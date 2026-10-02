@@ -1,6 +1,6 @@
 # Six-hour investigation record
 
-The requested session began at 01:15:09 EDT on 2 October 2026. Its minimum completion time is 07:15:09 EDT. The [session record](session.json) retains UTC and local times. Work is still active. This record links completed observations, their independent checks and the remaining follow-ups.
+The requested session ran from 01:15:09 to 07:17:51 EDT on 2 October 2026: six hours, two minutes and forty-two seconds. The [session record](session.json) retains UTC and local times. This record links completed observations, their independent checks and the evidence needed for future work.
 
 ## Completed comparisons
 
@@ -81,6 +81,6 @@ The [population-identification check](latent-generator-identification/README.md)
 
 ## Repository preservation
 
-The private repository's first complete package was pushed as commit `4c941af5d39b1b88c1c150efcb793be26517ecf1`; a later package was pushed as `fab1941`. GitHub Actions is disabled. The full preservation check at 09:24 UTC hashes all 16,284 imported files and 1,568 selected historical evidence files with zero errors. Its [frozen report](../../knowledge/provenance/full-import-verification-2026-10-02-0924.json) is separate from routine mutable link checks. Further completed branches will be reviewed and pushed during this session.
+The private repository's first complete package was pushed as commit `4c941af5d39b1b88c1c150efcb793be26517ecf1`; the completed research package was pushed as `f979d5aa35e662cdba060ab969acef82dec0cb55`. GitHub Actions is disabled. The full preservation check at 09:24 UTC hashes all 16,284 imported files and 1,568 selected historical evidence files with zero errors. Its [frozen report](../../knowledge/provenance/full-import-verification-2026-10-02-0924.json) is separate from routine mutable link checks. The [clean-clone execution](integration-review/fresh-clone-execution/README.md) reconstructs the packaged result and repeats the exact identification audit from tracked inputs. The closing documentation is recorded in a subsequent commit.
 
 Every new subagent assignment carries the user's writing rule: maximize reader comprehension, explain the idea directly in connected prose, keep shared assumptions together and avoid repeated corrective comparisons or warnings. Root reviews returned prose before integration. Branch retrospectives record externally observable approaches and failures; frozen evidence keeps its original wording.

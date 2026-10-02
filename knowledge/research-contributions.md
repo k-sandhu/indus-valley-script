@@ -32,6 +32,8 @@ The mapping program tests a bijection against an independent known reference in 
 
 Making administrative forms the same length and mixing their symbols reduces recovery. A fitted three-component reference mixture restores all 24 large-reference maps at zero and .35 shared mass, compared with 22 under the preceding selector. A coincident-component smoothing control recovers 21 and 22. The component count remains a supplied prior. At .70 mass, reference validation chooses ordinary slot prediction and preserves the associated failures. Six failed mixture maps score below truth, providing a specific search diagnostic for another optimizer. [Paper 004](../papers/004-reference-model-selection/manuscript.md), [claim files](../papers/004-reference-model-selection/methods.md).
 
+All 36 stored profiles satisfy a published population-identification condition under two declared exact probability conventions. Rational rank witnesses certify that the full population law determines the form weights and slot distributions, up to a common form-label permutation within the fixed three-component model. A collapsed-component boundary preserves distinct weights with identical observations. This structural calculation gives the finite-sample recovery program a precise parameter target. [Proof, witnesses and independent elimination](../experiments/2026-10-02-six-hour/latent-generator-identification/README.md).
+
 ## Source frames and experiments that need physical execution
 
 The Harappa frame restores excavation-unit/item keys for all 22 copied tablets in its source set. Nineteen readable lower-face pairs have recorded layout classes. A scale/pagination amendment preserves the earlier statements beside the corrected source coordinates.

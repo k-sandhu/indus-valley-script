@@ -18,7 +18,7 @@ The repository is private. Its local equivalent is this project folder. No CI/CD
 | What we tried and how problems were resolved | [Retrospectives](knowledge/retrospectives/README.md) |
 | New research directions and priorities | [Research roadmap](knowledge/directions/research-roadmap.md) |
 | Cryptography framing and recent model results | [Cryptography memo](knowledge/directions/cryptography.md) |
-| Current six-hour investigation | [Session record](experiments/2026-10-02-six-hour/SESSION_LOG.md) |
+| Completed six-hour investigation | [Session record](experiments/2026-10-02-six-hour/SESSION_LOG.md) |
 | Source identity, rights and catalogue caveats | [Sources](knowledge/provenance/SOURCES.md), [redistribution](knowledge/provenance/REDISTRIBUTION.md) |
 | Original completed report | [18-page report](output/pdf/indus_script_research_report.pdf) |
 | Inspect the 687-cell chart | [Local interactive atlas](output/chart_atlas/index.html) |

@@ -1,6 +1,6 @@
 # Six-hour research integration
 
-This account records the observable integration work for the session that began at 05:15:09 UTC on 2 October 2026. The [session log](../../experiments/2026-10-02-six-hour/SESSION_LOG.md) links each contributor's detailed experimental record. Its final timing record will be completed after the requested six elapsed hours.
+This account records the observable integration work for the session from 05:15:09 to 11:17:51 UTC on 2 October 2026: six hours, two minutes and forty-two seconds. The [session log](../../experiments/2026-10-02-six-hour/SESSION_LOG.md) links each contributor's detailed experimental record and the completed timing record.
 
 ## How the user's ideas became experiments
 
@@ -43,6 +43,8 @@ The completed package pushed as commit `6cf15fd` contains four paper drafts, met
 The root contributor owns shared registry, index and paper edits. Parallel contributors own distinct branches and return changed paths. Every assignment repeats the user's writing rule, and returned prose is read before integration. The [contribution guide](../../CONTRIBUTING.md) now includes that instruction for future assignments.
 
 The final manuscript reviews independently reaggregate the shared-quality tails, physical validation and mixture/rank results. Their [physical/reference review](../../experiments/2026-10-02-six-hour/integration-review/physical-and-reference/REPORT.md), [delta](../../experiments/2026-10-02-six-hour/integration-review/physical-and-reference/delta-review-2026-10-02/REPORT.md) and [mapping review](../../experiments/2026-10-02-six-hour/integration-review/physical-and-reference/mapping-review-2026-10-02/REPORT.md) preserve source hashes and every correction. The [checkout review](../../experiments/2026-10-02-six-hour/integration-review/checkout-availability/REPORT.md) supplies the source-route inventory and its accepted captured bytes.
+
+An actual local clone of `f979d5aa35e662cdba060ab969acef82dec0cb55` then reconstructed the oversized authored result and repeated the exact identification audit from tracked inputs. Its excluded original was absent, and its Git working tree stayed clean. The audit's copied source changes only its fixed output path, with original and executed hashes preserved. [Clean-clone execution](../../experiments/2026-10-02-six-hour/integration-review/fresh-clone-execution/README.md).
 
 ## What changes the next research cycle
 
