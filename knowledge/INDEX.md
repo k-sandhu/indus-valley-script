@@ -16,6 +16,8 @@ The [research-contribution overview](research-contributions.md) explains the res
 
 The [decipherment readiness review](directions/decipherment-readiness-2026-10-02.md) assesses all 101 previously registered entries, identifies short records outside the main benchmark and names the independent observations required for a restricted reading.
 
+The [regional connection findings](directions/regional-numerical-connections-2026-10-02.md) report the subsequent Susa weight census, Oxus inventory targets, South Indian stroke contexts, Harappa short records and Lothal image checks. The [independent novelty review](../experiments/2026-10-02-connections-and-priority/novelty/REPORT.md) evaluates the project's data connections and publication priorities against primary precedents.
+
 [Writing rules](editorial/WRITING.md) record the user's language preference, recent editorial sources and editing decisions.
 
 - [First complete manuscript](../papers/001-artifact-aware-prediction/manuscript.md), [detailed methods](../papers/001-artifact-aware-prediction/methods.md), [claim-evidence map](../papers/001-artifact-aware-prediction/claim-evidence-map.md).

@@ -38,5 +38,6 @@ The [six-hour continuation](../../experiments/2026-10-02-six-hour/SESSION_LOG.md
 | [Population identification](../../experiments/2026-10-02-six-hour/latent-generator-identification/RETROSPECTIVE.md) | Fixed grouped slots, exact rank witnesses, rational probability conventions and a repaired support assertion |
 | [Six-hour integration](six-hour-integration.md) | Shared manuscript corrections, preserved source bytes, repository packaging and final review |
 | [Decipherment readiness review](../../experiments/2026-10-02-decipherment-readiness/RETROSPECTIVE.md) | Corpus coverage, computational input requirements, source-defined tests and missing physical targets |
+| [Connections and publication priority](../../experiments/2026-10-02-connections-and-priority/RETROSPECTIVE.md) | Independent precedent review; Susa marked-weight census; Oxus source recovery; South Indian digital/print comparison; Harappa and Lothal source observations |
 
 A retry should name the new observation or method that changes the test. The registry preserves each earlier result and the evidence needed to assess that change.
