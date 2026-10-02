@@ -1,0 +1,15 @@
+# Same-length and shared-symbol stress test
+
+Paper 004 identified a tractable administrative design in which length revealed the record form and each role had its own symbol pool. This branch changed those observations on twelve fresh matched systems. The protocol fixed all four variants, reference sizes, process changes, mapping budgets and selection rule before the main run. The pilot completed four conditions. The main run completed 192 conditions in 31.52 seconds.
+
+Matching the worlds required a shared random stream with six position draws per record. Drawing only each form's actual length would change the random stream as the variants changed. Sampling six uniforms before truncation kept the form and common positions paired across variants. The independent replay rebuilt every probability and record. During review implementation, inspection of the main code showed that added-slot draws assigned probabilities in sorted pool order. The reviewer reproduced that ordering explicitly before executing its audit.
+
+The common-length contrast also adds slots to the shorter forms. Its protocol records that mechanism. The supplied-form diagnostic makes a cleaner information comparison by retaining every record and changing its conditioning field. It supplied a measurable recovery improvement at zero shared mass, and improved symbol accuracy at high shared mass.
+
+Reference prediction favored graph on eleven of twelve large common-length references without overlap, then favored slot on every shared-mass reference. The source family alone therefore leaves a model-choice question once forms mix at one length. At forty reference records, all methods failed complete recovery at .70 mass. These unsuccessful conditions remain beside the larger-reference recoveries.
+
+The independent audit passed 9,202 checks. It reconstructed all inputs, choices, ordinary and supplied-form scalar scores, and 384 assignment dual bounds. Code-exclusion searches retained thirty tied linear conditions with sixty exact equality witnesses. A post-outcome truth-score audit showed that every failed map in both linear channels and the graph channel placed the true map below the returned score. Further search on those same objectives would continue preferring a wrong identity assignment.
+
+The plotting diagnostic first failed because Matplotlib was unavailable in the system Python. The bundled workspace Python also lacked it. The failed source and both errors are preserved. Reusing the local plotting packages already acquired for the geometry branch produced the figure without a new installation or fitting change. The rendered figure was inspected for legible labels and complete axes.
+
+The next model test can estimate latent forms from reference records and compare that estimate with the supplied-form diagnostic on fresh systems. For an archaeological application, a documented physical class could supply an observed conditioning field. The current branch makes the input difference, its recovery cost and the remaining reference requirement available for that experiment.

@@ -1,0 +1,7 @@
+# Administrative forms with shared length and symbols
+
+The fresh twenty-symbol stress test completed 192 conditions. With 400 reference records, the reference-selected decoder recovered 24 of 24 separated-form maps, 22 of 24 same-length maps without shared mass, and 16 of 24 maps at .70 shared mass. With 40 reference records, those counts were 10, 8 and 0. Supplied form labels improved recovery on the same records.
+
+Read the [report](REPORT.md), [methods](METHODS.md) and [retrospective](RETROSPECTIVE.md). The [protocol](PROTOCOL.md) was frozen before the main run. The [main endpoint](main-v1/results.json), [generated worlds](main-v1/worlds.json) and [full generator parameters](main-v1/parameters.json) preserve all outcomes. The [independent review](review-v1/verification.json) passes 9,202 checks, including every input replay, reference choice, score and linear dual bound. [Exact alternative assignments](review-v1/linear-alternatives.json) preserve the tied optima.
+
+The [additional diagnostic](additional-v1/summary.json) records supplied-label benefits, truth-score comparisons and the [recovery figure](additional-v1/recovery.png). Its [protocol](ADDITIONAL_PROTOCOL.md) followed the primary outcome. A [plot-runtime failure](plot-runtime-failure-v1/failure.json) and its source snapshot remain beside the successful run. The [final checks](verification.json) cover navigation and the preserved endpoints.

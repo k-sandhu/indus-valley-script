@@ -1,16 +1,34 @@
 # Adding durable research knowledge
 
-This is a knowledge repository. Do not add CI/CD, deployment configuration or workflows.
+This is a knowledge repository with manually run research code. It has no CI/CD or deployment configuration.
 
-1. Search `knowledge/experiments/registry.json`, `knowledge/retrospectives/`, `research/` and existing paper references before starting. Record why the new work is not a duplicate.
-2. Copy the [experiment template](templates/EXPERIMENT.md) into `experiments/YYYY-MM-DD-short-name/`. Assign an ID, source snapshots, question, test, exclusions and failure conditions before looking at new outcomes where practical.
-3. State whether the work is a proposal, simulation, exploratory analysis, frozen evaluation, failed test, source audit, or replication. State the level of inference: graphic, structural, functional, numerical, phonetic, lexical or historical.
-4. Preserve physical-object aliases and source identity. A second drawing, catalogue label, face or transcription does not automatically create a new independent ancient object.
-5. Keep observations separate from interpretations. Record uncertainty and unmapped cases. Do not silently merge inventory numbers, assume an erased section is one glyph, equate later iconography with an ancient word, or treat a plausible story as verification.
-6. Keep old failed and superseded outcomes. A corrected run goes in a new directory with the defect, change and relationship recorded. Do not select the best endpoint across incompatible populations.
-7. Save commands, seeds, source/code hashes, dependencies and exact result paths. Write a short challenges-and-remedies account grounded in observable actions and outputs. Do not reconstruct unrecorded intentions as facts.
-8. Update the registry, knowledge index and claim-evidence maps. Add the future experiment to the roadmap with a stopping condition and required new evidence.
-9. Add primary citations for factual claims. Community suggestions are attributed hypotheses. Check that a claimed novelty is not already in the literature.
-10. Run the relevant manual checks. Use `python tools/verify_knowledge_repo.py` for repository integrity; run analysis-specific checks only when the changed analysis requires them.
+## Before starting
 
-Use `papers/002-descriptive-title/` for a genuinely new manuscript. Keep draft status, unresolved claims, contribution declarations and references visible. Public release should occur only after an explicit decision and the documented source-specific review.
+Read the [registry](knowledge/experiments/registry.json), the relevant [retrospective](knowledge/retrospectives/README.md) and the linked paper methods. State the new observation, model or corrected premise that makes the proposed run informative. The registry's `retry_when` field identifies useful reasons to revisit earlier failures.
+
+Choose the next unused experiment ID and a dated directory under `experiments/`. Copy the [experiment template](templates/EXPERIMENT.md), then record the target, inputs, selection rule, controls, outcomes and stopping conditions. State whether the work is a proposal, simulation, source replication, exploratory refinement or frozen evaluation. Keep its graphic, functional, numerical or linguistic target explicit.
+
+## During a run
+
+1. Preserve source identity, physical-object aliases, all available faces and uncertain cases. Record how the analytical representation was made from the source observations.
+2. Keep source observations, proposed interpretations and evaluator answers in distinct inputs. Describe exactly what the fitted model and any acquisition selector receive.
+3. Save commands, seeds, code/helper snapshots, source hashes and environment versions. A copied helper needs its own hash in the run record.
+4. Write each run or repair to a new endpoint. Retain earlier results and identify the defect or premise changed by the repair.
+5. Check the computation with an appropriate independent implementation, exact certificate or source inspection. Report the independent unit and keep repeated conditions together when calculating uncertainty.
+6. Record the observable approach, challenges, fixes and outcomes in a retrospective. Link each conclusion to exact outputs and source coordinates.
+
+Raw acquired sources and detailed unresolved-rights derivatives remain local under the [redistribution record](knowledge/provenance/REDISTRIBUTION.md). Track our code, prose, protocols, generated controls, aggregate results and acquisition manifests. Review payload contents as well as extensions.
+
+## Parallel assignments and writing
+
+Assign each contributor distinct owned paths. Tell them that others share the workspace and that their implementation must accommodate those changes. Include this requirement in every assignment:
+
+> Maximize reader comprehension. Explain the idea directly in connected prose, keep necessary shared assumptions together, and avoid repeated corrective comparisons or warnings that interrupt the argument. Read `knowledge/editorial/WRITING.md` before writing. Preserve exact source titles and frozen evidence wording.
+
+The integrating contributor reviews returned prose, numbers, links and source scope. Describe the result early, followed by the method and evidence needed to assess it. Necessary limitations belong together with the affected claim or shared methods premises.
+
+## After completion
+
+Update the registry, index and claim-evidence maps. Give each failure a concrete retry input. Run `python tools/verify_knowledge_repo.py` for repository links and paths, plus the analysis-specific checks required by the change. Inspect the proposed Git payload before pushing completed private research contents.
+
+Use the next unused numbered directory under `papers/` for a new manuscript. Keep its draft status, contribution, source access and exact evidence map visible. Future public release or external submission requires the user's decision and the recorded source-specific packaging review.

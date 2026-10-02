@@ -1,0 +1,11 @@
+# Delta review record
+
+The review began with the original frozen manuscript snapshot and the current five manuscript files. A line diff isolated the shared-quality additions and the physical corrections. The first broad terminal read produced more output than its display budget; subsequent reads selected the changed sections and exact JSON summary fields. No source content was changed to make those reads shorter.
+
+One snapshot command saved all five files successfully, then encountered Windows's CP1252 output encoder when printing a minus sign. The read was repeated with an explicit UTF-8 stdout encoder. The saved manuscript bytes were intact. The check helper uses UTF-8 file decoding and prints ASCII-compatible summary fields.
+
+The arithmetic review reconstructed agreement scores from observed face pairs, avoiding latent values and quality labels in the score. It counted saved gain and agreement-score exceedances, checked rejection totals and Wilson intervals, and verified fresh generator namespaces. Exact distributions were checked through middle-column overlap counting, followed by cell convolution. This uses separate arithmetic from the source row-state recurrence. The checks completed without a fitting replay. The paired bootstrap intervals were read from the independently audited endpoints.
+
+The first check pass covered the diagnostic and nested score totals. The helper was then extended to check the small exact space, class-agreement fractions and covariance rounding cited in the preceding section. The second pass includes that additional coverage; no scientific endpoint was rerun or replaced. All 41,979 arithmetic assertions passed.
+
+Paper 003 now applies the four factual and two wording changes. Paper 002's new table revealed a denominator sentence that still described every rate interval as using 1,000 populations. The coordinating agent corrected that sentence and added the shared-quality result to the abstract during this review. A separate completion snapshot records those changes. The review also found that the first report's Pearson-statistic correction was stale relative to its own pinned manuscript. This delta states the corrected values and preserves the earlier report. This reviewer made no shared manuscript, registry or source-witness edit.

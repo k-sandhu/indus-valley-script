@@ -1,0 +1,13 @@
+# Agreement diagnostic work record
+
+The completed nested score comparison showed little separation between broad and quality-conditioned references. An exact sampler calculation had already shown that their conditional laws differed. This motivated a separate score that reads consecutive observed face agreements. The prior nested result, including its small paired difference, stays preserved. Fresh population/reference namespaces and the integer score were fixed before generation.
+
+The score uses only the observed pair's signs and object identifier. Conditional quality classes remain part of the sampler. No latent state or quality value is supplied to its arithmetic. Broad and quality samplers preserve complete ordered vectors, aliases and broad margins; the quality sampler also retains its class-specific margins. All 99,000 broad proposals changed those margins, and every matched proposal retained them.
+
+Agreement arrangements have a compact exact representation. Uniform permutations of complete vectors induce uniform binary agreement arrangements given their counts, because every binary arrangement has the same number of compatible vector assignments. A row-state integer recurrence therefore counts all possible scores for n=5 and n=10 without storing every full table. Totals equal products of binomial coefficients and exact means equal the declared formula. An independent calculation conditions on the middle agreement column and convolves two hypergeometric overlap counts. It agrees on all 1,547 distributions and every observed exact tail.
+
+The new statistic strongly separates the references: 94.2% versus 1.0% rejection at 5% with 99 draws, and 95.0% versus .8% using exact tails. The matched score is frequently tied, explaining its conservative rejection fraction. Its means track the supplied shared-quality mechanism, with observed mean 18.855 and matched conditional mean 18.8614. The broad mean is 13.4469. The smaller nested effect and the large agreement effect both belong in the record.
+
+The independent audit reconstructs the fresh generator in separate code, replays all proposals and integer scores, checks metadata and both margin types, verifies every inclusive rank and exact tail, and repeats the paired bootstrap. It took 96.27 seconds and passed every check. No source failure, fit failure or endpoint restart occurred. Source snapshots, truth rows, seeds, scores, rational distributions and hash witnesses remain in the endpoint.
+
+A future score can use jointly observed face information when its physical pairing and observation process are established. This diagnostic supplies a fixed synthetic measurement for that choice. The current nested predictor retains its original input and loss criterion.

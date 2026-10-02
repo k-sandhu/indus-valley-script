@@ -1,0 +1,30 @@
+# Read-only review of papers 002 and 003
+
+The stated main sample sizes, paired intervals, support-bound counts and numerical recovery results match the linked outputs. The KHI-05 addition also matches its sealed computation. The [numerical check record](numerical-checks.json) contains 106 passing checks from sixteen saved source files. No fitting experiments were rerun. The [manuscript snapshot](manuscript-inputs.json) pins the five files and their line numbers as reviewed, including the KHI-05 addition.
+
+## Corrections to make
+
+| File and line in the pinned version | Correction | Exact basis |
+|---|---|---|
+| [Paper 002 manuscript](../../../../papers/002-conditional-reference-laws/manuscript.md), line 63 | Call `.01336` the chi-square **p-value**. The statistic is `263.51936`, with 215 degrees of freedom. Suggested wording: “The direct stream's chi-square p-value is .01336 at its declared seed.” | `null-calibration/unequal-copy-counts/results.json`, `direct_sampling.diagnostic_p`, `chi_square` and `degrees_of_freedom` |
+| Paper 002 manuscript, line 110 | Specify that the `.334097` total-variation comparator uses the agreement-estimated rate. Suggested phrase: “.334097 for projected inversion using the agreement-estimated rate.” The preceding negative-component diagnostic uses the known rate; the frequency comparator has a different rate input. | `null-calibration/noisy-channel/main/results.json`, `summary.agreement_projected_total_variation` and `negative_inversions.known_channel` |
+| [Paper 003 manuscript](../../../../papers/003-physical-observations/manuscript.md), lines 53-55 | State the local-vote premise alongside missing-association conditions: “Each visible local group contributes an equality vote, including groups with missing associations.” KHI-04 retains those local votes while declared pool missingness changes the collective constraint. | `khipu-control/robust-decoder/METHODS.md`; `khipu-control/conservation-check/PROTOCOL.md`, observation conditions and exact fitting |
+| Paper 003 manuscript, line 55 | Carry the collective observation's operation and availability premises into this methods paragraph. The source design assumes the same quantity type, units and event, parent marks describing their contents, and pooling without loss or exchange. All observed parent and pool marks are supplied before the first local prefix; no inventory-acquisition cost is assigned. These premises can be collected in one connected methods paragraph. | `khipu-control/conservation-check/METHODS.md`, “Physical premises and available observations”; `PROTOCOL_AVAILABILITY.md` |
+| Paper 003 manuscript, line 119 | Remove “with equal check counts” from the end of this paragraph, or specify that comparisons at each fixed budget have equal counts. This paragraph itself compares one count-first check with two greedy-rank checks. Methods already states the common one-unit cost assumption and budgets zero through three. | `khipu-control/validation-design/PROTOCOL.md`, fixed policies and budgets; `main-v1/aggregate.json` |
+| Paper 003 manuscript, line 144 | Replace “Generated worlds are the independent units” with “Base collections or base seeds are the independent units; prefixes, representations, policies and reused condition views share them.” The 1,400 KHI-04 condition-worlds share 200 seeds; KHI-05 reuses that population. | `khipu-control/conservation-check/main-v1/aggregate.json`, `worlds=1400`, `base_seeds=200`; `validation-design/main-v1/aggregate.json`, `independent_base_seeds=200` |
+
+## Two wording changes that improve the methods
+
+In Paper 003 line 43, replace “reverse rows” with “reverse selected rows' column order.” The control has eight within-row reversal choices. Whole-row permutations preserve the sum and are mentioned separately in the next sentence.
+
+In Paper 003 line 59, use “eight held-out account coefficient rows” in place of “eight fresh account coefficient rows.” KHI-05 reuses KHI-04's previously withheld observations after its outcomes were seen. The paragraph already states post-outcome reuse clearly; this wording keeps the observation's phase consistent.
+
+## Verified integration
+
+Paper 002 reports 3,000 observed populations and 396,000 reference fits correctly. Its literal-copy paired interval is 8.5-12.6 percentage points, from 500 linked seed clusters and 20,000 bootstrap draws. Its noisy-face interval is 4.3-7.7 points, with the stated 41/69/9/881 joint rejection counts. The 8,000/2,880 table counts, selected-law percentages, guard denominators and channel-estimation means agree with their endpoints. The support-bound paragraph carries its one-string-per-physical-block and absence-of-other-physical-links premises, correctly excluding the sampled record-copy references and imperfect-face witness from that bound.
+
+Paper 003 preserves the corrected PHYS-01 measurement scope, PHYS-02's public completeness/child-menu descriptors, the fresh interval-refinement population, KHI-01's prior target exposure and the separate CM009 reconstruction. The counted unit fixes the first positional value; account equations infer the remaining ratios. The PHYS-01 24-collection results, PHYS-02 recovery table and interval widths, KHI-01 299/300 result, KHI-03 consensus counts and KHI-04 200-seed comparisons agree with their sources.
+
+KHI-05's stated check budgets and outcomes match. Three account-first checks leave one of nine wrong rays compatible. Greedy rank excludes all nine with two checks and a unit anchor, or three without it. Count-first excludes them with one anchored count or two unanchored counts. The wrong scale-fit vector and residual `1092/23` recompute exactly. The 190/199 validated absolute-point totals and the 59,856 additional random-family intersections also match.
+
+The current prose explains the distinct mechanisms in connected paragraphs. The corrections above place the remaining shared premises in Methods and remove one budget phrase that interrupts the interpretation. No additional general qualifications are needed for the checked results.

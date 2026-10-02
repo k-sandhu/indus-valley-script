@@ -1,0 +1,7 @@
+# Independent mixture and mapping review
+
+This review protocol precedes inspection of the main recovery results. Use scalar logarithms and Bayes normalization to recompute mixture likelihoods and form responsibilities. For every saved reference-fit start, check initial/final objectives, the terminal M update from its saved preceding parameters, all reported monotonic objective changes and the stopping rule. Recompute the chosen reference-start score and every CV choice. Tiny rational mixture enumeration checks normalization separately.
+
+For every mapping step, reconstruct responsibilities and expected code/slot counts, rebuild all assignment weights independently, recompute both selected Q values and actual likelihoods, and solve the separate row/column-potential dual program. Check actual ascent and the EM bound `new likelihood - old likelihood >= new Q - old Q` within 1e-7. Verify all preserved starting candidates and the returned maximum, including distinct candidate ties. No global mixture or nonlinear mapping optimality is certified.
+
+Recompute complete recovery and symbol accuracy from the frozen answer key only in evaluation. Score every returned map on held-out records under the fixed mixture, ordinary slot and conditional graph models. Keep reused benchmark and per-record-label comparators explicit. Compare outcomes and twelve-system paired differences, resampling the four reference/mixture conditions together with 20,000 draws and seed 1510261002. Preserve frozen inputs and save the independent review separately.

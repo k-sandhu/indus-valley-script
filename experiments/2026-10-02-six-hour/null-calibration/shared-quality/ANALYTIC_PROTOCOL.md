@@ -1,0 +1,7 @@
+# Single-face and paired-face dependence from the quality mixture
+
+Written during the frozen main run, after 100 of 300 populations have completed. The pilot and exact sampler outcomes have been seen. This calculation inspects the supplied probabilities, with no fitted main score or p-value used to choose it. It adds an explanation of the fixed observation model and leaves the main protocol and endpoints unchanged.
+
+For the balanced quality classes, compute single-face marginals and adjacent-slot joint distributions with rational arithmetic under the declared eight-category kernels and rotating site/slot probabilities. Check each of 256 covariance entries both by mixing the two class-specific products and by the closed expression `Var(t_q)(p_i(a)−1/8)(p_j(b)−1/8)`, where `t_q=1−8ε_q/7`. Also enumerate the 16,384 corresponding ordered-face-vector event pairs, checking normalization and their largest absolute covariance. Store the individual single-face entries, vector maximum witnesses, class agreement and whole-string agreement probabilities. Use no model fitting or rejection calculation.
+
+These calculations measure the dependence available in the supplied observations. The nested predictor reads the preceding sign from a single face, while physical/text grouping also responds to whole-string coincidences across faces. The main calibration study will separately measure that statistic's response.

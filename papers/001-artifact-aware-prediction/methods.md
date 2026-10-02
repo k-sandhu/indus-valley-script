@@ -2,6 +2,8 @@
 
 Companion to the [manuscript](manuscript.md), written 2 October 2026. Procedures below describe completed work, with exploratory refinements identified by stage. Proposed additions are in [submission-gaps.md](submission-gaps.md).
 
+The corpus, definition JSON, crosswalk and source-PDF links in this paper address locally preserved inputs. A Git clone can follow the [source-route review](../../experiments/2026-10-02-six-hour/integration-review/checkout-availability/REPORT.md) to their selected acquisition and transformation records. Aggregate results, code and numeric reviews are tracked.
+
 ## Data, coding and dependence
 
 The input [lipi_clean_rtl_singleline.jsonl](../../data/normalized/lipi_clean_rtl_singleline.jsonl) has SHA-256 `9e539daef4d5a7efbe3c5f34b73e14058eec1c5e888c749bc2eafb0f08084ba8`. Its observational completeness, line-layout and direction filters precede model fitting. The [loader](../../src/methods/conditional_structure.py) additionally excludes missing/blank codes and applies a minimum length, normally three. The clean ≥2 population has 2,930 records and 1,859 strings; ≥3 has 2,107 records and 1,596 strings. A face record, physical artifact, complete string and connected component are different units.
@@ -91,6 +93,12 @@ Sampled counts are 815 ones, 454 twos and 327 threes, yielding the constant-one 
 [template_comparison.py](../../src/methods/template_comparison.py) selects finite independent-slot mixtures from 16,32,64 components with minimum component size five. The known [nonphonetic routing control](../../research/methods/controls/workflow_codes.jsonl) tests whether residual dependence beyond that fitted family is specific to language. Source-published controls preserve author order and simultaneous composite units. Totem OOV coverage and weather's one-component closure prevent treating them as matched language classifiers.
 
 Exact substitution frames have one wildcard and identical remaining length/slot/context. Training components supply discoveries; held-out transfer requires a new frame. Support counts distinct frames, with shared mapped graphic classes separated from disjoint classes. [substitution_joint_null.py](../../src/methods/substitution_joint_null.py) repeats discovery and transfer on every shuffled corpus. Aggregate counts and pair-level maximum statistics have separate reference distributions. Frequency-adjusted maxima are post-pilot sensitivities.
+
+## Extra shrinkage of two-state histories
+
+The [adaptive follow-up](../../experiments/2026-10-02-six-hour/markov-adaptive/PROTOCOL.md) reuses the same masks and component folds. First-order strength remains twenty. For a training history count `N>0`, multiply the second-order weight by `N/(N+κ)`, yielding effective strength `α+κ+ακ/N`. Zero histories use first order. The grid contains seventeen distinct finite factors from α=5/20/100/500/2000 and κ=0/20/100/500, plus exact first-order backoff. Three inner component folds minimize unknown-bucket loss. Complete masked probabilities include beginning/end events and all later factors involving the candidate.
+
+Every outer fold selects backoff. [The endpoint](../../experiments/2026-10-02-six-hour/markov-adaptive/main/results.json) preserves all ninety candidate/fold losses and paired component intervals. [Independent flat-count review](../../experiments/2026-10-02-six-hour/markov-adaptive/review/verification.json) reconstructs every query, verifies rational effective-strength identities and checks full-chain probabilities. Detailed source-linked predictions remain local. This protocol follows earlier outcomes and supplies a comparison on reused development records.
 
 ## Reproduction and preservation
 

@@ -33,12 +33,28 @@ def main():
     docs += list((ROOT/"experiments").rglob("*.md"))
     broken = []
     frozen_link_contexts = []
+    document_snapshot_contexts = {}
+    capture_root = ROOT/'experiments/2026-10-02-six-hour/integration-review/checkout-availability'
+    for summary_path in capture_root.glob('captured-*/summary.json'):
+        captured = json.loads(summary_path.read_text(encoding='utf-8'))
+        for original, snapshot in captured.get('document_snapshots', {}).items():
+            snapshot_path = ROOT/snapshot
+            expected = captured['document_hashes'][original]
+            if not snapshot_path.is_file() or hashlib.sha256(snapshot_path.read_bytes()).hexdigest() != expected:
+                errors.append('Captured document hash mismatch: ' + snapshot)
+                continue
+            document_snapshot_contexts[snapshot_path] = (ROOT/original).parent
+    resolved_document_contexts = []
     for doc in docs:
         if not doc.is_file():
             continue
         content = doc.read_text(encoding="utf-8")
         link_base = doc.parent
-        if doc.name.lower().endswith("protocol_snapshot.md") and (doc.parent.parent/"PROTOCOL.md").is_file():
+        if doc in document_snapshot_contexts:
+            link_base = document_snapshot_contexts[doc]
+            resolved_document_contexts.append({'snapshot':doc.relative_to(ROOT).as_posix(),
+                                              'source_context':link_base.relative_to(ROOT).as_posix()})
+        elif doc.name.lower().endswith("protocol_snapshot.md") and (doc.parent.parent/"PROTOCOL.md").is_file():
             # Byte-preserved copies retain links relative to the original protocol.
             link_base = doc.parent.parent
             frozen_link_contexts.append({"snapshot":doc.relative_to(ROOT).as_posix(),
@@ -95,6 +111,7 @@ def main():
               "manuscript_words": words, "distributed_files": len(listed), "imported_files_hashed": imported,
               "historical_selected_files_hashed": historical_selected, "errors": errors,
               "frozen_protocol_link_contexts":frozen_link_contexts,
+              "document_snapshot_link_contexts":resolved_document_contexts,
               "scope": "repository structure, local links, preserved evidence and distribution checks; not peer review or archaeological validation"}
     dest = ROOT/"knowledge/provenance/repository-verification.json"
     dest.parent.mkdir(parents=True, exist_ok=True)

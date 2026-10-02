@@ -10,11 +10,13 @@ The six-hour continuation has now tested the main computational ideas behind thi
 |---|---|---|
 | Graphic restoration | Second-order context raises top-one accuracy to 37.27%, while first order has better probability loss | A new reviewed image/transcription block or a specified predictor that addresses segmentation and unknown count |
 | Conditional references | Matched object/vector references calibrate near declared thresholds in known laws; record shuffling inflates copy/face rejection rates | Independently established object dependence, selection history and recording-quality strata |
-| Symbol mapping | Reference-only model choice recovers 309/384 generated maps; retained tied maps expose unresolved identities | A justified external reference, overlapping/same-length forms or uncertain boundary controls |
+| Symbol mapping | Reference-only choice recovers 309/384 generated maps; same-length mixtures improve several conditions, with exact population rank certificates and retained search misses | A justified external reference, a frozen form-count rule, encoded-mixture adaptation or fresh uncertain-boundary controls |
 | Numerical observations | Physical relations identify ratios; counts fix scale; complete-pool constraints resolve many wrong local assignments | A source-joined physical inventory or count with independently recorded completeness and units |
 | Artifact operation | Harappa, Lothal and Kanmer frames restore object/context joins; curved contact can bias observed graphics | Measured groove geometry, original bore/wear observations, replica results or specimen-level context |
 
 Exact outputs, failures and retry conditions are in the [experiment registry](../experiments/registry.json). [Paper 002](../../papers/002-conditional-reference-laws/manuscript.md), [Paper 003](../../papers/003-physical-observations/manuscript.md) and [Paper 004](../../papers/004-reference-model-selection/manuscript.md) give the corresponding methods. The remaining archaeological work depends chiefly on better linked observations.
+
+The final controls sharpen the next computational choices. Extra two-state-history shrinkage returns first order under loss selection. Shared quality gives little separation under the nested predictor but strong separation under a fresh observed-agreement statistic. Count-first validation needs fewer checks than coefficient-rank selection in the saved wrong-decoder cases. Three-component mixtures help when reference data retain form distinctions, while high-overlap and small-reference conditions preserve failures. Each result has a separate endpoint and a specific changed premise for another run.
 
 ## First decisions
 

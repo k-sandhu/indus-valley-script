@@ -54,8 +54,25 @@ The historical commands below use default output directories and can overwrite o
 
 Re-running an old failed experiment without new evidence is usually unnecessary. Consult [the registry](knowledge/experiments/registry.json) for the reason to revisit, including alias leakage, selection, masking mismatch, source identity and post-reference tuning issues.
 
+## Six-hour continuation packages
+
+The new studies keep executed source/helper snapshots, parameters and output hashes in dated endpoints. Their protocols distinguish development, fresh generated evaluation, source replication and later mathematical refinements. The [session record](experiments/2026-10-02-six-hour/SESSION_LOG.md) is the entry point for all branches.
+
+| Package | Inputs available from Git | Reproduction entry |
+|---|---|---|
+| [Paper 001](papers/001-artifact-aware-prediction/methods.md) | Aggregate restoration outputs, source snapshots, parameters and numeric review | Detailed query reanalysis also needs local corpus-derived slot audits |
+| [Paper 002](papers/002-conditional-reference-laws/methods.md) | Generated populations, finite tables, proposal histories, method snapshots, results and auditors | Exact calculations are short; original main calibration took about 3.1 hours and imperfect-face calibration about 1.5 hours on the recorded host |
+| [Paper 003](papers/003-physical-observations/methods.md) | Generated worlds, separated evaluator keys, exact certificates, protocols and auditors | Published-source replication additionally needs the locally retained source vectors; synthetic numerical controls use tracked generated inputs |
+| [Paper 004](papers/004-reference-model-selection/methods.md) | Generated worlds, hidden mapping keys, generator/solver snapshots, exact/dual checks and independent reviewers | The two main mapping grids each took about 47 seconds on the recorded host; independent reviews take additional time |
+
+Inspect a frozen endpoint before deciding to rerun it. New executions must use a fresh output directory, including independent-review reruns. The recorded seeds and helper hashes identify the actual calculation; changing a live working helper creates a new method even when its filename is unchanged.
+
+The original full import was checked again during the continuation. Its [preserved report](knowledge/provenance/full-import-verification-2026-10-02-0924.json) covers 16,284 imported files and 1,568 selected historical evidence files, with no hash errors. Routine link/registry verification writes a separate mutable report.
+
 ## Portability limits
 
 Most analysis paths resolve from the script's repository root. Some historical source-fetch, rendering or review helpers contain the original host's absolute paths; those are preserved as historical records and may require explicit path edits or copied input locations. Code snapshots remain unmodified so their recorded hashes retain meaning. Some acquisition requests failed historically and cannot be guaranteed to work against current servers.
 
-No journal acceptance, expert sign-inventory certification, public corpus redistribution permission or semantic interpretation is implied by a successful numerical reproduction.
+The complete mixture endpoint is stored as eight compressed byte chunks. Run `python src/six_hour/latent_forms_package.py verify` to check the stream without writing a file. A clone can restore the original analysis path with the [reconstruction command](experiments/2026-10-02-six-hour/latent-forms/git-package/main-results-v1/RECONSTRUCT.md); the helper refuses to overwrite an existing destination and verifies each chunk and the full hash.
+
+The [checkout-availability review](experiments/2026-10-02-six-hour/integration-review/checkout-availability/REPORT.md) inventories core navigation and gives selected source routes for all eighteen local-only targets. Its copied-document hashes fix the reviewed version. Later status edits remain visible in Git history.

@@ -12,12 +12,15 @@ The project distinguishes **observed graphics**, **statistical structure**, **po
 
 ## Manuscripts and reproducibility
 
+The [research-contribution overview](research-contributions.md) explains the results available for reuse and connects them to the four papers.
+
 [Writing rules](editorial/WRITING.md) record the user's language preference, recent editorial sources and editing decisions.
 
 - [First complete manuscript](../papers/001-artifact-aware-prediction/manuscript.md), [detailed methods](../papers/001-artifact-aware-prediction/methods.md), [claim-evidence map](../papers/001-artifact-aware-prediction/claim-evidence-map.md).
 - [Conditional reference laws](../papers/002-conditional-reference-laws/manuscript.md): related objects, uniqueness selection and the fitting domain, with [claim files](../papers/002-conditional-reference-laws/methods.md).
 - [Physical observations in numerical decoding](../papers/003-physical-observations/manuscript.md), [methods](../papers/003-physical-observations/methods.md), [claim files](../papers/003-physical-observations/claim-evidence-map.md).
 - [Reference model selection before symbol mapping](../papers/004-reference-model-selection/manuscript.md), [methods and evidence](../papers/004-reference-model-selection/methods.md).
+- [Mapping method precedents](directions/mapping-method-precedents.md): primary sources for latent inference, search and parameter identification.
 - [Manual reproduction](../REPRODUCING.md), [historical environment](../output/environment.json), [original evidence manifest](../output/evidence_manifest.json).
 - [Original report](../output/pdf/indus_script_research_report.pdf), [chart atlas](../output/chart_atlas/index.html).
 

@@ -1,0 +1,264 @@
+{
+  "scope": "Constructed geometry outside recovery percentages",
+  "cases": [
+    {
+      "name": "scale_free_ray",
+      "equations": [
+        [
+          -10,
+          1,
+          0,
+          0
+        ],
+        [
+          -100,
+          0,
+          1,
+          0
+        ]
+      ],
+      "halfspace": null,
+      "fitter_geometry": {
+        "status": "family",
+        "dimension": 1,
+        "base": [
+          "0",
+          "0",
+          "0"
+        ],
+        "slopes": [
+          [
+            "1/100",
+            "1/10",
+            "1"
+          ]
+        ],
+        "witness": [
+          "1/100",
+          "1/10",
+          "1"
+        ]
+      },
+      "independent_status": "family",
+      "independent_dimension": 1
+    },
+    {
+      "name": "count_fixes_ray_scale",
+      "equations": [
+        [
+          -10,
+          1,
+          0,
+          0
+        ],
+        [
+          -100,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          20
+        ]
+      ],
+      "halfspace": null,
+      "fitter_geometry": {
+        "status": "point",
+        "dimension": 0,
+        "base": [
+          "2",
+          "20",
+          "200"
+        ],
+        "slopes": [],
+        "witness": [
+          "2",
+          "20",
+          "200"
+        ]
+      },
+      "independent_status": "point",
+      "independent_dimension": 0
+    },
+    {
+      "name": "family_cut_to_point",
+      "equations": [
+        [
+          -10,
+          -9,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          20
+        ],
+        [
+          0,
+          0,
+          1,
+          200
+        ]
+      ],
+      "halfspace": null,
+      "fitter_geometry": {
+        "status": "point",
+        "dimension": 0,
+        "base": [
+          "2",
+          "20",
+          "200"
+        ],
+        "slopes": [],
+        "witness": [
+          "2",
+          "20",
+          "200"
+        ]
+      },
+      "independent_status": "point",
+      "independent_dimension": 0
+    },
+    {
+      "name": "zero_coordinate_excludes_positivity",
+      "equations": [
+        [
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "halfspace": null,
+      "fitter_geometry": {
+        "status": "empty",
+        "reason": "positive_domain_excluded"
+      },
+      "independent_status": "empty",
+      "independent_dimension": null
+    },
+    {
+      "name": "positive_halfspace",
+      "equations": [
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "halfspace": [
+        -1,
+        1,
+        0
+      ],
+      "fitter_geometry": {
+        "status": "family",
+        "dimension": 2,
+        "base": [
+          "0",
+          "1",
+          "0"
+        ],
+        "slopes": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-1",
+            "1"
+          ]
+        ],
+        "witness": [
+          "1/2",
+          "3/4",
+          "1/4"
+        ]
+      },
+      "independent_status": "family",
+      "independent_dimension": 2
+    },
+    {
+      "name": "excluded_open_endpoint",
+      "equations": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "halfspace": [
+        -1,
+        1,
+        0
+      ],
+      "fitter_geometry": {
+        "status": "empty",
+        "reason": "positive_domain_excluded"
+      },
+      "independent_status": "empty",
+      "independent_dimension": null
+    },
+    {
+      "name": "forced_closed_boundary",
+      "equations": [
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      "halfspace": [
+        -2,
+        1,
+        0
+      ],
+      "fitter_geometry": {
+        "status": "point",
+        "dimension": 0,
+        "base": [
+          "1",
+          "2",
+          "1"
+        ],
+        "slopes": [],
+        "witness": [
+          "1",
+          "2",
+          "1"
+        ]
+      },
+      "independent_status": "point",
+      "independent_dimension": 0
+    }
+  ],
+  "passed": true
+}

@@ -97,3 +97,11 @@ Generated from `registry.json`; the registry contains challenges, remedies and r
 | NULL-08 | completed-main-and-independent-audit | How do record and matched object references calibrate the preserved nested statistic under known independent, unique and literal-copy laws? |
 | NULL-09 | completed-proof-and-allocation-audit | Which original conditional laws admit a component lower bound that guarantees nonempty nested folds? |
 | KHI-04 | completed-synthetic-control-and-independent-audit | Can an independently observed pooled inventory resolve numerical values when local account membership is unreliable? |
+| KANMER-02 | completed-bounded-source-amendment | Can original bibliography, author proofs and library holdings resolve early Kanmer interpretation history and identify the missing object pages? |
+| KHI-05 | completed-post-outcome-reuse-and-independent-audit | Can a fixed small validation budget distinguish wrong numerical rays by independent coefficient rank or measured counts? |
+| CRYPTO-09 | completed-fresh-stress-test-and-independent-audit | How does reference-selected mapping behave when generated forms share a length and their slot distributions share probability mass? |
+| NULL-10 | completed-fresh-main-and-independent-audit | Does an object-level quality mechanism shared across slots change vector-reference laws and calibration of the preserved nested statistic? |
+| NULL-11 | completed-fresh-diagnostic-and-independent-audit | Does an observed adjacent-agreement statistic expose the conditional-law mismatch that the original nested predictor scarcely detects? |
+| MARKOV-05 | completed-negative-comparison-and-independent-review | Can extra training-count-dependent shrinkage improve probability prediction while retaining useful second-order histories? |
+| CRYPTO-10 | completed-bounded-comparison-and-independent-audit | Can a reference-fitted mixture preserve form distinctions absent from observed record length? |
+| CRYPTO-11 | completed-exact-population-check-and-independent-audit | Do the stored overlapping-form product distributions satisfy a published three-component identification condition? |

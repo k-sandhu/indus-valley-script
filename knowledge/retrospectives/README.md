@@ -25,8 +25,17 @@ The [six-hour continuation](../../experiments/2026-10-02-six-hour/SESSION_LOG.md
 | [Khipu controls](../../experiments/2026-10-02-six-hour/khipu-control/RETROSPECTIVE.md) | Source-coordinate replication, grouping, numerical recovery and positive ambiguities |
 | [Incorrect memberships](../../experiments/2026-10-02-six-hour/khipu-control/robust-decoder/RETROSPECTIVE.md) | Exact consensus, retained families and a wrong seven-vote majority |
 | [Collective conservation](../../experiments/2026-10-02-six-hour/khipu-control/conservation-check/RETROSPECTIVE.md) | Independently available inventories, completeness errors and redundant fresh validation relations |
+| [Validation selection](../../experiments/2026-10-02-six-hour/khipu-control/validation-design/RETROSPECTIVE.md) | Coefficient rank, exact random subsets and counts that test ratios after fitting scale |
+| [Overlapping forms](../../experiments/2026-10-02-six-hour/overlapping-forms/RETROSPECTIVE.md) | Added slots, shared mass, supplied-label diagnostics and fitted objectives favoring wrong identities |
 | [Contact geometry](../../experiments/2026-10-02-six-hour/stamp-geometry/RETROSPECTIVE.md) | Flat stamp/curved clay simulation, symmetry and quadrature refinement |
 | [Kanmer](../../experiments/2026-10-02-six-hour/kanmer-physical-use/RETROSPECTIVE.md) | New source witnesses, registration/scan joins, caption extraction failure and handling design |
+| [Kanmer source continuation](../../experiments/2026-10-02-six-hour/kanmer-physical-use/source-continuation-2026-10-02/RETROSPECTIVE.md) | Original bibliographies, text-extraction failure, author witnesses and a physical volume/disc holding |
 | [Sampling laws](../../experiments/2026-10-02-six-hour/null-calibration/RETROSPECTIVE.md) | Exact conditional spaces, selection, physical vectors and feasibility |
+| [Shared recording quality](../../experiments/2026-10-02-six-hour/null-calibration/shared-quality/RETROSPECTIVE.md) | Unequal table probabilities, little nested-score separation, exact moments and fixed-budget runtime |
+| [Agreement diagnostic](../../experiments/2026-10-02-six-hour/null-calibration/shared-quality/agreement-diagnostic/RETROSPECTIVE.md) | Fresh post-outcome statistic, strong separation and independent hypergeometric verification of exact tails |
+| [Extra history shrinkage](../../experiments/2026-10-02-six-hour/markov-adaptive/RETROSPECTIVE.md) | Algebraic candidate equivalence, eighteen-candidate loss selection and exact return to first order |
+| [Unlabelled form mixtures](../../experiments/2026-10-02-six-hour/latent-forms/RETROSPECTIVE.md) | MAP versus likelihood ascent, latent form recovery, collapsed smoothing, six search misses and lossless chunk packaging |
+| [Population identification](../../experiments/2026-10-02-six-hour/latent-generator-identification/RETROSPECTIVE.md) | Fixed grouped slots, exact rank witnesses, rational probability conventions and a repaired support assertion |
+| [Six-hour integration](six-hour-integration.md) | Shared manuscript corrections, preserved source bytes, repository packaging and final review |
 
 A retry should name the new observation or method that changes the test. The registry preserves each earlier result and the evidence needed to assess that change.

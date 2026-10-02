@@ -4,7 +4,7 @@ Complete private working manuscript, 2 October 2026. Authorship, affiliations an
 
 ## Abstract
 
-Recovering a bijection between two symbol inventories depends on the distinctions retained by the reference model. We compare boundary-seeded graph mapping with linear assignment of record-length/slot profiles on generated short records. In a first grid of 48 new systems, length/slot assignment recovers 55 of 96 twenty-symbol administrative mappings, compared with graph mapping's 25; graph mapping recovers 74 of 96 twenty-symbol transition mappings, compared with zero for slot profiles. A second fresh grid chooses the score family using three-fold held-out reference likelihood before mapping truth is opened. Both likelihoods condition on the observed record length; the graph model includes its exact length normalizer. The selected decoder recovers 46 of 96 twenty-symbol administrative maps and 76 of 96 transition maps, matching the supplied-family diagnostic in both. At eight symbols it loses one recovery relative to that diagnostic. Independent counts, likelihoods, small-inventory enumeration and assignment dual bounds accompany the first grid. The second audit checks every reference choice, likelihood and dual bound, and certifies exact likelihood ties. The result supplies a known-system control for selecting a record model from available reference observations, with the external reference and inventory correspondence kept explicit.
+Recovering a bijection between two symbol inventories depends on the distinctions retained by the reference model. We compare graph mapping, length/slot assignment and latent-form mixtures on generated short records. In a first grid of 48 new systems, slot assignment recovers 55 of 96 twenty-symbol administrative maps, compared with graph mapping's 25; graph mapping recovers 74 transition maps, compared with zero for slot profiles. A second fresh grid chooses between models by three-fold reference prediction before mapping truth is opened. Both likelihoods condition on observed length through normalized record probabilities. Selection recovers 309 of 384 maps, compared with 310 under a supplied-family diagnostic. A further matched grid makes administrative forms the same length and adds shared symbol mass. A post-outcome mixture fitted on those frozen records receives three components but no record labels. At reference size 400 it recovers 24 of 24 maps at both zero and .35 shared mass, compared with 22 under the preceding selector. Coincident-component smoothing controls recover 21 and 22. At .70 mass, reference validation prefers ordinary slot prediction and recovery stays 16 of 24. Independent counts, conditional likelihoods, exact small-inventory optima, assignment duals and EM bounds accompany the results. Six failed mixture maps score below truth, identifying search misses; 56 score above it. The study supplies recovery controls for choosing a record model under an explicit external reference, inventory correspondence and finite fitting budget.
 
 ## 1. A mapping search needs a record model
 
@@ -48,6 +48,26 @@ Report complete identity recovery, the fraction of symbols correctly mapped and 
 
 Twenty thousand bootstrap draws resample the twelve systems within a family/inventory, after averaging the eight repeated conditions within each system. Intervals describe the generated design and chosen fitting procedure. Model-development decisions followed preceding outcomes, while each new grid had fresh systems and a pre-generation protocol.
 
+### 2.5 Same-length and overlapping-form stress test
+
+A third fresh grid generates twelve matched twenty-symbol systems. It compares the separated-length design with three six-slot forms at shared masses 0, .35 and .70. Equalizing length adds two slots to the first form and one to the second. Their new slots draw declared role-pool distributions. In the six-slot variants, each cell distribution is `(1−alpha)p + alpha*b`, with one shared twenty-symbol background `b` per system. The shared-mass comparison therefore holds record length fixed. Each variant has reference sizes 40 and 400, encoded training size 640 and mixture changes 0 and .35, giving 192 conditions. Common form and slot uniforms couple variants within each system.
+
+The graph, slot and reference-selection rules remain fixed. A separate stronger-input diagnostic supplies observed form labels on both reference and encoded records and conditions its slot profiles on those labels. That comparison holds the symbolic records fixed. Twenty thousand paired bootstrap draws retain each system's variants and repeated conditions. Linear objectives have independent dual bounds and exact tied-map certificates; the twenty-symbol graph search has no global optimum certificate. [Stress protocol](../../experiments/2026-10-02-six-hour/overlapping-forms/PROTOCOL.md), [independent review](../../experiments/2026-10-02-six-hour/overlapping-forms/review-v1/verification.json).
+
+### 2.6 Unlabelled form mixtures
+
+The stress result motivated a three-component mixture fitted from the known reference: `p(x)=Σ_z π[z]∏_j θ[z,j,x[j]]`. Each component has six independent categorical slot profiles. The component count is supplied as three; fitting reads reference symbols without their generated form labels or role pools. EM is an established latent-inference method, including in noisy-channel decipherment. [Dempster, Laird and Rubin 1977](https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.2517-6161.1977.tb01600.x), [Knight et al. 2006](https://aclanthology.org/P06-2065/).
+
+MAP-EM adds one pseudocount per mixture component and per categorical cell, corresponding to Dirichlet(2) priors. Eight fixed starts have at most 150 iterations. The retained start maximizes the saved penalized objective. Of 2,304 individual starts across 288 reference fits, 178 reach the iteration limit. Raw likelihood and penalized trajectories are both saved. For encoded records, the reference mixture stays fixed. Each current map gives soft form responsibilities, whose expected counts produce a linear assignment update. The implementation checks actual likelihood ascent and retains the best initial or intermediate map across the declared starts, with at most 25 updates per start. [Mixture protocol and equations](../../experiments/2026-10-02-six-hour/latent-forms/PROTOCOL.md).
+
+This is a post-outcome comparison on the frozen common-six-slot worlds: twelve systems, three shared-mass levels, two reference sizes and two mixture conditions, for 144 conditions. Three-fold reference prediction adds mixture to the earlier slot/graph selector. Encoded test records and true mappings remain outside selection. A subsequent separately specified control uses the coincident-component profile `(count+3)/(N+60)` to match the mixture's collapsed smoothing. Here `count` is a symbol's reference frequency at one slot, and `N` is the number of reference records. Its four-model selector adds that profile to the three-model comparison. Paired intervals resample twelve systems, retaining repeated conditions, with 20,000 draws. [Mixture methods](../../experiments/2026-10-02-six-hour/latent-forms/METHODS.md), [collapsed-profile protocol](../../experiments/2026-10-02-six-hour/latent-forms/COLLAPSED_PROTOCOL.md).
+
+### 2.7 Identification at the stored population parameters
+
+A separate post-outcome calculation fixes the grouping `(0,1)`, `(2,3)`, `(4,5)` before rank checks. Each pair is a 400-state variable whose conditional distribution has three form rows. The six-slot product generator makes the pairs conditionally independent given form. Allman, Matias and Rhodes's Corollary 2 identifies the three weights and pair distributions up to a common form-label permutation when the weights are positive and the three row Kruskal ranks sum to at least eight. Marginalizing each pair recovers its two original slot distributions. [Primary theorem](https://arxiv.org/pdf/0809.5032v2), [fixed-group protocol and proof](../../experiments/2026-10-02-six-hour/latent-generator-identification/METHODS.md).
+
+The calculation uses exact rational normalization of stored binary64 probabilities and, separately, probabilities from rounded cumulative thresholds under continuous independent uniforms. Saved nonzero minors certify rank; singular values are diagnostics. Both conventions define population laws for a fixed three-component product model. A separate shared-mass-one control makes every component identical. [Protocol](../../experiments/2026-10-02-six-hour/latent-generator-identification/PROTOCOL.md).
+
 ## 3. Results
 
 ### 3.1 Profiles improve administrative mapping
@@ -80,13 +100,55 @@ The twenty-symbol administrative selector-minus-graph recovery difference is 26.
 
 The fresh selector grid has its own fixed-method comparison. It retains the graph's transition recovery and the slot model's twenty-symbol administrative recovery without receiving the family label. Its outcomes are evaluated on the new systems saved with that grid.
 
+### 3.3 Shared mass and the additional form observation
+
+| Reference records | Generated variant | Reference-selected complete maps | Supplied-form complete maps |
+|---:|---|---:|---:|
+| 40 | Separated lengths | 10/24 | 10/24 |
+| 40 | Same length, shared mass 0 | 8/24 | 14/24 |
+| 40 | Same length, shared mass .35 | 2/24 | 4/24 |
+| 40 | Same length, shared mass .70 | 0/24 | 0/24 |
+| 400 | Separated lengths | 24/24 | 24/24 |
+| 400 | Same length, shared mass 0 | 22/24 | 24/24 |
+| 400 | Same length, shared mass .35 | 22/24 | 24/24 |
+| 400 | Same length, shared mass .70 | 16/24 | 19/24 |
+
+Each denominator contains twelve systems and their two mixture conditions. Among six-slot forms, .70 shared mass reduces selected recovery by 29.17 percentage points relative to zero mass across both reference sizes, interval −45.83 to −14.58. Symbol accuracy falls by 13.96 points, interval −20.63 to −7.60. The zero-mass common-length contrast with separated forms is −8.33 recovery points, interval −25.00 to 10.42; that contrast also adds slots. [Stress results and paired comparisons](../../experiments/2026-10-02-six-hour/overlapping-forms/REPORT.md).
+
+For same-length zero-mass records, supplied form labels improve recovery on identical records by 16.67 points, interval 4.17–29.17, and symbol accuracy by 7.08 points, interval 3.33–11.04. At .70 mass, labels improve symbol accuracy by 6.56 points, interval 1.46–11.15; complete recovery gains 6.25 points, interval −2.08 to 16.67. The role observation can help while the finite reference still leaves unresolved identities.
+
+Reference selection also incurs a mapping cost in one small-reference condition. At common length and zero shared mass, fixed graph recovers 13 maps while selection recovers eight. All .35/.70 references choose slot. Thirty linear conditions retain sixty exact equality witnesses, all at reference size forty. In every failed returned mapping, the true map has a lower fitted score: 88 ordinary-slot failures, 73 supplied-label failures and 105 graph failures. Improving the same objective's optimization cannot select that lower-scoring true map. [Objective and tied-map diagnostics](../../experiments/2026-10-02-six-hour/overlapping-forms/additional-v1/summary.json).
+
+### 3.4 Learning the missing form distinction
+
+| Reference records | Shared mass | Earlier selector | Fixed mixture | Three-model selector | Collapsed-profile control |
+|---:|---:|---:|---:|---:|---:|
+| 40 | 0 | 8/24 | 12/24 | 12/24 | 8/24 |
+| 40 | .35 | 2/24 | 4/24 | 3/24 | 1/24 |
+| 40 | .70 | 0/24 | 0/24 | 0/24 | 0/24 |
+| 400 | 0 | 22/24 | 24/24 | 24/24 | 21/24 |
+| 400 | .35 | 22/24 | 24/24 | 24/24 | 22/24 |
+| 400 | .70 | 16/24 | 18/24 | 16/24 | 17/24 |
+
+The three-model selector chooses mixture in all large-reference cases at zero and .35 shared mass. It chooses ordinary slot at .70. Across all 144 conditions, fixed mixture recovers 82 maps, three-model selection 79 and the earlier selector 70. The supplied-label diagnostic recovers 85 on those same records. Across both reference sizes and mixture conditions, selected-minus-earlier recovery gains are 12.50 points at zero mass, interval 0–25, and 6.25 points at .35 mass, interval 0–12.50. Recovery at .70 is unchanged. [Reviewed outcomes and paired comparisons](../../experiments/2026-10-02-six-hour/latent-forms/REPORT.md).
+
+At large reference size, mixture's median reference-CV gains over the collapsed profile are 1,669.37 bits at zero shared mass and 530.80 bits at .35. At .70 the median difference is −36.48 bits. Adding the collapsed profile to a four-model selector leaves all complete-map counts unchanged. This control measures how much of the observed gain remains when the smoothing of coincident mixture components is supplied to a single profile. [Control checks and reference scores](../../experiments/2026-10-02-six-hour/latent-forms/collapsed-v1/verification.json).
+
+Among 62 failed fixed-mixture mappings, 56 score above truth and six score below it. Those six expose search misses under the nonlinear objective, while the other failures have a fitted objective favoring a wrong identity. Every one of the 4,433 linear assignment updates has an independent dual certificate. Scalar responsibilities, likelihoods and EM lower bounds pass 68,014 checks; the largest assignment-Q disagreement is 1.46×10⁻¹¹ nats. No distinct retained candidate is within 10⁻⁸ of its selected map's likelihood. The reference and mapping budgets remain finite, with intermediate candidates preserved. [Independent review](../../experiments/2026-10-02-six-hour/latent-forms/review-v1/verification.json), [objective diagnostics](../../experiments/2026-10-02-six-hour/latent-forms/review-v1/objective-diagnostics.json).
+
+### 3.5 Exact form parameters remain identifiable in the overlap controls
+
+All 36 profiles, twelve systems at each of zero, .35 and .70 shared mass, have pair ranks three/three/three under both conventions. Their sum nine exceeds the required eight. Unshifted and rotated mixture weights remain positive. Exact population probabilities therefore determine the form weights and six slot distributions within the specified model, up to a common form permutation. The alpha-one controls have identical pair rows and rank one. Distinct weight vectors (.2,.3,.5) and (.3,.3,.4) give the same collapsed population law. [Exact witnesses and controls](../../experiments/2026-10-02-six-hour/latent-generator-identification/README.md).
+
+The independent audit reconstructs 345,600 rational pair entries, checks 34,560 slot marginals and 144 mixing vectors, and certifies 288 minors by elimination. It retains the first audit's failed support assertion: a rounded zero-mass cumulative sum can leave a tiny positive interval for the final code, increasing support from five to six. The corrected review leaves the main ranks and witnesses unchanged. The result identifies the population-model parameters; finite reference fitting and cross-alphabet mapping remain the empirical tasks evaluated above. [Independent audit and repair](../../experiments/2026-10-02-six-hour/latent-generator-identification/review-v2/verification.json), [repair record](../../experiments/2026-10-02-six-hour/latent-generator-identification/AUDIT_REPAIR.md).
+
 ## 4. What this supplies for an unfamiliar script
 
 The study starts with an external reference whose symbols and record process are known. The inventory correspondence is a bijection, record boundaries and length are observed, and generator changes have a declared form. Those premises define the current recovery problem. An Indus application would need an independently justified reference or functional observation, plus a model for graphic identity, segmentation and mixtures. The current experiment supplies a way to test those model choices on a known control before investing in an archaeological mapping.
 
 The most useful observation can be the record's form or physical role. Here an observable length preserves an administrative form, and held-out reference prediction chooses the associated score. In other collections, a container class, face role, operational stage or measured quantity could provide the conditioning variable. Its source must be recorded separately from the symbolic mapping so its predictive value can be checked.
 
-Future controls should include several forms with the same length, overlapping role inventories and uncertain record boundaries. Those designs would measure where the current slot conditioning loses the information that made this example tractable. An acquired reference or object relation can then replace a declared generator premise in a new experiment.
+The same-length stress test and mixture follow-up make the conditioning field a measurable research target. Fitted latent forms improve several conditions under the supplied count of three. The next evaluation can vary form count, adapt encoded-population mixture weights and use fresh systems with uncertain boundaries. The six search misses also provide a fixed optimization diagnostic. An acquired reference or independently recorded object role can replace a declared generator premise in a new experiment.
 
 ## 5. Verification and availability
 

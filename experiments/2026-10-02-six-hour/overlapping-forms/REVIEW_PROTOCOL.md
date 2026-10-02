@@ -1,0 +1,9 @@
+# Independent saved-world review
+
+This review specification was written after the main grid launched, before reading its outcomes. Rebuild reference choices with the preceding independent scalar Counter model, including the graph's state-recursion length probability. Check every reference fold, likelihood, pooled choice, mapping, accuracy and held-out score against saved inputs. Rebuild form-conditioned cells separately with Counters and scalar logarithms.
+
+Derive the assignment dual independently as row and column potentials constrained above all weights. Check the bound, all inequalities and each selected linear score at 1e-7 tolerance. For each ordinary and form-observed slot optimum, forbid each selected code assignment and retain alternatives within 1e-7. Certify any retained exact equality by prime-exponent cancellation in the rational likelihood ratio; preserve rejected near equalities separately. These checks certify linear optima and equality witnesses, while the graph comparator retains its declared finite search budget.
+
+Reproduce each sampled record independently from the saved parameters and fixed uniform stream, including common draws across variants, mixture changes and encoding. Check that the main seeds differ from the pilot and preceding grids, and that the executable/helper hashes match the before-run freeze. Inspect the selector's inputs: ordinary selection uses reference records, inventory size and fold seed; form labels enter only the stronger-input diagnostic.
+
+Summarize all variants and reference sizes. Compare common-length zero overlap with the separated form design, and .35/.70 shared mass with common-length zero overlap. Resample the twelve matched systems with 20,000 draws, keeping each system's reference/shift conditions together, seed 1210261002. Retain the entire main endpoint and save the independent review separately.
