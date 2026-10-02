@@ -1,0 +1,13 @@
+# Independent reference-selector review
+
+This review reads the saved generated worlds, protocol and code snapshots. It will rebuild the three reference folds, smoothed distributions, complete-record conditional likelihoods, model choices, returned-map objectives, answer-key comparisons and held-out scores. It will preserve all discrepancies in a new endpoint. The preceding graph optimizer will not be rerun.
+
+Use independent Counter-based edge and length/position counts. The graph model's start probabilities use one pseudocount per symbol; each symbol row uses one pseudocount for every symbol destination and the end destination. Calculate the probability of each exact length by recursively propagating an explicit state vector, then applying end probabilities. Check this recurrence with exact rational enumeration of a two-symbol sequence space, including length one. The slot model uses one pseudocount per symbol in each observed length/position cell; unseen cells are uniform.
+
+Reconstruct folds from the declared seeded permutation with a separately written assignment route. Score complete records with stable scalar sums and compare at a tolerance of 1e-7 bits for raw objectives and 1e-9 bits per token for reported held-out losses. Save the largest errors, closest selection margin and every disagreement. Verify all mappings are bijections and that the selected and family-oracle rows point to the declared fixed-model maps. Recreate the truth permutation from each world's seed, using it only in evaluation.
+
+For the length/slot maps, use an independent dual linear program to check the assignment objective. A feasible row/column potential system bounds the returned score. This certificate covers the linear slot assignment, while the saved graph mappings remain heuristic outputs whose likelihoods are checked here. No global optimality claim is made for those graph outputs. Preserve the original scoring model, the length-conditional comparison and all primary result bytes.
+
+Report condition and system counts, model-choice outcomes, complete/symbol recovery and held-out scores. Group the eight conditions within each generated system when comparing algorithms. The review will compute differences from those system means and distinguish the supplied-family diagnostic from the reference-only selector. It will retain a source-hash manifest, checks, report and retrospective under this owned review folder.
+
+Write to maximize reader comprehension: explain methods and observations in connected prose, keep shared assumptions together, and avoid repeated corrective comparisons or warnings. Review the prose before handoff.

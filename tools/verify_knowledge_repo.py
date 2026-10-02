@@ -43,6 +43,18 @@ def main():
             link_base = doc.parent.parent
             frozen_link_contexts.append({"snapshot":doc.relative_to(ROOT).as_posix(),
                                          "source_context":link_base.relative_to(ROOT).as_posix()})
+        elif doc.name.upper() in {"PROTOCOL.MD", "PROTOCOL_PREFIX.MD"}:
+            # Some endpoint packages preserve the canonical filename as well as bytes.
+            # Find an identical ancestor original without editing its relative links.
+            for ancestor in doc.parent.parents:
+                if ancestor == ROOT.parent:
+                    break
+                candidate = ancestor/doc.name
+                if candidate.is_file() and candidate.read_bytes() == doc.read_bytes():
+                    link_base = ancestor
+                    frozen_link_contexts.append({"snapshot":doc.relative_to(ROOT).as_posix(),
+                                                 "source_context":link_base.relative_to(ROOT).as_posix()})
+                    break
         for target in re.findall(r"\[[^\]]*\]\(([^)]+)\)", content):
             target = target.split("#",1)[0].strip().strip("<>")
             if not target or re.match(r"[a-zA-Z][\w+.-]*:", target):

@@ -1,0 +1,15 @@
+# A constructive component bound for identity and copy references
+
+Written October 2, 2026, after the noisy-face and guard endpoints, before this audit. The original independent/unique family summaries and some physical-copy trial outcomes have been seen. This audit reads the frozen original main endpoint after completion, with its full independent verification as a prerequisite. It creates no fitted scores.
+
+Assume each record supplies at least two signs, every physical connected block contains one complete string value, and different blocks share no physical link. Joining these blocks by identical complete strings then gives exactly one analysis component per distinct string. At a fixed slot, every distinct observed code needs a distinct string, so the largest used-code count over the slots is a lower bound on components. Record-column shuffling preserves that inventory when physical blocks are singleton records. Object-column shuffling preserves it and the one-string-per-physical-block premise when the observed faces are identical copies. Whole-string-unique record references have forty singleton components under their supplied identity premise.
+
+The ordinary record-column comparator on copied objects fixes physical aliases but can make their two faces differ. Its whole-string physical premise can then fail. Report its sampled component counts and actual copy-premise violations separately; the used-code count supplies no conditional-space guarantee for that comparator.
+
+Audit all 3,000 original populations, their slot inventories, physical blocks, observed premises and every saved accepted reference grouping/fold load. Regenerate both physical-copy reference types from their actual saved seeds to verify the copy premise. The completed main audit already checks every proposal's margins, metadata, independent graph components and saved grouping, and supplies that certificate for the singleton and uniqueness designs. Preserve all input hashes, per-trial lower bounds and reference-case summaries.
+
+Check the actual allocator and nested source. With five or more positive-weight components, the first five greedy allocations fill the five empty outer folds. Every outer training set retains at least four components because the other four folds each have one. Its three inner folds consequently receive positive-weight components, and every inner training set retains at least two. Each tested/training record has positive noninitial count. The model's .5 unigram prior, positive smoothing grid and positive normalizations keep scores finite in these bounded simulation designs.
+
+Exercise the frozen `make_folds` and `fixed_groups` functions on every group-size vector in `{1,2,3}^G` for G=5,6,7,8 and seeds 0, 20,261,001 and 2,026,100,209. Preserve all 29,160 allocation cases. Check every outer and inner split's component, record and noninitial-token counts without fitting any model. The general positive-weight argument covers sizes beyond that finite test grid.
+
+After the audit, read paper 002's manuscript and methods without edits and return any specific numerical, mathematical or plain-writing corrections to its owner.

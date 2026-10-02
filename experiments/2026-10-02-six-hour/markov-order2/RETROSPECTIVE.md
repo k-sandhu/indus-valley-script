@@ -1,0 +1,9 @@
+# What the second-order comparison changed
+
+The first-order comparator made the original local restorer's gains easier to interpret. We next tested whether a second previous state helped on the same held-out masks. The protocol included a backoff-only candidate so the added model could return to first order when its extra counts were unhelpful. A one-fold pilot passed ten mathematical self-checks, then the five-fold main endpoint improved exact top-one accuracy.
+
+The first independent ranking check failed on a single query. Its flat-count, full-record calculation reproduced every target outcome and loss, but floating-point evaluation reordered two tied lower candidates. We retained the [failed source and report](review/). The revised review computed complete likelihoods as exact fractions for each displaced rank. Both displacements were exact ties. The new [review endpoint](review-ties/verification.json) documents that criterion and leaves the original predictions unchanged.
+
+The main result also increased probability loss and calibration error. We froze a new protocol selecting smoothing by held-out loss. All five folds chose backoff-only, reproducing first order. This comparison gave a useful model-selection result: the objective determines whether the extra context survives tuning. It also stopped us from presenting an accuracy improvement as an improvement in every aspect of prediction.
+
+The current source has gained a selection-objective argument for reuse. Original pilot and main source snapshots preserve the earlier interface. Both runs retain hashes, seeds, inner candidate scores, aggregates and independent reviews. Detailed predictions are local source-derived records. A future retry should introduce a declared smoothing model or an independently acquired evaluation population, then retain the same separation of exact guesses and probability loss.

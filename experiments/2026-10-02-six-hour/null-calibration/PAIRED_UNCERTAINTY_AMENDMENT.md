@@ -1,0 +1,7 @@
+# Shared reference seeds in the copy comparison
+
+Written during the independent-record stage and before the physical-copy stage, October 2, 2026. A check of the fixed seed schedule found that the block reference for copy trial i and the record reference for copy trial i+500 use the same 99 seeds, for i=0,...,499. The references operate on different populations and different record counts, but share their pseudorandom streams. Seeds remain distinct across datasets within each separately reported family/reference case.
+
+Keep the declared main datasets, source snapshot, reference draws, rejection rules and case-specific Wilson intervals. Preserve the seed sharing in an explicit audit. Report the paired copy-reference rejection counts and disagreement counts. For uncertainty in their difference, join each of the 500 linked trial pairs into one cluster. Compute each cluster's mean of the two record-minus-block rejection indicators and average over the 500 clusters. Resample these clusters 20,000 times with seed 2026100203 and report percentile 95% intervals at the three already declared thresholds. This addresses the cross-reference seed links without changing any fitted outcome.
+
+The primary calibration endpoints stay as declared in the main protocol. This amendment specifies uncertainty for the additional paired comparison after discovering a scheduling limitation, before outcomes in that family exist. Future studies should allocate a separate namespace to each family/reference stream.

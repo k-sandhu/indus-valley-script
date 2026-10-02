@@ -1,0 +1,11 @@
+# Conditional sampling when artifacts have unequal copy counts
+
+Written before this finite experiment, October 2, 2026. The main calibration study uses two records per artifact, so a fixed record-column count also fixes the corresponding object-column count. This experiment examines the next case: fixed artifacts contribute different numbers of identical records.
+
+Use six labeled latent artifacts with multiplicities `[1,1,1,2,2,3]`. Every binary column has three ones across latent artifacts and five ones across the ten expanded records. Enumerate all compatible columns and all three-column tables. These two count constraints define the uniform conditional law of independent categorical latent signs when their slot probability is shared across the artifacts. Enumerate the law conditioned only on the expanded record count separately, using a known sign probability of .2, to show which additional count removes that probability dependence.
+
+Compare three samplers or spaces. Unrestricted object-column permutation preserves three latent ones and accepts a column only if its weighted sum is five. Permutation within equal-multiplicity classes preserves the observed class-specific sign counts and samples a smaller conditional space. An integer dynamic program counts all continuations with the required latent and weighted counts, then samples branches with probabilities proportional to those integer counts. It samples the full declared space directly.
+
+Derive each direct sampler's exact branch probability for every compatible column. Save all enumerated assignments, their probabilities, the generating seed and sample counts. Generate 100,000 three-column tables with the dynamic-program sampler and 100,000 with rejection from unrestricted object-column permutations. Check every draw's latent and expanded margins. Report proposal counts and a Pearson uniformity diagnostic for each sampler; exact counting supplies the probability argument.
+
+Use the fixed seeds 2026100201 for direct sampling and 2026100202 for rejection. The output is separate from the active nested calibration endpoints. This experiment studies the conditional sampler and has no manuscript performance endpoint or model selection.

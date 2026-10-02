@@ -1,0 +1,11 @@
+# Exact check of a declared score extension and abstention rule
+
+Written October 2, 2026, after the connected paired-face witness and before this extension's outcomes. The original 8,000 balanced binary tables, their 2,880 unique-table nested scores and their 2,240 infeasible-table count have been seen. This is a separate post-outcome method check. The earlier source files, scores and main runs remain frozen.
+
+Use the original space of six labeled records, three binary slots and three ones per slot. Every table has probability 1/8,000. Give each record its own physical alias. Define the extended score as the preserved nested gain when the physical/text grouping has at least five components, and exactly zero otherwise. The five-outer/three-inner routine and fitting seed remain fixed. Reuse the saved scores for all 2,880 unique tables and fit the 2,880 five-component tables once. Retain the guard score and component count for every remaining table. Confirm selected reused scores by replay and preserve any unexpected fit failure before revising the rule.
+
+For every table, compute its inclusive exact tail in the full 8,000-table extended-score law. An observed table with fewer than five components abstains. Report rejection counts at .01, .05 and .10 over the full original population, with abstentions counted separately. Also report the conditional rejection fractions among feasible observed tables; this denominator changes the sampling question.
+
+Separately compute inclusive exact tails in the uniform feasible subset. The table law is the original conditional law further conditioned on at least five components. Report rejection fractions over that subset and over the original population when infeasible observations abstain. Record the exact feasible-space probability. This calculation supplies the sampling/selection argument for the second design in [DESIGN.md](DESIGN.md).
+
+Verify all table identities and component counts independently, every tail using score-frequency counting, all endpoint denominators, the declared zero guard, and selected reused/new fitting scores. Store complete score/rank vectors, source and input hashes, and the source snapshot. This bounded finite experiment checks the stated extension on its declared space; the twenty-object noisy-face witness remains a separate support observation.

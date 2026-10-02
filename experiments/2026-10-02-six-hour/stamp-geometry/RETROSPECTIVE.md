@@ -1,0 +1,31 @@
+# How the contact experiment developed
+
+The Harappa object-frame work acquired a flat rectangular inscribed matrix drawing and a primary photograph of stamped curved Beas fragments. Their physical contact suggested a numerical question: could the transfer and loss of stroke segments change which graphic classes appear at an inscription boundary? I wrote the initial protocol before running the geometry grid and used invented symmetric graphics to isolate the preservation effect.
+
+## Sources and model choice
+
+The mechanics search found a plastic-fluid indentation study, a measured sensitive-soil indentation study and a recent experimental ceramic trace study. The first two describe constitutive and boundary conditions for particular materials. The ceramic experiment reports different traces with clay state and tool application, and its firing failure leaves unfired observations. None supplied measured carved-matrix transfer parameters for the acquired Indus specimens. The implemented model therefore uses controlled displacement, explicit curvature and a declared local relief law. A force-controlled clay calculation remains dependent on new material measurements.
+
+The ordinary author-PDF route acquired Ball, Balmforth and Hewitt's study. A subsequent PMC access returned a challenge page. A later web-tool opening of the author PDF timed out even though the earlier local acquisition succeeded. The Springer and EXARC pages were acquired through ordinary public requests; EXARC later failed through the web opening route. The separate local access ledger retains the successful hashes and routes. No access restriction was circumvented.
+
+The Harappa scale inspection produced an additional useful source result. H-1714's illustrated face is about 13.02×6.79 mm under the stated drawing assumptions. During review of the earlier tablet figure, I also found a visible 0–3 cm bar and literal manuscript page headers that differ from the mapped book pagination used earlier. Those corrections are preserved separately under [the Harappa correction record](../harappa-object-frame/corrections/2026-10-02-scale-and-pagination/README.md), leaving the original annotations intact.
+
+## Computation and repairs
+
+Both the ordinary Python environment and the bundled runtime lacked Matplotlib. The initial startup failure and its code snapshot remain in [startup-failure/](startup-failure/record.json). I installed plotting packages into the experiment's ignored local runtime directory. The code imports NumPy and SciPy before adding that directory, so the calculation used the existing user packages; [runtime.json](runtime.json) records the paths and versions. The package manager emitted compatibility messages for unrelated packages while resolving the target installation. No global package installation was performed.
+
+The first numerical run passed nine limiting-case and independent checks, then completed 4,320 primary and 8,748 sensitivity configurations. The sensitivity run had 4,086 configurations with no visible graphic. In 2,916, the maximum retained groove height was already below 0.08 mm before blur. These rows establish how much the assumed relief threshold controls visibility; they remain in the output.
+
+Increasing midpoint sampling from 256 to 1,024 points per stroke changed six binary decisions in three configurations. They share the eight-slot frame, 15 mm radius, 0.4 mm displacement, zero tilt and 60-degree rotation, with one configuration for each damage case. The vertical line at slots 2 and 5 lay just below the exact 80% cutoff. I wrote an analytic-refinement note, implemented exact circle/plane intersections along every straight segment and saved the new endpoint. Its check against the finer quadrature reached a maximum fraction difference of 0.000745 across 648 configurations. The original sampled endpoint remains available for reviewing this correction.
+
+After the primary run, I added a minimum-three-visible-graphics calculation to examine a common corpus length selection. The probability recurrence passed exhaustive three-slot and selected eight-slot enumeration checks. The initial calculation represented two entirely empty three-slot break pools with zero vectors and a zero endpoint TV. A separate reviewed result replaces those undefined statistics with `null`; all defined values are unchanged. The transformation is reproduced by [review_statistics.py](reviewed/review_statistics.py).
+
+The first plots omitted a colour scale and used coded labels. A display-only refinement added the scale and readable class names. The final illustrations use the exact geometry and reviewed probabilities. Both earlier plot endpoints are retained.
+
+The first artifact verifier passed 38 of 41 checks. Its three failures came from a reviewed-result provenance field omitted by the replay helper, strict equality on a floating-point scale calculation, and checking the verifier's own output link before the file existed. The failed report is preserved in [verification-first-failure.json](verification-first-failure.json). The helper now reproduces the provenance fields, the scale check uses a 10⁻¹² mm tolerance, and the final navigation check reads the saved report. The prose scan initially included a dependency's documentation; a second scan covers the eight authored documents and reports no flagged stock patterns.
+
+## What the result supports next
+
+Balanced physical reversal preserves equal endpoints under the model's declared graphic and sampling symmetry. A consistently sided pressing angle or break can introduce a small pooled endpoint difference, and individual configurations can have larger effects. Curvature also changes graphic frequencies while preserving endpoint symmetry. This gives a concrete observation design: measure physical side, pressing trace, radius, groove geometry, relief and fracture boundary before relating a stamped-pottery positional pattern to writing direction.
+
+The next computation should use measured transfer data from [the clay experiment](PHYSICAL-TEST-PROTOCOL.md). A rerun of the same ideal grid would add little evidence. The current code, parameters, failed startup, sampled result, exact refinement, selection extension and field review are sufficient to reproduce the numerical contribution and its limits.

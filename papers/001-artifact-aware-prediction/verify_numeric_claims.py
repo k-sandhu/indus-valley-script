@@ -96,6 +96,30 @@ add('experiments/2026-10-02-six-hour/markov-baseline/main/results.json', {
     'paired.PMB_minus_Markov.metrics.bucket_loss_bits_slot.difference': .6282966129,
     'paired.PMB_minus_Markov.metrics.bucket_loss_bits_slot.cluster_bootstrap_95_ci': [.5792676247,.6785458023],
 })
+add('experiments/2026-10-02-six-hour/markov-order2/main/results.json', {
+    'models.Markov2.top1': .3727057060806593,
+    'models.Markov2.top5': .5887126982145087,
+    'models.Markov2.top10': .6545136721188662,
+    'models.Markov2.equal_text_weight.top1': .3566994478648614,
+    'models.Markov2.macro_type.top1': .061234523915069686,
+    'models.Markov2.bucket_cross_entropy_bits': 5.247170529625563,
+    'models.Markov2.expected_calibration_error': .04350622575051666,
+    'paired.Markov1.metrics.top1_slot.difference': .026844799600449495,
+    'paired.Markov1.metrics.top1_slot.cluster_bootstrap_95_ci': [.019901689341987848,.03396797126450709],
+    'paired.Markov1.metrics.bucket_loss_bits_slot.difference': .12773567330375107,
+    'paired.Markov1.metrics.bucket_loss_bits_slot.cluster_bootstrap_95_ci': [.09648781430926393,.15887284545670682],
+})
+add('experiments/2026-10-02-six-hour/markov-order2/loss-selected/main/results.json', {
+    'models.Markov2.top1': .3458609064802098,
+    'models.Markov2.bucket_cross_entropy_bits': 5.119434856321813,
+    'paired.Markov1.metrics.top1_slot.difference': 0.,
+    'paired.Markov1.metrics.bucket_loss_bits_slot.difference': 0.,
+    'folds.0.chosen_alpha': None,
+    'folds.1.chosen_alpha': None,
+    'folds.2.chosen_alpha': None,
+    'folds.3.chosen_alpha': None,
+    'folds.4.chosen_alpha': None,
+})
 add('results/gap_restoration/gap_benchmark.json', {
     'models.baseline.exact_count_accuracy': .4191729323,
     'models.local.exact_count_accuracy': .4304511278,

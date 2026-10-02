@@ -81,10 +81,22 @@ Before applying a new inverse decoder to Indus data, test it on a documented num
 
 Measure whether the algorithm recovers values up to an identifiable scale or permutation, whether its uncertainty covers the true system, and whether several wrong systems fit equally well. Fix the selection rule before revealing the control dictionary. This gives a measurable recovery target and can reveal failures caused by sparsity or the coding scheme.
 
-Choosing suitable licensed corpora and documented reference dictionaries remains open. Register the control experiment separately and record the recovery conditions established by its results.
+A documented khipu control is now complete, with source-derived inputs kept local while their rights remain unresolved. Its published account alignment and generated hidden-value tests are indexed below. Further control corpora should supply comparable source coordinates, an independent dictionary and a clear reuse status.
 
 ## Recording decisions
 
 Each proposed experiment needs a dated protocol naming new evidence, target, baselines, family exclusion, parameter symmetries, candidate-space boundaries and stopping rule. Use a fresh output directory and retain all candidate systems that satisfy the stated constraints. A language-model suggestion can propose a model or source query; its suggested arithmetic or meaning enters the table as an analyst hypothesis until independently checked.
 
 The next action with the greatest value is completing the source-linked witness table and identifying a held-out external quantity. Constraint solvers can then narrow a declared hypothesis set. The current exact proof remains the baseline against which that additional evidence should be measured.
+
+## New recovery and observation results
+
+The [physical-observation manuscript](../../papers/003-physical-observations/manuscript.md) combines exact positive constraints, observation-cost policies and a documented khipu representation control. Complete whole-part relations identify ratios, counts fix scale, and valid intervals can leave a bounded scale range. An explicit wrong-scale example passes every withheld conservation relation and fails independently counted objects, showing which observation measures the remaining uncertainty.
+
+The Puruchuco control reproduces sixteen of twenty published account columns with total absolute error sixteen. Ordered flattening with known addresses retains the result; lost correspondence produces much larger errors. A separate decimal simulation recovers remaining positional values in 299 of 300 complete worlds after one counted unit fixes the first value. The unresolved world retains two explicit positive alternatives. Cluster intervals independently select two published partitions under a largest-gap rule and an equal-cord-count rule, both retained in the result. [Control and source audit](../../experiments/2026-10-02-six-hour/khipu-control/README.md), [interval comparison](../../experiments/2026-10-02-six-hour/khipu-control/INTERVALS.md).
+
+[Exact consensus](../../experiments/2026-10-02-six-hour/khipu-control/robust-decoder/REPORT.md) tolerates incorrect memberships in fresh worlds. Its three-quarter gate recovers 281 of 300 two-swap cases and accepts four wrong vectors. The saved wrong-majority example repeats one true relation five times; two corrupted memberships then give a false vector seven votes against six for truth. This motivates collecting a new relation whose coefficients differ, rather than increasing repetitions of the same constraint.
+
+A separate [collective-inventory experiment](../../experiments/2026-10-02-six-hour/khipu-control/conservation-check/REPORT.md) records the whole pool independently of local assignments. With four swaps and a 50% support gate, it increases recovery from 133 to 190 of 200 fresh worlds and reduces accepted errors from nine to one. An erroneous completeness declaration gives fifteen accepted errors. One wrong local decoder passes eight fresh rank-one relations and fails three independent counts. The next validation design can choose measurements by the additional directions they constrain.
+
+[Conditional reference laws](../../papers/002-conditional-reference-laws/manuscript.md) specify related observations, selection and usable fitting populations. The imperfect-face study gives 5% rejection at a nominal 5% under matched face-vector shuffling and 11% under scalar-record shuffling. Exact finite examples retain every conditional probability and the fitting failures that prompted a declared extension.

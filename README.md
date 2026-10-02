@@ -8,7 +8,10 @@ The repository is private. Its local equivalent is this project folder. No CI/CD
 
 | Purpose | Read |
 |---|---|
-| Complete first manuscript | [Paper: artifact-aware prediction](papers/001-artifact-aware-prediction/manuscript.md) |
+| Graphic prediction and restoration | [Paper 001](papers/001-artifact-aware-prediction/manuscript.md) |
+| Conditional sampling and related records | [Paper 002](papers/002-conditional-reference-laws/manuscript.md) |
+| Numerical constraints and physical observations | [Paper 003](papers/003-physical-observations/manuscript.md) |
+| Selecting a record model before mapping symbols | [Paper 004](papers/004-reference-model-selection/manuscript.md) |
 | Detailed statistical methods | [Methods](papers/001-artifact-aware-prediction/methods.md) |
 | What is established, exploratory, failed or untested | [Knowledge index](knowledge/INDEX.md), [experiment registry](knowledge/experiments/registry.json) |
 | What we tried and how problems were resolved | [Retrospectives](knowledge/retrospectives/README.md) |
@@ -25,12 +28,14 @@ The repository is private. Its local equivalent is this project folder. No CI/CD
 The first investigation began October 1, 2026 and ran for four hours and two minutes. Its code and evidence paths are preserved under `src/`, `research/`, `results/` and `output/`. The original README and import manifest are retained in [the archive](archive/2026-10-01-investigation/README.md).
 
 - In the unique-text evaluation, local sequential dependencies improved predictive log score by approximately **0.848 bits per noninitial sign** under the declared filters and controls.
-- Artificial one-known-slot restoration reached **33.8% exact top-one**, compared with **17.0%** for the position/metadata baseline, over **8,009 masked slots**. The new conventional Markov comparator reaches **34.6%** on those same queries.
+- Artificial one-known-slot restoration reaches **37.27% exact top-one** with second-order context, compared with **34.59%** for first order and **33.81%** for the earlier local model on the same **8,009 masks**. Second order has greater probability loss; loss-based tuning selects first order in every fold.
 - A different annotation of shared archaeological sources retained a positive candidate-event score gain after source/text-overlap exclusions.
 - Unknown gap-count prediction **failed** to beat the constant-one control: **46.3% versus 51.1%**.
 - A published numerical proposal has four positive-integer solutions before an additional archaeological range restriction. The selected 10/8/6 values remain conditional on the proposal's unverified premises.
 
 These measurements describe graphic-code prediction in selected transcriptions, including artificial masking and alternate annotation of shared sources. The manuscript's claim-evidence map defines each population and outcome; the [priority audit](research/literature/evidence_and_novelty_matrix.md) places the methods alongside earlier Markov, duplication-control and administrative-system research.
+
+The current continuation also has exact sampling-law examples, known-system mapping controls, numerical acquisition studies and source frames for Harappa, Lothal and Kanmer. At a nominal 5% threshold, literal-copy simulations reject 5.4% with matched object references and 15.9% with record-wise references; imperfect-face simulations give 5% and 11%. A reference-only model selector recovers 309 of 384 simulated symbol maps, compared with 283 for graph mapping and 168 for slot mapping alone. A complete-inventory constraint increases numerical recovery from 133 to 190 of 200 worlds with four incorrect local assignments. The [session record](experiments/2026-10-02-six-hour/SESSION_LOG.md) links each experiment, its preserved failures and its independent review.
 
 ## Repository organization
 

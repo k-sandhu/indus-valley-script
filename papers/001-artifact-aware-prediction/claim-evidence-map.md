@@ -37,3 +37,11 @@ The measured targets are fine-code predictive likelihood, compatible-event likel
 The paper makes dataset-specific measurement claims. Publication priority for Markov restoration, duplicate analysis, shared-context methods and template/comparator tests is addressed once in related work. A submission should compare older and newer predictors under a shared protocol before making performance-ranking claims.
 
 The companion manual numeric review reads frozen results without refitting. Its [saved review](numeric-review.json) records source hashes and checked values; [the review script](verify_numeric_claims.py) provides the check in a fresh checkout with the required files available.
+
+## Subsequent second-order comparison
+
+| Claim | Frozen evidence | Design status |
+|---|---|---|
+| Top-one 37.2706%; second-minus-first gain 2.6845 points, interval 1.9902–3.3968 | [MARKOV-03](../../experiments/2026-10-02-six-hour/markov-order2/main/results.json) | Model class specified after prior comparator, same held-out masks |
+| Loss rises by 0.1277 bits, interval 0.0965–0.1589 | Same endpoint and [all-query review](../../experiments/2026-10-02-six-hour/markov-order2/review-ties/verification.json) | Paired component bootstrap conditional on fitted predictions |
+| Loss selection chooses backoff-only in all five folds | [MARKOV-04](../../experiments/2026-10-02-six-hour/markov-order2/loss-selected/main/results.json) and [review](../../experiments/2026-10-02-six-hour/markov-order2/loss-selected/review/verification.json) | Separate pre-fit objective protocol; reused development benchmark |

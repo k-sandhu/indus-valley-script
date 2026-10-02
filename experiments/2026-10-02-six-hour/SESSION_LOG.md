@@ -1,6 +1,6 @@
 # Six-hour investigation record
 
-The requested session began at 01:15:09 EDT on 2 October 2026. Its minimum completion time is 07:15:09 EDT. The [session record](session.json) retains UTC and local times. Work is still active; the entries below record completed observations as they become available.
+The requested session began at 01:15:09 EDT on 2 October 2026. Its minimum completion time is 07:15:09 EDT. The [session record](session.json) retains UTC and local times. Work is still active. This record links completed observations, their independent checks and the remaining follow-ups.
 
 ## Completed comparisons
 
@@ -22,10 +22,53 @@ The [metadata audit](context-audit/README.md) distinguishes excavation observati
 
 The [Lothal branch](lothal-physical-use/README.md) acquired the full 2005 Frenez–Tosi chapter and inspected its table and figures. Two independent pixel transcriptions agree on all 465 compared cells: 93 physical objects and 133 seal impressions; the prose reports 130. Its context totals also differ. The refined corpus join contains 68 objects and 29 objects in the main clean-sequence population. These form nine strings, with 21 objects in two groups. Table transcription and detailed joins remain local; aggregate audits and source coordinates are kept here. The independent computation and witness checks pass.
 
-## Active work
+## Restoration and the accuracy/probability tradeoff
 
-The numerical branch is calibrating the full nested statistic under declared known sampling laws. It includes exact small conditional spaces and larger Monte Carlo studies, with duplicate copies, nonidentical object faces and uniqueness-conditioned populations. The physical source branch has begun a documented khipu comparison. The geometry branch is modelling contact between flat stamps and curved clay. Each new analysis has its own protocol and endpoint.
+The [second-order model](markov-order2/README.md) raises top-one restoration to 37.27% on the same 8,009 masks, compared with first order's 34.59%. Its paired gain is 2.6845 percentage points, interval 1.9902–3.3968. Its bucketed probability loss is worse: 5.2472 versus 5.1194 bits. A separately specified loss-selected run chooses first-order backoff in all five outer folds. This supplies two reproducible objectives for later restoration work. The independent record-level review initially disagreed on one floating-point rank; exact fractions established the tie and preserved all accuracy results. Both reviewer endpoints remain available.
+
+## Mapping, source dependence and model choice
+
+| Branch | Tested idea and measured outcome | Preserved problem or alternative |
+|---|---|---|
+| [Correlated sources](correlated-sources/FINDINGS.md) | Model a copied identity report as one possible shared error. In a changed administrative condition, ten independent-counted copies produce 46 confident wrong mappings in 48 cases; counting once gives eleven, and a coupled model gives four. | Declared source error rates and selected wrong reports define this control; all 48 systems and 18,432 reviewed scores remain saved. |
+| [Graph mapping](graph-mapping/FINDINGS.md) | Match transition graphs with multiple FAQ/2-opt starts, checking small inventories exhaustively. Twenty-symbol transition recovery is 70/96; administrative recovery is 20/96. | Exact maxima distinguish optimizer gaps from objectives that prefer wrong identities. |
+| [Length/slot mapping](slot-mapping/FINDINGS.md) | Preserve record form through observed length and slot. On fresh twenty-symbol systems, administrative recovery is 55/96 versus graph mapping's 25/96; transition recovery is zero versus 74/96. | Twenty-three conditions retain alternative assignments at the same numerical optimum. |
+| [Reference selection](reference-selector/README.md) | Choose graph or slot by held-out reference likelihood before mapping truth is opened. Recovery is 309/384, compared with 283 for fixed graph and 168 for fixed slot. | The supplied-family diagnostic gives 310; eleven exact slot-tie conditions and 32 equality witnesses are retained. A serialization failure and corrected deterministic pilot have separate endpoints. |
+
+The independent selector audit passes 6,489 checks, including every reference choice, all likelihoods, assignment bounds and exact conditional mass. [Paper 004](../../papers/004-reference-model-selection/manuscript.md) connects these results and states which external reference observations the decoder receives.
+
+## Sampling laws and observation channels
+
+The [main reference study](null-calibration/README.md) completes 3,000 original observed fits and 396,000 references, then 1,000 imperfect-face fits and 198,000 references. At nominal 5%, independent and uniqueness-conditioned populations reject 5.0% and 5.9%. Literal copies reject 15.9% with individual-record references and 5.4% with matched object references. The paired excess is 10.5 points, interval 8.5–12.6, preserving 500 linked seed clusters. Imperfect faces give 11.0% and 5.0%; their paired excess is 6.0 points, interval 4.3–7.7. Both full audits pass, including every proposal/grouping/p-value and 48 complete fit replays across the two mains.
+
+Exact calculations retain several distinct record processes. Uniform proposals restricted to unique strings are uniform on the accepted space: 2,880 of 8,000 balanced binary tables. Deduplicating seven raw draws into six retained strings instead produces unequal support masses; its uniform-reference rejection is 5.1537% and its matched-law rejection is 4.9407%. Unequal object copy counts require weighted margins, and exact continuation counts supply a uniform sampler. The direct sampler's uneven chi-square diagnostic is retained beside its exact branch probabilities.
+
+A [same-margin witness](null-calibration/domain-support/README.md) produces either one or twenty physical/text components. The one-component fit fails. Declared score extension, observed abstention and feasibility conditioning have different rejection fractions among usable observations. A later constructive bound covers singleton and identical-copy laws when each physical block contains one complete string, with all 3,000 margins and 29,169 allocation cases audited. Its premise fails for nonidentical faces.
+
+The [channel follow-up](null-calibration/noisy-channel/README.md) estimates the supplied symmetric error rate near its true .1. Raw frequency inversion produces 10,335 negative components, close to an exact expectation of 10,331.87. Constrained correction loses to matched shrinkage in ten-object cells but improves pooled cell frequencies. Exact observer-rate ambiguities, the unused boundary fallback and every optimizer check remain in its retrospective. [Paper 002](../../papers/002-conditional-reference-laws/manuscript.md) gives the laws, calibration results and fitting-domain premises together.
+
+## Positional accounts, ambiguity and pooled inventories
+
+The [Puruchuco control](khipu-control/README.md) reproduces sixteen of twenty published columns with absolute error sixteen. Flattening retains the result when addresses are supplied; correspondence-free controls have larger error. Source fields with zero values and prior exposure to the published target are documented. A generated positional-value control recovers 299/300 complete worlds after a unit-feature count fixes scale; the remaining world preserves a positive family with distinct solutions.
+
+The [interval study](khipu-control/INTERVALS.md) selects published partitions under both largest-gap and equal-cord-count rules. The preserved uncertainty calculations show where competing cuts become compatible. [Maximum consensus](khipu-control/robust-decoder/REPORT.md) tolerates incorrect local membership but accepts some wrong vectors: repeated true equations can have less independent rank than their vote count suggests.
+
+The [collective-inventory study](khipu-control/conservation-check/REPORT.md) adds an independently recorded whole-pool observation. On 200 fresh four-swap worlds at 50% local support, correct/wrong/ambiguous counts change from 133/9/58 to 190/1/9. Misdeclaring a partial pool complete gives fifteen wrong accepted points. One wrong baseline passes eight fresh rank-one relations but fails three independent counts. Exact subset geometry and residual audits pass. A static checker repair preserves its initial false flag beside unchanged inference hashes. [Paper 003](../../papers/003-physical-observations/manuscript.md) connects physical acquisition, known-system representation and these numerical controls.
+
+## Geometry and operation
+
+The [stamp-contact model](stamp-geometry/README.md) predicts graphic survival under flat-stamp contact with curved clay. Centred contact and balanced reversal can preserve endpoint balance while changing graphic frequencies. One-sided contact biases endpoint frequencies in the supplied geometry. Finer quadrature changes three of 4,320 primary visibility decisions; triangular groove profiles supply a separate sensitivity. Analytic stroke intervals, symmetry and independent numeric checks are preserved. Its laboratory design remains unrun.
+
+The [Kanmer frame](kanmer-physical-use/README.md) joins registered clay pendants to published dimensions and three-dimensional scanner views. Eight comparative objects and 25 scanner captions have source coordinates. Individual hole axes, wear and the fourth pendant's registration remain unavailable. A caption-order extraction error was preserved and repaired using page-position evidence. The proposed replica-handling design compares suspension, parcel attachment and hand inspection; no physical trials were performed.
+
+The [Harappa corrections](harappa-object-frame/corrections/2026-10-02-scale-and-pagination/README.md) preserve old pagination and an incorrect no-scale statement beside the inspected scale bar. A [representation comparison](tablet-representation/README.md) measures how orientation/reversal choices change the recorded lower-face arrangement classes. Its result guides a source-defined orientation rule for a future physical test.
+
+## Work still active
+
+The final follow-ups test shared recording quality, rank-based validation selection and overlapping same-length forms. Kanmer source continuation is checking early publications and final-report citations. Each owns a separate endpoint. Their final results will be linked here after review.
 
 ## Repository preservation
 
-The private repository's first complete package was pushed as commit `4c941af5d39b1b88c1c150efcb793be26517ecf1`. It contains the manuscript, reusable methods, experiment registry, source provenance and retrospectives. GitHub Actions is disabled. Further completed branches will be reviewed and pushed during this session.
+The private repository's first complete package was pushed as commit `4c941af5d39b1b88c1c150efcb793be26517ecf1`; a later package was pushed as `fab1941`. GitHub Actions is disabled. The full preservation check at 09:24 UTC hashes all 16,284 imported files and 1,568 selected historical evidence files with zero errors. Its [frozen report](../../knowledge/provenance/full-import-verification-2026-10-02-0924.json) is separate from routine mutable link checks. Further completed branches will be reviewed and pushed during this session.
+
+Every new subagent assignment carries the user's writing rule: maximize reader comprehension, explain the idea directly in connected prose, keep shared assumptions together and avoid repeated corrective comparisons or warnings. Root reviews returned prose before integration. Branch retrospectives record externally observable approaches and failures; frozen evidence keeps its original wording.

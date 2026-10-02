@@ -1,0 +1,12 @@
+{
+  "stage": "independent audit, before any successful audit endpoint",
+  "failed_commands": [
+    "python experiments/2026-10-02-six-hour/null-calibration/verify_result.py exact",
+    "python experiments/2026-10-02-six-hour/null-calibration/verify_result.py prefix --quick"
+  ],
+  "exception": "AssertionError when comparing compact replay dictionaries",
+  "diagnosis": "Model choices contain tuples in memory and become lists when saved as JSON. The audit compared those containers directly.",
+  "repair": "Normalize replay dictionaries through JSON serialization before comparison. Limit a live prefix audit to the datasets recorded in its starting checkpoint.",
+  "effect_on_analysis": "No dataset, fitted score, reference draw, result or running calibration process was changed.",
+  "failed_audit_source": "verify_result_v1.py"
+}

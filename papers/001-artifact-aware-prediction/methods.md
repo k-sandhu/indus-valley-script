@@ -70,6 +70,14 @@ The [new protocol](../../experiments/2026-10-02-six-hour/markov-baseline/PROTOCO
 
 The 20261006 grouping/fold construction reproduces all 8,009 saved identities, targets, groups and folds. Strength is selected from 20/100/500/2000 by three grouped inner folds maximizing exact top-one; ties favor greater strength. The PM/PMB predictions are reused. Ten thousand paired component draws with seed 142 produce conditional contrast intervals. Confidence bins are fixed at width .2. Macro-code weights use inverse true-code frequency in the complete benchmark and remain fixed during component resampling. [Results](../../experiments/2026-10-02-six-hour/markov-baseline/main/results.json) record these choices, and an [independent counter verification](../../experiments/2026-10-02-six-hour/markov-baseline/verification.json) checks every ranking and target loss. The smoothing rule differs from Rao et al.'s modified Kneser–Ney rule.
 
+### October 2 second-order comparison
+
+[MARKOV-03](../../experiments/2026-10-02-six-hour/markov-order2/README.md) retains the comparator's exact queries, physical aliases, components and seed 20261006. It uses two start states, an end state and next-state counts after each two-state history. Each row shrinks toward the first-order row after its latest state, with a fixed first-order strength of 20. Candidate scoring multiplies all factors involving the masked state, including the next two factors when present. Inner exact top-one selection considers 5, 20, 100, 500, 2,000 and backoff-only, then chooses 20/20/100/20/20 across outer folds.
+
+The separately specified MARKOV-04 retains the same class and grid but minimizes summed inner bucket loss. All folds choose backoff-only. These are post-comparator model-development runs on the preserved benchmark. Ten thousand component-bootstrap draws with seed 23101 compare their unchanged query populations. The [findings](../../experiments/2026-10-02-six-hour/markov-order2/FINDINGS.md) report exact top-k, equal-text/code accuracy, loss and calibration together.
+
+The independent reviewer reconstructs flat edge and triple counts and uses full-record likelihoods. One lower-rank floating-point discrepancy in MARKOV-03 has two exact rational tie witnesses; target outcomes remain unchanged. The original failed review and its refinement are separate endpoints. Both final reviews check all 8,009 queries, candidate masses, losses, correspondence, hidden-target invariance and code/protocol hashes.
+
 ## Unknown gap counts and observation law
 
 [gap_restoration.py](../../src/gap_restoration.py) draws one internal gap per intact unique string: `k∼Uniform{1,…,min(3,L−2)}`, then a valid internal start uniformly. The predictor observes both surviving sides and compares candidate counts 1–3. It sums hidden fine-state paths using a dynamic program, a training-derived full-length prior and frozen α=20.

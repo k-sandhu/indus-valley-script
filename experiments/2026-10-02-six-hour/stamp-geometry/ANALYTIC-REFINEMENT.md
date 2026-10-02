@@ -1,0 +1,7 @@
+# Exact stroke lengths after the sampling check
+
+The 256-to-1,024 sample comparison found six changed visibility cells in three configurations. Each involved a vertical line whose surviving fraction lay almost exactly at the 80% cutoff. This refinement is written after that outcome and before running the exact-stroke endpoint.
+
+Every invented graphic is made of straight segments. Along a segment parameter `s`, the cylinder coordinate and tilted stamp height are linear functions. The retained-height condition can therefore be reduced to a quadratic interval from the circle/plane intersection, intersected with the segment and damage half-plane. Its length gives the exact surviving stroke fraction under the rectangular-groove model. The flat-wall case reduces to a linear inequality. Use this calculation to replace quadrature for every rectangular-profile primary configuration.
+
+Change no primary grid input, visibility threshold or graphic geometry. Compare every exact fraction and visibility cell with the frozen main run. Recalculate the same pools for any visible graphic and for at least three visible graphics. Check exact fractions against 1,024-point quadrature across the declared 648-case sensitivity block, with differences no greater than 0.004 of stroke length, and check reflection in that block. Preserve `main`, `sampling-refinement` and `length-selection`; write the new endpoint to `analytic-refinement/`. The triangular-width sensitivity retains its original seven-point construction.

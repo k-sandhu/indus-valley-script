@@ -1,0 +1,7 @@
+# Exact tied-tail counting for copied independent strings
+
+Written before calculating this endpoint, October 2, 2026. Use four labeled latent objects, each with three binary signs. Each latent column has two zeros and two ones, and the columns are independent and uniform under those margins. There are `choose(4,2)^3 = 216` latent tables. Expand each object to c identical records, for c=1,2,3,4,5.
+
+The statistic counts equal adjacent signs over every expanded row. Count its exact conditional tails under two references: the matched latent-object columns and ordinary record-column permutations with their expanded margins. Report the exact probability of p≤.01, .05 and .10 under the latent-object law for every c and both references. The example isolates the table law and tied-tail calculation; it uses this declared integer statistic rather than the nested manuscript statistic.
+
+Enumerate all 216 latent tables. For the much larger ordinary record space, count the distribution combinatorially. Conditional on a balanced middle column of n=4c records, each neighboring balanced column has `choose(n/2,k)^2` arrangements with k sign exchanges in each direction and n−2k equal rows. Convolve the two neighbor counts. Verify this formula by complete enumeration when c=1 and c=2. Use exact integers and rational probabilities throughout and save every tail and rejection count. The endpoint has no simulated seeds or fitted parameters.

@@ -1,0 +1,40 @@
+{
+  "suggested_id": "KHI-03",
+  "title": "Exact positive maximum-consensus recovery under incorrect memberships",
+  "status": "completed-synthetic-independent-checks",
+  "protocol": "experiments/2026-10-02-six-hour/khipu-control/robust-decoder/PROTOCOL.md",
+  "protocol_sha256": "3449b2c7fea6c4e00d43afe0f8966d2b66f3c734e93a576b931e762436821170",
+  "endpoint": "experiments/2026-10-02-six-hour/khipu-control/robust-decoder/main-v1/freeze-manifest.json",
+  "report": "experiments/2026-10-02-six-hour/khipu-control/robust-decoder/REPORT.md",
+  "retrospective": "experiments/2026-10-02-six-hour/khipu-control/robust-decoder/RETROSPECTIVE.md",
+  "results": {
+    "worlds": 1500,
+    "seeds_per_condition": 300,
+    "prefix_states": 12000,
+    "two_swapped_three_quarter": {
+      "correct": 281,
+      "wrong": 4,
+      "ambiguous": 15
+    },
+    "two_incomplete_three_quarter": {
+      "correct": 285,
+      "wrong": 1,
+      "ambiguous": 14
+    },
+    "four_swapped_half": {
+      "correct": 200,
+      "wrong": 16,
+      "ambiguous": 84
+    },
+    "ownership_three_quarter_rejected": 300,
+    "ownership_half_wrong": 1,
+    "all_final_wrong_answers_fail_relations_and_counts": true,
+    "subset_states_checked": 384768,
+    "source_prior": "RANSAC1981; exhaustive two-coordinate exact fitting"
+  },
+  "retry_conditions": [
+    "Independent collection-wide relation whose physical operation preserves quantities under reassociation",
+    "Calibrated feature or measurement errors rather than exact membership errors",
+    "A prospective source group with independently acquired complete membership and count observations"
+  ]
+}

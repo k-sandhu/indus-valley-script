@@ -1,0 +1,3 @@
+# A forty-record allocation edge case
+
+Written before the support-bound audit and its allocation calculations, October 2, 2026. Add three five-component profiles containing one thirty-six-record component and four singleton components. Place the large component first, second and last, and use the three already declared seeds. This adds nine allocation cases to the 29,160-case grid. The profiles retain the original forty-record scale and exercise the outer fold whose removal leaves exactly four records for inner tuning. They require no model fit. Preserve all 29,169 cases and their split-count checks alongside the original positive-weight argument.

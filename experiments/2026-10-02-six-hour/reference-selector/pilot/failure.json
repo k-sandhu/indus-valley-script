@@ -1,0 +1,8 @@
+{
+  "stage": "result-serialization",
+  "status": "preserved-failed-pilot",
+  "observed_error": "TypeError: Object of type bool is not JSON serializable",
+  "cause": "A normalization self-check returned a NumPy boolean rather than a Python boolean. All four pilot systems fitted before serialization failed.",
+  "repair": "Convert each self-check outcome to Python bool and repeat the deterministic pilot into pilot-v2. No model, seed, fitting objective or selector rule changed.",
+  "source": "failed_code_snapshot.py"
+}

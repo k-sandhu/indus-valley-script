@@ -1,0 +1,5 @@
+# Consensus under membership errors
+
+The three-quarter consensus rule recovered 281 of 300 decoders after two child swaps and 285 after two missing associations. It retained ambiguities and accepted four and one wrong vectors, respectively. Fresh relations and counts rejected every final wrong answer. The [report](REPORT.md) explains the successful recoveries and the repeated-carry failure; the [methods](METHODS.md) give the exact candidate class and input separation.
+
+The [frozen endpoint](main-v1/freeze-manifest.json) contains generated observations, separate evaluator keys, every prefix inference, exact scoring, two independent reviews and code copies. The [protocol](PROTOCOL.md) preceded generation. [Retrospective](RETROSPECTIVE.md), [source acquisition](source-acquisition.json), [source review](source-review.json) and [compact failure](maximum-consensus-failure.json) preserve the work and its reusable examples. Downloaded method sources remain local. Protocol snapshots retain this original directory's relative-link context.

@@ -1,0 +1,9 @@
+# What paired faces can identify in the symmetric model
+
+The shared-rate model identifies ε from agreement and then identifies p from a marginal. Its attenuation is `λ=1−8ε/7`, so `H=1/8+(7/8)λ²` and `m=u+λ(p−u)`, where u is the uniform eight-category distribution. The positive branch supplies λ from the square root. At ε=7/8, both faces are uniform observations and p disappears from their distribution.
+
+The ideal limit also allows separate face rates when p differs from u. Write the positive attenuations as λ1 and λ2. Agreement determines their product `P=(8H−1)/7=λ1λ2`. Their centered marginals satisfy `m1−u=λ1(p−u)` and `m2−u=λ2(p−u)`, so any nonzero component determines the ratio `ρ=λ1/λ2`. The two rates follow from `λ1=sqrt(Pρ)` and `λ2=sqrt(P/ρ)`, and either marginal recovers p. These equations provide a restricted unequal-observer extension without a new latent category vocabulary.
+
+Uniform latent frequencies remove the ratio. For example, rate pairs (.1,.2) and (.175,143/1120) yield exactly the same ordered-pair distribution when p=u. Their attenuation products both equal 837/1225. The [rational check](unequal-rates-limit/results.json) verifies all 64 pair probabilities and recovers the distinct rates from the declared nonuniform p. This limit calculation was prepared during the main calibration run, before fitting the saved populations; it creates no sampled population or recovery endpoint.
+
+The ratio becomes sensitive to sampling error as the latent frequencies approach uniformity. A future unequal-observer fit would need its own uncertainty study and observation model. More independent views can support a more flexible model; [Allman, Matias and Rhodes](https://arxiv.org/abs/0809.5032) give conditional-independence and rank conditions for latent mixture identification. The current recovery experiment keeps its shared rate and fixed eight-category symmetric kernel.

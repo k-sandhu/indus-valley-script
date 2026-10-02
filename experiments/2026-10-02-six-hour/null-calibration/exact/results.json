@@ -1,0 +1,87 @@
+{
+  "design": "Exact binary-column conditional-space and sampler audit",
+  "source_sha256": "5a313b3cd97dc4687cb8259a4f1e6e616ec3869b8ab54a0fee0969ca0b8032b5",
+  "source_snapshots": {
+    "conditional_structure.py": "ed150239452339a04ef35f04b5814a236d9bd3ad0b64702e66a0230760de0ca8",
+    "nested_conditional.py": "7bdcbb7589e295511a264b42e360b88554b9fe2a2abb52787f9bac85598f0359",
+    "nested_joint_null.py": "5ce2f1fe305886f9b22ec596d69fcd41adbefcfe170bd7993ae55eec134f9d90",
+    "nested_unique_conditioned.py": "8d828266beb80d64aa7598122e49468aabb13b59a40736c402fdf55b17252fc8"
+  },
+  "space_summaries": {
+    "record_columns": {
+      "tables": 8000,
+      "table_probability": 0.000125,
+      "statistic_counts": {
+        "0": 20,
+        "2": 360,
+        "4": 1980,
+        "6": 3280,
+        "8": 1980,
+        "10": 360,
+        "12": 20
+      },
+      "exact_rejection_rates": {
+        "0.01": 0.0025,
+        "0.05": 0.0475,
+        "0.1": 0.0475
+      },
+      "minimum_p_value": 0.0025
+    },
+    "unique_columns": {
+      "tables": 2880,
+      "table_probability": 0.00034722222222222224,
+      "statistic_counts": {
+        "4": 720,
+        "6": 1440,
+        "8": 720
+      },
+      "exact_rejection_rates": {
+        "0.01": 0.0,
+        "0.05": 0.0,
+        "0.1": 0.0
+      },
+      "minimum_p_value": 0.25
+    },
+    "unique_nested_full_procedure": {
+      "tables": 2880,
+      "minimum_p_value": 0.0006944444444444445,
+      "exact_rejection_rates": {
+        "0.01": 0.009722222222222222,
+        "0.05": 0.05,
+        "0.1": 0.09930555555555555
+      },
+      "distinct_gain_values": 906,
+      "gain_min_max": [
+        -0.1820833911527441,
+        0.15820753990744896
+      ]
+    }
+  },
+  "column_label_permutations": 373248000,
+  "multiplicity_per_record_table": 46656,
+  "unique_acceptance_probability": 0.36,
+  "rejection_sampler": {
+    "accepted": 100000,
+    "proposals": 278408,
+    "seed_base": 10000000,
+    "acceptance_rate": 0.3591850808884802,
+    "chi_square_uniformity": 2765.1392,
+    "chi_square_df": 2879,
+    "diagnostic_chi_square_p": 0.9347258890763844
+  },
+  "ordinary_space_distinct_string_counts": {
+    "2": 80,
+    "4": 2160,
+    "5": 2880,
+    "6": 2880
+  },
+  "ordinary_space_too_few_groups_for_five_outer_folds": 2240,
+  "copy_space": {
+    "latent_objects": 4,
+    "copies_per_object": 2,
+    "balanced_binary_latent_column_tables": 216,
+    "balanced_binary_record_column_tables": 343000,
+    "ordinary_reference_probability_of_preserving_all_copy_pairs": 0.0006297376093294461
+  },
+  "elapsed_seconds": 42.490352200000416
+}

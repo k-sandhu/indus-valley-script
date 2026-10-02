@@ -1,0 +1,17 @@
+{
+  "id": "NUM-02",
+  "theme": "numerical search for symbol correspondences",
+  "status": "completed synthetic graph-mapping control; computation reviewed",
+  "question": "How well does scalable quadratic assignment recover mappings and attain an exact small-inventory score optimum?",
+  "outcome": "A 48-system, 384-condition grid compares frequency assignment, two FAQ starts and multistart/2-opt. Multistart reaches 190/192 eight-symbol optima and recovers 186/192 true maps. Four optima prefer a wrong map; two search gaps remain. Twenty-symbol recovery is 70/96 transition and 20/96 administrative conditions. Ten independent count, score and exact-max checks pass.",
+  "challenge": "Candidate search quality and correctness of the best score are separate properties. Start/end factors require fixed boundary nodes. Larger inventories have no exhaustive certificate.",
+  "remedy": "Boundary-seeded quadratic objective, predeclared starts and seeds, direct likelihood checks, exhaustive eight-symbol maxima, separate true-map and optimization outcomes, system-level comparisons.",
+  "evidence": [
+    "experiments/2026-10-02-six-hour/graph-mapping/PROTOCOL.md",
+    "experiments/2026-10-02-six-hour/graph-mapping/FINDINGS.md",
+    "experiments/2026-10-02-six-hour/graph-mapping/RETROSPECTIVE.md",
+    "experiments/2026-10-02-six-hour/graph-mapping/main/results.json",
+    "experiments/2026-10-02-six-hour/graph-mapping/review/checks.json"
+  ],
+  "retry_when": "A new optimizer, reference likelihood, inventory constraint or independently acquired correspondence changes the test. Reuse the saved exact-failure cases for development and reserve fresh systems for evaluation."
+}

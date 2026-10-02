@@ -1,0 +1,124 @@
+{
+  "status": "pass",
+  "datasets_checked": 1000,
+  "reference_corpora_checked": 198000,
+  "complete_fits_replayed": 15,
+  "distinct_reference_seeds": 198000,
+  "observed_group_range": [
+    15,
+    20
+  ],
+  "reference_group_ranges": {
+    "record_columns": [
+      9,
+      20
+    ],
+    "face_vectors": [
+      13,
+      20
+    ]
+  },
+  "reference_changed_joint_vector_draws": {
+    "record_columns": 99000,
+    "face_vectors": 0
+  },
+  "equal_face_slots": 48821,
+  "total_object_slots": 60000,
+  "equal_face_strings": 10817,
+  "total_objects": 20000,
+  "replaced_face_slots": 11868,
+  "total_face_slots": 120000,
+  "chosen_model_counts": {
+    "record_columns/baseline": {
+      "[\"P\", 20]": 45675,
+      "[\"PM\", 20]": 163470,
+      "[\"PM\", 100]": 151202,
+      "[\"PM\", 2000]": 5680,
+      "[\"PM\", 500]": 29769,
+      "[\"U\", 20]": 49467,
+      "[\"PM\", 5]": 15559,
+      "[\"P\", 100]": 20829,
+      "[\"P\", 500]": 4513,
+      "[\"P\", 5]": 7867,
+      "[\"P\", 2000]": 969
+    },
+    "record_columns/dependent": {
+      "[\"PMB\", 20]": 87043,
+      "[\"PMB\", 100]": 269748,
+      "[\"PMB\", 500]": 61458,
+      "[\"PMB\", 2000]": 76635,
+      "[\"PMB\", 5]": 116
+    },
+    "face_vectors/baseline": {
+      "[\"P\", 100]": 59198,
+      "[\"PM\", 100]": 81140,
+      "[\"PM\", 500]": 39721,
+      "[\"U\", 20]": 224086,
+      "[\"P\", 500]": 22644,
+      "[\"P\", 20]": 34834,
+      "[\"PM\", 2000]": 9983,
+      "[\"PM\", 20]": 15522,
+      "[\"P\", 2000]": 5671,
+      "[\"P\", 5]": 2034,
+      "[\"PM\", 5]": 167
+    },
+    "face_vectors/dependent": {
+      "[\"PMB\", 500]": 83021,
+      "[\"PMB\", 20]": 7067,
+      "[\"PMB\", 100]": 117940,
+      "[\"PMB\", 2000]": 286968,
+      "[\"PMB\", 5]": 4
+    }
+  },
+  "paired_rejection": {
+    "0.01": {
+      "both": 4,
+      "record_only": 21,
+      "vector_only": 1,
+      "neither": 974,
+      "rate_difference": 0.02,
+      "paired_95_interval": [
+        0.011,
+        0.029
+      ]
+    },
+    "0.05": {
+      "both": 41,
+      "record_only": 69,
+      "vector_only": 9,
+      "neither": 881,
+      "rate_difference": 0.06,
+      "paired_95_interval": [
+        0.043,
+        0.077
+      ]
+    },
+    "0.1": {
+      "both": 90,
+      "record_only": 106,
+      "vector_only": 14,
+      "neither": 790,
+      "rate_difference": 0.092,
+      "paired_95_interval": [
+        0.071,
+        0.113
+      ]
+    }
+  },
+  "bootstrap_seed": 2026100204,
+  "bootstrap_replicates": 20000,
+  "checks": [
+    "source_hashes",
+    "all_observed_generation_and_latent_truth",
+    "independent_vector_shuffle",
+    "all_record_and_joint_vector_margins",
+    "metadata_preservation",
+    "independent_groups_and_fold_loads",
+    "plus_one_p_values",
+    "all_reference_seed_uniqueness",
+    "selected_full_fit_replays",
+    "aggregate",
+    "paired_rejections_and_bootstrap"
+  ],
+  "audit_source_sha256": "c9765a31573743e8fdabf1ffeaa16b89e9796ca336935def63d75d9c936f8e94"
+}

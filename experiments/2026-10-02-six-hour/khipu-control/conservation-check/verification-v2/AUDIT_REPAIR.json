@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-10-02T09:22:04.793796+00:00",
+  "failed_run": "First verification of main-v1 reached the final static check after all 1400 world loops, constructed diagnostics and aggregate checks; no passed JSON was written",
+  "traceback": "AssertionError in static_check, khipu_conservation_verify.py line 337: banned ast.Name identifier",
+  "flagged_nodes": [
+    {
+      "function": "collective_consensus",
+      "identifier": "key",
+      "line": 132,
+      "context": "Load"
+    },
+    {
+      "function": "collective_consensus",
+      "identifier": "key",
+      "line": 132,
+      "context": "Store"
+    }
+  ],
+  "diagnosis": "The name key is a locally bound coordinate tuple in point_map sorting, derived from public geometry; it is not an evaluator key",
+  "repair": "Allow the locally bound comprehension target key, while preserving bans on external evaluator fields, filesystem operations and hidden globals",
+  "original_verifier_sha256": "3cfdbbc180518c8eee68f727b6db617c16d84ab5b9ecaaa6b5adf8e8a015cadf",
+  "inference_sha256": "22287f834877401bad8e794055d9ae19a3881d47c2f0b906aa5c69cf1edd29ce",
+  "evaluation_sha256": "478edc4c3f4b5a224e2c9a484171a15e324b4d0c0a0578a1dea2a802efd021cc",
+  "numerical_fitting_or_scoring_changed": false,
+  "review_endpoint": "verification-v2/"
+}

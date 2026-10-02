@@ -15,6 +15,9 @@ The project distinguishes **observed graphics**, **statistical structure**, **po
 [Writing rules](editorial/WRITING.md) record the user's language preference, recent editorial sources and editing decisions.
 
 - [First complete manuscript](../papers/001-artifact-aware-prediction/manuscript.md), [detailed methods](../papers/001-artifact-aware-prediction/methods.md), [claim-evidence map](../papers/001-artifact-aware-prediction/claim-evidence-map.md).
+- [Conditional reference laws](../papers/002-conditional-reference-laws/manuscript.md): related objects, uniqueness selection and the fitting domain, with [claim files](../papers/002-conditional-reference-laws/methods.md).
+- [Physical observations in numerical decoding](../papers/003-physical-observations/manuscript.md), [methods](../papers/003-physical-observations/methods.md), [claim files](../papers/003-physical-observations/claim-evidence-map.md).
+- [Reference model selection before symbol mapping](../papers/004-reference-model-selection/manuscript.md), [methods and evidence](../papers/004-reference-model-selection/methods.md).
 - [Manual reproduction](../REPRODUCING.md), [historical environment](../output/environment.json), [original evidence manifest](../output/evidence_manifest.json).
 - [Original report](../output/pdf/indus_script_research_report.pdf), [chart atlas](../output/chart_atlas/index.html).
 
@@ -22,15 +25,15 @@ The project distinguishes **observed graphics**, **statistical structure**, **po
 
 | Direction | Memo | Status |
 |---|---|---|
-| Cryptography, independent anchors, known-system controls | [Cryptography](directions/cryptography.md) | Completed symmetry, mapping, reference-uncertainty and acquisition experiments |
-| Constraint/inverse/numerical methods | [Numerical methods](directions/numerical-methods.md) | Exact conditional audit and physical-membership simulation; calibration and measurement-choice work active |
-| Pictorial meaning, physical function, cultural comparisons | [Archaeology and iconography](directions/archaeology-and-iconography.md) | Harappa object frame and independently checked Lothal physical-use frame |
-| Human symbol evolution, other fields, alien-artifact approach | [Cross-disciplinary and alien](directions/cross-disciplinary-and-alien.md) | Physical-operation simulation completed; human studies and other comparisons proposed |
+| Cryptography, independent anchors, known-system controls | [Cryptography](directions/cryptography.md) | Symmetry, mapping, reference uncertainty, acquisition, verification and source-dependence controls completed |
+| Constraint/inverse/numerical methods | [Numerical methods](directions/numerical-methods.md) | Exact constraints, physical acquisition, positive consensus, pooled inventories, khipu controls and main calibration audits completed |
+| Pictorial meaning, physical function, cultural comparisons | [Archaeology and iconography](directions/archaeology-and-iconography.md) | Harappa, Lothal and Kanmer source frames; curved-contact simulation and laboratory designs |
+| Human symbol evolution, other fields, alien-artifact approach | [Cross-disciplinary and alien](directions/cross-disciplinary-and-alien.md) | Physical-operation, graph/linear assignment, error-channel and conservation ideas developed; human studies proposed |
 | Public/community suggestions | [Community proposals](directions/community-proposals.md) | Tell Jokha lead traced to a scholarly figure; original object report still sought |
 | Feasible next investigations | [Ranked roadmap](directions/research-roadmap.md) | Required inputs, falsification and stopping conditions |
 | Better archaeological observations | [Context data plan](directions/context-data-plan.md) | Proposed data schema and conservative comparisons |
 
-The [six-hour session record](../experiments/2026-10-02-six-hour/SESSION_LOG.md) links the new Markov comparator and mechanism study, finite-reference mapping grid, physical-membership simulation and context-source audits. It records completed branches separately from the experiments still running.
+The [six-hour session record](../experiments/2026-10-02-six-hour/SESSION_LOG.md) links the restoration, reference-law, mapping, numerical and source-observation studies. It records completed branches separately from the experiments still running.
 
 ## Sources and reuse
 

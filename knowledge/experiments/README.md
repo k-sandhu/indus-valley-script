@@ -75,3 +75,25 @@ Generated from `registry.json`; the registry contains challenges, remedies and r
 | CRYPTO-05 | completed-synthetic-grid | Can an additional identity observation detect a wrong mapping after conditional model confidence has crossed 95%? |
 | PHYS-02 | synthetic-verified-with-preserved-pilot-and-post-outcome-refinement | Which accessible whole/part inspection or independent object measurement most efficiently restricts surviving positive quantity assignments? |
 | COMM-02 | completed-bounded-source-audit | Can the community's Tell Jokha object lead be traced to a scholarly photograph and an original report locator? |
+| CRYPTO-06 | completed synthetic stress study; computation reviewed | How do copied reports and coupled source errors change an enumerated identity mapping? |
+| ARCH-03 | completed source-linked conditional representation audit | Which Harappa lower-face arrangement distinctions survive face exchange and end reversal? |
+| KHI-01 | completed published-source replication and synthetic controls; independently checked | Which positional and physical membership information supports a numerical relation and decoder? |
+| GEOM-01 | verified-synthetic-forward-model | Can curved contact, pressing angle and break side change visible graphic endpoint frequencies? |
+| NUM-02 | completed synthetic graph-mapping control; computation reviewed | How well does scalable quadratic assignment recover mappings and attain an exact small-inventory score optimum? |
+| KHI-02 | completed source-controlled interval study; independently checked | Do recorded cord-cluster gaps restrict published account partitions when quantities are withheld? |
+| MARKOV-03 | completed-with-independent-review | Does second-order context improve restoration on the saved artifact-held-out masks? |
+| MARKOV-04 | completed-post-outcome-comparison | Does selecting second-order smoothing by inner probability loss retain the extra context? |
+| KHI-03 | completed-synthetic-independent-checks | Can exact positive maximum consensus recover positional values after incorrect child memberships? |
+| CRYPTO-07 | completed-new-world-post-outcome-comparison | Can length/slot profiles improve administrative mapping after a pooled transition score loses typed-slot distinctions? |
+| KANMER-01 | source-frame-and-prospective-handling-test | Which original object observations support the proposed Kanmer pendant/pass use, and which handling experiment can test suspension? |
+| NULL-01 | completed-exact-independent-audit | Is column permutation uniform, and does uniqueness rejection preserve its conditional law? |
+| NULL-02 | completed-exact-independent-audit | How does record-wise shuffling behave under a known literal-copy process? |
+| NULL-03 | completed-exact-sampler-audit | Can a reference preserve both latent and expanded margins with unequal copy counts? |
+| NULL-04 | completed-exact-reweighting-audit | Does deduplicating raw draws give the same law as drawing a population conditional on uniqueness? |
+| NULL-05 | completed-main-and-independent-audit | Can whole ordered face vectors preserve a known paired-error law in the nested reference? |
+| NULL-06 | completed-witness-and-exact-extension-audit | How do undefined fits, score extension and feasibility conditioning change reference rejection fractions? |
+| NULL-07 | completed-known-channel-recovery-audit | Can paired faces estimate a known symmetric error rate and correct latent frequencies? |
+| CRYPTO-08 | completed-fresh-world-independent-review | Can held-out reference prediction choose a mapping score without the generated family label? |
+| NULL-08 | completed-main-and-independent-audit | How do record and matched object references calibrate the preserved nested statistic under known independent, unique and literal-copy laws? |
+| NULL-09 | completed-proof-and-allocation-audit | Which original conditional laws admit a component lower bound that guarantees nonempty nested folds? |
+| KHI-04 | completed-synthetic-control-and-independent-audit | Can an independently observed pooled inventory resolve numerical values when local account membership is unreliable? |
