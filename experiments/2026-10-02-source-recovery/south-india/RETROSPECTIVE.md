@@ -1,0 +1,15 @@
+# South Indian source recovery retrospective
+
+The prior study had finite stroke populations and useful specimen identifiers, but lacked an original numerical inscription tied to a physical count or excavation record. This run followed its named acquisition targets under [the protocol](PROTOCOL.md).
+
+The Tamil Digital Library supplied the full 2005 government Alagankulam report. The web reader could not ingest its file; a direct public download saved the complete 140-page PDF. Inspection connected the proposed 408 reading across prose, table serial 2 and drawing 2. Text extraction omitted several numeric table cells, so the values were read from the rendered original table. The four-sided candidate die or weight came from the same report and has its own context and conditional interpretation.
+
+Mahadevan's authored web mirror gave a specific cave, three beds, the numeral description and original publication details. Its generic image depicts sculpted figures and supplies no bed census or inscription impression. We saved and excluded it. An indexed 2018 PDF route returned HTML with status 500. Rather than treating the indexed orientation description as a recovered witness, we searched for the original book. An ePustakalay catalogue linked the Digital Library of India scan on Internet Archive, which downloaded successfully. Its original Tondur pages and Plate 8 confirm the wording in the mirror. The plate itself is too dark for a fresh count. The exact cave matters because neighbouring caves contain different numbers of beds.
+
+The 2026 catalogue's general figures have no specimen registrations. We therefore followed its registered appendix tables and photo plates. Alagankulam_044 gives a joint surface with letters and a separate graphic; Alagankulam_004 gives a registered stroke example. Similar readings or compatible depths suggested two earlier-to-later matches. The depth header omits units and the catalogue pools excavation years, so those matches remain candidate concordances. No new fit was justified by these records.
+
+A public JavaScript template suggested a compound-image index. Its request returned 403 XML. The registration spelling, source sign namespace, original field number and modern catalogue identifier remain separate fields. Further acquisition should target the five saved fixed leads and the original 408 sherd's registration. Repeating aggregate API counts would add no quantity observation.
+
+The independent visual review corrected the old serial 1 reading from the faulty text-extraction spelling to Pidiyuraiyu before this endpoint was frozen. It also found that Mahadevan's reading list continues onto printed page 135, extending the commonly cited chapter range. The candidate object identity remained unresolved throughout.
+
+The result is a source-linked comparison packet with original witnesses, exact locators, reusable acquisition and checking code. All dates are the cited authors' dates with their stated basis. External requests were prepared as local records only; none were sent.

@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-02",
+  "scope": "Targeted recovery of Sarianidi1998 Figure41, Kircho2008b Plate94.2 and exact room/inventory/context locators. Selected keyword follow-up in Sarianidi2005. This is not an exhaustive Oxus bibliography review.",
+  "prior_failure_record": "experiments/2026-10-02-connections-and-priority/regional-west/source-acquisition-v3.json",
+  "prior_locators": "experiments/2026-10-02-connections-and-priority/regional-west/evidence-table.json",
+  "recorded_queries": [
+    "Gonur tokens 26 room",
+    "Gonur tokens Sarianidi 1998 room",
+    "Гонур 26 жетонов помещение",
+    "Гонур Северный жетоны вход дворец 26",
+    "Гонур 26 фишек",
+    "Гонур жетоны дворца",
+    "Gonur tokens room Sarianidi2005",
+    "site:margiana.su Gonur-depe2005"
+  ],
+  "routes": [
+    {
+      "source": "Bonora et al.2014",
+      "url": "https://www.persee.fr/docAsPDF/paleo_0153-9345_2014_num_40_1_5616.pdf",
+      "status": "prior ordinary request returned403 HTML; not repeated in this run",
+      "evidence": "prior_failure_record"
+    },
+    {
+      "source": "Bonora et al.2014 author full text",
+      "url": "https://www.researchgate.net/publication/316841191_On_the_use_of_tokens_and_seals_along_the_Kopet_Dagh_piedmont_Turkmenistan_ca_6000-3000_BCE",
+      "status": "web-readable bibliography confirmed Sarianidi1998 book identity and Kircho2008b chapter identity; original books then acquired"
+    },
+    {
+      "source": "Kircho et al.2008 institute landing page",
+      "url": "https://www.old.archeo.ru/izdaniya-1/vagnejshije-izdanija/pdf/Altyn_technical_2008.pdf/view",
+      "status": "acquired HTML; observed public download link"
+    },
+    {
+      "source": "Kircho et al.2008 direct PDF",
+      "url": "https://www.old.archeo.ru/izdaniya-1/vagnejshije-izdanija/pdf/Altyn_technical_2008.pdf/at_download/file",
+      "web_reader_status": "tool rejected content length24080915; this was a reader-size limit, not a source HTTP rejection",
+      "ordinary_request_status": "HTTP200; complete PDF acquired"
+    },
+    {
+      "source": "Official Margiana expedition bibliography, page3",
+      "url": "https://margiana.su/publikaczii/rabotyi-v.i.-sarianidi/?page=3",
+      "status": "acquired HTML; book1998 identity and cloud link observed"
+    },
+    {
+      "source": "Sarianidi1998 public cloud share",
+      "url": "https://cloud.mail.ru/public/YRbv/maWz94TRz",
+      "web_reader_status": "page reported JavaScript required",
+      "ordinary_request_status": "HTTP200 public HTML supplied filename Narg_protozoroastr_1.pdf, expected29522613 bytes and ordinary dispatcher.weblink_get download route; PDF acquired with matching byte count"
+    },
+    {
+      "source": "CiNii bibliographic record",
+      "url": "https://ci.nii.ac.jp/ncid/BA44160041.amp",
+      "status": "bibliographic corroboration of1998 Kapon book and ISBN9607254619; no figure witness acquired here"
+    },
+    {
+      "source": "Official Margiana expedition bibliography, page4",
+      "url": "https://margiana.su/publikaczii/rabotyi-v.i.-sarianidi/?page=4",
+      "status": "acquired HTML; later palace volume link observed"
+    },
+    {
+      "source": "Sarianidi2005 unresolved relative link",
+      "url": "https://margiana.su/publikaczii/rabotyi-v.i.-sarianidi/publication/book/Gonur-Depe_City_of_Kings_and_Gods_2005.pdf",
+      "status": "web request404; relative link resolved against page path"
+    },
+    {
+      "source": "Sarianidi2005 corrected root-relative publication path",
+      "url": "https://margiana.su/publication/book/Gonur-Depe_City_of_Kings_and_Gods_2005.pdf",
+      "status": "ordinary requestHTTP200; complete165-spread PDF acquired; original elephant seal figure and context located"
+    }
+  ],
+  "local_search": {
+    "sarianidi1998": "Native page images/OCR: copyright page4; contents page8; PDF pages60-100 covering glyptics, chronology and palace discussion; final illustration/index pages189-191. Cited pages visually checked.",
+    "kircho2008": "Full373-page extracted text; Plate94.2 and contextual pages34-36,48,104 inspected; copyright and bilingual contents checked.",
+    "sarianidi2005": "Full165-spread extracted text; normalized hyphenated line breaks; target token, counters, scratched signs,26clay,жетон,фишк and northern-entrance terms yielded no specific token-hoard passage. Figure114 and context visually checked.",
+    "raw_handling": "local-only sources, images and OCR; own summaries and manifests under owned experiment directory"
+  },
+  "rejected_extensions": [
+    "Treating26reported tokens as26pictured specimens",
+    "Adding23photos and23drawings as46physical objects",
+    "Assigning individual photo-to-drawing matches from position alone",
+    "Attaching palace radiocarbon sample Beta33563 to the token pile without a deposit link",
+    "Joining temenos bullae or Temple of Water elephant seal to the palace-entrance pile by site name alone",
+    "Assigning a numerical value or exact impression count to Altyn Plate94.2 from ambiguous drawn boundaries"
+  ]
+}

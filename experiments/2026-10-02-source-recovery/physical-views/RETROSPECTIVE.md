@@ -1,0 +1,17 @@
+# Physical-view recovery retrospective
+
+The protocol fixed four Harappa targets, their production controls and eight Lothal targets before source acquisition. Exact excavation registrations proved more selective than bare catalogue codes: searches for H2238 and related numbers often returned unrelated records. The exact H95 registration led to a 1997 excavation chapter, whose rendered Figure 10.21 caption instead names H95-2614/6560-02. That neighbouring specimen was retained as a failed target join.
+
+The public 2024 Lothal article supplied specific figure and photography-session locators. Its publisher and author-deposit download routes returned HTTP 403 through ordinary requests, while the web reader exposed the author article's text. The branch records the named figure and its published interpretation without an acquired figure-image hash. The author's university-hosted CV independently supplied January 2005 ASI and February 2006 National Museum documentation dates.
+
+A subsequent original publication yielded the larger labelled L190 colour photograph. The 2020 author-deposit PDF also downloaded successfully, but its complete colour montage is small. Larger page rendering was used to read captions; native-image extraction established the real pixel limits. The first three 2020 crop rectangles were estimated in page-layout coordinates and landed on L145. Inspecting those crops exposed the mistake. The initial record and wrong crops remain local as the coordinate pilot, and new v2 crops use the native montage's lower L190 row. The accepted observation file points only to the corrected crops.
+
+Review of the existing CISI1 source index found target plates that earlier Lothal contact work had not used. The plates provide labelled sides as well as stamp fronts. The source's side and basic-data keys were inspected before coding those labels and archive registrations. This added 15 catalogue panels, including L190 B, D and F and upper-side views for L163 and L168. L193's two catalogue panels both carry A labels, so its panel count exceeds its distinct face count.
+
+An alternative public CISI1 PDF was acquired to seek better scan detail. Its PDF hash and page count differ from the existing government-hosted file, but the seven checked embedded target/data images are byte-identical. The comparison saved a concrete failed resolution route. Further rendering of that scan cannot add original groove detail.
+
+The extra L190 side photographs did not resolve a second contact topology. A second model reader inspected the native D and F crops, knew the topology question and also left the junction unresolved. The photographs remain useful as archive targets and as evidence of which surfaces were recorded. No earlier count or topology endpoint was changed.
+
+The first manual checker passed 434 of 436 checks. Its two failures were documentation links to the output file before the checker had created it. The source hashes, pixels and registration checks passed. That first record is retained as verification.json; a fresh verification-v2.json supplies the passing endpoint and the final navigation links point there.
+
+The final packet translates the unresolved observations into named records and required surface views. Harappa's 2010 introduction supplies a reserve-collection and field-record route; CISI1 supplies Lothal museum registrations and photograph keys. Current holdings, access rights and original-file availability remain acquisition questions. No collection was contacted and no request was sent.

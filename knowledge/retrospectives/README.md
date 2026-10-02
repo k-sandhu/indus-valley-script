@@ -39,5 +39,6 @@ The [six-hour continuation](../../experiments/2026-10-02-six-hour/SESSION_LOG.md
 | [Six-hour integration](six-hour-integration.md) | Shared manuscript corrections, preserved source bytes, repository packaging and final review |
 | [Decipherment readiness review](../../experiments/2026-10-02-decipherment-readiness/RETROSPECTIVE.md) | Corpus coverage, computational input requirements, source-defined tests and missing physical targets |
 | [Connections and publication priority](../../experiments/2026-10-02-connections-and-priority/RETROSPECTIVE.md) | Independent precedent review; Susa marked-weight census; Oxus source recovery; South Indian digital/print comparison; Harappa and Lothal source observations |
+| [Original source recovery](../../experiments/2026-10-02-source-recovery/RETROSPECTIVE.md) | Original Gonur and Altyn Depe figures; historical Susa disagreements; South Indian numerical contexts; registered physical views and archive requests |
 
 A retry should name the new observation or method that changes the test. The registry preserves each earlier result and the evidence needed to assess that change.

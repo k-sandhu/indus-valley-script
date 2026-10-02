@@ -1,5 +1,7 @@
 # What the new data connections give us
 
+**Later source update, 2 October 2026:** the [original-source follow-up](source-recovery-2026-10-02.md) recovered the Gonur figure and South Indian numerical pages. It also found conflicting historical and modern Susa mark and mass records. Read that audit before interpreting the close duck-weight group below. The earlier computational endpoints remain preserved.
+
 We found actual collections to investigate behind the proposed regional numerical links. The western study now joins marks, measured masses and catalogue identities at Susa. The South Indian study supplies a finite collection of stroke groups and their surrounding graphics. The Harappa and Lothal studies identify particular objects whose improved images would decide narrower questions. The independent agent's review places these results beside the earlier research and assesses what the project can contribute to a paper.
 
 ## Which connections we made

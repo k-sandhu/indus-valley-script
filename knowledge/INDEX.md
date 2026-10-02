@@ -18,6 +18,8 @@ The [decipherment readiness review](directions/decipherment-readiness-2026-10-02
 
 The [regional connection findings](directions/regional-numerical-connections-2026-10-02.md) report the subsequent Susa weight census, Oxus inventory targets, South Indian stroke contexts, Harappa short records and Lothal image checks. The [independent novelty review](../experiments/2026-10-02-connections-and-priority/novelty/REPORT.md) evaluates the project's data connections and publication priorities against primary precedents.
 
+The [original-source follow-up](directions/source-recovery-2026-10-02.md) recovers Gonur's token illustration, early Susa mass and mark descriptions, South Indian numerical examples and registered physical views. The Susa records disagree on marks and masses, so consult this follow-up before reusing the earlier close duck-weight group. [Methods, witnesses and checks](../experiments/2026-10-02-source-recovery/README.md).
+
 [Writing rules](editorial/WRITING.md) record the user's language preference, recent editorial sources and editing decisions.
 
 - [First complete manuscript](../papers/001-artifact-aware-prediction/manuscript.md), [detailed methods](../papers/001-artifact-aware-prediction/methods.md), [claim-evidence map](../papers/001-artifact-aware-prediction/claim-evidence-map.md).

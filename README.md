@@ -11,6 +11,7 @@ The repository is private. Its local equivalent is this project folder. No CI/CD
 | Findings available for reuse and discussion | [Research contributions](knowledge/research-contributions.md) |
 | Evidence we have and need for decipherment | [Decipherment readiness review](knowledge/directions/decipherment-readiness-2026-10-02.md) |
 | New numerical connections and independent publication assessment | [Regional connection findings](knowledge/directions/regional-numerical-connections-2026-10-02.md), [study records](experiments/2026-10-02-connections-and-priority/README.md) |
+| Original sources that change the numerical candidates | [Source recovery findings](knowledge/directions/source-recovery-2026-10-02.md), [source audits and registered views](experiments/2026-10-02-source-recovery/README.md) |
 | Graphic prediction and restoration | [Paper 001](papers/001-artifact-aware-prediction/manuscript.md) |
 | Conditional sampling and related records | [Paper 002](papers/002-conditional-reference-laws/manuscript.md) |
 | Numerical constraints and physical observations | [Paper 003](papers/003-physical-observations/manuscript.md) |

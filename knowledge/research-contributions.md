@@ -2,6 +2,8 @@
 
 Research package, 2 October 2026. Four working manuscripts connect the measured results to their methods, source observations and computational checks. The project has generated restoration measurements, controlled recovery experiments, exact sampling examples and corrected archaeological source frames. Historical sounds and lexical meanings remain unassigned.
 
+The [latest source audit](directions/source-recovery-2026-10-02.md) adds recoverable original figures, object-level numerical contexts and historical catalogue disagreements. It provides material for a source data note and concrete archival targets; the earlier statistical manuscripts retain their frozen evaluations.
+
 ## Graphic restoration on the selected Indus transcriptions
 
 The restoration benchmark holds physical aliases and repeated whole strings together. It masks 8,009 known positions in 1,596 distinct strings and evaluates exact graphic-code recovery. The conventional first-order model reaches 34.59% top-one accuracy. Adding second-order context raises that to 37.27%, a paired gain of 2.6845 percentage points, with a component-bootstrap interval of 1.9902–3.3968.
