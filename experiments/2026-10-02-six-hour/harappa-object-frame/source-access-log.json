@@ -1,0 +1,46 @@
+{
+  "run_date": "2026-10-02",
+  "access_methods": ["public web search and page reading", "ordinary HTTPS request", "reuse of preserved author-hosted PDF with hash check"],
+  "full_cisi31_search": {
+    "queries": [
+      "Corpus of Indus seals and inscriptions Volume 3 2010 PDF",
+      "site:helda.helsinki.fi Corpus of Indus seals 2010",
+      "978-951-41-1040-5 PDF",
+      "site:archive.org Corpus of Indus seals 2010",
+      "site:ignca.gov.in Corpus Indus seals 2010"
+    ],
+    "routes": [
+      {"url": "https://researchportal.helsinki.fi/en/publications/corpus-of-indus-seals-and-inscriptions-volume-3-new-material-untr/", "method": "web page read", "outcome": "official bibliographic record inspected; 2010 volume, 504 pages, ISBN 978-951-41-1040-5; no full-text attachment found in the returned record"},
+      {"url": "https://helda.helsinki.fi/search?query=Corpus%20of%20Indus%20seals", "method": "web page read", "outcome": "tool returned Internal Error; repository search was not inspected"},
+      {"url": "https://www.finna.fi/Record/oy.9910978483906252", "method": "web page read", "outcome": "library catalogue record inspected; printed holdings in ten libraries, no downloadable book located"},
+      {"url": "https://list.indology.info/pipermail/indology/2010-October/034729.html", "method": "web search result", "outcome": "publication announcement located; no object plates acquired"},
+      {"url": "https://list.indology.info/pipermail/indology/attachments/20200116/6fb825d1/attachment.pdf", "method": "web search result", "outcome": "publisher announcement/catalogue attachment located; no object plates acquired"}
+    ],
+    "endpoint": "No full CISI 3.1 plate/basic-data witness was acquired through these routes. The introduction is separately preserved. Object observations in this run use earlier original excavation publications and captions."
+  },
+  "targeted_object_search": {
+    "queries_without_results": [
+      "site:harappa.com H98-3510",
+      "site:harappa.com H99-4214",
+      "site:harappa.com H2000-4503",
+      "site:harappa.com H1704"
+    ],
+    "successful_routes": [
+      {"url": "https://www.harappa.com/sites/default/files/pdf/Kenoyer2000_The%20Tiny%20Steatite%20Seals%20of%20Harappa.pdf", "outcome": "preserved 21-page author-hosted chapter reused; Figure 4 includes all 22 tablets with full registration/unit/item keys; native raster and caption inspected", "record": "figure4-native-crop-manifest.json"},
+      {"url": "https://www.harappa.com/beas/mapping-project", "outcome": "original author survey page acquired; linked Figure 12 photograph inspected", "record": "acquisition/beas-mapping-project.json"},
+      {"url": "https://www.harappa.com/sites/default/files/pdf/Kenoyer2005_Excavations%20at%20Harappa%202000-2001%20New%20insights%20on.pdf", "outcome": "19-page original excavation chapter acquired; native rasters and OCR locator made; Figure 4.3 supplies H1714 source registration and physical drawing", "record": "acquisition/kenoyer-meadow2005-harappa.json"},
+      {"url": "https://www.harappa.com/indus4/e3.html", "outcome": "legacy URL redirects to the working author-hosted 2001 excavation summary; Figure 4.8 caption supplies H1710 registration", "record": "acquisition/meadow-kenoyer2001-part3.json"},
+      {"url": "https://www.harappa.com/sites/default/files/essays/1_9.gif", "outcome": "linked original Figure 4 drawing acquired and inspected; 600×568 pixels", "record": "acquisition/meadow-kenoyer2001-figure4.json"}
+    ],
+    "failed_or_unjoined_routes": [
+      {"url": "https://www.harappa.com/slide/three-clay-sealings", "outcome": "original HARP caption read; no individual registration or CISI identifier supplied, so no target join was made and its figure was not coded"},
+      {"url": "https://www.harappa.com/slide/seal-impression", "outcome": "original HARP caption read; different early-period case, no target registration supplied; not added to the frame"},
+      {"url": "https://www.harappa.com/slide/steatite-tablets", "outcome": "web tool returned Internal Error; no source acquired"},
+      {"url": "https://live-harappacom.gotpantheon.com/indus4/e3.html", "outcome": "current contents link returned 502 through web tool; the preserved public harappa.com legacy path succeeded"},
+      {"url": "https://www.harappa.com/content/e4.html", "outcome": "current contents link returned 404; legacy /indus4/e4.html redirected to a working article section"},
+      {"url": "https://www.harappa.com/content/e5.html", "outcome": "current contents link returned 404; legacy /indus4/e5.html returned the original article section"},
+      {"url": "https://www.harappa.com/slide/long-rectangular-seal-no-animal-motif", "outcome": "HARP caption read; no individual registration supplied, so no object correspondence was assigned"}
+    ]
+  },
+  "rights": "Bulk PDFs, HTML, OCR, extracted rasters and cropped source figures remain local-only under local-witness. Tracked files contain our source assertions, annotation methods, identifiers, checks and aggregates. No external publication or contact occurred."
+}

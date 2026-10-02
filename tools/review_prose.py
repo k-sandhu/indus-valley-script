@@ -1,5 +1,6 @@
 """Flag selected stock writing patterns for manual editing, not authorship detection."""
 from pathlib import Path
+import argparse
 import json
 import re
 
@@ -13,8 +14,20 @@ PATTERNS = {
 }
 
 def main():
-    files = [ROOT/x for x in ("README.md", "REPRODUCING.md", "CONTRIBUTING.md", "REUSE.md")]
-    files += list((ROOT/"papers").rglob("*.md")) + list((ROOT/"knowledge").rglob("*.md"))
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--path", action="append", help="File or directory to scan; repeat for several owned paths")
+    parser.add_argument("--output", default="knowledge/editorial/prose-review.json")
+    parser.add_argument("--no-write", action="store_true", help="Print findings without changing a shared report")
+    args = parser.parse_args()
+    if args.path:
+        files = []
+        for value in args.path:
+            target = ROOT/value
+            files.extend(target.rglob("*.md") if target.is_dir() else [target])
+    else:
+        files = [ROOT/x for x in ("README.md", "REPRODUCING.md", "CONTRIBUTING.md", "REUSE.md")]
+        files += list((ROOT/"papers").rglob("*.md")) + list((ROOT/"knowledge").rglob("*.md")) + list((ROOT/"experiments").rglob("*.md"))
+    files = sorted(set(path for path in files if path.is_file() and "editorial" not in path.parts))
     flags = []
     for path in files:
         if not path.exists() or "editorial" in path.parts:
@@ -29,9 +42,10 @@ def main():
                 if re.search(pattern,line,re.I):
                     flags.append({"file": path.relative_to(ROOT).as_posix(), "line": number, "pattern": name, "text": line})
     result = {"scope": "new repository prose; flags require human judgment and may be source titles/technical quotations", "files_scanned": len(files), "flags": flags}
-    output = ROOT/"knowledge/editorial/prose-review.json"
-    output.parent.mkdir(parents=True,exist_ok=True)
-    output.write_text(json.dumps(result,indent=2) + "\n",encoding="utf-8")
+    if not args.no_write:
+        output = ROOT/args.output
+        output.parent.mkdir(parents=True,exist_ok=True)
+        output.write_text(json.dumps(result,indent=2) + "\n",encoding="utf-8")
     print(json.dumps(result,indent=2))
 
 if __name__ == "__main__":

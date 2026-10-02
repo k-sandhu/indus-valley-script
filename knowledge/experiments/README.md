@@ -64,3 +64,14 @@ Generated from `registry.json`; the registry contains challenges, remedies and r
 | METHODS-totem_templates | completed-analysis-see-source-design | Declared latent independent-slot template robustness; no phonetic values |
 | METHODS-workflow_templates | completed-analysis-see-source-design | Declared latent independent-slot template robustness; no phonetic values |
 | CRYPTO-02 | completed-synthetic-grid | When can a known reference and correct anchors recover an eight-symbol encoding? |
+| MARKOV-01 | verified-computation-on-preserved-queries | How does a conventional first-order Markov model compare on the exact earlier known-slot queries? |
+| MARKOV-02 | verified-post-outcome-mechanism-study | Which learned boundaries and interior transitions support restoration? |
+| CONTEXT-01 | verified-availability-and-source-cohort-audit | Which physical-use and chronological comparisons can the preserved corpus support? |
+| CRYPTO-03 | verified-declared-synthetic-grid | Can integrated reference uncertainty and further-record prediction diagnose confident wrong maps? |
+| PHYS-01 | synthetic-verified-with-preserved-correction | Which physical membership and count observations identify unfamiliar quantity labels? |
+| CRYPTO-04 | verified-declared-synthetic-grid | Can conditional mapping uncertainty choose useful independent identities to measure under process mismatch? |
+| ARCH-01 | completed-source-audit | Can original Harappa publications restore object-level contexts and physical observations for short inscriptions excluded from the principal prediction population? |
+| ARCH-02 | completed-source-and-coverage-audit | How do the published Lothal sealing objects, physical traces and recurrent stamps enter the preserved inscription population? |
+| CRYPTO-05 | completed-synthetic-grid | Can an additional identity observation detect a wrong mapping after conditional model confidence has crossed 95%? |
+| PHYS-02 | synthetic-verified-with-preserved-pilot-and-post-outcome-refinement | Which accessible whole/part inspection or independent object measurement most efficiently restricts surviving positive quantity assignments? |
+| COMM-02 | completed-bounded-source-audit | Can the community's Tell Jokha object lead be traced to a scholarly photograph and an original report locator? |

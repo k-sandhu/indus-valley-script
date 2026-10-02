@@ -30,17 +30,25 @@ def main():
     # Check the new navigational material, not historical archives whose original links are preserved.
     docs = [ROOT/p for p in ("README.md", "REPRODUCING.md", "CONTRIBUTING.md", "REUSE.md")]
     docs += list((ROOT/"knowledge").rglob("*.md")) + list((ROOT/"papers").rglob("*.md"))
+    docs += list((ROOT/"experiments").rglob("*.md"))
     broken = []
+    frozen_link_contexts = []
     for doc in docs:
         if not doc.is_file():
             continue
         content = doc.read_text(encoding="utf-8")
+        link_base = doc.parent
+        if doc.name.lower().endswith("protocol_snapshot.md") and (doc.parent.parent/"PROTOCOL.md").is_file():
+            # Byte-preserved copies retain links relative to the original protocol.
+            link_base = doc.parent.parent
+            frozen_link_contexts.append({"snapshot":doc.relative_to(ROOT).as_posix(),
+                                         "source_context":link_base.relative_to(ROOT).as_posix()})
         for target in re.findall(r"\[[^\]]*\]\(([^)]+)\)", content):
             target = target.split("#",1)[0].strip().strip("<>")
             if not target or re.match(r"[a-zA-Z][\w+.-]*:", target):
                 continue
             target = unquote(target)
-            if not (doc.parent/target).exists():
+            if not (link_base/target).exists():
                 broken.append({"file": doc.relative_to(ROOT).as_posix(), "target": target})
     errors += [f"Broken link: {r['file']} -> {r['target']}" for r in broken]
     listed = subprocess.run(["git", "ls-files", "--cached", "--others", "--exclude-standard"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.splitlines()
@@ -74,6 +82,7 @@ def main():
     result = {"status": "pass" if not errors else "fail", "registry_entries": len(ids), "new_markdown_documents_checked": len(docs),
               "manuscript_words": words, "distributed_files": len(listed), "imported_files_hashed": imported,
               "historical_selected_files_hashed": historical_selected, "errors": errors,
+              "frozen_protocol_link_contexts":frozen_link_contexts,
               "scope": "repository structure, local links, preserved evidence and distribution checks; not peer review or archaeological validation"}
     dest = ROOT/"knowledge/provenance/repository-verification.json"
     dest.parent.mkdir(parents=True, exist_ok=True)

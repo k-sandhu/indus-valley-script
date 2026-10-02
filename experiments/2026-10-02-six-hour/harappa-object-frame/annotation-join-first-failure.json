@@ -1,0 +1,9 @@
+{
+  "created_utc": "2026-10-02T06:23:34.736222+00:00",
+  "command": "annotate --output annotated",
+  "code_sha256": "db1141f6a5be48b29be058b18c9ffc2910170478855802871835e8bb31d1f095",
+  "stage": "pre-output registration join assertion",
+  "outcome": "failed before endpoint was written",
+  "cause": "The derivative field concatenates registrations and Figure labels, such as H97-3319Figure 12.11. A trailing regex word boundary prevents every such registration match.",
+  "remedy": "Keep the initial failure record, change the registration locator to stop at the last digit without requiring a word boundary, then rerun the as-yet-unwritten annotation endpoint."
+}

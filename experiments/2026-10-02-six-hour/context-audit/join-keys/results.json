@@ -1,0 +1,84 @@
+{
+  "created_utc": "2026-10-02T05:44:13.016111+00:00",
+  "protocol": "experiments/2026-10-02-six-hour/context-audit/JOIN-KEY-PROTOCOL.md",
+  "code_sha256": "cabdd49dc89b324e623397d29192ca030af457ddfdf55a78473926d925f7eb75",
+  "input": {
+    "path": "data/normalized/lipi_observed_faces.jsonl",
+    "sha256": "1220f5591a42abe7c6696ac014aba90e7c49fdce6b0ccba0b85bb45f950c30db"
+  },
+  "harappa_families": 1921,
+  "syntax_category_family_counts": {
+    "other_reported_identifier": 1101,
+    "registration_prefix_without_documented_lot_item_syntax": 767,
+    "missing": 49,
+    "registration_plus_lot_item_syntax": 4
+  },
+  "illustrative_examples": {
+    "other_reported_identifier": [
+      {
+        "cisi_reference": "-",
+        "literal_identifier": "-Figure 68.02"
+      },
+      {
+        "cisi_reference": "H-1438",
+        "literal_identifier": "-751"
+      },
+      {
+        "cisi_reference": "H-1189",
+        "literal_identifier": "-500"
+      }
+    ],
+    "registration_prefix_without_documented_lot_item_syntax": [
+      {
+        "cisi_reference": "H-1789",
+        "literal_identifier": "H86-5132Figure 36.07"
+      },
+      {
+        "cisi_reference": "-",
+        "literal_identifier": "H96-6952-33Figure 74.03"
+      },
+      {
+        "cisi_reference": "-",
+        "literal_identifier": "H96-7259-18Figure 74.01"
+      }
+    ],
+    "missing": [
+      {
+        "cisi_reference": "H-741",
+        "literal_identifier": "-"
+      },
+      {
+        "cisi_reference": "H-1146",
+        "literal_identifier": "-"
+      },
+      {
+        "cisi_reference": "-",
+        "literal_identifier": "-"
+      }
+    ],
+    "registration_plus_lot_item_syntax": [
+      {
+        "cisi_reference": "H-2372",
+        "literal_identifier": "H90-3005/3151-501Figure 31.01"
+      },
+      {
+        "cisi_reference": "H-2367",
+        "literal_identifier": "H94-3003/3985-0020Figure 31.10"
+      },
+      {
+        "cisi_reference": "H-2369",
+        "literal_identifier": "H95-3011/4416-72Figure 38.18"
+      }
+    ]
+  },
+  "patterns": {
+    "registration": "\\bH(?:19|20)?\\d{2}-\\d+",
+    "registered_lot_item": "\\bH(?:19|20)?\\d{2}-\\d+(?:/|\\s+)\\d{4}[- ]\\d+",
+    "unregistered_lot_item": "\\bH(?:19|20)?\\d{2}/\\d{4}[- ]\\d+"
+  },
+  "checks": {
+    "four_identifier_examples": "passed",
+    "family_accounting": "passed"
+  },
+  "interpretation": "syntax availability for joining; fieldbook/object identity confirmation remains a separate source task"
+}

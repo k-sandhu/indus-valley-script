@@ -1,0 +1,120 @@
+{
+  "created_utc": "2026-10-02T05:46:03.028921+00:00",
+  "protocol": "experiments/2026-10-02-six-hour/context-audit/JOIN-KEY-REFINEMENT.md",
+  "code_sha256": "24ff564239b26df90db590a5eb8d069c854cda89a80091d9eea2ea49bce539f6",
+  "input": {
+    "path": "data/normalized/lipi_observed_faces.jsonl",
+    "sha256": "1220f5591a42abe7c6696ac014aba90e7c49fdce6b0ccba0b85bb45f950c30db"
+  },
+  "harappa_families": 1921,
+  "syntax_category_family_counts": {
+    "figure_locator_without_object_identifier": 3,
+    "other_reported_identifier": 1098,
+    "registration_prefix_without_documented_lot_item_syntax": 643,
+    "hyphenated_year_number_item_syntax": 124,
+    "missing": 49,
+    "registration_plus_lot_item_syntax": 4
+  },
+  "illustrative_examples": {
+    "figure_locator_without_object_identifier": [
+      {
+        "cisi_reference": "-",
+        "literal_identifier": "-Figure 68.02"
+      },
+      {
+        "cisi_reference": "-",
+        "literal_identifier": "-Figure 39.06"
+      },
+      {
+        "cisi_reference": "H-585",
+        "literal_identifier": "-Figure 13.31"
+      }
+    ],
+    "other_reported_identifier": [
+      {
+        "cisi_reference": "H-1438",
+        "literal_identifier": "-751"
+      },
+      {
+        "cisi_reference": "H-1189",
+        "literal_identifier": "-500"
+      },
+      {
+        "cisi_reference": "H-1128",
+        "literal_identifier": "-640"
+      }
+    ],
+    "registration_prefix_without_documented_lot_item_syntax": [
+      {
+        "cisi_reference": "H-1789",
+        "literal_identifier": "H86-5132Figure 36.07"
+      },
+      {
+        "cisi_reference": "H-2399",
+        "literal_identifier": "H97-5131Figure 74.04"
+      },
+      {
+        "cisi_reference": "-",
+        "literal_identifier": "H99-4548Figure 68.07"
+      }
+    ],
+    "hyphenated_year_number_item_syntax": [
+      {
+        "cisi_reference": "-",
+        "literal_identifier": "H96-6952-33Figure 74.03"
+      },
+      {
+        "cisi_reference": "-",
+        "literal_identifier": "H96-7259-18Figure 74.01"
+      },
+      {
+        "cisi_reference": "-",
+        "literal_identifier": "H97-6199-80Figure 74.05"
+      }
+    ],
+    "missing": [
+      {
+        "cisi_reference": "H-741",
+        "literal_identifier": "-"
+      },
+      {
+        "cisi_reference": "H-1146",
+        "literal_identifier": "-"
+      },
+      {
+        "cisi_reference": "-",
+        "literal_identifier": "-"
+      }
+    ],
+    "registration_plus_lot_item_syntax": [
+      {
+        "cisi_reference": "H-2372",
+        "literal_identifier": "H90-3005/3151-501Figure 31.01"
+      },
+      {
+        "cisi_reference": "H-2367",
+        "literal_identifier": "H94-3003/3985-0020Figure 31.10"
+      },
+      {
+        "cisi_reference": "H-2369",
+        "literal_identifier": "H95-3011/4416-72Figure 38.18"
+      }
+    ]
+  },
+  "patterns": {
+    "registration": "\\bH(?:19|20)?\\d{2}-\\d+",
+    "registered_lot_item": "\\bH(?:19|20)?\\d{2}-\\d+(?:/|\\s+)\\d{4}[- ]\\d+",
+    "unregistered_lot_item": "\\bH(?:19|20)?\\d{2}/\\d{4}[- ]\\d+",
+    "hyphenated_year_number_item": "\\bH(?:19|20)?\\d{2}-\\d{4}-\\d+",
+    "figure_only": "^[- ]*Figure\\s"
+  },
+  "figure_only_all_site_counts": {
+    "rows": 4,
+    "families": 4
+  },
+  "checks": {
+    "six_identifier_examples": "passed",
+    "family_accounting": "passed"
+  },
+  "interpretation": "syntax availability for joining; fieldbook/object identity confirmation remains a separate source task"
+}

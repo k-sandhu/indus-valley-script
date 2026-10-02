@@ -1,6 +1,6 @@
 # Numerical, inverse and constraint research directions
 
-Date: 2 October 2026. The completed work below is an exact audit of a published numerical proposal. The experiments that follow are proposed and have not been executed. Read [the registry](../experiments/registry.json) and [methods retrospective](../retrospectives/methods.md) before opening a new dated run.
+Date: 2 October 2026. Completed work includes an exact audit of a published numerical proposal and a controlled physical-membership experiment. Further designs are labelled below. Read [the registry](../experiments/registry.json) and [methods retrospective](../retrospectives/methods.md) before opening a new dated run.
 
 ## Completed conditional audit
 
@@ -20,6 +20,14 @@ Both assumed L ranges 8..13 and 8..18 select 10/8/6. An L≥10 condition leaves 
 The proposal assumes equal quantities across faces, selected place multipliers, addition of specified groups and an external bangle-count range. Source photographs corroborate some physical marks and joins. The inspected Vidale chapter does not establish the inscription-specific M1383 count or identity required for that range. The H904/Vats object join has documentary support; its link to the author's historical ICIT3786 remains provisional. Current Lipi ID 3786 refers to another object. [Source premises](../../research/literature/metrology/numerical_source_premises.json) and [the numerical audit](../../research/methods/NUMERICAL_CONSTRAINT_AUDIT.md) retain these dependencies.
 
 The proposed equations and 10/8/6 values precede this investigation. The completed contribution is their full conditional solution set, the parity check, coefficient sensitivity and source-assumption record. Further arithmetic using the same two equations would reproduce this endpoint.
+
+## Physical membership as an inverse problem
+
+The [completed simulation](../../experiments/2026-10-02-six-hour/physical-information/README.md) supplies six unknown positive quantities and physical parent–child membership. Twelve complete relations identify relative values in all 24 simulated worlds. One separately counted object fixes their scale. When six relations are incomplete and are entered as inequalities, seven worlds retain alternative positive integer values after the count. Exact certificates preserve those alternatives.
+
+A physical membership relation supplies a row of a constraint matrix; a count supplies a scale observation. Preparing separate solver inputs also found a measurement-design defect: identifying an object's badge with its counted quantity changed ownership-control outcomes. The original and corrected endpoints preserve that repair.
+
+The [acquisition branch](../../experiments/2026-10-02-six-hour/physical-acquisition/PROTOCOL.md) extends this design to unrestricted positive values, interval counts and observation cost. Public action descriptors guide its choices while a separate oracle holds their outcomes. The original Louvre Susa objects provide source targets for the relation between contents and exterior marks. Source-linked Indus equalities remain an acquisition task.
 
 ## 1. Resolve the observation table before fitting
 

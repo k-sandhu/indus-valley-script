@@ -1,6 +1,6 @@
 # Human symbols and unfamiliar artifacts
 
-Reviewed 2 October 2026. The experiments below are proposals. They use comparison systems whose function, production or physical organisation can help us frame new Indus tests.
+Reviewed 2 October 2026. The physical-operation branch now has controlled simulation results. The human-participant and comparative designs below remain proposals. They use systems whose function, production or physical organisation can help us frame new Indus tests.
 
 ## Function can shape a symbol system
 
@@ -29,6 +29,8 @@ For each comparison, keep both the source representation and the transformed ana
 ## The alien-artifact experiment
 
 Treat an unfamiliar artifact as if its users and conventions were unavailable. Its material, geometry, operation, repeated parts and inscriptions become the available evidence. This can be tested with an answer key.
+
+The first implemented part is [physical-membership recovery](../../experiments/2026-10-02-six-hour/physical-information/README.md). It withholds six quantities while supplying object membership and one count. Separate saved inputs keep the answer key outside the intended solver input. Complete relations recover relative values, and an independent count fixes scale; incomplete collections retain explicit alternatives. The subsequent [measurement-choice experiment](../../experiments/2026-10-02-six-hour/physical-acquisition/PROTOCOL.md) compares the cost of acquiring relations and interval counts. These are programmatic controls; a participant study would add independent human observers.
 
 The Voyager Golden Record is a useful design example. NASA describes its cover's playback diagrams, hydrogen-transition time reference and instructions for reconstructing images. It provides a physical relationship between the diagram and the recorded signal. [NASA, Golden Record Cover](https://science.nasa.gov/mission/voyager/golden-record-cover/).
 

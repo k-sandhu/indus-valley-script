@@ -4,7 +4,7 @@
 
 ## Abstract
 
-We evaluate local predictive dependencies in Indus transcriptions while accounting for correlated artifacts, repeated texts, annotation granularity and the sampling of restoration tasks. A selected derivative corpus contains 2,107 complete, single-line, right-to-left records of at least three signs, representing 1,596 distinct strings and 1,526 connected artifact/text components. Five-fold component-held-out prediction with training-only model selection yields a local-dependency gain of 0.890 bits per noninitial sign over a position/length/metadata baseline; the conditional component-bootstrap interval is 0.817–0.965. The gain remains 0.848 bits after retaining one representative per whole string while preserving every physical alias. Full-procedure metadata-conditioned permutation references produce no exceedances in 1,000 trials, both for the multi-record population and for a post-pilot uniqueness-conditioned sensitivity. An independently encoded, source-excluded candidate-event test yields 0.725 bits per noninitial event on 74 scored faces, with an interval of 0.551–0.899. In a separate benchmark, exact known-slot restoration improves from 16.99% to 33.81%. Unknown-count internal-gap inference achieves 46.30% after matching the artificial masking law, below a constant-one control at 51.07%. The study contributes measured predictive constraints and a negative count-recovery result for this selected transcription population. Its outcomes concern graphic-code prediction and restoration under specified observation laws.
+We evaluate local predictive dependencies in Indus transcriptions while accounting for correlated artifacts, repeated texts, annotation granularity and the sampling of restoration tasks. A selected derivative corpus contains 2,107 complete, single-line, right-to-left records of at least three signs, representing 1,596 distinct strings and 1,526 connected artifact/text components. Five-fold component-held-out prediction with training-only model selection yields a local-dependency gain of 0.890 bits per noninitial sign over a position/length/metadata baseline; the conditional component-bootstrap interval is 0.817–0.965. The gain remains 0.848 bits after retaining one representative per whole string while preserving every physical alias. Full-procedure metadata-conditioned permutation references produce no exceedances in 1,000 trials, both for the multi-record population and for a post-pilot uniqueness-conditioned sensitivity. An independently encoded, source-excluded candidate-event test yields 0.725 bits per noninitial event on 74 scored faces, with an interval of 0.551–0.899. In a separate benchmark, exact known-slot restoration reaches 16.99% with position/length information, 33.81% after adding neighbours and 34.59% with a conventional first-order Markov model. The neighbour model minus Markov difference is −0.77 percentage points, with a component-bootstrap interval of −1.60 to +0.05. Unknown-count internal-gap inference achieves 46.30% after matching the artificial masking law, below a constant-one control at 51.07%. The study contributes measured predictive constraints and a negative count-recovery result for this selected transcription population. Its outcomes concern graphic-code prediction and restoration under specified observation laws.
 
 ## 1. Introduction
 
@@ -20,7 +20,7 @@ Our evaluation combines observational filters, transitive component grouping, tr
 
 ## 2. Related work
 
-Rao et al. (2009) fitted a Markov model, examined functional interchangeability and predicted missing signs using a corpus with identical inscriptions removed. The present study extends this line of work with transitive artifact/string grouping, nested selection and explicit observation laws. Comparing their restoration accuracy with ours requires a common corpus, coding inventory, masking task and split rule. That reproduction is a submission gap [R1].
+Rao et al. (2009) fitted a Markov model, examined functional interchangeability and predicted missing signs using a corpus with identical inscriptions removed. The present study extends this line of work with transitive artifact/string grouping, nested selection and explicit observation laws. An October 2 comparison adds a conventional first-order model to our exact preserved masks. It shares the conceptual model family while using the present fine-code inventory and unigram-prior smoothing. Rao et al.'s modified Kneser–Ney implementation remains a separate reproduction target [R1].
 
 Historical distributional studies describe initial and terminal classes, recurrent clusters and modified-fish interchangeability. Yadav's 2019 overview reports both M267 and M391 before M99 as predominantly initial pairs. Mahadevan's 1982 and 1986 studies discuss similar terminal environments and replacement among modified fish. Khanna and Merriam (2025) use shared contexts and substitution-resistant pairs. Our frame searches recover these broad classes and evaluate their behavior under different weighting and transfer rules [R2–R4].
 
@@ -88,6 +88,8 @@ This benchmark uses all 1,596 distinct strings with aliases retained, partitione
 
 We report slot-weighted exact top-one and top-k inclusion, plus a conditional component-bootstrap interval for the paired accuracy difference. Equal-text weighting and frequency-stratified summaries reveal which populations drive the aggregate result.
 
+A subsequently specified [conventional Markov comparison](../../experiments/2026-10-02-six-hour/markov-baseline/PROTOCOL.md) recreates every saved query and outer fold before fitting. It learns one position-independent transition matrix, an initial distribution and an end-of-text state. Internal masks use both neighboring transition factors; boundary masks use the learned start or end factor. Three inner grouped folds select strength from 20, 100, 500 and 2,000, with 20 selected in every outer fold. The comparison reuses unchanged independent and local predictions. Ten thousand paired component-bootstrap draws summarize the new contrasts. A second count implementation verifies every candidate ranking and target loss.
+
 ### 4.5 Unknown-count gaps
 
 Each intact unique string receives one internal artificial gap. The erased count k is drawn uniformly from 1,…,min(3,L−2); its start is drawn uniformly among the valid internal starts. A dynamic program marginalizes the missing fine states for candidate counts 1–3, with fixed surviving sides. Models use a training-derived full-length prior and frozen smoothing 20. We compare them with a constant-one count control.
@@ -122,15 +124,19 @@ The positive result supports transfer across the tested encodings. Shared catalo
 
 ### 5.3 Known-slot prediction improves, with important frequency and calibration limits
 
-| Metric | Independent restorer | Local restorer |
-|---|---:|---:|
-| Exact top-one | 16.99% | 33.81% |
-| Target included in top five | 35.50% | 55.34% |
-| Target included in top ten | 45.57% | 62.70% |
+| Metric | Independent restorer | Local restorer | Conventional Markov |
+|---|---:|---:|---:|
+| Exact top-one | 16.99% | 33.81% | 34.59% |
+| Target included in top five | 35.50% | 55.34% | 58.46% |
+| Target included in top ten | 45.57% | 62.70% | 65.43% |
 
 The paired top-one improvement is 16.82 percentage points, with a conditional component-bootstrap interval of 15.64–17.98 points. Equal-text means are approximately 17.4% and 32.6%. Exact prediction is concentrated among frequent signs: all 205 singleton types fail fine-code recovery when held out, and macro accuracy across types is much lower than slot-weighted accuracy. Compatible-class merging raises local exact accuracy to 35.90%, showing the effect of target-alphabet granularity.
 
+The conventional comparator's 34.59% top-one score is 17.59 points above the independent restorer (interval 16.38–18.83). Local-minus-Markov is −0.774 points (−1.596 to +0.050), while the top-five difference is −3.121 points (−3.859 to −2.376). Equal-text scores are 32.60% for local and 33.35% for Markov. Equal-code top-one slightly favors local, 5.13% versus 4.80%; both models have low rare-code accuracy. The [new endpoint](../../experiments/2026-10-02-six-hour/markov-baseline/main/results.json) and [independent verification](../../experiments/2026-10-02-six-hour/markov-baseline/verification.json) preserve the common-query checks and paired outcomes.
+
 Model mass is overconfident. In the 0.4–0.6 confidence bin, mean local mass is 0.492 and exact correctness is 0.384; in the 0.8–1.0 bin, they are 0.896 and 0.838. The benchmark and complete calibration bins are in [benchmark.json](../../results/restoration/benchmark.json).
+
+The Markov comparator's five-bin calibration error is 2.56%, compared with 8.05% for the local restorer. Its bucket log loss is 5.119 bits per slot, compared with 5.748. Local-minus-Markov loss is 0.628 bits (0.579–0.679). These measurements favor retaining the conventional model in future comparisons and investigating how boundary terms, metadata multiplication and smoothing affect prediction.
 
 Cross-site known-slot sensitivities exclude entire components touching the raw held-out site. Improvements are 14.94 points at Mohenjo-daro on 866 unique texts, 15.48 at Harappa on 496, and 17.93 at Lothal on 51. These are separate transfer populations with different vocabulary coverage; small-site precision is limited. The [cross-site output](../../results/restoration_crosssite/crosssite.json) records intervals and removals. Structural site-transfer results must use the separate corrected [transitive transfer file](../../research/methods/results/nested_primary/transitive_site_transfer.json), not older direct-overlap fields.
 
@@ -156,6 +162,8 @@ The local predictive constraint survives unique-string weighting and the tested 
 
 Restoration separates two inference problems. A known slot allows local context to rank glyphs; an unknown count also requires a length model and an observation mechanism. The measured difference suggests that a count-recovery extension needs additional evidence or a different predictor. Historical specimens can supply gap width, surviving traces, line layout and spacing, with reference uncertainty recorded in a new benchmark.
 
+The new conventional comparison also changes the model-development target. Both sequential predictors substantially exceed the independent restorer, while the conventional model has higher top-five coverage and lower bucket loss. Its initial/end terms and position-independent transitions offer a simpler reference for testing the added length, position and metadata factors. A later ablation protocol will examine those terms on the same masks.
+
 Adjacent project experiments give mixed results. The independent-text seal/tablet contrast is positive; the Bull1 contrast is negative. Matched known-period microcontext probabilities range from 0.0560 to 0.0864 across weighting/merging variants. Aggregate substitution transfer changes with repeated-text weighting and class treatment. The [retrospective](../../knowledge/retrospectives/methods.md) records these paths and their failed or superseded variants.
 
 A separate audit enumerates four positive integer solutions to Fuls's proposed equations. Selecting 10/8/6 requires the additional range restriction. The [numerical directions](../../knowledge/directions/numerical-methods.md) identify the required source joins and propose held-out externally measured quantity tests.
@@ -166,7 +174,7 @@ The main source is a derivative transcription with disputed accompanying interpr
 
 The likelihood alphabet pools unseen codes into `UNKNOWN`; candidate events and exact glyph restoration have different semantics. Candidate-event exclusions favor cases that have at least some training support. Neither bootstrap interval includes every source of curation and model uncertainty. The conditional references assume exchangeability within declared columns and do not represent every historical mechanism.
 
-Several safeguards and sensitivity designs were added after pilots or errors were identified and retain their post-pilot status. A common-protocol reproduction remains necessary for performance comparisons with earlier publications or newer models.
+Several safeguards and sensitivity designs were added after pilots or errors were identified and retain their post-pilot status. The conventional comparator was specified after the original restoration outcomes and fitted under its own saved protocol. A faithful common-protocol reproduction of earlier smoothing methods remains necessary for comparison with those published implementations.
 
 Connecting a predictive constraint to a sound or meaning requires an externally fixed lexical or numerical anchor. The present likelihoods remain invariant under relabelling of freely adapted semantic models, leaving those assignments unidentified.
 

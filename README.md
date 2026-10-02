@@ -14,6 +14,7 @@ The repository is private. Its local equivalent is this project folder. No CI/CD
 | What we tried and how problems were resolved | [Retrospectives](knowledge/retrospectives/README.md) |
 | New research directions and priorities | [Research roadmap](knowledge/directions/research-roadmap.md) |
 | Cryptography framing and recent model results | [Cryptography memo](knowledge/directions/cryptography.md) |
+| Current six-hour investigation | [Session record](experiments/2026-10-02-six-hour/SESSION_LOG.md) |
 | Source identity, rights and catalogue caveats | [Sources](knowledge/provenance/SOURCES.md), [redistribution](knowledge/provenance/REDISTRIBUTION.md) |
 | Original completed report | [18-page report](output/pdf/indus_script_research_report.pdf) |
 | Inspect the 687-cell chart | [Local interactive atlas](output/chart_atlas/index.html) |
@@ -24,12 +25,12 @@ The repository is private. Its local equivalent is this project folder. No CI/CD
 The first investigation began October 1, 2026 and ran for four hours and two minutes. Its code and evidence paths are preserved under `src/`, `research/`, `results/` and `output/`. The original README and import manifest are retained in [the archive](archive/2026-10-01-investigation/README.md).
 
 - In the unique-text evaluation, local sequential dependencies improved predictive log score by approximately **0.848 bits per noninitial sign** under the declared filters and controls.
-- Artificial one-known-slot restoration reached **33.8% exact top-one**, compared with **17.0%** for the position/metadata baseline, over **8,009 masked slots**. This is a masked-data benchmark, not an authenticated restoration of eroded text.
-- A different annotation of shared archaeological sources retained a positive candidate-event score gain after source/text-overlap exclusions. It is not an independent excavation corpus.
+- Artificial one-known-slot restoration reached **33.8% exact top-one**, compared with **17.0%** for the position/metadata baseline, over **8,009 masked slots**. The new conventional Markov comparator reaches **34.6%** on those same queries.
+- A different annotation of shared archaeological sources retained a positive candidate-event score gain after source/text-overlap exclusions.
 - Unknown gap-count prediction **failed** to beat the constant-one control: **46.3% versus 51.1%**.
 - A published numerical proposal has four positive-integer solutions before an additional archaeological range restriction. The selected 10/8/6 values remain conditional on the proposal's unverified premises.
 
-These are corpus-specific measurements and constraints. Markov structure, prediction, duplication controls and administrative alternatives have substantial prior literature; first-method and state-of-the-art claims are not established. See the manuscript's claim-evidence map and [priority audit](research/literature/evidence_and_novelty_matrix.md).
+These measurements describe graphic-code prediction in selected transcriptions, including artificial masking and alternate annotation of shared sources. The manuscript's claim-evidence map defines each population and outcome; the [priority audit](research/literature/evidence_and_novelty_matrix.md) places the methods alongside earlier Markov, duplication-control and administrative-system research.
 
 ## Repository organization
 

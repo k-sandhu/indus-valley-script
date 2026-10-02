@@ -22,13 +22,15 @@ The project distinguishes **observed graphics**, **statistical structure**, **po
 
 | Direction | Memo | Status |
 |---|---|---|
-| Cryptography, independent anchors, known-system controls | [Cryptography](directions/cryptography.md) | Exact symmetry illustration and completed short-record mapping grid; stress tests underway |
-| Constraint/inverse/numerical methods | [Numerical methods](directions/numerical-methods.md) | Existing conditional audit distinguished from proposed experiments |
-| Pictorial meaning, physical function, cultural comparisons | [Archaeology and iconography](directions/archaeology-and-iconography.md) | Source-grounded hypotheses and controls |
-| Human symbol evolution, other fields, alien-artifact approach | [Cross-disciplinary and alien](directions/cross-disciplinary-and-alien.md) | Analogies and test designs, not historical claims |
-| Public/community suggestions | [Community proposals](directions/community-proposals.md) | Attributed, unvalidated proposals |
+| Cryptography, independent anchors, known-system controls | [Cryptography](directions/cryptography.md) | Completed symmetry, mapping, reference-uncertainty and acquisition experiments |
+| Constraint/inverse/numerical methods | [Numerical methods](directions/numerical-methods.md) | Exact conditional audit and physical-membership simulation; calibration and measurement-choice work active |
+| Pictorial meaning, physical function, cultural comparisons | [Archaeology and iconography](directions/archaeology-and-iconography.md) | Harappa object frame and independently checked Lothal physical-use frame |
+| Human symbol evolution, other fields, alien-artifact approach | [Cross-disciplinary and alien](directions/cross-disciplinary-and-alien.md) | Physical-operation simulation completed; human studies and other comparisons proposed |
+| Public/community suggestions | [Community proposals](directions/community-proposals.md) | Tell Jokha lead traced to a scholarly figure; original object report still sought |
 | Feasible next investigations | [Ranked roadmap](directions/research-roadmap.md) | Required inputs, falsification and stopping conditions |
 | Better archaeological observations | [Context data plan](directions/context-data-plan.md) | Proposed data schema and conservative comparisons |
+
+The [six-hour session record](../experiments/2026-10-02-six-hour/SESSION_LOG.md) links the new Markov comparator and mechanism study, finite-reference mapping grid, physical-membership simulation and context-source audits. It records completed branches separately from the experiments still running.
 
 ## Sources and reuse
 

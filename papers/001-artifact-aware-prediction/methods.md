@@ -64,6 +64,12 @@ The final sum gives the specified whole-event probability. Intermediate normaliz
 
 Report slot-weighted top-one and top-k inclusion, paired component-bootstrap accuracy differences, equal-text means and frequency strata. Calibration compares maximum posterior mass with observed exact correctness. [benchmark.json](../../results/restoration/benchmark.json) contains complete summaries; cross-site tests remove whole components using the raw site populations.
 
+### October 2 conventional comparator
+
+The [new protocol](../../experiments/2026-10-02-six-hour/markov-baseline/PROTOCOL.md) specifies a position-independent first-order model with learned start probabilities and an end state E. Its state vocabulary matches each existing outer training fold. For internal masks between a and b, score candidate c by `A(a,c)A(c,b)`; use `π(c)A(c,b)` initially and `A(a,c)A(c,E)` finally. Normalize over candidate glyph states, excluding E. Outgoing rows shrink toward a training destination unigram; start counts shrink toward the training glyph unigram.
+
+The 20261006 grouping/fold construction reproduces all 8,009 saved identities, targets, groups and folds. Strength is selected from 20/100/500/2000 by three grouped inner folds maximizing exact top-one; ties favor greater strength. The PM/PMB predictions are reused. Ten thousand paired component draws with seed 142 produce conditional contrast intervals. Confidence bins are fixed at width .2. Macro-code weights use inverse true-code frequency in the complete benchmark and remain fixed during component resampling. [Results](../../experiments/2026-10-02-six-hour/markov-baseline/main/results.json) record these choices, and an [independent counter verification](../../experiments/2026-10-02-six-hour/markov-baseline/verification.json) checks every ranking and target loss. The smoothing rule differs from Rao et al.'s modified Kneser–Ney rule.
+
 ## Unknown gap counts and observation law
 
 [gap_restoration.py](../../src/gap_restoration.py) draws one internal gap per intact unique string: `k∼Uniform{1,…,min(3,L−2)}`, then a valid internal start uniformly. The predictor observes both surviving sides and compares candidate counts 1–3. It sums hidden fine-state paths using a dynamic program, a training-derived full-length prior and frozen α=20.

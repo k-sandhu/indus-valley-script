@@ -21,7 +21,7 @@ def main():
         if known_tokens.search(payload):
             suspect.append(name)
         sizes.append((len(payload),name))
-    forbidden = [name for name in selected if name.startswith("data/") and name != "data/README.md" or name.startswith(".github/workflows/") or name.startswith("research/literature/sources/") or name.startswith("research/literature/primary/") or name.startswith("research/literature/nonlinguistic_controls/") and name.endswith(".jsonl")]
+    forbidden = [name for name in selected if name.startswith("data/") and name != "data/README.md" or name.startswith(".github/workflows/") or name.startswith("research/literature/sources/") or name.startswith("research/literature/primary/") or name.startswith("research/literature/nonlinguistic_controls/") and name.endswith(".jsonl") or name.startswith("experiments/2026-10-02-six-hour/markov-") and name.endswith(".jsonl")]
     staged = subprocess.run(["git","ls-files","--stage"],cwd=ROOT,capture_output=True,text=True,check=True).stdout.splitlines()
     byte_mismatches = []
     for entry in staged:

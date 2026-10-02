@@ -1,0 +1,35 @@
+# Quantity constraints and acquisition scores
+
+The experiment represents six label quantities by a positive rational vector `v`. Its shared assumptions are that a label has one quantity throughout a world, a complete whole equals the sum of its recorded parts, an incomplete whole contains at least its surviving recorded parts, and an independent measurement concerns the same quantity on the named object. The ownership condition changes the first assumption by assigning badges independently of physical quantities. The undercovered-count condition changes measurement accuracy. Other conditions preserve those assumptions while varying available evidence. No quantity-value bag, finite assignment list or quantity upper bound is supplied to inference.
+
+## The set inferred after each observation
+
+A complete relation contributes one integer-coefficient equation. For a parent with label 4 and children with labels 1, 1 and 3, the row is `(0, −2, 0, −1, 1, 0)` with right-hand side zero. A surviving incomplete group contributes the corresponding inequality `parent − sum(surviving children) ≥ 0`. Counts contribute a coordinate equality or two inequalities for the reported interval. All coefficients and reported endpoints are retained exactly.
+
+Before an absolute measurement, `sum(v) = 1` selects one representative of each relative ray. The selector keeps this normalization outside the acquired-equality rank. After a count, the normalization is removed and measured units define scale. This distinction was repaired after the first pilot; the [repair record](PILOT_REPAIR_01.md) and original endpoint remain available.
+
+Strict positive feasibility is tested by maximizing a common margin `δ`, subject to every `v_j ≥ δ` and `0 ≤ δ ≤ 1`, together with the observed constraints. A positive optimum supplies a feasible positive vector. An optimum of zero certifies that only boundary vectors survive. An infeasible relaxation gets an exact phase-one certificate.
+
+Coordinate lower and upper bounds are computed over the nonnegative closed constraint set. Once a strictly positive feasible point exists, these are also the infima and suprema for the strictly positive set: a convex combination of that point with any feasible boundary point approaches the boundary while retaining positive coordinates. Finite equal lower and upper bounds on every coordinate certify one vector. Different bounds preserve ambiguity, including cases where an endpoint itself lies on the boundary.
+
+Before a count, one vector under the normalization gives unique ratios and unfixed scale. After a count, equal coordinate bounds give absolute uniqueness. Unique ratios can also survive with a scale interval. Rank five in the homogeneous membership equations certifies a single positive ray. Where that shortcut does not apply, the code tests the functionals `p_0 v_j − p_j v_0` for `j = 1,...,5`, using a saved positive point `p`. Exact zero lower and upper bounds for all five functionals certify one ray. A nonzero range or an unbounded direction preserves relative ambiguity.
+
+## Arithmetic certificates
+
+SciPy's dual-simplex solver proposes extrema. The implementation reconstructs primal and dual entries as fractions, first with denominator limit one million and then one billion. It accepts an optimum only after exact verification of every equality, inequality, nonnegative variable and dual sign, plus dual stationarity and equal primal/dual objectives.
+
+For a minimization with `A v ≤ b`, `E v = d` and `v ≥ 0`, the certificate stores multipliers `λ ≤ 0`, unrestricted `μ` and residual `s ≥ 0` such that `c = Aᵀλ + Eᵀμ + s`. Every feasible vector has objective at least `bᵀλ + dᵀμ`. A feasible vector attaining that value proves the saved optimum. The numerical interface's marginal convention is described in the [SciPy documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linprog.html); the duality result is covered in [Boyd and Vandenberghe's textbook](https://web.stanford.edu/~boyd/cvxbook/index.html).
+
+An unbounded range includes a nonnegative recession direction that preserves homogeneous equalities, satisfies the homogeneous inequalities and decreases the requested objective. An infeasible linear system includes the optimum of a phase-one problem that relaxes each equality and inequality by a common nonnegative violation. A strictly positive phase-one optimum proves infeasibility. The separate checkers reconstruct the observation constraints and bind each saved proof to its actual objective. Planning queries undergo the same exact verification during execution; their certificate stream is represented by a rolling digest, while state proofs are stored in full.
+
+## How the acquisition rule sees an unopened assembly
+
+The public descriptor gives the parent label, any already visible child labels, completeness indicator, cost and availability. The planner enumerates two-/three-child multisets for a complete assembly, or one-/two-child surviving multisets for a fragmentary assembly. It excludes complete positive relations in which the parent appears among its children. The retained outcome menu comes from the declared physical group-size bound and visible fragments.
+
+For each possible outcome, the planner tests compatibility with the current positive set. A complete outcome gets score one if its row increases equality rank, otherwise zero. A fragmentary outcome gets score one-quarter if its inequality cuts the present set, otherwise zero. The mean over compatible outcomes is divided by cost. This uniform menu distribution is a stated planning prior; real collection records would need their own observed group-size bounds and costs.
+
+An exact count is scored by its prospective rank increase among acquired equalities. The first interval count gets scale information, with relative precision used once ratios are known. Later interval counts use the original width rule stated in the [protocol](PROTOCOL.md). The separate [precision refinement](PRECISION_REFINEMENT_PROTOCOL.md) changes that last score after observing its failure on pilot intervals.
+
+Once ratios are identified, another compatible homogeneous relation has zero quantity-identification score. The planner can evaluate its possible rows by exact substitution into the relative vector. It spends remaining budget according to the cost fallback when every information score vanishes. Each policy continues to the budget boundary, so the record separates first identification cost from total paid cost. Continued acquisition can also reveal a contradiction after an apparently unique answer.
+
+Every action is recorded before its oracle response is opened. The selector's function receives public descriptors, acquired observations, current constraints and policy randomness. Evaluation then checks the concealed answer, ten withheld physical relations and two independently counted withheld objects. The latter test scale, which homogeneous membership relations preserve under rescaling. A separate concealed-data replacement test and recorded public-input hashes check the acquisition boundary.

@@ -77,6 +77,25 @@ add('results/restoration/benchmark.json', {
     'models.local.confidence_audit.4.exact_accuracy': .8378378378,
 })
 add('results/restoration_collapsed/benchmark.json', {'models.local.top1': .3589743590})
+add('experiments/2026-10-02-six-hour/markov-baseline/main/results.json', {
+    'correspondence.verified_queries_per_model': 8009,
+    'correspondence.texts': 1596, 'correspondence.components': 1526,
+    'models.Markov.top1': .3458609065,
+    'models.Markov.top5': .5845923336,
+    'models.Markov.top10': .6542639531,
+    'models.Markov.expected_calibration_error': .0255636116,
+    'models.PMB.expected_calibration_error': .0804843091,
+    'models.Markov.bucket_cross_entropy_bits': 5.1194348563,
+    'models.PMB.bucket_cross_entropy_bits': 5.7477314692,
+    'paired.Markov_minus_PM.metrics.top1_slot.difference': .1759270820,
+    'paired.Markov_minus_PM.metrics.top1_slot.cluster_bootstrap_95_ci': [.1638323867,.1883286086],
+    'paired.PMB_minus_Markov.metrics.top1_slot.difference': -.0077412910,
+    'paired.PMB_minus_Markov.metrics.top1_slot.cluster_bootstrap_95_ci': [-.0159608573,.0004990098],
+    'paired.PMB_minus_Markov.metrics.top5_slot.difference': -.0312148833,
+    'paired.PMB_minus_Markov.metrics.top5_slot.cluster_bootstrap_95_ci': [-.0385927177,-.0237616294],
+    'paired.PMB_minus_Markov.metrics.bucket_loss_bits_slot.difference': .6282966129,
+    'paired.PMB_minus_Markov.metrics.bucket_loss_bits_slot.cluster_bootstrap_95_ci': [.5792676247,.6785458023],
+})
 add('results/gap_restoration/gap_benchmark.json', {
     'models.baseline.exact_count_accuracy': .4191729323,
     'models.local.exact_count_accuracy': .4304511278,

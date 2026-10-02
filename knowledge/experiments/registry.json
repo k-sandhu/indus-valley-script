@@ -1336,6 +1336,216 @@
         "experiments/2026-10-02-six-hour/anchor-benchmark/FINDINGS.md"
       ],
       "retry_when": "A separately declared stress test adds changed references, wrong anchors or generator-aware scoring."
+    },
+    {
+      "id": "MARKOV-01",
+      "theme": "conventional restoration comparator",
+      "status": "verified-computation-on-preserved-queries",
+      "question": "How does a conventional first-order Markov model compare on the exact earlier known-slot queries?",
+      "outcome": "Markov top-one 34.5861%, PMB 33.8120%, PM 16.9934% on the same 8,009 masks. PMB minus Markov top-one interval includes zero; Markov top-five and bucket log loss improve. This is the conceptual Markov family with unigram-prior smoothing, distinct from the published modified Kneser\u2013Ney estimator.",
+      "challenge": "A stronger conventional comparator had to retain the existing query identities, grouping, folds and training-only selection.",
+      "remedy": "Exact correspondence checks, nested smoothing selection, paired component intervals and independent recalculation of every query prediction.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/markov-baseline/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/markov-baseline/README.md",
+        "experiments/2026-10-02-six-hour/markov-baseline/main/results.json",
+        "experiments/2026-10-02-six-hour/markov-baseline/verification.json",
+        "experiments/2026-10-02-six-hour/markov-baseline/RETROSPECTIVE.md",
+        "src/six_hour/markov_baseline.py"
+      ],
+      "retry_when": "A declared new estimator, independently tuned start distribution or changed observation population supplies a distinct comparison. Reuse saved masks and predictions."
+    },
+    {
+      "id": "MARKOV-02",
+      "theme": "boundary and order mechanisms",
+      "status": "verified-post-outcome-mechanism-study",
+      "question": "Which learned boundaries and interior transitions support restoration?",
+      "outcome": "Removing only the end factor lowers final-slot top-one from 53.95% to 48.25%. Interior-only training shuffles average 24.52% overall versus 34.59% full Markov; all-slot shuffles average 14.88%. Unigram start replacement lowers initial top-one while improving initial bucket loss. Rare-target calibration remains poor despite low overall calibration error.",
+      "challenge": "Deleting an inference factor and refitting without end events have different effects. Training transformations can incidentally recreate held-out texts.",
+      "remedy": "Separate interventions, fixed original groups and smoothing, twenty saved training orders per control, logged accidental text coincidences and independent prediction checks.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/markov-ablation/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/markov-ablation/README.md",
+        "experiments/2026-10-02-six-hour/markov-ablation/main/results.json",
+        "experiments/2026-10-02-six-hour/markov-ablation/verification.json",
+        "experiments/2026-10-02-six-hour/markov-ablation/RETROSPECTIVE.md",
+        "src/six_hour/markov_ablation.py"
+      ],
+      "retry_when": "A training-only start-shrinkage or historical transition estimator changes the comparison; retain all existing mechanism endpoints."
+    },
+    {
+      "id": "CONTEXT-01",
+      "theme": "archaeological metadata and source-defined populations",
+      "status": "verified-availability-and-source-cohort-audit",
+      "question": "Which physical-use and chronological comparisons can the preserved corpus support?",
+      "outcome": "Informative depth appears in 2,810/5,680 rows; an earlier rule counted 2,870 placeholder strings as present. Metadata repeats across object faces. Three Harappa physical-use groups contain 69 source objects, 60 joined objects and only two objects in the main >=3-sign population. All 66 faces of 22 copied tablets are complete two-sign observations.",
+      "challenge": "Placeholders, duplicated object metadata, site-dependent chronological labels and ambiguous identifier punctuation change apparent coverage.",
+      "remedy": "Row/family counts, explicit placeholder and interval categories, full source introduction acquisition, separately frozen cohort/identifier refinements and source-coordinate checks.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/context-audit/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/context-audit/README.md",
+        "experiments/2026-10-02-six-hour/context-audit/main/results.json",
+        "experiments/2026-10-02-six-hour/context-audit/source-cohorts/results.json",
+        "experiments/2026-10-02-six-hour/context-audit/join-keys-refined/results.json",
+        "experiments/2026-10-02-six-hour/context-audit/verification.json",
+        "src/six_hour/metadata_audit.py"
+      ],
+      "retry_when": "Object plates/basic-data tables resolve identifiers or new independently dated/attached-object observations support a defined comparison."
+    },
+    {
+      "id": "CRYPTO-03",
+      "theme": "reference uncertainty and erroneous identities",
+      "status": "verified-declared-synthetic-grid",
+      "question": "Can integrated reference uncertainty and further-record prediction diagnose confident wrong maps?",
+      "outcome": "The 2,592-trial grid spans 24 new systems and 216 conditions. Integrated reference uncertainty removes confident wrong cases in the unchanged administrative conditions but leaves failures after a process change. Erroneous supplied identities usually worsen held-out score, with saved exceptions under the constrained model.",
+      "challenge": "Finite reference parameters, a mismatched stationary model and a wrong supplied identity contribute different failures. Archived source-path imports initially sought the helper under the wrong directory.",
+      "remedy": "Dirichlet-integrated ordered-sequence scores, exact mapping enumeration, paired held-out populations, separate identity conditions, frozen-byte execution with original path context and independent scalar/sequential scores for all 216 conditions.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/reference-uncertainty/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/reference-uncertainty/FINDINGS.md",
+        "experiments/2026-10-02-six-hour/reference-uncertainty/main/results.json",
+        "experiments/2026-10-02-six-hour/reference-uncertainty/review/checks.json",
+        "experiments/2026-10-02-six-hour/reference-uncertainty/RETROSPECTIVE.md",
+        "src/six_hour/reference_uncertainty.py",
+        "src/six_hour/review_reference_uncertainty.py"
+      ],
+      "retry_when": "A new observation-selection, variable-inventory, segmentation or physically grounded identity model changes the supplied benchmark assumptions."
+    },
+    {
+      "id": "PHYS-01",
+      "theme": "physical relations and numerical identifiability",
+      "status": "synthetic-verified-with-preserved-correction",
+      "question": "Which physical membership and count observations identify unfamiliar quantity labels?",
+      "outcome": "Twelve complete assemblies identify six relative values in 24/24 simulated collections; one physical count fixes absolute values. Scrambled membership, incomplete groups treated as complete and independent ownership labels reject positive quantities in 24/24 at the full prefix. Correctly recorded incompleteness preserves the answer but leaves seven collections with compatible alternative integer values, even after one count; a supplied value bag masks this ambiguity.",
+      "challenge": "Physical function and missingness must be observed separately from labels. Preparing blind inputs exposed an ownership-control count indexed by badge rather than by the counted object.",
+      "remedy": "Exact rational ranks, exhaustive finite-prior maps, preserved failed/ambiguous cases, withheld physical relations, object-level count traces and a separately recorded corrected run. Independent direct enumeration and prime-field rank reviews pass all 840 records.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/physical-information/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/physical-information/README.md",
+        "experiments/2026-10-02-six-hour/physical-information/main-corrected-anchor/results.json",
+        "experiments/2026-10-02-six-hour/physical-information/corrected-review.json",
+        "experiments/2026-10-02-six-hour/physical-information/integer-ambiguity-certificates.json",
+        "experiments/2026-10-02-six-hour/physical-information/ANCHOR_CORRECTION.md",
+        "experiments/2026-10-02-six-hour/physical-information/ARCHAEOLOGICAL_TARGET.md",
+        "experiments/2026-10-02-six-hour/physical-information/RETROSPECTIVE.md",
+        "src/six_hour/physical_information.py"
+      ],
+      "retry_when": "An accession-linked inside/outside collection, measured quantity anchor, uncertain-label observation model or separately specified multi-commodity hypothesis changes the test. Reuse existing blind inputs for the current noiseless design."
+    },
+    {
+      "id": "CRYPTO-04",
+      "theme": "active identity measurement",
+      "status": "verified-declared-synthetic-grid",
+      "question": "Can conditional mapping uncertainty choose useful independent identities to measure under process mismatch?",
+      "outcome": "Across 48 new systems, entropy selection reduces mean measurements to exact recovery. In changed administrative systems, it also increases wrong decisions from a 95%-mass stopping diagnostic: at 35% change, 2.500 versus 3.552 measurements but 25/96 versus 17/96 stopping errors against random selection. All 576 conditions and 15,552 prefix records are retained.",
+      "challenge": "Measurement efficiency and a calibrated stopping decision are distinct targets. Two pilots failed on NumPy Boolean serialization. Fixed-score restriction makes first-correct recovery monotone, rendering one planned diagnostic redundant.",
+      "remedy": "Separate query/response oracle interfaces, exhaustive compatible bijections, saved complete histories, paired system-level comparisons, startup serialization checks and independent reindexed likelihood/policy replay.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/active-identities/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/active-identities/FINDINGS.md",
+        "experiments/2026-10-02-six-hour/active-identities/main/results.json",
+        "experiments/2026-10-02-six-hour/active-identities/review/checks.json",
+        "experiments/2026-10-02-six-hour/active-identities/review/paired-system-comparisons.json",
+        "experiments/2026-10-02-six-hour/active-identities/RETROSPECTIVE.md",
+        "src/six_hour/active_identities.py",
+        "src/six_hour/review_active_identities.py"
+      ],
+      "retry_when": "A physically specified measurement likelihood/cost, generative-model disagreement, verification design or separately declared stopping-calibration procedure changes the acquisition problem."
+    },
+    {
+      "id": "ARCH-01",
+      "theme": "Archaeological context and physical observations",
+      "status": "completed-source-audit",
+      "question": "Can original Harappa publications restore object-level contexts and physical observations for short inscriptions excluded from the principal prediction population?",
+      "outcome": "The 81-target frame joins 72 objects. Original figures identify 24 targets, including all 22 copied tablets with excavation-unit/item keys and 66 displayed faces. Nineteen readable lower-face pairs occupy all eight declared arrangement classes. Two rectangular seals and four Beas vessel fragments provide comparison observations. All 97 integrity, accounting and frozen-replay checks pass.",
+      "challenge": "Full CISI3.1 plates were unacquired; small renders obscured incisions; caption specimen order differs from catalogue order; concatenated derivative figure labels broke the first registration parser.",
+      "remedy": "Followed original HARP author publications, joined complete registrations, preserved first-pass and native-raster reinspection separately, and retained missing/unreadable objects. The source-access and failure logs record the unsuccessful routes.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/harappa-object-frame/README.md",
+        "experiments/2026-10-02-six-hour/harappa-object-frame/annotated/results.json",
+        "experiments/2026-10-02-six-hour/harappa-object-frame/display-summary/results.json",
+        "experiments/2026-10-02-six-hour/harappa-object-frame/verification.json"
+      ],
+      "retry_when": "Acquire identified adjoining-face photographs or 3D records, or previously unavailable source plates; freeze physical face order and incision coding before comparing published production groups."
+    },
+    {
+      "id": "ARCH-02",
+      "theme": "Archaeological physical-use frame",
+      "status": "completed-source-and-coverage-audit",
+      "question": "How do the published Lothal sealing objects, physical traces and recurrent stamps enter the preserved inscription population?",
+      "outcome": "Independent readings agree on 465 table cells for 93 objects. The table gives 133 impressions and 62 single-impression objects; the prose gives 130 and 63, with different context totals. The corpus joins 68 objects and 86 faces; 29 eligible objects form nine strings, with 21 objects in the two largest groups. One group spans seven source physical categories; a ten-object elephant group uses wooden boxes. All 14 independent review checks pass.",
+      "challenge": "String-valued identifiers were first iterated as characters; an independent defaultdict count included empty joins. Source totals differ, contextW1 is stamp-derived, and physical categories mix contact texture, support form and closure.",
+      "remedy": "Preserved both failed endpoints; repaired identifier schema and nonempty-object counts; separately recorded source assertions and the corrected prose coordinate. The trace schema separates observation dimensions and context basis.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/lothal-physical-use/README.md",
+        "experiments/2026-10-02-six-hour/lothal-physical-use/join-refined/results.json",
+        "experiments/2026-10-02-six-hour/lothal-physical-use/graphic-coverage/results.json",
+        "experiments/2026-10-02-six-hour/lothal-physical-use/independent-review/main-refined/verification.json"
+      ],
+      "retry_when": "Acquire matched views for G01/G02, missing L171/L172 faces, or independent records resolving source counts; preregister physical dimensions and whole-stamp holdouts before a prediction study."
+    },
+    {
+      "id": "CRYPTO-05",
+      "theme": "Reserved prediction and mapping verification",
+      "status": "completed-synthetic-grid",
+      "question": "Can an additional identity observation detect a wrong mapping after conditional model confidence has crossed 95%?",
+      "outcome": "48 new systems yield 576 conditions and 4,032 audit records. Under 70% administrative change, a two-identity audit chosen by the frozen posterior rejects all 60 wrong proposals; a random two-identity audit rejects 56. Correct proposals all pass. A conservative random rule has an exact conditional probability bound of at most 5% for accepting a wrong map, with one wrong acceptance in 288 administrative proposals. All 12 independent review checks pass.",
+      "challenge": "Model confidence can stop on a wrong map, while verification cost and selection affect detection. A rejection leaves the mapping unresolved. The first verifier contained an unnecessarily complex code-availability expression and a redundant assertion.",
+      "remedy": "Frozen proposals were checked against separately acquired identities; exact uniform-subset probabilities were enumerated. System-level paired summaries retain all size conditions. The original review was preserved and a simpler verifier replayed the same checks and results.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/reserved-verification/FINDINGS.md",
+        "experiments/2026-10-02-six-hour/reserved-verification/main/results.json",
+        "experiments/2026-10-02-six-hour/reserved-verification/review-clean/checks.json",
+        "experiments/2026-10-02-six-hour/reserved-verification/review-clean/paired-system-comparisons.json"
+      ],
+      "retry_when": "Specify measurement errors, sequential proposal correction or multiple generative models in a fresh protocol; acquire an archaeological observation with an independently justified identity likelihood."
+    },
+    {
+      "id": "PHYS-02",
+      "theme": "physical measurement acquisition",
+      "status": "synthetic-verified-with-preserved-pilot-and-post-outcome-refinement",
+      "question": "Which accessible whole/part inspection or independent object measurement most efficiently restricts surviving positive quantity assignments?",
+      "outcome": "In 24 new worlds per condition, information/rank identifies absolute quantities in 23 complete and 22 incomplete collections, versus random 15 and 17 and cost-first 0 and 1. Undercovered counts produce wrong unique answers in 21 information/rank worlds; withheld absolute measurements expose wrong scales that pass physical relations. A post-outcome overlap score, specified before 24 fresh valid-interval worlds, identifies six absolute vectors versus zero under each original policy and narrows scale intervals in 15 paired worlds. Exact positive alternatives certify all 28 retained relative ambiguities across the two endpoints.",
+      "challenge": "Artificial relative normalization initially concealed the information from a scale measurement. The original interval score ignored the possible contraction from shifted intervals. Availability, incomplete contents and understated measurement errors create distinct failure cases.",
+      "remedy": "Preserve pilot v1, separate acquired equalities from the gauge, reconstruct and verify exact LP certificates, keep hidden responses outside selection, compare original/refined rules on new worlds and retain all wrong, ambiguous and rejected assignments. Main and refinement reviews verify 4,794 states and 4,338 acquired actions; an all-available post-run diagnostic separates collection limits from budget failures.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/physical-acquisition/README.md",
+        "experiments/2026-10-02-six-hour/physical-acquisition/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/physical-acquisition/METHODS.md",
+        "experiments/2026-10-02-six-hour/physical-acquisition/PILOT_REPAIR_01.md",
+        "experiments/2026-10-02-six-hour/physical-acquisition/main/results.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/main-review.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/main-classification-review.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/main-ambiguity-certificates.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/main-analysis/analysis.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/PRECISION_REFINEMENT_PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/physical-acquisition/precision-refinement/results.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/precision-refinement-review.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/precision-refinement-classification-review.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/precision-analysis/analysis.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/SOURCE_AND_MEASUREMENTS.md",
+        "experiments/2026-10-02-six-hour/physical-acquisition/source-acquisition.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/susa-design-calculation.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/RETROSPECTIVE.md",
+        "src/six_hour/physical_acquisition.py"
+      ],
+      "retry_when": "A new observation-selection rule, calibrated measurement distribution, measured collection access costs, observed contents-size bounds, uncertain label assignments or accession-linked physical pilot changes the test. Reuse existing frozen worlds for diagnostic comparisons and specify fresh seeds for a new policy endpoint."
+    },
+    {
+      "id": "COMM-02",
+      "theme": "Community lead and source acquisition",
+      "status": "completed-bounded-source-audit",
+      "question": "Can the community's Tell Jokha object lead be traced to a scholarly photograph and an original report locator?",
+      "outcome": "Frenez's 2023 chapter reproduces a Tell Jokha square object and cites the SAHI report's page 59, Figure 6.61. Its public panel was acquired, hashed and inspected. Original registration, material, surface-find record and dating basis remain unverified from the report body.",
+      "challenge": "Author text was readable through the web tool while direct retrieval returned 403. ResearchGate PDF retrieval failed; the Academia report preview contained only front matter and its download retrieval was restricted.",
+      "remedy": "Preserved the public photograph, panel coordinates, observation origins and all failed routes. Kept community-attributed object fields separate from the inspected chapter and pixels.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/tell-jokha-contact/README.md",
+        "experiments/2026-10-02-six-hour/tell-jokha-contact/source-manifest.json",
+        "experiments/2026-10-02-six-hour/tell-jokha-contact/observations.json",
+        "experiments/2026-10-02-six-hour/tell-jokha-contact/access-log.json"
+      ],
+      "retry_when": "Obtain the original report's object pages, a higher-resolution face/rear view or accessioned project record; compare publication orientation and material before fine sign coding."
     }
   ]
 }

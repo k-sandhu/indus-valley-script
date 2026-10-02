@@ -1,0 +1,17 @@
+# Approaches, source problems and repairs
+
+The investigation began with a physical-use question: which inscriptions can be linked to the surfaces and closures against which their clay sealings were pressed? A source search located the full Frenez–Tosi chapter in its author's Zenodo deposit. Ordinary acquisition succeeded, and the downloaded MD5 matched the deposit. Rendering the original table and figures supplied the source frame; OCR helped locate the discussion but was not used as the table witness.
+
+The root transcribed all 93 Table 1 objects, saved an initial pass, and inspected the two table pages again. That reinspection corrected L196's context, L198's category, L216's category and several page coordinates. A separate reader then transcribed every row from pixels before opening the root CSV. Agreement across all five compared fields supports the table counts. Both readers had access to the aggregate research question, so the review is independent transcription with known aggregate targets.
+
+The first corpus join mistakenly iterated characters in the string-valued `source_cisi` field as though it were a list. It reported zero joins. That endpoint, code and results remain in `main`. The repair added schema assertions and matched the complete source identifier, using the actual clean-face field name. The `join-refined` endpoint reports 68 objects and 86 faces. Its notes retain an incorrect coordinate for the prose totals; the later independent review corrects that coordinate separately.
+
+The independent join had another bookkeeping failure. Examining a missing identifier created an empty entry in a `defaultdict`; counting keys therefore reported all 93 objects as joined. The actual face count remained 86. Comparison exposed the mismatch. The reviewer preserved `independent-review/main`, counted nonempty face lists and produced `main-refined`. Fourteen checks pass on the latter endpoint.
+
+Source discrepancies became an acquisition result rather than a reason to alter the rows. The table and prose have different impression, single-impression and context totals. Both L174 and L179 also have differing prose/table impression counts. Every version stays in its source-assertion record. The review also identified the stamp-based construction of W1, which affects the design of a future context model.
+
+An early interpretation treated L124's woven-straw table category and proposed pottery cover as conflicting. Reading the physical description showed that contact material and support form can coexist. The field design now separates texture, geometry, proposed support and closure action. This makes the archaeological operation easier to describe and avoids discarding compatible observations.
+
+The eligible inscriptions are concentrated in two large repeated groups. Instead of fitting a small function classifier, the run measured coverage and recorded the source-defined cohorts. The immediate research target is a matched physical comparison within those cohorts. Full source images, detailed table rows and code strings stay in the local data directory because redistribution rights remain unresolved.
+
+The investigation adds a reusable object frame and source audit. The chapter's general recurrent-stamp interpretation predates this work. Further progress requires identified surface photographs, especially the absent L171/L172 corpus faces and the varied attachments carrying G01. Those explicit gaps should guide the next acquisition.
