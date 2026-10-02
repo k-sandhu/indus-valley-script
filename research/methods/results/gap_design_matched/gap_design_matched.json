@@ -1,0 +1,469 @@
+{
+  "design": "Post-audit artificial-gap-sampling-law sensitivity; unchanged fitted models and held-out queries.",
+  "parameters": {
+    "prior": "results/gap_restoration",
+    "output": "research/methods/results/gap_design_matched"
+  },
+  "source_sha256": "f50795656b4b5519da9b40e902eb99dfa27a5cdd32af462b0b2ee7c181b77d68",
+  "prior_result_sha256": "d756c5bb64bc0a594014e2969197858976e87934510df937183bb15cca3de5fe",
+  "input_sha256": "9e539daef4d5a7efbe3c5f34b73e14058eec1c5e888c749bc2eafb0f08084ba8",
+  "dependency_sha256": {
+    "src\\gap_restoration.py": "c632cfb67bed4376cc07a4314f8d6991fa4065bea53b02aa94e2044f064dce34",
+    "src\\restoration.py": "5c45d5e61f045a9c2e8c8e8155cc3def708cb05d20d2dd1529a6a40dd981cbc7",
+    "src\\methods\\conditional_structure.py": "ed150239452339a04ef35f04b5814a236d9bd3ad0b64702e66a0230760de0ca8"
+  },
+  "source_output_hashes": {
+    "results\\gap_restoration\\gap_benchmark.json": "d756c5bb64bc0a594014e2969197858976e87934510df937183bb15cca3de5fe",
+    "results\\gap_restoration\\baseline_count_audit.jsonl": "ac518c2007ca258fc90d0bb513d7bf9de2e23f34324c8ddd7de333b18ecb15cb",
+    "results\\gap_restoration\\local_count_audit.jsonl": "68557a12f6d6a37eacb596ca623b6592779b1397b85b7c2a7a41a1ca3afd2721"
+  },
+  "count_candidates": [
+    1,
+    2,
+    3
+  ],
+  "alpha": 20,
+  "query_seed": 20261012,
+  "fold_seed": 20261006,
+  "bootstrap_seed": 142,
+  "bootstrap_draws": 10000,
+  "unique_texts": 1596,
+  "physical_text_components": 1526,
+  "fold_token_loads": [
+    1603,
+    1600,
+    1602,
+    1602,
+    1602
+  ],
+  "posterior_adjustment": "p_design(k|survivors) proportional to p_original(k|survivors) / min(3,m+k-2)",
+  "start_factor": "1/(m-1), identical across count candidates and therefore canceled",
+  "original_models": {
+    "baseline": {
+      "texts": 1596,
+      "exact_count_accuracy": 0.4191729323308271,
+      "constant_one_glyph_design_control_accuracy": 0.5106516290726817,
+      "true_count_distribution": {
+        "1": 815,
+        "2": 454,
+        "3": 327
+      },
+      "confusion": [
+        {
+          "actual": 1,
+          "predicted": 1,
+          "n": 370
+        },
+        {
+          "actual": 1,
+          "predicted": 2,
+          "n": 251
+        },
+        {
+          "actual": 1,
+          "predicted": 3,
+          "n": 194
+        },
+        {
+          "actual": 2,
+          "predicted": 1,
+          "n": 170
+        },
+        {
+          "actual": 2,
+          "predicted": 2,
+          "n": 159
+        },
+        {
+          "actual": 2,
+          "predicted": 3,
+          "n": 125
+        },
+        {
+          "actual": 3,
+          "predicted": 1,
+          "n": 90
+        },
+        {
+          "actual": 3,
+          "predicted": 2,
+          "n": 97
+        },
+        {
+          "actual": 3,
+          "predicted": 3,
+          "n": 140
+        }
+      ],
+      "calibration": [
+        {
+          "interval": [
+            0.0,
+            0.4
+          ],
+          "n": 45,
+          "mean_model_mass": 0.372086867838265,
+          "accuracy": 0.35555555555555557
+        },
+        {
+          "interval": [
+            0.4,
+            0.6
+          ],
+          "n": 454,
+          "mean_model_mass": 0.5115041192949661,
+          "accuracy": 0.3458149779735683
+        },
+        {
+          "interval": [
+            0.6,
+            0.8
+          ],
+          "n": 414,
+          "mean_model_mass": 0.6938349941385351,
+          "accuracy": 0.4082125603864734
+        },
+        {
+          "interval": [
+            0.8,
+            1.0
+          ],
+          "n": 683,
+          "mean_model_mass": 0.9377277893446624,
+          "accuracy": 0.4787701317715959
+        }
+      ]
+    },
+    "local": {
+      "texts": 1596,
+      "exact_count_accuracy": 0.43045112781954886,
+      "constant_one_glyph_design_control_accuracy": 0.5106516290726817,
+      "true_count_distribution": {
+        "1": 815,
+        "2": 454,
+        "3": 327
+      },
+      "confusion": [
+        {
+          "actual": 1,
+          "predicted": 1,
+          "n": 384
+        },
+        {
+          "actual": 1,
+          "predicted": 2,
+          "n": 244
+        },
+        {
+          "actual": 1,
+          "predicted": 3,
+          "n": 187
+        },
+        {
+          "actual": 2,
+          "predicted": 1,
+          "n": 162
+        },
+        {
+          "actual": 2,
+          "predicted": 2,
+          "n": 164
+        },
+        {
+          "actual": 2,
+          "predicted": 3,
+          "n": 128
+        },
+        {
+          "actual": 3,
+          "predicted": 1,
+          "n": 87
+        },
+        {
+          "actual": 3,
+          "predicted": 2,
+          "n": 101
+        },
+        {
+          "actual": 3,
+          "predicted": 3,
+          "n": 139
+        }
+      ],
+      "calibration": [
+        {
+          "interval": [
+            0.0,
+            0.4
+          ],
+          "n": 33,
+          "mean_model_mass": 0.3768335775711531,
+          "accuracy": 0.24242424242424243
+        },
+        {
+          "interval": [
+            0.4,
+            0.6
+          ],
+          "n": 436,
+          "mean_model_mass": 0.5104537784221954,
+          "accuracy": 0.36009174311926606
+        },
+        {
+          "interval": [
+            0.6,
+            0.8
+          ],
+          "n": 437,
+          "mean_model_mass": 0.6964469786227023,
+          "accuracy": 0.41418764302059496
+        },
+        {
+          "interval": [
+            0.8,
+            1.0
+          ],
+          "n": 690,
+          "mean_model_mass": 0.9357191413566154,
+          "accuracy": 0.49420289855072463
+        }
+      ]
+    }
+  },
+  "design_matched_models": {
+    "baseline": {
+      "texts": 1596,
+      "exact_count_accuracy": 0.45614035087719296,
+      "constant_one_glyph_design_control_accuracy": 0.5106516290726817,
+      "true_count_distribution": {
+        "1": 815,
+        "2": 454,
+        "3": 327
+      },
+      "confusion": [
+        {
+          "actual": 1,
+          "predicted": 1,
+          "n": 462
+        },
+        {
+          "actual": 1,
+          "predicted": 2,
+          "n": 209
+        },
+        {
+          "actual": 1,
+          "predicted": 3,
+          "n": 144
+        },
+        {
+          "actual": 2,
+          "predicted": 1,
+          "n": 195
+        },
+        {
+          "actual": 2,
+          "predicted": 2,
+          "n": 152
+        },
+        {
+          "actual": 2,
+          "predicted": 3,
+          "n": 107
+        },
+        {
+          "actual": 3,
+          "predicted": 1,
+          "n": 123
+        },
+        {
+          "actual": 3,
+          "predicted": 2,
+          "n": 90
+        },
+        {
+          "actual": 3,
+          "predicted": 3,
+          "n": 114
+        }
+      ],
+      "calibration": [
+        {
+          "interval": [
+            0.0,
+            0.4
+          ],
+          "n": 24,
+          "mean_model_mass": 0.38069529707181865,
+          "accuracy": 0.3333333333333333
+        },
+        {
+          "interval": [
+            0.4,
+            0.6
+          ],
+          "n": 449,
+          "mean_model_mass": 0.5173956146986243,
+          "accuracy": 0.4053452115812918
+        },
+        {
+          "interval": [
+            0.6,
+            0.8
+          ],
+          "n": 420,
+          "mean_model_mass": 0.6917506209871175,
+          "accuracy": 0.45476190476190476
+        },
+        {
+          "interval": [
+            0.8,
+            1.0
+          ],
+          "n": 703,
+          "mean_model_mass": 0.9380560310379489,
+          "accuracy": 0.49359886201991465
+        }
+      ]
+    },
+    "local": {
+      "texts": 1596,
+      "exact_count_accuracy": 0.4630325814536341,
+      "constant_one_glyph_design_control_accuracy": 0.5106516290726817,
+      "true_count_distribution": {
+        "1": 815,
+        "2": 454,
+        "3": 327
+      },
+      "confusion": [
+        {
+          "actual": 1,
+          "predicted": 1,
+          "n": 470
+        },
+        {
+          "actual": 1,
+          "predicted": 2,
+          "n": 200
+        },
+        {
+          "actual": 1,
+          "predicted": 3,
+          "n": 145
+        },
+        {
+          "actual": 2,
+          "predicted": 1,
+          "n": 188
+        },
+        {
+          "actual": 2,
+          "predicted": 2,
+          "n": 154
+        },
+        {
+          "actual": 2,
+          "predicted": 3,
+          "n": 112
+        },
+        {
+          "actual": 3,
+          "predicted": 1,
+          "n": 119
+        },
+        {
+          "actual": 3,
+          "predicted": 2,
+          "n": 93
+        },
+        {
+          "actual": 3,
+          "predicted": 3,
+          "n": 115
+        }
+      ],
+      "calibration": [
+        {
+          "interval": [
+            0.0,
+            0.4
+          ],
+          "n": 32,
+          "mean_model_mass": 0.3813469205672002,
+          "accuracy": 0.21875
+        },
+        {
+          "interval": [
+            0.4,
+            0.6
+          ],
+          "n": 421,
+          "mean_model_mass": 0.5176090206436444,
+          "accuracy": 0.4014251781472684
+        },
+        {
+          "interval": [
+            0.6,
+            0.8
+          ],
+          "n": 425,
+          "mean_model_mass": 0.6998580679311905,
+          "accuracy": 0.4588235294117647
+        },
+        {
+          "interval": [
+            0.8,
+            1.0
+          ],
+          "n": 718,
+          "mean_model_mass": 0.9357153494586907,
+          "accuracy": 0.5125348189415042
+        }
+      ]
+    }
+  },
+  "design_matched_local_minus_independent": {
+    "gain_accuracy": 0.006892230576441102,
+    "cluster_bootstrap_95_ci": [
+      -0.005689001264222503,
+      0.01939955274399825
+    ],
+    "clusters": 1526,
+    "bootstrap": 10000
+  },
+  "design_matched_local_minus_constant_one": {
+    "gain_accuracy": -0.047619047619047616,
+    "cluster_bootstrap_95_ci": [
+      -0.07774520118521062,
+      -0.01726263871763255
+    ],
+    "clusters": 1526,
+    "bootstrap": 10000
+  },
+  "design_matched_minus_original": {
+    "baseline": {
+      "gain_accuracy": 0.03696741854636591,
+      "cluster_bootstrap_95_ci": [
+        0.02199874292897549,
+        0.05217459666393217
+      ],
+      "clusters": 1526,
+      "bootstrap": 10000
+    },
+    "local": {
+      "gain_accuracy": 0.03258145363408521,
+      "cluster_bootstrap_95_ci": [
+        0.01878522229179712,
+        0.046411560287708147
+      ],
+      "clusters": 1526,
+      "bootstrap": 10000
+    }
+  },
+  "limitations": [
+    "This law belongs to the artificial masking benchmark, not physical erosion.",
+    "Model/count masses remain uncalibrated, and finite counts 1..3 omit other historical possibilities.",
+    "Bootstrap conditions on unchanged fitted cross-validation models and sampled queries.",
+    "Source glyph uncertainty, unknown sign count, separators and UNKNOWN pooling remain unresolved."
+  ]
+}

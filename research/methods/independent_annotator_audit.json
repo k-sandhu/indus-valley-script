@@ -1,0 +1,80 @@
+{
+  "scope": "Read-only adversarial source/unit review; no root edits and no semantic claims.",
+  "source_sha256": "42e5e532d80ca81373764c08bfbd96c5b07f5285ed565d3a49d6197366c939b7",
+  "root_source_sha256": "a34c4e0bb49586bcea25c16976d5d06ad556fa220f90324c0567ac78a1030e3c",
+  "root_result_sha256": "e19815835d6c4d5665422c3bfdc05946b9236209fbb7a03694d065fd0b1604af",
+  "mapped_eligible_tests": 81,
+  "complete_only_identity_exclusion": {
+    "source_range": "CISI M1..M199, including sources not in eligible test set",
+    "matched_source_artifacts": 155,
+    "source_direct_texts": 155,
+    "coarse_compatible_direct_texts": 70,
+    "excluded_component_texts": 170
+  },
+  "broader_observational_identity_exclusion": {
+    "source_range": "CISI M1..M199, including sources not in eligible test set",
+    "matched_source_artifacts": 195,
+    "source_direct_texts": 155,
+    "coarse_compatible_direct_texts": 70,
+    "excluded_component_texts": 170
+  },
+  "complete_only_train_texts": 1426,
+  "broader_train_texts": 1426,
+  "identical_retained_record_ids": true,
+  "saved_result_matches_current_source": true,
+  "scored_faces": 74,
+  "scored_physical_source_objects": 74,
+  "multiple_scored_faces_per_object": {},
+  "observed_generic_object_types": {
+    "seal": 74
+  },
+  "recorded_model_stratum": {
+    "site": "Mohenjo-daro",
+    "object_type": "SEAL:S"
+  },
+  "main_candidate_event_result": {
+    "texts": 74,
+    "artifact_P_text_groups": 73,
+    "noninitial_glyphs": 315,
+    "gain_bits_per_noninitial_candidate_event": 0.7248273761719933,
+    "conditional_cluster_bootstrap_95_ci": [
+      0.5507226353128714,
+      0.8993568858746328
+    ],
+    "bootstrap": 10000,
+    "bootstrap_conditions_on_fitted_model": true
+  },
+  "unspecified_subtype_sensitivity": {
+    "texts": 74,
+    "artifact_P_text_groups": 73,
+    "noninitial_glyphs": 315,
+    "gain_bits_per_noninitial_candidate_event": 0.7771888352201299,
+    "conditional_cluster_bootstrap_95_ci": [
+      0.6008529354712953,
+      0.9552924668792712
+    ],
+    "bootstrap": 10000,
+    "bootstrap_conditions_on_fitted_model": true
+  },
+  "fully_supported_candidate_sensitivity": {
+    "texts": 54,
+    "artifact_P_text_groups": 53,
+    "noninitial_glyphs": 231,
+    "gain_bits_per_noninitial_candidate_event": 0.877860203081516,
+    "conditional_cluster_bootstrap_95_ci": [
+      0.6697959449384595,
+      1.089631181690201
+    ],
+    "bootstrap": 10000,
+    "bootstrap_conditions_on_fitted_model": true
+  },
+  "math_review": "The forward filter sums allowed fine-code events and propagates their normalized posterior through each row-normalized PMB transition. It is correct for this time-varying Markov model; candidate events may overlap and therefore do not define a normalized P-label alphabet.",
+  "qualifications": [
+    "All current scored faces come from distinct source objects. The updated bootstrap also groups physical artifact aliases and identical P strings, protecting future multi-face reuse.",
+    "The updated implementation uses the full observational source register; this leaves the present eligible training IDs identical to the complete-only identity rule.",
+    "Generic seal metadata does not independently certify the SEAL:S subtype. The updated source declares that assumption and adds an unspecified-subtype sensitivity.",
+    "Unsupported candidates are removed from scoring, so the estimand concerns training-supported candidate events. The fully supported subset is a useful sensitivity, not a complete-corpus validation.",
+    "Model selection uses fine-code training likelihood, rather than independently observed coarse-event likelihood; keep the baseline's stated selection scope precise.",
+    "The coarse schema and source photographs derive from shared historical catalogues. This is independent annotation, not independent archaeological evidence or decoded semantics."
+  ]
+}

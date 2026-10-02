@@ -1,0 +1,436 @@
+{
+  "outcome": "bull1_other",
+  "positive_label": "Bull1 family",
+  "objects": 1086,
+  "groups": 1020,
+  "labels": {
+    "1": 903,
+    "0": 183
+  },
+  "largest_group": 6,
+  "site_labels": {
+    "Allahdino": {
+      "1": 5,
+      "0": 1
+    },
+    "Bala-kot": {
+      "1": 3
+    },
+    "Banawali": {
+      "1": 2,
+      "0": 2
+    },
+    "Bhirrana": {
+      "1": 2
+    },
+    "Chanhu-daro": {
+      "1": 27,
+      "0": 2
+    },
+    "Dholavira": {
+      "1": 35,
+      "0": 4
+    },
+    "Dilmun": {
+      "0": 1
+    },
+    "Farmana": {
+      "0": 1,
+      "1": 1
+    },
+    "Gola Dhoro (Bagasra)": {
+      "1": 5
+    },
+    "Gonur Depe": {
+      "0": 1
+    },
+    "Harappa": {
+      "1": 158,
+      "0": 25
+    },
+    "Jhukar": {
+      "1": 1
+    },
+    "Kalibangan": {
+      "1": 16,
+      "0": 6
+    },
+    "Karanpura": {
+      "1": 1
+    },
+    "Karzakan": {
+      "0": 2
+    },
+    "Khirsara": {
+      "1": 1
+    },
+    "Kish": {
+      "1": 1
+    },
+    "Lakhanjo-daro": {
+      "1": 3
+    },
+    "Lohumjo-daro": {
+      "1": 1
+    },
+    "Lothal": {
+      "1": 21,
+      "0": 3
+    },
+    "Luristan": {
+      "0": 1
+    },
+    "Mohenjo-daro": {
+      "1": 601,
+      "0": 122
+    },
+    "Nausharo": {
+      "1": 10,
+      "0": 2
+    },
+    "Nindowari-damb": {
+      "1": 1
+    },
+    "Rakhigarhi": {
+      "1": 1,
+      "0": 1
+    },
+    "Salut": {
+      "0": 1
+    },
+    "Shortughai": {
+      "0": 1
+    },
+    "Surkotada": {
+      "1": 1
+    },
+    "Susa": {
+      "0": 1
+    },
+    "Unknown": {
+      "0": 4,
+      "1": 6
+    },
+    "Ur": {
+      "0": 2
+    }
+  },
+  "models": {
+    "baseline": {
+      "log_loss_nats": 0.4534431464782462,
+      "balanced_accuracy": 0.5,
+      "roc_auc": 0.5398247493176964
+    },
+    "unigram": {
+      "log_loss_nats": 0.48863474985764715,
+      "balanced_accuracy": 0.5119274549316486,
+      "roc_auc": 0.49386380552983683
+    },
+    "boundary": {
+      "log_loss_nats": 0.4987237037143137,
+      "balanced_accuracy": 0.5119274549316486,
+      "roc_auc": 0.49372462163159836
+    },
+    "full": {
+      "log_loss_nats": 0.5160181870587539,
+      "balanced_accuracy": 0.5091589056514714,
+      "roc_auc": 0.48095601183668285
+    }
+  },
+  "gain_nats_per_object": -0.06257504058050765,
+  "gain_cluster_bootstrap_95_ci": [
+    -0.08489174227020416,
+    -0.04121825189925619
+  ],
+  "unique_sequence_weighted_models": {
+    "baseline": {
+      "log_loss_nats": 0.4596357227264763,
+      "balanced_accuracy": 0.5,
+      "roc_auc": 0.5455698685612045
+    },
+    "unigram": {
+      "log_loss_nats": 0.49524864545301145,
+      "balanced_accuracy": 0.5108250753985352,
+      "roc_auc": 0.4978941892263869
+    },
+    "boundary": {
+      "log_loss_nats": 0.5045144873225296,
+      "balanced_accuracy": 0.5105288668677295,
+      "roc_auc": 0.4974641819558139
+    },
+    "full": {
+      "log_loss_nats": 0.5204911418726097,
+      "balanced_accuracy": 0.5117294090191009,
+      "roc_auc": 0.48811201469673016
+    }
+  },
+  "site_transfer": [
+    {
+      "train_site": "Harappa",
+      "test_site": "Mohenjo-daro",
+      "train_objects": 162,
+      "test_objects": 723,
+      "overlapping_sequences_removed_from_train": true,
+      "models": {
+        "baseline": {
+          "log_loss_nats": 0.5021984357358743,
+          "balanced_accuracy": 0.5,
+          "roc_auc": 0.4692657046998172
+        },
+        "unigram": {
+          "log_loss_nats": 0.546008268485075,
+          "balanced_accuracy": 0.5027754289299255,
+          "roc_auc": 0.4424047352772701
+        },
+        "boundary": {
+          "log_loss_nats": 0.5503125728886163,
+          "balanced_accuracy": 0.4887550803305965,
+          "roc_auc": 0.44719183873871415
+        },
+        "full": {
+          "log_loss_nats": 0.5427837347951721,
+          "balanced_accuracy": 0.48317694552794527,
+          "roc_auc": 0.450437794931944
+        }
+      }
+    },
+    {
+      "train_site": "Mohenjo-daro",
+      "test_site": "Harappa",
+      "train_objects": 695,
+      "test_objects": 183,
+      "overlapping_sequences_removed_from_train": true,
+      "models": {
+        "baseline": {
+          "log_loss_nats": 0.5065401220013335,
+          "balanced_accuracy": 0.5,
+          "roc_auc": 0.4570886075949367
+        },
+        "unigram": {
+          "log_loss_nats": 0.49141038327306846,
+          "balanced_accuracy": 0.49468354430379746,
+          "roc_auc": 0.4564556962025317
+        },
+        "boundary": {
+          "log_loss_nats": 0.5093688062024182,
+          "balanced_accuracy": 0.5125316455696203,
+          "roc_auc": 0.470126582278481
+        },
+        "full": {
+          "log_loss_nats": 0.5008615676571924,
+          "balanced_accuracy": 0.49569620253164554,
+          "roc_auc": 0.4463291139240506
+        }
+      }
+    }
+  ],
+  "exploratory_coefficients": {
+    "low_label": [
+      {
+        "feature": "pair=231>520",
+        "coefficient": -1.2651927605043543
+      },
+      {
+        "feature": "sign=518",
+        "coefficient": -1.004433288199602
+      },
+      {
+        "feature": "pair=233>235",
+        "coefficient": -0.9838380419054576
+      },
+      {
+        "feature": "first=032",
+        "coefficient": -0.962316105210048
+      },
+      {
+        "feature": "sign=924",
+        "coefficient": -0.9456861287461806
+      },
+      {
+        "feature": "pair=390>151",
+        "coefficient": -0.9147828820245566
+      },
+      {
+        "feature": "pair=017>390",
+        "coefficient": -0.8737044083296873
+      },
+      {
+        "feature": "sign=511",
+        "coefficient": -0.8728117265832621
+      },
+      {
+        "feature": "first=518",
+        "coefficient": -0.8667837596486664
+      },
+      {
+        "feature": "last=002",
+        "coefficient": -0.8384692835897376
+      },
+      {
+        "feature": "pair=235>233",
+        "coefficient": -0.7908724733878876
+      },
+      {
+        "feature": "pair=140>920",
+        "coefficient": -0.7483432318967679
+      },
+      {
+        "feature": "first=760",
+        "coefficient": -0.7437615468373452
+      },
+      {
+        "feature": "pair=740>400",
+        "coefficient": -0.7403655372568619
+      },
+      {
+        "feature": "pair=002>014",
+        "coefficient": -0.7400098653485336
+      },
+      {
+        "feature": "pair=002>104",
+        "coefficient": -0.7354437800712107
+      },
+      {
+        "feature": "pair=368>142",
+        "coefficient": -0.7242180008981227
+      },
+      {
+        "feature": "pair=390>621",
+        "coefficient": -0.7208003451150318
+      },
+      {
+        "feature": "pair=820>840",
+        "coefficient": -0.7202940799792199
+      },
+      {
+        "feature": "first=279",
+        "coefficient": -0.7097871974495789
+      },
+      {
+        "feature": "pair=220>017",
+        "coefficient": -0.7055686525014913
+      },
+      {
+        "feature": "pair=615>740",
+        "coefficient": -0.7050182692727559
+      },
+      {
+        "feature": "pair=002>416",
+        "coefficient": -0.7037223998663191
+      },
+      {
+        "feature": "first=741",
+        "coefficient": -0.7020321190298516
+      },
+      {
+        "feature": "pair=590>705",
+        "coefficient": -0.6983938992284016
+      }
+    ],
+    "high_label": [
+      {
+        "feature": "length=9",
+        "coefficient": 1.120859133143265
+      },
+      {
+        "feature": "pair=233>520",
+        "coefficient": 0.8439234048900951
+      },
+      {
+        "feature": "site=Dholavira",
+        "coefficient": 0.8248935519515351
+      },
+      {
+        "feature": "first=416",
+        "coefficient": 0.8191982913093766
+      },
+      {
+        "feature": "sign=806",
+        "coefficient": 0.7687649736896583
+      },
+      {
+        "feature": "site=Lothal",
+        "coefficient": 0.7442998047634544
+      },
+      {
+        "feature": "sign=032",
+        "coefficient": 0.7262695828855688
+      },
+      {
+        "feature": "pair=002>003",
+        "coefficient": 0.7167038049295326
+      },
+      {
+        "feature": "sign=405",
+        "coefficient": 0.7122689602505041
+      },
+      {
+        "feature": "first=255",
+        "coefficient": 0.6958056880161829
+      },
+      {
+        "feature": "site=Chanhu-daro",
+        "coefficient": 0.6761149901200677
+      },
+      {
+        "feature": "pair=390>002",
+        "coefficient": 0.6462508595483066
+      },
+      {
+        "feature": "pair=240>233",
+        "coefficient": 0.645121329335846
+      },
+      {
+        "feature": "sign=798",
+        "coefficient": 0.6273065055019658
+      },
+      {
+        "feature": "sign=368",
+        "coefficient": 0.6065815603160083
+      },
+      {
+        "feature": "pair=390>740",
+        "coefficient": 0.5850097963574697
+      },
+      {
+        "feature": "pair=240>220",
+        "coefficient": 0.5754258222241875
+      },
+      {
+        "feature": "pair=840>760",
+        "coefficient": 0.5599680010657082
+      },
+      {
+        "feature": "last=405",
+        "coefficient": 0.5584203909242749
+      },
+      {
+        "feature": "first=005",
+        "coefficient": 0.5430278874482732
+      },
+      {
+        "feature": "pair=400>520",
+        "coefficient": 0.5411936759595634
+      },
+      {
+        "feature": "length=10",
+        "coefficient": 0.5363323001338169
+      },
+      {
+        "feature": "pair=031>156",
+        "coefficient": 0.5290413597549579
+      },
+      {
+        "feature": "site=Harappa",
+        "coefficient": 0.5198164911164169
+      },
+      {
+        "feature": "pair=033>033",
+        "coefficient": 0.5178804024241596
+      }
+    ]
+  },
+  "permutations": [],
+  "permutation_exchangeable_objects": 927,
+  "permutation_total_strata": 97
+}

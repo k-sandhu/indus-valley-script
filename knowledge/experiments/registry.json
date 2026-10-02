@@ -1,0 +1,1341 @@
+{
+  "schema_version": 1,
+  "scope": "documented external work, not exhaustive unrecorded thoughts",
+  "experiments": [
+    {
+      "id": "ROOT-01",
+      "theme": "corpus",
+      "status": "completed-source-audit",
+      "question": "What observational corpus is usable?",
+      "outcome": "Pinned and normalized source records; RTL/single-line filters and inventory namespaces recorded.",
+      "challenge": "Variant codes, missing/damaged marks and interpretive source fields could contaminate observations.",
+      "remedy": "Excluded interpretation fields, retained raw observation provenance and separated inventories.",
+      "evidence": [
+        "research/corpus/CORPUS_REPORT.md",
+        "research/corpus/normalize_lipi.py"
+      ],
+      "retry_when": "A new pinned corpus or corrected expert transcription is available."
+    },
+    {
+      "id": "ROOT-02",
+      "theme": "structural prediction",
+      "status": "verified-computation",
+      "question": "Does local order improve held-out score under artifact controls?",
+      "outcome": "Positive gain under the declared position/length/site/type reference; not language identification.",
+      "challenge": "Related artifacts, tuning and null fitting can create optimistic comparisons.",
+      "remedy": "Transitive alias/text groups, nested fitting and complete-procedure nulls.",
+      "evidence": [
+        "research/methods/FINDINGS.md",
+        "research/methods/results/joint_nested_unique_conditioned_1000"
+      ],
+      "retry_when": "A new corpus, faithful prior baseline or independently frozen comparison changes the test."
+    },
+    {
+      "id": "ROOT-03",
+      "theme": "restoration",
+      "status": "superseded",
+      "question": "Can an early deduplicated restoration split generalize?",
+      "outcome": "Early endpoint is superseded; do not use its better numbers as the current benchmark.",
+      "challenge": "Choosing unique-string representatives discarded physical aliases.",
+      "remedy": "Preserved aliases before group closure and reran in separate output directories.",
+      "evidence": [
+        "results/restoration_superseded_lost_aliases/SUPERSEDED.md"
+      ],
+      "retry_when": "Do not rerun the defective design; inspect it only to understand leakage."
+    },
+    {
+      "id": "ROOT-04",
+      "theme": "restoration",
+      "status": "verified-computation",
+      "question": "Can one deliberately hidden known sign be ranked?",
+      "outcome": "33.8% exact top-one versus 17.0% position/metadata baseline on 8,009 slots.",
+      "challenge": "Slot micro accuracy conceals poor rare-code performance and confidence calibration.",
+      "remedy": "Added frequency, text-weighting, grouped uncertainty and site-transfer audits.",
+      "evidence": [
+        "src/restoration.py",
+        "results/restoration",
+        "research/RESTORATION_SENSITIVITY.md"
+      ],
+      "retry_when": "Fresh reviewed graphic cases or a new frozen restoration method are available."
+    },
+    {
+      "id": "ROOT-05",
+      "theme": "restoration site transfer",
+      "status": "completed-sensitivity",
+      "question": "Does restoration improve across held-out sites?",
+      "outcome": "Positive selected-site gains; no semantic or place-name reading follows.",
+      "challenge": "Aliases at other sites and excluded short faces can connect test artifacts to training.",
+      "remedy": "Excluded entire components with any held-out-site face in the full observational register.",
+      "evidence": [
+        "results/restoration_crosssite",
+        "src/methods/alias_safe_site_transfer.py"
+      ],
+      "retry_when": "New sites/context or independent source-reviewed evaluation is available."
+    },
+    {
+      "id": "ROOT-06",
+      "theme": "independent annotation",
+      "status": "verified-computation",
+      "question": "Does structural gain survive another manual encoding?",
+      "outcome": "74 scored faces, approximately +0.725 bits/candidate event; shared archaeological sources.",
+      "challenge": "Crosswalk candidates overlap, source objects repeat, unseen candidates have no supported mass.",
+      "remedy": "Candidate-event recursion, family and compatible-text exclusions, retained unsupported events.",
+      "evidence": [
+        "src/independent_annotator.py",
+        "results/independent_annotator",
+        "research/INDEPENDENT_ANNOTATOR_PLAN.md"
+      ],
+      "retry_when": "A genuinely fresh expert-reviewed transcription block can be frozen."
+    },
+    {
+      "id": "ROOT-07",
+      "theme": "independent annotation",
+      "status": "exploratory-source-quality-sensitivity",
+      "question": "Do source-quality exclusions change the score?",
+      "outcome": "Post-outcome source exclusions retained gain; not independent confirmation.",
+      "challenge": "A source review after outcome creates selection sensitivity.",
+      "remedy": "Marked the quality sensitivity exploratory and kept the initial endpoint.",
+      "evidence": [
+        "src/independent_quality_sensitivity.py",
+        "research/INDEPENDENT_TEXT_SENSITIVITY.md"
+      ],
+      "retry_when": "Quality rules can be fixed before new annotation outcomes."
+    },
+    {
+      "id": "ROOT-08",
+      "theme": "gap count",
+      "status": "failed-comparator",
+      "question": "Can the number of erased signs be inferred statistically?",
+      "outcome": "Matched estimator 46.3% versus 51.1% always-one; tested approach failed.",
+      "challenge": "The artificial masking law differs from the source-length distribution.",
+      "remedy": "Matched the prior to gap sampling and added the dominant constant-one baseline.",
+      "evidence": [
+        "src/gap_restoration.py",
+        "src/methods/gap_design_matched.py",
+        "results/gap_restoration"
+      ],
+      "retry_when": "Physical gap geometry or a genuinely new model with frozen masking controls is available."
+    },
+    {
+      "id": "ROOT-09",
+      "theme": "context",
+      "status": "exploratory-no-semantic-anchor",
+      "question": "Can site/type/motif predict a functional interpretation?",
+      "outcome": "Context diagnostics were generated; no authenticated function or lexical value.",
+      "challenge": "Broad metadata, object dependence and ambiguous source contexts limit interpretation.",
+      "remedy": "Compared metadata-conditioned alternatives and reviewed physical sources.",
+      "evidence": [
+        "src/context_study.py",
+        "results/context",
+        "src/microcontext.py",
+        "results/microcontext"
+      ],
+      "retry_when": "Fine source-verified findspots, materials and independently observed functions become available."
+    },
+    {
+      "id": "ROOT-10",
+      "theme": "paired surfaces",
+      "status": "exploratory-no-semantic-anchor",
+      "question": "Do opposed faces create a decoding constraint?",
+      "outcome": "Paired-face relationships and source inconsistencies audited; no recovered meaning.",
+      "challenge": "Face relations and historical/current object IDs are not interchangeable.",
+      "remedy": "Preserved physical-family grouping and traced candidate catalogue joins.",
+      "evidence": [
+        "src/paired_surfaces.py",
+        "results/paired",
+        "research/PAIRED_SURFACE_PLAN.md"
+      ],
+      "retry_when": "Photographic identity and independent physical relation are authenticated."
+    },
+    {
+      "id": "ROOT-11",
+      "theme": "substitution families",
+      "status": "exploratory-inconclusive-individual",
+      "question": "Can shared frames establish a new semantic sign family?",
+      "outcome": "Aggregate weighting sensitivity; individual primary highlighted-pair support insufficient and important prior exists.",
+      "challenge": "Multiple testing, allographic compatibility and duplicated frames inflate discovery claims.",
+      "remedy": "Adjusted max and full-procedure transfer references; primary literature/graphic checks.",
+      "evidence": [
+        "research/literature/candidate_pair_novelty_audit.md",
+        "src/methods/substitution_validation.py"
+      ],
+      "retry_when": "New independently verified graphic cases and a frozen family-specific prediction are available."
+    },
+    {
+      "id": "ROOT-12",
+      "theme": "nonphonetic control",
+      "status": "synthetic-counterexample",
+      "question": "Is sequential prediction diagnostic of language?",
+      "outcome": "Constructed office-routing data retains predictive gain; order alone is not diagnostic.",
+      "challenge": "An independent-slot finite template does not exhaust nonlinguistic generative alternatives.",
+      "remedy": "Ran a nonphonetic sequential workflow through the same assay.",
+      "evidence": [
+        "src/methods/generate_workflow_control.py",
+        "research/methods/FINDINGS.md"
+      ],
+      "retry_when": "A broader known-system comparison with matched controls tests discrimination."
+    },
+    {
+      "id": "ROOT-13",
+      "theme": "numerical identifiability",
+      "status": "exact-conditional-audit",
+      "question": "Do published equalities uniquely identify numeral values?",
+      "outcome": "Four positive-integer solutions; 10/8/6 requires an additional range restriction.",
+      "challenge": "Unverified equality semantics, unsupported range and an invalid parity argument.",
+      "remedy": "Eliminated variables exactly, enumerated all divisors and reviewed cited archaeological sources.",
+      "evidence": [
+        "src/methods/audit_numerical_equalities.py",
+        "research/methods/NUMERICAL_CONSTRAINT_AUDIT.md"
+      ],
+      "retry_when": "Independent count bounds, object identity and arithmetic premises are verified."
+    },
+    {
+      "id": "ROOT-14",
+      "theme": "metrology",
+      "status": "synthetic-identifiability-audit",
+      "question": "Can vessel capacities alone fix a stroke value/base?",
+      "outcome": "Rescaled unit/count interpretations fit the same capacities.",
+      "challenge": "Unit and count scale are confounded.",
+      "remedy": "Constructed explicit 10/12 alternative parameterizations with equal predictions.",
+      "evidence": [
+        "src/identifiability_demo.py",
+        "results/identifiability",
+        "research/literature/metrology/README.md"
+      ],
+      "retry_when": "An independent unit or count is physically grounded."
+    },
+    {
+      "id": "ROOT-15",
+      "theme": "chart transcription",
+      "status": "completed-uncertainty-preserving-resource",
+      "question": "Can the original sign chart be indexed transparently?",
+      "outcome": "687 source-linked cells with retained numeric ambiguities; no expert accuracy claim.",
+      "challenge": "Printed small digits, duplicates and inventory differences.",
+      "remedy": "Independent reference comparison, source crops and ambiguity-preserving atlas.",
+      "evidence": [
+        "src/chart_reference.py",
+        "src/chart_atlas.py",
+        "output/chart_atlas/index.html",
+        "research/chart_reference"
+      ],
+      "retry_when": "Expert adjudication or a new source image corrects explicit uncertain fields."
+    },
+    {
+      "id": "ROOT-16",
+      "theme": "image recognition pilot",
+      "status": "exploratory-development",
+      "question": "Can original printed graphics be recognized from the chart?",
+      "outcome": "Small printed-row development pilot; not a full inscription corpus decoder.",
+      "challenge": "Segmentation, editorial signs, touching forms and clipped rows.",
+      "remedy": "Source crop review and explicit compatible-candidate scoring.",
+      "evidence": [
+        "src/font_pilot.py",
+        "research/visual_digitization/FRESH_FONT_PILOT_PLAN.md"
+      ],
+      "retry_when": "New blind examples and source-only crop rules are frozen."
+    },
+    {
+      "id": "ROOT-17",
+      "theme": "fresh20 image test",
+      "status": "frozen-evaluation-failed-whole-row-recovery",
+      "question": "Does the frozen acquisition pipeline recover unseen-reference printed rows?",
+      "outcome": "14 matching row counts; two compatible first-candidate whole rows of 20.",
+      "challenge": "Acquisition/segmentation defects and chart mapping ambiguity.",
+      "remedy": "Preserved frozen predictions, independent numeric reference and explicit coverage.",
+      "evidence": [
+        "research/visual_digitization/font_fresh20/evaluation_frozen_endpoint.json",
+        "src/evaluate_font_fresh20.py"
+      ],
+      "retry_when": "A repaired pipeline is frozen on genuinely new reference-withheld rows."
+    },
+    {
+      "id": "ROOT-18",
+      "theme": "image geometry repair",
+      "status": "post-reference-development",
+      "question": "Can source-only geometric repair reduce acquisition errors?",
+      "outcome": "Improved development row recovery; not a fresh blind accuracy result.",
+      "challenge": "Neighbor rows and top cuts contaminated drawn-unit acquisition.",
+      "remedy": "Used source-only revised vertical crops with the same frozen chart/matcher.",
+      "evidence": [
+        "src/methods/font_geometry_sensitivity.py",
+        "research/methods/results/font_geometry_sensitivity"
+      ],
+      "retry_when": "Fresh withheld-source references can validate the revised crop protocol."
+    },
+    {
+      "id": "ROOT-19",
+      "theme": "source identity",
+      "status": "completed-with-unresolved-joins",
+      "question": "Which historical source joins are physically defensible?",
+      "outcome": "Several primary joins and scan duplicate checks resolved; other historical IDs/bangle context remain conditional.",
+      "challenge": "Misleading retrieval titles, reused inventory numbers, unavailable author figure and duplicated scan pages.",
+      "remedy": "Original plate/text review, dimensions, opposing strings and image hashing.",
+      "evidence": [
+        "research/literature/audit_source_identities.py",
+        "research/literature/cisi1_counting_and_errata.md",
+        "research/corpus/FINAL_SOURCE_NOTES.md"
+      ],
+      "retry_when": "The missing primary witness or authentic historical crosswalk is obtained."
+    },
+    {
+      "id": "ROOT-20",
+      "theme": "report and integrity",
+      "status": "completed-historical-verification",
+      "question": "Can the investigation be delivered with auditable evidence?",
+      "outcome": "18-page report; 1,568 selected evidence hashes verified; 23 root and eight methods historical checks.",
+      "challenge": "Quantitative/source scope and visual layout required independent review.",
+      "remedy": "Exact result audit, source corrections, render-and-inspect QA and manifest verification.",
+      "evidence": [
+        "output/verification.json",
+        "output/evidence_manifest.json",
+        "output/report_visual_qa.json",
+        "output/pdf/indus_script_research_report.pdf"
+      ],
+      "retry_when": "A changed artifact or new manuscript requires the relevant new checks."
+    },
+    {
+      "id": "CRYPTO-01",
+      "theme": "cryptography framing",
+      "status": "verified-synthetic-demonstration",
+      "question": "Can an internally fitted structural score select semantic labels?",
+      "outcome": "All 720 six-symbol relabellings score identically; two fixed identities leave 24 maps.",
+      "challenge": "Permutation-equivariant structural statistics have no semantic anchor.",
+      "remedy": "Exact enumeration demonstrates the scope and external-anchor requirement.",
+      "evidence": [
+        "experiments/2026-10-02-cryptography-framing/protocol.md",
+        "experiments/2026-10-02-cryptography-framing/results.json",
+        "src/exploratory/permutation_identifiability.py"
+      ],
+      "retry_when": "A grounded known-system benchmark tests recovery under explicit anchors."
+    },
+    {
+      "id": "METHODS-adjusted_max_primary",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot frequency-adjusted full-universe max permutation sensitivity; distinct graphic classes only",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/adjusted_max_primary/adjusted_max_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/adjusted_max_primary",
+          "permutations": 1000,
+          "seed": 20261001,
+          "unique": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-adjusted_max_primary_10000",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot frequency-adjusted full-universe max permutation sensitivity; distinct graphic classes only",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/adjusted_max_primary_10000/adjusted_max_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/adjusted_max_primary_10000",
+          "permutations": 10000,
+          "seed": 20261001,
+          "unique": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-adjusted_max_unique",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot frequency-adjusted full-universe max permutation sensitivity; distinct graphic classes only",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/adjusted_max_unique/adjusted_max_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/adjusted_max_unique",
+          "permutations": 1000,
+          "seed": 20261001,
+          "unique": true,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-classaware_collapsed",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Exploratory class-aware substitution analysis with selection-aware max statistic and train-only new-frame transfer",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/classaware_collapsed/substitution_validation.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/classaware_collapsed",
+          "min_length": 3,
+          "seed": 20261001,
+          "permutations": 1000,
+          "unique": false,
+          "collapse": "research/methods/curated_allograph_collapse.json"
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-classaware_pilot",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Exploratory class-aware substitution analysis with selection-aware max statistic and train-only new-frame transfer",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/classaware_pilot/substitution_validation.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/classaware_pilot",
+          "min_length": 3,
+          "seed": 20261001,
+          "permutations": 100,
+          "unique": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-classaware_primary",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Exploratory class-aware substitution analysis with selection-aware max statistic and train-only new-frame transfer",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/classaware_primary/substitution_validation.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/classaware_primary",
+          "min_length": 3,
+          "seed": 20261001,
+          "permutations": 1000,
+          "unique": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-classaware_unique",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Exploratory class-aware substitution analysis with selection-aware max statistic and train-only new-frame transfer",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/classaware_unique/substitution_validation.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/classaware_unique",
+          "min_length": 3,
+          "seed": 20261001,
+          "permutations": 1000,
+          "unique": true,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-classaware_unique_preserved_aliases",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Exploratory class-aware substitution analysis with selection-aware max statistic and train-only new-frame transfer",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/classaware_unique_preserved_aliases/substitution_validation.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/classaware_unique_preserved_aliases",
+          "min_length": 3,
+          "seed": 20261001,
+          "permutations": 1000,
+          "unique": true,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-collapsed_primary",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "See exact source result",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/collapsed_primary/conditional_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/collapsed_primary",
+          "min_length": 3,
+          "folds": 5,
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "permutations": 200,
+          "substitution_permutations": 10000,
+          "unique": false,
+          "reverse": false,
+          "collapse": "research/methods/curated_allograph_collapse.json"
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-font_fresh20_audit",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "See exact source result",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/font_fresh20_audit/audit.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        null
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-font_geometry_sensitivity",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-reference source-geometry development diagnostic; not fresh validation",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/font_geometry_sensitivity/evaluation_post_reference.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        null
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-font_pilot_audit",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "See exact source result",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/font_pilot_audit/audit.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        null
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-gap_design_matched",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-audit artificial-gap-sampling-law sensitivity; unchanged fitted models and held-out queries.",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/gap_design_matched/gap_design_matched.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "prior": "results/gap_restoration",
+          "output": "research/methods/results/gap_design_matched"
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-joint_nested_primary",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-audit full-procedure grouped nested structural permutation sensitivity",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/joint_nested_primary/joint_nested_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/joint_nested_primary",
+          "permutations": 100,
+          "position_permutations": 100,
+          "seed": 20261001,
+          "unique": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-joint_nested_primary_1000",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-audit full-procedure grouped nested structural permutation sensitivity",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/joint_nested_primary_1000/joint_nested_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/joint_nested_primary",
+          "permutations": 100,
+          "position_permutations": 100,
+          "seed": 20261001,
+          "unique": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-joint_nested_unique",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-audit full-procedure grouped nested structural permutation sensitivity",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/joint_nested_unique/joint_nested_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/joint_nested_unique",
+          "permutations": 100,
+          "position_permutations": 50,
+          "seed": 20261001,
+          "unique": true,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-joint_nested_unique_conditioned_1000",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot full nested metadata permutation reference conditioned on whole-string uniqueness; See exact source result",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/joint_nested_unique_conditioned_1000/joint_nested_results.json",
+        "research/methods/results/joint_nested_unique_conditioned_1000/completion_audit.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/joint_nested_unique_conditioned_1000",
+          "permutations": 1000,
+          "seed": 20261001,
+          "max_attempts": 1000000
+        },
+        null
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-joint_transfer_collapsed",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-audit joint full-corpus column-permutation new-frame transfer reference, with discovery and grouping rerun on every null corpus",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/joint_transfer_collapsed/joint_null_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/joint_transfer_collapsed",
+          "permutations": 1000,
+          "seed": 20261001,
+          "unique": false,
+          "collapse": "research/methods/curated_allograph_collapse.json"
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-joint_transfer_primary",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-audit joint full-corpus column-permutation new-frame transfer reference, with discovery and grouping rerun on every null corpus",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/joint_transfer_primary/joint_null_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/joint_transfer_primary",
+          "permutations": 1000,
+          "seed": 20261001,
+          "unique": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-joint_transfer_unique",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-audit joint full-corpus column-permutation new-frame transfer reference, with discovery and grouping rerun on every null corpus",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/joint_transfer_unique/joint_null_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/joint_transfer_unique",
+          "permutations": 1000,
+          "seed": 20261001,
+          "unique": true,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-joint_transfer_unique_conditioned",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-audit joint full-corpus column-permutation new-frame transfer reference, with discovery and grouping rerun on every null corpus",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/joint_transfer_unique_conditioned/joint_null_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/joint_transfer_unique_conditioned",
+          "permutations": 1000,
+          "seed": 20261001,
+          "unique": true,
+          "collapse": null,
+          "require_unique_null": true,
+          "max_attempts": 1000000
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-nested_collapsed",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot training-only nested model-selection robustness; Site transfer excluding every transitive physical-artifact/identical-string component touching the held-out site",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/nested_collapsed/nested_results.json",
+        "research/methods/results/nested_collapsed/transitive_site_transfer.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_collapsed",
+          "min_length": 3,
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "permutations": 200,
+          "position_permutations": 50,
+          "unique": false,
+          "reverse": false,
+          "collapse": "research/methods/curated_allograph_collapse.json"
+        },
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_collapsed/transitive_site_transfer.json",
+          "min_length": 3,
+          "seed": 20261001,
+          "collapse": "research/methods/curated_allograph_collapse.json",
+          "all_records": true
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-nested_length2",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot training-only nested model-selection robustness",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/nested_length2/nested_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_length2",
+          "min_length": 2,
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "permutations": 0,
+          "position_permutations": null,
+          "unique": false,
+          "reverse": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-nested_length2_unique_preserved_aliases",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot training-only nested model-selection robustness; Site transfer excluding every transitive physical-artifact/identical-string component touching the held-out site; Unique-sequence sensitivity with all physical aliases excluded across held-out sites",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/nested_length2_unique_preserved_aliases/nested_results.json",
+        "research/methods/results/nested_length2_unique_preserved_aliases/alias_safe_site_transfer.json",
+        "research/methods/results/nested_length2_unique_preserved_aliases/transitive_site_transfer.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_length2_unique_preserved_aliases",
+          "min_length": 2,
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "permutations": 0,
+          "position_permutations": null,
+          "unique": true,
+          "reverse": false,
+          "collapse": null
+        },
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_length2_unique_preserved_aliases/alias_safe_site_transfer.json",
+          "min_length": 2,
+          "seed": 20261001,
+          "collapse": null
+        },
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_length2_unique_preserved_aliases/transitive_site_transfer.json",
+          "min_length": 2,
+          "seed": 20261001,
+          "collapse": null,
+          "all_records": false
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-nested_pilot",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot training-only nested model-selection robustness",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/nested_pilot/nested_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_pilot",
+          "min_length": 3,
+          "seed": 20261001,
+          "bootstrap": 1000,
+          "permutations": 0,
+          "unique": false,
+          "reverse": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-nested_primary",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot training-only nested model-selection robustness; Site transfer excluding every transitive physical-artifact/identical-string component touching the held-out site",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/nested_primary/nested_results.json",
+        "research/methods/results/nested_primary/transitive_site_transfer.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_primary",
+          "min_length": 3,
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "permutations": 1000,
+          "position_permutations": 200,
+          "unique": false,
+          "reverse": false,
+          "collapse": null
+        },
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_primary/transitive_site_transfer.json",
+          "min_length": 3,
+          "seed": 20261001,
+          "collapse": null,
+          "all_records": true
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-nested_reverse",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot training-only nested model-selection robustness",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/nested_reverse/nested_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_reverse",
+          "min_length": 3,
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "permutations": 0,
+          "position_permutations": null,
+          "unique": false,
+          "reverse": true,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-nested_unique",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot training-only nested model-selection robustness",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/nested_unique/nested_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_unique",
+          "min_length": 3,
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "permutations": 100,
+          "position_permutations": 50,
+          "unique": true,
+          "reverse": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-nested_unique_preserved_aliases",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot training-only nested model-selection robustness; Site transfer excluding every transitive physical-artifact/identical-string component touching the held-out site; Unique-sequence sensitivity with all physical aliases excluded across held-out sites",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/nested_unique_preserved_aliases/nested_results.json",
+        "research/methods/results/nested_unique_preserved_aliases/alias_safe_site_transfer.json",
+        "research/methods/results/nested_unique_preserved_aliases/transitive_site_transfer.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_unique_preserved_aliases",
+          "min_length": 3,
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "permutations": 100,
+          "position_permutations": 50,
+          "unique": true,
+          "reverse": false,
+          "collapse": null
+        },
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_unique_preserved_aliases/alias_safe_site_transfer.json",
+          "min_length": 3,
+          "seed": 20261001,
+          "collapse": null
+        },
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_unique_preserved_aliases/transitive_site_transfer.json",
+          "min_length": 3,
+          "seed": 20261001,
+          "collapse": null,
+          "all_records": false
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-numerical_equalities",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "See exact source result",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/numerical_equalities/numerical_equalities_audit.json",
+        "research/methods/results/numerical_equalities/numerical_count_delta_sensitivity.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        null,
+        null
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-pilot",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "See exact source result",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/pilot/conditional_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/pilot",
+          "min_length": 3,
+          "folds": 5,
+          "seed": 20261001,
+          "bootstrap": 200,
+          "permutations": 2,
+          "substitution_permutations": 10,
+          "unique": false,
+          "reverse": false
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-raw_primary",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "See exact source result",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/raw_primary/conditional_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/raw_primary",
+          "min_length": 3,
+          "folds": 5,
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "permutations": 1000,
+          "substitution_permutations": 10000,
+          "unique": false,
+          "reverse": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-templates_extended",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Declared latent independent-slot template robustness; no phonetic values",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/templates_extended/template_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/templates_extended",
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "unique": false,
+          "collapse": null,
+          "component_grid": "16,32,64",
+          "min_per_component": 5
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-templates_primary",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Declared latent independent-slot template robustness; no phonetic values",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/templates_primary/template_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/templates_primary",
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "unique": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-totem_joint_nested",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-audit full-procedure grouped nested structural permutation sensitivity",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/totem_joint_nested/joint_nested_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "research/literature/nonlinguistic_controls/TotemPoles_author_ordered.jsonl",
+          "output": "research/methods/results/totem_joint_nested",
+          "permutations": 100,
+          "position_permutations": 100,
+          "seed": 20261001,
+          "unique": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-totem_nested",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot training-only nested model-selection robustness",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/totem_nested/nested_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "research/literature/nonlinguistic_controls/TotemPoles_author_ordered.jsonl",
+          "output": "research/methods/results/totem_nested",
+          "min_length": 3,
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "permutations": 100,
+          "position_permutations": 100,
+          "unique": false,
+          "reverse": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-totem_templates",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Declared latent independent-slot template robustness; no phonetic values",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/totem_templates/template_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "research/literature/nonlinguistic_controls/TotemPoles_author_ordered.jsonl",
+          "output": "research/methods/results/totem_templates",
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "unique": false,
+          "collapse": null,
+          "component_grid": "16,32,64",
+          "min_per_component": 5
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-workflow_templates",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Declared latent independent-slot template robustness; no phonetic values",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/workflow_templates/template_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "research/methods/controls/workflow_codes.jsonl",
+          "output": "research/methods/results/workflow_templates",
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "unique": false,
+          "collapse": null,
+          "component_grid": "16,32,64",
+          "min_per_component": 5
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "CRYPTO-02",
+      "theme": "anchored mapping",
+      "status": "completed-synthetic-grid",
+      "question": "When can a known reference and correct anchors recover an eight-symbol encoding?",
+      "outcome": "Transition mappings recover throughout the grid; shifted administrative forms show confident wrong mappings despite held-out reference preference.",
+      "challenge": "A fixed reference likelihood can concentrate on the wrong identity map under a changed generating process.",
+      "remedy": "Exact enumeration, concealed ground truth, correct/wrong reference comparison, frozen code snapshots and twelve arithmetic/integrity checks.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/anchor-benchmark/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/anchor-benchmark/main/results.json",
+        "experiments/2026-10-02-six-hour/anchor-benchmark/review/checks.json",
+        "experiments/2026-10-02-six-hour/anchor-benchmark/FINDINGS.md"
+      ],
+      "retry_when": "A separately declared stress test adds changed references, wrong anchors or generator-aware scoring."
+    }
+  ]
+}

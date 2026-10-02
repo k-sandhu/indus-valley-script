@@ -1,0 +1,179 @@
+{
+  "scope": "Read-only audit; no change to root benchmark or archaeological interpretation",
+  "parameters": {
+    "root_output": "results/restoration",
+    "output": "research/methods/root_restoration_audit.json",
+    "seed": 20261006
+  },
+  "source_sha256": "eee2788b59049951735ec81b3a56d4d3c882e9d0f4f6874a42cc19eef28c4e38",
+  "benchmark_sha256": "1d354865e5ffb8de2ec014e137114fee1ac378bc328420bdeca28391adaf7fa4",
+  "helper_sha256": "ed150239452339a04ef35f04b5814a236d9bd3ad0b64702e66a0230760de0ca8",
+  "equal_text_original_baseline": {
+    "texts": 1596,
+    "groups": 1526,
+    "baseline_top1": 0.17361845547935711,
+    "local_top1": 0.3259836358990487,
+    "gain_top1": 0.15236518041969163,
+    "95pct_group_bootstrap_gain_ci": [
+      0.14076312279127862,
+      0.16367671024455893
+    ],
+    "estimand": "Uniform complete text, then a uniformly selected one-glyph mask within that text."
+  },
+  "stronger_baseline_policy": "Select U20 or P/PM at alpha20/100/500/2000 on three inner training groups by exact all-slot top1; ties favor greater smoothing then PM>P>U.",
+  "folds": [
+    {
+      "fold": 0,
+      "chosen": [
+        "PM",
+        20
+      ],
+      "inner_accuracy": {
+        "P@20": 0.1575085857009054,
+        "PM@20": 0.16266000624414612,
+        "U@20": 0.10677489853262566,
+        "P@100": 0.1554792382141742,
+        "PM@100": 0.16000624414611303,
+        "P@500": 0.12925382453949422,
+        "PM@500": 0.13534186699968778,
+        "P@2000": 0.10677489853262566,
+        "PM@2000": 0.1084920387137059
+      }
+    },
+    {
+      "fold": 1,
+      "chosen": [
+        "PM",
+        20
+      ],
+      "inner_accuracy": {
+        "P@20": 0.15587455141207676,
+        "PM@20": 0.16398814167576845,
+        "U@20": 0.10563270400998595,
+        "P@100": 0.15369012326415976,
+        "PM@100": 0.15681073490404118,
+        "P@500": 0.1273209549071618,
+        "PM@500": 0.132157902948978,
+        "P@2000": 0.10563270400998595,
+        "PM@2000": 0.10563270400998595
+      }
+    },
+    {
+      "fold": 2,
+      "chosen": [
+        "PM",
+        20
+      ],
+      "inner_accuracy": {
+        "P@20": 0.16294677696269705,
+        "PM@20": 0.16560012486343062,
+        "U@20": 0.10769470891212736,
+        "P@100": 0.154518495395661,
+        "PM@100": 0.1607616669267988,
+        "P@500": 0.1261120649289839,
+        "PM@500": 0.13641329795536133,
+        "P@2000": 0.10769470891212736,
+        "PM@2000": 0.10769470891212736
+      }
+    },
+    {
+      "fold": 3,
+      "chosen": [
+        "PM",
+        20
+      ],
+      "inner_accuracy": {
+        "P@20": 0.16575620415170908,
+        "PM@20": 0.16747307632277197,
+        "U@20": 0.10628999531762136,
+        "P@100": 0.1610738255033557,
+        "PM@100": 0.16466364913375994,
+        "P@500": 0.13235523646012173,
+        "PM@500": 0.14000312158576556,
+        "P@2000": 0.10628999531762136,
+        "PM@2000": 0.10800686748868425
+      }
+    },
+    {
+      "fold": 4,
+      "chosen": [
+        "PM",
+        20
+      ],
+      "inner_accuracy": {
+        "P@20": 0.15842047760262212,
+        "PM@20": 0.16279069767441862,
+        "U@20": 0.10613391602934291,
+        "P@100": 0.15124083034181365,
+        "PM@100": 0.1579522397377868,
+        "P@500": 0.13032620571250195,
+        "PM@500": 0.13828624941470266,
+        "P@2000": 0.10613391602934291,
+        "PM@2000": 0.10613391602934291
+      }
+    }
+  ],
+  "stronger_baseline_slot_top1": 0.16993382444749658,
+  "local_slot_top1": 0.3381196154326383,
+  "equal_text_stronger_baseline": {
+    "texts": 1596,
+    "groups": 1526,
+    "baseline_top1": 0.17361845547935711,
+    "local_top1": 0.3259836358990487,
+    "gain_top1": 0.15236518041969163,
+    "95pct_group_bootstrap_gain_ci": [
+      0.14076312279127862,
+      0.16367671024455893
+    ],
+    "estimand": "Uniform complete text, then a uniformly selected one-glyph mask within that text."
+  },
+  "local_confidence_bins_from_root": [
+    {
+      "mass_interval": [
+        0.0,
+        0.2
+      ],
+      "slots": 1489,
+      "mean_model_mass": 0.13821532223111255,
+      "exact_accuracy": 0.08059100067159167
+    },
+    {
+      "mass_interval": [
+        0.2,
+        0.4
+      ],
+      "slots": 3058,
+      "mean_model_mass": 0.2926677952539797,
+      "exact_accuracy": 0.20830608240680182
+    },
+    {
+      "mass_interval": [
+        0.4,
+        0.6
+      ],
+      "slots": 1605,
+      "mean_model_mass": 0.4915071324055263,
+      "exact_accuracy": 0.3844236760124611
+    },
+    {
+      "mass_interval": [
+        0.6,
+        0.8
+      ],
+      "slots": 1006,
+      "mean_model_mass": 0.6962847573432217,
+      "exact_accuracy": 0.617296222664016
+    },
+    {
+      "mass_interval": [
+        0.8,
+        1.0
+      ],
+      "slots": 851,
+      "mean_model_mass": 0.8959890549899626,
+      "exact_accuracy": 0.8378378378378378
+    }
+  ],
+  "confidence_interpretation": "Compare mean model mass with exact held-out code accuracy. This is not calibration to archaeological truth and no calibrator was fitted on outer test predictions.",
+  "elapsed_seconds": 4.984488500005682
+}

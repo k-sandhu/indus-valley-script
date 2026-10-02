@@ -1,0 +1,454 @@
+{
+  "outcome": "seal_tablet",
+  "positive_label": "seal",
+  "objects": 2304,
+  "groups": 1679,
+  "labels": {
+    "1": 1394,
+    "0": 910
+  },
+  "largest_group": 40,
+  "site_labels": {
+    "Allahdino": {
+      "1": 6
+    },
+    "Bala-kot": {
+      "1": 3
+    },
+    "Banawali": {
+      "1": 13
+    },
+    "Bhirrana": {
+      "1": 2
+    },
+    "Chanhu-daro": {
+      "1": 30
+    },
+    "Desalpur": {
+      "1": 1
+    },
+    "Dholavira": {
+      "1": 60,
+      "0": 5
+    },
+    "Dilmun": {
+      "1": 1
+    },
+    "Farmana": {
+      "1": 2
+    },
+    "Gharo Bhiro": {
+      "1": 1
+    },
+    "Gola Dhoro (Bagasra)": {
+      "1": 5
+    },
+    "Gonur Depe": {
+      "1": 1
+    },
+    "Hajar": {
+      "0": 1
+    },
+    "Harappa": {
+      "0": 671,
+      "1": 248
+    },
+    "Jhukar": {
+      "1": 1
+    },
+    "Kalibangan": {
+      "1": 29,
+      "0": 3
+    },
+    "Kanmer": {
+      "1": 1
+    },
+    "Karanpura": {
+      "1": 1
+    },
+    "Karzakan": {
+      "1": 2
+    },
+    "Khirsara": {
+      "1": 3
+    },
+    "Kish": {
+      "1": 1
+    },
+    "Lakhanjo-daro": {
+      "1": 3
+    },
+    "Lohumjo-daro": {
+      "1": 1
+    },
+    "Lothal": {
+      "1": 44,
+      "0": 1
+    },
+    "Luristan": {
+      "1": 1
+    },
+    "Mohenjo-daro": {
+      "1": 894,
+      "0": 225
+    },
+    "Nausharo": {
+      "1": 13
+    },
+    "Nindowari-damb": {
+      "1": 1
+    },
+    "Nuhato": {
+      "1": 1
+    },
+    "Rajanpur": {
+      "0": 1
+    },
+    "Rakhigarhi": {
+      "1": 2
+    },
+    "Rupar": {
+      "0": 1
+    },
+    "Saar": {
+      "1": 1
+    },
+    "Salut": {
+      "1": 1
+    },
+    "Shortughai": {
+      "1": 1
+    },
+    "Surkotada": {
+      "1": 2
+    },
+    "Susa": {
+      "1": 1
+    },
+    "Unknown": {
+      "1": 15,
+      "0": 2
+    },
+    "Ur": {
+      "1": 2
+    }
+  },
+  "models": {
+    "baseline": {
+      "log_loss_nats": 0.4936548756845373,
+      "balanced_accuracy": 0.7837584940167437,
+      "roc_auc": 0.8139668437731566
+    },
+    "unigram": {
+      "log_loss_nats": 0.43216925088624225,
+      "balanced_accuracy": 0.7779896574014221,
+      "roc_auc": 0.881058539738597
+    },
+    "boundary": {
+      "log_loss_nats": 0.4169841829627543,
+      "balanced_accuracy": 0.7890322733220868,
+      "roc_auc": 0.8911378435051319
+    },
+    "full": {
+      "log_loss_nats": 0.4092731791826839,
+      "balanced_accuracy": 0.795412048496697,
+      "roc_auc": 0.8977880082614659
+    }
+  },
+  "gain_nats_per_object": 0.0843816965018534,
+  "gain_cluster_bootstrap_95_ci": [
+    0.03244575765607053,
+    0.13033456252485592
+  ],
+  "unique_sequence_weighted_models": {
+    "baseline": {
+      "log_loss_nats": 0.3989783987323053,
+      "balanced_accuracy": 0.7900803647057445,
+      "roc_auc": 0.8181122672834413
+    },
+    "unigram": {
+      "log_loss_nats": 0.3529802528743259,
+      "balanced_accuracy": 0.7776596296189507,
+      "roc_auc": 0.8785057999916838
+    },
+    "boundary": {
+      "log_loss_nats": 0.34766909237338794,
+      "balanced_accuracy": 0.772020870552319,
+      "roc_auc": 0.8813451634098297
+    },
+    "full": {
+      "log_loss_nats": 0.3421600376522173,
+      "balanced_accuracy": 0.7768650288452948,
+      "roc_auc": 0.8849472826967115
+    }
+  },
+  "site_transfer": [
+    {
+      "train_site": "Harappa",
+      "test_site": "Mohenjo-daro",
+      "train_objects": 842,
+      "test_objects": 1119,
+      "overlapping_sequences_removed_from_train": true,
+      "models": {
+        "baseline": {
+          "log_loss_nats": 1.031235716533063,
+          "balanced_accuracy": 0.4983221476510067,
+          "roc_auc": 0.47455132985334325
+        },
+        "unigram": {
+          "log_loss_nats": 0.8630678149069229,
+          "balanced_accuracy": 0.45843400447427296,
+          "roc_auc": 0.47590355456127265
+        },
+        "boundary": {
+          "log_loss_nats": 0.8376795125596754,
+          "balanced_accuracy": 0.47746457867263237,
+          "roc_auc": 0.4760676112353964
+        },
+        "full": {
+          "log_loss_nats": 0.8260107871379986,
+          "balanced_accuracy": 0.46476510067114096,
+          "roc_auc": 0.4796321153368133
+        }
+      }
+    },
+    {
+      "train_site": "Mohenjo-daro",
+      "test_site": "Harappa",
+      "train_objects": 1054,
+      "test_objects": 919,
+      "overlapping_sequences_removed_from_train": true,
+      "models": {
+        "baseline": {
+          "log_loss_nats": 0.9414906400833969,
+          "balanced_accuracy": 0.48147024181529735,
+          "roc_auc": 0.5438981298976011
+        },
+        "unigram": {
+          "log_loss_nats": 1.0792315857623669,
+          "balanced_accuracy": 0.5459443055622326,
+          "roc_auc": 0.6507619825969906
+        },
+        "boundary": {
+          "log_loss_nats": 1.1583965692166498,
+          "balanced_accuracy": 0.5325735541560502,
+          "roc_auc": 0.6539799769241863
+        },
+        "full": {
+          "log_loss_nats": 1.1953987807774809,
+          "balanced_accuracy": 0.528802701793183,
+          "roc_auc": 0.6589977645305514
+        }
+      }
+    }
+  ],
+  "exploratory_coefficients": {
+    "low_label": [
+      {
+        "feature": "site=Harappa",
+        "coefficient": -2.740659633633635
+      },
+      {
+        "feature": "pair=033>923",
+        "coefficient": -2.047925123431133
+      },
+      {
+        "feature": "first=630",
+        "coefficient": -1.720982043512901
+      },
+      {
+        "feature": "pair=615>752",
+        "coefficient": -1.5162270311321504
+      },
+      {
+        "feature": "first=706",
+        "coefficient": -1.2954867605795877
+      },
+      {
+        "feature": "sign=700",
+        "coefficient": -1.272957361279649
+      },
+      {
+        "feature": "last=002",
+        "coefficient": -1.2553813966250666
+      },
+      {
+        "feature": "pair=585>388",
+        "coefficient": -1.2504627711523761
+      },
+      {
+        "feature": "sign=585",
+        "coefficient": -1.1721165351649194
+      },
+      {
+        "feature": "pair=220>840",
+        "coefficient": -1.1255686350684055
+      },
+      {
+        "feature": "pair=060>690",
+        "coefficient": -1.1211341020728125
+      },
+      {
+        "feature": "last=700",
+        "coefficient": -1.0960935728313987
+      },
+      {
+        "feature": "pair=003>861",
+        "coefficient": -1.0919415914788333
+      },
+      {
+        "feature": "pair=503>615",
+        "coefficient": -1.0914857375030884
+      },
+      {
+        "feature": "pair=142>617",
+        "coefficient": -1.061461684233824
+      },
+      {
+        "feature": "pair=630>740",
+        "coefficient": -1.0570120826092055
+      },
+      {
+        "feature": "last=167",
+        "coefficient": -1.0152584634876185
+      },
+      {
+        "feature": "sign=167",
+        "coefficient": -1.0152584634876185
+      },
+      {
+        "feature": "pair=501>405",
+        "coefficient": -1.0095488208417578
+      },
+      {
+        "feature": "first=501",
+        "coefficient": -1.0095488208417578
+      },
+      {
+        "feature": "first=798",
+        "coefficient": -0.9683402784517684
+      },
+      {
+        "feature": "pair=240>482",
+        "coefficient": -0.9480219389708338
+      },
+      {
+        "feature": "sign=630",
+        "coefficient": -0.9476647491352349
+      },
+      {
+        "feature": "pair=001>142",
+        "coefficient": -0.9289497768407452
+      },
+      {
+        "feature": "sign=421",
+        "coefficient": -0.9151910570735471
+      }
+    ],
+    "high_label": [
+      {
+        "feature": "sign=002",
+        "coefficient": 1.306924235725756
+      },
+      {
+        "feature": "sign=742",
+        "coefficient": 1.2751461495971967
+      },
+      {
+        "feature": "length=9",
+        "coefficient": 1.1933769989575636
+      },
+      {
+        "feature": "first=031",
+        "coefficient": 1.1576223609597927
+      },
+      {
+        "feature": "pair=585>740",
+        "coefficient": 1.0620394297887403
+      },
+      {
+        "feature": "pair=741>240",
+        "coefficient": 1.0324738875831225
+      },
+      {
+        "feature": "first=061",
+        "coefficient": 0.963191249517591
+      },
+      {
+        "feature": "sign=060",
+        "coefficient": 0.955641906444008
+      },
+      {
+        "feature": "sign=055",
+        "coefficient": 0.9525547036867802
+      },
+      {
+        "feature": "pair=002>003",
+        "coefficient": 0.9444910531749705
+      },
+      {
+        "feature": "pair=002>235",
+        "coefficient": 0.9345817949204008
+      },
+      {
+        "feature": "sign=140",
+        "coefficient": 0.9218776692658855
+      },
+      {
+        "feature": "sign=001",
+        "coefficient": 0.9138359393517045
+      },
+      {
+        "feature": "sign=741",
+        "coefficient": 0.8808250096678701
+      },
+      {
+        "feature": "sign=125",
+        "coefficient": 0.8606587354254721
+      },
+      {
+        "feature": "pair=003>140",
+        "coefficient": 0.8507402494721792
+      },
+      {
+        "feature": "pair=140>100",
+        "coefficient": 0.8483415692210979
+      },
+      {
+        "feature": "site=Lothal",
+        "coefficient": 0.837989552417935
+      },
+      {
+        "feature": "pair=468>806",
+        "coefficient": 0.8259622903611182
+      },
+      {
+        "feature": "sign=468",
+        "coefficient": 0.8259622903611182
+      },
+      {
+        "feature": "site=Chanhu-daro",
+        "coefficient": 0.8092644252251424
+      },
+      {
+        "feature": "last=220",
+        "coefficient": 0.7957715170863998
+      },
+      {
+        "feature": "sign=527",
+        "coefficient": 0.7718037315657296
+      },
+      {
+        "feature": "pair=002>032",
+        "coefficient": 0.7572285864541642
+      },
+      {
+        "feature": "last=151",
+        "coefficient": 0.7532582048580352
+      }
+    ]
+  },
+  "permutations": [],
+  "permutation_exchangeable_objects": 2067,
+  "permutation_total_strata": 114
+}

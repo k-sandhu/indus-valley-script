@@ -1,0 +1,7313 @@
+{
+  "design": "Exploratory class-aware substitution analysis with selection-aware max statistic and train-only new-frame transfer",
+  "input_sha256": "9e539daef4d5a7efbe3c5f34b73e14058eec1c5e888c749bc2eafb0f08084ba8",
+  "classes_sha256": "9fea45e16be1218d148473dad440f806a2f0c12c954c79347db2584324cc1f71",
+  "source_sha256": "f9306f5e4270820c6a120aaaf5e4fa565fcdbf2339b524977f4bebdaa4e97cca",
+  "dependency_sha256": "6a96245d1392db24ae501e1bc4a417bd809cb1f9bdae6a492b8a05510f73e9bc",
+  "parameters": {
+    "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+    "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+    "output": "research/methods/results/classaware_unique",
+    "min_length": 3,
+    "seed": 20261001,
+    "permutations": 1000,
+    "unique": true,
+    "collapse": null
+  },
+  "records": 1596,
+  "groups": 1563,
+  "unique_sequences": 1596,
+  "excluded": {
+    "too_short": 823,
+    "duplicate_sequence": 511
+  },
+  "class_policy": "A pair shares a Mayig class iff its two Wells IDs have a nonempty intersection of listed classes. Do not use graph-connected components: overlapping candidate sets need not imply equivalence.",
+  "pairs_by_category": {
+    "known_distinct_graphic_classes": {
+      "pairs": 429,
+      "pairs_with_two_or_more_frames": 60,
+      "top_pairs": [
+        {
+          "pair": [
+            "817",
+            "820"
+          ],
+          "distinct_frames": 8,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 16,
+          "sites": [
+            "Dholavira",
+            "Harappa",
+            "Mohenjo-daro",
+            "Nausharo"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAG:P"
+          ],
+          "contexts": [
+            [
+              4,
+              0,
+              [
+                "*",
+                "002",
+                "003",
+                "390"
+              ]
+            ],
+            [
+              5,
+              0,
+              [
+                "*",
+                "002",
+                "017",
+                "585",
+                "740"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "002",
+                "004",
+                "390"
+              ]
+            ],
+            [
+              5,
+              0,
+              [
+                "*",
+                "002",
+                "590",
+                "390",
+                "740"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "002",
+                "222",
+                "740"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "002",
+                "231",
+                "520"
+              ]
+            ],
+            [
+              5,
+              0,
+              [
+                "*",
+                "002",
+                "415",
+                "100",
+                "740"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "002",
+                "540",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "817": [
+              "P385"
+            ],
+            "820": [
+              "P378"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "233",
+            "235"
+          ],
+          "distinct_frames": 7,
+          "slots": [
+            "initial",
+            "medial"
+          ],
+          "artifact_count": 14,
+          "sites": [
+            "Chanhu-daro",
+            "Harappa",
+            "Lothal",
+            "Mohenjo-daro",
+            "Rupar"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAB:B",
+            "TAB:C",
+            "TAB:I",
+            "TAG:L"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "550",
+                "527"
+              ]
+            ],
+            [
+              5,
+              3,
+              [
+                "817",
+                "002",
+                "803",
+                "*",
+                "520"
+              ]
+            ],
+            [
+              3,
+              0,
+              [
+                "*",
+                "923",
+                "740"
+              ]
+            ],
+            [
+              3,
+              0,
+              [
+                "*",
+                "798",
+                "740"
+              ]
+            ],
+            [
+              3,
+              0,
+              [
+                "*",
+                "176",
+                "740"
+              ]
+            ],
+            [
+              3,
+              0,
+              [
+                "*",
+                "803",
+                "740"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "032",
+                "877",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "233": [
+              "P058"
+            ],
+            "235": [
+              "P060"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "235",
+            "240"
+          ],
+          "distinct_frames": 6,
+          "slots": [
+            "initial",
+            "medial"
+          ],
+          "artifact_count": 12,
+          "sites": [
+            "Harappa",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL",
+            "SEAL:S",
+            "TAB:B",
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              4,
+              0,
+              [
+                "*",
+                "590",
+                "390",
+                "740"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "415",
+                "220",
+                "520"
+              ]
+            ],
+            [
+              3,
+              0,
+              [
+                "*",
+                "772",
+                "740"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "176",
+                "740",
+                "400"
+              ]
+            ],
+            [
+              5,
+              2,
+              [
+                "817",
+                "002",
+                "*",
+                "550",
+                "527"
+              ]
+            ],
+            [
+              3,
+              1,
+              [
+                "806",
+                "*",
+                "520"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "235": [
+              "P060"
+            ],
+            "240": [
+              "P062"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "820",
+            "861"
+          ],
+          "distinct_frames": 6,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 12,
+          "sites": [
+            "Bhirrana",
+            "Harappa",
+            "Kalibangan",
+            "Lothal",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:R",
+            "SEAL:S",
+            "TAG",
+            "TAG:L",
+            "TAG:P"
+          ],
+          "contexts": [
+            [
+              4,
+              0,
+              [
+                "*",
+                "002",
+                "003",
+                "390"
+              ]
+            ],
+            [
+              3,
+              0,
+              [
+                "*",
+                "002",
+                "236"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "002",
+                "004",
+                "390"
+              ]
+            ],
+            [
+              5,
+              0,
+              [
+                "*",
+                "002",
+                "590",
+                "390",
+                "740"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "002",
+                "004",
+                "407"
+              ]
+            ],
+            [
+              5,
+              0,
+              [
+                "*",
+                "002",
+                "415",
+                "100",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "820": [
+              "P378"
+            ],
+            "861": [
+              "P385"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "003",
+            "004"
+          ],
+          "distinct_frames": 4,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 8,
+          "sites": [
+            "Harappa",
+            "Kalibangan",
+            "Lothal",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAG:L"
+          ],
+          "contexts": [
+            [
+              3,
+              1,
+              [
+                "491",
+                "*",
+                "390"
+              ]
+            ],
+            [
+              4,
+              2,
+              [
+                "861",
+                "002",
+                "*",
+                "390"
+              ]
+            ],
+            [
+              4,
+              2,
+              [
+                "817",
+                "002",
+                "*",
+                "390"
+              ]
+            ],
+            [
+              4,
+              2,
+              [
+                "820",
+                "002",
+                "*",
+                "390"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "003": [
+              "P123"
+            ],
+            "004": [
+              "P124"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "151",
+            "740"
+          ],
+          "distinct_frames": 4,
+          "slots": [
+            "terminal"
+          ],
+          "artifact_count": 8,
+          "sites": [
+            "Allahdino",
+            "Dholavira",
+            "Harappa",
+            "Lothal",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAB:B"
+          ],
+          "contexts": [
+            [
+              3,
+              2,
+              [
+                "416",
+                "840",
+                "*"
+              ]
+            ],
+            [
+              3,
+              2,
+              [
+                "220",
+                "100",
+                "*"
+              ]
+            ],
+            [
+              4,
+              3,
+              [
+                "861",
+                "002",
+                "176",
+                "*"
+              ]
+            ],
+            [
+              3,
+              2,
+              [
+                "590",
+                "390",
+                "*"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "151": [
+              "P001"
+            ],
+            "740": [
+              "P324"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "176",
+            "923"
+          ],
+          "distinct_frames": 4,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 8,
+          "sites": [
+            "Harappa",
+            "Lothal",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAB:B",
+            "TAB:C"
+          ],
+          "contexts": [
+            [
+              5,
+              3,
+              [
+                "817",
+                "002",
+                "240",
+                "*",
+                "740"
+              ]
+            ],
+            [
+              3,
+              1,
+              [
+                "235",
+                "*",
+                "740"
+              ]
+            ],
+            [
+              3,
+              1,
+              [
+                "233",
+                "*",
+                "740"
+              ]
+            ],
+            [
+              4,
+              2,
+              [
+                "032",
+                "220",
+                "*",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "176": [
+              "P194"
+            ],
+            "923": [
+              "P175"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "031",
+            "235"
+          ],
+          "distinct_frames": 3,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 6,
+          "sites": [
+            "Harappa",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:R",
+            "SEAL:S",
+            "TAB:B",
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              4,
+              0,
+              [
+                "*",
+                "240",
+                "740",
+                "090"
+              ]
+            ],
+            [
+              3,
+              0,
+              [
+                "*",
+                "388",
+                "740"
+              ]
+            ],
+            [
+              3,
+              0,
+              [
+                "*",
+                "176",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "031": [
+              "P144"
+            ],
+            "235": [
+              "P060"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "061",
+            "176"
+          ],
+          "distinct_frames": 3,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 6,
+          "sites": [
+            "Harappa",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "ROD",
+            "SEAL:S",
+            "TAB:B"
+          ],
+          "contexts": [
+            [
+              4,
+              2,
+              [
+                "817",
+                "002",
+                "*",
+                "740"
+              ]
+            ],
+            [
+              4,
+              2,
+              [
+                "861",
+                "002",
+                "*",
+                "151"
+              ]
+            ],
+            [
+              4,
+              1,
+              [
+                "140",
+                "*",
+                "740",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "061": [
+              "P204"
+            ],
+            "176": [
+              "P194"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "176",
+            "772"
+          ],
+          "distinct_frames": 3,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 6,
+          "sites": [
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAB:B"
+          ],
+          "contexts": [
+            [
+              4,
+              2,
+              [
+                "861",
+                "002",
+                "*",
+                "740"
+              ]
+            ],
+            [
+              3,
+              1,
+              [
+                "235",
+                "*",
+                "740"
+              ]
+            ],
+            [
+              4,
+              2,
+              [
+                "817",
+                "002",
+                "*",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "176": [
+              "P194"
+            ],
+            "772": [
+              "P096"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "176",
+            "803"
+          ],
+          "distinct_frames": 3,
+          "slots": [
+            "initial",
+            "medial"
+          ],
+          "artifact_count": 6,
+          "sites": [
+            "Harappa",
+            "Lothal",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAB:B"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "740",
+                "400"
+              ]
+            ],
+            [
+              3,
+              1,
+              [
+                "235",
+                "*",
+                "740"
+              ]
+            ],
+            [
+              3,
+              1,
+              [
+                "233",
+                "*",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "176": [
+              "P194"
+            ],
+            "803": [
+              "P364"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "176",
+            "904"
+          ],
+          "distinct_frames": 3,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 6,
+          "sites": [
+            "Allahdino",
+            "Harappa",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAB:B",
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              4,
+              1,
+              [
+                "240",
+                "*",
+                "740",
+                "400"
+              ]
+            ],
+            [
+              5,
+              3,
+              [
+                "817",
+                "002",
+                "240",
+                "*",
+                "740"
+              ]
+            ],
+            [
+              5,
+              3,
+              [
+                "235",
+                "705",
+                "033",
+                "*",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "176": [
+              "P194"
+            ],
+            "904": [
+              "P172"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "220",
+            "231"
+          ],
+          "distinct_frames": 3,
+          "slots": [
+            "initial",
+            "medial"
+          ],
+          "artifact_count": 6,
+          "sites": [
+            "Harappa",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:R",
+            "SEAL:S",
+            "TAB:C"
+          ],
+          "contexts": [
+            [
+              3,
+              1,
+              [
+                "003",
+                "*",
+                "740"
+              ]
+            ],
+            [
+              7,
+              0,
+              [
+                "*",
+                "017",
+                "585",
+                "095",
+                "520",
+                "032",
+                "407"
+              ]
+            ],
+            [
+              5,
+              2,
+              [
+                "820",
+                "060",
+                "*",
+                "798",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "220": [
+              "P050"
+            ],
+            "231": [
+              "P056"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "240",
+            "415"
+          ],
+          "distinct_frames": 3,
+          "slots": [
+            "initial",
+            "medial"
+          ],
+          "artifact_count": 6,
+          "sites": [
+            "Harappa",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAB:B",
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "100",
+                "740"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "100",
+                "740",
+                "400"
+              ]
+            ],
+            [
+              4,
+              1,
+              [
+                "235",
+                "*",
+                "220",
+                "520"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "240": [
+              "P062"
+            ],
+            "415": [
+              "P092"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "003",
+            "016"
+          ],
+          "distinct_frames": 2,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 4,
+          "sites": [
+            "Dholavira",
+            "Harappa",
+            "Kalibangan",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:R",
+            "SEAL:S",
+            "TAB:B",
+            "TAG:L"
+          ],
+          "contexts": [
+            [
+              4,
+              2,
+              [
+                "861",
+                "002",
+                "*",
+                "390"
+              ]
+            ],
+            [
+              4,
+              2,
+              [
+                "550",
+                "060",
+                "*",
+                "390"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "003": [
+              "P123"
+            ],
+            "016": [
+              "P126"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "004",
+            "005"
+          ],
+          "distinct_frames": 2,
+          "slots": [
+            "initial",
+            "medial"
+          ],
+          "artifact_count": 4,
+          "sites": [
+            "Harappa",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              4,
+              2,
+              [
+                "817",
+                "002",
+                "*",
+                "390"
+              ]
+            ],
+            [
+              3,
+              0,
+              [
+                "*",
+                "900",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "004": [
+              "P124"
+            ],
+            "005": [
+              "P125"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "004",
+            "016"
+          ],
+          "distinct_frames": 2,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 4,
+          "sites": [
+            "Dholavira",
+            "Harappa",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:R",
+            "SEAL:S",
+            "TAB:B"
+          ],
+          "contexts": [
+            [
+              4,
+              2,
+              [
+                "861",
+                "002",
+                "*",
+                "390"
+              ]
+            ],
+            [
+              4,
+              2,
+              [
+                "861",
+                "002",
+                "*",
+                "405"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "004": [
+              "P124"
+            ],
+            "016": [
+              "P126"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "007",
+            "460"
+          ],
+          "distinct_frames": 2,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 4,
+          "sites": [
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:R",
+            "SEAL:S"
+          ],
+          "contexts": [
+            [
+              3,
+              1,
+              [
+                "503",
+                "*",
+                "740"
+              ]
+            ],
+            [
+              5,
+              3,
+              [
+                "817",
+                "002",
+                "503",
+                "*",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "007": [
+              "P127"
+            ],
+            "460": [
+              "P215"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "025",
+            "840"
+          ],
+          "distinct_frames": 2,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 4,
+          "sites": [
+            "Harappa"
+          ],
+          "object_types": [
+            "TAB:B",
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "032",
+                "740"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "032",
+                "740",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "025": [
+              "P141"
+            ],
+            "840": [
+              "P349"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "028",
+            "840"
+          ],
+          "distinct_frames": 2,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 4,
+          "sites": [
+            "Harappa"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAB:B",
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "032",
+                "740"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "032",
+                "740",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "028": [
+              "P141"
+            ],
+            "840": [
+              "P349"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "031",
+            "176"
+          ],
+          "distinct_frames": 2,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 4,
+          "sites": [
+            "Harappa",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "MISC",
+            "SEAL:S",
+            "TAB:B"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "100",
+                "740"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "705",
+                "033",
+                "520"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "031": [
+              "P144"
+            ],
+            "176": [
+              "P194"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "031",
+            "220"
+          ],
+          "distinct_frames": 2,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 4,
+          "sites": [
+            "Harappa",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "MISC",
+            "SEAL:S",
+            "TAB:B",
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "100",
+                "740"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "240",
+                "740",
+                "090"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "031": [
+              "P144"
+            ],
+            "220": [
+              "P050"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "031",
+            "233"
+          ],
+          "distinct_frames": 2,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 4,
+          "sites": [
+            "Dholavira",
+            "Harappa",
+            "Lothal",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:R",
+            "SEAL:S"
+          ],
+          "contexts": [
+            [
+              4,
+              0,
+              [
+                "*",
+                "706",
+                "033",
+                "520"
+              ]
+            ],
+            [
+              3,
+              0,
+              [
+                "*",
+                "176",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "031": [
+              "P144"
+            ],
+            "233": [
+              "P058"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "031",
+            "240"
+          ],
+          "distinct_frames": 2,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 4,
+          "sites": [
+            "Harappa",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "MISC",
+            "SEAL:S",
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "100",
+                "740"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "705",
+                "033",
+                "520"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "031": [
+              "P144"
+            ],
+            "240": [
+              "P062"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "032",
+            "382"
+          ],
+          "distinct_frames": 2,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 4,
+          "sites": [
+            "Harappa",
+            "Nausharo"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAB:B",
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "740",
+                "400"
+              ]
+            ],
+            [
+              3,
+              0,
+              [
+                "*",
+                "760",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "032": [
+              "P145"
+            ],
+            "382": [
+              "P111"
+            ]
+          }
+        }
+      ]
+    },
+    "unmapped_or_partly_mapped": {
+      "pairs": 153,
+      "pairs_with_two_or_more_frames": 5,
+      "top_pairs": [
+        {
+          "pair": [
+            "025",
+            "059"
+          ],
+          "distinct_frames": 2,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 4,
+          "sites": [
+            "Harappa"
+          ],
+          "object_types": [
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "032",
+                "740"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "032",
+                "740",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "025": [
+              "P141"
+            ],
+            "059": []
+          }
+        },
+        {
+          "pair": [
+            "028",
+            "059"
+          ],
+          "distinct_frames": 2,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 4,
+          "sites": [
+            "Harappa"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "032",
+                "740"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "032",
+                "740",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "028": [
+              "P141"
+            ],
+            "059": []
+          }
+        },
+        {
+          "pair": [
+            "059",
+            "840"
+          ],
+          "distinct_frames": 2,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 4,
+          "sites": [
+            "Harappa"
+          ],
+          "object_types": [
+            "TAB:B",
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "032",
+                "740"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "032",
+                "740",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "059": [],
+            "840": [
+              "P349"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "235",
+            "838"
+          ],
+          "distinct_frames": 2,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 4,
+          "sites": [
+            "Gharo Bhiro",
+            "Harappa",
+            "Lothal",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "ROD",
+            "SEAL:R",
+            "SEAL:S",
+            "TAB:B"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "923",
+                "740"
+              ]
+            ],
+            [
+              3,
+              0,
+              [
+                "*",
+                "482",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "235": [
+              "P060"
+            ],
+            "838": []
+          }
+        },
+        {
+          "pair": [
+            "575",
+            "585"
+          ],
+          "distinct_frames": 2,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 4,
+          "sites": [
+            "Khirsara",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:R",
+            "SEAL:S"
+          ],
+          "contexts": [
+            [
+              3,
+              1,
+              [
+                "017",
+                "*",
+                "740"
+              ]
+            ],
+            [
+              5,
+              3,
+              [
+                "820",
+                "002",
+                "017",
+                "*",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "575": [
+              "P289"
+            ],
+            "585": []
+          }
+        },
+        {
+          "pair": [
+            "004",
+            "844"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "390",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "004": [
+              "P124"
+            ],
+            "844": []
+          }
+        },
+        {
+          "pair": [
+            "007",
+            "463"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:R",
+            "SEAL:S"
+          ],
+          "contexts": [
+            [
+              3,
+              1,
+              [
+                "503",
+                "*",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "007": [
+              "P127"
+            ],
+            "463": []
+          }
+        },
+        {
+          "pair": [
+            "013",
+            "799"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Harappa"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              4,
+              0,
+              [
+                "*",
+                "840",
+                "760",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "013": [
+              "P139"
+            ],
+            "799": []
+          }
+        },
+        {
+          "pair": [
+            "014",
+            "059"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Harappa"
+          ],
+          "object_types": [
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              4,
+              0,
+              [
+                "*",
+                "032",
+                "740",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "014": [
+              "P124"
+            ],
+            "059": []
+          }
+        },
+        {
+          "pair": [
+            "015",
+            "059"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Harappa"
+          ],
+          "object_types": [
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              4,
+              0,
+              [
+                "*",
+                "032",
+                "740",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "015": [
+              "P125"
+            ],
+            "059": []
+          }
+        },
+        {
+          "pair": [
+            "017",
+            "463"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:R",
+            "SEAL:S"
+          ],
+          "contexts": [
+            [
+              3,
+              1,
+              [
+                "503",
+                "*",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "017": [
+              "P127"
+            ],
+            "463": []
+          }
+        },
+        {
+          "pair": [
+            "027",
+            "059"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Harappa"
+          ],
+          "object_types": [
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              4,
+              0,
+              [
+                "*",
+                "032",
+                "740",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "027": [
+              "P141"
+            ],
+            "059": []
+          }
+        },
+        {
+          "pair": [
+            "031",
+            "495"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Dholavira",
+            "Harappa"
+          ],
+          "object_types": [
+            "SEAL:S"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "460",
+                "520"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "031": [
+              "P144"
+            ],
+            "495": []
+          }
+        },
+        {
+          "pair": [
+            "032",
+            "141"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Harappa"
+          ],
+          "object_types": [
+            "TAB:B",
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "740",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "032": [
+              "P145"
+            ],
+            "141": []
+          }
+        },
+        {
+          "pair": [
+            "032",
+            "263"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Harappa",
+            "Kalibangan"
+          ],
+          "object_types": [
+            "TAB:B",
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "740",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "032": [
+              "P145"
+            ],
+            "263": []
+          }
+        },
+        {
+          "pair": [
+            "032",
+            "445"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Farmana",
+            "Nausharo"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAG"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "760",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "032": [
+              "P145"
+            ],
+            "445": []
+          }
+        },
+        {
+          "pair": [
+            "032",
+            "681"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Harappa"
+          ],
+          "object_types": [
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "740",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "032": [
+              "P145"
+            ],
+            "681": []
+          }
+        },
+        {
+          "pair": [
+            "042",
+            "222"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S"
+          ],
+          "contexts": [
+            [
+              4,
+              2,
+              [
+                "820",
+                "002",
+                "*",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "042": [],
+            "222": [
+              "P053"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "042",
+            "388"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S"
+          ],
+          "contexts": [
+            [
+              4,
+              2,
+              [
+                "820",
+                "002",
+                "*",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "042": [],
+            "388": [
+              "P110"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "042",
+            "416"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S"
+          ],
+          "contexts": [
+            [
+              5,
+              3,
+              [
+                "920",
+                "060",
+                "741",
+                "*",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "042": [],
+            "416": [
+              "P095"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "042",
+            "440"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S"
+          ],
+          "contexts": [
+            [
+              5,
+              3,
+              [
+                "920",
+                "060",
+                "741",
+                "*",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "042": [],
+            "440": [
+              "P283"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "042",
+            "460"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S"
+          ],
+          "contexts": [
+            [
+              5,
+              3,
+              [
+                "920",
+                "060",
+                "741",
+                "*",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "042": [],
+            "460": [
+              "P215"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "042",
+            "482"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Lothal",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAG"
+          ],
+          "contexts": [
+            [
+              4,
+              2,
+              [
+                "820",
+                "002",
+                "*",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "042": [],
+            "482": [
+              "P197"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "042",
+            "540"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S"
+          ],
+          "contexts": [
+            [
+              4,
+              2,
+              [
+                "820",
+                "002",
+                "*",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "042": [],
+            "540": [
+              "P224"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "042",
+            "821"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Lothal",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAB:B"
+          ],
+          "contexts": [
+            [
+              5,
+              3,
+              [
+                "920",
+                "060",
+                "741",
+                "*",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "042": [],
+            "821": []
+          }
+        }
+      ]
+    },
+    "shared_graphic_class": {
+      "pairs": 35,
+      "pairs_with_two_or_more_frames": 9,
+      "top_pairs": [
+        {
+          "pair": [
+            "817",
+            "861"
+          ],
+          "distinct_frames": 10,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 20,
+          "sites": [
+            "Dholavira",
+            "Harappa",
+            "Kalibangan",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAG:L"
+          ],
+          "contexts": [
+            [
+              4,
+              0,
+              [
+                "*",
+                "002",
+                "003",
+                "390"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "002",
+                "176",
+                "740"
+              ]
+            ],
+            [
+              7,
+              0,
+              [
+                "*",
+                "002",
+                "240",
+                "415",
+                "100",
+                "740",
+                "090"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "002",
+                "004",
+                "390"
+              ]
+            ],
+            [
+              5,
+              0,
+              [
+                "*",
+                "002",
+                "590",
+                "390",
+                "740"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "002",
+                "772",
+                "740"
+              ]
+            ],
+            [
+              5,
+              0,
+              [
+                "*",
+                "002",
+                "061",
+                "142",
+                "740"
+              ]
+            ],
+            [
+              5,
+              0,
+              [
+                "*",
+                "002",
+                "415",
+                "100",
+                "740"
+              ]
+            ],
+            [
+              6,
+              0,
+              [
+                "*",
+                "002",
+                "255",
+                "435",
+                "690",
+                "740"
+              ]
+            ],
+            [
+              6,
+              0,
+              [
+                "*",
+                "002",
+                "235",
+                "840",
+                "032",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "817": [
+              "P385"
+            ],
+            "861": [
+              "P385"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "390",
+            "405"
+          ],
+          "distinct_frames": 6,
+          "slots": [
+            "medial",
+            "terminal"
+          ],
+          "artifact_count": 12,
+          "sites": [
+            "Allahdino",
+            "Dholavira",
+            "Harappa",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:R",
+            "SEAL:S",
+            "TAB:B",
+            "TAB:C"
+          ],
+          "contexts": [
+            [
+              4,
+              3,
+              [
+                "861",
+                "002",
+                "016",
+                "*"
+              ]
+            ],
+            [
+              4,
+              3,
+              [
+                "861",
+                "002",
+                "004",
+                "*"
+              ]
+            ],
+            [
+              3,
+              2,
+              [
+                "104",
+                "004",
+                "*"
+              ]
+            ],
+            [
+              4,
+              2,
+              [
+                "235",
+                "590",
+                "*",
+                "740"
+              ]
+            ],
+            [
+              3,
+              1,
+              [
+                "590",
+                "*",
+                "740"
+              ]
+            ],
+            [
+              5,
+              3,
+              [
+                "003",
+                "220",
+                "590",
+                "*",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "390": [
+              "P086"
+            ],
+            "405": [
+              "P086"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "705",
+            "706"
+          ],
+          "distinct_frames": 5,
+          "slots": [
+            "initial",
+            "medial"
+          ],
+          "artifact_count": 10,
+          "sites": [
+            "Dholavira",
+            "Harappa",
+            "Lothal",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:R",
+            "SEAL:S",
+            "TAB:C",
+            "TAB:I",
+            "TAG:O"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "033",
+                "520"
+              ]
+            ],
+            [
+              3,
+              1,
+              [
+                "590",
+                "*",
+                "868"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "717",
+                "388",
+                "154"
+              ]
+            ],
+            [
+              4,
+              1,
+              [
+                "031",
+                "*",
+                "033",
+                "520"
+              ]
+            ],
+            [
+              5,
+              0,
+              [
+                "*",
+                "033",
+                "923",
+                "740",
+                "001"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "705": [
+              "P316"
+            ],
+            "706": [
+              "P316"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "390",
+            "407"
+          ],
+          "distinct_frames": 3,
+          "slots": [
+            "medial",
+            "terminal"
+          ],
+          "artifact_count": 6,
+          "sites": [
+            "Allahdino",
+            "Hulas",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:R",
+            "SEAL:S",
+            "TAG:P"
+          ],
+          "contexts": [
+            [
+              4,
+              3,
+              [
+                "861",
+                "002",
+                "004",
+                "*"
+              ]
+            ],
+            [
+              3,
+              1,
+              [
+                "590",
+                "*",
+                "740"
+              ]
+            ],
+            [
+              4,
+              3,
+              [
+                "820",
+                "002",
+                "004",
+                "*"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "390": [
+              "P086"
+            ],
+            "407": [
+              "P086"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "025",
+            "028"
+          ],
+          "distinct_frames": 2,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 4,
+          "sites": [
+            "Harappa"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "032",
+                "740"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "032",
+                "740",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "025": [
+              "P141"
+            ],
+            "028": [
+              "P141"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "154",
+            "158"
+          ],
+          "distinct_frames": 2,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 4,
+          "sites": [
+            "Harappa",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "TAB:B",
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              4,
+              2,
+              [
+                "467",
+                "806",
+                "*",
+                "400"
+              ]
+            ],
+            [
+              3,
+              1,
+              [
+                "690",
+                "*",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "154": [
+              "P004"
+            ],
+            "158": [
+              "P004"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "405",
+            "407"
+          ],
+          "distinct_frames": 2,
+          "slots": [
+            "medial",
+            "terminal"
+          ],
+          "artifact_count": 4,
+          "sites": [
+            "Harappa",
+            "Hulas",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAB:B",
+            "TAG:P"
+          ],
+          "contexts": [
+            [
+              4,
+              3,
+              [
+                "861",
+                "002",
+                "004",
+                "*"
+              ]
+            ],
+            [
+              3,
+              1,
+              [
+                "590",
+                "*",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "405": [
+              "P086"
+            ],
+            "407": [
+              "P086"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "526",
+            "527"
+          ],
+          "distinct_frames": 2,
+          "slots": [
+            "terminal"
+          ],
+          "artifact_count": 4,
+          "sites": [
+            "Lothal",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:R",
+            "SEAL:S"
+          ],
+          "contexts": [
+            [
+              3,
+              2,
+              [
+                "235",
+                "555",
+                "*"
+              ]
+            ],
+            [
+              5,
+              4,
+              [
+                "861",
+                "002",
+                "235",
+                "555",
+                "*"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "526": [
+              "P301"
+            ],
+            "527": [
+              "P301"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "803",
+            "806"
+          ],
+          "distinct_frames": 2,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 4,
+          "sites": [
+            "Kalibangan",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:R",
+            "SEAL:S",
+            "TAB:C"
+          ],
+          "contexts": [
+            [
+              3,
+              0,
+              [
+                "*",
+                "923",
+                "740"
+              ]
+            ],
+            [
+              4,
+              0,
+              [
+                "*",
+                "233",
+                "176",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "803": [
+              "P364"
+            ],
+            "806": [
+              "P364"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "007",
+            "017"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S"
+          ],
+          "contexts": [
+            [
+              3,
+              1,
+              [
+                "503",
+                "*",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "007": [
+              "P127"
+            ],
+            "017": [
+              "P127"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "025",
+            "027"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Harappa"
+          ],
+          "object_types": [
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              4,
+              0,
+              [
+                "*",
+                "032",
+                "740",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "025": [
+              "P141"
+            ],
+            "027": [
+              "P141"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "027",
+            "028"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Harappa"
+          ],
+          "object_types": [
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              4,
+              0,
+              [
+                "*",
+                "032",
+                "740",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "027": [
+              "P141"
+            ],
+            "028": [
+              "P141"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "061",
+            "062"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Harappa",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAB:B"
+          ],
+          "contexts": [
+            [
+              5,
+              2,
+              [
+                "817",
+                "002",
+                "*",
+                "142",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "061": [
+              "P204"
+            ],
+            "062": [
+              "P204"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "061",
+            "063"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "TAB:C"
+          ],
+          "contexts": [
+            [
+              5,
+              3,
+              [
+                "798",
+                "240",
+                "845",
+                "*",
+                "407"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "061": [
+              "P204"
+            ],
+            "063": [
+              "P204"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "153",
+            "156"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Harappa"
+          ],
+          "object_types": [
+            "TAB:B"
+          ],
+          "contexts": [
+            [
+              3,
+              1,
+              [
+                "118",
+                "*",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "153": [
+              "P004"
+            ],
+            "156": [
+              "P004"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "154",
+            "155"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "terminal"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Harappa",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:R"
+          ],
+          "contexts": [
+            [
+              3,
+              2,
+              [
+                "468",
+                "806",
+                "*"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "154": [
+              "P004"
+            ],
+            "155": [
+              "P004"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "154",
+            "156"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "terminal"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Harappa"
+          ],
+          "object_types": [
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              3,
+              2,
+              [
+                "255",
+                "435",
+                "*"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "154": [
+              "P004"
+            ],
+            "156": [
+              "P004"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "336",
+            "337"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Harappa",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:S",
+            "TAB:B"
+          ],
+          "contexts": [
+            [
+              3,
+              1,
+              [
+                "176",
+                "*",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "336": [
+              "P309"
+            ],
+            "337": [
+              "P309"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "350",
+            "354"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "SEAL:R",
+            "SEAL:S"
+          ],
+          "contexts": [
+            [
+              5,
+              2,
+              [
+                "817",
+                "002",
+                "*",
+                "400",
+                "520"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "350": [
+              "P091"
+            ],
+            "354": [
+              "P091"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "365",
+            "368"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Harappa"
+          ],
+          "object_types": [
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              3,
+              1,
+              [
+                "817",
+                "*",
+                "690"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "365": [
+              "P202"
+            ],
+            "368": [
+              "P202"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "435",
+            "436"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "medial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Harappa",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "TAB:B",
+            "TAB:I"
+          ],
+          "contexts": [
+            [
+              4,
+              1,
+              [
+                "255",
+                "*",
+                "690",
+                "740"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "435": [
+              "P188"
+            ],
+            "436": [
+              "P188"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "467",
+            "468"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Harappa"
+          ],
+          "object_types": [
+            "SEAL:R",
+            "TAB:B"
+          ],
+          "contexts": [
+            [
+              4,
+              0,
+              [
+                "*",
+                "806",
+                "154",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "467": [
+              "P186"
+            ],
+            "468": [
+              "P186"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "467",
+            "470"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Harappa",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "TAB:B"
+          ],
+          "contexts": [
+            [
+              4,
+              0,
+              [
+                "*",
+                "806",
+                "158",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "467": [
+              "P186"
+            ],
+            "470": [
+              "P186"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "467",
+            "472"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Harappa",
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "TAB:B"
+          ],
+          "contexts": [
+            [
+              4,
+              0,
+              [
+                "*",
+                "806",
+                "158",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "467": [
+              "P186"
+            ],
+            "472": [
+              "P186"
+            ]
+          }
+        },
+        {
+          "pair": [
+            "467",
+            "473"
+          ],
+          "distinct_frames": 1,
+          "slots": [
+            "initial"
+          ],
+          "artifact_count": 2,
+          "sites": [
+            "Mohenjo-daro"
+          ],
+          "object_types": [
+            "TAB:B"
+          ],
+          "contexts": [
+            [
+              4,
+              0,
+              [
+                "*",
+                "806",
+                "158",
+                "400"
+              ]
+            ]
+          ],
+          "independent_P_classes": {
+            "467": [
+              "P186"
+            ],
+            "473": [
+              "P186"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "transfer_counts_by_category": {
+    "known_distinct_graphic_classes": 2,
+    "shared_graphic_class": 3
+  },
+  "confirmed_transfers": {
+    "known_distinct_graphic_classes": [
+      {
+        "fold": 1,
+        "pair": [
+          "233",
+          "235"
+        ],
+        "new_frames": [
+          [
+            4,
+            0,
+            [
+              "*",
+              "032",
+              "877",
+              "740"
+            ]
+          ]
+        ]
+      },
+      {
+        "fold": 3,
+        "pair": [
+          "817",
+          "820"
+        ],
+        "new_frames": [
+          [
+            4,
+            0,
+            [
+              "*",
+              "002",
+              "222",
+              "740"
+            ]
+          ]
+        ]
+      }
+    ],
+    "shared_graphic_class": [
+      {
+        "fold": 1,
+        "pair": [
+          "817",
+          "861"
+        ],
+        "new_frames": [
+          [
+            6,
+            0,
+            [
+              "*",
+              "002",
+              "255",
+              "435",
+              "690",
+              "740"
+            ]
+          ]
+        ]
+      },
+      {
+        "fold": 3,
+        "pair": [
+          "705",
+          "706"
+        ],
+        "new_frames": [
+          [
+            4,
+            1,
+            [
+              "031",
+              "*",
+              "033",
+              "520"
+            ]
+          ]
+        ]
+      },
+      {
+        "fold": 4,
+        "pair": [
+          "817",
+          "861"
+        ],
+        "new_frames": [
+          [
+            7,
+            0,
+            [
+              "*",
+              "002",
+              "240",
+              "415",
+              "100",
+              "740",
+              "090"
+            ]
+          ]
+        ]
+      }
+    ]
+  },
+  "maximum_known_distinct_class_pair_support": 8,
+  "claims": "Graphic-class distinction rules out one particular catalogue's allographic grouping; it does not prove semantic difference or equivalence.",
+  "elapsed_seconds": 207.95658109999204,
+  "null_position": {
+    "permutations": 1000,
+    "mobility": {
+      "cells": 88,
+      "movable_tokens": 8006,
+      "total_tokens": 8009
+    },
+    "max_support": {
+      "observed": 8,
+      "mean": 2.391,
+      "95pct_range": [
+        2.0,
+        4.0
+      ],
+      "p_one_sided": 0.000999000999000999
+    },
+    "max_support_values": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      4,
+      2,
+      2,
+      3,
+      3,
+      4,
+      3,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      3,
+      3,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      6,
+      2,
+      3,
+      3,
+      2,
+      3,
+      3,
+      3,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      5,
+      2,
+      1,
+      2,
+      2,
+      2,
+      2,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      4,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      2,
+      3,
+      4,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      3,
+      4,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      4,
+      2,
+      2,
+      2,
+      4,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      4,
+      3,
+      2,
+      3,
+      2,
+      2,
+      5,
+      2,
+      3,
+      2,
+      2,
+      4,
+      3,
+      4,
+      2,
+      2,
+      3,
+      2,
+      3,
+      5,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      5,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      2,
+      3,
+      2,
+      1,
+      3,
+      2,
+      2,
+      3,
+      3,
+      2,
+      4,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      6,
+      2,
+      3,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      1,
+      2,
+      2,
+      2,
+      1,
+      2,
+      4,
+      3,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      4,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      4,
+      1,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      1,
+      4,
+      4,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      3,
+      2,
+      4,
+      2,
+      2,
+      3,
+      3,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      5,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      4,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      5,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      4,
+      2,
+      3,
+      2,
+      2,
+      4,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      3,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      2,
+      3,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      4,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      4,
+      4,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      4,
+      3,
+      3,
+      5,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      1,
+      2,
+      2,
+      2,
+      1,
+      3,
+      1,
+      2,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      4,
+      2,
+      2,
+      4,
+      4,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      4,
+      3,
+      2,
+      3,
+      3,
+      2,
+      5,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      4,
+      2,
+      2,
+      3,
+      2,
+      3,
+      1,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      3,
+      3,
+      2,
+      3,
+      2,
+      4,
+      2,
+      3,
+      4,
+      2,
+      2,
+      3,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      3,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      5,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      4,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      4,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      3,
+      2,
+      4,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      4,
+      2,
+      3,
+      3,
+      2,
+      4,
+      2,
+      3,
+      4,
+      2,
+      2,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      4,
+      3,
+      4,
+      3,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      4,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      5,
+      2,
+      3,
+      2,
+      2,
+      2,
+      4,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3,
+      4,
+      4,
+      2,
+      3,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      4,
+      3,
+      2,
+      3,
+      2,
+      3,
+      3,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      3,
+      3,
+      3,
+      3,
+      2,
+      3
+    ],
+    "new_frame_transfer": {
+      "shared_graphic_class": {
+        "observed": 3,
+        "mean": 0.037,
+        "95pct_range": [
+          0.0,
+          1.0
+        ],
+        "p_one_sided": 0.000999000999000999
+      },
+      "known_distinct_graphic_classes": {
+        "observed": 2,
+        "mean": 0.41,
+        "95pct_range": [
+          0.0,
+          2.0
+        ],
+        "p_one_sided": 0.07592407592407592
+      },
+      "unmapped_or_partly_mapped": {
+        "observed": 0,
+        "mean": 0.0,
+        "95pct_range": [
+          0.0,
+          0.0
+        ],
+        "p_one_sided": 1.0
+      }
+    },
+    "pair_support": [
+      {
+        "pair": [
+          "003",
+          "004"
+        ],
+        "distinct_frames": 4,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.056943056943056944,
+        "null_mean": 0.178,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "003",
+          "016"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.015,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "004",
+          "005"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.02,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "004",
+          "016"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.014,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "007",
+          "460"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.008,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "025",
+          "840"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.003,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "028",
+          "840"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.003,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "031",
+          "176"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.015984015984015984,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.178,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "031",
+          "220"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.026973026973026972,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.303,
+        "null_support_max": 3
+      },
+      {
+        "pair": [
+          "031",
+          "233"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.03996003996003996,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.306,
+        "null_support_max": 3
+      },
+      {
+        "pair": [
+          "031",
+          "235"
+        ],
+        "distinct_frames": 3,
+        "unadjusted_permutation_p": 0.003996003996003996,
+        "max_support_FWER_p": 0.33966033966033965,
+        "null_mean": 0.393,
+        "null_support_max": 4
+      },
+      {
+        "pair": [
+          "031",
+          "240"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.022977022977022976,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.256,
+        "null_support_max": 3
+      },
+      {
+        "pair": [
+          "032",
+          "382"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.002997002997002997,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.086,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "061",
+          "176"
+        ],
+        "distinct_frames": 3,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.33966033966033965,
+        "null_mean": 0.041,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "100",
+          "176"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.033,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "100",
+          "636"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.014,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "100",
+          "904"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.027,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "151",
+          "740"
+        ],
+        "distinct_frames": 4,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.056943056943056944,
+        "null_mean": 0.358,
+        "null_support_max": 3
+      },
+      {
+        "pair": [
+          "176",
+          "220"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.01098901098901099,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.142,
+        "null_support_max": 3
+      },
+      {
+        "pair": [
+          "176",
+          "222"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.011,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "176",
+          "240"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.011988011988011988,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.132,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "176",
+          "384"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.009,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "176",
+          "388"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.018,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "176",
+          "440"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.001998001998001998,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.033,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "176",
+          "637"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.009,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "176",
+          "717"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.001998001998001998,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.036,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "176",
+          "772"
+        ],
+        "distinct_frames": 3,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.33966033966033965,
+        "null_mean": 0.009,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "176",
+          "798"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.029,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "176",
+          "803"
+        ],
+        "distinct_frames": 3,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.33966033966033965,
+        "null_mean": 0.074,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "176",
+          "904"
+        ],
+        "distinct_frames": 3,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.33966033966033965,
+        "null_mean": 0.038,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "176",
+          "923"
+        ],
+        "distinct_frames": 4,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.056943056943056944,
+        "null_mean": 0.025,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "220",
+          "231"
+        ],
+        "distinct_frames": 3,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.33966033966033965,
+        "null_mean": 0.09,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "220",
+          "233"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.027972027972027972,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.239,
+        "null_support_max": 3
+      },
+      {
+        "pair": [
+          "220",
+          "235"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.029970029970029972,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.288,
+        "null_support_max": 3
+      },
+      {
+        "pair": [
+          "220",
+          "240"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.011988011988011988,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.194,
+        "null_support_max": 3
+      },
+      {
+        "pair": [
+          "220",
+          "440"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.043,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "220",
+          "717"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.002997002997002997,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.065,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "220",
+          "803"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.00999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.135,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "222",
+          "540"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.005,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "231",
+          "233"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.086,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "233",
+          "235"
+        ],
+        "distinct_frames": 7,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.000999000999000999,
+        "null_mean": 0.321,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "233",
+          "806"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.014985014985014986,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.133,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "235",
+          "240"
+        ],
+        "distinct_frames": 6,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.002997002997002997,
+        "null_mean": 0.305,
+        "null_support_max": 3
+      },
+      {
+        "pair": [
+          "235",
+          "806"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.011988011988011988,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.173,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "240",
+          "415"
+        ],
+        "distinct_frames": 3,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.33966033966033965,
+        "null_mean": 0.093,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "388",
+          "482"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.01,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "440",
+          "717"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.01,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "440",
+          "803"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.02,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "440",
+          "927"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.002,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "482",
+          "923"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.017,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "636",
+          "904"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.003,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "740",
+          "820"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.008991008991008992,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.153,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "760",
+          "772"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.027,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "798",
+          "803"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.03,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "798",
+          "923"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.029,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "803",
+          "820"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.001998001998001998,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.074,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "803",
+          "861"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.008991008991008992,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.111,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "803",
+          "923"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.9820179820179821,
+        "null_mean": 0.03,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "817",
+          "820"
+        ],
+        "distinct_frames": 8,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.000999000999000999,
+        "null_mean": 0.171,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "820",
+          "861"
+        ],
+        "distinct_frames": 6,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.002997002997002997,
+        "null_mean": 0.194,
+        "null_support_max": 3
+      }
+    ]
+  },
+  "null_position_metadata": {
+    "permutations": 1000,
+    "mobility": {
+      "cells": 1251,
+      "movable_tokens": 7280,
+      "total_tokens": 8009
+    },
+    "max_support": {
+      "observed": 8,
+      "mean": 2.467,
+      "95pct_range": [
+        2.0,
+        4.0
+      ],
+      "p_one_sided": 0.000999000999000999
+    },
+    "max_support_values": [
+      3,
+      2,
+      3,
+      3,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      4,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      4,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      4,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      4,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      5,
+      4,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      2,
+      3,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      3,
+      2,
+      4,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      4,
+      3,
+      4,
+      4,
+      2,
+      2,
+      1,
+      2,
+      4,
+      2,
+      2,
+      2,
+      2,
+      2,
+      4,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      3,
+      4,
+      2,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      4,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      5,
+      3,
+      2,
+      2,
+      4,
+      2,
+      2,
+      4,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      3,
+      4,
+      2,
+      2,
+      2,
+      4,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      4,
+      3,
+      2,
+      3,
+      4,
+      3,
+      2,
+      3,
+      2,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      3,
+      3,
+      2,
+      4,
+      3,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      2,
+      2,
+      2,
+      4,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      4,
+      3,
+      3,
+      1,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      4,
+      3,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      5,
+      2,
+      2,
+      4,
+      3,
+      5,
+      2,
+      3,
+      3,
+      2,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      5,
+      2,
+      3,
+      2,
+      2,
+      2,
+      5,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      1,
+      2,
+      2,
+      3,
+      2,
+      3,
+      5,
+      2,
+      4,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      4,
+      3,
+      3,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      4,
+      2,
+      4,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      5,
+      3,
+      3,
+      2,
+      3,
+      1,
+      2,
+      3,
+      3,
+      3,
+      2,
+      3,
+      3,
+      3,
+      2,
+      3,
+      2,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      3,
+      2,
+      4,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      2,
+      3,
+      2,
+      5,
+      2,
+      3,
+      3,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      4,
+      2,
+      3,
+      3,
+      2,
+      2,
+      3,
+      2,
+      1,
+      2,
+      3,
+      4,
+      2,
+      3,
+      2,
+      3,
+      3,
+      2,
+      3,
+      3,
+      2,
+      4,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      4,
+      2,
+      2,
+      3,
+      3,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      4,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      4,
+      3,
+      2,
+      3,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      4,
+      3,
+      2,
+      1,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      4,
+      4,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      4,
+      2,
+      2,
+      2,
+      4,
+      3,
+      1,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      3,
+      3,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      4,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      2,
+      2,
+      3,
+      2,
+      4,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3,
+      3,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3,
+      3,
+      2,
+      3,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      4,
+      2,
+      2,
+      3,
+      3,
+      5,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      2,
+      3,
+      2,
+      4,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      3,
+      3,
+      3,
+      4,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      4,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      5,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      6,
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      3,
+      3,
+      3,
+      2,
+      3,
+      3,
+      2,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      3,
+      3,
+      4,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      2,
+      2,
+      4,
+      3,
+      5,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      3,
+      3,
+      2,
+      3,
+      2,
+      3,
+      4,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      3
+    ],
+    "new_frame_transfer": {
+      "shared_graphic_class": {
+        "observed": 3,
+        "mean": 0.027,
+        "95pct_range": [
+          0.0,
+          1.0
+        ],
+        "p_one_sided": 0.000999000999000999
+      },
+      "known_distinct_graphic_classes": {
+        "observed": 2,
+        "mean": 0.305,
+        "95pct_range": [
+          0.0,
+          2.0
+        ],
+        "p_one_sided": 0.03696303696303696
+      },
+      "unmapped_or_partly_mapped": {
+        "observed": 0,
+        "mean": 0.0,
+        "95pct_range": [
+          0.0,
+          0.0
+        ],
+        "p_one_sided": 1.0
+      }
+    },
+    "pair_support": [
+      {
+        "pair": [
+          "003",
+          "004"
+        ],
+        "distinct_frames": 4,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.06493506493506493,
+        "null_mean": 0.152,
+        "null_support_max": 3
+      },
+      {
+        "pair": [
+          "003",
+          "016"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.031,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "004",
+          "005"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.013,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "004",
+          "016"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.009,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "007",
+          "460"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.008,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "025",
+          "840"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.001998001998001998,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.02,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "028",
+          "840"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.003,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "031",
+          "176"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.015984015984015984,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.215,
+        "null_support_max": 3
+      },
+      {
+        "pair": [
+          "031",
+          "220"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.07592407592407592,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.51,
+        "null_support_max": 4
+      },
+      {
+        "pair": [
+          "031",
+          "233"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.03496503496503497,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.281,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "031",
+          "235"
+        ],
+        "distinct_frames": 3,
+        "unadjusted_permutation_p": 0.011988011988011988,
+        "max_support_FWER_p": 0.3996003996003996,
+        "null_mean": 0.551,
+        "null_support_max": 3
+      },
+      {
+        "pair": [
+          "031",
+          "240"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.03996003996003996,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.312,
+        "null_support_max": 3
+      },
+      {
+        "pair": [
+          "032",
+          "382"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.001998001998001998,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.098,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "061",
+          "176"
+        ],
+        "distinct_frames": 3,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.3996003996003996,
+        "null_mean": 0.058,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "100",
+          "176"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.014985014985014986,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.158,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "100",
+          "636"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.017,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "100",
+          "904"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.001998001998001998,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.057,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "151",
+          "740"
+        ],
+        "distinct_frames": 4,
+        "unadjusted_permutation_p": 0.001998001998001998,
+        "max_support_FWER_p": 0.06493506493506493,
+        "null_mean": 0.474,
+        "null_support_max": 5
+      },
+      {
+        "pair": [
+          "176",
+          "220"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.024975024975024976,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.292,
+        "null_support_max": 3
+      },
+      {
+        "pair": [
+          "176",
+          "222"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.003996003996003996,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.088,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "176",
+          "240"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.014985014985014986,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.209,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "176",
+          "384"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.001998001998001998,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.059,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "176",
+          "388"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.05,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "176",
+          "440"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.064,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "176",
+          "637"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.022,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "176",
+          "717"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.001998001998001998,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.049,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "176",
+          "772"
+        ],
+        "distinct_frames": 3,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.3996003996003996,
+        "null_mean": 0.009,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "176",
+          "798"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.002997002997002997,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.05,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "176",
+          "803"
+        ],
+        "distinct_frames": 3,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.3996003996003996,
+        "null_mean": 0.108,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "176",
+          "904"
+        ],
+        "distinct_frames": 3,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.3996003996003996,
+        "null_mean": 0.026,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "176",
+          "923"
+        ],
+        "distinct_frames": 4,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.06493506493506493,
+        "null_mean": 0.069,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "220",
+          "231"
+        ],
+        "distinct_frames": 3,
+        "unadjusted_permutation_p": 0.001998001998001998,
+        "max_support_FWER_p": 0.3996003996003996,
+        "null_mean": 0.154,
+        "null_support_max": 3
+      },
+      {
+        "pair": [
+          "220",
+          "233"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.04095904095904096,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.383,
+        "null_support_max": 3
+      },
+      {
+        "pair": [
+          "220",
+          "235"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.08891108891108891,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.518,
+        "null_support_max": 4
+      },
+      {
+        "pair": [
+          "220",
+          "240"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.052947052947052944,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.431,
+        "null_support_max": 3
+      },
+      {
+        "pair": [
+          "220",
+          "440"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.006993006993006993,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.152,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "220",
+          "717"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.003996003996003996,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.08,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "220",
+          "803"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.01098901098901099,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.208,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "222",
+          "540"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.004,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "231",
+          "233"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.002997002997002997,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.09,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "233",
+          "235"
+        ],
+        "distinct_frames": 7,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.000999000999000999,
+        "null_mean": 0.287,
+        "null_support_max": 3
+      },
+      {
+        "pair": [
+          "233",
+          "806"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.003996003996003996,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.085,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "235",
+          "240"
+        ],
+        "distinct_frames": 6,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.001998001998001998,
+        "null_mean": 0.51,
+        "null_support_max": 4
+      },
+      {
+        "pair": [
+          "235",
+          "806"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.014985014985014986,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.156,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "240",
+          "415"
+        ],
+        "distinct_frames": 3,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.3996003996003996,
+        "null_mean": 0.155,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "388",
+          "482"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.018,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "440",
+          "717"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.017,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "440",
+          "803"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.063,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "440",
+          "927"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.001,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "482",
+          "923"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.003996003996003996,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.279,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "636",
+          "904"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.006,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "740",
+          "820"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.006993006993006993,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.108,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "760",
+          "772"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.021,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "798",
+          "803"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.025,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "798",
+          "923"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.027,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "803",
+          "820"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.001998001998001998,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.08,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "803",
+          "861"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.005994005994005994,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.103,
+        "null_support_max": 2
+      },
+      {
+        "pair": [
+          "803",
+          "923"
+        ],
+        "distinct_frames": 2,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.99000999000999,
+        "null_mean": 0.021,
+        "null_support_max": 1
+      },
+      {
+        "pair": [
+          "817",
+          "820"
+        ],
+        "distinct_frames": 8,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.000999000999000999,
+        "null_mean": 0.158,
+        "null_support_max": 3
+      },
+      {
+        "pair": [
+          "820",
+          "861"
+        ],
+        "distinct_frames": 6,
+        "unadjusted_permutation_p": 0.000999000999000999,
+        "max_support_FWER_p": 0.001998001998001998,
+        "null_mean": 0.435,
+        "null_support_max": 4
+      }
+    ]
+  }
+}

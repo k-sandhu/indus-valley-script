@@ -1,0 +1,1 @@
+These preliminary restoration results are superseded. Deduplicating a whole text discarded some physical-artifact aliases, allowing different surface texts from an alias artifact to enter different folds. The repaired loader retains every alias. Use results/restoration/ after the corrected rerun. The correction, preliminary values, and source hashes are retained for transparency.

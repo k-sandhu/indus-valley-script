@@ -1,0 +1,225 @@
+{
+  "task": "Predict erased internal glyph count from survivors; no glyph identity or translation.",
+  "input_sha256": "9e539daef4d5a7efbe3c5f34b73e14058eec1c5e888c749bc2eafb0f08084ba8",
+  "source_sha256": "c632cfb67bed4376cc07a4314f8d6991fa4065bea53b02aa94e2044f064dce34",
+  "unique_texts": 1596,
+  "groups": 1526,
+  "alpha": 20,
+  "count_candidates": [
+    1,
+    2,
+    3
+  ],
+  "query_seed": 20261012,
+  "fold_seed": 20261006,
+  "models": {
+    "baseline": {
+      "texts": 1596,
+      "exact_count_accuracy": 0.4191729323308271,
+      "constant_one_glyph_design_control_accuracy": 0.5106516290726817,
+      "true_count_distribution": {
+        "1": 815,
+        "2": 454,
+        "3": 327
+      },
+      "confusion": [
+        {
+          "actual": 1,
+          "predicted": 1,
+          "n": 370
+        },
+        {
+          "actual": 1,
+          "predicted": 2,
+          "n": 251
+        },
+        {
+          "actual": 1,
+          "predicted": 3,
+          "n": 194
+        },
+        {
+          "actual": 2,
+          "predicted": 1,
+          "n": 170
+        },
+        {
+          "actual": 2,
+          "predicted": 2,
+          "n": 159
+        },
+        {
+          "actual": 2,
+          "predicted": 3,
+          "n": 125
+        },
+        {
+          "actual": 3,
+          "predicted": 1,
+          "n": 90
+        },
+        {
+          "actual": 3,
+          "predicted": 2,
+          "n": 97
+        },
+        {
+          "actual": 3,
+          "predicted": 3,
+          "n": 140
+        }
+      ],
+      "calibration": [
+        {
+          "interval": [
+            0.0,
+            0.4
+          ],
+          "n": 45,
+          "mean_model_mass": 0.372086867838265,
+          "accuracy": 0.35555555555555557
+        },
+        {
+          "interval": [
+            0.4,
+            0.6
+          ],
+          "n": 454,
+          "mean_model_mass": 0.5115041192949661,
+          "accuracy": 0.3458149779735683
+        },
+        {
+          "interval": [
+            0.6,
+            0.8
+          ],
+          "n": 414,
+          "mean_model_mass": 0.6938349941385351,
+          "accuracy": 0.4082125603864734
+        },
+        {
+          "interval": [
+            0.8,
+            1.0
+          ],
+          "n": 683,
+          "mean_model_mass": 0.9377277893446624,
+          "accuracy": 0.4787701317715959
+        }
+      ]
+    },
+    "local": {
+      "texts": 1596,
+      "exact_count_accuracy": 0.43045112781954886,
+      "constant_one_glyph_design_control_accuracy": 0.5106516290726817,
+      "true_count_distribution": {
+        "1": 815,
+        "2": 454,
+        "3": 327
+      },
+      "confusion": [
+        {
+          "actual": 1,
+          "predicted": 1,
+          "n": 384
+        },
+        {
+          "actual": 1,
+          "predicted": 2,
+          "n": 244
+        },
+        {
+          "actual": 1,
+          "predicted": 3,
+          "n": 187
+        },
+        {
+          "actual": 2,
+          "predicted": 1,
+          "n": 162
+        },
+        {
+          "actual": 2,
+          "predicted": 2,
+          "n": 164
+        },
+        {
+          "actual": 2,
+          "predicted": 3,
+          "n": 128
+        },
+        {
+          "actual": 3,
+          "predicted": 1,
+          "n": 87
+        },
+        {
+          "actual": 3,
+          "predicted": 2,
+          "n": 101
+        },
+        {
+          "actual": 3,
+          "predicted": 3,
+          "n": 139
+        }
+      ],
+      "calibration": [
+        {
+          "interval": [
+            0.0,
+            0.4
+          ],
+          "n": 33,
+          "mean_model_mass": 0.3768335775711531,
+          "accuracy": 0.24242424242424243
+        },
+        {
+          "interval": [
+            0.4,
+            0.6
+          ],
+          "n": 436,
+          "mean_model_mass": 0.5104537784221954,
+          "accuracy": 0.36009174311926606
+        },
+        {
+          "interval": [
+            0.6,
+            0.8
+          ],
+          "n": 437,
+          "mean_model_mass": 0.6964469786227023,
+          "accuracy": 0.41418764302059496
+        },
+        {
+          "interval": [
+            0.8,
+            1.0
+          ],
+          "n": 690,
+          "mean_model_mass": 0.9357191413566154,
+          "accuracy": 0.49420289855072463
+        }
+      ]
+    }
+  },
+  "paired_gain": {
+    "gain_accuracy": 0.011278195488721804,
+    "cluster_bootstrap_95_ci": [
+      -0.0018668907641219198,
+      0.024691553491426824
+    ],
+    "clusters": 1526,
+    "bootstrap": 10000
+  },
+  "surviving_OOV_codes": 184,
+  "surviving_codes": 5305,
+  "limitations": [
+    "The erased-count sampling law is artificial and not a historical missing-sign prior.",
+    "Count masses are uncalibrated. Real gaps can contain more than three signs or separators.",
+    "Unseen surviving signs use the common UNKNOWN bucket; this is not a fine-glyph recognition test.",
+    "Smoothing is frozen from the earlier one-slot benchmark; this is an exploratory conditional comparison."
+  ],
+  "runtime_seconds": 16.51300620000984
+}

@@ -1,0 +1,587 @@
+{
+  "interpretation": "Masked graphic-code prediction. No semantic or phonetic values.",
+  "input_sha256": "9e539daef4d5a7efbe3c5f34b73e14058eec1c5e888c749bc2eafb0f08084ba8",
+  "source_sha256": "5c45d5e61f045a9c2e8c8e8155cc3def708cb05d20d2dd1529a6a40dd981cbc7",
+  "model_dependency_sha256": "ed150239452339a04ef35f04b5814a236d9bd3ad0b64702e66a0230760de0ca8",
+  "parameters": {
+    "mode": "benchmark",
+    "out": "results/restoration",
+    "seed": 20261006,
+    "sequence": null,
+    "site": "Mohenjo-daro",
+    "type": "SEAL:S",
+    "alpha": 20,
+    "collapse": null,
+    "exclude_artifact": []
+  },
+  "collapse_mapping": null,
+  "unique_texts": 1596,
+  "artifact_text_groups": 1526,
+  "exclusions": {
+    "too_short": 823,
+    "duplicate_sequence": 511
+  },
+  "smoothing_grid": [
+    20,
+    100,
+    500,
+    2000
+  ],
+  "fold_token_loads": [
+    1603,
+    1600,
+    1602,
+    1602,
+    1602
+  ],
+  "folds": [
+    {
+      "fold": 0,
+      "train_texts": 1274,
+      "test_texts": 322,
+      "chosen_alpha": {
+        "baseline": 20,
+        "local": 20
+      },
+      "inner_top1": {
+        "baseline": {
+          "20": 0.16266000624414612,
+          "100": 0.16000624414611303,
+          "500": 0.13534186699968778,
+          "2000": 0.1084920387137059
+        },
+        "local": {
+          "20": 0.3182953481111458,
+          "100": 0.3117389946924758,
+          "500": 0.22447705276303465,
+          "2000": 0.13456134873556042
+        }
+      }
+    },
+    {
+      "fold": 1,
+      "train_texts": 1281,
+      "test_texts": 315,
+      "chosen_alpha": {
+        "baseline": 20,
+        "local": 20
+      },
+      "inner_top1": {
+        "baseline": {
+          "20": 0.16398814167576845,
+          "100": 0.15681073490404118,
+          "500": 0.132157902948978,
+          "2000": 0.10563270400998595
+        },
+        "local": {
+          "20": 0.3222031518177563,
+          "100": 0.3131533780621002,
+          "500": 0.22546419098143236,
+          "2000": 0.13652675924481197
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "train_texts": 1278,
+      "test_texts": 318,
+      "chosen_alpha": {
+        "baseline": 20,
+        "local": 20
+      },
+      "inner_top1": {
+        "baseline": {
+          "20": 0.16560012486343062,
+          "100": 0.1607616669267988,
+          "500": 0.13641329795536133,
+          "2000": 0.10769470891212736
+        },
+        "local": {
+          "20": 0.3288590604026846,
+          "100": 0.3241766817543312,
+          "500": 0.22943655376931482,
+          "2000": 0.13625721866708287
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "train_texts": 1279,
+      "test_texts": 317,
+      "chosen_alpha": {
+        "baseline": 20,
+        "local": 20
+      },
+      "inner_top1": {
+        "baseline": {
+          "20": 0.16747307632277197,
+          "100": 0.16466364913375994,
+          "500": 0.14000312158576556,
+          "2000": 0.10800686748868425
+        },
+        "local": {
+          "20": 0.32604963321367253,
+          "100": 0.3179335102231934,
+          "500": 0.23396285312938972,
+          "2000": 0.14062743873887934
+        }
+      }
+    },
+    {
+      "fold": 4,
+      "train_texts": 1272,
+      "test_texts": 324,
+      "chosen_alpha": {
+        "baseline": 20,
+        "local": 20
+      },
+      "inner_top1": {
+        "baseline": {
+          "20": 0.16279069767441862,
+          "100": 0.1579522397377868,
+          "500": 0.13828624941470266,
+          "2000": 0.10613391602934291
+        },
+        "local": {
+          "20": 0.3110660215389418,
+          "100": 0.3065397221788669,
+          "500": 0.21929140003121586,
+          "2000": 0.1342281879194631
+        }
+      }
+    }
+  ],
+  "models": {
+    "baseline": {
+      "slots": 8009,
+      "top1": 0.16993382444749658,
+      "top5": 0.35497565239106005,
+      "top10": 0.4557372955425147,
+      "unknown_true_rate": 0.03133974278936197,
+      "unknown_prediction_rate": 0.0,
+      "bucket_cross_entropy_bits": 7.1354115481969425,
+      "equal_text_weight": {
+        "top1": 0.17361845547935773,
+        "top5": 0.3551215545106522,
+        "top10": 0.45324852848349084,
+        "texts": 1596
+      },
+      "positions": {
+        "initial": {
+          "slots": 1596,
+          "top1": 0.07957393483709273,
+          "top5": 0.2850877192982456,
+          "top10": 0.36528822055137844,
+          "unknown_true_rate": 0.06390977443609022,
+          "unknown_prediction_rate": 0.0,
+          "bucket_cross_entropy_bits": 8.553934111811092
+        },
+        "internal": {
+          "slots": 4817,
+          "top1": 0.1228980693377621,
+          "top5": 0.2858625700643554,
+          "top10": 0.40004151961801954,
+          "unknown_true_rate": 0.02262819182063525,
+          "unknown_prediction_rate": 0.0,
+          "bucket_cross_entropy_bits": 7.373943812109601
+        },
+        "final": {
+          "slots": 1596,
+          "top1": 0.40225563909774437,
+          "top5": 0.6334586466165414,
+          "top10": 0.7142857142857143,
+          "unknown_true_rate": 0.02506265664160401,
+          "unknown_prediction_rate": 0.0,
+          "bucket_cross_entropy_bits": 4.996957959979239
+        }
+      },
+      "confidence_audit": [
+        {
+          "mass_interval": [
+            0.0,
+            0.2
+          ],
+          "slots": 5484,
+          "mean_model_mass": 0.10861542389835183,
+          "exact_accuracy": 0.08643326039387308
+        },
+        {
+          "mass_interval": [
+            0.2,
+            0.4
+          ],
+          "slots": 1818,
+          "mean_model_mass": 0.28535849928274826,
+          "exact_accuracy": 0.3063806380638064
+        },
+        {
+          "mass_interval": [
+            0.4,
+            0.6
+          ],
+          "slots": 707,
+          "mean_model_mass": 0.46132321369772394,
+          "exact_accuracy": 0.4667609618104668
+        },
+        {
+          "mass_interval": [
+            0.6,
+            0.8
+          ],
+          "slots": 0,
+          "mean_model_mass": null,
+          "exact_accuracy": null
+        },
+        {
+          "mass_interval": [
+            0.8,
+            1.0
+          ],
+          "slots": 0,
+          "mean_model_mass": null,
+          "exact_accuracy": null
+        }
+      ]
+    },
+    "local": {
+      "slots": 8009,
+      "top1": 0.3381196154326383,
+      "top5": 0.5533774503683356,
+      "top10": 0.62704457485329,
+      "unknown_true_rate": 0.03133974278936197,
+      "unknown_prediction_rate": 0.0,
+      "bucket_cross_entropy_bits": 5.747731469243176,
+      "equal_text_weight": {
+        "top1": 0.32598363589904944,
+        "top5": 0.5413077124073365,
+        "top10": 0.6141573130294935,
+        "texts": 1596
+      },
+      "positions": {
+        "initial": {
+          "slots": 1596,
+          "top1": 0.18421052631578946,
+          "top5": 0.42355889724310775,
+          "top10": 0.4830827067669173,
+          "unknown_true_rate": 0.06390977443609022,
+          "unknown_prediction_rate": 0.0,
+          "bucket_cross_entropy_bits": 7.435843855160703
+        },
+        "internal": {
+          "slots": 4817,
+          "top1": 0.3159642931285032,
+          "top5": 0.5364334648121237,
+          "top10": 0.6232094664729084,
+          "unknown_true_rate": 0.02262819182063525,
+          "unknown_prediction_rate": 0.0,
+          "bucket_cross_entropy_bits": 5.778343618806218
+        },
+        "final": {
+          "slots": 1596,
+          "top1": 0.5588972431077694,
+          "top5": 0.7343358395989975,
+          "top10": 0.7825814536340853,
+          "unknown_true_rate": 0.02506265664160401,
+          "unknown_prediction_rate": 0.0,
+          "bucket_cross_entropy_bits": 3.967226398836186
+        }
+      },
+      "confidence_audit": [
+        {
+          "mass_interval": [
+            0.0,
+            0.2
+          ],
+          "slots": 1489,
+          "mean_model_mass": 0.13821532223111255,
+          "exact_accuracy": 0.08059100067159167
+        },
+        {
+          "mass_interval": [
+            0.2,
+            0.4
+          ],
+          "slots": 3058,
+          "mean_model_mass": 0.2926677952539797,
+          "exact_accuracy": 0.20830608240680182
+        },
+        {
+          "mass_interval": [
+            0.4,
+            0.6
+          ],
+          "slots": 1605,
+          "mean_model_mass": 0.4915071324055263,
+          "exact_accuracy": 0.3844236760124611
+        },
+        {
+          "mass_interval": [
+            0.6,
+            0.8
+          ],
+          "slots": 1006,
+          "mean_model_mass": 0.6962847573432217,
+          "exact_accuracy": 0.617296222664016
+        },
+        {
+          "mass_interval": [
+            0.8,
+            1.0
+          ],
+          "slots": 851,
+          "mean_model_mass": 0.8959890549899626,
+          "exact_accuracy": 0.8378378378378378
+        }
+      ]
+    }
+  },
+  "paired_gain": {
+    "gain_accuracy": 0.16818579098514172,
+    "cluster_bootstrap_95_ci": [
+      0.15644116114962853,
+      0.17980257099368116
+    ],
+    "clusters": 1526,
+    "bootstrap": 10000
+  },
+  "equal_text_weight_paired_gain": {
+    "gain_accuracy": 0.1523651804196917,
+    "cluster_bootstrap_95_ci": [
+      0.1406882430263748,
+      0.1637892566163936
+    ],
+    "clusters": 1526,
+    "bootstrap": 10000
+  },
+  "missing_slot_assumption": "Exactly one missing glyph with correct surviving transcription and line length.",
+  "confidence_warning": "Normalized model masses are not calibrated probabilities of historical correctness.",
+  "oov_warning": "Unseen fine glyphs count as failed predictions; descriptive cross-entropy pools them in UNKNOWN.",
+  "external_source_check": {
+    "source_audit_cases": 25,
+    "compatible_primary_texts_length3plus": 16,
+    "test_record_ids": [
+      "2537.1",
+      "2544.1",
+      "2562.1",
+      "2586.1",
+      "2593.1",
+      "2604.1",
+      "2620.1",
+      "2621.1",
+      "2634.1",
+      "2656.1",
+      "2659.1",
+      "2662.1",
+      "2671.1",
+      "2674.1",
+      "2679.1",
+      "2708.1"
+    ],
+    "training_unique_texts": 1580,
+    "removed_training_texts": 16,
+    "chosen_alpha": {
+      "baseline": 20,
+      "local": 20
+    },
+    "inner_accuracy": {
+      "baseline": {
+        "20": 0.16986128625472888,
+        "100": 0.16065573770491803,
+        "500": 0.13984867591424968,
+        "2000": 0.10996216897856242
+      },
+      "local": {
+        "20": 0.3350567465321564,
+        "100": 0.3295081967213115,
+        "500": 0.25031525851197983,
+        "2000": 0.14300126103404792
+      }
+    },
+    "models": {
+      "baseline": {
+        "slots": 79,
+        "top1": 0.189873417721519,
+        "top5": 0.34177215189873417,
+        "top10": 0.4936708860759494,
+        "unknown_true_rate": 0.012658227848101266,
+        "unknown_prediction_rate": 0.0,
+        "bucket_cross_entropy_bits": 6.657453070741097,
+        "equal_text_weight": {
+          "top1": 0.17410714285714285,
+          "top5": 0.3282738095238095,
+          "top10": 0.4855654761904762,
+          "texts": 16
+        },
+        "positions": {
+          "initial": {
+            "slots": 16,
+            "top1": 0.125,
+            "top5": 0.25,
+            "top10": 0.25,
+            "unknown_true_rate": 0.0,
+            "unknown_prediction_rate": 0.0,
+            "bucket_cross_entropy_bits": 9.24019121555661
+          },
+          "internal": {
+            "slots": 47,
+            "top1": 0.14893617021276595,
+            "top5": 0.2765957446808511,
+            "top10": 0.5106382978723404,
+            "unknown_true_rate": 0.02127659574468085,
+            "unknown_prediction_rate": 0.0,
+            "bucket_cross_entropy_bits": 6.429562679932059
+          },
+          "final": {
+            "slots": 16,
+            "top1": 0.375,
+            "top5": 0.625,
+            "top10": 0.6875,
+            "unknown_true_rate": 0.0,
+            "unknown_prediction_rate": 0.0,
+            "bucket_cross_entropy_bits": 4.74414294892714
+          }
+        },
+        "confidence_audit": [
+          {
+            "mass_interval": [
+              0.0,
+              0.2
+            ],
+            "slots": 49,
+            "mean_model_mass": 0.10582877044751253,
+            "exact_accuracy": 0.10204081632653061
+          },
+          {
+            "mass_interval": [
+              0.2,
+              0.4
+            ],
+            "slots": 20,
+            "mean_model_mass": 0.28161509944530827,
+            "exact_accuracy": 0.25
+          },
+          {
+            "mass_interval": [
+              0.4,
+              0.6
+            ],
+            "slots": 10,
+            "mean_model_mass": 0.4743865138838227,
+            "exact_accuracy": 0.5
+          },
+          {
+            "mass_interval": [
+              0.6,
+              0.8
+            ],
+            "slots": 0,
+            "mean_model_mass": null,
+            "exact_accuracy": null
+          },
+          {
+            "mass_interval": [
+              0.8,
+              1.0
+            ],
+            "slots": 0,
+            "mean_model_mass": null,
+            "exact_accuracy": null
+          }
+        ]
+      },
+      "local": {
+        "slots": 79,
+        "top1": 0.4177215189873418,
+        "top5": 0.620253164556962,
+        "top10": 0.7341772151898734,
+        "unknown_true_rate": 0.012658227848101266,
+        "unknown_prediction_rate": 0.0,
+        "bucket_cross_entropy_bits": 4.7178113352127555,
+        "equal_text_weight": {
+          "top1": 0.4153273809523809,
+          "top5": 0.6148809523809524,
+          "top10": 0.7294642857142857,
+          "texts": 16
+        },
+        "positions": {
+          "initial": {
+            "slots": 16,
+            "top1": 0.1875,
+            "top5": 0.375,
+            "top10": 0.5,
+            "unknown_true_rate": 0.0,
+            "unknown_prediction_rate": 0.0,
+            "bucket_cross_entropy_bits": 7.991918196391014
+          },
+          "internal": {
+            "slots": 47,
+            "top1": 0.40425531914893614,
+            "top5": 0.6595744680851063,
+            "top10": 0.7872340425531915,
+            "unknown_true_rate": 0.02127659574468085,
+            "unknown_prediction_rate": 0.0,
+            "bucket_cross_entropy_bits": 4.115432918190135
+          },
+          "final": {
+            "slots": 16,
+            "top1": 0.6875,
+            "top5": 0.75,
+            "top10": 0.8125,
+            "unknown_true_rate": 0.0,
+            "unknown_prediction_rate": 0.0,
+            "bucket_cross_entropy_bits": 3.213191074038446
+          }
+        },
+        "confidence_audit": [
+          {
+            "mass_interval": [
+              0.0,
+              0.2
+            ],
+            "slots": 12,
+            "mean_model_mass": 0.12541796035611988,
+            "exact_accuracy": 0.0
+          },
+          {
+            "mass_interval": [
+              0.2,
+              0.4
+            ],
+            "slots": 29,
+            "mean_model_mass": 0.2736252503770559,
+            "exact_accuracy": 0.3448275862068966
+          },
+          {
+            "mass_interval": [
+              0.4,
+              0.6
+            ],
+            "slots": 15,
+            "mean_model_mass": 0.49363507118487515,
+            "exact_accuracy": 0.6
+          },
+          {
+            "mass_interval": [
+              0.6,
+              0.8
+            ],
+            "slots": 17,
+            "mean_model_mass": 0.7012541405491,
+            "exact_accuracy": 0.47058823529411764
+          },
+          {
+            "mass_interval": [
+              0.8,
+              1.0
+            ],
+            "slots": 6,
+            "mean_model_mass": 0.931674379950585,
+            "exact_accuracy": 1.0
+          }
+        ]
+      }
+    },
+    "limitation": "Nonrandom primary-photo compatibility sample; catalogue-family compatibility is weaker than fine-glyph identity. This is a source check, not independent population validation."
+  },
+  "runtime_seconds": 32.219762000007904
+}

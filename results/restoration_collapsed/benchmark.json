@@ -1,0 +1,591 @@
+{
+  "interpretation": "Masked graphic-code prediction. No semantic or phonetic values.",
+  "input_sha256": "9e539daef4d5a7efbe3c5f34b73e14058eec1c5e888c749bc2eafb0f08084ba8",
+  "source_sha256": "5c45d5e61f045a9c2e8c8e8155cc3def708cb05d20d2dd1529a6a40dd981cbc7",
+  "model_dependency_sha256": "ed150239452339a04ef35f04b5814a236d9bd3ad0b64702e66a0230760de0ca8",
+  "parameters": {
+    "mode": "benchmark",
+    "out": "results/restoration_collapsed",
+    "seed": 20261006,
+    "sequence": null,
+    "site": "Mohenjo-daro",
+    "type": "SEAL:S",
+    "alpha": 20,
+    "collapse": "research/methods/curated_allograph_collapse.json",
+    "exclude_artifact": []
+  },
+  "collapse_mapping": {
+    "861": "817",
+    "405": "390",
+    "706": "705"
+  },
+  "unique_texts": 1575,
+  "artifact_text_groups": 1506,
+  "exclusions": {
+    "too_short": 823,
+    "duplicate_sequence": 532
+  },
+  "smoothing_grid": [
+    20,
+    100,
+    500,
+    2000
+  ],
+  "fold_token_loads": [
+    1584,
+    1584,
+    1584,
+    1584,
+    1581
+  ],
+  "folds": [
+    {
+      "fold": 0,
+      "train_texts": 1261,
+      "test_texts": 314,
+      "chosen_alpha": {
+        "baseline": 20,
+        "local": 20
+      },
+      "inner_top1": {
+        "baseline": {
+          "20": 0.17748302542239064,
+          "100": 0.17116690352123795,
+          "500": 0.14479709458392548,
+          "2000": 0.10626875098689405
+        },
+        "local": {
+          "20": 0.33980735828201486,
+          "100": 0.33238591504816045,
+          "500": 0.25580293699668405,
+          "2000": 0.14227064582346438
+        }
+      }
+    },
+    {
+      "fold": 1,
+      "train_texts": 1263,
+      "test_texts": 312,
+      "chosen_alpha": {
+        "baseline": 20,
+        "local": 20
+      },
+      "inner_top1": {
+        "baseline": {
+          "20": 0.17369335228169905,
+          "100": 0.16990367914100743,
+          "500": 0.14558660982156957,
+          "2000": 0.10626875098689405
+        },
+        "local": {
+          "20": 0.3383862308542555,
+          "100": 0.33443865466603506,
+          "500": 0.2534343912837518,
+          "2000": 0.13990210011053214
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "train_texts": 1258,
+      "test_texts": 317,
+      "chosen_alpha": {
+        "baseline": 20,
+        "local": 100
+      },
+      "inner_top1": {
+        "baseline": {
+          "20": 0.17558818885204486,
+          "100": 0.1689562608558345,
+          "500": 0.14306016106110847,
+          "2000": 0.1048476235591347
+        },
+        "local": {
+          "20": 0.33885993999684194,
+          "100": 0.34186009789988947,
+          "500": 0.2583293857571451,
+          "2000": 0.14369177325122376
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "train_texts": 1260,
+      "test_texts": 315,
+      "chosen_alpha": {
+        "baseline": 20,
+        "local": 20
+      },
+      "inner_top1": {
+        "baseline": {
+          "20": 0.18079898942049583,
+          "100": 0.17732512237486184,
+          "500": 0.15585030791094268,
+          "2000": 0.1086372966998263
+        },
+        "local": {
+          "20": 0.3467550923732828,
+          "100": 0.3459655771356387,
+          "500": 0.25943470708984684,
+          "2000": 0.14732354334438655
+        }
+      }
+    },
+    {
+      "fold": 4,
+      "train_texts": 1258,
+      "test_texts": 317,
+      "chosen_alpha": {
+        "baseline": 20,
+        "local": 20
+      },
+      "inner_top1": {
+        "baseline": {
+          "20": 0.17424242424242425,
+          "100": 0.1720328282828283,
+          "500": 0.1431502525252525,
+          "2000": 0.10590277777777778
+        },
+        "local": {
+          "20": 0.328125,
+          "100": 0.32039141414141414,
+          "500": 0.24431818181818182,
+          "2000": 0.13841540404040403
+        }
+      }
+    }
+  ],
+  "models": {
+    "baseline": {
+      "slots": 7917,
+      "top1": 0.17784514336238474,
+      "top5": 0.35670077049387394,
+      "top10": 0.4587596311734243,
+      "unknown_true_rate": 0.03081975495768599,
+      "unknown_prediction_rate": 0.0,
+      "bucket_cross_entropy_bits": 7.096612938853713,
+      "equal_text_weight": {
+        "top1": 0.18055445436397818,
+        "top5": 0.35782290196575905,
+        "top10": 0.45561913571437374,
+        "texts": 1575
+      },
+      "positions": {
+        "initial": {
+          "slots": 1575,
+          "top1": 0.12507936507936507,
+          "top5": 0.29904761904761906,
+          "top10": 0.38476190476190475,
+          "unknown_true_rate": 0.06349206349206349,
+          "unknown_prediction_rate": 0.0,
+          "bucket_cross_entropy_bits": 8.36396865787042
+        },
+        "internal": {
+          "slots": 4767,
+          "top1": 0.12146003775959723,
+          "top5": 0.2823578770715335,
+          "top10": 0.3933291378225299,
+          "unknown_true_rate": 0.022445982798405706,
+          "unknown_prediction_rate": 0.0,
+          "bucket_cross_entropy_bits": 7.372022332407066
+        },
+        "final": {
+          "slots": 1575,
+          "top1": 0.4012698412698413,
+          "top5": 0.6393650793650794,
+          "top10": 0.7307936507936508,
+          "unknown_true_rate": 0.02349206349206349,
+          "unknown_prediction_rate": 0.0,
+          "bucket_cross_entropy_bits": 4.995684788682197
+        }
+      },
+      "confidence_audit": [
+        {
+          "mass_interval": [
+            0.0,
+            0.2
+          ],
+          "slots": 5166,
+          "mean_model_mass": 0.11524345775028538,
+          "exact_accuracy": 0.09407665505226481
+        },
+        {
+          "mass_interval": [
+            0.2,
+            0.4
+          ],
+          "slots": 2064,
+          "mean_model_mass": 0.27387614433758667,
+          "exact_accuracy": 0.2936046511627907
+        },
+        {
+          "mass_interval": [
+            0.4,
+            0.6
+          ],
+          "slots": 687,
+          "mean_model_mass": 0.45960774590179637,
+          "exact_accuracy": 0.45997088791848617
+        },
+        {
+          "mass_interval": [
+            0.6,
+            0.8
+          ],
+          "slots": 0,
+          "mean_model_mass": null,
+          "exact_accuracy": null
+        },
+        {
+          "mass_interval": [
+            0.8,
+            1.0
+          ],
+          "slots": 0,
+          "mean_model_mass": null,
+          "exact_accuracy": null
+        }
+      ]
+    },
+    "local": {
+      "slots": 7917,
+      "top1": 0.358974358974359,
+      "top5": 0.5587975243147657,
+      "top10": 0.627763041556145,
+      "unknown_true_rate": 0.03081975495768599,
+      "unknown_prediction_rate": 0.0,
+      "bucket_cross_entropy_bits": 5.587314313412059,
+      "equal_text_weight": {
+        "top1": 0.3470174252555205,
+        "top5": 0.5483257412781222,
+        "top10": 0.6165882124929744,
+        "texts": 1575
+      },
+      "positions": {
+        "initial": {
+          "slots": 1575,
+          "top1": 0.24952380952380954,
+          "top5": 0.43746031746031744,
+          "top10": 0.4901587301587302,
+          "unknown_true_rate": 0.06349206349206349,
+          "unknown_prediction_rate": 0.0,
+          "bucket_cross_entropy_bits": 7.0859230606816626
+        },
+        "internal": {
+          "slots": 4767,
+          "top1": 0.3272498426683449,
+          "top5": 0.540381791483113,
+          "top10": 0.6205160478288232,
+          "unknown_true_rate": 0.022445982798405706,
+          "unknown_prediction_rate": 0.0,
+          "bucket_cross_entropy_bits": 5.634872677210399
+        },
+        "final": {
+          "slots": 1575,
+          "top1": 0.5644444444444444,
+          "top5": 0.7358730158730159,
+          "top10": 0.7873015873015873,
+          "unknown_true_rate": 0.02349206349206349,
+          "unknown_prediction_rate": 0.0,
+          "bucket_cross_entropy_bits": 3.9447622517128087
+        }
+      },
+      "confidence_audit": [
+        {
+          "mass_interval": [
+            0.0,
+            0.2
+          ],
+          "slots": 1928,
+          "mean_model_mass": 0.1316867462313012,
+          "exact_accuracy": 0.10684647302904564
+        },
+        {
+          "mass_interval": [
+            0.2,
+            0.4
+          ],
+          "slots": 2690,
+          "mean_model_mass": 0.29441672989881795,
+          "exact_accuracy": 0.2505576208178439
+        },
+        {
+          "mass_interval": [
+            0.4,
+            0.6
+          ],
+          "slots": 1656,
+          "mean_model_mass": 0.4915521234760245,
+          "exact_accuracy": 0.45954106280193235
+        },
+        {
+          "mass_interval": [
+            0.6,
+            0.8
+          ],
+          "slots": 924,
+          "mean_model_mass": 0.6945880852931444,
+          "exact_accuracy": 0.6417748917748918
+        },
+        {
+          "mass_interval": [
+            0.8,
+            1.0
+          ],
+          "slots": 719,
+          "mean_model_mass": 0.8993144204511218,
+          "exact_accuracy": 0.8456189151599444
+        }
+      ]
+    }
+  },
+  "paired_gain": {
+    "gain_accuracy": 0.18112921561197423,
+    "cluster_bootstrap_95_ci": [
+      0.1690832673584309,
+      0.19320362085027432
+    ],
+    "clusters": 1506,
+    "bootstrap": 10000
+  },
+  "equal_text_weight_paired_gain": {
+    "gain_accuracy": 0.16646297089154233,
+    "cluster_bootstrap_95_ci": [
+      0.15498106858029725,
+      0.17848735265114013
+    ],
+    "clusters": 1506,
+    "bootstrap": 10000
+  },
+  "missing_slot_assumption": "Exactly one missing glyph with correct surviving transcription and line length.",
+  "confidence_warning": "Normalized model masses are not calibrated probabilities of historical correctness.",
+  "oov_warning": "Unseen fine glyphs count as failed predictions; descriptive cross-entropy pools them in UNKNOWN.",
+  "external_source_check": {
+    "source_audit_cases": 25,
+    "compatible_primary_texts_length3plus": 16,
+    "test_record_ids": [
+      "2537.1",
+      "2544.1",
+      "2562.1",
+      "2586.1",
+      "2593.1",
+      "2604.1",
+      "2620.1",
+      "2621.1",
+      "2634.1",
+      "2656.1",
+      "2659.1",
+      "2662.1",
+      "2671.1",
+      "2674.1",
+      "2679.1",
+      "2708.1"
+    ],
+    "training_unique_texts": 1559,
+    "removed_training_texts": 16,
+    "chosen_alpha": {
+      "baseline": 20,
+      "local": 20
+    },
+    "inner_accuracy": {
+      "baseline": {
+        "20": 0.17874457769839244,
+        "100": 0.17006889512630774,
+        "500": 0.151696861444246,
+        "2000": 0.10946670068895126
+      },
+      "local": {
+        "20": 0.3470273028833886,
+        "100": 0.3434549630007655,
+        "500": 0.27239091605001275,
+        "2000": 0.15373819852003062
+      }
+    },
+    "models": {
+      "baseline": {
+        "slots": 79,
+        "top1": 0.21518987341772153,
+        "top5": 0.3670886075949367,
+        "top10": 0.5316455696202531,
+        "unknown_true_rate": 0.012658227848101266,
+        "unknown_prediction_rate": 0.0,
+        "bucket_cross_entropy_bits": 6.459411261009062,
+        "equal_text_weight": {
+          "top1": 0.20223214285714286,
+          "top5": 0.3543154761904762,
+          "top10": 0.5272321428571428,
+          "texts": 16
+        },
+        "positions": {
+          "initial": {
+            "slots": 16,
+            "top1": 0.25,
+            "top5": 0.25,
+            "top10": 0.3125,
+            "unknown_true_rate": 0.0,
+            "unknown_prediction_rate": 0.0,
+            "bucket_cross_entropy_bits": 8.989198907020443
+          },
+          "internal": {
+            "slots": 47,
+            "top1": 0.14893617021276595,
+            "top5": 0.3191489361702128,
+            "top10": 0.5531914893617021,
+            "unknown_true_rate": 0.02127659574468085,
+            "unknown_prediction_rate": 0.0,
+            "bucket_cross_entropy_bits": 6.219320112416054
+          },
+          "final": {
+            "slots": 16,
+            "top1": 0.375,
+            "top5": 0.625,
+            "top10": 0.6875,
+            "unknown_true_rate": 0.0,
+            "unknown_prediction_rate": 0.0,
+            "bucket_cross_entropy_bits": 4.634891363989639
+          }
+        },
+        "confidence_audit": [
+          {
+            "mass_interval": [
+              0.0,
+              0.2
+            ],
+            "slots": 45,
+            "mean_model_mass": 0.12226065455502341,
+            "exact_accuracy": 0.1111111111111111
+          },
+          {
+            "mass_interval": [
+              0.2,
+              0.4
+            ],
+            "slots": 24,
+            "mean_model_mass": 0.26038286333118693,
+            "exact_accuracy": 0.2916666666666667
+          },
+          {
+            "mass_interval": [
+              0.4,
+              0.6
+            ],
+            "slots": 10,
+            "mean_model_mass": 0.46993928889206477,
+            "exact_accuracy": 0.5
+          },
+          {
+            "mass_interval": [
+              0.6,
+              0.8
+            ],
+            "slots": 0,
+            "mean_model_mass": null,
+            "exact_accuracy": null
+          },
+          {
+            "mass_interval": [
+              0.8,
+              1.0
+            ],
+            "slots": 0,
+            "mean_model_mass": null,
+            "exact_accuracy": null
+          }
+        ]
+      },
+      "local": {
+        "slots": 79,
+        "top1": 0.4430379746835443,
+        "top5": 0.6329113924050633,
+        "top10": 0.7088607594936709,
+        "unknown_true_rate": 0.012658227848101266,
+        "unknown_prediction_rate": 0.0,
+        "bucket_cross_entropy_bits": 4.582547438604897,
+        "equal_text_weight": {
+          "top1": 0.4263392857142857,
+          "top5": 0.6238095238095238,
+          "top10": 0.6998511904761905,
+          "texts": 16
+        },
+        "positions": {
+          "initial": {
+            "slots": 16,
+            "top1": 0.3125,
+            "top5": 0.375,
+            "top10": 0.5,
+            "unknown_true_rate": 0.0,
+            "unknown_prediction_rate": 0.0,
+            "bucket_cross_entropy_bits": 7.512192533473141
+          },
+          "internal": {
+            "slots": 47,
+            "top1": 0.40425531914893614,
+            "top5": 0.6808510638297872,
+            "top10": 0.7446808510638298,
+            "unknown_true_rate": 0.02127659574468085,
+            "unknown_prediction_rate": 0.0,
+            "bucket_cross_entropy_bits": 4.066231148343461
+          },
+          "final": {
+            "slots": 16,
+            "top1": 0.6875,
+            "top5": 0.75,
+            "top10": 0.8125,
+            "unknown_true_rate": 0.0,
+            "unknown_prediction_rate": 0.0,
+            "bucket_cross_entropy_bits": 3.169581446379617
+          }
+        },
+        "confidence_audit": [
+          {
+            "mass_interval": [
+              0.0,
+              0.2
+            ],
+            "slots": 13,
+            "mean_model_mass": 0.12930440866591522,
+            "exact_accuracy": 0.07692307692307693
+          },
+          {
+            "mass_interval": [
+              0.2,
+              0.4
+            ],
+            "slots": 26,
+            "mean_model_mass": 0.27669565941368507,
+            "exact_accuracy": 0.2692307692307692
+          },
+          {
+            "mass_interval": [
+              0.4,
+              0.6
+            ],
+            "slots": 19,
+            "mean_model_mass": 0.5169716572184526,
+            "exact_accuracy": 0.6842105263157895
+          },
+          {
+            "mass_interval": [
+              0.6,
+              0.8
+            ],
+            "slots": 16,
+            "mean_model_mass": 0.7082338451764757,
+            "exact_accuracy": 0.5625
+          },
+          {
+            "mass_interval": [
+              0.8,
+              1.0
+            ],
+            "slots": 5,
+            "mean_model_mass": 0.9301654058548682,
+            "exact_accuracy": 1.0
+          }
+        ]
+      }
+    },
+    "limitation": "Nonrandom primary-photo compatibility sample; catalogue-family compatibility is weaker than fine-glyph identity. This is a source check, not independent population validation."
+  },
+  "runtime_seconds": 32.10472250000748
+}

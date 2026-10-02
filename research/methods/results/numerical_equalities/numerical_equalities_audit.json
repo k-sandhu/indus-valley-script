@@ -1,0 +1,229 @@
+{
+  "scope": "Exact conditional arithmetic constraint audit; no new decoded numeral or priority claim.",
+  "source_sha256": "3bd5141dc2abe2c0d7fa6bec0e048b3411b2d5d67584427b7c06d5538fd4d3f1",
+  "source_url": "https://www.researchgate.net/profile/Andreas-Fuls/publication/373522958_Ancient_Writing_and_Modern_Technologies_-_Structural_Analysis_of_Numerical_Indus_Inscriptions/links/64f04b160f7ab20a8667db0b/Ancient-Writing-and-Modern-Technologies-Structural-Analysis-of-Numerical-Indus-Inscriptions.pdf",
+  "source_editions": {
+    "original_chapter": "Fuls2020, bibliographic pp57-90",
+    "verified_author_posted_reprint": "2023 posting, printed pp15-48; all following coordinates refer to this linked PDF"
+  },
+  "source_locations": {
+    "bangle_range": "2023 reprint printed pp28-29, PDF pages14-15 (1-indexed), Fig15/Eq1",
+    "first_equality": "2023 reprint printed p30, PDF page16, Fig16/Eq2",
+    "sum_relation": "2023 reprint printed p32, PDF page18, Fig18"
+  },
+  "variables": {
+    "L": "hypothesized value/base multiplier of a long stroke",
+    "S": "hypothesized higher-position multiplier of a short stroke",
+    "v": "hypothesized unit value of W900"
+  },
+  "assumed_equalities": [
+    "v=2*S-L",
+    "v*L+1=7*S+5"
+  ],
+  "derived_relation": "S=(L^2+4)/(2*L-7)",
+  "unbounded_completeness_argument": [
+    "Set d=2*L-7. Integer L makes d odd and nonzero.",
+    "4*(L^2+4)=d*(2*L+7)+65. Integer S therefore requires d to divide 65.",
+    "All signed divisors are -65,-13,-5,-1,1,5,13,65; each is explicitly tested with Fraction arithmetic.",
+    "S>0 implies d>0 because L^2+4 is positive. Thus only four positive divisors remain."
+  ],
+  "all_integer_solutions": [
+    {
+      "L": -29,
+      "S": -13,
+      "v": 3,
+      "d": -65
+    },
+    {
+      "L": -3,
+      "S": -1,
+      "v": 1,
+      "d": -13
+    },
+    {
+      "L": 1,
+      "S": -1,
+      "v": -3,
+      "d": -5
+    },
+    {
+      "L": 3,
+      "S": -13,
+      "v": -29,
+      "d": -1
+    },
+    {
+      "L": 4,
+      "S": 20,
+      "v": 36,
+      "d": 1
+    },
+    {
+      "L": 6,
+      "S": 8,
+      "v": 10,
+      "d": 5
+    },
+    {
+      "L": 10,
+      "S": 8,
+      "v": 6,
+      "d": 13
+    },
+    {
+      "L": 36,
+      "S": 20,
+      "v": 4,
+      "d": 65
+    }
+  ],
+  "admissibility": "L positive integer, S integer at least8, v positive integer; no even/prime restriction",
+  "all_admissible_solutions": [
+    {
+      "L": 4,
+      "S": 20,
+      "v": 36,
+      "d": 1
+    },
+    {
+      "L": 6,
+      "S": 8,
+      "v": 10,
+      "d": 5
+    },
+    {
+      "L": 10,
+      "S": 8,
+      "v": 6,
+      "d": 13
+    },
+    {
+      "L": 36,
+      "S": 20,
+      "v": 4,
+      "d": 65
+    }
+  ],
+  "range_sensitivities": {
+    "L_8_to_13": [
+      {
+        "L": 10,
+        "S": 8,
+        "v": 6,
+        "d": 13
+      }
+    ],
+    "L_8_to_18": [
+      {
+        "L": 10,
+        "S": 8,
+        "v": 6,
+        "d": 13
+      }
+    ],
+    "L_8_to_35": [
+      {
+        "L": 10,
+        "S": 8,
+        "v": 6,
+        "d": 13
+      }
+    ],
+    "L_8_to_36": [
+      {
+        "L": 10,
+        "S": 8,
+        "v": 6,
+        "d": 13
+      },
+      {
+        "L": 36,
+        "S": 20,
+        "v": 4,
+        "d": 65
+      }
+    ],
+    "L_1_to_1000": [
+      {
+        "L": 4,
+        "S": 20,
+        "v": 36,
+        "d": 1
+      },
+      {
+        "L": 6,
+        "S": 8,
+        "v": 10,
+        "d": 5
+      },
+      {
+        "L": 10,
+        "S": 8,
+        "v": 6,
+        "d": 13
+      },
+      {
+        "L": 36,
+        "S": 20,
+        "v": 4,
+        "d": 65
+      }
+    ]
+  },
+  "digit_maximum_assumption_L_at_least10": [
+    {
+      "L": 10,
+      "S": 8,
+      "v": 6,
+      "d": 13
+    },
+    {
+      "L": 36,
+      "S": 20,
+      "v": 4,
+      "d": 65
+    }
+  ],
+  "redundant_assumptions_in_exact_joint_system": [
+    "All positive-integer solutions already have S>=8 and v>0.",
+    "All four admissible L values are composite; excluding prime bases adds no restriction here.",
+    "Both L8..13 and the wider L8..18 leave exactly (L,S,v)=(10,8,6)."
+  ],
+  "first_equality_parity_audit": {
+    "correct_implication": "Integer S=(v+L)/2 implies v and L share parity, not that S is even.",
+    "odd_S_counterexample": {
+      "L": 10,
+      "S": 9,
+      "v": 8
+    },
+    "note": "The four positive joint-system solutions happen to have even S as a result, not a premise."
+  },
+  "source_assumption_chain": [
+    "ICIT3786: assign coefficients3 and2 to long-stroke groups,2 to the higher-position short group, and v to W900; equate quantities on two faces bearing different other glyphs.",
+    "M331: assign five stacked strokes to5, four short strokes to4*S, three short strokes to3*S, W900+one short stroke to v*L+1; equate the latter to the sum of the first two expressions.",
+    "M1383: associate 017/031 with7+L and identify that expression with a reconstructed bangle total, yielding assumed L8..13 or a stated wider range."
+  ],
+  "source_cautions": [
+    "The source describes three long strokes on ICIT3786 while labelling them032; that code/count discrepancy requires source-image adjudication.",
+    "ICIT3786 is the published paper's identifier, not a safely matched current Lipi numeric ID; its physical/CISI identity remains unresolved in this audit.",
+    "Physical grouping and surviving stroke counts do not establish equal quantities, positional ranks, addition or the bangle referent.",
+    "Without a range or other independently grounded restriction, the exact equations leave four positive solutions, not a uniquely decoded decimal base.",
+    "These equations and their selected solution are published prior. Removing unnecessary prime/parity premises is an arithmetic audit, not semantic decipherment."
+  ],
+  "falsifiable_followup": [
+    "Freeze graphic coefficients, positional assignments and equal-quantity rules before reading an independent object.",
+    "Validate ICIT3786's three-versus-two group and every M331 physical side/line against accessible source images.",
+    "Test an independently identified total/parts object with the same fixed units and operations, and report exceptions without changing multipliers or referents."
+  ],
+  "brute_force_check": {
+    "L_range": [
+      1,
+      1000
+    ],
+    "S_range": [
+      8,
+      1000
+    ],
+    "matches_proven_solution_set": true
+  }
+}
