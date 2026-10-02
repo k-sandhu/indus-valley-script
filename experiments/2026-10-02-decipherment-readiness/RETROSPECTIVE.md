@@ -1,0 +1,15 @@
+# How the decipherment readiness review was assembled
+
+The user's question followed the completed six-hour research session. The root first read the project instructions, index, registry, writing rules and integration retrospective, then assigned three separate reviews of the actual corpus, computational requirements and physical evidence. Each assignment carried the reader-focused writing rule and a distinct directory; contributors retained the existing results and avoided model refits.
+
+The review started by recording all 101 registry entries and checking that every indexed evidence path exists. The root captured the registry's exact bytes, the baseline commit and hashes for the four manuscripts and selected source/decision notes. Contributors traced claims into the relevant schemas, aggregate results and source observations. This approach separates the published benchmark population from the smaller archaeological groups that might support a restricted reading.
+
+The short-record selection rule became a consequential finding. The current restoration benchmark requires at least three signs, excluding all 66 faces of the 22-tablet Harappa group. The Lothal source/corpus join supplied a different immediate test: one repeated eight-sign inscription occurs across several coded physical categories. The proposed test needs confirmation of contact features and object/stamp identity before interpreting its result.
+
+The numerical review returned to the exact 10/8/6 proposal and its four conditional solutions. Existing mathematical controls specify what a quantity test would require, while the original-source audit identifies the unresolved count and object joins. The external reading audit supplied the status of the familiar Gulf contact objects and the distinction between recorded contact, a cuneiform name and a corresponding Indus spelling.
+
+A supplementary search confirmed the full title, pages, DOI and publisher's online date of Frenez's 2024 Lothal article. Its institutional abstract supplies a precise acquisition route. Direct publisher retrieval returned 403 and the institutional page returned 502 in this update, so the root retained the bibliography and access record without inventing specimen observations from unavailable plates. The contributor's separate source checks retain their own routes and scopes.
+
+Two root shell reads initially used an incorrect extra `primary_numeric` directory for the numerical source notes. The recorded file inventory supplied the correct `research/literature/metrology/` paths. No source or endpoint changed. Contributor-specific extraction and checker issues are recorded in their own retrospectives.
+
+The integration report keeps shared requirements together: source identity, graphic observation, an outside target, competing interpretations and an independently reserved evaluation. Future work can begin from a source-defined physical or numerical question and reuse the completed controls when their assumptions match it.

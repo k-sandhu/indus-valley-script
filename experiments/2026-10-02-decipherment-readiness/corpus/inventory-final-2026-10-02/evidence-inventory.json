@@ -1,0 +1,797 @@
+{
+  "recorded_utc": "2026-10-02T14:47:44.965456+00:00",
+  "scope": "Actual Indus corpus and source frames; generated mapping/numerical systems excluded from observation counts.",
+  "protocol_sha256": "bbd9f002b03bf31e084ec9f8c4db846427058ce69cdb53b77863c5b64ce6eb1a",
+  "code_sha256": "d97658e98513c38203eb5201343ef0a809c585c8991a3a3ea61e5ee41f69f820",
+  "input_hashes": {
+    "knowledge/experiments/registry.json": "ec3df8461077ebabe8ecde70d409e5e3310c934d64039c624864117edd344d30",
+    "data/lipi/src/assets/data/inscriptions.csv": "c36d0c26becb00b12b509cb2f5a35ffab1b5332e2e438cda308a272f77dba62c",
+    "data/lipi/src/assets/data/seal_id_and_image_mapping.json": "8069120d4ee271939adf096287762a3b83ecfd8f5dcb6f4fa014ae8e18f668d5",
+    "data/normalized/lipi_observed_faces.jsonl": "1220f5591a42abe7c6696ac014aba90e7c49fdce6b0ccba0b85bb45f950c30db",
+    "data/normalized/lipi_clean_rtl_singleline.jsonl": "9e539daef4d5a7efbe3c5f34b73e14058eec1c5e888c749bc2eafb0f08084ba8",
+    "data/normalized/mayig_faces.jsonl": "033b8e40d4fdfa1f4a2c51390c8fd5f95eae35c6c835b47776c969ab947a19b7",
+    "data/normalized/indus_website_observed.jsonl": "ff842377a6b98d51ee2b6cf3355977e7b31dc4e701bef705b178990b0f4ed162",
+    "experiments/2026-10-02-six-hour/context-audit/main/results.json": "b805129bd2dbd4f17ca66fa2c5edf50df3e4b3657016463033cb13b6d283435b",
+    "experiments/2026-10-02-six-hour/context-audit/source-cohorts/results.json": "7dbf96dd602e4e714fdeccee21ed17a30d6d154105d6018d3ce96f071ef4532b",
+    "experiments/2026-10-02-six-hour/harappa-object-frame/annotated/results.json": "026b14a9d7dedf0a98b805a8db0c8e777d5676bc47253c59123df64c0bf57e40",
+    "experiments/2026-10-02-six-hour/harappa-object-frame/figure4-native-reinspection.json": "c2ff77a79d0604b9459a75998632277c8793bc130c8832f2e23f12c4546e01f5",
+    "experiments/2026-10-02-six-hour/lothal-physical-use/join-refined/results.json": "cd236f6552cf421cd3f46f2000b1fb8928541362626c54790455865b7853b9cd",
+    "experiments/2026-10-02-six-hour/lothal-physical-use/graphic-coverage/results.json": "f790303378ddb7069e581426fca870cec50c4617215aef2fb9baf76b0bcff496",
+    "experiments/2026-10-02-six-hour/lothal-physical-use/independent-review/selected-trace-observations.json": "e33bb6efe8288da911ca2f3600caa1edd9f8845ef20540394fb07602c9112f6a",
+    "experiments/2026-10-02-six-hour/kanmer-physical-use/main/results.json": "eaedc6d46cb445a87776eae5a0c1d5737a7d93293036360bef75176cd5e4f29b",
+    "research/corpus/normalize_lipi.py": "ca9d8788adb03e415d3bc4203678370008512d8c63814aeb6c45b3c4ea478096",
+    "research/corpus/normalize_mayig.py": "761f7070d7dd94bd14996863ecdc238fdd1b5256c16997db2698f0c78c36ff22",
+    "research/corpus/normalize_indus_website.py": "2f3da413211e68ce6e7a43bc21bcf0e7cd5ebc66eab65e9713a09a7bd28a1c7b"
+  },
+  "corpus_schemas": {
+    "lipi": {
+      "rows": 5680,
+      "families": 4695,
+      "top_level_keys": [
+        "clean_rtl_singleline",
+        "complete_observed",
+        "direction",
+        "has_blank_space",
+        "has_unknown_sign",
+        "length",
+        "metadata",
+        "object_family_id",
+        "object_type",
+        "orientation_basis",
+        "record_id",
+        "region",
+        "signs_reading_rtl",
+        "signs_visual_ltr",
+        "single_line",
+        "site",
+        "source_cisi",
+        "source_record_id",
+        "symbol",
+        "text_code_visual_ltr"
+      ],
+      "metadata_keys": [
+        "area-section",
+        "block-house",
+        "boss",
+        "cisi",
+        "class",
+        "color",
+        "complete",
+        "condition",
+        "cross-section",
+        "cult",
+        "depth",
+        "dir.",
+        "excavation-idno",
+        "h",
+        "horizontal(mm)",
+        "material",
+        "period",
+        "phase",
+        "preservation",
+        "region",
+        "room-grid",
+        "shape",
+        "sides",
+        "signs",
+        "site",
+        "symbol",
+        "text length",
+        "th",
+        "thickness(mm)",
+        "time",
+        "type",
+        "v",
+        "vertical(mm)"
+      ],
+      "supplied_interpretive_keys_found": []
+    },
+    "mayig": {
+      "rows": 179,
+      "families": 179,
+      "top_level_keys": [
+        "clear_transcription",
+        "description",
+        "graphemes",
+        "has_unknown_sign",
+        "length",
+        "line_count",
+        "max_damage",
+        "max_uncertainty",
+        "multiline",
+        "object_family_id",
+        "object_type",
+        "orientation_basis",
+        "record_id",
+        "signs_reading_rtl",
+        "signs_visual_ltr",
+        "site",
+        "source_file"
+      ],
+      "metadata_keys": [],
+      "supplied_interpretive_keys_found": []
+    },
+    "earlier_export": {
+      "rows": 2543,
+      "families": 2543,
+      "top_level_keys": [
+        "complete_observed",
+        "direction",
+        "length",
+        "license",
+        "material",
+        "metadata",
+        "object_family_id",
+        "orientation_basis",
+        "parts_reading_rtl",
+        "parts_visual_ltr",
+        "qualities",
+        "record_id",
+        "signs_visual_ltr",
+        "single_line",
+        "site",
+        "source_cisi",
+        "symbol"
+      ],
+      "metadata_keys": [
+        "CISI",
+        "HEIGHT",
+        "MATERIAL",
+        "MUSEUM",
+        "SEALID",
+        "SITEID",
+        "THICKNESS",
+        "WIDTH"
+      ],
+      "supplied_interpretive_keys_found": []
+    }
+  },
+  "raw_interpretive_column_presence": {
+    "sanskrit": {
+      "nonempty_strings": 3826,
+      "absent_cells": 1841,
+      "empty_strings": 5,
+      "whitespace_only_strings": 8
+    },
+    "translation": {
+      "nonempty_strings": 1765,
+      "absent_cells": 3915,
+      "empty_strings": 0,
+      "whitespace_only_strings": 0
+    },
+    "notes": {
+      "nonempty_strings": 47,
+      "absent_cells": 5631,
+      "empty_strings": 2,
+      "whitespace_only_strings": 0
+    }
+  },
+  "raw_schema_fields": [
+    "id",
+    "cisi",
+    "region",
+    "site",
+    "area-section",
+    "block-house",
+    "room-grid",
+    "excavation-idno",
+    "time",
+    "period",
+    "phase",
+    "depth",
+    "boss",
+    "material",
+    "color",
+    "shape",
+    "cross-section",
+    "preservation",
+    "symbol",
+    "cult",
+    "type",
+    "sides",
+    "condition",
+    "complete",
+    "dir.",
+    "class",
+    "text length",
+    "signs",
+    "h",
+    "v",
+    "th",
+    "horizontal(mm)",
+    "vertical(mm)",
+    "thickness(mm)",
+    "text",
+    "sanskrit",
+    "translation",
+    "notes"
+  ],
+  "export_image_index": {
+    "asset_directory": "data/lipi/public/seal_images",
+    "index_path": "data/lipi/src/assets/data/seal_id_and_image_mapping.json",
+    "assets": 8722,
+    "asset_extensions": {
+      ".jpg": 8716,
+      ".png": 6
+    },
+    "indexed_catalogue_keys": 3318,
+    "index_references": 6570,
+    "unique_indexed_files": 6570,
+    "missing_indexed_files": 0,
+    "unindexed_assets": 2152,
+    "unique_asset_byte_hashes": 8709,
+    "duplicate_asset_byte_excess": 13,
+    "byte_duplicate_group_size_distribution": {
+      "2": 6,
+      "3": 1,
+      "6": 1
+    },
+    "lipi_exact_key_matched_catalogue_keys": 2507,
+    "lipi_rows_with_existing_indexed_asset": 2944,
+    "lipi_families_with_existing_indexed_asset": 2507,
+    "principal_rows_with_existing_indexed_asset": 1400,
+    "mayig_faces_with_existing_indexed_asset": 179,
+    "missingness_scope": "Exact raw CISI key through the upstream image index; no fuzzy key or physical side/polarity match. Counts identify available assets and export links, not independent artifact photographs.",
+    "hash_scope": "SHA-256 of every file in the asset directory; byte differences can still depict the same object/side."
+  },
+  "derivative_metadata_availability": {
+    "site": {
+      "reported_rows": 5652,
+      "families_any_value": 4668,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "reported": 5652,
+        "missing": 28
+      }
+    },
+    "region": {
+      "reported_rows": 5680,
+      "families_any_value": 4695,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "reported": 5680
+      }
+    },
+    "cisi": {
+      "reported_rows": 5019,
+      "families_any_value": 4075,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "reported": 5019,
+        "missing": 661
+      }
+    },
+    "area-section": {
+      "reported_rows": 4260,
+      "families_any_value": 3469,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "missing": 1420,
+        "reported": 4260
+      }
+    },
+    "block-house": {
+      "reported_rows": 1513,
+      "families_any_value": 1424,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "missing": 4167,
+        "reported": 1513
+      }
+    },
+    "room-grid": {
+      "reported_rows": 2191,
+      "families_any_value": 1865,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "missing": 3489,
+        "reported": 2191
+      }
+    },
+    "excavation-idno": {
+      "reported_rows": 5147,
+      "families_any_value": 4206,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "missing": 533,
+        "reported": 5147
+      }
+    },
+    "time": {
+      "reported_rows": 3067,
+      "families_any_value": 2380,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "missing": 2613,
+        "reported": 3067
+      }
+    },
+    "period": {
+      "reported_rows": 2318,
+      "families_any_value": 1887,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "missing": 3362,
+        "reported": 2318
+      }
+    },
+    "phase": {
+      "reported_rows": 2653,
+      "families_any_value": 2039,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "missing": 3027,
+        "reported": 2653
+      }
+    },
+    "depth": {
+      "reported_rows": 2810,
+      "families_any_value": 2375,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "missing": 2870,
+        "reported": 2810
+      }
+    },
+    "material": {
+      "reported_rows": 4706,
+      "families_any_value": 3871,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "reported": 4706,
+        "missing": 974
+      }
+    },
+    "symbol": {
+      "reported_rows": 5141,
+      "families_any_value": 4197,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "catalogued_absence": 2635,
+        "reported": 2506,
+        "missing": 539
+      }
+    },
+    "cult": {
+      "reported_rows": 4840,
+      "families_any_value": 3910,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "catalogued_absence": 3398,
+        "missing": 840,
+        "reported": 1442
+      }
+    },
+    "type": {
+      "reported_rows": 5679,
+      "families_any_value": 4694,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "reported": 5679,
+        "missing": 1
+      }
+    },
+    "shape": {
+      "reported_rows": 4377,
+      "families_any_value": 3526,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "missing": 1303,
+        "reported": 4377
+      }
+    },
+    "h": {
+      "reported_rows": 2592,
+      "families_any_value": 2199,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "missing": 3088,
+        "reported": 2592
+      }
+    },
+    "v": {
+      "reported_rows": 2495,
+      "families_any_value": 2119,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "missing": 3185,
+        "reported": 2495
+      }
+    },
+    "th": {
+      "reported_rows": 1049,
+      "families_any_value": 980,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "missing": 4631,
+        "reported": 1049
+      }
+    },
+    "horizontal(mm)": {
+      "reported_rows": 3870,
+      "families_any_value": 3158,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "zero_or_negative": 1810,
+        "positive_numeric": 3870
+      }
+    },
+    "thickness(mm)": {
+      "reported_rows": 1563,
+      "families_any_value": 1246,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "zero_or_negative": 3586,
+        "positive_numeric": 1563,
+        "reported_unparsed": 531
+      }
+    },
+    "vertical(mm)": {
+      "reported_rows": 3999,
+      "families_any_value": 3195,
+      "families_distinct_face_values": 0,
+      "row_statuses": {
+        "zero_or_negative": 1681,
+        "positive_numeric": 3999
+      }
+    }
+  },
+  "joint_metadata_availability": {
+    "site_type_material": {
+      "rows": 4702,
+      "families_any_face": 3867,
+      "families_every_face": 3867
+    },
+    "site_excavation_area": {
+      "rows": 4083,
+      "families_any_face": 3296,
+      "families_every_face": 3296
+    },
+    "site_area_depth_any_chronology": {
+      "rows": 1966,
+      "families_any_face": 1606,
+      "families_every_face": 1606
+    },
+    "site_room_depth_any_chronology": {
+      "rows": 1445,
+      "families_any_face": 1164,
+      "families_every_face": 1164
+    },
+    "site_type_material_any_chronology": {
+      "rows": 3185,
+      "families_any_face": 2468,
+      "families_every_face": 2468
+    },
+    "site_positive_two_dimensions_motif_reported": {
+      "rows": 3368,
+      "families_any_face": 2730,
+      "families_every_face": 2730
+    },
+    "site_positive_three_dimensions": {
+      "rows": 1149,
+      "families_any_face": 960,
+      "families_every_face": 960
+    },
+    "site_area_excavation_depth_room_any_chronology": {
+      "rows": 1444,
+      "families_any_face": 1163,
+      "families_every_face": 1163
+    }
+  },
+  "metadata_evidence_basis": {
+    "table_fields": "derivative catalogue values; source pins recorded",
+    "existing_primary_audit": "25 selected Mohenjo-daro objects, graphics/layout rather than general metadata verification",
+    "primary_context_followup": "recorded separately in source-assertions.json"
+  },
+  "main_filter": {
+    "clean_rows": 2930,
+    "principal_rows": 2107,
+    "source_cohorts": [
+      {
+        "cohort": "incised_tablet_copies",
+        "published_bases": 22,
+        "matched_bases": 22,
+        "matched_families": 22,
+        "matched_faces": 66,
+        "unknown_sign_faces": 0,
+        "incomplete_faces": 0,
+        "multiline_faces": 0,
+        "blank_space_faces": 0
+      },
+      {
+        "cohort": "sealings_and_stopper",
+        "published_bases": 7,
+        "matched_bases": 6,
+        "matched_families": 6,
+        "matched_faces": 8,
+        "unknown_sign_faces": 5,
+        "incomplete_faces": 7,
+        "multiline_faces": 0,
+        "blank_space_faces": 0
+      },
+      {
+        "cohort": "stamped_vessels",
+        "published_bases": 40,
+        "matched_bases": 32,
+        "matched_families": 32,
+        "matched_faces": 32,
+        "unknown_sign_faces": 5,
+        "incomplete_faces": 11,
+        "multiline_faces": 0,
+        "blank_space_faces": 0
+      },
+      {
+        "cohort": "targeted_source_cautions",
+        "published_bases": 2,
+        "matched_bases": 0,
+        "matched_families": 0,
+        "matched_faces": 0,
+        "unknown_sign_faces": 0,
+        "incomplete_faces": 0,
+        "multiline_faces": 0,
+        "blank_space_faces": 0
+      }
+    ]
+  },
+  "harappa": {
+    "target_frame": 81,
+    "initial_export_joined_objects": 72,
+    "initial_export_absent_objects": 9,
+    "primary_image_objects_in_frame": 24,
+    "primary_image_objects_by_group": {
+      "copied_tablets": 22,
+      "rectangular_seals": 2
+    },
+    "primary_registration_joins": 25,
+    "unresolved_registration_joins": 0,
+    "source_objects_visible": 29,
+    "source_objects_outside_frame_visible": 5,
+    "source_faces_visible": 73,
+    "source_faces_in_target_frame": 68,
+    "tablet_faces": 66,
+    "tablet_lower_face_form_unresolved": 3,
+    "tablet_faces_with_direct_stroke_count": 7,
+    "tablet_source_unit_counts": {
+      "8040": 16,
+      "8010": 1,
+      "8038": 1,
+      "6951": 1,
+      "6937": 1,
+      "6560": 1,
+      "8039": 1
+    },
+    "tablet_group_summary": [
+      {
+        "published_group": 1,
+        "objects": 6,
+        "deposition_associations": {
+          "clump": 5,
+          "scattered": 1
+        },
+        "middle_forms": {
+          "D": 2,
+          "A": 4
+        },
+        "readable_angle_positions": {
+          "right": 4,
+          "left": 2
+        },
+        "readable_diamond_positions": {
+          "left": 3,
+          "right": 3
+        },
+        "unresolved_lower_faces": 0
+      },
+      {
+        "published_group": 2,
+        "objects": 9,
+        "deposition_associations": {
+          "clump": 7,
+          "near-clump": 2
+        },
+        "middle_forms": {
+          "A": 6,
+          "D": 3
+        },
+        "readable_angle_positions": {
+          "right": 6,
+          "left": 3
+        },
+        "readable_diamond_positions": {
+          "left": 3,
+          "right": 6
+        },
+        "unresolved_lower_faces": 0
+      },
+      {
+        "published_group": 3,
+        "objects": 7,
+        "deposition_associations": {
+          "scattered": 3,
+          "clump": 4
+        },
+        "middle_forms": {
+          "D": 6,
+          "A": 1
+        },
+        "readable_angle_positions": {
+          "right": 2,
+          "left": 2
+        },
+        "readable_diamond_positions": {
+          "right": 2,
+          "left": 5
+        },
+        "unresolved_lower_faces": 3
+      }
+    ],
+    "direct_numeric_dimensions": 0,
+    "reported_museum_accessions": 0,
+    "witness_types": {
+      "drawing": 25,
+      "photograph": 4
+    },
+    "phase_labels_in_frame": {
+      "late Period 3B": 22,
+      "3C?": 1,
+      "3C": 1
+    },
+    "display_convention": "top/middle/bottom and left/right are positions in a published drawing; no exported A/B/C face alignment is assigned"
+  },
+  "direct_tablet_stroke_counts": {
+    "faces": 7,
+    "histogram": {
+      "3": 5,
+      "4": 2
+    },
+    "basis": "visible-in-source-figure",
+    "source_geometry_convention": "top/middle/bottom and left/right are positions in a published drawing; no exported A/B/C face alignment is assigned"
+  },
+  "lothal": {
+    "source_objects": 93,
+    "table_impressions": 133,
+    "joined_objects": 68,
+    "joined_faces": 86,
+    "principal_objects": 29,
+    "distinct_principal_strings": 9,
+    "photographed_labelled_objects": 35,
+    "selected_trace_objects": 12,
+    "recurring_groups": [
+      {
+        "group_id": "G01",
+        "objects": 11,
+        "length": 8,
+        "source_categories": {
+          "woven_straw": 1,
+          "wooden_box": 1,
+          "leather_sack": 1,
+          "undiagnostic": 2,
+          "pottery": 2,
+          "structure": 3,
+          "peg_on_wall": 1
+        },
+        "selected_trace_objects": 4,
+        "selected_trace_ids": [
+          "L-124",
+          "L-126",
+          "L-193",
+          "L-206"
+        ]
+      },
+      {
+        "group_id": "G02",
+        "objects": 10,
+        "length": 4,
+        "source_categories": {
+          "wooden_box": 10
+        },
+        "selected_trace_objects": 1,
+        "selected_trace_ids": [
+          "L-163"
+        ]
+      },
+      {
+        "group_id": "G03",
+        "objects": 2,
+        "length": 3,
+        "source_categories": {
+          "structure": 1,
+          "undiagnostic": 1
+        },
+        "selected_trace_objects": 1,
+        "selected_trace_ids": [
+          "L-130"
+        ]
+      },
+      {
+        "group_id": "G04",
+        "objects": 1,
+        "length": 4,
+        "source_categories": {
+          "structure": 1
+        },
+        "selected_trace_objects": 0,
+        "selected_trace_ids": []
+      },
+      {
+        "group_id": "G05",
+        "objects": 1,
+        "length": 6,
+        "source_categories": {
+          "parallel_canes": 1
+        },
+        "selected_trace_objects": 0,
+        "selected_trace_ids": []
+      },
+      {
+        "group_id": "G06",
+        "objects": 1,
+        "length": 5,
+        "source_categories": {
+          "wooden_box": 1
+        },
+        "selected_trace_objects": 1,
+        "selected_trace_ids": [
+          "L-142"
+        ]
+      },
+      {
+        "group_id": "G07",
+        "objects": 1,
+        "length": 3,
+        "source_categories": {
+          "parallel_canes": 1
+        },
+        "selected_trace_objects": 0,
+        "selected_trace_ids": []
+      },
+      {
+        "group_id": "G08",
+        "objects": 1,
+        "length": 4,
+        "source_categories": {
+          "structure": 1
+        },
+        "selected_trace_objects": 0,
+        "selected_trace_ids": []
+      },
+      {
+        "group_id": "G09",
+        "objects": 1,
+        "length": 6,
+        "source_categories": {
+          "parallel_canes": 1
+        },
+        "selected_trace_objects": 1,
+        "selected_trace_ids": [
+          "L-143"
+        ]
+      }
+    ],
+    "context_basis_record": "experiments/2026-10-02-six-hour/lothal-physical-use/README.md"
+  },
+  "kanmer": {
+    "objects": 8,
+    "core_pendants": 4,
+    "original_core_registered": 3,
+    "core_field_coverage": {
+      "registration": 3,
+      "dimensions_and_mass": 3,
+      "individual_trench_layer": 3,
+      "visible_reverse_hole": 4,
+      "source_numbered_reverse_photos": 4,
+      "caption_stem_joined_scanner_objects": 3,
+      "measured_hole_axis": 0,
+      "measured_hole_wear": 0,
+      "individual_hole_diameter": 0,
+      "direct_object_laboratory_date": 0
+    },
+    "core_graphic_layout": {
+      "author_shared_obverse_upper_units": 2,
+      "numbered_reverse_marked_layouts": 4,
+      "reverse_partial_cases": 2,
+      "matrix_identity_basis": "author assertion and visible broad correspondence; no raw-surface geometric matrix match"
+    },
+    "raw_mesh_acquired": false
+  }
+}

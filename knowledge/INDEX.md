@@ -14,6 +14,8 @@ The project distinguishes **observed graphics**, **statistical structure**, **po
 
 The [research-contribution overview](research-contributions.md) explains the results available for reuse and connects them to the four papers.
 
+The [decipherment readiness review](directions/decipherment-readiness-2026-10-02.md) assesses all 101 previously registered entries, identifies short records outside the main benchmark and names the independent observations required for a restricted reading.
+
 [Writing rules](editorial/WRITING.md) record the user's language preference, recent editorial sources and editing decisions.
 
 - [First complete manuscript](../papers/001-artifact-aware-prediction/manuscript.md), [detailed methods](../papers/001-artifact-aware-prediction/methods.md), [claim-evidence map](../papers/001-artifact-aware-prediction/claim-evidence-map.md).
@@ -36,7 +38,7 @@ The [research-contribution overview](research-contributions.md) explains the res
 | Feasible next investigations | [Ranked roadmap](directions/research-roadmap.md) | Required inputs, falsification and stopping conditions |
 | Better archaeological observations | [Context data plan](directions/context-data-plan.md) | Proposed data schema and conservative comparisons |
 
-The [six-hour session record](../experiments/2026-10-02-six-hour/SESSION_LOG.md) links the restoration, reference-law, mapping, numerical and source-observation studies. It records completed branches separately from the experiments still running.
+The [six-hour session record](../experiments/2026-10-02-six-hour/SESSION_LOG.md) links the completed restoration, reference-law, mapping, numerical and source-observation studies. Proposed physical experiments retain their unrun status.
 
 ## Sources and reuse
 

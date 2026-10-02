@@ -1,0 +1,15 @@
+# Readiness audit record
+
+The audit read the 101-entry registry, corpus/root retrospectives, normalization code and existing Harappa, Lothal and Kanmer source frames. It reused their source and metadata counts instead of rerunning earlier prediction experiments. The new computations count actual image-index coverage and the current filter's coverage of the nominated VN class.
+
+The source image directory contained substantially more files than its active upstream index referenced. The index resolved all 6,570 referenced files, while 2,152 other assets remained outside that map. Exact-key joining established a usable image route for 2,507 Lipi families and all 179 Mayig objects. Three local pixel checks confirmed the presence of a pictorial impression, a paired numerical target and a rear contact surface. These checks demonstrate available witnesses without assigning unreviewed side or polarity labels to the whole collection.
+
+Searches in the ignored raw corpus initially returned no source code or image references. Repeating them with `rg -uu` exposed the upstream Vue page and its image-index import. The default search respected the repository's exclusion policy; it was not evidence that local acquisition files were absent.
+
+The raw CSV also has absent trailing cells. A preliminary count called `.strip()` on a null and failed. Safe presence counting separated absent cells, empty strings and whitespace-only strings. The first executable inventory then encountered the existing source-cohort dictionary as though it were a list. That failure is preserved with its source snapshot. The repaired inventory completed with one failed accounting check, which identified eight whitespace-only Sanskrit cells. A separate final endpoint added that category and passed all ten checks. No raw interpretive values were copied into the results.
+
+The filter supplement found 355 VN rows, of which only two enter the principal prediction population. The same inventory preserved all 66 Harappa tablet faces and the seven directly counted source stroke groups. This established which evidence can be brought into a semantic study without acquiring a new transcription first. Physical face order, numerical value and external content count still require their specific source joins.
+
+The current Lothal design uses four already inspected G01 objects as development evidence for a fixed eleven-object block. Its predicted outcome is contact and fastening geometry. The records have no named owner or commodity answer, so the design specifies a physical restriction that can be checked directly. Existing source categories helped identify the targets; independent coding follows the photographed surfaces and keeps the author's interpretation separately visible.
+
+All additions are confined to this new corpus-readiness folder. Frozen source-frame results, original corpora and other contributors' documents were preserved. No new reading, numerical decoding model or external publication was performed.

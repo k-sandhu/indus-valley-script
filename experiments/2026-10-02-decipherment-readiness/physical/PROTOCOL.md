@@ -1,0 +1,15 @@
+# Physical evidence readiness audit
+
+Prepared 2 October 2026 before the descriptive calculations below. This audit reviews preserved source observations and analysis endpoints. It adds no simulated worlds or fitted decipherment model.
+
+The question is which existing objects connect an inscription to an independently observed quantity, material, person, role or operation. A usable connection needs an authenticated specimen identity, a directly observed target, an explicit relation between the inscription and that target, and enough independent cases to distinguish competing assignments. Physical deposition, manufacture and handling observations can establish narrower record roles before a lexical value becomes testable.
+
+Read the complete experiment registry and trace the physical branches to their original ledgers, source notes and result files. Record exact reviewed IDs in `coverage.json`. Catalogue reading and endpoint/source review are separate coverage levels. Preserve every frozen source and outcome. Newly checked external pages are recorded by URL, access result and observation; acquired raw materials remain in their existing local-only directories.
+
+For each source group, record what was observed, which target it supplies, missing specimen fields, and an attainable next collection. Review Harappa tablets, paired copper devices, Lothal sealings, Kanmer pendants, numerical proposals, Susa envelopes, Puruchuco khipus, Tell Jokha and the prospective clay/handling protocols. Use source-defined groups and original registrations rather than pooled counts across photographs.
+
+Two bounded descriptive checks are declared here. First, compute the maximum number of Lothal objects compatible with assigning one recorded physical category to each complete inscription. Within each preserved group this maximum is the largest category count. The primary calculation excludes `undiagnostic`, because it supplies no physical target; a second calculation retains it as an administrative category for comparison. Retain every tied maximizer. These categories combine contact texture, support and fastening, so the result concerns this exact category rule. It does not test a commodity word or a prediction on new objects.
+
+Second, count capacity rows marked eligible for an independent held-out 40.4-litre-per-stroke test in the preserved metrology audit. Verify the four published-equality solutions and their bangle-expression totals by direct substitution. Check the Susa equal-mixture ambiguity witnesses by exact integer arithmetic. These checks audit existing premises and certificates, without searching for a new numerical reading.
+
+Report findings in connected prose with shared assumptions stated once, followed by a specimen-specific acquisition checklist and tests possible with current local material. Record unsuccessful source routes and the precise input that would justify a retry. Pin the reviewed source/result files and the final audit files with SHA-256 hashes. Review prose and relative links before handoff.

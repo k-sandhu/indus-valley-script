@@ -37,5 +37,6 @@ The [six-hour continuation](../../experiments/2026-10-02-six-hour/SESSION_LOG.md
 | [Unlabelled form mixtures](../../experiments/2026-10-02-six-hour/latent-forms/RETROSPECTIVE.md) | MAP versus likelihood ascent, latent form recovery, collapsed smoothing, six search misses and lossless chunk packaging |
 | [Population identification](../../experiments/2026-10-02-six-hour/latent-generator-identification/RETROSPECTIVE.md) | Fixed grouped slots, exact rank witnesses, rational probability conventions and a repaired support assertion |
 | [Six-hour integration](six-hour-integration.md) | Shared manuscript corrections, preserved source bytes, repository packaging and final review |
+| [Decipherment readiness review](../../experiments/2026-10-02-decipherment-readiness/RETROSPECTIVE.md) | Corpus coverage, computational input requirements, source-defined tests and missing physical targets |
 
 A retry should name the new observation or method that changes the test. The registry preserves each earlier result and the evidence needed to assess that change.

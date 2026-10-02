@@ -9,6 +9,7 @@ The repository is private. Its local equivalent is this project folder. No CI/CD
 | Purpose | Read |
 |---|---|
 | Findings available for reuse and discussion | [Research contributions](knowledge/research-contributions.md) |
+| Evidence we have and need for decipherment | [Decipherment readiness review](knowledge/directions/decipherment-readiness-2026-10-02.md) |
 | Graphic prediction and restoration | [Paper 001](papers/001-artifact-aware-prediction/manuscript.md) |
 | Conditional sampling and related records | [Paper 002](papers/002-conditional-reference-laws/manuscript.md) |
 | Numerical constraints and physical observations | [Paper 003](papers/003-physical-observations/manuscript.md) |

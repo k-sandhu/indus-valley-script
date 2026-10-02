@@ -1,0 +1,2063 @@
+{
+  "schema_version": 1,
+  "scope": "documented external work, not exhaustive unrecorded thoughts",
+  "experiments": [
+    {
+      "id": "ROOT-01",
+      "theme": "corpus",
+      "status": "completed-source-audit",
+      "question": "What observational corpus is usable?",
+      "outcome": "Pinned and normalized source records; RTL/single-line filters and inventory namespaces recorded.",
+      "challenge": "Variant codes, missing/damaged marks and interpretive source fields could contaminate observations.",
+      "remedy": "Excluded interpretation fields, retained raw observation provenance and separated inventories.",
+      "evidence": [
+        "research/corpus/CORPUS_REPORT.md",
+        "research/corpus/normalize_lipi.py"
+      ],
+      "retry_when": "A new pinned corpus or corrected expert transcription is available."
+    },
+    {
+      "id": "ROOT-02",
+      "theme": "structural prediction",
+      "status": "verified-computation",
+      "question": "Does local order improve held-out score under artifact controls?",
+      "outcome": "Positive gain under the declared position/length/site/type reference; not language identification.",
+      "challenge": "Related artifacts, tuning and null fitting can create optimistic comparisons.",
+      "remedy": "Transitive alias/text groups, nested fitting and complete-procedure nulls.",
+      "evidence": [
+        "research/methods/FINDINGS.md",
+        "research/methods/results/joint_nested_unique_conditioned_1000"
+      ],
+      "retry_when": "A new corpus, faithful prior baseline or independently frozen comparison changes the test."
+    },
+    {
+      "id": "ROOT-03",
+      "theme": "restoration",
+      "status": "superseded",
+      "question": "Can an early deduplicated restoration split generalize?",
+      "outcome": "Early endpoint is superseded; do not use its better numbers as the current benchmark.",
+      "challenge": "Choosing unique-string representatives discarded physical aliases.",
+      "remedy": "Preserved aliases before group closure and reran in separate output directories.",
+      "evidence": [
+        "results/restoration_superseded_lost_aliases/SUPERSEDED.md"
+      ],
+      "retry_when": "Do not rerun the defective design; inspect it only to understand leakage."
+    },
+    {
+      "id": "ROOT-04",
+      "theme": "restoration",
+      "status": "verified-computation",
+      "question": "Can one deliberately hidden known sign be ranked?",
+      "outcome": "33.8% exact top-one versus 17.0% position/metadata baseline on 8,009 slots.",
+      "challenge": "Slot micro accuracy conceals poor rare-code performance and confidence calibration.",
+      "remedy": "Added frequency, text-weighting, grouped uncertainty and site-transfer audits.",
+      "evidence": [
+        "src/restoration.py",
+        "results/restoration",
+        "research/RESTORATION_SENSITIVITY.md"
+      ],
+      "retry_when": "Fresh reviewed graphic cases or a new frozen restoration method are available."
+    },
+    {
+      "id": "ROOT-05",
+      "theme": "restoration site transfer",
+      "status": "completed-sensitivity",
+      "question": "Does restoration improve across held-out sites?",
+      "outcome": "Positive selected-site gains; no semantic or place-name reading follows.",
+      "challenge": "Aliases at other sites and excluded short faces can connect test artifacts to training.",
+      "remedy": "Excluded entire components with any held-out-site face in the full observational register.",
+      "evidence": [
+        "results/restoration_crosssite",
+        "src/methods/alias_safe_site_transfer.py"
+      ],
+      "retry_when": "New sites/context or independent source-reviewed evaluation is available."
+    },
+    {
+      "id": "ROOT-06",
+      "theme": "independent annotation",
+      "status": "verified-computation",
+      "question": "Does structural gain survive another manual encoding?",
+      "outcome": "74 scored faces, approximately +0.725 bits/candidate event; shared archaeological sources.",
+      "challenge": "Crosswalk candidates overlap, source objects repeat, unseen candidates have no supported mass.",
+      "remedy": "Candidate-event recursion, family and compatible-text exclusions, retained unsupported events.",
+      "evidence": [
+        "src/independent_annotator.py",
+        "results/independent_annotator",
+        "research/INDEPENDENT_ANNOTATOR_PLAN.md"
+      ],
+      "retry_when": "A genuinely fresh expert-reviewed transcription block can be frozen."
+    },
+    {
+      "id": "ROOT-07",
+      "theme": "independent annotation",
+      "status": "exploratory-source-quality-sensitivity",
+      "question": "Do source-quality exclusions change the score?",
+      "outcome": "Post-outcome source exclusions retained gain; not independent confirmation.",
+      "challenge": "A source review after outcome creates selection sensitivity.",
+      "remedy": "Marked the quality sensitivity exploratory and kept the initial endpoint.",
+      "evidence": [
+        "src/independent_quality_sensitivity.py",
+        "research/INDEPENDENT_TEXT_SENSITIVITY.md"
+      ],
+      "retry_when": "Quality rules can be fixed before new annotation outcomes."
+    },
+    {
+      "id": "ROOT-08",
+      "theme": "gap count",
+      "status": "failed-comparator",
+      "question": "Can the number of erased signs be inferred statistically?",
+      "outcome": "Matched estimator 46.3% versus 51.1% always-one; tested approach failed.",
+      "challenge": "The artificial masking law differs from the source-length distribution.",
+      "remedy": "Matched the prior to gap sampling and added the dominant constant-one baseline.",
+      "evidence": [
+        "src/gap_restoration.py",
+        "src/methods/gap_design_matched.py",
+        "results/gap_restoration"
+      ],
+      "retry_when": "Physical gap geometry or a genuinely new model with frozen masking controls is available."
+    },
+    {
+      "id": "ROOT-09",
+      "theme": "context",
+      "status": "exploratory-no-semantic-anchor",
+      "question": "Can site/type/motif predict a functional interpretation?",
+      "outcome": "Context diagnostics were generated; no authenticated function or lexical value.",
+      "challenge": "Broad metadata, object dependence and ambiguous source contexts limit interpretation.",
+      "remedy": "Compared metadata-conditioned alternatives and reviewed physical sources.",
+      "evidence": [
+        "src/context_study.py",
+        "results/context",
+        "src/microcontext.py",
+        "results/microcontext"
+      ],
+      "retry_when": "Fine source-verified findspots, materials and independently observed functions become available."
+    },
+    {
+      "id": "ROOT-10",
+      "theme": "paired surfaces",
+      "status": "exploratory-no-semantic-anchor",
+      "question": "Do opposed faces create a decoding constraint?",
+      "outcome": "Paired-face relationships and source inconsistencies audited; no recovered meaning.",
+      "challenge": "Face relations and historical/current object IDs are not interchangeable.",
+      "remedy": "Preserved physical-family grouping and traced candidate catalogue joins.",
+      "evidence": [
+        "src/paired_surfaces.py",
+        "results/paired",
+        "research/PAIRED_SURFACE_PLAN.md"
+      ],
+      "retry_when": "Photographic identity and independent physical relation are authenticated."
+    },
+    {
+      "id": "ROOT-11",
+      "theme": "substitution families",
+      "status": "exploratory-inconclusive-individual",
+      "question": "Can shared frames establish a new semantic sign family?",
+      "outcome": "Aggregate weighting sensitivity; individual primary highlighted-pair support insufficient and important prior exists.",
+      "challenge": "Multiple testing, allographic compatibility and duplicated frames inflate discovery claims.",
+      "remedy": "Adjusted max and full-procedure transfer references; primary literature/graphic checks.",
+      "evidence": [
+        "research/literature/candidate_pair_novelty_audit.md",
+        "src/methods/substitution_validation.py"
+      ],
+      "retry_when": "New independently verified graphic cases and a frozen family-specific prediction are available."
+    },
+    {
+      "id": "ROOT-12",
+      "theme": "nonphonetic control",
+      "status": "synthetic-counterexample",
+      "question": "Is sequential prediction diagnostic of language?",
+      "outcome": "Constructed office-routing data retains predictive gain; order alone is not diagnostic.",
+      "challenge": "An independent-slot finite template does not exhaust nonlinguistic generative alternatives.",
+      "remedy": "Ran a nonphonetic sequential workflow through the same assay.",
+      "evidence": [
+        "src/methods/generate_workflow_control.py",
+        "research/methods/FINDINGS.md"
+      ],
+      "retry_when": "A broader known-system comparison with matched controls tests discrimination."
+    },
+    {
+      "id": "ROOT-13",
+      "theme": "numerical identifiability",
+      "status": "exact-conditional-audit",
+      "question": "Do published equalities uniquely identify numeral values?",
+      "outcome": "Four positive-integer solutions; 10/8/6 requires an additional range restriction.",
+      "challenge": "Unverified equality semantics, unsupported range and an invalid parity argument.",
+      "remedy": "Eliminated variables exactly, enumerated all divisors and reviewed cited archaeological sources.",
+      "evidence": [
+        "src/methods/audit_numerical_equalities.py",
+        "research/methods/NUMERICAL_CONSTRAINT_AUDIT.md"
+      ],
+      "retry_when": "Independent count bounds, object identity and arithmetic premises are verified."
+    },
+    {
+      "id": "ROOT-14",
+      "theme": "metrology",
+      "status": "synthetic-identifiability-audit",
+      "question": "Can vessel capacities alone fix a stroke value/base?",
+      "outcome": "Rescaled unit/count interpretations fit the same capacities.",
+      "challenge": "Unit and count scale are confounded.",
+      "remedy": "Constructed explicit 10/12 alternative parameterizations with equal predictions.",
+      "evidence": [
+        "src/identifiability_demo.py",
+        "results/identifiability",
+        "research/literature/metrology/README.md"
+      ],
+      "retry_when": "An independent unit or count is physically grounded."
+    },
+    {
+      "id": "ROOT-15",
+      "theme": "chart transcription",
+      "status": "completed-uncertainty-preserving-resource",
+      "question": "Can the original sign chart be indexed transparently?",
+      "outcome": "687 source-linked cells with retained numeric ambiguities; no expert accuracy claim.",
+      "challenge": "Printed small digits, duplicates and inventory differences.",
+      "remedy": "Independent reference comparison, source crops and ambiguity-preserving atlas.",
+      "evidence": [
+        "src/chart_reference.py",
+        "src/chart_atlas.py",
+        "output/chart_atlas/index.html",
+        "research/chart_reference"
+      ],
+      "retry_when": "Expert adjudication or a new source image corrects explicit uncertain fields."
+    },
+    {
+      "id": "ROOT-16",
+      "theme": "image recognition pilot",
+      "status": "exploratory-development",
+      "question": "Can original printed graphics be recognized from the chart?",
+      "outcome": "Small printed-row development pilot; not a full inscription corpus decoder.",
+      "challenge": "Segmentation, editorial signs, touching forms and clipped rows.",
+      "remedy": "Source crop review and explicit compatible-candidate scoring.",
+      "evidence": [
+        "src/font_pilot.py",
+        "research/visual_digitization/FRESH_FONT_PILOT_PLAN.md"
+      ],
+      "retry_when": "New blind examples and source-only crop rules are frozen."
+    },
+    {
+      "id": "ROOT-17",
+      "theme": "fresh20 image test",
+      "status": "frozen-evaluation-failed-whole-row-recovery",
+      "question": "Does the frozen acquisition pipeline recover unseen-reference printed rows?",
+      "outcome": "14 matching row counts; two compatible first-candidate whole rows of 20.",
+      "challenge": "Acquisition/segmentation defects and chart mapping ambiguity.",
+      "remedy": "Preserved frozen predictions, independent numeric reference and explicit coverage.",
+      "evidence": [
+        "research/visual_digitization/font_fresh20/evaluation_frozen_endpoint.json",
+        "src/evaluate_font_fresh20.py"
+      ],
+      "retry_when": "A repaired pipeline is frozen on genuinely new reference-withheld rows."
+    },
+    {
+      "id": "ROOT-18",
+      "theme": "image geometry repair",
+      "status": "post-reference-development",
+      "question": "Can source-only geometric repair reduce acquisition errors?",
+      "outcome": "Improved development row recovery; not a fresh blind accuracy result.",
+      "challenge": "Neighbor rows and top cuts contaminated drawn-unit acquisition.",
+      "remedy": "Used source-only revised vertical crops with the same frozen chart/matcher.",
+      "evidence": [
+        "src/methods/font_geometry_sensitivity.py",
+        "research/methods/results/font_geometry_sensitivity"
+      ],
+      "retry_when": "Fresh withheld-source references can validate the revised crop protocol."
+    },
+    {
+      "id": "ROOT-19",
+      "theme": "source identity",
+      "status": "completed-with-unresolved-joins",
+      "question": "Which historical source joins are physically defensible?",
+      "outcome": "Several primary joins and scan duplicate checks resolved; other historical IDs/bangle context remain conditional.",
+      "challenge": "Misleading retrieval titles, reused inventory numbers, unavailable author figure and duplicated scan pages.",
+      "remedy": "Original plate/text review, dimensions, opposing strings and image hashing.",
+      "evidence": [
+        "research/literature/audit_source_identities.py",
+        "research/literature/cisi1_counting_and_errata.md",
+        "research/corpus/FINAL_SOURCE_NOTES.md"
+      ],
+      "retry_when": "The missing primary witness or authentic historical crosswalk is obtained."
+    },
+    {
+      "id": "ROOT-20",
+      "theme": "report and integrity",
+      "status": "completed-historical-verification",
+      "question": "Can the investigation be delivered with auditable evidence?",
+      "outcome": "18-page report; 1,568 selected evidence hashes verified; 23 root and eight methods historical checks.",
+      "challenge": "Quantitative/source scope and visual layout required independent review.",
+      "remedy": "Exact result audit, source corrections, render-and-inspect QA and manifest verification.",
+      "evidence": [
+        "output/verification.json",
+        "output/evidence_manifest.json",
+        "output/report_visual_qa.json",
+        "output/pdf/indus_script_research_report.pdf"
+      ],
+      "retry_when": "A changed artifact or new manuscript requires the relevant new checks."
+    },
+    {
+      "id": "CRYPTO-01",
+      "theme": "cryptography framing",
+      "status": "verified-synthetic-demonstration",
+      "question": "Can an internally fitted structural score select semantic labels?",
+      "outcome": "All 720 six-symbol relabellings score identically; two fixed identities leave 24 maps.",
+      "challenge": "Permutation-equivariant structural statistics have no semantic anchor.",
+      "remedy": "Exact enumeration demonstrates the scope and external-anchor requirement.",
+      "evidence": [
+        "experiments/2026-10-02-cryptography-framing/protocol.md",
+        "experiments/2026-10-02-cryptography-framing/results.json",
+        "src/exploratory/permutation_identifiability.py"
+      ],
+      "retry_when": "A grounded known-system benchmark tests recovery under explicit anchors."
+    },
+    {
+      "id": "METHODS-adjusted_max_primary",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot frequency-adjusted full-universe max permutation sensitivity; distinct graphic classes only",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/adjusted_max_primary/adjusted_max_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/adjusted_max_primary",
+          "permutations": 1000,
+          "seed": 20261001,
+          "unique": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-adjusted_max_primary_10000",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot frequency-adjusted full-universe max permutation sensitivity; distinct graphic classes only",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/adjusted_max_primary_10000/adjusted_max_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/adjusted_max_primary_10000",
+          "permutations": 10000,
+          "seed": 20261001,
+          "unique": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-adjusted_max_unique",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot frequency-adjusted full-universe max permutation sensitivity; distinct graphic classes only",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/adjusted_max_unique/adjusted_max_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/adjusted_max_unique",
+          "permutations": 1000,
+          "seed": 20261001,
+          "unique": true,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-classaware_collapsed",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Exploratory class-aware substitution analysis with selection-aware max statistic and train-only new-frame transfer",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/classaware_collapsed/substitution_validation.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/classaware_collapsed",
+          "min_length": 3,
+          "seed": 20261001,
+          "permutations": 1000,
+          "unique": false,
+          "collapse": "research/methods/curated_allograph_collapse.json"
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-classaware_pilot",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Exploratory class-aware substitution analysis with selection-aware max statistic and train-only new-frame transfer",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/classaware_pilot/substitution_validation.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/classaware_pilot",
+          "min_length": 3,
+          "seed": 20261001,
+          "permutations": 100,
+          "unique": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-classaware_primary",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Exploratory class-aware substitution analysis with selection-aware max statistic and train-only new-frame transfer",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/classaware_primary/substitution_validation.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/classaware_primary",
+          "min_length": 3,
+          "seed": 20261001,
+          "permutations": 1000,
+          "unique": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-classaware_unique",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Exploratory class-aware substitution analysis with selection-aware max statistic and train-only new-frame transfer",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/classaware_unique/substitution_validation.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/classaware_unique",
+          "min_length": 3,
+          "seed": 20261001,
+          "permutations": 1000,
+          "unique": true,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-classaware_unique_preserved_aliases",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Exploratory class-aware substitution analysis with selection-aware max statistic and train-only new-frame transfer",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/classaware_unique_preserved_aliases/substitution_validation.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/classaware_unique_preserved_aliases",
+          "min_length": 3,
+          "seed": 20261001,
+          "permutations": 1000,
+          "unique": true,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-collapsed_primary",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "See exact source result",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/collapsed_primary/conditional_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/collapsed_primary",
+          "min_length": 3,
+          "folds": 5,
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "permutations": 200,
+          "substitution_permutations": 10000,
+          "unique": false,
+          "reverse": false,
+          "collapse": "research/methods/curated_allograph_collapse.json"
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-font_fresh20_audit",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "See exact source result",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/font_fresh20_audit/audit.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        null
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-font_geometry_sensitivity",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-reference source-geometry development diagnostic; not fresh validation",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/font_geometry_sensitivity/evaluation_post_reference.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        null
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-font_pilot_audit",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "See exact source result",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/font_pilot_audit/audit.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        null
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-gap_design_matched",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-audit artificial-gap-sampling-law sensitivity; unchanged fitted models and held-out queries.",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/gap_design_matched/gap_design_matched.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "prior": "results/gap_restoration",
+          "output": "research/methods/results/gap_design_matched"
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-joint_nested_primary",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-audit full-procedure grouped nested structural permutation sensitivity",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/joint_nested_primary/joint_nested_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/joint_nested_primary",
+          "permutations": 100,
+          "position_permutations": 100,
+          "seed": 20261001,
+          "unique": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-joint_nested_primary_1000",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-audit full-procedure grouped nested structural permutation sensitivity",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/joint_nested_primary_1000/joint_nested_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/joint_nested_primary",
+          "permutations": 100,
+          "position_permutations": 100,
+          "seed": 20261001,
+          "unique": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-joint_nested_unique",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-audit full-procedure grouped nested structural permutation sensitivity",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/joint_nested_unique/joint_nested_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/joint_nested_unique",
+          "permutations": 100,
+          "position_permutations": 50,
+          "seed": 20261001,
+          "unique": true,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-joint_nested_unique_conditioned_1000",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot full nested metadata permutation reference conditioned on whole-string uniqueness; See exact source result",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/joint_nested_unique_conditioned_1000/joint_nested_results.json",
+        "research/methods/results/joint_nested_unique_conditioned_1000/completion_audit.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/joint_nested_unique_conditioned_1000",
+          "permutations": 1000,
+          "seed": 20261001,
+          "max_attempts": 1000000
+        },
+        null
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-joint_transfer_collapsed",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-audit joint full-corpus column-permutation new-frame transfer reference, with discovery and grouping rerun on every null corpus",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/joint_transfer_collapsed/joint_null_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/joint_transfer_collapsed",
+          "permutations": 1000,
+          "seed": 20261001,
+          "unique": false,
+          "collapse": "research/methods/curated_allograph_collapse.json"
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-joint_transfer_primary",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-audit joint full-corpus column-permutation new-frame transfer reference, with discovery and grouping rerun on every null corpus",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/joint_transfer_primary/joint_null_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/joint_transfer_primary",
+          "permutations": 1000,
+          "seed": 20261001,
+          "unique": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-joint_transfer_unique",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-audit joint full-corpus column-permutation new-frame transfer reference, with discovery and grouping rerun on every null corpus",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/joint_transfer_unique/joint_null_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/joint_transfer_unique",
+          "permutations": 1000,
+          "seed": 20261001,
+          "unique": true,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-joint_transfer_unique_conditioned",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-audit joint full-corpus column-permutation new-frame transfer reference, with discovery and grouping rerun on every null corpus",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/joint_transfer_unique_conditioned/joint_null_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "classes": "data/normalized/mayig_wells_class_crosswalk.json",
+          "output": "research/methods/results/joint_transfer_unique_conditioned",
+          "permutations": 1000,
+          "seed": 20261001,
+          "unique": true,
+          "collapse": null,
+          "require_unique_null": true,
+          "max_attempts": 1000000
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-nested_collapsed",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot training-only nested model-selection robustness; Site transfer excluding every transitive physical-artifact/identical-string component touching the held-out site",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/nested_collapsed/nested_results.json",
+        "research/methods/results/nested_collapsed/transitive_site_transfer.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_collapsed",
+          "min_length": 3,
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "permutations": 200,
+          "position_permutations": 50,
+          "unique": false,
+          "reverse": false,
+          "collapse": "research/methods/curated_allograph_collapse.json"
+        },
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_collapsed/transitive_site_transfer.json",
+          "min_length": 3,
+          "seed": 20261001,
+          "collapse": "research/methods/curated_allograph_collapse.json",
+          "all_records": true
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-nested_length2",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot training-only nested model-selection robustness",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/nested_length2/nested_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_length2",
+          "min_length": 2,
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "permutations": 0,
+          "position_permutations": null,
+          "unique": false,
+          "reverse": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-nested_length2_unique_preserved_aliases",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot training-only nested model-selection robustness; Site transfer excluding every transitive physical-artifact/identical-string component touching the held-out site; Unique-sequence sensitivity with all physical aliases excluded across held-out sites",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/nested_length2_unique_preserved_aliases/nested_results.json",
+        "research/methods/results/nested_length2_unique_preserved_aliases/alias_safe_site_transfer.json",
+        "research/methods/results/nested_length2_unique_preserved_aliases/transitive_site_transfer.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_length2_unique_preserved_aliases",
+          "min_length": 2,
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "permutations": 0,
+          "position_permutations": null,
+          "unique": true,
+          "reverse": false,
+          "collapse": null
+        },
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_length2_unique_preserved_aliases/alias_safe_site_transfer.json",
+          "min_length": 2,
+          "seed": 20261001,
+          "collapse": null
+        },
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_length2_unique_preserved_aliases/transitive_site_transfer.json",
+          "min_length": 2,
+          "seed": 20261001,
+          "collapse": null,
+          "all_records": false
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-nested_pilot",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot training-only nested model-selection robustness",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/nested_pilot/nested_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_pilot",
+          "min_length": 3,
+          "seed": 20261001,
+          "bootstrap": 1000,
+          "permutations": 0,
+          "unique": false,
+          "reverse": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-nested_primary",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot training-only nested model-selection robustness; Site transfer excluding every transitive physical-artifact/identical-string component touching the held-out site",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/nested_primary/nested_results.json",
+        "research/methods/results/nested_primary/transitive_site_transfer.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_primary",
+          "min_length": 3,
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "permutations": 1000,
+          "position_permutations": 200,
+          "unique": false,
+          "reverse": false,
+          "collapse": null
+        },
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_primary/transitive_site_transfer.json",
+          "min_length": 3,
+          "seed": 20261001,
+          "collapse": null,
+          "all_records": true
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-nested_reverse",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot training-only nested model-selection robustness",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/nested_reverse/nested_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_reverse",
+          "min_length": 3,
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "permutations": 0,
+          "position_permutations": null,
+          "unique": false,
+          "reverse": true,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-nested_unique",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot training-only nested model-selection robustness",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/nested_unique/nested_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_unique",
+          "min_length": 3,
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "permutations": 100,
+          "position_permutations": 50,
+          "unique": true,
+          "reverse": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-nested_unique_preserved_aliases",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot training-only nested model-selection robustness; Site transfer excluding every transitive physical-artifact/identical-string component touching the held-out site; Unique-sequence sensitivity with all physical aliases excluded across held-out sites",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/nested_unique_preserved_aliases/nested_results.json",
+        "research/methods/results/nested_unique_preserved_aliases/alias_safe_site_transfer.json",
+        "research/methods/results/nested_unique_preserved_aliases/transitive_site_transfer.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_unique_preserved_aliases",
+          "min_length": 3,
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "permutations": 100,
+          "position_permutations": 50,
+          "unique": true,
+          "reverse": false,
+          "collapse": null
+        },
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_unique_preserved_aliases/alias_safe_site_transfer.json",
+          "min_length": 3,
+          "seed": 20261001,
+          "collapse": null
+        },
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/nested_unique_preserved_aliases/transitive_site_transfer.json",
+          "min_length": 3,
+          "seed": 20261001,
+          "collapse": null,
+          "all_records": false
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-numerical_equalities",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "See exact source result",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/numerical_equalities/numerical_equalities_audit.json",
+        "research/methods/results/numerical_equalities/numerical_count_delta_sensitivity.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        null,
+        null
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-pilot",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "See exact source result",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/pilot/conditional_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/pilot",
+          "min_length": 3,
+          "folds": 5,
+          "seed": 20261001,
+          "bootstrap": 200,
+          "permutations": 2,
+          "substitution_permutations": 10,
+          "unique": false,
+          "reverse": false
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-raw_primary",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "See exact source result",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/raw_primary/conditional_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/raw_primary",
+          "min_length": 3,
+          "folds": 5,
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "permutations": 1000,
+          "substitution_permutations": 10000,
+          "unique": false,
+          "reverse": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-templates_extended",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Declared latent independent-slot template robustness; no phonetic values",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/templates_extended/template_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/templates_extended",
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "unique": false,
+          "collapse": null,
+          "component_grid": "16,32,64",
+          "min_per_component": 5
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-templates_primary",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Declared latent independent-slot template robustness; no phonetic values",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/templates_primary/template_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+          "output": "research/methods/results/templates_primary",
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "unique": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-totem_joint_nested",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-audit full-procedure grouped nested structural permutation sensitivity",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/totem_joint_nested/joint_nested_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "research/literature/nonlinguistic_controls/TotemPoles_author_ordered.jsonl",
+          "output": "research/methods/results/totem_joint_nested",
+          "permutations": 100,
+          "position_permutations": 100,
+          "seed": 20261001,
+          "unique": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-totem_nested",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Post-pilot training-only nested model-selection robustness",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/totem_nested/nested_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "research/literature/nonlinguistic_controls/TotemPoles_author_ordered.jsonl",
+          "output": "research/methods/results/totem_nested",
+          "min_length": 3,
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "permutations": 100,
+          "position_permutations": 100,
+          "unique": false,
+          "reverse": false,
+          "collapse": null
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-totem_templates",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Declared latent independent-slot template robustness; no phonetic values",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/totem_templates/template_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "research/literature/nonlinguistic_controls/TotemPoles_author_ordered.jsonl",
+          "output": "research/methods/results/totem_templates",
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "unique": false,
+          "collapse": null,
+          "component_grid": "16,32,64",
+          "min_per_component": 5
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "METHODS-workflow_templates",
+      "theme": "original-methods-run",
+      "status": "completed-analysis-see-source-design",
+      "question": "Declared latent independent-slot template robustness; no phonetic values",
+      "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+      "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+      "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+      "evidence": [
+        "research/methods/results/workflow_templates/template_results.json"
+      ],
+      "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+      "parameters": [
+        {
+          "input": "research/methods/controls/workflow_codes.jsonl",
+          "output": "research/methods/results/workflow_templates",
+          "seed": 20261001,
+          "bootstrap": 5000,
+          "unique": false,
+          "collapse": null,
+          "component_grid": "16,32,64",
+          "min_per_component": 5
+        }
+      ],
+      "source_index": "research/methods/RESULT_INDEX.json"
+    },
+    {
+      "id": "CRYPTO-02",
+      "theme": "anchored mapping",
+      "status": "completed-synthetic-grid",
+      "question": "When can a known reference and correct anchors recover an eight-symbol encoding?",
+      "outcome": "Transition mappings recover throughout the grid; shifted administrative forms show confident wrong mappings despite held-out reference preference.",
+      "challenge": "A fixed reference likelihood can concentrate on the wrong identity map under a changed generating process.",
+      "remedy": "Exact enumeration, concealed ground truth, correct/wrong reference comparison, frozen code snapshots and twelve arithmetic/integrity checks.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/anchor-benchmark/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/anchor-benchmark/main/results.json",
+        "experiments/2026-10-02-six-hour/anchor-benchmark/review/checks.json",
+        "experiments/2026-10-02-six-hour/anchor-benchmark/FINDINGS.md"
+      ],
+      "retry_when": "A separately declared stress test adds changed references, wrong anchors or generator-aware scoring."
+    },
+    {
+      "id": "MARKOV-01",
+      "theme": "conventional restoration comparator",
+      "status": "verified-computation-on-preserved-queries",
+      "question": "How does a conventional first-order Markov model compare on the exact earlier known-slot queries?",
+      "outcome": "Markov top-one 34.5861%, PMB 33.8120%, PM 16.9934% on the same 8,009 masks. PMB minus Markov top-one interval includes zero; Markov top-five and bucket log loss improve. This is the conceptual Markov family with unigram-prior smoothing, distinct from the published modified Kneser\u2013Ney estimator.",
+      "challenge": "A stronger conventional comparator had to retain the existing query identities, grouping, folds and training-only selection.",
+      "remedy": "Exact correspondence checks, nested smoothing selection, paired component intervals and independent recalculation of every query prediction.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/markov-baseline/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/markov-baseline/README.md",
+        "experiments/2026-10-02-six-hour/markov-baseline/main/results.json",
+        "experiments/2026-10-02-six-hour/markov-baseline/verification.json",
+        "experiments/2026-10-02-six-hour/markov-baseline/RETROSPECTIVE.md",
+        "src/six_hour/markov_baseline.py"
+      ],
+      "retry_when": "A declared new estimator, independently tuned start distribution or changed observation population supplies a distinct comparison. Reuse saved masks and predictions."
+    },
+    {
+      "id": "MARKOV-02",
+      "theme": "boundary and order mechanisms",
+      "status": "verified-post-outcome-mechanism-study",
+      "question": "Which learned boundaries and interior transitions support restoration?",
+      "outcome": "Removing only the end factor lowers final-slot top-one from 53.95% to 48.25%. Interior-only training shuffles average 24.52% overall versus 34.59% full Markov; all-slot shuffles average 14.88%. Unigram start replacement lowers initial top-one while improving initial bucket loss. Rare-target calibration remains poor despite low overall calibration error.",
+      "challenge": "Deleting an inference factor and refitting without end events have different effects. Training transformations can incidentally recreate held-out texts.",
+      "remedy": "Separate interventions, fixed original groups and smoothing, twenty saved training orders per control, logged accidental text coincidences and independent prediction checks.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/markov-ablation/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/markov-ablation/README.md",
+        "experiments/2026-10-02-six-hour/markov-ablation/main/results.json",
+        "experiments/2026-10-02-six-hour/markov-ablation/verification.json",
+        "experiments/2026-10-02-six-hour/markov-ablation/RETROSPECTIVE.md",
+        "src/six_hour/markov_ablation.py"
+      ],
+      "retry_when": "A training-only start-shrinkage or historical transition estimator changes the comparison; retain all existing mechanism endpoints."
+    },
+    {
+      "id": "CONTEXT-01",
+      "theme": "archaeological metadata and source-defined populations",
+      "status": "verified-availability-and-source-cohort-audit",
+      "question": "Which physical-use and chronological comparisons can the preserved corpus support?",
+      "outcome": "Informative depth appears in 2,810/5,680 rows; an earlier rule counted 2,870 placeholder strings as present. Metadata repeats across object faces. Three Harappa physical-use groups contain 69 source objects, 60 joined objects and only two objects in the main >=3-sign population. All 66 faces of 22 copied tablets are complete two-sign observations.",
+      "challenge": "Placeholders, duplicated object metadata, site-dependent chronological labels and ambiguous identifier punctuation change apparent coverage.",
+      "remedy": "Row/family counts, explicit placeholder and interval categories, full source introduction acquisition, separately frozen cohort/identifier refinements and source-coordinate checks.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/context-audit/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/context-audit/README.md",
+        "experiments/2026-10-02-six-hour/context-audit/main/results.json",
+        "experiments/2026-10-02-six-hour/context-audit/source-cohorts/results.json",
+        "experiments/2026-10-02-six-hour/context-audit/join-keys-refined/results.json",
+        "experiments/2026-10-02-six-hour/context-audit/verification.json",
+        "src/six_hour/metadata_audit.py"
+      ],
+      "retry_when": "Object plates/basic-data tables resolve identifiers or new independently dated/attached-object observations support a defined comparison."
+    },
+    {
+      "id": "CRYPTO-03",
+      "theme": "reference uncertainty and erroneous identities",
+      "status": "verified-declared-synthetic-grid",
+      "question": "Can integrated reference uncertainty and further-record prediction diagnose confident wrong maps?",
+      "outcome": "The 2,592-trial grid spans 24 new systems and 216 conditions. Integrated reference uncertainty removes confident wrong cases in the unchanged administrative conditions but leaves failures after a process change. Erroneous supplied identities usually worsen held-out score, with saved exceptions under the constrained model.",
+      "challenge": "Finite reference parameters, a mismatched stationary model and a wrong supplied identity contribute different failures. Archived source-path imports initially sought the helper under the wrong directory.",
+      "remedy": "Dirichlet-integrated ordered-sequence scores, exact mapping enumeration, paired held-out populations, separate identity conditions, frozen-byte execution with original path context and independent scalar/sequential scores for all 216 conditions.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/reference-uncertainty/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/reference-uncertainty/FINDINGS.md",
+        "experiments/2026-10-02-six-hour/reference-uncertainty/main/results.json",
+        "experiments/2026-10-02-six-hour/reference-uncertainty/review/checks.json",
+        "experiments/2026-10-02-six-hour/reference-uncertainty/RETROSPECTIVE.md",
+        "src/six_hour/reference_uncertainty.py",
+        "src/six_hour/review_reference_uncertainty.py"
+      ],
+      "retry_when": "A new observation-selection, variable-inventory, segmentation or physically grounded identity model changes the supplied benchmark assumptions."
+    },
+    {
+      "id": "PHYS-01",
+      "theme": "physical relations and numerical identifiability",
+      "status": "synthetic-verified-with-preserved-correction",
+      "question": "Which physical membership and count observations identify unfamiliar quantity labels?",
+      "outcome": "Twelve complete assemblies identify six relative values in 24/24 simulated collections; one physical count fixes absolute values. Scrambled membership, incomplete groups treated as complete and independent ownership labels reject positive quantities in 24/24 at the full prefix. Correctly recorded incompleteness preserves the answer but leaves seven collections with compatible alternative integer values, even after one count; a supplied value bag masks this ambiguity.",
+      "challenge": "Physical function and missingness must be observed separately from labels. Preparing blind inputs exposed an ownership-control count indexed by badge rather than by the counted object.",
+      "remedy": "Exact rational ranks, exhaustive finite-prior maps, preserved failed/ambiguous cases, withheld physical relations, object-level count traces and a separately recorded corrected run. Independent direct enumeration and prime-field rank reviews pass all 840 records.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/physical-information/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/physical-information/README.md",
+        "experiments/2026-10-02-six-hour/physical-information/main-corrected-anchor/results.json",
+        "experiments/2026-10-02-six-hour/physical-information/corrected-review.json",
+        "experiments/2026-10-02-six-hour/physical-information/integer-ambiguity-certificates.json",
+        "experiments/2026-10-02-six-hour/physical-information/ANCHOR_CORRECTION.md",
+        "experiments/2026-10-02-six-hour/physical-information/ARCHAEOLOGICAL_TARGET.md",
+        "experiments/2026-10-02-six-hour/physical-information/RETROSPECTIVE.md",
+        "src/six_hour/physical_information.py"
+      ],
+      "retry_when": "An accession-linked inside/outside collection, measured quantity anchor, uncertain-label observation model or separately specified multi-commodity hypothesis changes the test. Reuse existing blind inputs for the current noiseless design."
+    },
+    {
+      "id": "CRYPTO-04",
+      "theme": "active identity measurement",
+      "status": "verified-declared-synthetic-grid",
+      "question": "Can conditional mapping uncertainty choose useful independent identities to measure under process mismatch?",
+      "outcome": "Across 48 new systems, entropy selection reduces mean measurements to exact recovery. In changed administrative systems, it also increases wrong decisions from a 95%-mass stopping diagnostic: at 35% change, 2.500 versus 3.552 measurements but 25/96 versus 17/96 stopping errors against random selection. All 576 conditions and 15,552 prefix records are retained.",
+      "challenge": "Measurement efficiency and a calibrated stopping decision are distinct targets. Two pilots failed on NumPy Boolean serialization. Fixed-score restriction makes first-correct recovery monotone, rendering one planned diagnostic redundant.",
+      "remedy": "Separate query/response oracle interfaces, exhaustive compatible bijections, saved complete histories, paired system-level comparisons, startup serialization checks and independent reindexed likelihood/policy replay.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/active-identities/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/active-identities/FINDINGS.md",
+        "experiments/2026-10-02-six-hour/active-identities/main/results.json",
+        "experiments/2026-10-02-six-hour/active-identities/review/checks.json",
+        "experiments/2026-10-02-six-hour/active-identities/review/paired-system-comparisons.json",
+        "experiments/2026-10-02-six-hour/active-identities/RETROSPECTIVE.md",
+        "src/six_hour/active_identities.py",
+        "src/six_hour/review_active_identities.py"
+      ],
+      "retry_when": "A physically specified measurement likelihood/cost, generative-model disagreement, verification design or separately declared stopping-calibration procedure changes the acquisition problem."
+    },
+    {
+      "id": "ARCH-01",
+      "theme": "Archaeological context and physical observations",
+      "status": "completed-source-audit",
+      "question": "Can original Harappa publications restore object-level contexts and physical observations for short inscriptions excluded from the principal prediction population?",
+      "outcome": "The 81-target frame joins 72 objects. Original figures identify 24 targets, including all 22 copied tablets with excavation-unit/item keys and 66 displayed faces. Nineteen readable lower-face pairs occupy all eight declared arrangement classes. Two rectangular seals and four Beas vessel fragments provide comparison observations. All 97 integrity, accounting and frozen-replay checks pass.",
+      "challenge": "Full CISI3.1 plates were unacquired; small renders obscured incisions; caption specimen order differs from catalogue order; concatenated derivative figure labels broke the first registration parser.",
+      "remedy": "Followed original HARP author publications, joined complete registrations, preserved first-pass and native-raster reinspection separately, and retained missing/unreadable objects. The source-access and failure logs record the unsuccessful routes.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/harappa-object-frame/README.md",
+        "experiments/2026-10-02-six-hour/harappa-object-frame/annotated/results.json",
+        "experiments/2026-10-02-six-hour/harappa-object-frame/display-summary/results.json",
+        "experiments/2026-10-02-six-hour/harappa-object-frame/verification.json"
+      ],
+      "retry_when": "Acquire identified adjoining-face photographs or 3D records, or previously unavailable source plates; freeze physical face order and incision coding before comparing published production groups."
+    },
+    {
+      "id": "ARCH-02",
+      "theme": "Archaeological physical-use frame",
+      "status": "completed-source-and-coverage-audit",
+      "question": "How do the published Lothal sealing objects, physical traces and recurrent stamps enter the preserved inscription population?",
+      "outcome": "Independent readings agree on 465 table cells for 93 objects. The table gives 133 impressions and 62 single-impression objects; the prose gives 130 and 63, with different context totals. The corpus joins 68 objects and 86 faces; 29 eligible objects form nine strings, with 21 objects in the two largest groups. One group spans seven source physical categories; a ten-object elephant group uses wooden boxes. All 14 independent review checks pass.",
+      "challenge": "String-valued identifiers were first iterated as characters; an independent defaultdict count included empty joins. Source totals differ, contextW1 is stamp-derived, and physical categories mix contact texture, support form and closure.",
+      "remedy": "Preserved both failed endpoints; repaired identifier schema and nonempty-object counts; separately recorded source assertions and the corrected prose coordinate. The trace schema separates observation dimensions and context basis.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/lothal-physical-use/README.md",
+        "experiments/2026-10-02-six-hour/lothal-physical-use/join-refined/results.json",
+        "experiments/2026-10-02-six-hour/lothal-physical-use/graphic-coverage/results.json",
+        "experiments/2026-10-02-six-hour/lothal-physical-use/independent-review/main-refined/verification.json"
+      ],
+      "retry_when": "Acquire matched views for G01/G02, missing L171/L172 faces, or independent records resolving source counts; preregister physical dimensions and whole-stamp holdouts before a prediction study."
+    },
+    {
+      "id": "CRYPTO-05",
+      "theme": "Reserved prediction and mapping verification",
+      "status": "completed-synthetic-grid",
+      "question": "Can an additional identity observation detect a wrong mapping after conditional model confidence has crossed 95%?",
+      "outcome": "48 new systems yield 576 conditions and 4,032 audit records. Under 70% administrative change, a two-identity audit chosen by the frozen posterior rejects all 60 wrong proposals; a random two-identity audit rejects 56. Correct proposals all pass. A conservative random rule has an exact conditional probability bound of at most 5% for accepting a wrong map, with one wrong acceptance in 288 administrative proposals. All 12 independent review checks pass.",
+      "challenge": "Model confidence can stop on a wrong map, while verification cost and selection affect detection. A rejection leaves the mapping unresolved. The first verifier contained an unnecessarily complex code-availability expression and a redundant assertion.",
+      "remedy": "Frozen proposals were checked against separately acquired identities; exact uniform-subset probabilities were enumerated. System-level paired summaries retain all size conditions. The original review was preserved and a simpler verifier replayed the same checks and results.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/reserved-verification/FINDINGS.md",
+        "experiments/2026-10-02-six-hour/reserved-verification/main/results.json",
+        "experiments/2026-10-02-six-hour/reserved-verification/review-clean/checks.json",
+        "experiments/2026-10-02-six-hour/reserved-verification/review-clean/paired-system-comparisons.json"
+      ],
+      "retry_when": "Specify measurement errors, sequential proposal correction or multiple generative models in a fresh protocol; acquire an archaeological observation with an independently justified identity likelihood."
+    },
+    {
+      "id": "PHYS-02",
+      "theme": "physical measurement acquisition",
+      "status": "synthetic-verified-with-preserved-pilot-and-post-outcome-refinement",
+      "question": "Which accessible whole/part inspection or independent object measurement most efficiently restricts surviving positive quantity assignments?",
+      "outcome": "In 24 new worlds per condition, information/rank identifies absolute quantities in 23 complete and 22 incomplete collections, versus random 15 and 17 and cost-first 0 and 1. Undercovered counts produce wrong unique answers in 21 information/rank worlds; withheld absolute measurements expose wrong scales that pass physical relations. A post-outcome overlap score, specified before 24 fresh valid-interval worlds, identifies six absolute vectors versus zero under each original policy and narrows scale intervals in 15 paired worlds. Exact positive alternatives certify all 28 retained relative ambiguities across the two endpoints.",
+      "challenge": "Artificial relative normalization initially concealed the information from a scale measurement. The original interval score ignored the possible contraction from shifted intervals. Availability, incomplete contents and understated measurement errors create distinct failure cases.",
+      "remedy": "Preserve pilot v1, separate acquired equalities from the gauge, reconstruct and verify exact LP certificates, keep hidden responses outside selection, compare original/refined rules on new worlds and retain all wrong, ambiguous and rejected assignments. Main and refinement reviews verify 4,794 states and 4,338 acquired actions; an all-available post-run diagnostic separates collection limits from budget failures.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/physical-acquisition/README.md",
+        "experiments/2026-10-02-six-hour/physical-acquisition/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/physical-acquisition/METHODS.md",
+        "experiments/2026-10-02-six-hour/physical-acquisition/PILOT_REPAIR_01.md",
+        "experiments/2026-10-02-six-hour/physical-acquisition/main/results.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/main-review.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/main-classification-review.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/main-ambiguity-certificates.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/main-analysis/analysis.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/PRECISION_REFINEMENT_PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/physical-acquisition/precision-refinement/results.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/precision-refinement-review.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/precision-refinement-classification-review.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/precision-analysis/analysis.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/SOURCE_AND_MEASUREMENTS.md",
+        "experiments/2026-10-02-six-hour/physical-acquisition/source-acquisition.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/susa-design-calculation.json",
+        "experiments/2026-10-02-six-hour/physical-acquisition/RETROSPECTIVE.md",
+        "src/six_hour/physical_acquisition.py"
+      ],
+      "retry_when": "A new observation-selection rule, calibrated measurement distribution, measured collection access costs, observed contents-size bounds, uncertain label assignments or accession-linked physical pilot changes the test. Reuse existing frozen worlds for diagnostic comparisons and specify fresh seeds for a new policy endpoint."
+    },
+    {
+      "id": "COMM-02",
+      "theme": "Community lead and source acquisition",
+      "status": "completed-bounded-source-audit",
+      "question": "Can the community's Tell Jokha object lead be traced to a scholarly photograph and an original report locator?",
+      "outcome": "Frenez's 2023 chapter reproduces a Tell Jokha square object and cites the SAHI report's page 59, Figure 6.61. Its public panel was acquired, hashed and inspected. Original registration, material, surface-find record and dating basis remain unverified from the report body.",
+      "challenge": "Author text was readable through the web tool while direct retrieval returned 403. ResearchGate PDF retrieval failed; the Academia report preview contained only front matter and its download retrieval was restricted.",
+      "remedy": "Preserved the public photograph, panel coordinates, observation origins and all failed routes. Kept community-attributed object fields separate from the inspected chapter and pixels.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/tell-jokha-contact/README.md",
+        "experiments/2026-10-02-six-hour/tell-jokha-contact/source-manifest.json",
+        "experiments/2026-10-02-six-hour/tell-jokha-contact/observations.json",
+        "experiments/2026-10-02-six-hour/tell-jokha-contact/access-log.json"
+      ],
+      "retry_when": "Obtain the original report's object pages, a higher-resolution face/rear view or accessioned project record; compare publication orientation and material before fine sign coding."
+    },
+    {
+      "id": "CRYPTO-06",
+      "theme": "source dependence in identity recovery",
+      "status": "completed synthetic stress study; computation reviewed",
+      "question": "How do copied reports and coupled source errors change an enumerated identity mapping?",
+      "outcome": "73,728 records over 48 new systems. In shifted administrative eight-code wrong-source conditions, ten copied reports yield 1/48 recovery and 46 confident errors; counting source once gives 25/48 and 11 errors; the coupled-swap model gives 41/48 and 4. One correct source B gives 45/48 and 0 errors for source-once models, while ten copies of A give 3/48 and 45 errors. Twelve checks and 18,432 independent row replays pass.",
+      "challenge": "Exact copies and correlated mistakes supply different dependencies. Hard source disagreements can remove every candidate. Reused training sizes require system-level comparisons.",
+      "remedy": "Explicit 29-state source channel, copied/source-once baselines, preserved empty sets, independent inverse-response likelihood and system-level paired bootstrap intervals.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/correlated-sources/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/correlated-sources/FINDINGS.md",
+        "experiments/2026-10-02-six-hour/correlated-sources/RETROSPECTIVE.md",
+        "experiments/2026-10-02-six-hour/correlated-sources/main/results.json",
+        "experiments/2026-10-02-six-hour/correlated-sources/review/checks.json"
+      ],
+      "retry_when": "A new source-error family, measured source reliability, partial copying model or independently acquired archaeological quantity/identity relation changes the likelihood."
+    },
+    {
+      "id": "ARCH-03",
+      "theme": "tablet display and physical representation",
+      "status": "completed source-linked conditional representation audit",
+      "question": "Which Harappa lower-face arrangement distinctions survive face exchange and end reversal?",
+      "outcome": "Nineteen readable pairs occupy 8 displayed states. Exchangeable lower faces give 4 groups with counts 4,3,5,7; adding common reversal gives 11 same-side and 8 opposite-side objects; separate reversals give 1 group. Three unresolved pairs produce whole-frame bounds 11\u201314 and 8\u201311. Seven main checks and 9 independently reconstructed-source checks pass.",
+      "challenge": "Published drawing rows lack an explicit oriented prism-face and common-end map. A and D inventory and native-raster refinements needed independent source reconstruction.",
+      "remedy": "Declared each conditional representation before calculation, retained unresolved objects, reconstructed source fields and direct form-specific partitions without calling the orbit implementation.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/tablet-representation/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/tablet-representation/README.md",
+        "experiments/2026-10-02-six-hour/tablet-representation/RETROSPECTIVE.md",
+        "experiments/2026-10-02-six-hour/tablet-representation/main/results.json",
+        "experiments/2026-10-02-six-hour/tablet-representation/review/checks.json",
+        "experiments/2026-10-02-six-hour/harappa-object-frame/corrections/2026-10-02-scale-and-pagination/correction.json"
+      ],
+      "retry_when": "Adjoining-face photographs or 3D records identify physical ends, face order, incision orientation and damaged regions."
+    },
+    {
+      "id": "KHI-01",
+      "theme": "known numerical system and record representation",
+      "status": "completed published-source replication and synthetic controls; independently checked",
+      "question": "Which positional and physical membership information supports a numerical relation and decoder?",
+      "outcome": "Published UR068-to-UR067 alignment matches 16/20 columns with absolute error 16; ordered flattening with known width reproduces it. It is the unique minimum among 400 relative shifts; 10,000 shuffles and 10,000 bag allocations have minimum errors 738 and 828. Complete simulations recover hidden positional values in 299/300 worlds, with one positive ambiguity. All 36,000 prefix states and 20,411 source predictions were independently checked.",
+      "challenge": "Pendant positions and knot-cluster totals are all zero in selected database fields. Source review exposed target quantities before protocol freeze. Removing grouping and misassigning membership produce different ambiguities or failures.",
+      "remedy": "Pinned six original accounts and separated markers and CM009 reconstruction; used the published source alignment with disclosed prior exposure and an isolated scorer. Separate generated accounts have quantity-hidden inputs, exact positive solution certificates and later-relation evaluation.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/khipu-control/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/khipu-control/REPORT.md",
+        "experiments/2026-10-02-six-hour/khipu-control/RETROSPECTIVE.md",
+        "experiments/2026-10-02-six-hour/khipu-control/endpoints/source-v1/freeze-manifest.json",
+        "experiments/2026-10-02-six-hour/khipu-control/endpoints/main-v1/freeze-manifest.json",
+        "experiments/2026-10-02-six-hour/khipu-control/source-verification.json",
+        "experiments/2026-10-02-six-hour/khipu-control/endpoints/main-v1/verification.json"
+      ],
+      "retry_when": "Measured cluster intervals, a documented new source relation, or a fresh observation-error/robust-decoder design changes the input. Reuse the current endpoints for the published fixed alignment."
+    },
+    {
+      "id": "GEOM-01",
+      "theme": "physical production and preservation",
+      "status": "verified-synthetic-forward-model",
+      "question": "Can curved contact, pressing angle and break side change visible graphic endpoint frequencies?",
+      "outcome": "Exact stroke model: balanced reversal gives equal pooled endpoints; eight-slot positive-tilt pool has TV 0.0308466 with minimum three visible graphics under the declared grid.",
+      "challenge": "Clay transfer parameters are unmeasured; sampled strokes near the threshold changed six decisions; empty selected pools needed undefined statistics.",
+      "remedy": "Declared displacement/relief assumptions, independent limiting checks, exact segment refinement, minimum-length selection and separate field review; prospective measured clay protocol.",
+      "evidence": [
+        "src/six_hour/stamp_geometry.py",
+        "experiments/2026-10-02-six-hour/stamp-geometry/README.md",
+        "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json",
+        "experiments/2026-10-02-six-hour/stamp-geometry/verification.json"
+      ],
+      "retry_when": "Measured matrix, relief, clay-state, curvature and pressing-angle observations permit testing the transfer law or fitting a material model."
+    },
+    {
+      "id": "NUM-02",
+      "theme": "numerical search for symbol correspondences",
+      "status": "completed synthetic graph-mapping control; computation reviewed",
+      "question": "How well does scalable quadratic assignment recover mappings and attain an exact small-inventory score optimum?",
+      "outcome": "A 48-system, 384-condition grid compares frequency assignment, two FAQ starts and multistart/2-opt. Multistart reaches 190/192 eight-symbol optima and recovers 186/192 true maps. Four optima prefer a wrong map; two search gaps remain. Twenty-symbol recovery is 70/96 transition and 20/96 administrative conditions. Ten independent count, score and exact-max checks pass.",
+      "challenge": "Candidate search quality and correctness of the best score are separate properties. Start/end factors require fixed boundary nodes. Larger inventories have no exhaustive certificate.",
+      "remedy": "Boundary-seeded quadratic objective, predeclared starts and seeds, direct likelihood checks, exhaustive eight-symbol maxima, separate true-map and optimization outcomes, system-level comparisons.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/graph-mapping/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/graph-mapping/FINDINGS.md",
+        "experiments/2026-10-02-six-hour/graph-mapping/RETROSPECTIVE.md",
+        "experiments/2026-10-02-six-hour/graph-mapping/main/results.json",
+        "experiments/2026-10-02-six-hour/graph-mapping/review/checks.json"
+      ],
+      "retry_when": "A new optimizer, reference likelihood, inventory constraint or independently acquired correspondence changes the test. Reuse the saved exact-failure cases for development and reserve fresh systems for evaluation."
+    },
+    {
+      "id": "KHI-02",
+      "theme": "physical geometry and record grouping",
+      "status": "completed source-controlled interval study; independently checked",
+      "question": "Do recorded cord-cluster gaps restrict published account partitions when quantities are withheld?",
+      "outcome": "Both largest-gap and equal-cord-count rules uniquely recover the two selected partitions. Order plus supplied counts leaves 21 and 78 partitions; order alone leaves 128 and 8,192. Exact gap permutations match the source partition in 20/420 and 2/156 cases. Gap radius 1/4 allows 10 and 12 partitions. Independent checks cover 626 records, 1,097 witnesses and 22,537 exclusions.",
+      "challenge": "Group counts, source ranges and reference partitions were exposed before protocol; individual pendant positions are absent. Missing and tied distances can preserve many partitions.",
+      "remedy": "Explicit reference-controlled scope, quantity-free input, supplied-count and count-free rules, equal-size baseline, exact all-tie candidate sets and independent source-interval/certificate checks.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/khipu-control/PROTOCOL_INTERVALS.md",
+        "experiments/2026-10-02-six-hour/khipu-control/INTERVALS.md",
+        "experiments/2026-10-02-six-hour/khipu-control/endpoints/intervals-v1/RETROSPECTIVE.md",
+        "experiments/2026-10-02-six-hour/khipu-control/endpoints/intervals-v1/freeze-manifest.json",
+        "experiments/2026-10-02-six-hour/khipu-control/endpoints/intervals-v1/verification.json"
+      ],
+      "retry_when": "Prospectively selected accounts where gap and equal-size rules disagree, measured uncertainty or finer attachment positions supply new evidence."
+    },
+    {
+      "id": "MARKOV-03",
+      "theme": "restoration-comparator",
+      "status": "completed-with-independent-review",
+      "question": "Does second-order context improve restoration on the saved artifact-held-out masks?",
+      "outcome": "Top-one-selected second order reaches 37.2706%, compared with first-order 34.5861%; paired gain 2.6845 points, interval 1.9902\u20133.3968. Bucket loss worsens by 0.1277 bits, interval 0.0965\u20130.1589. Top-five and top-ten differences are small. All 8,009 query outcomes independently checked.",
+      "challenge": "Full-record floating-point likelihoods reordered two lower-ranked candidates in one query despite matching target outcomes and losses.",
+      "remedy": "Preserved the failed reviewer and original predictions. Exact rational full-record likelihoods certified the two ties in a separately saved review endpoint.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/markov-order2/README.md",
+        "experiments/2026-10-02-six-hour/markov-order2/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/markov-order2/main/results.json",
+        "experiments/2026-10-02-six-hour/markov-order2/review-ties/verification.json",
+        "experiments/2026-10-02-six-hour/markov-order2/RETROSPECTIVE.md"
+      ],
+      "retry_when": "A declared new smoothing model or independent evaluation corpus is available; retain probability loss beside exact guesses."
+    },
+    {
+      "id": "MARKOV-04",
+      "theme": "restoration-selection-objective",
+      "status": "completed-post-outcome-comparison",
+      "question": "Does selecting second-order smoothing by inner probability loss retain the extra context?",
+      "outcome": "All five folds choose backoff-only and reproduce every first-order query outcome: 34.5861% top-one and 5.11943 bits bucket loss. All 8,009 masks independently reviewed.",
+      "challenge": "The preceding top-one-selected second-order model improved accuracy while worsening probability estimates.",
+      "remedy": "Froze a separate loss-selection protocol before execution; retained model class, grid, folds and queries. Recorded reused-benchmark model-development status and both outcomes.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/markov-order2/loss-selected/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/markov-order2/loss-selected/main/results.json",
+        "experiments/2026-10-02-six-hour/markov-order2/loss-selected/review/verification.json",
+        "experiments/2026-10-02-six-hour/markov-order2/FINDINGS.md"
+      ],
+      "retry_when": "New smoothing or a fresh evaluation population can test the accuracy/loss tradeoff without another adaptive comparison on the same masks."
+    },
+    {
+      "id": "KHI-03",
+      "theme": "numerical-consensus",
+      "status": "completed-synthetic-independent-checks",
+      "question": "Can exact positive maximum consensus recover positional values after incorrect child memberships?",
+      "outcome": "Across 300 fresh seeds per five conditions, the three-quarter gate recovers 281 two-swap worlds, accepts four wrong vectors and keeps fifteen ambiguities; two missing memberships give 285 correct, one wrong and fourteen ambiguous. The half gate recovers 200 four-swap worlds and accepts sixteen wrong. All final wrong vectors fail fresh relation and count checks. Twelve thousand prefixes and 384,768 subset states independently checked.",
+      "challenge": "Repeated correct carry relations and two corrupted memberships can give a wrong positive increasing vector seven votes against six for truth. Early wrong unique answers occur before later rejection or recovery.",
+      "remedy": "Retain every positive family and discrete tie, continue all prefixes, preserve incorrect accepted vectors and check withheld relations and counts. Save the exact wrong-majority witness and original development diagnostic failure.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/khipu-control/robust-decoder/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/khipu-control/robust-decoder/REPORT.md",
+        "experiments/2026-10-02-six-hour/khipu-control/robust-decoder/main-v1/verification.json",
+        "experiments/2026-10-02-six-hour/khipu-control/robust-decoder/main-v1/aggregate-review.json",
+        "experiments/2026-10-02-six-hour/khipu-control/robust-decoder/maximum-consensus-failure.json",
+        "experiments/2026-10-02-six-hour/khipu-control/robust-decoder/RETROSPECTIVE.md"
+      ],
+      "retry_when": "An independently observed collection-wide conservation relation, calibrated feature error model or source group with acquired membership/count observations supplies a new test."
+    },
+    {
+      "id": "CRYPTO-07",
+      "theme": "record-process-mapping",
+      "status": "completed-new-world-post-outcome-comparison",
+      "question": "Can length/slot profiles improve administrative mapping after a pooled transition score loses typed-slot distinctions?",
+      "outcome": "Across 48 fresh systems and 384 conditions, twenty-symbol administrative recovery is 55/96 for linear slot assignment versus 25/96 for multistart graph mapping, paired gain 31.25 points with interval 21.875\u201341.667. Transition recovery instead favors graph mapping: 74/96 versus 0/96 at twenty symbols. All counts, scores, eight-symbol maxima and dual assignment bounds independently checked; 23 conditions retain tied code alternatives.",
+      "challenge": "Pooled transitions and position profiles retain different distinctions. A selected assignment can have optimal score and unresolved or wrong identities.",
+      "remedy": "Use fresh generated worlds, compare both families, verify linear optima, evaluate both scores on held-out records and preserve code-exclusion tie witnesses. Record post-outcome model-development status.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/slot-mapping/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/slot-mapping/FINDINGS.md",
+        "experiments/2026-10-02-six-hour/slot-mapping/main/results.json",
+        "experiments/2026-10-02-six-hour/slot-mapping/review/verification.json",
+        "experiments/2026-10-02-six-hour/slot-mapping/review/ties.json",
+        "experiments/2026-10-02-six-hour/slot-mapping/RETROSPECTIVE.md"
+      ],
+      "retry_when": "A reference-only family selector, shared-length forms or a new observation model supplies an informative comparator."
+    },
+    {
+      "id": "KANMER-01",
+      "theme": "archaeological physical use",
+      "status": "source-frame-and-prospective-handling-test",
+      "question": "Which original object observations support the proposed Kanmer pendant/pass use, and which handling experiment can test suspension?",
+      "outcome": "Four photographed clay pendants, three restored registrations with dimensions/mass/context, seven registered comparison-frame objects with 25 captioned scanner views; 2012 authorcopy acquired and a 42-replica suspension/handling design specified.",
+      "challenge": "Fourth registration, raw meshes, individual hole measurements and wear are missing; original-three context descriptions differ; PDF resource order initially misassigned six figure captions.",
+      "remedy": "Preserve source-relative faces, use numerical-caption stem joins, separate group and individual context statements, correct extraction by page positions in a separate endpoint, and state the original scanner method and remaining measurements.",
+      "evidence": [
+        "src/six_hour/kanmer_sources.py",
+        "src/six_hour/kanmer_extract.py",
+        "src/six_hour/kanmer_images.py",
+        "src/six_hour/kanmer_audit.py",
+        "experiments/2026-10-02-six-hour/kanmer-physical-use/README.md",
+        "experiments/2026-10-02-six-hour/kanmer-physical-use/main/results.json",
+        "experiments/2026-10-02-six-hour/kanmer-physical-use/reviewed-verification/verification.json",
+        "experiments/2026-10-02-six-hour/kanmer-physical-use/PHYSICAL-TEST-PROTOCOL.md"
+      ],
+      "retry_when": "Original 2009 article, final-volume physical/object pages, object context register, fourth registration or raw scanner meshes provide new observations; physical replicas can then test resting orientation and wear.",
+      "local_inputs": "Detailed object/face records and all third-party witnesses are local-only. Tracked source manifests, source coordinates, summaries, code and aggregates support future acquisition."
+    },
+    {
+      "id": "NULL-01",
+      "theme": "conditional-enumeration",
+      "status": "completed-exact-independent-audit",
+      "question": "Is column permutation uniform, and does uniqueness rejection preserve its conditional law?",
+      "outcome": "Enumerated 8,000 balanced binary tables and 2,880 unique tables; exact acceptance .36 and equal generating multiplicities. All 2,880 unique tables have full nested fits; exact 5% nested rejection is 5%.",
+      "challenge": "Tiny ordinary tables can have too few components for the preserved five-fold procedure.",
+      "remedy": "Count the full ordinary space without inventing nested scores; fit the unique subset and retain the domain issue for a separate declared experiment.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/null-calibration/MATHEMATICS.md",
+        "experiments/2026-10-02-six-hour/null-calibration/exact/results.json",
+        "experiments/2026-10-02-six-hour/null-calibration/verification_exact.json"
+      ],
+      "retry_when": "A changed observation law, statistic or conditional constraint supplies a new finite space."
+    },
+    {
+      "id": "NULL-02",
+      "theme": "literal-copy-reference",
+      "status": "completed-exact-independent-audit",
+      "question": "How does record-wise shuffling behave under a known literal-copy process?",
+      "outcome": "Four latent binary objects give 216 tables. With three copies each, an integer adjacency test rejects 25% at nominal 5% under record-column tails; matched object tails reject 2.78%. Exact distributions retained for one through five copies.",
+      "challenge": "Ordinary record references mostly leave the copy-supported table space.",
+      "remedy": "Enumerate latent tables and count expanded reference scores with integer convolution; an independent row-state dynamic program checks every distribution and tail.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/null-calibration/copy-tail-counts/README.md",
+        "experiments/2026-10-02-six-hour/null-calibration/copy-tail-counts/results.json",
+        "experiments/2026-10-02-six-hour/null-calibration/copy-tail-counts/verification.json"
+      ],
+      "retry_when": "Known unequal-copy or nonidentical-face mechanisms change the supported observation space."
+    },
+    {
+      "id": "NULL-03",
+      "theme": "weighted-copy-margins",
+      "status": "completed-exact-sampler-audit",
+      "question": "Can a reference preserve both latent and expanded margins with unequal copy counts?",
+      "outcome": "For multiplicities 1,1,1,2,2,3, fixing three latent and five expanded ones leaves six columns. Integer continuation sampling gives exact uniform 1/6 column probabilities. Direct and rejection streams each preserve 100,000 sampled tables.",
+      "challenge": "Unrestricted object shuffles change expanded margins in fourteen of twenty columns. The direct stream has a retained .01336 chi-square diagnostic.",
+      "remedy": "Count legal completions exactly, verify every branch probability and independently replay streams. Preserve the uneven sample diagnostic beside the exact law.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/null-calibration/unequal-copy-counts/README.md",
+        "experiments/2026-10-02-six-hour/null-calibration/unequal-copy-counts/results.json",
+        "experiments/2026-10-02-six-hour/null-calibration/unequal-copy-counts/verification.json"
+      ],
+      "retry_when": "An established copy process has additional count/stratum constraints requiring a new conditional sampler."
+    },
+    {
+      "id": "NULL-04",
+      "theme": "deduplication-selection",
+      "status": "completed-exact-reweighting-audit",
+      "question": "Does deduplicating raw draws give the same law as drawing a population conditional on uniqueness?",
+      "outcome": "Seven binary draws retained as six unique balanced strings have four unequal support masses. Uniform-reference nested rejection becomes 5.1537% at nominal 5%; matched selected-law tails give 4.9407%. No model refits were needed.",
+      "challenge": "Whole-string uniqueness alone does not specify the raw selection history.",
+      "remedy": "Specify the raw process, sum exact occupancy probabilities, reuse frozen scores and check support weights by an independent seen-set recurrence and every weighted tail.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/null-calibration/dedup-selection/README.md",
+        "experiments/2026-10-02-six-hour/null-calibration/dedup-selection/results.json",
+        "experiments/2026-10-02-six-hour/null-calibration/dedup-selection/verification.json"
+      ],
+      "retry_when": "A proposed catalogue selection history supplies a different explicit inclusion law."
+    },
+    {
+      "id": "NULL-05",
+      "theme": "imperfect-face-reference",
+      "status": "completed-main-and-independent-audit",
+      "question": "Can whole ordered face vectors preserve a known paired-error law in the nested reference?",
+      "outcome": "Across 1,000 twenty-object populations, matched vector references reject 5% at nominal 5%, versus 11% for record-wise references; paired excess 6 points, interval 4.3\u20137.7. All 198,000 reference corpora and fifteen full fit replays audited. Two finite spaces and 200,000 sampler draws independently checked.",
+      "challenge": "Scalar record shuffling preserves marginals while changing every tested joint vector margin. Physical/text aliases can also create fitting-domain failures outside sampled main trials.",
+      "remedy": "Condition on ordered-vector counts, preserve physical aliases, rebuild fit components on every proposal, use disjoint seed namespaces and preserve a separate support-domain witness.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/null-calibration/noisy-faces/METHODS.md",
+        "experiments/2026-10-02-six-hour/null-calibration/noisy-faces/main/results.json",
+        "experiments/2026-10-02-six-hour/null-calibration/noisy-faces/verification_main.json",
+        "experiments/2026-10-02-six-hour/null-calibration/noisy-faces/verification_exact.json"
+      ],
+      "retry_when": "An independently justified observer-error kernel, vector structure or archaeological relation changes the stated sampling model."
+    },
+    {
+      "id": "NULL-06",
+      "theme": "fitting-support-and-selection",
+      "status": "completed-witness-and-exact-extension-audit",
+      "question": "How do undefined fits, score extension and feasibility conditioning change reference rejection fractions?",
+      "outcome": "Same vector margins permit one or twenty components; one-component nested fit raises ZeroDivisionError. Across all 8,000 binary tables, a zero-gain extension with observed abstention rejects 400 at nominal 5%, or 6.9444% among 5,760 usable observations. Conditioning the reference on usability rejects 276/5,760, or 4.7917%.",
+      "challenge": "A uniform table sampler does not by itself define a statistic on every supported table. Reporting only feasible observations changes the measured population.",
+      "remedy": "Preserve the failed fit and declare extension/selection alternatives before their exact evaluation. Independently check every graph, full tail, conditional tail and selected fit replay.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/null-calibration/domain-support/README.md",
+        "experiments/2026-10-02-six-hour/null-calibration/domain-support/GUARD_PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/null-calibration/domain-support/main-v2/results.json",
+        "experiments/2026-10-02-six-hour/null-calibration/domain-support/guard-exact/results.json",
+        "experiments/2026-10-02-six-hour/null-calibration/domain-support/verification.json"
+      ],
+      "retry_when": "A prospective corpus needs a declared total statistic or an explicit feasible-observation selection law."
+    },
+    {
+      "id": "NULL-07",
+      "theme": "paired-observation-channel",
+      "status": "completed-known-channel-recovery-audit",
+      "question": "Can paired faces estimate a known symmetric error rate and correct latent frequencies?",
+      "outcome": "On 1,000 frozen populations with true rate .1, agreement and joint mean estimates are .099261 and .101605. Known-rate inversion gives 10,335 negative components, matching exact expectation 10,331.87. Small-cell total variation is .245280 for joint correction and .227690 for matched shrinkage; pooled correction improves .020967 to .012236. Exact identification limits retained.",
+      "challenge": "Finite inversion can leave the simplex; a flexible corrected estimator can still lose to a prior-matched simple baseline. An unspecified boundary fallback was found, with no main case using it.",
+      "remedy": "Constrain the fit, retain matched shrinkage, compute exact absence/agreement distributions, audit all objectives/projections and preserve the boundary note without changing endpoints.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/null-calibration/noisy-channel/README.md",
+        "experiments/2026-10-02-six-hour/null-calibration/noisy-channel/main/results.json",
+        "experiments/2026-10-02-six-hour/null-calibration/noisy-channel/main/verification.json",
+        "experiments/2026-10-02-six-hour/null-calibration/noisy-channel/IDENTIFICATION.md",
+        "experiments/2026-10-02-six-hour/null-calibration/noisy-channel/RETROSPECTIVE.md"
+      ],
+      "retry_when": "A new kernel, correlated observers or near-uniform latent frequencies provide an explicit misspecification or identification test."
+    },
+    {
+      "id": "CRYPTO-08",
+      "theme": "reference-only-model-selection",
+      "status": "completed-fresh-world-independent-review",
+      "question": "Can held-out reference prediction choose a mapping score without the generated family label?",
+      "outcome": "Across 48 fresh systems and 384 conditions, the selector recovers 309 maps versus fixed graph 283, fixed slot 168 and supplied-family diagnostic 310. Twenty-symbol administrative gain over graph is 26.04 points, interval 14.58\u201338.54. All 96 reference choices and 1,536 returned-map scores independently checked; 6,489 checks pass. Eleven slot-tie conditions have 32 exact alternative likelihood witnesses.",
+      "challenge": "Graph end probabilities and slot likelihoods initially describe different length spaces; small references can select a weaker mapping model. A NumPy boolean caused pilot serialization failure.",
+      "remedy": "Condition both likelihoods on observed length using an exact graph normalizer, choose before truth evaluation, retain both fixed methods and the supplied-family diagnostic. Preserve failed pilot and repeat only its boolean serialization repair in a new endpoint. Certify tied alternatives separately.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/reference-selector/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/reference-selector/main/results.json",
+        "experiments/2026-10-02-six-hour/reference-selector/review/REPORT.md",
+        "experiments/2026-10-02-six-hour/reference-selector/review/main-v1/verification.json",
+        "experiments/2026-10-02-six-hour/reference-selector/review/additional-v1/exact-slot-alternatives.json",
+        "experiments/2026-10-02-six-hour/reference-selector/RETROSPECTIVE.md"
+      ],
+      "retry_when": "Shared-length forms, overlapping inventories, uncertain segmentation or an independently acquired reference changes the observation problem."
+    },
+    {
+      "id": "NULL-08",
+      "theme": "main-reference-calibration",
+      "status": "completed-main-and-independent-audit",
+      "question": "How do record and matched object references calibrate the preserved nested statistic under known independent, unique and literal-copy laws?",
+      "outcome": "Three thousand observed populations and 396,000 references audited. At nominal 5%, independent records reject 5.0%, uniqueness-conditioned records 5.9%, and literal copies reject 5.4% with object references versus 15.9% with record references. Paired excess 10.5 points, 500-cluster interval 8.5\u201312.6.",
+      "challenge": "Copied reference streams have 500 linked trial pairs; copying also changes the physical-block premise required for fitting support bounds.",
+      "remedy": "Preserve actual seeds, audit all 928,424 proposals and p-values, replay 33 complete fits and resample linked clusters for the paired interval. Audit constructive component bounds separately.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/null-calibration/main/results.json",
+        "experiments/2026-10-02-six-hour/null-calibration/verification_main.json",
+        "experiments/2026-10-02-six-hour/null-calibration/paired_seed_audit.json",
+        "experiments/2026-10-02-six-hour/null-calibration/RETROSPECTIVE.md"
+      ],
+      "retry_when": "A new observation or selection law changes the conditional space; do not rerun the same frozen calibration merely to improve its rates."
+    },
+    {
+      "id": "NULL-09",
+      "theme": "constructive-fitting-support",
+      "status": "completed-proof-and-allocation-audit",
+      "question": "Which original conditional laws admit a component lower bound that guarantees nonempty nested folds?",
+      "outcome": "One complete string per physical block yields one component per distinct string. Preserved slot inventories bound singleton references at eight and matched literal-copy references at six to eight. All 3,000 margins, 396,000 groupings and 29,169 allocation cases passed the audit. The bound's copy premise fails in all 99,000 record-copy references.",
+      "challenge": "Nonidentical faces can join many complete strings through one physical component, invalidating a slot-inventory bound without its physical premise.",
+      "remedy": "State the premise, prove the positive-weight allocator argument, regenerate 198,000 copy references and test 583,380 outer/inner splits without changing fitted scores.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/null-calibration/domain-support/SUPPORT_PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/null-calibration/domain-support/support-bound/results.json",
+        "experiments/2026-10-02-six-hour/null-calibration/domain-support/README.md"
+      ],
+      "retry_when": "A new physical graph structure supplies a different support premise or needs an explicit total score."
+    },
+    {
+      "id": "KHI-04",
+      "theme": "collective-conservation",
+      "status": "completed-synthetic-control-and-independent-audit",
+      "question": "Can an independently observed pooled inventory resolve numerical values when local account membership is unreliable?",
+      "outcome": "Two hundred fresh base seeds generate 1,400 worlds and 11,200 prefixes. Under four swaps and 50% local support, complete-pool conservation changes correct/wrong/ambiguous outcomes from 133/9/58 to 190/1/9. Misdeclared completeness gives fifteen wrong accepted points. One wrong baseline passes eight rank-one fresh relations but fails independent counts.",
+      "challenge": "The whole inventory must be independently available and complete; redundant fresh relations can preserve a wrong numerical ray. A static checker initially misclassified a local comprehension variable as hidden-key access.",
+      "remedy": "Freeze observation availability, impose the collective relation without adding a support vote, retain inequalities and both scale views, independently verify all subset states and residuals, and preserve the checker repair beside unchanged inference hashes.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/khipu-control/conservation-check/REPORT.md",
+        "experiments/2026-10-02-six-hour/khipu-control/conservation-check/METHODS.md",
+        "experiments/2026-10-02-six-hour/khipu-control/conservation-check/main-v1/aggregate.json",
+        "experiments/2026-10-02-six-hour/khipu-control/conservation-check/verification-v2/verification.json",
+        "experiments/2026-10-02-six-hour/khipu-control/conservation-check/RETROSPECTIVE.md"
+      ],
+      "retry_when": "New physical inventory observations, measured acquisition costs or independently ranked validation rows change the available constraints."
+    },
+    {
+      "id": "KANMER-02",
+      "theme": "source-history-and-acquisition",
+      "status": "completed-bounded-source-amendment",
+      "question": "Can original bibliography, author proofs and library holdings resolve early Kanmer interpretation history and identify the missing object pages?",
+      "outcome": "Eight source-history/bibliography/holding observations, 148 checks and all 108 original-frame hashes preserved. Original witnesses date the excavation article December 2009 and final volume March 2012. An inspected author proof explicitly cites final page 487; the institutional catalogue identifies a physical volume with CD-ROM. No new specimen joins or physical-use observations.",
+      "challenge": "Journal requests failed, annual-report extraction omitted visible bibliography, and the final object pages and fourth registration remained unavailable. Two sources give chapter endings 759 and 760.",
+      "remedy": "Retain failed routes, inspect page pixels, acquire public original author/institution witnesses, preserve both page ranges and freeze a separate amendment. Identify the exact article/report page packet and catalogue holding for a future acquisition.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/kanmer-physical-use/source-continuation-2026-10-02/REPORT.md",
+        "experiments/2026-10-02-six-hour/kanmer-physical-use/source-continuation-2026-10-02/results.json",
+        "experiments/2026-10-02-six-hour/kanmer-physical-use/source-continuation-2026-10-02/verification.json",
+        "experiments/2026-10-02-six-hour/kanmer-physical-use/source-continuation-2026-10-02/RETROSPECTIVE.md"
+      ],
+      "retry_when": "The original 2009 article pages 147\u2013164, final report pages 484\u2013490/749\u2013760/827\u2013832, or the accompanying disc become available."
+    },
+    {
+      "id": "KHI-05",
+      "theme": "validation-observation-design",
+      "status": "completed-post-outcome-reuse-and-independent-audit",
+      "question": "Can a fixed small validation budget distinguish wrong numerical rays by independent coefficient rank or measured counts?",
+      "outcome": "On KHI-04's reused 200 four-swap worlds, greedy rank rejects nine wrong rays with two checks and a counted unit anchor, or three checks without scale. Count-first needs one anchored count or two unanchored counts. Three account-first checks leave one wrong ray. Filtering collective ambiguous sets gives 199 correct absolute points and one rejected world under the stated policies.",
+      "challenge": "One unanchored count fits every wrong ray by changing scale; account checks can repeat the same rank-one relation. Acquisition costs and measurement error are unavailable in this fixed generated population.",
+      "remedy": "Freeze a post-outcome equal-check-count comparison, seal selector rows before opening targets, retain points/rays/positive families and compute exact random-subset expectations. Independently audit 33,600 deterministic records, 59,856 random-family intersections and compatible wrong witnesses.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/khipu-control/validation-design/REPORT.md",
+        "experiments/2026-10-02-six-hour/khipu-control/validation-design/METHODS.md",
+        "experiments/2026-10-02-six-hour/khipu-control/validation-design/main-v1/aggregate.json",
+        "experiments/2026-10-02-six-hour/khipu-control/validation-design/main-v1/verification.json",
+        "experiments/2026-10-02-six-hour/khipu-control/validation-design/additional-review/verification.json",
+        "experiments/2026-10-02-six-hour/khipu-control/validation-design/RETROSPECTIVE.md"
+      ],
+      "retry_when": "Fresh prospectively selected objects supply measured check costs, uncertain counts or incomplete validation membership."
+    },
+    {
+      "id": "CRYPTO-09",
+      "theme": "overlapping-record-forms",
+      "status": "completed-fresh-stress-test-and-independent-audit",
+      "question": "How does reference-selected mapping behave when generated forms share a length and their slot distributions share probability mass?",
+      "outcome": "Twelve fresh matched twenty-symbol systems give 192 conditions. At reference size 400, selected recovery is 24/24 separated, 22/24 same-length zero shared mass, 22/24 mass .35 and 16/24 mass .70. At size 40 the counts are 10/24, 8/24, 2/24 and 0/24. Supplied form labels improve same-record recovery in several conditions. All 9,202 primary checks and 384 dual certificates pass; thirty linear ties have sixty exact witnesses.",
+      "challenge": "Equalizing length adds slots, so that contrast changes record content. Small references and overlapping role distributions can favor wrong objectives; all failed returned mappings score above the true map under their fitted objectives.",
+      "remedy": "Preserve matched uniforms and complete parameters, isolate shared-mass contrasts among six-slot forms, compare supplied labels on identical records, independently replay choices/counts/scores and retain exact ties, paired system intervals and optimization diagnostics.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/overlapping-forms/REPORT.md",
+        "experiments/2026-10-02-six-hour/overlapping-forms/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/overlapping-forms/review-v1/verification.json",
+        "experiments/2026-10-02-six-hour/overlapping-forms/additional-v1/summary.json",
+        "experiments/2026-10-02-six-hour/overlapping-forms/RETROSPECTIVE.md"
+      ],
+      "retry_when": "A frozen latent-form estimator, new independently observed record class, larger reference or uncertain-boundary control changes the mapping information."
+    },
+    {
+      "id": "NULL-10",
+      "theme": "shared-measurement-quality",
+      "status": "completed-fresh-main-and-independent-audit",
+      "question": "Does an object-level quality mechanism shared across slots change vector-reference laws and calibration of the preserved nested statistic?",
+      "outcome": "Three hundred fresh populations and 59,400 reference fits audited, with zero guarded states. At nominal 5%, broad vectors reject 12/300 (4%) and quality-conditioned vectors 9/300 (3%); paired difference one point, interval -1 to 3. Exact enumeration gives unequal broad-column probabilities and uniform quality-conditioned tables. Exact covariance calculations retain the stronger information in paired observations.",
+      "challenge": "A wrong conditional law can have little measured separation under this prediction statistic. Main runtime was slower than the tiny pilot extrapolation.",
+      "remedy": "Preserve the small main effect, fixed sample budget and actual runtime. Audit every proposal and sixteen fits, independently enumerate the laws and moments, and declare a separate fresh agreement-count sensitivity diagnostic.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/null-calibration/shared-quality/README.md",
+        "experiments/2026-10-02-six-hour/null-calibration/shared-quality/main/results.json",
+        "experiments/2026-10-02-six-hour/null-calibration/shared-quality/verification_main.json",
+        "experiments/2026-10-02-six-hour/null-calibration/shared-quality/verification_exact.json",
+        "experiments/2026-10-02-six-hour/null-calibration/shared-quality/analytic-moments/verification.json",
+        "experiments/2026-10-02-six-hour/null-calibration/shared-quality/RETROSPECTIVE.md"
+      ],
+      "retry_when": "A new externally observed quality proxy or frozen statistic changes the specified observation/sensitivity question."
+    },
+    {
+      "id": "NULL-11",
+      "theme": "shared-quality-score-sensitivity",
+      "status": "completed-fresh-diagnostic-and-independent-audit",
+      "question": "Does an observed adjacent-agreement statistic expose the conditional-law mismatch that the original nested predictor scarcely detects?",
+      "outcome": "On 1,000 fresh populations, broad vector references reject 94.2% at nominal 5%, compared with 1.0% for quality-conditioned references; paired difference 93.2 percentage points, interval 91.6\u201394.7. Exact conditional tails give 95.0% and .8%. All 198,000 references, 1,547 cell distributions and 2,000 exact tails pass independent replay. The original nested 4% versus 3% result remains preserved.",
+      "challenge": "The statistic was developed after the nested main result. Integer ties and constant-score configurations make the matched reference conservative.",
+      "remedy": "Freeze the new observed-sign statistic and fresh seed namespaces before generation, label it post-outcome method development, and verify the row-state dynamic program with a separate hypergeometric convolution.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/null-calibration/shared-quality/agreement-diagnostic/README.md",
+        "experiments/2026-10-02-six-hour/null-calibration/shared-quality/agreement-diagnostic/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/null-calibration/shared-quality/agreement-diagnostic/main/results.json",
+        "experiments/2026-10-02-six-hour/null-calibration/shared-quality/agreement-diagnostic/verification.json",
+        "experiments/2026-10-02-six-hour/null-calibration/shared-quality/agreement-diagnostic/RETROSPECTIVE.md"
+      ],
+      "retry_when": "A new observable quality proxy, observation mechanism or separately specified statistic changes the sensitivity question."
+    },
+    {
+      "id": "MARKOV-05",
+      "theme": "rare-history-shrinkage",
+      "status": "completed-negative-comparison-and-independent-review",
+      "question": "Can extra training-count-dependent shrinkage improve probability prediction while retaining useful second-order histories?",
+      "outcome": "All five outer folds select pure first-order backoff from eighteen frozen candidates. All 8,009 distributions equal M1. The closest finite candidate is .00846\u2013.00929 inner bits worse. Independent flat counts, complete-chain probabilities, calibration and 10,000 paired component-bootstrap draws pass.",
+      "challenge": "The extra history weight is algebraically equivalent to effective strength alpha+kappa+alpha*kappa/N, leaving equivalent grid pairs. The benchmark had already guided earlier model development.",
+      "remedy": "Freeze the equivalence, remove duplicate candidates before fitting, reuse documented masks/folds, and preserve the negative result without changing the loss objective. Verify 13,045 contexts and 3,859 exact rational identities.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/markov-adaptive/README.md",
+        "experiments/2026-10-02-six-hour/markov-adaptive/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/markov-adaptive/main/results.json",
+        "experiments/2026-10-02-six-hour/markov-adaptive/review/verification.json",
+        "experiments/2026-10-02-six-hour/markov-adaptive/RETROSPECTIVE.md"
+      ],
+      "retry_when": "A different probability model or new independently reviewed observation block changes the test beyond this completed count-shrinkage family."
+    },
+    {
+      "id": "CRYPTO-10",
+      "theme": "unlabelled-form-mixtures",
+      "status": "completed-bounded-comparison-and-independent-audit",
+      "question": "Can a reference-fitted mixture preserve form distinctions absent from observed record length?",
+      "outcome": "On 144 frozen common-length generated conditions, fixed mixture recovers 82 maps and reference selection 79, compared with the earlier selector's 70. At reference size 400, zero/.35 shared mass each give 24/24 under mixture and selection, compared with 22/24 earlier. A collapsed-profile smoothing control gives 21/24 and 22/24. All68,014 primary checks, 4,433 assignment duals, 289 control checks and 72 final checks pass.",
+      "challenge": "Three components are supplied as a prior, finite EM budgets leave 178 starts at their iteration limit, and six failed maps score below truth. The full 132,193,239-byte result exceeds GitHub's blob limit.",
+      "remedy": "Keep the post-outcome same-record comparison explicit, verify penalized reference objectives separately from mapping likelihood, add a matched collapsed-profile control and preserve all candidates. Store the original locally and track eight lossless hashed gzip chunks with a refusing-to-overwrite reconstruction helper.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/latent-forms/README.md",
+        "experiments/2026-10-02-six-hour/latent-forms/REPORT.md",
+        "experiments/2026-10-02-six-hour/latent-forms/PROTOCOL.md",
+        "experiments/2026-10-02-six-hour/latent-forms/review-v1/verification.json",
+        "experiments/2026-10-02-six-hour/latent-forms/collapsed-v1/verification.json",
+        "experiments/2026-10-02-six-hour/latent-forms/git-package/main-results-v1/manifest.json",
+        "experiments/2026-10-02-six-hour/latent-forms/verification.json",
+        "experiments/2026-10-02-six-hour/latent-forms/RETROSPECTIVE.md"
+      ],
+      "retry_when": "A frozen form-count rule, changed encoded-mixture estimation, larger declared search budget or fresh uncertain-boundary systems supply a new comparison."
+    },
+    {
+      "id": "CRYPTO-11",
+      "theme": "latent-generator-identification",
+      "status": "completed-exact-population-check-and-independent-audit",
+      "question": "Do the stored overlapping-form product distributions satisfy a published three-component identification condition?",
+      "outcome": "All 36 profiles under two declared rational population conventions have fixed paired-slot ranks 3/3/3 and positive unshifted/rotated weights. The rank sum 9 meets threshold 8, identifying form weights and six slot distributions up to a common label permutation within the fixed three-component product model. Alpha 1 controls have rank one and distinct positive mixing vectors giving the same law.",
+      "challenge": "The stored binary64 probabilities need an exact population convention. A first audit incorrectly required five-symbol support at zero shared mass, while cumulative rounding can give the final code tiny positive mass.",
+      "remedy": "Freeze normalized-rational and continuous-uniform threshold conventions before rank tests. Use nonzero rational minors and independent elimination, retain the failed review, and correct only its support expectation. Reconstruct 345,600 pair entries and certify 288 minors.",
+      "evidence": [
+        "experiments/2026-10-02-six-hour/latent-generator-identification/README.md",
+        "experiments/2026-10-02-six-hour/latent-generator-identification/METHODS.md",
+        "experiments/2026-10-02-six-hour/latent-generator-identification/main/results.json",
+        "experiments/2026-10-02-six-hour/latent-generator-identification/collapsed-control/results.json",
+        "experiments/2026-10-02-six-hour/latent-generator-identification/review-v2/verification.json",
+        "experiments/2026-10-02-six-hour/latent-generator-identification/AUDIT_REPAIR.md",
+        "experiments/2026-10-02-six-hour/latent-generator-identification/RETROSPECTIVE.md"
+      ],
+      "retry_when": "A changed component count, dependent-slot mechanism, fixed alternative grouping or new source-backed parameter population changes the mathematical premises."
+    }
+  ]
+}
