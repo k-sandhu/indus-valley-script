@@ -46,7 +46,11 @@ def main():
             assert 0 <= stats['mean'] <= 1+1e-14
             counts['interval_cells']+=1
     manifest=json.loads((OWN/'run-v1/manifest.json').read_text(encoding='utf-8'))
-    for key,path in [('protocol_sha256',OWN/'PROTOCOL.md'),('code_sha256',OWN/'analyze.py'),
+    # The amended protocol preserves the exact original witness separately.
+    protocol=OWN/'history/2026-10-07-before-amendment/PROTOCOL.md'
+    if not protocol.exists():
+        protocol=OWN/'PROTOCOL.md'
+    for key,path in [('protocol_sha256',protocol),('code_sha256',OWN/'analyze.py'),
                      ('coder_a_sha256',RAW/'coder-a.json'),('coder_b_sha256',RAW/'coder-b.json'),
                      ('indus_selection_sha256',RAW/'indus-selection.json')]:
         assert manifest[key]==sha(path),key
