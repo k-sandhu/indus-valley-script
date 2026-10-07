@@ -42,7 +42,7 @@ The first census passes were thin: B1 left nearly every metadata field unassesse
 | Package | Run | Review | Main result |
 |---|---|---|---|
 | A, D1, D2, E, G | Running since 2026-10-07 03:56 UTC | Pending | Pending |
-| B1 first pass | Finished 04:2x UTC | Superseded by regional batches | 89 site labels; counts for 4 sites |
+| B1 first pass | Finished 04:25 UTC | Superseded by regional batches | 89 site labels; counts for 4 sites |
 | B1 batches a–d | Started after B1 | Pending | Pending |
 | B2 | First pass finished 04:25 UTC; depth pass running | Pending | 37 collections, 15 datasets; one direct catalogue count |
 | C | Finished 04:20 UTC | Sonnet review running | 23 candidates across 112 registry entries |
