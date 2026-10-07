@@ -41,6 +41,8 @@ SETS = {
 BACKUP_FILES = {
     "helsinki1979-provisional-occurrences": "experiments/2026-10-07-helsinki1979-digitization/runs/2026-10-07-full-v1/occurrences.jsonl",
     "helsinki1979-provisional-ledger-import": "experiments/2026-10-07-helsinki1979-digitization/integration/2026-10-07-v1/ledger-import.jsonl",
+    "helsinki1979-repair-v1-frame": "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-07-v1/frame.json",
+    "helsinki1979-repair-v2-frame": "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-07-v2/frame.json",
 }
 
 

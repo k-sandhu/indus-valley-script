@@ -1,0 +1,105 @@
+{
+  "status": "Frozen evaluation",
+  "created_utc": "2026-10-07T16:54:51.431467+00:00",
+  "code_hashes": {
+    "layout_v3.py": "8c228241668075c8bcece706c0385f71f7bf7eea1c5551be2023457121354b78",
+    "freeze_repair_v2.py": "ad2384c85f6d0e397242a44175603d5cf82746a999416cfbfff8635d047a96f4",
+    "evaluate_repair.py": "6f298188912ca7fd5f52a3cc696d9845d1dcbd2c4b1322085022156fb9676bb8",
+    "pipeline.py": "edddcbd0ca92d2dca8456bbe68590c984e567aead9880eec45a2c9140f55c799",
+    "evaluate.py": "c76952c3ad583d8072d2140856f66b1bb7c8a8004527fd6845ad04d9d6201506",
+    "chart-snapshot.json": "09cc31162ff68ddb908953a612df3505a64c93b1ae5a472f236a0b52df240b29",
+    "development/classifier.pt": "fd541c3ca7cf4433e23ee90931bc22ff20c24e94388073d63b6f4634cbae62d8",
+    "development/digits.npz": "6720bdc18c68af8c890fd9f7c1a34ab207181f39b1c7ee38ad83f4a63ca03519",
+    "development/calibration.json": "dfc4a8010df5988f482adad2a1737e5bef520464bae7dcc0566294c9626aface"
+  },
+  "source_sha256": "7bfc35f2a8bbcb58f13c42e1835f5b3ebd17a1f9947786b6c5933623df83cf27",
+  "parameters": {
+    "ocr_cluster_sigma_pt": 6,
+    "minimum_peak_distance_pt": 38,
+    "minimum_ocr_support": 5,
+    "ocr_cluster_halfwidth_pt": 20,
+    "field_edge_padding_pt": 0.5,
+    "field_ink_gap_pixels": 5,
+    "minimum_field_band_pixels": 5,
+    "maximum_field_band_pixels": 30,
+    "page_body_fraction": [
+      0.073,
+      0.933
+    ],
+    "orientation": "source_header_content",
+    "number_edge_clearance_pt": 0.8,
+    "recognizer": "unchanged first-endpoint weights/templates/calibration",
+    "print_column_gap_pixels": 16,
+    "print_column_minimum_ink": 4000,
+    "print_column_maximum_width_pixels": 170,
+    "ocr_batch_rows": 96
+  },
+  "development_pages": [
+    22,
+    25,
+    30,
+    37,
+    62,
+    78,
+    100,
+    129,
+    130,
+    145
+  ],
+  "sample": {
+    "seed": 2026100780,
+    "sections": [
+      [
+        "number_order",
+        22,
+        78,
+        28
+      ],
+      [
+        "end_sorted",
+        79,
+        130,
+        26
+      ],
+      [
+        "beginning_sorted",
+        131,
+        180,
+        26
+      ]
+    ],
+    "n": 80,
+    "exclude_previous_targets": true
+  },
+  "source_row_counts": {
+    "seed": 2026100791,
+    "random_pages_per_section": 6,
+    "stress_pages": [
+      62,
+      129,
+      130
+    ]
+  },
+  "readers": "Two independent source-only readers on every row and count page; third reader adjudicates without predictions",
+  "release_rule": {
+    "minimum_unit_confidence": 0.9,
+    "product_unit_confidences": 0.9,
+    "minimum_global_row_recall": 0.95,
+    "other_global_criteria": {
+      "crop": 0.9,
+      "number": 0.9,
+      "count": 0.95,
+      "top5_whole_rows": 0.8
+    },
+    "required": [
+      "upright resolved layout",
+      "no clipping or continuation",
+      "no auxiliary/candidate ambiguity",
+      "singleton top-one codes",
+      "numeric-witness agreement"
+    ],
+    "object_import_requires_reviewed_identity_and_surface": true
+  },
+  "prior_evaluation_unchanged": true,
+  "recognizer_refitted": false
+}

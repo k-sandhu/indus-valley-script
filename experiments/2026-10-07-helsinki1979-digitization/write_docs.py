@@ -18,6 +18,9 @@ def interval(values,percent=True):
 
 
 def main():
+    if (HERE/'follow-up/2026-10-07/analysis-v1').exists():
+        from write_followup_docs import main as corrected_main
+        return corrected_main()
     metrics=read('evaluation/2026-10-07-frozen-v1/metrics.json');s=metrics['summary'];ci=metrics['row_bootstrap_95']
     full=read('runs/2026-10-07-full-v1/coverage.json');counts=full['counts']
     comparison=read('evaluation/annotation-comparison-v1.json');review=read('review/2026-10-07-v1/summary.json')

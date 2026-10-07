@@ -1,35 +1,52 @@
 # Package M: Helsinki 1979 digitization
 
-The new pipeline failed its 60-row frozen test: 23/60 clean crops, 33/60 matching unit counts, 23/60 exact inscription numbers, 13/60 strict compatible whole rows at top one and 24/60 at top five. All four reliability criteria failed. The package contains 11,369 provisional printed occurrences and 57,426 unit candidates from all 159 corpus pages, plus source references and a review queue. These files do not yet supply the reliable complete corpus sought by this package.
+**First endpoint:** 60 numbered-section rows from PDF pages 31–79, drawn from 3,460 of 11,369 detected occurrences; no sorted-section row was evaluated. In that frame the frozen pipeline has 33/60 matching counts, 23/60 exact numbers and 24/60 top-five compatible whole rows. It fails all four criteria. The corrected [report](REPORT.md) gives the per-annotator crop labels, objective audit, adjudication overlays and orientation findings.
 
-The [report](REPORT.md) gives intervals, calibration, crop and reference disagreements, and label-blinding limits. Exact outcomes are [metrics.json](evaluation/2026-10-07-frozen-v1/metrics.json), field `summary`; extraction totals are [coverage.json](runs/2026-10-07-full-v1/coverage.json), field `counts`. The primary reference has 267 drawn units, including 38 editorial units. Number accuracy after excluding all 22 source-OCR-exposed locator rows is 13/38. Six repeated visual readings agree on counts and printed fields; four agree on ordered strict candidate sets, and crop judgments disagree on four. Initial references remain unchanged.
+**Repair status:** method and 80 predictions are frozen across the whole edition (28 numbered, 26 end-sorted, 26 beginning-sorted). Two independent readings, source-count adjudication and new metrics remain pending after the disk cutoff. All 11,369 original occurrences remain quarantined. The active triage subset has 9,584 rows and flags all 1,223 inverted occurrences. The original frozen files and references are unchanged.
 
-## Files and source attribution
+## Main files
 
-[PROTOCOL.md](PROTOCOL.md) records the pre-outcome plan, freeze and subsequent disclosure. [freeze-manifest.json](freeze-manifest.json), [prediction-freeze.json](prediction-freeze.json), [chart-snapshot.json](chart-snapshot.json), `development/` and `blind/` retain the frozen dependencies and independent annotations. The CC BY derived extraction is [occurrences.jsonl](runs/2026-10-07-full-v1/occurrences.jsonl). The [priority queue](review/2026-10-07-v1/priority-queue.jsonl) links to compressed local row crops; all rows retain field/boundary review requirements. [IMPORT_INTERFACE.md](IMPORT_INTERFACE.md) and [staged rows](integration/2026-10-07-v1/ledger-import.jsonl) preserve source-qualified identities. All 11,369 staged rows remain quarantined, with zero verified external object joins. [RETROSPECTIVE.md](RETROSPECTIVE.md), [sources.json](sources.json) and [registry-entry.json](registry-entry.json) complete the record. [validation.png](figures/validation.png) plots the reserved row outcomes and conditional calibration.
+- [Original protocol and dated amendments](PROTOCOL.md).
+- [Original 60-row metrics](evaluation/2026-10-07-frozen-v1/metrics.json), `summary`; the frame above qualifies every accuracy figure.
+- [Original full coverage](runs/2026-10-07-full-v1/coverage.json): 159 attempted pages, 11,369 occurrences, 57,426 candidates.
+- [Corrections and adjudication](follow-up/2026-10-07/analysis-v1/adjudication-overlay.json); [crop audit restatement](follow-up/2026-10-07/analysis-v1/crop-and-frame.json).
+- [Active triage](follow-up/2026-10-07/analysis-v1/triage-queue.jsonl); [orientation flags](follow-up/2026-10-07/analysis-v1/orientation-overlay.json); [row-recall evidence](follow-up/2026-10-07/analysis-v1/row-recall-evidence.json).
+- [Upright-only calibration sensitivity](follow-up/2026-10-07/analysis-v1/calibration-upright-only.json): 126 units in the original numbered-section frame, Brier 0.1262 and ten-bin error 0.1183.
+- [Repaired freeze](repair/2026-10-07-v2/freeze-manifest.json), [prediction freeze](repair/2026-10-07-v2/prediction-freeze.json), [source-only locator](repair/2026-10-07-v2/blind/selection.json) and [reading conventions](repair/2026-10-07-v2/blind/CONVENTIONS.md).
+- [Disk stop and exact remaining work](follow-up/2026-10-07/storage-stop-v2.json), [retrospective](RETROSPECTIVE.md), [registry proposal](registry-entry.json), [source register](sources.json) and [import contract](IMPORT_INTERFACE.md).
 
-Source: Kimmo Koskenniemi and Asko Parpola (1979), *Corpus of Texts in the Indus Script*, Research Reports 1, Department of Asian and African Studies, University of Helsinki. [Persistent handle](http://hdl.handle.net/10138/342677), [institutional licence witness](https://researchportal.helsinki.fi/en/publications/corpus-of-texts-in-the-indus-script/), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Chart crops, evaluation crops, annotations and transcription are source-derived changes made here. Retain the title, authors, source URL, licence and modification notice with those assets. Our new code/prose have no separately assigned blanket licence. The 1980 PDF, extracted text, source crops and copied crosswalk rows stay in local raw because its licence is unverified.
+## Portable first evaluation
 
-## Run from the repository root
+The coordinator must apply every path in [TRACK-EXCEPTIONS.txt](TRACK-EXCEPTIONS.txt), including the digit NPZ and images. The exact owned prediction copy and image hashes are in [portable-input-manifest.json](follow-up/2026-10-07/analysis-v1/portable-input-manifest.json). JSON references and frozen code are already owned. The evaluator hash is in a [dated supplement](follow-up/2026-10-07/analysis-v1/freeze-supplement.json); the original freeze manifests remain unchanged. The portable command uses only NumPy and no original PDF, GPU, model inference or local raw predictions. [requirements.txt](requirements.txt) pins NumPy 2.5.3. The original recognition replay additionally needs the acquired PDF, PyTorch and recorded environment.
 
-The existing interpreter is `C:\Users\sandh\.venvs\indus-ml\Scripts\python.exe`. The freeze records exact recognition-package versions; the [interface check](integration/l-interface-check-v1.json) records the later schema-check dependencies. This package installed PyMuPDF, OpenCV and jsonschema with its four dependencies using `pip --no-cache-dir`; NumPy, SciPy, Pillow, PyTorch, Tesseract and plotting support were already available. `pipeline.py` uses the saved chart-trained weights and calibrated coefficients. TMP, TEMP and MPLCONFIGDIR are under the local raw directory.
-
-Use new output paths on every repeat. These commands recompute from preserved inputs without replacing frozen endpoints:
-
-```powershell
-& 'C:\Users\sandh\.venvs\indus-ml\Scripts\python.exe' experiments/2026-10-07-helsinki1979-digitization/evaluate.py --out experiments/2026-10-07-helsinki1979-digitization/evaluation/reviewer-recompute
-& 'C:\Users\sandh\.venvs\indus-ml\Scripts\python.exe' experiments/2026-10-07-helsinki1979-digitization/rerun_frozen_sample.py --predictions-out data/raw/2026-10-07-helsinki1979-digitization/reviewer-sample-v2.json --audit-out experiments/2026-10-07-helsinki1979-digitization/verification/reviewer-sample-v2.json
-& 'C:\Users\sandh\.venvs\indus-ml\Scripts\python.exe' experiments/2026-10-07-helsinki1979-digitization/verify.py --out experiments/2026-10-07-helsinki1979-digitization/verification/reviewer-v2.json
-```
-
-The selected-row recomputation processes only 60 rows and already passed. A full repeat costs about 52.1 minutes on this environment and creates another payload plus compressed crops; check the local storage limit before repeating it:
+Run from the repository root with a fresh output directory:
 
 ```powershell
-& 'C:\Users\sandh\.venvs\indus-ml\Scripts\python.exe' experiments/2026-10-07-helsinki1979-digitization/pipeline.py full --out experiments/2026-10-07-helsinki1979-digitization/runs/reviewer-repeat
+& 'C:\Users\sandh\.venvs\indus-ml\Scripts\python.exe' experiments/2026-10-07-helsinki1979-digitization/portable_evaluate.py --out experiments/2026-10-07-helsinki1979-digitization/review/reviewer-portable-v3
 ```
 
-The original development/freezing/selection commands were `pipeline.py develop`, `pipeline.py freeze` and `pipeline.py sample`. Do not run `develop` over this frozen package: it rewrites dependencies. Develop a subsequent dated experiment instead. Freeze/sample commands refuse existing endpoints.
+Both local portable replays reproduce the original metrics byte-for-byte. Recompute corrections with `respond_to_review.py --out <new-owned-directory>` and the L check with `check_ledger_followup.py --out <new-owned-file>`; these need the preserved local full extraction and reviewer diagnostics. They preserve the first endpoint. `write_docs.py` now delegates to `write_followup_docs.py` for the corrected prose.
 
-Other rerunnable scripts are `build_review_queue.py`, `prepare_import.py`, `check_ledger_interface.py` and `compare_annotations.py`, each with `--out` for a new owned directory/file. `review_package_prose.py` captures the required root prose scan and input hashes in [prose-review-v1.json](verification/prose-review-v1.json). `plot_results.py` regenerates the derived figure; `write_docs.py` regenerates prose from aggregate outputs. `inventory_files.py` updates the derived [file manifest](file-manifest.jsonl) and [inventory totals](file-manifest-summary.json). The [final verification](verification/2026-10-07-v1.json) records input checks and storage, including installed dependency bytes. The file manifest enumerates every created package/raw asset and installed distribution file. No shared registry, index, manuscript, history or other package was edited.
+## Resume the repaired evaluation
 
-Reviewer checks: repeat evaluation and the 60-row computation; sample exact glyph boxes against wider source context, especially indices 14–16, 24, 29, 30, 35, 42 and 51; adjudicate the two repeated glyph disagreements and four crop disagreements; inspect number suffixes, classification blanks and auxiliary units; confirm all staged rows remain quarantined without an inspected object concordance. Run `python tools/review_prose.py --path experiments/2026-10-07-helsinki1979-digitization --no-write`.
+Use the existing v2 freeze and source-only sample; do not regenerate it over the endpoint. Assign two independent readers every row and count page under the convention sheet, then a third reader the disagreements without predictions. Required final reference files are `repair/2026-10-07-v2/blind/adjudicated-reference.json` and `adjudicated-counts.json`. Preserve both initial readings and the adjudication. Only then run:
+
+```powershell
+& 'C:\Users\sandh\.venvs\indus-ml\Scripts\python.exe' experiments/2026-10-07-helsinki1979-digitization/evaluate_repair.py --out experiments/2026-10-07-helsinki1979-digitization/review/repaired-evaluation-v1
+```
+
+`prepare_repair_v2.py` created the replacement code once; it is a historical construction helper and must not be rerun over frozen files. `freeze_repair_v2.py` refuses existing freeze/prediction endpoints. A methodological repair after reference requires a separate dated freeze and new sample.
+
+Before any operation writing more than 50 MB, check free space **inside the active process immediately before serialization**, after library/model loading. If below 1,000,000,000 bytes, stop and record unfinished work. A caller-only check proved inadequate during this run. Render source pages one at a time in memory. The repaired full run and confidence-based release are unfinished. Package L still requires a reviewed carrier concordance and occurrence-surface alignment.
+
+## Attribution and reviewer checks
+
+Source-derived crops, chart cards and transcription: Kimmo Koskenniemi and Asko Parpola, *Corpus of Texts in the Indus Script* (1979), Research Reports 1, Department of Asian and African Studies, University of Helsinki; [handle](http://hdl.handle.net/10138/342677), [institutional licence](https://researchportal.helsinki.fi/en/publications/corpus-of-texts-in-the-indus-script/), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Changes are raster cropping, card arrangement, numerical recognition and source annotation. The 1980 copied table rows and images remain local because their licence is unverified. This source licence does not assign a blanket licence to our code.
+
+- Check ignored-asset exceptions and run portable evaluation from a checkout without local raw predictions.
+- Confirm every first-endpoint hash against the preservation check, and that references still carry the original labels.
+- Inspect the eleven adjudication entries and high/centered tick convention in untrimmed chart cells.
+- Verify the 1,223 orientation flags, subset triage and the source-count limits on pages 62,129,130.
+- Complete the two blinded readings and adjudication before opening repaired predictions for scoring.
+- Confirm suffixes and occurrence segments pass L's schema while unsupported joins stay quarantined.
+- Run `python tools/review_prose.py --path experiments/2026-10-07-helsinki1979-digitization --no-write`.

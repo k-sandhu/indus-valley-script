@@ -51,3 +51,109 @@ Three annotators own disjoint primary groups, sample indices 0–19, 20–39 and
 ## Annotation disclosure, 7 October 2026, after annotation started
 
 The locator manifest also retained `ocr_number_witnesses`, extracted from the PDF's original OCR layer during layout discovery. These are source OCR strings, rather than the new numeric classifier's predictions, but they can disclose possible numbers. Annotator A noticed that field while reading the permitted locator file, stated that it was not used to resolve any field, and continued reading pixels. Preserve the original selection and its hash. A separate [blind/selection-source-only.json](blind/selection-source-only.json) omits OCR witness strings and automated flags for continued annotation. Ask every annotator to disclose exposure in their note. Glyph candidates and pipeline unit counts remain withheld. Report the label-blinding limitation beside number accuracy, and give an annotation-group sensitivity without group A where possible. This locator repair is post-start and does not revise predictions, selection, primary references or the frozen recognition endpoint.
+
+
+## Amendment, 7 October 2026: coordinator corrections and disk-gated repair
+
+7 October 2026, coordinator follow-up: instructions recorded before new calculations.
+
+### Amendment, 7 October 2026: Part 1 corrections (Exploratory)
+
+Part 1 uses the existing frozen files and the Sonnet review in REVIEW.md. It
+preserves the original pipeline, selection, predictions, references, models,
+freeze manifests and evaluation outputs. New calculations are Exploratory.
+
+1. Copy the prediction bytes into an owned portable input root; enumerate the
+   existing digit NPZ, 60 source crops and nine chart sheets for tracking.
+   A supplemental freeze record identifies the evaluator hash retrospectively;
+   it does not claim that the evaluator was in the original manifest.
+2. Retain 23/60 as the original subjective crop result and separately report
+   A=4/20, B=3/20, C=16/20 and the review's objective edge tests, 14/60 and
+   21/60 allowing a one-point crossing tolerance. Nine C acceptances fail the
+   tolerant audit; eleven fail without tolerance.
+3. Every first-endpoint headline carries the 60-row frame: PDF 31–79,
+   3,460 of 11,369 detected occurrences; no sorted-section row was selected.
+4. All 17 originally rotated pages are upright according to the review.
+   Flag their 1,223 occurrences in a separate orientation overlay.
+5. Build a subset triage queue using objective margin-edge crossings,
+   narrow units at the number edge, incorrect orientation, missing fields,
+   unmatched ink and numbered-section order violations. Exclude the universal
+   classification/boundary flag and the old minimum-confidence rule. Keep all
+   rows quarantined. Use priorities: orientation/complex-column/recall anomaly;
+   clipping/fragment/unmatched ink; unresolved field/order; candidate
+   cross-section disagreement. Compare detected page counts with the review's
+   source counts without assuming every short page should print 72 rows.
+6. Write the review's eleven unit-label corrections as an adjudication overlay
+   with zero-based unit positions, source locations and original/new sets.
+   Do not edit frozen references. The six repeated rows were fixed convenience
+   indices, two in each 20-row group; no random-selection algorithm was recorded.
+   Recompute calibration on the original same-position labels after excluding
+   all three rotated selected rows, with 2,000 row-bootstrap replicates,
+   seed 2026100707. Do not refit the model or select a favourable reference.
+
+### Amendment, 7 October 2026: Part 2 design before layout development
+
+Part 2 is Proposed and has not been run. The free-space check found
+896,548,864 bytes on C:, below the user's 1,000,000,000-byte stop threshold.
+The planned full transcription would write more than 50 MB. Compact Part 1
+deliverables proceed; no repaired freeze, new evaluation or full extraction
+is represented as completed.
+
+The repair must localize field edges per page/column from source OCR boxes,
+checked against print components, and retain an ink-based fallback. Record
+offsets and witness conflicts. Determine orientation from readable header /
+numeric content and reject unresolved orientation. Discover columns and row
+bands without a fixed count, including pages 129–130. Preserve editorial
+underlines and reject number-edge fragments. Keep the existing recognizer's
+weights, chart and proposal scores unchanged. Freeze new code and parameters
+before any new reference.
+
+Draw 80 new rows with seed 2026100780: 28 numbered, 26 end-sorted and 26
+beginning-sorted occurrences, excluding development pages and previously
+annotated targets. Record section denominators and inclusion probabilities.
+Two readers must independently read every selected row, without predictions
+or OCR-number strings. Use uncropped chart cells that preserve vertical
+position and a convention sheet for codes 2/25, narrow/wide hatching,
+underline variants and editorial units. A third source-only reader adjudicates
+disagreements before predictions are released for scoring. Preserve both
+initial readings and adjudication.
+
+Independently count and match printed rows on 18 seeded pages (six per
+section) plus stress pages 62,129,130. Two source readers receive no detected
+counts. Report matched-row recall and precision with intervals, separating
+the random page frame from the prespecified stress pages. Missing rows must
+remain in the denominator. Report the original four thresholds and add 95%
+row recall on the random source-count frame, with page-bootstrap intervals.
+Report all first-endpoint metrics, intervals and calibration beside the new
+endpoint, with their distinct frames and reference conventions.
+
+Proposed confidence release rule, to be confirmed in the new pre-reference
+freeze: transcription eligibility requires all global reliability criteria,
+resolved upright layout, no objective clipping/continuation/auxiliary ambiguity,
+singleton top-one codes, agreement of independent numeric witnesses, minimum
+unit confidence >=0.90 and product of unit confidences >=0.90. A qualifying
+row can leave transcription quarantine; Package L still requires a reviewed
+identity concordance and surface alignment before an object import. All other
+rows stay quarantined. No confidence refit may use the new reference.
+
+Before any step writing more than 50 MB, record shutil.disk_usage('C:\\').free.
+If below 1 GB, stop that work and record the uncompleted steps. Keep new
+follow-up storage under 500 MB. Render one page at a time in memory; retain
+only evaluation/review crops. No existing source witness is deleted to free
+space. Package L's available contract is HELSINKI-INTERFACE.md plus its dated
+review-response amendment; the requested IMPORT_INTERFACE.md is absent.
+
+
+### Amendment, 7 October 2026: storage resumption before layout development
+
+Free space rose above 1 GB during the compact correction work (see follow-up/2026-10-07/storage-resumption-v1.json). Resume Part 2 under the same per-large-write gate. The preceding statement that Part 2 had not run remains its then-current state. The end-of-run storage-gate.json captured 2.65 GB free but retained stale stop-reason prose; the resumption record corrects that interpretation without replacing the output.
+
+
+### Amendment, 7 October 2026: unlabelled-frame audit before any new reference
+
+The repair/2026-10-07-v1 candidate was frozen and sampled, but no reference was started or released. Its unlabelled frame showed 125 candidate rows on an ordinary page because glyph-like numeric OCR strings formed extra margin clusters. Preserve this whole candidate as Superseded before evaluation. The replacement copies layout_v2.py to layout_v3.py and restricts ordinary-page OCR field candidates to within 35 PDF points of the documented two-column margin neighbourhoods. Native print features still discover the extra columns on compact end-sorted pages; row counts remain unconstrained. Freeze the replacement and evaluator before its source sample or reference. No v1 candidate accuracy is known.
+
+
+### Amendment, 7 October 2026: second disk stop after the repaired sample
+
+The pre-frame check found 917,327,872 bytes free and a later check found 256,331,776. The sampling helper had already written its 60,522,244-byte frame and finished before an interruption could take effect. Preserve the completed repaired freeze, 80 predictions, source crops and 21 source-count pages. No fresh reference or evaluation exists. Stop further repair work under the user cutoff; finish the compact correction deliverables. See follow-up/2026-10-07/storage-stop-v2.json for exact remaining steps and the process-control failure.
