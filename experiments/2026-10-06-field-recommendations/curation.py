@@ -4,6 +4,7 @@ This file is the editable authority. build_tables.py exports and checks it.
 Bulk source text is held in the local raw directory, not in this catalogue.
 """
 from pathlib import Path
+import runpy
 
 ROOT = Path(__file__).resolve().parents[2]
 RAW = 'data/raw/2026-10-06-field-recommendations/rebuild-2026-10-07/'
@@ -412,3 +413,8 @@ corrections = [
  ('RAJAN-2025','RAJAN-SIVANANTHAM-2025','Correct accessible brochure URL and source scope; admit only explicit additional-evidence request onPDF8.'),
  ('POSSEHL-2002','POSSEHL-PAGE-1996','Unsupported agenda attribution to2002 book removed; three principles from opened author institutional page about1996book, through identified proxy.'),
 ]
+
+# Final polish is an explicit dated correction layer, not a new source survey.
+_polished = runpy.run_path(str(Path(__file__).with_name('polish_coding.py')))['apply'](globals().copy())
+for _key in ['sources','recommendations','positions','coverage','corrections','author_groups','action_ranking']:
+    globals()[_key] = _polished[_key]

@@ -12,6 +12,8 @@ import json
 from pathlib import Path
 import re
 import runpy
+from check_polish import check as check_polish, check_file, preserved_reviews
+from polish_coding import normalize_prose
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
@@ -66,6 +68,7 @@ def main():
         s['witness_bytes'] = path.stat().st_size
         s['acquisition_log'] = str((RAW/'acquisition-log.json').relative_to(ROOT)).replace('\\','/')
     rows = coded['recommendations']
+    polish_checks = check_polish(coded)
     assert len({r['id'] for r in rows}) == len(rows), 'Duplicate recommendation ID'
     links = set()
     for r in rows:
@@ -108,6 +111,7 @@ def main():
     missing_out = [dict(review_item=i,researcher=r['researcher'],recommendation_ids=d[0],
                         position_ids=d[1],disposition=d[2])
                    for i,(r,d) in enumerate(zip(missing,dispositions),1)]
+    missing_out = normalize_prose(missing_out)
     summary = dict(status='Exploratory', recommendations=len(rows), source_records=len(sources),
                    sources_used_for_recommendations=len({r['source_id'] for r in rows}),
                    themes=dict(sorted(Counter(r['theme'] for r in rows).items())),
@@ -116,11 +120,14 @@ def main():
                    positions=len(coded['positions']), named_coverage_gaps=sum('gap' in x['disposition'] for x in coded['coverage']),
                    source_corrections=len(corrections), missing_review_items=len(missing_out),
                    comparison_entries=sum(len(r['comparisons']) for r in rows), repository_links=len(links),
+                   anchors_checked=polish_checks['anchors'],author_groups=len(coded['author_groups']['groups']),
+                   row_dispositions={'retained_recommendations':56,'moved_positions':['F04','F53'],'moved_coverage':['F55']},
                    semantic_validation='Manual coding; reviewer must check passages. No automatic attribution verification.')
     outputs = {'sources.json':dumped(sources), 'recommendations.json':dumped(rows),
                'recommendations.csv':csv_text(rows), 'positions.json':dumped(coded['positions']),
                'coverage.json':dumped(coded['coverage']), 'source-corrections.json':dumped(corrections),
-               'missing-item-disposition.json':dumped(missing_out), 'summary.json':dumped(summary)}
+               'missing-item-disposition.json':dumped(missing_out), 'summary.json':dumped(summary),
+               'author-groups.json':dumped(coded['author_groups']), 'action-ranking.json':dumped(coded['action_ranking'])}
     for name, content in outputs.items():
         path = HERE/name
         if args.check:
@@ -132,9 +139,11 @@ def main():
         if not path.is_file() or path.suffix not in TEXT_SUFFIXES:
             continue
         relative = path.relative_to(HERE)
-        if relative.parts[0] in {'first-pass','review'} or relative.name == 'REVIEW.md':
+        if relative.parts[0] in {'first-pass','review','review-2','__pycache__'} or relative.name in {'REVIEW.md','REVIEW-2.md'}:
             continue
-        encoding_check(path)
+        checked_text = encoding_check(path)
+        assert '\r' not in checked_text, f'Active file must use LF: {path}'
+        check_file(path, checked_text)
         checked.append(str(relative).replace('\\','/'))
     snap = json.loads((HERE/'first-pass-manifest.json').read_text(encoding='utf-8'))
     for row in snap:
@@ -145,7 +154,9 @@ def main():
                   witness_hashes_checked=len(sources),repository_links_checked=len(links),
                   encoding_files_checked=checked,historical_files_hash_checked=len(snap),
                   reviewer_files_byte_equal=4,deterministic_export_files=len(outputs),
-                  encoding_exclusions=['first-pass/**','review/**','REVIEW.md'],
+                  reviewer_files_hash_checked=preserved_reviews(),polish_checks=polish_checks,
+                  fused_token_check='Passed for active Markdown and JSON prose/locators.',
+                  encoding_exclusions=['first-pass/**','review/**','review-2/**','REVIEW.md','REVIEW-2.md'],
                   note='Mechanical checks only; attribution remains Exploratory.')
     if not args.check:
         (HERE/'validation.json').write_bytes(dumped(result).encode('utf-8'))

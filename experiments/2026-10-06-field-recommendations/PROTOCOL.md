@@ -48,3 +48,11 @@ The coordinator reported Windows error 112 and subsequently freed disk space. Be
 ### Additional source selection, 7 October 2026
 
 A final bounded search for the remaining roster gaps located Green's 2021 review, *Killing the Priest-King: Addressing Egalitarianism in the Indus Civilization*. Read its explicit future-work passages before deciding whether to admit additional rows. The extension follows the same prescription rule and remains Exploratory. Preserve the exclusion of inferred recommendations from Green's 2016 method paper. The same search located an author-deposited 2005 Lothal chapter record; use it to resolve metadata separately from recommendation selection.
+
+## Final polish amendment, 7 October 2026
+
+Apply the nine corrections in the second review to the existing coding and witnesses. Keep `first-pass/` and both reviews unchanged. Move F04's reported findings and F53's expectation into positions, retaining their identifiers; move F55's general archaeological remark into coverage. Narrow F03 to the speaker's site-size/context proposal and separate the package's sample-size controls into an implementation note. Correct F24's scope and F10's paragraph locator.
+
+Add one verbatim anchor of fewer than 15 words to every retained recommendation and each moved row, using opened source text and a locator. This per-row requirement supersedes the earlier one-passage-per-source selection rule. Use brief excerpts and record the anchor-check method. Count overlapping author groups together: Wells/Fuls and Rao/Yadav/Vahia are dependent groups; include further overlapping authors when counting comparison evidence. Independence is a conservative bibliographic grouping, not a measure of independent observations. Remove self-comparisons and comparisons that only share a broad topic.
+
+Rank current-data actions with declared scores for available inputs, dependency on external access and reuse across recommendations. Exclude rows marked Limited from the ranked actions. Keep all refinements Exploratory, align report discussion with the row themes, normalize active authored files to UTF-8 without BOM and LF, and add fused-token and anchor checks to the existing exporter. The local source witnesses remain required for reproduction.

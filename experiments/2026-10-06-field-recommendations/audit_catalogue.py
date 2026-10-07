@@ -11,7 +11,7 @@ ROOT = HERE.parents[1]
 RAW = ROOT/'data/raw/2026-10-06-field-recommendations'
 
 def save(name, value):
-    (HERE/name).write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    (HERE/name).write_bytes((json.dumps(value,ensure_ascii=False,indent=2)+'\n').encode('utf-8'))
 
 def main():
     coded = runpy.run_path(str(HERE/'curation.py'))
@@ -24,7 +24,7 @@ def main():
         ('Richard Sproat','SPROAT-2010'),('Steve Farmer','FSW-2004'),('Michael Witzel','FSW-2004'),
         ('Bahata Ansumali Mukhopadhyay','MUKHOPADHYAY-2023'),('Marta Ameri','AMERI-2013'),
         ('Adam Green','GREEN-2021'),('Cameron Petrie','PETRIE-LYNAM-2020'),('Rita Wright',None),
-        ('Shereen Ratnagar','RATNAGAR-INTERVIEW-2018'),('Randall Law','LAW-2011'),
+        ('Shereen Ratnagar',None),('Randall Law','LAW-2011'),
         ('Heather Miller','MILLER-PROJECT-2025'),('Vasant Shinde',None),('R. S. Bisht',None),
         ('K. Rajan','RAJAN-SIVANANTHAM-2025'),('Dennys Frenez','FRENEZ-TALK-2026')]
     coverage = []
@@ -43,13 +43,17 @@ def main():
     ledger=[]
     for i,(prior,new) in enumerate(zip(old,replacement),1):
         researcher=prior['researcher'].replace('M\x3fry','M\u00e9ry')
-        ledger.append(dict(first_pass_row=i,researcher=researcher,replacement_ids=new.split(),
+        rec_ids=[rid for rid in new.split() if any(r['id']==rid for r in rows)]
+        moved=[rid for rid in new.split() if rid in {'F04','F53','F55'}]
+        ledger.append(dict(first_pass_row=i,researcher=researcher,replacement_ids=rec_ids,
+                           retained_outside_recommendations=moved,
                            disposition='Rebuilt from newly read passage; original claim is not carried forward automatically.' if new else 'Dropped: no qualifying recommendation in opened material or source unavailable.'))
     save('row-rebuild.json',ledger)
     save('coverage-counts.json',dict(required_roster=len(roster),with_admitted_recommendation=sum(bool(x['recommendation_ids']) for x in coverage),
                                     no_admitted_recommendation=sum(not x['recommendation_ids'] for x in coverage),
                                     first_pass_rows=len(ledger),replaced_rows=sum(bool(x['replacement_ids']) for x in ledger),
-                                    dropped_rows=sum(not x['replacement_ids'] for x in ledger)))
+                                    dropped_rows=sum(not x['replacement_ids'] and not x['retained_outside_recommendations'] for x in ledger),
+                                    retained_only_outside_recommendations=sum(not x['replacement_ids'] and bool(x['retained_outside_recommendations']) for x in ledger)))
     acquisitions=json.loads((RAW/'rebuild-2026-10-07/acquisition-log.json').read_text(encoding='utf-8'))
     checked=0
     for item in acquisitions:
@@ -58,7 +62,7 @@ def main():
             checked+=1
     markdown_links=[]
     for path in sorted(HERE.glob('*.md')):
-        if path.name=='REVIEW.md':
+        if path.name in {'REVIEW.md','REVIEW-2.md'}:
             continue
         for target in re.findall(r'\]\(([^)]+)\)',path.read_text(encoding='utf-8')):
             if target.startswith(('https://','http://')):
@@ -77,7 +81,7 @@ def main():
             if path.is_file() and path.name!='FILE-MANIFEST.json':
                 inventory.append(dict(path=str(path.relative_to(ROOT)).replace('\\','/'),bytes=path.stat().st_size,
                                       sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
-                                      role='preserved historical/reviewer witness' if 'first-pass' in path.parts or 'review' in path.parts or path.name=='REVIEW.md'
+                                      role='preserved historical/reviewer witness' if 'first-pass' in path.parts or 'review' in path.parts or 'review-2' in path.parts or path.name in {'REVIEW.md','REVIEW-2.md'}
                                            else 'local-only third-party/source acquisition' if base==RAW else 'active authored deliverable'))
     save('FILE-MANIFEST.json',inventory)
     print('Wrote coverage,33-row disposition, acquisition/link checks and two-directory inventory.')

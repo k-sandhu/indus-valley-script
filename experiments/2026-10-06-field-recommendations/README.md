@@ -1,28 +1,29 @@
 # Field recommendations
 
-Status: Exploratory. Rebuilt 7 October 2026 after the source review and resumed after a disk-full interruption.
+Status: **Exploratory**. Rebuilt and polished 7 October 2026 after two reviews and a disk-full interruption.
 
-The catalogue contains **59 recommendations drawn from 28 sources**, with **35 source records** including comparisons and background, across six themes. It admits a recommendation for **22 of the 25 requested researchers**. Rita Wright, Vasant Shinde and R. S. Bisht have no admitted recommendation in the material opened here. These are access or selection gaps, documented in [roster-coverage.json](roster-coverage.json) and [coverage.json](coverage.json).
+The catalogue contains **56 recommendations from 27 sources**, **35 source records**, **nine positions** and recommendations for **21 of 25 requested researchers**. It prioritizes object/context joins and reuse of regional/site/type analyses. Seven actions have explicit scores. [REPORT.md](REPORT.md), [summary.json](summary.json), [action-ranking.json](action-ranking.json).
 
-The strongest repeated priorities in the read sample are regional and chronological analysis, separation of object classes and production stages, and collaboration with accessible data. The report ranks work possible with current holdings and links packages D1, D2, E, G, H and the evidence census. Fuls's 2023 abstract already compares sign frequencies against per-site artefact counts; improving those comparisons requires defining the sample and its missing context. See [REPORT.md](REPORT.md).
+F03 states the speaker's site-size/context proposal, with controls in an implementation note. F04/F53 are positions; F55 is a coverage note. F24 applies the comparative second-hand seal problem to Indus symbols/users. Rows now include short anchors, shared/disputed classification and author-group counts. Overlapping authors count together. [recommendations.json](recommendations.json), [positions.json](positions.json), [coverage.json](coverage.json), [author-groups.json](author-groups.json).
 
-## Outputs and evidence
+## Outputs
 
-- [recommendations.json](recommendations.json) and [recommendations.csv](recommendations.csv): one explicit recommendation, future priority or stated project aim per row, with source locator, feasibility, scoped comparisons and repository links. Every row is Exploratory.
-- [sources.json](sources.json): exact metadata, opened/read scope, access limits and local witness hashes. Four lecture rows use the coordinator's caption check; this package did not independently read a full transcript.
-- [positions.json](positions.json): seven interpretations or observations, including Frenez's written oligopoly argument on printed pp. 186-187. They are separate from recommendations.
-- [summary.json](summary.json), [coverage-counts.json](coverage-counts.json), [row-rebuild.json](row-rebuild.json), [source-corrections.json](source-corrections.json) and [missing-item-disposition.json](missing-item-disposition.json): counts, disposition of all 33 old rows, 14 reviewed source corrections and all 16 missing-item leads.
-- [validation.json](validation.json): encoding, witness hashes, repository links, export identity and historical preservation checks. These checks verify file integrity; source interpretation requires review.
-- [PROTOCOL.md](PROTOCOL.md), [RETROSPECTIVE.md](RETROSPECTIVE.md) and [registry-entry.json](registry-entry.json): selection rules, changes, problems and proposed registry entry.
-- [audit-checks.json](audit-checks.json) and [prose-check.json](prose-check.json): acquisition hashes, local Markdown links and the required prose scan.
-- [CHANGED-PATHS.json](CHANGED-PATHS.json): paths created or changed during the rebuild and continuation.
-- [FILE-MANIFEST.json](FILE-MANIFEST.json): every file in the owned and raw directories, with path, size, hash and role. The manifest excludes itself.
+- [recommendations.json](recommendations.json) and [recommendations.csv](recommendations.csv): 56 recommendations, priorities or project aims with evidence, feasibility and scoped comparisons.
+- [sources.json](sources.json): 35 source records, read scope, limits and witness hashes. The report's lecture section states its evidence limit.
+- [positions.json](positions.json): nine interpretations/findings/expectations, including Frenez's written oligopoly model and F04/F53.
+- [action-ranking.json](action-ranking.json): seven actions, criteria, scores, reasons and package links.
+- [author-groups.json](author-groups.json): conservative author components and count definition.
+- [summary.json](summary.json), [coverage-counts.json](coverage-counts.json), [roster-coverage.json](roster-coverage.json): counts and roster gaps.
+- [row-rebuild.json](row-rebuild.json), [source-corrections.json](source-corrections.json), [missing-item-disposition.json](missing-item-disposition.json): original-row disposition, 14 source corrections and 16 missing-item leads.
+- [polish-checks.json](polish-checks.json), [validation.json](validation.json), [audit-checks.json](audit-checks.json), [prose-check.json](prose-check.json): corrections, anchors, preservation, exports, links and prose.
+- [PROTOCOL.md](PROTOCOL.md), [RETROSPECTIVE.md](RETROSPECTIVE.md), [registry-entry.json](registry-entry.json): selection, amendments, problems and proposed registry entry.
+- [CHANGED-PATHS.json](CHANGED-PATHS.json), [FILE-MANIFEST.json](FILE-MANIFEST.json): changed paths and two-directory inventory with hashes.
 
-The 19 files in [first-pass/](first-pass/) preserve the original outputs and reviewer witnesses byte for byte. The active reviewer files are also unchanged. Historical files retain their original encoding; newly authored files are UTF-8 without a byte-order mark.
+The **19 first-pass files** and **18 reviewer witnesses** remain byte for byte unchanged. Active authored files use UTF-8 without BOM and LF endings. Third-party witnesses remain local or reuse existing literature holdings.
 
 ## Reproduce from the repository root
 
-The exporter and audit use the Python standard library and existing witnesses. They need no network access or installation. `curation.py` is the manually coded authority; rerunning exports does not repeat source reading.
+Exporter/audit require Python's standard library and the local source/anchor witnesses, including the acquisition log. **A fresh clone lacks the Git-ignored raw directory**; restore those witnesses before running. `curation.py` holds initial manual coding and `polish_coding.py` its dated corrections. Exporting repeats coding, counts and integrity checks; source interpretation needs reading.
 
 ```powershell
 $env:PYTHONDONTWRITEBYTECODE = '1'
@@ -32,6 +33,6 @@ python experiments/2026-10-06-field-recommendations/build_tables.py --check
 python tools/review_prose.py --path experiments/2026-10-06-field-recommendations --no-write
 ```
 
-`build_tables.py --check` compares eight exports without writing and checks source hashes, links, encoding and the preserved snapshot. `audit_catalogue.py` regenerates coverage and the inventory. Run it last if files have changed. Optional acquisition uses `capture_sources.py`, requests and PyMuPDF; downloads and extraction files stay in `data/raw/2026-10-06-field-recommendations/`. That directory also holds the acquisition log, failed responses and source qualifications.
+`build_tables.py --check` compares **ten exports** without writing. It checks 35 source hashes, 59 anchors, group fields, score arithmetic, references, encoding, fused prose/locators and preserved files. Two image anchors need visual review. Run `audit_catalogue.py` last after files change to refresh coverage/inventory. Optional acquisition uses `capture_sources.py`, requests and PyMuPDF, confined to local raw storage.
 
-The reviewer should sample the cited passages, especially the four mediated lecture rows, the undated Possehl and Miller pages, and the conditional agendas in Farmer-Sproat-Witzel. Full lecture transcription, Sproat's 2014 main article and the three roster gaps remain unresolved.
+Review corrected rows, group counts and ordinal scores. Wright/Shinde/Bisht have no qualifying opened recommendation; Ratnagar's remark is outside this agenda. Full lecture transcription and Sproat's 2014 main article remain unavailable. Access failures and the disk interruption are recorded in the retrospective.
