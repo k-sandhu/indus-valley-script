@@ -56,5 +56,7 @@ All packages finished, were reviewed by Claude Sonnet 5.5 and had their required
 | F, researchers' recommendations | GPT-6.1-Sol (began on GPT-6-Luna) | [REVIEW-2.md](../2026-10-06-field-recommendations/REVIEW-2.md) | 56 recommendations from 27 opened sources |
 | G, weight metrology | GPT-6.1-Sol | [REVIEW.md](../2026-10-06-weight-metrology/REVIEW.md) | Dholavira 5–100 g weights fit 13.716 g; no western Indus-standard signal against a chance control |
 | H, resemblance baseline | GPT-6.1-Sol | [REVIEW.md](../2026-10-06-resemblance-baseline/REVIEW.md) | Coarse matches: Indus subset 30/42, Ogham 24/42, Tifinagh 31/42; coder agreement 46% |
+| L, pilot object ledger (7 October) | GPT-6.1-Sol | [REVIEW.md](../2026-10-07-object-ledger/REVIEW.md) | 200 records across 34 sites; 26 confirmed museum joins; a second hash-ordered selection adds 44 Lower Indus and 10 Kalibangan carriers; validator catches 26/26 review mutations |
+| M, 1979 Helsinki digitization (7 October) | GPT-6.1-Sol; blind readers and adjudicator Claude Sonnet 5.5 | [REVIEW.md](../2026-10-07-helsinki1979-digitization/REVIEW.md) | Both frozen evaluations fail; the repaired pipeline reads 62/80 numbers and 40/80 whole rows within top five, with row cropping the limiting stage; all occurrences quarantined |
 
 The coordinator's own checks are [frenez-talk-check.md](frenez-talk-check.md), [local-site-coverage.json](local-site-coverage.json) and the two title-trimming scripts, which replaced copied search-result text in census source titles and kept the originals in local-only files.

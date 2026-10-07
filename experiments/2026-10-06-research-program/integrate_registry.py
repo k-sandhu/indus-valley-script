@@ -3,7 +3,8 @@
 Each package proposed a registry entry in its own directory. This script copies
 those entries into knowledge/experiments/registry.json under normalized IDs,
 adds the package review files to each entry's evidence, records the proposed
-ID, and leaves every existing entry unchanged. It refuses to run twice.
+ID, and leaves every existing entry unchanged. A rerun adds only the entries
+that are not yet present.
 Run from the repository root:
 
     python experiments/2026-10-06-research-program/integrate_registry.py
@@ -31,6 +32,8 @@ PACKAGES = [
     ("FIELD-RECOMMENDATIONS-01", "experiments/2026-10-06-field-recommendations", "exploratory-survey-reviewed"),
     ("WEIGHT-METROLOGY-01", "experiments/2026-10-06-weight-metrology", "exploratory-reviewed-with-amendments"),
     ("RESEMBLANCE-BASELINE-01", "experiments/2026-10-06-resemblance-baseline", "exploratory-pilot-reviewed"),
+    ("OBJECT-LEDGER-PILOT-01", "experiments/2026-10-07-object-ledger", "exploratory-pilot-reviewed-with-amendments"),
+    ("HELSINKI1979-DIGITIZATION-01", "experiments/2026-10-07-helsinki1979-digitization", "failed-frozen-evaluations-quarantined"),
 ]
 
 
@@ -48,10 +51,11 @@ def main():
     newline = "\r\n" if "\r\n" in raw else "\n"
     registry = json.loads(raw)
     existing = {entry["id"] for entry in registry["experiments"]}
-    clashes = [pid for pid, _, _ in PACKAGES if pid in existing]
-    if clashes:
-        raise SystemExit(f"already integrated: {clashes}")
+    added = 0
     for pid, directory, status in PACKAGES:
+        if pid in existing:
+            continue
+        added += 1
         proposed = load_entry(directory)
         evidence = list(proposed.get("evidence", []))
         for review in ("REVIEW.md", "REVIEW-2.md"):
@@ -71,7 +75,7 @@ def main():
             "proposed_id": proposed.get("id"),
             "package": directory,
         })
-    registry["experiments"].append({
+    program_entry = {
         "id": "RESEARCH-PROGRAM-2026-10-06",
         "theme": "multi-model research program, lecture check and integration",
         "status": "completed-coordination-record",
@@ -87,10 +91,13 @@ def main():
             "knowledge/retrospectives/2026-10-06-research-program.md",
         ],
         "retry_when": "A new package needs the same multi-model pattern; reuse COMMON.md and the review template, keep source-citing work on the stronger model, check free disk space before parallel runs, and never edit a script that is running.",
-    })
+    }
+    if program_entry["id"] not in existing:
+        registry["experiments"].append(program_entry)
+        added += 1
     text = json.dumps(registry, indent=2, ensure_ascii=True) + "\n"
     REGISTRY.write_bytes(text.replace("\n", newline).encode("utf-8"))
-    print(f"added {len(PACKAGES)} entries; registry now has {len(registry['experiments'])}")
+    print(f"added {added} entries; registry now has {len(registry['experiments'])}")
 
 
 if __name__ == "__main__":
