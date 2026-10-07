@@ -1,26 +1,23 @@
 # Collections and datasets census
 
-The depth pass still cannot answer that all findable Indus-script evidence is indexed. It now records a dated search method and outcome for all **37 collection rows**. Exact upstream HTTP status was captured for **11 rows** (7 returned 200, 1 returned 403, 1 returned 410, and 2 returned 429); the other 26 rows rely on search excerpts or timed-out direct routes whose upstream status was unavailable. The strongest direct count is Cleveland Museum of Art's API: `q=Indus seal` returned **3 unique object IDs**, all titled as Indus seals with inscriptions (147416, 140095, 147417). `q=Indus` returned 10 API records, three of which were these seals. The museum's catalogue is openly searchable, and its designated Open Access assets use CC0 terms. This is a confirmed count for one collection endpoint, not a global or holding total.
+The focused pass on 7 October 2026 documents **114 inscription-confirmed original records**: New Delhi 76, Kolkata 18, British Museum 6, Penn 5, Louvre 4 and Met 5. **108 records were retrieved directly with HTTP 200; six British Museum witnesses came through the search provider while direct requests were blocked.** These are bounded minima. Complete inscription inventories remain unmeasured. [Results and bases](REPORT.md), [summary](focused-summary.json).
 
-Other observed counts have broader units. The British Museum culture-term page excerpt reports **724 related objects of mixed types**; a direct local request returned HTTP 403. Louvre's `q=Indus` search excerpt reports **21 mixed records**; the local query page returned HTTP 429, while the public JSON for SB 2425 returned HTTP 200 and exposes two image URLs with per-image credits. NMMA's Lothal museum page lists **133 Seals & Sealing category entries**, but their inscription status was not individually checked and direct retrieval timed out. The Metropolitan Museum API returned HTTP 410 for six terms; object pages remain accessible through web search. Smithsonian API calls returned HTTP 429 for six terms. Exact per-term API counts/statuses and raw responses are recorded in the local query log.
+**61/114 inspected originals (53.51%)** join to 61 corpus families and 67 faces. Of 80 records with usable identifier keys, 61 match (76.25%). The [full audit](paired-full-audit.csv) retains every confirmed pair; the [30-object sample](paired-sample-audit.csv) is selected deterministically. Marshall's 1931 table resolves Hr 5635 / HR 5635345 as field number HR 5635 followed by plate number 345. [Join methods and disagreements](REPORT.md#identifier-audit).
 
-Across **11 institutional groups**, the files cite at least **17 distinct object-record or official-highlight witnesses** to Indus seals, sealings or script-bearing objects. This is a minimum of named examples, not a sum of catalogue result sets. The paired audit validated **0 of 30 (0%)** museum-to-corpus joins under the explicit-identifier rule. One British Museum/corpus candidate was retained as unconfirmed because `Hr 5635` and `HR 5635345` do not match exactly; a string-prefix resemblance is insufficient.
+The Museums of India union contains **4,007 record IDs** across seven terms. All 156 result pages and 158 candidate object pages were captured. Accession deduplication gives 94 confirmed originals, ten plaster copies and 44 candidates with unconfirmed inscriptions. Penn's complete Indus Script filter contains 34 records: five originals and 29 plaster impressions. [Candidate counts](portal-candidate-counts.csv), [counts per term](portal-term-counts.csv).
 
-## Files and reproduction
+## Outputs and reproduction
 
-- [Collection register JSON](collection-register.json) and [CSV](collection-register.csv): 37 rows, each with a `depth_pass` query/method, observed status, count basis, sampled fields and evidence URLs.
-- [Dataset and archive register](dataset-register.json): 15 entries carried forward from the 2 October landscape; their original count units and version limits are retained.
-- [Metadata field matrix](metadata-field-matrix.csv): 37 collection rows and 15 dataset rows. Dataset rows reflect described schema fields; collection rows reflect sampled catalogue records, not institutional completeness.
-- [Museum API query counts](museum-api-query-counts.csv): six terms per API for Met, Cleveland, Art Institute of Chicago and Smithsonian; returned IDs and count bases are explicit.
-- [Paired sample audit](paired-sample-audit.csv): one unconfirmed candidate and 29 unfilled slots; confirmed joins = 0.
-- [Protocol](PROTOCOL.md), [report](REPORT.md), [retrospective](RETROSPECTIVE.md), [sources](sources.json), and proposed [registry entry](registry-entry.json).
-- [First-pass register builder](build_registers.py) preserves the original baseline. The depth scripts add acquisition observations and regenerate the updated register views.
+The [collection register](collection-register.json) and [CSV](collection-register.csv) retain 37 rows. The [dataset register](dataset-register.json) retains 15 entries. The [field matrix](metadata-field-matrix.csv) has 52 rows; [focused field counts](focused-field-counts.csv) give record denominators. The [query log](focused-query-log.csv) records exact URLs, dates, HTTP outcomes, counts and raw-body locators for 417 direct attempts. [Sources](sources.json) distinguish direct access from provider text and failures.
 
-Run from the repository root:
+Run from the repository root with Python and beautifulsoup4 available:
 
 ```powershell
-python experiments/2026-10-06-evidence-census/collections-and-datasets/depth_queries.py
-python experiments/2026-10-06-evidence-census/collections-and-datasets/apply_depth_pass.py
+python experiments/2026-10-06-evidence-census/collections-and-datasets/focused_rerun.py
 ```
 
-Direct API/page response bodies, HTTP errors, and the grouped live-search query log are local-only under `data/raw/2026-10-06-evidence-census/collections-and-datasets/depth-pass/`. `web-search-log.json` records the exact search queries and witness URLs; the web search provider does not expose the upstream HTTP status or full catalogue result counts. No bulk images were downloaded. The British Museum, Louvre, NMMA, Met and Smithsonian counts must not be added together: they use different units and several are mixed-type result sets.
+This command recomputes the focused registers and audits from existing local witnesses without network requests. It needs the ignored raw directory and data/normalized/lipi_observed_faces.jsonl. focused_fetch.py captures a new named URL without replacing an existing response. focused_enumerate.py reuses captured portal pages. Earlier scripts and [the previous snapshot](history/2026-10-07-depth-pass/) remain available; earlier register builders would restore earlier outcomes.
+
+The pass reused the 2 October landscape, existing Lipi CSV/export and complete CISI Volume 1 scan. Acquired pages, three Met photograph witnesses, PDFs, OCR, source rows and paired values remain under data/raw/2026-10-06-evidence-census/collections-and-datasets/focused-pass-2026-10-07/. [Protocol](PROTOCOL.md), [retrospective](RETROSPECTIVE.md), [registry proposal](registry-entry.json).
+
+Remaining work includes full inscription counts for BM, MFA, ASI site museums and Karachi, and wider inscription adjudication beyond the portal and Met candidate frames. The report gives failed routes, rights conditions and reviewer checks beside the affected results. [Changed-path manifest](CHANGES.json).

@@ -1,0 +1,30 @@
+{
+  "id": "B2-COLLECTION-CENSUS-01",
+  "theme": "museum collection and dataset discoverability",
+  "status": "Exploratory",
+  "question": "Do public museum catalogues, corpora and image archives index findable evidence for the Indus script, and which metadata fields can be joined?",
+  "outcome": "Depth pass dated 2026-10-07 added a query/method and evidence locator to all 37 collection rows and retained 15 dataset/archive rows from the 2 October landscape. Cleveland's API returned 3 unique inscription-bearing Indus seals for q=Indus seal (IDs 147416, 140095, 147417); q=Indus returned 10 broader records. British Museum's term-page excerpt reports 724 mixed-type objects; Louvre's Indus search excerpt reports 21 mixed records; NMMA Lothal lists 133 Seals & Sealing category entries without individual inscription adjudication. At least 17 named object-record/official-highlight witnesses occur across 11 institutional groups; these are a minimum sample, not full catalogue totals. The 37-row collection field matrix documents accession 15, findspot 13, excavation identifier 1, date 15, dimensions 14, material 12, photographs 15, multiple views 0 and bibliography 6. The audit confirmed 0/30 museum-to-corpus joins; one BM/Lipi candidate remains unconfirmed because the excavation ID strings differ.",
+  "challenge": "The web-search tool does not expose upstream HTTP status or full per-query catalogue totals. Local routes returned HTTP 410 for all six Met API terms, HTTP 429 for all six Smithsonian terms, HTTP 403 for the British Museum term page and HTTP 429 for the Louvre search page; NMMA requests timed out. Several query excerpts gave broad culture or object-category totals rather than counts of script-bearing objects. An explicit museum/CISI concordance was not available for 30 pairs.",
+  "remedy": "Retain exact query/status/count bases and raw responses by term; use the Cleveland three-object API set as the only validated inscription-specific count; report BM/Louvre/NMMA totals with their broad bases; treat browser-excerpt nulls as unmeasured; keep the candidate join unconfirmed; carry forward prior ICIT/CISI/Lipi/Mayig counts and rights assessments without recounting local payloads.",
+  "evidence": [
+    "experiments/2026-10-06-evidence-census/collections-and-datasets/README.md",
+    "experiments/2026-10-06-evidence-census/collections-and-datasets/PROTOCOL.md",
+    "experiments/2026-10-06-evidence-census/collections-and-datasets/collection-register.json",
+    "experiments/2026-10-06-evidence-census/collections-and-datasets/dataset-register.json",
+    "experiments/2026-10-06-evidence-census/collections-and-datasets/metadata-field-matrix.csv",
+    "experiments/2026-10-06-evidence-census/collections-and-datasets/paired-sample-audit.csv",
+    "experiments/2026-10-06-evidence-census/collections-and-datasets/sources.json",
+    "experiments/2026-10-06-evidence-census/collections-and-datasets/RETROSPECTIVE.md",
+    "experiments/2026-10-06-evidence-census/collections-and-datasets/depth_queries.py",
+    "experiments/2026-10-06-evidence-census/collections-and-datasets/apply_depth_pass.py",
+    "experiments/2026-10-06-evidence-census/collections-and-datasets/museum-api-query-counts.csv",
+    "data/raw/2026-10-06-evidence-census/collections-and-datasets/catalogue-extracts.json",
+    "data/raw/2026-10-06-evidence-census/collections-and-datasets/failed-downloads.json",
+    "data/raw/2026-10-06-evidence-census/collections-and-datasets/search-capture.json",
+    "data/raw/2026-10-06-evidence-census/collections-and-datasets/followup-search-capture-20261007.json",
+    "data/raw/2026-10-06-evidence-census/collections-and-datasets/reuse-search-capture-20261007.json"
+    ,"data/raw/2026-10-06-evidence-census/collections-and-datasets/depth-pass/query-log.json"
+    ,"data/raw/2026-10-06-evidence-census/collections-and-datasets/depth-pass/web-search-log.json"
+  ],
+  "retry_when": "A current ICIT export, CISI object index, museum API access or published crosswalk becomes available; complete a fresh 30-object explicit-key sample and extend query totals institution by institution."
+}

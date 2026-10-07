@@ -3,9 +3,9 @@
   "theme": "museum collection and dataset discoverability",
   "status": "Exploratory",
   "question": "Do public museum catalogues, corpora and image archives index findable evidence for the Indus script, and which metadata fields can be joined?",
-  "outcome": "Depth pass dated 2026-10-07 added a query/method and evidence locator to all 37 collection rows and retained 15 dataset/archive rows from the 2 October landscape. Cleveland's API returned 3 unique inscription-bearing Indus seals for q=Indus seal (IDs 147416, 140095, 147417); q=Indus returned 10 broader records. British Museum's term-page excerpt reports 724 mixed-type objects; Louvre's Indus search excerpt reports 21 mixed records; NMMA Lothal lists 133 Seals & Sealing category entries without individual inscription adjudication. At least 17 named object-record/official-highlight witnesses occur across 11 institutional groups; these are a minimum sample, not full catalogue totals. The 37-row collection field matrix documents accession 15, findspot 13, excavation identifier 1, date 15, dimensions 14, material 12, photographs 15, multiple views 0 and bibliography 6. The audit confirmed 0/30 museum-to-corpus joins; one BM/Lipi candidate remains unconfirmed because the excavation ID strings differ.",
-  "challenge": "The web-search tool does not expose upstream HTTP status or full per-query catalogue totals. Local routes returned HTTP 410 for all six Met API terms, HTTP 429 for all six Smithsonian terms, HTTP 403 for the British Museum term page and HTTP 429 for the Louvre search page; NMMA requests timed out. Several query excerpts gave broad culture or object-category totals rather than counts of script-bearing objects. An explicit museum/CISI concordance was not available for 30 pairs.",
-  "remedy": "Retain exact query/status/count bases and raw responses by term; use the Cleveland three-object API set as the only validated inscription-specific count; report BM/Louvre/NMMA totals with their broad bases; treat browser-excerpt nulls as unmeasured; keep the candidate join unconfirmed; carry forward prior ICIT/CISI/Lipi/Mayig counts and rights assessments without recounting local payloads.",
+  "outcome": "Focused pass: 114 inspected inscription-confirmed original records across New Delhi 76, Kolkata 18, British Museum 6 cached witnesses, Penn 5, Louvre 4 and Met website 5; these are bounded minima. Portal seven-term union has 4007 record IDs and 158 candidate pages, yielding 94 unique originals and 10 plaster copies. Penn Indus Script filter has 34 records: 5 originals and 29 plaster impressions. 61/114 originals (53.51%) join to 61 corpus families / 67 faces; 80 carry usable identifier keys and 61/80 (76.25%) match. Audit methods: 13 exact, 6 normalized, 36 CISI published concordance, 5 shared field/plate, 1 Marshall composite. Thirty confirmed pairs selected deterministically; all 61 retained. HR 5635345 resolved via Marshall 1931 II p. 404, row 345 = HR 5635. Missing sampled metadata: bibliography 101/114, dimensions 25/114. One site, four material, five comparable dimension and nine single-face sign-count differences flagged.",
+  "challenge": "British Museum and MFA requests HTTP 403; Louvre search 429 though object JSON works; NMMA timeouts; National Museum of Pakistan SSL transfer failure and no object-level inventory located. Complete institutional inscription totals remain unmeasured. Corpus identifiers include concatenated publication references and an identifier collision at DKI838; 53 sampled originals remain unjoined. Museum and corpus terminology, dimension coverage and sign segmentation differ.",
+  "remedy": "Use portal internal JSON route with museumId=all, complete pagination and accession deduplication; use Met website instead of failed API; use explicit CISI museum/excavation concordances and Penn published plate references. Preserve all failed routes, source values and uncertain joins in raw storage. Record image/data rights separately; keep unresolved-rights payloads local. Keep previous pass in history/2026-10-07-depth-pass.",
   "evidence": [
     "experiments/2026-10-06-evidence-census/collections-and-datasets/README.md",
     "experiments/2026-10-06-evidence-census/collections-and-datasets/PROTOCOL.md",
@@ -22,9 +22,21 @@
     "data/raw/2026-10-06-evidence-census/collections-and-datasets/failed-downloads.json",
     "data/raw/2026-10-06-evidence-census/collections-and-datasets/search-capture.json",
     "data/raw/2026-10-06-evidence-census/collections-and-datasets/followup-search-capture-20261007.json",
-    "data/raw/2026-10-06-evidence-census/collections-and-datasets/reuse-search-capture-20261007.json"
-    ,"data/raw/2026-10-06-evidence-census/collections-and-datasets/depth-pass/query-log.json"
-    ,"data/raw/2026-10-06-evidence-census/collections-and-datasets/depth-pass/web-search-log.json"
+    "data/raw/2026-10-06-evidence-census/collections-and-datasets/reuse-search-capture-20261007.json",
+    "data/raw/2026-10-06-evidence-census/collections-and-datasets/depth-pass/query-log.json",
+    "data/raw/2026-10-06-evidence-census/collections-and-datasets/depth-pass/web-search-log.json",
+    "experiments/2026-10-06-evidence-census/collections-and-datasets/focused-summary.json",
+    "experiments/2026-10-06-evidence-census/collections-and-datasets/focused-query-log.csv",
+    "experiments/2026-10-06-evidence-census/collections-and-datasets/focused-field-counts.csv",
+    "experiments/2026-10-06-evidence-census/collections-and-datasets/portal-term-counts.csv",
+    "experiments/2026-10-06-evidence-census/collections-and-datasets/portal-candidate-counts.csv",
+    "experiments/2026-10-06-evidence-census/collections-and-datasets/paired-full-audit.csv",
+    "experiments/2026-10-06-evidence-census/collections-and-datasets/focused_rerun.py",
+    "data/raw/2026-10-06-evidence-census/collections-and-datasets/focused-pass-2026-10-07/focused-records.json",
+    "data/raw/2026-10-06-evidence-census/collections-and-datasets/focused-pass-2026-10-07/paired-comparisons.json",
+    "data/raw/2026-10-06-evidence-census/collections-and-datasets/focused-pass-2026-10-07/cisi1-concordance-transcription.json",
+    "data/raw/2026-10-06-evidence-census/collections-and-datasets/focused-pass-2026-10-07/unconfirmed-join-candidates.json",
+    "data/raw/2026-10-06-evidence-census/collections-and-datasets/focused-pass-2026-10-07/marshall-table-055.png"
   ],
-  "retry_when": "A current ICIT export, CISI object index, museum API access or published crosswalk becomes available; complete a fresh 30-object explicit-key sample and extend query totals institution by institution."
+  "retry_when": "Independent reviewer repeats 30 confirmed pairs and checks the full 61-row audit; functioning BM/MFA/NMMA inventories or Pakistan object-level records permit wider inscription counts; published concordances resolve the remaining 53 unjoined sampled records."
 }
