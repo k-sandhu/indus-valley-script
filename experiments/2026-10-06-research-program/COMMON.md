@@ -1,6 +1,6 @@
 # Shared instructions for every work package
 
-You are one of several parallel contributors to a private Indus research repository at `C:\Users\sandh\OneDrive\Projects\indus_valley_script` (the repository root below). Today is 6 October 2026. A coordinating agent planned this work; a separate reviewer will check your outputs, rerun your scripts and sample your sources.
+You are one of several parallel contributors to a private Indus research repository at `C:\Users\sandh\OneDrive\Projects\indus_valley_script` (the repository root below). Today is 7 October 2026 (the program began on 6 October). A coordinating agent planned this work; a separate reviewer will check your outputs, rerun your scripts and sample your sources.
 
 ## Before you start
 
