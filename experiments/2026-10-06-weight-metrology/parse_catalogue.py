@@ -30,7 +30,7 @@ SITES = ['Susa (Arjan)', 'Susa', 'Choga Zanbil/Dûr-Untaš', 'Djaffarabad',
          'Tell Ingharra/Kish', 'Tell el-Mukayyar/Ur', 'Jiroft valley',
          'Konar Sandal South', 'Tepe Yahya', 'Shahr-i Sokhta', 'Mindasht',
          'Rakhigarhi', 'Farmana', 'Kuntasi', 'Nageshwar', 'Nagwada',
-         'Shikarpur', 'Bagasra', 'Dholavira']
+         'Shikarpur', 'Bagasra', 'Dholavira', 'Tell Ingharra /Kish', 'Baluchistan', 'Unknown']
 SITE_RE = '|'.join(re.escape(s) for s in SITES)
 START = re.compile(r'(?m)^(\d{1,4})\.?[^\S\n]+(' + SITE_RE + r')(?=[. \n-])')
 SHAPE_RE = (r'(?:Fragmented |Irregular |Truncated |fragmented )?'
@@ -46,7 +46,8 @@ MATERIALS = ['banded chert', 'fluvial limestone', 'black stone', 'white stone', 
              'vesuvianite', 'hematite', 'terracotta', 'diorite', 'basalt', 'calcite',
              'alabaster', 'chlorite', 'granite', 'gabbro', 'jasper', 'marble', 'olivine',
              'silver', 'bronze', 'copper', 'bitumen', 'quartz', 'agate', 'chert', 'shell',
-             'stone', 'clay', 'faience', 'lead', 'iron', 'bone']
+             'stone', 'clay', 'faience', 'lead', 'iron', 'bone', 'emestite', 'gypsum',
+             'schist', 'siltstone', 'waagenophyllum', 'gate']
 
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -97,14 +98,14 @@ def parse():
     starts = list(START.finditer(full))
     rows = []
     for j, match in enumerate(starts):
-        cat = int(match[1]); site = match[2]
+        cat = int(match[1]); site_literal = match[2]; site = site_literal.replace(' /', '/')
         end = starts[j + 1].start() if j + 1 < len(starts) else len(full)
         literal = full[match.start():end]
         # Any following numbered section is analytical prose, not entry content.
         literal = re.split(r'(?m)^[456]\.\d+(?:\.\d+)*\.', literal, maxsplit=1)[0].strip()
         finish = match.start() + len(literal)
         entry = normalise(literal)
-        head = re.match(r'\d+\.?\s+' + re.escape(site) + r'\.?\s*(?:-\s*)?', entry)
+        head = re.match(r'\d+\.?\s+' + re.escape(site_literal) + r'\.?\s*(?:-\s*)?', entry)
         body = entry[head.end():]
         delim = re.search(r'\s*-\s*' + SHAPE_RE, body, re.I)
         if not delim:
@@ -129,23 +130,28 @@ def parse():
         dimensions_text = (measure_tail[:mass.start()] if mass else measure_tail.split(' - ')[0]).strip(' ,')
         dimensions = [{'axis': m[1], 'value_cm': float(m[2])} for m in
                       re.finditer(r'\b(L|H|D|W|Th|T)\.\s*(\d+(?:\.\d+)?)\s*cm', dimensions_text)]
-        mat = re.search(r'(?i)\b(' + '|'.join(re.escape(m) for m in MATERIALS) + r')\.?$', description)
-        material = mat[1].lower() if mat else description.split(',')[-1].strip(' .').lower()
-        without_mat = description[:mat.start()].strip(' ,') if mat else ','.join(description.split(',')[:-1])
+        mat = re.search(r'(?i)\b(' + '|'.join(re.escape(m) for m in MATERIALS) + r')(?:\s*\([^)]*\))?\.?$', description)
+        if not mat:
+            mat = re.search(r'(?i)(?<=, )(' + '|'.join(re.escape(m) for m in MATERIALS) + r')(?:\s*\([^)]*\))?(?=[,.]|$)', description)
+        material = mat[0].strip(' .').lower() if mat else None
+        without_mat = (description[:mat.start()] + description[mat.end():]).strip(' ,') if mat else description
         shape_literal = without_mat.split(',')[0].strip()
+        malformed_shape = re.search(r'\s+(good|perfect|worn)$', shape_literal, re.I)
+        if malformed_shape:
+            shape_literal = shape_literal[:malformed_shape.start()]
         shape = re.sub(r'(?i)^fragmented\s+', '', shape_literal)
         shape = shape[0].upper() + shape[1:] if shape else shape
         condition = ','.join(without_mat.split(',')[1:]).strip()
+        if malformed_shape:
+            condition = malformed_shape[1] + (', ' + condition if condition else '')
         tail = (measure_tail[mass.end():] if mass else ' - '.join(measure_tail.split(' - ')[1:])).strip(' .-')
-        period_match = re.search(r'(?:Period\s+[IVX]+(?:-[IVX]+)?|(?:Early|Mature|Late) Harappan|'
-                                 r'Neo-Sumerian|Ur III|Old.Elamite|Middle Elamite|Early ICS|Proto.ICS|'
-                                 r'Yahya\s+[IVX]+|Shahr-i Sokhta\s+[IVX]+)[^-]*', tail)
-        period_literal = re.match(r'(?:[^-]|-(?=\d|[IVX]|C))*', tail)[0].strip() if period_match else None
+        period_literal = tail.split(' - ')[0].strip() if re.search(r'\bBC\b|\bPeriod\b', tail) else None
         stage = re.search(r'\bPeriod\s+([IVX]+(?:-[IVX]+)?)\b', tail)
         dates = re.findall(r'\b(\d{3,4})\s*-\s*(\d{3,4}(?:/\d{3,4})?)\s*BC\b', tail)
         museums = re.findall(r'\bMus\.\s+([^;]+?)(?=\s+-\s+|$)', tail)
         museum_ids = re.findall(r'\(([^)]+)\)', ' '.join(museums))
         identifiers = re.findall(r'\b(?:DHR|AS|AO|Sb|SH|KM|RGR)[ .]*[\dA-Za-z./-]+', context + ' ' + ' '.join(museum_ids))
+        excavation_id_literal = context.split(',')[0] if context not in ('No context', 'Surface') else None
         area = re.search(r'\b(Middle Town|Lower Town|Castle|Bailey|Citadel|Acropolis)\b', context, re.I)
         level = re.search(r'\bLevel\s+([^,]+)', context, re.I)
         grids = re.findall(r'\b\d+(?:[xX/]\d+)+(?:[xX][A-Za-z0-9/+]+)?', context)
@@ -159,8 +165,9 @@ def parse():
         region = 'Greater Indus' if cat >= 1121 else ('Southern/Eastern Iran' if cat >= 888 else 'Susiana/Lower Mesopotamia')
         source_pages = pages[bisect.bisect_right(offsets, match.start()) - 1:
                              bisect.bisect_right(offsets, finish - 1)]
-        rows.append(dict(cat=cat, site=site, region=region, context_literal=context,
-                         identifiers=identifiers, museum_identifiers=museum_ids, museum_literal=museums,
+        rows.append(dict(cat=cat, site=site, site_literal=site_literal, region=region, context_literal=context,
+                         identifiers=identifiers, excavation_id_literal=excavation_id_literal,
+                         museum_identifiers=museum_ids, museum_literal=museums,
                          area=area[1].title() if area else None, level=level[1].strip() if level else None,
                          grids=grids, period_literal=period_literal, period_stage=stage[1] if stage else None,
                          date_ranges_bce=dates, shape_literal=shape_literal, shape=shape,
@@ -176,7 +183,7 @@ def parse():
     ids = [r['cat'] for r in rows]
     assert len(ids) == len(set(ids)) == 2058, (len(ids), [i for i in range(1, 2059) if i not in ids])
     assert set(ids) == set(range(1, 2059))
-    return doc, rows
+    return doc, sorted(rows, key=lambda r:r['cat'])
 
 def render_sample(doc, rows, out):
     sample = sorted(random.Random(20261006).sample(range(1, 2059), 60))
@@ -194,7 +201,7 @@ def render_sample(doc, rows, out):
                 if block['type'] != 0:
                     continue
                 txt = '\n'.join(''.join(s['text'] for s in line['spans']) for line in block['lines'])
-                if re.search(r'(?m)^' + str(cat) + r'\.?\s+' + re.escape(row['site']), txt):
+                if re.search(r'(?m)^' + str(cat) + r'\.?\s+' + re.escape(row['site_literal']), txt):
                     candidates.append((block['bbox'], txt))
             if candidates:
                 # A block can hold several entries. Find the target's individual lines.
@@ -206,9 +213,9 @@ def render_sample(doc, rows, out):
                         continue
                     for line in block['lines']:
                         txt = ''.join(s['text'] for s in line['spans'])
-                        if re.match(str(cat) + r'\.?\s+' + re.escape(row['site']), txt):
+                        if re.match(str(cat) + r'\.?\s+' + re.escape(row['site_literal']), txt):
                             active = True
-                        elif active and (START.match(txt) or re.match(r'[456]\.\d', txt)):
+                        elif active and (START.match(txt) or re.match(r'[456]\.\d+(?:\.\d+)+\.', txt)):
                             active = False
                             break
                         if active:
@@ -254,8 +261,8 @@ def render_sample(doc, rows, out):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--raw-output', default='data/raw/2026-10-06-weight-metrology/extraction-v1')
-    ap.add_argument('--summary-output', default='experiments/2026-10-06-weight-metrology/extraction-v1.json')
+    ap.add_argument('--raw-output', default='data/raw/2026-10-06-weight-metrology/extraction-rerun')
+    ap.add_argument('--summary-output', default='experiments/2026-10-06-weight-metrology/extraction-rerun.json')
     ap.add_argument('--render-sample', action='store_true')
     args = ap.parse_args()
     out = ROOT / args.raw_output; summary = ROOT / args.summary_output
@@ -279,7 +286,7 @@ def main():
                         'rows_sha256': sha(out / 'catalogue-rows.json'), 'row_count': len(rows),
                         'id_min': 1, 'id_max': 2058, 'ids_complete_unique': True,
                         'indus_site_counts_match_prior_audit': True, 'site_counts': sites,
-                        'material_counts': dict(Counter(r['material'] for r in rows)),
+                        'material_counts': dict(Counter(r['material'] or 'unprovided' for r in rows)),
                         'shape_counts': dict(Counter(r['shape'] for r in rows)),
                         'entry_unit_attribution_n': sum(bool(r['entry_unit_attribution']) for r in rows),
                         'raw_rows_path': (out / 'catalogue-rows.json').relative_to(ROOT).as_posix()})

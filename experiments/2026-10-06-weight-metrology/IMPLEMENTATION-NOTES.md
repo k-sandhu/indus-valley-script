@@ -1,0 +1,7 @@
+# Endpoint annotation, 7 October 2026
+
+The likelihood fits and catalogue selections follow the protocol and its pre-fit clarification. While preparing the report, comparison of the Monte Carlo code with the protocol exposed a seed deviation. The protocol names seed 20261007. The implementation uses 20261007 plus the sorted site index, and 20261099 for the additional Dholavira all-class quantogram. Each output records its actual seed. This changes the realized synthetic reference samples. The all-class quantogram was also an additional diagnostic beyond the specified certain-object/site quantograms.
+
+Preserve the completed endpoint and its hashes. Treat the Monte Carlo comparisons using successive seeds, and the additional all-class quantogram, as Exploratory. Bagasra uses the specified seed. This annotation does not change any numerical output or fitted unit. A reviewer can run a separately dated common-seed control if the Monte Carlo conclusions will support a formal claim. The observed cosine scores were independently checked; the envelopes have not been independently regenerated in this package.
+
+The Gulf supplement has its own post-endpoint amendment and Exploratory status. Its source-derived 50-fold level must remain distinct from the main declared Indus list. Two serialization failures left incomplete local score witnesses before the successful supplement; they are recorded in the retrospective.

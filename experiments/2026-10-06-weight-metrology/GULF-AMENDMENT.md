@@ -1,0 +1,9 @@
+# Gulf supplement, 7 October 2026
+
+Status: Exploratory. Written after the catalogue endpoint and before calculating the supplemental residuals. The source search found T. G. Bibby's *Efter Dilmun norm* (1970), whose seven Qala'at al-Bahrain weights can support a bounded comparison. The seven published masses have been seen; their residuals have not yet been calculated. Preserve `runs/2026-10-06-main/` and its protocol hash.
+
+Transcribe all seven weights in the article's English summary, printed p. 350 (PDF p. 11), into the local raw directory. Check that page by eye against the publisher's summary. Keep the source's excavation identifiers and rounded masses. The selection is the author's seven identified weights, not every stone from the excavation.
+
+Calculate nearest absolute log residuals and relative mass errors against: (a) the main declared Indus list at canonical 13.65 g, (b) the same list at the frozen Dholavira unit, (c) a Gulf list [1/8, 1, 2, 12.5, 50, 100] at 13.5 g, (d) that Gulf list at 13.65 g, and (e) the three main Near Eastern lists at fixed 7.8, 8.4 and 9.4 g. The Gulf list translates Bibby's ratios [1, 8, 16, 8, 100, 400, 800] to the conventional eight-fold unit. Its 50-fold level is absent from the main Indus list. This is a source-led support sensitivity, with all four Indus/Gulf references reported.
+
+Report counts within 2%, 3% and 5%, median and maximum errors, and which objects have smaller residuals than all three western references. Do not estimate a unit, likelihood, quantogram or binomial population interval from seven selected rounded masses. A negative result is few close fits or dependence on the added 50-fold level or chosen reference unit. Similar fits to 13.5 and 13.65 g leave the origin of individual objects unresolved. This supplement adds an arithmetic check to an established published Gulf comparison.

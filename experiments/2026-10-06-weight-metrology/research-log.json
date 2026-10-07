@@ -1,0 +1,152 @@
+{
+  "date": "2026-10-07",
+  "scope": "Externally observable search and recovery outcomes; no account creation, contacts or access circumvention.",
+  "witnesses_directory": "data/raw/2026-10-06-weight-metrology/searches",
+  "witness_format": "Earlier files contain exported response strings. Later files also contain request objects. Original query strings were not retained in every early export.",
+  "searches_without_requested_full_text": [
+    {
+      "target": "Hemmy 1937 Harappa/Mohenjo-daro study",
+      "outcome": "No matching 1937 Indus study identified; opened book bibliography identifies the 1937 Egyptian paper and relevant 1931/1938 Indus chapters.",
+      "witness": "search-09.json"
+    },
+    {
+      "target": "Mainkar 1984 original chapter",
+      "outcome": "Bibliography and mediated discussion found; original chapter unavailable.",
+      "witnesses": [
+        "search-08.json",
+        "search-09.json",
+        "open-08.json"
+      ]
+    },
+    {
+      "target": "Miller 2013 original chapter",
+      "outcome": "Author bibliography found; linked page yields metadata only.",
+      "witnesses": [
+        "open-03.json",
+        "open-07.json",
+        "search-08.json",
+        "search-09.json"
+      ]
+    },
+    {
+      "target": "Højlund 1994 Stone weights",
+      "outcome": "Exact chapter reference located in Laursen 2016, chapter unavailable.",
+      "witnesses": [
+        "search-08.json",
+        "open-06.json"
+      ]
+    },
+    {
+      "target": "Ascalone/Peyronel 1999/2003 original texts",
+      "outcome": "Exact book bibliography and institutional 1999 metadata found; original texts unavailable.",
+      "witnesses": [
+        "search-07.json",
+        "open-05.json"
+      ]
+    },
+    {
+      "target": "Rahmstorf 2020 full chapter",
+      "outcome": "Author abstract and figure excerpts found; full PDF unavailable.",
+      "witnesses": [
+        "open-04.json",
+        "open-07.json",
+        "open-08.json"
+      ]
+    },
+    {
+      "target": "Petruso 1992 full monograph",
+      "outcome": "Contents/bibliography and methodological citations found; full monograph unavailable.",
+      "witnesses": [
+        "search-09.json",
+        "open-09.json"
+      ]
+    }
+  ],
+  "failed_opens_or_downloads": [
+    {
+      "url": "https://air.unimi.it/retrieve/dfa8b99b-500b-748b-e053-3a05fe0a3a96/1-s2.0-S0305440318300025-main.pdf",
+      "error": "web internal error",
+      "remedy": "IULM PDF successfully downloaded",
+      "witness": "open-01.json"
+    },
+    {
+      "url": "https://www.uni-goettingen.de/en/weight+metrology+in+the+harappan+civilization/625636.html",
+      "error": "web internal error on a guessed URL",
+      "remedy": "Opened author profile and linked paper excerpts; guessed URL supplies no evidence",
+      "witness": "open-02.json"
+    },
+    {
+      "url": "https://www.harappa.com/sites/default/files/pdf/Laursen-2016-Arabian_Archaeology_and_Epigraphy.pdf",
+      "error": "ordinary Python download HTTP 403",
+      "remedy": "Full PDF text accessible via web tool; no downloaded local PDF",
+      "witness": "data/raw/2026-10-06-weight-metrology/literature/acquisition.json"
+    },
+    {
+      "url": "https://archaeologydataservice.ac.uk/catalogue/adsdata/arch-456-2/dissemination/pdf/dilmun_temple_at_saar.pdf",
+      "error": "web internal error; subsequent weights find unavailable",
+      "remedy": "No claims drawn from this inaccessible source",
+      "witnesses": [
+        "open-05.json",
+        "open-06.json"
+      ]
+    },
+    {
+      "url": "https://www.petrieproject.com/book/ancient-egypt-and-the-east-1935-vol-23-part-i-ii",
+      "error": "linked PDF download returned web internal error",
+      "remedy": "Digitized primary transcript opened; OCR limitations retained",
+      "witness": "open-10.json"
+    }
+  ],
+  "unsuccessful_text_finds": [
+    {
+      "source": "Ialongo/Vacca/Peyronel 2018 web PDF",
+      "terms": [
+        "Monte Carlo",
+        "frequency"
+      ],
+      "witness": "open-04.json",
+      "remedy": "Downloaded text inspected directly"
+    },
+    {
+      "source": "Ialongo/Lago 2021 web PDF",
+      "terms": [
+        "15%"
+      ],
+      "witness": "open-04.json",
+      "remedy": "Downloaded text inspected directly"
+    },
+    {
+      "source": "Kenoyer 2010 web PDF",
+      "terms": [
+        "13.65"
+      ],
+      "witness": "open-08.json",
+      "remedy": "Read actual weight discussion and its approximately 13.7 g notation"
+    },
+    {
+      "source": "Rahmstorf linked metadata/figure page",
+      "terms": [
+        "13.6"
+      ],
+      "witness": "open-08.json",
+      "remedy": "Read accessible figure excerpts, including its 13.68 g statement"
+    },
+    {
+      "source": "Hemmy 1935 OCR transcript",
+      "terms": [
+        "13-52"
+      ],
+      "witness": "open-10.json",
+      "remedy": "No numerical estimate adopted from this failed find"
+    }
+  ],
+  "computational_failures": [
+    "Two early parser framing attempts stopped before full extraction; version directories preserved.",
+    "Five period-field errors and seven clipped crops repaired before fitting.",
+    "Initial analysis stopped before fitting on the source's reordered Kish catalogue IDs.",
+    "Initial verifier tuple/list comparison failed; canonical JSON equality passed for all rows.",
+    "Gulf supplement path-hash and NumPy integer serialization failures left preserved local partial-run score witnesses.",
+    "Matplotlib absent; optional plotted figure omitted, with tabular comparisons retained."
+  ],
+  "seed_deviation_annotation": "experiments/2026-10-06-weight-metrology/IMPLEMENTATION-NOTES.md"
+}

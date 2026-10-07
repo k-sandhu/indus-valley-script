@@ -1,0 +1,7 @@
+# Follow-up for a site-census batch from the coordinator
+
+The coordinator has switched this session to GPT-6.1-Sol to complete the batch. The first pass stopped well short of the checklist in your prompt: too few searches per site, missing coordinates, campaign histories, CISI page ranges and class-by-class counts, and object metadata left unverified. Some files also contain damaged characters where an en dash or accented letter became a replacement character; write every file as UTF-8 and repair the damaged text.
+
+Keep the first pass's files as a record: copy them into a `first-pass/` subdirectory before editing, then complete the checklist for every site in the batch. For each site, run at least three distinct searches, open at least one primary or substantial secondary source, and fill each field with a sourced value or with the searches that failed. Use the CISI volumes, Mahadevan 1977 and the site's excavation reports for counts, recording each count's unit and page. Use *Indian Archaeology – A Review* or *Pakistan Archaeology* for seasons after CISI coverage. Record coordinates from a gazetteer or the excavation report.
+
+Update `site-rows.json`, `site-rows.csv`, `sources.json`, `searches.json`, `REPORT.md`, `README.md`, `RETROSPECTIVE.md` and `registry-entry.json`, and add a dated amendment to `PROTOCOL.md`. Report the batch totals with their bases: sites, sites with a final report, sites with post-CISI inscribed finds, published counts against local counts, and the fields most often missing. Finish every site before stopping.
