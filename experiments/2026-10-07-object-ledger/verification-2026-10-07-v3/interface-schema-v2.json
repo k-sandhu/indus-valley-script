@@ -1,0 +1,235 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Helsinki 1979 digitization and object concordance interface",
+  "$defs": {
+    "digitized_row": {
+      "type": "object",
+      "required": [
+        "edition_id",
+        "text_number",
+        "inventory",
+        "inventory_version",
+        "source_page",
+        "glyph_tokens",
+        "auxiliary_markers",
+        "order",
+        "boundary_status",
+        "rights",
+        "digitization_version",
+        "review_status",
+        "segment_id"
+      ],
+      "properties": {
+        "edition_id": {
+          "const": "Koskenniemi-Parpola-1979"
+        },
+        "text_number": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^\\d+[A-Za-z]*$"
+            },
+            {
+              "type": "integer",
+              "minimum": 1
+            }
+          ]
+        },
+        "segment_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "inventory": {
+          "type": "string",
+          "minLength": 1
+        },
+        "inventory_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_page": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "glyph_tokens": {
+          "type": "array"
+        },
+        "auxiliary_markers": {
+          "type": "array"
+        },
+        "order": {
+          "type": "string",
+          "minLength": 1
+        },
+        "boundary_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "digitization_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "review_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rights": {
+          "type": "object",
+          "required": [
+            "license",
+            "source_url",
+            "attribution",
+            "modifications"
+          ],
+          "properties": {
+            "license": {
+              "const": "CC-BY-4.0"
+            },
+            "source_url": {
+              "const": "http://hdl.handle.net/10138/342677"
+            },
+            "attribution": {
+              "type": "string",
+              "minLength": 1
+            },
+            "modifications": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "crosswalk_row": {
+      "type": "object",
+      "required": [
+        "edition_id",
+        "text_number",
+        "concordance_source",
+        "concordance_page",
+        "source_access",
+        "target_identifier",
+        "surface_review_status",
+        "relation",
+        "status",
+        "review_status",
+        "segment_id"
+      ],
+      "properties": {
+        "edition_id": {
+          "const": "Koskenniemi-Parpola-1979"
+        },
+        "text_number": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^\\d+[A-Za-z]*$"
+            },
+            {
+              "type": "integer",
+              "minimum": 1
+            }
+          ]
+        },
+        "segment_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "concordance_source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "concordance_page": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_access": {
+          "const": "opened_primary_concordance"
+        },
+        "target_identifier": {
+          "type": "object",
+          "required": [
+            "scheme",
+            "value"
+          ],
+          "properties": {
+            "scheme": {
+              "type": "string",
+              "minLength": 1
+            },
+            "value": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "surface_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "surface_review_status": {
+          "const": "reviewed_source_surface_alignment"
+        },
+        "relation": {
+          "const": "same_physical_object"
+        },
+        "status": {
+          "const": "confirmed"
+        },
+        "review_status": {
+          "const": "reviewed_object_identity"
+        },
+        "create_surface": {
+          "type": "boolean"
+        },
+        "source_surface_label": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "create_surface": {
+                "const": true
+              }
+            },
+            "required": [
+              "create_surface"
+            ]
+          },
+          "then": {
+            "required": [
+              "source_surface_label"
+            ]
+          },
+          "else": {
+            "required": [
+              "surface_id"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "required": [
+    "digitized_rows",
+    "crosswalk_rows"
+  ],
+  "properties": {
+    "digitized_rows": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/digitized_row"
+      }
+    },
+    "crosswalk_rows": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/crosswalk_row"
+      }
+    }
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "status": "Verified computation",
+  "reviewer_script_sha256": "d6889b967404923c026c0052d76e77bb83a2f6700c00d45a70d243e4fba8b1aa",
+  "baseline_errors": [],
+  "caught": 26,
+  "total": 26,
+  "results": {
+    "R1_context_points_to_missing_object": {
+      "category": "referential",
+      "description": "context.object_id set to an identifier that is not in objects",
+      "caught": true,
+      "new_errors": [
+        "C-OL-0045: broken reference to objects/OL-9999",
+        "C-OL-0045: cell assertion belongs to another object",
+        "Contexts must cover each object exactly once"
+      ],
+      "new_error_count": 3
+    },
+    "R2_identifier_points_to_missing_assertion": {
+      "category": "referential",
+      "description": "identifier.assertion_id set to a nonexistent assertion",
+      "caught": true,
+      "new_errors": [
+        "I-00001: assertion points to another object",
+        "I-00001: broken reference to assertions/A-999999",
+        "I-00001: row value/unit differs from assertion"
+      ],
+      "new_error_count": 3
+    },
+    "R3_cell_cites_missing_assertion": {
+      "category": "referential",
+      "description": "object cell lists a nonexistent assertion id",
+      "caught": true,
+      "new_errors": [
+        "$.objects[0].fields.catalogue_identifier: broken reference to assertions/A-999999",
+        "$.objects[0].fields.catalogue_identifier: chosen value absent from referenced assertions",
+        "OL-0001: cell assertion belongs to another object"
+      ],
+      "new_error_count": 3
+    },
+    "R4_transcription_points_to_surface_of_other_object": {
+      "category": "referential",
+      "description": "transcription.surface_id belongs to a different object",
+      "caught": true,
+      "new_errors": [
+        "T-00001: surface belongs to another object"
+      ],
+      "new_error_count": 1
+    },
+    "R5_relationship_points_to_missing_source": {
+      "category": "referential",
+      "description": "relationship.source_id is not in sources",
+      "caught": true,
+      "new_errors": [
+        "J-00001: broken reference to sources/no-such-source"
+      ],
+      "new_error_count": 1
+    },
+    "R6_measurement_row_disagrees_with_its_assertion": {
+      "category": "referential",
+      "description": "measurements.value changed to 99.0 while its assertion still says 12.5",
+      "caught": true,
+      "new_errors": [
+        "M-00001: row value/unit differs from assertion"
+      ],
+      "new_error_count": 1
+    },
+    "R7_identifier_value_disagrees_with_its_assertion": {
+      "category": "referential",
+      "description": "identifiers.value changed while its assertion keeps the original value",
+      "caught": true,
+      "new_errors": [
+        "I-00001: row value/unit differs from assertion"
+      ],
+      "new_error_count": 1
+    },
+    "R8_two_contexts_for_one_object_none_for_another": {
+      "category": "referential",
+      "description": "second context re-pointed to the first object; counts stay at the expected totals",
+      "caught": true,
+      "new_errors": [
+        "A-000024: HARP conversion lacks Harappa label-table provenance",
+        "A-000046: HARP conversion lacks Harappa label-table provenance",
+        "A-000068: HARP conversion lacks Harappa label-table provenance"
+      ],
+      "new_error_count": 6
+    },
+    "R9_locator_record_does_not_exist_in_source_file": {
+      "category": "referential",
+      "description": "assertion.locator.record names a record that is not in the cited file; the file path exists",
+      "caught": true,
+      "new_errors": [
+        "A-002583: locator record absent from source"
+      ],
+      "new_error_count": 1
+    },
+    "R10_locator_file_missing": {
+      "category": "referential",
+      "description": "assertion.locator.path names a file that does not exist",
+      "caught": true,
+      "new_errors": [
+        "A-002583: locator record absent from source",
+        "A-002583: source file does not exist data/normalized/not-a-file.jsonl"
+      ],
+      "new_error_count": 2
+    },
+    "R11_relationship_confirmed_without_assertion_support": {
+      "category": "referential",
+      "description": "candidate relationship relabelled confirmed while its assertion keeps candidate confidence",
+      "caught": true,
+      "new_errors": [
+        "J-00001: confirmed relationship backed by candidate assertion"
+      ],
+      "new_error_count": 1
+    },
+    "U1_unit_not_in_enum": {
+      "category": "unit",
+      "description": "measurements.unit set to m",
+      "caught": true,
+      "new_errors": [
+        "$.measurements[0].unit: 'm' is not one of ['mm', 'cm', 'g', 'kg']",
+        "M-00001: dimension requires length unit",
+        "M-00001: invalid measurement"
+      ],
+      "new_error_count": 5
+    },
+    "U2_negative_value": {
+      "category": "unit",
+      "description": "measurements.value set to -1",
+      "caught": true,
+      "new_errors": [
+        "$.measurements[0].value: -1 is less than or equal to the minimum of 0",
+        "M-00001: invalid measurement",
+        "M-00001: nonpositive or nonfinite measurement"
+      ],
+      "new_error_count": 4
+    },
+    "U3_mass_unit_on_length_dimension": {
+      "category": "unit",
+      "description": "horizontal dimension recorded in g",
+      "caught": true,
+      "new_errors": [
+        "M-00001: dimension requires length unit",
+        "M-00001: length requires mm or cm",
+        "M-00001: row value/unit differs from assertion"
+      ],
+      "new_error_count": 3
+    },
+    "U4_unit_changed_mm_to_cm_row_only": {
+      "category": "unit",
+      "description": "measurement row says cm for a value that its assertion gives in mm",
+      "caught": true,
+      "new_errors": [
+        "M-00001: row value/unit differs from assertion"
+      ],
+      "new_error_count": 1
+    },
+    "U5_inches_inside_accepted_cell_and_assertion": {
+      "category": "unit",
+      "description": "object measurement cell and its assertion both carry unit inch (the measurements table is untouched)",
+      "caught": true,
+      "new_errors": [
+        "A-000013: length requires mm or cm",
+        "M-00001: row value/unit differs from assertion",
+        "OL-0001.measurement: length requires mm or cm"
+      ],
+      "new_error_count": 3
+    },
+    "U6_implausible_magnitude_12_5_metres": {
+      "category": "unit",
+      "description": "a seal width of 12500 mm (12.5 m) in the measurement row and assertion",
+      "caught": true,
+      "new_errors": [
+        "A-000013: length exceeds pilot plausibility bound 1000 mm",
+        "M-00001: length exceeds pilot plausibility bound 1000 mm",
+        "OL-0001.measurement: length exceeds pilot plausibility bound 1000 mm"
+      ],
+      "new_error_count": 3
+    },
+    "U7_nan_value": {
+      "category": "unit",
+      "description": "measurement value NaN",
+      "caught": true,
+      "new_errors": [
+        "M-00001: invalid measurement",
+        "M-00001: nonpositive or nonfinite measurement",
+        "M-00001: row value/unit differs from assertion"
+      ],
+      "new_error_count": 3
+    },
+    "I1_reversed_interval": {
+      "category": "interval",
+      "description": "bce_oldest younger than bce_youngest",
+      "caught": true,
+      "new_errors": [
+        "A-000024: reversed/nonpositive BCE interval"
+      ],
+      "new_error_count": 1
+    },
+    "I2_string_endpoints": {
+      "category": "interval",
+      "description": "endpoints given as strings",
+      "caught": true,
+      "new_errors": [
+        "A-000024: reversed/nonpositive BCE interval"
+      ],
+      "new_error_count": 1
+    },
+    "I3_zero_endpoint": {
+      "category": "interval",
+      "description": "bce_youngest set to 0",
+      "caught": true,
+      "new_errors": [
+        "A-000024: date outside pilot plausibility range 4000-1000 BCE",
+        "A-000024: reversed/nonpositive BCE interval",
+        "OL-0001: accepted interval exceeds period-label range"
+      ],
+      "new_error_count": 3
+    },
+    "I4_extra_key": {
+      "category": "interval",
+      "description": "interval carries an additional ce key",
+      "caught": true,
+      "new_errors": [
+        "A-000024: date outside pilot plausibility range 4000-1000 BCE",
+        "A-000024: malformed BCE interval",
+        "OL-0001: accepted interval exceeds period-label range"
+      ],
+      "new_error_count": 3
+    },
+    "I5_interval_inconsistent_with_period_label": {
+      "category": "interval",
+      "description": "object labelled late Period 3B receives the Period 3A interval 2600-2450",
+      "caught": true,
+      "new_errors": [
+        "OL-0001: accepted interval exceeds period-label range"
+      ],
+      "new_error_count": 1
+    },
+    "I6_implausible_interval": {
+      "category": "interval",
+      "description": "interval 50000-40000 BCE for a Harappa tablet",
+      "caught": true,
+      "new_errors": [
+        "A-000024: date outside pilot plausibility range 4000-1000 BCE",
+        "OL-0001: accepted interval exceeds period-label range"
+      ],
+      "new_error_count": 2
+    },
+    "I7_interval_attributed_to_wrong_source": {
+      "category": "interval",
+      "description": "museum range assertion re-sourced to the HARP table without a matching table row",
+      "caught": true,
+      "new_errors": [
+        "A-002613: HARP conversion lacks Harappa label-table provenance"
+      ],
+      "new_error_count": 1
+    },
+    "I8_calendar_interval_on_nonharappa_object_from_harp_mapping": {
+      "category": "interval",
+      "description": "HARP-method assertion attached to a Mohenjo-daro object",
+      "caught": true,
+      "new_errors": [
+        "A-002613: HARP conversion lacks Harappa label-table provenance"
+      ],
+      "new_error_count": 1
+    }
+  }
+}
