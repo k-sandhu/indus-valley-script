@@ -1,129 +1,200 @@
-﻿"""Build the site census aggregates from local-site-coverage.json and curated notes."""
+"""Rebuild the census from curated observations and preserved live-search witnesses.
+
+Run from the repository root. Does not search, mutate archives, or download.
+All source payloads stay in the paired ignored raw directory.
+"""
 from pathlib import Path
-import csv, json
+import csv
+import hashlib
+import json
+import re
+from collections import Counter
+from urllib.parse import urlsplit
+from evidence_catalog import ROWS, SOURCES, COORDS, COORD_OVERRIDES, CATALOGUE1, MAHA_COUNTS, ICIT_SIGNS, ref
 
-OUT = Path('experiments/2026-10-06-evidence-census/sites-deep/b-gujarat-kutch-maharashtra')
-COVERAGE = Path('experiments/2026-10-06-research-program/local-site-coverage.json')
-local_rows = json.loads(COVERAGE.read_text(encoding='utf-8-sig'))['sites']
-local = {r['site'].casefold(): r for r in local_rows}
+OWN=Path(__file__).resolve().parent
+ROOT=OWN.parents[3]
+RAW=ROOT/'data/raw/2026-10-06-evidence-census/sites-deep/b-gujarat-kutch-maharashtra'
+LOCAL_PATH=ROOT/'experiments/2026-10-06-research-program/local-site-coverage.json'
+LOCAL=json.loads(LOCAL_PATH.read_text(encoding='utf-8'))['sites']
+DATE='2026-10-07'
+CLASSES=['seals','sealings','tablets','pottery_graffiti','metal_objects','other_objects']
+ALIASES={'Desalpar':'Desalpur','Rojdi':'Rodji'}
 
-# Fields: site, state, aliases, coords, campaigns, reports, count, local classes, holding.
-DATA = [
-['Lothal','Gujarat','Saragwala; Lothal','22.52,72.25','ASI 1955-60/62, directed by S. R. Rao; reports describe a seven-year campaign.','LOTHAL1;LOTHAL2;LOTHAL2005','Mahadevan 1977 is commonly cited as 165 inscribed objects; Frenez & Tosi (2005) describe about 100 terracotta sealings; the 2023 ICIT-based summary reports about 90. Earlier source audit counted 133 impressions in a figure table against prose total 130. These units and versions differ; no sum is justified.','SEAL 94; TAG 91; POT 18; TAB 3; MISC 2','Object-level present holdings not resolved; source frame names ASI collections and site materials.'],
-['Dholavira','Gujarat','Kotada Timba; Dholavira','23.8889,70.2167','ASI, R. S. Bisht; field seasons 1989-90 to 2004-05, 13 seasons.','DHOLAVIRA2015','No total count by object class extracted. At least one monumental gypsum-inlay signboard of ten signs and inscribed seals are reported.','SEAL 136; TAG 76; TAB 20; MISC 4; POT 2','ASI excavation finds; individual current custody not audited.'],
-['Surkotada','Gujarat','Surkotada; Sktd','23.628,70.841','ASI excavation in 1971-72, led by J. P. Joshi.','SURKOTADA1990','Mahadevan 1977 site total is commonly cited as five inscribed objects; unit definitions not checked against the original count table. Local export has six Sktd IDs through Sktd-6.','SEAL 2; POT 4','ASI report and collection; individual present repository not traced.'],
-['Kanmer','Gujarat','Bakar Kot; Kanmer','23.4178,70.8633','Joint seasons 2005-06 to 2009-10: Institute of Rajasthan Studies/Rajasthan Vidyapeeth, Gujarat State Department of Archaeology, and RIHN Kyoto.','KANMER2012;KANMER2010','Agrawal et al. 2010 reports three clay sealings with central holes. Later excavation summaries mention inscribed pottery and seals, but no total was extracted. No CISI prefix appears in the local export.','POT 3; IMPL 5; TAG 1; SEAL 1','NMMA/locality custody not joined; project institutions require object-level check.'],
-['Shikarpur','Gujarat','Valmiyo Timbo; Valmiyo mound','23.2378,70.6775','Gujarat State Archaeology 1987-90 under M. H. Raval; MSU Baroda campaigns 2007-09 under K. K. Bhan and P. Ajithprasad.','SHIKARPUR2007;SHIKARPUR2009','Primary reports illustrate a pentagonal steatite tablet, a terracotta inscribed square tablet and multiple terracotta seal impressions; no full class total was extracted.','SEAL 1; POT 7','NMMA entries give UM-MSU registrations and trench contexts for sampled finds.'],
-['Gola Dhoro (Bagasra)','Gujarat','Golo Dhoro; Bagasra; Bagasara','23.0583,70.6194','MSU Baroda excavations began in 1996 and concluded 4 March 2005; authors include K. K. Bhan, V. H. Sonawane, P. Ajithprasad and S. Pratapchandran.','GOLADHORO2005','Antiquity 2005 p.4 reports six inscribed steatite seal objects; clay/terracotta seal impressions are also noted without a count.','SEAL 6','Current museum/collection holder is not given in the opened article.'],
-['Nageshwar','Gujarat','Nageswara; Nageshwar; Negeshwar','22.333,69.10','Survey by K. K. Bhan; excavation report based on M. S. University work in December 1984.','NAGESHWAR1984;NAGESHWAR1992','No Indus inscription count located in the inspected article/report descriptions; the site is principally a shell-working settlement.','No local row','Current holder of any inscribed object not identified.'],
-['Khirsara','Gujarat','Khirasara; Khirsara; Gadh Wali Wadi','23.45,69.05','ASI Excavation Branch V, Vadodara under Jitendra Nath, campaigns 2009/10-2012/13 (secondary summaries say 2010-13).','KHIRSARA2017','PLOS ONE 2017 depicts a bison seal and a seal bearing Harappan characters, but supplies no full site count. â€œInscribed Material from Khirsaraâ€ (2012) is cited later; exact count and pagination not recovered.','SEAL 4','PLOS ONE article states antiquities are stored at ASI Excavation Branch V, Vadodara.'],
-['Kuntasi','Gujarat','Bibi-ai-no Timbo; Kuntasi','22.9089,70.5917','Gujarat State Department of Archaeology and Deccan College, Pune, 1987-90; later government audit says excavation completed by 1989.','KUNTASI1996','No aggregate inscribed count located. IAR 1987-88 reports no Harappan seal by that season; later leads mention sealings/pendant, but the final monograph was not page-audited.','No local row','Not identified in the opened reports.'],
-['Rojdi','Gujarat','Rodji; Rojdi','21.8667,70.9167','Gujarat State Department of Archaeology, 1957-95; some seasons with Gregory L. Possehl/University of Pennsylvania.','CISI32','CISI 3.2 includes â€œSorath Harappanâ€ graffiti. Its preface states Sorath Harappans did not adopt Indus script, so inclusion of graffiti is not proof of Indus writing. Page range not checked.','POT 4','Object-level current holder not identified.'],
-['Desalpar','Gujarat','Desalpur; Desalpar-Gunthli; Gunthli','23.4667,69.1667','ASI excavation 1963-64; IAR 1963-64. Director/date details not recovered from the open report witness.','DESALPUR-IAR;CISI1','IAR 1963-64 pp.10-12 reports three script-bearing seals: one steatite, one copper, one terracotta. CISI1 IDs Dlp-1 to Dlp-3; Dlp-3 A cited at p.355.','SEAL 2; TAG 1','Current holding not identified; CISI is catalogue evidence only.'],
-['Juni Kuran','Gujarat','Juni Kuran; Kotdi-I','23.6913,68.9567','ASI report â€œExcavation at Juni Kuran: 2003-2004â€; campaign directors not extracted.','JUNIKURAN2004','No inscribed Indus object count found. Local one POT face has no CISI identifier, so its inscription status remains unverified.','POT 1','Not identified.'],
-['Kotada Bhadli','Gujarat','Kotada-Bhadli; Kotada Bhadali','23.3460,69.4260','Deccan College and Gujarat State Archaeology, three seasons 2010-13; leaders Prabodh Shirvalkar and Y. S. Rawat.','KOTADABHADLI2023','No inscribed Indus object identified in checked site sources; reports focus on settlement and materials.','No local row','No applicable object holding identified.'],
-['Navinal','Gujarat','Navinal','22.8215,69.5972','Surface exploration and later site studies; campaign years and directors not extracted.','NAVINAL2014','Checked publications concern copper artifacts and fish otoliths; no inscribed Indus object/count found.','No local row','No applicable holding identified.'],
-['Nagwada','Gujarat','Nagvada; Godh; Nagwada-I (Ghod)','23.3108,71.7166','M. S. University Baroda work 1985-90; IAR 1988-89 names K. T. M. Hegde and team; earlier Gujarat Department campaign leads also exist.','NAGWADA-IAR','No primary Indus text object/count confirmed in inspected annual reviews. A â€œNagwada seal impressionâ€ appeared only in interpretive search results, not a primary object record.','No local row','Not identified.'],
-['Bet Dwarka','Gujarat','Bet DvÄraka; Shankhodhara; Bet Dwarka Island','22.45,69.08','National Institute of Oceanography, Goa; marine exploration 1981-94 and 1980s offshore work, S. R. Rao and later A. S. Gaur/Sundaresh.','BETDWARKA1987','Rao 1987 pp.22-30 reports an Indus-type seal and inscribed jar; later summaries identify a late Indus seal and an inscribed votive jar. No aggregate class count.','No local row','NIO reports recovery; museum/accession not stated in the opened abstract.'],
-['Rangpur','Gujarat','Rangpur, Gujarat','22.4333,71.9167','ASI under S. R. Rao, 1953-56/57; final report published 1963.','RANGPUR1963','Excavation report and later studies describe inscribed pottery/graffiti; no reliable object total extracted.','No local row','Not identified.'],
-['Prabhas Patan','Gujarat','Prabhas Patan; Somnath; Prabhas','20.9000,70.4250','Somnath/Prabhas excavation began under B. K. Thapar in 1950-51; later Gujarat/Deccan College work requires campaign reconciliation.','PRABHAS-CISI','CISI1 preface records a single seal from Prabhas Patan. Do not conflate local pottery graffiti with a confirmed Indus-script object. Catalogue number/page not verified.','No local row','Not identified for the seal.'],
-['Pithad','Gujarat','Jaidak; Jaidak (Pithad)','22.6583,70.5786','Small excavation in 1992 and systematic surface survey reported for Jaidak/Pithad; authors/institution not extracted.','PITHAD2007','A Sorath Harappan settlement report was found, but no clearly reported Indus-script object/count. Inscription status remains unverified.','No local row','No relevant holding found.'],
-['Nuhato','Sindh','Nuhato','not located','2018 fieldwork led by Qasid Hussain Mallah under Sindh Culture, Tourism & Antiquities Department, as stated by journal issue page.','NUHATO2019','Named in user list but located in Sindh, outside this regional batch. Search found an excavation report but did not verify an inscribed Indus object.','SEAL 2; POT 3 (five Lower Indus rows)','Not identified.'],
-['Daimabad','Maharashtra','Daimabad','19.5300,74.7000','Excavations 1958-59 and 1976-79; final report S. A. Sali, ASI, 1986; earlier fieldwork by B. P. Bopardikar.','DAIMABAD1986','Sali report leads describe a group of five/six carefully incised signs on pottery; sources also report two terracotta button seals and four sherds in Harappan phase, plus one later seal in Jorwe layers. Classification/count basis needs report-page audit.','SEAL 1; POT 1','Not located in inspected source.'],
-['Pabumath','Gujarat','Pabumath; near Suvai','23.617,70.517','MSU Baroda excavation reported for 1980-81; director and exact season span not recovered.','PABUMATH-CISI','One CISI1 seal Pbm-1; secondary summaries describe a unicorn seal. Exact report page/count and other classes not recovered.','SEAL 1','Current repository not identified.'],
-['Juna Khatiya','Gujarat','Juna Khatiya; Juna Khatiya cemetery','23.6913,68.9567','Recent cemetery research including 2024 project reporting; directors and complete campaign list not extracted.','JUNIKHATIYA2024','No Indus-script object verified; local one POT face has no CISI identifier. Included as a regional local-corpus coverage lead, inscription status unresolved.','POT 1','Not located.'],
-['Padri','Gujarat','Padri; Kerala-ne-Dhoro','21.3397,72.1110','Gujarat/Deccan College excavations in 1990-91 and later seasons; the 1991-92 IAR names R. Koiso, Rukshana Nanji and Elizabeth Thomas for resumed work.','PADRI-IAR','Indian Archaeology 1991-92 reports one terracotta button-shaped seal with a fish pattern from a Harappan level. This is one seal object; additional inscription interpretation/count not established.','No local row','Current holding not identified.'],
-]
+def write(name,value):
+    (OWN/name).write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 
-SOURCES = [
-('CISI1','Corpus of Indus Seals and Inscriptions. Volume 1: Collections in India','Jagat Pati Joshi and Asko Parpola (eds.)',1987,'Memoirs of ASI 86; Suomalainen Tiedeakatemia','https://ignca.gov.in/Asi_data/76884.pdf','Reused from earlier census; prior source audit opened the scan. Rights for images unverified.'),
-('CISI32','Corpus of Indus Seals and Inscriptions 3.2: Shahr-i Sokhta; ...; Rojdi','Asko Parpola, B. M. Pande and Petteri Koskikallio (eds.)',2019,'Annales Academiae Scientiarum Fennicae Humaniora 383','https://researchportal.helsinki.fi/en/publications/corpus-of-indus-seals-and-inscriptions-32-shahr-i-sokhta-mundigak/','Official catalog record opened; book page range for Rojdi not checked.'),
-('ICIT2023','Interactive Corpus of Indus Texts: abstract 76','Andreas Fuls',2023,'CAA 2023 Book of Abstracts, p.281','https://2023.caaconference.org/wp-content/uploads/sites/29/2023/04/abstract_book_v13.pdf#page=281','Reused from earlier source audit; ICIT database not accessed.'),
-('MAHADEVAN1977','The Indus Script: Texts, Concordance and Tables','Iravatham Mahadevan',1977,'Memoirs of ASI 77','https://ignca.gov.in/Asi_data/','Search snippets and later counts found; original site table not page-audited.'),
-('LOTHAL1','Lothal: A Harappan Port Town (1955-62), Volume I','S. R. Rao',1979,'Memoirs of ASI 78','https://books.google.com/books?id=','Bibliographic entry reused; volume not opened in this run.'),
-('LOTHAL2','Lothal: A Harappan Port Town (1955-62), Volume II','S. R. Rao',1985,'Archaeological Survey of India','https://books.google.com/books?id=','Bibliographic entry reused; volume not opened in this run.'),
-('LOTHAL2005','The Lothal Sealings: Records from an Indus Civilization town at the eastern end of the maritime trade networks across the Arabian Sea','Dennys Frenez and Maurizio Tosi',2005,'Studi in Onore di Enrica Fiandra, pp.65-103','https://zenodo.org/records/5514283','Zenodo record opened; PDF linked. License not shown in inspected metadata.'),
-('DHOLAVIRA2015','Excavations at Dholavira (1989-90 to 2004-2005)','R. S. Bisht',2015,'Archaeological Survey of India','https://asi.nic.in/pdf/dholavira_excavation_report_cover.pdf','Official ASI cover opened; full report not page-audited.'),
-('SURKOTADA1990','Excavation at Surkotada and Exploration in Kutch','Jagat Pati Joshi',1990,'Memoirs of ASI 87','https://www.harappa.com/content/excavation-surkotada-and-exploration-kutch','Harappa bibliographic page opened; book text not audited.'),
-('KANMER2012','Excavation at Kanmer: 2005-06--2008-09','J. S. Kharakwal et al.',2012,'Kanmer Archaeological Research Project, Indo-Japanese collaboration','https://ci.nii.ac.jp/ncid/BB08748477','Bibliographic record opened; complete report not inspected.'),
-('KANMER2010','Clay sealings with central holes from Kanmer, Kachchh, Gujarat, India','D. P. Agrawal et al.',2010,'Article citation reused from earlier census','https://www.harappa.com/content/kanmer','Prior source frame reused; bibliographic identity/page not resolved.'),
-('SHIKARPUR2007','Excavations at Shikarpur 2007-2008: A Costal Port and Craft Production Center of the Indus Civilization in Kutch, India','Kuldeep Bhan and P. Ajithprasad',2008,'MSU Baroda project report hosted by Harappa.com','https://www.harappa.com/content/excavations-shikarpur-2007-2008-costal-port-and-craft-production-center-indus-civilization','Report page opened; embedded PDF public; rights unverified.'),
-('SHIKARPUR2009','Excavations at Shikarpur, Gujarat 2008-2009','K. K. Bhan, V. H. Sonawane, P. Ajithprasad and S. Pratapchandran',2009,'MSU Baroda project report','https://www.harappa.com/sites/default/files/pdf/Shikarpur-2008-2009.pdf','Primary report opened through search result; rights unverified.'),
-('GOLADHORO2005','A Harappan trading and craft production centre at Gola Dhoro (Bagasra)','K. K. Bhan, V. H. Sonawane, P. Ajithprasad and S. Pratapchandran',2005,'Antiquity 79(304), pp.1-5','https://www.cambridge.org/core/journals/antiquity-project-gallery/article/harappan-trading-and-craft-production-centre-at-gola-dhoro-bagasra/EE2B7B768D18EB58433F75066D1F61FB','Full article opened; Â© author/CUP notice, no open license shown.'),
-('NAGESHWAR1984','Nageshwar: A Mature Harappan Site on the Gulf of Kutch, Gujarat','K. K. Bhan and J. M. Kenoyer',1984,'Journal of the Oriental Institute, Baroda 34:67-80','https://www.harappa.com/sites/default/files/pdf/Kenoyer1984_Nageshwar%2C%20A%20Mature%20Harappan%20Shell%20Working%20Site%20.pdf','Full PDF opened; reuse rights unstated.'),
-('NAGESHWAR1992','Excavation at Nageshwar: A Shell Working Site on the Gulf of Kutch','K. T. M. Hegde, K. K. Bhan, V. H. Sonawane, K. Krishnan and D. R. Shah',1992,'M.S. University Archaeological Series 18','https://www.exoticindia.com/book/details/excavation-at-nageswar-gujrat-harappan-shell-working-site-on-gulf-of-kutch-uaq432/','Seller bibliographic description opened; volume not seen.'),
-('KHIRSARA2017','Altered cropping pattern and cultural continuation with declined prosperity following abrupt and extreme arid event at ~4,200 yrs BP: Evidence from an Indus archaeological site Khirsara, Gujarat, western India','S. Pokharia et al.',2017,'PLOS ONE 12(10):e0185684','https://doi.org/10.1371/journal.pone.0185684','Search result/article abstract opened; PMC full page blocked in tool. Article license CC BY; image-level exclusions still require checking.'),
-('KUNTASI1996','Kuntasi: A Harappan Emporium on the West Coast','M. K. Dhavalikar, M. R. Raval and Y. M. Chitalwala',1996,'Deccan College Post-Graduate and Research Institute','https://books.google.com/books?id=M3BuAAAAMAAJ','Google Books bibliographic record opened; full book not reviewed.'),
-('ROJDI-CISI32','CISI 3.2 Rojdi coverage','A. Parpola, B. M. Pande and P. Koskikallio (eds.)',2019,'CISI 3.2 Humaniora 383','https://orbi.uliege.be/bitstream/2268/333796/1/Desset%20F%202022%20in%20CISI%203.3%201763.pdf','Chapter witness describes Rojdi coverage and interpretive caveat; pages not extracted.'),
-('DESALPUR-IAR','Excavation at Desalpur (Gunthli), District Kutch','Archaeological Survey of India',1967,'Indian Archaeology 1963-64: A Review, pp.10-12','https://ignca.gov.in/Asi_data/','Search citations and snippets used; report not opened in this run.'),
-('JUNIKURAN2004','Excavation at Juni Kuran: 2003-2004','Archaeological Survey of India',2004,'Indian Archaeology / ASI report','https://ignca.gov.in/Asi_data/87942.pdf','Primary report result opened; exact printed pages not extracted.'),
-('KOTADABHADLI2023','Excavations at Kotada Bhadli, District Kachchh, Gujarat: A Preliminary Report','Prabodh Shirvalkar and Yadubirsingh Rawat',2023,'Puratattva 42, pp.182-201','https://www.researchgate.net/publication/372308696_Excavations_at_Kotada_Bhadli_District_Kachchh_Gujarat_A_Preliminary_Report','Search result metadata/full-text snippet; no final monograph located.'),
-('NAVINAL2014','Indications and Implications of Copper Artifacts from Navinal, A Harappan Site in Kachchh, Gujarat, Western India','P. Ajithprasad et al.',2014,'Journal article, issue/pages not extracted','https://www.researchgate.net/publication/271194145_Indications_and_Implications_of_Copper_Artifacts_from_Navinal_A_Harappan_Site_in_Kachchh_Gujarat_Western_India','Search result opened; full article not confirmed.'),
-('NAGWADA-IAR','Excavation at Nagwada, District Surendranagar','K. T. M. Hegde et al.',1989,'Indian Archaeology 1988-89: A Review','https://nmma.nic.in/nmma/NAS1/nmma_doc/IAR/Indian%20Archaeology%201988-89%20A%20Review.pdf','Primary ASI review PDF result opened.'),
-('BETDWARKA1987','Marine archaeological explorations off Dwarka, northwest coast of India','S. R. Rao',1987,'Indian Journal of Marine Sciences 16(1):22-30','https://nopr.niscpr.res.in/handle/123456789/38461','NIScPR catalog record and PDF opened; reuse terms not stated.'),
-('RANGPUR1963','Excavations at Rangpur and Other Explorations in Gujarat','S. R. Rao',1963,'Ancient India 18-19','https://ignca.gov.in/Asi_data/40421.pdf','Primary report PDF search result opened; reuse terms unverified.'),
-('PRABHAS-CISI','CISI 1: Prabhas Patan single seal entry','J. P. Joshi and A. Parpola (eds.)',1987,'CISI 1','https://ignca.gov.in/Asi_data/76884.pdf','CISI preface snippet says single seal; scan reused from earlier source audit.'),
-('PITHAD2007','Jaidak (Pithad): a Sorath Harappan site in Jamnagar District, Gujarat and its architectural features','Authors not extracted',2007,'Journal article; venue/pages not verified','https://www.researchgate.net/publication/285731591_Jaidak_Pithad_a_Sorath_Harappan_site_in_Jamnagar_District_Gujarat_and_its_architectural_features','Search-result record opened; no inscription count in snippet.'),
-('DAIMABAD1986','Daimabad, 1976-79','S. A. Sali',1986,'Memoirs of ASI 83, 745 pp.','https://rmrl.in/ta/onlinecat/70078/daimabad%2C-1976-79','Library catalog opened; report content accessed only via search snippets.'),
-('NUHATO2019','Nuhato excavation report','Q. H. Mallah (supervisor; report authors not extracted)',2019,'Sindh Antiquities 5(1)','https://saj.sindhculture.gov.pk/index.php/archives/15-sindh-antiquities-bi-annual-journal-vol-5-no-1-2019','Journal issue page opened; no inscribed-object claim found.'),
-('PABUMATH-CISI','CISI 1: Pabumath Pbm-1','J. P. Joshi and A. Parpola (eds.)',1987,'CISI 1','https://www.indusproject.org/section-headers-1-1/container/bag/','Secondary catalog entry gives Pbm-1; volume not inspected.'),
-('JUNIKHATIYA2024','Excavations at Kachchh, India: Juna Khatiya Cemetery and the Indus Civilization','Authors not extracted',2024,'Institutional project news','https://icac.cat/en/actualitat/noticies/2024/tribuna-kachchh-conesa/','Institutional page opened; no inscription evidence in result.'),
-('PADRI-IAR','Excavation at Padri, District Bhavnagar','Archaeological Survey of India',1992,'Indian Archaeology 1991-92: A Review','https://nmma.nic.in/nmma/NAS1/nmma_doc/IAR/Indian%20Archaeology%201991-92%20A%20Review.pdf','Primary ASI review PDF opened through search result; reports inscribed button-shaped seal.'),
-('PAGES','Illustrative Text Reference: Desalpur Dlp-3','Indus Dictionary Project',2017,'Website catalogue reference','https://www.indusproject.org/section-headers-1-1/container/bag/','Search snippet gives Dlp-3 A at CISI1 p.355.'),
-('ROJDI1989','Harappan Civilization and Rojdi','Gregory L. Possehl and M. H. Raval',1989,'Oxford & IBH Publishing Co.','https://search.worldcat.org/title/harappan-civilization-and-rojdi/oclc/20218911','Bibliographic records opened; volume not inspected.'),
-('COORD-SITES2025','Caravanserai, a lesser-known aspect of Harappan trade mechanism: A case study of Kotada Bhadli, Kachchh, Gujarat, India','Authors listed on article page',2025,'Journal article on ScienceDirect','https://www.sciencedirect.com/science/article/pii/S0003552125000603','Search result gives coordinates, excavation dates and AMS/radiocarbon/OSL date range; full article open not verified.'),
-('COORD-NAGWADA2018','Shell working at Nagwada, Gujarat','V. H. Sonawane et al.',2018,'Indian Journal of History of Science 53(3)','https://insa.nic.in/writereaddata/UpLoadedFiles/IJHS/Vol53_3_2018__Art01.pdf','Search result gives site coordinates, locality and campaign range; PDF result opened.'),
-('COORD-JUNIKHATIYA','Early Harappan interaction between Sindh and Gujarat, as evidenced by lithic tools','Authors listed on article page',2021,'Research article','https://www.researchgate.net/publication/353714468_Early_Harappan_interaction_between_Sindh_and_Gujarat_as_evidenced_by_lithic_tools','Search snippet gives Juna Khatiya coordinates and survey institutions.'),
-('COORD-PITHAD','Jaidak (Pithad): a Sorath Harappan site in Jamnagar District, Gujarat and its architectural features','P. Ajithprasad',2007,'Research article','https://www.researchgate.net/publication/285731591_Jaidak_Pithad_a_Sorath_Harappan_site_in_Jamnagar_District_Gujarat_and_its_architectural_features','Search snippet gives village and archaeological-site coordinates, and reports 1992 work.'),
-('COORD-PADRI','Roots of Sorath Harappans: A Study Based on the Re-analysis of Ceramics from Padri and Its Surroundings in Gujarat, Western India','Authors listed on article page',2017,'Research article','https://www.researchgate.net/publication/317346070_Roots_of_Sorath_Harappans_A_Study_Based_on_the_Re-analysis_of_Ceramics_from_Padri_and_Its_Surroundings_in_Gujarat_Western_India','Search result gives Padri site coordinates and 1990-95 campaign range.'),
-('COORD-RANGPUR','Excavations at Rangpur and Other Explorations in Gujarat','S. R. Rao',1963,'Ancient India 18-19','https://ignca.gov.in/Asi_data/40421.pdf','Primary report PDF search result; printed coordinate labels appear swapped in retrieved text, so coordinates are corroborated against later site list.'),
-('COORD-SHIKARPUR','Archaeology of Shikarpur, Gujarat','Authors listed on article page',2025,'Research article','https://www.researchgate.net/publication/388169938_Archaeology_of_Shikarpur_Gujarat','Search result gives site coordinates and excavation history.'),
-('COORD-PADRI-IAR','Indian Archaeology 1991-92: A Review','Archaeological Survey of India',1992,'Annual excavation review','https://www.asiaurangabadcircle.com/assets/files/publications/1991-1992.pdf','Primary annual report search result opened; inscribed seal reported.'),
-('CORPUS2022','Corpus of Indus Inscriptions','Andreas Fuls',2022,'Mathematica Epigraphica 3, self-published, ISBN 978-1-671-80486-9','https://www.researchgate.net/publication/373522666_Corpus_of_Indus_Inscriptions','Full book opened; site chapter list pp. 25-26 names ten Gujarat/Kutch inscription sites including Pabumath; exact site inventories were not counted here.'),
-('COORD-NAVINAL2025','Ichthyoarchaeological perspectives on roles of fish and red meat during Indus Civilization in Gujarat, India','G. S. Abhayan, Pramod P. Joglekar, P. Ajithprasad, S. V. Rajesh, Pankaj Goyal, Brad Chase, Jeevan Kharakwal and Prabodh Shirvalkar',2025,'Frontiers in Environmental Archaeology 4, article 1517351','https://doi.org/10.3389/fearc.2025.1517351','Full article opened; coordinates at ?4.4; reuse license stated on publisher page.'),
-]
+def clean_metadata(text):
+    # Raw source witnesses retain their original bytes. Only discovery metadata
+    # is normalised; never reconstruct an unreadable source title by guessing.
+    for old,new in [('â€“','–'),('â€”','—'),('â€œ','“'),('â€\x9d','”'),('Ã¡','á'),('Ã¤','ä'),('Ã¶','ö'),('Ã¼','ü')]:
+        text=text.replace(old,new)
+    if '\ufffd' in text:
+        return 'Title contains unreadable characters in retrieved metadata; see raw witness.'
+    return text
 
-sources = [dict(id=i,title=t,authors=a,year=y,venue=v,url=u,access=acc,rights='See source-specific note; rights are not assumed from public access.') for i,t,a,y,v,u,acc in SOURCES]
+def headers(result):
+    found=[]
+    for line in str(result).splitlines():
+        if line.startswith(('L0:','L1:','\ue200')) or re.match(r'^L\d+[@:]',line):continue
+        m=re.match(r'^(.*?) \((https?://.+)\)$',line.strip())
+        if m: found.append((clean_metadata(m[1]) or 'Source title not supplied',m[2]))
+    return list(dict.fromkeys(found))
 
-# The live-search trail uses distinct excavation, catalogue and later-finds queries for every named/additional site.
-searches=[]
-for row in DATA:
-    name=row[0]
-    query_set=(f'{name} excavation report campaign director publication',f'{name} inscribed Indus object seal sealing CISI ICIT count',f'{name} later finds Indian Archaeology Review post-CISI museum collection')
-    outcomes=(f"Campaign/report lead: {row[4]} Report identifiers: {row[5]}.",f"Count/catalogue lead: {row[6]}",f"Later-find/holding lead: campaign history is {row[4]} Holding lead: {row[8]}")
-    for n,(query,outcome) in enumerate(zip(query_set,outcomes),1):
-        searches.append({'id':f'{name.upper().replace(" ","-").replace("(","").replace(")","")}-Q{n}','site':name,'date':'2026-10-07','place':'Live web search','query':query,'query_record_status':'normalized formulation; verbatim engine query was not captured','topic':['excavation/publication','object/catalogue/count','later finds/holding'][n-1],'result':outcome,'interpretation':'A missing result is limited to the indexed sources and search formulation; it does not establish archaeological absence.'})
+logs=[]; searches=[]; discovery={}
+for path in sorted(list(RAW.glob('B[0-9][0-9].json'))+list(RAW.glob('O[0-9][0-9].json'))):
+    log=json.loads(path.read_text(encoding='utf-8')); logs.append(log)
+    result=log.get('result',''); seen=headers(result)
+    queries=log.get('queries',log.get('request',{}).get('search_query',[]))
+    for n,q in enumerate(queries,1):
+        searches.append(dict(id=log['id']+f'-Q{n}',sites=log['sites'],scope='regional_shared' if log['id']=='B40' else 'site_specific',date=log.get('retrieved_at',DATE),place='Live web search via web.run',query=q['q'],domains=q.get('domains'),result_urls=[u for t,u in seen],result_summary=f'{len(seen)} source headers returned in the saved multi-query response. Individual result-to-query attribution is not supplied by the tool; inspect the raw bundle for the actual snippets and failures.',raw_witness=str(path.relative_to(ROOT)).replace('\\','/')))
+    for title,url in seen:
+        d=discovery.setdefault(url,dict(id='DISC-'+hashlib.sha256(url.encode()).hexdigest()[:12],title=title,authors=None,year=None,venue=urlsplit(url).netloc,url=url,access_state='snippet_only',seen_in=[],opened_in=[],failed_in=[],metadata_note='Uncatalogued discovery result; author/year not extracted. Not used to support site claims.',rights='Unresolved; raw response remains local.'))
+        d['seen_in'].append(log['id'])
+        if log['id'].startswith('O'):
+            # Identify error blocks independently, including bundles containing
+            # both successful and failed opens.
+            block=str(result).split(url,1)[1].split('--------------------------------------------------------------------------------',1)[0]
+            if 'Failed to fetch' in block or 'not accessible via this tool' in block or 'Total lines: 1\nL0:' in block:
+                d['failed_in'].append(log['id'])
+            else:
+                d['opened_in'].append(log['id']);d['access_state']='opened'
 
-COORD_SOURCES={'Lothal':['LOTHAL1'],'Dholavira':['DHOLAVIRA2015'],'Surkotada':['SURKOTADA1990'],'Kanmer':['KANMER2012'],'Shikarpur':['COORD-SHIKARPUR'],'Gola Dhoro (Bagasra)':['GOLADHORO2005'],'Nageshwar':['NAGESHWAR1984'],'Khirsara':['KHIRSARA2017'],'Kuntasi':['KUNTASI1996'],'Rojdi':['ROJDI1989'],'Desalpar':['DESALPUR-IAR'],'Juni Kuran':['JUNIKURAN2004'],'Kotada Bhadli':['COORD-SITES2025'],'Navinal':['COORD-NAVINAL2025'],'Nagwada':['COORD-NAGWADA2018'],'Bet Dwarka':['BETDWARKA1987'],'Rangpur':['COORD-RANGPUR'],'Prabhas Patan':['PRABHAS-CISI'],'Pithad':['COORD-PITHAD'],'Nuhato':[],'Daimabad':['DAIMABAD1986'],'Pabumath':['PABUMATH-CISI'],'Juna Khatiya':['COORD-JUNIKHATIYA'],'Padri':['COORD-PADRI']}
-for i,query,result in [
- (1,'Gujarat Harappan site inscribed seal site list Malwan Bagasra Pabumath','Corpus of Indus Inscriptions search result identified regional inscription-site list; Pabumath appears among ten Gujarat/Kutch sites.'),
- (2,'Harappan sites Gujarat inscribed objects seals site names Prabhas Patan Desalpur','Results surfaced Desalpur and Prabhas Patan CISI records; both are already represented in the site rows.'),
- (3,'Indus inscriptions sites Gujarat Kachchh seal found site archaeology','Results surfaced Gujarat government heritage page and current regional reviews; no additional missing inscribed site verified.'),
-]:
- searches.append({'id':f'BATCH-DISCOVERY-Q{i}','site':'Gujarat/Kutch region','date':'2026-10-07','place':'Live web search','query':query,'query_record_status':'verbatim query captured from search request','topic':'additional site discovery','result':result,'source_ids':['CORPUS2022','COORD-NAVINAL2025'],'interpretation':'Regional list supports a bounded search for missing inscription-bearing sites, not proof of complete coverage.'})
+# Preserve failed request URLs which may not have a normal source header.
+failures=[]
+for log in logs:
+    result=str(log.get('result',''))
+    if any(x in result for x in ['Failed to fetch','not accessible via this tool','Internal Error','Too Many Requests','Forbidden']):
+        failures.append(dict(log_id=log['id'],sites=log['sites'],raw_witness=str((RAW/(log['id']+'.json')).relative_to(ROOT)).replace('\\','/'),request=log.get('request',{}),note='One or more accesses failed; exact error and successful accesses are retained side by side in the raw bundle.'))
+
+acquisitions=[]
+for p in sorted(RAW.glob('*.acquisition.json')):
+    a=json.loads(p.read_text(encoding='utf-8'))
+    # Acquisition success is a transport result, not proof of a useful document.
+    if a.get('id') in ['LOTHAL1985','KANMER2012CH8','BETDWARKA1998']:
+        a['content_audit']='HTTP200 returned a challenge/HTML page, not full primary-source content; successful web-indexed reads have separate O logs.'
+    elif a.get('status')=='acquired':
+        a['content_audit']='PDF/content extraction retained; inspection locations specified by curated sources where used.'
+    acquisitions.append(a)
+
+sources=[dict(s) for s in SOURCES]
+curated_urls={s['url'] for s in sources}
+for s in sources:
+    d=discovery.get(s['url'],{})
+    s['seen_in']=d.get('seen_in',[]);s['opened_in']=d.get('opened_in',[])
+    s['retrieval_date']=DATE
+    s['quotation']=None
+    s['raw_acquisitions']=[a['id'] for a in acquisitions if a.get('url')==s['url'] or a.get('id')==s['id']]
+sources.extend(d for u,d in sorted(discovery.items()) if u not in curated_urls)
+source_map={s['id']:s for s in sources}
+
+def missing(row,field,why):
+    return dict(status='unresolved',value=None,field=field,reason=why,search_ids=row['search_ids'],inspected_sources=[row['primary_read']],search_outcome='Recorded queries returned the sources in searches.json/result_urls and the saved raw response. The inspected source did not expose a usable value for this field; absence from those passages does not establish archaeological absence.')
 
 rows=[]
-for s,state,aliases,coords,campaign,reports,count,local_classes,holding in DATA:
-    l=local.get(s.casefold())
-    if s=='Rojdi': l=local.get('rodji')
-    if s=='Desalpar': l=local.get('desalpur')
-    if not l and s in ('Nuhato','Daimabad'):
-        l=next((x for x in local_rows if x['site'].casefold()==s.casefold()),None)
-    if l:
-        lc={k:l[k] for k in ('faces','object_families','distinct_cisi_ids','cisi_prefixes','max_cisi_number_by_prefix','object_classes','faces_with_period_or_time','faces_with_room_or_grid','faces_with_dimensions','faces_with_excavation_number')}
-        lc['source']='experiments/2026-10-06-research-program/local-site-coverage.json'
-    else:
-        lc={'faces':0,'object_families':0,'distinct_cisi_ids':0,'cisi_prefixes':{},'max_cisi_number_by_prefix':{},'object_classes':{},'faces_with_period_or_time':0,'faces_with_room_or_grid':0,'faces_with_dimensions':0,'faces_with_excavation_number':0,'source':'local-site-coverage.json: no row for this literal site label'}
-    reportids=reports.split(';')
-    ids=[q['id'] for q in searches if q['site']==s]
-    rows.append({'site':s,'canonical_name_and_alternatives':{'canonical':s,'alternatives':aliases},'country':'Pakistan' if s=='Nuhato' else 'India','province_or_state':state,'coordinates':{'value':coords,'source_ids':COORD_SOURCES.get(s,[]) if coords!='not located' else [],'precision':'approximate; exact survey datum not extracted'},'excavation_campaigns':{'summary':campaign,'source_ids':reportids},'primary_excavation_reports_and_final_publications':reportids,'cisi':{'icit_2022_section_page':{'Desalpar':41,'Dholavira':42,'Gola Dhoro (Bagasra)':60,'Kanmer':273,'Khirsara':274,'Lothal':278,'Pabumath':441,'Rojdi':444,'Shikarpur':445,'Daimabad':41}.get(s),'volume_and_pages':('CISI1; Desalpur Dlp-3 A p.355. Lothal/Surkotada/Pabumath/Prabhas Patan entries exist; their full ranges were not checked.' if s in ('Desalpar','Lothal','Surkotada','Pabumath','Prabhas Patan') else ('CISI3.2 includes Rojdi; page span not verified.' if s=='Rojdi' else 'No exact volume and page range verified in this search pass. See searches.json.')),'site_count_or_Mahadevan':'See reported_counts.summary; Mahadevan values are not given unless stated there.','source_ids':['CISI1','CISI32','MAHADEVAN1977','ICIT2023','CORPUS2022']},'reported_counts':{'summary':count,'by_class':local_classes,'count_basis':'Units are stated in summary where source exposed them. Unextracted counts remain explicitly unresolved; local class rows are faces/observations, not necessarily objects.','source_ids':reportids},'local_corpus':lc,'local_coverage_judgment':'Local rows are face/side observations. CISI sequence maxima and row counts do not form a denominator; object-level joins and numbering continuity checks remain required.' if lc['faces'] else 'No row under the site label in local-site-coverage.json. This is local-export absence, not archaeological absence.','publication_metadata':{'findspot':'Partial; only the locations stated in reports were extracted.','stratum_or_phase':'Partial; object-level contexts not audited across publications.','absolute_dates':'Partial; published ranges appear in summary where recovered.','dimensions':'Partial; dimensions are available for some published objects/sites, not all.','material':'Reported for selected counted objects; complete inventory comparison not made.','photographs':'Available in illustrated reports/articles listed in sources.json; image-by-image coverage not audited.','drawings':'Partial; not checked for every catalogue entry.','registration_numbers':'Partial; sampled NMMA and CISI identifiers noted, but no complete crosswalk.','source_ids':reportids},'post_cisi_find_reports':{'summary':'Later publications and campaigns appear in the campaign/count fields where found. No exhaustive season-by-season update was completed.','documentation':'primary/secondary source strength is recorded in sources.json; some discovery leads were snippets only.','source_ids':reportids},'current_holding':{'summary':holding,'source_ids':reportids},'digital_availability_and_reuse':{'availability':'See sources.json for opened page, snippet-only and partial-report states.','terms':'Source-specific; public access is not treated as permission to redistribute. See knowledge/provenance/REDISTRIBUTION.md.','source_ids':reportids},'open_problems':['Complete find inventory and site-object crosswalk remain unresolved where the report is not digitized or page-audited.','CISI page ranges and inventory metadata need direct volume inspection.','Search records preserve three distinct query formulations; field gaps are not evidence of absence.'],'search_ids':ids,'status':'Exploratory'})
+for original in ROWS:
+    r=json.loads(json.dumps(original)); name=r['canonical_name']
+    r['status']='Exploratory';r['audit_date']=DATE
+    r['alternative_spellings']=[x.strip() for item in r['alternative_spellings'] for x in item.split(';') if x.strip()!=name]
+    r['search_ids']=[q['id'] for q in searches if name in q['sites']]
+    r['source_access_logs']=[l['id'] for l in logs if l['id'].startswith('O') and name in l['sites']]
+    r['source_read_basis']='A specific primary or substantial secondary passage was read. Direct PDF reads are represented by acquisition/.pages.json witnesses; web reads by O logs. Landing pages alone are excluded.'
+    r['country']='Pakistan' if name=='Nuhato' else 'India'
+    r['province']='Sindh' if name=='Nuhato' else 'Maharashtra' if name=='Daimabad' else 'Gujarat'
+    r['administrative_evidence']=ref('NUHATO2018','p.2') if name=='Nuhato' else ref('GAZETTEER2018','Table1,pp.8–9') if name in COORDS else r['primary_read']
+    r['batch_scope']='Explicitly requested Sindh cross-reference; excluded from Gujarat/Maharashtra-only totals.' if name=='Nuhato' else 'Regional site'
+    if name in COORDS:
+        lat,lon,n=COORDS[name]
+        r['coordinates']=dict(latitude=lat,longitude=lon,datum='WGS84 as labelled by gazetteer',precision_note='Printed coordinate precision does not establish survey accuracy.',evidence=[ref('GAZETTEER2018',f'Table1,row{n},p.'+('9' if n==184 else '8'))])
+    if name in COORD_OVERRIDES:r['coordinates']=COORD_OVERRIDES[name]
+    if name=='Khirsara':r['coordinates']['conflicts']='IAR2009–10 p.16 gives23°50′N,69°05′E; this is incompatible with the gazetteer point. Original report transcription retained without correction.'
+    if name=='Nagwada':r['coordinates']['conflicts']='IAR1987–88 p.19 gives23°20′N,71°41′E; gazetteer gives23.3042N,71.7125E; original points unaligned.'
+    if name=='Rangpur':
+        r['coordinates']['conflicts']='RANGPUR1963 p.7 prints latitude22°26′E and longitude71°55′N, with reversed hemisphere labels; even after exchanging the labels the latitude differs from the gazetteer point. Gazetteer point retained; no silent correction of the report.'
+        r['coordinates']['evidence'].append(ref('RANGPUR1963','p.7; RANGPUR1963-p18-coordinate-check.png'))
+    r['local_corpus']=next((s for s in LOCAL if s['site']==ALIASES.get(name,name)),None)
+    if r['local_corpus'] is None:
+        r['local_corpus']=dict(site=None,faces=0,object_families=0,distinct_cisi_ids=0,cisi_prefixes={},max_cisi_number_by_prefix={},object_classes={},faces_with_period_or_time=0,faces_with_room_or_grid=0,faces_with_dimensions=0,faces_with_excavation_number=0,label_present=False)
+    else:r['local_corpus']['label_present']=True
+    r['local_corpus']['evidence']=dict(file=str(LOCAL_PATH.relative_to(ROOT)).replace('\\','/'),field='sites[site='+str(r['local_corpus']['site'])+']',sha256=hashlib.sha256(LOCAL_PATH.read_bytes()).hexdigest())
+    if not r['local_coverage_judgment']:
+        r['local_coverage_judgment']='No local export row for this site; a published inscribed-object denominator was not verified, so corpus completeness cannot be estimated.' if r['local_corpus']['faces']==0 else 'Local faces are present but object identities and source inventory are unaligned; no completeness fraction computed.'
+    r['cisi_coverage']=[]
+    if name in CATALOGUE1:
+        prefix,number,pages,basic=CATALOGUE1[name]
+        r['cisi_coverage'].append(dict(volume='CISI1',year=1987,page_range=pages,basic_data_pages=basic,identifier_prefix=prefix,identifier_range=f'{prefix}1–{number}',catalogue_object_slots=number,unit='catalogue object identifiers',contiguity_check='The printed site catalogue and contents delimit a contiguous1–N range. Lower-case impression images and bis/ter photographic views are not additional objects. This is not a claim that all excavated finds were catalogued.',evidence=[ref('CISI1','contents pp.III–IV; site pp.'+pages+'; basic data pp.'+basic)]))
+    else:r['cisi_coverage'].append(dict(volume='CISI1',year=1987,status='no_site_section_in_inspected_contents',page_range=None,evidence=[ref('CISI1','contents pp.III–IV')],search_ids=r['search_ids']))
+    r['cisi_coverage'].append(dict(volume='CISI2',year=1991,status='reported_by_excavation_report_not_directly_verified' if name=='Nuhato' else 'no_applicable_site_section_verified',page_range='390 (citation only; range unresolved)' if name=='Nuhato' else None,evidence=[ref('NUHATO2018','p.41 cites CISI2 p.390')] if name=='Nuhato' else [ref('CISI2','bibliographic title: Collections in Pakistan')],search_ids=r['search_ids']))
+    r['cisi_coverage'].append(dict(volume='CISI3.1',year=2010,status='volume addresses Mohenjo-daro and Harappa; no batch site section verified',page_range=None,evidence=[ref('FULS2022','preview bibliography, CISI3.1 title')],search_ids=r['search_ids']))
+    r['cisi_coverage'].append(dict(volume='CISI3.2',year=2019,status='site inclusion bibliographically verified; pages/counts unavailable' if name=='Rojdi' else 'no_site_section_for_this_site_in_published_volume_title',page_range=None,evidence=[ref('CISI32','official volume title and site list')],search_ids=r['search_ids']))
+    r['mahadevan1977']=dict(value=MAHA_COUNTS[name],unit='selected legible inscribed objects; each object treated as one text',count_date=1977,evidence=[ref('MAHADEVAN1977','p.6,Table1; method pp.5–6')]) if name in MAHA_COUNTS else missing(r,'mahadevan1977','No separate site total in the inspected Table1,p.6; a later site absent from the table is not assigned zero historical finds.')
+    r['icit_site_count']=dict(status='published_aggregate',value=ICIT_SIGNS[name],unit='legible sign occurrences, not objects/faces/texts',count_date=2023,count_basis='Author’s ICIT-based corpus regional list; no direct database query.',evidence=[ref('FULS2023SIGNS','§5.3,p.501,regional site list before p.502')],object_count=missing(r,'icit_inscribed_object_count','Published regional list counts signs; no ICIT site-level object inventory acquired.')) if name in ICIT_SIGNS else missing(r,'icit_site_count','No site aggregate for this label in the inspected Fuls2023 regional list; no queryable ICIT inventory accessed. B40 records the actual ICIT search.')
+    r['counts_by_class']={c:[v for v in r['reported_counts'] if v['object_class']==c] or [missing(r,c,'No usable numerical inventory for '+c+' in the inspected site passages. See primary_publications for unavailable final-report pages and open_problems for site-specific gaps.')] for c in CLASSES}
+    for c in r['reported_counts']:
+        if c['count_date'] is None:c['count_date']=source_map[c['evidence'][0]['source_id']]['year']
+    r['count_comparisons']=[dict(object_class=c,observations=[dict(value=v['value'],unit=v['unit'],basis=v['count_basis'],date=v['count_date'],evidence=v['evidence']) for v in records],note='Keep count bases and source dates distinct. Different totals may reflect selection, overlapping mentions or genuine disagreement; site open_problems gives the specific issue.') for c,records in r['counts_by_class'].items() if len(records)>1]
+    r['metadata_available']=r.pop('metadata_observation')
+    for k,v in r['metadata_available'].items():
+        if v['availability']=='no':v['unresolved_searches']=missing(r,k,'Not demonstrated for an identified inscription in the cited passage; other publication pages may contain it.')
+    if r['holdings']['status']=='unresolved':r['holdings']['unresolved_searches']=missing(r,'current_holdings',r['holdings']['observation'])
+    if r['post_cisi_finds']['status']=='unresolved':r['post_cisi_finds']['search_record']=missing(r,'post_cisi_finds',r['post_cisi_finds']['note'])
+    if r['final_report']['status']=='unresolved':r['final_report']['search_record']=missing(r,'final_report',r['final_report']['note'])
+    r['digital_availability']=[dict(source_id=s['id'],url=s['url'],access_state=s['access_state'],publication_availability='Relevant text inspected in indicated witness.' if s['access_state']=='opened' else 'Bibliography/preview/snippet only; do not treat as full report access.',image_availability='See metadata_available.photographs and drawings; accessible image is not permission to redistribute.',reuse_terms=s['rights'],witness=s['witness']) for p in r['primary_publications']+[dict(source_id=r['primary_read']['source_id'])] for s in [source_map[p['source_id']]]]
+    # De-duplicate repeated main-publication references.
+    r['digital_availability']=list({v['source_id']:v for v in r['digital_availability']}.values())
+    r['missing_fields']=[f'counts_by_class.{c}' for c,v in r['counts_by_class'].items() if v[0].get('status')=='unresolved']
+    r['missing_fields'] += ['metadata_available.'+k for k,v in r['metadata_available'].items() if v['availability']=='no']
+    r['missing_fields'] += ['icit_inscribed_object_count']
+    if name not in ICIT_SIGNS:r['missing_fields'].append('icit_site_count')
+    for key in ['holdings','post_cisi_finds','final_report']:
+        if r[key]['status']=='unresolved':r['missing_fields'].append(key)
+    if name=='Rojdi':r['missing_fields'].append('CISI3.2.page_range_and_counts')
+    if name=='Nuhato':r['missing_fields'].append('CISI2.direct_page_verification')
+    if any('unresolved' in v.get('director','').lower() or 'not stated' in v.get('director','').lower() for v in r['excavation_campaigns']):r['missing_fields'].append('excavation_campaigns.director')
+    if any('not specified' in v.get('years','').lower() or 'unresolved' in v.get('years','').lower() for v in r['excavation_campaigns']):r['missing_fields'].append('excavation_campaigns.complete_years')
+    r['unresolved_fields']=[missing(r,k,'Consult the cited inspected passages and site open_problems; recorded searches did not resolve this field.') for k in r['missing_fields']]
+    r['addition_basis']='Found while reading IAR1977–78 p.21 for Pabumath; explicit inscribed pottery at Kanewal, then B37 three live searches and official final-report catalogue opened.' if name=='Kanewal' else 'Regional local export label; CISI1 Pbm1 independently verifies the added inscribed site.' if name=='Pabumath' else 'Regional local export lead; unnumbered pottery face remains unverified as inscription.' if name=='Juna Khatiya' else 'Explicit user list.'
+    rows.append(r)
 
-OUT.mkdir(parents=True,exist_ok=True)
-(OUT/'sources.json').write_text(json.dumps(sources,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-(OUT/'searches.json').write_text(json.dumps(searches,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-(OUT/'site-rows.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-with (OUT/'site-rows.csv').open('w',encoding='utf-8-sig',newline='') as f:
-    w=csv.DictWriter(f,fieldnames=list(rows[0])); w.writeheader()
-    for row in rows: w.writerow({k:json.dumps(v,ensure_ascii=False) if isinstance(v,(dict,list)) else v for k,v in row.items()})
-print(f'{len(rows)} site rows; {len(searches)} search records; {len(sources)} source records')
+metrics=dict(status='Exploratory',audit_date=DATE,sites=len(rows),regional_sites=sum(r['canonical_name']!='Nuhato' for r in rows),requested_cross_references=['Nuhato'],explicit_list_sites=22,added_sites=['Pabumath','Juna Khatiya','Kanewal'],local_labels_present=sum(r['local_corpus']['label_present'] for r in rows),local_faces=sum(r['local_corpus']['faces'] for r in rows),local_object_families=sum(r['local_corpus']['object_families'] for r in rows),distinct_local_cisi_ids_sum=sum(r['local_corpus']['distinct_cisi_ids'] for r in rows),live_search_queries=len(searches),live_search_bundles=sum(l['id'].startswith('B') for l in logs),minimum_distinct_searches_per_site=min(len(set(q['query'] for q in searches if r['canonical_name'] in q['sites'])) for r in rows),sites_with_substantial_source_passage_read=len(rows),sites_with_coordinates_or_published_extent=sum('coordinates' in r for r in rows),sites_with_coordinate_point=sum(r['coordinates'].get('latitude') is not None for r in rows),sites_with_completed_report=sum(r['final_report']['status']=='bibliographically_verified' for r in rows),completed_report_relevant_pages_read=sum(r['final_report'].get('relevant_object_pages_read',False) for r in rows),completed_report_sites=[r['canonical_name'] for r in rows if r['final_report']['status']=='bibliographically_verified'],post_site_catalogue_find_sites=[r['canonical_name'] for r in rows if r['post_cisi_finds'].get('comparison_kind')=='after_site_catalogue'],post_reported_site_catalogue_find_sites=[r['canonical_name'] for r in rows if r['post_cisi_finds'].get('comparison_kind')=='after_reported_site_catalogue'],new_sites_with_script_material_after_1987=[r['canonical_name'] for r in rows if r['post_cisi_finds'].get('comparison_kind')=='new_site_after_1987' and r['post_cisi_finds']['status']=='documented'],uncertain_later_find_sites=[r['canonical_name'] for r in rows if r['post_cisi_finds']['status']=='uncertain'],cisi1=dict(sites=len(CATALOGUE1),catalogue_object_slots=sum(v[1] for v in CATALOGUE1.values()),basis='Sum of the ten directly inspected contiguous CISI1 site ranges; includes selected geometric/pictorial objects and broad graffiti. Not all317 are authenticated texts.',local_faces_at_these_sites=sum(r['local_corpus']['faces'] for r in rows if r['canonical_name'] in CATALOGUE1),local_families_at_these_sites=sum(r['local_corpus']['object_families'] for r in rows if r['canonical_name'] in CATALOGUE1),local_distinct_cisi_ids_at_these_sites=sum(r['local_corpus']['distinct_cisi_ids'] for r in rows if r['canonical_name'] in CATALOGUE1)),mahadevan1977=dict(sites=len(MAHA_COUNTS),selected_inscribed_objects=sum(MAHA_COUNTS.values()),basis='Table1,p.6: Lothal165,Desalpar2,Dholavira1,Rojdi2,Surkotada5. Do not add to CISI1 totals because records overlap.'),most_often_missing=Counter(k for r in rows for k in r['missing_fields']).most_common(),acquisition_attempts=len(acquisitions),failed_acquisitions=sum(a.get('status')=='failed' for a in acquisitions),transport_success_challenge_payloads=[a['id'] for a in acquisitions if 'challenge' in a.get('content_audit','')],source_records=len(sources),opened_curated_sources=sum(s['access_state']=='opened' for s in SOURCES))
 
+write('site-rows.json',rows);write('sources.json',sources);write('searches.json',searches);write('aggregate-results.json',metrics)
+write('source-access.json',dict(web_access_failures=failures,acquisitions=acquisitions,note='Transport and content audit distinguished. Some web access failures have successful requests-based local PDF acquisitions.'))
+with (OWN/'site-rows.csv').open('w',encoding='utf-8',newline='') as f:
+    writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader()
+    for r in rows:writer.writerow({k:json.dumps(v,ensure_ascii=False,separators=(',',':')) if isinstance(v,(list,dict)) else v for k,v in r.items()})
+
+# Reviewer constraints are computed as an audit, not a test of archaeology.
+audit=dict(status='Verified computation',sites=len(rows),unique_site_names=len(set(r['canonical_name'] for r in rows)),minimum_queries_per_site=metrics['minimum_distinct_searches_per_site'],class_fields_per_site=len(CLASSES),metadata_fields_per_site=8,all_claim_source_ids_resolve=True,archive_hashes_unchanged=True)
+def refs_in(v):
+    if isinstance(v,dict):
+        if 'source_id' in v:yield v['source_id']
+        for x in v.values():yield from refs_in(x)
+    elif isinstance(v,list):
+        for x in v:yield from refs_in(x)
+audit['unknown_source_ids']=sorted(set(refs_in(rows))-set(source_map));audit['all_claim_source_ids_resolve']=not audit['unknown_source_ids']
+metrics['minimum_distinct_searches_per_site']=min(len(set(q['query'] for q in searches if r['canonical_name'] in q['sites'] and q['scope']=='site_specific')) for r in rows)
+metrics['site_specific_query_records']=sum(q['scope']=='site_specific' for q in searches)
+metrics['regional_shared_query_records']=sum(q['scope']=='regional_shared' for q in searches)
+audit['minimum_queries_per_site']=metrics['minimum_distinct_searches_per_site']
+metrics['published_icit_sign_aggregate_sites']=len(ICIT_SIGNS)
+metrics['published_icit_sign_occurrences']=sum(ICIT_SIGNS.values())
+metrics['icit_object_count_totals_available']=0
+write('aggregate-results.json',metrics)
+manifest=json.loads((OWN/'first-pass/preservation-manifest.json').read_text(encoding='utf-8'))
+audit['archive_mismatches']=[item['path'] for item in manifest['files'] if hashlib.sha256((OWN/'first-pass'/item['path']).read_bytes()).hexdigest()!=item['sha256']]
+audit['archive_hashes_unchanged']=not audit['archive_mismatches']
+with (OWN/'site-rows.csv').open(encoding='utf-8',newline='') as f:
+    csv_rows=list(csv.DictReader(f))
+expected_csv=[{k:json.dumps(v,ensure_ascii=False,separators=(',',':')) if isinstance(v,(list,dict)) else '' if v is None else str(v) for k,v in r.items()} for r in rows]
+audit['csv_matches_json']=csv_rows==expected_csv
+audit['utf8_decode_failures']=[]
+audit['current_text_files_with_replacement_characters']=[]
+for p in sorted(OWN.rglob('*')):
+    if not p.is_file() or 'first-pass' in p.relative_to(OWN).parts or p.suffix not in {'.md','.py','.json','.csv','.txt'}:continue
+    try: content=p.read_text(encoding='utf-8')
+    except UnicodeError:
+        audit['utf8_decode_failures'].append(str(p.relative_to(OWN)));continue
+    if '\ufffd' in content:audit['current_text_files_with_replacement_characters'].append(str(p.relative_to(OWN)))
+write('build-audit.json',audit)
+print(json.dumps(metrics,ensure_ascii=False,indent=2))

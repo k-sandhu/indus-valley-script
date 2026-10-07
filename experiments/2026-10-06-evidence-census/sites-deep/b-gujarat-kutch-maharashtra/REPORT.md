@@ -1,23 +1,65 @@
-# Batch report: Gujarat, Kutch and Maharashtra
+# Gujarat, Kutch and Maharashtra site census
 
-## Findings
+Status: Exploratory. Source audit: 7 October 2026 UTC. This revision replaces the first pass for current use; the original ten files remain unchanged in [first-pass](first-pass/preservation-manifest.json).
 
-The census has 24 rows: all 22 explicitly named sites, plus the two additional Gujarat/Kutch labels in the local coverage export, Pabumath and Juna Khatiya. The list check began with `experiments/2026-10-06-research-program/local-site-coverage.json`. Pabumath was missing from the requested list and is verified as an inscribed-object site by CISI 1 identifier Pbm-1 (`PABUMATH-CISI` in `sources.json`). Juna Khatiya was also missing; it is retained because the local export contains one pottery face, but the sources checked did not establish an inscribed Indus object there. Andreas Fuls' *Corpus of Indus Inscriptions* (2022), pp. 25-26, independently lists the Gujarat/Kutch inscription section as Desalpur, Dholavira, Gola Dhoro, Kanmer, Khirsara, Kuntasi, Lothal, Pabumath, Rodji and Surkotada (`CORPUS2022` in `sources.json`). This confirms Pabumath was omitted from the requested names. No other missing inscription-bearing Gujarat/Kutch site was found in that regional inventory; this check does not cover every unexcavated or newly reported site.
+The 25-site batch contains 496 local corpus faces in 460 object families, distributed across 13 site labels. Direct inspection of ten CISI 1 site ranges gives 317 catalogue objects. The catalogue includes geometric, pictorial and graffiti material alongside inscriptions; its objects and the local faces have different units and cutoffs. Every site has a read primary or substantial secondary passage and at least three site-specific live searches. There are 130 actual queries: 127 site-specific query records and three shared ICIT queries. These bases are recorded in [aggregate-results.json](aggregate-results.json), fields `sites`, `local_faces`, `local_object_families`, `cisi1` and `minimum_distinct_searches_per_site`.
 
-Nine sites have a final site-report title or full-report bibliographic record in the source set: Lothal, Dholavira, Surkotada, Kanmer, Nageshwar, Kuntasi, Rojdi, Rangpur and Daimabad. “Identified” here means a named monograph/report or complete excavation publication record is present; it does not mean the full report was read. Six sites have post-CISI campaigns or inscribed-object reports identified: Dholavira, Gola Dhoro, Kanmer, Shikarpur, Khirsara and Padri. Bet Dwarka has inscribed-object reports, but the 1987 publication date does not establish whether it postdates CISI 1. The evidence is strongest for the opened Gola Dhoro article (six inscribed steatite seals, p. 4) and the ASI Padri review (one terracotta button-shaped seal from a Harappan level); other entries include bibliographic or search-result evidence.
+## Scope and report access
 
-The 11 Gujarat/Kutch local rows contain 489 face observations in total. Lothal has 208 faces, 182 object families and 179 distinct CISI identifiers; the highest local L-series number is 274. Dholavira has 238 faces and two CISI identifiers (Dlv-1 and Dlv-2). Surkotada has six local identifiers (Sktd-1 through Sktd-6); Desalpur has three (Dlp-1 through Dlp-3); Rojdi/Rodji has four (Rjd sequence maximum 76). This spread shows that local row counts and identifier maxima differ substantially, but it does not establish a completeness percentage. The source volumes need to be checked for site-specific sequence continuity and duplicate faces before those values can be compared as coverage fractions.
+There are 23 Gujarat sites, Daimabad in Maharashtra and the explicitly requested Nuhato cross-reference in Sindh. Pabumath was added from the local coverage list and verified against CISI 1 Pbm 1. Juna Khatiya was added as a local pottery-record lead. Kanewal was found while reading *Indian Archaeology 1977–78 – A Review*, p. 21, item 22: the passage explicitly reports incised Harappan characters on potsherds. Its 1980 final-report bibliography was then verified in the [CiNii record](https://ci.nii.ac.jp/ncid/BA82253260). Addition evidence is in `site-rows.json[].addition_basis`; search bundle B37 contains its three searches.
 
-Published counts do not form a single comparable total. Lothal evidence ranges from Mahadevan’s 165 entries, to a later source audit that found prose total 130 versus 133 impressions in the figure table, to approximately 100 terracotta sealings in Frenez and Tosi (2005), and approximately 90 in a 2023 ICIT-based summary. The count basis and corpus versions differ. For Gola Dhoro, the 2005 *Antiquity* article reports six inscribed steatite seal objects (p. 4), while local coverage has six seal faces; the matching numeral does not prove a one-to-one object match. Kanmer has three clay sealings reported by Agrawal et al. (2010), while the local export has ten faces across eight object families and no CISI IDs. Desalpur’s IAR entry reports three script-bearing seals (1963-64, pp. 10-12); the local export has three faces and three CISI IDs. Padri has one button-shaped seal in IAR 1991-92; the local export has no Padri row. These are the clearest count comparisons in this batch.
+Twelve sites have a bibliographically identified completed campaign publication, including the 121-page Nuhato 2018 departmental report. Relevant passages from six were read: Lothal, Dholavira, Kanmer, Rangpur, Nuhato and Daimabad. The other six are bibliographic identifications. The 12 sites are listed in `aggregate-results.json.completed_report_sites`; each row’s `final_report` states access. This count does not imply a final publication for all seasons. Nageshwar’s 1990 report date is taken from Rawat 2015, p. 213; the first pass’s 1992 attribution was not independently reproduced.
 
-## Count and metadata limits
+## Published counts and local coverage
 
-The report and table distinguish published counts from local classes. Local class tallies are face observations and can include multiple faces per object. Counts are not summed across sites or source versions. Object-by-object matches, CISI page ranges, Mahadevan count definitions and ICIT extraction dates remain unresolved for most sites. The most useful next audit is to inspect CISI 1 directly for Lothal, Surkotada, Pabumath, Prabhas Patan and Desalpur, then compare identifiers and printed page ranges with the local export.
+| Site | CISI 1 objects / pages | Local faces / families / CISI IDs |
+| --- | --- | --- |
+| Lothal | 290 / 238–297 | 208 / 182 / 179 |
+| Dholavira | 2 / 355 | 238 / 230 / 2 |
+| Surkotada | 6 / 362–363 | 6 / 6 / 6 |
+| Kanmer | No site section in inspected contents | 10 / 8 / 0 |
+| Shikarpur | No site section in inspected contents | 8 / 8 / 0 |
+| Gola Dhoro (Bagasra) | No site section in inspected contents | 6 / 6 / 0 |
+| Nageshwar | No site section in inspected contents | 0 / 0 / 0 |
+| Khirsara | 2 / 357 | 4 / 4 / 2 |
+| Kuntasi | No site section in inspected contents | 0 / 0 / 0 |
+| Rojdi | 1 / 361 | 4 / 4 / 4 |
+| Desalpar | 3 / 355 | 3 / 3 / 3 |
+| Juni Kuran | No site section in inspected contents | 0 / 0 / 0 |
+| Kotada Bhadli | No site section in inspected contents | 0 / 0 / 0 |
+| Navinal | No site section in inspected contents | 0 / 0 / 0 |
+| Nagwada | No site section in inspected contents | 0 / 0 / 0 |
+| Padri | No site section in inspected contents | 0 / 0 / 0 |
+| Bet Dwarka | No site section in inspected contents | 0 / 0 / 0 |
+| Rangpur | 2 / 360 | 0 / 0 / 0 |
+| Prabhas Patan | 1 / 359 | 0 / 0 / 0 |
+| Pithad | No site section in inspected contents | 0 / 0 / 0 |
+| Nuhato | No site section in inspected contents | 5 / 5 / 0 |
+| Daimabad | 9 / 352–354 | 2 / 2 / 2 |
+| Pabumath | 1 / 358 | 1 / 1 / 1 |
+| Juna Khatiya | No site section in inspected contents | 1 / 1 / 0 |
+| Kanewal | No site section in inspected contents | 0 / 0 / 0 |
 
-Campaign chronology, directors, exact findspots, strata, absolute dates, dimensions, materials, images, drawings, accession numbers and current holdings are not uniformly published in the accessible records sampled here. The rows mark these fields partial where selected evidence exists and identify broad audit gaps. Search snippets and catalog records are labeled as such in `sources.json`; a snippet does not count as a read excavation report. No third-party PDFs or extracted corpora were copied into the owned directory.
+The table’s published counts are CISI 1 identifier slots from the printed site sections and contents, not complete excavation totals. At those ten sites the local export has 466 faces, 432 families and 199 distinct CISI identifiers, including later Dholavira material and Rojdi identifiers extending beyond CISI 1. The local source is [local-site-coverage.json](../../../2026-10-06-research-program/local-site-coverage.json); exact unchanged source fields and hash are copied into each row’s `local_corpus.evidence`. No completeness percentage is calculated across these units. CISI 1’s scan contains a duplicate 431-page sequence; the audit used the first sequence and treated photographic views/impressions separately from object identifiers.
 
-Coordinates are approximate site locations, not excavation grid points. A few coordinate leads conflict or refer to a village rather than the archaeological mound; the row-level value should be treated as provisional where its source is a secondary gazetteer or a search result. The 2005 Gola Dhoro article gives 23.0583 N, 70.6194 E, while a 2025 regional article gives Bagasra 23.0367 N, 70.6197 E. Navinal is now located in Abhayan et al. (2025), section 4.4, at 22.8215 N, 69.5972 E. Nuhato coordinates were not located in the sources inspected.
+Mahadevan 1977, p. 6, Table 1 gives 175 selected legible inscribed objects across five sites: Lothal 165, Desalpar 2, Dholavira 1, Rojdi 2 and Surkotada 5. Lothal’s class table, p. 7, gives 89 seals, 75 sealings and one pottery object. These objects overlap CISI records and cannot be added to 317. The values and selection rules are in `mahadevan1977` and `counts_by_class`.
 
-## Review checks
+Several larger source inventories require separate interpretation. Rangpur’s report, p. 130, counts 26 figurative, 188 linear-symbol and eight combined-sign potsherds, a total of 222 broadly marked sherds; its CISI 1 selection has two objects and the local export has none. Dholavira’s 2015 report, p. 242, marks 139 of 194 analysed seals as inscription-bearing; its overall inventory, p. 232, has 225 seals. The same report gives 60 sealings in its overview and 61 in the detailed chapter, p. 308, whose subtraction is internally inconsistent. Lothal’s 1985 report, p. 305, gives 91 sealings; Frenez and Tosi 2005, pp. 67–68, give 93. These differences are retained side by side in each row’s `count_comparisons`; [sources.json](sources.json) supplies exact bibliographies and witnesses.
 
-Repeat the 75 logged searches and inspect the opened witnesses for Lothal, Dholavira, Surkotada, Kanmer, Shikarpur, Gola Dhoro, Nageshwar, Kuntasi, Rojdi, Padri, Bet Dwarka, Rangpur, Daimabad and Pabumath. In particular, verify Lothal count basis and figure/prose disagreement, Gola Dhoro p. 4, Desalpur IAR pp. 10-12, Padri IAR 1991-92 and CISI 1 site/page entries. Confirm that the script reproduces 24 rows, 75 search entries and the 11 local site rows totaling 489 faces.
+Daimabad’s final report, pp. 504–507, explicitly describes two script-bearing terracotta seals and five marked sherds across phases II andIII. CISI 1 catalogues nine objects with different classifications, including a cylinder scene and a crescent scene object. Desalpar’s primary review, p. 10, has two script-bearing seals and one lettered clay sealing. The first pass’s three-seal claim is corrected. Shikarpur’s 2008–09 report, pp. 3–5, has two inscribed sealing objects and one tablet; three impressions on one sealing remain one object. Each observation has its own count unit, date and source page in `reported_counts`.
+
+Fuls 2023’s ICIT-based regional list,§5.3, p. 501, supplies 1446 legible sign occurrences across 13 batch sites. Those are signs, not objects, faces or texts; they are stored in `icit_site_count` and excluded from object totals. No ICIT object denominator was verified. Juna Khatiya’s two signs in that transcription require an original artifact source before archaeological inscription status can be verified.
+
+## Finds after catalogue coverage
+
+Two sites have directly established CISI 1 sections followed by dated new inscribed finds: Dholavira’s 1989–2005 campaign and Khirsara’s 2009–10 campaign. Nuhato adds a third dated later-find case: the 2018 report, pp. 14, 41–42, describes a newly excavated inscribed terracotta seal distinct from the 1973 find. It cites the older seal in CISI 2, p. 390; that catalogue page remains uninspected. Thus the total is two with directly checked catalogue baselines, plus one with a baseline reported by the excavation author. Nuhato is outside the regional-only denominator.
+
+Four further sites have explicit script-material reports published after 1987 and no CISI 1 site section: Kanmer, Shikarpur, Gola Dhoro and Nagwada. Nagwada’s sealing is from the 1987–88 season and the annual review was published in 1993; its excavation date cannot be narrowed to before or after CISI 1 publication. Padri’s later fish-pattern button seal has uncertain inscription status. Bet Dwarka’s two reported protohistoric inscriptions have disputed attribution and unverified recovery dates. Rojdi’s later catalogue publication does not by itself date new inscription discoveries. Details are in `post_cisi_finds`.
+
+## Remaining gaps
+
+All 25 sites have sourced coordinates or a published extent: 24 points and Bet Dwarka’s island bounds. Conflicts are retained in `coordinates.conflicts`, including the erroneous Juni Kuran point removed from the first pass and the differing Prabhas, Pithad, Khirsara and Nageshwar locations.
+
+The fields most often lacking a usable value in the inspected witnesses are ICIT object counts (25 sites), inscribed metal-class totals (24), other-object totals (23) and tablet totals (22). Inscription drawings were not demonstrated in 19 sites’ inspected passages and registrations in 15. These figures describe this audit’s source access, not the contents of all unpublished or inaccessible records. Each unresolved field includes actual search IDs, returned URLs and an inspected passage in `unresolved_fields`; [searches.json](searches.json) links to verbatim local responses.
+
+Rojdi’s CISI 3.2 site pages and count remain unavailable. Nuhato’s CISI 2 page needs direct inspection. Full final object inventories for Surkotada, Nageshwar, Kuntasi, Rojdi, Somnath and Kanewal remain unread. No identified inscribed artifact was verified for Nageshwar, Kotada Bhadli, Navinal or Pithad; Juni Kuran’s steatite seal has unverified script status. Seventeen sites have unresolved current object holdings. `source-access.json` retains 13 failed acquisitions among 45 attempts and three HTTP200 challenge payloads. Successful alternate IAR downloads and the Nuhato departmental PDF are recorded alongside earlier failures. Source rights are retained per publication; raw scans, images and responses remain local.
