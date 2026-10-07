@@ -57,10 +57,10 @@ The coordinator checked the user's summary of the lecture against its captions; 
 | Sign 740's use relates to site size or type | No corrected association across 17 sites | D2 |
 | Unicorn dominates inside the valley, the "Indus bison" outside | 1,236 of 1,604 core known motifs are unicorns; 15 of 27 external known motifs are gaur, including all 13 circular motifs | D2 |
 | Motif frequencies stay the same for almost a millennium | The q = 0.007 difference comes from Period 3C subphase labels that share one date range; unambiguous phases give 6 of 7 unicorns in 3B and 112 of 123 in 3C, which does not contradict persistence | D2 |
-| Inscribed media diversify around 2100 BCE | Period 3C has 4.60 more rarefied object types than 3B (Holm p = .0145); the excavation composition of the two periods differs and is being separated in a further amendment | D1 |
+| Inscribed media diversify around 2100 BCE | Period 3C has 4.60 more rarefied object types than 3B (Holm p = .0145), and 3.74 and 4.36 more within period-labelled faces only and Mound E only, so the rise survives the excavation-composition difference between the periods | D1 |
 | A small sign set marks the earliest phase | 31 early families with 18 signs match what later samples of the same size show | D1 |
 | "Man" and "twins" signs are frequent outside the valley | Wells 090 and 091 are 7 and 5 of 149 external tokens against 184 and 22 of 17,792 core tokens; all external cases are on circular seals, so no matched comparison exists | D1 |
-| Statistical work treats the corpus as monolithic | Harappa 3B and 3C differ by 0.190 bits after object-type adjustment, 0.032 bits above the permutation-null mean; regional differences pass in 4 of 6 pairs under one reference and 1 of 6 under another | D1 |
+| Statistical work treats the corpus as monolithic | Harappa 3B and 3C differ by 0.190 bits after object-type adjustment, 0.033 bits above the permutation-null mean, and sign 034 passes a false-discovery correction; the apparent rise in text length (0.72 signs) falls to 0.12–0.16 within single-excavation subsets; regional differences pass in 4 of 6 pairs under one reference and 1 of 6 under another | D1 |
 
 The lecture's interpretive claims, such as seals as corporate badges and the unbalanced oligopoly, are attributed positions; Frenez develops the oligopoly argument in his 2018 chapter, pp. 186–187. [D1](../2026-10-06-chronology-region/REPORT.md), [D2](../2026-10-06-sign-context-and-seals/REPORT.md).
 
