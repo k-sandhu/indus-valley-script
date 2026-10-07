@@ -39,7 +39,7 @@ SHAPE_RE = (r'(?:Fragmented |Irregular |Truncated |fragmented )?'
             r'Parallelepiped|Discoid|discoid|Octagonal|Cuboid|Hemisphere|hemisphere|Cone|'
             r'Pyramid|Pyra|Irregular|Clay sphendonoid|Dome|Trapezoid|Rounded flat|Kudurru|‘Kudurru’|'
             r'KUDURRU|Bead)')
-MATERIALS = ['banded chert', 'fluvial limestone', 'black stone', 'white stone', 'green stone',
+MATERIALS = ['copper/bronze', 'banded chert', 'fluvial limestone', 'black stone', 'white stone', 'green stone',
              'grey stone', 'gray stone', 'red stone', 'pink stone', 'unpolished stone',
              'polished stone', 'volcanic stone', 'carnelian', 'chalcedony', 'limestone',
              'sandstone', 'softstone', 'soapstone', 'steatite', 'serpentinite', 'hornblende',
@@ -78,17 +78,42 @@ def class_of(cat, site, description):
         return 'possible', 'entry explicit designation'
     return 'class-unresolved', 'no explicit entry classification encoded'
 
+def mass_number(token):
+    """A single comma with 1–2 trailing digits is decimal, unlike 1,000."""
+    if re.fullmatch(r'\d+,\d{1,2}', token):
+        return float(token.replace(',', '.'))
+    return float(token.replace(',', ''))
+
+def page_without_captions(page):
+    blocks = [b for b in page.get_text('dict')['blocks'] if b['type'] == 0]
+    texts = ['\n'.join(''.join(s['text'] for s in l['spans']) for l in b['lines']) for b in blocks]
+    dropped = {i for i, t in enumerate(texts) if re.match(r'^\s*[pqtus]?\s*Fig\.\s*\d+\.', t)}
+    # Continuations may be separate PDF blocks. Caption type is italic, and
+    # the continuation must touch the same caption column vertically.
+    changed = True
+    while changed:
+        changed = False
+        for i, b in enumerate(blocks):
+            spans = [s for l in b['lines'] for s in l['spans'] if s['text'].strip()]
+            if i in dropped or not spans or not all(s['font'].endswith('-It') for s in spans):
+                continue
+            x0, y0, x1, y1 = b['bbox']
+            if any(-3 <= y0-blocks[j]['bbox'][3] <= 6 and
+                   min(x1, blocks[j]['bbox'][2]) > max(x0, blocks[j]['bbox'][0]) for j in dropped):
+                dropped.add(i); changed = True
+    return '\n'.join(t for i, t in enumerate(texts) if i not in dropped)
+
 def parse():
     doc = fitz.open(SOURCE)
     pages, offsets, snippets = [], [], []
     total = 0
     for i in range(57, 181):
-        txt = doc[i].get_text().replace('\u00ad', '')
+        txt = page_without_captions(doc[i]).replace('\u00ad', '')
         # Remove page headers without reordering columns or dropping entry lines.
         lines = [s for s in txt.splitlines() if not re.fullmatch(r'\d{1,3}', s.strip())
                  and not s.startswith(('Weight and Value', 'Enrico Ascalone',
                                        '4 Susiana and Lower Mesopotamia',
-                                       '5 Southern and Eastern Iran', '6 Greater Indus Valley'))]
+                                       '5 Southern and Eastern Iran', '5 Iranian Highlands', '6 Greater Indus Valley'))]
         txt = '\n'.join(lines) + '\n'
         offsets.append(total)
         pages.append(i + 1)
@@ -125,7 +150,7 @@ def parse():
         description = rest[:dim.start()].strip(' .')
         measure_tail = rest[dim.start():]
         mass = re.search(r'(?<![\w.])([\d,]+(?:\.\d+)?)\s*(\+\s*x)?\s*g\b', measure_tail)
-        mass_g = float(mass[1].replace(',', '')) if mass else None
+        mass_g = mass_number(mass[1]) if mass else None
         missing_mass = bool(mass and mass[2])
         dimensions_text = (measure_tail[:mass.start()] if mass else measure_tail.split(' - ')[0]).strip(' ,')
         dimensions = [{'axis': m[1], 'value_cm': float(m[2])} for m in
@@ -154,9 +179,10 @@ def parse():
         excavation_id_literal = context.split(',')[0] if context not in ('No context', 'Surface') else None
         area = re.search(r'\b(Middle Town|Lower Town|Castle|Bailey|Citadel|Acropolis)\b', context, re.I)
         level = re.search(r'\bLevel\s+([^,]+)', context, re.I)
-        grids = re.findall(r'\b\d+(?:[xX/]\d+)+(?:[xX][A-Za-z0-9/+]+)?', context)
+        grids = re.findall(r'\b\d+(?:[xX/]\d+)+(?:[xX][A-Za-z0-9/+]+)?', context) if site == 'Dholavira' else []
         marking = re.findall(r'with\s+(?:markings?|inscription)[^,.]*(?:\([^)]*\))?', description, re.I)
         unit = re.findall(r'(?:\d+(?:\.\d+)?\s+)?(?:certified\s+)?(?:minas?|shekels?|unit)[^)]*', description, re.I)
+        unit += re.findall(r'\(\s*=\s*\d+(?:\.\d+)?\s*\)', description + ' ' + measure_tail)
         cls, cls_basis = class_of(cat, site, description)
         shape_condition = shape_literal + ', ' + condition
         damage = bool(re.search(r'chipp|fragment|broken|incomplete|damag|restor|missing', shape_condition, re.I))

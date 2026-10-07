@@ -15,14 +15,21 @@ def main():
     if output.exists(): raise FileExistsError(output)
     endpoint=RUN/'runs/2026-10-06-main'; raw=RAW/'main'
     rows=json.loads((RAW/'extraction-v6/catalogue-rows.json').read_text(encoding='utf-8'))
-    doc,reparsed=parse()
+    # The current parser intentionally corrects the historical extraction.
+    # Verify the frozen rows using the preserved parser and protocol witness.
+    import importlib.util
+    historical=RUN/'history/2026-10-07-before-review-response'
+    spec=importlib.util.spec_from_file_location('historical_weight_parser',historical/'parse_catalogue.py')
+    module=importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+    module.SOURCE=ROOT/'data/raw/2026-10-02-connections-and-priority/regional-west/ascalone2022.pdf'
+    doc,reparsed=module.parse()
     # JSON represents the parser's date-range tuples as lists.
     reparsed=json.loads(json.dumps(reparsed))
     assert rows==reparsed, 'Parser reproduction differs'
     assert all(r['cat']==i+1 for i,r in enumerate(rows))
     manifest=json.loads((endpoint/'manifest.json').read_text())
     assert manifest['source_rows_sha256']==sha(RAW/'extraction-v6/catalogue-rows.json')
-    assert manifest['protocol_sha256']==sha(RUN/'PROTOCOL.md')
+    assert manifest['protocol_sha256']==sha(historical/'PROTOCOL.md')
     assert manifest['analysis_sha256']==sha(RUN/'analyze.py')
     complete=json.loads((endpoint/'completion.json').read_text())
     assert all(sha(endpoint/name)==digest for name,digest in complete['output_hashes'].items())

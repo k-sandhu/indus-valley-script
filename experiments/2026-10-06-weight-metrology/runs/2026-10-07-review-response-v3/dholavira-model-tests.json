@@ -1,0 +1,245 @@
+{
+  "status": "Exploratory",
+  "single_unit": {
+    "model": "indus_binary_decimal",
+    "n": 298,
+    "unit_g": 14.00290059727235,
+    "sigma_log": 0.04319325357716405,
+    "signal_cv_percent": 4.321340736029663,
+    "signal_probability": 0.5619747057661393,
+    "log_likelihood": -662.2867849937943,
+    "aic": 1330.5735699875886,
+    "background_aic": 1656.8457862047483,
+    "aic_minus_background": -326.27221621715967,
+    "unit_at_boundary": false,
+    "sigma_at_boundary": false,
+    "signal_at_boundary": false,
+    "optimizer_success": true,
+    "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "starts": 10,
+    "successful_starts": 10
+  },
+  "fixed_13_65": {
+    "model": "indus_binary_decimal",
+    "n": 298,
+    "unit_g": 13.65,
+    "sigma_log": 0.05087518851892544,
+    "signal_cv_percent": 5.090812614644083,
+    "signal_probability": 0.5636609929449196,
+    "log_likelihood": -679.5097676795531,
+    "aic": 1363.0195353591062,
+    "parameter_count": 2,
+    "unit_fixed": true,
+    "unit_at_boundary": false,
+    "sigma_at_boundary": false,
+    "signal_at_boundary": false,
+    "aic_minus_background": -293.8262508456421,
+    "optimizer_success": true
+  },
+  "log_likelihood_loss_by_band": [
+    {
+      "band": "below-1.3",
+      "n": 53,
+      "ll_free": -160.08839848367552,
+      "ll_fixed": -160.33570836282325,
+      "ll_loss": 0.2473098791477355
+    },
+    {
+      "band": "1.3-to-5",
+      "n": 147,
+      "ll_free": -318.82425395853716,
+      "ll_fixed": -335.0184978709385,
+      "ll_loss": 16.19424391240136
+    },
+    {
+      "band": "5-to-100",
+      "n": 90,
+      "ll_free": -167.43112931779095,
+      "ll_fixed": -168.75948787192075,
+      "ll_loss": 1.3283585541298066
+    },
+    {
+      "band": "above-100",
+      "n": 8,
+      "ll_free": -15.9430032337908,
+      "ll_fixed": -15.396073573870453,
+      "ll_loss": -0.5469296599203464
+    }
+  ],
+  "alternative_models": [
+    {
+      "model": "two-unit",
+      "n": 298,
+      "parameter_count": 6,
+      "sigma_cap": 0.2,
+      "log_likelihood": -609.0491238935083,
+      "aic": 1230.0982477870166,
+      "parameters": [
+        13.817460863677004,
+        14.72383384649222,
+        0.020148841860432476,
+        0.18927090972350688,
+        0.35754817064789635,
+        0.9804909309984007
+      ],
+      "optimizer_success": true,
+      "successful_starts": 48,
+      "starts": 48,
+      "boundary_parameters": [],
+      "unit1_g": 13.817460863677004,
+      "unit2_g": 14.72383384649222,
+      "cv1_percent": 2.01508870190954,
+      "cv2_percent": 19.097871430763075,
+      "unit1_signal_fraction": 0.35754817064789635,
+      "signal_probability": 0.9804909309984007,
+      "aic_improvement_over_single_unit": 100.47532220057201
+    },
+    {
+      "model": "two-unit",
+      "n": 298,
+      "parameter_count": 6,
+      "sigma_cap": 0.05,
+      "log_likelihood": -642.3752480674179,
+      "aic": 1296.7504961348359,
+      "parameters": [
+        13.778098015371166,
+        15.0,
+        0.019922924785537168,
+        0.05,
+        0.6273599068560672,
+        0.5989096361010012
+      ],
+      "optimizer_success": true,
+      "successful_starts": 48,
+      "starts": 48,
+      "boundary_parameters": [
+        1,
+        3
+      ],
+      "unit1_g": 13.778098015371166,
+      "unit2_g": 15.0,
+      "cv1_percent": 1.992490191545678,
+      "cv2_percent": 5.003126628214686,
+      "unit1_signal_fraction": 0.6273599068560672,
+      "signal_probability": 0.5989096361010012,
+      "aic_improvement_over_single_unit": 33.823073852752714
+    },
+    {
+      "model": "two-unit",
+      "n": 298,
+      "parameter_count": 6,
+      "sigma_cap": 0.03,
+      "log_likelihood": -647.1517176340885,
+      "aic": 1306.303435268177,
+      "parameters": [
+        13.802248701632895,
+        15.0,
+        0.02152115606153705,
+        0.03,
+        0.7379426086782719,
+        0.5609858938456646
+      ],
+      "optimizer_success": true,
+      "successful_starts": 48,
+      "starts": 48,
+      "boundary_parameters": [
+        1,
+        3
+      ],
+      "unit1_g": 13.802248701632895,
+      "unit2_g": 15.0,
+      "cv1_percent": 2.1523648237516513,
+      "cv2_percent": 3.0006751265795875,
+      "unit1_signal_fraction": 0.7379426086782719,
+      "signal_probability": 0.5609858938456646,
+      "aic_improvement_over_single_unit": 24.270134719411544
+    },
+    {
+      "model": "absolute-error",
+      "n": 298,
+      "parameter_count": 4,
+      "sigma_cap": 0.2,
+      "log_likelihood": -618.5031344489904,
+      "aic": 1245.0062688979808,
+      "parameters": [
+        13.892597534925594,
+        0.02866001933094612,
+        0.19649760565149782,
+        0.786720907077366
+      ],
+      "optimizer_success": true,
+      "successful_starts": 24,
+      "starts": 24,
+      "boundary_parameters": [],
+      "unit_g": 13.892597534925594,
+      "sigma_relative": 0.02866001933094612,
+      "extra_g": 0.19649760565149782,
+      "signal_probability": 0.786720907077366,
+      "aic_improvement_over_single_unit": 85.56730108960778
+    },
+    {
+      "model": "small-target-offset",
+      "n": 298,
+      "parameter_count": 4,
+      "sigma_cap": 0.2,
+      "log_likelihood": -643.6490899882019,
+      "aic": 1295.2981799764038,
+      "parameters": [
+        13.728114971622219,
+        0.04169203798788912,
+        0.0940479017428713,
+        0.589008545370821
+      ],
+      "optimizer_success": true,
+      "successful_starts": 24,
+      "starts": 24,
+      "boundary_parameters": [],
+      "unit_g": 13.728114971622219,
+      "sigma_relative": 0.04169203798788912,
+      "extra_g": 0.0940479017428713,
+      "signal_probability": 0.589008545370821,
+      "aic_improvement_over_single_unit": 35.275390011184754
+    }
+  ],
+  "extra_fractions": {
+    "model": "indus-extra-fractions",
+    "n": 298,
+    "unit_g": 14.102579460982415,
+    "sigma_log": 0.0856984171673835,
+    "signal_cv_percent": 8.585600516044863,
+    "signal_probability": 0.9210242606680055,
+    "log_likelihood": -600.3421041966023,
+    "aic": 1206.6842083932047,
+    "background_aic": 1656.8457862047483,
+    "aic_minus_background": -450.16157781154357,
+    "unit_at_boundary": false,
+    "sigma_at_boundary": false,
+    "signal_at_boundary": false,
+    "optimizer_success": true,
+    "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "starts": 10,
+    "successful_starts": 10
+  },
+  "extra_fractions_ll_gain": 61.94468079719195,
+  "random_extra_levels": {
+    "status": "Synthetic",
+    "seed": 20261012,
+    "draws": 120,
+    "ll_gain_mean": 17.179162009101386,
+    "ll_gain_percentile95": 53.467398489490776,
+    "ll_gain_max": 62.262626119058496,
+    "fraction_ge_declared_gain": 0.008333333333333333
+  },
+  "book_heavier_list": {
+    "enumerated_n": 97,
+    "mean_printed_normalized_unit_g": 14.30536082474227,
+    "primary_members_n": 82,
+    "primary_small_band_members_n": 55,
+    "source_printed_pages": [
+      169,
+      170,
+      171
+    ],
+    "selection_limit": "Book group was selected metrologically; conditional partitions cannot establish regional origin."
+  }
+}

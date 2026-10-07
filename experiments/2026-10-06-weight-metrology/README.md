@@ -1,55 +1,33 @@
-# Weight metrology package
+# Indus weight metrology across sites and regions
 
-The parser covers **2,058 catalogue entries**, including **938 Greater Indus records**. A 60-entry rendered-page audit found **5 period-field errors (8.33%)**, repaired before fitting, with **0 observed mass/+x errors**. The intact certain Dholavira sample contains **298 objects**: unit **14.003 g** (bootstrap 95% interval **13.819–14.518**), fitted signal CV **4.32%** (interval **2.41–15.85%**). Its broader 568-object frame has **17.24% CV**. Of **701 western records**, **136 (19.40%)** have a smaller Indus residual than every local alternative, and **18 (2.57%)** meet the additional close-fit rule. [Report](REPORT.md), [validation](parser-validation-v2.json), [model results](runs/2026-10-06-main/model-comparisons.json), [western results](runs/2026-10-06-main/western-compatibility.json).
+The corrected Dholavira analysis gives **13.716 g, signal CV 1.591%** for 90 intact certain weights of 5–100 g, and **14.280 g, CV 5.777%** for 147 weights of 1.3–5 g. The pooled 14.003 g fit combines these distributions. Western compatibility counts fail the chance comparison and give **no evidence of Indus-standard weights in the western assemblages**. [Report](REPORT.md); [mass-band estimates](runs/2026-10-07-review-response-v4/mass-band-estimates.json), `fits`; [chance controls](runs/2026-10-07-review-response-v4/western-chance-baselines.json), `nulls`.
 
-The principal mass fits are a Frozen evaluation, with arithmetic recorded as Verified computation. Per-site Monte Carlo seed deviations are labelled Exploratory in [implementation notes](IMPLEMENTATION-NOTES.md). The separate [Gulf supplement](gulf-supplement.json) is Exploratory: **6/7** selected Qala'at al-Bahrain weights fall within 3% of either 13.5 or 13.65 g with the source-derived Gulf series. A complete Gulf assemblage analysis and several requested full-text precedent reviews remain unfinished. [Source access record](sources.json).
+The final review response is **Exploratory**, because the model changes followed the [Sonnet review](REVIEW.md). Its computation is verified. The frozen `runs/2026-10-06-main/` endpoint and extraction v6 remain unchanged. The [dated protocol amendments](PROTOCOL.md) declare the new comparisons; [historical documents and code](history/2026-10-07-before-review-response/) preserve the earlier statements.
 
-## Files and source handling
+## What changed
 
-Start with [PROTOCOL.md](PROTOCOL.md), [REPORT.md](REPORT.md) and [RETROSPECTIVE.md](RETROSPECTIVE.md). The main endpoint is `runs/2026-10-06-main/`; [summary tables](summary-tables/manifest.json) flatten counts, unit intervals, quantogram peaks and western sensitivities. [Verification](verification.json) independently checks 45 likelihoods, 169 cosine scores and all 701 western classifications. A [full rerun](reproduction.json) reproduced all 18 numerical files and nine local derivatives byte for byte. [Registry proposal](registry-entry.json) is for the coordinator to integrate. [File inventory](FILES.json) enumerates the package's created files and local raw witnesses with hashes.
+The parser retains **2,058 entries**, including **938 Greater Indus** records. It fixes decimal-comma masses in cats. 1201 and 1730, clears **111** false grid fields, removes captions from **7** entries and captures cat. 593's numeric unit annotation. The explicit 430-object dimension screen has **13 flags before correction and 12 afterward**; the review's 413-object screen excludes 17 terracotta records, which add no flags. Cat. 1212 has a further printed inconsistency outside the box-shape gate. [Parser audit](runs/2026-10-07-review-response-v4/parser-audit.json), `changed_field_counts`, `dimension_screen_before`, `dimension_screen_after`; [report](REPORT.md).
 
-The source PDF already held by the project is `data/raw/2026-10-02-connections-and-priority/regional-west/ascalone2022.pdf`. The parser rows are local-only at `data/raw/2026-10-06-weight-metrology/extraction-v6/catalogue-rows.json`. The local directory also holds earlier extraction witnesses, 60-entry audit images, downloaded literature, web-result records, bootstrap draws and object assignments. No third-party payload was copied into the owned directory.
+The final run contains **45 site/model fits, 75 stratum fits, 1,600 bootstrap refits and 12 quantograms**. Two-unit, additional-fraction, absolute-error and small-mass-offset models all improve on the original pooled model. Their differences leave the physical cause unresolved. The main model comparisons have **0 optimizer failures**. [Completion](runs/2026-10-07-review-response-v4/completion.json); [model tests](runs/2026-10-07-review-response-v4/dholavira-model-tests.json).
 
-Reused prior work: the regional-west entry framing/dehyphenation approach, the 938-entry site-count audit, +x/mark handling from its census, and the Susa accession-collision/mass-disagreement findings. Their locations and the registry checks are documented in the retrospective. No shared registry, index, manuscript or earlier endpoint was changed.
+With the old western rule, observed counts of **136 geometric / 18 close** compare with jitter-control means of **170.246 / 38.727**. With canonical 7.8, 8.4 and 9.4 g competitors and a 13.65 g reference, observed counts are **125 / 29**, against **148.716 / 38.5375**. The 29 close hits are 4.137% of 701 selected records (conditional Wilson interval 2.896–5.878%). Ascalone's Susa list and the overlap comparison are documented separately; cat. 220 is absent from the revised screen objects. [Compatibility](runs/2026-10-07-review-response-v4/western-compatibility.json); [Susa comparison](runs/2026-10-07-review-response-v4/ascalone-susa-comparison.json).
 
-## Rerun from the repository root
+## Reproduce from the repository root
 
-Requirements are Python, NumPy, SciPy, PyMuPDF (`fitz`) and Pillow. The endpoint used Python 3.13.5, NumPy 2.2.6 and SciPy 1.17.1. Scripts refuse existing output paths. Use fresh names on later reviews. Set library temporary locations inside the local raw directory in PowerShell:
-
-```powershell
-$metrologyTemp = Join-Path (Get-Location) 'data/raw/2026-10-06-weight-metrology/tmp'
-New-Item -ItemType Directory -Force -Path $metrologyTemp | Out-Null
-$env:TMP = $metrologyTemp
-$env:TEMP = $metrologyTemp
-$env:MPLCONFIGDIR = Join-Path $metrologyTemp 'mpl'
-```
-
-Extract all entries and regenerate the fixed random sample's PDF crops:
+Python needs NumPy, SciPy, PyMuPDF and Pillow, already available in this environment. No installation is needed. The original source PDF remains at `data/raw/2026-10-02-connections-and-priority/regional-west/ascalone2022.pdf`. Scripts set writable library temporary paths under this package's local raw directory. New endpoints refuse existing output directories.
 
 ```powershell
-python -X utf8 experiments/2026-10-06-weight-metrology/parse_catalogue.py --raw-output data/raw/2026-10-06-weight-metrology/review-extraction --summary-output experiments/2026-10-06-weight-metrology/review-extraction.json --render-sample
-```
-
-The audit script reconstructs the recorded author review and checks repairs. Running it does not perform a new visual review. The reviewer should inspect the regenerated crops and full source pages independently, especially IDs 652, 758, 892, 930 and 1892, and the seven crop-repair IDs in the raw audit.
-
-```powershell
-python -X utf8 experiments/2026-10-06-weight-metrology/validation_audit.py --output experiments/2026-10-06-weight-metrology/review-validation.json --raw-output data/raw/2026-10-06-weight-metrology/review-manual-validation.json
-```
-
-Recompute all main fits, 1,800 bootstrap refits and ten 999-surrogate quantograms. The original run took 137 seconds on this environment; timing varies. This repeats the documented successive seeds.
-
-```powershell
-python -X utf8 experiments/2026-10-06-weight-metrology/analyze.py --rows data/raw/2026-10-06-weight-metrology/review-extraction/catalogue-rows.json --output experiments/2026-10-06-weight-metrology/runs/reviewer-rerun --raw-output data/raw/2026-10-06-weight-metrology/reviewer-rerun
-python -X utf8 experiments/2026-10-06-weight-metrology/verify.py --output experiments/2026-10-06-weight-metrology/review-verification.json
-```
-
-`verify.py` checks the original frozen endpoint. Compare a fresh run's numerical output hashes with the original using `compare_runs.py`; timestamp/path/timing manifests are checked separately.
-
-```powershell
-python -X utf8 experiments/2026-10-06-weight-metrology/compare_runs.py --actual experiments/2026-10-06-weight-metrology/runs/reviewer-rerun --actual-raw data/raw/2026-10-06-weight-metrology/reviewer-rerun --output experiments/2026-10-06-weight-metrology/review-reproduction.json
-python -X utf8 experiments/2026-10-06-weight-metrology/make_summaries.py --output experiments/2026-10-06-weight-metrology/review-summary-tables
-python -X utf8 experiments/2026-10-06-weight-metrology/gulf_supplement.py --output experiments/2026-10-06-weight-metrology/review-gulf.json --raw-output data/raw/2026-10-06-weight-metrology/review-gulf-scores.json
+python -B -X utf8 experiments/2026-10-06-weight-metrology/review_response.py --output experiments/2026-10-06-weight-metrology/runs/2026-10-07-reviewer-repeat --raw-output data/raw/2026-10-06-weight-metrology/2026-10-07-reviewer-repeat
+python -B -X utf8 experiments/2026-10-06-weight-metrology/verify_review_response.py --run experiments/2026-10-06-weight-metrology/runs/2026-10-07-reviewer-repeat --output experiments/2026-10-06-weight-metrology/reviewer-repeat-verification.json
+python -B -X utf8 experiments/2026-10-06-weight-metrology/verify.py --output experiments/2026-10-06-weight-metrology/reviewer-frozen-verification.json
+python -B -X utf8 experiments/2026-10-06-weight-metrology/make_review_summaries.py --run experiments/2026-10-06-weight-metrology/runs/2026-10-07-reviewer-repeat --output experiments/2026-10-06-weight-metrology/summary-tables-reviewer-repeat
 python tools/review_prose.py --path experiments/2026-10-06-weight-metrology --no-write
 ```
 
-`acquire_sources.py` records the public PDF downloads, including failures, and refuses to overwrite `literature/acquisition.json`. Remeasurement, complete analytical-attribution joins, independent page review, source class/context reconciliation and additional Gulf assemblages require new evidence and separately dated work.
+The completed run took **131.334 seconds**. The final verifier reproduced **2,058 rows**, independently checked **129 likelihoods**, **203 scalar quantogram points**, **6,309 western scores** and **9 null-summary frames**, and confirmed **20 unchanged frozen files**. [Verification](review-response-verification.json); [historical verification](review-response-frozen-verification.json). The completed v3 run is a Superseded witness: a section-boundary error duplicated two rows in its book-list aggregate. The recomputation reproduced **25 owned numerical files and 18 local derivatives** byte for byte, with model tests identical apart from that corrected source-list aggregate. [Comparison](review-response-reproduction.json). Two earlier partial attempts have Failed records. [Retrospective](RETROSPECTIVE.md).
+
+## Files and source access
+
+[Summary tables](summary-tables-review-response/manifest.json) point to the current endpoint. Older `summary-tables/`, top-level verification records and Gulf supplement remain historical witnesses. [Sources](sources.json) records exact titles, venues, access levels, corrected metadata and unrecovered originals. [Research log](review-response-research-log.json) records the new source recovery and failures. [Registry proposal](registry-entry.json) is local to this package; the shared registry was not edited.
+
+All catalogue rows, source-selected lists, predictions, bootstrap draws, simulated counts and acquired source payloads remain under `data/raw/2026-10-06-weight-metrology/`. The [revision file inventory](REVIEW-RESPONSE-FILES.json) lists every new or modified file with hashes. The response adds only a small local working set; the existing PDF and renders were reused. See [REPORT.md](REPORT.md) for the required reweighing, rounding-resolution, wear, identity and excavation-context checks.
