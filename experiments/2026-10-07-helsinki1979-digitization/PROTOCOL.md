@@ -157,3 +157,71 @@ The repair/2026-10-07-v1 candidate was frozen and sampled, but no reference was 
 ### Amendment, 7 October 2026: second disk stop after the repaired sample
 
 The pre-frame check found 917,327,872 bytes free and a later check found 256,331,776. The sampling helper had already written its 60,522,244-byte frame and finished before an interruption could take effect. Preserve the completed repaired freeze, 80 predictions, source crops and 21 source-count pages. No fresh reference or evaluation exists. Stop further repair work under the user cutoff; finish the compact correction deliverables. See follow-up/2026-10-07/storage-stop-v2.json for exact remaining steps and the process-control failure.
+
+### Amendment, 7 October 2026: recording the coordinator's completed v2 evaluation
+
+The coordinator has supplied two independent Sonnet readings of all 80 sampled
+rows and all 21 count pages, third-reader adjudication, and the unchanged
+frozen evaluator's completed metrics. The preceding disk-stop paragraph
+records the state when this package stopped, before that separate work.
+Preserve every pipeline, prediction, initial reading, adjudication and metric
+byte. Record their hashes before this compact analysis. No inference or
+reference creation is authorized by this amendment.
+
+Report both endpoints with their different frames and the intervals already
+in the frozen outputs. The first frame is 60 numbered-section rows on PDF
+31–79. The second is 80 selected occurrences across the numbered, end-sorted
+and beginning-sorted sections (28/26/26), excluding development pages and
+the previous targets. Its random source-count frame is 18 pages, with three
+prespecified stress pages reported separately. A cross-frame difference is
+descriptive and is not a paired estimate of improvement.
+
+The following diagnosis and workload projection are Exploratory because
+the repaired results are already known. Use every per-row metric and the
+adjudicated reference; group by the frozen section assignment and PDF page,
+including field side, parity and continuation/blank-gap observations. Retain
+reader crop tags as source strings alongside the adjudicated normalized tags.
+For each of top one and top five, partition incompatible whole rows by the
+earliest failed observable check: incorrect crop, then unequal drawn-unit
+count in an accepted crop, then incompatible candidates in an accepted crop
+with matching counts. Also tabulate these checks for all 80 rows, including
+compatible rows with a rejected crop. Number/classification errors are
+separate, overlapping field failures and are additionally counted after
+passing crop and count checks. Equal counts alone do not establish unit
+boundaries. Call that subset a count-consistent segmentation proxy, not an
+independent geometric validation of every unit. Compare strict and
+shape-only candidates in the same subset to separate graphic proposal
+misses from underline/position distinctions. Preserve row indices and
+exact input fields for every aggregate.
+
+Estimate review workload for the 11,369 original provisional occurrences:
+one complete human reading and a second independent AI reading per row,
+then adjudication of disagreements. Apply measured row failure rates and
+reader disagreement rates as planning projections, with their sample frame
+and intervals. Where timing records exist, report elapsed task time, summed
+task time and any overlap separately. A task's elapsed time is not measured
+human labor. Monetary cost requires an actual usage/billing witness; otherwise
+leave it unknown and give explicit human-minutes-per-row scenarios rather
+than a fabricated bill. Record process deviations from reader notes without
+inferring prediction exposure they did not report.
+
+All occurrences remain quarantined if any frozen global reliability
+criterion fails. A future automatic release needs a new method freeze and
+fresh blind evaluation passing all criteria plus the existing row-level
+confidence rule. A reviewed transcription route needs a separately specified
+and validated acceptance rule, both readings, adjudication, source-row recall
+and preserved source/editorial metadata. Package L still requires reviewed
+carrier identity and occurrence-surface alignment. No release is computed
+in this follow-up. Keep new output small and rerun the prose scan.
+
+#### Exploratory unit-window inspection, 7 October 2026
+
+Inspect every residual top-five mismatch after accepted row crops and matching
+counts (five units in rows 25, 58 and 72), plus the three accepted-crop rows
+with wrong counts (3, 50 and 52). This selection follows the observed results.
+Use the existing exact source images, adjudicated codes and frozen unit boxes
+to describe missing or split ink and underline association. Preserve this
+inspection as a separate diagnostic witness; do not edit references. A
+graphic-only mismatch with a visibly complete unit is the residual proposal
+classification category. The inspection identifies repair targets and does
+not measure accuracy after a repair.

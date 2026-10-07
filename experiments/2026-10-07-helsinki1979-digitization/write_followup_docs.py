@@ -12,6 +12,9 @@ def read(name):return json.loads((HERE/name).read_text(encoding='utf-8'))
 
 
 def main():
+    if (HERE/'repair/2026-10-07-v2/evaluation-2026-10-07-adjudicated/metrics.json').exists():
+        import write_repaired_endpoint_docs
+        return write_repaired_endpoint_docs.main()
     first=read('evaluation/2026-10-07-frozen-v1/metrics.json');s=first['summary']
     cal=read(ANALYSIS+'/calibration-upright-only.json');q=read(ANALYSIS+'/triage-summary.json')
     freeze=read(REPAIR+'/freeze-manifest.json');pf=read(REPAIR+'/prediction-freeze.json')

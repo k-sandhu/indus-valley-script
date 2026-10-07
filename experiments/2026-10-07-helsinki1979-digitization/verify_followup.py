@@ -24,6 +24,9 @@ def read(path):return json.loads(path.read_text(encoding='utf-8'))
 
 
 def main():
+    if (HERE/'repair/2026-10-07-v2/evaluation-2026-10-07-adjudicated/metrics.json').exists():
+        import verify_repaired_record
+        return verify_repaired_record.main()
     ap=argparse.ArgumentParser()
     ap.add_argument('--out',type=Path,default=FOLLOW/'verification-v1.json')
     ap.add_argument('--manifest-out',type=Path)

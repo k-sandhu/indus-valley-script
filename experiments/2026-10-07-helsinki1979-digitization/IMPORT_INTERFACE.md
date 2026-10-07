@@ -8,4 +8,4 @@ Package L's current contract is [HELSINKI-INTERFACE.md](../2026-10-07-object-led
 
 The 1980 Finnish-to-Mahadevan table is a catalogue lead. Its four inspected pairs and source crop stay local because the edition's reuse licence is unverified. The CISI 1 p. 365 Finnish Concordance column is a lead named by Package L, not opened or verified in this follow-up. Ancient lost-sign extent and physical side/line boundaries remain unresolved.
 
-The repaired freeze's confidence rule concerns transcription eligibility. Object import still requires reviewed identity and surface evidence. No repaired output has passed the pending blind evaluation, so no release is authorized by a result yet.
+The repaired freeze's confidence rule concerns transcription eligibility. Object import still requires reviewed identity and surface evidence. The completed repaired 80-row blind evaluation fails four of five global criteria. Every occurrence remains quarantined; no high-confidence row can bypass that frozen global rule. See [repaired metrics](repair/2026-10-07-v2/evaluation-2026-10-07-adjudicated/metrics.json), `negative_result_criteria`.

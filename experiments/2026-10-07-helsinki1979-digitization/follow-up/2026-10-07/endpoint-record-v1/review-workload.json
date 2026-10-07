@@ -1,0 +1,240 @@
+{
+  "status": "Exploratory",
+  "population_occurrences": 11369,
+  "population_scope": "original provisional extraction; incomplete row recall, not a true edition census",
+  "sample_frame": {
+    "rows": 80,
+    "section_quotas": {
+      "number_order": 28,
+      "end_sorted": 26,
+      "beginning_sorted": 26
+    },
+    "denominators": {
+      "number_order": 3596,
+      "end_sorted": 3228,
+      "beginning_sorted": 3496
+    },
+    "development_pages_excluded": [
+      22,
+      25,
+      30,
+      37,
+      62,
+      78,
+      100,
+      129,
+      130,
+      145
+    ],
+    "previous_60_targets_excluded": true
+  },
+  "required_human_row_readings": 11369,
+  "required_second_ai_row_readings": 11369,
+  "minimum_row_readings": 22738,
+  "projections": {
+    "crop_correction": {
+      "success": 36,
+      "total": 80,
+      "rate": 0.45,
+      "ci95": [
+        0.34577689184711224,
+        0.5588049211064404
+      ],
+      "expected_occurrences": 5116.05,
+      "projected_ci95": [
+        3931.137483409819,
+        6353.053148059121
+      ]
+    },
+    "unit_count_correction": {
+      "success": 21,
+      "total": 80,
+      "rate": 0.2625,
+      "ci95": [
+        0.1785740148850936,
+        0.36818959664428175
+      ],
+      "expected_occurrences": 2984.3625,
+      "projected_ci95": [
+        2030.2079752286293,
+        4185.947524248839
+      ]
+    },
+    "top1_sequence_correction": {
+      "success": 60,
+      "total": 80,
+      "rate": 0.75,
+      "ci95": [
+        0.6451532538076602,
+        0.8319376814245761
+      ],
+      "expected_occurrences": 8526.75,
+      "projected_ci95": [
+        7334.747342539289,
+        9458.299500116005
+      ]
+    },
+    "top5_proposal_miss": {
+      "success": 40,
+      "total": 80,
+      "rate": 0.5,
+      "ci95": [
+        0.3929741508611972,
+        0.6070258491388028
+      ],
+      "expected_occurrences": 5684.5,
+      "projected_ci95": [
+        4467.723121140951,
+        6901.276878859048
+      ]
+    },
+    "number_correction": {
+      "success": 18,
+      "total": 80,
+      "rate": 0.225,
+      "ci95": [
+        0.14733207340846635,
+        0.3278678978360735
+      ],
+      "expected_occurrences": 2558.025,
+      "projected_ci95": [
+        1675.0183425808539,
+        3727.5301304983195
+      ]
+    },
+    "classification_field_correction": {
+      "success": 25,
+      "total": 80,
+      "rate": 0.3125,
+      "ci95": [
+        0.2215040411289482,
+        0.4206777574468744
+      ],
+      "expected_occurrences": 3552.8125,
+      "projected_ci95": [
+        2518.2794435950123,
+        4782.685424413515
+      ]
+    },
+    "either_field_correction": {
+      "success": 30,
+      "total": 80,
+      "rate": 0.375,
+      "ci95": [
+        0.27694178701531175,
+        0.48451274536857
+      ],
+      "expected_occurrences": 4263.375,
+      "projected_ci95": [
+        3148.5511765770793,
+        5508.425402095272
+      ]
+    },
+    "strict_reader_disagreement": {
+      "success": 15,
+      "total": 80,
+      "rate": 0.1875,
+      "ci95": [
+        0.11705310466977323,
+        0.28658322628993116
+      ],
+      "expected_occurrences": 2131.6875,
+      "projected_ci95": [
+        1330.7767469906519,
+        3258.1646996902273
+      ]
+    }
+  },
+  "correction_categories_overlap": true,
+  "observed_reader_task_timing": [
+    {
+      "path": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json",
+      "reader": "A",
+      "part": 1,
+      "started_utc": "2026-10-07T17:24:26Z",
+      "finished_utc": "2026-10-07T18:12:17Z",
+      "elapsed_seconds": 2871.0,
+      "items": 40,
+      "notes": "Coverage. All 40 assigned indices (sample_index 0 to 39) are read: 28 rows from the number-ordered section (0 to 27, number and classification to the right of the signs) and 12 from the end-sorted section (28 to 39, number and classification to the left). The file holds 170 drawn units. 23 exact crops are correct and 17 are not. 13 units keep a candidate set of two or more strict codes; no unit is left empty.\n\nMethod. The wide source crop fixed the intended printed row, the exact crop was checked for clipped target ink, neighbour ink and number-field ink, and each drawing was matched to the position-chart cards by shape, underline and vertical position. I enlarged the supplied crops and cards and measured on them: the horizontal ink extent of each unit in PDF points (x_extent_pdf_pt), the extent of each underline, and the ink at the edges of each exact crop. The wide crops contained every target, number and classification, so the only page I rendered from the original PDF was page 21, once at two pixels per point, to compare the printed sign list with the cards. The PDF text layer, OCR and every file the instructions put off limits were not opened. The temporary renders were deleted.\n\nFields. Units follow the left-to-right order on the page. strict_candidate_codes are the chart numbers that agree with the drawing, its underline and its vertical position; shape_only_candidate_codes add codes that share the drawn shape and differ only in underline or height. chart_location lists the card locations of the strict codes and chart_locations those of every code named in the unit; a label such as 465/485/486 is one card and is listed under each number. uncertainty is none when one code fits and the nearest variant is clearly different, low when one code fits but a neighbouring variant is conceivable or when the strict set lists cards that coincide on the chart (such as 9 and 765), and moderate when two codes stay open for another reason (the narrow-patch pairs). unit_kind is sign, numeral_stack (short strokes), hatched_span or loss_rectangle. blank_gaps lists ink-to-ink gaps of about 19 pt or more between neighbouring units and attaches no side or line interpretation. A crop is marked incorrect when it cuts target ink (including an underline lying below the box), contains ink of a neighbouring printed row, or contains any part of a number or classification digit; crop_issues names the cause.\n\nRecurring decisions. An underline is a row of five dashes about 14 pt long under a sign, and it is part of the strict code. A pair of ticks in the top fifth of the sign line is 25 (509 when underlined) and a centred pair is 2 (231); single ticks follow the same rule, 23 and 258 for the high position, 1 and 423 for the centred one. Strokes that coincide on the cards stay together: 764 with 8 (underlined 768 with 501) and 9 with 765 (underlined 543 with 769). Stroke stacks were counted directly. For the narrow hatched patches the cards put the patch at the left edge of its sign box for 597 and 13 and about 8 pt inside the box for 598 and 542, and the position chart agrees with the printed sign list on page 21. A patch that starts within a few points of the preceding sign cannot lie 8 pt inside its own box, so it is recorded as 597; a patch at the start of a line or after a blank gap keeps both codes. Where a boundary between units could be drawn in more than one way, the row names it in unresolved_boundary (rows 19, 31 and 36).\n\nDigits. The digit 1 is printed in two styles, one of them like a lower-case i, and both are read as 1. Where the first classification digit is faded to a cap and a few dots (rows 31, 35, 39 and partly 15) it is read as 1. Row 6 carries a dust dot after the first digit of its number.\n\nBlindness. I did not open predictions, the frame, freeze or detection files, any other reader's folder, the earlier evaluation references or the PDF text layer. The shared scratchpad held a zoom.py written by another process over my first helper script; two lines of it appeared in a Python error trace (parsing a row index and a view name), and it contained no reading or prediction."
+    },
+    {
+      "path": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json",
+      "reader": "A",
+      "part": 2,
+      "started_utc": "2026-10-07T17:24:56Z",
+      "finished_utc": "2026-10-07T18:10:22Z",
+      "elapsed_seconds": 2726.0,
+      "items": 40,
+      "notes": "Rows 40 to 79 of selection.json were read from the supplied row crops, exact crops and position-chart cards. The sign chart on PDF pages 20 and 21 (rendered at two pixels per point) confirmed chart locations and the dash convention, and the layout definitions came from the book introduction (printed pages 15 to 17, PDF pages 16 to 18). The target row is the one whose number field sits next to the glyphs: to the left in the end-sorted rows (40 to 53) and to the right in the beginning-sorted rows (54 to 79). The inscription number and the five classification positions were read from magnified copies of that field. The blank classification position is always the third one, and no number in these rows carries a letter suffix.\n\nEach unit records strict_candidate_codes and, where it differs, shape_only_candidate_codes. A strict code agrees with the chart drawing in shape, count, placement in the sign box and in having or lacking dashes under the unit. The shape-only set adds the chart codes with the same bare drawing: the dashed or undashed twin and, for ticks and narrow hatched patches, the placement variants. Dash groups under each unit were located with a separate scan of the crops, and underline_dashes_present records the result. Long strokes cannot be tied to one code, because the unmarked strokes 8, 9 and 10 and their twins 764, 765 and 766 have the same drawn height on the chart, so both codes stay in the strict set. The 8 to 12 series has no unmarked four-stroke code, so four strokes without dashes are recorded as 767 with 294 and 771 in the shape-only set.\n\nThe introduction defines the third classification position as the number of lines or sides (blank for one line, 2 and 3 for line counts, 6 and 7 for two- and three-sided objects, 9 for other cases) and says that a blank space in a row corresponds to those boundaries. The ten rows with a blank gap (41, 42, 43, 44, 51, 52, 69, 70, 71 and 75) are exactly the rows whose third position is 2 or 6, which agrees with the gap list. The introduction also says that the code group stands next to the first line of a multi-line text only. In row 75 the unnumbered upper line therefore belongs to the numbered text 2725 above it (third position 7, a three-sided object), so the units listed for row 75 are those of the numbered lower line alone. The proposed box covers both lines, and its right edge also cuts the number digits.\n\nSingle ticks are the least certain readings. A tick of standard height at the top of the sign box with no dashes (rows 44 and 52) agrees with none of the chart codes 1, 23, 258 and 423 (centered, tiny and high, high with dashes, centered with dashes), so the strict set of those two units is empty. In row 52 a dark 3 px speck lies where the left tick of a high pair would be, so 25 and 509 are added to its shape candidates. The same tick with dashes under it (row 71) is 258.\n\nNarrow hatched patches are one unit each. Codes 597 and 598 differ only in whether the patch stands at the left or the right of its sign box, and the introduction describes this patch as marking a break-off on either side of the text. I chose between the two codes from the spacing to the neighbouring sign. A gap of 8 to 12 px between a narrow patch and the wide sign that follows it fits a patch standing at the right of its sign box (598), and a gap of 8 to 23 px between a sign and the narrow patch that follows it fits a patch standing at the left of its sign box (597). These units are marked moderate.\n\ncrop_correct is false when the exact box cuts or leaves out ink of the target row, counting underline dashes, or contains ink from a neighbouring row or from the number field; crop_issues names the cause. blank_gaps lists clear spaces of at least 16 pt between neighbouring units and does not read them as line or side breaks.\n\nField names inside units and rows are my own, since CONVENTIONS.md describes their content but not their spelling. started_utc is the creation time of my first working file, and the reading began a few minutes earlier. Besides the supplied crops, cards, the two chart pages and the introduction pages, I rendered one 7 px/pt clip of chart page 20 (the single-tick class 121) and clips of page 173 around row 75 to see its line layout. I did not open predictions.json, frame.json, prediction-freeze.json, count-page-detections.json, any other reader folder, or the PDF text layer, and I saw no prediction."
+    },
+    {
+      "path": "repair/2026-10-07-v2/blind/reader-a/counts.json",
+      "reader": "A",
+      "part": 3,
+      "started_utc": "2026-10-07T17:23:09Z",
+      "finished_utc": "2026-10-07T17:37:52Z",
+      "elapsed_seconds": 883.0,
+      "items": 21,
+      "notes": "Counts come from the 21 page images in page-count-source/ (595 x 841 pt pages rendered at two pixels per point). Coordinates are PDF points measured from the top-left corner, the convention of the pdf boxes in selection.json. A printed row is one classification/number pair together with its drawing row. The pairs were located by extracting the digit-sized ink lines in the number field of each column and joining the two lines of each pair (connected components in numpy/scipy on the supplied PNGs; no OCR layer, pipeline output or other reader's file was used), and each column was then checked by eye on a full-page overlay that places one tick at every pair. row_centers_pdf is the vertical midpoint of the pair, which lies on average 1.25 pt below the centre of the drawing's ink. A full column is a block of 36 line slots at a pitch of about 19.75 pt. A line that carries no pair continues the inscription of the pair above it and adds no row. Such continuation lines occur on pdf pages 37, 48, 84 and 123, where they take up slots without a pair; their slot centres are given in continuation_line_centers_pdf, and lines_including_continuations gives the page total if they were counted as rows. x_extent_pdf covers all printed ink of the column (number field, drawings and continuation lines) and leaves out marks in the page margins and the handwritten note on pdf page 139. Rows are aligned to the number field inside a typeset column about 245 pt wide, so a column of short rows has a narrower extent than the column itself. Pages have two columns, except pdf page 129 (eight columns) and pdf page 130 (six columns, the last with 21 rows). No page count is unresolved. Row contents are not transcribed; on the number-order pages the printed numbering was used only to confirm the pair counts."
+    },
+    {
+      "path": "repair/2026-10-07-v2/blind/reader-b/rows-part1.json",
+      "reader": "B",
+      "part": 1,
+      "started_utc": "2026-10-07T17:24:41Z",
+      "finished_utc": "2026-10-07T18:56:39Z",
+      "elapsed_seconds": 5518.0,
+      "items": 40,
+      "notes": "Reader B, part 1: the 40 rows with sample_index 0 to 39 of selection.json (rows 0 to 27 from the number-ordered section, rows 28 to 39 from the end-sorted section). Each row was read from its source crop and exact crop, enlarged from those crops, and checked against renders of the original PDF pages 20 and 21 (the sign chart). The PDF text layer, predictions, frame, detections, other readers' files and earlier evaluation references were not opened, and no prediction was seen. A directory listing of research/corpus/primary/ showed the names of other files there; none of them was opened.\n\nIn these notes, box means the proposed target box of a row and slot means the typeset space of one sign.\n\nRow format. A row has printed_inscription_id (letter suffixes included), classification_literal (five positions, a space for a blank position), drawn_unit_count, crop_correct with crop_observations, units in visual left-to-right order, blank_gaps, source_observations and unresolved_boundary. A unit has unit_kind (sign for chart signs including stroke groups, hatched_span for hatched patches, loss_rectangle for code 70), strict_candidate_codes (the codes that fit the shape, its height in the sign line and its underline), shape_only_candidate_codes (every code with the same ink shape when the underline and the position inside the sign slot are ignored), chart_locations (page:column:row of the position-chart card, for the strict codes), underlined, uncertainty (none, low or moderate, with the reason in observation) and, for one unit, unit_status_doubtful. blank_gaps give the ink-to-ink distance in PDF points between neighbouring units where it is much wider than the other gaps in the row; they make no claim about lines or sides.\n\nChart labels. Every code was checked against the printed number on PDF pages 20 and 21, because several position-chart card labels differ from the print. The underlined comb Y at 20:4:1 prints 508 (card: 506); the entry at 21:0:1 prints 698 (card: 598/698); the five underlined long strokes at 20:7:22 print 784 (card: 764/784); 21:5:34 prints 206 (card: 205/206/208); 21:0:21 prints 380 (card: 360); the underlined ladder at 20:4:21 prints 486 (card: 465/485/486); code 53 occurs only at 20:9:33 (21:8:16 prints 63) and code 533 only at 21:7:4. The chart_locations fields give the locations whose printed label equals the code.\n\nDecisions that affect several rows. (1) The digit 1 in the number field is often printed as a small 'i' (a vertical stroke with a detached flag) and is read as 1. (2) The chart holds two series of long vertical strokes, codes 764 to 771 and codes 8, 9, 10, 12, 294, 424, 501, 543 and 784, with the same height and spacing and a 0.8 pt difference of horizontal position inside the slot; the printed rows do not separate them, so both codes are listed (rows 1, 4, 8, 11, 25, 38). Five unmarked long strokes exist only as code 12. (3) Narrow hatched patches. On the chart pages 597 and 13 stand at the left side and 598 and 542 at the right side of the same slot as the wide patches 599 and 106 (15 pt of hatching), and the underline under 13 and 542 spans the whole slot (14.3 pt), as under every other underlined sign. The slot is therefore the same width whichever side the patch occupies, and the side shows in a row as blank slot space beside the patch. The print puts the slots of ordinary neighbours about 2 pt apart, and the ink of each sign begins at the offset measured on the chart page. A patch that begins 1.6 to 4.8 pt after the ink of the preceding unit matches a left-side patch (597) within 0.7 pt for nine units after seven different preceding signs, whereas a right-side patch (598) would begin about 8.5 pt later. A patch that ends 0.7 to 2.1 pt before the slot of the next unit matches 598, whereas 597 would leave 9 pt of blank slot. A scan of the 328 narrow patches on the pages of these rows gives the same pattern: 25 patches have a sign on both sides, and each has 5.5 pt or less to one neighbour and at least 10.6 pt to the other; none has a sign within 9 pt on both sides. Fifteen units in this part follow the rule (nine 597, six 598). The codes 597 and 598 remain in the shape-only sets, and the observation field of each unit states that the side is read from spacing. (4) The dashed underline spans the slot of its sign (about 14.3 pt) whatever the width of the ink, so the dashes under a narrow sign are wider than the sign. (5) crop_correct is false when the exact crop includes ink of a neighbour or of the number field, when it clips a unit, or when it ends above the target row's own underline dashes.\n\nCounts. 40 rows read, 170 units recorded. crop_correct is true for 23 rows and false for 17 rows (0, 2, 5, 9, 10, 13, 15, 17, 19, 20, 21, 22, 27, 28, 33, 38, 39). No row is unresolved as a whole and no unit has an empty strict set. 6 units carry a candidate set of two codes (the long-stroke series); the other units are single codes. Remaining doubts: row 28 unit 5 is an isolated single stroke at mid height whose spacing does not fit a separate sign slot (recorded as code 1, unit_status_doubtful); row 31 has a faint first classification digit read as 1; row 34 unit 1 is a single top-position stroke read as 23 because the underlined alternative 258 has no underline here.\n\nTemporary renders were written only to data/raw/2026-10-07-helsinki1979-digitization/reader-tmp-B1/ and deleted at the end."
+    },
+    {
+      "path": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json",
+      "reader": "B",
+      "part": 2,
+      "started_utc": "2026-10-07T17:22:00Z",
+      "finished_utc": "2026-10-07T18:06:55Z",
+      "elapsed_seconds": 2695.0,
+      "items": 40,
+      "notes": "Rows 40 to 79 of selection.json were read from the supplied row crops and exact crops, enlarged views of those crops, renders of PDF pages 173, 20 and 21 at 1 to 4 pixels per point (and pixel-level measurements of the stroke signs on chart page 20 at 8 pixels per point), and the position-chart cards. In the 14 end-sorted rows (40 to 53) the number and classification sit at the left of the drawing row. In the 26 beginning-sorted rows (54 to 79) they sit at the right and the drawing rows are right-aligned against them. Units are listed in visual left-to-right order, and every row has its inscription number, its five classification positions and its units.\n\nField meanings. strict_candidate_codes lists the chart codes that agree with every visible detail, including the dashed underline. shape_only_candidate_codes lists a chart code with the same outline that differs in one detail I examined and set aside (for example 33 against 241, or the underlined and plain four-stroke forms). A dashed line about 1.8 pt below a row's glyph bottoms was assigned to that row, because the underline-to-glyph gap on the chart cards is about 1.6 pt and the gap to the next row's glyph tops is 3 pt or more; each unit carries underline_observed. blank_gaps records spaces of 13 pt or more between adjacent drawings and draws no conclusion about lines or sides. Short ticks were separated by their height in the box: a pair or single tick in the top 15 percent of the drawing height was read as 25 or 23 (258 when underlined), as against the centred codes 2 and 1. Rows of three to seven short strokes were read from their count and from being centred on the drawing height.\n\nCandidate sets. The long-stroke codes 8/764, 9/765, 10/766 and their underlined forms 501/768, 543/769, 424/770 are drawn identically on chart page 20 (strokes 14.8 to 15.0 pt tall, the same offset in the cell, spacing within 0.3 pt), so each stroke pair or triple here keeps both codes. Four strokes without an underline occur only as 767. The narrow hatched spans are 597/598 (13 and 542 when underlined). The chart draws the strip at the left of its cell for 597 and at the right for 598, and a text row does not show the cell, so every narrow span in rows 76 to 79 and in the upper line of row 75 keeps both codes. No unit has an empty candidate set.\n\nCrops. crop_correct is false when the exact crop includes number-field ink or the neighbouring row, cuts a drawing, or omits the underline of its own row; crop_issues holds the tags number_ink, neighbour_ink, own_underline_missing and drawing_cut so that the underline rule can be reapplied separately. 19 of the 40 boxes are marked incorrect: number_ink in rows [41, 42, 43, 74, 75, 77, 79], neighbour_ink in rows [51, 67, 69, 70, 75], own_underline_missing in rows [45, 47, 51, 64, 65, 71, 75, 76, 77], drawing_cut in rows [48, 53].\n\nRow 75. The box is 37 pt tall and covers two printed lines. I read the labelled line (3685) as the row and listed the five drawings of the label-less upper line separately, because that line sits directly under the first line of record 2725 and is most likely its continuation.\n\nProcedure and blindness. I did not open predictions.json, frame.json, prediction-freeze.json, count-page-detections.json, the other reader's folder, earlier evaluation references or the PDF text layer, and I saw no prediction. While checking my temporary folder I listed the names, but not the contents, of data/raw/2026-10-07-helsinki1979-digitization/ and of the shared scratchpad folder. A helper script in the shared scratchpad, overwritten by another agent, ran once with my arguments and wrote one enlarged render into reader-tmp-B1; I deleted that file. I wrote my own scripts only under reader-tmp-B2. That folder and its renders were deleted after this file was written. started_utc is approximate and comes from folder creation times."
+    },
+    {
+      "path": "repair/2026-10-07-v2/blind/reader-b/counts.json",
+      "reader": "B",
+      "part": 3,
+      "started_utc": "2026-10-07T17:23:13Z",
+      "finished_utc": "2026-10-07T17:45:37Z",
+      "elapsed_seconds": 1344.0,
+      "items": 21,
+      "notes": "Counts are of printed rows, meaning one inscription number with its five-position classification and the glyph line printed beside it. On the 21 pages listed in count_pages I counted 1847 rows in 52 columns (pages[].row_count and pages[].columns[].row_count give the counts by page and column). Counting used only the supplied page images. For each page I first looked at the whole image to see the layout. I then located every number/classification block by finding the dark pixels in a narrow vertical strip beside the glyph lines, merged the two text lines of each block into one vertical run, and drew a box around each counted block on a temporary copy of the page. I checked each page against its annotated copy for missed rows, extra detections and printed lines without a block; the copies have been deleted. The printed inscription numbers were visible in the images and I used their sequence only as a cross-check; no row contents are recorded.\n\nCoordinates are PDF points with the origin at the top-left corner of the page and y increasing downward. The supplied PNGs are 2x renders of the full page (a fresh render of PDF page 37 matched its PNG pixel for pixel), so points are pixels divided by 2. pdf_page is the 1-based PDF page number used in count_pages. x_extent_pdf runs from the leftmost to the rightmost printed ink of the column, including number blocks, uncertainty underlines and unnumbered continuation lines, and excludes margin specks and the handwritten annotation on page 139. row_centers_pdf lists the vertical centre of each row's number/classification block from top to bottom; the glyph line of a row is centred about 2 to 2.5 pt higher (median 2.25 pt over 1,581 measurable rows). Row indices in continuation_lines.follows_row_index count from 1 down each column.\n\nA numbered block with its glyph line is one row, including rows whose glyph line has a wide blank gap, two repeated halves, or only hatched loss units. Lines that have no number/classification block of their own (10, on pages 37, 48, 84 and 123) are listed under continuation_lines with the row they follow and are not counted in row_count. Each full column holds 36 line slots at a median pitch of 19.4 to 20.0 pt (by column), and a continuation line occupies a slot, so the five columns that contain two of them show 34 rows. physical_line_count adds the continuation lines for a reader who counts every printed line (1857 lines in total). Page 129 has eight columns of 36 rows and page 130 has six columns, the last holding 21 rows above blank page.\n\nNo row, column or page count is unresolved. Neighbouring number blocks are at least 18 pt apart, except where continuation lines intervene, and apart from the running head and page label no printed glyphs or numbers lie outside the column grids.\n\nSources and blindness. I read the assignment file, CONVENTIONS.md, the count_pages, random_count_pages and stress_pages values of selection.json (the other fields were not read), the supplied page images, and the original PDF only to render page 37 for the pixel check and to read page sizes. I did not open predictions.json, frame.json, prediction-freeze.json, count-page-detections.json, any other reader's output, the earlier evaluation references or the PDF text layer. The session scratch directory is shared with reader A's part 3. My first helper file there, common.py, was replaced by theirs, and I read it before I saw whose it was. It held only image-loading and run-merging helper functions, with no counts or positions. I moved my scripts to a separate subfolder and opened nothing else of theirs. No prediction was seen."
+    }
+  ],
+  "reader_summed_elapsed_seconds": 16037.0,
+  "row_reader_summed_elapsed_seconds": 13810.0,
+  "count_reader_summed_elapsed_seconds": 2227.0,
+  "reader_wall_span_seconds": 5679.0,
+  "reader_row_readings": 160,
+  "ai_elapsed_seconds_per_row_reading": 86.3125,
+  "ai_one_pass_projected_task_hours": 272.5796701388889,
+  "human_scenarios": [
+    {
+      "assumed_minutes_per_row": 1,
+      "hours": 189.48333333333332,
+      "eight_hour_days": 23.685416666666665
+    },
+    {
+      "assumed_minutes_per_row": 2,
+      "hours": 378.96666666666664,
+      "eight_hour_days": 47.37083333333333
+    },
+    {
+      "assumed_minutes_per_row": 5,
+      "hours": 947.4166666666666,
+      "eight_hour_days": 118.42708333333333
+    }
+  ],
+  "adjudicator_time_seconds": null,
+  "billed_usd": null,
+  "billed_tokens": null,
+  "monetary_cost_note": "No billing witness supplied; reader wall/task times do not establish monetary cost or human throughput.",
+  "extrapolation_note": "Unweighted 28/26/26 sample rates used for planning; new all-section frame differs from old output. No population accuracy claim. Human/AI disagreement rate and missing-row recovery costs remain unmeasured."
+}
