@@ -2,7 +2,22 @@
 
 Modified Kneser–Ney reaches 39.7178% exact top-one and 4.581891 bucket bits on all 8,009 masks. The highest top-one among the primary procedures is 41.1662% for `ensemble/extra1/loss`; the lowest native bucket loss is 4.347675 bits for `ensemble/extra1/loss`. These are Exploratory comparisons on a reused benchmark. [Aggregate results](aggregate-results.json), `models.*.summary`.
 
-The saved population, artifacts, targets, components and folds reproduce exactly. The broader export links 144–159 existing benchmark training strings per fold to test strings through other observed faces. The matched comparison retains the required saved folds; extra text excludes all such connections. This limits an independence claim for the broader register. [Benchmark audit](benchmark-audit.json), `correspondence`; [graph audit](extra-graph-audit.json), `outer`.
+The saved population, artifacts, targets, components and folds reproduce exactly. The reviewer reproduced every headline and confirmed inner selection and extra-text exclusion. [Benchmark audit](benchmark-audit.json), `correspondence`; [review](REVIEW.md), Reproduction log and Leakage and the extra-text exclusion.
+
+## Cross-fold links and component-held-out independence
+
+Paper 001's component-held-out independence is limited by links visible only in the complete face export. A benchmark text on object X connects to another face of X carrying a short text; the same short text on object Y connects to a different benchmark text on Y. Sixteen identical texts, four of one sign and twelve of two signs, create all these chains. They join 192 benchmark strings and 748 queries (9.3%) in six sets, with 145, 159, 148, 144 and 144 linked training strings in outer folds 0–4. Requiring at least three signs for identical-text edges leaves no cross-fold links. The saved comparison keeps its original folds, while the extra pool excludes the full held-out closure. [Graph size](review/graph-links-summary.json), `bridged_rows_total`, `bridged_queries_total`, `per_fold`; [graph rules](review/graph-rule-sensitivity.json), `rules`, `strings_whose_faces_reach_two_or_more_saved_components`.
+
+| Model | Top-one change on 748 touched queries, points [95% interval] | Implied whole-benchmark change, points |
+|---|---:|---:|
+| First order | −8.02 [−10.29, −5.73] | −0.75 |
+| Second order | −8.96 [−11.68, −6.37] | −0.84 |
+| MKN | −5.88 [−8.87, −3.20] | −0.55 |
+
+The reviewer removed linked training strings with saved hyperparameters and rescored touched queries. The whole-benchmark estimate holds the other 7,261 queries unchanged. Ranking among the three n-gram models is preserved, and their paired differences move by 0.09–0.29 points, at most 0.30. This exploratory sensitivity does not rerun selection or neural models. [Removal estimates](review/link-respect-estimate.json), `models.*.change_when_linked_strings_removed_points`, `change_interval_component_bootstrap_points`, `implied_change_in_whole_benchmark_top1_if_only_touched_queries_change_points`; [review](REVIEW.md), The 144–159 links and Paper 001's independence claim.
+
+Near variants extend beyond these link sets: 509/1,596 strings (31.9%), covering 2,016/8,009 queries (25.2%), have a benchmark training string one sign edit away. Removing these neighbours lowers touched-query top-one by 5.85, 9.23 and 7.14 points for first order, second order and MKN. Holding unaffected queries fixed gives whole-benchmark estimates of −1.47, −2.32 and −1.80 points. Same-size random removals change touched-query accuracy by +0.41, −0.004 and +0.40 points, respectively. These reviewer counterfactuals quantify variant coverage in the benchmark. [Exposure](review/neighbor-exposure.json), `strings_with_a_one_edit_training_neighbor`, `queries_by_neighbor_status`; [removal estimates](review/variant-respect-estimate.json), `models`.
+
 
 ## Accuracy, probability loss and calibration
 
@@ -25,8 +40,8 @@ Primary choices minimize three-inner-fold loss. Neural probabilities average thr
 
 Every table entry comes from `aggregate-results.json`, `comparators` or `models.<family>/extra<0|1>/loss.summary`. Configuration and inner candidate losses are in `fold_selection`; detailed probabilities remain local.
 
-The benchmark-only GRU gives 38.0946% top-one and 4.604726 bits; the transformer gives 34.1990% and 4.966507 bits. Loss selection chooses MKN order 3 and discount scale 1 in all ten outer fold/regime combinations. The tables compare each family with the same saved first- and second-order queries.
-Paired differences below are new minus saved comparator. Accuracy differences are percentage points, and loss differences are bits. Intervals use 2,000 paired component resamples with seed 23101. They condition on the fitted models and transcription population.
+The neural families alone do not beat MKN on top-one: GRU reaches 38.0946%, transformer 34.1990% and conditioned neural 38.5067%, compared with 39.7178%. Their native losses are also higher. The benchmark-only ensemble improves on MKN by 1.07 accuracy points [0.43, 1.69] and −0.191 bits [−0.216, −0.166]. Thus combining the neural and n-gram probabilities adds predictive information. These additional paired contrasts were computed by the reviewer. [Reviewer contrasts](review/recomputed-headlines.json), `unreported_paired_contrasts`. Loss selection chooses MKN order 3 and discount scale 1 in all ten outer fold/regime combinations.
+Paired differences below are new minus saved comparator. Accuracy differences are percentage points, and loss differences are bits. Intervals use 2,000 paired component resamples with seed 23101. They condition on fitted models, fixed strata and the transcription population; they do not refit selection or capture transcription uncertainty.
 
 | Procedure | Comparator | Top-one difference [95% interval] | Native loss difference [95% interval] |
 |---|---|---:|---:|
@@ -53,7 +68,7 @@ Paired differences below are new minus saved comparator. Accuracy differences ar
 
 `models.*.paired.<comparator>.strata` also gives paired top-five, top-ten, common-alphabet loss and ECE intervals for every position and frequency stratum.
 
-MKN improves accuracy and loss over both saved Markov comparators. Its ECE is 5.2751%, compared with 2.5564% for first order. The rare-target and boundary rows below locate that calibration cost. [Full MKN contrasts](aggregate-results.json), `models.classical/extra0/loss.paired`.
+MKN improves accuracy and loss over both saved Markov comparators. Its ECE is 5.2751%, compared with 2.5564% for first order. Position-stratum ECE is 10.1927% initially, 5.5279% internally and 3.5113% finally. Frequency strata are defined by the target outcome and do not diagnose calibration. In the singleton stratum, all 205 targets are absent from training; its ECE equals mean confidence because exact accuracy is zero. [Full MKN contrasts](aggregate-results.json), `models.classical/extra0/loss.paired`.
 
 ## Additional text and metadata
 
@@ -77,6 +92,10 @@ Inner fitting excludes the outer test closure and the inner validation closure. 
 | Conditioned neural | +0.1249 [-0.5009, +0.7537] | -0.0395 [-0.0655, -0.0127] | -0.2817 [-0.3204, -0.2421] |
 | Log ensemble | +0.3746 [-0.1224, +0.8573] | -0.0428 [-0.0621, -0.0227] | -0.2983 [-0.3360, -0.2609] |
 
+Extra text produces no measurable exact top-one gain in any family: all five paired intervals include zero, and point changes range from −0.1124 to +0.4870 points. Its loss gain is concentrated in the 251 targets outside the benchmark-only training alphabet. Those queries contribute 94% of MKN's −0.2990-bit common-alphabet change and 72–94% across the five families. For MKN, outside-target common loss falls from 14.6008 to 5.6325 bits, while their top-one accuracy does not change. On the 7,758 in-alphabet queries, MKN's loss changes by −0.0185 bits [−0.0398, +0.0020]. The main probability gain therefore reflects vocabulary coverage of 3.1% of queries. [Reviewer decomposition](review/extra-text-decomposition.json), `targets_outside`, `families.*.share_of_total_common_bit_change_from_outside_targets`, `families.MKN`.
+
+The common-alphabet calculation was added after all ten n-gram cells and their summary were available. Its gains are post-outcome exploratory results; the original native-loss selection remains unchanged. [Dated timing erratum](ERRATA-2026-10-07.md), Auxiliary-loss amendment timing.
+
 These are separately selected procedures within each training regime. Additional text can change vocabulary, contexts, domain and selected settings. Common-alphabet loss compares the same target events; the native loss also includes finer prediction events when the extra pool supports a previously unseen fine code. [Direct contrasts](aggregate-results.json), `direct_contrasts.*extra_minus_noextra`.
 
 The conditioned model adds object type, site, region and motif together to the best unconditioned family selected inside each outer training set. It retunes duration on inner folds. The measurement concerns the joint predictive contribution of those fields and representative metadata; it does not isolate any single field.
@@ -99,7 +118,7 @@ The curve keeps the full-training inner-selected family, configuration and durat
 
 ![Accuracy learning curves](figures/learning-curves.png)
 
-[Learning-curve outputs](learning-curves.json), `models.*.summary`, contain OOV rates, strata, seed outcomes and exact training counts. Loss pooling changes as subset vocabularies grow, so these loss values do not by themselves identify a ceiling.
+[Learning-curve outputs](learning-curves.json), `models.*.summary`, contain OOV rates, strata, seed outcomes and exact training counts.
 
 | Procedure | 100% minus 75% top-one, points [95% interval] |
 |---|---:|
@@ -108,9 +127,9 @@ The curve keeps the full-training inner-selected family, configuration and durat
 | Selected neural | +1.2611 [+0.6018, +1.9207] |
 | Selected neural + extra | +1.2486 [+0.6200, +1.9072] |
 
-The 75%-to-100% accuracy increment is positive in 4 of four curves; its interval is entirely above zero in 4. These final increments directly answer whether performance is still rising under the declared procedure.
+All four curves rise from 75% to 100% training, by 1.21–1.71 accuracy points; every paired interval lies above zero. Accuracy is still rising at full size under the declared procedure.
 
-A positive final increment supports acquiring more suitable training data for the tested procedure. Neural training also takes more optimizer steps at larger subsets because the number of epochs stays fixed. The curve therefore combines data size with that training budget. The full benchmark has 205 singleton target types, all unseen in their benchmark-only training folds. They receive zero exact credit under a training-only candidate alphabet. [Frequency strata](aggregate-results.json), `models.classical/extra0/loss.summary.frequency_strata.1`.
+Neural training takes more optimizer steps at larger subsets because the number of epochs stays fixed. The curve therefore combines data size with that training budget and with additional coverage of near variants. Loss pooling also changes as subset vocabularies grow. These methods support further-data testing, while the tested widths, fixed epochs and reused population leave an information-theoretic ceiling and the best possible neural architecture unresolved. The full benchmark has 205 singleton target types, all unseen in their benchmark-only training folds. They receive zero exact credit under a training-only candidate alphabet. [Frequency strata](aggregate-results.json), `models.classical/extra0/loss.summary.frequency_strata.1`.
 
 Configuration comparisons below pool inner losses across the five outer training sets, weighting by their query counts. They compare the declared small and larger configurations before outer evaluation.
 
@@ -123,11 +142,11 @@ Configuration comparisons below pool inner losses across the five outer training
 
 Parameter ranges reflect the inner training vocabularies. The GRU comparison changes width and depth together; both transformer configurations use two layers.
 
-Transformer early stopping selects the maximum 45 epochs in 119 of 180 inner seed fits. That cap leaves longer-training behavior untested. The tested widths and curves support a bounded comparison of these models and data; they do not establish an information-theoretic limit or the best possible neural architecture. [Training diagnostics](training-diagnostics.json), `groups`.
+Transformer early stopping selects the maximum 45 epochs in 119 of 180 inner seed fits. That cap leaves longer-training behavior untested. [Training diagnostics](training-diagnostics.json), `groups`.
 
 ## Position, frequency and seed spread
 
-The table shows benchmark-only MKN. The aggregate file gives the same fields and paired differences against both comparators for every procedure. Frequency bins use target counts across the whole 8,009-query benchmark.
+The table shows benchmark-only MKN. The aggregate file gives the same fields and paired differences against both comparators for every procedure. Frequency bins use target counts across the whole 8,009-query benchmark. Their ECE values are retained as outcome-conditioned summaries; only the position rows supply the calibration diagnostic.
 
 | Stratum | Queries | Top-one % | Top-five % | Top-ten % | Bits | ECE % |
 |---|---:|---:|---:|---:|---:|---:|
@@ -169,7 +188,7 @@ Secondary selection changes the configuration or ensemble weight using inner acc
 
 ## Verification, precedents and the carry-forward model
 
-The scalar review reconstructs all stored classical probabilities in 13 distinct outer configurations, with brute-force complete-sequence checks on sampled corpus queries. It reproduces 102 neural seed checkpoints and checks hidden-query inputs throughout the test population. Independent multiplication and normalization reconstruct 14 ensemble arrays, including the repaired disk-interruption output. Toy cases cover every n-gram order, all boundary positions, continuation counts, normalization and neural padding. [Verification](verification.json), `classical`, `neural`, `ensemble` and `self_tests`. External review remains pending.
+The scalar review reconstructs all stored classical probabilities in 13 distinct outer configurations, with brute-force complete-sequence checks on sampled corpus queries. It reproduces 102 neural seed checkpoints and checks hidden-query inputs throughout the test population. Independent multiplication and normalization reconstruct 14 ensemble arrays, including the repaired disk-interruption output. Toy cases cover every n-gram order, all boundary positions, continuation counts, normalization and neural padding. [Verification](verification.json), `classical`, `neural`, `ensemble` and `self_tests`. The Sonnet reviewer independently reproduced the headline metrics and confirmed selection and exclusions. [Review](REVIEW.md), Reproduction log and Method and scope findings.
 
 The literature comparisons are in [RELATED-WORK.md](RELATED-WORK.md). Yadav’s 74% is 90%-mass candidate coverage; Venkatesh and Farghaly’s 63% is top-ten; Tiwari’s 2.60 is next-token perplexity. Ithaca and Aeneas restore spans in known languages, while the Linear B study tests a small recurrent model and finds negative transfer in its synthetic-gap assay. Their outcome definitions prevent a direct cross-paper ranking.
 
