@@ -1,0 +1,5 @@
+# Provenance implementation repair
+
+The first constructed endpoint, `run-2026-10-07-v1`, failed validation at 68 identifier edition cells. Each edition cell cited the identifier assertion, whose value was an accession or registration. The validator required an assertion supporting the chosen edition value. The repaired builder creates an edition assertion with the parent source locator. The selection, source observations and frozen protocol are unchanged. V1 is preserved as a Failed implementation endpoint; its code is in the local raw `development-code-2026-10-07-v1` directory.
+
+The repair also makes each transcription rights pointer cite the source's redistribution-rule row, rather than a generated transcription ID as the source-record locator. This corrects the definition of computational source-lookup cost before that outcome is measured. Future builds save their exact code beside their outputs. The fresh `run-2026-10-07-v2` endpoint supplies the proposed pilot. Source assertions remain Exploratory; successful validation will describe computation, not expert identity approval.

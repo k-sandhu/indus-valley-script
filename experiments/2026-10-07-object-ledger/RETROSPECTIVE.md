@@ -1,0 +1,35 @@
+# Object-ledger work record
+
+The package built a 200-carrier ledger from preserved local sources, produced a public metadata view and kept all source transcription payloads local. The current endpoint passes 158 checks and ten selection/result files replay exactly. The populated annotations remain Exploratory. [Current results](analysis-2026-10-07-v3/summary.json), [checks](checks-2026-10-07-v4/checks.json), [replay](replay-comparison-2026-10-07-v3.json).
+
+## Reuse and design
+
+The repository instructions, README, knowledge index, writing rules, redistribution record, catalogue caveats and relevant registry/retrospective entries were read before research. DATASET-LANDSCAPE-01 supplied the unpopulated schema and stage 2 pilot plan. EVIDENCE-CENSUS-SYNTHESIS-01 supplied the reviewed catalogue ranges, absent keys, museum lower bound and batch corrections. The Harappa frame, Lothal source-table review and chronology mapping supplied object-level joins and context. No earlier prediction, numerical fit, resemblance test or broad literature search was repeated. [Frozen input manifest](selection-2026-10-07-v1/selection.json), `input_manifest`; [protocol](PROTOCOL.md).
+
+Initial directory guesses missed the census's dated raw endpoint and the Lothal table location. File discovery found `main-2026-10-07-v6` and `data/six-hour/lothal/table-coding`. A guessed Harappa frame retrospective file was absent; the frame README, correction record and shared corpus retrospective supplied the work history. An inline inspection command failed on a literal newline escape, and several PowerShell wildcard path arguments failed in `rg`. Stdin Python blocks and directory/glob discovery completed those reads. These failures changed no input or outcome. [Source access record](sources.json), `failed_local_locator_attempts`.
+
+The protocol preceded row construction. Source discovery required a pre-outcome clarification: most external export rows lack CISI keys, so their pinned export-family identities were admitted with source-reported confidence. Three Central Asian families set that mandatory pool's available size. The rule did not substitute comparative Susa weights or Oxus tokens for Indus carriers. All twenty catalogue-only slots could be filled by the inspected Lothal sealing frame, avoiding an unsupported choice from mixed graffiti/comparison sections. Selection froze 200 ordered IDs before enrichment.
+
+## Implementation problems and repairs
+
+An initial large patch was rejected because its end marker was not accepted. Smaller patches with a final newline created the intended files. The selection script was renamed from `select.py` to `select_pilot.py` before further imports so it would not shadow Python's standard `select` module. Its generated selection remained unchanged.
+
+The first build produced 6,377 assertions but failed 68 edition-provenance cells: identifier assertions did not support their edition values. The builder now creates separate edition assertions. It also cites actual source-specific redistribution-rule rows for transcription rights, rather than generated IDs as source-record locators. V1's ledger, raw register and failed validation remain intact, and its code was saved locally before repair. V2 has 6,445 assertions and passes validation. [Failure](validation-2026-10-07-v1.json), [repair](AMENDMENT-2026-10-07-provenance.md), [current validation](validation-2026-10-07-v2.json).
+
+The first analysis attempt treated every museum comparison value as a categorical string. Dimension arrays caused an unhashable-list error before an analysis endpoint was created. A type guard limits disagreement-category matching to strings. The pre-fix analyzer is saved in the local development-code directory. The completed analysis retains those dimension arrays in the local paired input and its permitted numerical comparison summary.
+
+The first checker passed 142 source, schema and import checks. Four further checks added nonfinite dimensions, glyph-payload keys, cross-object provenance and synthetic-layer rejection, giving 146 passing checks. The importer tests use a fictitious object and surface, so their accepted example never enters the 200-carrier ledger. Actual Package M rows and a historical concordance were not available; their import remains unverified. [Checks](checks-2026-10-07-v2/checks.json), `results`.
+
+The final entity review found eight field identifiers and 34 candidate accessions represented as assertions but absent from the alias table. V3 supplies their confirmed/candidate alias records and 42 edition assertions, raising the total to 6,487. Eight field-alias checks and one candidate-alias check bring the total to 155. Selection, completeness, join and lookup counts stay fixed. [Alias amendment](AMENDMENT-2026-10-07-alias-table.md).
+
+A final comparison of the existing Lothal prose audit with selected IDs found L174 in the pilot and L179 outside it. V4 preserves L174?s table count one and prose count two, supplies its Figure 7 pointer and adds a count-review question. Three new hash/conflict/photo checks give 158 passing checks. The fresh endpoint has 6,490 assertions and 1,095 recorded source lookups; completeness and join counts are unchanged. [Source amendment](AMENDMENT-2026-10-07-lothal-source.md).
+
+The frozen protocol accidentally names three authors for the 1980 documentation volume. Its local provenance manifest names Kimmo Koskenniemi and Asko Parpola. The interface and source register use those two authors, with the protocol wording preserved. This bibliographic correction changes no selection or output value.
+
+## Preservation and remaining review
+
+Fresh rebuilds reproduced the selected IDs, public ledger, museum comparisons, source lookups and six analysis files byte for byte. Code snapshots and manifests preserve build versions. Downloaded payloads were reused in place; no new download, rendering, installation, contact, publication or repository-history operation occurred. Writes remained inside the two assigned directories. Preserved public ledger versions and two replays account for most package bytes; the final sizes and every created path are recorded in FILES.json.
+
+The remaining source work is concrete: inspect each catalogue-only sealing's inscription and exact photographs, recover external registrations, review the H1688 3A context, align tablet source faces, adjudicate five supplemental museum pairs and obtain the 1979 object/surface crosswalk. The 134-question queue organizes these tasks. The computational lookup cost has no timed human-review counterpart. [Review queue](analysis-2026-10-07-v3/review-queue.json), [lookup cost](analysis-2026-10-07-v3/summary.json), `source_lookup_cost`.
+
+The reviewer should repeat the fresh-directory commands in README, check the negative validator/import cases, compare the ten replay files, and sample the H2218 caption, Lothal Table 1, the two material disagreements and the BM-123208 findspot/production distinction. Zero independent dating-sample links and zero new image inspections are retained as outcomes rather than inferred from broader source dates or image slots.
