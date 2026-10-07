@@ -1,3 +1,3 @@
-﻿# Amendment, 6 October 2026
+# Amendment, 6 October 2026
 
 The live literature searches began before `PROTOCOL.md` was written. At that point the searches were discovery work and no structured coding or analytical outcome had been completed. The protocol was added before the thematic synthesis and priority ranking; this timing does not make the source selection prospective. Mark all 33 recommendation rows and the report’s synthesis Exploratory. Preserve the search access labels and unverified locators. A future verification pass should use a predeclared source list or named database queries and record each exact page before revising a recommendation.

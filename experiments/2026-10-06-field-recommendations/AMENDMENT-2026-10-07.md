@@ -1,0 +1,11 @@
+# Amendment, 7 October 2026: rebuild after source review
+
+The first pass is preserved in `first-pass/`. The review found unsupported attributions, bibliographic errors and encoding damage. This rebuild is Exploratory and follows the row audit rather than a fresh prospective literature sample.
+
+Read each source before admitting a recommendation. Include an explicit future-work statement, research priority or stated project aim with a printed page, named section or timestamp. A demonstrated method, descriptive finding or catalogue scope alone does not qualify. Keep interpretations such as the oligopoly argument in a separate position table when they are needed to check the lecture. Document named researchers with no qualifying statement in a coverage table, outside the recommendations table.
+
+Reuse source witnesses in `research/literature/sources/` before acquisition. Save hashes and page locators for reused files, and save new responses and extraction files under `data/raw/2026-10-06-field-recommendations/rebuild-2026-10-07/`. The coordinator's caption check supplies the four lecture statements and timestamps, with that mediation identified. Each agreement or dispute must cite an opened source and its own passage; remove surname matching as an attribution method. Read the published Sproat and Farmer-Sproat-Witzel replies before describing those debates.
+
+Correct the reviewed source metadata, drop the nonexistent Miller citation, and use Miller's actual institutional project page only if it can be read. Add the missing recommendations where the primary text contains an explicit agenda; log exclusions where it does not. Link project coverage to the October 6 chronology/region (D1), sign/context/seals (D2), backward chronology (E), resemblance baseline (G), byproduct inventory (H) and evidence census packages, distinguishing completed results from plans.
+
+Write active deliverables as UTF-8 without a byte-order mark. The builder must reject invalid UTF-8, a BOM, replacement characters, suspicious question marks inside words, and common mojibake sequences. Check source and repository references, export identity, preserved-file hashes and the required prose scan. Numerical checks verify export integrity, not source interpretation.
