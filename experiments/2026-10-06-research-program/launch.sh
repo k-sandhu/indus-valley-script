@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Manual launcher for one Codex work package. No scheduling or automation.
 # Usage: bash experiments/2026-10-06-research-program/launch.sh <prompt-name> <owned-dir> <raw-dir> <model> <effort> <log-dir> [extra-writable-dir]
-set -euo pipefail
+set -uo pipefail
 ROOT="C:/Users/sandh/OneDrive/Projects/indus_valley_script"
 PROGRAM="$ROOT/experiments/2026-10-06-research-program"
 NAME="$1"; OWNED="$ROOT/$2"; RAW="$ROOT/$3"; MODEL="$4"; EFFORT="$5"; LOGDIR="$6"; EXTRA="${7:-}"
@@ -14,7 +14,7 @@ ARGS=(exec -m "$MODEL" -c "model_reasoning_effort=$EFFORT" -c 'web_search="live"
 if [ -n "$EXTRA" ]; then ARGS+=(--add-dir "$EXTRA"); fi
 echo "start $(date -u +%FT%TZ) $NAME $MODEL $EFFORT" >> "$LOGDIR/launches.txt"
 cd "$ROOT"
-codex "${ARGS[@]}" - < "$PROMPT" > "$LOGDIR/$NAME.log" 2>&1
-STATUS=$?
+codex "${ARGS[@]}" - < "$PROMPT" 2>&1 | gzip -6 > "$LOGDIR/$NAME.log.gz"
+STATUS=${PIPESTATUS[0]}
 echo "end $(date -u +%FT%TZ) $NAME exit=$STATUS" >> "$LOGDIR/launches.txt"
 exit $STATUS

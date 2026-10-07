@@ -1,0 +1,13 @@
+# Follow-up for package C from the coordinator: corrections on GPT-6.1-Sol
+
+The coordinator has switched this session to GPT-6.1-Sol. A Sonnet review is in `experiments/2026-10-06-byproduct-inventory/REVIEW.md`, with its scripts and outputs in `review/`. It confirmed 142 of 146 reported values and the complete registry mapping, and found problems that must be fixed before the ranking can be used. Copy the current files into `first-pass/` before editing, add a dated amendment to `PROTOCOL.md`, and then:
+
+1. Remove the numbers and claims taken from packages B1 and B2 (README line 3, rank 6 in `inventory.json`, REPORT lines 7 and 25, RETROSPECTIVE line 3, `registry-entry.json` line 6). Those packages were still running and their figures have changed. Keep rank 6 as a placeholder that points to `experiments/2026-10-06-evidence-census/` without numbers.
+2. Make `audit_coverage.py` pass, add the missing `registry_ids` fields, and correct the registry mapping for the entries the review lists as assigned to candidates they do not support (NULL-01 to 11, CONTEXT-01, ARCH-02, NUM-02, DATASET-LANDSCAPE-01 and REGIONNUM-01).
+3. Correct the stale numbers and descriptions: 16 lower-code ambiguities in the final atlas (not 13), and say the chart readers were AI models; the Harappa counts superseded by HARP-SHORT-01 (32 and 5); the stamp-contact model's description (displacement-controlled) and its results; the two web routes compared in the Tamil Nadu record; the G02 observations; and the secondary 50% gate behind the conservation gains. Fix the two nonexistent evidence paths for rank 5, add Fuls to rank 1's evidence, and point rank 23's 46.30% to its machine-readable file.
+4. Replace the precedent searches for ranks 2, 3, 4 and 8 with on-subject searches, including Soutzo 1911's own mass-per-mark reading, Ascalone and Peyronel 1999, Frenez's Lothal thesis and Fuls's ICIT documentation, or relabel those precedent checks as not done.
+5. State provenance and limits beside each claim, correct the source records the review lists (SRC-03, SRC-07, SRC-09, SRC-10, SRC-18) and repair the damaged characters, writing UTF-8 without a byte-order mark.
+6. Re-pair publishable forms and venues with what each venue actually publishes, following the review's notes.
+7. Add the results the review found missing: the IGNCA CISI 1 PDF repeating its own 431 pages, the cross-catalogue join audit, the 40.4 L capacity audit, the Susa 25:1:2 reconstruction, the dataset landscape and the Harappa module analysis.
+
+Update `inventory.json`, `REPORT.md`, `README.md`, `RETROSPECTIVE.md` and `registry-entry.json`. Keep disk use small; about 7 GB is free on the computer.
