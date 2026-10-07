@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-02",
+  "scope": "Public source discovery and local inventory comparison; private ICIT contents not inspected. Sizes are attributed historical counts or local pinned counts.",
+  "conclusion": "Broad corpora already exist. This search did not establish one openly downloadable, permission-cleared package combining all the proposed layers. No claim of superiority is established.",
+  "sources": [
+    {
+      "id": "ICIT",
+      "title": "Interactive Corpus of Indus Texts",
+      "url": "https://www.epigraphica.de/indus/menueindus.htm",
+      "type": "archaeological-and-epigraphic-database",
+      "counts": {"objects": 4665, "texts": 5650, "legible_sign_occurrences": 17966, "photos_and_drawings": 16015, "tables": 29},
+      "count_basis": "Andreas Fuls, CAA 2023 abstract 76, printed and PDF page 281; historical count, not current inventory.",
+      "count_source_url": "https://2023.caaconference.org/wp-content/uploads/sites/29/2023/04/abstract_book_v13.pdf#page=281",
+      "observations": "Includes excavation identifiers, findspots, material, preservation, direction, completeness, iconography, spatial mapping and analysis tools.",
+      "access": "Official page says to ask the administrator for access. Full internal schema and current bulk release not inspected.",
+      "redistribution": "No open bulk-data or image redistribution license established in this review.",
+      "witness": "data/raw/2026-10-02-dataset-landscape/witnesses-v1/caa2023.pdf"
+    },
+    {
+      "id": "CISI",
+      "title": "Corpus of Indus Seals and Inscriptions",
+      "url": "https://researchportal.helsinki.fi/en/projects/corpus-of-indus-seals-and-inscriptions/",
+      "type": "photographic-source-corpus",
+      "counts": null,
+      "observations": "Photographic corpus project; verified publication records include volume 3.1 (2010) and 3.2 (2019). Object faces, impressions and museum/excavation references already have scholarly precedents.",
+      "access": "Published volumes and some publicly accessible scans; no complete openly licensed machine-readable package inspected.",
+      "redistribution": "Photographic assets need their own source-specific review.",
+      "related_url": "https://researchportal.helsinki.fi/en/publications/corpus-of-indus-seals-and-inscriptions-32-shahr-i-sokhta-mundigak"
+    },
+    {
+      "id": "IM77-WEB",
+      "title": "The Indus Script IM77 Web Application",
+      "url": "https://indusscript.in/",
+      "type": "institutional-corpus-and-concordance",
+      "counts": null,
+      "observations": "RMRL describes a web application based on Mahadevan's 1977 book. The institution also lists an expanded concordance among planned activities.",
+      "access": "Public application; internal data and full export route not verified.",
+      "redistribution": "No bulk-data license established here.",
+      "source_url": "https://www.rmrl.in/en/irc"
+    },
+    {
+      "id": "HELSINKI-1979",
+      "title": "Corpus of Texts in the Indus Script",
+      "url": "https://researchportal.helsinki.fi/en/publications/corpus-of-texts-in-the-indus-script/",
+      "type": "licensed-primary-edition",
+      "counts": {"book_pages": 179},
+      "observations": "Printed graphic texts; local project has a 687-cell chart annotation resource. Text digitization still requires source and boundary review.",
+      "access": "Official publication portal and public PDF.",
+      "redistribution": "Official portal links CC BY 4.0 for the published version; retain attribution and transformation records.",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "id": "HELSINKI-1982",
+      "title": "A Concordance to the Texts in the Indus Script",
+      "url": "https://researchportal.helsinki.fi/en/publications/a-concordande-to-the-texts-in-the-indus-script/",
+      "type": "licensed-primary-edition",
+      "counts": null,
+      "observations": "Concordance available as an image-based PDF in the local project.",
+      "access": "Official publication portal and public PDF.",
+      "redistribution": "Official portal links CC BY 4.0 for the published version; preserve notices and source coordinates."
+    },
+    {
+      "id": "MAYIG",
+      "title": "Corpus of Indus Seals and Inscriptions digitization",
+      "url": "https://github.com/mayig/indus-valley-script-corpus",
+      "type": "annotated-json-corpus",
+      "counts": {"local_pinned_faces": 179, "local_pinned_tokens": 1003},
+      "count_basis": "Local pin ad2f1e218a34b8c33c57de0d6cb8d99272765bbb; no fresh count of upstream main.",
+      "observations": "Parpola-style signs with feature vectors, line, damage and uncertainty annotations. Local subset is Mohenjo-daro unicorn seals.",
+      "access": "Public GitHub JSON and feature schema.",
+      "redistribution": "Actual MIT notice, Michael Carlson 2024. Separately sourced photographs retain their own rights."
+    },
+    {
+      "id": "LIPI",
+      "title": "Lipi inscription export",
+      "url": "https://github.com/yajnadevam/lipi",
+      "type": "csv-corpus-export",
+      "counts": {"local_pinned_rows": 5680, "local_provisional_families": 4695, "local_pinned_token_positions": 19946},
+      "count_basis": "Local pin fc8813a52e183d19c441631dc26c33a4dccbea39; aggregate replay in main-v1/local-input-audit.json.",
+      "observations": "Broad metadata export. Source interpretations are excluded from our observed-data extraction.",
+      "access": "Public source repository; already preserved locally.",
+      "redistribution": "No license found at local pin; current GitHub repository metadata also returns license null. Public accessibility alone does not clear a bulk release."
+    },
+    {
+      "id": "OLDER-EXPORT",
+      "title": "Earlier Indus website export",
+      "url": "https://github.com/yajnadevam/indus-website",
+      "type": "sql-corpus-export",
+      "counts": {"local_pinned_rows": 2543, "local_pinned_token_positions": 11135},
+      "observations": "Earlier overlapping export from the same maintainer; useful for version comparison.",
+      "access": "Already preserved locally and parsed as text.",
+      "redistribution": "Upstream repository GPL-3.0; imported data and image coverage needs component review."
+    },
+    {
+      "id": "FIELD-CADY",
+      "title": "Indus Valley Script Corpus",
+      "url": "https://github.com/field-cady/indus_valley_script_corpus",
+      "type": "derivative-corpus-repository",
+      "counts": {"author_reported_inscriptions_lower_bound": 5000},
+      "observations": "README identifies Lipi as the CSV source; alternate availability does not add independent objects.",
+      "access": "Public repository.",
+      "redistribution": "GitHub reports MIT; scope of inherited Lipi and ICIT material remains unresolved."
+    },
+    {
+      "id": "HF-SYNTHETIC",
+      "title": "Synthetic Indus Script Dataset",
+      "url": "https://huggingface.co/datasets/hellosindh/indus-script-synthetic",
+      "type": "synthetic-sequences",
+      "counts": {"card_reported_synthetic_sequences": 5000},
+      "observations": "Generated sequences and a sign index; these are not newly discovered archaeological inscriptions. The API file list differs from parts of the card's file descriptions.",
+      "access": "Public Hugging Face repository, pinned e455cfc7e9069ade81ce994b47b7a7533308627e.",
+      "redistribution": "Card declares CC BY 4.0. No independent review of all source-derived index fields.",
+      "witness": "data/raw/2026-10-02-dataset-landscape/discovery-v1/hf-dataset-0.json"
+    },
+    {
+      "id": "HF-LANE",
+      "title": "Zer0pa Indus Valley lane state",
+      "url": "https://huggingface.co/datasets/Zer0pa/Indus-Valley-lane-state",
+      "type": "research-project-mirror",
+      "counts": null,
+      "observations": "Card describes a research-state and source-code mirror with derived integer data and no image bytes admitted. Includes a demonstration fixture; full bundles not acquired.",
+      "access": "API metadata and pinned card acquired; web reader could not open its normal page.",
+      "redistribution": "Custom policy. No blanket reusable full archaeological corpus established.",
+      "witness": "data/raw/2026-10-02-dataset-landscape/witnesses-v1/hf-card-1.md"
+    },
+    {
+      "id": "HF-BRANCH",
+      "title": "P316 P147 P217 Indus Branch Audit Article Assets",
+      "url": "https://huggingface.co/datasets/junafinity/p316-p147-p217-indus-branch-audit-20260609",
+      "type": "focused-research-evidence-package",
+      "counts": null,
+      "observations": "Article assets, named-sign route tables, summaries and image comparisons. Card's checked-artifact count is not a census of independent ancient objects.",
+      "access": "API metadata and pinned card acquired; bulk assets not acquired.",
+      "redistribution": "Card declares CC BY 4.0; permissions for reproduced third-party panels require separate review.",
+      "witness": "data/raw/2026-10-02-dataset-landscape/witnesses-v1/hf-card-2.md"
+    },
+    {
+      "id": "GLYPH-GITHUB",
+      "title": "Indus Valley Script Dataset",
+      "url": "https://github.com/HimanshuAttri/IndusValleyScriptDataset",
+      "type": "isolated-glyph-images",
+      "counts": {"author_reported_glyph_images": 418},
+      "observations": "Book-derived isolated character PNGs, useful for graphic experiments rather than a complete object corpus.",
+      "access": "Public GitHub repository.",
+      "redistribution": "GitHub repository metadata has no detected license; original image rights not established."
+    },
+    {
+      "id": "GLYPH-KAGGLE-REFERENCE",
+      "title": "IM 417 150",
+      "url": "https://www.kaggle.com/datasets/storesource/im-417-150",
+      "type": "isolated-glyph-images",
+      "counts": {"downstream_reported_glyph_images": 417},
+      "observations": "Referenced by jocchanon-prog/induscorpus as a 150 by 150 pixel glyph collection. Original Kaggle payload and rights were not independently inspected.",
+      "access": "Discovery reference only in this review.",
+      "redistribution": "Downstream README states Apache 2.0; original publication and crop permissions remain unverified.",
+      "source_url": "https://github.com/jocchanon-prog/induscorpus"
+    },
+    {
+      "id": "OPEN-INDUS-LAB",
+      "title": "Open Indus Lab",
+      "url": "https://github.com/premkumar2306/open-indus-lab",
+      "type": "hypothesis-and-author-reading-package",
+      "counts": {"author_reported_seal_reading_rows": 194, "author_reported_sign_mapping_rows": 264},
+      "observations": "Current README lists author readings and sign-to-phoneme hypotheses, and reports removal of its external CISI corpus and guessed numbering bridge in July 2026.",
+      "access": "Public repository and seed CSVs; counts attributed to README, not independently recounted.",
+      "redistribution": "README declares MIT and author permission. Imported assets require individual review."
+    },
+    {
+      "id": "INDUSCRIPT-COM",
+      "title": "Induscript research compilation",
+      "url": "https://induscript.com/",
+      "type": "research-website-compilation",
+      "counts": {"site_reported_inscriptions": 2543, "site_reported_signs": 592, "site_reported_sites": 52},
+      "observations": "Site describes an ICIT-style compilation and graphic stand-ins; it expressly limits its photographic completeness. Similar functions have existing precedents.",
+      "access": "Public website; no complete bulk payload examined.",
+      "redistribution": "Full source and asset license not established here."
+    },
+    {
+      "id": "LEDGER-MELUHHA",
+      "title": "The Ledger of Meluhha",
+      "url": "https://github.com/chanakyan/ledger-of-meluhha",
+      "type": "interpretive-sqlite-research-package",
+      "counts": {"author_reported_cisi_inscriptions": 179, "author_reported_mahadevan_line_metadata_rows": 923},
+      "observations": "Public description combines transcription data, OCR, metadata and an author's numerical interpretation. Database contents were not downloaded or independently evaluated.",
+      "access": "Landing-page description reviewed only.",
+      "redistribution": "Page states separate restrictions on AI use and mixed third-party data. Exclude payload from acquisition or release pending a documented basis."
+    },
+    {
+      "id": "OCR-ENGINE",
+      "title": "The Indus script optical grapheme recognition engine",
+      "url": "https://github.com/tpsatish95/indus-script-ocr",
+      "type": "recognition-code-and-training-assets",
+      "counts": null,
+      "observations": "Image text localization, segmentation and grapheme recognition project; not evaluated as a holistic archaeological corpus.",
+      "access": "Public repository; no training payload acquired in this audit.",
+      "redistribution": "GitHub reports Apache 2.0 for the repository; training-image rights must be checked separately."
+    }
+  ]
+}
