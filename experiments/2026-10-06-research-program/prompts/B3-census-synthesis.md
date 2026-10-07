@@ -8,7 +8,14 @@ Answer the user's question directly: is all evidence for the Indus script that c
 
 ## Inputs
 
-Read the two finished census packages and their reviews: `experiments/2026-10-06-evidence-census/sites-and-publications/` and `experiments/2026-10-06-evidence-census/collections-and-datasets/` (each with `REVIEW.md`). Read the earlier uncommitted dataset landscape in `experiments/2026-10-02-dataset-landscape/` (README, `landscape.json`, `SCHEMA.md`, `DATASET_PLAN.md`) without editing it. Where a review lists required fixes, apply the correction in your synthesis and say so.
+Read the finished census work, none of which has been reviewed yet:
+- the four regional site batches in `experiments/2026-10-06-evidence-census/sites-deep/` (`a-pakistan-afghanistan`, `b-gujarat-kutch-maharashtra`, `c-north-india`, `d-finds-abroad`), each completed on GPT-6.1-Sol, with first-pass files preserved;
+- the collection and dataset census in `experiments/2026-10-06-evidence-census/collections-and-datasets/`, whose third pass confirmed 114 online museum records and joined 61 of them to corpus records by excavation number;
+- the superseded first site pass in `experiments/2026-10-06-evidence-census/sites-and-publications/`;
+- the coordinator's local figures in `experiments/2026-10-06-research-program/local-site-coverage.json`;
+- the October 2 dataset landscape in `experiments/2026-10-02-dataset-landscape/` (README, `landscape.json`, `SCHEMA.md`, `DATASET_PLAN.md`), read without editing.
+
+Because no review exists yet, verify the numbers you rely on: recompute each batch's totals from its site rows, check a sample of at least 20 site rows across batches against their cited sources, and record disagreements between batches (for example, sites claimed by two batches or different count bases for the same catalogue). Some batch files store long search-snippet text in source titles; do not copy such text into your outputs, and list the affected batch files so the coordinator can trim them.
 
 ## Steps
 
