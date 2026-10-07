@@ -1,0 +1,5143 @@
+{
+ "reader": "A",
+ "part": 1,
+ "started_utc": "2026-10-07T17:24:26Z",
+ "finished_utc": "2026-10-07T18:12:17Z",
+ "scope": "sample_index 0 through 39 of selection.json (40 rows)",
+ "notes": "Coverage. All 40 assigned indices (sample_index 0 to 39) are read: 28 rows from the number-ordered section (0 to 27, number and classification to the right of the signs) and 12 from the end-sorted section (28 to 39, number and classification to the left). The file holds 170 drawn units. 23 exact crops are correct and 17 are not. 13 units keep a candidate set of two or more strict codes; no unit is left empty.\n\nMethod. The wide source crop fixed the intended printed row, the exact crop was checked for clipped target ink, neighbour ink and number-field ink, and each drawing was matched to the position-chart cards by shape, underline and vertical position. I enlarged the supplied crops and cards and measured on them: the horizontal ink extent of each unit in PDF points (x_extent_pdf_pt), the extent of each underline, and the ink at the edges of each exact crop. The wide crops contained every target, number and classification, so the only page I rendered from the original PDF was page 21, once at two pixels per point, to compare the printed sign list with the cards. The PDF text layer, OCR and every file the instructions put off limits were not opened. The temporary renders were deleted.\n\nFields. Units follow the left-to-right order on the page. strict_candidate_codes are the chart numbers that agree with the drawing, its underline and its vertical position; shape_only_candidate_codes add codes that share the drawn shape and differ only in underline or height. chart_location lists the card locations of the strict codes and chart_locations those of every code named in the unit; a label such as 465/485/486 is one card and is listed under each number. uncertainty is none when one code fits and the nearest variant is clearly different, low when one code fits but a neighbouring variant is conceivable or when the strict set lists cards that coincide on the chart (such as 9 and 765), and moderate when two codes stay open for another reason (the narrow-patch pairs). unit_kind is sign, numeral_stack (short strokes), hatched_span or loss_rectangle. blank_gaps lists ink-to-ink gaps of about 19 pt or more between neighbouring units and attaches no side or line interpretation. A crop is marked incorrect when it cuts target ink (including an underline lying below the box), contains ink of a neighbouring printed row, or contains any part of a number or classification digit; crop_issues names the cause.\n\nRecurring decisions. An underline is a row of five dashes about 14 pt long under a sign, and it is part of the strict code. A pair of ticks in the top fifth of the sign line is 25 (509 when underlined) and a centred pair is 2 (231); single ticks follow the same rule, 23 and 258 for the high position, 1 and 423 for the centred one. Strokes that coincide on the cards stay together: 764 with 8 (underlined 768 with 501) and 9 with 765 (underlined 543 with 769). Stroke stacks were counted directly. For the narrow hatched patches the cards put the patch at the left edge of its sign box for 597 and 13 and about 8 pt inside the box for 598 and 542, and the position chart agrees with the printed sign list on page 21. A patch that starts within a few points of the preceding sign cannot lie 8 pt inside its own box, so it is recorded as 597; a patch at the start of a line or after a blank gap keeps both codes. Where a boundary between units could be drawn in more than one way, the row names it in unresolved_boundary (rows 19, 31 and 36).\n\nDigits. The digit 1 is printed in two styles, one of them like a lower-case i, and both are read as 1. Where the first classification digit is faded to a cap and a few dots (rows 31, 35, 39 and partly 15) it is read as 1. Row 6 carries a dust dot after the first digit of its number.\n\nBlindness. I did not open predictions, the frame, freeze or detection files, any other reader's folder, the earlier evaluation references or the PDF text layer. The shared scratchpad held a zoom.py written by another process over my first helper script; two lines of it appeared in a Python error trace (parsing a row index and a view name), and it contained no reading or prediction.",
+ "rows": [
+  {
+   "sample_index": 0,
+   "pdf_page": 23,
+   "printed_inscription_id": "255D",
+   "classification_literal": "51 40",
+   "drawn_unit_count": 5,
+   "crop_correct": false,
+   "crop_issues": [
+    "top edge includes the dashed underline of the printed row above (255C)",
+    "the row's own underlines (five-dash segments under units 1, 3, 4, 5) lie 5 px below the box bottom and are excluded",
+    "right edge includes the left part of the first classification digit"
+   ],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      526
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": {
+      "526": "21:5:31",
+      "204": "21:5:30"
+     },
+     "chart_location": [
+      "21:5:31"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      428.3,
+      441.3
+     ],
+     "uncertainty": "none",
+     "note": "U with F-shaped flags, no tick between them; five-dash underline present"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      210
+     ],
+     "shape_only_candidate_codes": [
+      210,
+      395
+     ],
+     "chart_locations": {
+      "210": "21:6:11",
+      "395": "21:6:14"
+     },
+     "chart_location": [
+      "21:6:11"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      445.5,
+      457.7
+     ],
+     "uncertainty": "none",
+     "note": "U with closed P-shaped hooks; no underline beneath this unit"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      502
+     ],
+     "shape_only_candidate_codes": [
+      31,
+      502
+     ],
+     "chart_locations": {
+      "502": "21:3:29",
+      "31": "21:3:28"
+     },
+     "chart_location": [
+      "21:3:29"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      463.3,
+      470.5
+     ],
+     "uncertainty": "none",
+     "note": "tall bracket shape (top bar, short left stem, long right stem) with underline"
+    },
+    {
+     "order": 4,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      509
+     ],
+     "shape_only_candidate_codes": [
+      25,
+      509,
+      2,
+      231
+     ],
+     "chart_locations": {
+      "509": "20:5:19",
+      "25": "20:5:18",
+      "2": "20:5:28",
+      "231": "20:5:29"
+     },
+     "chart_location": [
+      "20:5:19"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      481.7,
+      484.9
+     ],
+     "uncertainty": "low",
+     "note": "pair of short ticks at the top of the sign line, underlined; the chart separates the high pair (25/509) from the centred pair (2/231) by vertical position only"
+    },
+    {
+     "order": 5,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      421
+     ],
+     "shape_only_candidate_codes": [
+      420,
+      421
+     ],
+     "chart_locations": {
+      "421": "21:8:27",
+      "420": "21:8:26"
+     },
+     "chart_location": [
+      "21:8:27"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      493.7,
+      505.5
+     ],
+     "uncertainty": "none",
+     "note": "egg-shaped oval with V notch at top, underlined"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Intended row is the second of three in the context crop (255C, 255D, 256). Each five-dash underline is centred under its own sign; unit 2 has none.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 1,
+   "pdf_page": 24,
+   "printed_inscription_id": "297",
+   "classification_literal": "48690",
+   "drawn_unit_count": 6,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      596
+     ],
+     "shape_only_candidate_codes": [
+      596,
+      454
+     ],
+     "chart_locations": {
+      "596": "21:9:11",
+      "454": "21:9:12"
+     },
+     "chart_location": [
+      "21:9:11"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      145.2,
+      160.2
+     ],
+     "uncertainty": "none",
+     "note": "hatched square with a ring-and-hook sign visible beneath; no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      596
+     ],
+     "shape_only_candidate_codes": [
+      596,
+      454
+     ],
+     "chart_locations": {
+      "596": "21:9:11",
+      "454": "21:9:12"
+     },
+     "chart_location": [
+      "21:9:11"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      162.2,
+      177.2
+     ],
+     "uncertainty": "none",
+     "note": "same drawing as unit 1"
+    },
+    {
+     "order": 3,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      597
+     ],
+     "shape_only_candidate_codes": [
+      597,
+      598,
+      13,
+      542
+     ],
+     "chart_locations": {
+      "597": "21:9:15",
+      "598": "21:9:17",
+      "13": "21:9:16",
+      "542": "21:9:18"
+     },
+     "chart_location": [
+      "21:9:15"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      179.0,
+      185.0
+     ],
+     "uncertainty": "low",
+     "note": "narrow hatched patch about 6 pt wide, no underline, 1.8 pt after the preceding block; it sits too close to the preceding sign to carry the roughly 8 pt blank offset that distinguishes 598 from 597"
+    },
+    {
+     "order": 4,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      597,
+      598
+     ],
+     "shape_only_candidate_codes": [
+      597,
+      598,
+      13,
+      542
+     ],
+     "chart_locations": {
+      "597": "21:9:15",
+      "598": "21:9:17",
+      "13": "21:9:16",
+      "542": "21:9:18"
+     },
+     "chart_location": [
+      "21:9:15",
+      "21:9:17"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      210.8,
+      217.0
+     ],
+     "uncertainty": "moderate",
+     "note": "narrow hatched patch after a wide blank, no underline; 597 and 598 differ only by the offset inside the sign box, which cannot be fixed after a blank"
+    },
+    {
+     "order": 5,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      768,
+      501
+     ],
+     "shape_only_candidate_codes": [
+      764,
+      768,
+      8,
+      501
+     ],
+     "chart_locations": {
+      "768": "20:5:27",
+      "501": "20:7:12",
+      "764": "20:5:26",
+      "8": "20:7:11"
+     },
+     "chart_location": [
+      "20:5:27",
+      "20:7:12"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      226.2,
+      226.6
+     ],
+     "uncertainty": "low",
+     "note": "single full-height thin stroke with underline; chart pairs 764/768 and 8/501 have indistinguishable strokes at this resolution"
+    },
+    {
+     "order": 6,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      163
+     ],
+     "shape_only_candidate_codes": [
+      163,
+      254
+     ],
+     "chart_locations": {
+      "163": "21:8:12",
+      "254": "21:8:13"
+     },
+     "chart_location": [
+      "21:8:12"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      237.0,
+      248.6
+     ],
+     "uncertainty": "none",
+     "note": "ellipse crossed by three diameters; no underline under it (the underline to its left belongs to unit 5)"
+    }
+   ],
+   "blank_gaps": [
+    {
+     "between_units": [
+      3,
+      4
+     ],
+     "gap_pt": 25.8,
+     "note": "ink-to-ink blank of about one and a half sign pitches; recorded as a blank gap, no side or line interpretation made"
+    }
+   ],
+   "units_with_candidate_sets": [
+    4,
+    5
+   ],
+   "source_observations": "Middle of three printed rows (296, 297, 298). Underline dashes span x 219.8-233.6 pt, centred on the stroke only.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 2,
+   "pdf_page": 26,
+   "printed_inscription_id": "430",
+   "classification_literal": "71 49",
+   "drawn_unit_count": 4,
+   "crop_correct": false,
+   "crop_issues": [
+    "right edge includes the first classification digit (x 256.8-259.4 pt against box edge 259.0 pt)"
+   ],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": {
+      "204": "21:5:30",
+      "526": "21:5:31"
+     },
+     "chart_location": [
+      "21:5:30"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      194.2,
+      206.8
+     ],
+     "uncertainty": "none",
+     "note": "U with F-shaped flags, no ticks, no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      93
+     ],
+     "shape_only_candidate_codes": [
+      93,
+      293
+     ],
+     "chart_locations": {
+      "93": "20:5:4",
+      "293": "20:5:5"
+     },
+     "chart_location": [
+      "20:5:4"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      209.6,
+      222.4
+     ],
+     "uncertainty": "low",
+     "note": "heart-shaped leaf with vertical hatching on a vertical stem line; no underline"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      179
+     ],
+     "shape_only_candidate_codes": [
+      179,
+      463
+     ],
+     "chart_locations": {
+      "179": "20:2:24",
+      "463": "20:2:25"
+     },
+     "chart_location": [
+      "20:2:24"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      228.0,
+      235.6
+     ],
+     "uncertainty": "low",
+     "note": "almond fish with a horizontal bar across the body, side fins and crossed tail; the bar separates it from 177"
+    },
+    {
+     "order": 4,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      161
+     ],
+     "shape_only_candidate_codes": [
+      161,
+      537
+     ],
+     "chart_locations": {
+      "161": "21:7:28",
+      "537": "21:7:29"
+     },
+     "chart_location": [
+      "21:7:28"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      239.2,
+      251.0
+     ],
+     "uncertainty": "none",
+     "note": "oval enclosing a stem with a fan of short prongs at its top; no corner ticks; no underline"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Second of three near-identical rows (429, 430, 431). The digit 1 is printed like a lower-case i in the number and classification lines.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 3,
+   "pdf_page": 27,
+   "printed_inscription_id": "486",
+   "classification_literal": "73 97",
+   "drawn_unit_count": 1,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "loss_rectangle",
+     "strict_candidate_codes": [
+      70
+     ],
+     "shape_only_candidate_codes": [
+      70
+     ],
+     "chart_locations": {
+      "70": "21:9:20"
+     },
+     "chart_location": [
+      "21:9:20"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      229.4,
+      250.4
+     ],
+     "uncertainty": "none",
+     "note": "empty rectangle, entire-text loss; about 21 pt wide"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three consecutive rows (485, 486, 487), each a single empty rectangle.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 4,
+   "pdf_page": 29,
+   "printed_inscription_id": "714",
+   "classification_literal": "11 40",
+   "drawn_unit_count": 6,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      597,
+      598
+     ],
+     "shape_only_candidate_codes": [
+      597,
+      598,
+      13,
+      542
+     ],
+     "chart_locations": {
+      "597": "21:9:15",
+      "598": "21:9:17",
+      "13": "21:9:16",
+      "542": "21:9:18"
+     },
+     "chart_location": [
+      "21:9:15",
+      "21:9:17"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      168.6,
+      175.0
+     ],
+     "uncertainty": "moderate",
+     "note": "narrow hatched patch at the start of the line, no underline; 597 and 598 differ only by the offset inside the sign box. The following sign box starts 6.4 pt after the patch ink began, which is at the limit for 598 (it needs 6.5 pt), so 597 is slightly favoured within the card-to-print registration error"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      50
+     ],
+     "shape_only_candidate_codes": [
+      50,
+      683
+     ],
+     "chart_locations": {
+      "50": "21:4:2",
+      "683": "21:4:3"
+     },
+     "chart_location": [
+      "21:4:2"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      179.8,
+      194.6
+     ],
+     "uncertainty": "low",
+     "note": "trapezoid with two top ticks, side flags and an inner up-arrow; no underline"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      177
+     ],
+     "shape_only_candidate_codes": [
+      177,
+      517
+     ],
+     "chart_locations": {
+      "177": "20:2:11",
+      "517": "20:2:12"
+     },
+     "chart_location": [
+      "20:2:11"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      200.0,
+      207.6
+     ],
+     "uncertainty": "low",
+     "note": "almond fish with side fins and crossed tail, no bar"
+    },
+    {
+     "order": 4,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      9,
+      765
+     ],
+     "shape_only_candidate_codes": [
+      9,
+      765,
+      543,
+      769
+     ],
+     "chart_locations": {
+      "9": "20:7:13",
+      "765": "20:5:30",
+      "543": "20:7:14",
+      "769": "20:5:31"
+     },
+     "chart_location": [
+      "20:7:13",
+      "20:5:30"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      214.6,
+      219.6
+     ],
+     "uncertainty": "low",
+     "note": "two full-height strokes 4.4 pt apart; chart cards 9 and 765 coincide"
+    },
+    {
+     "order": 5,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      25
+     ],
+     "shape_only_candidate_codes": [
+      25,
+      509,
+      2,
+      231
+     ],
+     "chart_locations": {
+      "25": "20:5:18",
+      "509": "20:5:19",
+      "2": "20:5:28",
+      "231": "20:5:29"
+     },
+     "chart_location": [
+      "20:5:18"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      227.2,
+      230.0
+     ],
+     "uncertainty": "low",
+     "note": "pair of short ticks at the top of the line, no underline: high pair"
+    },
+    {
+     "order": 6,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      162
+     ],
+     "shape_only_candidate_codes": [
+      162,
+      510
+     ],
+     "chart_locations": {
+      "162": "21:8:25",
+      "510": "21:8:28"
+     },
+     "chart_location": [
+      "21:8:25"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      232.6,
+      245.0
+     ],
+     "uncertainty": "none",
+     "note": "diamond with a V notch at the top, no underline"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [
+    1,
+    4
+   ],
+   "source_observations": "Middle of three printed rows (713, 714, 715).",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 5,
+   "pdf_page": 31,
+   "printed_inscription_id": "1138",
+   "classification_literal": "11 91",
+   "drawn_unit_count": 4,
+   "crop_correct": false,
+   "crop_issues": [
+    "the underline under units 3 and 4 lies at y 186-189 px, below the box bottom at 182.5 px, so the box excludes it"
+   ],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      51
+     ],
+     "shape_only_candidate_codes": [
+      51,
+      465,
+      485,
+      486
+     ],
+     "chart_locations": {
+      "51": "20:4:20",
+      "465": "20:4:21",
+      "485": "20:4:21",
+      "486": "20:4:21"
+     },
+     "chart_location": [
+      "20:4:20"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      451.3,
+      457.9
+     ],
+     "uncertainty": "none",
+     "note": "spine with six horizontal bars, no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      503
+     ],
+     "shape_only_candidate_codes": [
+      503,
+      263
+     ],
+     "chart_locations": {
+      "503": "20:3:5",
+      "263": "20:3:6"
+     },
+     "chart_location": [
+      "20:3:5"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      463.1,
+      478.3
+     ],
+     "uncertainty": "none",
+     "note": "striped-torso figure between a pair of parentheses; no underline"
+    },
+    {
+     "order": 3,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      106
+     ],
+     "shape_only_candidate_codes": [
+      599,
+      106
+     ],
+     "chart_locations": {
+      "106": "21:9:14",
+      "599": "21:9:13"
+     },
+     "chart_location": [
+      "21:9:14"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      480.1,
+      494.9
+     ],
+     "uncertainty": "low",
+     "note": "wide hatched block about 15 pt wide with five-dash underline"
+    },
+    {
+     "order": 4,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      106
+     ],
+     "shape_only_candidate_codes": [
+      599,
+      106
+     ],
+     "chart_locations": {
+      "106": "21:9:14",
+      "599": "21:9:13"
+     },
+     "chart_location": [
+      "21:9:14"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      496.7,
+      511.9
+     ],
+     "uncertainty": "low",
+     "note": "wide hatched block with underline"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (1137, 1138, 1139). Underline dashes are drawn 6 px below the block bottoms.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 6,
+   "pdf_page": 32,
+   "printed_inscription_id": "1228",
+   "classification_literal": "11 40",
+   "drawn_unit_count": 4,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      145
+     ],
+     "shape_only_candidate_codes": [
+      145,
+      538
+     ],
+     "chart_locations": {
+      "145": "20:0:9",
+      "538": "20:0:10"
+     },
+     "chart_location": [
+      "20:0:9"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      469.9,
+      479.1
+     ],
+     "uncertainty": "low",
+     "note": "figure with ring-ended arms and two small flagged prongs at the top; no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      189
+     ],
+     "shape_only_candidate_codes": [
+      189,
+      489
+     ],
+     "chart_locations": {
+      "189": "20:3:11",
+      "489": "20:3:12"
+     },
+     "chart_location": [
+      "20:3:11"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      484.7,
+      491.7
+     ],
+     "uncertainty": "none",
+     "note": "long-necked bird with striped body"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      25
+     ],
+     "shape_only_candidate_codes": [
+      25,
+      509,
+      2,
+      231
+     ],
+     "chart_locations": {
+      "25": "20:5:18",
+      "509": "20:5:19",
+      "2": "20:5:28",
+      "231": "20:5:29"
+     },
+     "chart_location": [
+      "20:5:18"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      499.3,
+      502.3
+     ],
+     "uncertainty": "low",
+     "note": "pair of short ticks at the top of the line: high pair"
+    },
+    {
+     "order": 4,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      420
+     ],
+     "shape_only_candidate_codes": [
+      420,
+      421
+     ],
+     "chart_locations": {
+      "420": "21:8:26",
+      "421": "21:8:27"
+     },
+     "chart_location": [
+      "21:8:26"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      505.5,
+      517.3
+     ],
+     "uncertainty": "none",
+     "note": "egg-shaped oval with V notch, no underline"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (1227, 1228, 1229). A faint dot after the first digit of the number is dust; the digits read 1228.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 7,
+   "pdf_page": 33,
+   "printed_inscription_id": "1249",
+   "classification_literal": "11 40",
+   "drawn_unit_count": 2,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      126
+     ],
+     "shape_only_candidate_codes": [
+      126,
+      151,
+      443
+     ],
+     "chart_locations": {
+      "126": "20:3:34",
+      "151": "20:4:0",
+      "443": "20:3:32"
+     },
+     "chart_location": [
+      "20:3:34"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      227.2,
+      234.0
+     ],
+     "uncertainty": "low",
+     "note": "stem with a Y-shaped fork and a faint central prong rising between the arms; 443 has no central prong"
+    },
+    {
+     "order": 2,
+     "unit_kind": "numeral_stack",
+     "strict_candidate_codes": [
+      18
+     ],
+     "shape_only_candidate_codes": [
+      18,
+      670
+     ],
+     "chart_locations": {
+      "18": "20:6:12",
+      "670": "20:6:13"
+     },
+     "chart_location": [
+      "20:6:12"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      240.0,
+      246.2
+     ],
+     "uncertainty": "none",
+     "note": "three short strokes over three short strokes (3 over 3), no underline"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (1248, 1249, 1250).",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 8,
+   "pdf_page": 40,
+   "printed_inscription_id": "2115",
+   "classification_literal": "11 40",
+   "drawn_unit_count": 6,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": {
+      "204": "21:5:30",
+      "526": "21:5:31"
+     },
+     "chart_location": [
+      "21:5:30"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      168.8,
+      181.4
+     ],
+     "uncertainty": "none",
+     "note": "U with F-shaped flags, no ticks"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      9,
+      765
+     ],
+     "shape_only_candidate_codes": [
+      9,
+      765,
+      543,
+      769
+     ],
+     "chart_locations": {
+      "9": "20:7:13",
+      "765": "20:5:30",
+      "543": "20:7:14",
+      "769": "20:5:31"
+     },
+     "chart_location": [
+      "20:7:13",
+      "20:5:30"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      188.0,
+      193.0
+     ],
+     "uncertainty": "low",
+     "note": "two full-height strokes"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      169
+     ],
+     "shape_only_candidate_codes": [
+      169,
+      533
+     ],
+     "chart_locations": {
+      "169": "21:7:3",
+      "533": "21:7:4"
+     },
+     "chart_location": [
+      "21:7:3"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      198.0,
+      214.4
+     ],
+     "uncertainty": "none",
+     "note": "two overlapping outlines, the left one lens-shaped"
+    },
+    {
+     "order": 4,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      205
+     ],
+     "shape_only_candidate_codes": [
+      205,
+      209
+     ],
+     "chart_locations": {
+      "205": "21:5:32",
+      "209": "21:5:33"
+     },
+     "chart_location": [
+      "21:5:32"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      217.0,
+      230.0
+     ],
+     "uncertainty": "low",
+     "note": "U with F-shaped flags and one short tick centred between them"
+    },
+    {
+     "order": 5,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      154
+     ],
+     "shape_only_candidate_codes": [
+      154,
+      469
+     ],
+     "chart_locations": {
+      "154": "20:5:20",
+      "469": "20:5:21"
+     },
+     "chart_location": [
+      "20:5:20"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      237.2,
+      240.8
+     ],
+     "uncertainty": "low",
+     "note": "short thick tick at upper left, long line at right turning into a slanted tail"
+    },
+    {
+     "order": 6,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      220
+     ],
+     "shape_only_candidate_codes": [
+      220,
+      155
+     ],
+     "chart_locations": {
+      "220": "20:8:2",
+      "155": "20:8:3"
+     },
+     "chart_location": [
+      "20:8:2"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      249.6,
+      253.6
+     ],
+     "uncertainty": "low",
+     "note": "large right-bulging arc with a small inner arc forming an eye at its centre"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [
+    2
+   ],
+   "source_observations": "First printed row of the pair 2115, 2116; the box begins 11 pt above the row and contains only blank space there.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 9,
+   "pdf_page": 41,
+   "printed_inscription_id": "2217",
+   "classification_literal": "11 93",
+   "drawn_unit_count": 3,
+   "crop_correct": false,
+   "crop_issues": [
+    "right edge includes the first digits of the inscription number and the classification (x 245.8-251.0 pt, box edge 251.0 pt)"
+   ],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      133
+     ],
+     "shape_only_candidate_codes": [
+      133,
+      535
+     ],
+     "chart_locations": {
+      "133": "20:0:26",
+      "535": "20:0:27"
+     },
+     "chart_location": [
+      "20:0:26"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      204.2,
+      211.2
+     ],
+     "uncertainty": "low",
+     "note": "stick figure with drooping arms, a short stub above the shoulders and spread legs; no tick between the legs and no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      133
+     ],
+     "shape_only_candidate_codes": [
+      133,
+      535
+     ],
+     "chart_locations": {
+      "133": "20:0:26",
+      "535": "20:0:27"
+     },
+     "chart_location": [
+      "20:0:26"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      216.6,
+      223.8
+     ],
+     "uncertainty": "low",
+     "note": "same drawing as unit 1"
+    },
+    {
+     "order": 3,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      599
+     ],
+     "shape_only_candidate_codes": [
+      599,
+      106
+     ],
+     "chart_locations": {
+      "599": "21:9:13",
+      "106": "21:9:14"
+     },
+     "chart_location": [
+      "21:9:13"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      225.6,
+      240.6
+     ],
+     "uncertainty": "low",
+     "note": "wide hatched block about 15 pt wide, no underline"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (2216, 2217, 2218).",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 10,
+   "pdf_page": 41,
+   "printed_inscription_id": "2258",
+   "classification_literal": "11 54",
+   "drawn_unit_count": 2,
+   "crop_correct": false,
+   "crop_issues": [
+    "right edge includes the first two digits of the inscription number and the first digits of the classification (x 507.5-514.7 pt, box edge 514.5 pt)"
+   ],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": {
+      "204": "21:5:30",
+      "526": "21:5:31"
+     },
+     "chart_location": [
+      "21:5:30"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      472.7,
+      485.5
+     ],
+     "uncertainty": "none",
+     "note": "U with F-shaped flags, no ticks, no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      186
+     ],
+     "shape_only_candidate_codes": [
+      186,
+      434
+     ],
+     "chart_locations": {
+      "186": "20:9:20",
+      "434": "20:9:21"
+     },
+     "chart_location": [
+      "20:9:20"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      490.5,
+      502.1
+     ],
+     "uncertainty": "low",
+     "note": "leaf at the top, vertical line with two horizontal ticks and one slanted tick on the right, angular bent line at lower left; no underline"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (2257, 2258, 2259). The underline of the row above ends 5 px above the box top.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 11,
+   "pdf_page": 42,
+   "printed_inscription_id": "2286",
+   "classification_literal": "11 40",
+   "drawn_unit_count": 6,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      144
+     ],
+     "shape_only_candidate_codes": [
+      144,
+      539
+     ],
+     "chart_locations": {
+      "144": "20:0:0",
+      "539": "20:0:3"
+     },
+     "chart_location": [
+      "20:0:0"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      182.8,
+      191.8
+     ],
+     "uncertainty": "low",
+     "note": "figure with a stem above its shoulder bar and a ring at the end of each arm; no tick between the legs, no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      87
+     ],
+     "shape_only_candidate_codes": [
+      87
+     ],
+     "chart_locations": {
+      "87": "20:2:9"
+     },
+     "chart_location": [
+      "20:2:9"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      198.2,
+      203.8
+     ],
+     "uncertainty": "low",
+     "note": "diagonally hatched almond with a chevron on top and crossed legs; the chart has no underlined counterpart"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      764,
+      8
+     ],
+     "shape_only_candidate_codes": [
+      764,
+      768,
+      8,
+      501
+     ],
+     "chart_locations": {
+      "764": "20:5:26",
+      "8": "20:7:11",
+      "768": "20:5:27",
+      "501": "20:7:12"
+     },
+     "chart_location": [
+      "20:5:26",
+      "20:7:11"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      212.8,
+      213.4
+     ],
+     "uncertainty": "low",
+     "note": "single full-height thin stroke, no underline; cards 764 and 8 are indistinguishable"
+    },
+    {
+     "order": 4,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      25
+     ],
+     "shape_only_candidate_codes": [
+      25,
+      509,
+      2,
+      231
+     ],
+     "chart_locations": {
+      "25": "20:5:18",
+      "509": "20:5:19",
+      "2": "20:5:28",
+      "231": "20:5:29"
+     },
+     "chart_location": [
+      "20:5:18"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      221.0,
+      224.0
+     ],
+     "uncertainty": "low",
+     "note": "pair of short ticks at the top of the line: high pair"
+    },
+    {
+     "order": 5,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      163
+     ],
+     "shape_only_candidate_codes": [
+      163,
+      254
+     ],
+     "chart_locations": {
+      "163": "21:8:12",
+      "254": "21:8:13"
+     },
+     "chart_location": [
+      "21:8:12"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      227.2,
+      238.8
+     ],
+     "uncertainty": "none",
+     "note": "ellipse crossed by three diameters, no underline"
+    },
+    {
+     "order": 6,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      205
+     ],
+     "shape_only_candidate_codes": [
+      205,
+      209
+     ],
+     "chart_locations": {
+      "205": "21:5:32",
+      "209": "21:5:33"
+     },
+     "chart_location": [
+      "21:5:32"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      241.6,
+      254.6
+     ],
+     "uncertainty": "low",
+     "note": "U with F-shaped flags and one short tick between them"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [
+    3
+   ],
+   "source_observations": "Middle of three rows (2285, 2286, 2287).",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 12,
+   "pdf_page": 42,
+   "printed_inscription_id": "2318",
+   "classification_literal": "23 99",
+   "drawn_unit_count": 3,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      51
+     ],
+     "shape_only_candidate_codes": [
+      51,
+      465,
+      485,
+      486
+     ],
+     "chart_locations": {
+      "51": "20:4:20",
+      "465": "20:4:21",
+      "485": "20:4:21",
+      "486": "20:4:21"
+     },
+     "chart_location": [
+      "20:4:20"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      481.8,
+      488.2
+     ],
+     "uncertainty": "none",
+     "note": "spine with six horizontal bars, no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": {
+      "204": "21:5:30",
+      "526": "21:5:31"
+     },
+     "chart_location": [
+      "21:5:30"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      491.4,
+      503.8
+     ],
+     "uncertainty": "none",
+     "note": "U with F-shaped flags, no ticks"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      177
+     ],
+     "shape_only_candidate_codes": [
+      177,
+      517
+     ],
+     "chart_locations": {
+      "177": "20:2:11",
+      "517": "20:2:12"
+     },
+     "chart_location": [
+      "20:2:11"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      509.2,
+      517.0
+     ],
+     "uncertainty": "low",
+     "note": "almond fish with side fins and crossed tail, no horizontal bar"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (2317, 2318, 2319). The digit 1 in the number is printed like a lower-case i.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 13,
+   "pdf_page": 44,
+   "printed_inscription_id": "2449",
+   "classification_literal": "12 40",
+   "drawn_unit_count": 5,
+   "crop_correct": false,
+   "crop_issues": [
+    "right edge cuts through unit 5: the straight side of the D lies at the box edge (525.0 pt) while the bowl and the diagonal reach 532.2 pt",
+    "left edge includes part of the right-hand digits of the number and classification of the neighbouring left column (x 290.0-294.8 pt)"
+   ],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": {
+      "204": "21:5:30",
+      "526": "21:5:31"
+     },
+     "chart_location": [
+      "21:5:30"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      452.2,
+      465.0
+     ],
+     "uncertainty": "none",
+     "note": "U with F-shaped flags, no ticks"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      186
+     ],
+     "shape_only_candidate_codes": [
+      186,
+      434
+     ],
+     "chart_locations": {
+      "186": "20:9:20",
+      "434": "20:9:21"
+     },
+     "chart_location": [
+      "20:9:20"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      470.2,
+      482.0
+     ],
+     "uncertainty": "low",
+     "note": "leaf at the top, three ticks on the right, angular bent line at lower left"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      205
+     ],
+     "shape_only_candidate_codes": [
+      205,
+      209
+     ],
+     "chart_locations": {
+      "205": "21:5:32",
+      "209": "21:5:33"
+     },
+     "chart_location": [
+      "21:5:32"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      484.8,
+      497.6
+     ],
+     "uncertainty": "low",
+     "note": "U with F-shaped flags and one tick between them"
+    },
+    {
+     "order": 4,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      126
+     ],
+     "shape_only_candidate_codes": [
+      126,
+      151,
+      443
+     ],
+     "chart_locations": {
+      "126": "20:3:34",
+      "151": "20:4:0",
+      "443": "20:3:32"
+     },
+     "chart_location": [
+      "20:3:34"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      503.0,
+      510.0
+     ],
+     "uncertainty": "low",
+     "note": "stem with three prongs at the top, the central prong as long as the arms; card 443 has two arms only"
+    },
+    {
+     "order": 5,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      139
+     ],
+     "shape_only_candidate_codes": [
+      139,
+      390
+     ],
+     "chart_locations": {
+      "139": "20:1:23",
+      "390": "20:1:24"
+     },
+     "chart_location": [
+      "20:1:23"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      516.0,
+      532.2
+     ],
+     "uncertainty": "low",
+     "note": "stick figure with raised bent arm joined to a D-shaped outline crossed by a rising diagonal; no underline"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (2448, 2449, 2450) in the right-hand column of the page.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 14,
+   "pdf_page": 45,
+   "printed_inscription_id": "2525",
+   "classification_literal": "11 99",
+   "drawn_unit_count": 2,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      127
+     ],
+     "shape_only_candidate_codes": [
+      127,
+      506
+     ],
+     "chart_locations": {
+      "127": "20:3:33",
+      "506": "20:4:1"
+     },
+     "chart_location": [
+      "20:3:33"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      492.9,
+      499.9
+     ],
+     "uncertainty": "low",
+     "note": "Y-shaped fork on a long stem with a comb of short ticks along the right arm; no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "numeral_stack",
+     "strict_candidate_codes": [
+      5
+     ],
+     "shape_only_candidate_codes": [
+      5,
+      715
+     ],
+     "chart_locations": {
+      "5": "20:6:7",
+      "715": "20:6:9"
+     },
+     "chart_location": [
+      "20:6:7"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      503.3,
+      514.7
+     ],
+     "uncertainty": "none",
+     "note": "five short strokes in a single row, vertically centred on the line, no underline"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (2524, 2525, 2526).",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 15,
+   "pdf_page": 52,
+   "printed_inscription_id": "3157",
+   "classification_literal": "11 40",
+   "drawn_unit_count": 2,
+   "crop_correct": false,
+   "crop_issues": [
+    "top edge includes the dashed underline of the printed row above (3156), x 516.3-530.1 pt",
+    "the row's own underline under unit 1 lies at y 197-203 px, below the box bottom at 192 px, so the box excludes it"
+   ],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      526
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": {
+      "526": "21:5:31",
+      "204": "21:5:30"
+     },
+     "chart_location": [
+      "21:5:31"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      508.9,
+      521.7
+     ],
+     "uncertainty": "none",
+     "note": "U with F-shaped flags, no ticks; five-dash underline spans 508.5-522.3 pt"
+    },
+    {
+     "order": 2,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      597
+     ],
+     "shape_only_candidate_codes": [
+      597,
+      598,
+      13,
+      542
+     ],
+     "chart_locations": {
+      "597": "21:9:15",
+      "598": "21:9:17",
+      "13": "21:9:16",
+      "542": "21:9:18"
+     },
+     "chart_location": [
+      "21:9:15"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      524.0,
+      530.2
+     ],
+     "uncertainty": "low",
+     "note": "narrow hatched patch about 6 pt wide, no underline, 2.3 pt after the U; it sits too close to the preceding sign to carry the roughly 8 pt blank offset that distinguishes 598 from 597"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (3156, 3157, 3158). The digit 1 in the number is printed like a lower-case i.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 16,
+   "pdf_page": 55,
+   "printed_inscription_id": "3380",
+   "classification_literal": "63 99",
+   "drawn_unit_count": 3,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      596
+     ],
+     "shape_only_candidate_codes": [
+      596,
+      454
+     ],
+     "chart_locations": {
+      "596": "21:9:11",
+      "454": "21:9:12"
+     },
+     "chart_location": [
+      "21:9:11"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      464.7,
+      479.7
+     ],
+     "uncertainty": "none",
+     "note": "hatched square with a ring-and-hook sign visible beneath, no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      596
+     ],
+     "shape_only_candidate_codes": [
+      596,
+      454
+     ],
+     "chart_locations": {
+      "596": "21:9:11",
+      "454": "21:9:12"
+     },
+     "chart_location": [
+      "21:9:11"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      481.5,
+      496.5
+     ],
+     "uncertainty": "none",
+     "note": "same drawing"
+    },
+    {
+     "order": 3,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      596
+     ],
+     "shape_only_candidate_codes": [
+      596,
+      454
+     ],
+     "chart_locations": {
+      "596": "21:9:11",
+      "454": "21:9:12"
+     },
+     "chart_location": [
+      "21:9:11"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      498.1,
+      513.3
+     ],
+     "uncertainty": "none",
+     "note": "same drawing"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (3379, 3380, 3381). Three identical hatched squares, no underline anywhere in the row.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 17,
+   "pdf_page": 56,
+   "printed_inscription_id": "3460",
+   "classification_literal": "75699",
+   "drawn_unit_count": 7,
+   "crop_correct": false,
+   "crop_issues": [
+    "the underlines under units 1, 4 and 5 lie at y 183-187 px, below the box bottom at 180 px, so the box excludes them"
+   ],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      712
+     ],
+     "shape_only_candidate_codes": [
+      232,
+      712
+     ],
+     "chart_locations": {
+      "712": "21:2:13",
+      "232": "21:2:12"
+     },
+     "chart_location": [
+      "21:2:13"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      400.0,
+      415.2
+     ],
+     "uncertainty": "low",
+     "note": "two crossing diagonals flanked by a chevron on each side, underlined (underline 398.6-412.6 pt)"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      53
+     ],
+     "shape_only_candidate_codes": [
+      53,
+      582
+     ],
+     "chart_locations": {
+      "53": "20:9:33",
+      "582": "20:9:34"
+     },
+     "chart_location": [
+      "20:9:33"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      422.2,
+      430.6
+     ],
+     "uncertainty": "low",
+     "note": "slanted line carrying a small striped flag; no underline"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      162
+     ],
+     "shape_only_candidate_codes": [
+      162,
+      510
+     ],
+     "chart_locations": {
+      "162": "21:8:25",
+      "510": "21:8:28"
+     },
+     "chart_location": [
+      "21:8:25"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      433.2,
+      445.6
+     ],
+     "uncertainty": "none",
+     "note": "diamond with a V notch at the top, no underline"
+    },
+    {
+     "order": 4,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      465,
+      485,
+      486
+     ],
+     "shape_only_candidate_codes": [
+      51,
+      465,
+      485,
+      486
+     ],
+     "chart_locations": {
+      "465": "20:4:21",
+      "485": "20:4:21",
+      "486": "20:4:21",
+      "51": "20:4:20"
+     },
+     "chart_location": [
+      "20:4:21"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      466.6,
+      473.0
+     ],
+     "uncertainty": "low",
+     "note": "spine with six horizontal bars, underlined (underline 463.0-477.0 pt); the chart card for the underlined form is labelled 465/485/486"
+    },
+    {
+     "order": 5,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      526
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": {
+      "526": "21:5:31",
+      "204": "21:5:30"
+     },
+     "chart_location": [
+      "21:5:31"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      479.8,
+      492.6
+     ],
+     "uncertainty": "none",
+     "note": "U with F-shaped flags, no ticks, underlined (underline 479.4-493.0 pt)"
+    },
+    {
+     "order": 6,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      215
+     ],
+     "shape_only_candidate_codes": [
+      215,
+      266
+     ],
+     "chart_locations": {
+      "215": "20:5:13",
+      "266": "20:5:15"
+     },
+     "chart_location": [
+      "20:5:13"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      496.6,
+      516.0
+     ],
+     "uncertainty": "low",
+     "note": "three small figures joined by a curved line with a central vertical; no underline"
+    },
+    {
+     "order": 7,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      104
+     ],
+     "shape_only_candidate_codes": [
+      104,
+      389
+     ],
+     "chart_locations": {
+      "104": "21:0:13",
+      "389": "21:0:15"
+     },
+     "chart_location": [
+      "21:0:13"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      520.6,
+      529.8
+     ],
+     "uncertainty": "low",
+     "note": "tall triangle crossed by horizontal bars, no vertical centre line, no underline"
+    }
+   ],
+   "blank_gaps": [
+    {
+     "between_units": [
+      3,
+      4
+     ],
+     "gap_pt": 21.0,
+     "note": "ink-to-ink blank of about one empty sign cell; recorded as a blank gap, no side or line interpretation made"
+    }
+   ],
+   "units_with_candidate_sets": [
+    4
+   ],
+   "source_observations": "Middle of three rows (3459, 3460, 3461) in the right-hand column. Classification has five filled positions.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 18,
+   "pdf_page": 57,
+   "printed_inscription_id": "3521",
+   "classification_literal": "75699",
+   "drawn_unit_count": 3,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      177
+     ],
+     "shape_only_candidate_codes": [
+      177,
+      517
+     ],
+     "chart_locations": {
+      "177": "20:2:11",
+      "517": "20:2:12"
+     },
+     "chart_location": [
+      "20:2:11"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      454.0,
+      461.8
+     ],
+     "uncertainty": "low",
+     "note": "almond fish with side fins and crossed tail, no bar, no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      239
+     ],
+     "shape_only_candidate_codes": [
+      239
+     ],
+     "chart_locations": {
+      "239": "21:6:30"
+     },
+     "chart_location": [
+      "21:6:30"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      481.2,
+      495.0
+     ],
+     "uncertainty": "low",
+     "note": "arch ending in a small ring at each foot, no centre stem; the chart has no underlined counterpart"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      197
+     ],
+     "shape_only_candidate_codes": [
+      197,
+      532
+     ],
+     "chart_locations": {
+      "197": "21:5:15",
+      "532": "21:5:17"
+     },
+     "chart_location": [
+      "21:5:15"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      500.0,
+      508.2
+     ],
+     "uncertainty": "low",
+     "note": "tall U enclosing a vertical stem that ends in a small ring; no flags, no underline"
+    }
+   ],
+   "blank_gaps": [
+    {
+     "between_units": [
+      1,
+      2
+     ],
+     "gap_pt": 19.4,
+     "note": "ink-to-ink blank of about one empty sign cell; recorded as a blank gap, no side or line interpretation made"
+    }
+   ],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (3520, 3521, 3522). The left-edge ink in the context crop belongs to the neighbouring column and lies outside the box.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 19,
+   "pdf_page": 59,
+   "printed_inscription_id": "3638",
+   "classification_literal": "62697",
+   "drawn_unit_count": 5,
+   "crop_correct": false,
+   "crop_issues": [
+    "the underline under unit 1 lies at y 185-190 px, below the box bottom at 180 px, so the box excludes it"
+   ],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      548
+     ],
+     "shape_only_candidate_codes": [
+      246,
+      548
+     ],
+     "chart_locations": {
+      "548": "21:5:4",
+      "246": "21:5:3"
+     },
+     "chart_location": [
+      "21:5:4"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      154.6,
+      163.0
+     ],
+     "uncertainty": "low",
+     "note": "plain U with straight sides and no ticks, underlined (underline 151.8-165.8 pt)"
+    },
+    {
+     "order": 2,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      599
+     ],
+     "shape_only_candidate_codes": [
+      599,
+      106
+     ],
+     "chart_locations": {
+      "599": "21:9:13",
+      "106": "21:9:14"
+     },
+     "chart_location": [
+      "21:9:13"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      167.6,
+      182.6
+     ],
+     "uncertainty": "low",
+     "note": "wide hatched block about 15 pt wide, no underline"
+    },
+    {
+     "order": 3,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      597,
+      598
+     ],
+     "shape_only_candidate_codes": [
+      597,
+      598,
+      13,
+      542
+     ],
+     "chart_locations": {
+      "597": "21:9:15",
+      "598": "21:9:17",
+      "13": "21:9:16",
+      "542": "21:9:18"
+     },
+     "chart_location": [
+      "21:9:15",
+      "21:9:17"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      207.6,
+      214.2
+     ],
+     "uncertainty": "moderate",
+     "note": "narrow hatched patch after a wide blank, no underline; 597 and 598 differ only by the offset inside the sign box, which cannot be fixed after a blank"
+    },
+    {
+     "order": 4,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      71
+     ],
+     "shape_only_candidate_codes": [
+      71,
+      685
+     ],
+     "chart_locations": {
+      "71": "20:0:19",
+      "685": "20:0:21"
+     },
+     "chart_location": [
+      "20:0:19"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      218.4,
+      236.8
+     ],
+     "uncertainty": "low",
+     "note": "stick figure with raised trident-like head between two right-bulging arcs, no underline"
+    },
+    {
+     "order": 5,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      597
+     ],
+     "shape_only_candidate_codes": [
+      597,
+      598,
+      13,
+      542
+     ],
+     "chart_locations": {
+      "597": "21:9:15",
+      "598": "21:9:17",
+      "13": "21:9:16",
+      "542": "21:9:18"
+     },
+     "chart_location": [
+      "21:9:15"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      238.4,
+      244.6
+     ],
+     "uncertainty": "low",
+     "note": "narrow hatched patch 1.6 pt after the arc, no underline; too close to the preceding sign for the 598 offset"
+    }
+   ],
+   "blank_gaps": [
+    {
+     "between_units": [
+      2,
+      3
+     ],
+     "gap_pt": 25.0,
+     "note": "ink-to-ink blank of more than one empty sign cell; recorded as a blank gap, no side or line interpretation made"
+    }
+   ],
+   "units_with_candidate_sets": [
+    3
+   ],
+   "source_observations": "Middle of three rows (3637, 3638, 3639). The two arcs and the figure are read as one sign because the chart card for 71 has the same composition.",
+   "unresolved_boundary": "unit 4: the two arcs and the figure are read as one drawing because chart card 71 has the same composition; no chart card supports reading them as three separate drawings"
+  },
+  {
+   "sample_index": 20,
+   "pdf_page": 60,
+   "printed_inscription_id": "3708",
+   "classification_literal": "91299",
+   "drawn_unit_count": 8,
+   "crop_correct": false,
+   "crop_issues": [
+    "top edge includes the dashed underline of the printed row above (3707), x 228.0-258.8 pt",
+    "the row's own underlines under units 1-4 lie at y 194-196 px, below the box bottom at 190 px, so the box excludes them"
+   ],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      309
+     ],
+     "shape_only_candidate_codes": [
+      170,
+      309
+     ],
+     "chart_locations": {
+      "309": "21:7:8",
+      "170": "21:7:7"
+     },
+     "chart_location": [
+      "21:7:8"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      123.2,
+      139.4
+     ],
+     "uncertainty": "low",
+     "note": "two overlapping outlines crossed by a slanted line, underlined (underline 120.2-142.8 pt, wider than the others)"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      554
+     ],
+     "shape_only_candidate_codes": [
+      69,
+      554
+     ],
+     "chart_locations": {
+      "554": "21:2:33",
+      "69": "21:2:30"
+     },
+     "chart_location": [
+      "21:2:33"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      160.6,
+      173.2
+     ],
+     "uncertainty": "low",
+     "note": "grid of three columns by four rows, underlined (underline 160.2-174.0 pt)"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      517
+     ],
+     "shape_only_candidate_codes": [
+      177,
+      517
+     ],
+     "chart_locations": {
+      "517": "20:2:12",
+      "177": "20:2:11"
+     },
+     "chart_location": [
+      "20:2:12"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      179.2,
+      187.0
+     ],
+     "uncertainty": "low",
+     "note": "almond fish with side fins and crossed tail, no bar, underlined (underline 176.4-190.2 pt)"
+    },
+    {
+     "order": 4,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      108
+     ],
+     "shape_only_candidate_codes": [
+      52,
+      108
+     ],
+     "chart_locations": {
+      "108": "20:9:32",
+      "52": "20:9:31"
+     },
+     "chart_location": [
+      "20:9:32"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      197.0,
+      205.2
+     ],
+     "uncertainty": "low",
+     "note": "slanted line with a short branch to the right, underlined (underline 192.6-206.2 pt)"
+    },
+    {
+     "order": 5,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      51
+     ],
+     "shape_only_candidate_codes": [
+      51,
+      465,
+      485,
+      486
+     ],
+     "chart_locations": {
+      "51": "20:4:20",
+      "465": "20:4:21",
+      "485": "20:4:21",
+      "486": "20:4:21"
+     },
+     "chart_location": [
+      "20:4:20"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      212.2,
+      218.8
+     ],
+     "uncertainty": "none",
+     "note": "spine with six horizontal bars, no underline"
+    },
+    {
+     "order": 6,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      25
+     ],
+     "shape_only_candidate_codes": [
+      25,
+      509,
+      2,
+      231
+     ],
+     "chart_locations": {
+      "25": "20:5:18",
+      "509": "20:5:19",
+      "2": "20:5:28",
+      "231": "20:5:29"
+     },
+     "chart_location": [
+      "20:5:18"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      226.4,
+      229.4
+     ],
+     "uncertainty": "low",
+     "note": "pair of short ticks at the top of the line: high pair; no underline"
+    },
+    {
+     "order": 7,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      81
+     ],
+     "shape_only_candidate_codes": [
+      81,
+      253
+     ],
+     "chart_locations": {
+      "81": "20:9:0",
+      "253": "20:9:1"
+     },
+     "chart_location": [
+      "20:9:0"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      238.0,
+      246.0
+     ],
+     "uncertainty": "low",
+     "note": "D-shaped outline crossed by a rising diagonal, no underline"
+    },
+    {
+     "order": 8,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      97
+     ],
+     "shape_only_candidate_codes": [
+      97,
+      534
+     ],
+     "chart_locations": {
+      "97": "20:0:22",
+      "534": "20:0:23"
+     },
+     "chart_location": [
+      "20:0:22"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      251.6,
+      258.8
+     ],
+     "uncertainty": "low",
+     "note": "stick figure whose head is a pair of crossed loops with a short stub above; no underline"
+    }
+   ],
+   "blank_gaps": [
+    {
+     "between_units": [
+      1,
+      2
+     ],
+     "gap_pt": 21.2,
+     "note": "ink-to-ink blank of about one empty sign cell; recorded as a blank gap, no side or line interpretation made"
+    }
+   ],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (3707, 3708, 3709). Four underlines (units 1-4) are drawn 5-7 px below the glyph bottoms.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 21,
+   "pdf_page": 61,
+   "printed_inscription_id": "3792",
+   "classification_literal": "91 99",
+   "drawn_unit_count": 3,
+   "crop_correct": false,
+   "crop_issues": [
+    "top edge includes the dashed underline of the printed row above (3791), x 232.0-246.0 pt",
+    "the row's own underline under unit 2 lies at y 193-196 px, below the box bottom at 190 px, so the box excludes it"
+   ],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      596
+     ],
+     "shape_only_candidate_codes": [
+      596,
+      454
+     ],
+     "chart_locations": {
+      "596": "21:9:11",
+      "454": "21:9:12"
+     },
+     "chart_location": [
+      "21:9:11"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      206.8,
+      222.0
+     ],
+     "uncertainty": "none",
+     "note": "hatched square with a ring-and-hook sign visible beneath, no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      526
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": {
+      "526": "21:5:31",
+      "204": "21:5:30"
+     },
+     "chart_location": [
+      "21:5:31"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      224.6,
+      237.4
+     ],
+     "uncertainty": "none",
+     "note": "U with F-shaped flags, no ticks, underlined (underline 224.2-238.0 pt)"
+    },
+    {
+     "order": 3,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      597
+     ],
+     "shape_only_candidate_codes": [
+      597,
+      598,
+      13,
+      542
+     ],
+     "chart_locations": {
+      "597": "21:9:15",
+      "598": "21:9:17",
+      "13": "21:9:16",
+      "542": "21:9:18"
+     },
+     "chart_location": [
+      "21:9:15"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      239.8,
+      246.0
+     ],
+     "uncertainty": "low",
+     "note": "narrow hatched patch about 6 pt wide, no underline, 2.4 pt after the U; too close to the preceding sign for the 598 offset"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (3791, 3792, 3793).",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 22,
+   "pdf_page": 65,
+   "printed_inscription_id": "4103",
+   "classification_literal": "67 41",
+   "drawn_unit_count": 5,
+   "crop_correct": false,
+   "crop_issues": [
+    "top edge includes the dashed underline of the printed row above (4102), x 481.8-495.4 pt"
+   ],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      95
+     ],
+     "shape_only_candidate_codes": [
+      95,
+      549
+     ],
+     "chart_locations": {
+      "95": "21:0:27",
+      "549": "21:0:28"
+     },
+     "chart_location": [
+      "21:0:27"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      453.6,
+      456.6
+     ],
+     "uncertainty": "low",
+     "note": "vertical stem with a hollow triangular arrowhead, no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      180
+     ],
+     "shape_only_candidate_codes": [
+      180,
+      541
+     ],
+     "chart_locations": {
+      "180": "20:2:31",
+      "541": "20:2:33"
+     },
+     "chart_location": [
+      "20:2:31"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      461.8,
+      469.8
+     ],
+     "uncertainty": "low",
+     "note": "almond body with oblique strokes at its upper and lower sides and crossed legs; no underline"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      25
+     ],
+     "shape_only_candidate_codes": [
+      25,
+      509,
+      2,
+      231
+     ],
+     "chart_locations": {
+      "25": "20:5:18",
+      "509": "20:5:19",
+      "2": "20:5:28",
+      "231": "20:5:29"
+     },
+     "chart_location": [
+      "20:5:18"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      477.6,
+      480.4
+     ],
+     "uncertainty": "low",
+     "note": "pair of short ticks at the top of the line: high pair, no underline"
+    },
+    {
+     "order": 4,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      127
+     ],
+     "shape_only_candidate_codes": [
+      127,
+      506
+     ],
+     "chart_locations": {
+      "127": "20:3:33",
+      "506": "20:4:1"
+     },
+     "chart_location": [
+      "20:3:33"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      486.6,
+      493.6
+     ],
+     "uncertainty": "low",
+     "note": "Y-shaped fork on a long stem with a comb of short ticks along the right arm; no underline"
+    },
+    {
+     "order": 5,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      103
+     ],
+     "shape_only_candidate_codes": [
+      103,
+      245
+     ],
+     "chart_locations": {
+      "103": "21:0:11",
+      "245": "21:0:12"
+     },
+     "chart_location": [
+      "21:0:11"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      498.2,
+      507.4
+     ],
+     "uncertainty": "low",
+     "note": "tall triangle with a solid apex, a vertical centre line and horizontal bars; no underline"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (4102, 4103, 4104).",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 23,
+   "pdf_page": 70,
+   "printed_inscription_id": "4534",
+   "classification_literal": "67 41",
+   "drawn_unit_count": 5,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      95
+     ],
+     "shape_only_candidate_codes": [
+      95,
+      549
+     ],
+     "chart_locations": {
+      "95": "21:0:27",
+      "549": "21:0:28"
+     },
+     "chart_location": [
+      "21:0:27"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      204.4,
+      207.6
+     ],
+     "uncertainty": "low",
+     "note": "vertical stem with a hollow triangular arrowhead, no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      180
+     ],
+     "shape_only_candidate_codes": [
+      180,
+      541
+     ],
+     "chart_locations": {
+      "180": "20:2:31",
+      "541": "20:2:33"
+     },
+     "chart_location": [
+      "20:2:31"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      212.8,
+      221.0
+     ],
+     "uncertainty": "low",
+     "note": "almond body with oblique strokes at its upper and lower sides and crossed legs; no underline"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      25
+     ],
+     "shape_only_candidate_codes": [
+      25,
+      509,
+      2,
+      231
+     ],
+     "chart_locations": {
+      "25": "20:5:18",
+      "509": "20:5:19",
+      "2": "20:5:28",
+      "231": "20:5:29"
+     },
+     "chart_location": [
+      "20:5:18"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      228.6,
+      231.6
+     ],
+     "uncertainty": "low",
+     "note": "pair of short ticks at the top of the line: high pair, no underline"
+    },
+    {
+     "order": 4,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      127
+     ],
+     "shape_only_candidate_codes": [
+      127,
+      506
+     ],
+     "chart_locations": {
+      "127": "20:3:33",
+      "506": "20:4:1"
+     },
+     "chart_location": [
+      "20:3:33"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      237.6,
+      244.8
+     ],
+     "uncertainty": "low",
+     "note": "Y-shaped fork on a long stem with a comb of short ticks along the right arm; no underline"
+    },
+    {
+     "order": 5,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      103
+     ],
+     "shape_only_candidate_codes": [
+      103,
+      245
+     ],
+     "chart_locations": {
+      "103": "21:0:11",
+      "245": "21:0:12"
+     },
+     "chart_location": [
+      "21:0:11"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      249.2,
+      258.6
+     ],
+     "uncertainty": "low",
+     "note": "tall triangle with a solid apex, a vertical centre line and horizontal bars; no underline"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three identical-looking rows (4533, 4534, 4535).",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 24,
+   "pdf_page": 73,
+   "printed_inscription_id": "6144",
+   "classification_literal": "51 99",
+   "drawn_unit_count": 3,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      597,
+      598
+     ],
+     "shape_only_candidate_codes": [
+      597,
+      598,
+      13,
+      542
+     ],
+     "chart_locations": {
+      "597": "21:9:15",
+      "598": "21:9:17",
+      "13": "21:9:16",
+      "542": "21:9:18"
+     },
+     "chart_location": [
+      "21:9:15",
+      "21:9:17"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      481.2,
+      487.6
+     ],
+     "uncertainty": "moderate",
+     "note": "narrow hatched patch at the start of the line, no underline; 597 and 598 differ only by the offset inside the sign box, which cannot be fixed at a line start"
+    },
+    {
+     "order": 2,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      596
+     ],
+     "shape_only_candidate_codes": [
+      596,
+      454
+     ],
+     "chart_locations": {
+      "596": "21:9:11",
+      "454": "21:9:12"
+     },
+     "chart_location": [
+      "21:9:11"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      489.4,
+      504.4
+     ],
+     "uncertainty": "none",
+     "note": "hatched square with a ring-and-hook sign visible beneath, no underline"
+    },
+    {
+     "order": 3,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      597
+     ],
+     "shape_only_candidate_codes": [
+      597,
+      598,
+      13,
+      542
+     ],
+     "chart_locations": {
+      "597": "21:9:15",
+      "598": "21:9:17",
+      "13": "21:9:16",
+      "542": "21:9:18"
+     },
+     "chart_location": [
+      "21:9:15"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      506.2,
+      512.2
+     ],
+     "uncertainty": "low",
+     "note": "narrow hatched patch, no underline, 1.8 pt after the preceding block; too close to the preceding sign for the 598 offset"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [
+    1
+   ],
+   "source_observations": "Second of two rows on the page foot (6143, 6144). The row above ends its underline 8 px above the box top.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 25,
+   "pdf_page": 74,
+   "printed_inscription_id": "6178C",
+   "classification_literal": "51 90",
+   "drawn_unit_count": 6,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      526
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": {
+      "526": "21:5:31",
+      "204": "21:5:30"
+     },
+     "chart_location": [
+      "21:5:31"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      425.0,
+      437.6
+     ],
+     "uncertainty": "none",
+     "note": "U with F-shaped flags, no ticks, underlined (underline 424.4-438.2 pt)"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      151
+     ],
+     "shape_only_candidate_codes": [
+      126,
+      151
+     ],
+     "chart_locations": {
+      "151": "20:4:0",
+      "126": "20:3:34"
+     },
+     "chart_location": [
+      "20:4:0"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      444.0,
+      450.8
+     ],
+     "uncertainty": "low",
+     "note": "Y-shaped fork on a long stem with a central prong rising between the arms, underlined (underline 440.8-454.4 pt)"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      491
+     ],
+     "shape_only_candidate_codes": [
+      27,
+      491
+     ],
+     "chart_locations": {
+      "491": "21:3:20",
+      "27": "21:3:19"
+     },
+     "chart_location": [
+      "21:3:20"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      459.4,
+      467.8
+     ],
+     "uncertainty": "low",
+     "note": "small open square carrying a vertical stem on top, underlined (underline 457.0-470.6 pt)"
+    },
+    {
+     "order": 4,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      543,
+      769
+     ],
+     "shape_only_candidate_codes": [
+      9,
+      765,
+      543,
+      769
+     ],
+     "chart_locations": {
+      "543": "20:7:14",
+      "769": "20:5:31",
+      "9": "20:7:13",
+      "765": "20:5:30"
+     },
+     "chart_location": [
+      "20:7:14",
+      "20:5:31"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      477.2,
+      482.0
+     ],
+     "uncertainty": "low",
+     "note": "two full-height strokes about 4.2 pt apart, underlined (underline 472.8-486.8 pt); cards 543 and 769 coincide"
+    },
+    {
+     "order": 5,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      25
+     ],
+     "shape_only_candidate_codes": [
+      25,
+      509,
+      2,
+      231
+     ],
+     "chart_locations": {
+      "25": "20:5:18",
+      "509": "20:5:19",
+      "2": "20:5:28",
+      "231": "20:5:29"
+     },
+     "chart_location": [
+      "20:5:18"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      494.2,
+      497.2
+     ],
+     "uncertainty": "low",
+     "note": "pair of short ticks at the top of the line: high pair; no underline"
+    },
+    {
+     "order": 6,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      114
+     ],
+     "shape_only_candidate_codes": [
+      114,
+      797
+     ],
+     "chart_locations": {
+      "114": "21:8:23",
+      "797": "21:8:24"
+     },
+     "chart_location": [
+      "21:8:23"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      500.0,
+      512.4
+     ],
+     "uncertainty": "low",
+     "note": "diamond outline with four small corner marks and a small spoked circle at its centre; no underline"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [
+    4
+   ],
+   "source_observations": "Middle of three rows (6178B, 6178C, 6179); the underline is one continuous dashed line made of four 14 pt groups under units 1-4.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 26,
+   "pdf_page": 75,
+   "printed_inscription_id": "7050",
+   "classification_literal": "91 99",
+   "drawn_unit_count": 3,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      597,
+      598
+     ],
+     "shape_only_candidate_codes": [
+      597,
+      598,
+      13,
+      542
+     ],
+     "chart_locations": {
+      "597": "21:9:15",
+      "598": "21:9:17",
+      "13": "21:9:16",
+      "542": "21:9:18"
+     },
+     "chart_location": [
+      "21:9:15",
+      "21:9:17"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      470.9,
+      477.5
+     ],
+     "uncertainty": "moderate",
+     "note": "narrow hatched patch at the start of the line, no underline; 597 and 598 differ only by the offset inside the sign box, which cannot be fixed at a line start"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      81
+     ],
+     "shape_only_candidate_codes": [
+      81,
+      253
+     ],
+     "chart_locations": {
+      "81": "20:9:0",
+      "253": "20:9:1"
+     },
+     "chart_location": [
+      "20:9:0"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      486.1,
+      494.1
+     ],
+     "uncertainty": "low",
+     "note": "D-shaped outline crossed by a rising diagonal, no underline"
+    },
+    {
+     "order": 3,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      597
+     ],
+     "shape_only_candidate_codes": [
+      597,
+      598,
+      13,
+      542
+     ],
+     "chart_locations": {
+      "597": "21:9:15",
+      "598": "21:9:17",
+      "13": "21:9:16",
+      "542": "21:9:18"
+     },
+     "chart_location": [
+      "21:9:15"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      495.9,
+      502.1
+     ],
+     "uncertainty": "low",
+     "note": "narrow hatched patch, no underline, 1.8 pt after the D; too close to the preceding sign for the 598 offset"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [
+    1
+   ],
+   "source_observations": "Middle of three rows (7049, 7050, 7051).",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 27,
+   "pdf_page": 76,
+   "printed_inscription_id": "8070",
+   "classification_literal": "91 99",
+   "drawn_unit_count": 3,
+   "crop_correct": false,
+   "crop_issues": [
+    "top edge includes the dashed underline of the printed row above (8069), x 480.4-494.2 pt",
+    "right edge cuts unit 3: the patch reaches x 526.2 pt while the box ends at 525.0 pt"
+   ],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      597,
+      598
+     ],
+     "shape_only_candidate_codes": [
+      597,
+      598,
+      13,
+      542
+     ],
+     "chart_locations": {
+      "597": "21:9:15",
+      "598": "21:9:17",
+      "13": "21:9:16",
+      "542": "21:9:18"
+     },
+     "chart_location": [
+      "21:9:15",
+      "21:9:17"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      495.2,
+      501.8
+     ],
+     "uncertainty": "moderate",
+     "note": "narrow hatched patch at the start of the line, no underline; the gap to the following X sign leaves little room for the 598 offset, so 597 is slightly favoured, but the difference is within the card-to-print registration error"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      125
+     ],
+     "shape_only_candidate_codes": [
+      125,
+      736
+     ],
+     "chart_locations": {
+      "125": "21:2:10",
+      "736": "21:2:11"
+     },
+     "chart_location": [
+      "21:2:10"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      503.6,
+      518.0
+     ],
+     "uncertainty": "low",
+     "note": "two crossing diagonals with a small barb at each of the four ends; no underline"
+    },
+    {
+     "order": 3,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      597
+     ],
+     "shape_only_candidate_codes": [
+      597,
+      598,
+      13,
+      542
+     ],
+     "chart_locations": {
+      "597": "21:9:15",
+      "598": "21:9:17",
+      "13": "21:9:16",
+      "542": "21:9:18"
+     },
+     "chart_location": [
+      "21:9:15"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      520.0,
+      526.2
+     ],
+     "uncertainty": "low",
+     "note": "narrow hatched patch, no underline, 2.0 pt after the X sign; clipped by the box at x 525.0 pt"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [
+    1
+   ],
+   "source_observations": "Second of two rows near the page foot (8069, 8070). The box is 27 pt tall, 7 pt taller than usual.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 28,
+   "pdf_page": 81,
+   "printed_inscription_id": "6157",
+   "classification_literal": "51 90",
+   "drawn_unit_count": 8,
+   "crop_correct": false,
+   "crop_issues": [
+    "left edge includes the right-hand digits of the inscription number and the classification (x 346.0-354.4 pt, box edge 346.0 pt)"
+   ],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      133
+     ],
+     "shape_only_candidate_codes": [
+      133,
+      535
+     ],
+     "chart_locations": {
+      "133": "20:0:26",
+      "535": "20:0:27"
+     },
+     "chart_location": [
+      "20:0:26"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      364.6,
+      371.4
+     ],
+     "uncertainty": "low",
+     "note": "stick figure with drooping arms, a short stub above the shoulders and spread legs; no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": {
+      "204": "21:5:30",
+      "526": "21:5:31"
+     },
+     "chart_location": [
+      "21:5:30"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      374.2,
+      387.2
+     ],
+     "uncertainty": "none",
+     "note": "U with F-shaped flags, no ticks"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      177
+     ],
+     "shape_only_candidate_codes": [
+      177,
+      517
+     ],
+     "chart_locations": {
+      "177": "20:2:11",
+      "517": "20:2:12"
+     },
+     "chart_location": [
+      "20:2:11"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      392.2,
+      400.2
+     ],
+     "uncertainty": "low",
+     "note": "almond fish with side fins and crossed tail, no bar"
+    },
+    {
+     "order": 4,
+     "unit_kind": "numeral_stack",
+     "strict_candidate_codes": [
+      24
+     ],
+     "shape_only_candidate_codes": [
+      24,
+      280
+     ],
+     "chart_locations": {
+      "24": "20:7:8",
+      "280": "20:7:9"
+     },
+     "chart_location": [
+      "20:7:8"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      405.6,
+      413.2
+     ],
+     "uncertainty": "low",
+     "note": "three rows of four short strokes (4 over 4 over 4)"
+    },
+    {
+     "order": 5,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      1
+     ],
+     "shape_only_candidate_codes": [
+      1,
+      423,
+      23,
+      258
+     ],
+     "chart_locations": {
+      "1": "20:5:22",
+      "423": "20:5:25",
+      "23": "20:5:23",
+      "258": "20:5:24"
+     },
+     "chart_location": [
+      "20:5:22"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      422.0,
+      422.6
+     ],
+     "uncertainty": "low",
+     "note": "single short vertical tick at mid height of the line (centred position, not the high position of 23)"
+    },
+    {
+     "order": 6,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      205
+     ],
+     "shape_only_candidate_codes": [
+      205,
+      209
+     ],
+     "chart_locations": {
+      "205": "21:5:32",
+      "209": "21:5:33"
+     },
+     "chart_location": [
+      "21:5:32"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      425.2,
+      438.2
+     ],
+     "uncertainty": "low",
+     "note": "U with F-shaped flags and one short tick between them"
+    },
+    {
+     "order": 7,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      102
+     ],
+     "shape_only_candidate_codes": [
+      102,
+      703
+     ],
+     "chart_locations": {
+      "102": "21:0:9",
+      "703": "21:0:10"
+     },
+     "chart_location": [
+      "21:0:9"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      442.6,
+      451.8
+     ],
+     "uncertainty": "low",
+     "note": "triangle outline with a vertical centre line, no horizontal bars; no underline"
+    },
+    {
+     "order": 8,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      532
+     ],
+     "shape_only_candidate_codes": [
+      197,
+      532
+     ],
+     "chart_locations": {
+      "532": "21:5:17",
+      "197": "21:5:15"
+     },
+     "chart_location": [
+      "21:5:17"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      456.8,
+      465.2
+     ],
+     "uncertainty": "low",
+     "note": "tall U enclosing a stem that ends in a small ring, underlined (underline 454.2-468.2 pt)"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Second of two rows (6149A, 6157) in the end-sorted section; number and classification stand to the left of the signs here.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 29,
+   "pdf_page": 82,
+   "printed_inscription_id": "216",
+   "classification_literal": "62 77",
+   "drawn_unit_count": 7,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      133
+     ],
+     "shape_only_candidate_codes": [
+      133,
+      535
+     ],
+     "chart_locations": {
+      "133": "20:0:26",
+      "535": "20:0:27"
+     },
+     "chart_location": [
+      "20:0:26"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      98.8,
+      105.6
+     ],
+     "uncertainty": "low",
+     "note": "stick figure with drooping arms, a short stub above the shoulders and spread legs; no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": {
+      "204": "21:5:30",
+      "526": "21:5:31"
+     },
+     "chart_location": [
+      "21:5:30"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      108.2,
+      121.2
+     ],
+     "uncertainty": "none",
+     "note": "U with F-shaped flags, no ticks"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      180
+     ],
+     "shape_only_candidate_codes": [
+      180,
+      541
+     ],
+     "chart_locations": {
+      "180": "20:2:31",
+      "541": "20:2:33"
+     },
+     "chart_location": [
+      "20:2:31"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      126.2,
+      134.4
+     ],
+     "uncertainty": "low",
+     "note": "almond body with oblique strokes at its upper and lower sides and crossed legs"
+    },
+    {
+     "order": 4,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      86
+     ],
+     "shape_only_candidate_codes": [
+      86,
+      568
+     ],
+     "chart_locations": {
+      "86": "20:2:28",
+      "568": "20:2:29"
+     },
+     "chart_location": [
+      "20:2:28"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      139.6,
+      147.2
+     ],
+     "uncertainty": "low",
+     "note": "chevron above an almond fish with side fins and crossed tail; body not hatched"
+    },
+    {
+     "order": 5,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      27
+     ],
+     "shape_only_candidate_codes": [
+      27,
+      491
+     ],
+     "chart_locations": {
+      "27": "21:3:19",
+      "491": "21:3:20"
+     },
+     "chart_location": [
+      "21:3:19"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      151.8,
+      160.4
+     ],
+     "uncertainty": "low",
+     "note": "small open square carrying a vertical stem on top, no underline"
+    },
+    {
+     "order": 6,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      122
+     ],
+     "shape_only_candidate_codes": [
+      122,
+      728
+     ],
+     "chart_locations": {
+      "122": "21:1:28",
+      "728": "21:1:29"
+     },
+     "chart_location": [
+      "21:1:28"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      164.6,
+      174.2
+     ],
+     "uncertainty": "none",
+     "note": "two crossing diagonals, no extra marks, no underline"
+    },
+    {
+     "order": 7,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      149
+     ],
+     "shape_only_candidate_codes": [
+      149,
+      772
+     ],
+     "chart_locations": {
+      "149": "20:1:2",
+      "772": "20:1:3"
+     },
+     "chart_location": [
+      "20:1:2"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      180.0,
+      191.4
+     ],
+     "uncertainty": "low",
+     "note": "stick figure whose legs continue into a two-peak zigzag; no underline"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (1109, 216, 222) in the end-sorted section; number and classification stand to the left of the signs and lie outside the box.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 30,
+   "pdf_page": 86,
+   "printed_inscription_id": "1301",
+   "classification_literal": "11 42",
+   "drawn_unit_count": 3,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      126
+     ],
+     "shape_only_candidate_codes": [
+      126,
+      151
+     ],
+     "chart_locations": {
+      "126": "20:3:34",
+      "151": "20:4:0"
+     },
+     "chart_location": [
+      "20:3:34"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      92.7,
+      99.7
+     ],
+     "uncertainty": "low",
+     "note": "Y-shaped fork on a long stem with a central prong between the arms; no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "numeral_stack",
+     "strict_candidate_codes": [
+      5
+     ],
+     "shape_only_candidate_codes": [
+      5,
+      715
+     ],
+     "chart_locations": {
+      "5": "20:6:7",
+      "715": "20:6:9"
+     },
+     "chart_location": [
+      "20:6:7"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      103.3,
+      114.5
+     ],
+     "uncertainty": "none",
+     "note": "five short strokes in a single row, vertically centred, no underline"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      97
+     ],
+     "shape_only_candidate_codes": [
+      97,
+      534
+     ],
+     "chart_locations": {
+      "97": "20:0:22",
+      "534": "20:0:23"
+     },
+     "chart_location": [
+      "20:0:22"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      119.9,
+      127.1
+     ],
+     "uncertainty": "low",
+     "note": "stick figure whose head is a pair of crossed loops with a short stub above; no underline"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (1422, 1301, 1346) in the end-sorted section. The digit 1 in the number is printed like a lower-case i.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 31,
+   "pdf_page": 88,
+   "printed_inscription_id": "1382",
+   "classification_literal": "11 38",
+   "drawn_unit_count": 1,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      547
+     ],
+     "shape_only_candidate_codes": [
+      547
+     ],
+     "chart_locations": {
+      "547": "20:4:4"
+     },
+     "chart_location": [
+      "20:4:4"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      93.5,
+      104.9
+     ],
+     "uncertainty": "low",
+     "note": "bar with four short upright teeth above a three-pronged fork on a long stem; one sign, the chart card 547 has the same two-part composition; no underline"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (3205, 1382, 8002) in the end-sorted section. The first classification digit is faded to a cap and a dotted stroke and is read as 1.",
+   "unresolved_boundary": "unit 1: the bar with four upright teeth and the three-pronged fork below it, 2 pt apart, are read as one drawing because chart card 547 has the same two-part composition"
+  },
+  {
+   "sample_index": 32,
+   "pdf_page": 89,
+   "printed_inscription_id": "3565",
+   "classification_literal": "79 52",
+   "drawn_unit_count": 3,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      51
+     ],
+     "shape_only_candidate_codes": [
+      51,
+      465,
+      485,
+      486
+     ],
+     "chart_locations": {
+      "51": "20:4:20",
+      "465": "20:4:21",
+      "485": "20:4:21",
+      "486": "20:4:21"
+     },
+     "chart_location": [
+      "20:4:20"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      91.3,
+      97.9
+     ],
+     "uncertainty": "none",
+     "note": "spine with six horizontal bars, no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      81
+     ],
+     "shape_only_candidate_codes": [
+      81,
+      253
+     ],
+     "chart_locations": {
+      "81": "20:9:0",
+      "253": "20:9:1"
+     },
+     "chart_location": [
+      "20:9:0"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      106.5,
+      114.5
+     ],
+     "uncertainty": "low",
+     "note": "D-shaped outline crossed by a rising diagonal, no underline"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      116
+     ],
+     "shape_only_candidate_codes": [
+      116,
+      257
+     ],
+     "chart_locations": {
+      "116": "21:8:7",
+      "257": "21:8:8"
+     },
+     "chart_location": [
+      "21:8:7"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      117.7,
+      129.5
+     ],
+     "uncertainty": "low",
+     "note": "oval enclosing three short slanted strokes, no underline"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three identical rows (3423, 3565, 3854) in the end-sorted section.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 33,
+   "pdf_page": 91,
+   "printed_inscription_id": "9551",
+   "classification_literal": "52 90",
+   "drawn_unit_count": 4,
+   "crop_correct": false,
+   "crop_issues": [
+    "the underlines under units 1 and 3 lie at y 183-187 px, below the box bottom at 180 px, so the box excludes them"
+   ],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      509
+     ],
+     "shape_only_candidate_codes": [
+      25,
+      509,
+      2,
+      231
+     ],
+     "chart_locations": {
+      "509": "20:5:19",
+      "25": "20:5:18",
+      "2": "20:5:28",
+      "231": "20:5:29"
+     },
+     "chart_location": [
+      "20:5:19"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      91.7,
+      94.7
+     ],
+     "uncertainty": "low",
+     "note": "pair of short ticks at the top of the line: high pair, underlined (underline 86.3-100.3 pt, drawn at the foot of the line)"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      135
+     ],
+     "shape_only_candidate_codes": [
+      135,
+      427
+     ],
+     "chart_locations": {
+      "135": "20:1:6",
+      "427": "20:1:7"
+     },
+     "chart_location": [
+      "20:1:6"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      105.9,
+      112.9
+     ],
+     "uncertainty": "low",
+     "note": "stick figure with one arm bent upward; no underline"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      538
+     ],
+     "shape_only_candidate_codes": [
+      145,
+      538
+     ],
+     "chart_locations": {
+      "538": "20:0:10",
+      "145": "20:0:9"
+     },
+     "chart_location": [
+      "20:0:10"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      117.3,
+      126.5
+     ],
+     "uncertainty": "low",
+     "note": "figure with ring-ended arms and two small flagged prongs at the top, underlined (underline 115.3-129.1 pt)"
+    },
+    {
+     "order": 4,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      597
+     ],
+     "shape_only_candidate_codes": [
+      597,
+      598,
+      13,
+      542
+     ],
+     "chart_locations": {
+      "597": "21:9:15",
+      "598": "21:9:17",
+      "13": "21:9:16",
+      "542": "21:9:18"
+     },
+     "chart_location": [
+      "21:9:15"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      130.7,
+      136.9
+     ],
+     "uncertainty": "low",
+     "note": "narrow hatched patch, no underline, 4.2 pt after the preceding sign; the preceding underline places the next sign box at about 131.6 pt, so the patch starts at the left of its box"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (2836, 9551, 3663) in the end-sorted section; number and classification stand to the left of the signs.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 34,
+   "pdf_page": 91,
+   "printed_inscription_id": "4418",
+   "classification_literal": "89 99",
+   "drawn_unit_count": 2,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      23
+     ],
+     "shape_only_candidate_codes": [
+      23,
+      258,
+      1,
+      423
+     ],
+     "chart_locations": {
+      "23": "20:5:23",
+      "258": "20:5:24",
+      "1": "20:5:22",
+      "423": "20:5:25"
+     },
+     "chart_location": [
+      "20:5:23"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      353.6,
+      354.2
+     ],
+     "uncertainty": "moderate",
+     "note": "single short tick at the top of the line (high position), no underline; the chart card 23 shows a fainter tick than the print, but the position and absence of an underline match 23"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      81
+     ],
+     "shape_only_candidate_codes": [
+      81,
+      253
+     ],
+     "chart_locations": {
+      "81": "20:9:0",
+      "253": "20:9:1"
+     },
+     "chart_location": [
+      "20:9:0"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      362.8,
+      370.8
+     ],
+     "uncertainty": "low",
+     "note": "D-shaped outline crossed by a rising diagonal, no underline"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (3561, 4418, 5030) in the second column of the end-sorted section; number and classification stand to the left of the signs and lie outside the box.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 35,
+   "pdf_page": 93,
+   "printed_inscription_id": "1303",
+   "classification_literal": "11 45",
+   "drawn_unit_count": 3,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      12
+     ],
+     "shape_only_candidate_codes": [
+      12,
+      764,
+      784
+     ],
+     "chart_locations": {
+      "12": "20:7:21",
+      "764": "20:7:22",
+      "784": "20:7:22"
+     },
+     "chart_location": [
+      "20:7:21"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      74.2,
+      86.8
+     ],
+     "uncertainty": "low",
+     "note": "five full-height thin strokes, 3.0 pt apart, no underline; the chart card for the underlined form is labelled 764/784"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      192
+     ],
+     "shape_only_candidate_codes": [
+      192,
+      785
+     ],
+     "chart_locations": {
+      "192": "21:6:34",
+      "785": "21:7:0"
+     },
+     "chart_location": [
+      "21:6:34"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      89.0,
+      102.4
+     ],
+     "uncertainty": "low",
+     "note": "stem carrying a short bar with an oval at each end; no underline"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      538
+     ],
+     "shape_only_candidate_codes": [
+      145,
+      538
+     ],
+     "chart_locations": {
+      "538": "20:0:10",
+      "145": "20:0:9"
+     },
+     "chart_location": [
+      "20:0:10"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      107.0,
+      116.0
+     ],
+     "uncertainty": "low",
+     "note": "figure with ring-ended arms and two small flagged prongs at the top, underlined (underline 105.0-118.6 pt)"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (2824, 1303, 1325) in the end-sorted section; the digits of the number lie left of the box edge. The digit 1 is printed like a lower-case i.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 36,
+   "pdf_page": 93,
+   "printed_inscription_id": "7086",
+   "classification_literal": "62 91",
+   "drawn_unit_count": 7,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      81
+     ],
+     "shape_only_candidate_codes": [
+      81,
+      253
+     ],
+     "chart_locations": {
+      "81": "20:9:0",
+      "253": "20:9:1"
+     },
+     "chart_location": [
+      "20:9:0"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      342.5,
+      350.5
+     ],
+     "uncertainty": "low",
+     "note": "D-shaped outline crossed by a rising diagonal, no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      327
+     ],
+     "shape_only_candidate_codes": [
+      327,
+      794
+     ],
+     "chart_locations": {
+      "327": "20:8:29",
+      "794": "20:8:30"
+     },
+     "chart_location": [
+      "20:8:29"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      359.3,
+      365.7
+     ],
+     "uncertainty": "low",
+     "note": "plain D-shaped outline without a diagonal, no underline"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      360
+     ],
+     "shape_only_candidate_codes": [
+      360
+     ],
+     "chart_locations": {
+      "360": "20:4:13"
+     },
+     "chart_location": [
+      "20:4:13"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      370.9,
+      377.7
+     ],
+     "uncertainty": "low",
+     "note": "vertical stem passing through a small hatched box; the chart carries two cards labelled 360 and this is the one at 20:4:13"
+    },
+    {
+     "order": 4,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      25
+     ],
+     "shape_only_candidate_codes": [
+      25,
+      509,
+      2,
+      231
+     ],
+     "chart_locations": {
+      "25": "20:5:18",
+      "509": "20:5:19",
+      "2": "20:5:28",
+      "231": "20:5:29"
+     },
+     "chart_location": [
+      "20:5:18"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      385.3,
+      388.1
+     ],
+     "uncertainty": "low",
+     "note": "pair of short ticks at the top of the line: high pair, no underline"
+    },
+    {
+     "order": 5,
+     "unit_kind": "numeral_stack",
+     "strict_candidate_codes": [
+      24
+     ],
+     "shape_only_candidate_codes": [
+      24,
+      280
+     ],
+     "chart_locations": {
+      "24": "20:7:8",
+      "280": "20:7:9"
+     },
+     "chart_location": [
+      "20:7:8"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      393.3,
+      401.1
+     ],
+     "uncertainty": "low",
+     "note": "three rows of four short strokes"
+    },
+    {
+     "order": 6,
+     "unit_kind": "numeral_stack",
+     "strict_candidate_codes": [
+      24
+     ],
+     "shape_only_candidate_codes": [
+      24,
+      280
+     ],
+     "chart_locations": {
+      "24": "20:7:8",
+      "280": "20:7:9"
+     },
+     "chart_location": [
+      "20:7:8"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      406.3,
+      413.9
+     ],
+     "uncertainty": "low",
+     "note": "second three-by-four stroke stack 5.2 pt after the first; read as two signs because each has the width of one 24 card"
+    },
+    {
+     "order": 7,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      110
+     ],
+     "shape_only_candidate_codes": [
+      110,
+      692
+     ],
+     "chart_locations": {
+      "110": "20:0:31",
+      "692": "20:0:32"
+     },
+     "chart_location": [
+      "20:0:31"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      419.7,
+      433.1
+     ],
+     "uncertainty": "low",
+     "note": "two stick figures joined at the arms, no underline"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (7085, 7086, 7087) in the second column of the end-sorted section; number and classification lie left of the box.",
+   "unresolved_boundary": "units 5 and 6: two three-by-four stroke stacks 5.2 pt apart are read as two drawings, one 24 card each; the chart has no card for a double stack"
+  },
+  {
+   "sample_index": 37,
+   "pdf_page": 94,
+   "printed_inscription_id": "4101",
+   "classification_literal": "52 99",
+   "drawn_unit_count": 2,
+   "crop_correct": true,
+   "crop_issues": [],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      312
+     ],
+     "shape_only_candidate_codes": [
+      312,
+      798
+     ],
+     "chart_locations": {
+      "312": "21:0:24",
+      "798": "21:0:25"
+     },
+     "chart_location": [
+      "21:0:24"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      352.9,
+      371.1
+     ],
+     "uncertainty": "low",
+     "note": "three separate upward carets side by side, centred on the line; no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      72
+     ],
+     "shape_only_candidate_codes": [
+      72,
+      317
+     ],
+     "chart_locations": {
+      "72": "21:3:14",
+      "317": "21:3:17"
+     },
+     "chart_location": [
+      "21:3:14"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      376.1,
+      384.5
+     ],
+     "uncertainty": "low",
+     "note": "small open square with a short stem above and below; no underline"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (4059, 4101, 1343) in the second column of the end-sorted section; number and classification lie left of the box. The digit 1 is printed like a lower-case i.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 38,
+   "pdf_page": 96,
+   "printed_inscription_id": "2614",
+   "classification_literal": "11 40",
+   "drawn_unit_count": 10,
+   "crop_correct": false,
+   "crop_issues": [
+    "left edge includes a 3 px (0.6 pt) sliver of the last classification digit (x 84.5-85.1 pt, box edge 84.5 pt)"
+   ],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      95
+     ],
+     "shape_only_candidate_codes": [
+      95,
+      549
+     ],
+     "chart_locations": {
+      "95": "21:0:27",
+      "549": "21:0:28"
+     },
+     "chart_location": [
+      "21:0:27"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      97.1,
+      99.9
+     ],
+     "uncertainty": "low",
+     "note": "vertical stem with a hollow triangular arrowhead, no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      173
+     ],
+     "shape_only_candidate_codes": [
+      173,
+      528
+     ],
+     "chart_locations": {
+      "173": "20:5:7",
+      "528": "20:5:10"
+     },
+     "chart_location": [
+      "20:5:7"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      106.1,
+      112.5
+     ],
+     "uncertainty": "low",
+     "note": "circle on a long stem with a short V of arms below the circle; no underline"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      177
+     ],
+     "shape_only_candidate_codes": [
+      177,
+      517
+     ],
+     "chart_locations": {
+      "177": "20:2:11",
+      "517": "20:2:12"
+     },
+     "chart_location": [
+      "20:2:11"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      117.9,
+      125.7
+     ],
+     "uncertainty": "low",
+     "note": "almond fish with side fins and crossed tail, no bar"
+    },
+    {
+     "order": 4,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      9,
+      765
+     ],
+     "shape_only_candidate_codes": [
+      9,
+      765,
+      543,
+      769
+     ],
+     "chart_locations": {
+      "9": "20:7:13",
+      "765": "20:5:30",
+      "543": "20:7:14",
+      "769": "20:5:31"
+     },
+     "chart_location": [
+      "20:7:13",
+      "20:5:30"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      132.3,
+      137.1
+     ],
+     "uncertainty": "low",
+     "note": "two full-height strokes about 4.2 pt apart"
+    },
+    {
+     "order": 5,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      180
+     ],
+     "shape_only_candidate_codes": [
+      180,
+      541
+     ],
+     "chart_locations": {
+      "180": "20:2:31",
+      "541": "20:2:33"
+     },
+     "chart_location": [
+      "20:2:31"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      142.3,
+      150.3
+     ],
+     "uncertainty": "low",
+     "note": "almond body with oblique strokes at its upper and lower sides and crossed legs"
+    },
+    {
+     "order": 6,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      161
+     ],
+     "shape_only_candidate_codes": [
+      161,
+      537
+     ],
+     "chart_locations": {
+      "161": "21:7:28",
+      "537": "21:7:29"
+     },
+     "chart_location": [
+      "21:7:28"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      153.7,
+      165.5
+     ],
+     "uncertainty": "none",
+     "note": "oval enclosing a stem with a fan of short prongs at its top; no underline"
+    },
+    {
+     "order": 7,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      205
+     ],
+     "shape_only_candidate_codes": [
+      205,
+      209
+     ],
+     "chart_locations": {
+      "205": "21:5:32",
+      "209": "21:5:33"
+     },
+     "chart_location": [
+      "21:5:32"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      168.3,
+      181.1
+     ],
+     "uncertainty": "low",
+     "note": "U with F-shaped flags and one short tick between them"
+    },
+    {
+     "order": 8,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      287
+     ],
+     "shape_only_candidate_codes": [
+      287
+     ],
+     "chart_locations": {
+      "287": "21:2:7"
+     },
+     "chart_location": [
+      "21:2:7"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      185.5,
+      196.3
+     ],
+     "uncertainty": "low",
+     "note": "vertical stem with crossed arms at its top and a small striped flag leaning on the upper left; the chart has no underlined counterpart"
+    },
+    {
+     "order": 9,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      177
+     ],
+     "shape_only_candidate_codes": [
+      177,
+      517
+     ],
+     "chart_locations": {
+      "177": "20:2:11",
+      "517": "20:2:12"
+     },
+     "chart_location": [
+      "20:2:11"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      201.5,
+      209.5
+     ],
+     "uncertainty": "low",
+     "note": "almond fish with side fins and crossed tail, no bar"
+    },
+    {
+     "order": 10,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      328
+     ],
+     "shape_only_candidate_codes": [
+      328,
+      269
+     ],
+     "chart_locations": {
+      "328": "20:2:4",
+      "269": "20:2:5"
+     },
+     "chart_location": [
+      "20:2:4"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      215.9,
+      222.7
+     ],
+     "uncertainty": "low",
+     "note": "striped zigzag band shaped like a leg; no underline"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [
+    4
+   ],
+   "source_observations": "Middle of three rows (2436, 2614, 2555) in the end-sorted section. The underline above the box belongs to the row above and ends 6 px above the box top.",
+   "unresolved_boundary": null
+  },
+  {
+   "sample_index": 39,
+   "pdf_page": 97,
+   "printed_inscription_id": "1497",
+   "classification_literal": "11 98",
+   "drawn_unit_count": 5,
+   "crop_correct": false,
+   "crop_issues": [
+    "top edge includes the dashed underline of the printed row above (6129), x 391.8-405.8 pt",
+    "the row's own underline under unit 4 lies at y 194-196 px, below the box bottom at 190 px, so the box excludes it"
+   ],
+   "units": [
+    {
+     "order": 1,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      241
+     ],
+     "shape_only_candidate_codes": [
+      241,
+      593
+     ],
+     "chart_locations": {
+      "241": "21:1:11",
+      "593": "21:1:14"
+     },
+     "chart_location": [
+      "21:1:11"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      353.2,
+      362.6
+     ],
+     "uncertainty": "low",
+     "note": "closed triangle on the left with crossing diagonals whose right ends turn into short vertical hooks; no underline"
+    },
+    {
+     "order": 2,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      220
+     ],
+     "shape_only_candidate_codes": [
+      220,
+      155
+     ],
+     "chart_locations": {
+      "220": "20:8:2",
+      "155": "20:8:3"
+     },
+     "chart_location": [
+      "20:8:2"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      371.6,
+      375.6
+     ],
+     "uncertainty": "low",
+     "note": "large right-bulging arc with a small inner arc forming an eye at its centre; no underline"
+    },
+    {
+     "order": 3,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      275
+     ],
+     "shape_only_candidate_codes": [
+      275,
+      519
+     ],
+     "chart_locations": {
+      "275": "21:4:26",
+      "519": "21:4:27"
+     },
+     "chart_location": [
+      "21:4:26"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      378.6,
+      391.0
+     ],
+     "uncertainty": "low",
+     "note": "two long verticals joined by a double crossbar with two short legs hanging below it; no underline"
+    },
+    {
+     "order": 4,
+     "unit_kind": "sign",
+     "strict_candidate_codes": [
+      517
+     ],
+     "shape_only_candidate_codes": [
+      177,
+      517
+     ],
+     "chart_locations": {
+      "517": "20:2:12",
+      "177": "20:2:11"
+     },
+     "chart_location": [
+      "20:2:12"
+     ],
+     "underline_present": true,
+     "x_extent_pdf_pt": [
+      396.2,
+      404.0
+     ],
+     "uncertainty": "low",
+     "note": "almond fish with side fins and crossed tail, no bar, underlined (faint underline 394.8-407.0 pt)"
+    },
+    {
+     "order": 5,
+     "unit_kind": "hatched_span",
+     "strict_candidate_codes": [
+      597
+     ],
+     "shape_only_candidate_codes": [
+      597,
+      598,
+      13,
+      542
+     ],
+     "chart_locations": {
+      "597": "21:9:15",
+      "598": "21:9:17",
+      "13": "21:9:16",
+      "542": "21:9:18"
+     },
+     "chart_location": [
+      "21:9:15"
+     ],
+     "underline_present": false,
+     "x_extent_pdf_pt": [
+      408.8,
+      415.0
+     ],
+     "uncertainty": "low",
+     "note": "narrow hatched patch, no underline, 4.8 pt after the fish; the preceding underline places the next sign box at about 409-411 pt, so the patch starts at the left of its box"
+    }
+   ],
+   "blank_gaps": [],
+   "units_with_candidate_sets": [],
+   "source_observations": "Middle of three rows (6129, 1497, 7014) in the second column of the end-sorted section; number and classification lie left of the box. The first classification digit is degraded to a dotted stroke and is read as 1.",
+   "unresolved_boundary": null
+  }
+ ]
+}
