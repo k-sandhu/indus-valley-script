@@ -27,3 +27,19 @@ A negative result is limited to the recorded query set and sources opened. Recor
 ## Planned outputs
 
 Produce one row per in-scope site in JSON and CSV, a source ledger, a search ledger, an aggregate report and a proposed registry entry. Claims must resolve to a source ID plus exact source location or an output file and field. Raw downloaded pages and third-party material remain under the package's local raw directory.
+
+## Amendment: 2026-10-07, completion after coordinator review
+
+Status: Exploratory. The coordinator found that the first pass left publication, coordinate, campaign, count and metadata checks incomplete. Before editing, all 25 top-level first-pass files were copied byte for byte into `first-pass/`. The revised outputs retain the original observations and add source inspection, new queries and explicit field-level failure records. The archive remains the historical witness, including its encoding defects.
+
+Run at least three new distinct live queries per in-scope site, open a primary or substantial secondary source for each, and retain exact page or catalogue locators. A bibliographic landing page counts as bibliographic access only. For an unavailable full source, record the access route, failure and affected fields. Unknown values must point to the targeted queries that failed to recover them. Inspect CISI, Mahadevan 1977 and excavation publications wherever accessible; a later corpus-derived site summary is a separate count basis.
+
+Each revised row will distinguish a verified final excavation report from a preliminary report or catalogue. Post-CISI totals will count only rows with a dated, documented inscribed find after that site's latest inspected CISI coverage. Leads and catalogue republications remain recorded separately. Metadata availability uses yes, partial or no with the inspected source location; inaccessible source fields are recorded as unresolved with failure evidence, rather than inferred from a book title.
+
+Write active files as UTF-8. Repair reversible encoding damage mechanically and check irrecoverable characters against source titles. Recompute query, source, publication, post-CISI and missing-field totals from the revised rows. Preserve physical-object, face, text, impression and mark denominators in comparisons. The first-pass outcome is not a frozen evaluation; these revisions respond to its observed gaps.
+
+### Further amendment: 2026-10-07, country and publication classification
+
+The local aggregate places Miri Qalat, Sibri, Ornach area and Murda Sang under Iranian Plateau. Their geographical locations or reported provenances are in Pakistan. Inspect these neighbouring labels and include a row when an opened source or the local corpus records a marked or inscribed object, retaining unresolved site identity and script classification in the row. This expands the site list after inspecting the local regional categories; the affected rows and totals are Exploratory. Run at least three distinct live searches for each added label and record the source that motivated inclusion.
+
+Separate final excavation monographs and final exploration publications from identified seasonal or short reports whose comprehensive status remains unresolved. The latter include Gumla, Mehrgarh, Naru-Waro-dharo, Rehman Dheri and Sarai Khola in the inspected sources. Report the categories separately and keep the original bibliographic observations. Copy local figures directly from the coordinator aggregate after spelling joins, rather than accepting a missing match as zero. A requested alias remains a row but shares a catalogue locality identifier where the catalogue explicitly joins it.

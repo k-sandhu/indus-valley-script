@@ -1,0 +1,9 @@
+# Retrospective
+
+The work reused the earlier 89-label census for its site register and source leads, then joined the coordinator's local-site snapshot rather than treating either as a new excavation inventory. Three research slices were combined by a rerunnable script; source and query identifiers were namespaced to keep links unambiguous. The first join exposed an alias fallback that could attach unmatched sites to Harappa. That fallback was removed, after which six named Pakistan sites remained correctly unmatched to the local snapshot. A UTF-8-with-signature input also required `utf-8-sig` decoding.
+
+The geographic check found that five Inter-Riverine labels in the local corpus are in India. The batch records the exclusion evidence separately rather than silently treating corpus region labels as national boundaries. A Rajanpur homonym remains uncertain and is kept with a caution in the site row. Karanpura was identified in the same broad region but is in Rajasthan, so it is retained as an out-of-scope cross-reference.
+
+Search snippets and online corpus summaries supplied useful leads but did not replace primary catalogue checks. The count ledger therefore preserves unlike units and labels such as unfinished seals separately. Some worker records use incomplete bibliographies or secondary source leads; the package leaves those gaps visible rather than inferring final report status or custody. The 14-site final-publication figure is a bibliographic identification and needs review against the cited volumes.
+
+The principal remaining work is page-level verification of CISI and excavation publications, class-by-class count reconciliation, artifact-context inspection, and custody and rights research. A reviewer can rerun `build_site_rows.py`, inspect a sample of source URLs and page locators, verify the 14-site bibliography classification, and confirm that the five geographic exclusions and local totals agree with the source files.

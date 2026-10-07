@@ -1,0 +1,31 @@
+# Eleven-site revision: catalogue coverage and field-report checks
+
+Status: Exploratory. Revision date: 7 October 2026.
+
+The revision covers Harappa, Mohenjo-daro, Chanhu-daro, Nausharo, Mehrgarh, Kot Diji, Amri, Lakhanjo-daro, Allahdino, Balakot and Pirak. It records 59 live queries, including three distinct new queries for each site, and 43 source records. All eleven sites have a coordinate from an opened gazetteer, government inventory or field report. Each row supplies query IDs for its unresolved fields in [revision-major-sites.json](revision-major-sites.json).
+
+The full Pakistan catalogue made the smaller-site comparisons more precise. Its plates show five seal identifiers and one painted bangle at Balakot, eight seal identifiers and two pottery graffiti at Allahdino, and five clearly script-bearing seal identifiers at Nausharo. These are catalogue subsets. The catalogue introduction states that numerous Allahdino and Amri graffiti could not be photographed, and that 28 earlier Balakot pottery-mark examples published by Dales were omitted. The source locations and count units are in `reported_object_counts` for these rows; all refer to CISI 2 pages xv, 387–392 and 407–409.
+
+Mehrgarh and Pirak need a broader definition of the catalogue's contents. Mehrgarh's Mr1–17 plates show earlier geometric seal or amulet forms; Mr18 is a bowl with a graffito. Quivron's approximate 850 figure counts incised marks, with 147 distinct marks grouped into 50 categories, from the first four excavation seasons. It does not count 850 Indus-script objects. CISI 2 page xvii, note 30, explicitly excludes that mark collection. Pirak's Pk3–49 are 47 later geometric-seal identifiers. The introduction reports three Mature Harappan surface seals, whereas the plates illustrate Pk1–2. Both observations remain in the Pirak row with their different bases.
+
+## Publication and later-season checks
+
+The revision identifies excavation publications for Harappa, Mohenjo-daro, Chanhu-daro, Mehrgarh, Amri and Pirak. Chanhu-daro's 1943 report was inspected as a full local scan, with the preface used for the excavation calendar, recording practices and historical division of finds. The Harappa and Mohenjo-daro monographs and the Amri and Pirak volumes are identified from primary CISI references; their inscription inventories were not recounted. Mehrgarh's 1995 publication is a field-report volume whose coverage of later seasons remains unresolved. The `final_report` fields distinguish inspected reports, bibliographic identification and unresolved final publication.
+
+No row in this eleven-site revision establishes a dated inscribed discovery after its latest inspected CISI coverage. This is a search outcome. Renewed work at Chanhu-daro in 2015–17 is documented, but the exact inscription pages and counts were not retained when subsequent HAL access was blocked. The 2017 Chanhu-daro surface study reports no seal-making remains in its investigation on pages 2–3. The Sindh synopsis reports three unfinished seals at Lakhanjo-daro in 2017; it does not identify them as inscribed. The 2025 Allahdino programme and 2020 Amri activity are leads without a verified later inscription count. The `post_cisi_assessment` fields preserve those distinctions and the query/source trail.
+
+## Corrections and access limits
+
+The first-pass Allahdino coordinate was rejected because no excavation-site source supported it. Uesugi's 2010 archaeological gazetteer supplies 24°57′00″ N, 67°18′00″ E on page 107, citing Possehl 1999 page 729. It also supplies Amri's reference coordinate on page 109 and Kot Diji's GPS coordinate on page 111. The Kot Diji entry gives a second, different coordinate from Possehl; both remain in the row. The same gazetteer supplied Harappa's archaeological reference coordinate on page 96, replacing the earlier settlement directory value.
+
+For Pirak, the DOAM entry gives 27.911111111, 65.894444444 while describing a site in the Kachhi plain. The opened Vici archaeological gazetteer gives 29.443167, 67.844955. The latter is the adopted reference coordinate; the conflicting government value remains in the source record. Kot Diji Fort is an eighteenth-century monument and its coordinate is not substituted for the prehistoric mound.
+
+The CISI 1 scan downloaded from the Rare Book Society has 431 pages. The repository's existing government scan contains the same book twice, as already recorded in the literature retrospective. The revision reused the repository's Mackay 1943 scan and the coordinator's new CISI 2 scan and OCR. The previous broad census and first-pass rows supplied leads and local corpus aggregates; unsupported object totals and later-find claims were replaced with source-specific counts or unresolved fields.
+
+The separate CISI 1 government download timed out. The Pakistan Archaeology 1 download failed with an SSL EOF error. Chanhu-daro's 2017 field-survey PDF was recovered through a direct download after the web tool rejected the URL. The Mallah et al. article gives the adopted Mound A coordinate on pages 1 and 5. These attempts and the successful PDF hashes are retained under the local raw directory. The HAL Chanhu-daro paper initially opened through the web tool but later presented an Anubis access block; no exact class census is inferred from its bibliographic record.
+
+## Reviewer checks
+
+Repeat the smaller-site plate classifications in CISI 2 pages 379–409, and the exclusions described on pages xv–xviii. Check Nausharo Ns4's numbered examples before assigning a physical-object denominator. Compare the Pirak introduction's three surface finds with the two illustrated catalogue identifiers. Verify the Chanhu-daro 2015–17 paper's title page, publication date and inscription pages when access is restored. Check Uesugi's coordinate fields on pages 96, 107, 109 and 111 against the cited Possehl pages and GPS notes. Join the coordinator's independently inspected Mahadevan 1977 pages 6–7 class table without summing it with overlapping CISI subsets.
+
+The JSON files contain own summaries and aggregates. Downloaded PDFs, OCR and page images remain in the local raw directory. CISI 2 assigns rights in the volume to the Finnish Academy and rights in photographs to the owners of the original objects. Public access supplies no general photograph reuse permission.
