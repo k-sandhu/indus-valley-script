@@ -1,0 +1,33 @@
+# Retrospective: Helsinki 1979 digitization
+
+The complete new pipeline failed its reserved-row evaluation and left 11,369 provisional occurrences for review. All 159 corpus pages were processed. The fixed 60-row endpoint has 33 matching counts and 24 strict top-five compatible whole rows; source number and crop judgments pass on 23 rows each. The [report](REPORT.md) and [metrics](evaluation/2026-10-07-frozen-v1/metrics.json) preserve the results and uncertainty.
+
+## Approaches and observed changes
+
+The repository registry and corpus retrospective identified fixed row-pitch drift as the earlier failure. The new method anchored vertical rows to observed two-line numeric fields and chose intervening blank gaps. It reused the numerical chart, atlas, source definitions, known page-30 reference and previous scoring concepts. It added chart-only CNN augmentations, size-preserving chamfer costs, numeric templates and a development confidence fit. It did not replace the earlier failed or post-reference endpoints.
+
+The first development matcher normalized templates into square canvases and added a larger learned-model cost. Its predictions and evaluation are preserved under `development/trial-01/`. Development comparison prompted a return to source-size-preserving chamfer distances with a small learned-model contribution. A dense distance implementation was slow and its development process was deliberately interrupted. Sparse template-ink indexing reduced repeated array allocation. Final development had 17/20 correct counts and 6/20 and 12/20 compatible rows at top one/five. No reserved reference existed during these changes.
+
+Source overview inspection showed three printed arrangements. Page 100 was added to development to correct the left-margin field locator. The overview had included page 80, so that page was excluded from selection before a reference existed. Source headers later verified section ranges 22–78, 79–130 and 131–180. These source navigation records remain separate from reconstructed object identity.
+
+Numeric templates trained on page-30 known labels recovered many fields that Tesseract read as 1923 instead of 1023 during development. This improvement did not generalize to the reserved population: the final number score is 23/60. Static horizontal field regions still clipped numbers and target drawings on shifted pages. The 0/180 orientation score inverted three selected page-37 crops. The source readers viewed those drawings upright and preserved the resulting errors in the frozen comparison. Neither number order nor repeated number consistency was used to force IDs.
+
+## Annotation challenges and preserved failures
+
+Predictions were frozen before three annotators received GO. Each read 20 disjoint source rows and two repeated rows without glyph candidates or predicted counts. Exact-box source checks exposed underlines omitted from target crops, clipped rightmost drawings, printed-margin leakage and adjacent-row ink. Wider source context allowed all 60 targets to be read, but only 23 initial crop judgments passed. Four of six repeated crop judgments disagree, so that proportion retains a qualitative reference limit. Counts, numbers and classifications agree in all six repeats; strict ordered candidates agree in four. Expert adjudication remains required.
+
+The original locator unexpectedly contained source-PDF OCR witnesses. All three annotators saw some label-like strings. The frozen locator was preserved, a filtered copy was supplied, and each annotator disclosed exposure. Number accuracy has this blinding limit. Excluding all 22 rows with nonempty source OCR fields yields 13/38 correct numbers; glyph candidates and counts remained withheld throughout. The primary references were never edited after comparison.
+
+Recognition and calibration were evaluated separately from row acquisition. The primary sample has 267 modern drawing units, including 38 editorial units. Aligned top-five recall reaches 224/267, while whole-row compatibility is 24/60 because counts, order and every candidate intersection must agree. Calibration on 140 equal-count positions has Brier score 0.1488 and ten-bin error 0.1056; it cannot qualify the many rows with wrong counts or identities. The selected-row recomputation reproduced all 60 frozen fields, unit boundaries and top-five candidates.
+
+## Concordance, rights and integration
+
+The four inspected entries in the local 1980 documentation link Finnish text numbers to Mahadevan numbers. A CISI/object join remains unverified. An initial source clip truncated destination digits and was retained as a failed inspection; a wider 4x crop resolved four pairs and one OCR disagreement. Raw text, source crops and copied mappings stayed local because the 1980 licence is unverified. No direct object join or external sign-class comparison was completed.
+
+Package L's actual importer became available during this run. The adapter was matched to its required fields, source-qualified segments and exact rights spelling without changing any Package L file. The first interface attempt failed because jsonschema was absent, without writing an endpoint. Installing it and its four dependencies inside the authorized environment enabled the repeat. The failure log remains in local raw. Its pure importer was tested on 60 staged occurrences with an empty crosswalk: zero accepted, 60 quarantined. The full staging payload contains 11,369 quarantined occurrences. Repeated sort appearances remain separate witnesses.
+
+PyMuPDF, OpenCV and the schema-check dependencies were installed without a pip cache inside the authorized environment. Pages were rendered in memory; source contexts, selected crops and compressed row crops are retained inside the two owned directories. The audit counts installed distribution bytes as well as package/raw assets against the 500 MB allowance. Source-derived 1979 assets retain CC BY 4.0 attribution. No PDF was redownloaded, no public release was made and no repository history or shared research file was changed.
+
+## Remaining work
+
+The next method needs per-page horizontal-field localization and an independent orientation check, plus glyph bounds that retain editorial underlines while excluding margin ink. It must freeze those changes before a new reserved reference. The references need expert source adjudication, particularly samples 30/35 and crop decisions 5/13/42/51. A reviewed edition-to-object concordance and source-surface alignment are required before importing carrier identities or comparing the local corpus. The reliable complete transcription remains unfinished.

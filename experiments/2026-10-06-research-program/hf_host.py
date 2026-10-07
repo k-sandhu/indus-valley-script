@@ -37,6 +37,12 @@ SETS = {
     },
 }
 
+# Large project-generated files kept out of Git and backed up to the Hub without removing the local copy.
+BACKUP_FILES = {
+    "helsinki1979-provisional-occurrences": "experiments/2026-10-07-helsinki1979-digitization/runs/2026-10-07-full-v1/occurrences.jsonl",
+    "helsinki1979-provisional-ledger-import": "experiments/2026-10-07-helsinki1979-digitization/integration/2026-10-07-v1/ledger-import.jsonl",
+}
+
 
 def files_of(rel):
     base = ROOT / rel
@@ -148,6 +154,27 @@ def cmd_free_local(args):
     print(f"removed {len(records)} verified local files, {freed / 1e9:.2f} GB; manifest {MANIFEST.relative_to(ROOT)}")
 
 
+def cmd_backup_files(args):
+    """Upload large project-generated files that Git cannot hold, verify them, and keep the local copies."""
+    hub = api()
+    info = hub.repo_info(args.repo, repo_type="dataset")
+    if not getattr(info, "private", False):
+        sys.exit(f"{args.repo} is not private; refusing to upload")
+    records = []
+    for name, rel in BACKUP_FILES.items():
+        path = ROOT / rel
+        hub.upload_file(path_or_fileobj=str(path), path_in_repo=rel, repo_id=args.repo, repo_type="dataset",
+                        commit_message=f"Back up {name}")
+        remote = remote_index(hub, args.repo, str(Path(rel).parent.as_posix())).get(rel)
+        local_sha = sha256(path)
+        ok = bool(remote) and remote["size"] == path.stat().st_size and remote["sha256"] in (None, local_sha)
+        records.append({"set": name, "path": rel, "bytes": path.stat().st_size, "sha256": local_sha, "verified": ok})
+        print(("verified " if ok else "NOT VERIFIED ") + rel)
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else {"repo": args.repo, "files": []}
+    manifest["backed_up_files_kept_locally"] = records
+    MANIFEST.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+
+
 def cmd_restore(args):
     from huggingface_hub import snapshot_download
     patterns = [spec["path"] + "/**" for spec in SETS.values()]
@@ -159,12 +186,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("plan")
-    for name in ("upload", "verify", "free-local", "restore"):
+    for name in ("upload", "verify", "free-local", "restore", "backup-files"):
         p = sub.add_parser(name)
         p.add_argument("--repo", required=True, help="NAMESPACE/NAME of the private dataset repository")
     args = parser.parse_args()
     {"plan": cmd_plan, "upload": cmd_upload, "verify": cmd_verify,
-     "free-local": cmd_free_local, "restore": cmd_restore}[args.command](args)
+     "free-local": cmd_free_local, "restore": cmd_restore, "backup-files": cmd_backup_files}[args.command](args)
 
 
 if __name__ == "__main__":
