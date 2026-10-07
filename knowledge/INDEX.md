@@ -20,6 +20,8 @@ The [regional connection findings](directions/regional-numerical-connections-202
 
 The [original-source follow-up](directions/source-recovery-2026-10-02.md) recovers Gonur's token illustration, early Susa mass and mark descriptions, South Indian numerical examples and registered physical views. The Susa records disagree on marks and masses, so consult this follow-up before reusing the earlier close duck-weight group. [Methods, witnesses and checks](../experiments/2026-10-02-source-recovery/README.md).
 
+The [October 6–7 program report](../experiments/2026-10-06-research-program/REPORT.md) summarizes fifteen reviewed work packages: stronger restoration models on the Paper 001 masks, a census of where Indus evidence is indexed and with which metadata, an inventory of results outside decipherment, tests of statements in Dennys Frenez's 3 October 2026 lecture, a survey of researchers' recommendations, a backward chronology from early historic scripts, Indus weight metrology, seal measurements and a chance baseline for cross-script resemblance. Each package keeps its protocol, Sonnet review and amendments; the [program record](../experiments/2026-10-06-research-program/README.md) lists them, and the [retrospective](retrospectives/2026-10-06-research-program.md) records the problems and repairs.
+
 [Writing rules](editorial/WRITING.md) record the user's language preference, recent editorial sources and editing decisions.
 
 - [First complete manuscript](../papers/001-artifact-aware-prediction/manuscript.md), [detailed methods](../papers/001-artifact-aware-prediction/methods.md), [claim-evidence map](../papers/001-artifact-aware-prediction/claim-evidence-map.md).

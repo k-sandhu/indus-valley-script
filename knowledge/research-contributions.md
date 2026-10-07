@@ -4,6 +4,14 @@ Research package, 2 October 2026. Four working manuscripts connect the measured 
 
 The [latest source audit](directions/source-recovery-2026-10-02.md) adds recoverable original figures, object-level numerical contexts and historical catalogue disagreements. It provides material for a source data note and concrete archival targets; the earlier statistical manuscripts retain their frozen evaluations.
 
+## October 6–7 additions
+
+The [program report](../experiments/2026-10-06-research-program/REPORT.md) adds reviewed, exploratory results that other researchers can check. A Kneser–Ney and GRU ensemble reaches 41.17% exact top-one on the saved restoration masks, against 34.59% and 37.27% for the Paper 001 Markov models, and learning curves still rise at full training size. The same audit found that sixteen identical one- or two-sign texts link 9.3% of the benchmark's queries across folds, which would lower the paper's first- and second-order figures by about 0.75 and 0.84 points. [Restoration package](../experiments/2026-10-06-modern-restoration/REPORT.md).
+
+The evidence census measures how incompletely the material is indexed: within 19 CISI volume 1 site ranges in Gujarat and north India, 166 of 493 catalogue identifiers are absent from the local corpus export; at least 61 of 114 online museum records join to corpus records; and the export has no photograph, dating-sample or rights links. [Census synthesis](../experiments/2026-10-06-evidence-census/synthesis/REPORT.md).
+
+Tests of statements in Frenez's lecture give exact denominators for sign 740's share (10.0–10.7%) and final position (69.6%), show that site sign inventories and the early small sign set follow sample size, and find no motif change between unambiguous Harappa Period 3B and 3C labels. Separating mass bands gives a Dholavira unit of 13.716 g for 5–100 g weights and finds no western Indus-standard signal against a chance control. A shape-descriptor pilot shows that an unrelated script matches the Tamil Nadu base graffiti about as often as the Indus subset under a coarse rule. [D1](../experiments/2026-10-06-chronology-region/REPORT.md), [D2](../experiments/2026-10-06-sign-context-and-seals/REPORT.md), [weights](../experiments/2026-10-06-weight-metrology/REPORT.md), [resemblance](../experiments/2026-10-06-resemblance-baseline/REPORT.md).
+
 ## Graphic restoration on the selected Indus transcriptions
 
 The restoration benchmark holds physical aliases and repeated whole strings together. It masks 8,009 known positions in 1,596 distinct strings and evaluates exact graphic-code recovery. The conventional first-order model reaches 34.59% top-one accuracy. Adding second-order context raises that to 37.27%, a paired gain of 2.6845 percentage points, with a component-bootstrap interval of 1.9902–3.3968.

@@ -9,6 +9,8 @@ The repository is private. Its local equivalent is this project folder. No CI/CD
 | Purpose | Read |
 |---|---|
 | Findings available for reuse and discussion | [Research contributions](knowledge/research-contributions.md) |
+| October 6–7 program: stronger restoration models, evidence census, tests of Frenez's lecture, weights, backward chronology | [Program report](experiments/2026-10-06-research-program/REPORT.md), [packages and reviews](experiments/2026-10-06-research-program/README.md) |
+| Is the Indus evidence completely indexed, and with what metadata? | [Census synthesis](experiments/2026-10-06-evidence-census/synthesis/REPORT.md) |
 | Evidence we have and need for decipherment | [Decipherment readiness review](knowledge/directions/decipherment-readiness-2026-10-02.md) |
 | New numerical connections and independent publication assessment | [Regional connection findings](knowledge/directions/regional-numerical-connections-2026-10-02.md), [study records](experiments/2026-10-02-connections-and-priority/README.md) |
 | Original sources that change the numerical candidates | [Source recovery findings](knowledge/directions/source-recovery-2026-10-02.md), [source audits and registered views](experiments/2026-10-02-source-recovery/README.md) |
