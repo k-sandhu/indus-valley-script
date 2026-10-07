@@ -1,0 +1,9 @@
+# Follow-up for package E from the coordinator
+
+The coordinator checked Frenez's lecture against its captions; read `experiments/2026-10-06-research-program/frenez-talk-check.md`. Keep your existing outputs unchanged and add a dated amendment.
+
+1. **The early end of the chain.** The talk gives a dated sequence for the script's beginnings: pre-firing potters' marks at most Indus sites in the second half of the fourth millennium BCE; at Mehrgarh, marks read as identifying the potter or owner during a firing event, nearly disappearing when a new kiln type appears; the same repertoire on seals by the late fourth to early third millennium (an ivory button seal the captions place at "Rakandere", probably Rehman Dheri); and at Harappa before 2800 BCE, shared signs on seals and pottery with the first clay sealings, including one from a fireplace radiocarbon-dated to about 2800 BCE. Find the primary publications for each step (for example the Mehrgarh and Nausharo reports, Durrani's Rehman Dheri publications, and Kenoyer and Meadow's Harappa reports), add rows to the evidence table with their dating basis, and correct the site attribution if the captions are wrong.
+2. **The late end.** He states that later Indian priests preferred oral transmission and that writing was reintroduced by Buddhist merchants in the fifth century. Record this as his statement and set it against the dated early Brahmi evidence already in your table.
+3. **Indus-style seals with cuneiform and Linear Elamite inscriptions.** He reports a forthcoming paper on such seals. Record the published items you can identify (for example the Shu-ilishu seal and Gulf and Mesopotamian Indus-style seals with cuneiform inscriptions) as a separate contact-period row, linked to `research/literature/external_phonetic_anchor_audit.md`.
+
+Update the coverage table and test designs if the new rows change them. Finish with the usual deliverables and final message.

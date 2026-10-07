@@ -1,0 +1,52 @@
+{
+  "status": "Verified computation",
+  "archaeological_interpretation_verified": false,
+  "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependencies": {
+    "numpy": "2.2.6",
+    "PyMuPDF": "1.28.0",
+    "Pillow": "12.2.0",
+    "requests": "2.33.0"
+  },
+  "checks": [
+    {
+      "command": "python experiments/2026-10-06-resemblance-baseline/analyze.py --verify",
+      "outcome": "Exact equality of all five aggregate JSON outputs and all local per-query results."
+    },
+    {
+      "command": "python experiments/2026-10-06-resemblance-baseline/prepare_inputs.py --directory reviewer-source-reproduction-20261007",
+      "outcome": "Seeded42of687selection matched preserved JSON; source sheets regenerated without replacing originals."
+    },
+    {
+      "command": "python tools/review_prose.py --path experiments/2026-10-06-resemblance-baseline --no-write",
+      "outcome": "Four Markdown files scanned; zero flags."
+    },
+    {
+      "command": "python experiments/2026-10-06-resemblance-baseline/verify_package.py",
+      "outcome": "Passed3sourcehashchecks,9directpairwisecensuschecks,54exactcollisionformulachecks,108intervalboundschecks,5frozenmanifesthashchecks,brochurebyteidentityandregistryentryschema/links."
+    }
+  ],
+  "checked_in_analysis": [
+    "nonnegative integer/categorical descriptor schema",
+    "planar graph terminal identity when junction degrees are specified and no dots",
+    "R1>=R2>=R3 observed coverage",
+    "Monte Carlo means versus exact finite-subset and collision expectations"
+  ],
+  "unverified": [
+    "complete2025monograph and its reported90% denominator/matching rule",
+    "six excluded Indus cells",
+    "adjudication of uncertain and discrepant coding",
+    "trained-human reliability",
+    "control genealogical independence",
+    "new geometric-drawing null and held-out validation",
+    "archaeological transmission, dating, positional and composite evidence"
+  ],
+  "check_counts": {
+    "source_hashes": 3,
+    "census_cells": 9,
+    "exact_formula_cells": 54,
+    "interval_cells": 108,
+    "frozen_manifest_hashes": 5
+  }
+}
