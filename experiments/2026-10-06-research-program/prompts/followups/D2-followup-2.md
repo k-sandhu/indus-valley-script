@@ -1,0 +1,12 @@
+# Second follow-up for package D2 from the coordinator
+
+A Sonnet review is in `experiments/2026-10-06-sign-context-and-seals/REVIEW.md`, with scripts and outputs in `review/`. It reproduced every output and confirmed the headline numbers, including under collapsing of repeated inscriptions. Keep frozen endpoints and `site-table.json` unchanged, add a dated amendment to `PROTOCOL.md`, and make these corrections:
+
+1. Replace the `REPORT.md` line-5 sentence about area associations: under the frozen reference law sign 520 passes (q 0.044; minimum and maximum areas 0.044 and 0.047), failing without Harappa and Mohenjo-daro (q 0.387) and under the amended law (q 0.223).
+2. State beside the period result (q 0.007) that it comes from contrasts among Period 3C subphase labels that share one 2200–1900 BCE interval (a test on those four labels alone gives p 0.0006), and that unambiguous phases give 3B 6/7 and 3C 112/123 unicorns, so the data do not contradict the lecture's persistence statement. Quote the lecture's own persistence claim accurately from `experiments/2026-10-06-research-program/frenez-talk-check.md`.
+3. In an exploratory amendment, add the site extents printed in the Treccani entries the protocol's minimum–maximum rule required (Harappa about 100 ha, Rakhigarhi over 100 ha, Mohenjo-daro at least 2 × 2 km, Lothal over 8 ha, Nausharo about 6 ha, Banawali 400 m a side), rerun the amended area test, and correct the statement that no Banawali area source was acquired.
+4. Add the missing precedents (Jamison 2018 and Green 2018 in Cambridge University Press publications, Jamison's 2018 chapter in *Walking with the Unicorn*, Ameri 2013), attribute the 65% unicorn figure to Ameri 2013's multi-site average, and state how each result relates to Yadav 2013, Oakes and Frenez.
+5. Document the motif-code mapping (`Bull1*` as unicorn, `Gaur` as the bison Frenez describes) with the review's cross-checks (Oakes Table 9; Trough codes; Frenez and colleagues 2016) and the unpooled `Bull:i*` codes; record the two Salūt records' disagreement.
+6. Fix the minor items: the registry status, the nested label, the duplicate checks file, the "14 site/type comparisons" wording, the reviewer-addressed README paragraphs and the repeated caveat. Note that `plot_followup.py` depends on a local plotting install that OneDrive made online-only.
+
+Update `README.md`, `REPORT.md`, `RETROSPECTIVE.md` and `registry-entry.json`. Disk space is low (about 5 GB free): write small outputs and do not reinstall plotting packages.
