@@ -1,0 +1,360 @@
+{
+ "reviewer": "Claude (Sonnet 5.5) via Claude Code, review of Package E and the 7 October 2026 Frenez amendment",
+ "date": "2026-10-07",
+ "environment": {
+  "python": "3.13.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "working_directory": "repository root"
+ },
+ "method_note": "The README commands write into fresh directories inside the package or amendment directory. The reviewer may write only under review/, so each script was run from review/ or with --output under review/. The first-pass scripts ran in place from the package directory. The four amendment scripts were copied unmodified into review/ (same directory depth, so each script computes the same repository root) together with the rebuilt inputs, and were deleted after the runs. The rerun outputs were compared byte for byte with the shipped outputs and then deleted; their SHA-256 values are kept below.",
+ "commands": [
+  "python experiments/2026-10-06-backward-chronology/analyze_coverage.py --output experiments/2026-10-06-backward-chronology/review/first-pass-run",
+  "python experiments/2026-10-06-backward-chronology/build_evidence.py --output experiments/2026-10-06-backward-chronology/review/first-pass-evidence",
+  "python experiments/2026-10-06-backward-chronology/review/build_amendment.py --output experiments/2026-10-06-backward-chronology/review/amendment-inputs",
+  "python experiments/2026-10-06-backward-chronology/review/analyze_coverage.py --output experiments/2026-10-06-backward-chronology/review/amendment-run   (run twice: amendment-run, amendment-run-repeat)",
+  "python experiments/2026-10-06-backward-chronology/review/compare_coverage.py --run .../review/amendment-run --reproduction .../review/amendment-run-repeat --output .../review/amendment-comparison",
+  "python experiments/2026-10-06-backward-chronology/review/make_audits.py --output experiments/2026-10-06-backward-chronology/review/amendment-audits",
+  "python tools/review_prose.py --path experiments/2026-10-06-backward-chronology --no-write",
+  "python experiments/2026-10-06-backward-chronology/review/gap_sensitivity.py --output experiments/2026-10-06-backward-chronology/review/gap-sensitivity"
+ ],
+ "exit_codes": "all 0",
+ "outputs_compared": [
+  {
+   "rerun": "review/first-pass-run/coverage.csv",
+   "shipped": "run-2026-10-07-03/coverage.csv",
+   "rerun_sha256": "69a06aec66a4762547898f29e39f52f99850fd6c2589e5bef0c76ed032d2f2b8",
+   "shipped_sha256": "69a06aec66a4762547898f29e39f52f99850fd6c2589e5bef0c76ed032d2f2b8",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/first-pass-run/coverage.json",
+   "shipped": "run-2026-10-07-03/coverage.json",
+   "rerun_sha256": "0d7999268d0d3a3e5e62bcf4af556d29819d816641af322dd9ba0e1fdfd1e4a4",
+   "shipped_sha256": "0d7999268d0d3a3e5e62bcf4af556d29819d816641af322dd9ba0e1fdfd1e4a4",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/first-pass-run/summary.json",
+   "shipped": "run-2026-10-07-03/summary.json",
+   "rerun_sha256": "27a692620ec7773c48aa9b40677e11a42ce9626c49ad4aa8d09064bd6422927c",
+   "shipped_sha256": "27a692620ec7773c48aa9b40677e11a42ce9626c49ad4aa8d09064bd6422927c",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/first-pass-run/dating-audit.json",
+   "shipped": "run-2026-10-07-03/dating-audit.json",
+   "rerun_sha256": "bc1a8d2808bc238db174ec8a484416de8f4ebe5f78006fcf075e21421ad004bb",
+   "shipped_sha256": "bc1a8d2808bc238db174ec8a484416de8f4ebe5f78006fcf075e21421ad004bb",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/first-pass-run/regional-gaps.json",
+   "shipped": "run-2026-10-07-03/regional-gaps.json",
+   "rerun_sha256": "a831f2982b616d4e12c80d778aeaabc20c060e169ea7f47b3c22b46a69db962d",
+   "shipped_sha256": "a831f2982b616d4e12c80d778aeaabc20c060e169ea7f47b3c22b46a69db962d",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/first-pass-run/verification.json",
+   "shipped": "run-2026-10-07-03/verification.json",
+   "rerun_sha256": "0a8c86443cd57b61b5efa362e16226d15731723aea40547a7d921011d795f844",
+   "shipped_sha256": "0a8c86443cd57b61b5efa362e16226d15731723aea40547a7d921011d795f844",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/first-pass-evidence/evidence-table.json",
+   "shipped": "evidence-table.json",
+   "rerun_sha256": "0c7faa45531764437a47317a82bdcb85c59421cbe09af0d43c5385084faefd19",
+   "shipped_sha256": "0c7faa45531764437a47317a82bdcb85c59421cbe09af0d43c5385084faefd19",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/first-pass-evidence/evidence-table.csv",
+   "shipped": "evidence-table.csv",
+   "rerun_sha256": "2a5989c1823cf15a58548f69d61f702f548d3260bd5a32acd7082ec465df9ecf",
+   "shipped_sha256": "2a5989c1823cf15a58548f69d61f702f548d3260bd5a32acd7082ec465df9ecf",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/first-pass-evidence/sources.json",
+   "shipped": "sources.json",
+   "rerun_sha256": "ed566207313bfa7948525264d25e6a9ae6e7e2a6faa44f17ca773045ed49920d",
+   "shipped_sha256": "ed566207313bfa7948525264d25e6a9ae6e7e2a6faa44f17ca773045ed49920d",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/amendment-inputs/evidence-table.json",
+   "shipped": "amendment-2026-10-07-frenez/evidence-table.json",
+   "rerun_sha256": "65be969f13d9ca51ce761eebb907e97601d96d1ed53b878eed02de0032b208c3",
+   "shipped_sha256": "65be969f13d9ca51ce761eebb907e97601d96d1ed53b878eed02de0032b208c3",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/amendment-inputs/evidence-table.csv",
+   "shipped": "amendment-2026-10-07-frenez/evidence-table.csv",
+   "rerun_sha256": "ca00762e6fef61581dedcb9fa664898e62aba4979e10b0b6b7fdd65a0b66f821",
+   "shipped_sha256": "ca00762e6fef61581dedcb9fa664898e62aba4979e10b0b6b7fdd65a0b66f821",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/amendment-inputs/sources.json",
+   "shipped": "amendment-2026-10-07-frenez/sources.json",
+   "rerun_sha256": "6a0aaf232d1cc14a3e0cd04c5dbbe51ff53ef3d77a453731f49ae4d8101ecf29",
+   "shipped_sha256": "6a0aaf232d1cc14a3e0cd04c5dbbe51ff53ef3d77a453731f49ae4d8101ecf29",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/amendment-inputs/continuity-claims.json",
+   "shipped": "amendment-2026-10-07-frenez/continuity-claims.json",
+   "rerun_sha256": "98e6d79563ebff84a735cc3c9e0bf50378750ffada3a044b5b4b474a17920269",
+   "shipped_sha256": "98e6d79563ebff84a735cc3c9e0bf50378750ffada3a044b5b4b474a17920269",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/amendment-inputs/added-rows.json",
+   "shipped": "amendment-2026-10-07-frenez/added-rows.json",
+   "rerun_sha256": "7b87c938df8caed024eb115ae78d73e69f55b84c1cee89656f27ba9ef83f3710",
+   "shipped_sha256": "7b87c938df8caed024eb115ae78d73e69f55b84c1cee89656f27ba9ef83f3710",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/amendment-inputs/build-verification.json",
+   "shipped": "amendment-2026-10-07-frenez/build-verification.json",
+   "rerun_sha256": "dee0ebd34bbca84b090cecc9fdccb49ea0f7930eb0738f7b3fdf5877a67ae8d3",
+   "shipped_sha256": "dee0ebd34bbca84b090cecc9fdccb49ea0f7930eb0738f7b3fdf5877a67ae8d3",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/amendment-run/coverage.csv",
+   "shipped": "amendment-2026-10-07-frenez/run-01/coverage.csv",
+   "rerun_sha256": "09e2116c26b19d585eeeac35e98d42202b1f6885f91a621758ca98357ae9e891",
+   "shipped_sha256": "09e2116c26b19d585eeeac35e98d42202b1f6885f91a621758ca98357ae9e891",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/amendment-run-repeat/coverage.csv",
+   "shipped": "review/amendment-run/coverage.csv",
+   "rerun_sha256": "09e2116c26b19d585eeeac35e98d42202b1f6885f91a621758ca98357ae9e891",
+   "shipped_sha256": "09e2116c26b19d585eeeac35e98d42202b1f6885f91a621758ca98357ae9e891",
+   "identical": true,
+   "note": "second reviewer run versus first reviewer run"
+  },
+  {
+   "rerun": "review/amendment-run/coverage.json",
+   "shipped": "amendment-2026-10-07-frenez/run-01/coverage.json",
+   "rerun_sha256": "a3d62acd3b0605b9663ffe23360f026d1760f7014908fdd6d8a38e7de37ad5b1",
+   "shipped_sha256": "a3d62acd3b0605b9663ffe23360f026d1760f7014908fdd6d8a38e7de37ad5b1",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/amendment-run-repeat/coverage.json",
+   "shipped": "review/amendment-run/coverage.json",
+   "rerun_sha256": "a3d62acd3b0605b9663ffe23360f026d1760f7014908fdd6d8a38e7de37ad5b1",
+   "shipped_sha256": "a3d62acd3b0605b9663ffe23360f026d1760f7014908fdd6d8a38e7de37ad5b1",
+   "identical": true,
+   "note": "second reviewer run versus first reviewer run"
+  },
+  {
+   "rerun": "review/amendment-run/summary.json",
+   "shipped": "amendment-2026-10-07-frenez/run-01/summary.json",
+   "rerun_sha256": "8a55383017a092b4d2e43f8f08de7adfff43248fb6d19c2ce6c0f65eed80eac8",
+   "shipped_sha256": "8a55383017a092b4d2e43f8f08de7adfff43248fb6d19c2ce6c0f65eed80eac8",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/amendment-run-repeat/summary.json",
+   "shipped": "review/amendment-run/summary.json",
+   "rerun_sha256": "8a55383017a092b4d2e43f8f08de7adfff43248fb6d19c2ce6c0f65eed80eac8",
+   "shipped_sha256": "8a55383017a092b4d2e43f8f08de7adfff43248fb6d19c2ce6c0f65eed80eac8",
+   "identical": true,
+   "note": "second reviewer run versus first reviewer run"
+  },
+  {
+   "rerun": "review/amendment-run/dating-audit.json",
+   "shipped": "amendment-2026-10-07-frenez/run-01/dating-audit.json",
+   "rerun_sha256": "387381696b8b41108fb9ee26960a4e9d53861f263218f587e2c81414dec41fad",
+   "shipped_sha256": "387381696b8b41108fb9ee26960a4e9d53861f263218f587e2c81414dec41fad",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/amendment-run-repeat/dating-audit.json",
+   "shipped": "review/amendment-run/dating-audit.json",
+   "rerun_sha256": "387381696b8b41108fb9ee26960a4e9d53861f263218f587e2c81414dec41fad",
+   "shipped_sha256": "387381696b8b41108fb9ee26960a4e9d53861f263218f587e2c81414dec41fad",
+   "identical": true,
+   "note": "second reviewer run versus first reviewer run"
+  },
+  {
+   "rerun": "review/amendment-run/regional-gaps.json",
+   "shipped": "amendment-2026-10-07-frenez/run-01/regional-gaps.json",
+   "rerun_sha256": "9143732bd8f4031b8afd7a08961700f685b3cfaf244425f083bc5132ccaff7fc",
+   "shipped_sha256": "9143732bd8f4031b8afd7a08961700f685b3cfaf244425f083bc5132ccaff7fc",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/amendment-run-repeat/regional-gaps.json",
+   "shipped": "review/amendment-run/regional-gaps.json",
+   "rerun_sha256": "9143732bd8f4031b8afd7a08961700f685b3cfaf244425f083bc5132ccaff7fc",
+   "shipped_sha256": "9143732bd8f4031b8afd7a08961700f685b3cfaf244425f083bc5132ccaff7fc",
+   "identical": true,
+   "note": "second reviewer run versus first reviewer run"
+  },
+  {
+   "rerun": "review/amendment-run/verification.json",
+   "shipped": "amendment-2026-10-07-frenez/run-01/verification.json",
+   "rerun_sha256": "02e581cdc0b12f993a8d8ce3b75e1c60fe20a4333452ba6d7408ca57526d3b30",
+   "shipped_sha256": "02e581cdc0b12f993a8d8ce3b75e1c60fe20a4333452ba6d7408ca57526d3b30",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/amendment-run-repeat/verification.json",
+   "shipped": "review/amendment-run/verification.json",
+   "rerun_sha256": "02e581cdc0b12f993a8d8ce3b75e1c60fe20a4333452ba6d7408ca57526d3b30",
+   "shipped_sha256": "02e581cdc0b12f993a8d8ce3b75e1c60fe20a4333452ba6d7408ca57526d3b30",
+   "identical": true,
+   "note": "second reviewer run versus first reviewer run"
+  },
+  {
+   "rerun": "review/amendment-audits/contact-items.json",
+   "shipped": "amendment-2026-10-07-frenez/contact-items.json",
+   "rerun_sha256": "ff182629a3148e8f7f4db0011c68199b9abc62f2a5f799112b4c1f2f1df6e873",
+   "shipped_sha256": "ff182629a3148e8f7f4db0011c68199b9abc62f2a5f799112b4c1f2f1df6e873",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/amendment-audits/lecture-claim-audit.json",
+   "shipped": "amendment-2026-10-07-frenez/lecture-claim-audit.json",
+   "rerun_sha256": "33803784ab38ddf3c64aa6d50bc03da4608c59c409024ba9a70a637051ef735d",
+   "shipped_sha256": "33803784ab38ddf3c64aa6d50bc03da4608c59c409024ba9a70a637051ef735d",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/amendment-audits/dating-details.json",
+   "shipped": "amendment-2026-10-07-frenez/dating-details.json",
+   "rerun_sha256": "e68406310e6575ba050c1c887602e6e7a5c6ee6a4d468f8f1eae4e24a538419d",
+   "shipped_sha256": "e68406310e6575ba050c1c887602e6e7a5c6ee6a4d468f8f1eae4e24a538419d",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/amendment-audits/search-log.json",
+   "shipped": "amendment-2026-10-07-frenez/search-log.json",
+   "rerun_sha256": "54765fcb359e93700f69850b9841ce48c3624e313036d239c3d8a722e9522c8f",
+   "shipped_sha256": "0c4457f82ff8a08df35f7d20bcc89f2ec6f3b4cb64284f58374a7288877cd88b",
+   "identical": false,
+   "note": "search-log.json differs: reruns include web-22.json acquired after the original audit"
+  },
+  {
+   "rerun": "review/amendment-comparison/coverage-deltas.csv",
+   "shipped": "amendment-2026-10-07-frenez/comparison-01/coverage-deltas.csv",
+   "rerun_sha256": "c539d4bba0d0c3a58c4472d92961808f156ad9e8857ce0ac1c4a190ad7935330",
+   "shipped_sha256": "c539d4bba0d0c3a58c4472d92961808f156ad9e8857ce0ac1c4a190ad7935330",
+   "identical": true,
+   "note": ""
+  },
+  {
+   "rerun": "review/amendment-comparison/baseline-verification.json",
+   "shipped": "amendment-2026-10-07-frenez/comparison-01/baseline-verification.json",
+   "rerun_sha256": "1df02db48b92e4aaf1533dc2406d7b734fb52717e9e7d55299582203fb313bee",
+   "shipped_sha256": "1df02db48b92e4aaf1533dc2406d7b734fb52717e9e7d55299582203fb313bee",
+   "identical": true,
+   "note": ""
+  }
+ ],
+ "identical_files": 32,
+ "total_files": 33,
+ "not_identical": [
+  "review/amendment-audits/search-log.json"
+ ],
+ "explanation_of_difference": "amendment-audits/search-log.json differs from the shipped search-log.json because make_audits.py rescans data/raw/.../web-*.json; the rerun lists 22 batches (adds web-22.json, acquired after the shipped log was written) and every other record is unchanged. The amendment README states this.",
+ "comparison_script_checks": {
+  "parent_run": "run-2026-10-07-03",
+  "added_rows": 12,
+  "added_dated_additive_rows": 5,
+  "added_distinct_reported_exact_objects": 193,
+  "centuries_with_changed_assemblage_count": 16,
+  "unchanged_gap_series": [
+   "grade_A",
+   "phase_or_historical_AB",
+   "high_moderate_calendar_AB"
+  ],
+  "coverage_functions_unchanged_by_AST": 9,
+  "baseline_files_checked": 477,
+  "all_baseline_files_unchanged": true,
+  "reproduction_files_identical": 6
+ },
+ "coverage_markdown": "amendment-comparison/COVERAGE.md matched the shipped comparison-01/COVERAGE.md apart from the run directory name in two links.",
+ "completeness_of_baseline_list": "The 477 paths in baseline-integrity.json equal the 477 first-pass files now present (93 under experiments/, 384 under data/raw/, excluding the amendment and review directories).",
+ "other_checks": [
+  "Every field of every row of both evidence-table.json files equals its evidence-table.csv cell (42 and 54 rows).",
+  "REPORT.md century table (33 rows) equals run-2026-10-07-03/coverage.csv; amendment COVERAGE.md equals run-01/coverage.csv.",
+  "Relative Markdown links in both directories resolve (92 per the package; 0 broken in the reviewer recheck); one link label mismatch: RETROSPECTIVE.md \"run-2026-10-07-02\" points to run-2026-10-07-03."
+ ],
+ "prose_scan": {
+  "command": "python tools/review_prose.py --path experiments/2026-10-06-backward-chronology --no-write",
+  "package_markdown_files": 13,
+  "flags_package": 0,
+  "files_with_review_markdown": 18,
+  "flags_with_review": 0,
+  "review_markdown_files": 5
+ },
+ "review_files_kept": [
+  "REVIEW.md",
+  "review/reproduction-log.json",
+  "review/gap_sensitivity.py",
+  "review/gap-sensitivity/gap-sensitivity.json",
+  "review/dating-basis-checks.md",
+  "review/attribution-checks.md",
+  "review/amendment-checks.md",
+  "review/source-record-checks.md",
+  "review/rows-and-the-1300-700-interval.csv"
+ ],
+ "deleted_after_use": [
+  "copies of build_amendment.py, analyze_coverage.py, compare_coverage.py, make_audits.py, evidence-table.json/.csv, sources.json, continuity-claims.json, PROTOCOL.md and baseline-integrity.json placed in review/ for the amendment runs",
+  "review/first-pass-run, first-pass-evidence, amendment-inputs, amendment-run, amendment-run-repeat, amendment-comparison, amendment-audits (hashes above)"
+ ],
+ "gap_sensitivity": {
+  "command": "python experiments/2026-10-06-backward-chronology/review/gap_sensitivity.py --output <fresh directory>",
+  "runs": 2,
+  "outputs_identical": true,
+  "kept_output": "review/gap-sensitivity/gap-sensitivity.json",
+  "sha256": "3a9e21d131e7515713e212df48e83649a0dd1cb30676cfc54e210d01ba725708",
+  "inputs": "amendment-2026-10-07-frenez/analyze_coverage.py (imported unchanged) and amendment-2026-10-07-frenez/evidence-table.json (read only)",
+  "series": [
+   "phase_or_historical_AB",
+   "high_moderate_calendar_AB",
+   "all_grades"
+  ],
+  "scenarios": [
+   "leave_one_out",
+   "promote_to_moderate",
+   "whatif_pirak (6 intervals)",
+   "whatif_pirak_grid (20 intervals)",
+   "whatif_added_rows (5 rows)"
+  ],
+  "note": "The scenarios are reviewer what-ifs that show sensitivity of the coverage rule. They are not findings of date."
+ }
+}

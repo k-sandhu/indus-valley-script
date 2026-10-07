@@ -1,0 +1,44 @@
+# Early marks, contact seals and the fifth-century statement
+
+Reviewer checks of the 7 October amendment's primary-source rows (Mehrgarh and Nausharo, Rehman Dheri, Harappa), its five contact items and the fifth-century table in its REPORT. Page numbers are printed pages unless stated. Rows and claims are cited by the identifiers in `amendment-2026-10-07-frenez/evidence-table.json` and `continuity-claims.json`.
+
+## Early marks, Rehman Dheri and Harappa
+
+The primary-source rows hold up where the reviewer checked them.
+
+- Quivron 1980 is correctly cited (*Paléorient* 6(1):269–280; about 850 marks, 147 variants, 50 categories). Its p. 275 gives 183 pots in one Period VII room (a third incised with 23 different marks) and, separately, "142 jarres" on an oval of about 24 m² in Period IV, the failed firing.
+- Coningham 2002 reports 1,265 marks over 3600–2500 BC and a storage room (CXVIII) with 100 vessels, 33 incised with 16 signs, citing Quivron 1997; the package keeps this apart from Quivron's room of 183 pots. Miller 1997 describes the Period VI structure as about 140 jars and estimates an original load of about 200. The REPORT attributes "142 surviving jars" to Miller; the figure is Quivron's, and the evidence row `mehrgarh-failed-firing` has it right.
+- Durrani and colleagues 1995 report 314 registered and 190 stratified inscribed sherds (p. 208), phase sign totals of 7, 12, 14, 19 and 111 for Periods IA, IB, II, IIIA and IIIB (pp. 216–217; sum 163, 27 below 190) and "no clear progression from simple to composite signs". Catalogue 54 is BIV/25, Layer 6, Level 19, bone, described as a carved bone seal (p. 201). Durrani 1988 (p. 28) describes an ivory seal from Period IB that combines animal motifs with symbols and that he proposes to treat as proto-Harappan. The 1995 Introduction (p. vii) says 12 radiocarbon dates fix Periods I–III at 3300–2850, 2850–2500 and 2500–1900 BC.
+- The Harappa gallery dates the hearth sealing to the "Kot Diji Phase, circa 2800 BCE" and names no laboratory determination, so the package is right not to grade the sealing A.
+
+The correction of "Rakandere" to Rehman Dheri is better supported than the package says. Frenez 2018, a source the package cites only for Figure 10 (PDF p. 12 of the local copy; printed p. 171 n. 5 per the checking pass), describes "a famous button seal in ivory" from Rehman Dheri, with a scorpion, a frog, wild goats and geometric signs, whose signs "were traced also on pottery containers before their firing" (citing his 2004 slides): the lecture's claim in his own earlier words. Kenoyer and Meadow 2010 (p. liv) name the carved ivory button seal from Rahman-dheri (*CISI* 2, p. 352, Rhd-1). The object itself is a rectangular two-holed plaque, called an ivory seal (Durrani 1988), a bone seal (1995) and a pendant (Kenoyer 2020), so "button" is Frenez's and Kenoyer and Meadow's usage; the package's caution that the row is "not a verified button seal" can be dropped. The caption's "north-western Baluchistan" stays unexplained, since Rehman Dheri lies in the Gomal plain. The row's 3300–1900 BCE interval is the whole site sequence, so it adds possible coverage to 14 bins and cannot be allocated among them.
+
+### Corrections to the early-marks record
+
+1. **Rehman Dheri totals.** The printed phase totals (7, 12, 14, 19, 111; Durrani and colleagues 1995 pp. 216–217) follow the sentence "Altogether 190 signs have been found in a stratified position", and the 27 difference is exactly 41 − 14: 7 + 12 + 41 + 19 + 111 = 190. A transposed "14" for "41" is the likely explanation. A checking pass that recounted the catalogue entries from OCR (192 lines) reproduced IA plus IB as 19 and IIIA plus IIIB as 130 and found about 43 for Period II. The package leaves the 27 unresolved and calls the five-phase matrix blocked; the matrix may be buildable from the catalogue.
+2. **Object 54.** The alternative "local Layer 6 correlated with main Layer 12, Period II" (Durrani 1988 p. 25) appears to misread a section of trenches BIV/20–25; the 1995 Introduction (Table 1) maps BIV/25 Layer 6 to Level 19, which is Period IA (the Introduction, p. vii, assigns Levels 20–18 to IA), and the 1988 plate captions give about 3200 BC. The "conflicting assignments" then reduce to IA/IB (3300–2850).
+3. **Quivron p. 279.** It compares certain incised marks with later writing characters and finds a resemblance for about twenty of 396 Harappan signs; the REPORT says it compares "selected pottery shapes with Indus signs".
+4. **The 193 specimens** include a script-free elephant seal and a geometric bone seal beside inscribed sherds. The row limitations say so; the README and REPORT headline does not.
+
+## Contact seals
+
+The five records in `contact-items.json` are accurate on object identity, locators, dates and access: the Ur stamp BM120573 (Gadd 1932, no. 1), the BnF stamp, the Linear Elamite round stamp (Laursen 2010 no. 28; proposed date 2112–2095 BCE), the Shu-ilishu cylinder (Possehl 2006; Louvre AO 22310) and the Bahrain tokens (three tokens, two seals, embargo to 1 April 2027, no Indus imagery in the abstract). The 2024 CV lists the "Hybrid identities" paper as in preparation, and no published version turned up. Seven corrections are needed.
+
+1. The date locator of `ur-bm120573`, "Gadd1932 p.6", should be p. 5, where the estimate closes.
+2. The package writes "fifth century BCE" in `oral-merchants`, `oral-merchants-followup` and the REPORT; the coordinator note says "in the fifth century" without an era, so BCE is inferred.
+3. `contact-paper` drops the lecture's clause that some seals encode Sumerian names and others names that are neither Sumerian nor Akkadian.
+4. `frenez2023-caption` has the wrong venue (see [source-record-checks.md](source-record-checks.md)).
+5. `contact-items.json` records `images_reviewed: false` for the BnF stamp while `visual-checks.json` and the evidence row record the image as checked, and it grades the BnF stamp and the Bahrain tokens C where the evidence rows grade them D.
+6. The merchant attribution (see [attribution-checks.md](attribution-checks.md)).
+7. "The dated pottery and edict record constrains when writing occurs" (REPORT) overstates the table: four of the five cited rows are C with low strength, Porunthal has no interval, and only Ashoka is A.
+
+The record omits items that the repository's audit (`research/literature/external_phonetic_anchor_audit.md`) or the sources carry: Marchesi's reading of Gadd no. 1 as *Ka-lu-lim* or *Ka-lu-si*, "neither Sumerian nor Akkadian" (Possehl 2008, pp. 141–142, which the audit cites); other references and a later date for BM120573 (Mitchell 1986; Aruz and Wallenfels 2003; a CDLI entry citing Collon 1997 for Ur III); Desset's 2018 reading of early Sukkalmah rulers' names on Linear Elamite vessels, which weakens the premise behind Laursen's date; the 2016 citation of the "Hybrid identities" paper as in press for the *Journal of Near Eastern Studies*; press details on the Bahrain tokens (20 April 2026); and the audit's Lothal stamp L-56 and Gadd nos. 6 and 7. The package calls its four cases "a bounded case selection, not a corpus total". The reviewer found no further Indus-style seal with a Linear Elamite legend and no cuneiform-name seal beyond these.
+
+## The fifth-century statement
+
+The REPORT table matches the evidence rows on interval, grade and strength for `anuradhapura`, `porunthal-I`, `kodumanal`, `keeladi` and `ashoka-brahmi` (the Porunthal cell omits "C/low"). Two entries are less secure than they read.
+
+- For Anuradhapura the table says the two assessments "fall on different sides of the proposed fifth-century event". That depends on reading the abstract's "beginning of the fourth century" as 400–300 BCE. Allchin (1995, p. 176, quoted in a 1996 review and an Indology list post) gives radiocarbon 450–350 BC, search snippets of later Coningham work place the first Brahmi in the early fourth century, and one unidentified source gives a late-fifth-century sherd. The full articles were not opened by the package or the reviewer, so the row may reach into the fifth century.
+- For Porunthal the table says the reported 490 BCE "cannot fix a calibrated fifth-century endpoint here". Volume II (p. 1165, Table 10.1 p. 1175) gives the authors' calibrated values and ranges (about 580–410 BCE, curve and confidence level not named), and a published calibration of 2440±30 BP (Premathilake and colleagues 2017, seen as a snippet) gives 571–404 cal BC at 72.5% (two sigma). Volume I (p. 11) also says recent AMS dates place Tamil-Brahmi in the 7th–6th century BCE, which the table does not record.
+
+The table's conclusion, that chronology constrains when writing is attested without identifying agents, stands; these points change how close the early Brahmi dates sit to Frenez's century.
