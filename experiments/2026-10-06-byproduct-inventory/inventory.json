@@ -1,64 +1,144 @@
 {
   "schema_version": 1,
-  "date": "2026-10-06",
+  "date": "2026-10-07",
   "scope": "Recorded outputs outside script decipherment; no analyses rerun",
   "ranking_criteria": [
-    "plausible novelty after bounded precedent search",
-    "readiness of source witnesses and reproducible aggregate outputs",
-    "usefulness to the candidate field and availability of a small publishable form",
-    "amount of external validation or rights work still required"
+    "Subject-specific plausible contribution after recorded precedents",
+    "Readiness of saved evidence and source witnesses",
+    "Usefulness to a named field audience",
+    "Remaining external validation and deposit requirements"
   ],
-  "search_boundary": "Targeted live web searches and selected source openings; not an exhaustive literature review. Each record states whether its precedent judgment was checked or remains unchecked.",
+  "search_boundary": "On-subject correction searches are logged locally; partly checked means the exact priority claim remains unresolved. Failed opens and full-text/metadata differences are recorded.",
   "candidates": [
     {
       "rank": 1,
       "id": "FULS-ARITHMETIC",
-      "title": "Exact solution set for the published 10/8/6 numerical proposal",
+      "title": "Fuls numerical premises, exact arithmetic and capacity audit",
       "field": "Archaeological metrology; epigraphy and history of scholarship",
       "audience": "Researchers evaluating numerical readings and the original proposal",
-      "established": "Under the two assumed equalities, four positive-integer triples solve the system: (4,20,36), (6,8,10), (10,8,6), and (36,20,4). The stated range restriction selects (10,8,6); the printed parity step does not establish that the short-stroke multiplier is even.",
+      "established": "In variable order (L,S,v), the assumed equations v=2S-L and vL+1=7S+5 have four positive-integer solutions: (4,20,36), (6,8,10), (10,8,6), (36,20,4). Restricting L to 8–13 selects (10,8,6). The footnote's even-S inference fails for the first equality alone; S is even in every joint solution, so correcting that step changes no joint conclusion. The companion capacity audit fits three selected published profile-derived volumes at 40.3531914893617 L/stroke, with residuals -0.2, -1.8 and +1.0 L at 40.4. It documents excavation-ID and K90 prose/table conflicts, and no eligible independent held-out vessel.",
       "numbers": {
         "positive_integer_solutions": 4,
         "selected_by_reported_range": [
           10,
           8,
           6
+        ],
+        "variable_order": [
+          "L",
+          "S",
+          "v"
+        ],
+        "range_L": [
+          8,
+          13
+        ],
+        "all_solutions": [
+          [
+            4,
+            20,
+            36
+          ],
+          [
+            6,
+            8,
+            10
+          ],
+          [
+            10,
+            8,
+            6
+          ],
+          [
+            36,
+            20,
+            4
+          ]
+        ],
+        "capacity_fit_L_per_stroke": 40.3531914893617,
+        "heldout_same_module_vessels": 0,
+        "capacity_vessels": [
+          "H-372",
+          "H-371",
+          "H-370"
+        ],
+        "profile_capacities_L": [
+          121.0,
+          240.6,
+          283.8
+        ],
+        "long_stroke_counts": [
+          3,
+          6,
+          7
+        ],
+        "residuals_at_40_4_L": [
+          -0.2,
+          -1.8,
+          1.0
+        ],
+        "K90_prose_table_unit_L": [
+          56.7,
+          51.5
+        ],
+        "two_stroke_alternative_solution": [
+          4,
+          4,
+          8
         ]
       },
       "evidence": [
         "research/methods/NUMERICAL_CONSTRAINT_AUDIT.md",
         "research/methods/results/numerical_equalities/numerical_equalities_audit.json",
-        "experiments/2026-10-02-source-recovery/south-india/REPORT.md",
-        "experiments/2026-10-06-contribution-assessment/REPORT.md#Contributions-with-specialist-value"
+        "research/methods/results/numerical_equalities/numerical_count_delta_sensitivity.json",
+        "research/literature/metrology/source_and_identifiability_audit.json",
+        "research/literature/metrology/numerical_source_premises.json",
+        "research/literature/metrology/README.md"
       ],
       "evidence_fields": [
-        "solution_set",
-        "assumptions",
-        "range restriction",
-        "parity argument review"
+        "research/literature/metrology/source_and_identifiability_audit.json#/fit_only/least_squares_zero_intercept_scale_l_per_long_stroke",
+        "research/literature/metrology/source_and_identifiability_audit.json#/heldout_validation/eligible_independent_same_module_objects",
+        "all_admissible_solutions",
+        "range_sensitivities.L_8_to_13",
+        "first_equality_parity_audit",
+        "source_preserved_capacities[].frozen_residual_l",
+        "source_internal_discordances",
+        "premises",
+        "conditional_algebra_result"
       ],
       "status": "Verified computation",
       "novelty": {
-        "judgment": "The exact conditional enumeration and correction are supported by the saved arithmetic; direct public literature precedents for this particular premise were not located in this package's bounded search. The proposal and archaeological joins remain prior claims.",
-        "precedent_search": "Partly checked; targeted search incomplete",
-        "sources": [
-          "SRC-11",
-          "SRC-18"
-        ]
+        "judgment": "A targeted erratum query returned no directly relevant correction. This limited query cannot establish priority. Fuls and Wells supply the prior proposal; the conditional enumeration and source-conflict table are the assessed work.",
+        "precedent_search": "Partly checked; one targeted erratum query and original proposal reopened",
+        "sources": []
       },
-      "missing_validation": "Resolve the source object's identity and independently support the physical count/range before evaluating the equalities archaeologically; invite the proposal's author to review the correction.",
-      "smallest_form": "Short commentary or correction letter",
-      "venues": [
-        "Journal of Archaeological Science: Reports (short methods/commentary fit to confirm with editors)",
-        "an author correspondence with the original proposal's venue"
-      ],
-      "remaining_work": "Several days for source-by-source checking, author review, and a concise submission draft.",
+      "missing_validation": "Specialist review of the source identities, graphic counts, count range and vessel scope; obtain measurement records and independent comparable vessels. Source text was reopened, but archaeological premises are not authenticated by the algebra.",
+      "smallest_form": "One source commentary joining the arithmetic, capacity and object-premise audits",
+      "venues": [],
+      "remaining_work": "One to two weeks for original-source and specialist review; correspondence route requires the original volume's editors or author.",
       "registry_ids": [
         "ROOT-13",
         "METHODS-numerical_equalities"
       ],
-      "venue_sources": [
-        "SRC-22"
+      "venue_sources": [],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [
+        "Fuls's 2020 chapter is the proposal under audit. Its author-posted reprint was reopened as indexed PDF text in this correction, at printed pp. 29–32; the volume is Studies on Indus Script, pp. 57–90. Figure-level archaeological interpretations remain unverified.",
+        "The capacity values are geometric reconstructions from three selected fitting vessels, not liquid-fill measurements or a held-out validation. H370/H372 excavation IDs disagree between sources; measurements are not reassigned.",
+        "The saved premise audit found no M1383 join, 82-fragment count or 15–20-total claim in the inspected Vidale chapter; Fuls attributes the count premise to Wells 2015. The current numeric ID 3786 denotes M1540; H904 matches the cited plate candidate. A two-stroke variant yields (4,4,8), outside S>=8."
+      ],
+      "related_candidates": [],
+      "venue_options_unverified": [],
+      "submission_route": "Draft correspondence for the original proposal's author and volume editors; no verified standalone article-type fit is claimed.",
+      "original_registry_statuses": {
+        "ROOT-13": "exact-conditional-audit",
+        "METHODS-numerical_equalities": "completed-analysis-see-source-design"
+      },
+      "ranking_eligible": true,
+      "priority_position": 4,
+      "primary_sources": [
+        "SRC-18",
+        "SRC-32"
       ]
     },
     {
@@ -67,7 +147,7 @@
       "title": "Susa marked weights: census and original-to-modern catalogue conflicts",
       "field": "Near Eastern archaeology; metrology; museum documentation",
       "audience": "Susa and Mesopotamian weight specialists, catalogue editors, museum registrars",
-      "established": "The 2022 catalogue census contains 69 explicitly coded Susa entries and 57 usable mass/mark ratios. The later catalogue and Soutzo 1911 disagree on named duck weights: AS 13820 is 2769 g in the 1911 source and 3067 g in the 2022 catalogue; two originals describe ducks as unmarked while the newer catalogue records strokes. The source audit also separates manufacture from later deposition for SB 17774.",
+      "established": "The post-outcome 2022 catalogue census has 69 coded Susa entries and 57 eligible mass/mark ratios. Soutzo's no. 13820 is listed at 2,769 g, while Ascalone 2022 entry 603, which cites that number, gives 3,067 g, limestone, six strokes and Louvre Sb 9340. The two source assertions differ in mass, material and marks; no independently checked museum concordance establishes that they describe the same surviving object. Two 1911 unmarked-duck descriptions also conflict with later stroke counts.",
       "numbers": {
         "coded_entries": 69,
         "usable_mass_mark_ratios": 57,
@@ -83,34 +163,54 @@
         "experiments/2026-10-02-source-recovery/susa/mass-source-audit.json"
       ],
       "evidence_fields": [
-        "coded_entry_count",
-        "eligible_ratio_count",
-        "AS 13820 mass rows",
-        "mark descriptions and accession joins"
+        "experiments/2026-10-02-connections-and-priority/regional-west/marked-weight-census-v2.json#/marked_entry_count",
+        "experiments/2026-10-02-connections-and-priority/regional-west/marked-weight-census-v2.json#/complete_single_graphic_entry_count",
+        "experiments/2026-10-02-source-recovery/susa/mass-source-audit.json#/comparisons/2/earlier_mass_g",
+        "experiments/2026-10-02-source-recovery/susa/mass-source-audit.json#/comparisons/2/later_mass_g",
+        "experiments/2026-10-02-source-recovery/susa/mass-source-audit.json#/comparisons/2/identity_scope"
       ],
-      "status": "Verified computation",
+      "status": "Exploratory",
       "novelty": {
-        "judgment": "Source-to-source discrepancy tables may be useful to metrology and collection work; the close precedent search found archaeological catalogue data correction and data-paper models, not an equivalent Susa mark/mass census. Distinctive contribution remains provisional until accession conflicts are resolved.",
-        "precedent_search": "Checked, bounded",
+        "judgment": "Soutzo 1911 already reads duck marks as weight multiples, and Ascalone/Peyronel 1999 treats Susa, Gulf and Indus weight systems. General mass-per-mark novelty is therefore unavailable. The exact 1911/2022 source conflict remains a candidate correction requiring museum concordance; the 1999 article was found in metadata only.",
+        "precedent_search": "On-subject search completed; primary 1911 local text inspected and 1999 metadata found, full 1999 article unavailable",
         "sources": [
-          "SRC-01",
-          "SRC-02"
+          "SRC-25",
+          "SRC-26"
         ]
       },
       "missing_validation": "Obtain full-resolution museum images, resolve two accession collisions, confirm dates and condition, and ask a Susa catalogue specialist to adjudicate original-to-modern object identity.",
-      "smallest_form": "Source data note with a catalogue-maintainer correction table",
+      "smallest_form": "Source-conflict table for catalogue maintainers; a data paper only after rights-cleared deposit",
       "venues": [
-        "Journal of Open Archaeology Data (if rights-cleared dataset deposited)",
-        "Internet Archaeology data paper"
+        "Internet Archaeology: data paper, conditional on a reusable licensed dataset deposit",
+        "Journal of Open Archaeology Data: data paper, conditional on an openly archived dataset"
       ],
       "remaining_work": "One to two weeks plus external catalogue review; a public data-paper path also requires rights review.",
       "registry_ids": [
-        "REGIONNUM-01",
         "SUSA-SOURCE-02"
       ],
       "venue_sources": [
-        "SRC-05",
-        "SRC-02"
+        "SRC-02",
+        "SRC-05"
+      ],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [
+        "The census was designed after inspecting masses. Three named source mass differences are -10.75, -9.5 and +298 g; the first concerns a four-mark ovoid.",
+        "The source audit compares catalogue assertions. Museum identity, conservation and reweighing histories remain unresolved."
+      ],
+      "related_candidates": [
+        "MARKED-WEIGHT-CENSUS"
+      ],
+      "venue_options_unverified": [],
+      "original_registry_statuses": {
+        "SUSA-SOURCE-02": "completed-historical-modern-discrepancy-audit"
+      },
+      "ranking_eligible": true,
+      "related_registry_ids": [
+        "REGIONNUM-01"
+      ],
+      "priority_position": 7,
+      "primary_sources": [
+        "SRC-06"
       ]
     },
     {
@@ -119,7 +219,7 @@
       "title": "Cross-source catalogue totals and component mismatches",
       "field": "Digital archaeology; catalogue scholarship; research data quality",
       "audience": "Curators, catalogue maintainers, archaeologists reusing structured catalogues",
-      "established": "Independent table transcription finds 133 Lothal impressions versus 130 in prose and 62 single-impression objects versus 63. Tamil Nadu compound 4.19C differs between printed concordance and web array (six versus five components); the paper also reports four literal cross-route identifier differences. Gonur's account reports 26 tokens while each original figure panel depicts 23 representations. These counts describe distinct source assertions, not a resolved object total.",
+      "established": "Two AI-model transcriptions of the same Lothal table sum to 133 impressions and 62 single-impression objects, compared with 130 and 63 in that chapter's prose; the second reader knew the first aggregates. Tamil Nadu 4.19C has six components in one of three purposively checked printed rows and five in the deployed array; the 5.0-to-5.7 variant mapping could reflect representation or edition differences. Separately, two web routes differ in four literal identifier cells because of spaces or a dot. Gonur's source reports 26 tokens, while two AI readers counted 23 representations in each panel; unspecified figure selection leaves a sample explanation open.",
       "numbers": {
         "lothal_table_impressions": 133,
         "lothal_prose_impressions": 130,
@@ -138,29 +238,36 @@
       "evidence": [
         "experiments/2026-10-02-six-hour/lothal-physical-use/README.md#Source-table-and-prose",
         "experiments/2026-10-02-connections-and-priority/south-india/REPORT.md",
-        "experiments/2026-10-02-source-recovery/oxus/REPORT.md"
+        "experiments/2026-10-02-source-recovery/oxus/REPORT.md",
+        "experiments/2026-10-02-six-hour/lothal-physical-use/independent-review/source-assertions.json",
+        "experiments/2026-10-02-connections-and-priority/south-india/aggregate-v1/results.json",
+        "experiments/2026-10-02-connections-and-priority/south-india/stroke-membership-v2/results.json",
+        "experiments/2026-10-02-source-recovery/oxus/results-v2.json"
       ],
       "evidence_fields": [
-        "Lothal Table 1 and prose totals",
-        "4.19C concordance row",
-        "route identifier comparison",
-        "Gonur Fig. 41 photo and drawing panel counts"
+        "experiments/2026-10-02-six-hour/lothal-physical-use/independent-review/source-assertions.json: table and prose assertions",
+        "experiments/2026-10-02-connections-and-priority/south-india/aggregate-v1/results.json#/cross_route_cells_differing",
+        "experiments/2026-10-02-connections-and-priority/south-india/aggregate-v1/results.json#/site_route_occurrence_total",
+        "experiments/2026-10-02-connections-and-priority/south-india/aggregate-v1/results.json#/family_route_occurrence_total",
+        "experiments/2026-10-02-connections-and-priority/south-india/stroke-membership-v2/results.json#/printed_source_checks/2",
+        "experiments/2026-10-02-source-recovery/oxus/results-v2.json#/checks"
       ],
       "status": "Verified computation",
       "novelty": {
-        "judgment": "The bounded search found an archaeological example of correcting catalogue-derived data and established data-paper outlets. It did not find these exact disagreements previously reported. Each discrepancy needs a maintainer response or primary ledger before correction claims are final.",
-        "precedent_search": "Checked, bounded",
+        "judgment": "The Lothal chapter and Frenez's thesis are earlier source ledgers; the thesis was identified from its author's CV but not read. Tamil Nadu's portal links the 2025 morphological study, while the project compared later print volumes; edition reconciliation is missing. Bonora et al. 2014 is prior token scholarship. No query establishes that any discrepancy is a previously unpublished error.",
+        "precedent_search": "On-subject search completed; Lothal chapter metadata, thesis CV and Gonur article record opened; Tamil Nadu source located",
         "sources": [
-          "SRC-01",
-          "SRC-02",
-          "SRC-03"
+          "SRC-27",
+          "SRC-28",
+          "SRC-30",
+          "SRC-31"
         ]
       },
       "missing_validation": "Request the source registers and ask catalogue maintainers to confirm whether the differences are errors, scope differences, or transcription variants.",
-      "smallest_form": "Short source-audit note or correction correspondence, split by catalogue owner if needed",
+      "smallest_form": "Separate correction requests to source owners; data paper only if a reusable discrepancy dataset is deposited",
       "venues": [
-        "Internet Archaeology",
-        "Journal of Open Archaeology Data (for a rights-cleared joined discrepancy dataset)"
+        "Internet Archaeology: data paper, conditional on a reusable licensed dataset deposit",
+        "Journal of Open Archaeology Data: data paper, conditional on an openly archived dataset"
       ],
       "remaining_work": "Several days to prepare an evidence table; external responses may take weeks.",
       "registry_ids": [
@@ -169,7 +276,22 @@
       "venue_sources": [
         "SRC-02",
         "SRC-05"
-      ]
+      ],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [
+        "Lothal counts are model readings of one published table, not independent excavation counts. Tamil Nadu route differences compare family and site web routes, not print and web. Gonur panels may illustrate a subset."
+      ],
+      "related_candidates": [
+        "LOTHAL-OBSERVATION-FRAME",
+        "SOUTH-INDIA-STROKE-POPULATION",
+        "GONUR-ALTYN-RECOVERY"
+      ],
+      "venue_options_unverified": [],
+      "original_registry_statuses": {
+        "PRIORITY-01": "completed-primary-precedent-review"
+      },
+      "ranking_eligible": true,
+      "priority_position": 6
     },
     {
       "rank": 4,
@@ -177,7 +299,7 @@
       "title": "Context and measurement completeness in the inscribed-object export",
       "field": "Archaeological data quality; digital heritage; corpus construction",
       "audience": "Indus archaeologists, corpus builders, metadata and provenance researchers",
-      "established": "Across 5,680 rows and 4,695 numeric families, catalogue availability varies sharply by field. Only 1,444 rows from 1,163 families jointly contain area, room/grid, excavation label, depth and a chronological label. Of 69 objects in three source-defined Harappa cohorts, 60 join the export, but only two enter the complete RTL single-line length-at-least-three benchmark. The audit corrected missingness rules that had treated 2,870 depth placeholders and zero dimensions as observed values.",
+      "established": "In the pinned derivative export, 5,680 rows represent 4,695 provisional numeric families. Requiring informative site, area, room/grid, excavation label, depth and chronology yields 1,444 rows and 1,163 families: 751 Harappa, 682 Mohenjo-daro and 11 other rows. Of 69 source-cohort objects, 60 join the export and two of those 60 enter the primary benchmark. The old missingness rule counted 2,870 dash-only depth placeholders as present. These are export-field availability statistics, not estimates of surviving excavation documentation.",
       "numbers": {
         "rows": 5680,
         "numeric_families": 4695,
@@ -186,7 +308,12 @@
         "harappa_source_cohort_objects": 69,
         "joined_objects": 60,
         "eligible_objects_in_main_filter": 2,
-        "misread_depth_placeholders": 2870
+        "depth_placeholders_missed_by_old_rule": 2870,
+        "joint_context_rows_by_site": {
+          "Harappa": 751,
+          "Mohenjo-daro": 682,
+          "other": 11
+        }
       },
       "evidence": [
         "experiments/2026-10-02-six-hour/context-audit/README.md#Available-fields",
@@ -196,34 +323,52 @@
         "experiments/2026-10-02-six-hour/context-audit/verification.json"
       ],
       "evidence_fields": [
-        "row/family availability",
-        "source cohort join and filter counts",
-        "verification checks"
+        "counts",
+        "joint_availability",
+        "field_availability.depth",
+        "source-cohorts/results.json: cohort join and eligibility counts",
+        "experiments/2026-10-02-six-hour/context-audit/main/results.json#/counts/rows",
+        "experiments/2026-10-02-six-hour/context-audit/main/results.json#/counts/families",
+        "experiments/2026-10-02-six-hour/context-audit/main/results.json#/joint_availability/site_area_excavation_depth_room_any_chronology/rows",
+        "experiments/2026-10-02-six-hour/context-audit/main/results.json#/joint_availability/site_area_excavation_depth_room_any_chronology/families_any_face"
       ],
       "status": "Verified computation",
       "novelty": {
-        "judgment": "A useful description of selection and missingness in this particular export. BIAD Standards provide a close general precedent for archaeological data completeness and harmonization; a specific Indus export audit was not found in the bounded search.",
-        "precedent_search": "Checked, bounded",
+        "judgment": "Fuls's ICIT documentation already describes unavailable chronology and uneven excavation/site representation. The possible contribution is a pinned-export field-by-field audit and cohort-filter table. A targeted context-completeness query did not establish priority for this exact audit.",
+        "precedent_search": "On-subject search and official ICIT documentation opening completed; precise audit novelty unchecked",
         "sources": [
-          "SRC-04"
+          "SRC-29"
         ]
       },
       "missing_validation": "Expert review of field semantics, improved object identifiers and a second corpus version comparison; release requires source and licensing review.",
       "smallest_form": "Data quality note with a reusable missingness and cohort table",
       "venues": [
-        "Internet Archaeology",
-        "Journal of Open Archaeology Data if a reusable licensed dataset is deposited"
+        "Internet Archaeology: data paper, conditional on a reusable licensed dataset deposit",
+        "Journal of Open Archaeology Data: data paper, conditional on an openly archived dataset"
       ],
       "remaining_work": "One to two weeks for data dictionary, release review and independent reproduction.",
       "registry_ids": [
         "ROOT-01",
-        "READINESS-01",
-        "DATASET-LANDSCAPE-01"
+        "CONTEXT-01",
+        "READINESS-01"
       ],
       "venue_sources": [
         "SRC-02",
         "SRC-05"
-      ]
+      ],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [
+        "Families are provisional export groupings. Cohort filtering is tied to a particular length/direction/completeness benchmark; it does not count all context-rich archaeological objects."
+      ],
+      "related_candidates": [],
+      "venue_options_unverified": [],
+      "original_registry_statuses": {
+        "ROOT-01": "completed-source-audit",
+        "CONTEXT-01": "verified-availability-and-source-cohort-audit",
+        "READINESS-01": "completed-source-and-methods-audit"
+      },
+      "ranking_eligible": true,
+      "priority_position": 2
     },
     {
       "rank": 5,
@@ -231,7 +376,7 @@
       "title": "Uncertainty-preserving transcription index for the 1979 sign chart",
       "field": "Digital epigraphy; digital archaeology; historical sign catalogues",
       "audience": "Indus epigraphers, corpus editors, sign-chart users and digitization researchers",
-      "established": "The atlas indexes 687 source-linked cells. Independent numeric-label work includes a complete 175-cell reference for PDF20 columns 5-9 and a 337-cell reference for PDF21; comparison logged 22 initial disagreements, and post-comparison crop review retained 13 lower-code ambiguities. A separate fresh 20-cell spotcheck agreed jointly on 16/20, rank on 19/20, and code on 17/20. Two PDF20 lower codes and one upper rank were corrected from larger original crops; duplicate labels were retained rather than forced unique. These procedures audit printed numeric labels, not glyph identity or semantic accuracy.",
+      "established": "An AI-model annotation atlas links all 687 cells of the two-page Helsinki 1979 interim-edition chart to source crops. AI numeric references cover 175 cells on PDF20 and 337 on PDF21; a different AI agent read the other 175. The 22 initial disagreements concern 337 PDF21 labels. The consolidated atlas retains 16 lower-code ambiguities (14 PDF21, two PDF20). A fresh 20-cell PDF21 comparison gives 16 joint, 19 rank and 17 code agreements. These are model numeric-label comparisons, with no expert certification of digits or glyph identity.",
       "numbers": {
         "source_linked_cells": 687,
         "initial_cell_disagreements": 22,
@@ -242,15 +387,18 @@
         "pdf20_complete_reference_cells": 175,
         "pdf21_complete_reference_cells": 337,
         "initial_cross_reader_disagreements": 22,
-        "post_comparison_lower_code_ambiguities": 13,
+        "post_comparison_lower_code_ambiguities": 16,
         "fresh_spotcheck_joint_agreement": 16,
         "fresh_spotcheck_rank_agreement": 19,
         "fresh_spotcheck_code_agreement": 17,
-        "post_comparison_duplicate_audit_cells": 16
+        "post_comparison_duplicate_audit_cells": 16,
+        "ambiguous_cells_by_page": {
+          "PDF20": 2,
+          "PDF21": 14
+        }
       },
       "evidence": [
         "output/chart_atlas/index.html",
-        "research/chart_reference/README.md",
         "src/chart_reference.py",
         "src/chart_atlas.py",
         "output/evidence_manifest.json",
@@ -259,98 +407,84 @@
         "research/chart_reference/manual_numeric_reference.json",
         "research/literature/chart_complete/README.md",
         "research/literature/chart_label_audit/README.md",
-        "research/chart_reference/duplicate_labels/adjudication.json"
+        "output/chart_atlas/reference.json",
+        "research/corpus/primary/chart_complete/consolidated_atlas_audit.json",
+        "research/literature/chart_complete/duplicate_labels/adjudication.json"
       ],
       "evidence_fields": [
-        "cell source locator",
-        "candidate numeric readings",
-        "crop coordinates and source links",
-        "initial numeric disagreements by row/column",
-        "fresh 20-cell comparison joint/rank/code agreement",
-        "current candidate numeric readings",
-        "PDF20 and PDF21 occupied-cell counts",
-        "cross-reader disagreement and ambiguity status",
-        "original-crop numeric-label corrections",
-        "duplicate-label source adjudication"
+        "research/corpus/primary/chart_complete/consolidated_atlas_audit.json#/frame_cells",
+        "research/corpus/primary/chart_complete/consolidated_atlas_audit.json#/ambiguous_lower_code_cells",
+        "research/corpus/primary/chart_complete/consolidated_atlas_audit.json#/atlas_images_checked",
+        "research/chart_reference/fresh20_before_correction.json#/joint_agreement",
+        "research/chart_reference/fresh20_before_correction.json#/rank_agreement",
+        "research/chart_reference/fresh20_before_correction.json#/code_agreement"
       ],
       "status": "Verified computation",
       "novelty": {
-        "judgment": "The search found existing Indus sign charts and digitization work, but did not establish that this uncertainty-preserving linked index is unique. The resource's value is strongest as a citable derivative dataset after rights and expert review.",
-        "precedent_search": "Partly checked; no exhaustive chart search",
+        "judgment": "Existing sign lists and ICIT precede this atlas. This correction drops unrelated weights and journal-list sources. No subject search establishes novelty for a double-reading numeric-label audit; the publishable claim is a documented annotation resource.",
+        "precedent_search": "Exact chart-annotation precedent check not done; existing catalogue identified",
         "sources": [
-          "SRC-05",
-          "SRC-06"
+          "SRC-32",
+          "SRC-36"
         ]
       },
       "missing_validation": "Independent epigraphic adjudication of uncertain cells, additional fresh numeric checks, accessibility testing, and explicit redistribution permission for chart imagery and derived crops.",
-      "smallest_form": "Digital resource note or teaching resource",
+      "smallest_form": "Data paper describing deposited crop-linked numeric annotations and retained uncertainty",
       "venues": [
-        "Digital Scholarship in the Humanities",
-        "Journal of Open Archaeology Data after rights-cleared deposition"
+        "Internet Archaeology: data paper, conditional on a reusable licensed dataset deposit",
+        "Journal of Open Archaeology Data: data paper, conditional on an openly archived dataset"
       ],
       "remaining_work": "Two to four weeks for expert annotation, rights review and durable hosting.",
       "registry_ids": [
         "ROOT-15"
       ],
       "venue_sources": [
-        "SRC-15",
+        "SRC-02",
         "SRC-05"
-      ]
+      ],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [
+        "Numeric references and the Helsinki 1979 source edition have recorded CC BY 4.0 reuse bases; retain attribution and distinguish that licensed edition from unrelated photograph rights. The reference/adjudication source limits explicitly identify AI visual readers."
+      ],
+      "related_candidates": [],
+      "venue_options_unverified": [],
+      "original_registry_statuses": {
+        "ROOT-15": "completed-uncertainty-preserving-resource"
+      },
+      "ranking_eligible": true,
+      "priority_position": 1
     },
     {
       "id": "PUBLIC-INDEX-COVERAGE",
-      "title": "Museum, dataset, and excavation-publication coverage of Indus records",
+      "title": "Evidence-census package: held placeholder",
       "field": "Digital archaeology; museum documentation; research infrastructure",
       "audience": "Indus archaeologists, museum data teams, corpus builders, digital heritage researchers",
-      "established": "A bounded public-source census recorded 35 museum/institution rows and 15 dataset/archive entries, plus 87 site-name rows and four site-specific excavation-report titles across four sites. The sources do not support a complete global object denominator, and zero of 30 planned museum-to-corpus pairs met the explicit accession/excavation/CISI join rule. The result is a coverage map and a list of retrieval targets, not a completeness fraction.",
-      "numbers": {
-        "institution_rows": 35,
-        "dataset_archive_rows": 15,
-        "site_name_rows": 87,
-        "site_labels_in_lipi": 78,
-        "site_specific_report_titles": 4,
-        "validated_pairs": 0,
-        "planned_pairs": 30,
-        "global_coverage_fraction": null
-      },
+      "established": "Await the separate evidence-census package's completed outputs and review. No result from B1 or B2 is assessed here.",
+      "numbers": {},
       "evidence": [
-        "experiments/2026-10-06-evidence-census/collections-and-datasets/REPORT.md",
-        "experiments/2026-10-06-evidence-census/collections-and-datasets/README.md",
-        "experiments/2026-10-06-evidence-census/sites-and-publications/REPORT.md",
-        "experiments/2026-10-06-evidence-census/sites-and-publications/coverage-summary.json",
-        "experiments/2026-10-06-evidence-census/sites-and-publications/site-register.json",
-        "experiments/2026-10-06-evidence-census/collections-and-datasets/sources.json"
+        "experiments/2026-10-06-evidence-census/"
       ],
-      "evidence_fields": [
-        "institution and dataset/archive registers",
-        "site-name rows and local corpus counts",
-        "paired join outcome",
-        "coverage summary status and as_of date"
-      ],
-      "status": "Exploratory",
+      "evidence_fields": [],
+      "status": "Proposed",
       "novelty": {
-        "judgment": "The outputs organize dispersed public sources and show why a global coverage fraction cannot currently be calculated. The search located existing integrated Indus corpora and archaeological data-publication standards; novelty of the particular coverage map remains unchecked.",
-        "precedent_search": "Partly checked; close digital-collection audits not searched exhaustively",
-        "sources": [
-          "SRC-01",
-          "SRC-02",
-          "SRC-04",
-          "SRC-05"
-        ]
+        "judgment": "No judgment made.",
+        "precedent_search": "Not done; held placeholder",
+        "sources": []
       },
-      "missing_validation": "Widen institution coverage, establish stable source snapshots, inspect the unreviewed dataset payloads, and validate a representative accession-to-corpus join sample before proposing an integrated resource.",
-      "smallest_form": "Research data landscape note with a public source register",
-      "venues": [
-        "Internet Archaeology",
-        "Digital Scholarship in the Humanities"
-      ],
-      "remaining_work": "Several weeks for stronger source sampling and rights review; full register construction is a larger project.",
+      "missing_validation": "Completed package outputs and independent review are required.",
+      "smallest_form": "Pending completed package and review",
+      "venues": [],
+      "remaining_work": "Reassess only after the package is complete and reviewed.",
       "registry_ids": [],
       "rank": 6,
-      "venue_sources": [
-        "SRC-02",
-        "SRC-15"
-      ]
+      "venue_sources": [],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [],
+      "related_candidates": [],
+      "venue_options_unverified": [],
+      "ranking_eligible": false,
+      "original_registry_statuses": {},
+      "priority_position": null
     },
     {
       "rank": 7,
@@ -358,52 +492,71 @@
       "title": "Registration and face-layout frame for 22 Harappa tablets",
       "field": "Harappan archaeology; archaeological documentation; epigraphy",
       "audience": "Harappa excavators, Indus corpus editors, production and object-use researchers",
-      "established": "The frame restores excavation unit/item keys for all 22 copied tablets and records 66 displayed faces. Sixteen objects are assigned to a unit-8040 clump; the remaining six are nearby or scattered. Seven direct stroke counts are readable (five with three strokes and two with four); all three faces on specimens 8 and 16 show 3,4,3. These are descriptions of published drawings and captions.",
+      "established": "The source-linked frame has 22 tablets and 66 faces, with 16 tablets in the published unit-8040 clump. HARP-SHORT-01 extends the earlier seven-face/two-profile endpoint to 32 directly counted faces and five fully readable (C,A,D)=(3,4,3) profiles. In the derivative coding, 20 tablets share the same unordered set of three exact modules; among 231 pairs, 190 are identical, 40 differ in one module and one in two. Imported face order is serialization; physical prism order is not established.",
       "numbers": {
         "tablets": 22,
         "faces": 66,
         "unit_8040_clump": 16,
-        "direct_stroke_counts": 7,
-        "readable_3_4_3_profiles": 2
+        "direct_stroke_counts": 32,
+        "readable_3_4_3_profiles": 5,
+        "tablets_sharing_three_exact_modules": 20,
+        "all_pairs": 231,
+        "pairs_same_modules": 190,
+        "pairs_one_module_changed": 40,
+        "pairs_two_modules_changed": 1
       },
       "evidence": [
         "experiments/2026-10-02-six-hour/harappa-object-frame/README.md",
         "experiments/2026-10-02-six-hour/harappa-object-frame/annotated/results.json",
         "experiments/2026-10-02-six-hour/harappa-object-frame/figure4-caption-ledger.json",
-        "experiments/2026-10-02-six-hour/harappa-object-frame/figure4-native-reinspection.json"
+        "experiments/2026-10-02-six-hour/harappa-object-frame/figure4-native-reinspection.json",
+        "experiments/2026-10-02-connections-and-priority/harappa-short-records/main-v2/results.json",
+        "experiments/2026-10-02-connections-and-priority/harappa-short-records/REPORT.md"
       ],
       "evidence_fields": [
-        "registration-to-excavation-unit joins",
-        "66 face rows",
-        "native-raster stroke counts",
-        "published engraver group and deposition context"
+        "experiments/2026-10-02-connections-and-priority/harappa-short-records/main-v2/results.json#/native_source/directly_counted_faces",
+        "experiments/2026-10-02-connections-and-priority/harappa-short-records/main-v2/results.json#/native_source/complete_count_profile_objects",
+        "experiments/2026-10-02-connections-and-priority/harappa-short-records/main-v2/results.json#/exact_unordered_module_set_class_sizes/0",
+        "experiments/2026-10-02-connections-and-priority/harappa-short-records/main-v2/results.json#/pair_counts/all_object_pairs",
+        "experiments/2026-10-02-connections-and-priority/harappa-short-records/main-v2/results.json#/pair_counts/exact_same_modules",
+        "experiments/2026-10-02-connections-and-priority/harappa-short-records/main-v2/results.json#/pair_counts/exact_one_module_changed",
+        "experiments/2026-10-02-connections-and-priority/harappa-short-records/main-v2/results.json#/pair_counts/exact_two_modules_changed"
       ],
-      "status": "Verified computation",
+      "status": "Exploratory",
       "novelty": {
-        "judgment": "The object and production observations were published previously; the contribution is a source-to-catalogue join and machine-readable descriptive frame. General precedent search supports archaeological data publication, not a priority claim for the observations.",
-        "precedent_search": "Checked at field level; exact-frame novelty unchecked",
-        "sources": [
-          "SRC-01",
-          "SRC-02"
-        ]
+        "judgment": "Meadow and Kenoyer's published frame supplies the object, unit and production-group observations. The exact contribution is recoding and joining that frame; exact-frame priority and overlap with CISI 3.1's registration list remain unchecked.",
+        "precedent_search": "Principal source known; exact-frame novelty unchecked",
+        "sources": []
       },
       "missing_validation": "Independent coding from original objects or calibrated photographs, access to missing CISI plates and review of registration/context joins.",
       "smallest_form": "Short archaeological source-data note",
       "venues": [
-        "Internet Archaeology",
-        "Journal of Open Archaeology Data if image rights permit"
+        "Internet Archaeology: data paper, conditional on a reusable licensed dataset deposit",
+        "Journal of Open Archaeology Data: data paper, conditional on an openly archived dataset"
       ],
       "remaining_work": "One to three weeks depending on access to full plates and second-coder review.",
       "registry_ids": [
         "ARCH-01",
-        "ARCH-02",
         "ARCH-03",
         "HARP-SHORT-01"
       ],
       "venue_sources": [
         "SRC-02",
         "SRC-05"
-      ]
+      ],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [
+        "The newer counts and module comparisons come from an Exploratory source/corpus refinement. Direct counts are AI readings of the published drawings; fine allograph assignments remain derivative and need archaeological review."
+      ],
+      "related_candidates": [],
+      "venue_options_unverified": [],
+      "original_registry_statuses": {
+        "ARCH-01": "completed-source-audit",
+        "ARCH-03": "completed source-linked conditional representation audit",
+        "HARP-SHORT-01": "completed-source-linked-module-and-count-analysis"
+      },
+      "ranking_eligible": true,
+      "priority_position": 8
     },
     {
       "rank": 8,
@@ -411,7 +564,7 @@
       "title": "Lothal sealing recurrence, source counts, and physical-view frame",
       "field": "Harappan archaeology; sealings; archaeological science",
       "audience": "Lothal specialists, seal-impression researchers, experimental archaeologists",
-      "established": "The source table covers 93 objects and 133 impressions; 68 objects join the corpus, and 29 eligible objects carry nine complete strings. G01 occurs on 11 objects across seven listed physical categories. The authors' prose instead reports 130 impressions. Among four G02 upper-zone observations, visible-cut ranges are 2–4, 3–5, 3–5 and 2–3, whose intersection is three; whole-object totals are unavailable. L206 is the only resolved contact example and contradicts one angular board-edge prediction.",
+      "established": "The AI-transcribed 93-object source table sums to 133 impressions. The export joins 68 objects; 29 eligible objects form nine strings. G01 occurs on 11 objects across seven published physical categories. For four selected G02 zones, two AI readers' count envelopes are 2–4, 3–5, 3–5 and 2–3, whose arithmetic intersection is three. Two zones are upper margins, one is a lower-left side strip and one a right margin; comparable coverage and whole-object totals are not established. L206 is one resolved contact example viewed twice, among five pictured G01 objects.",
       "numbers": {
         "objects": 93,
         "table_impressions": 133,
@@ -420,52 +573,94 @@
         "G01_objects": 11,
         "G01_categories": 7,
         "G02_visible_zone_intersection": 3,
-        "resolved_contact_examples": 1
+        "resolved_contact_examples": 1,
+        "joined_objects": 68,
+        "G02_selected_zone_reader_envelopes": [
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            2,
+            3
+          ]
+        ]
       },
       "evidence": [
         "experiments/2026-10-02-six-hour/lothal-physical-use/README.md",
         "experiments/2026-10-02-connections-and-priority/lothal-contact/REPORT.md",
         "experiments/2026-10-02-source-recovery/physical-views/REPORT.md",
-        "experiments/2026-10-02-six-hour/lothal-physical-use/independent-review/main-refined/verification.json"
+        "experiments/2026-10-02-six-hour/lothal-physical-use/independent-review/main-refined/verification.json",
+        "experiments/2026-10-02-six-hour/lothal-physical-use/independent-review/main-refined/results.json",
+        "experiments/2026-10-02-connections-and-priority/lothal-contact/results.json"
       ],
       "evidence_fields": [
-        "Table 1 counts",
-        "object-to-string recurrence",
-        "L206 contact observation",
-        "G02 selected-zone cut ranges",
-        "source-view registrations"
+        "groups[0]",
+        "G02.reader_envelope_visible_zone_intervals",
+        "G02.zone_comparability_established",
+        "G02.whole_object_totals_observed",
+        "G01.board_edge_only_incompatible_objects",
+        "experiments/2026-10-02-six-hour/lothal-physical-use/independent-review/main-refined/results.json#/objects",
+        "experiments/2026-10-02-six-hour/lothal-physical-use/independent-review/main-refined/results.json#/source_impressions",
+        "experiments/2026-10-02-six-hour/lothal-physical-use/independent-review/main-refined/results.json#/joined_objects",
+        "experiments/2026-10-02-six-hour/lothal-physical-use/independent-review/main-refined/results.json#/principal_objects",
+        "experiments/2026-10-02-six-hour/lothal-physical-use/independent-review/main-refined/results.json#/distinct_complete_strings"
       ],
       "status": "Exploratory",
       "novelty": {
-        "judgment": "The bounded search confirms established experimental clay-impression studies and archaeological data papers, but did not locate this exact Lothal source frame. The physical-use interpretation remains preliminary.",
-        "precedent_search": "Checked, bounded",
+        "judgment": "Frenez and Tosi's 2005 source chapter and Frenez's 2005 thesis precede the frame. The possible contribution is machine-readable table recoding, count reconciliation and source-zone locators; the thesis ledger was not inspected here, so priority remains unchecked.",
+        "precedent_search": "On-subject search partly checked; chapter record and thesis CV opened",
         "sources": [
-          "SRC-02",
-          "SRC-07"
+          "SRC-27",
+          "SRC-28"
         ]
       },
       "missing_validation": "Calibrated full-object images and an independent blind coding of contact geometry; reconcile prose/table discrepancies with original logs.",
       "smallest_form": "Source frame and image-observation data note",
       "venues": [
-        "Internet Archaeology",
-        "Journal of Archaeological Science: Reports"
+        "Internet Archaeology: data paper, conditional on a reusable licensed dataset deposit",
+        "Journal of Open Archaeology Data: data paper, conditional on an openly archived dataset"
       ],
       "remaining_work": "Several weeks for measured images, coding reliability and reconciliation.",
       "registry_ids": [
+        "ARCH-02",
         "LOTHAL-TRACE-01",
         "HARP-LOTHAL-SOURCE-02"
       ],
       "venue_sources": [
         "SRC-02",
-        "SRC-22"
-      ]
+        "SRC-05"
+      ],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [
+        "Both table and image readers were AI models. The second table reader knew the first aggregates; source-zone intervals are reader envelopes, not confidence intervals. The same count discrepancy is summarized at rank 3."
+      ],
+      "related_candidates": [
+        "CATALOGUE-CROSSCHECKS"
+      ],
+      "venue_options_unverified": [],
+      "original_registry_statuses": {
+        "ARCH-02": "completed-source-and-coverage-audit",
+        "LOTHAL-TRACE-01": "completed-bounded-source-informed-image-study",
+        "HARP-LOTHAL-SOURCE-02": "completed-registered-view-and-archive-target-recovery"
+      },
+      "ranking_eligible": true,
+      "priority_position": 10
     },
     {
       "id": "KANMER-PENDANT-FRAME",
       "title": "Kanmer pendant source frame and handling experiment",
       "field": "Harappan archaeology; archaeological science; object conservation",
       "audience": "Kanmer excavation researchers, seal and sealing specialists, conservation and experimental archaeology teams",
-      "established": "The source frame covers eight related objects, including four clay pendants. Numbered reverse photographs are available for all four; three of four have restored registrations, dimensions/mass, individual trench/layer entries, and caption joins to scanner figures. The original three measure 32.5?34.1 mm long, 34.5?35.4 mm wide, 15.7?16.6 mm thick, and 15.0?15.7 g. No hole/wear measurement or direct laboratory date is available. A handling experiment is proposed, not run.",
+      "established": "The frame covers eight related objects, including four clay pendants. All four have numbered reverse photographs; three have registrations, dimensions/mass and individual trench/layer records. Those three measure 32.5–34.1 mm long, 34.5–35.4 mm wide, 15.7–16.6 mm thick and 15.0–15.7 g. No individual hole, axis or quantified-wear measurement or direct laboratory date is available; a shared 4.15 mm perforation diameter is reported. A handling experiment remains Proposed.",
       "numbers": {
         "objects_in_frame": 8,
         "clay_pendants": 4,
@@ -473,9 +668,10 @@
         "registered": 3,
         "with_dimensions_and_mass": 3,
         "with_trench_layer": 3,
-        "hole_or_wear_measurements": 0,
         "direct_lab_dates": 0,
-        "original_three_width_cv_pct": 1.15
+        "original_three_width_cv_pct": 1.15,
+        "individual_hole_axis_or_quantified_wear_measurements": 0,
+        "shared_reported_perforation_diameter_mm": 4.15
       },
       "evidence": [
         "experiments/2026-10-02-six-hour/kanmer-physical-use/README.md",
@@ -486,11 +682,9 @@
         "experiments/2026-10-02-six-hour/kanmer-physical-use/source-continuation-2026-10-02/results.json"
       ],
       "evidence_fields": [
-        "object ledger registration and measurements",
-        "reverse-image coverage",
-        "scanner-caption joins",
-        "hole/wear and laboratory-date availability",
-        "source continuation counts"
+        "experiments/2026-10-02-six-hour/kanmer-physical-use/main/results.json#/core_field_coverage",
+        "experiments/2026-10-02-six-hour/kanmer-physical-use/main/results.json#/nominal_core_dimensions_mm",
+        "experiments/2026-10-02-six-hour/kanmer-physical-use/main/results.json#/nominal_core_mass_g"
       ],
       "status": "Proposed",
       "novelty": {
@@ -501,22 +695,31 @@
           "SRC-19"
         ]
       },
-      "missing_validation": "Inspect the 2009 excavation article, final-volume object plates and CD-ROM; resolve all four registrations; make calibrated 3D measurements and run blind suspension/handling trials with replicated controls.",
+      "missing_validation": "Original object access, individual hole/axis/quantified wear measurements and a prospectively specified handling experiment. A shared perforation diameter alone does not supply object-specific wear.",
       "smallest_form": "Source-data note followed by a measured experimental-methods note",
-      "venues": [
-        "EXARC Journal",
-        "Journal of Archaeological Science: Reports"
-      ],
+      "venues": [],
       "remaining_work": "Several weeks and institutional source access; physical trials require lab time.",
       "registry_ids": [
         "KANMER-01",
         "KANMER-02"
       ],
       "rank": 9,
-      "venue_sources": [
-        "SRC-19",
-        "SRC-22"
-      ]
+      "venue_sources": [],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [
+        "A shared 4.15 mm perforation diameter is reported, although individual hole/axis/wear measurements are absent. The 1.15% width CV is a population CV over three objects. Proposed physical handling trials were not run."
+      ],
+      "related_candidates": [],
+      "venue_options_unverified": [
+        "EXARC Journal: physical experimental report; contributor page timed out, and its search snippet flags restrictions on AI-generated ideas."
+      ],
+      "original_registry_statuses": {
+        "KANMER-01": "source-frame-and-prospective-handling-test",
+        "KANMER-02": "completed-bounded-source-amendment"
+      },
+      "ranking_eligible": true,
+      "venue_fit_limit": "No presently verified standalone article-type fit. Develop the specified experiment, substantive research paper or appendix before selecting a venue.",
+      "priority_position": 19
     },
     {
       "rank": 10,
@@ -524,7 +727,7 @@
       "title": "Stroke and compound counts in the pinned Tamil Nadu graffiti catalogue",
       "field": "South Indian archaeology; epigraphy; catalogue data quality",
       "audience": "Tamil Nadu archaeologists, graffiti and early writing specialists, catalogue maintainers",
-      "established": "The pinned catalogue snapshot has 480 plain-stroke occurrences and 194 explicit stroke compounds; 142 compounds have one stroke block plus one other component. A print/web check found four literal route-key differences and a six-versus-five component mismatch for 4.19C, specimen SGI(PPT)-G-0137. Aggregate API margins do not identify joint specimen rows or vessel quantities.",
+      "established": "The post-outcome stroke-membership refinement counts 480 plain-stroke occurrences, 194 compound forms and 142 simple stroke-plus-one-component forms. The first endpoint used 115 forms. Four identifier-cell differences compare site and family web routes (9,349 and 9,345 occurrences), with whitespace or a dot in the keys. A separate purposive print check finds six components for 4.19C versus five in the deployed web array.",
       "numbers": {
         "plain_stroke_occurrences": 480,
         "explicit_stroke_compounds": 194,
@@ -541,25 +744,25 @@
         "experiments/2026-10-02-source-recovery/south-india/REPORT.md"
       ],
       "evidence_fields": [
-        "plain stroke occurrence distribution",
-        "compound membership counts",
-        "route keys",
-        "printed concordance versus web component array"
+        "cross_route_cells_differing",
+        "site_route_occurrence_total",
+        "family_route_occurrence_total",
+        "printed_source_checks[2]",
+        "stroke-membership-v2/results.json: count summaries"
       ],
       "status": "Exploratory",
       "novelty": {
-        "judgment": "The search confirms broad catalogue and graffiti scholarship but did not locate this pinned-snapshot occurrence census. A publication would describe catalogue structure, not prove a numerical function or historical link to Indus signs.",
-        "precedent_search": "Partly checked",
+        "judgment": "The official portal and 2025 morphology book already catalogue Tamil Nadu graffiti. This is a pinned-implementation audit and post-outcome population refinement, with no completed check for prior publication of the exact discrepancy.",
+        "precedent_search": "Partly checked; subject sources located",
         "sources": [
-          "SRC-01",
-          "SRC-02"
+          "SRC-30"
         ]
       },
       "missing_validation": "Join aggregate records to registered specimen images, verify printed components against primary plates, and document portal versioning and reuse rights.",
       "smallest_form": "Catalogue data note with a specimen-level correction appendix",
       "venues": [
-        "Journal of Open Archaeology Data",
-        "Internet Archaeology"
+        "Internet Archaeology: data paper, conditional on a reusable licensed dataset deposit",
+        "Journal of Open Archaeology Data: data paper, conditional on an openly archived dataset"
       ],
       "remaining_work": "Two to four weeks for specimen joins, version pinning and rights review.",
       "registry_ids": [
@@ -567,9 +770,23 @@
         "TN-SOURCE-02"
       ],
       "venue_sources": [
-        "SRC-05",
-        "SRC-02"
-      ]
+        "SRC-02",
+        "SRC-05"
+      ],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [
+        "194 and 142 count forms; 480 counts occurrences. Membership v2 was defined after inspecting the first endpoint. The print difference may reflect edition or representation; source-owner review is missing."
+      ],
+      "related_candidates": [
+        "CATALOGUE-CROSSCHECKS"
+      ],
+      "venue_options_unverified": [],
+      "original_registry_statuses": {
+        "TN-STROKE-01": "completed-pinned-snapshot-and-printed-source-comparison",
+        "TN-SOURCE-02": "completed-original-numerical-source-and-specimen-audit"
+      },
+      "ranking_eligible": true,
+      "priority_position": 12
     },
     {
       "rank": 11,
@@ -591,33 +808,42 @@
         "experiments/2026-10-02-source-recovery/oxus/RETROSPECTIVE.md"
       ],
       "evidence_fields": [
-        "Sarianidi 1998 Fig. 41 panel counts",
-        "Kircho et al. 2008 Plate 94.2 object views and caption",
-        "Gonur 2005 Fig. 114 context"
+        "experiments/2026-10-02-source-recovery/oxus/results-v2.json#/checks",
+        "experiments/2026-10-02-source-recovery/oxus/observations.json: saved AI panel readings"
       ],
       "status": "Verified computation",
       "novelty": {
-        "judgment": "The contribution is recovering and separating original source claims and illustration counts; the underlying archaeology is prior. Search did not find a prior published reconciliation of the 26/23 discrepancy, but its cause is unknown.",
-        "precedent_search": "Partly checked",
+        "judgment": "Bonora et al. 2014 is earlier regional token scholarship; object-level catalogue recovery is the practical contribution. Exact figure/hoard discrepancy priority remains unchecked.",
+        "precedent_search": "Partly checked; regional article record opened",
         "sources": [
-          "SRC-01",
-          "SRC-03"
+          "SRC-31"
         ]
       },
       "missing_validation": "Field inventory, individual token identities, original object photography, and archaeological review of the tentative impression classification.",
-      "smallest_form": "Source note or illustrated catalogue correction request",
-      "venues": [
-        "Iran (journal of the British Institute of Persian Studies)",
-        "Internet Archaeology"
-      ],
+      "smallest_form": "Illustrated source appendix or catalogue-owner query; data paper only after a reusable source-locator dataset is deposited",
+      "venues": [],
       "remaining_work": "Several days for a note; token-level dataset work depends on archive access.",
       "registry_ids": [
         "OXUS-SOURCE-02"
       ],
-      "venue_sources": [
-        "SRC-23",
-        "SRC-02"
-      ]
+      "venue_sources": [],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [
+        "23 and 23 are AI readings of two panels in one publication. Figure selection is unspecified; they do not establish that the reported 26-object assemblage contains only 23 tokens."
+      ],
+      "related_candidates": [
+        "CATALOGUE-CROSSCHECKS",
+        "MARKED-WEIGHT-CENSUS"
+      ],
+      "venue_options_unverified": [],
+      "original_registry_statuses": {
+        "OXUS-SOURCE-02": "completed-original-figure-and-context-audit"
+      },
+      "ranking_eligible": true,
+      "related_registry_ids": [
+        "REGIONNUM-01"
+      ],
+      "priority_position": 13
     },
     {
       "rank": 12,
@@ -625,45 +851,72 @@
       "title": "Mass-to-mark variation in Susa weights and a Greater Indus catalogue audit",
       "field": "Metrology; Near Eastern archaeology; archaeological data science",
       "audience": "Weight and exchange-system specialists, Dholavira researchers",
-      "established": "In a bounded Susa catalogue census, six displayed groups range from 1.921% to 99.773% minimum symmetric variation in mass per mark, with strong differences by shape/material/graphic family. The Greater Indus audit covered all 938 records, including 870 Dholavira objects, and found no explicit mark-related description terms; selected compressed Dholavira plates did not show a readable glyph joined to a mass.",
+      "established": "The exploratory census has 69 coded Susa entries and 57 ratios; the catalogue audit also covers 938 Greater Indus entries, including 870 Dholavira records. The 1.921% symmetric variation duck group uses Sb 9340 at 3,067 g and six strokes, whose older mass/mark assertions conflict. The published 25:1:2 reconstruction for three other Susa objects requires 0.944619% minimum symmetric relative variation or 1.871560% loss-only tolerance. At the proposed coefficients, 25*(27.25/2)=340.625 g, against the recorded 334.25 g. The readable Girsu controls imply 8.253 and 8.310 g. These are conditional reconstructions of published proposals; creation dates and independent unit anchors remain absent.",
       "numbers": {
         "susa_coded_entries": 69,
         "susa_ratio_measurements": 57,
         "greater_indus_records": 938,
         "dholavira_records": 870,
         "duck_stroke_group_variation_pct": 1.921,
-        "widest_group_variation_pct": 99.773
+        "widest_group_variation_pct": 99.773,
+        "susa_25_1_2_minimum_symmetric_relative_tolerance": 0.009446193739581403,
+        "susa_25_1_2_minimum_loss_only_relative_tolerance": 0.01871559633027523,
+        "mass_from_25_half_units_g": 340.625,
+        "girsu_implied_unit_1_g": 8.253,
+        "girsu_implied_unit_2_g": 8.31
       },
       "evidence": [
         "experiments/2026-10-02-connections-and-priority/regional-west/REPORT.md",
         "experiments/2026-10-02-connections-and-priority/regional-west/marked-weight-census-v2.json",
         "experiments/2026-10-02-connections-and-priority/regional-west/indus-weight-audit.json",
-        "experiments/2026-10-02-connections-and-priority/regional-west/validation.json"
+        "experiments/2026-10-02-connections-and-priority/regional-west/validation.json",
+        "experiments/2026-10-02-connections-and-priority/regional-west/numerical-compatibility.json"
       ],
       "evidence_fields": [
-        "object counts and ratios",
-        "group variation fields",
-        "complete catalogue ID coverage",
-        "search terms and selected plate review"
+        "experiments/2026-10-02-connections-and-priority/regional-west/numerical-compatibility.json#/susa_quarter_mina_hypothesis/minimum_symmetric_relative_tolerance/decimal",
+        "experiments/2026-10-02-connections-and-priority/regional-west/numerical-compatibility.json#/susa_quarter_mina_hypothesis/minimum_loss_only_relative_tolerance/decimal",
+        "experiments/2026-10-02-connections-and-priority/regional-west/numerical-compatibility.json#/sb13677_expected_mass_from_sb17774_g/decimal",
+        "experiments/2026-10-02-connections-and-priority/regional-west/numerical-compatibility.json#/girsu_readable_shekel_control/objects/0/implied_unit_g/decimal",
+        "experiments/2026-10-02-connections-and-priority/regional-west/numerical-compatibility.json#/girsu_readable_shekel_control/objects/1/implied_unit_g/decimal"
       ],
       "status": "Exploratory",
       "novelty": {
-        "judgment": "The exact bounded census appears useful; direct precedent search for this groupwise mass-per-mark variation analysis remains unchecked. Related metrology sources and prior source catalogue work exist.",
-        "precedent_search": "Unchecked for close metrology precedents",
+        "judgment": "Soutzo 1911 already reads duck marks as weight multiples, and Ascalone/Peyronel 1999 treats Susa, Gulf and Indus weight systems. General mass-per-mark novelty is therefore unavailable. The exact 1911/2022 source conflict remains a candidate correction requiring museum concordance; the 1999 article was found in metadata only.",
+        "precedent_search": "On-subject search completed; primary 1911 local text inspected and 1999 metadata found, full 1999 article unavailable",
         "sources": [
-          "SRC-06"
+          "SRC-25",
+          "SRC-26"
         ]
       },
       "missing_validation": "Dated assemblages, high-resolution mark images, independent catalogue coding, and physical/museum confirmation of masses and condition.",
       "smallest_form": "Metrology data note with explicit null and date limits",
       "venues": [
-        "Journal of Archaeological Science: Reports",
-        "Iran"
+        "Iran: shorter notice concerning Susa; separate Greater Indus material would need another venue"
       ],
       "remaining_work": "Weeks to obtain specialist review and context/date fields.",
       "venue_sources": [
-        "SRC-22",
         "SRC-23"
+      ],
+      "registry_ids": [
+        "REGIONNUM-01"
+      ],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [
+        "The census groups were designed after seeing the catalogue masses. Its source report suggests a shared large unit for the ducks and other unit levels for broader groups; it does not conclude that all Susa groups use a single unit or reject every such interpretation.",
+        "The tight duck group depends on a disputed source assertion; source conflict rank 2 must be resolved before treating its coefficient of variation as physical standardization evidence. The 25:1:2 coefficients are attributed historical hypotheses."
+      ],
+      "related_candidates": [
+        "SUSA-SOURCE-CENSUS",
+        "GONUR-ALTYN-RECOVERY"
+      ],
+      "venue_options_unverified": [],
+      "original_registry_statuses": {
+        "REGIONNUM-01": "completed-source-linked-census-and-compatibility-analysis"
+      },
+      "ranking_eligible": true,
+      "priority_position": 11,
+      "primary_sources": [
+        "SRC-06"
       ]
     },
     {
@@ -672,21 +925,46 @@
       "title": "Forward simulation of a flat stamp contacting curved clay",
       "field": "Experimental archaeology; contact mechanics; archaeological science",
       "audience": "Seal-impression analysts and experimental archaeologists",
-      "established": "The recorded simulation predicts which parts of a flat engraved face contact a curved substrate under declared geometry and pressure assumptions. It supplies a prospective laboratory design; no physical experiment has yet tested the predictions. The related Lothal image study resolves only one contact example.",
+      "established": "A displacement-controlled geometric visibility model calculates which invented line graphics survive flat-stamp contact with curved clay; it predicts no force or pressure. The reviewed exact-stroke-length endpoint has 4,320 primary configurations, with 8,748 original nuisance configurations. In the eight-slot frame, endpoint total variation is zero for centred or balanced intact pools and balanced break sides. Positive tilt gives 0.0289415 at one surviving graphic and 0.0308466 at three; balanced tilt with the left quarter removed gives 0.0098707 and 0.00748721. Effect sizes apply to the declared grid and weighting; no physical trial has been completed.",
       "numbers": {
         "resolved_lothal_contact_examples": 1,
-        "physical_trials_completed": 0
+        "physical_trials_completed": 0,
+        "primary_configurations": 4320,
+        "nuisance_configurations": 8748,
+        "eight_slot_min_1_centred_no_damage_endpoint_tv": 0.0,
+        "eight_slot_min_1_balanced_tilt_no_damage_endpoint_tv": 0.0,
+        "eight_slot_min_1_positive_tilt_no_damage_endpoint_tv": 0.028941486618144288,
+        "eight_slot_min_1_balanced_tilt_left_break_endpoint_tv": 0.00987070467316177,
+        "eight_slot_min_1_balanced_tilt_both_break_sides_endpoint_tv": 0.0,
+        "eight_slot_min_3_centred_no_damage_endpoint_tv": 0.0,
+        "eight_slot_min_3_balanced_tilt_no_damage_endpoint_tv": 0.0,
+        "eight_slot_min_3_positive_tilt_no_damage_endpoint_tv": 0.030846578008433337,
+        "eight_slot_min_3_balanced_tilt_left_break_endpoint_tv": 0.0074872091862601825,
+        "eight_slot_min_3_balanced_tilt_both_break_sides_endpoint_tv": 0.0
       },
       "evidence": [
         "experiments/2026-10-02-six-hour/stamp-geometry/README.md",
         "experiments/2026-10-02-six-hour/stamp-geometry/RETROSPECTIVE.md",
         "knowledge/directions/archaeology-and-iconography.md",
-        "experiments/2026-10-02-connections-and-priority/lothal-contact/REPORT.md"
+        "experiments/2026-10-02-connections-and-priority/lothal-contact/REPORT.md",
+        "experiments/2026-10-02-six-hour/stamp-geometry/METHODS.md",
+        "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json",
+        "experiments/2026-10-02-six-hour/stamp-geometry/analytic-refinement/results.json",
+        "experiments/2026-10-02-six-hour/stamp-geometry/main/results.json"
       ],
       "evidence_fields": [
-        "geometry and pressure assumptions",
-        "predicted contact regions",
-        "laboratory protocol and measured outputs"
+        "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json#/primary_configurations",
+        "experiments/2026-10-02-six-hour/stamp-geometry/main/results.json#/nuisance_configurations",
+        "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json#/minimum_visible_graphics_pools/1/8/centred_no_damage/left_right_endpoint_tv",
+        "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json#/minimum_visible_graphics_pools/1/8/balanced_tilt_no_damage/left_right_endpoint_tv",
+        "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json#/minimum_visible_graphics_pools/1/8/positive_tilt_no_damage/left_right_endpoint_tv",
+        "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json#/minimum_visible_graphics_pools/1/8/balanced_tilt_left_break/left_right_endpoint_tv",
+        "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json#/minimum_visible_graphics_pools/1/8/balanced_tilt_both_break_sides/left_right_endpoint_tv",
+        "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json#/minimum_visible_graphics_pools/3/8/centred_no_damage/left_right_endpoint_tv",
+        "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json#/minimum_visible_graphics_pools/3/8/balanced_tilt_no_damage/left_right_endpoint_tv",
+        "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json#/minimum_visible_graphics_pools/3/8/positive_tilt_no_damage/left_right_endpoint_tv",
+        "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json#/minimum_visible_graphics_pools/3/8/balanced_tilt_left_break/left_right_endpoint_tv",
+        "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json#/minimum_visible_graphics_pools/3/8/balanced_tilt_both_break_sides/left_right_endpoint_tv"
       ],
       "status": "Synthetic",
       "novelty": {
@@ -699,18 +977,26 @@
       },
       "missing_validation": "Run the proposed trials with measured stamp curvature, substrate geometry, pressure and replicate impressions; compare predicted and observed footprints blind.",
       "smallest_form": "Experimental methods note after physical validation; currently a teaching simulation",
-      "venues": [
-        "EXARC Journal",
-        "Journal of Archaeological Science: Reports"
-      ],
+      "venues": [],
       "remaining_work": "Two to six weeks depending on lab access and trial count.",
       "registry_ids": [
         "GEOM-01"
       ],
-      "venue_sources": [
-        "SRC-19",
-        "SRC-22"
-      ]
+      "venue_sources": [],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [
+        "All graphics are invented. Exact segment integration is a separate refinement of the preserved sampled endpoint, not a physical validation. Survival and endpoint probabilities depend on the declared geometry and pool weights."
+      ],
+      "related_candidates": [],
+      "venue_options_unverified": [
+        "EXARC Journal: physical experimental report; contributor page timed out, and its search snippet flags restrictions on AI-generated ideas."
+      ],
+      "original_registry_statuses": {
+        "GEOM-01": "verified-synthetic-forward-model"
+      },
+      "ranking_eligible": true,
+      "venue_fit_limit": "No presently verified standalone article-type fit. Develop the specified experiment, substantive research paper or appendix before selecting a venue.",
+      "priority_position": 15
     },
     {
       "rank": 14,
@@ -736,35 +1022,44 @@
         "experiments/2026-10-02-six-hour/khipu-control/RETROSPECTIVE.md"
       ],
       "evidence_fields": [
-        "published coordinate alignment",
-        "20 quantity columns",
-        "shuffle and shift controls",
-        "verification"
+        "experiments/2026-10-02-six-hour/khipu-control/source-aggregate.json#/published_alignment_scores",
+        "experiments/2026-10-02-six-hour/khipu-control/source-aggregate.json#/column_denominator",
+        "experiments/2026-10-02-six-hour/khipu-control/source-aggregate.json#/methods",
+        "experiments/2026-10-02-six-hour/khipu-control/REPORT.md: numerical replication table"
       ],
       "status": "Verified computation",
       "novelty": {
-        "judgment": "Khipu computational work is an active area; the bounded search located a 2026 structural-pattern preprint but did not check the specific published UR068/UR067 source history. Exact replication priority is unchecked.",
-        "precedent_search": "Partly checked",
+        "judgment": "The Khipu Field Guide already replicates Puruchuco, and Urton/Brezine published its account hierarchy. The contribution is a documented rerun with grouping controls, not a first account match.",
+        "precedent_search": "Direct replication sources identified; notebook and publication metadata located",
         "sources": [
-          "SRC-09"
+          "SRC-33",
+          "SRC-34"
         ]
       },
       "missing_validation": "Khipu specialist confirmation of knot/cord coordinates and source transcription, along with a clear comparison to the original account's stated reconstruction procedure.",
-      "smallest_form": "Replication note or teaching example in computational archaeology",
-      "venues": [
-        "Journal of Archaeological Science: Reports",
-        "Digital Scholarship in the Humanities"
-      ],
+      "smallest_form": "Replication appendix to a completed Andean research paper; no standalone teaching-note venue verified",
+      "venues": [],
       "remaining_work": "One to three weeks for source-coordinate audit and specialist review.",
       "registry_ids": [
         "KHI-01",
         "KHI-02",
         "KHI-03"
       ],
-      "venue_sources": [
-        "SRC-22",
-        "SRC-15"
-      ]
+      "venue_sources": [],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [
+        "The analyst had seen the published targets before the protocol. This replicates the Khipu Field Guide's Puruchuco notebook; it is source-informed reproduction. Santa Valley research in SRC-09 concerns another khipu set."
+      ],
+      "related_candidates": [],
+      "venue_options_unverified": [],
+      "original_registry_statuses": {
+        "KHI-01": "completed published-source replication and synthetic controls; independently checked",
+        "KHI-02": "completed source-controlled interval study; independently checked",
+        "KHI-03": "completed-synthetic-independent-checks"
+      },
+      "ranking_eligible": true,
+      "venue_fit_limit": "No presently verified standalone article-type fit. Develop the specified experiment, substantive research paper or appendix before selecting a venue.",
+      "priority_position": 16
     },
     {
       "rank": 15,
@@ -772,7 +1067,7 @@
       "title": "Complete pooled inventories as constraints on noisy local membership",
       "field": "Computational archaeology; accounting history; conservation and error control",
       "audience": "Researchers modeling distributed records, noisy inventories and archaeological accounting systems",
-      "established": "In 200 generated four-swap worlds, a 50% local support gate recovered 133 correct, 9 wrong and 58 ambiguous decoders. Adding a separately observed complete-pool conservation equation yielded 190 correct, 1 wrong and 9 ambiguous. The one remaining wrong answer passed the pooled equation but failed three independent count checks. This is a synthetic method demonstration.",
+      "established": "In 200 synthetic four-swap worlds, the secondary 50% support gate changes correct/wrong/ambiguous outcomes from local 133/9/58 to complete-pool 190/1/9. At the primary 75% gate, outcomes are 1/2/0/197 rejected locally and 1/0/0/199 rejected with the pool. Three independent count checks reject the remaining wrong 50%-gate ray; pooled completeness and those counts are declared observation inputs.",
       "numbers": {
         "worlds": 200,
         "local_correct": 133,
@@ -781,18 +1076,35 @@
         "pooled_correct": 190,
         "pooled_wrong": 1,
         "pooled_ambiguous": 9,
-        "independent_count_checks_reject_remaining_wrong": 3
+        "independent_count_checks_reject_remaining_wrong": 3,
+        "headline_gate_pct": 50,
+        "primary_gate_pct": 75,
+        "primary_75_local_correct_wrong_ambiguous_rejected": [
+          1,
+          2,
+          0,
+          197
+        ],
+        "primary_75_pooled_correct_wrong_ambiguous_rejected": [
+          1,
+          0,
+          0,
+          199
+        ]
       },
       "evidence": [
         "experiments/2026-10-02-six-hour/khipu-control/conservation-check/REPORT.md",
         "experiments/2026-10-02-six-hour/khipu-control/conservation-check/main-v1/aggregate.json",
         "experiments/2026-10-02-six-hour/khipu-control/conservation-check/verification-v2/verification.json",
-        "experiments/2026-10-02-six-hour/khipu-control/conservation-check/RETROSPECTIVE.md"
+        "experiments/2026-10-02-six-hour/khipu-control/conservation-check/RETROSPECTIVE.md",
+        "experiments/2026-10-02-six-hour/khipu-control/conservation-check/main-v1/selected-case-arithmetic.json"
       ],
       "evidence_fields": [
-        "50 percent support threshold",
-        "four-swap world outcomes",
-        "pooled conservation and count-check conditions"
+        "experiments/2026-10-02-six-hour/khipu-control/conservation-check/main-v1/aggregate.json#/rows/71",
+        "experiments/2026-10-02-six-hour/khipu-control/conservation-check/main-v1/aggregate.json#/rows/79",
+        "experiments/2026-10-02-six-hour/khipu-control/conservation-check/main-v1/aggregate.json#/rows/87",
+        "experiments/2026-10-02-six-hour/khipu-control/conservation-check/main-v1/aggregate.json#/rows/95",
+        "experiments/2026-10-02-six-hour/khipu-control/conservation-check/main-v1/selected-case-arithmetic.json#/checks"
       ],
       "status": "Synthetic",
       "novelty": {
@@ -804,18 +1116,26 @@
       },
       "missing_validation": "Test on a source-defined real khipu or other inventory corpus with independent conservation totals and documented local membership error.",
       "smallest_form": "Methods note or classroom benchmark",
-      "venues": [
-        "Digital Scholarship in the Humanities",
-        "Journal of Archaeological Science: Reports"
-      ],
+      "venues": [],
       "remaining_work": "Several weeks for source application and external methods review.",
       "registry_ids": [
         "KHI-04"
       ],
-      "venue_sources": [
-        "SRC-15",
-        "SRC-22"
-      ]
+      "venue_sources": [],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [
+        "The 133/9/58 to 190/1/9 gain in 200 four-swap worlds is at the secondary 50% support gate. At the primary 75% gate, local correct/wrong/ambiguous/rejected outcomes are 1/2/0/197 and pooled outcomes 1/0/0/199. Every world is generated; independently measured completeness is an assumption."
+      ],
+      "related_candidates": [
+        "IDENTIFIABILITY-AND-OBSERVATION-DESIGN"
+      ],
+      "venue_options_unverified": [],
+      "original_registry_statuses": {
+        "KHI-04": "completed-synthetic-control-and-independent-audit"
+      },
+      "ranking_eligible": true,
+      "venue_fit_limit": "No presently verified standalone article-type fit. Develop the specified experiment, substantive research paper or appendix before selecting a venue.",
+      "priority_position": 21
     },
     {
       "rank": 16,
@@ -842,15 +1162,18 @@
         "experiments/2026-10-02-six-hour/null-calibration/shared-quality/README.md",
         "experiments/2026-10-02-six-hour/null-calibration/shared-quality/agreement-diagnostic/README.md",
         "experiments/2026-10-02-six-hour/null-calibration/shared-quality/agreement-diagnostic/verification.json",
-        "papers/002-conditional-reference-laws/manuscript.md"
+        "papers/002-conditional-reference-laws/manuscript.md",
+        "experiments/2026-10-02-six-hour/null-calibration/main/results.json",
+        "experiments/2026-10-02-six-hour/null-calibration/noisy-faces/main/results.json",
+        "experiments/2026-10-02-six-hour/null-calibration/shared-quality/agreement-diagnostic/main/results.json"
       ],
       "evidence_fields": [
-        "nominal rejection rates",
-        "copy and imperfect-face conditions",
-        "exact conditional tails",
-        "independent replay counts"
+        "experiments/2026-10-02-six-hour/null-calibration/main/results.json#/aggregate",
+        "experiments/2026-10-02-six-hour/null-calibration/noisy-faces/main/results.json#/aggregate",
+        "experiments/2026-10-02-six-hour/null-calibration/shared-quality/agreement-diagnostic/main/results.json#/aggregate",
+        "experiments/2026-10-02-six-hour/null-calibration/shared-quality/agreement-diagnostic/main/results.json#/exact_aggregate"
       ],
-      "status": "Verified computation",
+      "status": "Synthetic",
       "novelty": {
         "judgment": "Blockwise permutation methods preserving exchangeability are established (Zhou et al. 2014). The project result is a scenario-specific calibration stress test across copied records and shared recording quality; its broader contribution remains unchecked beyond this bounded search.",
         "precedent_search": "Partly checked",
@@ -861,14 +1184,38 @@
       "missing_validation": "Reimplement independently outside the project, compare to established cluster permutation procedures and define which realistic acquisition mechanisms the synthetic cases represent.",
       "smallest_form": "Focused statistical methods note with executable examples",
       "venues": [
-        "Journal of Statistical Software if a general-purpose software contribution is isolated",
-        "Journal of Computational and Graphical Statistics"
+        "Journal of Statistical Software: software article, conditional on a reusable GPL-compatible package and article"
       ],
       "remaining_work": "Two to four weeks for external implementation, literature comparison and a compact software package.",
       "venue_sources": [
-        "SRC-20",
-        "SRC-21"
-      ]
+        "SRC-20"
+      ],
+      "registry_ids": [
+        "NULL-02",
+        "NULL-05",
+        "NULL-07",
+        "NULL-08",
+        "NULL-10",
+        "NULL-11"
+      ],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [
+        "All calibration corpora are synthetic. The 94.2%/1.0% agreement statistic is post-outcome development; the original nested statistic remains 4%/3%. Saved replay verification establishes computation under those specified models."
+      ],
+      "related_candidates": [],
+      "venue_options_unverified": [
+        "Journal of Computational and Graphical Statistics: relevant methods scope, but publisher page not opened in this revision."
+      ],
+      "original_registry_statuses": {
+        "NULL-02": "completed-exact-independent-audit",
+        "NULL-05": "completed-main-and-independent-audit",
+        "NULL-07": "completed-known-channel-recovery-audit",
+        "NULL-08": "completed-main-and-independent-audit",
+        "NULL-10": "completed-fresh-main-and-independent-audit",
+        "NULL-11": "completed-fresh-diagnostic-and-independent-audit"
+      },
+      "ranking_eligible": true,
+      "priority_position": 17
     },
     {
       "rank": 17,
@@ -876,7 +1223,7 @@
       "title": "Exact finite sampling laws for uniqueness, deduplication, and unequal copies",
       "field": "Mathematical statistics; resampling methods; computational linguistics",
       "audience": "Researchers designing reference distributions after uniqueness filtering or duplicate collapse",
-      "established": "The project enumerates a uniform 2,880-table subset induced by direct uniqueness conditioning from an 8,000-table binary space and demonstrates that deduplicating seven raw draws into six retained strings yields nonuniform support weights. A continuation-count sampler preserves latent and expanded margins for unequal multiplicities.",
+      "established": "The saved finite examples enumerate 8,000 balanced binary tables and 2,880 uniqueness-conditioned tables. A deduplication example starts with seven draws and retains six unique balanced strings with unequal selected-law support masses. Integer continuation counting supplies an exact law under unequal copy constraints; prospective applicability depends on a justified acquisition process.",
       "numbers": {
         "binary_tables": 8000,
         "unique_conditioned_tables": 2880,
@@ -890,29 +1237,47 @@
         "papers/002-conditional-reference-laws/methods.md"
       ],
       "evidence_fields": [
-        "finite table support",
-        "support weights after deduplication",
-        "sampler margins and verification"
+        "experiments/2026-10-02-six-hour/null-calibration/unequal-copy-counts/results.json#/legal_columns",
+        "experiments/2026-10-02-six-hour/null-calibration/unequal-copy-counts/results.json#/both_margin_three_column_tables",
+        "experiments/2026-10-02-six-hour/null-calibration/dedup-selection/results.json#/raw_draws",
+        "experiments/2026-10-02-six-hour/null-calibration/dedup-selection/results.json#/retained_distinct_strings",
+        "experiments/2026-10-02-six-hour/null-calibration/dedup-selection/results.json#/supports"
       ],
       "status": "Verified computation",
       "novelty": {
-        "judgment": "Exact sampling and conditional randomization have substantial prior literature. The small examples may teach consequences of filtering; the search did not establish a novel general theorem.",
-        "precedent_search": "Partly checked",
-        "sources": [
-          "SRC-10"
-        ]
+        "judgment": "No close finite-law literature comparison was completed. The cited Indus n-gram paper is removed; exact examples are ready as a methods appendix or software documentation, with standalone novelty unchecked.",
+        "precedent_search": "Not done for exact sampling-law precedents",
+        "sources": []
       },
       "missing_validation": "Place results against established exact conditional inference literature and obtain independent proof/code review; avoid a novelty claim unless a theorem or new algorithm is isolated.",
       "smallest_form": "Teaching example or methods appendix",
       "venues": [
-        "Journal of Statistical Software if a reusable package is developed",
-        "teaching example in Digital Scholarship in the Humanities"
+        "Journal of Statistical Software: software article, conditional on a reusable GPL-compatible package and article"
       ],
       "remaining_work": "One to two weeks for proof-focused packaging and external methods review.",
       "venue_sources": [
-        "SRC-20",
-        "SRC-15"
-      ]
+        "SRC-20"
+      ],
+      "registry_ids": [
+        "NULL-01",
+        "NULL-03",
+        "NULL-04",
+        "NULL-06",
+        "NULL-09"
+      ],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [],
+      "related_candidates": [],
+      "venue_options_unverified": [],
+      "original_registry_statuses": {
+        "NULL-01": "completed-exact-independent-audit",
+        "NULL-03": "completed-exact-sampler-audit",
+        "NULL-04": "completed-exact-reweighting-audit",
+        "NULL-06": "completed-witness-and-exact-extension-audit",
+        "NULL-09": "completed-proof-and-allocation-audit"
+      },
+      "ranking_eligible": true,
+      "priority_position": 18
     },
     {
       "rank": 18,
@@ -920,7 +1285,7 @@
       "title": "What counts distinguish ratios, scale, and wrong local assignments",
       "field": "Metrology; inverse problems; mathematical archaeology",
       "audience": "Researchers planning physical measurements for numerical systems",
-      "established": "The saved generated-world studies separate relative-value recovery from absolute scale. In 200 four-swap worlds, a complete pooled inventory raises correct recovery from 133 to 190 and reduces wrong accepted values from 9 to 1 at the declared 50% gate. A validation design shows that with a counted unit anchor, one withheld count rejects all nine wrong local rays; without scale, count-first requires two checks. Vessel capacities alone retain rescaled unit/count alternatives.",
+      "established": "The saved synthetic observation-design study distinguishes ratio constraints from an absolute count anchor. It reuses rank 15's secondary 50%-gate conservation run, and all nine wrong local rays fail one anchored count in the post-outcome validation exercise. A first unanchored count requires two checks. The separate vessel-capacity audit identifies only the product of numerical multiplier and litre unit from selected fit cases.",
       "numbers": {
         "four_swap_worlds": 200,
         "correct_local": 133,
@@ -928,19 +1293,37 @@
         "wrong_local": 9,
         "wrong_with_pool": 1,
         "wrong_rays_rejected_one_anchored_count": 9,
-        "checks_unanchored_count_first": 2
+        "checks_unanchored_count_first": 2,
+        "headline_gate_pct": 50,
+        "primary_gate_pct": 75,
+        "primary_75_local_correct_wrong_ambiguous_rejected": [
+          1,
+          2,
+          0,
+          197
+        ],
+        "primary_75_pooled_correct_wrong_ambiguous_rejected": [
+          1,
+          0,
+          0,
+          199
+        ]
       },
       "evidence": [
         "papers/003-physical-observations/manuscript.md",
         "papers/003-physical-observations/claim-evidence-map.md",
         "experiments/2026-10-02-six-hour/khipu-control/validation-design/REPORT.md",
         "experiments/2026-10-02-six-hour/khipu-control/conservation-check/REPORT.md",
-        "results/identifiability/"
+        "results/identifiability/",
+        "experiments/2026-10-02-six-hour/khipu-control/conservation-check/main-v1/selected-case-arithmetic.json",
+        "research/literature/metrology/source_and_identifiability_audit.json"
       ],
       "evidence_fields": [
-        "recovery by observation type",
-        "rank and count checks",
-        "rescaled parameter witnesses"
+        "experiments/2026-10-02-six-hour/khipu-control/conservation-check/main-v1/aggregate.json#/rows/71",
+        "experiments/2026-10-02-six-hour/khipu-control/conservation-check/main-v1/aggregate.json#/rows/79",
+        "experiments/2026-10-02-six-hour/khipu-control/conservation-check/main-v1/aggregate.json#/rows/87",
+        "experiments/2026-10-02-six-hour/khipu-control/conservation-check/main-v1/aggregate.json#/rows/95",
+        "experiments/2026-10-02-six-hour/khipu-control/conservation-check/main-v1/selected-case-arithmetic.json#/checks"
       ],
       "status": "Synthetic",
       "novelty": {
@@ -953,22 +1336,38 @@
       },
       "missing_validation": "Apply the acquisition design to a real source-defined collection with independently measured counts, known completeness and realistic measurement error.",
       "smallest_form": "Methods note on observation design, with generated worlds labeled as simulations",
-      "venues": [
-        "Journal of Archaeological Science: Reports",
-        "Archaeological and Anthropological Sciences"
-      ],
+      "venues": [],
       "remaining_work": "Several weeks for stronger precedents, independent software review and a real-data case.",
       "registry_ids": [
         "ROOT-14",
         "CRYPTO-01",
         "PHYS-01",
         "PHYS-02",
-        "NUM-02",
         "KHI-05"
       ],
-      "venue_sources": [
-        "SRC-22"
-      ]
+      "venue_sources": [],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [
+        "The 133/9/58 to 190/1/9 gain in 200 four-swap worlds is at the secondary 50% support gate. At the primary 75% gate, local correct/wrong/ambiguous/rejected outcomes are 1/2/0/197 and pooled outcomes 1/0/0/199. Every world is generated; independently measured completeness is an assumption.",
+        "Observation-design choices were developed after seeing outcomes. The vessel-capacity claim is in the separate metrology audit, also included at rank 1; rank 18 is not a second independent conservation experiment."
+      ],
+      "related_candidates": [
+        "COLLECTIVE-CONSERVATION"
+      ],
+      "venue_options_unverified": [],
+      "original_registry_statuses": {
+        "ROOT-14": "synthetic-identifiability-audit",
+        "CRYPTO-01": "verified-synthetic-demonstration",
+        "PHYS-01": "synthetic-verified-with-preserved-correction",
+        "PHYS-02": "synthetic-verified-with-preserved-pilot-and-post-outcome-refinement",
+        "KHI-05": "completed-post-outcome-reuse-and-independent-audit"
+      },
+      "ranking_eligible": true,
+      "related_registry_ids": [
+        "KHI-04"
+      ],
+      "venue_fit_limit": "No presently verified standalone article-type fit. Develop the specified experiment, substantive research paper or appendix before selecting a venue.",
+      "priority_position": 20
     },
     {
       "rank": 19,
@@ -995,9 +1394,7 @@
         "knowledge/experiments/registry.json#ROOT-17"
       ],
       "evidence_fields": [
-        "frozen endpoint counts",
-        "crop defect audit",
-        "post-reference development result"
+        "research/methods/FONT_PILOT_AUDIT.md: saved report/result summary; exact field-level binding not reconstructed in this correction"
       ],
       "status": "Failed",
       "novelty": {
@@ -1010,10 +1407,7 @@
       },
       "missing_validation": "Freeze corrected crop rules and matcher before testing fresh source rows; have an independent image analyst assess crop boundaries.",
       "smallest_form": "Negative methods note or reproducibility case study",
-      "venues": [
-        "Digital Scholarship in the Humanities",
-        "Journal of Open Archaeology Data as a workflow/data resource"
-      ],
+      "venues": [],
       "remaining_work": "Two to four weeks for a new blind set and public-safe source permissions.",
       "registry_ids": [
         "ROOT-16",
@@ -1023,10 +1417,22 @@
         "METHODS-font_geometry_sensitivity",
         "METHODS-font_pilot_audit"
       ],
-      "venue_sources": [
-        "SRC-15",
-        "SRC-05"
-      ]
+      "venue_sources": [],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [],
+      "related_candidates": [],
+      "venue_options_unverified": [],
+      "original_registry_statuses": {
+        "ROOT-16": "exploratory-development",
+        "ROOT-17": "frozen-evaluation-failed-whole-row-recovery",
+        "ROOT-18": "post-reference-development",
+        "METHODS-font_fresh20_audit": "completed-analysis-see-source-design",
+        "METHODS-font_geometry_sensitivity": "completed-analysis-see-source-design",
+        "METHODS-font_pilot_audit": "completed-analysis-see-source-design"
+      },
+      "ranking_eligible": true,
+      "venue_fit_limit": "No presently verified standalone article-type fit. Develop the specified experiment, substantive research paper or appendix before selecting a venue.",
+      "priority_position": 14
     },
     {
       "rank": 20,
@@ -1034,7 +1440,7 @@
       "title": "Source manifests, hash verification, and historical report checks",
       "field": "Research software; digital preservation; computational archaeology",
       "audience": "Small research teams preserving local-only source evidence and reproducible outputs",
-      "established": "The historical report package records 1,568 selected evidence hashes verified, 23 root checks and eight methods checks. Several later source branches add independent verifiers that check source hashes, crop bounds, row accounting, IDs and output links. These are project-specific preservation tools, not a generalized archival platform.",
+      "established": "The historical manifest lists 1,568 file hashes; saved root verification summaries report 23 root and eight methods checks. This package confirms the manifest count and saved summaries, without rerunning every hash or establishing independence of the verifier authors. These tools support source/version preservation and audit navigation.",
       "numbers": {
         "historical_evidence_hashes": 1568,
         "root_checks": 23,
@@ -1048,42 +1454,47 @@
         "experiments/2026-10-02-source-recovery/physical-views/verification-v2.json",
         "tools/"
       ],
-      "evidence_fields": [
-        "verified hash count",
-        "check totals",
-        "source and crop manifest fields"
-      ],
+      "evidence_fields": [],
       "status": "Verified computation",
       "novelty": {
         "judgment": "Hash manifests and research-data verification are established practices. The package may serve as an applied case study; no claim to a new provenance method is supported.",
         "precedent_search": "Checked generally; exact tool comparison unchecked",
         "sources": [
           "SRC-04",
-          "SRC-14"
+          "SRC-02"
         ]
       },
       "missing_validation": "Package one command-line tool with documentation, test fixtures, clean-environment replay and interoperability comparison to existing preservation tools.",
       "smallest_form": "Software note or internal reproducibility guide",
       "venues": [
-        "Journal of Open Source Software",
-        "Internet Archaeology"
+        "Journal of Open Source Software: software paper only after open-source licensing, research use and at least six months of public development history"
       ],
-      "remaining_work": "Two to three weeks for package boundaries, docs and a clean-install review.",
+      "remaining_work": "At least six months of public development history after any user-authorized release, plus reusable software packaging, licensing and documented research use for JOSS. The present private repository is not eligible for immediate submission.",
       "registry_ids": [
         "ROOT-20"
       ],
       "venue_sources": [
-        "SRC-17",
-        "SRC-02"
-      ]
+        "SRC-17"
+      ],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [
+        "The count of hashes is not a fresh verification that every source file still matches. Verification reports and manifests have different roles; some source witnesses are local-only."
+      ],
+      "related_candidates": [],
+      "venue_options_unverified": [],
+      "original_registry_statuses": {
+        "ROOT-20": "completed-historical-verification"
+      },
+      "ranking_eligible": true,
+      "priority_position": 23
     },
     {
       "rank": 21,
       "id": "ACQUISITION-FAILURE-REGISTER",
-      "title": "Documented failed routes for archaeological source acquisition",
+      "title": "Source acquisition failures and unresolved object locators",
       "field": "Digital archaeology; research infrastructure; source provenance",
       "audience": "Researchers repeating access work for hard-to-find excavation records and plates",
-      "established": "Branch logs preserve failed retrievals and their remedies, including an initial 404 resolved by correcting a nested path, a PDF extraction failure that led to image-based inspection, unavailable institutional downloads, and source requests that remain unmade. The evidence is distributed across source-specific acquisition logs rather than normalized as one dataset.",
+      "established": "Saved logs document failed downloads and source-recovery routes; no normalized project-wide failure count is claimed. The Tell Jokha lead reaches a Frenez 2023 reproduced photograph and the original report locator p.59, Figure 6.61, while registration, material, surface-find record and dating basis remain unverified. These are acquisition outcomes and locators.",
       "numbers": {
         "normalized_cross_project_failure_count": null
       },
@@ -1092,38 +1503,43 @@
         "experiments/2026-10-02-source-recovery/susa/ACQUISITION_LOG.md",
         "experiments/2026-10-02-six-hour/kanmer-physical-use/RETROSPECTIVE.md",
         "experiments/2026-10-02-six-hour/kanmer-physical-use/source-continuation-2026-10-02/RETROSPECTIVE.md",
-        "experiments/2026-10-02-six-hour/harappa-object-frame/source-access-log.json"
+        "experiments/2026-10-02-six-hour/harappa-object-frame/source-access-log.json",
+        "experiments/2026-10-02-six-hour/tell-jokha-contact/README.md",
+        "experiments/2026-10-02-six-hour/tell-jokha-contact/observations.json",
+        "experiments/2026-10-02-six-hour/tell-jokha-contact/access-log.json"
       ],
       "evidence_fields": [
-        "route",
-        "attempt date",
-        "outcome",
-        "failure reason",
-        "remedy or next target"
+        "primary-source-search.json: acquisition outcomes",
+        "tell-jokha-contact/observations.json: source locator",
+        "tell-jokha-contact/access-log.json: access attempts"
       ],
       "status": "Exploratory",
       "novelty": {
         "judgment": "Acquisition logs are standard research documentation. Their value is local reuse; the project has not normalized counts or searched for a comparable access-failure dataset.",
         "precedent_search": "Unchecked",
         "sources": [
-          "SRC-14"
+          "SRC-02"
         ]
       },
       "missing_validation": "Normalize route outcomes across packages, check URLs again, separate temporary outages from durable barriers, and ask source institutions before publication of access commentary.",
-      "smallest_form": "Teaching example or appendix to a source-recovery note",
-      "venues": [
-        "Internet Archaeology",
-        "Digital Scholarship in the Humanities"
-      ],
+      "smallest_form": "Source-recovery appendix; standalone publication not recommended",
+      "venues": [],
       "remaining_work": "Several days for a structured register; low standalone publication priority.",
       "registry_ids": [
-        "ROOT-19",
         "COMM-02"
       ],
-      "venue_sources": [
-        "SRC-02",
-        "SRC-15"
-      ]
+      "venue_sources": [],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [
+        "COMM-02 supports the Tell Jokha locator subsection; it does not support all failure logs. No person was contacted and no restricted account was created."
+      ],
+      "related_candidates": [],
+      "venue_options_unverified": [],
+      "original_registry_statuses": {
+        "COMM-02": "completed-bounded-source-audit"
+      },
+      "ranking_eligible": true,
+      "priority_position": 25
     },
     {
       "rank": 22,
@@ -1146,12 +1562,15 @@
         "experiments/2026-10-02-six-hour/latent-generator-identification/README.md",
         "experiments/2026-10-02-six-hour/latent-generator-identification/main/results.json",
         "experiments/2026-10-02-six-hour/latent-generator-identification/review-v2/verification.json",
-        "papers/004-reference-model-selection/manuscript.md"
+        "papers/004-reference-model-selection/manuscript.md",
+        "experiments/2026-10-02-six-hour/graph-mapping/main/results.json",
+        "experiments/2026-10-02-six-hour/graph-mapping/FINDINGS.md"
       ],
       "evidence_fields": [
-        "recovered map counts",
-        "exact assignment certificates",
-        "population-rank witnesses and collapsed control"
+        "experiments/2026-10-02-six-hour/reference-selector/README.md: saved report/result summary; exact field-level binding not reconstructed in this correction",
+        "experiments/2026-10-02-six-hour/latent-generator-identification/README.md: saved report/result summary; exact field-level binding not reconstructed in this correction",
+        "papers/004-reference-model-selection/manuscript.md: saved report/result summary; exact field-level binding not reconstructed in this correction",
+        "experiments/2026-10-02-six-hour/graph-mapping/FINDINGS.md: saved report/result summary; exact field-level binding not reconstructed in this correction"
       ],
       "status": "Synthetic",
       "novelty": {
@@ -1163,11 +1582,8 @@
         ]
       },
       "missing_validation": "Demonstrate on a real record system with independently known mappings and an acquisition process not generated by the model; compare against current mapping software.",
-      "smallest_form": "Teaching benchmark or software appendix",
-      "venues": [
-        "Transactions of the Association for Computational Linguistics (unlikely without a broader NLP contribution)",
-        "Digital Scholarship in the Humanities"
-      ],
+      "smallest_form": "Synthetic benchmark appendix or statistical software documentation",
+      "venues": [],
       "remaining_work": "Weeks for a real-data validation; current synthetic case is supplementary material at most.",
       "registry_ids": [
         "CRYPTO-02",
@@ -1175,15 +1591,36 @@
         "CRYPTO-04",
         "CRYPTO-05",
         "CRYPTO-06",
+        "NUM-02",
         "CRYPTO-07",
         "CRYPTO-08",
         "CRYPTO-09",
         "CRYPTO-10",
         "CRYPTO-11"
       ],
-      "venue_sources": [
-        "SRC-15"
-      ]
+      "venue_sources": [],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [
+        "Every mapping world is generated. The latent-generator identification endpoint is post-outcome development. NUM-02 covers the sibling graph-mapping optimizer rather than the selector's 309/384 result."
+      ],
+      "related_candidates": [],
+      "venue_options_unverified": [],
+      "original_registry_statuses": {
+        "CRYPTO-02": "completed-synthetic-grid",
+        "CRYPTO-03": "verified-declared-synthetic-grid",
+        "CRYPTO-04": "verified-declared-synthetic-grid",
+        "CRYPTO-05": "completed-synthetic-grid",
+        "CRYPTO-06": "completed synthetic stress study; computation reviewed",
+        "NUM-02": "completed synthetic graph-mapping control; computation reviewed",
+        "CRYPTO-07": "completed-new-world-post-outcome-comparison",
+        "CRYPTO-08": "completed-fresh-world-independent-review",
+        "CRYPTO-09": "completed-fresh-stress-test-and-independent-audit",
+        "CRYPTO-10": "completed-bounded-comparison-and-independent-audit",
+        "CRYPTO-11": "completed-exact-population-check-and-independent-audit"
+      },
+      "ranking_eligible": true,
+      "venue_fit_limit": "No presently verified standalone article-type fit. Develop the specified experiment, substantive research paper or appendix before selecting a venue.",
+      "priority_position": 24
     },
     {
       "rank": 23,
@@ -1205,15 +1642,18 @@
         "results/restoration/benchmark.json",
         "results/gap_restoration/",
         "research/methods/FINDINGS.md",
-        "papers/001-artifact-aware-prediction/claim-evidence-map.md"
+        "papers/001-artifact-aware-prediction/claim-evidence-map.md",
+        "research/methods/results/gap_design_matched/gap_design_matched.json"
       ],
       "evidence_fields": [
-        "unique-text score gain",
-        "top-one restoration score",
-        "matched gap-count comparator",
-        "alias-preserving split definition"
+        "design_matched_models.local.exact_count_accuracy",
+        "design_matched_models.local.constant_one_glyph_design_control_accuracy",
+        "nested_results.json: exact gain field retained in the contribution assessment",
+        "benchmark.json: mask count and top-one accuracy",
+        "research/methods/results/gap_design_matched/gap_design_matched.json#/design_matched_models/local/exact_count_accuracy",
+        "research/methods/results/gap_design_matched/gap_design_matched.json#/design_matched_models/local/constant_one_glyph_design_control_accuracy"
       ],
-      "status": "Verified computation",
+      "status": "Exploratory",
       "novelty": {
         "judgment": "The October 6 live precedent assessment found Yadav et al. 2010's deduplicated held-out restoration, plus other Indus restoration and non-specificity results. Object/alias grouping and the joint accuracy/loss tradeoff are narrower candidate contributions; publication priority is plausible but not a general first restoration claim.",
         "precedent_search": "Checked in the October 6 assessment; a broader search is needed before submission",
@@ -1223,9 +1663,9 @@
         ]
       },
       "missing_validation": "Independent reproduction, reviewed source transcription, comparison to a faithful published baseline, and a genuinely fresh expert-annotated evaluation block.",
-      "smallest_form": "Workshop paper or methods note; retain the failed gap-count result as a negative comparison",
+      "smallest_form": "Conference research paper with grouped prediction controls and a retained negative gap comparison",
       "venues": [
-        "NLP4DH workshop"
+        "International Conference on Natural Language Processing for the Digital Humanities (NLP4DH): research paper; confirm the next call's format"
       ],
       "remaining_work": "One to two weeks for related-work correction and a reviewer-ready reproduction package; fresh annotation would take longer.",
       "registry_ids": [
@@ -1276,478 +1716,1398 @@
         "METHODS-workflow_templates",
         "MARKOV-01",
         "MARKOV-02",
-        "CONTEXT-01",
         "MARKOV-03",
         "MARKOV-04",
-        "NULL-01",
-        "NULL-02",
-        "NULL-03",
-        "NULL-04",
-        "NULL-05",
-        "NULL-06",
-        "NULL-07",
-        "NULL-08",
-        "NULL-09",
-        "NULL-10",
-        "NULL-11",
         "MARKOV-05"
       ],
       "venue_sources": [
         "SRC-16"
-      ]
+      ],
+      "assessment_status": "Exploratory",
+      "provenance_notes": [
+        "This registry bundle includes frozen, failed, synthetic, exploratory and superseded endpoints; legacy labels are retained per entry. The 46.30% gap-count score is the design-matched endpoint, not the earlier unmatched 43.05% score. The failed comparison remains beside the 51.07% constant-one baseline."
+      ],
+      "related_candidates": [],
+      "venue_options_unverified": [],
+      "original_registry_statuses": {
+        "ROOT-02": "verified-computation",
+        "ROOT-03": "superseded",
+        "ROOT-04": "verified-computation",
+        "ROOT-05": "completed-sensitivity",
+        "ROOT-06": "verified-computation",
+        "ROOT-07": "exploratory-source-quality-sensitivity",
+        "ROOT-08": "failed-comparator",
+        "ROOT-09": "exploratory-no-semantic-anchor",
+        "ROOT-10": "exploratory-no-semantic-anchor",
+        "ROOT-11": "exploratory-inconclusive-individual",
+        "ROOT-12": "synthetic-counterexample",
+        "METHODS-adjusted_max_primary": "completed-analysis-see-source-design",
+        "METHODS-adjusted_max_primary_10000": "completed-analysis-see-source-design",
+        "METHODS-adjusted_max_unique": "completed-analysis-see-source-design",
+        "METHODS-classaware_collapsed": "completed-analysis-see-source-design",
+        "METHODS-classaware_pilot": "completed-analysis-see-source-design",
+        "METHODS-classaware_primary": "completed-analysis-see-source-design",
+        "METHODS-classaware_unique": "completed-analysis-see-source-design",
+        "METHODS-classaware_unique_preserved_aliases": "completed-analysis-see-source-design",
+        "METHODS-collapsed_primary": "completed-analysis-see-source-design",
+        "METHODS-gap_design_matched": "completed-analysis-see-source-design",
+        "METHODS-joint_nested_primary": "completed-analysis-see-source-design",
+        "METHODS-joint_nested_primary_1000": "completed-analysis-see-source-design",
+        "METHODS-joint_nested_unique": "completed-analysis-see-source-design",
+        "METHODS-joint_nested_unique_conditioned_1000": "completed-analysis-see-source-design",
+        "METHODS-joint_transfer_collapsed": "completed-analysis-see-source-design",
+        "METHODS-joint_transfer_primary": "completed-analysis-see-source-design",
+        "METHODS-joint_transfer_unique": "completed-analysis-see-source-design",
+        "METHODS-joint_transfer_unique_conditioned": "completed-analysis-see-source-design",
+        "METHODS-nested_collapsed": "completed-analysis-see-source-design",
+        "METHODS-nested_length2": "completed-analysis-see-source-design",
+        "METHODS-nested_length2_unique_preserved_aliases": "completed-analysis-see-source-design",
+        "METHODS-nested_pilot": "completed-analysis-see-source-design",
+        "METHODS-nested_primary": "completed-analysis-see-source-design",
+        "METHODS-nested_reverse": "completed-analysis-see-source-design",
+        "METHODS-nested_unique": "completed-analysis-see-source-design",
+        "METHODS-nested_unique_preserved_aliases": "completed-analysis-see-source-design",
+        "METHODS-pilot": "completed-analysis-see-source-design",
+        "METHODS-raw_primary": "completed-analysis-see-source-design",
+        "METHODS-templates_extended": "completed-analysis-see-source-design",
+        "METHODS-templates_primary": "completed-analysis-see-source-design",
+        "METHODS-totem_joint_nested": "completed-analysis-see-source-design",
+        "METHODS-totem_nested": "completed-analysis-see-source-design",
+        "METHODS-totem_templates": "completed-analysis-see-source-design",
+        "METHODS-workflow_templates": "completed-analysis-see-source-design",
+        "MARKOV-01": "verified-computation-on-preserved-queries",
+        "MARKOV-02": "verified-post-outcome-mechanism-study",
+        "MARKOV-03": "completed-with-independent-review",
+        "MARKOV-04": "completed-post-outcome-comparison",
+        "MARKOV-05": "completed-negative-comparison-and-independent-review"
+      },
+      "ranking_eligible": true,
+      "priority_position": 22
+    },
+    {
+      "rank": 24,
+      "id": "CISI1-SCAN-AND-ERRATA",
+      "title": "CISI Volume 1 scan duplication and counting conventions",
+      "field": "Digital archaeology; library digitization",
+      "audience": "Digital archaeology; library digitization researchers and data curators",
+      "established": "The IGNCA-hosted CISI1 PDF has 862 pages. All embedded page-image lists on pages 1–431 equal those on pages 432–862: 431 duplicate groups at offset 431. Printed p.375 also carries catalogue corrigenda, including deletion of H266–H275 and relabelling H356A/B/C as H354A/B/C bis. Those printed corrigenda are prior editorial corrections; the project contribution is the scan-identity audit and explicit counting-unit notes.",
+      "numbers": {
+        "scan_pages": 862,
+        "duplicate_groups": 431,
+        "duplicate_offset": 431
+      },
+      "evidence": [
+        "research/literature/cisi1_page_image_audit.json",
+        "research/literature/cisi1_counting_and_errata.md"
+      ],
+      "evidence_fields": [
+        "pages",
+        "duplicate_groups",
+        "cisi1_counting_and_errata.md: Exact scan repetition; Primary counting conventions",
+        "research/literature/cisi1_page_image_audit.json#/pages",
+        "research/literature/cisi1_page_image_audit.json#/duplicate_groups"
+      ],
+      "status": "Verified computation",
+      "assessment_status": "Exploratory",
+      "novelty": {
+        "judgment": "Exact-result publication priority has not been checked; useful source-audit evidence is retained.",
+        "precedent_search": "Not done for the exact result",
+        "sources": []
+      },
+      "missing_validation": "Recheck current host file hashes; curator/editor review before any erratum request.",
+      "smallest_form": "Host correction request or corpus-note appendix",
+      "venues": [],
+      "venue_sources": [],
+      "remaining_work": "One to three days for exact-file check and a concise curator draft",
+      "registry_ids": [
+        "ROOT-19"
+      ],
+      "provenance_notes": [
+        "This is equality of embedded image lists for one acquired PDF, not evidence for more archaeological objects. Existing book corrigenda are cited rather than claimed as new discoveries."
+      ],
+      "related_candidates": [],
+      "venue_options_unverified": [],
+      "original_registry_statuses": {
+        "ROOT-19": "completed-with-unresolved-joins"
+      },
+      "ranking_eligible": true,
+      "priority_position": 3
+    },
+    {
+      "rank": 25,
+      "id": "CROSS-CATALOGUE-JOIN-AUDIT",
+      "title": "Version joins and source-plate compatibility across derivative catalogues",
+      "field": "Digital epigraphy; archaeological data quality",
+      "audience": "Digital epigraphy; archaeological data quality researchers and data curators",
+      "established": "Among 2,375 older-export rows carrying a CISI reference, 2,374 find a Lipi object, 2,243 match some face exactly and 2,293 after eroded 000 is ignored. All 179 Mayig objects find a Lipi identity. A qualitative AI plate audit finds 17 compatible and seven discrepant objects among 24 source-complete cases. The earlier export and Lipi share a maintainer: their agreement measures version stability. Any-face matches leave side identity unresolved; the plate judgments need expert review.",
+      "numbers": {
+        "older_rows_with_CISI": 2375,
+        "older_rows_joined": 2374,
+        "older_exact_any_face": 2243,
+        "older_compatible_ignoring_000": 2293,
+        "mayig_joined": 179,
+        "source_complete_plate_objects": 24,
+        "plate_compatible": 17,
+        "plate_discrepant": 7
+      },
+      "evidence": [
+        "research/corpus/CORPUS_REPORT.md",
+        "data/normalized/crosscorpus_summary.json",
+        "research/corpus/plate_audit/adjudications.json",
+        "research/corpus/plate_audit/README.md"
+      ],
+      "evidence_fields": [
+        "old_to_lipi_cisi_join",
+        "mayig_to_lipi_cisi_join",
+        "adjudications.json: sample; rows",
+        "data/normalized/crosscorpus_summary.json#/old_to_lipi_cisi_join/has_nonempty_cisi",
+        "data/normalized/crosscorpus_summary.json#/old_to_lipi_cisi_join/cisi_found",
+        "data/normalized/crosscorpus_summary.json#/old_to_lipi_cisi_join/exact_sequence_match_any_face",
+        "data/normalized/crosscorpus_summary.json#/old_to_lipi_cisi_join/match_after_ignoring_eroded_000",
+        "data/normalized/crosscorpus_summary.json#/mayig_to_lipi_cisi_join/cisi_found",
+        "research/corpus/plate_audit/adjudications.json#/sample/lipi_complete_single_line",
+        "research/corpus/plate_audit/adjudications.json#/sample/all_token_candidate_compatible",
+        "research/corpus/plate_audit/adjudications.json#/sample/complete_candidate_incompatible"
+      ],
+      "status": "Exploratory",
+      "assessment_status": "Exploratory",
+      "novelty": {
+        "judgment": "Exact-result publication priority has not been checked; useful source-audit evidence is retained.",
+        "precedent_search": "Not done for the exact result",
+        "sources": []
+      },
+      "missing_validation": "Expert plate adjudication, exact-side joins, and rights review for any deposited rows.",
+      "smallest_form": "Data paper about a deposited join/disagreement dataset",
+      "venues": [
+        "Internet Archaeology: data paper, conditional on a reusable licensed dataset deposit",
+        "Journal of Open Archaeology Data: data paper, conditional on an openly archived dataset"
+      ],
+      "venue_sources": [
+        "SRC-02",
+        "SRC-05"
+      ],
+      "remaining_work": "Two to four weeks for side-level review and a releaseable aggregate/register",
+      "registry_ids": [],
+      "provenance_notes": [
+        "Only aggregate results are copied here; source rows and images remain local. Mayig is another annotation of shared photographs, not an independent excavation corpus."
+      ],
+      "related_candidates": [],
+      "venue_options_unverified": [],
+      "original_registry_statuses": {},
+      "ranking_eligible": true,
+      "priority_position": 5
+    },
+    {
+      "rank": 26,
+      "id": "DATASET-LANDSCAPE",
+      "title": "Completed October 2 dataset and rights landscape",
+      "field": "Digital archaeology; data stewardship",
+      "audience": "Digital archaeology; data stewardship researchers and data curators",
+      "established": "The completed October 2 comparison covers 18 resources and reports 39 passing local count/missingness checks. Its historical CAA 2023 ICIT witness gives 4,665 objects, 5,650 texts, 17,966 legible sign occurrences and 16,015 images. These are dated source counts; no current census or new integrated corpus is established. The source comparison distinguishes reuse rights and count denominators, and proposes a 200-object pilot.",
+      "numbers": {
+        "resources": 18,
+        "passing_checks": 39,
+        "ICIT_2023_objects": 4665,
+        "ICIT_2023_texts": 5650,
+        "ICIT_2023_legible_sign_occurrences": 17966,
+        "ICIT_2023_photos_and_drawings": 16015
+      },
+      "evidence": [
+        "experiments/2026-10-02-dataset-landscape/README.md",
+        "experiments/2026-10-02-dataset-landscape/landscape.json",
+        "experiments/2026-10-02-dataset-landscape/main-v1/local-input-audit.json",
+        "experiments/2026-10-02-dataset-landscape/verification-v1.json"
+      ],
+      "evidence_fields": [
+        "sources",
+        "sources[0].counts",
+        "checks",
+        "all_checks_passed",
+        "experiments/2026-10-02-dataset-landscape/landscape.json#/sources",
+        "experiments/2026-10-02-dataset-landscape/main-v1/local-input-audit.json#/checks",
+        "experiments/2026-10-02-dataset-landscape/landscape.json#/sources/0/counts/objects",
+        "experiments/2026-10-02-dataset-landscape/landscape.json#/sources/0/counts/texts",
+        "experiments/2026-10-02-dataset-landscape/landscape.json#/sources/0/counts/legible_sign_occurrences",
+        "experiments/2026-10-02-dataset-landscape/landscape.json#/sources/0/counts/photos_and_drawings"
+      ],
+      "status": "Verified computation",
+      "assessment_status": "Exploratory",
+      "novelty": {
+        "judgment": "ICIT, CISI and the Helsinki editions are established predecessors. The contribution is a dated resource/rights comparison; no claim that an integrated corpus is absent or that the local collection is superior is supported.",
+        "precedent_search": "Completed in saved October 2 landscape; no new exhaustive resource sweep",
+        "sources": [
+          "SRC-29",
+          "SRC-35",
+          "SRC-36"
+        ]
+      },
+      "missing_validation": "Update resource-by-resource terms, obtain current ICIT export if available, and implement the proposed common object register.",
+      "smallest_form": "Data paper only after depositing a reusable bibliographic/rights register",
+      "venues": [
+        "Internet Archaeology: data paper, conditional on a reusable licensed dataset deposit",
+        "Journal of Open Archaeology Data: data paper, conditional on an openly archived dataset"
+      ],
+      "venue_sources": [
+        "SRC-02",
+        "SRC-05"
+      ],
+      "remaining_work": "One to three weeks for dated metadata verification; substantially longer for a new integrated corpus",
+      "registry_ids": [
+        "DATASET-LANDSCAPE-01"
+      ],
+      "provenance_notes": [
+        "Historical ICIT figures were visually checked in the earlier study at CAA 2023 abstract 76, page 281; this correction reads the preserved aggregate. The current resource internals and broad image rights were not audited."
+      ],
+      "related_candidates": [],
+      "venue_options_unverified": [],
+      "original_registry_statuses": {
+        "DATASET-LANDSCAPE-01": "completed-source-comparison-and-local-inventory-audit"
+      },
+      "ranking_eligible": true,
+      "priority_position": 9
     }
   ],
   "registry_coverage": {
-    "statement": "Every registered ID is assigned to one inventory candidate. Related statistical endpoints are consolidated when they test the same publication contribution. A separate, unregistered October 6 evidence-census package is included as a timely data-landscape candidate.",
+    "statement": "Every registered ID has one primary checklist home; original statuses are retained. REGIONNUM-01 also supports ranks 2 and 11, and KHI-04 supports rank 18; related_registry_ids record those cross-links without duplicating primary ownership. Rank 6 is held and contains no evidence-census result.",
     "items": [
       {
         "registry_id": "ROOT-01",
-        "candidate_id": "CONTEXT-COMPLETENESS"
+        "candidate_id": "CONTEXT-COMPLETENESS",
+        "original_status": "completed-source-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ROOT-02",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "verified-computation",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ROOT-03",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "superseded",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ROOT-04",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "verified-computation",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ROOT-05",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-sensitivity",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ROOT-06",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "verified-computation",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ROOT-07",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "exploratory-source-quality-sensitivity",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ROOT-08",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "failed-comparator",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ROOT-09",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "exploratory-no-semantic-anchor",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ROOT-10",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "exploratory-no-semantic-anchor",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ROOT-11",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "exploratory-inconclusive-individual",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ROOT-12",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "synthetic-counterexample",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ROOT-13",
-        "candidate_id": "FULS-ARITHMETIC"
+        "candidate_id": "FULS-ARITHMETIC",
+        "original_status": "exact-conditional-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ROOT-14",
-        "candidate_id": "IDENTIFIABILITY-AND-OBSERVATION-DESIGN"
+        "candidate_id": "IDENTIFIABILITY-AND-OBSERVATION-DESIGN",
+        "original_status": "synthetic-identifiability-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ROOT-15",
-        "candidate_id": "CHART-687"
+        "candidate_id": "CHART-687",
+        "original_status": "completed-uncertainty-preserving-resource",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ROOT-16",
-        "candidate_id": "FONT-OCR-FAILURE"
+        "candidate_id": "FONT-OCR-FAILURE",
+        "original_status": "exploratory-development",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ROOT-17",
-        "candidate_id": "FONT-OCR-FAILURE"
+        "candidate_id": "FONT-OCR-FAILURE",
+        "original_status": "frozen-evaluation-failed-whole-row-recovery",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ROOT-18",
-        "candidate_id": "FONT-OCR-FAILURE"
+        "candidate_id": "FONT-OCR-FAILURE",
+        "original_status": "post-reference-development",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ROOT-19",
-        "candidate_id": "ACQUISITION-FAILURE-REGISTER"
+        "candidate_id": "CISI1-SCAN-AND-ERRATA",
+        "original_status": "completed-with-unresolved-joins",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ROOT-20",
-        "candidate_id": "PROVENANCE-VERIFICATION-TOOLS"
+        "candidate_id": "PROVENANCE-VERIFICATION-TOOLS",
+        "original_status": "completed-historical-verification",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "CRYPTO-01",
-        "candidate_id": "IDENTIFIABILITY-AND-OBSERVATION-DESIGN"
+        "candidate_id": "IDENTIFIABILITY-AND-OBSERVATION-DESIGN",
+        "original_status": "verified-synthetic-demonstration",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-adjusted_max_primary",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-adjusted_max_primary_10000",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-adjusted_max_unique",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-classaware_collapsed",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-classaware_pilot",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-classaware_primary",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-classaware_unique",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-classaware_unique_preserved_aliases",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-collapsed_primary",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-font_fresh20_audit",
-        "candidate_id": "FONT-OCR-FAILURE"
+        "candidate_id": "FONT-OCR-FAILURE",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-font_geometry_sensitivity",
-        "candidate_id": "FONT-OCR-FAILURE"
+        "candidate_id": "FONT-OCR-FAILURE",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-font_pilot_audit",
-        "candidate_id": "FONT-OCR-FAILURE"
+        "candidate_id": "FONT-OCR-FAILURE",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-gap_design_matched",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-joint_nested_primary",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-joint_nested_primary_1000",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-joint_nested_unique",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-joint_nested_unique_conditioned_1000",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-joint_transfer_collapsed",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-joint_transfer_primary",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-joint_transfer_unique",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-joint_transfer_unique_conditioned",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-nested_collapsed",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-nested_length2",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-nested_length2_unique_preserved_aliases",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-nested_pilot",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-nested_primary",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-nested_reverse",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-nested_unique",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-nested_unique_preserved_aliases",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-numerical_equalities",
-        "candidate_id": "FULS-ARITHMETIC"
+        "candidate_id": "FULS-ARITHMETIC",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-pilot",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-raw_primary",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-templates_extended",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-templates_primary",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-totem_joint_nested",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-totem_nested",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-totem_templates",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "METHODS-workflow_templates",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-analysis-see-source-design",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "CRYPTO-02",
-        "candidate_id": "REFERENCE-MAPPING-SIMULATION"
+        "candidate_id": "REFERENCE-MAPPING-SIMULATION",
+        "original_status": "completed-synthetic-grid",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "MARKOV-01",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "verified-computation-on-preserved-queries",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "MARKOV-02",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "verified-post-outcome-mechanism-study",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "CONTEXT-01",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "CONTEXT-COMPLETENESS",
+        "original_status": "verified-availability-and-source-cohort-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "CRYPTO-03",
-        "candidate_id": "REFERENCE-MAPPING-SIMULATION"
+        "candidate_id": "REFERENCE-MAPPING-SIMULATION",
+        "original_status": "verified-declared-synthetic-grid",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "PHYS-01",
-        "candidate_id": "IDENTIFIABILITY-AND-OBSERVATION-DESIGN"
+        "candidate_id": "IDENTIFIABILITY-AND-OBSERVATION-DESIGN",
+        "original_status": "synthetic-verified-with-preserved-correction",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "CRYPTO-04",
-        "candidate_id": "REFERENCE-MAPPING-SIMULATION"
+        "candidate_id": "REFERENCE-MAPPING-SIMULATION",
+        "original_status": "verified-declared-synthetic-grid",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ARCH-01",
-        "candidate_id": "HARAPPA-FRAME"
+        "candidate_id": "HARAPPA-FRAME",
+        "original_status": "completed-source-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ARCH-02",
-        "candidate_id": "HARAPPA-FRAME"
+        "candidate_id": "LOTHAL-OBSERVATION-FRAME",
+        "original_status": "completed-source-and-coverage-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "CRYPTO-05",
-        "candidate_id": "REFERENCE-MAPPING-SIMULATION"
+        "candidate_id": "REFERENCE-MAPPING-SIMULATION",
+        "original_status": "completed-synthetic-grid",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "PHYS-02",
-        "candidate_id": "IDENTIFIABILITY-AND-OBSERVATION-DESIGN"
+        "candidate_id": "IDENTIFIABILITY-AND-OBSERVATION-DESIGN",
+        "original_status": "synthetic-verified-with-preserved-pilot-and-post-outcome-refinement",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "COMM-02",
-        "candidate_id": "ACQUISITION-FAILURE-REGISTER"
+        "candidate_id": "ACQUISITION-FAILURE-REGISTER",
+        "original_status": "completed-bounded-source-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "CRYPTO-06",
-        "candidate_id": "REFERENCE-MAPPING-SIMULATION"
+        "candidate_id": "REFERENCE-MAPPING-SIMULATION",
+        "original_status": "completed synthetic stress study; computation reviewed",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "ARCH-03",
-        "candidate_id": "HARAPPA-FRAME"
+        "candidate_id": "HARAPPA-FRAME",
+        "original_status": "completed source-linked conditional representation audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "KHI-01",
-        "candidate_id": "KHIPU-REPLICATION"
+        "candidate_id": "KHIPU-REPLICATION",
+        "original_status": "completed published-source replication and synthetic controls; independently checked",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "GEOM-01",
-        "candidate_id": "STAMP-CONTACT-SIMULATION"
+        "candidate_id": "STAMP-CONTACT-SIMULATION",
+        "original_status": "verified-synthetic-forward-model",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "NUM-02",
-        "candidate_id": "IDENTIFIABILITY-AND-OBSERVATION-DESIGN"
+        "candidate_id": "REFERENCE-MAPPING-SIMULATION",
+        "original_status": "completed synthetic graph-mapping control; computation reviewed",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "KHI-02",
-        "candidate_id": "KHIPU-REPLICATION"
+        "candidate_id": "KHIPU-REPLICATION",
+        "original_status": "completed source-controlled interval study; independently checked",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "MARKOV-03",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-with-independent-review",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "MARKOV-04",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-post-outcome-comparison",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "KHI-03",
-        "candidate_id": "KHIPU-REPLICATION"
+        "candidate_id": "KHIPU-REPLICATION",
+        "original_status": "completed-synthetic-independent-checks",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "CRYPTO-07",
-        "candidate_id": "REFERENCE-MAPPING-SIMULATION"
+        "candidate_id": "REFERENCE-MAPPING-SIMULATION",
+        "original_status": "completed-new-world-post-outcome-comparison",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "KANMER-01",
-        "candidate_id": "KANMER-PENDANT-FRAME"
+        "candidate_id": "KANMER-PENDANT-FRAME",
+        "original_status": "source-frame-and-prospective-handling-test",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "NULL-01",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "EXACT-FINITE-LAWS",
+        "original_status": "completed-exact-independent-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "NULL-02",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "PERMUTATION-CALIBRATION",
+        "original_status": "completed-exact-independent-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "NULL-03",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "EXACT-FINITE-LAWS",
+        "original_status": "completed-exact-sampler-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "NULL-04",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "EXACT-FINITE-LAWS",
+        "original_status": "completed-exact-reweighting-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "NULL-05",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "PERMUTATION-CALIBRATION",
+        "original_status": "completed-main-and-independent-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "NULL-06",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "EXACT-FINITE-LAWS",
+        "original_status": "completed-witness-and-exact-extension-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "NULL-07",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "PERMUTATION-CALIBRATION",
+        "original_status": "completed-known-channel-recovery-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "CRYPTO-08",
-        "candidate_id": "REFERENCE-MAPPING-SIMULATION"
+        "candidate_id": "REFERENCE-MAPPING-SIMULATION",
+        "original_status": "completed-fresh-world-independent-review",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "NULL-08",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "PERMUTATION-CALIBRATION",
+        "original_status": "completed-main-and-independent-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "NULL-09",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "EXACT-FINITE-LAWS",
+        "original_status": "completed-proof-and-allocation-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "KHI-04",
-        "candidate_id": "COLLECTIVE-CONSERVATION"
+        "candidate_id": "COLLECTIVE-CONSERVATION",
+        "original_status": "completed-synthetic-control-and-independent-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "KANMER-02",
-        "candidate_id": "KANMER-PENDANT-FRAME"
+        "candidate_id": "KANMER-PENDANT-FRAME",
+        "original_status": "completed-bounded-source-amendment",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "KHI-05",
-        "candidate_id": "IDENTIFIABILITY-AND-OBSERVATION-DESIGN"
+        "candidate_id": "IDENTIFIABILITY-AND-OBSERVATION-DESIGN",
+        "original_status": "completed-post-outcome-reuse-and-independent-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "CRYPTO-09",
-        "candidate_id": "REFERENCE-MAPPING-SIMULATION"
+        "candidate_id": "REFERENCE-MAPPING-SIMULATION",
+        "original_status": "completed-fresh-stress-test-and-independent-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "NULL-10",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "PERMUTATION-CALIBRATION",
+        "original_status": "completed-fresh-main-and-independent-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "NULL-11",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "PERMUTATION-CALIBRATION",
+        "original_status": "completed-fresh-diagnostic-and-independent-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "MARKOV-05",
-        "candidate_id": "STRUCTURAL-PREDICTION-METHODS"
+        "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+        "original_status": "completed-negative-comparison-and-independent-review",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "CRYPTO-10",
-        "candidate_id": "REFERENCE-MAPPING-SIMULATION"
+        "candidate_id": "REFERENCE-MAPPING-SIMULATION",
+        "original_status": "completed-bounded-comparison-and-independent-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "CRYPTO-11",
-        "candidate_id": "REFERENCE-MAPPING-SIMULATION"
+        "candidate_id": "REFERENCE-MAPPING-SIMULATION",
+        "original_status": "completed-exact-population-check-and-independent-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "READINESS-01",
-        "candidate_id": "CONTEXT-COMPLETENESS"
+        "candidate_id": "CONTEXT-COMPLETENESS",
+        "original_status": "completed-source-and-methods-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "PRIORITY-01",
-        "candidate_id": "CATALOGUE-CROSSCHECKS"
+        "candidate_id": "CATALOGUE-CROSSCHECKS",
+        "original_status": "completed-primary-precedent-review",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "REGIONNUM-01",
-        "candidate_id": "SUSA-SOURCE-CENSUS"
+        "candidate_id": "MARKED-WEIGHT-CENSUS",
+        "original_status": "completed-source-linked-census-and-compatibility-analysis",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "TN-STROKE-01",
-        "candidate_id": "SOUTH-INDIA-STROKE-POPULATION"
+        "candidate_id": "SOUTH-INDIA-STROKE-POPULATION",
+        "original_status": "completed-pinned-snapshot-and-printed-source-comparison",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "HARP-SHORT-01",
-        "candidate_id": "HARAPPA-FRAME"
+        "candidate_id": "HARAPPA-FRAME",
+        "original_status": "completed-source-linked-module-and-count-analysis",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "LOTHAL-TRACE-01",
-        "candidate_id": "LOTHAL-OBSERVATION-FRAME"
+        "candidate_id": "LOTHAL-OBSERVATION-FRAME",
+        "original_status": "completed-bounded-source-informed-image-study",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "OXUS-SOURCE-02",
-        "candidate_id": "GONUR-ALTYN-RECOVERY"
+        "candidate_id": "GONUR-ALTYN-RECOVERY",
+        "original_status": "completed-original-figure-and-context-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "SUSA-SOURCE-02",
-        "candidate_id": "SUSA-SOURCE-CENSUS"
+        "candidate_id": "SUSA-SOURCE-CENSUS",
+        "original_status": "completed-historical-modern-discrepancy-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "TN-SOURCE-02",
-        "candidate_id": "SOUTH-INDIA-STROKE-POPULATION"
+        "candidate_id": "SOUTH-INDIA-STROKE-POPULATION",
+        "original_status": "completed-original-numerical-source-and-specimen-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "HARP-LOTHAL-SOURCE-02",
-        "candidate_id": "LOTHAL-OBSERVATION-FRAME"
+        "candidate_id": "LOTHAL-OBSERVATION-FRAME",
+        "original_status": "completed-registered-view-and-archive-target-recovery",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       },
       {
         "registry_id": "DATASET-LANDSCAPE-01",
-        "candidate_id": "CONTEXT-COMPLETENESS"
+        "candidate_id": "DATASET-LANDSCAPE",
+        "original_status": "completed-source-comparison-and-local-inventory-audit",
+        "role": "Primary checklist home; inspect original evidence and status for each endpoint"
       }
-    ]
-  }
+    ],
+    "mapped_candidates": 24,
+    "registry_entries": 112
+  },
+  "revision": "Coordinator corrections after Sonnet review; first pass retained",
+  "ranking_limit": "Ranks 1–23 are stable first-pass reference positions after correction, with rank 6 held; records 24–26 are additions. Use the report's field-specific priority statements. The original ordinal ordering has not been recomputed as a score ranking.",
+  "recommended_priority_order": [
+    "CHART-687",
+    "CONTEXT-COMPLETENESS",
+    "CISI1-SCAN-AND-ERRATA",
+    "FULS-ARITHMETIC",
+    "CROSS-CATALOGUE-JOIN-AUDIT",
+    "CATALOGUE-CROSSCHECKS",
+    "SUSA-SOURCE-CENSUS",
+    "HARAPPA-FRAME",
+    "DATASET-LANDSCAPE",
+    "LOTHAL-OBSERVATION-FRAME",
+    "MARKED-WEIGHT-CENSUS",
+    "SOUTH-INDIA-STROKE-POPULATION",
+    "GONUR-ALTYN-RECOVERY",
+    "FONT-OCR-FAILURE",
+    "STAMP-CONTACT-SIMULATION",
+    "KHIPU-REPLICATION",
+    "PERMUTATION-CALIBRATION",
+    "EXACT-FINITE-LAWS",
+    "KANMER-PENDANT-FRAME",
+    "IDENTIFIABILITY-AND-OBSERVATION-DESIGN",
+    "COLLECTIVE-CONSERVATION",
+    "STRUCTURAL-PREDICTION-METHODS",
+    "PROVENANCE-VERIFICATION-TOOLS",
+    "REFERENCE-MAPPING-SIMULATION",
+    "ACQUISITION-FAILURE-REGISTER"
+  ],
+  "priority_basis": "Qualitative post-review order for the smallest credible deliverable, balancing recorded precedent, readiness, field use and remaining work. Stable rank numbers preserve review references; priority_position is the amended recommendation. No numerical score or novelty-priority certification is claimed.",
+  "correction_claim_checks": [
+    {
+      "candidate_id": "FULS-ARITHMETIC",
+      "inventory_key": "capacity_fit_L_per_stroke",
+      "source_path": "research/literature/metrology/source_and_identifiability_audit.json",
+      "source_pointer": "/fit_only/least_squares_zero_intercept_scale_l_per_long_stroke",
+      "transform": "exact",
+      "expected": 40.3531914893617
+    },
+    {
+      "candidate_id": "FULS-ARITHMETIC",
+      "inventory_key": "heldout_same_module_vessels",
+      "source_path": "research/literature/metrology/source_and_identifiability_audit.json",
+      "source_pointer": "/heldout_validation/eligible_independent_same_module_objects",
+      "transform": "exact",
+      "expected": 0
+    },
+    {
+      "candidate_id": "HARAPPA-FRAME",
+      "inventory_key": "direct_stroke_counts",
+      "source_path": "experiments/2026-10-02-connections-and-priority/harappa-short-records/main-v2/results.json",
+      "source_pointer": "/native_source/directly_counted_faces",
+      "transform": "exact",
+      "expected": 32
+    },
+    {
+      "candidate_id": "HARAPPA-FRAME",
+      "inventory_key": "readable_3_4_3_profiles",
+      "source_path": "experiments/2026-10-02-connections-and-priority/harappa-short-records/main-v2/results.json",
+      "source_pointer": "/native_source/complete_count_profile_objects",
+      "transform": "exact",
+      "expected": 5
+    },
+    {
+      "candidate_id": "HARAPPA-FRAME",
+      "inventory_key": "tablets_sharing_three_exact_modules",
+      "source_path": "experiments/2026-10-02-connections-and-priority/harappa-short-records/main-v2/results.json",
+      "source_pointer": "/exact_unordered_module_set_class_sizes/0",
+      "transform": "exact",
+      "expected": 20
+    },
+    {
+      "candidate_id": "HARAPPA-FRAME",
+      "inventory_key": "all_pairs",
+      "source_path": "experiments/2026-10-02-connections-and-priority/harappa-short-records/main-v2/results.json",
+      "source_pointer": "/pair_counts/all_object_pairs",
+      "transform": "exact",
+      "expected": 231
+    },
+    {
+      "candidate_id": "HARAPPA-FRAME",
+      "inventory_key": "pairs_same_modules",
+      "source_path": "experiments/2026-10-02-connections-and-priority/harappa-short-records/main-v2/results.json",
+      "source_pointer": "/pair_counts/exact_same_modules",
+      "transform": "exact",
+      "expected": 190
+    },
+    {
+      "candidate_id": "HARAPPA-FRAME",
+      "inventory_key": "pairs_one_module_changed",
+      "source_path": "experiments/2026-10-02-connections-and-priority/harappa-short-records/main-v2/results.json",
+      "source_pointer": "/pair_counts/exact_one_module_changed",
+      "transform": "exact",
+      "expected": 40
+    },
+    {
+      "candidate_id": "HARAPPA-FRAME",
+      "inventory_key": "pairs_two_modules_changed",
+      "source_path": "experiments/2026-10-02-connections-and-priority/harappa-short-records/main-v2/results.json",
+      "source_pointer": "/pair_counts/exact_two_modules_changed",
+      "transform": "exact",
+      "expected": 1
+    },
+    {
+      "candidate_id": "MARKED-WEIGHT-CENSUS",
+      "inventory_key": "susa_25_1_2_minimum_symmetric_relative_tolerance",
+      "source_path": "experiments/2026-10-02-connections-and-priority/regional-west/numerical-compatibility.json",
+      "source_pointer": "/susa_quarter_mina_hypothesis/minimum_symmetric_relative_tolerance/decimal",
+      "transform": "exact",
+      "expected": 0.009446193739581403
+    },
+    {
+      "candidate_id": "MARKED-WEIGHT-CENSUS",
+      "inventory_key": "susa_25_1_2_minimum_loss_only_relative_tolerance",
+      "source_path": "experiments/2026-10-02-connections-and-priority/regional-west/numerical-compatibility.json",
+      "source_pointer": "/susa_quarter_mina_hypothesis/minimum_loss_only_relative_tolerance/decimal",
+      "transform": "exact",
+      "expected": 0.01871559633027523
+    },
+    {
+      "candidate_id": "MARKED-WEIGHT-CENSUS",
+      "inventory_key": "mass_from_25_half_units_g",
+      "source_path": "experiments/2026-10-02-connections-and-priority/regional-west/numerical-compatibility.json",
+      "source_pointer": "/sb13677_expected_mass_from_sb17774_g/decimal",
+      "transform": "exact",
+      "expected": 340.625
+    },
+    {
+      "candidate_id": "MARKED-WEIGHT-CENSUS",
+      "inventory_key": "girsu_implied_unit_1_g",
+      "source_path": "experiments/2026-10-02-connections-and-priority/regional-west/numerical-compatibility.json",
+      "source_pointer": "/girsu_readable_shekel_control/objects/0/implied_unit_g/decimal",
+      "transform": "exact",
+      "expected": 8.253
+    },
+    {
+      "candidate_id": "MARKED-WEIGHT-CENSUS",
+      "inventory_key": "girsu_implied_unit_2_g",
+      "source_path": "experiments/2026-10-02-connections-and-priority/regional-west/numerical-compatibility.json",
+      "source_pointer": "/girsu_readable_shekel_control/objects/1/implied_unit_g/decimal",
+      "transform": "exact",
+      "expected": 8.31
+    },
+    {
+      "candidate_id": "STAMP-CONTACT-SIMULATION",
+      "inventory_key": "primary_configurations",
+      "source_path": "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json",
+      "source_pointer": "/primary_configurations",
+      "transform": "exact",
+      "expected": 4320
+    },
+    {
+      "candidate_id": "STAMP-CONTACT-SIMULATION",
+      "inventory_key": "nuisance_configurations",
+      "source_path": "experiments/2026-10-02-six-hour/stamp-geometry/main/results.json",
+      "source_pointer": "/nuisance_configurations",
+      "transform": "exact",
+      "expected": 8748
+    },
+    {
+      "candidate_id": "STAMP-CONTACT-SIMULATION",
+      "inventory_key": "eight_slot_min_1_centred_no_damage_endpoint_tv",
+      "source_path": "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json",
+      "source_pointer": "/minimum_visible_graphics_pools/1/8/centred_no_damage/left_right_endpoint_tv",
+      "transform": "exact",
+      "expected": 0.0
+    },
+    {
+      "candidate_id": "STAMP-CONTACT-SIMULATION",
+      "inventory_key": "eight_slot_min_1_balanced_tilt_no_damage_endpoint_tv",
+      "source_path": "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json",
+      "source_pointer": "/minimum_visible_graphics_pools/1/8/balanced_tilt_no_damage/left_right_endpoint_tv",
+      "transform": "exact",
+      "expected": 0.0
+    },
+    {
+      "candidate_id": "STAMP-CONTACT-SIMULATION",
+      "inventory_key": "eight_slot_min_1_positive_tilt_no_damage_endpoint_tv",
+      "source_path": "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json",
+      "source_pointer": "/minimum_visible_graphics_pools/1/8/positive_tilt_no_damage/left_right_endpoint_tv",
+      "transform": "exact",
+      "expected": 0.028941486618144288
+    },
+    {
+      "candidate_id": "STAMP-CONTACT-SIMULATION",
+      "inventory_key": "eight_slot_min_1_balanced_tilt_left_break_endpoint_tv",
+      "source_path": "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json",
+      "source_pointer": "/minimum_visible_graphics_pools/1/8/balanced_tilt_left_break/left_right_endpoint_tv",
+      "transform": "exact",
+      "expected": 0.00987070467316177
+    },
+    {
+      "candidate_id": "STAMP-CONTACT-SIMULATION",
+      "inventory_key": "eight_slot_min_1_balanced_tilt_both_break_sides_endpoint_tv",
+      "source_path": "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json",
+      "source_pointer": "/minimum_visible_graphics_pools/1/8/balanced_tilt_both_break_sides/left_right_endpoint_tv",
+      "transform": "exact",
+      "expected": 0.0
+    },
+    {
+      "candidate_id": "STAMP-CONTACT-SIMULATION",
+      "inventory_key": "eight_slot_min_3_centred_no_damage_endpoint_tv",
+      "source_path": "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json",
+      "source_pointer": "/minimum_visible_graphics_pools/3/8/centred_no_damage/left_right_endpoint_tv",
+      "transform": "exact",
+      "expected": 0.0
+    },
+    {
+      "candidate_id": "STAMP-CONTACT-SIMULATION",
+      "inventory_key": "eight_slot_min_3_balanced_tilt_no_damage_endpoint_tv",
+      "source_path": "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json",
+      "source_pointer": "/minimum_visible_graphics_pools/3/8/balanced_tilt_no_damage/left_right_endpoint_tv",
+      "transform": "exact",
+      "expected": 0.0
+    },
+    {
+      "candidate_id": "STAMP-CONTACT-SIMULATION",
+      "inventory_key": "eight_slot_min_3_positive_tilt_no_damage_endpoint_tv",
+      "source_path": "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json",
+      "source_pointer": "/minimum_visible_graphics_pools/3/8/positive_tilt_no_damage/left_right_endpoint_tv",
+      "transform": "exact",
+      "expected": 0.030846578008433337
+    },
+    {
+      "candidate_id": "STAMP-CONTACT-SIMULATION",
+      "inventory_key": "eight_slot_min_3_balanced_tilt_left_break_endpoint_tv",
+      "source_path": "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json",
+      "source_pointer": "/minimum_visible_graphics_pools/3/8/balanced_tilt_left_break/left_right_endpoint_tv",
+      "transform": "exact",
+      "expected": 0.0074872091862601825
+    },
+    {
+      "candidate_id": "STAMP-CONTACT-SIMULATION",
+      "inventory_key": "eight_slot_min_3_balanced_tilt_both_break_sides_endpoint_tv",
+      "source_path": "experiments/2026-10-02-six-hour/stamp-geometry/reviewed/results.json",
+      "source_pointer": "/minimum_visible_graphics_pools/3/8/balanced_tilt_both_break_sides/left_right_endpoint_tv",
+      "transform": "exact",
+      "expected": 0.0
+    },
+    {
+      "candidate_id": "CISI1-SCAN-AND-ERRATA",
+      "inventory_key": "scan_pages",
+      "source_path": "research/literature/cisi1_page_image_audit.json",
+      "source_pointer": "/pages",
+      "transform": "length",
+      "expected": 862
+    },
+    {
+      "candidate_id": "CISI1-SCAN-AND-ERRATA",
+      "inventory_key": "duplicate_groups",
+      "source_path": "research/literature/cisi1_page_image_audit.json",
+      "source_pointer": "/duplicate_groups",
+      "transform": "length",
+      "expected": 431
+    },
+    {
+      "candidate_id": "CROSS-CATALOGUE-JOIN-AUDIT",
+      "inventory_key": "older_rows_with_CISI",
+      "source_path": "data/normalized/crosscorpus_summary.json",
+      "source_pointer": "/old_to_lipi_cisi_join/has_nonempty_cisi",
+      "transform": "exact",
+      "expected": 2375
+    },
+    {
+      "candidate_id": "CROSS-CATALOGUE-JOIN-AUDIT",
+      "inventory_key": "older_rows_joined",
+      "source_path": "data/normalized/crosscorpus_summary.json",
+      "source_pointer": "/old_to_lipi_cisi_join/cisi_found",
+      "transform": "exact",
+      "expected": 2374
+    },
+    {
+      "candidate_id": "CROSS-CATALOGUE-JOIN-AUDIT",
+      "inventory_key": "older_exact_any_face",
+      "source_path": "data/normalized/crosscorpus_summary.json",
+      "source_pointer": "/old_to_lipi_cisi_join/exact_sequence_match_any_face",
+      "transform": "exact",
+      "expected": 2243
+    },
+    {
+      "candidate_id": "CROSS-CATALOGUE-JOIN-AUDIT",
+      "inventory_key": "older_compatible_ignoring_000",
+      "source_path": "data/normalized/crosscorpus_summary.json",
+      "source_pointer": "/old_to_lipi_cisi_join/match_after_ignoring_eroded_000",
+      "transform": "exact",
+      "expected": 2293
+    },
+    {
+      "candidate_id": "CROSS-CATALOGUE-JOIN-AUDIT",
+      "inventory_key": "mayig_joined",
+      "source_path": "data/normalized/crosscorpus_summary.json",
+      "source_pointer": "/mayig_to_lipi_cisi_join/cisi_found",
+      "transform": "exact",
+      "expected": 179
+    },
+    {
+      "candidate_id": "DATASET-LANDSCAPE",
+      "inventory_key": "resources",
+      "source_path": "experiments/2026-10-02-dataset-landscape/landscape.json",
+      "source_pointer": "/sources",
+      "transform": "length",
+      "expected": 18
+    },
+    {
+      "candidate_id": "DATASET-LANDSCAPE",
+      "inventory_key": "passing_checks",
+      "source_path": "experiments/2026-10-02-dataset-landscape/main-v1/local-input-audit.json",
+      "source_pointer": "/checks",
+      "transform": "length",
+      "expected": 39
+    },
+    {
+      "candidate_id": "DATASET-LANDSCAPE",
+      "inventory_key": "ICIT_2023_objects",
+      "source_path": "experiments/2026-10-02-dataset-landscape/landscape.json",
+      "source_pointer": "/sources/0/counts/objects",
+      "transform": "exact",
+      "expected": 4665
+    },
+    {
+      "candidate_id": "DATASET-LANDSCAPE",
+      "inventory_key": "ICIT_2023_texts",
+      "source_path": "experiments/2026-10-02-dataset-landscape/landscape.json",
+      "source_pointer": "/sources/0/counts/texts",
+      "transform": "exact",
+      "expected": 5650
+    },
+    {
+      "candidate_id": "DATASET-LANDSCAPE",
+      "inventory_key": "ICIT_2023_legible_sign_occurrences",
+      "source_path": "experiments/2026-10-02-dataset-landscape/landscape.json",
+      "source_pointer": "/sources/0/counts/legible_sign_occurrences",
+      "transform": "exact",
+      "expected": 17966
+    },
+    {
+      "candidate_id": "DATASET-LANDSCAPE",
+      "inventory_key": "ICIT_2023_photos_and_drawings",
+      "source_path": "experiments/2026-10-02-dataset-landscape/landscape.json",
+      "source_pointer": "/sources/0/counts/photos_and_drawings",
+      "transform": "exact",
+      "expected": 16015
+    },
+    {
+      "candidate_id": "CHART-687",
+      "inventory_key": "post_comparison_lower_code_ambiguities",
+      "source_path": "research/corpus/primary/chart_complete/consolidated_atlas_audit.json",
+      "source_pointer": "/ambiguous_lower_code_cells",
+      "transform": "exact",
+      "expected": 16
+    },
+    {
+      "candidate_id": "CONTEXT-COMPLETENESS",
+      "inventory_key": "rows",
+      "source_path": "experiments/2026-10-02-six-hour/context-audit/main/results.json",
+      "source_pointer": "/counts/rows",
+      "transform": "exact",
+      "expected": 5680
+    },
+    {
+      "candidate_id": "CONTEXT-COMPLETENESS",
+      "inventory_key": "numeric_families",
+      "source_path": "experiments/2026-10-02-six-hour/context-audit/main/results.json",
+      "source_pointer": "/counts/families",
+      "transform": "exact",
+      "expected": 4695
+    },
+    {
+      "candidate_id": "CONTEXT-COMPLETENESS",
+      "inventory_key": "joint_context_rows",
+      "source_path": "experiments/2026-10-02-six-hour/context-audit/main/results.json",
+      "source_pointer": "/joint_availability/site_area_excavation_depth_room_any_chronology/rows",
+      "transform": "exact",
+      "expected": 1444
+    },
+    {
+      "candidate_id": "CONTEXT-COMPLETENESS",
+      "inventory_key": "joint_context_families",
+      "source_path": "experiments/2026-10-02-six-hour/context-audit/main/results.json",
+      "source_pointer": "/joint_availability/site_area_excavation_depth_room_any_chronology/families_any_face",
+      "transform": "exact",
+      "expected": 1163
+    },
+    {
+      "candidate_id": "LOTHAL-OBSERVATION-FRAME",
+      "inventory_key": "objects",
+      "source_path": "experiments/2026-10-02-six-hour/lothal-physical-use/independent-review/main-refined/results.json",
+      "source_pointer": "/objects",
+      "transform": "exact",
+      "expected": 93
+    },
+    {
+      "candidate_id": "LOTHAL-OBSERVATION-FRAME",
+      "inventory_key": "table_impressions",
+      "source_path": "experiments/2026-10-02-six-hour/lothal-physical-use/independent-review/main-refined/results.json",
+      "source_pointer": "/source_impressions",
+      "transform": "exact",
+      "expected": 133
+    },
+    {
+      "candidate_id": "LOTHAL-OBSERVATION-FRAME",
+      "inventory_key": "joined_objects",
+      "source_path": "experiments/2026-10-02-six-hour/lothal-physical-use/independent-review/main-refined/results.json",
+      "source_pointer": "/joined_objects",
+      "transform": "exact",
+      "expected": 68
+    },
+    {
+      "candidate_id": "LOTHAL-OBSERVATION-FRAME",
+      "inventory_key": "eligible_joined_objects",
+      "source_path": "experiments/2026-10-02-six-hour/lothal-physical-use/independent-review/main-refined/results.json",
+      "source_pointer": "/principal_objects",
+      "transform": "exact",
+      "expected": 29
+    },
+    {
+      "candidate_id": "LOTHAL-OBSERVATION-FRAME",
+      "inventory_key": "eligible_string_groups",
+      "source_path": "experiments/2026-10-02-six-hour/lothal-physical-use/independent-review/main-refined/results.json",
+      "source_pointer": "/distinct_complete_strings",
+      "transform": "exact",
+      "expected": 9
+    },
+    {
+      "candidate_id": "CROSS-CATALOGUE-JOIN-AUDIT",
+      "inventory_key": "source_complete_plate_objects",
+      "source_path": "research/corpus/plate_audit/adjudications.json",
+      "source_pointer": "/sample/lipi_complete_single_line",
+      "transform": "exact",
+      "expected": 24
+    },
+    {
+      "candidate_id": "CROSS-CATALOGUE-JOIN-AUDIT",
+      "inventory_key": "plate_compatible",
+      "source_path": "research/corpus/plate_audit/adjudications.json",
+      "source_pointer": "/sample/all_token_candidate_compatible",
+      "transform": "exact",
+      "expected": 17
+    },
+    {
+      "candidate_id": "CROSS-CATALOGUE-JOIN-AUDIT",
+      "inventory_key": "plate_discrepant",
+      "source_path": "research/corpus/plate_audit/adjudications.json",
+      "source_pointer": "/sample/complete_candidate_incompatible",
+      "transform": "exact",
+      "expected": 7
+    },
+    {
+      "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+      "inventory_key": "gap_estimator_pct",
+      "source_path": "research/methods/results/gap_design_matched/gap_design_matched.json",
+      "source_pointer": "/design_matched_models/local/exact_count_accuracy",
+      "transform": "percent_round_2",
+      "expected": 46.3
+    },
+    {
+      "candidate_id": "STRUCTURAL-PREDICTION-METHODS",
+      "inventory_key": "constant_one_pct",
+      "source_path": "research/methods/results/gap_design_matched/gap_design_matched.json",
+      "source_pointer": "/design_matched_models/local/constant_one_glyph_design_control_accuracy",
+      "transform": "percent_round_2",
+      "expected": 51.07
+    }
+  ]
 }

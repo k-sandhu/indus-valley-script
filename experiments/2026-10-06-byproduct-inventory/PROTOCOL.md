@@ -1,4 +1,4 @@
-﻿# Protocol: byproduct publication inventory
+# Protocol: byproduct publication inventory
 
 ## Question
 Which recorded project outputs outside the narrow question of deciphering the Indus script establish reusable archaeological, metrological, catalogue, computational, conservation, or reproducibility results, and what is the smallest credible publication form for each?
@@ -19,3 +19,13 @@ A candidate can be a negative result if it rejects a tested method, exposes an i
 
 ## Amendment rule
 Any change after inspecting candidate outcomes will be dated here and will mark affected judgments exploratory. This inventory is an assessment of existing outputs; no earlier analysis is rerun or altered.
+
+## Amendment: 2026-10-07, coordinator correction after review
+
+The first-pass package is preserved in `first-pass/`. The initial draft added the public-index placeholder, Kanmer frame and structural-prediction bundle after its first snapshot and reordered candidates without recording an amendment. It also used search results for several venue pages despite the opening requirement, and omitted original registry status wording. These departures affect publication judgments, which remain Exploratory.
+
+This revision follows `REVIEW.md`: remove all results from the unfinished B1/B2 packages, retain rank 6 solely as an unranked pointer, correct saved-output numbers and provenance, reassign registry entries by their evidence, and add missed archival and metrological results. Existing candidate ranks 1–23 are stable reference numbers during correction; appended records receive 24 onward. They are not a new numerical score ordering. The report will give field-specific priorities and distinguish held candidates.
+
+For ranks 2, 3, 4 and 8, conduct on-subject live searches and record the particular source opened or seen only in results. A source under audit is prior scholarship, not an independent correction precedent. Keep unsuccessful source openings in the search log. Name a submission venue only when its official page has been opened and supports the proposed article type; otherwise retain an explicit venue-verification gap. Preserve legacy registry labels per mapped entry and distinguish primary endpoints, synthetic data and post-outcome refinements. All numerical corrections use saved evidence; only package bookkeeping and prose checks will run.
+
+The amended qualitative recommendation is recorded separately as `priority_position` and `recommended_priority_order`; stable `rank` numbers locate review comments. Rank 6 has no priority position. The amended top five are the chart resource, context audit, CISI host notice, combined numerical-premise audit and cross-catalogue audit. This is an exploratory assessment of the smallest credible deliverable, not a scored or independently validated literature-priority ranking.
