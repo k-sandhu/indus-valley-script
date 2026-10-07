@@ -87,9 +87,15 @@ def cisi_id(value):
     return (m[1].casefold(), int(m[2])) if m else None
 
 
-def range_in(text):
-    m = re.search(r'([A-Za-z]+)\s*-?\s*(\d+)\s*[\u2013\u2014-]\s*(?:[A-Za-z]+\s*-?\s*)?(\d+)', text)
-    return (m[1], int(m[2]), int(m[3])) if m else None
+def ranges_in(text):
+    """Parse all identifier runs before the page-reference semicolon."""
+    found = []
+    for part in text.split(';', 1)[0].split(','):
+        m = re.fullmatch(r'\s*([A-Za-z]+)\s*-?\s*(\d+)(?:\s*[\u2013\u2014-]\s*(?:[A-Za-z]+\s*-?\s*)?(\d+))?\s*', part)
+        if not m:
+            raise ValueError('Unparsed catalogue run: ' + part)
+        found.append((m[1], int(m[2]), int(m[3] or m[2])))
+    return found
 
 
 def main():
@@ -113,6 +119,9 @@ def main():
     cm = {r['site']: r for r in coord}
     lipi = jsonl(ROOT / 'data/normalized/lipi_observed_faces.jsonl')
     mayig = jsonl(ROOT / 'data/normalized/mayig_faces.jsonl')
+    corrections = read(OWN / 'v6-correction-inputs.json')
+    im77_source = ROOT / corrections['im77_source']
+    PINS[corrections['im77_source']] = {'bytes': im77_source.stat().st_size, 'sha256': sha256(im77_source.read_bytes()).hexdigest()}
     bysite = defaultdict(list)
     for row in lipi:
         bysite[canonical(row['site'])].append(row)
@@ -182,9 +191,8 @@ def main():
                         'first': 1, 'last': c['catalogue_objects'], 'pages': c['page_range'], 'input_pointer': pointer})
             if b.startswith('a'):
                 for vol, value in (row.get('cisi') or {}).get('verified_ranges', {}).items():
-                    r = range_in(value) if vol in ['1', '2'] else None
-                    if r:
-                        prefix, first, last = r
+                    runs = ranges_in(value) if vol in ['1', '2'] else []
+                    for prefix, first, last in runs:
                         # Catalogue aliases do not create extra edition entries.
                         catalogue.append({'site': site, 'batch': b, 'edition': 'CISI' + vol,
                             'prefix': prefix, 'first': first, 'last': last, 'pages': value, 'input_pointer': pointer})
@@ -217,9 +225,14 @@ def main():
                 title = s.get('title', '')
                 if not isinstance(title, str):
                     continue
-                if len(title) > 350 or len(title.split()) > 55:
+                removed = title.startswith('Search-result text removed by the coordinator')
+                rules = [rule for rule, matches in [('length_over_150', len(title) > 150),
+                         ('mid_sentence_start', bool(re.match(r'^[a-z]', title))),
+                         ('multiple_sentences', bool(re.search(r'[.!?]\s+[A-Z].*[.!?]', title)))] if matches]
+                if rules and not removed:
                     snippet_flags.append({'file': source_path.relative_to(ROOT).as_posix(), 'record_id': s.get('id', s.get('source_id')),
-                        'title_characters': len(title), 'title_words': len(title.split()), 'review': 'Suspected snippet in title; inspect original. Legitimate long titles may also trigger.'})
+                        'title_characters': len(title), 'title_words': len(title.split()), 'rules': rules,
+                        'review': 'Screening candidate only; bibliographic titles can trigger. No title payload copied.'})
 
     bysite = defaultdict(list)
     for row in lipi:
@@ -243,6 +256,10 @@ def main():
         c['matching_prefix'] = key_prefix
         c['prefix_basis'] = 'CISI2 pp.389-390; Ai1-2 refer to CISI1 Amri1-2' if key_prefix != c['prefix'] else 'printed catalogue prefix'
         expected_keys = {(key_prefix.casefold(), n) for n in range(c['first'], c['last'] + 1)}
+        c['printed_number_slots'] = len(expected_keys)
+        exclusions = [x for x in corrections['catalogue_exclusions'] if x['site'] == c['site'] and x['edition'] == c['edition'] and x['prefix'] == c['prefix'] and c['first'] <= x['number'] <= c['last']]
+        c['exclusions'] = exclusions
+        expected_keys -= {(key_prefix.casefold(), x['number']) for x in exclusions}
         present = keys & expected_keys
         missing = expected_keys - keys
         c.update(catalogue_entries=len(expected_keys), local_matching_entries=len(present), local_absent_entry_keys=len(missing),
@@ -251,6 +268,30 @@ def main():
                             'absent_base_identifiers': sorted(f'{p}-{n}' for p, n in missing)})
     csvout(out / 'catalogue-coverage.csv', catalogue)
     write(raw / 'absent-catalogue-identifiers.json', raw_missing)
+
+    # Classify absent keys by the reviewed catalogue section, not by a
+    # presumed linguistic status of each marked object.
+    review_csv = ROOT / corrections['section_split_source']
+    PINS[corrections['section_split_source']] = {'bytes': review_csv.stat().st_size, 'sha256': sha256(review_csv.read_bytes()).hexdigest()}
+    reviewed_sections = list(csv.DictReader(review_csv.open(encoding='utf-8-sig')))
+    section_rows = []
+    def graffiti_section(site, n):
+        return (site == 'Lothal' and n >= 221) or (site == 'Kalibangan' and 90 <= n <= 120) or (site == 'Banawali' and n >= 24) or (site == 'Daimabad' and n >= 6) or site in ['Rangpur', 'Chandigarh'] or (site == 'Tarkhanewala Dera' and n >= 2)
+    for r in reviewed_sections:
+        c = next(x for x in catalogue if x['site'] == r['site'] and x['edition'] == 'CISI1-1987')
+        keys = {cisi_id(x['source_cisi']) for x in bysite[c['site']]}
+        absent = {(c['matching_prefix'].casefold(), n) for n in range(c['first'], c['last'] + 1)} - keys
+        graffiti = sum(graffiti_section(c['site'], n) for _, n in absent)
+        other = len(absent) - graffiti
+        check('review_section:' + c['site'] + ':absent', len(absent), int(r['local_absent']))
+        check('review_section:' + c['site'] + ':graffiti', graffiti, int(r['absent_in_graffiti_or_pottery_sections']))
+        check('review_section:' + c['site'] + ':other', other, int(r['absent_in_seal_impression_tablet_sections']))
+        section_rows.append({'site': c['site'], 'range': r['range'], 'entries': c['catalogue_entries'], 'matching_keys': c['local_matching_entries'],
+                             'absent_keys': len(absent), 'absent_graffiti_or_pottery_sections': graffiti,
+                             'absent_seal_impression_tablet_other_sections': other, 'printed_pages': r['printed_pages_read'],
+                             'classification_basis': 'Reviewed printed section boundaries; Banawali B24-29 is a mixed tablets/graffiti section; eligibility remains object-specific',
+                             'evidence': corrections['section_split_source']})
+    csvout(out / 'catalogue-section-split.csv', section_rows)
 
     # Source-level joins connect registers without treating a shared publication as a new object.
     pub = read(BASE / 'sites-and-publications/publication-register.json')['publications']
@@ -305,8 +346,6 @@ def main():
         confirmed.append({'key': p['key'], 'museum_url': j['museum_url'], 'method': j['join_method'],
                           'family': j['object_family_id'], 'face_ids': face_ids, 'source_evidence': j['join_evidence'],
                           'status': 'reported_confirmed_identifier_join; numerical_consistency_rechecked'})
-    write(raw / 'confirmed-object-joins.json', confirmed)
-    write(raw / 'candidate-object-joins.json', candidates)
     joins = {'museum_original_records': len(museum), 'confirmed_identifier_joins': len(paired),
              'unconfirmed_records': len(candidates), 'confirmed_families': len({r['family'] for r in confirmed}),
              'confirmed_faces': len({x for r in confirmed for x in r['face_ids']}), 'methods': dict(method_counts),
@@ -318,19 +357,67 @@ def main():
         check('museum_summary:' + key, joins[key], saved_summary[previous])
     check('museum_partition', len(paired) + len(candidates), len(museum))
     check('museum_methods', dict(method_counts), saved_summary['join_methods'])
+    supplement = read(ROOT / corrections['museum_supplement'])
+    new_pairs = []
+    for s in supplement:
+        selected = [r for r in museum if r['institution'] == s['institution'] and r['accession'] == s['accession']]
+        check('additional_museum:' + s['record_id'] + ':unique_record', len(selected), 1)
+        m = selected[0]
+        original = ROOT / s['raw_record']
+        digest = sha256(original.read_bytes()).hexdigest()
+        PINS[original.relative_to(ROOT).as_posix()] = {'bytes': original.stat().st_size, 'sha256': digest}
+        check('additional_museum:' + s['record_id'] + ':original_hash', digest, s['raw_sha256'])
+        hits = [r for r in lipi if r['source_cisi'] == s['source_cisi']]
+        id_hits = [r for r in lipi if norm(r['metadata'].get('excavation-idno')) == norm(s['excavation_idno'])]
+        check('additional_museum:' + s['record_id'] + ':unique_cisi_family', len({r['object_family_id'] for r in hits}), 1)
+        check('additional_museum:' + s['record_id'] + ':same_id_family', sorted({r['object_family_id'] for r in hits}), sorted({r['object_family_id'] for r in id_hits}))
+        if s['method'].startswith('normalized_full_excavation'):
+            key = m['accession'].removesuffix('-1145') if m['accession'] == 'BNL-1-170-84-1145' else m['accession']
+            check('additional_museum:' + s['record_id'] + ':full_string', norm(key), norm(s['excavation_idno']))
+        family = hits[0]['object_family_id']
+        key = m['institution'] + '|' + m['accession']
+        check('additional_museum:' + s['record_id'] + ':unused_record', key in {r['key'] for r in confirmed}, False)
+        check('additional_museum:' + s['record_id'] + ':unused_family', family in {r['family'] for r in confirmed}, False)
+        faces = [r for r in lipi if r['object_family_id'] == family]
+        confirmed.append({'key': key, 'museum_url': m['url'], 'method': s['method'], 'family': family,
+                          'face_ids': [r['record_id'] for r in faces], 'source_evidence': s['source_evidence'], 'status': s['review_status']})
+        method_counts[s['method']] += 1
+        new_pairs.append({'museum': m, 'corpus_faces': faces, 'join_evidence': s['source_evidence'], 'method': s['method'], 'field_comparison_status': 'not adjudicated'})
+    joined_keys = {r['key'] for r in confirmed}
+    candidates = [r for r in candidates if r['institution'] + '|' + r['accession'] not in joined_keys]
+    def candidate_status(r):
+        if r['attempts']:
+            return 'failed_string_match'
+        return 'untried_usable_key' if r['usable_identifier'] else 'no_usable_key_in_original_pass'
+    for r in candidates:
+        r['query_disposition'] = candidate_status(r)
+    joins.update(confirmed_identifier_joins=len(confirmed), unconfirmed_records=len(candidates),
+                 confirmed_families=len({r['family'] for r in confirmed}),
+                 confirmed_faces=len({x for r in confirmed for x in r['face_ids']}), methods=dict(method_counts),
+                 previous_confirmed_lower_bound=len(paired), additional_checked_joins=len(supplement),
+                 comparison_denominator=len(paired), additional_field_comparisons='Seven new joins have not received the full paired-field adjudication',
+                 unresolved_query_dispositions=dict(Counter(r['query_disposition'] for r in candidates)),
+                 join_count_is_lower_bound=True)
+    check('expanded_museum_partition', len(confirmed) + len(candidates), len(museum))
+    check('expanded_museum_unique_records', len(joined_keys), len(confirmed))
+    check('expanded_museum_unique_families', len({r['family'] for r in confirmed}), len(confirmed))
+    write(raw / 'confirmed-object-joins.json', confirmed)
+    write(raw / 'candidate-object-joins.json', candidates)
+    write(raw / 'additional-join-pairs.json', new_pairs)
     write(out / 'join-summary.json', joins)
 
     field_rows = []
     def field(index, unit, total, key, count, basis, source, measurement='measured_export_presence'):
         field_rows.append({'index': index, 'unit': unit, 'denominator': total, 'field': key, 'present': count,
-            'missing': total - count if total is not None and count is not None else None,
-            'percent': round(100 * count / total, 4) if total and count is not None else None,
+            'missing': total - count if total is not None and count is not None and measurement != 'structural_schema_absence' else None,
+            'percent': round(100 * count / total, 4) if total and count is not None and measurement != 'structural_schema_absence' else None,
             'measurement': measurement, 'basis': basis, 'evidence': source})
     lp = 'data/normalized/lipi_observed_faces.jsonl; metadata fields named in basis; input-manifest.json'
     n = len(lipi)
     definitions = {
         'named_site': (lambda r: populated(r['site']), 'site; Unknown is missing'),
         'findspot': (lambda r: populated(r['metadata'].get('room-grid')), 'room-grid; spatial-unit proxy, not an independently reviewed findspot'),
+        'spatial_context_any': (lambda r: any(populated(r['metadata'].get(k)) for k in ['area-section', 'block-house', 'room-grid']), 'any area-section, block-house or room-grid; broad spatial context presence'),
         'stratum_or_phase': (lambda r: any(populated(r['metadata'].get(k)) for k in ['period', 'phase']), 'period or phase; generic/site-specific labels retained'),
         'depth': (lambda r: populated(r['metadata'].get('depth')), 'depth; dash-space placeholder normalized to missing'),
         'date_or_period_label': (lambda r: populated(r['metadata'].get('time')), 'time; includes source cultural-period codes'),
@@ -344,14 +431,17 @@ def main():
         'CISI_identifier': (lambda r: populated(r['source_cisi']), 'source_cisi; raw identifier strings retained'),
         'licence': (lambda r: False, 'No per-row asset/source rights link in normalized derivative; Lipi bulk terms unresolved')}
     for key, (rule, basis) in definitions.items():
-        field('Lipi pinned derivative', 'face records', n, key, sum(rule(r) for r in lipi), basis, lp)
+        structural = key in ['absolute_date', 'photographs', 'licence']
+        field('Lipi pinned derivative', 'face records', n, key, sum(rule(r) for r in lipi), basis, lp,
+              'structural_schema_absence' if structural else 'measured_export_presence')
     for key, (rule, _) in definitions.items():
         if key in ['named_site', 'findspot', 'stratum_or_phase', 'absolute_date', 'dimensions', 'material', 'photographs', 'registration_numbers', 'licence']:
             count = sum(populated(r['site']) for r in mayig) if key == 'named_site' else 0
             basis = 'site' if key == 'named_site' else 'Field absent from this normalized annotation; upstream assets and MIT notice have separate scope'
-            field('Mayig pinned derivative', 'face records', len(mayig), key, count, basis, 'data/normalized/mayig_faces.jsonl')
+            field('Mayig pinned derivative', 'face records', len(mayig), key, count, basis, 'data/normalized/mayig_faces.jsonl',
+                  'measured_export_presence' if key == 'named_site' else 'structural_schema_absence')
     field('Mayig pinned derivative', 'face records', len(mayig), 'CISI_identifier', len(mayig), 'object_family_id is a CISI key, not a museum/excavation registration', 'data/normalized/mayig_faces.jsonl')
-    field('Mayig pinned derivative', 'face records', len(mayig), 'calendar_date_assertion', 0, 'No calendar-date field in normalized annotation', 'data/normalized/mayig_faces.jsonl')
+    field('Mayig pinned derivative', 'face records', len(mayig), 'calendar_date_assertion', 0, 'No calendar-date field in normalized annotation', 'data/normalized/mayig_faces.jsonl', 'structural_schema_absence')
     field_path = BASE / 'collections-and-datasets/focused-field-counts.csv'
     PINS[field_path.relative_to(ROOT).as_posix()] = {'bytes': field_path.stat().st_size, 'sha256': sha256(field_path.read_bytes()).hexdigest()}
     fr = list(csv.DictReader(field_path.open(encoding='utf-8-sig')))
@@ -369,7 +459,9 @@ def main():
                 basis += '; image slots, not inspected photographs; BM six records unmeasured'
             unknown_images = old == 'photographs' and int(s['image_count_unmeasured']) == len(subset)
             field(s['source'], 'inspected museum originals', len(subset), key, None if unknown_images else int(s[old]), basis,
-                  field_path.relative_to(ROOT).as_posix(), 'unmeasured' if unknown_images else 'measured_export_presence')
+                  field_path.relative_to(ROOT).as_posix(), 'unmeasured' if unknown_images else 'inherited_rule_not_recomputed' if old in ['named_site', 'excavation_number'] else 'measured_export_presence')
+        field(s['source'], 'inspected museum originals', len(subset), 'site_label_raw_presence', sum(bool(r['site']) for r in subset), 'Nonempty raw site string; no named-site adjudication', 'focused-records.json; input-manifest.json')
+        field(s['source'], 'inspected museum originals', len(subset), 'excavation_raw_presence', sum(bool(r['excavation_raw']) for r in subset), 'Nonempty excavation_raw; source-assisted concordance keys have separate scope', 'focused-records.json; input-manifest.json')
         field(s['source'], 'inspected museum originals', len(subset), 'accession_number', int(s['accession_number']), 'Museum accession presence', field_path.relative_to(ROOT).as_posix())
         field(s['source'], 'inspected museum originals', len(subset), 'calendar_date_assertion', sum(calendar_label(r['date']) for r in subset),
               'Numeral plus explicit era/century/millennium or French negative-year range; includes broad catalogue/style attributions, not direct object dates', 'focused-records.json; input-manifest.json')
@@ -401,11 +493,15 @@ def main():
                 v = (r.get('mahadevan_1977_or_icit_count') or {}).get('main_corpus_objects')
                 if isinstance(v, int):
                     m77 = v
+        inherited_m77 = m77
+        m77 = corrections['im77_site_table'].get(site)
+        m77_status = 'printed_IM77_p6_count' if m77 is not None else 'not_listed_in_IM77_p6_site_table'
         cat = [c for c in catalogue if c['site'] == site]
         coverage.append({'site': site, 'assigned_region': region, 'batch_mentions': [e['batch'] for e in entries],
             'local_faces': len(local), 'local_families': len({r['object_family_id'] for r in local}),
             'local_cisi_identifiers': len({r['source_cisi'] for r in local if populated(r['source_cisi'])}),
-            'IM77_main_selected_objects': m77, 'catalogue_runs': cat,
+            'IM77_main_selected_objects': m77, 'IM77_count_status': m77_status,
+            'IM77_inherited_count': inherited_m77, 'IM77_evidence': corrections['im77_locator'], 'catalogue_runs': cat,
             'published_count_assertions': [a for a in assertions if a['site'] == site],
             'ICIT_object_count': None, 'worldwide_missing_objects': None,
             'coverage_basis': 'Source/version-specific count assertions; no common worldwide object denominator',
@@ -417,8 +513,12 @@ def main():
         region_rows.append({'region': b, 'site_or_provenance_entities': len(rr), 'local_faces': sum(r['local_faces'] for r in rr),
             'local_families': sum(r['local_families'] for r in rr), 'IM77_main_selected_objects_available': sum(r['IM77_main_selected_objects'] or 0 for r in rr),
             'IM77_sites_with_count': sum(r['IM77_main_selected_objects'] is not None for r in rr),
-            'CISI1_catalogue_entries': sum(c['catalogue_entries'] for c in cat), 'CISI1_matching_local_keys': sum(c['local_matching_entries'] for c in cat),
-            'CISI1_absent_local_keys': sum(c['local_absent_entry_keys'] for c in cat), 'worldwide_missing_objects': None})
+            'IM77_count_status': 'sum_of_named_sites_in_frame; unknown-provenance entries excluded',
+            'CISI1_catalogue_entries': sum(c['catalogue_entries'] for c in cat) if cat else None, 'CISI1_matching_local_keys': sum(c['local_matching_entries'] for c in cat) if cat else None,
+            'CISI1_absent_local_keys': sum(c['local_absent_entry_keys'] for c in cat) if cat else None,
+            'CISI1_count_status': 'selected_source_ranges' if cat else 'not_applicable_to_abroad_frame', 'worldwide_missing_objects': None})
+    check('corrected_IM77_north', next(r['IM77_main_selected_objects_available'] for r in region_rows if r['region'].startswith('c')), 117)
+    check('IM77_site_table_plus_unknown', sum(corrections['im77_site_table'].values()) + corrections['im77_unknown_south_asian'] + corrections['im77_unknown_west_asian'], 2906)
     represented = {r['site'] for r in coverage}
     excluded_local = [{'site': r['site'], 'faces': r['faces'], 'families': r['object_families']} for r in coord if canonical(r['site']) not in represented]
     cisi1 = [c for c in catalogue if c['edition'] == 'CISI1-1987']
@@ -432,14 +532,26 @@ def main():
                'local_all_faces': len(lipi), 'local_all_provisional_families': len({r['object_family_id'] for r in lipi}),
                'CISI1_BC_entries': sum(c['catalogue_entries'] for c in bc), 'CISI1_BC_matching_keys': sum(c['local_matching_entries'] for c in bc),
                'CISI1_BC_absent_keys': sum(c['local_absent_entry_keys'] for c in bc),
+               'CISI1_BC_absent_graffiti_or_pottery_sections': sum(r['absent_graffiti_or_pottery_sections'] for r in section_rows),
+               'CISI1_BC_absent_seal_impression_tablet_other_sections': sum(r['absent_seal_impression_tablet_other_sections'] for r in section_rows),
                'worldwide_missing_objects': None, 'worldwide_coverage_percent': None}
+    frame_omissions = []
+    for gap in corrections['frame_omissions']:
+        check('frame_omission:' + gap['site'] + ':no_row', canonical(gap['site']) in groups, False)
+        check('frame_omission:' + gap['site'] + ':no_local_label', any(norm(x['site']) == norm(gap['site']) for x in lipi), False)
+        frame_omissions.append(dict(gap))
     result = {'status': 'Exploratory', 'computation_status': 'Verified computation' if all(c['passed'] for c in checks) else 'Failed',
               'as_of': '2026-10-07', 'summary': summary, 'batch_recomputation': batches, 'regions': region_rows, 'sites': coverage,
+              'frame_omissions': frame_omissions, 'input_state': corrections['post_trim_note'],
+              'definitions': {'face': 'One normalized record for a source-defined object side or text-bearing view; not an independently excavated object',
+                 'local_corpus': 'Pinned Lipi derivative with 5680 face rows, whose internal numbering follows the ICIT-derived export; relation to current ICIT inventory unverified',
+                 'provisional_family': 'Local object_family_id groups face rows; physical identity has not been adjudicated across all families',
+                 'absent_key': 'A catalogue base identifier has no exact or recorded source-attested alias match among the local keys; object absence remains unresolved'},
               'index_counts': [{'index': s['id'], 'counts': s.get('counts'), 'basis': s.get('count_basis', s.get('observations')), 'input': '2026-10-02-dataset-landscape/landscape.json'} for s in landscape['sources'] if s['id'] in ['ICIT', 'MAYIG', 'LIPI', 'IM77-WEB', 'CISI']]}
     write(out / 'coverage.json', result)
-    csvout(out / 'coverage.csv', [{k: r[k] for k in ['site', 'assigned_region', 'local_faces', 'local_families', 'local_cisi_identifiers', 'IM77_main_selected_objects', 'catalogue_runs', 'published_count_assertions', 'ICIT_object_count', 'worldwide_missing_objects', 'evidence']} for r in coverage])
+    csvout(out / 'coverage.csv', [{k: r[k] for k in ['site', 'assigned_region', 'local_faces', 'local_families', 'local_cisi_identifiers', 'IM77_main_selected_objects', 'IM77_count_status', 'IM77_inherited_count', 'catalogue_runs', 'published_count_assertions', 'ICIT_object_count', 'worldwide_missing_objects', 'evidence']} for r in coverage])
     csvout(out / 'region-coverage.csv', region_rows)
-    write(out / 'source-title-audit.json', {'rule': 'title >350 characters or >55 whitespace words; candidates for manual trimming', 'flags': snippet_flags,
+    write(out / 'source-title-audit.json', {'rule': 'title >150 characters, lowercase mid-sentence start, or multiple sentences; coordinator removal markers excluded; candidates require manual review', 'input_state': corrections['post_trim_note'], 'flags': snippet_flags,
           'affected_files': dict(Counter(r['file'] for r in snippet_flags)), 'copied_title_payload': False})
     write(out / 'checks.json', {'status': 'Verified computation' if all(c['passed'] for c in checks) else 'Failed', 'checks_count': len(checks),
                               'failed': [c for c in checks if not c['passed']],

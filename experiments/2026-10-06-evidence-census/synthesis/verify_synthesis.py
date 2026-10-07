@@ -16,7 +16,7 @@ def load(path):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--endpoint', default='experiments/2026-10-06-evidence-census/synthesis/main-2026-10-07-v5')
+    ap.add_argument('--endpoint', default='experiments/2026-10-06-evidence-census/synthesis/main-2026-10-07-v6')
     ap.add_argument('--compare', help='Optional independently rebuilt endpoint')
     ap.add_argument('--output', help='New verification JSON inside owned directory')
     args = ap.parse_args()
@@ -41,6 +41,15 @@ def main():
         for key in ['catalogue_runs', 'published_count_assertions', 'evidence']:
             check('CSV:' + a['site'] + ':' + key, a[key] == json.loads(b[key]))
     check('all_computation_checks_passed', load(endpoint / 'checks.json')['status'] == 'Verified computation')
+    check('corrected_north_IM77', next(r['IM77_main_selected_objects_available'] for r in c['regions'] if r['region'].startswith('c')) == 117)
+    check('BC_absent_section_partition', c['summary']['CISI1_BC_absent_graffiti_or_pottery_sections'] == 75 and c['summary']['CISI1_BC_absent_seal_impression_tablet_other_sections'] == 91)
+    fields = list(csv.DictReader((endpoint / 'field-completeness.csv').open(encoding='utf-8')))
+    check('twelve_structural_absences', sum(r['measurement'] == 'structural_schema_absence' for r in fields) == 12)
+    check('structural_absences_no_percentage', all(r['percent'] == '' for r in fields if r['measurement'] == 'structural_schema_absence'))
+    joins = load(endpoint / 'join-summary.json')
+    check('expanded_museum_lower_bound', joins['confirmed_identifier_joins'] == 68 and joins['join_count_is_lower_bound'])
+    check('expanded_museum_partition', joins['confirmed_identifier_joins'] + joins['unconfirmed_records'] == 114)
+    check('unresolved_query_dispositions', sum(joins['unresolved_query_dispositions'].values()) == 46)
     selection = load(OWN / 'sample-selection.json')
     sample = load(OWN / 'source-sample-audit.json')
     check('sample_has_twenty_rows', sample['rows_checked'] == 20 == len(sample['rows']))

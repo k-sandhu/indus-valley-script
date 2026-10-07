@@ -158,24 +158,28 @@
     {
       "rank": 7,
       "id": "museum-unjoined",
-      "pool": "53 confirmed-original museum records lacking confirmed local joins",
+      "pool": "46 museum original records lacking a checked local identifier join",
       "kind": "identity_gap",
       "scale": {
         "inspected_originals": 114,
-        "confirmed_joins": 61,
-        "unjoined": 53
+        "confirmed_join_lower_bound": 68,
+        "previous_lower_bound": 61,
+        "unjoined": 46,
+        "failed_string_match": 13,
+        "untried_usable_key": 2,
+        "no_usable_key_in_original_pass": 31
       },
       "evidence_added": "New photographs, dimensions, accessions and possibly objects once aliases and duplicates are resolved.",
       "route": [
-        "53 raw candidate records",
+        "Original53 raw candidate records;46 remain unresolved after seven checked additions",
         "CISI museum/excavation tables",
         "museum request for registration concordances and item-level image terms"
       ],
       "rights": "Met eligible assets CC0, Penn downloadable data CC BY4.0 and Louvre record data Etalab Open Licence2.0 are recorded policy routes; image permissions and Indian portal/BM bulk terms have separate scopes. Policies were inherited from the focused census.",
       "evidence": [
         "join-summary.json",
-        "collections-and-datasets/focused-field-counts.csv",
-        "collections-and-datasets/REPORT.md#Fields and reuse conditions"
+        "data/raw/2026-10-06-evidence-census/synthesis/main-2026-10-07-v6/candidate-object-joins.json",
+        "review/museum-join-check.md"
       ]
     },
     {
@@ -206,5 +210,6 @@
         "conflicts.json#Foreign-find-denominator"
       ]
     }
-  ]
+  ],
+  "amendment": "v6 museum lower bound and query dispositions; pools remain overlapping"
 }

@@ -1,50 +1,53 @@
 # Evidence census synthesis, Package B3
 
-The available evidence does **not** establish a complete Indus index. The worldwide number of missing physical objects remains unknown. Across 19 inspected CISI 1 site ranges, **327 of 493 catalogue identifiers match the local corpus and 166 do not**. The selected online museum frame contains **114 originals, 61 confirmed identifier joins and 53 unjoined records**. These overlapping source frames have different counting units. [REPORT.md](REPORT.md) explains the bases, source disagreements and acquisition gaps.
+No complete worldwide index is established. The local Lipi derivative matches 327 of 493 identifiers in 19 inspected CISI 1 ranges; 166 are absent keys, split into 75 in pottery/graffiti sections and 91 in other sections. The museum join count is now a lower bound of 68 among 114 originals, with 46 unresolved. The worldwide number of additional physical objects remains unknown. [REPORT.md](REPORT.md) defines the units and explains the source populations.
 
-The four active site batches' **123 rows** join to **115 site/provenance entities**, representing **5,652 local faces and 4,668 provisional families**. Another **28 faces and 27 families** have unknown site labels. On the full 5,680-face derivative, **2,191** have room/grid context, **4,441** a positive dimension and **4,706** material. Calendar dates, independent dating links, image links and item-rights links are absent from its normalized fields. [coverage.json](coverage.json), `summary`, and [field-completeness.csv](field-completeness.csv), `basis`, define those measures.
+Here, a face is one source-defined side or text-bearing view in the pinned 5,680-record local corpus. A provisional family groups those records by a local object identifier. An absent key has no exact or recorded alias match in that export; the corresponding physical object may still occur under another key. The 115 site/provenance entities account for 5,652 faces by site label, while 28 faces have unknown sites.
 
-Status: Exploratory synthesis and Proposed schema/pilot amendments. The v5 arithmetic endpoint passes **728 checks**. A fresh replay matches all ten JSON/CSV aggregates, and [verification-2026-10-07-v2.json](verification-2026-10-07-v2.json) passes **1,069 checks**. A purposive source check covers **20 sites**, five per batch, with **14 supported and six qualified selected assertions**. Separate contributor/source review remains outstanding.
+V6 records the coordinator's post-trim inputs and the Sonnet review corrections. Its corrected Pakistan CISI 1 comparison is 910 matches in 1,040 catalogue entries across five runs at four sites. The north India IM77 count is 117. Seven checked museum additions bring the total to 68 families and 74 faces. [coverage.json](coverage.json), [catalogue-coverage.csv](catalogue-coverage.csv) and [join-summary.json](join-summary.json) contain these numbers.
 
-[Package checks](package-checks-2026-10-07-v1.json) pass 94 copy, link, syntax and accounting checks. The four authored ledgers reproduce in [annotation replay checks](annotation-replay-checks-2026-10-07-v1.json). The final [prose scan](prose-review-2026-10-07-v2.json) reports no flagged wording in the five Markdown files; source interpretation still requires the review below.
+The synthesis remains Exploratory. A fresh replay matches all eleven aggregate files, with [1,093 verification checks](verification-2026-10-07-v6.json) passing. [The endpoint](main-2026-10-07-v6/checks.json) passes 850 arithmetic checks. These checks establish computation and pinned bytes; source interpretation and unresolved identities retain their review status. The original 20-site sample verdicts 14/6 and the review's source-wide 18/2 verdicts are recorded separately.
 
-## Outputs
+[Package checks](package-checks-2026-10-07-v6.json) pass 173 checks, including unchanged hashes for 64 earlier endpoint files. The [prose scan](prose-review-2026-10-07-v6.json) finds no flags in 19 current, preserved and reviewer Markdown files.
 
-| File | Contents |
+## Current outputs and preservation
+
+| Output | Contents |
 |---|---|
-| [PROTOCOL.md](PROTOCOL.md) | Pre-outcome method, sample rules and dated correction amendments. |
-| [REPORT.md](REPORT.md) | Direct answer, count bases, metadata measures, uncertainty and source-title repairs. |
-| [RETROSPECTIVE.md](RETROSPECTIVE.md) | Reused work, observed problems, corrections and remaining review. |
-| [coverage.json](coverage.json), [coverage.csv](coverage.csv), [region-coverage.csv](region-coverage.csv) | Site and regional figures, source count assertions and undefined worldwide coverage. |
-| [catalogue-coverage.csv](catalogue-coverage.csv) | Selected CISI ranges and local base-identifier membership. |
-| [field-completeness.csv](field-completeness.csv) | Measured field presence and unmeasured denominators for each index. |
-| [register-joins.json](register-joins.json), [join-summary.json](join-summary.json) | Source/site links, candidate statuses and museum object-join aggregates. |
-| [priority-gaps.json](priority-gaps.json) | Eight overlapping acquisition pools, routes and rights constraints. |
-| [SCHEMA-AMENDMENTS.md](SCHEMA-AMENDMENTS.md) | Proposed entity/field additions and stratified 200-object pilot. |
-| [sources.json](sources.json), [sample-selection.json](sample-selection.json), [source-sample-audit.json](source-sample-audit.json), [conflicts.json](conflicts.json) | Bibliography, opening status, 20-site sample, observations and seven conflicts. |
-| [source-title-audit.json](source-title-audit.json), [source-title-review.json](source-title-review.json) | 17 flagged headers in five files, with no copied title payload. |
-| [checks.json](checks.json), [input-manifest.json](input-manifest.json), [OUTPUT-MANIFEST.json](OUTPUT-MANIFEST.json) | Recomputed checks, input pins and top-level byte-copy provenance. |
-| [registry-entry.json](registry-entry.json) | Proposed entry for the coordinator; shared registry was not edited. |
-| [created-paths.json](created-paths.json) | Every created file under both B3 roots, size, hash and local-raw disposition. |
+| [PROTOCOL.md](PROTOCOL.md), [REPORT.md](REPORT.md), [RETROSPECTIVE.md](RETROSPECTIVE.md) | Method amendments, answer and observed corrections. |
+| [coverage.json](coverage.json), [coverage.csv](coverage.csv), [region-coverage.csv](region-coverage.csv) | Local frame, corrected IM77 counts, catalogue comparisons and eight omitted sections. |
+| [catalogue-coverage.csv](catalogue-coverage.csv), [catalogue-section-split.csv](catalogue-section-split.csv) | Complete multi-run parsing, H356 duplicate correction and the 166-key section split. |
+| [field-completeness.csv](field-completeness.csv) | Measured field presence, twelve structural schema absences, inherited rules and unmeasured fields. |
+| [register-joins.json](register-joins.json), [join-summary.json](join-summary.json) | Source/site links and the expanded museum lower bound. |
+| [priority-gaps.json](priority-gaps.json), [SCHEMA-AMENDMENTS.md](SCHEMA-AMENDMENTS.md) | Eight acquisition pools and Proposed schema/200-object pilot changes. |
+| [sources.json](sources.json), [sample-selection.json](sample-selection.json), [source-sample-audit.json](source-sample-audit.json), [conflicts.json](conflicts.json) | 21 bibliographic entries, opening scopes, original sample verdicts, reviewer verdicts and corrected locators. |
+| [batch-corrections.json](batch-corrections.json) | 53 proposed row/ledger corrections for batch owners; no batch edited. |
+| [source-title-audit.json](source-title-audit.json), [source-title-review-v6.json](source-title-review-v6.json) | Widened screening candidates and checks that all 32 reviewer residual IDs have coordinator removal markers. |
+| [checks.json](checks.json), [input-manifest.json](input-manifest.json), [OUTPUT-MANIFEST.json](OUTPUT-MANIFEST.json) | Current checks, post-trim pins and top-level copy provenance. |
+| [registry-entry.json](registry-entry.json) | Updated proposal; shared registry unchanged. |
+| [created-paths-v6.json](created-paths-v6.json), [v6-changed-paths.json](v6-changed-paths.json) | Current package inventory and every B3 path created or changed in this follow-up. |
 
-Top-level computed tables are byte copies of `main-2026-10-07-v5/`. Preserve `development-2026-10-07-v1/`, the main endpoints v2–v5, and `replay-2026-10-07-v1/`; the development run failed one check and earlier computations have documented method limitations. Use v5 for final figures. The separately named source checks and object crosswalks stay under `data/raw/2026-10-06-evidence-census/synthesis/`. No payload from another package was moved or edited.
+Top-level aggregate files copy `main-2026-10-07-v6/`; authored annotation ledgers copy the dated amendment directory named in `OUTPUT-MANIFEST.json`. `pre-v6-2026-10-07/` preserves the preceding top-level state and code. All earlier endpoints and the reviewer files remain unchanged. Third-party extracted records, museum pairs and small page witnesses stay under the paired local raw directory.
+
+The v5 replay/verification statements describe the creation-time state. Five source ledgers changed after the coordinator's two title trims, making seven v5 verification checks stale. Batch B's `created-paths.json` and C/D's `file-manifest.json` also predate the edits. The review found stale hashes in batch D's `build.py --verify` and `inventory.py --verify`; B3 has not rewritten those manifests or rerun mutation-producing batch builders. Current v6 pins match the edited ledgers.
 
 ## Reproduce from the repository root
 
-The arithmetic builder uses the Python standard library. Source-page extraction additionally uses the installed PyMuPDF package. Choose new output names on each rerun; scripts refuse to overwrite an existing endpoint. They constrain writes to this package's owned and local-raw roots and set library temporary locations under the chosen raw endpoint.
+The builder uses the Python standard library and existing local inputs. Source rendering uses the already installed PyMuPDF package. Use new output names on every replay; existing endpoints are preserved. No full PDF download or volume rendering is needed.
 
 ```powershell
 $env:PYTHONIOENCODING = 'utf-8'
-python -B experiments/2026-10-06-evidence-census/synthesis/build_synthesis.py --output-dir experiments/2026-10-06-evidence-census/synthesis/reviewer-2026-10-07-v1 --raw-dir data/raw/2026-10-06-evidence-census/synthesis/reviewer-2026-10-07-v1
-python -B experiments/2026-10-06-evidence-census/synthesis/verify_synthesis.py --compare experiments/2026-10-06-evidence-census/synthesis/reviewer-2026-10-07-v1 --output experiments/2026-10-06-evidence-census/synthesis/reviewer-verification-2026-10-07-v1.json
-python -B experiments/2026-10-06-evidence-census/synthesis/review_sources.py --output-dir data/raw/2026-10-06-evidence-census/synthesis/reviewer-sources-2026-10-07-v1 --render
+python -B experiments/2026-10-06-evidence-census/synthesis/build_synthesis.py --output-dir experiments/2026-10-06-evidence-census/synthesis/reviewer-2026-10-07-v6 --raw-dir data/raw/2026-10-06-evidence-census/synthesis/reviewer-2026-10-07-v6
+python -B experiments/2026-10-06-evidence-census/synthesis/verify_synthesis.py --compare experiments/2026-10-06-evidence-census/synthesis/reviewer-2026-10-07-v6 --output experiments/2026-10-06-evidence-census/synthesis/reviewer-verification-2026-10-07-v6.json
+python -B experiments/2026-10-06-evidence-census/synthesis/amend_v6_records.py --output-dir experiments/2026-10-06-evidence-census/synthesis/reviewer-amendments-2026-10-07-v6
+python -B experiments/2026-10-06-evidence-census/synthesis/make_batch_corrections.py --output experiments/2026-10-06-evidence-census/synthesis/reviewer-batch-corrections-2026-10-07-v6.json
 python -B tools/review_prose.py --path experiments/2026-10-06-evidence-census/synthesis --no-write
 ```
 
-`review_sources.py` recreates 31 PDF-page witnesses and three saved Dholavira mirror passages. Nuhato's pp. 41–42 were additionally opened for the overlap conflict; their original path and hash are in `sources.json`. Page extraction is mechanical; repeat visual/source judgment separately. `write_annotations.py --output-dir experiments/2026-10-06-evidence-census/synthesis/reviewer-annotations-2026-10-07-v1` replays the four authored JSON ledgers into a new directory. It preserves recorded observations and does not conduct a new source review. `finalize_package.py` copied the first final aggregates and wrote the title-header review; it intentionally refuses to replace top-level files. Its `--inventory` mode can write a newly named full file inventory.
+The builder consumes `v6-correction-inputs.json`, the small raw seven-join supplement and the review's catalogue-section counts. `prepare_v6.py` created these recorded inputs once and refuses to overwrite them. `amend_v6_records.py` replays the attributed source/locator amendments from the preserved pre-v6 state; it does not perform a new source review. `write_annotations.py` and its original replay outputs document the v5 annotation method. `review_sources.py` remains available for selected-page extraction; the v6 bibliographic and concordance pages have their own small manifests under `review-fixes-2026-10-07-v1/` in the local raw root.
 
-## Checks to repeat
+## Reviewer checks
 
-Recompute all batch row totals and compare the new endpoint with v5. Check alias attribution for Nuhato/Gharo Bhiro and the six A/D cross-references. Inspect catalogue membership for Lothal L1–290, Kalibangan K1–122, Banawali B1–37, Rohira Rhr1–2, Rehman Dheri Rhd1–270 and the Amri/Ai concordance. Classify absent keys before calling them additional physical objects. Repeat all 20 source assertions at their exact locators, including Dholavira's mirror qualification. Sample the 61 museum concordances, then examine the field disagreements. Check the room/grid, phase, dimension-placeholder, calendar-attribution and image-slot rules before interpreting completeness percentages.
+Compare a new build with v6 and inspect the post-trim input hashes. Repeat IM77 p.6 for Tarkhanewala Dera and West Asia; CISI 1 contents and p.375 corrigenda for Harappa H278?382; CISI 2's three Harappa runs; and the 75/91 section split. Check the seven added joins against CISI 1 pp.373,375, Marshall p.402, saved museum accessions and unique local families. Review the 46 unresolved query dispositions and distinguish the original 61-record field-comparison denominator from the seven new pairs.
 
-Full current ICIT, complete later CISI/holding inventories, some final excavation catalogues, original Dholavira page images and independent expert adjudication remain missing. No worldwide missing-object count or global coverage percentage was computed. All new work and failed preliminary outcomes are confined to the two authorized B3 paths.
+Check the eight omitted catalogue sections and the 53 proposed batch corrections before integrating them. Verify bibliography/access scope, especially unseen Rao 1985 p.305, Dholavira mirror p.233, Nippur catalogue p.113 and the CISI 3.3 excerpt. Current ICIT and complete later catalogues remain acquisition work.
