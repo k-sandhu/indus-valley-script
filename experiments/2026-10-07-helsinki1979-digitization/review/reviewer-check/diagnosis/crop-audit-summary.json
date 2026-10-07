@@ -1,0 +1,295 @@
+{
+ "tests": {
+  "margin_side_edge_crosses_ink": {
+   "n": 31,
+   "rows": [
+    3,
+    4,
+    9,
+    11,
+    12,
+    13,
+    17,
+    18,
+    20,
+    24,
+    25,
+    26,
+    27,
+    28,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    41,
+    43,
+    45,
+    46,
+    48,
+    49,
+    51,
+    55,
+    56,
+    57,
+    59
+   ]
+  },
+  "pipeline_unit_at_number_edge_not_in_reference": {
+   "n": 18,
+   "rows": [
+    4,
+    5,
+    6,
+    7,
+    9,
+    10,
+    19,
+    20,
+    26,
+    27,
+    32,
+    35,
+    41,
+    42,
+    45,
+    46,
+    48,
+    51
+   ]
+  },
+  "neighbor_row_ink_unit_at_strip_top_or_bottom": {
+   "n": 3,
+   "rows": [
+    34,
+    49,
+    50
+   ]
+  },
+  "top_or_bottom_edge_crosses_ink": {
+   "n": 2,
+   "rows": [
+    14,
+    53
+   ]
+  },
+  "reference_unit_lost_without_extra_unit": {
+   "n": 5,
+   "rows": [
+    24,
+    29,
+    30,
+    33,
+    43
+   ]
+  },
+  "page_rotated_by_heuristic": {
+   "n": 3,
+   "rows": [
+    14,
+    15,
+    16
+   ]
+  }
+ },
+ "rows_failing_at_least_one_test": 46,
+ "clean_rows": [
+  0,
+  1,
+  2,
+  8,
+  21,
+  22,
+  23,
+  31,
+  40,
+  44,
+  47,
+  52,
+  54,
+  58
+ ],
+ "n_clean": 14,
+ "wilson_clean": [
+  14.4,
+  35.4
+ ],
+ "annotator_crop_true": [
+  0,
+  1,
+  2,
+  8,
+  22,
+  23,
+  31,
+  40,
+  41,
+  42,
+  44,
+  45,
+  46,
+  47,
+  48,
+  49,
+  50,
+  51,
+  54,
+  55,
+  57,
+  58,
+  59
+ ],
+ "annotator_true_but_failing_a_test": [
+  41,
+  42,
+  45,
+  46,
+  48,
+  49,
+  50,
+  51,
+  55,
+  57,
+  59
+ ],
+ "annotator_C_true_n": 16,
+ "annotator_C_true_failing": 11,
+ "annotator_AB_true_n": 7,
+ "annotator_AB_true_failing": 0,
+ "clean_rows_with_annotator_false": [
+  21,
+  52
+ ],
+ "note": "tests are post-outcome (Exploratory); a clean row can still have an excluded underline or neighbouring ink wholly inside the box (rows 21 and 52 carry such annotator notes) | variants: the same tests with and without a 1 pt tolerance on edge-crossing reach",
+ "variants": {
+  "no_tolerance": {
+   "tolerance_pt": 0.0,
+   "rows_failing": 46,
+   "clean_rows": [
+    0,
+    1,
+    2,
+    8,
+    21,
+    22,
+    23,
+    31,
+    40,
+    44,
+    47,
+    52,
+    54,
+    58
+   ],
+   "n_clean": 14,
+   "wilson_clean": [
+    14.4,
+    35.4
+   ],
+   "clean_rows_with_annotator_false": [
+    21,
+    52
+   ],
+   "n_clean_after_annotator_notes": 12,
+   "wilson_after_notes": [
+    11.8,
+    31.8
+   ],
+   "annotator_true_failing": [
+    41,
+    42,
+    45,
+    46,
+    48,
+    49,
+    50,
+    51,
+    55,
+    57,
+    59
+   ],
+   "C_true_n": 16,
+   "C_true_failing": 11,
+   "AB_true_n": 7,
+   "AB_true_failing": 0,
+   "test_row_counts": {
+    "margin_side_edge_crosses_ink": 31,
+    "unit_at_number_edge_not_in_reference": 18,
+    "neighbor_row_ink_unit": 3,
+    "top_or_bottom_edge_crosses_ink": 2,
+    "reference_unit_lost_without_extra_unit": 5,
+    "page_rotated": 3
+   }
+  },
+  "ignore_crossings_under_1pt": {
+   "tolerance_pt": 1.0,
+   "rows_failing": 39,
+   "clean_rows": [
+    0,
+    1,
+    2,
+    3,
+    8,
+    17,
+    21,
+    22,
+    23,
+    31,
+    38,
+    40,
+    44,
+    47,
+    52,
+    53,
+    54,
+    55,
+    56,
+    58,
+    59
+   ],
+   "n_clean": 21,
+   "wilson_clean": [
+    24.2,
+    47.6
+   ],
+   "clean_rows_with_annotator_false": [
+    3,
+    17,
+    21,
+    38,
+    52,
+    53,
+    56
+   ],
+   "n_clean_after_annotator_notes": 14,
+   "wilson_after_notes": [
+    14.4,
+    35.4
+   ],
+   "annotator_true_failing": [
+    41,
+    42,
+    45,
+    46,
+    48,
+    49,
+    50,
+    51,
+    57
+   ],
+   "C_true_n": 16,
+   "C_true_failing": 9,
+   "AB_true_n": 7,
+   "AB_true_failing": 0,
+   "test_row_counts": {
+    "margin_side_edge_crosses_ink": 23,
+    "unit_at_number_edge_not_in_reference": 18,
+    "neighbor_row_ink_unit": 3,
+    "top_or_bottom_edge_crosses_ink": 1,
+    "reference_unit_lost_without_extra_unit": 5,
+    "page_rotated": 3
+   }
+  }
+ }
+}

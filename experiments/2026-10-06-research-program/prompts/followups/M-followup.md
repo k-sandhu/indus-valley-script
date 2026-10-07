@@ -1,0 +1,20 @@
+# Follow-up for package M from the coordinator: corrections and a layout repair
+
+A Sonnet review is in `experiments/2026-10-07-helsinki1979-digitization/REVIEW.md`, with checks in `review/reviewer-check/`. It confirmed all 43 headline numbers, the freeze chronology and the quarantine, and independently read 30 rows (the reference matches in all 30 for count, number and classification). It diagnosed the failure as page geometry: the number field lies about +7.4 pt from the fixed window on even PDF pages and −3.2 pt on odd pages (range −11 to +18 pt); all 17 pages the heuristic rotated are upright, putting 1,223 rows on inverted strips; where crops are size-consistent the recognizer's top five holds the correct code in 198 of 198 units; and the 601 dpi bilevel scan does not limit recognition. An exploratory rerun with the field window shifted by the offset measured from the PDF's OCR layer and pages set upright raised count agreement from 33 to 44 of 60, numbers from 23 to 40 and top-five whole rows from 24 to 35.
+
+Keep every frozen endpoint unchanged. Add dated amendments to `PROTOCOL.md` for each part below.
+
+## Part 1: corrections to the first endpoint
+
+1. Make the frozen evaluation reproducible from a clean clone: keep `digits.npz`, the frozen predictions file, the 60 annotated evaluation crops and the chart sheets in the owned directory (the edition is CC BY 4.0, so these derived files may be tracked with attribution; the coordinator will add repository exceptions for image files you list in a `TRACK-EXCEPTIONS.txt`), and record the evaluator's hash with the freeze.
+2. Restate the crop figure with per-annotator counts (annotators A and B accepted 7 of 40 boxes; C accepted 16 of 20, 9 with defects) and the review's objective edge audit (14 of 60, 21 with a 1 pt tolerance).
+3. State the evaluation frame beside every headline number: the 60 rows came from PDF pages 31–79 (3,460 of 11,369 rows), and no sorted-section row was evaluated.
+4. Replace "need source review" for the 17 rotated pages with the finding that they are upright, and flag the 1,223 affected rows.
+5. Record the row-recall evidence (20 pages with fewer than 72 rows, page 62 column 0 with 21 of 36, pages 129–130 with five to eight columns) and make the review queue triage rows instead of listing all 11,369.
+6. Add a dated adjudication note listing the reference errors the review found (sample 10 unit 4, sample 35 units 2 and 8, and eight tick-pair units coded 2 where the chart geometry indicates 25), leaving the frozen references unedited; state the selection rule for the six repeat rows; and recompute calibration without the rotated rows.
+
+## Part 2: layout repair and a new frozen evaluation
+
+Repair the layout stage: measure each page's field offsets from the PDF's OCR layer or from detected print features, determine orientation from content rather than the heuristic, detect rows without a fixed count per column (pages 129–130 print five to eight columns), and measure row recall against an independent count. Keep the recognizer, which the review found sound, as a proposal generator. Freeze the repaired pipeline, then draw a new seeded blind sample of at least 80 rows across the whole edition, including the sorted sections, and build its reference blind to predictions with at least two independent readers and an adjudication step. Report the same metrics as the first endpoint, row recall, and calibration, with intervals, next to the first endpoint's results. If the repaired pipeline meets the reliability criteria, rerun the full edition and release its output from quarantine only for rows that pass the frozen confidence rule; otherwise keep it quarantined and say which stage limits it.
+
+Coordinate with package L's import interface (`experiments/2026-10-07-object-ledger/IMPORT_INTERFACE.md` and its follow-up), which is being revised to accept letter-suffixed text numbers and per-occurrence segment identifiers. Keep new storage under about 1 GB; about 4 GB is free.

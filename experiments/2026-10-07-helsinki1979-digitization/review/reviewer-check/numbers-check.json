@@ -1,0 +1,616 @@
+{
+ "n_checks": 43,
+ "n_confirmed": 43,
+ "n_discrepancy": 0,
+ "review_status_values": {
+  "automatic_provisional_requires_review": 11369
+ },
+ "rights_variants": 1,
+ "rights_example": {
+  "attribution": "Kimmo Koskenniemi and Asko Parpola (1979), Corpus of Texts in the Indus Script, University of Helsinki",
+  "authors": [
+   "Kimmo Koskenniemi",
+   "Asko Parpola"
+  ],
+  "licence": "CC BY 4.0",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "raster cropping, image recognition, provisional numerical transcription",
+  "publisher": "University of Helsinki",
+  "source_url": "http://hdl.handle.net/10138/342677",
+  "status": "explicit-license",
+  "title": "Corpus of Texts in the Indus Script",
+  "year": 1979
+ },
+ "checks": [
+  {
+   "claim": "clean crops 23/60 (README, REPORT)",
+   "claimed": [
+    23,
+    60
+   ],
+   "recomputed": [
+    23,
+    60
+   ],
+   "result": "confirmed",
+   "source": "blind/reference-*.json crop_correct"
+  },
+  {
+   "claim": "matching unit counts 33/60",
+   "claimed": [
+    33,
+    60
+   ],
+   "recomputed": [
+    33,
+    60
+   ],
+   "result": "confirmed",
+   "source": "predictions vs references"
+  },
+  {
+   "claim": "exact inscription numbers 23/60",
+   "claimed": [
+    23,
+    60
+   ],
+   "recomputed": [
+    23,
+    60
+   ],
+   "result": "confirmed",
+   "source": "predictions vs references"
+  },
+  {
+   "claim": "exact classification 19/60",
+   "claimed": [
+    19,
+    60
+   ],
+   "recomputed": [
+    19,
+    60
+   ],
+   "result": "confirmed",
+   "source": "predictions vs references"
+  },
+  {
+   "claim": "strict top-1 whole rows 13/60",
+   "claimed": [
+    13,
+    60
+   ],
+   "recomputed": [
+    13,
+    60
+   ],
+   "result": "confirmed",
+   "source": "metrics.json summary (evaluate.py recomputed byte-identical)"
+  },
+  {
+   "claim": "strict top-5 whole rows 24/60",
+   "claimed": [
+    24,
+    60
+   ],
+   "recomputed": [
+    24,
+    60
+   ],
+   "result": "confirmed",
+   "source": "metrics.json summary"
+  },
+  {
+   "claim": "unique exact sequence 10/52",
+   "claimed": [
+    10,
+    52
+   ],
+   "recomputed": [
+    10,
+    52
+   ],
+   "result": "confirmed",
+   "source": "metrics.json summary"
+  },
+  {
+   "claim": "288 predicted vs 267 reference units",
+   "claimed": [
+    288,
+    267
+   ],
+   "recomputed": [
+    288,
+    267
+   ],
+   "result": "confirmed",
+   "source": "predictions, references"
+  },
+  {
+   "claim": "229 glyph + 38 editorial reference units",
+   "claimed": [
+    229,
+    38
+   ],
+   "recomputed": [
+    229,
+    38
+   ],
+   "result": "confirmed",
+   "source": "reference unit_kind"
+  },
+  {
+   "claim": "eight reference units with two candidates",
+   "claimed": 8,
+   "recomputed": 8,
+   "result": "confirmed",
+   "source": "reference strict_candidate_codes"
+  },
+  {
+   "claim": "52 rows with singleton codes throughout",
+   "claimed": 52,
+   "recomputed": 52,
+   "result": "confirmed",
+   "source": "reference strict_candidate_codes"
+  },
+  {
+   "claim": "Wilson interval crop 23/60 CI 27.1-51.0",
+   "claimed": [
+    27.1,
+    51.0
+   ],
+   "recomputed": [
+    27.1,
+    51.0
+   ],
+   "result": "confirmed",
+   "source": "closed-form Wilson 95%"
+  },
+  {
+   "claim": "Wilson interval count 33/60 CI 42.5-66.9",
+   "claimed": [
+    42.5,
+    66.9
+   ],
+   "recomputed": [
+    42.5,
+    66.9
+   ],
+   "result": "confirmed",
+   "source": "closed-form Wilson 95%"
+  },
+  {
+   "claim": "Wilson interval classification 19/60 CI 21.3-44.2",
+   "claimed": [
+    21.3,
+    44.2
+   ],
+   "recomputed": [
+    21.3,
+    44.2
+   ],
+   "result": "confirmed",
+   "source": "closed-form Wilson 95%"
+  },
+  {
+   "claim": "Wilson interval top-1 13/60 CI 13.1-33.6",
+   "claimed": [
+    13.1,
+    33.6
+   ],
+   "recomputed": [
+    13.1,
+    33.6
+   ],
+   "result": "confirmed",
+   "source": "closed-form Wilson 95%"
+  },
+  {
+   "claim": "Wilson interval top-5 24/60 CI 28.6-52.6",
+   "claimed": [
+    28.6,
+    52.6
+   ],
+   "recomputed": [
+    28.6,
+    52.6
+   ],
+   "result": "confirmed",
+   "source": "closed-form Wilson 95%"
+  },
+  {
+   "claim": "Wilson interval unique 10/52 CI 10.8-31.9",
+   "claimed": [
+    10.8,
+    31.9
+   ],
+   "recomputed": [
+    10.8,
+    31.9
+   ],
+   "result": "confirmed",
+   "source": "closed-form Wilson 95%"
+  },
+  {
+   "claim": "Wilson interval 13/38 number CI 21.2-50.1",
+   "claimed": [
+    21.2,
+    50.1
+   ],
+   "recomputed": [
+    21.2,
+    50.1
+   ],
+   "result": "confirmed",
+   "source": "closed-form Wilson 95%"
+  },
+  {
+   "claim": "aligned recall top-1 199/267, top-5 224/267",
+   "claimed": [
+    199,
+    224,
+    267
+   ],
+   "recomputed": [
+    199,
+    224,
+    267
+   ],
+   "result": "confirmed",
+   "source": "metrics.json summary"
+  },
+  {
+   "claim": "summed edits 95 and 71",
+   "claimed": [
+    95,
+    71
+   ],
+   "recomputed": [
+    95,
+    71
+   ],
+   "result": "confirmed",
+   "source": "metrics.json summary"
+  },
+  {
+   "claim": "same-position 103/140 and 118/140",
+   "claimed": [
+    103,
+    118,
+    140
+   ],
+   "recomputed": [
+    103,
+    118,
+    140
+   ],
+   "result": "confirmed",
+   "source": "metrics.json summary"
+  },
+  {
+   "claim": "relaxed shape-only whole rows 15/60 and 25/60",
+   "claimed": [
+    15,
+    25
+   ],
+   "recomputed": [
+    15,
+    25
+   ],
+   "result": "confirmed",
+   "source": "metrics.json summary"
+  },
+  {
+   "claim": "top-5 mean width 5.208, max 8",
+   "claimed": [
+    5.208,
+    8
+   ],
+   "recomputed": [
+    5.208,
+    8
+   ],
+   "result": "confirmed",
+   "source": "metrics.json summary"
+  },
+  {
+   "claim": "bootstrap CI aligned recall 66.3-81.7 and 76.0-90.6",
+   "claimed": [
+    [
+     66.3,
+     81.7
+    ],
+    [
+     76.0,
+     90.6
+    ]
+   ],
+   "recomputed": [
+    [
+     66.3,
+     81.7
+    ],
+    [
+     76.0,
+     90.6
+    ]
+   ],
+   "result": "confirmed",
+   "source": "metrics.json row_bootstrap_95"
+  },
+  {
+   "claim": "same-position CI 58.4-85.3 and 68.7-95.7",
+   "claimed": [
+    [
+     58.4,
+     85.3
+    ],
+    [
+     68.7,
+     95.7
+    ]
+   ],
+   "recomputed": [
+    [
+     58.4,
+     85.3
+    ],
+    [
+     68.7,
+     95.7
+    ]
+   ],
+   "result": "confirmed",
+   "source": "metrics.json row_bootstrap_95"
+  },
+  {
+   "claim": "Brier 0.1488 CI 0.107-0.197; ECE10 0.1056 CI 0.080-0.185",
+   "claimed": [
+    0.1488,
+    [
+     0.107,
+     0.197
+    ],
+    0.1056,
+    [
+     0.08,
+     0.185
+    ]
+   ],
+   "recomputed": [
+    0.1488,
+    [
+     0.107,
+     0.197
+    ],
+    0.1056,
+    [
+     0.08,
+     0.185
+    ]
+   ],
+   "result": "confirmed",
+   "source": "metrics.json"
+  },
+  {
+   "claim": "calibration on 140 resolved same-position units",
+   "claimed": 140,
+   "recomputed": 140,
+   "result": "confirmed",
+   "source": "metrics.json"
+  },
+  {
+   "claim": "number accuracy excluding 22 OCR-exposed rows: 13/38",
+   "claimed": [
+    13,
+    38
+   ],
+   "recomputed": [
+    13,
+    38
+   ],
+   "result": "confirmed",
+   "source": "metrics.json exploratory_sensitivities"
+  },
+  {
+   "claim": "22 rows with original OCR witnesses",
+   "claimed": 22,
+   "recomputed": 22,
+   "result": "confirmed",
+   "source": "blind/selection.json"
+  },
+  {
+   "claim": "3,460 frame rows; 60 rows from 33 pages",
+   "claimed": [
+    3460,
+    33
+   ],
+   "recomputed": [
+    3460,
+    33
+   ],
+   "result": "confirmed",
+   "source": "blind/selection.json"
+  },
+  {
+   "claim": "repeat readings: 6 counts, 6 numbers, 6 classes, 4 identical sets, 4 crop disagreements",
+   "claimed": [
+    6,
+    6,
+    6,
+    4,
+    4
+   ],
+   "recomputed": [
+    6,
+    6,
+    6,
+    4,
+    4
+   ],
+   "result": "confirmed",
+   "source": "annotation-comparison-v1.json"
+  },
+  {
+   "claim": "full run 11,369 rows, 57,426 units, 159 pages, 10,425 numbers read, 3 unmatched",
+   "claimed": [
+    11369,
+    57426,
+    159,
+    10425,
+    3
+   ],
+   "recomputed": [
+    11369,
+    57426,
+    159,
+    10425,
+    3
+   ],
+   "result": "confirmed",
+   "source": "coverage.json"
+  },
+  {
+   "claim": "section totals 4,036 / 3,743 / 3,590",
+   "claimed": [
+    4036,
+    3743,
+    3590
+   ],
+   "recomputed": [
+    4036,
+    3743,
+    3590
+   ],
+   "result": "confirmed",
+   "source": "coverage.json pages"
+  },
+  {
+   "claim": "17 pages rotated 180 degrees",
+   "claimed": 17,
+   "recomputed": 17,
+   "result": "confirmed",
+   "source": "coverage.json pages"
+  },
+  {
+   "claim": "full run 52.1 minutes",
+   "claimed": 52.1,
+   "recomputed": 52.1,
+   "result": "confirmed",
+   "source": "coverage.json seconds"
+  },
+  {
+   "claim": "priority queue 946 / 9,712 / 711",
+   "claimed": [
+    946,
+    9712,
+    711
+   ],
+   "recomputed": [
+    946,
+    9712,
+    711
+   ],
+   "result": "confirmed",
+   "source": "review/2026-10-07-v1/summary.json"
+  },
+  {
+   "claim": "490 nonincreasing within-column number pairs",
+   "claimed": 490,
+   "recomputed": 490,
+   "result": "confirmed",
+   "source": "review summary"
+  },
+  {
+   "claim": "calibration fit: 81 development positions, 61 correct",
+   "claimed": [
+    81,
+    61
+   ],
+   "recomputed": [
+    81,
+    61
+   ],
+   "result": "confirmed",
+   "source": "development/calibration.json"
+  },
+  {
+   "claim": "page-30 development: 17/20 counts, 6/20 top-1, 12/20 top-5",
+   "claimed": [
+    17,
+    6,
+    12
+   ],
+   "recomputed": [
+    17,
+    6,
+    12
+   ],
+   "result": "confirmed",
+   "source": "development/page30_evaluation.json"
+  },
+  {
+   "claim": "import staging: 11,369 quarantined, 944 unresolved numbers",
+   "claimed": [
+    11369,
+    944
+   ],
+   "recomputed": [
+    11369,
+    944
+   ],
+   "result": "confirmed",
+   "source": "integration summary"
+  },
+  {
+   "claim": "interface exercise: 0 accepted, 60 quarantined",
+   "claimed": [
+    0,
+    60
+   ],
+   "recomputed": [
+    0,
+    60
+   ],
+   "result": "confirmed",
+   "source": "l-interface-check-v1.json"
+  },
+  {
+   "claim": "occurrences.jsonl recount: rows, units, numbers read, unmatched, pages",
+   "claimed": [
+    11369,
+    57426,
+    10425,
+    3,
+    159
+   ],
+   "recomputed": [
+    11369,
+    57426,
+    10425,
+    3,
+    159
+   ],
+   "result": "confirmed",
+   "source": "runs/2026-10-07-full-v1/occurrences.jsonl"
+  },
+  {
+   "claim": "ledger-import.jsonl: 11,369 rows, all quarantine",
+   "claimed": [
+    11369,
+    {
+     "quarantine": 11369
+    }
+   ],
+   "recomputed": [
+    11369,
+    {
+     "quarantine": 11369
+    }
+   ],
+   "result": "confirmed",
+   "source": "integration/2026-10-07-v1/ledger-import.jsonl"
+  }
+ ]
+}
