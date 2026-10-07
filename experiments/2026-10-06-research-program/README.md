@@ -39,12 +39,18 @@ The first census passes were thin: B1 left nearly every metadata field unassesse
 
 ## Status
 
-| Package | Run | Review | Main result |
+All packages finished, were reviewed by Claude Sonnet 5.5 and had their required fixes applied in the same Codex session. Results are Exploratory unless a package states otherwise. The answers to the user's questions are collected in [REPORT.md](REPORT.md); the shared registry entries were added by [integrate_registry.py](integrate_registry.py).
+
+| Package | Final model | Review | Main result after review |
 |---|---|---|---|
-| A, D1, D2, E, G | Running since 2026-10-07 03:56 UTC | Pending | Pending |
-| B1 first pass | Finished 04:25 UTC | Superseded by regional batches | 89 site labels; counts for 4 sites |
-| B1 batches a–d | Started after B1 | Pending | Pending |
-| B2 | First pass finished 04:25 UTC; depth pass running | Pending | 37 collections, 15 datasets; one direct catalogue count |
-| C | Finished 04:20 UTC | Sonnet review running | 23 candidates across 112 registry entries |
-| F | Finished 04:05 UTC | Sonnet review running | 33 recommendations from 31 sources |
-| H | Finished 04:20 UTC | Sonnet review running | Coarse matches: Indus subset 30/42, Ogham 24/42, Tifinagh 32/42 |
+| A, restoration models | GPT-6.1-Sol | [REVIEW.md](../2026-10-06-modern-restoration/REVIEW.md) | Kneser–Ney and GRU ensemble 41.17% top-one against 34.59% and 37.27%; short-text links touch 9.3% of queries |
+| B1–B3, evidence census | GPT-6.1-Sol (B1 batches and B2 began on GPT-6-Luna) | [REVIEW.md](../2026-10-06-evidence-census/synthesis/REVIEW.md) | No complete index; 166 of 493 inspected CISI 1 identifiers absent locally; at least 68 of 114 museum records joined |
+| C, results outside decipherment | GPT-6.1-Sol (began on GPT-6-Luna) | [REVIEW.md](../2026-10-06-byproduct-inventory/REVIEW.md) | 25 assessed candidates; chart annotation, context completeness, CISI scan notice, numerical premises and catalogue joins ranked first |
+| D1, chronology and region | GPT-6.1-Sol | [REVIEW.md](../2026-10-06-chronology-region/REVIEW.md) | Media diversity rises in Period 3C across excavation frames; the length increase does not survive restriction |
+| D2, sign context and seals | GPT-6.1-Sol | [REVIEW.md](../2026-10-06-sign-context-and-seals/REVIEW.md) | Sign 740 at 10.0–10.7% and 69.6% final; site inventories follow sample size; no motif change between unambiguous 3B and 3C labels |
+| E, backward chronology | GPT-6.1-Sol | [REVIEW.md](../2026-10-06-backward-chronology/REVIEW.md) | 65 dated rows; no empty century in the broad record; no dated transmission chain |
+| F, researchers' recommendations | GPT-6.1-Sol (began on GPT-6-Luna) | [REVIEW-2.md](../2026-10-06-field-recommendations/REVIEW-2.md) | 56 recommendations from 27 opened sources |
+| G, weight metrology | GPT-6.1-Sol | [REVIEW.md](../2026-10-06-weight-metrology/REVIEW.md) | Dholavira 5–100 g weights fit 13.716 g; no western Indus-standard signal against a chance control |
+| H, resemblance baseline | GPT-6.1-Sol | [REVIEW.md](../2026-10-06-resemblance-baseline/REVIEW.md) | Coarse matches: Indus subset 30/42, Ogham 24/42, Tifinagh 31/42; coder agreement 46% |
+
+The coordinator's own checks are [frenez-talk-check.md](frenez-talk-check.md), [local-site-coverage.json](local-site-coverage.json) and the two title-trimming scripts, which replaced copied search-result text in census source titles and kept the originals in local-only files.
