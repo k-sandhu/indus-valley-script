@@ -1,0 +1,9 @@
+﻿# Retrospective
+
+The live search identified the Frenez lecture title and speaker but not its event metadata or transcript. Opening the YouTube watch page and the English timed-text endpoint returned throttling errors. A separate result identified the talk as an ILARA presentation, but did not provide its date, venue or transcript. The four lecture rows consequently preserve the user’s notes without adding timestamps. Published Frenez material was used for context, sealings and borderland objects where its source record was available.
+
+Searches for some researchers returned institutional records or abstracts, while others led only to bibliographic entries. The recommendations table keeps these levels visible: opened HTML, PDF text, abstract, snippet, citation-only or failed search. A source may support the broad subject of a recommendation without exposing the exact page needed for a precise attribution. The report flags those cases and leaves several named researchers without an attributed recommendation.
+
+The October 2 dataset landscape audit and its retrospective were reused rather than rerun. Its proposed schema, 200-object pilot and local aggregate audit inform the current-data priorities. The context data plan and registry context/physical-use entries were also reused to avoid proposing duplicate work. Existing contexts, source joins and numerical audits are linked in the recommendation table.
+
+The initial literature discovery preceded this package’s protocol file. The protocol labels the survey exploratory and records that it was written before thematic synthesis, not before initial searches. No quantitative benchmark was computed. For the next continuation, obtain stable source PDFs and verify every row’s exact page locator, then seek the lecture host’s full event description or a transcript. Keep new verification as a dated extension so snippet-level source states remain visible.
