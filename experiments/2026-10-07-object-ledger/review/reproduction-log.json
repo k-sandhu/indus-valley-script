@@ -1,0 +1,110 @@
+{
+ "status": "Verified computation (reviewer rerun)",
+ "run_from": "repository root, Python 3.13.5, jsonschema 4.26.0, PYTHONDONTWRITEBYTECODE=1, TMP/TEMP under data/raw/2026-10-07-object-ledger/review-tmp",
+ "commands": [
+  "select_pilot.py --output-dir experiments/2026-10-07-object-ledger/review/rerun-selection --raw-dir data/raw/2026-10-07-object-ledger/review-tmp/rerun-selection",
+  "build.py --selection experiments/2026-10-07-object-ledger/selection-2026-10-07-v1/selection.json --lothal-assertions experiments/2026-10-02-six-hour/lothal-physical-use/independent-review/source-assertions.json --output-dir .../review/rerun-ledger --raw-dir .../review-tmp/rerun-ledger",
+  "analyze.py --ledger-dir .../review/rerun-ledger --selection .../selection-2026-10-07-v1/selection.json --output-dir .../review/rerun-analysis   (README adds --lothal-assertions here; argparse rejects it, exit code 2)",
+  "check_pilot.py --ledger-dir .../review/rerun-ledger --analysis-dir .../review/rerun-analysis --selection .../selection.json --output-dir .../review/rerun-checks --raw-dir .../review-tmp/rerun-checks   (README adds --lothal-assertions here; argparse rejects it, exit code 2)",
+  "validate.py --ledger .../review/rerun-ledger/ledger-public.json --scan-dir .../review/rerun-ledger --output .../review/rerun-validation.json"
+ ],
+ "wall_clock_seconds_approx": {
+  "select": 0.3,
+  "build": 0.7,
+  "analyze": "under 5",
+  "check_pilot": "under 30",
+  "validate": "under 30"
+ },
+ "file_comparison": [
+  {
+   "file": "selection.json",
+   "rerun_sha256": "41fffd57b780a714167f1b8fb90269c7f5b61008d7b7ce5a90de4e642f15df1a",
+   "package_sha256": "41fffd57b780a714167f1b8fb90269c7f5b61008d7b7ce5a90de4e642f15df1a",
+   "identical": true
+  },
+  {
+   "file": "candidate-frame-exclusions.json (raw dir)",
+   "rerun_sha256": "6360f6d55c6322620c77bcfb7b0b428c67384d7e7f11422508183e3dc0110e6e",
+   "package_sha256": "6360f6d55c6322620c77bcfb7b0b428c67384d7e7f11422508183e3dc0110e6e",
+   "identical": true
+  },
+  {
+   "file": "ledger-public.json",
+   "rerun_sha256": "96641ad2923dd1c2b75d79b8751af158a750f59293aaf4d6578c826c5ef011d2",
+   "package_sha256": "96641ad2923dd1c2b75d79b8751af158a750f59293aaf4d6578c826c5ef011d2",
+   "identical": true
+  },
+  {
+   "file": "museum-comparisons.json",
+   "rerun_sha256": "7a043b4dbed597d3f5fe6dc19f295b6ad5a4879a5bafb948c82fe1fb1d947bd8",
+   "package_sha256": "7a043b4dbed597d3f5fe6dc19f295b6ad5a4879a5bafb948c82fe1fb1d947bd8",
+   "identical": true
+  },
+  {
+   "file": "source-lookups.json",
+   "rerun_sha256": "ef59b03d3ab723dfb677898ca9a9d1c8805f8cf9a09a24ff74947c3e9096f5b2",
+   "package_sha256": "ef59b03d3ab723dfb677898ca9a9d1c8805f8cf9a09a24ff74947c3e9096f5b2",
+   "identical": true
+  },
+  {
+   "file": "supplemental-source-manifest.json",
+   "rerun_sha256": "9f805bd1a116026cf1745ca5eabd73af6689ba7f1996941b347d790af089fcb4",
+   "package_sha256": "9f805bd1a116026cf1745ca5eabd73af6689ba7f1996941b347d790af089fcb4",
+   "identical": true
+  },
+  {
+   "file": "completeness.csv (analysis)",
+   "rerun_sha256": "a50d995be6d1d12cf9842823dff659bc4bf975c2f1cc290838807ddc4de5521f",
+   "package_sha256": "a50d995be6d1d12cf9842823dff659bc4bf975c2f1cc290838807ddc4de5521f",
+   "identical": true
+  },
+  {
+   "file": "completeness.json (analysis)",
+   "rerun_sha256": "ae4f8158ceeab037dd7da9a87a4fb1a0dc17c476eeb0f81025e74946440ba484",
+   "package_sha256": "ae4f8158ceeab037dd7da9a87a4fb1a0dc17c476eeb0f81025e74946440ba484",
+   "identical": true
+  },
+  {
+   "file": "disagreements.json (analysis)",
+   "rerun_sha256": "fd27a1d3da0214db3cf818253a48074afcde8c124357ce1331ada335e888a917",
+   "package_sha256": "fd27a1d3da0214db3cf818253a48074afcde8c124357ce1331ada335e888a917",
+   "identical": true
+  },
+  {
+   "file": "join-report.json (analysis)",
+   "rerun_sha256": "6bd731383599158410789853f6f664aea6d13f31ca2c4130927f301afa91d3d0",
+   "package_sha256": "6bd731383599158410789853f6f664aea6d13f31ca2c4130927f301afa91d3d0",
+   "identical": true
+  },
+  {
+   "file": "review-queue.json (analysis)",
+   "rerun_sha256": "0870138798e5fb317307caa77de8a3a8b6ee87eebb4762d7b62375d129299297",
+   "package_sha256": "0870138798e5fb317307caa77de8a3a8b6ee87eebb4762d7b62375d129299297",
+   "identical": true
+  },
+  {
+   "file": "summary.json (analysis)",
+   "rerun_sha256": "a629b510888d042678ce22b7e4c2f6c86db9604a7c984a73a23618a0d660b831",
+   "package_sha256": "a629b510888d042678ce22b7e4c2f6c86db9604a7c984a73a23618a0d660b831",
+   "identical": true
+  },
+  {
+   "file": "analysis-manifest.json (analysis)",
+   "rerun_sha256": "cbce121712e381816f951585aa4e23d5aecae4dfcb548954cb9097f9492ffa63",
+   "package_sha256": "0bc750a4d2580a441c0e2b0687ca69f6d4b6058b49eb992c63cb5517b847868b",
+   "identical": false
+  }
+ ],
+ "all_compared_files_identical_except": [
+  "analysis-manifest.json (analysis)"
+ ],
+ "decompressed_full_register_identical": true,
+ "check_results_identical_to_package": true,
+ "checks": {
+  "status": "Verified computation",
+  "checks": 158,
+  "passed": 158,
+  "failed": 0
+ },
+ "note": "analysis-manifest.json differs only because it embeds the SHA-256 of build-manifest.json, which records the rerun output paths; ledger_sha256, selection_sha256 and code_sha256 inside it are identical."
+}

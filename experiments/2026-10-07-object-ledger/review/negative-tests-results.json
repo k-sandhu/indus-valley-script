@@ -1,0 +1,358 @@
+{
+ "full_ledger_baseline_errors": [],
+ "two_object_slice_baseline_errors": [
+  "Pilot must contain exactly 200 object records",
+  "Pilot requires one context record per object"
+ ],
+ "mutations_on_full_ledger": {
+  "R1_context_points_to_missing_object": {
+   "category": "referential",
+   "description": "context.object_id set to an identifier that is not in objects",
+   "caught": true,
+   "new_errors": [
+    "C-OL-0045: broken reference to objects/OL-9999",
+    "C-OL-0045: cell assertion belongs to another object"
+   ],
+   "new_error_count": 2
+  },
+  "R2_identifier_points_to_missing_assertion": {
+   "category": "referential",
+   "description": "identifier.assertion_id set to a nonexistent assertion",
+   "caught": true,
+   "new_errors": [
+    "I-00001: assertion points to another object",
+    "I-00001: broken reference to assertions/A-999999"
+   ],
+   "new_error_count": 2
+  },
+  "R3_cell_cites_missing_assertion": {
+   "category": "referential",
+   "description": "object cell lists a nonexistent assertion id",
+   "caught": true,
+   "new_errors": [
+    "$.objects[0].fields.catalogue_identifier: broken reference to assertions/A-999999",
+    "$.objects[0].fields.catalogue_identifier: chosen value absent from referenced assertions",
+    "OL-0001: cell assertion belongs to another object"
+   ],
+   "new_error_count": 3
+  },
+  "R4_transcription_points_to_surface_of_other_object": {
+   "category": "referential",
+   "description": "transcription.surface_id belongs to a different object",
+   "caught": true,
+   "new_errors": [
+    "T-00001: surface belongs to another object"
+   ],
+   "new_error_count": 1
+  },
+  "R5_relationship_points_to_missing_source": {
+   "category": "referential",
+   "description": "relationship.source_id is not in sources",
+   "caught": true,
+   "new_errors": [
+    "J-00001: broken reference to sources/no-such-source"
+   ],
+   "new_error_count": 1
+  },
+  "R6_measurement_row_disagrees_with_its_assertion": {
+   "category": "referential",
+   "description": "measurements.value changed to 99.0 while its assertion still says 12.5",
+   "caught": false,
+   "new_errors": [],
+   "new_error_count": 0
+  },
+  "R7_identifier_value_disagrees_with_its_assertion": {
+   "category": "referential",
+   "description": "identifiers.value changed while its assertion keeps the original value",
+   "caught": false,
+   "new_errors": [],
+   "new_error_count": 0
+  },
+  "R8_two_contexts_for_one_object_none_for_another": {
+   "category": "referential",
+   "description": "second context re-pointed to the first object; counts stay at the expected totals",
+   "caught": true,
+   "new_errors": [
+    "C-OL-0045: cell assertion belongs to another object"
+   ],
+   "new_error_count": 1
+  },
+  "R9_locator_record_does_not_exist_in_source_file": {
+   "category": "referential",
+   "description": "assertion.locator.record names a record that is not in the cited file; the file path exists",
+   "caught": false,
+   "new_errors": [],
+   "new_error_count": 0
+  },
+  "R10_locator_file_missing": {
+   "category": "referential",
+   "description": "assertion.locator.path names a file that does not exist",
+   "caught": true,
+   "new_errors": [
+    "A-002583: source file does not exist data/normalized/not-a-file.jsonl"
+   ],
+   "new_error_count": 1
+  },
+  "R11_relationship_confirmed_without_assertion_support": {
+   "category": "referential",
+   "description": "candidate relationship relabelled confirmed while its assertion keeps candidate confidence",
+   "caught": false,
+   "new_errors": [],
+   "new_error_count": 0
+  },
+  "U1_unit_not_in_enum": {
+   "category": "unit",
+   "description": "measurements.unit set to m",
+   "caught": true,
+   "new_errors": [
+    "$.measurements[0].unit: 'm' is not one of ['mm', 'cm', 'g', 'kg']",
+    "M-00001: dimension requires length unit",
+    "M-00001: invalid measurement"
+   ],
+   "new_error_count": 3
+  },
+  "U2_negative_value": {
+   "category": "unit",
+   "description": "measurements.value set to -1",
+   "caught": true,
+   "new_errors": [
+    "$.measurements[0].value: -1 is less than or equal to the minimum of 0",
+    "M-00001: invalid measurement"
+   ],
+   "new_error_count": 2
+  },
+  "U3_mass_unit_on_length_dimension": {
+   "category": "unit",
+   "description": "horizontal dimension recorded in g",
+   "caught": true,
+   "new_errors": [
+    "M-00001: dimension requires length unit"
+   ],
+   "new_error_count": 1
+  },
+  "U4_unit_changed_mm_to_cm_row_only": {
+   "category": "unit",
+   "description": "measurement row says cm for a value that its assertion gives in mm",
+   "caught": false,
+   "new_errors": [],
+   "new_error_count": 0
+  },
+  "U5_inches_inside_accepted_cell_and_assertion": {
+   "category": "unit",
+   "description": "object measurement cell and its assertion both carry unit inch (the measurements table is untouched)",
+   "caught": false,
+   "new_errors": [],
+   "new_error_count": 0
+  },
+  "U6_implausible_magnitude_12_5_metres": {
+   "category": "unit",
+   "description": "a seal width of 12500 mm (12.5 m) in the measurement row and assertion",
+   "caught": false,
+   "new_errors": [],
+   "new_error_count": 0
+  },
+  "U7_nan_value": {
+   "category": "unit",
+   "description": "measurement value NaN",
+   "caught": true,
+   "new_errors": [
+    "M-00001: invalid measurement"
+   ],
+   "new_error_count": 1
+  },
+  "I1_reversed_interval": {
+   "category": "interval",
+   "description": "bce_oldest younger than bce_youngest",
+   "caught": true,
+   "new_errors": [
+    "A-000024: reversed/nonpositive BCE interval"
+   ],
+   "new_error_count": 1
+  },
+  "I2_string_endpoints": {
+   "category": "interval",
+   "description": "endpoints given as strings",
+   "caught": true,
+   "new_errors": [
+    "A-000024: reversed/nonpositive BCE interval"
+   ],
+   "new_error_count": 1
+  },
+  "I3_zero_endpoint": {
+   "category": "interval",
+   "description": "bce_youngest set to 0",
+   "caught": true,
+   "new_errors": [
+    "A-000024: reversed/nonpositive BCE interval"
+   ],
+   "new_error_count": 1
+  },
+  "I4_extra_key": {
+   "category": "interval",
+   "description": "interval carries an additional ce key",
+   "caught": true,
+   "new_errors": [
+    "A-000024: malformed BCE interval"
+   ],
+   "new_error_count": 1
+  },
+  "I5_interval_inconsistent_with_period_label": {
+   "category": "interval",
+   "description": "object labelled late Period 3B receives the Period 3A interval 2600-2450",
+   "caught": false,
+   "new_errors": [],
+   "new_error_count": 0
+  },
+  "I6_implausible_interval": {
+   "category": "interval",
+   "description": "interval 50000-40000 BCE for a Harappa tablet",
+   "caught": false,
+   "new_errors": [],
+   "new_error_count": 0
+  },
+  "I7_interval_attributed_to_wrong_source": {
+   "category": "interval",
+   "description": "museum range assertion re-sourced to the HARP table without a matching table row",
+   "caught": false,
+   "new_errors": [],
+   "new_error_count": 0
+  },
+  "I8_calendar_interval_on_nonharappa_object_from_harp_mapping": {
+   "category": "interval",
+   "description": "HARP-method assertion attached to a Mohenjo-daro object",
+   "caught": false,
+   "new_errors": [],
+   "new_error_count": 0
+  }
+ },
+ "mutations_on_slice": {
+  "R1_context_points_to_missing_object": {
+   "caught": true,
+   "new_error_count": 2
+  },
+  "R2_identifier_points_to_missing_assertion": {
+   "caught": true,
+   "new_error_count": 2
+  },
+  "R3_cell_cites_missing_assertion": {
+   "caught": true,
+   "new_error_count": 3
+  },
+  "R4_transcription_points_to_surface_of_other_object": {
+   "caught": true,
+   "new_error_count": 1
+  },
+  "R5_relationship_points_to_missing_source": {
+   "caught": true,
+   "new_error_count": 1
+  },
+  "R6_measurement_row_disagrees_with_its_assertion": {
+   "caught": false,
+   "new_error_count": 0
+  },
+  "R7_identifier_value_disagrees_with_its_assertion": {
+   "caught": false,
+   "new_error_count": 0
+  },
+  "R8_two_contexts_for_one_object_none_for_another": {
+   "caught": true,
+   "new_error_count": 1
+  },
+  "R9_locator_record_does_not_exist_in_source_file": {
+   "caught": false,
+   "new_error_count": 0
+  },
+  "R10_locator_file_missing": {
+   "caught": true,
+   "new_error_count": 1
+  },
+  "R11_relationship_confirmed_without_assertion_support": {
+   "caught": false,
+   "new_error_count": 0
+  },
+  "U1_unit_not_in_enum": {
+   "caught": true,
+   "new_error_count": 3
+  },
+  "U2_negative_value": {
+   "caught": true,
+   "new_error_count": 2
+  },
+  "U3_mass_unit_on_length_dimension": {
+   "caught": true,
+   "new_error_count": 1
+  },
+  "U4_unit_changed_mm_to_cm_row_only": {
+   "caught": false,
+   "new_error_count": 0
+  },
+  "U5_inches_inside_accepted_cell_and_assertion": {
+   "caught": false,
+   "new_error_count": 0
+  },
+  "U6_implausible_magnitude_12_5_metres": {
+   "caught": false,
+   "new_error_count": 0
+  },
+  "U7_nan_value": {
+   "caught": true,
+   "new_error_count": 1
+  },
+  "I1_reversed_interval": {
+   "caught": true,
+   "new_error_count": 1
+  },
+  "I2_string_endpoints": {
+   "caught": true,
+   "new_error_count": 1
+  },
+  "I3_zero_endpoint": {
+   "caught": true,
+   "new_error_count": 1
+  },
+  "I4_extra_key": {
+   "caught": true,
+   "new_error_count": 1
+  },
+  "I5_interval_inconsistent_with_period_label": {
+   "caught": false,
+   "new_error_count": 0
+  },
+  "I6_implausible_interval": {
+   "caught": false,
+   "new_error_count": 0
+  },
+  "I7_interval_attributed_to_wrong_source": {
+   "caught": false,
+   "new_error_count": 0
+  },
+  "I8_calendar_interval_on_nonharappa_object_from_harp_mapping": {
+   "caught": false,
+   "new_error_count": 0
+  }
+ },
+ "sequence_fixtures_function_level": {
+  "F10_mayig_style_grapheme_dicts_new_key.json": "NOT caught",
+  "F11_sequence_in_csv.csv": "not scanned (file type other than .json)",
+  "F12_sequence_in_markdown.md": "not scanned (file type other than .json)",
+  "F13_sequence_in_jsonl.jsonl": "not scanned (file type other than .json)",
+  "F1_key_sign_sequence.json": "caught",
+  "F2_new_key_three_token_string.json": "caught",
+  "F3_new_key_two_token_string.json": "NOT caught",
+  "F4_text_code_two_signs.json": "NOT caught",
+  "F5_embedded_in_sentence.json": "NOT caught",
+  "F6_integer_array.json": "NOT caught",
+  "F7_comma_separated_string.json": "NOT caught",
+  "F8_string_array_two_codes.json": "caught",
+  "F9_p_codes_space_separated.json": "caught",
+  "schema.json": "skipped by the scanner (schema file name)"
+ },
+ "sequence_fixtures_command_line_scan_exit_code": 1,
+ "sequence_fixtures_command_line_scan_flagged_files": [
+  "F1_key_sign_sequence.json",
+  "F2_new_key_three_token_string.json",
+  "F8_string_array_two_codes.json",
+  "F9_p_codes_space_separated.json"
+ ],
+ "invented_codes_used": "three codes absent from both exports (not listed here)"
+}
