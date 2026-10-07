@@ -1,0 +1,11 @@
+# Retrospective
+
+The live search combined institution-specific queries with direct catalogue and object-page discovery on 6 October, then checked regional museum leads and official Helsinki publication records on 7 October. It recovered official record examples from NMMA, CSMVS, JATAN/Museums of India, the British Museum, the Met, Louvre and Cleveland, plus selected research/archive pages. The source register marks whether those records were opened directly or seen through search-result content.
+
+Direct PowerShell HTTP downloads failed for six institutional URLs, usually with a closed connection during response receipt; the National Museum host could not be reached and a later browser open timed out. The browser search/open route supplied readable catalogue fields for several pages, so those fields were recorded with source and access state. The raw directory preserves the failed request list and the search query set. It does not contain complete HTML or API bodies.
+
+The first broad search found a British Museum culture-term count of 724, but the category includes objects beyond inscriptions. The register was corrected to keep that total labelled as a mixed-type result count. The Met API could not be reached from PowerShell, so its Indus query total remains null. Search-engine omissions were recorded as unverified rather than as zero results.
+
+The 30-object audit did not produce validated pairs. Catalogue records frequently expose museum accession numbers while corpus editions expose CISI or excavation references; a shared key or published concordance was not found for 30 records. The matrix therefore reports the fields actually documented in the sampled pages and leaves the audit slots open. It does not fill fields by apparent image similarity.
+
+The existing 2 October dataset landscape provided the counts for Lipi and Mayig and earlier rights reviews for ICIT/CISI. Those inputs were reused without recounting their payloads. The new registers separate record counts, text counts, signs, faces, files and objects; they do not combine those units. The next useful retrieval step is a permission-aware ICIT export or CISI identifier index that can be joined to official museum accession records.

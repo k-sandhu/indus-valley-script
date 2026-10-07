@@ -33,3 +33,9 @@ A negative result is an executed query returning a documented zero with an acces
 ## Outputs
 
 `collection-register.json` and `.csv`; `dataset-register.json`; `metadata-field-matrix.csv`; paired sample audit; `sources.json`; rerunnable acquisition/aggregation code; `README.md`, `REPORT.md`, `RETROSPECTIVE.md`; and a proposed registry entry. All counts retain a basis and observation date.
+
+## Amendment, 2026-10-07
+
+Live searches on 2026-10-06 established several direct catalogue records and discovery pages, but PowerShell HTTP requests to museum domains repeatedly failed during transfer. The web search/open tool exposed record text, while many institutional search totals and original response bodies remained unavailable. The planned 30-record museum-to-corpus comparison also could not be completed: no 30 explicit shared identifiers were validated. The outputs are therefore **Exploratory**, not a frozen catalogue census. The 30 audit slots remain empty and null counts mean unmeasured, not zero. This amendment records an access/scope limit after the first searches; it does not change the inclusion rule or treat visual similarity as an identity key.
+
+The 35 requested collection rows do not all represent individually executed catalogue searches. `search_status` distinguishes pages returned by the batched live searches, institutions included in a search batch without a relevant result, and institutions retained as follow-up targets that were not separately searched. The `query` column is the literal query family or the retained query target. Only direct totals are entered as numeric result counts.
