@@ -1,0 +1,64 @@
+{
+  "note": "Reviewer reruns of the package scripts from saved predictions (7 October 2026). Outputs were written under review/. Byte-identical means equal SHA-256 to the package file. The frozen-inference record differs only in the path of its sample witness.",
+  "pairs": [
+    {
+      "package_file": "aggregate-results.json",
+      "rerun_file": "review/reviewer-aggregate-results.json",
+      "command": "summarize.py --run main",
+      "package_sha256": "184ca496cd2557d29a2597a12c7be3d39cedfc6b6593392f96b8abb4dae2e5e0",
+      "rerun_sha256": "184ca496cd2557d29a2597a12c7be3d39cedfc6b6593392f96b8abb4dae2e5e0",
+      "byte_identical": true
+    },
+    {
+      "package_file": "learning-curves.json",
+      "rerun_file": "review/reviewer-learning-curves.json",
+      "command": "summarize.py --run main --curves",
+      "package_sha256": "fcbec5514dee93770afaae109d6c9696720a9981905fc46afbe69146d1e38aa0",
+      "rerun_sha256": "fcbec5514dee93770afaae109d6c9696720a9981905fc46afbe69146d1e38aa0",
+      "byte_identical": true
+    },
+    {
+      "package_file": "verification.json",
+      "rerun_file": "review/reviewer-verification.json",
+      "command": "verify.py --run main",
+      "package_sha256": "7f1719149aa1777c65a31e3064837e64a5598dfd8df690af99593b3422eb4081",
+      "rerun_sha256": "7f1719149aa1777c65a31e3064837e64a5598dfd8df690af99593b3422eb4081",
+      "byte_identical": true
+    },
+    {
+      "package_file": "benchmark-audit.json",
+      "rerun_file": "review/reviewer-benchmark-audit.json",
+      "command": "data.py",
+      "package_sha256": "e2e6bc74bb330c0ef925bb2bacf10cb246d5c4b7cb28697659699b54b1d8f3c1",
+      "rerun_sha256": "e2e6bc74bb330c0ef925bb2bacf10cb246d5c4b7cb28697659699b54b1d8f3c1",
+      "byte_identical": true
+    },
+    {
+      "package_file": "extra-graph-audit.json",
+      "rerun_file": "review/reviewer-extra-graph-audit.json",
+      "command": "audit_extra.py",
+      "package_sha256": "fc165791db80dbccc0737806c8e6aab7d9a458bd01b80316aae07a634a96582c",
+      "rerun_sha256": "fc165791db80dbccc0737806c8e6aab7d9a458bd01b80316aae07a634a96582c",
+      "byte_identical": true
+    },
+    {
+      "package_file": "training-diagnostics.json",
+      "rerun_file": "review/reviewer-training-diagnostics.json",
+      "command": "training_diagnostics.py --run main",
+      "package_sha256": "a739179a6fabd7e895dacb821770bf2d657bbd509b3ea935d28742efeffd6730",
+      "rerun_sha256": "a739179a6fabd7e895dacb821770bf2d657bbd509b3ea935d28742efeffd6730",
+      "byte_identical": true
+    },
+    {
+      "package_file": "frozen-inference-v2-verification.json",
+      "rerun_file": "review/reviewer-frozen-inference-verification.json",
+      "command": "verify_frozen.py",
+      "package_sha256": "d2a5a32837982bc00b6178ff271ed8f4a5064f13afcb0d6da8f0e1e941a433b8",
+      "rerun_sha256": "68fa012c62b73aa9686d53bca3707ae87608491752a2214189393daac45306ab",
+      "byte_identical": false,
+      "differing_keys": [
+        "sample_witness"
+      ]
+    }
+  ]
+}

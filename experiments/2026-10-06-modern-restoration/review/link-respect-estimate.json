@@ -1,0 +1,206 @@
+{
+  "status": "Exploratory reviewer analysis",
+  "rule": "object keys plus identical strings of any length over the observed export (package rule)",
+  "random_repeats": {
+    "Markov1": 200,
+    "Markov2": 200,
+    "MKN order 3": 100
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "training_rows": 1274,
+      "linked_training_rows": 145,
+      "linked_training_tokens": 557,
+      "touched_test_rows": 37,
+      "touched_test_queries": 138
+    },
+    {
+      "fold": 1,
+      "training_rows": 1281,
+      "linked_training_rows": 159,
+      "linked_training_tokens": 615,
+      "touched_test_rows": 29,
+      "touched_test_queries": 115
+    },
+    {
+      "fold": 2,
+      "training_rows": 1278,
+      "linked_training_rows": 148,
+      "linked_training_tokens": 574,
+      "touched_test_rows": 40,
+      "touched_test_queries": 159
+    },
+    {
+      "fold": 3,
+      "training_rows": 1279,
+      "linked_training_rows": 144,
+      "linked_training_tokens": 560,
+      "touched_test_rows": 42,
+      "touched_test_queries": 163
+    },
+    {
+      "fold": 4,
+      "training_rows": 1272,
+      "linked_training_rows": 144,
+      "linked_training_tokens": 560,
+      "touched_test_rows": 44,
+      "touched_test_queries": 173
+    }
+  ],
+  "models": {
+    "Markov1": {
+      "touched_queries": 748,
+      "touched_top1_full_training": 0.3877005347593583,
+      "touched_top1_linked_strings_removed": 0.3074866310160428,
+      "change_when_linked_strings_removed_points": -8.02139037433155,
+      "change_interval_component_bootstrap_points": [
+        -10.288720569783747,
+        -5.7267619569807096
+      ],
+      "control_change_random_unlinked_removal_mean_points": 0.2566844919786096,
+      "control_change_random_unlinked_removal_sd_points": 0.4735401245382075,
+      "control_change_random_unlinked_removal_5_95_points": [
+        -0.53475935828877,
+        0.9358288770053476
+      ],
+      "excess_change_beyond_random_removal_points": -8.27807486631016,
+      "implied_change_in_whole_benchmark_top1_if_only_touched_queries_change_points": -0.7491571981520789,
+      "implied_excess_change_in_whole_benchmark_top1_points": -0.7731302284929454,
+      "saved_top1_touched_queries": 0.3877005347593583,
+      "saved_top1_untouched_queries": 0.3415507505853188,
+      "touched_queries_total": 748,
+      "untouched_queries_total": 7261
+    },
+    "Markov2": {
+      "touched_queries": 748,
+      "touched_top1_full_training": 0.4090909090909091,
+      "touched_top1_linked_strings_removed": 0.3195187165775401,
+      "change_when_linked_strings_removed_points": -8.957219251336898,
+      "change_interval_component_bootstrap_points": [
+        -11.681855575042036,
+        -6.371827876276162
+      ],
+      "control_change_random_unlinked_removal_mean_points": 0.08689839572192512,
+      "control_change_random_unlinked_removal_sd_points": 0.5164324564443898,
+      "control_change_random_unlinked_removal_5_95_points": [
+        -0.8021390374331552,
+        0.8088235294117625
+      ],
+      "excess_change_beyond_random_removal_points": -9.044117647058822,
+      "implied_change_in_whole_benchmark_top1_if_only_touched_queries_change_points": -0.8365588712698215,
+      "implied_excess_change_in_whole_benchmark_top1_points": -0.8446747409164689,
+      "saved_top1_touched_queries": 0.4090909090909091,
+      "saved_top1_untouched_queries": 0.3689574438782537,
+      "touched_queries_total": 748,
+      "untouched_queries_total": 7261
+    },
+    "MKN order 3": {
+      "touched_queries": 748,
+      "touched_top1_full_training": 0.4144385026737968,
+      "touched_top1_linked_strings_removed": 0.35561497326203206,
+      "change_when_linked_strings_removed_points": -5.88235294117647,
+      "change_interval_component_bootstrap_points": [
+        -8.870076391535619,
+        -3.197350392534441
+      ],
+      "control_change_random_unlinked_removal_mean_points": 0.5802139037433155,
+      "control_change_random_unlinked_removal_sd_points": 0.5375272719034055,
+      "control_change_random_unlinked_removal_5_95_points": [
+        -0.27406417112299464,
+        1.6042780748663104
+      ],
+      "excess_change_beyond_random_removal_points": -6.4625668449197855,
+      "implied_change_in_whole_benchmark_top1_if_only_touched_queries_change_points": -0.5493819453115245,
+      "implied_excess_change_in_whole_benchmark_top1_points": -0.6035709826445248,
+      "saved_top1_touched_queries": 0.4144385026737968,
+      "saved_top1_untouched_queries": 0.3954000826332461,
+      "touched_queries_total": 748,
+      "untouched_queries_total": 7261
+    }
+  },
+  "saved_correspondence": {
+    "Markov1": [
+      {
+        "fold": 0,
+        "queries": 1603,
+        "identical_to_saved": true
+      },
+      {
+        "fold": 1,
+        "queries": 1600,
+        "identical_to_saved": true
+      },
+      {
+        "fold": 2,
+        "queries": 1602,
+        "identical_to_saved": true
+      },
+      {
+        "fold": 3,
+        "queries": 1602,
+        "identical_to_saved": true
+      },
+      {
+        "fold": 4,
+        "queries": 1602,
+        "identical_to_saved": true
+      }
+    ],
+    "Markov2": [
+      {
+        "fold": 0,
+        "queries": 1603,
+        "identical_to_saved": true
+      },
+      {
+        "fold": 1,
+        "queries": 1600,
+        "identical_to_saved": true
+      },
+      {
+        "fold": 2,
+        "queries": 1602,
+        "identical_to_saved": true
+      },
+      {
+        "fold": 3,
+        "queries": 1602,
+        "identical_to_saved": true
+      },
+      {
+        "fold": 4,
+        "queries": 1602,
+        "identical_to_saved": true
+      }
+    ],
+    "MKN order 3": [
+      {
+        "fold": 0,
+        "queries": 1603,
+        "identical_to_saved": true
+      },
+      {
+        "fold": 1,
+        "queries": 1600,
+        "identical_to_saved": true
+      },
+      {
+        "fold": 2,
+        "queries": 1602,
+        "identical_to_saved": true
+      },
+      {
+        "fold": 3,
+        "queries": 1602,
+        "identical_to_saved": true
+      },
+      {
+        "fold": 4,
+        "queries": 1602,
+        "identical_to_saved": true
+      }
+    ]
+  },
+  "elapsed_seconds": 109.7232506275177
+}

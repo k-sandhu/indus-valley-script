@@ -1,0 +1,76 @@
+{
+  "status": "Exploratory reviewer counterfactual",
+  "folds": [
+    {
+      "fold": 0,
+      "training_rows": 1274,
+      "neighbor_training_rows_removed": 178,
+      "affected_test_rows": 102,
+      "affected_test_queries": 398
+    },
+    {
+      "fold": 1,
+      "training_rows": 1281,
+      "neighbor_training_rows_removed": 186,
+      "affected_test_rows": 100,
+      "affected_test_queries": 409
+    },
+    {
+      "fold": 2,
+      "training_rows": 1278,
+      "neighbor_training_rows_removed": 186,
+      "affected_test_rows": 98,
+      "affected_test_queries": 391
+    },
+    {
+      "fold": 3,
+      "training_rows": 1279,
+      "neighbor_training_rows_removed": 176,
+      "affected_test_rows": 98,
+      "affected_test_queries": 378
+    },
+    {
+      "fold": 4,
+      "training_rows": 1272,
+      "neighbor_training_rows_removed": 181,
+      "affected_test_rows": 111,
+      "affected_test_queries": 440
+    }
+  ],
+  "models": {
+    "Markov1": {
+      "affected_queries": 2016,
+      "change_when_neighbors_removed_points": -5.853174603174603,
+      "interval_component_bootstrap_points": [
+        -7.271188314075369,
+        -4.377729114480291
+      ],
+      "control_change_random_removal_mean_points": 0.41021825396825395,
+      "control_change_random_removal_sd_points": 0.4529147637647896,
+      "implied_change_in_whole_benchmark_top1_points": -1.4733424896990885
+    },
+    "Markov2": {
+      "affected_queries": 2016,
+      "change_when_neighbors_removed_points": -9.226190476190476,
+      "interval_component_bootstrap_points": [
+        -10.988005487295718,
+        -7.540465747702591
+      ],
+      "control_change_random_removal_mean_points": -0.003968253968253975,
+      "control_change_random_removal_sd_points": 0.39529929410878983,
+      "implied_change_in_whole_benchmark_top1_points": -2.322387314271445
+    },
+    "MKN order 3": {
+      "affected_queries": 2016,
+      "change_when_neighbors_removed_points": -7.142857142857142,
+      "interval_component_bootstrap_points": [
+        -8.884693961118476,
+        -5.566897389919929
+      ],
+      "control_change_random_removal_mean_points": 0.4007936507936507,
+      "control_change_random_removal_sd_points": 0.3768135941500759,
+      "implied_change_in_whole_benchmark_top1_points": -1.7979772755649894
+    }
+  },
+  "elapsed_seconds": 101.4390001296997
+}
