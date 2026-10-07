@@ -1,6 +1,14 @@
+# Dated review correction, 7 October 2026
+
+Status: Exploratory; arithmetic: Verified computation. The current review correction has **65 rows, 50 sources, 17 attributed claims and 30 dated contributing rows** (2 A, 15 B, 13 C). Broad possible coverage has no empty century; A+B at any strength leaves two 100-year empty bins. The high/moderate-calendar A+B longest internal empty run ranges **400–1,600 years** across 80 Pirak/Perumbalai scenarios. Their current low ratings give 1,600 years, 1900–300 BCE; hypothetical moderate Perumbalai gives a 400–1,200-year range. This measures coverage of the assembled inventory. [Summary](amendment-2026-10-07-review-corrections/run-2026-10-07-04/summary.json), `gaps`; [sensitivity](amendment-2026-10-07-review-corrections/sensitivity-04/gap-sensitivity.json), `scenario_ranges`.
+
+The primary catalogue was reused; it places Pk-15–17 in IB, so the later-seal date remains unresolved. The 2012 publisher paper was opened, the 2010 preview lacked its chapter and the Coningham full-paper attempt returned 403 HTML. Current source access, small raw additions, text repairs and verification outcomes are described in [the new retrospective](amendment-2026-10-07-review-corrections/RETROSPECTIVE.md) and [recovery audit](amendment-2026-10-07-review-corrections/recovery-audit.json). The earlier report below records the outcome as assessed before this review correction. Its computations remain preserved; current archaeological assessments are in the linked amendment.
+
+## Preserved earlier work account
+
 # Package E retrospective
 
-Work was planned under the 6 October package date and executed across 6–7 October 2026 in Toronto; retrieval timestamps use UTC. The completed record has 42 rows, 18 sources and 33 century bins. The main limitation is the absence of a joined, diagnostic sequence across the post-urban interval. The calculation makes that acquisition problem visible rather than supplying missing specimen dates from general cultural chronologies. Final results are in [run-2026-10-07-02](run-2026-10-07-03/summary.json); the first endpoint remains preserved.
+Work was planned under the 6 October package date and executed across 6–7 October 2026 in Toronto; retrieval timestamps use UTC. The completed record has 42 rows, 18 sources and 33 century bins. The main limitation is the absence of a joined, diagnostic sequence across the post-urban interval. The calculation makes that acquisition problem visible rather than supplying missing specimen dates from general cultural chronologies. Final results are in [run-2026-10-07-03](run-2026-10-07-03/summary.json); the first endpoint remains preserved.
 
 ## Reused work and approaches
 
