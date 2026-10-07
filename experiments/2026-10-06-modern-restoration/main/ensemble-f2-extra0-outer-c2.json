@@ -1,0 +1,141 @@
+{
+  "summary": {
+    "slots": 1602,
+    "texts": 318,
+    "glyph_types": 286,
+    "top1": 0.39575530586766544,
+    "top5": 0.6048689138576779,
+    "top10": 0.6841448189762797,
+    "equal_text_weight": {
+      "top1": 0.38277533088853843,
+      "top5": 0.5903638901280411,
+      "top10": 0.6709370294275955
+    },
+    "macro_type": {
+      "top1": 0.12978630912942407,
+      "top5": 0.26491372507423955,
+      "top10": 0.3284500250159668
+    },
+    "unknown_true_rate": 0.03433208489388265,
+    "unknown_prediction_rate": 0.0,
+    "bucket_cross_entropy_bits": 4.544656563705428,
+    "positions": {
+      "initial": {
+        "slots": 318,
+        "top1": 0.24213836477987422,
+        "top5": 0.4716981132075472,
+        "top10": 0.5660377358490566
+      },
+      "internal": {
+        "slots": 966,
+        "top1": 0.38819875776397517,
+        "top5": 0.6086956521739131,
+        "top10": 0.6904761904761905
+      },
+      "final": {
+        "slots": 318,
+        "top1": 0.5723270440251572,
+        "top5": 0.7264150943396226,
+        "top10": 0.7830188679245284
+      }
+    },
+    "confidence_audit": [
+      {
+        "mass_interval": [
+          0.0,
+          0.2
+        ],
+        "slots": 485,
+        "mean_model_mass": 0.12212389706315535,
+        "exact_accuracy": 0.11134020618556702
+      },
+      {
+        "mass_interval": [
+          0.2,
+          0.4
+        ],
+        "slots": 464,
+        "mean_model_mass": 0.29423728667069254,
+        "exact_accuracy": 0.27370689655172414
+      },
+      {
+        "mass_interval": [
+          0.4,
+          0.6
+        ],
+        "slots": 258,
+        "mean_model_mass": 0.492428536789481,
+        "exact_accuracy": 0.4573643410852713
+      },
+      {
+        "mass_interval": [
+          0.6,
+          0.8
+        ],
+        "slots": 143,
+        "mean_model_mass": 0.6911973882288429,
+        "exact_accuracy": 0.7202797202797203
+      },
+      {
+        "mass_interval": [
+          0.8,
+          1.0
+        ],
+        "slots": 252,
+        "mean_model_mass": 0.9279821245467882,
+        "exact_accuracy": 0.9206349206349206
+      }
+    ],
+    "expected_calibration_error": 0.018609876686381956,
+    "top_label_brier": 0.15597549052029072,
+    "frequency_strata": {
+      "1": {
+        "slots": 134,
+        "types": 134,
+        "top1": 0.04477611940298507,
+        "top5": 0.12686567164179105,
+        "top10": 0.17164179104477612,
+        "unknown_in_training_rate": 0.3656716417910448
+      },
+      "2-4": {
+        "slots": 215,
+        "types": 82,
+        "top1": 0.11162790697674418,
+        "top5": 0.26976744186046514,
+        "top10": 0.3395348837209302,
+        "unknown_in_training_rate": 0.027906976744186046
+      },
+      "5-19": {
+        "slots": 476,
+        "types": 50,
+        "top1": 0.3088235294117647,
+        "top5": 0.5567226890756303,
+        "top10": 0.6533613445378151,
+        "unknown_in_training_rate": 0.0
+      },
+      "20+": {
+        "slots": 777,
+        "types": 20,
+        "top1": 0.5881595881595881,
+        "top5": 0.8095238095238095,
+        "top10": 0.8867438867438867,
+        "unknown_in_training_rate": 0.0
+      }
+    }
+  },
+  "probability_file": "data/raw/2026-10-06-modern-restoration/main/ensemble-f2-extra0-outer-c2.npz",
+  "query_file": "data/raw/2026-10-06-modern-restoration/main/ensemble-f2-extra0-outer-c2-queries.jsonl",
+  "probability_sha256": "3f80e5d5b0b87e5b9d34155689dcefecf84a4c870dd875b96ae916a2e815b8ee",
+  "query_sha256": "77bb4203260a33dfc39ff20f13f11ee5d458700a6fe2a3c1f6ac95bd9ed50c04",
+  "ngram_weight": 0.5,
+  "neural_family": "gru",
+  "classical_config": {
+    "order": 3,
+    "discount_scale": 1.0
+  },
+  "neural_config": {
+    "family": "gru",
+    "width": 64,
+    "layers": 1
+  }
+}

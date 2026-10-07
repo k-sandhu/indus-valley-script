@@ -1,0 +1,326 @@
+{
+  "fold": 1,
+  "extra": false,
+  "family": "gru",
+  "weights": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "inner": [
+    {
+      "top1": 0.35824621625838665,
+      "bucket_loss_bits": 4.837299409566537
+    },
+    {
+      "top1": 0.3796224059915744,
+      "bucket_loss_bits": 4.6700729216693535
+    },
+    {
+      "top1": 0.38976439382118894,
+      "bucket_loss_bits": 4.606501847858423
+    },
+    {
+      "top1": 0.3885161491652364,
+      "bucket_loss_bits": 4.644107267445723
+    },
+    {
+      "top1": 0.378842253081604,
+      "bucket_loss_bits": 4.779838089878625
+    }
+  ],
+  "selected": {
+    "loss": 2,
+    "top1": 2
+  },
+  "outer": {
+    "loss": {
+      "config_index": 2,
+      "label": "ensemble-f1-extra0-outer-c2",
+      "summary": {
+        "slots": 1600,
+        "texts": 315,
+        "glyph_types": 275,
+        "top1": 0.413125,
+        "top5": 0.6425,
+        "top10": 0.705625,
+        "equal_text_weight": {
+          "top1": 0.4009149316292174,
+          "top5": 0.633752490895348,
+          "top10": 0.6977965597013216
+        },
+        "macro_type": {
+          "top1": 0.11756716274289095,
+          "top5": 0.2680776245460487,
+          "top10": 0.33212941433682264
+        },
+        "unknown_true_rate": 0.034375,
+        "unknown_prediction_rate": 0.0,
+        "bucket_cross_entropy_bits": 4.354929752338243,
+        "positions": {
+          "initial": {
+            "slots": 315,
+            "top1": 0.20952380952380953,
+            "top5": 0.48253968253968255,
+            "top10": 0.5587301587301587
+          },
+          "internal": {
+            "slots": 970,
+            "top1": 0.4154639175257732,
+            "top5": 0.6443298969072165,
+            "top10": 0.7072164948453609
+          },
+          "final": {
+            "slots": 315,
+            "top1": 0.6095238095238096,
+            "top5": 0.7968253968253968,
+            "top10": 0.8476190476190476
+          }
+        },
+        "confidence_audit": [
+          {
+            "mass_interval": [
+              0.0,
+              0.2
+            ],
+            "slots": 452,
+            "mean_model_mass": 0.12345654327950047,
+            "exact_accuracy": 0.13053097345132744
+          },
+          {
+            "mass_interval": [
+              0.2,
+              0.4
+            ],
+            "slots": 433,
+            "mean_model_mass": 0.2953756579897135,
+            "exact_accuracy": 0.2748267898383372
+          },
+          {
+            "mass_interval": [
+              0.4,
+              0.6
+            ],
+            "slots": 265,
+            "mean_model_mass": 0.49030708780320537,
+            "exact_accuracy": 0.44150943396226416
+          },
+          {
+            "mass_interval": [
+              0.6,
+              0.8
+            ],
+            "slots": 186,
+            "mean_model_mass": 0.6929381350005226,
+            "exact_accuracy": 0.6989247311827957
+          },
+          {
+            "mass_interval": [
+              0.8,
+              1.0
+            ],
+            "slots": 264,
+            "mean_model_mass": 0.9198855556854468,
+            "exact_accuracy": 0.8939393939393939
+          }
+        ],
+        "expected_calibration_error": 0.020618733878701202,
+        "top_label_brier": 0.16406695772004118,
+        "frequency_strata": {
+          "1": {
+            "slots": 127,
+            "types": 127,
+            "top1": 0.007874015748031496,
+            "top5": 0.07086614173228346,
+            "top10": 0.11811023622047244,
+            "unknown_in_training_rate": 0.33858267716535434
+          },
+          "2-4": {
+            "slots": 214,
+            "types": 80,
+            "top1": 0.12149532710280374,
+            "top5": 0.29439252336448596,
+            "top10": 0.3878504672897196,
+            "unknown_in_training_rate": 0.056074766355140186
+          },
+          "5-19": {
+            "slots": 500,
+            "types": 50,
+            "top1": 0.284,
+            "top5": 0.578,
+            "top10": 0.66,
+            "unknown_in_training_rate": 0.0
+          },
+          "20+": {
+            "slots": 759,
+            "types": 18,
+            "top1": 0.6482213438735178,
+            "top5": 0.8787878787878788,
+            "top10": 0.9235836627140975,
+            "unknown_in_training_rate": 0.0
+          }
+        }
+      },
+      "probability_file": "data/raw/2026-10-06-modern-restoration/main/ensemble-f1-extra0-outer-c2.npz",
+      "query_file": "data/raw/2026-10-06-modern-restoration/main/ensemble-f1-extra0-outer-c2-queries.jsonl",
+      "probability_sha256": "c6bdb4d2c6c60a4486f087241c9e127d9dcb221d799c9c0520262a1c6848e8cf",
+      "query_sha256": "a3d2d739e0ad96181893a91bdb36795469acbad5c6e44b0d2d40eb2b2266784c",
+      "ngram_weight": 0.5,
+      "neural_family": "gru",
+      "classical_config": {
+        "order": 3,
+        "discount_scale": 1.0
+      },
+      "neural_config": {
+        "family": "gru",
+        "width": 64,
+        "layers": 1
+      }
+    },
+    "top1": {
+      "config_index": 2,
+      "label": "ensemble-f1-extra0-outer-c2",
+      "summary": {
+        "slots": 1600,
+        "texts": 315,
+        "glyph_types": 275,
+        "top1": 0.413125,
+        "top5": 0.6425,
+        "top10": 0.705625,
+        "equal_text_weight": {
+          "top1": 0.4009149316292174,
+          "top5": 0.633752490895348,
+          "top10": 0.6977965597013216
+        },
+        "macro_type": {
+          "top1": 0.11756716274289095,
+          "top5": 0.2680776245460487,
+          "top10": 0.33212941433682264
+        },
+        "unknown_true_rate": 0.034375,
+        "unknown_prediction_rate": 0.0,
+        "bucket_cross_entropy_bits": 4.354929752338243,
+        "positions": {
+          "initial": {
+            "slots": 315,
+            "top1": 0.20952380952380953,
+            "top5": 0.48253968253968255,
+            "top10": 0.5587301587301587
+          },
+          "internal": {
+            "slots": 970,
+            "top1": 0.4154639175257732,
+            "top5": 0.6443298969072165,
+            "top10": 0.7072164948453609
+          },
+          "final": {
+            "slots": 315,
+            "top1": 0.6095238095238096,
+            "top5": 0.7968253968253968,
+            "top10": 0.8476190476190476
+          }
+        },
+        "confidence_audit": [
+          {
+            "mass_interval": [
+              0.0,
+              0.2
+            ],
+            "slots": 452,
+            "mean_model_mass": 0.12345654327950047,
+            "exact_accuracy": 0.13053097345132744
+          },
+          {
+            "mass_interval": [
+              0.2,
+              0.4
+            ],
+            "slots": 433,
+            "mean_model_mass": 0.2953756579897135,
+            "exact_accuracy": 0.2748267898383372
+          },
+          {
+            "mass_interval": [
+              0.4,
+              0.6
+            ],
+            "slots": 265,
+            "mean_model_mass": 0.49030708780320537,
+            "exact_accuracy": 0.44150943396226416
+          },
+          {
+            "mass_interval": [
+              0.6,
+              0.8
+            ],
+            "slots": 186,
+            "mean_model_mass": 0.6929381350005226,
+            "exact_accuracy": 0.6989247311827957
+          },
+          {
+            "mass_interval": [
+              0.8,
+              1.0
+            ],
+            "slots": 264,
+            "mean_model_mass": 0.9198855556854468,
+            "exact_accuracy": 0.8939393939393939
+          }
+        ],
+        "expected_calibration_error": 0.020618733878701202,
+        "top_label_brier": 0.16406695772004118,
+        "frequency_strata": {
+          "1": {
+            "slots": 127,
+            "types": 127,
+            "top1": 0.007874015748031496,
+            "top5": 0.07086614173228346,
+            "top10": 0.11811023622047244,
+            "unknown_in_training_rate": 0.33858267716535434
+          },
+          "2-4": {
+            "slots": 214,
+            "types": 80,
+            "top1": 0.12149532710280374,
+            "top5": 0.29439252336448596,
+            "top10": 0.3878504672897196,
+            "unknown_in_training_rate": 0.056074766355140186
+          },
+          "5-19": {
+            "slots": 500,
+            "types": 50,
+            "top1": 0.284,
+            "top5": 0.578,
+            "top10": 0.66,
+            "unknown_in_training_rate": 0.0
+          },
+          "20+": {
+            "slots": 759,
+            "types": 18,
+            "top1": 0.6482213438735178,
+            "top5": 0.8787878787878788,
+            "top10": 0.9235836627140975,
+            "unknown_in_training_rate": 0.0
+          }
+        }
+      },
+      "probability_file": "data/raw/2026-10-06-modern-restoration/main/ensemble-f1-extra0-outer-c2.npz",
+      "query_file": "data/raw/2026-10-06-modern-restoration/main/ensemble-f1-extra0-outer-c2-queries.jsonl",
+      "probability_sha256": "c6bdb4d2c6c60a4486f087241c9e127d9dcb221d799c9c0520262a1c6848e8cf",
+      "query_sha256": "a3d2d739e0ad96181893a91bdb36795469acbad5c6e44b0d2d40eb2b2266784c",
+      "ngram_weight": 0.5,
+      "neural_family": "gru",
+      "classical_config": {
+        "order": 3,
+        "discount_scale": 1.0
+      },
+      "neural_config": {
+        "family": "gru",
+        "width": 64,
+        "layers": 1
+      }
+    }
+  }
+}

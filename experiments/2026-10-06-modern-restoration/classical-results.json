@@ -1,0 +1,5707 @@
+{
+  "status": "Exploratory",
+  "queries": 8009,
+  "components": 1526,
+  "benchmark_audit_sha256": "e2e6bc74bb330c0ef925bb2bacf10cb246d5c4b7cb28697659699b54b1d8f3c1",
+  "native_loss_note": "Additional text can introduce new codes. Common-alphabet loss coarsens their mass into the original fold UNKNOWN bucket.",
+  "comparators": {
+    "Markov1": {
+      "slots": 8009,
+      "texts": 1596,
+      "glyph_types": 548,
+      "top1": 0.3458609064802098,
+      "top5": 0.5845923336246722,
+      "top10": 0.6542639530528156,
+      "equal_text_weight": {
+        "top1": 0.33352427299795717,
+        "top5": 0.569483814361634,
+        "top10": 0.6399350892771944
+      },
+      "macro_type": {
+        "top1": 0.047986125288089106,
+        "top5": 0.12168627559416333,
+        "top10": 0.15839955074406015
+      },
+      "unknown_true_rate": 0.03133974278936197,
+      "unknown_prediction_rate": 0.0,
+      "bucket_cross_entropy_bits": 5.119434856321813,
+      "positions": {
+        "initial": {
+          "slots": 1596,
+          "top1": 0.18233082706766918,
+          "top5": 0.45050125313283207,
+          "top10": 0.5156641604010025
+        },
+        "internal": {
+          "slots": 4817,
+          "top1": 0.33589370977787003,
+          "top5": 0.5785758771019307,
+          "top10": 0.6560099647083247
+        },
+        "final": {
+          "slots": 1596,
+          "top1": 0.5394736842105263,
+          "top5": 0.7368421052631579,
+          "top10": 0.7875939849624061
+        }
+      },
+      "confidence_audit": [
+        {
+          "mass_interval": [
+            0.0,
+            0.2
+          ],
+          "slots": 2227,
+          "mean_model_mass": 0.12740766610476437,
+          "exact_accuracy": 0.10327795240233498
+        },
+        {
+          "mass_interval": [
+            0.2,
+            0.4
+          ],
+          "slots": 2910,
+          "mean_model_mass": 0.2902937067239362,
+          "exact_accuracy": 0.24810996563573884
+        },
+        {
+          "mass_interval": [
+            0.4,
+            0.6
+          ],
+          "slots": 1482,
+          "mean_model_mass": 0.4874889438584603,
+          "exact_accuracy": 0.48313090418353577
+        },
+        {
+          "mass_interval": [
+            0.6,
+            0.8
+          ],
+          "slots": 809,
+          "mean_model_mass": 0.6908683542577767,
+          "exact_accuracy": 0.7169344870210136
+        },
+        {
+          "mass_interval": [
+            0.8,
+            1.0
+          ],
+          "slots": 581,
+          "mean_model_mass": 0.8996579863486105,
+          "exact_accuracy": 0.8984509466437177
+        }
+      ],
+      "expected_calibration_error": 0.025563611593732553,
+      "top_label_brier": 0.16529202027272658,
+      "frequency_strata": {
+        "1": {
+          "slots": 205,
+          "types": 205,
+          "top1": 0.0,
+          "top5": 0.0,
+          "top10": 0.0,
+          "unknown_in_training_rate": 1.0
+        },
+        "2-4": {
+          "slots": 412,
+          "types": 155,
+          "top1": 0.0024271844660194173,
+          "top5": 0.038834951456310676,
+          "top10": 0.07524271844660194,
+          "unknown_in_training_rate": 0.11165048543689321
+        },
+        "5-19": {
+          "slots": 991,
+          "types": 112,
+          "top1": 0.06861755802219979,
+          "top5": 0.20080726538849647,
+          "top10": 0.2875882946518668,
+          "unknown_in_training_rate": 0.0
+        },
+        "20+": {
+          "slots": 6401,
+          "types": 76,
+          "top1": 0.42196531791907516,
+          "top5": 0.6978597094204031,
+          "top10": 0.7692548039368848,
+          "unknown_in_training_rate": 0.0
+        }
+      },
+      "strata": {
+        "all": {
+          "slots": 8009,
+          "top1": 0.3458609064802098,
+          "top5": 0.5845923336246722,
+          "top10": 0.6542639530528156,
+          "bucket_loss_bits": 5.119434856321813,
+          "common_bucket_loss_bits": 5.119434856321813,
+          "expected_calibration_error": 0.02556361159373257,
+          "unknown_true_rate": 0.03133974278936197
+        },
+        "position/initial": {
+          "slots": 1596,
+          "top1": 0.18233082706766918,
+          "top5": 0.45050125313283207,
+          "top10": 0.5156641604010025,
+          "bucket_loss_bits": 6.818600153082694,
+          "common_bucket_loss_bits": 6.818600153082694,
+          "expected_calibration_error": 0.05756703062002488,
+          "unknown_true_rate": 0.06390977443609022
+        },
+        "position/internal": {
+          "slots": 4817,
+          "top1": 0.33589370977787003,
+          "top5": 0.5785758771019307,
+          "top10": 0.6560099647083247,
+          "bucket_loss_bits": 5.04959069558679,
+          "common_bucket_loss_bits": 5.04959069558679,
+          "expected_calibration_error": 0.03057137033416088,
+          "unknown_true_rate": 0.02262819182063525
+        },
+        "position/final": {
+          "slots": 1596,
+          "top1": 0.5394736842105263,
+          "top5": 0.7368421052631579,
+          "top10": 0.7875939849624061,
+          "bucket_loss_bits": 3.6310711399247135,
+          "common_bucket_loss_bits": 3.6310711399247135,
+          "expected_calibration_error": 0.07696433255781925,
+          "unknown_true_rate": 0.02506265664160401
+        },
+        "frequency/1": {
+          "slots": 205,
+          "top1": 0.0,
+          "top5": 0.0,
+          "top10": 0.0,
+          "bucket_loss_bits": 17.41550289234951,
+          "common_bucket_loss_bits": 17.41550289234951,
+          "expected_calibration_error": 0.2495370969127212,
+          "unknown_true_rate": 1.0
+        },
+        "frequency/2-4": {
+          "slots": 412,
+          "top1": 0.0024271844660194173,
+          "top5": 0.038834951456310676,
+          "top10": 0.07524271844660194,
+          "bucket_loss_bits": 12.529732861323097,
+          "common_bucket_loss_bits": 12.529732861323097,
+          "expected_calibration_error": 0.2468023390469629,
+          "unknown_true_rate": 0.11165048543689321
+        },
+        "frequency/5-19": {
+          "slots": 991,
+          "top1": 0.06861755802219979,
+          "top5": 0.20080726538849647,
+          "top10": 0.2875882946518668,
+          "bucket_loss_bits": 8.551216891195242,
+          "common_bucket_loss_bits": 8.551216891195242,
+          "expected_calibration_error": 0.2103061228469401,
+          "unknown_true_rate": 0.0
+        },
+        "frequency/20+": {
+          "slots": 6401,
+          "top1": 0.42196531791907516,
+          "top5": 0.6978597094204031,
+          "top10": 0.7692548039368848,
+          "bucket_loss_bits": 3.717367566522441,
+          "common_bucket_loss_bits": 3.717367566522441,
+          "expected_calibration_error": 0.031040005288624817,
+          "unknown_true_rate": 0.0
+        }
+      },
+      "common_alphabet_bucket_cross_entropy_bits": 5.119434856321813
+    },
+    "Markov2": {
+      "slots": 8009,
+      "texts": 1596,
+      "glyph_types": 548,
+      "top1": 0.3727057060806593,
+      "top5": 0.5887126982145087,
+      "top10": 0.6545136721188662,
+      "equal_text_weight": {
+        "top1": 0.3566994478648614,
+        "top5": 0.5725122482641279,
+        "top10": 0.6381844328742825
+      },
+      "macro_type": {
+        "top1": 0.061234523915069686,
+        "top5": 0.13314323405164932,
+        "top10": 0.16978454554178576
+      },
+      "unknown_true_rate": 0.03133974278936197,
+      "unknown_prediction_rate": 0.0,
+      "bucket_cross_entropy_bits": 5.247170529625563,
+      "positions": {
+        "initial": {
+          "slots": 1596,
+          "top1": 0.2111528822055138,
+          "top5": 0.4705513784461153,
+          "top10": 0.5238095238095238
+        },
+        "internal": {
+          "slots": 4817,
+          "top1": 0.36080548058957856,
+          "top5": 0.5742163172098816,
+          "top10": 0.6537263857172514
+        },
+        "final": {
+          "slots": 1596,
+          "top1": 0.5701754385964912,
+          "top5": 0.7506265664160401,
+          "top10": 0.7875939849624061
+        }
+      },
+      "confidence_audit": [
+        {
+          "mass_interval": [
+            0.0,
+            0.2
+          ],
+          "slots": 1945,
+          "mean_model_mass": 0.12878969944018467,
+          "exact_accuracy": 0.10282776349614396
+        },
+        {
+          "mass_interval": [
+            0.2,
+            0.4
+          ],
+          "slots": 2534,
+          "mean_model_mass": 0.28976142351880996,
+          "exact_accuracy": 0.23441199684293607
+        },
+        {
+          "mass_interval": [
+            0.4,
+            0.6
+          ],
+          "slots": 1505,
+          "mean_model_mass": 0.48883510903781935,
+          "exact_accuracy": 0.45714285714285713
+        },
+        {
+          "mass_interval": [
+            0.6,
+            0.8
+          ],
+          "slots": 1009,
+          "mean_model_mass": 0.6952179310915004,
+          "exact_accuracy": 0.6352824578790882
+        },
+        {
+          "mass_interval": [
+            0.8,
+            1.0
+          ],
+          "slots": 1016,
+          "mean_model_mass": 0.8971636002508093,
+          "exact_accuracy": 0.8484251968503937
+        }
+      ],
+      "expected_calibration_error": 0.04350622575051666,
+      "top_label_brier": 0.17058396883665713,
+      "frequency_strata": {
+        "1": {
+          "slots": 205,
+          "types": 205,
+          "top1": 0.0,
+          "top5": 0.0,
+          "top10": 0.0,
+          "unknown_in_training_rate": 1.0
+        },
+        "2-4": {
+          "slots": 412,
+          "types": 155,
+          "top1": 0.012135922330097087,
+          "top5": 0.055825242718446605,
+          "top10": 0.10194174757281553,
+          "unknown_in_training_rate": 0.11165048543689321
+        },
+        "5-19": {
+          "slots": 991,
+          "types": 112,
+          "top1": 0.0958627648839556,
+          "top5": 0.22906155398587286,
+          "top10": 0.30978809283551967,
+          "unknown_in_training_rate": 0.0
+        },
+        "20+": {
+          "slots": 6401,
+          "types": 76,
+          "top1": 0.4507108264333698,
+          "top5": 0.6975472582408999,
+          "top10": 0.7644118106545852,
+          "unknown_in_training_rate": 0.0
+        }
+      },
+      "strata": {
+        "all": {
+          "slots": 8009,
+          "top1": 0.3727057060806593,
+          "top5": 0.5887126982145087,
+          "top10": 0.6545136721188662,
+          "bucket_loss_bits": 5.247170529625563,
+          "common_bucket_loss_bits": 5.247170529625563,
+          "expected_calibration_error": 0.04350622575051667,
+          "unknown_true_rate": 0.03133974278936197
+        },
+        "position/initial": {
+          "slots": 1596,
+          "top1": 0.2111528822055138,
+          "top5": 0.4705513784461153,
+          "top10": 0.5238095238095238,
+          "bucket_loss_bits": 7.501803607854068,
+          "common_bucket_loss_bits": 7.501803607854068,
+          "expected_calibration_error": 0.08837205014506655,
+          "unknown_true_rate": 0.06390977443609022
+        },
+        "position/internal": {
+          "slots": 4817,
+          "top1": 0.36080548058957856,
+          "top5": 0.5742163172098816,
+          "top10": 0.6537263857172514,
+          "bucket_loss_bits": 5.064199070402599,
+          "common_bucket_loss_bits": 5.064199070402599,
+          "expected_calibration_error": 0.05469353520808744,
+          "unknown_true_rate": 0.02262819182063525
+        },
+        "position/final": {
+          "slots": 1596,
+          "top1": 0.5701754385964912,
+          "top5": 0.7506265664160401,
+          "top10": 0.7875939849624061,
+          "bucket_loss_bits": 3.544776498437796,
+          "common_bucket_loss_bits": 3.544776498437796,
+          "expected_calibration_error": 0.06688283049152793,
+          "unknown_true_rate": 0.02506265664160401
+        },
+        "frequency/1": {
+          "slots": 205,
+          "top1": 0.0,
+          "top5": 0.0,
+          "top10": 0.0,
+          "bucket_loss_bits": 19.91200043824094,
+          "common_bucket_loss_bits": 19.91200043824094,
+          "expected_calibration_error": 0.2944936521678518,
+          "unknown_true_rate": 1.0
+        },
+        "frequency/2-4": {
+          "slots": 412,
+          "top1": 0.012135922330097087,
+          "top5": 0.055825242718446605,
+          "top10": 0.10194174757281553,
+          "bucket_loss_bits": 13.516637793214798,
+          "common_bucket_loss_bits": 13.516637793214798,
+          "expected_calibration_error": 0.2828517056904,
+          "unknown_true_rate": 0.11165048543689321
+        },
+        "frequency/5-19": {
+          "slots": 991,
+          "top1": 0.0958627648839556,
+          "top5": 0.22906155398587286,
+          "top10": 0.30978809283551967,
+          "bucket_loss_bits": 8.751549300627396,
+          "common_bucket_loss_bits": 8.751549300627396,
+          "expected_calibration_error": 0.21954109798021978,
+          "unknown_true_rate": 0.0
+        },
+        "frequency/20+": {
+          "slots": 6401,
+          "top1": 0.4507108264333698,
+          "top5": 0.6975472582408999,
+          "top10": 0.7644118106545852,
+          "bucket_loss_bits": 3.702700914576705,
+          "common_bucket_loss_bits": 3.702700914576705,
+          "expected_calibration_error": 0.014433771593346086,
+          "unknown_true_rate": 0.0
+        }
+      },
+      "common_alphabet_bucket_cross_entropy_bits": 5.247170529625563
+    }
+  },
+  "models": {
+    "classical/extra0/loss": {
+      "summary": {
+        "slots": 8009,
+        "texts": 1596,
+        "glyph_types": 548,
+        "top1": 0.3971781745536272,
+        "top5": 0.6168060931452116,
+        "top10": 0.6876014483705831,
+        "equal_text_weight": {
+          "top1": 0.37890297533154677,
+          "top5": 0.6016790140380366,
+          "top10": 0.673024034584185
+        },
+        "macro_type": {
+          "top1": 0.07491561293462023,
+          "top5": 0.1517543581580624,
+          "top10": 0.19125946791297235
+        },
+        "unknown_true_rate": 0.03133974278936197,
+        "unknown_prediction_rate": 0.0,
+        "bucket_cross_entropy_bits": 4.581890918428459,
+        "positions": {
+          "initial": {
+            "slots": 1596,
+            "top1": 0.2174185463659148,
+            "top5": 0.4755639097744361,
+            "top10": 0.5363408521303258
+          },
+          "internal": {
+            "slots": 4817,
+            "top1": 0.39547436163587296,
+            "top5": 0.616151131409591,
+            "top10": 0.6985675731783267
+          },
+          "final": {
+            "slots": 1596,
+            "top1": 0.5820802005012531,
+            "top5": 0.7600250626566416,
+            "top10": 0.8057644110275689
+          }
+        },
+        "confidence_audit": [
+          {
+            "mass_interval": [
+              0.0,
+              0.2
+            ],
+            "slots": 2206,
+            "mean_model_mass": 0.12592808226593724,
+            "exact_accuracy": 0.12601994560290117
+          },
+          {
+            "mass_interval": [
+              0.2,
+              0.4
+            ],
+            "slots": 1972,
+            "mean_model_mass": 0.2942219605323205,
+            "exact_accuracy": 0.24036511156186613
+          },
+          {
+            "mass_interval": [
+              0.4,
+              0.6
+            ],
+            "slots": 1342,
+            "mean_model_mass": 0.4923388305216289,
+            "exact_accuracy": 0.4008941877794337
+          },
+          {
+            "mass_interval": [
+              0.6,
+              0.8
+            ],
+            "slots": 946,
+            "mean_model_mass": 0.6980254287257486,
+            "exact_accuracy": 0.5898520084566596
+          },
+          {
+            "mass_interval": [
+              0.8,
+              1.0
+            ],
+            "slots": 1543,
+            "mean_model_mass": 0.9228949075453119,
+            "exact_accuracy": 0.8639014906027219
+          }
+        ],
+        "expected_calibration_error": 0.05275140032064914,
+        "top_label_brier": 0.16852749571039652,
+        "frequency_strata": {
+          "1": {
+            "slots": 205,
+            "types": 205,
+            "top1": 0.0,
+            "top5": 0.0,
+            "top10": 0.0,
+            "unknown_in_training_rate": 1.0
+          },
+          "2-4": {
+            "slots": 412,
+            "types": 155,
+            "top1": 0.024271844660194174,
+            "top5": 0.07524271844660194,
+            "top10": 0.1262135922330097,
+            "unknown_in_training_rate": 0.11165048543689321
+          },
+          "5-19": {
+            "slots": 991,
+            "types": 112,
+            "top1": 0.12714429868819374,
+            "top5": 0.28557013118062563,
+            "top10": 0.3622603430877901,
+            "unknown_in_training_rate": 0.0
+          },
+          "20+": {
+            "slots": 6401,
+            "types": 76,
+            "top1": 0.475706920793626,
+            "top5": 0.7226995781909077,
+            "top10": 0.7961256053741603,
+            "unknown_in_training_rate": 0.0
+          }
+        },
+        "strata": {
+          "all": {
+            "slots": 8009,
+            "top1": 0.3971781745536272,
+            "top5": 0.6168060931452116,
+            "top10": 0.6876014483705831,
+            "bucket_loss_bits": 4.581890918428459,
+            "common_bucket_loss_bits": 4.581890918428459,
+            "expected_calibration_error": 0.052751400320649164,
+            "unknown_true_rate": 0.03133974278936197
+          },
+          "position/initial": {
+            "slots": 1596,
+            "top1": 0.2174185463659148,
+            "top5": 0.4755639097744361,
+            "top10": 0.5363408521303258,
+            "bucket_loss_bits": 6.0586162360110585,
+            "common_bucket_loss_bits": 6.0586162360110585,
+            "expected_calibration_error": 0.10192659961230534,
+            "unknown_true_rate": 0.06390977443609022
+          },
+          "position/internal": {
+            "slots": 4817,
+            "top1": 0.39547436163587296,
+            "top5": 0.616151131409591,
+            "top10": 0.6985675731783267,
+            "bucket_loss_bits": 4.519296802018554,
+            "common_bucket_loss_bits": 4.519296802018554,
+            "expected_calibration_error": 0.05527895359760064,
+            "unknown_true_rate": 0.02262819182063525
+          },
+          "position/final": {
+            "slots": 1596,
+            "top1": 0.5820802005012531,
+            "top5": 0.7600250626566416,
+            "top10": 0.8057644110275689,
+            "bucket_loss_bits": 3.294085311839912,
+            "common_bucket_loss_bits": 3.294085311839912,
+            "expected_calibration_error": 0.03511261698637895,
+            "unknown_true_rate": 0.02506265664160401
+          },
+          "frequency/1": {
+            "slots": 205,
+            "top1": 0.0,
+            "top5": 0.0,
+            "top10": 0.0,
+            "bucket_loss_bits": 14.67333436753032,
+            "common_bucket_loss_bits": 14.67333436753032,
+            "expected_calibration_error": 0.30653218117739806,
+            "unknown_true_rate": 1.0
+          },
+          "frequency/2-4": {
+            "slots": 412,
+            "top1": 0.024271844660194174,
+            "top5": 0.07524271844660194,
+            "top10": 0.1262135922330097,
+            "bucket_loss_bits": 11.114136559080682,
+            "common_bucket_loss_bits": 11.114136559080682,
+            "expected_calibration_error": 0.28409330111039166,
+            "unknown_true_rate": 0.11165048543689321
+          },
+          "frequency/5-19": {
+            "slots": 991,
+            "top1": 0.12714429868819374,
+            "top5": 0.28557013118062563,
+            "top10": 0.3622603430877901,
+            "bucket_loss_bits": 7.595225083003212,
+            "common_bucket_loss_bits": 7.595225083003212,
+            "expected_calibration_error": 0.2104260151496422,
+            "unknown_true_rate": 0.0
+          },
+          "frequency/20+": {
+            "slots": 6401,
+            "top1": 0.475706920793626,
+            "top5": 0.7226995781909077,
+            "top10": 0.7961256053741603,
+            "bucket_loss_bits": 3.3717291830577074,
+            "common_bucket_loss_bits": 3.3717291830577074,
+            "expected_calibration_error": 0.022669621359800746,
+            "unknown_true_rate": 0.0
+          }
+        },
+        "common_alphabet_bucket_cross_entropy_bits": 4.581890918428459
+      },
+      "fold_selection": [
+        {
+          "fold": 0,
+          "selected_index": 3,
+          "inner": [
+            {
+              "top1": 0.3545113955666563,
+              "bucket_loss_bits": 4.826393744623039
+            },
+            {
+              "top1": 0.3554480174836091,
+              "bucket_loss_bits": 4.772994193844497
+            },
+            {
+              "top1": 0.38073680924133624,
+              "bucket_loss_bits": 4.820690990981201
+            },
+            {
+              "top1": 0.39057133936934124,
+              "bucket_loss_bits": 4.639420110193004
+            },
+            {
+              "top1": 0.3768342179206993,
+              "bucket_loss_bits": 4.9139608179988015
+            },
+            {
+              "top1": 0.3893225101467374,
+              "bucket_loss_bits": 4.663644079494501
+            },
+            {
+              "top1": 0.37402435216984076,
+              "bucket_loss_bits": 4.982420819184977
+            },
+            {
+              "top1": 0.38885419918826103,
+              "bucket_loss_bits": 4.676158133103182
+            }
+          ],
+          "config": {
+            "order": 3,
+            "discount_scale": 1.0
+          },
+          "ngram_weight": null,
+          "neural_family": null,
+          "epochs": null
+        },
+        {
+          "fold": 1,
+          "selected_index": 3,
+          "inner": [
+            {
+              "top1": 0.35247308472460603,
+              "bucket_loss_bits": 4.941971991794971
+            },
+            {
+              "top1": 0.3585582774223748,
+              "bucket_loss_bits": 4.87292282547247
+            },
+            {
+              "top1": 0.3687002652519894,
+              "bucket_loss_bits": 4.977557585716029
+            },
+            {
+              "top1": 0.378842253081604,
+              "bucket_loss_bits": 4.779838089878625
+            },
+            {
+              "top1": 0.3629271337182088,
+              "bucket_loss_bits": 5.075278699144273
+            },
+            {
+              "top1": 0.37618973318770477,
+              "bucket_loss_bits": 4.814764267658788
+            },
+            {
+              "top1": 0.35965049149633327,
+              "bucket_loss_bits": 5.146230454438051
+            },
+            {
+              "top1": 0.37494148853175224,
+              "bucket_loss_bits": 4.832369860684018
+            }
+          ],
+          "config": {
+            "order": 3,
+            "discount_scale": 1.0
+          },
+          "ngram_weight": null,
+          "neural_family": null,
+          "epochs": null
+        },
+        {
+          "fold": 2,
+          "selected_index": 3,
+          "inner": [
+            {
+              "top1": 0.3519587950678945,
+              "bucket_loss_bits": 4.901785927668089
+            },
+            {
+              "top1": 0.3560168565631341,
+              "bucket_loss_bits": 4.837430515969416
+            },
+            {
+              "top1": 0.3644451381301701,
+              "bucket_loss_bits": 4.912730895912829
+            },
+            {
+              "top1": 0.3747463711565475,
+              "bucket_loss_bits": 4.739640784925703
+            },
+            {
+              "top1": 0.3617917902294365,
+              "bucket_loss_bits": 4.995948739245081
+            },
+            {
+              "top1": 0.3759950054627751,
+              "bucket_loss_bits": 4.762054630371036
+            },
+            {
+              "top1": 0.36210394880599345,
+              "bucket_loss_bits": 5.059464106852726
+            },
+            {
+              "top1": 0.37349773685031995,
+              "bucket_loss_bits": 4.77022461848474
+            }
+          ],
+          "config": {
+            "order": 3,
+            "discount_scale": 1.0
+          },
+          "ngram_weight": null,
+          "neural_family": null,
+          "epochs": null
+        },
+        {
+          "fold": 3,
+          "selected_index": 3,
+          "inner": [
+            {
+              "top1": 0.34290619634774466,
+              "bucket_loss_bits": 4.944715388655619
+            },
+            {
+              "top1": 0.3468081785547058,
+              "bucket_loss_bits": 4.876694830991329
+            },
+            {
+              "top1": 0.3708443889495864,
+              "bucket_loss_bits": 4.937838804791093
+            },
+            {
+              "top1": 0.379116591228344,
+              "bucket_loss_bits": 4.7633609804361035
+            },
+            {
+              "top1": 0.3636647416887779,
+              "bucket_loss_bits": 5.0369448432211374
+            },
+            {
+              "top1": 0.37287341969720617,
+              "bucket_loss_bits": 4.801623909326166
+            },
+            {
+              "top1": 0.3617917902294365,
+              "bucket_loss_bits": 5.095737278438661
+            },
+            {
+              "top1": 0.3733416575620415,
+              "bucket_loss_bits": 4.8057984319082605
+            }
+          ],
+          "config": {
+            "order": 3,
+            "discount_scale": 1.0
+          },
+          "ngram_weight": null,
+          "neural_family": null,
+          "epochs": null
+        },
+        {
+          "fold": 4,
+          "selected_index": 3,
+          "inner": [
+            {
+              "top1": 0.3379116591228344,
+              "bucket_loss_bits": 4.988031105237745
+            },
+            {
+              "top1": 0.34196972061807396,
+              "bucket_loss_bits": 4.914030008247755
+            },
+            {
+              "top1": 0.3589823630404245,
+              "bucket_loss_bits": 4.98683832674904
+            },
+            {
+              "top1": 0.36990791321991573,
+              "bucket_loss_bits": 4.793008833311399
+            },
+            {
+              "top1": 0.35726549086936166,
+              "bucket_loss_bits": 5.076111422873595
+            },
+            {
+              "top1": 0.3688153582019666,
+              "bucket_loss_bits": 4.819558159610821
+            },
+            {
+              "top1": 0.35570469798657717,
+              "bucket_loss_bits": 5.148018211709135
+            },
+            {
+              "top1": 0.36584985172467616,
+              "bucket_loss_bits": 4.837576961653017
+            }
+          ],
+          "config": {
+            "order": 3,
+            "discount_scale": 1.0
+          },
+          "ngram_weight": null,
+          "neural_family": null,
+          "epochs": null
+        }
+      ],
+      "paired": {
+        "Markov1": {
+          "direction": "new minus comparator",
+          "repeats": 2000,
+          "seed": 23101,
+          "bootstrap_population_components": 1526,
+          "strata": {
+            "all": {
+              "slots": 8009,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.0513172680734174,
+                  "component_bootstrap_95_ci": [
+                    0.04288656345468819,
+                    0.05987807545822767
+                  ]
+                },
+                "top5": {
+                  "difference": 0.03221375952053939,
+                  "component_bootstrap_95_ci": [
+                    0.02497717608730602,
+                    0.03946200912566125
+                  ]
+                },
+                "top10": {
+                  "difference": 0.03333749531776751,
+                  "component_bootstrap_95_ci": [
+                    0.026688578334009883,
+                    0.03984132319090369
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.5375439378933531,
+                  "component_bootstrap_95_ci": [
+                    -0.5851756515236805,
+                    -0.4913572064525338
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.5375439378933531,
+                  "component_bootstrap_95_ci": [
+                    -0.5851756515236805,
+                    -0.4913572064525338
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.027187788726916573,
+                  "component_bootstrap_95_ci": [
+                    0.015254847786253543,
+                    0.036695476037764664
+                  ]
+                }
+              }
+            },
+            "position/initial": {
+              "slots": 1596,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.03508771929824561,
+                  "component_bootstrap_95_ci": [
+                    0.01757634793286459,
+                    0.05207042878556521
+                  ]
+                },
+                "top5": {
+                  "difference": 0.02506265664160401,
+                  "component_bootstrap_95_ci": [
+                    0.01225744260508209,
+                    0.037725065997564415
+                  ]
+                },
+                "top10": {
+                  "difference": 0.020676691729323307,
+                  "component_bootstrap_95_ci": [
+                    0.006273035295742399,
+                    0.03474470571886982
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.7599839170716354,
+                  "component_bootstrap_95_ci": [
+                    -0.8584675203567019,
+                    -0.6624541071358572
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.7599839170716354,
+                  "component_bootstrap_95_ci": [
+                    -0.8584675203567019,
+                    -0.6624541071358572
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.04435956899228061,
+                  "component_bootstrap_95_ci": [
+                    0.02617411255537802,
+                    0.06374795962966505
+                  ]
+                }
+              }
+            },
+            "position/internal": {
+              "slots": 4817,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.0595806518580029,
+                  "component_bootstrap_95_ci": [
+                    0.04847224335892037,
+                    0.07129789669525159
+                  ]
+                },
+                "top5": {
+                  "difference": 0.03757525430766037,
+                  "component_bootstrap_95_ci": [
+                    0.027885871624109222,
+                    0.04756097164469001
+                  ]
+                },
+                "top10": {
+                  "difference": 0.042557608470002076,
+                  "component_bootstrap_95_ci": [
+                    0.033656903104731475,
+                    0.051613341514726505
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.5302938935682358,
+                  "component_bootstrap_95_ci": [
+                    -0.5892611624882931,
+                    -0.4736691934587979
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.5302938935682358,
+                  "component_bootstrap_95_ci": [
+                    -0.5892611624882931,
+                    -0.4736691934587979
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.024707583263439796,
+                  "component_bootstrap_95_ci": [
+                    0.01103773228927237,
+                    0.03809905863320125
+                  ]
+                }
+              }
+            },
+            "position/final": {
+              "slots": 1596,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.042606516290726815,
+                  "component_bootstrap_95_ci": [
+                    0.02726061871986455,
+                    0.05698315044129796
+                  ]
+                },
+                "top5": {
+                  "difference": 0.023182957393483708,
+                  "component_bootstrap_95_ci": [
+                    0.011955708331346574,
+                    0.034637917137688455
+                  ]
+                },
+                "top10": {
+                  "difference": 0.018170426065162906,
+                  "component_bootstrap_95_ci": [
+                    0.009433962264150943,
+                    0.027061044682190057
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.33698582808480176,
+                  "component_bootstrap_95_ci": [
+                    -0.38750225634725316,
+                    -0.2864780433429785
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.33698582808480176,
+                  "component_bootstrap_95_ci": [
+                    -0.38750225634725316,
+                    -0.2864780433429785
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.041851715571440386,
+                  "component_bootstrap_95_ci": [
+                    -0.06835460184162688,
+                    -0.010771499563033317
+                  ]
+                }
+              }
+            },
+            "frequency/1": {
+              "slots": 205,
+              "groups_with_queries": 191,
+              "metrics": {
+                "top1": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "top5": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "top10": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -2.7421685248191907,
+                  "component_bootstrap_95_ci": [
+                    -3.011696427054584,
+                    -2.4722819135860097
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -2.7421685248191907,
+                  "component_bootstrap_95_ci": [
+                    -3.011696427054584,
+                    -2.4722819135860097
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.05699508426467681,
+                  "component_bootstrap_95_ci": [
+                    0.028891109723328257,
+                    0.08628640163565009
+                  ]
+                }
+              }
+            },
+            "frequency/2-4": {
+              "slots": 412,
+              "groups_with_queries": 357,
+              "metrics": {
+                "top1": {
+                  "difference": 0.021844660194174758,
+                  "component_bootstrap_95_ci": [
+                    0.009388574437277874,
+                    0.03703949307397582
+                  ]
+                },
+                "top5": {
+                  "difference": 0.03640776699029126,
+                  "component_bootstrap_95_ci": [
+                    0.01909307875894988,
+                    0.05714463397299217
+                  ]
+                },
+                "top10": {
+                  "difference": 0.050970873786407765,
+                  "component_bootstrap_95_ci": [
+                    0.027294721407624633,
+                    0.07614275558437995
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -1.4155963022424132,
+                  "component_bootstrap_95_ci": [
+                    -1.6345582338835076,
+                    -1.2041465203927764
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -1.4155963022424132,
+                  "component_bootstrap_95_ci": [
+                    -1.6345582338835076,
+                    -1.2041465203927764
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.03729096206342866,
+                  "component_bootstrap_95_ci": [
+                    0.014801178839828413,
+                    0.05944757907930637
+                  ]
+                }
+              }
+            },
+            "frequency/5-19": {
+              "slots": 991,
+              "groups_with_queries": 717,
+              "metrics": {
+                "top1": {
+                  "difference": 0.05852674066599395,
+                  "component_bootstrap_95_ci": [
+                    0.04092326888719937,
+                    0.07804989363281056
+                  ]
+                },
+                "top5": {
+                  "difference": 0.08476286579212916,
+                  "component_bootstrap_95_ci": [
+                    0.06294097377583716,
+                    0.10630075209576904
+                  ]
+                },
+                "top10": {
+                  "difference": 0.07467204843592332,
+                  "component_bootstrap_95_ci": [
+                    0.053697212367589814,
+                    0.09690470576555556
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.9559918081920294,
+                  "component_bootstrap_95_ci": [
+                    -1.0782059977050626,
+                    -0.8389970182712595
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.9559918081920294,
+                  "component_bootstrap_95_ci": [
+                    -1.0782059977050626,
+                    -0.8389970182712595
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.00011989230270206819,
+                  "component_bootstrap_95_ci": [
+                    -0.022614306799858312,
+                    0.020549864297499967
+                  ]
+                }
+              }
+            },
+            "frequency/20+": {
+              "slots": 6401,
+              "groups_with_queries": 1517,
+              "metrics": {
+                "top1": {
+                  "difference": 0.053741602874550855,
+                  "component_bootstrap_95_ci": [
+                    0.04363920201464536,
+                    0.06391448612023401
+                  ]
+                },
+                "top5": {
+                  "difference": 0.02483986877050461,
+                  "component_bootstrap_95_ci": [
+                    0.01666608337221963,
+                    0.033170538893430454
+                  ]
+                },
+                "top10": {
+                  "difference": 0.026870801437275427,
+                  "component_bootstrap_95_ci": [
+                    0.019509088698223417,
+                    0.03401176629841263
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.345638383464733,
+                  "component_bootstrap_95_ci": [
+                    -0.3894461569034109,
+                    -0.3017278760871699
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.345638383464733,
+                  "component_bootstrap_95_ci": [
+                    -0.3894461569034109,
+                    -0.3017278760871699
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.008370383928824061,
+                  "component_bootstrap_95_ci": [
+                    -0.023119617082490638,
+                    0.007323604893245283
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "Markov2": {
+          "direction": "new minus comparator",
+          "repeats": 2000,
+          "seed": 23101,
+          "bootstrap_population_components": 1526,
+          "strata": {
+            "all": {
+              "slots": 8009,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.024472468472967912,
+                  "component_bootstrap_95_ci": [
+                    0.018235168307490935,
+                    0.031171157040067426
+                  ]
+                },
+                "top5": {
+                  "difference": 0.02809339493070296,
+                  "component_bootstrap_95_ci": [
+                    0.021682223047702575,
+                    0.03456271827873467
+                  ]
+                },
+                "top10": {
+                  "difference": 0.03308777625171682,
+                  "component_bootstrap_95_ci": [
+                    0.027259402559067527,
+                    0.03917671855923956
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.6652796111971041,
+                  "component_bootstrap_95_ci": [
+                    -0.7157556193143976,
+                    -0.6162736574210972
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.6652796111971041,
+                  "component_bootstrap_95_ci": [
+                    -0.7157556193143976,
+                    -0.6162736574210972
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.009245174570132464,
+                  "component_bootstrap_95_ci": [
+                    0.0031623922131567735,
+                    0.01882585393273126
+                  ]
+                }
+              }
+            },
+            "position/initial": {
+              "slots": 1596,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.006265664160401002,
+                  "component_bootstrap_95_ci": [
+                    -0.00443916082167158,
+                    0.017372437678708053
+                  ]
+                },
+                "top5": {
+                  "difference": 0.005012531328320802,
+                  "component_bootstrap_95_ci": [
+                    -0.006222872225421006,
+                    0.015889749579739047
+                  ]
+                },
+                "top10": {
+                  "difference": 0.012531328320802004,
+                  "component_bootstrap_95_ci": [
+                    0.0012437810945273632,
+                    0.024670674311451007
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -1.4431873718430095,
+                  "component_bootstrap_95_ci": [
+                    -1.613127646761599,
+                    -1.2825869037589097
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -1.4431873718430095,
+                  "component_bootstrap_95_ci": [
+                    -1.613127646761599,
+                    -1.2825869037589097
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.013554549467238775,
+                  "component_bootstrap_95_ci": [
+                    0.0006898021960500757,
+                    0.027041697598938475
+                  ]
+                }
+              }
+            },
+            "position/internal": {
+              "slots": 4817,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.03466888104629438,
+                  "component_bootstrap_95_ci": [
+                    0.025539579262192913,
+                    0.04365020560940919
+                  ]
+                },
+                "top5": {
+                  "difference": 0.04193481419970936,
+                  "component_bootstrap_95_ci": [
+                    0.033108130279219,
+                    0.051110715664023934
+                  ]
+                },
+                "top10": {
+                  "difference": 0.044841187461075356,
+                  "component_bootstrap_95_ci": [
+                    0.036388863220536326,
+                    0.0539828982005836
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.5449022683840441,
+                  "component_bootstrap_95_ci": [
+                    -0.5978970136515018,
+                    -0.49104340614801306
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.5449022683840441,
+                  "component_bootstrap_95_ci": [
+                    -0.5978970136515018,
+                    -0.49104340614801306
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.0005854183895131759,
+                  "component_bootstrap_95_ci": [
+                    -0.01083200580516605,
+                    0.012873966339874279
+                  ]
+                }
+              }
+            },
+            "position/final": {
+              "slots": 1596,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.011904761904761904,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.023319440285238326
+                  ]
+                },
+                "top5": {
+                  "difference": 0.009398496240601503,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.01958337958699935
+                  ]
+                },
+                "top10": {
+                  "difference": 0.018170426065162906,
+                  "component_bootstrap_95_ci": [
+                    0.010525990300426391,
+                    0.026532740539004913
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.25069118659788386,
+                  "component_bootstrap_95_ci": [
+                    -0.29830845904613357,
+                    -0.2034658870466642
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.25069118659788386,
+                  "component_bootstrap_95_ci": [
+                    -0.29830845904613357,
+                    -0.2034658870466642
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.03177021350514899,
+                  "component_bootstrap_95_ci": [
+                    -0.05618992505489398,
+                    -0.000591193211294984
+                  ]
+                }
+              }
+            },
+            "frequency/1": {
+              "slots": 205,
+              "groups_with_queries": 191,
+              "metrics": {
+                "top1": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "top5": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "top10": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -5.238666070710623,
+                  "component_bootstrap_95_ci": [
+                    -5.827096034605563,
+                    -4.6666444165138925
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -5.238666070710623,
+                  "component_bootstrap_95_ci": [
+                    -5.827096034605563,
+                    -4.6666444165138925
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.012038529009546273,
+                  "component_bootstrap_95_ci": [
+                    -0.009853089700682858,
+                    0.032653622571951854
+                  ]
+                }
+              }
+            },
+            "frequency/2-4": {
+              "slots": 412,
+              "groups_with_queries": 357,
+              "metrics": {
+                "top1": {
+                  "difference": 0.012135922330097087,
+                  "component_bootstrap_95_ci": [
+                    0.002450830576729469,
+                    0.023607126722385352
+                  ]
+                },
+                "top5": {
+                  "difference": 0.019417475728155338,
+                  "component_bootstrap_95_ci": [
+                    0.0024035586124401915,
+                    0.03836317135549872
+                  ]
+                },
+                "top10": {
+                  "difference": 0.024271844660194174,
+                  "component_bootstrap_95_ci": [
+                    0.0024874078737824523,
+                    0.047619047619047616
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -2.4025012341341156,
+                  "component_bootstrap_95_ci": [
+                    -2.794308110544292,
+                    -2.0428913507292084
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -2.4025012341341156,
+                  "component_bootstrap_95_ci": [
+                    -2.794308110544292,
+                    -2.0428913507292084
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.0012415954199915813,
+                  "component_bootstrap_95_ci": [
+                    -0.016615991952869467,
+                    0.018641398297713954
+                  ]
+                }
+              }
+            },
+            "frequency/5-19": {
+              "slots": 991,
+              "groups_with_queries": 717,
+              "metrics": {
+                "top1": {
+                  "difference": 0.03128153380423814,
+                  "component_bootstrap_95_ci": [
+                    0.01903695805666414,
+                    0.04398966415095447
+                  ]
+                },
+                "top5": {
+                  "difference": 0.056508577194752774,
+                  "component_bootstrap_95_ci": [
+                    0.03856907715036269,
+                    0.07549748136826426
+                  ]
+                },
+                "top10": {
+                  "difference": 0.05247225025227043,
+                  "component_bootstrap_95_ci": [
+                    0.03469580649222927,
+                    0.07142857142857142
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -1.1563242176241821,
+                  "component_bootstrap_95_ci": [
+                    -1.3199216489246495,
+                    -1.010700391561001
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -1.1563242176241821,
+                  "component_bootstrap_95_ci": [
+                    -1.3199216489246495,
+                    -1.010700391561001
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.009115082830577659,
+                  "component_bootstrap_95_ci": [
+                    -0.02510178701734506,
+                    0.005784062412841035
+                  ]
+                }
+              }
+            },
+            "frequency/20+": {
+              "slots": 6401,
+              "groups_with_queries": 1517,
+              "metrics": {
+                "top1": {
+                  "difference": 0.02499609436025621,
+                  "component_bootstrap_95_ci": [
+                    0.017360016646412478,
+                    0.03290278543670753
+                  ]
+                },
+                "top5": {
+                  "difference": 0.02515231995000781,
+                  "component_bootstrap_95_ci": [
+                    0.017642151128949103,
+                    0.03204055795446837
+                  ]
+                },
+                "top10": {
+                  "difference": 0.03171379471957507,
+                  "component_bootstrap_95_ci": [
+                    0.025088488954430242,
+                    0.038837176857849806
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.3309717315189983,
+                  "component_bootstrap_95_ci": [
+                    -0.3684477775908607,
+                    -0.29280463131929974
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.3309717315189983,
+                  "component_bootstrap_95_ci": [
+                    -0.3684477775908607,
+                    -0.29280463131929974
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.008235849766454672,
+                  "component_bootstrap_95_ci": [
+                    -0.007578578781732829,
+                    0.01794119908210329
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "classical/extra0/top1": {
+      "summary": {
+        "slots": 8009,
+        "texts": 1596,
+        "glyph_types": 548,
+        "top1": 0.39530528155824696,
+        "top5": 0.6161817954800849,
+        "top10": 0.6874765888375578,
+        "equal_text_weight": {
+          "top1": 0.376849727131682,
+          "top5": 0.6010797977433315,
+          "top10": 0.673035758797037
+        },
+        "macro_type": {
+          "top1": 0.07415886964034486,
+          "top5": 0.1518647905213793,
+          "top10": 0.19070517908210638
+        },
+        "unknown_true_rate": 0.03133974278936197,
+        "unknown_prediction_rate": 0.0,
+        "bucket_cross_entropy_bits": 4.592912738980017,
+        "positions": {
+          "initial": {
+            "slots": 1596,
+            "top1": 0.2111528822055138,
+            "top5": 0.4755639097744361,
+            "top10": 0.5363408521303258
+          },
+          "internal": {
+            "slots": 4817,
+            "top1": 0.3946439692754827,
+            "top5": 0.6151131409591032,
+            "top10": 0.6983599750882292
+          },
+          "final": {
+            "slots": 1596,
+            "top1": 0.581453634085213,
+            "top5": 0.7600250626566416,
+            "top10": 0.8057644110275689
+          }
+        },
+        "confidence_audit": [
+          {
+            "mass_interval": [
+              0.0,
+              0.2
+            ],
+            "slots": 2193,
+            "mean_model_mass": 0.12608200874966102,
+            "exact_accuracy": 0.12722298221614228
+          },
+          {
+            "mass_interval": [
+              0.2,
+              0.4
+            ],
+            "slots": 1980,
+            "mean_model_mass": 0.29356202752598265,
+            "exact_accuracy": 0.23434343434343435
+          },
+          {
+            "mass_interval": [
+              0.4,
+              0.6
+            ],
+            "slots": 1358,
+            "mean_model_mass": 0.4932244253012845,
+            "exact_accuracy": 0.4050073637702504
+          },
+          {
+            "mass_interval": [
+              0.6,
+              0.8
+            ],
+            "slots": 946,
+            "mean_model_mass": 0.7011975150872507,
+            "exact_accuracy": 0.5898520084566596
+          },
+          {
+            "mass_interval": [
+              0.8,
+              1.0
+            ],
+            "slots": 1532,
+            "mean_model_mass": 0.9227756003970313,
+            "exact_accuracy": 0.858355091383812
+          }
+        ],
+        "expected_calibration_error": 0.05538504282099819,
+        "top_label_brier": 0.16933842547084973,
+        "frequency_strata": {
+          "1": {
+            "slots": 205,
+            "types": 205,
+            "top1": 0.0,
+            "top5": 0.0,
+            "top10": 0.0,
+            "unknown_in_training_rate": 1.0
+          },
+          "2-4": {
+            "slots": 412,
+            "types": 155,
+            "top1": 0.024271844660194174,
+            "top5": 0.07766990291262135,
+            "top10": 0.12378640776699029,
+            "unknown_in_training_rate": 0.11165048543689321
+          },
+          "5-19": {
+            "slots": 991,
+            "types": 112,
+            "top1": 0.124117053481332,
+            "top5": 0.28456104944500504,
+            "top10": 0.3622603430877901,
+            "unknown_in_training_rate": 0.0
+          },
+          "20+": {
+            "slots": 6401,
+            "types": 76,
+            "top1": 0.4738322137166068,
+            "top5": 0.7219184502421496,
+            "top10": 0.7961256053741603,
+            "unknown_in_training_rate": 0.0
+          }
+        },
+        "strata": {
+          "all": {
+            "slots": 8009,
+            "top1": 0.39530528155824696,
+            "top5": 0.6161817954800849,
+            "top10": 0.6874765888375578,
+            "bucket_loss_bits": 4.592912738980017,
+            "common_bucket_loss_bits": 4.592912738980017,
+            "expected_calibration_error": 0.05538504282099818,
+            "unknown_true_rate": 0.03133974278936197
+          },
+          "position/initial": {
+            "slots": 1596,
+            "top1": 0.2111528822055138,
+            "top5": 0.4755639097744361,
+            "top10": 0.5363408521303258,
+            "bucket_loss_bits": 6.076038575472283,
+            "common_bucket_loss_bits": 6.076038575472283,
+            "expected_calibration_error": 0.11143715338698461,
+            "unknown_true_rate": 0.06390977443609022
+          },
+          "position/internal": {
+            "slots": 4817,
+            "top1": 0.3946439692754827,
+            "top5": 0.6151131409591032,
+            "top10": 0.6983599750882292,
+            "bucket_loss_bits": 4.5294403669272585,
+            "common_bucket_loss_bits": 4.5294403669272585,
+            "expected_calibration_error": 0.05757164294091777,
+            "unknown_true_rate": 0.02262819182063525
+          },
+          "position/final": {
+            "slots": 1596,
+            "top1": 0.581453634085213,
+            "top5": 0.7600250626566416,
+            "top10": 0.8057644110275689,
+            "bucket_loss_bits": 3.3013573386895874,
+            "common_bucket_loss_bits": 3.3013573386895874,
+            "expected_calibration_error": 0.03824208378276932,
+            "unknown_true_rate": 0.02506265664160401
+          },
+          "frequency/1": {
+            "slots": 205,
+            "top1": 0.0,
+            "top5": 0.0,
+            "top10": 0.0,
+            "bucket_loss_bits": 14.693868512411978,
+            "common_bucket_loss_bits": 14.693868512411978,
+            "expected_calibration_error": 0.304860725804547,
+            "unknown_true_rate": 1.0
+          },
+          "frequency/2-4": {
+            "slots": 412,
+            "top1": 0.024271844660194174,
+            "top5": 0.07766990291262135,
+            "top10": 0.12378640776699029,
+            "bucket_loss_bits": 11.132327960314107,
+            "common_bucket_loss_bits": 11.132327960314107,
+            "expected_calibration_error": 0.2852037013008697,
+            "unknown_true_rate": 0.11165048543689321
+          },
+          "frequency/5-19": {
+            "slots": 991,
+            "top1": 0.124117053481332,
+            "top5": 0.28456104944500504,
+            "top10": 0.3622603430877901,
+            "bucket_loss_bits": 7.604962647013505,
+            "common_bucket_loss_bits": 7.604962647013505,
+            "expected_calibration_error": 0.21448211719023227,
+            "unknown_true_rate": 0.0
+          },
+          "frequency/20+": {
+            "slots": 6401,
+            "top1": 0.4738322137166068,
+            "top5": 0.7219184502421496,
+            "top10": 0.7961256053741603,
+            "bucket_loss_bits": 3.3821837179513667,
+            "common_bucket_loss_bits": 3.3821837179513667,
+            "expected_calibration_error": 0.025082667751466857,
+            "unknown_true_rate": 0.0
+          }
+        },
+        "common_alphabet_bucket_cross_entropy_bits": 4.592912738980017
+      },
+      "fold_selection": [
+        {
+          "fold": 0,
+          "selected_index": 3,
+          "inner": [
+            {
+              "top1": 0.3545113955666563,
+              "bucket_loss_bits": 4.826393744623039
+            },
+            {
+              "top1": 0.3554480174836091,
+              "bucket_loss_bits": 4.772994193844497
+            },
+            {
+              "top1": 0.38073680924133624,
+              "bucket_loss_bits": 4.820690990981201
+            },
+            {
+              "top1": 0.39057133936934124,
+              "bucket_loss_bits": 4.639420110193004
+            },
+            {
+              "top1": 0.3768342179206993,
+              "bucket_loss_bits": 4.9139608179988015
+            },
+            {
+              "top1": 0.3893225101467374,
+              "bucket_loss_bits": 4.663644079494501
+            },
+            {
+              "top1": 0.37402435216984076,
+              "bucket_loss_bits": 4.982420819184977
+            },
+            {
+              "top1": 0.38885419918826103,
+              "bucket_loss_bits": 4.676158133103182
+            }
+          ],
+          "config": {
+            "order": 3,
+            "discount_scale": 1.0
+          },
+          "ngram_weight": null,
+          "neural_family": null,
+          "epochs": null
+        },
+        {
+          "fold": 1,
+          "selected_index": 3,
+          "inner": [
+            {
+              "top1": 0.35247308472460603,
+              "bucket_loss_bits": 4.941971991794971
+            },
+            {
+              "top1": 0.3585582774223748,
+              "bucket_loss_bits": 4.87292282547247
+            },
+            {
+              "top1": 0.3687002652519894,
+              "bucket_loss_bits": 4.977557585716029
+            },
+            {
+              "top1": 0.378842253081604,
+              "bucket_loss_bits": 4.779838089878625
+            },
+            {
+              "top1": 0.3629271337182088,
+              "bucket_loss_bits": 5.075278699144273
+            },
+            {
+              "top1": 0.37618973318770477,
+              "bucket_loss_bits": 4.814764267658788
+            },
+            {
+              "top1": 0.35965049149633327,
+              "bucket_loss_bits": 5.146230454438051
+            },
+            {
+              "top1": 0.37494148853175224,
+              "bucket_loss_bits": 4.832369860684018
+            }
+          ],
+          "config": {
+            "order": 3,
+            "discount_scale": 1.0
+          },
+          "ngram_weight": null,
+          "neural_family": null,
+          "epochs": null
+        },
+        {
+          "fold": 2,
+          "selected_index": 5,
+          "inner": [
+            {
+              "top1": 0.3519587950678945,
+              "bucket_loss_bits": 4.901785927668089
+            },
+            {
+              "top1": 0.3560168565631341,
+              "bucket_loss_bits": 4.837430515969416
+            },
+            {
+              "top1": 0.3644451381301701,
+              "bucket_loss_bits": 4.912730895912829
+            },
+            {
+              "top1": 0.3747463711565475,
+              "bucket_loss_bits": 4.739640784925703
+            },
+            {
+              "top1": 0.3617917902294365,
+              "bucket_loss_bits": 4.995948739245081
+            },
+            {
+              "top1": 0.3759950054627751,
+              "bucket_loss_bits": 4.762054630371036
+            },
+            {
+              "top1": 0.36210394880599345,
+              "bucket_loss_bits": 5.059464106852726
+            },
+            {
+              "top1": 0.37349773685031995,
+              "bucket_loss_bits": 4.77022461848474
+            }
+          ],
+          "config": {
+            "order": 4,
+            "discount_scale": 1.0
+          },
+          "ngram_weight": null,
+          "neural_family": null,
+          "epochs": null
+        },
+        {
+          "fold": 3,
+          "selected_index": 3,
+          "inner": [
+            {
+              "top1": 0.34290619634774466,
+              "bucket_loss_bits": 4.944715388655619
+            },
+            {
+              "top1": 0.3468081785547058,
+              "bucket_loss_bits": 4.876694830991329
+            },
+            {
+              "top1": 0.3708443889495864,
+              "bucket_loss_bits": 4.937838804791093
+            },
+            {
+              "top1": 0.379116591228344,
+              "bucket_loss_bits": 4.7633609804361035
+            },
+            {
+              "top1": 0.3636647416887779,
+              "bucket_loss_bits": 5.0369448432211374
+            },
+            {
+              "top1": 0.37287341969720617,
+              "bucket_loss_bits": 4.801623909326166
+            },
+            {
+              "top1": 0.3617917902294365,
+              "bucket_loss_bits": 5.095737278438661
+            },
+            {
+              "top1": 0.3733416575620415,
+              "bucket_loss_bits": 4.8057984319082605
+            }
+          ],
+          "config": {
+            "order": 3,
+            "discount_scale": 1.0
+          },
+          "ngram_weight": null,
+          "neural_family": null,
+          "epochs": null
+        },
+        {
+          "fold": 4,
+          "selected_index": 3,
+          "inner": [
+            {
+              "top1": 0.3379116591228344,
+              "bucket_loss_bits": 4.988031105237745
+            },
+            {
+              "top1": 0.34196972061807396,
+              "bucket_loss_bits": 4.914030008247755
+            },
+            {
+              "top1": 0.3589823630404245,
+              "bucket_loss_bits": 4.98683832674904
+            },
+            {
+              "top1": 0.36990791321991573,
+              "bucket_loss_bits": 4.793008833311399
+            },
+            {
+              "top1": 0.35726549086936166,
+              "bucket_loss_bits": 5.076111422873595
+            },
+            {
+              "top1": 0.3688153582019666,
+              "bucket_loss_bits": 4.819558159610821
+            },
+            {
+              "top1": 0.35570469798657717,
+              "bucket_loss_bits": 5.148018211709135
+            },
+            {
+              "top1": 0.36584985172467616,
+              "bucket_loss_bits": 4.837576961653017
+            }
+          ],
+          "config": {
+            "order": 3,
+            "discount_scale": 1.0
+          },
+          "ngram_weight": null,
+          "neural_family": null,
+          "epochs": null
+        }
+      ],
+      "paired": {
+        "Markov1": {
+          "direction": "new minus comparator",
+          "repeats": 2000,
+          "seed": 23101,
+          "bootstrap_population_components": 1526,
+          "strata": {
+            "all": {
+              "slots": 8009,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.04944437507803721,
+                  "component_bootstrap_95_ci": [
+                    0.04127412322800875,
+                    0.05797650301440035
+                  ]
+                },
+                "top5": {
+                  "difference": 0.031589461855412664,
+                  "component_bootstrap_95_ci": [
+                    0.02466748708768728,
+                    0.03892081080612608
+                  ]
+                },
+                "top10": {
+                  "difference": 0.033212635784742164,
+                  "component_bootstrap_95_ci": [
+                    0.026603132881469402,
+                    0.03979704918471079
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.5265221173417957,
+                  "component_bootstrap_95_ci": [
+                    -0.5740020104216956,
+                    -0.48110860214287515
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.5265221173417957,
+                  "component_bootstrap_95_ci": [
+                    -0.5740020104216956,
+                    -0.48110860214287515
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.02982143122726559,
+                  "component_bootstrap_95_ci": [
+                    0.017773795523009273,
+                    0.039331875727917
+                  ]
+                }
+              }
+            },
+            "position/initial": {
+              "slots": 1596,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.02882205513784461,
+                  "component_bootstrap_95_ci": [
+                    0.011791382282785822,
+                    0.045712140514247906
+                  ]
+                },
+                "top5": {
+                  "difference": 0.02506265664160401,
+                  "component_bootstrap_95_ci": [
+                    0.012463667624317503,
+                    0.037818063198679704
+                  ]
+                },
+                "top10": {
+                  "difference": 0.020676691729323307,
+                  "component_bootstrap_95_ci": [
+                    0.00618356816033455,
+                    0.03499309856450138
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.7425615776104098,
+                  "component_bootstrap_95_ci": [
+                    -0.838863323316008,
+                    -0.647355738874358
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.7425615776104098,
+                  "component_bootstrap_95_ci": [
+                    -0.838863323316008,
+                    -0.647355738874358
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.05387012276695986,
+                  "component_bootstrap_95_ci": [
+                    0.0357271106439879,
+                    0.0730227998203882
+                  ]
+                }
+              }
+            },
+            "position/internal": {
+              "slots": 4817,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.058750259497612624,
+                  "component_bootstrap_95_ci": [
+                    0.04776670259684367,
+                    0.0705280908957938
+                  ]
+                },
+                "top5": {
+                  "difference": 0.036537263857172514,
+                  "component_bootstrap_95_ci": [
+                    0.02709438694311693,
+                    0.046206008466086565
+                  ]
+                },
+                "top10": {
+                  "difference": 0.042350010379904504,
+                  "component_bootstrap_95_ci": [
+                    0.03358115976720529,
+                    0.051383138651743196
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.5201503286595319,
+                  "component_bootstrap_95_ci": [
+                    -0.5800461316777079,
+                    -0.4629414904500718
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.5201503286595319,
+                  "component_bootstrap_95_ci": [
+                    -0.5800461316777079,
+                    -0.4629414904500718
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.0270002726067569,
+                  "component_bootstrap_95_ci": [
+                    0.013523411240093748,
+                    0.04035224390920733
+                  ]
+                }
+              }
+            },
+            "position/final": {
+              "slots": 1596,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.041979949874686714,
+                  "component_bootstrap_95_ci": [
+                    0.02661579311448255,
+                    0.05607491357937447
+                  ]
+                },
+                "top5": {
+                  "difference": 0.023182957393483708,
+                  "component_bootstrap_95_ci": [
+                    0.012076733241505969,
+                    0.03459173919754918
+                  ]
+                },
+                "top10": {
+                  "difference": 0.018170426065162906,
+                  "component_bootstrap_95_ci": [
+                    0.009433962264150943,
+                    0.027061044682190057
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.3297138012351267,
+                  "component_bootstrap_95_ci": [
+                    -0.38027551030875983,
+                    -0.27914323927066015
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.3297138012351267,
+                  "component_bootstrap_95_ci": [
+                    -0.38027551030875983,
+                    -0.27914323927066015
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.03872224877505002,
+                  "component_bootstrap_95_ci": [
+                    -0.06726959944039339,
+                    -0.008797753245211733
+                  ]
+                }
+              }
+            },
+            "frequency/1": {
+              "slots": 205,
+              "groups_with_queries": 191,
+              "metrics": {
+                "top1": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "top5": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "top10": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -2.7216343799375338,
+                  "component_bootstrap_95_ci": [
+                    -2.989167314776796,
+                    -2.453813363000613
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -2.7216343799375338,
+                  "component_bootstrap_95_ci": [
+                    -2.989167314776796,
+                    -2.453813363000613
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.05532362889182579,
+                  "component_bootstrap_95_ci": [
+                    0.027939898928517677,
+                    0.08372006189365742
+                  ]
+                }
+              }
+            },
+            "frequency/2-4": {
+              "slots": 412,
+              "groups_with_queries": 357,
+              "metrics": {
+                "top1": {
+                  "difference": 0.021844660194174758,
+                  "component_bootstrap_95_ci": [
+                    0.009388574437277874,
+                    0.03703949307397582
+                  ]
+                },
+                "top5": {
+                  "difference": 0.038834951456310676,
+                  "component_bootstrap_95_ci": [
+                    0.021049571603427172,
+                    0.05958936141578626
+                  ]
+                },
+                "top10": {
+                  "difference": 0.04854368932038835,
+                  "component_bootstrap_95_ci": [
+                    0.02597122704881326,
+                    0.07328636144220414
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -1.3974049010089904,
+                  "component_bootstrap_95_ci": [
+                    -1.611490695591,
+                    -1.1889898792825113
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -1.3974049010089904,
+                  "component_bootstrap_95_ci": [
+                    -1.611490695591,
+                    -1.1889898792825113
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.03840136225390675,
+                  "component_bootstrap_95_ci": [
+                    0.01683515163675447,
+                    0.06070708309367008
+                  ]
+                }
+              }
+            },
+            "frequency/5-19": {
+              "slots": 991,
+              "groups_with_queries": 717,
+              "metrics": {
+                "top1": {
+                  "difference": 0.055499495459132187,
+                  "component_bootstrap_95_ci": [
+                    0.037846776587250164,
+                    0.07518243653804173
+                  ]
+                },
+                "top5": {
+                  "difference": 0.08375378405650857,
+                  "component_bootstrap_95_ci": [
+                    0.062111801242236024,
+                    0.10587191193161213
+                  ]
+                },
+                "top10": {
+                  "difference": 0.07467204843592332,
+                  "component_bootstrap_95_ci": [
+                    0.053697212367589814,
+                    0.09690470576555556
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.946254244181736,
+                  "component_bootstrap_95_ci": [
+                    -1.0676620366380505,
+                    -0.8313409712005952
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.946254244181736,
+                  "component_bootstrap_95_ci": [
+                    -1.0676620366380505,
+                    -0.8313409712005952
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.004175994343292078,
+                  "component_bootstrap_95_ci": [
+                    -0.017807791378076174,
+                    0.025071685888823324
+                  ]
+                }
+              }
+            },
+            "frequency/20+": {
+              "slots": 6401,
+              "groups_with_queries": 1517,
+              "metrics": {
+                "top1": {
+                  "difference": 0.051866895797531634,
+                  "component_bootstrap_95_ci": [
+                    0.04198644336911053,
+                    0.062326034411406606
+                  ]
+                },
+                "top5": {
+                  "difference": 0.024058740821746603,
+                  "component_bootstrap_95_ci": [
+                    0.01614360140855211,
+                    0.03233034330691461
+                  ]
+                },
+                "top10": {
+                  "difference": 0.026870801437275427,
+                  "component_bootstrap_95_ci": [
+                    0.019329703016370103,
+                    0.0342798447397676
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.33518384857107364,
+                  "component_bootstrap_95_ci": [
+                    -0.37919875619804233,
+                    -0.29066240192371384
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.33518384857107364,
+                  "component_bootstrap_95_ci": [
+                    -0.37919875619804233,
+                    -0.29066240192371384
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.00595733753715794,
+                  "component_bootstrap_95_ci": [
+                    -0.021763904620092898,
+                    0.009560536282866482
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "Markov2": {
+          "direction": "new minus comparator",
+          "repeats": 2000,
+          "seed": 23101,
+          "bootstrap_population_components": 1526,
+          "strata": {
+            "all": {
+              "slots": 8009,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.022599575477587713,
+                  "component_bootstrap_95_ci": [
+                    0.01615908183772504,
+                    0.029036207245322514
+                  ]
+                },
+                "top5": {
+                  "difference": 0.027469097265576226,
+                  "component_bootstrap_95_ci": [
+                    0.02112156049662087,
+                    0.03389214250689776
+                  ]
+                },
+                "top10": {
+                  "difference": 0.03296291671869147,
+                  "component_bootstrap_95_ci": [
+                    0.027043543504323135,
+                    0.03913054670198142
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.6542577906455465,
+                  "component_bootstrap_95_ci": [
+                    -0.7047968273171353,
+                    -0.604117010279632
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.6542577906455465,
+                  "component_bootstrap_95_ci": [
+                    -0.7047968273171353,
+                    -0.604117010279632
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.011878817070481482,
+                  "component_bootstrap_95_ci": [
+                    0.005218290858840036,
+                    0.02161490395322026
+                  ]
+                }
+              }
+            },
+            "position/initial": {
+              "slots": 1596,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    -0.01125721175860069,
+                    0.01194292723285557
+                  ]
+                },
+                "top5": {
+                  "difference": 0.005012531328320802,
+                  "component_bootstrap_95_ci": [
+                    -0.006226747050585227,
+                    0.016251529171894596
+                  ]
+                },
+                "top10": {
+                  "difference": 0.012531328320802004,
+                  "component_bootstrap_95_ci": [
+                    0.001243761769152992,
+                    0.024809278692250865
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -1.4257650323817834,
+                  "component_bootstrap_95_ci": [
+                    -1.5934681544019949,
+                    -1.2647649298350143
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -1.4257650323817834,
+                  "component_bootstrap_95_ci": [
+                    -1.5934681544019949,
+                    -1.2647649298350143
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.02306510324191803,
+                  "component_bootstrap_95_ci": [
+                    0.009318876446906184,
+                    0.036371369894173555
+                  ]
+                }
+              }
+            },
+            "position/internal": {
+              "slots": 4817,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.03383848868590409,
+                  "component_bootstrap_95_ci": [
+                    0.0246987911150128,
+                    0.042855313251877844
+                  ]
+                },
+                "top5": {
+                  "difference": 0.04089682374922151,
+                  "component_bootstrap_95_ci": [
+                    0.03203366199854493,
+                    0.05019032276434483
+                  ]
+                },
+                "top10": {
+                  "difference": 0.044633589370977785,
+                  "component_bootstrap_95_ci": [
+                    0.03618141612061857,
+                    0.05377086171059494
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.5347587034753402,
+                  "component_bootstrap_95_ci": [
+                    -0.5884244462258176,
+                    -0.48140403152592126
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.5347587034753402,
+                  "component_bootstrap_95_ci": [
+                    -0.5884244462258176,
+                    -0.48140403152592126
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.0028781077328302804,
+                  "component_bootstrap_95_ci": [
+                    -0.009006931590022867,
+                    0.015532927313518602
+                  ]
+                }
+              }
+            },
+            "position/final": {
+              "slots": 1596,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.011278195488721804,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.022388059701492536
+                  ]
+                },
+                "top5": {
+                  "difference": 0.009398496240601503,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.01936502397732909
+                  ]
+                },
+                "top10": {
+                  "difference": 0.018170426065162906,
+                  "component_bootstrap_95_ci": [
+                    0.010525990300426391,
+                    0.026532740539004913
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.24341915974820888,
+                  "component_bootstrap_95_ci": [
+                    -0.29079297175083424,
+                    -0.1964158487003317
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.24341915974820888,
+                  "component_bootstrap_95_ci": [
+                    -0.29079297175083424,
+                    -0.1964158487003317
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.028640746708758623,
+                  "component_bootstrap_95_ci": [
+                    -0.056830496258418205,
+                    0.0015981434419411525
+                  ]
+                }
+              }
+            },
+            "frequency/1": {
+              "slots": 205,
+              "groups_with_queries": 191,
+              "metrics": {
+                "top1": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "top5": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "top10": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -5.218131925828965,
+                  "component_bootstrap_95_ci": [
+                    -5.802628716145593,
+                    -4.646166822279528
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -5.218131925828965,
+                  "component_bootstrap_95_ci": [
+                    -5.802628716145593,
+                    -4.646166822279528
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.010367073636695256,
+                  "component_bootstrap_95_ci": [
+                    -0.011237069319622007,
+                    0.031801216735283626
+                  ]
+                }
+              }
+            },
+            "frequency/2-4": {
+              "slots": 412,
+              "groups_with_queries": 357,
+              "metrics": {
+                "top1": {
+                  "difference": 0.012135922330097087,
+                  "component_bootstrap_95_ci": [
+                    0.002450830576729469,
+                    0.023607126722385352
+                  ]
+                },
+                "top5": {
+                  "difference": 0.021844660194174758,
+                  "component_bootstrap_95_ci": [
+                    0.004728132387706856,
+                    0.04096385542168675
+                  ]
+                },
+                "top10": {
+                  "difference": 0.021844660194174758,
+                  "component_bootstrap_95_ci": [
+                    0.0022607069143446854,
+                    0.04477964785999081
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -2.3843098329006924,
+                  "component_bootstrap_95_ci": [
+                    -2.767455882656585,
+                    -2.0231936591361674
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -2.3843098329006924,
+                  "component_bootstrap_95_ci": [
+                    -2.767455882656585,
+                    -2.0231936591361674
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.0023519956104696704,
+                  "component_bootstrap_95_ci": [
+                    -0.015445542931208665,
+                    0.020405518113182686
+                  ]
+                }
+              }
+            },
+            "frequency/5-19": {
+              "slots": 991,
+              "groups_with_queries": 717,
+              "metrics": {
+                "top1": {
+                  "difference": 0.028254288597376387,
+                  "component_bootstrap_95_ci": [
+                    0.01573216034679602,
+                    0.04116728820042072
+                  ]
+                },
+                "top5": {
+                  "difference": 0.055499495459132187,
+                  "component_bootstrap_95_ci": [
+                    0.03729760443798838,
+                    0.07508274277381616
+                  ]
+                },
+                "top10": {
+                  "difference": 0.05247225025227043,
+                  "component_bootstrap_95_ci": [
+                    0.03469580649222927,
+                    0.07142857142857142
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -1.1465866536138887,
+                  "component_bootstrap_95_ci": [
+                    -1.3088453336483392,
+                    -0.9989788242649263
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -1.1465866536138887,
+                  "component_bootstrap_95_ci": [
+                    -1.3088453336483392,
+                    -0.9989788242649263
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.005058980789987649,
+                  "component_bootstrap_95_ci": [
+                    -0.02117533536445732,
+                    0.010034772837008078
+                  ]
+                }
+              }
+            },
+            "frequency/20+": {
+              "slots": 6401,
+              "groups_with_queries": 1517,
+              "metrics": {
+                "top1": {
+                  "difference": 0.023121387283236993,
+                  "component_bootstrap_95_ci": [
+                    0.015244195399710189,
+                    0.030944636000360123
+                  ]
+                },
+                "top5": {
+                  "difference": 0.024371192001249806,
+                  "component_bootstrap_95_ci": [
+                    0.017084762234846576,
+                    0.03132479442490791
+                  ]
+                },
+                "top10": {
+                  "difference": 0.03171379471957507,
+                  "component_bootstrap_95_ci": [
+                    0.025239054905298562,
+                    0.03868905286402321
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.32051719662533895,
+                  "component_bootstrap_95_ci": [
+                    -0.3590582310667244,
+                    -0.2826993875409302
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.32051719662533895,
+                  "component_bootstrap_95_ci": [
+                    -0.3590582310667244,
+                    -0.2826993875409302
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.010648896158120794,
+                  "component_bootstrap_95_ci": [
+                    -0.005746136453758047,
+                    0.020042223029040584
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "classical/extra1/loss": {
+      "summary": {
+        "slots": 8009,
+        "texts": 1596,
+        "glyph_types": 548,
+        "top1": 0.39605443875639906,
+        "top5": 0.6240479460606817,
+        "top10": 0.6925958296915969,
+        "equal_text_weight": {
+          "top1": 0.37784148113095484,
+          "top5": 0.6089670980648424,
+          "top10": 0.6803066259833177
+        },
+        "macro_type": {
+          "top1": 0.07463200426135613,
+          "top5": 0.15745170585210047,
+          "top10": 0.19636269046574725
+        },
+        "unknown_true_rate": 0.023848170807841178,
+        "unknown_prediction_rate": 0.0,
+        "bucket_cross_entropy_bits": 4.556616287461968,
+        "positions": {
+          "initial": {
+            "slots": 1596,
+            "top1": 0.21303258145363407,
+            "top5": 0.4824561403508772,
+            "top10": 0.5444862155388471
+          },
+          "internal": {
+            "slots": 4817,
+            "top1": 0.3975503425368487,
+            "top5": 0.6221714760224206,
+            "top10": 0.7027195349802782
+          },
+          "final": {
+            "slots": 1596,
+            "top1": 0.5745614035087719,
+            "top5": 0.7713032581453634,
+            "top10": 0.8101503759398496
+          }
+        },
+        "confidence_audit": [
+          {
+            "mass_interval": [
+              0.0,
+              0.2
+            ],
+            "slots": 2303,
+            "mean_model_mass": 0.12260017082114058,
+            "exact_accuracy": 0.12462006079027356
+          },
+          {
+            "mass_interval": [
+              0.2,
+              0.4
+            ],
+            "slots": 2035,
+            "mean_model_mass": 0.2933466366869949,
+            "exact_accuracy": 0.2599508599508599
+          },
+          {
+            "mass_interval": [
+              0.4,
+              0.6
+            ],
+            "slots": 1294,
+            "mean_model_mass": 0.49151169717714627,
+            "exact_accuracy": 0.40571870170015456
+          },
+          {
+            "mass_interval": [
+              0.6,
+              0.8
+            ],
+            "slots": 927,
+            "mean_model_mass": 0.6965234545758054,
+            "exact_accuracy": 0.622437971952535
+          },
+          {
+            "mass_interval": [
+              0.8,
+              1.0
+            ],
+            "slots": 1450,
+            "mean_model_mass": 0.922190880029883,
+            "exact_accuracy": 0.8648275862068966
+          }
+        ],
+        "expected_calibration_error": 0.04188817166179014,
+        "top_label_brier": 0.16720636437987488,
+        "frequency_strata": {
+          "1": {
+            "slots": 205,
+            "types": 205,
+            "top1": 0.0,
+            "top5": 0.0,
+            "top10": 0.0,
+            "unknown_in_training_rate": 0.7463414634146341
+          },
+          "2-4": {
+            "slots": 412,
+            "types": 155,
+            "top1": 0.024271844660194174,
+            "top5": 0.0825242718446602,
+            "top10": 0.12864077669902912,
+            "unknown_in_training_rate": 0.09223300970873786
+          },
+          "5-19": {
+            "slots": 991,
+            "types": 112,
+            "top1": 0.1301715438950555,
+            "top5": 0.29263370332996974,
+            "top10": 0.3794147325933401,
+            "unknown_in_training_rate": 0.0
+          },
+          "20+": {
+            "slots": 6401,
+            "types": 76,
+            "top1": 0.4738322137166068,
+            "top5": 0.7301984064989845,
+            "top10": 0.7995625683486955,
+            "unknown_in_training_rate": 0.0
+          }
+        },
+        "strata": {
+          "all": {
+            "slots": 8009,
+            "top1": 0.39605443875639906,
+            "top5": 0.6240479460606817,
+            "top10": 0.6925958296915969,
+            "bucket_loss_bits": 4.556616287461968,
+            "common_bucket_loss_bits": 4.2828738301980795,
+            "expected_calibration_error": 0.04188817166179013,
+            "unknown_true_rate": 0.023848170807841178
+          },
+          "position/initial": {
+            "slots": 1596,
+            "top1": 0.21303258145363407,
+            "top5": 0.4824561403508772,
+            "top10": 0.5444862155388471,
+            "bucket_loss_bits": 6.01809828638265,
+            "common_bucket_loss_bits": 5.4249187959168195,
+            "expected_calibration_error": 0.08934804102226525,
+            "unknown_true_rate": 0.05012531328320802
+          },
+          "position/internal": {
+            "slots": 4817,
+            "top1": 0.3975503425368487,
+            "top5": 0.6221714760224206,
+            "top10": 0.7027195349802782,
+            "bucket_loss_bits": 4.502631583594449,
+            "common_bucket_loss_bits": 4.319121337169311,
+            "expected_calibration_error": 0.057250771220615546,
+            "unknown_true_rate": 0.017230641478098403
+          },
+          "position/final": {
+            "slots": 1596,
+            "top1": 0.5745614035087719,
+            "top5": 0.7713032581453634,
+            "top10": 0.8101503759398496,
+            "bucket_loss_bits": 3.2580693252141195,
+            "common_bucket_loss_bits": 3.031427710920181,
+            "expected_calibration_error": 0.02350392487312351,
+            "unknown_true_rate": 0.017543859649122806
+          },
+          "frequency/1": {
+            "slots": 205,
+            "top1": 0.0,
+            "top5": 0.0,
+            "top10": 0.0,
+            "bucket_loss_bits": 14.411503625303814,
+            "common_bucket_loss_bits": 5.681115605769082,
+            "expected_calibration_error": 0.294858208379026,
+            "unknown_true_rate": 0.7463414634146341
+          },
+          "frequency/2-4": {
+            "slots": 412,
+            "top1": 0.024271844660194174,
+            "top5": 0.0825242718446602,
+            "top10": 0.12864077669902912,
+            "bucket_loss_bits": 10.980864477740441,
+            "common_bucket_loss_bits": 10.00350089467766,
+            "expected_calibration_error": 0.27456661389530834,
+            "unknown_true_rate": 0.09223300970873786
+          },
+          "frequency/5-19": {
+            "slots": 991,
+            "top1": 0.1301715438950555,
+            "top5": 0.29263370332996974,
+            "top10": 0.3794147325933401,
+            "bucket_loss_bits": 7.502107455869003,
+            "common_bucket_loss_bits": 7.502107455869003,
+            "expected_calibration_error": 0.19382302196751103,
+            "unknown_true_rate": 0.0
+          },
+          "frequency/20+": {
+            "slots": 6401,
+            "top1": 0.4738322137166068,
+            "top5": 0.7301984064989845,
+            "top10": 0.7995625683486955,
+            "bucket_loss_bits": 3.3714852287924355,
+            "common_bucket_loss_bits": 3.3714852287924355,
+            "expected_calibration_error": 0.02143362682331268,
+            "unknown_true_rate": 0.0
+          }
+        },
+        "common_alphabet_bucket_cross_entropy_bits": 4.2828738301980795
+      },
+      "fold_selection": [
+        {
+          "fold": 0,
+          "selected_index": 3,
+          "inner": [
+            {
+              "top1": 0.35513581017795814,
+              "bucket_loss_bits": 4.797673717527316
+            },
+            {
+              "top1": 0.3601311270683734,
+              "bucket_loss_bits": 4.750465783910369
+            },
+            {
+              "top1": 0.38136122385263815,
+              "bucket_loss_bits": 4.800197458285731
+            },
+            {
+              "top1": 0.3943178270371527,
+              "bucket_loss_bits": 4.621888789575044
+            },
+            {
+              "top1": 0.3758975960037465,
+              "bucket_loss_bits": 4.8891842338307026
+            },
+            {
+              "top1": 0.39384951607867624,
+              "bucket_loss_bits": 4.639981131447211
+            },
+            {
+              "top1": 0.37308773025288794,
+              "bucket_loss_bits": 4.954474543427476
+            },
+            {
+              "top1": 0.3916640649391196,
+              "bucket_loss_bits": 4.6479931191635675
+            }
+          ],
+          "config": {
+            "order": 3,
+            "discount_scale": 1.0
+          },
+          "ngram_weight": null,
+          "neural_family": null,
+          "epochs": null
+        },
+        {
+          "fold": 1,
+          "selected_index": 3,
+          "inner": [
+            {
+              "top1": 0.354657512872523,
+              "bucket_loss_bits": 4.8902552296658035
+            },
+            {
+              "top1": 0.35949446091433923,
+              "bucket_loss_bits": 4.836794883321915
+            },
+            {
+              "top1": 0.3754095802777344,
+              "bucket_loss_bits": 4.9278205055225195
+            },
+            {
+              "top1": 0.3836792011234202,
+              "bucket_loss_bits": 4.7349358063364155
+            },
+            {
+              "top1": 0.37104072398190047,
+              "bucket_loss_bits": 5.011559687284092
+            },
+            {
+              "top1": 0.3839912622874083,
+              "bucket_loss_bits": 4.75349311980095
+            },
+            {
+              "top1": 0.3654236230301139,
+              "bucket_loss_bits": 5.076288410514758
+            },
+            {
+              "top1": 0.3824309564674676,
+              "bucket_loss_bits": 4.763177865919949
+            }
+          ],
+          "config": {
+            "order": 3,
+            "discount_scale": 1.0
+          },
+          "ngram_weight": null,
+          "neural_family": null,
+          "epochs": null
+        },
+        {
+          "fold": 2,
+          "selected_index": 3,
+          "inner": [
+            {
+              "top1": 0.3566411737162479,
+              "bucket_loss_bits": 4.866055310478385
+            },
+            {
+              "top1": 0.36069923521148745,
+              "bucket_loss_bits": 4.8148560697249465
+            },
+            {
+              "top1": 0.3639769002653348,
+              "bucket_loss_bits": 4.887586306102497
+            },
+            {
+              "top1": 0.37583892617449666,
+              "bucket_loss_bits": 4.719330010350036
+            },
+            {
+              "top1": 0.3588262837521461,
+              "bucket_loss_bits": 4.967560709857651
+            },
+            {
+              "top1": 0.379116591228344,
+              "bucket_loss_bits": 4.736684434066749
+            },
+            {
+              "top1": 0.3567972530045263,
+              "bucket_loss_bits": 5.031114266081799
+            },
+            {
+              "top1": 0.3780240362103949,
+              "bucket_loss_bits": 4.745614014505396
+            }
+          ],
+          "config": {
+            "order": 3,
+            "discount_scale": 1.0
+          },
+          "ngram_weight": null,
+          "neural_family": null,
+          "epochs": null
+        },
+        {
+          "fold": 3,
+          "selected_index": 3,
+          "inner": [
+            {
+              "top1": 0.34259403777118774,
+              "bucket_loss_bits": 4.92265209865113
+            },
+            {
+              "top1": 0.35008584360855316,
+              "bucket_loss_bits": 4.860296381515229
+            },
+            {
+              "top1": 0.3711565475261433,
+              "bucket_loss_bits": 4.9218439884427045
+            },
+            {
+              "top1": 0.37849227407523023,
+              "bucket_loss_bits": 4.746153799026772
+            },
+            {
+              "top1": 0.3622600280942719,
+              "bucket_loss_bits": 5.018619418724844
+            },
+            {
+              "top1": 0.3759950054627751,
+              "bucket_loss_bits": 4.781763843645474
+            },
+            {
+              "top1": 0.3610113937880443,
+              "bucket_loss_bits": 5.078368154768467
+            },
+            {
+              "top1": 0.3753706883096613,
+              "bucket_loss_bits": 4.787313910138766
+            }
+          ],
+          "config": {
+            "order": 3,
+            "discount_scale": 1.0
+          },
+          "ngram_weight": null,
+          "neural_family": null,
+          "epochs": null
+        },
+        {
+          "fold": 4,
+          "selected_index": 3,
+          "inner": [
+            {
+              "top1": 0.3432183549243015,
+              "bucket_loss_bits": 4.945987082245782
+            },
+            {
+              "top1": 0.3458717028250351,
+              "bucket_loss_bits": 4.88333073959344
+            },
+            {
+              "top1": 0.3622600280942719,
+              "bucket_loss_bits": 4.954482335467369
+            },
+            {
+              "top1": 0.37271734040892773,
+              "bucket_loss_bits": 4.767665755168234
+            },
+            {
+              "top1": 0.35695333229280474,
+              "bucket_loss_bits": 5.045614366651843
+            },
+            {
+              "top1": 0.3725612611206493,
+              "bucket_loss_bits": 4.790696027405338
+            },
+            {
+              "top1": 0.3550803808334634,
+              "bucket_loss_bits": 5.107802688397177
+            },
+            {
+              "top1": 0.3710004682378648,
+              "bucket_loss_bits": 4.797317930340723
+            }
+          ],
+          "config": {
+            "order": 3,
+            "discount_scale": 1.0
+          },
+          "ngram_weight": null,
+          "neural_family": null,
+          "epochs": null
+        }
+      ],
+      "paired": {
+        "Markov1": {
+          "direction": "new minus comparator",
+          "repeats": 2000,
+          "seed": 23101,
+          "bootstrap_population_components": 1526,
+          "strata": {
+            "all": {
+              "slots": 8009,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.050193532276189286,
+                  "component_bootstrap_95_ci": [
+                    0.041142890673600954,
+                    0.05937049036537072
+                  ]
+                },
+                "top5": {
+                  "difference": 0.039455612436009486,
+                  "component_bootstrap_95_ci": [
+                    0.031980557638981506,
+                    0.04668849365013345
+                  ]
+                },
+                "top10": {
+                  "difference": 0.03833187663878137,
+                  "component_bootstrap_95_ci": [
+                    0.03141423480673493,
+                    0.04499417639277142
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.5628185688598435,
+                  "component_bootstrap_95_ci": [
+                    -0.6122702296144449,
+                    -0.5141774603325325
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.8365610261237325,
+                  "component_bootstrap_95_ci": [
+                    -0.9028976729793313,
+                    -0.7723949321835232
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.01632456006805754,
+                  "component_bootstrap_95_ci": [
+                    0.0039463686076645675,
+                    0.025695312833631394
+                  ]
+                }
+              }
+            },
+            "position/initial": {
+              "slots": 1596,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.03070175438596491,
+                  "component_bootstrap_95_ci": [
+                    0.011911295062695924,
+                    0.04905660377358491
+                  ]
+                },
+                "top5": {
+                  "difference": 0.03195488721804511,
+                  "component_bootstrap_95_ci": [
+                    0.018666878467498735,
+                    0.04634014007007887
+                  ]
+                },
+                "top10": {
+                  "difference": 0.02882205513784461,
+                  "component_bootstrap_95_ci": [
+                    0.01407193016790675,
+                    0.04383301135592363
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.8005018667000424,
+                  "component_bootstrap_95_ci": [
+                    -0.9048386681329684,
+                    -0.6984808153255762
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -1.3936813571658744,
+                  "component_bootstrap_95_ci": [
+                    -1.5898755480999542,
+                    -1.2102001585406374
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.0317810104022405,
+                  "component_bootstrap_95_ci": [
+                    0.012024553188227469,
+                    0.05172220779936443
+                  ]
+                }
+              }
+            },
+            "position/internal": {
+              "slots": 4817,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.06165663275897862,
+                  "component_bootstrap_95_ci": [
+                    0.05028324460338452,
+                    0.0732992566700674
+                  ]
+                },
+                "top5": {
+                  "difference": 0.043595598920489934,
+                  "component_bootstrap_95_ci": [
+                    0.03373915646552167,
+                    0.05417390123673985
+                  ]
+                },
+                "top10": {
+                  "difference": 0.0467095702719535,
+                  "component_bootstrap_95_ci": [
+                    0.0374201258403839,
+                    0.0557463815599283
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.5469591119923416,
+                  "component_bootstrap_95_ci": [
+                    -0.6091895799793327,
+                    -0.4888077746433377
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.7304693584174803,
+                  "component_bootstrap_95_ci": [
+                    -0.8051152109624943,
+                    -0.6622464328911027
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.02667940088645466,
+                  "component_bootstrap_95_ci": [
+                    0.01215440501126581,
+                    0.03987791806672557
+                  ]
+                }
+              }
+            },
+            "position/final": {
+              "slots": 1596,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.03508771929824561,
+                  "component_bootstrap_95_ci": [
+                    0.018855769261139133,
+                    0.04993678887484197
+                  ]
+                },
+                "top5": {
+                  "difference": 0.03446115288220551,
+                  "component_bootstrap_95_ci": [
+                    0.023823333241787342,
+                    0.04589308724616607
+                  ]
+                },
+                "top10": {
+                  "difference": 0.022556390977443608,
+                  "component_bootstrap_95_ci": [
+                    0.012017520396682796,
+                    0.033146234622546476
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.3730018147105947,
+                  "component_bootstrap_95_ci": [
+                    -0.4348711941959494,
+                    -0.3113683650637611
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.5996434290045334,
+                  "component_bootstrap_95_ci": [
+                    -0.7035879860991126,
+                    -0.5002645462847924
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.053460407684695815,
+                  "component_bootstrap_95_ci": [
+                    -0.07122347627125745,
+                    -0.02437883678565556
+                  ]
+                }
+              }
+            },
+            "frequency/1": {
+              "slots": 205,
+              "groups_with_queries": 191,
+              "metrics": {
+                "top1": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "top5": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "top10": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -3.003999267045693,
+                  "component_bootstrap_95_ci": [
+                    -3.2962287421278464,
+                    -2.706203532378197
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -11.734387286580425,
+                  "component_bootstrap_95_ci": [
+                    -12.054968159499577,
+                    -11.418897085481031
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.0453211114663048,
+                  "component_bootstrap_95_ci": [
+                    0.016551093676915374,
+                    0.07458535863039499
+                  ]
+                }
+              }
+            },
+            "frequency/2-4": {
+              "slots": 412,
+              "groups_with_queries": 357,
+              "metrics": {
+                "top1": {
+                  "difference": 0.021844660194174758,
+                  "component_bootstrap_95_ci": [
+                    0.009478112780522784,
+                    0.03722084367245657
+                  ]
+                },
+                "top5": {
+                  "difference": 0.043689320388349516,
+                  "component_bootstrap_95_ci": [
+                    0.024690512430238457,
+                    0.06484108753637945
+                  ]
+                },
+                "top10": {
+                  "difference": 0.05339805825242718,
+                  "component_bootstrap_95_ci": [
+                    0.02988234790793189,
+                    0.07921089584920028
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -1.5488683835826544,
+                  "component_bootstrap_95_ci": [
+                    -1.7860050354684571,
+                    -1.3245369600669996
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -2.5262319666454367,
+                  "component_bootstrap_95_ci": [
+                    -2.955673874560967,
+                    -2.120357310403821
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.027764274848345455,
+                  "component_bootstrap_95_ci": [
+                    0.005910574572163338,
+                    0.049814314987511384
+                  ]
+                }
+              }
+            },
+            "frequency/5-19": {
+              "slots": 991,
+              "groups_with_queries": 717,
+              "metrics": {
+                "top1": {
+                  "difference": 0.0615539858728557,
+                  "component_bootstrap_95_ci": [
+                    0.04431519856175923,
+                    0.07843188530642382
+                  ]
+                },
+                "top5": {
+                  "difference": 0.09182643794147326,
+                  "component_bootstrap_95_ci": [
+                    0.06788190922920893,
+                    0.11577316130870072
+                  ]
+                },
+                "top10": {
+                  "difference": 0.09182643794147326,
+                  "component_bootstrap_95_ci": [
+                    0.06913298817115439,
+                    0.1154648901245275
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -1.0491094353262396,
+                  "component_bootstrap_95_ci": [
+                    -1.1945288372704752,
+                    -0.906999277016741
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -1.0491094353262396,
+                  "component_bootstrap_95_ci": [
+                    -1.1945288372704752,
+                    -0.906999277016741
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.01648310087942914,
+                  "component_bootstrap_95_ci": [
+                    -0.03683220812256632,
+                    0.00321225427839718
+                  ]
+                }
+              }
+            },
+            "frequency/20+": {
+              "slots": 6401,
+              "groups_with_queries": 1517,
+              "metrics": {
+                "top1": {
+                  "difference": 0.051866895797531634,
+                  "component_bootstrap_95_ci": [
+                    0.04121208115476908,
+                    0.06275686418070524
+                  ]
+                },
+                "top5": {
+                  "difference": 0.032338697078581474,
+                  "component_bootstrap_95_ci": [
+                    0.02433583453133025,
+                    0.04070909515181364
+                  ]
+                },
+                "top10": {
+                  "difference": 0.030307764411810656,
+                  "component_bootstrap_95_ci": [
+                    0.022750490987722975,
+                    0.03763246190498056
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.34588233773000504,
+                  "component_bootstrap_95_ci": [
+                    -0.39028196617542893,
+                    -0.30078769948291856
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.34588233773000504,
+                  "component_bootstrap_95_ci": [
+                    -0.39028196617542893,
+                    -0.30078769948291856
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.009606378465312124,
+                  "component_bootstrap_95_ci": [
+                    -0.022463517810040495,
+                    0.005175611127058724
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "Markov2": {
+          "direction": "new minus comparator",
+          "repeats": 2000,
+          "seed": 23101,
+          "bootstrap_population_components": 1526,
+          "strata": {
+            "all": {
+              "slots": 8009,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.02334873267573979,
+                  "component_bootstrap_95_ci": [
+                    0.01649586440073256,
+                    0.03063757168303067
+                  ]
+                },
+                "top5": {
+                  "difference": 0.035335247846173055,
+                  "component_bootstrap_95_ci": [
+                    0.028861791752479753,
+                    0.04194242800455338
+                  ]
+                },
+                "top10": {
+                  "difference": 0.03808215757273068,
+                  "component_bootstrap_95_ci": [
+                    0.03204466659967525,
+                    0.04431313086456912
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.6905542421635944,
+                  "component_bootstrap_95_ci": [
+                    -0.7453926268344094,
+                    -0.6373463446590492
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.9642966994274833,
+                  "component_bootstrap_95_ci": [
+                    -1.037501921700413,
+                    -0.8964861583734444
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.0016180540887265685,
+                  "component_bootstrap_95_ci": [
+                    -0.00842438011593567,
+                    0.00785061205408634
+                  ]
+                }
+              }
+            },
+            "position/initial": {
+              "slots": 1596,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.0018796992481203006,
+                  "component_bootstrap_95_ci": [
+                    -0.010191407773300402,
+                    0.014357277871742145
+                  ]
+                },
+                "top5": {
+                  "difference": 0.011904761904761904,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.02424282878458232
+                  ]
+                },
+                "top10": {
+                  "difference": 0.020676691729323307,
+                  "component_bootstrap_95_ci": [
+                    0.00758953461382926,
+                    0.034071015804775326
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -1.4837053214714164,
+                  "component_bootstrap_95_ci": [
+                    -1.657641625040747,
+                    -1.3112835293486174
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -2.0768848119372483,
+                  "component_bootstrap_95_ci": [
+                    -2.343170086958976,
+                    -1.818663150354923
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.0009759908771986708,
+                  "component_bootstrap_95_ci": [
+                    -0.012236539119284687,
+                    0.015477848875187453
+                  ]
+                }
+              }
+            },
+            "position/internal": {
+              "slots": 4817,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.036744861947270085,
+                  "component_bootstrap_95_ci": [
+                    0.026547101794404653,
+                    0.04644877705408326
+                  ]
+                },
+                "top5": {
+                  "difference": 0.04795515881253892,
+                  "component_bootstrap_95_ci": [
+                    0.038754444025982514,
+                    0.0571607323929782
+                  ]
+                },
+                "top10": {
+                  "difference": 0.04899314926302678,
+                  "component_bootstrap_95_ci": [
+                    0.04024991167445387,
+                    0.05796983743286373
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.5615674868081499,
+                  "component_bootstrap_95_ci": [
+                    -0.6212071511336357,
+                    -0.5039982720940928
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.7450777332332886,
+                  "component_bootstrap_95_ci": [
+                    -0.8194355253957872,
+                    -0.6761639946762417
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.0025572360125280386,
+                  "component_bootstrap_95_ci": [
+                    -0.009505986172985597,
+                    0.014244283578797241
+                  ]
+                }
+              }
+            },
+            "position/final": {
+              "slots": 1596,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.0043859649122807015,
+                  "component_bootstrap_95_ci": [
+                    -0.00818639798488665,
+                    0.016885553470919325
+                  ]
+                },
+                "top5": {
+                  "difference": 0.020676691729323307,
+                  "component_bootstrap_95_ci": [
+                    0.010821133036282623,
+                    0.03070175438596491
+                  ]
+                },
+                "top10": {
+                  "difference": 0.022556390977443608,
+                  "component_bootstrap_95_ci": [
+                    0.013707165109034268,
+                    0.031914893617021274
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.2867071732236767,
+                  "component_bootstrap_95_ci": [
+                    -0.34690704068123907,
+                    -0.22622387385298134
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.5133487875176156,
+                  "component_bootstrap_95_ci": [
+                    -0.6181661784915606,
+                    -0.41441097848490843
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.04337890561840442,
+                  "component_bootstrap_95_ci": [
+                    -0.05897193360163397,
+                    -0.015257751203723581
+                  ]
+                }
+              }
+            },
+            "frequency/1": {
+              "slots": 205,
+              "groups_with_queries": 191,
+              "metrics": {
+                "top1": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "top5": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "top10": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -5.500496812937126,
+                  "component_bootstrap_95_ci": [
+                    -6.095136146389313,
+                    -4.917789586138054
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -14.230884832471858,
+                  "component_bootstrap_95_ci": [
+                    -14.872065424150577,
+                    -13.600067292678
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.0003645562111742606,
+                  "component_bootstrap_95_ci": [
+                    -0.02325303229202204,
+                    0.02319086573273596
+                  ]
+                }
+              }
+            },
+            "frequency/2-4": {
+              "slots": 412,
+              "groups_with_queries": 357,
+              "metrics": {
+                "top1": {
+                  "difference": 0.012135922330097087,
+                  "component_bootstrap_95_ci": [
+                    0.0024630541871921183,
+                    0.023530799112097663
+                  ]
+                },
+                "top5": {
+                  "difference": 0.02669902912621359,
+                  "component_bootstrap_95_ci": [
+                    0.0068462436267584005,
+                    0.047152280588850425
+                  ]
+                },
+                "top10": {
+                  "difference": 0.02669902912621359,
+                  "component_bootstrap_95_ci": [
+                    0.004516821633898789,
+                    0.04909560723514212
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -2.5357733154743567,
+                  "component_bootstrap_95_ci": [
+                    -2.9319670403287748,
+                    -2.1691690047642957
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -3.5131368985371387,
+                  "component_bootstrap_95_ci": [
+                    -4.062829544804292,
+                    -2.9981154507904604
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.008285091795091626,
+                  "component_bootstrap_95_ci": [
+                    -0.025759518893025045,
+                    0.011245869750639053
+                  ]
+                }
+              }
+            },
+            "frequency/5-19": {
+              "slots": 991,
+              "groups_with_queries": 717,
+              "metrics": {
+                "top1": {
+                  "difference": 0.034308779011099896,
+                  "component_bootstrap_95_ci": [
+                    0.01948618219037871,
+                    0.04956982074438971
+                  ]
+                },
+                "top5": {
+                  "difference": 0.06357214934409687,
+                  "component_bootstrap_95_ci": [
+                    0.04347155126140633,
+                    0.0852559520667265
+                  ]
+                },
+                "top10": {
+                  "difference": 0.06962663975782038,
+                  "component_bootstrap_95_ci": [
+                    0.048934761884127057,
+                    0.09071531698626363
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -1.2494418447583924,
+                  "component_bootstrap_95_ci": [
+                    -1.4316341683814011,
+                    -1.0871228651511127
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -1.2494418447583924,
+                  "component_bootstrap_95_ci": [
+                    -1.4316341683814011,
+                    -1.0871228651511127
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.025718076012708868,
+                  "component_bootstrap_95_ci": [
+                    -0.04303467706273508,
+                    -0.008568309336910628
+                  ]
+                }
+              }
+            },
+            "frequency/20+": {
+              "slots": 6401,
+              "groups_with_queries": 1517,
+              "metrics": {
+                "top1": {
+                  "difference": 0.023121387283236993,
+                  "component_bootstrap_95_ci": [
+                    0.01508218635813743,
+                    0.031289492300157803
+                  ]
+                },
+                "top5": {
+                  "difference": 0.032651148258084677,
+                  "component_bootstrap_95_ci": [
+                    0.025546296054580517,
+                    0.03993801474037254
+                  ]
+                },
+                "top10": {
+                  "difference": 0.035150757694110295,
+                  "component_bootstrap_95_ci": [
+                    0.02848604334964065,
+                    0.042219346460643147
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.33121568578427024,
+                  "component_bootstrap_95_ci": [
+                    -0.3711434485676907,
+                    -0.2915558016009524
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.33121568578427024,
+                  "component_bootstrap_95_ci": [
+                    -0.3711434485676907,
+                    -0.2915558016009524
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.006999855229966609,
+                  "component_bootstrap_95_ci": [
+                    -0.007553773191408995,
+                    0.016880982001127698
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "classical/extra1/top1": {
+      "summary": {
+        "slots": 8009,
+        "texts": 1596,
+        "glyph_types": 548,
+        "top1": 0.3943064052940442,
+        "top5": 0.6235485079285803,
+        "top10": 0.6922212510925209,
+        "equal_text_weight": {
+          "top1": 0.3753760372181425,
+          "top5": 0.6081379147168621,
+          "top10": 0.6796074574270063
+        },
+        "macro_type": {
+          "top1": 0.07518472292036896,
+          "top5": 0.15745835184426232,
+          "top10": 0.19408816591748979
+        },
+        "unknown_true_rate": 0.023848170807841178,
+        "unknown_prediction_rate": 0.0,
+        "bucket_cross_entropy_bits": 4.573877447755613,
+        "positions": {
+          "initial": {
+            "slots": 1596,
+            "top1": 0.20802005012531327,
+            "top5": 0.48370927318295737,
+            "top10": 0.5444862155388471
+          },
+          "internal": {
+            "slots": 4817,
+            "top1": 0.3960971559061657,
+            "top5": 0.6209258874818352,
+            "top10": 0.7018891426198879
+          },
+          "final": {
+            "slots": 1596,
+            "top1": 0.575187969924812,
+            "top5": 0.7713032581453634,
+            "top10": 0.8107769423558897
+          }
+        },
+        "confidence_audit": [
+          {
+            "mass_interval": [
+              0.0,
+              0.2
+            ],
+            "slots": 2320,
+            "mean_model_mass": 0.1226713206109274,
+            "exact_accuracy": 0.1267241379310345
+          },
+          {
+            "mass_interval": [
+              0.2,
+              0.4
+            ],
+            "slots": 1996,
+            "mean_model_mass": 0.29343232242891426,
+            "exact_accuracy": 0.26152304609218435
+          },
+          {
+            "mass_interval": [
+              0.4,
+              0.6
+            ],
+            "slots": 1303,
+            "mean_model_mass": 0.48878280937642465,
+            "exact_accuracy": 0.3983115886415963
+          },
+          {
+            "mass_interval": [
+              0.6,
+              0.8
+            ],
+            "slots": 958,
+            "mean_model_mass": 0.6970226768792422,
+            "exact_accuracy": 0.6200417536534447
+          },
+          {
+            "mass_interval": [
+              0.8,
+              1.0
+            ],
+            "slots": 1432,
+            "mean_model_mass": 0.9231107604988088,
+            "exact_accuracy": 0.8582402234636871
+          }
+        ],
+        "expected_calibration_error": 0.04465223946221138,
+        "top_label_brier": 0.17001142604779773,
+        "frequency_strata": {
+          "1": {
+            "slots": 205,
+            "types": 205,
+            "top1": 0.0,
+            "top5": 0.0,
+            "top10": 0.0,
+            "unknown_in_training_rate": 0.7463414634146341
+          },
+          "2-4": {
+            "slots": 412,
+            "types": 155,
+            "top1": 0.024271844660194174,
+            "top5": 0.0825242718446602,
+            "top10": 0.12135922330097088,
+            "unknown_in_training_rate": 0.09223300970873786
+          },
+          "5-19": {
+            "slots": 991,
+            "types": 112,
+            "top1": 0.13218970736629668,
+            "top5": 0.29364278506559033,
+            "top10": 0.3763874873864783,
+            "unknown_in_training_rate": 0.0
+          },
+          "20+": {
+            "slots": 6401,
+            "types": 76,
+            "top1": 0.47133260428058116,
+            "top5": 0.7294172785502265,
+            "top10": 0.8000312451179503,
+            "unknown_in_training_rate": 0.0
+          }
+        },
+        "strata": {
+          "all": {
+            "slots": 8009,
+            "top1": 0.3943064052940442,
+            "top5": 0.6235485079285803,
+            "top10": 0.6922212510925209,
+            "bucket_loss_bits": 4.573877447755613,
+            "common_bucket_loss_bits": 4.299708755210297,
+            "expected_calibration_error": 0.044652239462211404,
+            "unknown_true_rate": 0.023848170807841178
+          },
+          "position/initial": {
+            "slots": 1596,
+            "top1": 0.20802005012531327,
+            "top5": 0.48370927318295737,
+            "top10": 0.5444862155388471,
+            "bucket_loss_bits": 6.04003344977809,
+            "common_bucket_loss_bits": 5.444910645559784,
+            "expected_calibration_error": 0.09995232472138074,
+            "unknown_true_rate": 0.05012531328320802
+          },
+          "position/internal": {
+            "slots": 4817,
+            "top1": 0.3960971559061657,
+            "top5": 0.6209258874818352,
+            "top10": 0.7018891426198879,
+            "bucket_loss_bits": 4.520283495434355,
+            "common_bucket_loss_bits": 4.336653597955034,
+            "expected_calibration_error": 0.05846039446650038,
+            "unknown_true_rate": 0.017230641478098403
+          },
+          "position/final": {
+            "slots": 1596,
+            "top1": 0.575187969924812,
+            "top5": 0.7713032581453634,
+            "top10": 0.8107769423558897,
+            "bucket_loss_bits": 3.2694771276451,
+            "common_bucket_loss_bits": 3.043001033093015,
+            "expected_calibration_error": 0.029322272806655877,
+            "unknown_true_rate": 0.017543859649122806
+          },
+          "frequency/1": {
+            "slots": 205,
+            "top1": 0.0,
+            "top5": 0.0,
+            "top10": 0.0,
+            "bucket_loss_bits": 14.42384685743062,
+            "common_bucket_loss_bits": 5.677967489353645,
+            "expected_calibration_error": 0.2932289424756543,
+            "unknown_true_rate": 0.7463414634146341
+          },
+          "frequency/2-4": {
+            "slots": 412,
+            "top1": 0.024271844660194174,
+            "top5": 0.0825242718446602,
+            "top10": 0.12135922330097088,
+            "bucket_loss_bits": 10.998668049192544,
+            "common_bucket_loss_bits": 10.020726815843863,
+            "expected_calibration_error": 0.27717556101947927,
+            "unknown_true_rate": 0.09223300970873786
+          },
+          "frequency/5-19": {
+            "slots": 991,
+            "top1": 0.13218970736629668,
+            "top5": 0.29364278506559033,
+            "top10": 0.3763874873864783,
+            "bucket_loss_bits": 7.514983512391885,
+            "common_bucket_loss_bits": 7.514983512391885,
+            "expected_calibration_error": 0.19462578083636928,
+            "unknown_true_rate": 0.0
+          },
+          "frequency/20+": {
+            "slots": 6401,
+            "top1": 0.47133260428058116,
+            "top5": 0.7294172785502265,
+            "top10": 0.8000312451179503,
+            "bucket_loss_bits": 3.3895478794334855,
+            "common_bucket_loss_bits": 3.3895478794334855,
+            "expected_calibration_error": 0.025680296805608516,
+            "unknown_true_rate": 0.0
+          }
+        },
+        "common_alphabet_bucket_cross_entropy_bits": 4.299708755210297
+      },
+      "fold_selection": [
+        {
+          "fold": 0,
+          "selected_index": 3,
+          "inner": [
+            {
+              "top1": 0.35513581017795814,
+              "bucket_loss_bits": 4.797673717527316
+            },
+            {
+              "top1": 0.3601311270683734,
+              "bucket_loss_bits": 4.750465783910369
+            },
+            {
+              "top1": 0.38136122385263815,
+              "bucket_loss_bits": 4.800197458285731
+            },
+            {
+              "top1": 0.3943178270371527,
+              "bucket_loss_bits": 4.621888789575044
+            },
+            {
+              "top1": 0.3758975960037465,
+              "bucket_loss_bits": 4.8891842338307026
+            },
+            {
+              "top1": 0.39384951607867624,
+              "bucket_loss_bits": 4.639981131447211
+            },
+            {
+              "top1": 0.37308773025288794,
+              "bucket_loss_bits": 4.954474543427476
+            },
+            {
+              "top1": 0.3916640649391196,
+              "bucket_loss_bits": 4.6479931191635675
+            }
+          ],
+          "config": {
+            "order": 3,
+            "discount_scale": 1.0
+          },
+          "ngram_weight": null,
+          "neural_family": null,
+          "epochs": null
+        },
+        {
+          "fold": 1,
+          "selected_index": 5,
+          "inner": [
+            {
+              "top1": 0.354657512872523,
+              "bucket_loss_bits": 4.8902552296658035
+            },
+            {
+              "top1": 0.35949446091433923,
+              "bucket_loss_bits": 4.836794883321915
+            },
+            {
+              "top1": 0.3754095802777344,
+              "bucket_loss_bits": 4.9278205055225195
+            },
+            {
+              "top1": 0.3836792011234202,
+              "bucket_loss_bits": 4.7349358063364155
+            },
+            {
+              "top1": 0.37104072398190047,
+              "bucket_loss_bits": 5.011559687284092
+            },
+            {
+              "top1": 0.3839912622874083,
+              "bucket_loss_bits": 4.75349311980095
+            },
+            {
+              "top1": 0.3654236230301139,
+              "bucket_loss_bits": 5.076288410514758
+            },
+            {
+              "top1": 0.3824309564674676,
+              "bucket_loss_bits": 4.763177865919949
+            }
+          ],
+          "config": {
+            "order": 4,
+            "discount_scale": 1.0
+          },
+          "ngram_weight": null,
+          "neural_family": null,
+          "epochs": null
+        },
+        {
+          "fold": 2,
+          "selected_index": 5,
+          "inner": [
+            {
+              "top1": 0.3566411737162479,
+              "bucket_loss_bits": 4.866055310478385
+            },
+            {
+              "top1": 0.36069923521148745,
+              "bucket_loss_bits": 4.8148560697249465
+            },
+            {
+              "top1": 0.3639769002653348,
+              "bucket_loss_bits": 4.887586306102497
+            },
+            {
+              "top1": 0.37583892617449666,
+              "bucket_loss_bits": 4.719330010350036
+            },
+            {
+              "top1": 0.3588262837521461,
+              "bucket_loss_bits": 4.967560709857651
+            },
+            {
+              "top1": 0.379116591228344,
+              "bucket_loss_bits": 4.736684434066749
+            },
+            {
+              "top1": 0.3567972530045263,
+              "bucket_loss_bits": 5.031114266081799
+            },
+            {
+              "top1": 0.3780240362103949,
+              "bucket_loss_bits": 4.745614014505396
+            }
+          ],
+          "config": {
+            "order": 4,
+            "discount_scale": 1.0
+          },
+          "ngram_weight": null,
+          "neural_family": null,
+          "epochs": null
+        },
+        {
+          "fold": 3,
+          "selected_index": 3,
+          "inner": [
+            {
+              "top1": 0.34259403777118774,
+              "bucket_loss_bits": 4.92265209865113
+            },
+            {
+              "top1": 0.35008584360855316,
+              "bucket_loss_bits": 4.860296381515229
+            },
+            {
+              "top1": 0.3711565475261433,
+              "bucket_loss_bits": 4.9218439884427045
+            },
+            {
+              "top1": 0.37849227407523023,
+              "bucket_loss_bits": 4.746153799026772
+            },
+            {
+              "top1": 0.3622600280942719,
+              "bucket_loss_bits": 5.018619418724844
+            },
+            {
+              "top1": 0.3759950054627751,
+              "bucket_loss_bits": 4.781763843645474
+            },
+            {
+              "top1": 0.3610113937880443,
+              "bucket_loss_bits": 5.078368154768467
+            },
+            {
+              "top1": 0.3753706883096613,
+              "bucket_loss_bits": 4.787313910138766
+            }
+          ],
+          "config": {
+            "order": 3,
+            "discount_scale": 1.0
+          },
+          "ngram_weight": null,
+          "neural_family": null,
+          "epochs": null
+        },
+        {
+          "fold": 4,
+          "selected_index": 3,
+          "inner": [
+            {
+              "top1": 0.3432183549243015,
+              "bucket_loss_bits": 4.945987082245782
+            },
+            {
+              "top1": 0.3458717028250351,
+              "bucket_loss_bits": 4.88333073959344
+            },
+            {
+              "top1": 0.3622600280942719,
+              "bucket_loss_bits": 4.954482335467369
+            },
+            {
+              "top1": 0.37271734040892773,
+              "bucket_loss_bits": 4.767665755168234
+            },
+            {
+              "top1": 0.35695333229280474,
+              "bucket_loss_bits": 5.045614366651843
+            },
+            {
+              "top1": 0.3725612611206493,
+              "bucket_loss_bits": 4.790696027405338
+            },
+            {
+              "top1": 0.3550803808334634,
+              "bucket_loss_bits": 5.107802688397177
+            },
+            {
+              "top1": 0.3710004682378648,
+              "bucket_loss_bits": 4.797317930340723
+            }
+          ],
+          "config": {
+            "order": 3,
+            "discount_scale": 1.0
+          },
+          "ngram_weight": null,
+          "neural_family": null,
+          "epochs": null
+        }
+      ],
+      "paired": {
+        "Markov1": {
+          "direction": "new minus comparator",
+          "repeats": 2000,
+          "seed": 23101,
+          "bootstrap_population_components": 1526,
+          "strata": {
+            "all": {
+              "slots": 8009,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.048445498813834434,
+                  "component_bootstrap_95_ci": [
+                    0.03970125346228669,
+                    0.05766581302034131
+                  ]
+                },
+                "top5": {
+                  "difference": 0.0389561743039081,
+                  "component_bootstrap_95_ci": [
+                    0.03146677740904417,
+                    0.046271414613772474
+                  ]
+                },
+                "top10": {
+                  "difference": 0.03795729803970533,
+                  "component_bootstrap_95_ci": [
+                    0.031125413513453708,
+                    0.04466201012994131
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.5455574085661994,
+                  "component_bootstrap_95_ci": [
+                    -0.5964309734673818,
+                    -0.49761482456829526
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.8197261011115153,
+                  "component_bootstrap_95_ci": [
+                    -0.8864208095640685,
+                    -0.7557815250199812
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.019088627868478834,
+                  "component_bootstrap_95_ci": [
+                    0.006219134598414532,
+                    0.02834132157290537
+                  ]
+                }
+              }
+            },
+            "position/initial": {
+              "slots": 1596,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.02568922305764411,
+                  "component_bootstrap_95_ci": [
+                    0.007594816611822352,
+                    0.042922806616731105
+                  ]
+                },
+                "top5": {
+                  "difference": 0.03320802005012531,
+                  "component_bootstrap_95_ci": [
+                    0.01957009008750812,
+                    0.0475
+                  ]
+                },
+                "top10": {
+                  "difference": 0.02882205513784461,
+                  "component_bootstrap_95_ci": [
+                    0.014383540774820616,
+                    0.0433982772764561
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.7785667033046039,
+                  "component_bootstrap_95_ci": [
+                    -0.8825580998884001,
+                    -0.6769041540216963
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -1.3736895075229099,
+                  "component_bootstrap_95_ci": [
+                    -1.5694131929584874,
+                    -1.188948342980083
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.04238529410135604,
+                  "component_bootstrap_95_ci": [
+                    0.02343644429038997,
+                    0.06156610972075945
+                  ]
+                }
+              }
+            },
+            "position/internal": {
+              "slots": 4817,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.06020344612829562,
+                  "component_bootstrap_95_ci": [
+                    0.0487328358041787,
+                    0.07223919118108867
+                  ]
+                },
+                "top5": {
+                  "difference": 0.042350010379904504,
+                  "component_bootstrap_95_ci": [
+                    0.03257404410170256,
+                    0.05251054424572714
+                  ]
+                },
+                "top10": {
+                  "difference": 0.045879177911563214,
+                  "component_bootstrap_95_ci": [
+                    0.037043781287479795,
+                    0.054890154563178584
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.5293072001524353,
+                  "component_bootstrap_95_ci": [
+                    -0.5920617073682944,
+                    -0.4687972930403012
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.7129370976317565,
+                  "component_bootstrap_95_ci": [
+                    -0.7872583885074355,
+                    -0.6447259768822352
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.027889024132339492,
+                  "component_bootstrap_95_ci": [
+                    0.013994620432274273,
+                    0.04150331050070495
+                  ]
+                }
+              }
+            },
+            "position/final": {
+              "slots": 1596,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.03571428571428571,
+                  "component_bootstrap_95_ci": [
+                    0.020005717638916055,
+                    0.05070084423535475
+                  ]
+                },
+                "top5": {
+                  "difference": 0.03446115288220551,
+                  "component_bootstrap_95_ci": [
+                    0.023690404052174856,
+                    0.04582692665073429
+                  ]
+                },
+                "top10": {
+                  "difference": 0.023182957393483708,
+                  "component_bootstrap_95_ci": [
+                    0.01270607718058037,
+                    0.033920664643974585
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.36159401227961363,
+                  "component_bootstrap_95_ci": [
+                    -0.4229827741835804,
+                    -0.3004466197775619
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.588070106831699,
+                  "component_bootstrap_95_ci": [
+                    -0.6937483841192246,
+                    -0.4883557248341959
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.04764205975116345,
+                  "component_bootstrap_95_ci": [
+                    -0.06587868535038581,
+                    -0.018816971952039067
+                  ]
+                }
+              }
+            },
+            "frequency/1": {
+              "slots": 205,
+              "groups_with_queries": 191,
+              "metrics": {
+                "top1": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "top5": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "top10": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -2.9916560349188894,
+                  "component_bootstrap_95_ci": [
+                    -3.2803133379553144,
+                    -2.692414466405259
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -11.737535402995864,
+                  "component_bootstrap_95_ci": [
+                    -12.061535186132074,
+                    -11.422267576032304
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.043691845562933096,
+                  "component_bootstrap_95_ci": [
+                    0.016214236512911838,
+                    0.07294104503749906
+                  ]
+                }
+              }
+            },
+            "frequency/2-4": {
+              "slots": 412,
+              "groups_with_queries": 357,
+              "metrics": {
+                "top1": {
+                  "difference": 0.021844660194174758,
+                  "component_bootstrap_95_ci": [
+                    0.009478112780522784,
+                    0.03722084367245657
+                  ]
+                },
+                "top5": {
+                  "difference": 0.043689320388349516,
+                  "component_bootstrap_95_ci": [
+                    0.024690512430238457,
+                    0.06484108753637945
+                  ]
+                },
+                "top10": {
+                  "difference": 0.04611650485436893,
+                  "component_bootstrap_95_ci": [
+                    0.023376623376623377,
+                    0.07092558591640565
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -1.5310648121305546,
+                  "component_bootstrap_95_ci": [
+                    -1.7665236409614764,
+                    -1.3076015904075704
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -2.5090060454792322,
+                  "component_bootstrap_95_ci": [
+                    -2.9314362102001184,
+                    -2.1035746095244376
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.030373221972516323,
+                  "component_bootstrap_95_ci": [
+                    0.008043557548944738,
+                    0.05316876261602324
+                  ]
+                }
+              }
+            },
+            "frequency/5-19": {
+              "slots": 991,
+              "groups_with_queries": 717,
+              "metrics": {
+                "top1": {
+                  "difference": 0.06357214934409687,
+                  "component_bootstrap_95_ci": [
+                    0.046169585922996206,
+                    0.08071088192281314
+                  ]
+                },
+                "top5": {
+                  "difference": 0.09283551967709384,
+                  "component_bootstrap_95_ci": [
+                    0.06831541444651133,
+                    0.11703494706048366
+                  ]
+                },
+                "top10": {
+                  "difference": 0.08879919273461151,
+                  "component_bootstrap_95_ci": [
+                    0.06565406930911614,
+                    0.11307205876189277
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -1.036233378803357,
+                  "component_bootstrap_95_ci": [
+                    -1.1788767543714875,
+                    -0.8957947575928408
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -1.036233378803357,
+                  "component_bootstrap_95_ci": [
+                    -1.1788767543714875,
+                    -0.8957947575928408
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.01568034201057089,
+                  "component_bootstrap_95_ci": [
+                    -0.035817733695708155,
+                    0.003898381963927965
+                  ]
+                }
+              }
+            },
+            "frequency/20+": {
+              "slots": 6401,
+              "groups_with_queries": 1517,
+              "metrics": {
+                "top1": {
+                  "difference": 0.049367286361506016,
+                  "component_bootstrap_95_ci": [
+                    0.039220471270027556,
+                    0.059872220974797795
+                  ]
+                },
+                "top5": {
+                  "difference": 0.031557569129823465,
+                  "component_bootstrap_95_ci": [
+                    0.023740945411742573,
+                    0.03984066894477426
+                  ]
+                },
+                "top10": {
+                  "difference": 0.03077644118106546,
+                  "component_bootstrap_95_ci": [
+                    0.023085776191325735,
+                    0.038205893483953056
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.3278196870889554,
+                  "component_bootstrap_95_ci": [
+                    -0.37349859989402245,
+                    -0.2816724415278675
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.3278196870889554,
+                  "component_bootstrap_95_ci": [
+                    -0.37349859989402245,
+                    -0.2816724415278675
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.005359708483016298,
+                  "component_bootstrap_95_ci": [
+                    -0.01867829908232422,
+                    0.00971490943396055
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "Markov2": {
+          "direction": "new minus comparator",
+          "repeats": 2000,
+          "seed": 23101,
+          "bootstrap_population_components": 1526,
+          "strata": {
+            "all": {
+              "slots": 8009,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.021600699213384943,
+                  "component_bootstrap_95_ci": [
+                    0.014851501692887027,
+                    0.028785749599630404
+                  ]
+                },
+                "top5": {
+                  "difference": 0.03483580971407167,
+                  "component_bootstrap_95_ci": [
+                    0.028372273236323468,
+                    0.04137457379339091
+                  ]
+                },
+                "top10": {
+                  "difference": 0.03770757897365464,
+                  "component_bootstrap_95_ci": [
+                    0.03179538885388278,
+                    0.04388578978273635
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.6732930818699503,
+                  "component_bootstrap_95_ci": [
+                    -0.7292253466475457,
+                    -0.6210664872244325
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.9474617744152664,
+                  "component_bootstrap_95_ci": [
+                    -1.0222922679405162,
+                    -0.8787076706793259
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.0011460137116947253,
+                  "component_bootstrap_95_ci": [
+                    -0.006184360439900168,
+                    0.010509216579872614
+                  ]
+                }
+              }
+            },
+            "position/initial": {
+              "slots": 1596,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": -0.003132832080200501,
+                  "component_bootstrap_95_ci": [
+                    -0.01451523746129135,
+                    0.00869229638341663
+                  ]
+                },
+                "top5": {
+                  "difference": 0.013157894736842105,
+                  "component_bootstrap_95_ci": [
+                    0.0012499804809494067,
+                    0.02538764599667192
+                  ]
+                },
+                "top10": {
+                  "difference": 0.020676691729323307,
+                  "component_bootstrap_95_ci": [
+                    0.008114856429463172,
+                    0.03325223717107705
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -1.4617701580759779,
+                  "component_bootstrap_95_ci": [
+                    -1.6349956375079282,
+                    -1.2900996791583015
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -2.0568929622942838,
+                  "component_bootstrap_95_ci": [
+                    -2.324421094821195,
+                    -1.798028328699374
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.011580274576314206,
+                  "component_bootstrap_95_ci": [
+                    -0.0017304728456893073,
+                    0.025432961918767455
+                  ]
+                }
+              }
+            },
+            "position/internal": {
+              "slots": 4817,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.035291675316587084,
+                  "component_bootstrap_95_ci": [
+                    0.02533936686819326,
+                    0.04523824008038357
+                  ]
+                },
+                "top5": {
+                  "difference": 0.0467095702719535,
+                  "component_bootstrap_95_ci": [
+                    0.03741133769482913,
+                    0.055794080440276936
+                  ]
+                },
+                "top10": {
+                  "difference": 0.048162756902636494,
+                  "component_bootstrap_95_ci": [
+                    0.03969892071499034,
+                    0.05715009564058951
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.5439155749682435,
+                  "component_bootstrap_95_ci": [
+                    -0.6053308954021626,
+                    -0.4858168851892868
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.727545472447565,
+                  "component_bootstrap_95_ci": [
+                    -0.8035361317167394,
+                    -0.6593570682390986
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.003766859258412872,
+                  "component_bootstrap_95_ci": [
+                    -0.008438676506784006,
+                    0.015908022666586804
+                  ]
+                }
+              }
+            },
+            "position/final": {
+              "slots": 1596,
+              "groups_with_queries": 1526,
+              "metrics": {
+                "top1": {
+                  "difference": 0.005012531328320802,
+                  "component_bootstrap_95_ci": [
+                    -0.0075472885521925505,
+                    0.017246753805142286
+                  ]
+                },
+                "top5": {
+                  "difference": 0.020676691729323307,
+                  "component_bootstrap_95_ci": [
+                    0.010731478965234471,
+                    0.030934831974195522
+                  ]
+                },
+                "top10": {
+                  "difference": 0.023182957393483708,
+                  "component_bootstrap_95_ci": [
+                    0.014233550182231453,
+                    0.0325
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.2752993707926958,
+                  "component_bootstrap_95_ci": [
+                    -0.33680159055781134,
+                    -0.21604176465985714
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.5017754653447811,
+                  "component_bootstrap_95_ci": [
+                    -0.6076456377907629,
+                    -0.40300151505223214
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.037560557684872056,
+                  "component_bootstrap_95_ci": [
+                    -0.0533606035833106,
+                    -0.008137881523681834
+                  ]
+                }
+              }
+            },
+            "frequency/1": {
+              "slots": 205,
+              "groups_with_queries": 191,
+              "metrics": {
+                "top1": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "top5": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "top10": {
+                  "difference": 0.0,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -5.488153580810322,
+                  "component_bootstrap_95_ci": [
+                    -6.08622663245378,
+                    -4.906437875929259
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -14.234032948887295,
+                  "component_bootstrap_95_ci": [
+                    -14.879141988195467,
+                    -13.606731416573771
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.001264709692197441,
+                  "component_bootstrap_95_ci": [
+                    -0.025188382574927462,
+                    0.021926823424999273
+                  ]
+                }
+              }
+            },
+            "frequency/2-4": {
+              "slots": 412,
+              "groups_with_queries": 357,
+              "metrics": {
+                "top1": {
+                  "difference": 0.012135922330097087,
+                  "component_bootstrap_95_ci": [
+                    0.0024630541871921183,
+                    0.023530799112097663
+                  ]
+                },
+                "top5": {
+                  "difference": 0.02669902912621359,
+                  "component_bootstrap_95_ci": [
+                    0.0068462436267584005,
+                    0.047152280588850425
+                  ]
+                },
+                "top10": {
+                  "difference": 0.019417475728155338,
+                  "component_bootstrap_95_ci": [
+                    0.0,
+                    0.04021486240793812
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -2.517969744022257,
+                  "component_bootstrap_95_ci": [
+                    -2.9148852461455985,
+                    -2.1514603732087934
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -3.495910977370935,
+                  "component_bootstrap_95_ci": [
+                    -4.053254816000679,
+                    -2.9797720763560416
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.0056761446709207575,
+                  "component_bootstrap_95_ci": [
+                    -0.02413939095646071,
+                    0.013678994466045246
+                  ]
+                }
+              }
+            },
+            "frequency/5-19": {
+              "slots": 991,
+              "groups_with_queries": 717,
+              "metrics": {
+                "top1": {
+                  "difference": 0.03632694248234107,
+                  "component_bootstrap_95_ci": [
+                    0.020325450838768667,
+                    0.05257969240593901
+                  ]
+                },
+                "top5": {
+                  "difference": 0.06458123107971746,
+                  "component_bootstrap_95_ci": [
+                    0.04435304530493795,
+                    0.08531929747207524
+                  ]
+                },
+                "top10": {
+                  "difference": 0.06659939455095863,
+                  "component_bootstrap_95_ci": [
+                    0.04576251692364315,
+                    0.08814740285756459
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -1.2365657882355099,
+                  "component_bootstrap_95_ci": [
+                    -1.4144310927558326,
+                    -1.070835779391012
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -1.2365657882355099,
+                  "component_bootstrap_95_ci": [
+                    -1.4144310927558326,
+                    -1.070835779391012
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": -0.024915317143850618,
+                  "component_bootstrap_95_ci": [
+                    -0.043502492022202945,
+                    -0.006287596944606693
+                  ]
+                }
+              }
+            },
+            "frequency/20+": {
+              "slots": 6401,
+              "groups_with_queries": 1517,
+              "metrics": {
+                "top1": {
+                  "difference": 0.020621777847211375,
+                  "component_bootstrap_95_ci": [
+                    0.012677798801479973,
+                    0.029134954781845898
+                  ]
+                },
+                "top5": {
+                  "difference": 0.03187002030932667,
+                  "component_bootstrap_95_ci": [
+                    0.024443127923082803,
+                    0.038969825517657354
+                  ]
+                },
+                "top10": {
+                  "difference": 0.0356194344633651,
+                  "component_bootstrap_95_ci": [
+                    0.02877465032405744,
+                    0.04248900024157252
+                  ]
+                },
+                "bucket_loss_bits": {
+                  "difference": -0.3131530351432207,
+                  "component_bootstrap_95_ci": [
+                    -0.3544252626534942,
+                    -0.27314022902715324
+                  ]
+                },
+                "common_bucket_loss_bits": {
+                  "difference": -0.3131530351432207,
+                  "component_bootstrap_95_ci": [
+                    -0.3544252626534942,
+                    -0.27314022902715324
+                  ]
+                },
+                "expected_calibration_error": {
+                  "difference": 0.011246525212262435,
+                  "component_bootstrap_95_ci": [
+                    -0.0037181028500421136,
+                    0.021572479134061077
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "direct_contrasts": {
+    "classical/extra_minus_noextra": {
+      "direction": "new minus comparator",
+      "repeats": 2000,
+      "seed": 23101,
+      "bootstrap_population_components": 1526,
+      "strata": {
+        "all": {
+          "slots": 8009,
+          "groups_with_queries": 1526,
+          "metrics": {
+            "top1": {
+              "difference": -0.0011237357972281184,
+              "component_bootstrap_95_ci": [
+                -0.005327128810250889,
+                0.002930242021479082
+              ]
+            },
+            "top5": {
+              "difference": 0.0072418529154700964,
+              "component_bootstrap_95_ci": [
+                0.002880665149439572,
+                0.011451464255636947
+              ]
+            },
+            "top10": {
+              "difference": 0.00499438132101386,
+              "component_bootstrap_95_ci": [
+                0.0011054389764296535,
+                0.008963670019315412
+              ]
+            },
+            "bucket_loss_bits": {
+              "difference": -0.025274630966490293,
+              "component_bootstrap_95_ci": [
+                -0.0468383496584777,
+                -0.003908062416047181
+              ]
+            },
+            "common_bucket_loss_bits": {
+              "difference": -0.29901708823037926,
+              "component_bootstrap_95_ci": [
+                -0.33983001545762986,
+                -0.2592044495561688
+              ]
+            },
+            "expected_calibration_error": {
+              "difference": -0.010863228658859032,
+              "component_bootstrap_95_ci": [
+                -0.0159218773996785,
+                -0.006264985964171536
+              ]
+            }
+          }
+        },
+        "position/initial": {
+          "slots": 1596,
+          "groups_with_queries": 1526,
+          "metrics": {
+            "top1": {
+              "difference": -0.0043859649122807015,
+              "component_bootstrap_95_ci": [
+                -0.012445744450842011,
+                0.0037085115866575366
+              ]
+            },
+            "top5": {
+              "difference": 0.006892230576441102,
+              "component_bootstrap_95_ci": [
+                -0.0024723410577716914,
+                0.016383888506998144
+              ]
+            },
+            "top10": {
+              "difference": 0.008145363408521303,
+              "component_bootstrap_95_ci": [
+                -0.0018809072422839566,
+                0.018035668619519222
+              ]
+            },
+            "bucket_loss_bits": {
+              "difference": -0.04051794962840702,
+              "component_bootstrap_95_ci": [
+                -0.07596295417709054,
+                -0.0035320279064862113
+              ]
+            },
+            "common_bucket_loss_bits": {
+              "difference": -0.6336974400942389,
+              "component_bootstrap_95_ci": [
+                -0.7535216569010287,
+                -0.5187355805248355
+              ]
+            },
+            "expected_calibration_error": {
+              "difference": -0.012578558590040104,
+              "component_bootstrap_95_ci": [
+                -0.021224532317438885,
+                -0.004414086215904159
+              ]
+            }
+          }
+        },
+        "position/internal": {
+          "slots": 4817,
+          "groups_with_queries": 1526,
+          "metrics": {
+            "top1": {
+              "difference": 0.002075980900975711,
+              "component_bootstrap_95_ci": [
+                -0.0036911734664089283,
+                0.007384219474895919
+              ]
+            },
+            "top5": {
+              "difference": 0.006020344612829562,
+              "component_bootstrap_95_ci": [
+                0.00042211235987869394,
+                0.011786722409812217
+              ]
+            },
+            "top10": {
+              "difference": 0.004151961801951422,
+              "component_bootstrap_95_ci": [
+                -0.0006249122337190613,
+                0.009001536381201119
+              ]
+            },
+            "bucket_loss_bits": {
+              "difference": -0.016665218424105812,
+              "component_bootstrap_95_ci": [
+                -0.04085229993311527,
+                0.006809589564611854
+              ]
+            },
+            "common_bucket_loss_bits": {
+              "difference": -0.20017546484924445,
+              "component_bootstrap_95_ci": [
+                -0.24514204743205317,
+                -0.157246193210005
+              ]
+            },
+            "expected_calibration_error": {
+              "difference": 0.0019718176230148626,
+              "component_bootstrap_95_ci": [
+                -0.00567494395501332,
+                0.009167017487299126
+              ]
+            }
+          }
+        },
+        "position/final": {
+          "slots": 1596,
+          "groups_with_queries": 1526,
+          "metrics": {
+            "top1": {
+              "difference": -0.007518796992481203,
+              "component_bootstrap_95_ci": [
+                -0.01584409800362099,
+                0.001257881425365425
+              ]
+            },
+            "top5": {
+              "difference": 0.011278195488721804,
+              "component_bootstrap_95_ci": [
+                0.0031805605400739108,
+                0.019012614684439627
+              ]
+            },
+            "top10": {
+              "difference": 0.0043859649122807015,
+              "component_bootstrap_95_ci": [
+                -0.0025301243911730457,
+                0.011444014589306791
+              ]
+            },
+            "bucket_loss_bits": {
+              "difference": -0.03601598662579287,
+              "component_bootstrap_95_ci": [
+                -0.07543851783154057,
+                0.001987060597517291
+              ]
+            },
+            "common_bucket_loss_bits": {
+              "difference": -0.26265760091973156,
+              "component_bootstrap_95_ci": [
+                -0.35112627247394834,
+                -0.18242751493662038
+              ]
+            },
+            "expected_calibration_error": {
+              "difference": -0.011608692113255426,
+              "component_bootstrap_95_ci": [
+                -0.03263258480607809,
+                0.015046384369550931
+              ]
+            }
+          }
+        },
+        "frequency/1": {
+          "slots": 205,
+          "groups_with_queries": 191,
+          "metrics": {
+            "top1": {
+              "difference": 0.0,
+              "component_bootstrap_95_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "top5": {
+              "difference": 0.0,
+              "component_bootstrap_95_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "top10": {
+              "difference": 0.0,
+              "component_bootstrap_95_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "bucket_loss_bits": {
+              "difference": -0.26183074222650154,
+              "component_bootstrap_95_ci": [
+                -0.43268884994625106,
+                -0.09874165384749083
+              ]
+            },
+            "common_bucket_loss_bits": {
+              "difference": -8.992218761761238,
+              "component_bootstrap_95_ci": [
+                -9.108735463344134,
+                -8.873210911378093
+              ]
+            },
+            "expected_calibration_error": {
+              "difference": -0.011673972798372012,
+              "component_bootstrap_95_ci": [
+                -0.022632026843335002,
+                0.00038934733559532433
+              ]
+            }
+          }
+        },
+        "frequency/2-4": {
+          "slots": 412,
+          "groups_with_queries": 357,
+          "metrics": {
+            "top1": {
+              "difference": 0.0,
+              "component_bootstrap_95_ci": [
+                -0.007282441392375089,
+                0.007159904534606206
+              ]
+            },
+            "top5": {
+              "difference": 0.007281553398058253,
+              "component_bootstrap_95_ci": [
+                -0.007317073170731708,
+                0.021336992840095444
+              ]
+            },
+            "top10": {
+              "difference": 0.0024271844660194173,
+              "component_bootstrap_95_ci": [
+                -0.012315270935960592,
+                0.016908212560386472
+              ]
+            },
+            "bucket_loss_bits": {
+              "difference": -0.13327208134024135,
+              "component_bootstrap_95_ci": [
+                -0.24279965953558946,
+                -0.038326387531129616
+              ]
+            },
+            "common_bucket_loss_bits": {
+              "difference": -1.1106356644030233,
+              "component_bootstrap_95_ci": [
+                -1.4434761810614951,
+                -0.7956963475520267
+              ]
+            },
+            "expected_calibration_error": {
+              "difference": -0.009526687215083207,
+              "component_bootstrap_95_ci": [
+                -0.02000572432750027,
+                0.0012604812833071945
+              ]
+            }
+          }
+        },
+        "frequency/5-19": {
+          "slots": 991,
+          "groups_with_queries": 717,
+          "metrics": {
+            "top1": {
+              "difference": 0.0030272452068617556,
+              "component_bootstrap_95_ci": [
+                -0.008024475436359329,
+                0.013930602563391221
+              ]
+            },
+            "top5": {
+              "difference": 0.007063572149344097,
+              "component_bootstrap_95_ci": [
+                -0.00646551724137931,
+                0.020664945244862336
+              ]
+            },
+            "top10": {
+              "difference": 0.017154389505549948,
+              "component_bootstrap_95_ci": [
+                0.004214082249037374,
+                0.031182851586077392
+              ]
+            },
+            "bucket_loss_bits": {
+              "difference": -0.09311762713421025,
+              "component_bootstrap_95_ci": [
+                -0.1705740111853625,
+                -0.01831036697297761
+              ]
+            },
+            "common_bucket_loss_bits": {
+              "difference": -0.09311762713421025,
+              "component_bootstrap_95_ci": [
+                -0.1705740111853625,
+                -0.01831036697297761
+              ]
+            },
+            "expected_calibration_error": {
+              "difference": -0.01660299318213121,
+              "component_bootstrap_95_ci": [
+                -0.02757897563332049,
+                -0.005477553046080813
+              ]
+            }
+          }
+        },
+        "frequency/20+": {
+          "slots": 6401,
+          "groups_with_queries": 1517,
+          "metrics": {
+            "top1": {
+              "difference": -0.0018747070770192159,
+              "component_bootstrap_95_ci": [
+                -0.006620887309902404,
+                0.0028088033597836026
+              ]
+            },
+            "top5": {
+              "difference": 0.007498828308076863,
+              "component_bootstrap_95_ci": [
+                0.0029715009758102813,
+                0.01221972990841559
+              ]
+            },
+            "top10": {
+              "difference": 0.003436962974535229,
+              "component_bootstrap_95_ci": [
+                -0.0007753320523183765,
+                0.007805548852533169
+              ]
+            },
+            "bucket_loss_bits": {
+              "difference": -0.0002439542652720084,
+              "component_bootstrap_95_ci": [
+                -0.018321161437362354,
+                0.01774594452748382
+              ]
+            },
+            "common_bucket_loss_bits": {
+              "difference": -0.0002439542652720084,
+              "component_bootstrap_95_ci": [
+                -0.018321161437362354,
+                0.01774594452748382
+              ]
+            },
+            "expected_calibration_error": {
+              "difference": -0.001235994536488063,
+              "component_bootstrap_95_ci": [
+                -0.01030405269686522,
+                0.008848033162835698
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

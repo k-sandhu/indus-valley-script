@@ -1,0 +1,287 @@
+{
+  "status": "Frozen evaluation",
+  "created_date": "2026-10-07",
+  "selection_status": "Exploratory carry-forward recipe selected using reused-benchmark inner results",
+  "chosen": {
+    "family": "ensemble",
+    "extra": true,
+    "pooled_inner_bits": 4.5239502898033335
+  },
+  "candidate_inner_losses": [
+    {
+      "family": "classical",
+      "extra": false,
+      "pooled_inner_bits": 4.743059291098381
+    },
+    {
+      "family": "gru",
+      "extra": false,
+      "pooled_inner_bits": 4.811001404042975
+    },
+    {
+      "family": "transformer",
+      "extra": false,
+      "pooled_inner_bits": 5.3636778637677
+    },
+    {
+      "family": "metadata",
+      "extra": false,
+      "pooled_inner_bits": 4.823383313496288
+    },
+    {
+      "family": "ensemble",
+      "extra": false,
+      "pooled_inner_bits": 4.58070745823964
+    },
+    {
+      "family": "classical",
+      "extra": true,
+      "pooled_inner_bits": 4.717998889651264
+    },
+    {
+      "family": "gru",
+      "extra": true,
+      "pooled_inner_bits": 4.763605171034243
+    },
+    {
+      "family": "transformer",
+      "extra": true,
+      "pooled_inner_bits": 5.221171734256672
+    },
+    {
+      "family": "metadata",
+      "extra": true,
+      "pooled_inner_bits": 4.7675057161971415
+    },
+    {
+      "family": "ensemble",
+      "extra": true,
+      "pooled_inner_bits": 4.5239502898033335
+    }
+  ],
+  "recipe": {
+    "classical_config": {
+      "discount_scale": 1.0,
+      "order": 3
+    },
+    "ngram_weight": 0.5,
+    "neural_config": {
+      "family": "gru",
+      "layers": 1,
+      "width": 64
+    },
+    "epochs": {
+      "20261006": 36,
+      "20261007": 35,
+      "20261008": 38
+    },
+    "seeds": [
+      20261006,
+      20261007,
+      20261008
+    ]
+  },
+  "training_texts": 2233,
+  "training_tokens": 9744,
+  "extra_detail": {
+    "candidate_faces": 1533,
+    "excluded_connected_faces": 0,
+    "retained_faces": 1533,
+    "retained_face_tokens": 3304,
+    "added_texts": 637,
+    "added_tokens": 1735,
+    "added_short_texts": 464,
+    "added_multiline_texts": 75,
+    "added_directions": {
+      "L/R": 90,
+      "NR": 112,
+      "-": 98,
+      "R/L": 312,
+      "SYM": 6,
+      "BUS": 8,
+      "T/B": 11
+    },
+    "remaining_connected_to_held": 0
+  },
+  "files": [
+    {
+      "path": "data/raw/2026-10-06-modern-restoration/frozen-model/counts.pkl",
+      "sha256": "4da1eee9f559e5c470a9305ed8edff64036857b89b32764f6f9195e3a2a1b41b"
+    },
+    {
+      "path": "data/raw/2026-10-06-modern-restoration/frozen-model/seed-20261006.pt",
+      "sha256": "b275439f5145603941f0162bd98302794056a4332a159c0bcde84f1800b45393"
+    },
+    {
+      "path": "data/raw/2026-10-06-modern-restoration/frozen-model/seed-20261007.pt",
+      "sha256": "6e1ca31d6ec88c74aeb364a312fe618bf2bf4c300f057320497e9f6f40465ce5"
+    },
+    {
+      "path": "data/raw/2026-10-06-modern-restoration/frozen-model/seed-20261008.pt",
+      "sha256": "b92d2e43af58e8a86550d026dc380bc91f803d37baa8de3a7d130fa54dc8047b"
+    }
+  ],
+  "code_sha256": {
+    "data.py": "a3017e154a1d9e0df83bd33f7182778f62bc3a93087460b2740640624c9da774",
+    "models.py": "51e39ada1648b02771ce0207bac22a091f9ba709e7c615b36813a8397af032e5",
+    "run.py": "a1c9e9a8a696ab196c01ef37ce353b35122a4d6f56176bceb353189d31026661"
+  },
+  "protocol_sha256": "4076b9c424e948866cad441ebcbee16c149995e823caf8567076711231773d1c",
+  "benchmark_audit": {
+    "status": "Verified computation",
+    "correspondence": {
+      "verified_queries_per_model": 8009,
+      "texts": 1596,
+      "components": 1526,
+      "fold_token_loads": [
+        1603,
+        1600,
+        1602,
+        1602,
+        1602
+      ],
+      "matched_fields": [
+        "record_id",
+        "slot",
+        "actual",
+        "length",
+        "artifact",
+        "group",
+        "fold"
+      ],
+      "saved_metrics_reproduced": true
+    },
+    "additional_saved_models_checked": [
+      "Markov1",
+      "Markov2"
+    ],
+    "benchmark_exclusions": {
+      "too_short": 823,
+      "duplicate_sequence": 511
+    },
+    "input_sha256": "9e539daef4d5a7efbe3c5f34b73e14058eec1c5e888c749bc2eafb0f08084ba8",
+    "observed_sha256": "1220f5591a42abe7c6696ac014aba90e7c49fdce6b0ccba0b85bb45f950c30db",
+    "saved_prediction_sha256": {
+      "Markov1": "2930c6ebf3ce33223f69de24d0f724ce5d4744e804a0853a3e2aae0671d7b95f",
+      "Markov2": "e39e01cbc62735220c78d9beb843da263748b3af26b3f573dd46844f71e9a118"
+    },
+    "observed_faces": 5680,
+    "extra_candidate_faces": 1533,
+    "extra_candidate_tokens": 3304,
+    "candidate_exclusions": {
+      "incomplete_or_unknown": 2010,
+      "benchmark_string": 2137
+    },
+    "full_graph_bridged_benchmark_sets": 6,
+    "full_graph_bridged_benchmark_components": 169,
+    "full_graph_max_benchmark_components": 157,
+    "outer_extra": [
+      {
+        "fold": 0,
+        "candidate_faces": 1533,
+        "excluded_connected_faces": 807,
+        "retained_faces": 726,
+        "retained_face_tokens": 1777,
+        "added_texts": 504,
+        "added_tokens": 1419,
+        "added_short_texts": 369,
+        "added_multiline_texts": 72,
+        "added_directions": {
+          "L/R": 58,
+          "-": 88,
+          "NR": 85,
+          "R/L": 251,
+          "SYM": 5,
+          "BUS": 8,
+          "T/B": 9
+        },
+        "remaining_connected_to_held": 0
+      },
+      {
+        "fold": 1,
+        "candidate_faces": 1533,
+        "excluded_connected_faces": 828,
+        "retained_faces": 705,
+        "retained_face_tokens": 1760,
+        "added_texts": 503,
+        "added_tokens": 1424,
+        "added_short_texts": 367,
+        "added_multiline_texts": 73,
+        "added_directions": {
+          "L/R": 57,
+          "-": 88,
+          "NR": 81,
+          "R/L": 253,
+          "SYM": 5,
+          "BUS": 8,
+          "T/B": 11
+        },
+        "remaining_connected_to_held": 0
+      },
+      {
+        "fold": 2,
+        "candidate_faces": 1533,
+        "excluded_connected_faces": 818,
+        "retained_faces": 715,
+        "retained_face_tokens": 1767,
+        "added_texts": 506,
+        "added_tokens": 1427,
+        "added_short_texts": 371,
+        "added_multiline_texts": 73,
+        "added_directions": {
+          "L/R": 56,
+          "-": 87,
+          "NR": 83,
+          "R/L": 256,
+          "SYM": 5,
+          "BUS": 8,
+          "T/B": 11
+        },
+        "remaining_connected_to_held": 0
+      },
+      {
+        "fold": 3,
+        "candidate_faces": 1533,
+        "excluded_connected_faces": 824,
+        "retained_faces": 709,
+        "retained_face_tokens": 1763,
+        "added_texts": 501,
+        "added_tokens": 1419,
+        "added_short_texts": 365,
+        "added_multiline_texts": 73,
+        "added_directions": {
+          "L/R": 56,
+          "-": 88,
+          "NR": 82,
+          "R/L": 251,
+          "SYM": 5,
+          "BUS": 8,
+          "T/B": 11
+        },
+        "remaining_connected_to_held": 0
+      },
+      {
+        "fold": 4,
+        "candidate_faces": 1533,
+        "excluded_connected_faces": 820,
+        "retained_faces": 713,
+        "retained_face_tokens": 1763,
+        "added_texts": 502,
+        "added_tokens": 1419,
+        "added_short_texts": 367,
+        "added_multiline_texts": 73,
+        "added_directions": {
+          "L/R": 56,
+          "-": 88,
+          "NR": 83,
+          "R/L": 252,
+          "SYM": 4,
+          "BUS": 8,
+          "T/B": 11
+        },
+        "remaining_connected_to_held": 0
+      }
+    ]
+  },
+  "future_rule": "Load these counts/weights and recipe unchanged on a newly acquired population. No tuning against fresh targets."
+}

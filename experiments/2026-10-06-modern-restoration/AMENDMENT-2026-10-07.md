@@ -1,0 +1,7 @@
+# Auxiliary probability comparison, 7 October 2026
+
+The original [protocol](PROTOCOL.md) remains unchanged. After the first outer n-gram fold was available, the aggregation code gained a second loss calculation for the additional-text comparison. It sums the probability of newly supported codes into the original outer-training UNKNOWN bucket. This gives both regimes the same scored target events at full training size. The ordinary training-vocabulary bucket loss remains the primary selection criterion and reported outcome. No configuration, seed, fit duration or selection rule changed. All affected comparisons remain Exploratory.
+
+Learning-curve subsets can omit codes that exist in the full outer training set. Their UNKNOWN buckets cannot be split back into those codes. Curve loss therefore retains changes in target pooling; accuracy and OOV rates supply the data-size diagnostic. The curve models still use training-only vocabularies as specified before fitting.
+
+The broader-export graph audit found links among existing benchmark components, including 144–159 benchmark training strings per outer fold that connect to its test population through other observed faces. The experiment preserves the required saved folds and excludes every connected additional face. [Independent reachability audit](extra-graph-audit.json), `outer[*].benchmark_training_texts_connected_under_full_export_graph`, records the limitation. A future population test should construct its dependency graph from the complete observational register before allocating folds.
