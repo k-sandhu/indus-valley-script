@@ -69,6 +69,16 @@ Inspect a frozen endpoint before deciding to rerun it. New executions must use a
 
 The original full import was checked again during the continuation. Its [preserved report](knowledge/provenance/full-import-verification-2026-10-02-0924.json) covers 16,284 imported files and 1,568 selected historical evidence files, with no hash errors. Routine link/registry verification writes a separate mutable report.
 
+## Hosted outputs
+
+Package A's per-query predictions, inner-fold arrays and model checkpoints (`data/raw/2026-10-06-modern-restoration/main/` and `frozen-model/`, 1,034 files, 3.09 GB) were moved on 7 October 2026 to the private Hugging Face dataset `ksaw008/indus-research-data` because the local disk was full. Every file was verified against the Hub by size and checksum before the local copy was removed; [hf-hosting-manifest.json](experiments/2026-10-06-research-program/hf-hosting-manifest.json) lists each path and SHA-256. Restore them before rerunning package A's reviews or replays, after logging in with `python -m huggingface_hub.cli.hf auth login`:
+
+```powershell
+python experiments/2026-10-06-research-program/hf_host.py restore --repo ksaw008/indus-research-data
+```
+
+Third-party scans, captures and corpora were not uploaded and remain local.
+
 ## Portability limits
 
 Most analysis paths resolve from the script's repository root. Some historical source-fetch, rendering or review helpers contain the original host's absolute paths; those are preserved as historical records and may require explicit path edits or copied input locations. Code snapshots remain unmodified so their recorded hashes retain meaning. Some acquisition requests failed historically and cannot be guaranteed to work against current servers.

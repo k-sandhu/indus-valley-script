@@ -37,6 +37,10 @@ The coordinator read Frenez's lecture captions after package F could not obtain 
 
 The first census passes were thin: B1 left nearly every metadata field unassessed and found object counts for four sites, and B2 captured one direct catalogue count. B2 was resumed with named museum APIs and search routes. B1 was split into four regional batches with a per-site checklist ([B1-deep-base.md](prompts/B1-deep-base.md)): Pakistan and Afghanistan, Gujarat with Kutch and Maharashtra, and north India on GPT-6-Luna, and finds outside South Asia on GPT-6.1-Sol. The coordinator's [local-site-coverage.json](local-site-coverage.json) gives each batch the local corpus figures per site, including distinct CISI identifiers against the highest CISI number recorded; Dholavira, for example, has 238 local faces of which 2 carry CISI identifiers.
 
+## Hosted data
+
+On 7 October 2026 the local disk was nearly full. At the user's request, [hf_host.py](hf_host.py) moved package A's predictions and frozen model (1,034 files, 3.09 GB, project-generated) to the private Hugging Face dataset `ksaw008/indus-research-data`, verified all files against the Hub, and then removed the local copies; [hf-hosting-manifest.json](hf-hosting-manifest.json) records every path and checksum, and `hf_host.py restore` brings them back. Third-party payloads stay local because their reuse rights are unresolved.
+
 ## Status
 
 All packages finished, were reviewed by Claude Sonnet 5.5 and had their required fixes applied in the same Codex session. Results are Exploratory unless a package states otherwise. The answers to the user's questions are collected in [REPORT.md](REPORT.md); the shared registry entries were added by [integrate_registry.py](integrate_registry.py).
