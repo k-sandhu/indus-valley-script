@@ -31,8 +31,20 @@ At the user's request, the coordinator commits and pushes the work at milestones
 
 A Sonnet 5.5 reviewer reads each finished package, reruns its scripts or verification where feasible, checks reported numbers against the saved outputs, samples cited sources, and checks scope and wording against the repository rules. Each review is saved as `REVIEW.md` in the package directory. Packages and reviews are summarized below as they finish.
 
+## Additional passes
+
+The coordinator read Frenez's lecture captions after package F could not obtain a transcript; [frenez-talk-check.md](frenez-talk-check.md) confirms the user's summary at each timestamp and lists further testable statements. Follow-up instructions in [prompts/followups/](prompts/followups/) send those statements to packages D1, D2 and E when their first passes finish, using [resume.sh](resume.sh) to continue each Codex session in the same sandbox.
+
+The first census passes were thin: B1 left nearly every metadata field unassessed and found object counts for four sites, and B2 captured one direct catalogue count. B2 was resumed with named museum APIs and search routes. B1 was split into four regional batches with a per-site checklist ([B1-deep-base.md](prompts/B1-deep-base.md)): Pakistan and Afghanistan, Gujarat with Kutch and Maharashtra, and north India on GPT-6-Luna, and finds outside South Asia on GPT-6.1-Sol. The coordinator's [local-site-coverage.json](local-site-coverage.json) gives each batch the local corpus figures per site, including distinct CISI identifiers against the highest CISI number recorded; Dholavira, for example, has 238 local faces of which 2 carry CISI identifiers.
+
 ## Status
 
 | Package | Run | Review | Main result |
 |---|---|---|---|
-| A–H | Started 2026-10-07 03:56 UTC | Pending | Pending |
+| A, D1, D2, E, G | Running since 2026-10-07 03:56 UTC | Pending | Pending |
+| B1 first pass | Finished 04:2x UTC | Superseded by regional batches | 89 site labels; counts for 4 sites |
+| B1 batches a–d | Started after B1 | Pending | Pending |
+| B2 | First pass finished 04:25 UTC; depth pass running | Pending | 37 collections, 15 datasets; one direct catalogue count |
+| C | Finished 04:20 UTC | Sonnet review running | 23 candidates across 112 registry entries |
+| F | Finished 04:05 UTC | Sonnet review running | 33 recommendations from 31 sources |
+| H | Finished 04:20 UTC | Sonnet review running | Coarse matches: Indus subset 30/42, Ogham 24/42, Tifinagh 32/42 |
