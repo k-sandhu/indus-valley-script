@@ -44,10 +44,14 @@ def scan_text(text):
         line = mask_urls(raw_line)
         for m in MOJIBAKE.finditer(line):
             hits["mojibake"].append({"line": lineno, "match": m.group(0), "context": raw_line[max(0, m.start() - 30):m.end() + 30]})
+        seen_positions = set()
         for name, pat in QMARK_PATTERNS:
             for m in pat.finditer(line):
+                if (lineno, m.start()) in seen_positions:   # a "?" matching two patterns counts once
+                    continue
+                seen_positions.add((lineno, m.start()))
                 hits[name].append({"line": lineno, "context": raw_line[max(0, m.start() - 30):m.end() + 30]})
-        if "�" in line:
+        if "\ufffd" in line:
             hits["replacement_char"].append({"line": lineno, "context": raw_line[:80]})
     return hits
 
