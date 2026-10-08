@@ -1,0 +1,600 @@
+{
+ "yaml_keys": [
+  "configs",
+  "license",
+  "pretty_name",
+  "size_categories",
+  "tags",
+  "task_categories"
+ ],
+ "n_configs_yaml": 19,
+ "configs": {
+  "chart_reference": {
+   "data_files": [
+    {
+     "split": "train",
+     "path": "data/chart_reference.parquet"
+    }
+   ],
+   "paths_exist": true,
+   "splits": {
+    "train": 687
+   },
+   "expected_splits": [
+    "train"
+   ],
+   "card_rows": 687,
+   "rows_match_card": true,
+   "features": {
+    "cell_id": "Value('string')",
+    "pdf_page": "Value('int64')",
+    "column": "Value('int64')",
+    "row": "Value('int64')",
+    "rank": "Value('int64')",
+    "code": "Value('int64')",
+    "alternatives": "List(Value('int64'))",
+    "rank_alternatives": "List(Value('int64'))",
+    "numeric_confidence": "Value('string')",
+    "dashed_auxiliary": "Value('bool')",
+    "source_crop_pdf_points": "List(Value('float64'))",
+    "image_path": "Value('string')",
+    "annotation_method": "Value('string')",
+    "source_url": "Value('string')",
+    "source_pdf_sha256": "Value('string')",
+    "status": "Value('string')"
+   }
+  },
+  "benchmark_rows_v1": {
+   "data_files": [
+    {
+     "split": "test",
+     "path": "data/benchmark_rows_v1.parquet"
+    }
+   ],
+   "paths_exist": true,
+   "splits": {
+    "test": 60
+   },
+   "expected_splits": [
+    "test"
+   ],
+   "card_rows": 60,
+   "rows_match_card": true,
+   "features": {
+    "sample_index": "Value('int64')",
+    "occurrence_key": "Value('string')",
+    "pdf_page": "Value('int64')",
+    "section": "Value('string')",
+    "context_image_path": "Value('string')",
+    "exact_image_path": "Value('string')",
+    "locator_json": "Value('string')",
+    "reference_json": "Value('string')",
+    "prediction_json": "Value('string')",
+    "reference_kind": "Value('string')",
+    "original_ocr_locator_exposed": "Value('bool')",
+    "status": "Value('string')"
+   }
+  },
+  "benchmark_rows_v2": {
+   "data_files": [
+    {
+     "split": "test",
+     "path": "data/benchmark_rows_v2.parquet"
+    }
+   ],
+   "paths_exist": true,
+   "splits": {
+    "test": 80
+   },
+   "expected_splits": [
+    "test"
+   ],
+   "card_rows": 80,
+   "rows_match_card": true,
+   "features": {
+    "sample_index": "Value('int64')",
+    "occurrence_key": "Value('string')",
+    "pdf_page": "Value('int64')",
+    "section": "Value('string')",
+    "context_image_path": "Value('string')",
+    "exact_image_path": "Value('string')",
+    "locator_json": "Value('string')",
+    "reference_json": "Value('string')",
+    "prediction_json": "Value('string')",
+    "reference_kind": "Value('string')",
+    "original_ocr_locator_exposed": "Value('bool')",
+    "status": "Value('string')"
+   }
+  },
+  "benchmark_readings": {
+   "data_files": [
+    {
+     "split": "test",
+     "path": "data/benchmark_readings.parquet"
+    }
+   ],
+   "paths_exist": true,
+   "splits": {
+    "test": 306
+   },
+   "expected_splits": [
+    "test"
+   ],
+   "card_rows": 306,
+   "rows_match_card": true,
+   "features": {
+    "benchmark": "Value('string')",
+    "sample_index": "Value('int64')",
+    "reader": "Value('string')",
+    "kind": "Value('string')",
+    "reading_json": "Value('string')",
+    "source_file": "Value('string')",
+    "status": "Value('string')"
+   }
+  },
+  "benchmark_chart_cards": {
+   "data_files": [
+    {
+     "split": "train",
+     "path": "data/benchmark_chart_cards.parquet"
+    }
+   ],
+   "paths_exist": true,
+   "splits": {
+    "train": 21
+   },
+   "expected_splits": [
+    "train"
+   ],
+   "card_rows": 21,
+   "rows_match_card": true,
+   "features": {
+    "benchmark": "Value('string')",
+    "card_id": "Value('string')",
+    "image_path": "Value('string')",
+    "source_file": "Value('string')"
+   }
+  },
+  "benchmark_count_pages": {
+   "data_files": [
+    {
+     "split": "train",
+     "path": "data/benchmark_count_pages.parquet"
+    }
+   ],
+   "paths_exist": true,
+   "splits": {
+    "train": 21
+   },
+   "expected_splits": [
+    "train"
+   ],
+   "card_rows": 21,
+   "rows_match_card": true,
+   "features": {
+    "pdf_page": "Value('int64')",
+    "frame": "Value('string')",
+    "image_paths": "List(Value('string'))",
+    "reference_json": "Value('string')",
+    "detections_json": "Value('string')",
+    "status": "Value('string')"
+   }
+  },
+  "benchmark_count_readings": {
+   "data_files": [
+    {
+     "split": "train",
+     "path": "data/benchmark_count_readings.parquet"
+    }
+   ],
+   "paths_exist": true,
+   "splits": {
+    "train": 42
+   },
+   "expected_splits": [
+    "train"
+   ],
+   "card_rows": 42,
+   "rows_match_card": true,
+   "features": {
+    "pdf_page": "Value('int64')",
+    "reader": "Value('string')",
+    "reading_json": "Value('string')",
+    "source_file": "Value('string')"
+   }
+  },
+  "evidence_sites": {
+   "data_files": [
+    {
+     "split": "train",
+     "path": "data/evidence_sites.parquet"
+    }
+   ],
+   "paths_exist": true,
+   "splits": {
+    "train": 115
+   },
+   "expected_splits": [
+    "train"
+   ],
+   "card_rows": 115,
+   "rows_match_card": true,
+   "features": {
+    "site": "Value('string')",
+    "assigned_region": "Value('string')",
+    "local_faces": "Value('int64')",
+    "local_families": "Value('int64')",
+    "local_cisi_identifiers": "Value('int64')",
+    "IM77_main_selected_objects": "Value('int64')",
+    "IM77_count_status": "Value('string')",
+    "ICIT_object_count": "Value('int64')",
+    "worldwide_missing_objects": "Value('int64')",
+    "source_locator": "Value('string')",
+    "status": "Value('string')"
+   }
+  },
+  "evidence_publications": {
+   "data_files": [
+    {
+     "split": "train",
+     "path": "data/evidence_publications.parquet"
+    }
+   ],
+   "paths_exist": true,
+   "splits": {
+    "train": 17
+   },
+   "expected_splits": [
+    "train"
+   ],
+   "card_rows": 17,
+   "rows_match_card": true,
+   "features": {
+    "publication_id": "Value('string')",
+    "title": "Value('string')",
+    "authors_editors": "Value('string')",
+    "year": "Value('int64')",
+    "venue": "Value('string')",
+    "url": "Value('string')",
+    "access_record": "Value('string')",
+    "source_locator": "Value('string')",
+    "status": "Value('string')"
+   }
+  },
+  "evidence_collections": {
+   "data_files": [
+    {
+     "split": "train",
+     "path": "data/evidence_collections.parquet"
+    }
+   ],
+   "paths_exist": true,
+   "splits": {
+    "train": 37
+   },
+   "expected_splits": [
+    "train"
+   ],
+   "card_rows": 37,
+   "rows_match_card": true,
+   "features": {
+    "institution": "Value('string')",
+    "region": "Value('string')",
+    "confirmed_record_minimum": "Value('int64')",
+    "count_basis": "Value('string')",
+    "record_fields_json": "Value('string')",
+    "source_ids": "List(Value('string'))",
+    "query_date": "Value('string')",
+    "source_locator": "Value('string')",
+    "status": "Value('string')"
+   }
+  },
+  "evidence_datasets": {
+   "data_files": [
+    {
+     "split": "train",
+     "path": "data/evidence_datasets.parquet"
+    }
+   ],
+   "paths_exist": true,
+   "splits": {
+    "train": 15
+   },
+   "expected_splits": [
+    "train"
+   ],
+   "card_rows": 15,
+   "rows_match_card": true,
+   "features": {
+    "name": "Value('string')",
+    "size_json": "Value('string')",
+    "count_basis": "Value('string')",
+    "reported_reuse_terms": "Value('string')",
+    "version_basis": "Value('string')",
+    "source_ids": "List(Value('string'))",
+    "source_locator": "Value('string')",
+    "status": "Value('string')"
+   }
+  },
+  "evidence_catalogue_coverage": {
+   "data_files": [
+    {
+     "split": "train",
+     "path": "data/evidence_catalogue_coverage.parquet"
+    }
+   ],
+   "paths_exist": true,
+   "splits": {
+    "train": 38
+   },
+   "expected_splits": [
+    "train"
+   ],
+   "card_rows": 38,
+   "rows_match_card": true,
+   "features": {
+    "site": "Value('string')",
+    "batch": "Value('string')",
+    "edition": "Value('string')",
+    "prefix": "Value('string')",
+    "first": "Value('int64')",
+    "last": "Value('int64')",
+    "pages": "Value('string')",
+    "input_pointer": "Value('string')",
+    "matching_prefix": "Value('string')",
+    "prefix_basis": "Value('string')",
+    "printed_number_slots": "Value('int64')",
+    "exclusions": "Value('string')",
+    "catalogue_entries": "Value('int64')",
+    "local_matching_entries": "Value('int64')",
+    "local_absent_entry_keys": "Value('int64')",
+    "fraction": "Value('float64')",
+    "scope": "Value('string')",
+    "status": "Value('string')"
+   }
+  },
+  "evidence_catalogue_sections": {
+   "data_files": [
+    {
+     "split": "train",
+     "path": "data/evidence_catalogue_sections.parquet"
+    }
+   ],
+   "paths_exist": true,
+   "splits": {
+    "train": 19
+   },
+   "expected_splits": [
+    "train"
+   ],
+   "card_rows": 19,
+   "rows_match_card": true,
+   "features": {
+    "site": "Value('string')",
+    "range": "Value('string')",
+    "entries": "Value('string')",
+    "matching_keys": "Value('string')",
+    "absent_keys": "Value('string')",
+    "absent_graffiti_or_pottery_sections": "Value('string')",
+    "absent_seal_impression_tablet_other_sections": "Value('string')",
+    "printed_pages": "Value('string')",
+    "classification_basis": "Value('string')",
+    "evidence": "Value('string')",
+    "status": "Value('string')"
+   }
+  },
+  "evidence_field_completeness": {
+   "data_files": [
+    {
+     "split": "train",
+     "path": "data/evidence_field_completeness.parquet"
+    }
+   ],
+   "paths_exist": true,
+   "splits": {
+    "train": 140
+   },
+   "expected_splits": [
+    "train"
+   ],
+   "card_rows": 140,
+   "rows_match_card": true,
+   "features": {
+    "index": "Value('string')",
+    "unit": "Value('string')",
+    "denominator": "Value('int64')",
+    "field": "Value('string')",
+    "present": "Value('int64')",
+    "missing": "Value('int64')",
+    "percent": "Value('float64')",
+    "measurement": "Value('string')",
+    "basis": "Value('string')",
+    "evidence": "Value('string')",
+    "status": "Value('string')"
+   }
+  },
+  "evidence_museum_joins": {
+   "data_files": [
+    {
+     "split": "train",
+     "path": "data/evidence_museum_joins.parquet"
+    }
+   ],
+   "paths_exist": true,
+   "splits": {
+    "train": 68
+   },
+   "expected_splits": [
+    "train"
+   ],
+   "card_rows": 68,
+   "rows_match_card": true,
+   "features": {
+    "institution": "Value('string')",
+    "museum_record_id": "Value('string')",
+    "museum_accession": "Value('string')",
+    "museum_url": "Value('string')",
+    "cisi": "Value('string')",
+    "join_method": "Value('string')",
+    "shared_identifier": "Value('string')",
+    "join_evidence": "Value('string')",
+    "status": "Value('string')",
+    "source_locator": "Value('string')"
+   }
+  },
+  "evidence_sources": {
+   "data_files": [
+    {
+     "split": "train",
+     "path": "data/evidence_sources.parquet"
+    }
+   ],
+   "paths_exist": true,
+   "splits": {
+    "train": 111
+   },
+   "expected_splits": [
+    "train"
+   ],
+   "card_rows": 111,
+   "rows_match_card": true,
+   "features": {
+    "source_id": "Value('string')",
+    "title": "Value('string')",
+    "authors": "Value('string')",
+    "year": "Value('string')",
+    "venue": "Value('string')",
+    "url": "Value('string')",
+    "access_record": "Value('string')",
+    "opened_by_packager": "Value('bool')",
+    "source_locator": "Value('string')"
+   }
+  },
+  "weight_mass_bands": {
+   "data_files": [
+    {
+     "split": "train",
+     "path": "data/weight_mass_bands.parquet"
+    }
+   ],
+   "paths_exist": true,
+   "splits": {
+    "train": 4
+   },
+   "expected_splits": [
+    "train"
+   ],
+   "card_rows": 4,
+   "rows_match_card": true,
+   "features": {
+    "group": "Value('string')",
+    "n": "Value('int64')",
+    "unit_g": "Value('float64')",
+    "signal_cv_percent": "Value('float64')",
+    "signal_probability": "Value('float64')",
+    "within_3_percent_n": "Value('int64')",
+    "unit_ci95_low_g": "Value('float64')",
+    "unit_ci95_high_g": "Value('float64')",
+    "method_path": "Value('string')",
+    "source_locator": "Value('string')",
+    "status": "Value('string')"
+   }
+  },
+  "weight_chance_controls": {
+   "data_files": [
+    {
+     "split": "train",
+     "path": "data/weight_chance_controls.parquet"
+    }
+   ],
+   "paths_exist": true,
+   "splits": {
+    "train": 9
+   },
+   "expected_splits": [
+    "train"
+   ],
+   "card_rows": 9,
+   "rows_match_card": true,
+   "features": {
+    "frame": "Value('string')",
+    "null": "Value('string')",
+    "draws": "Value('int64')",
+    "observed_geometric_n": "Value('int64')",
+    "observed_close_n": "Value('int64')",
+    "geometric_mean": "Value('float64')",
+    "close_mean": "Value('float64')",
+    "geometric_simulation_interval95": "Value('string')",
+    "close_simulation_interval95": "Value('string')",
+    "fraction_ge_observed_geometric": "Value('float64')",
+    "fraction_ge_observed_close": "Value('float64')",
+    "method_path": "Value('string')",
+    "source_locator": "Value('string')",
+    "status": "Value('string')"
+   }
+  },
+  "image_assets": {
+   "data_files": [
+    {
+     "split": "train",
+     "path": "data/image_assets.parquet"
+    }
+   ],
+   "paths_exist": true,
+   "splits": {
+    "train": 949
+   },
+   "expected_splits": [
+    "train"
+   ],
+   "card_rows": 949,
+   "rows_match_card": true,
+   "features": {
+    "image_path": "Value('string')",
+    "component": "Value('string')",
+    "role": "Value('string')",
+    "pdf_page": "Value('int64')",
+    "source_path": "Value('string')",
+    "sha256": "Value('string')",
+    "bytes": "Value('int64')",
+    "license": "Value('string')",
+    "source_url": "Value('string')"
+   }
+  }
+ },
+ "config_names_from_library": [
+  "chart_reference",
+  "benchmark_rows_v1",
+  "benchmark_rows_v2",
+  "benchmark_readings",
+  "benchmark_chart_cards",
+  "benchmark_count_pages",
+  "benchmark_count_readings",
+  "evidence_sites",
+  "evidence_publications",
+  "evidence_collections",
+  "evidence_datasets",
+  "evidence_catalogue_coverage",
+  "evidence_catalogue_sections",
+  "evidence_field_completeness",
+  "evidence_museum_joins",
+  "evidence_sources",
+  "weight_mass_bands",
+  "weight_chance_controls",
+  "image_assets"
+ ],
+ "names_match_yaml": true,
+ "image_paths_opened_by_config": {
+  "chart_reference": 687,
+  "benchmark_rows_v1": 60,
+  "benchmark_rows_v2": 160,
+  "benchmark_chart_cards": 21,
+  "benchmark_count_pages": 21,
+  "image_assets": 949
+ },
+ "image_paths_checked": 1898,
+ "image_failures": [],
+ "png_files_on_disk": 949,
+ "image_assets_rows": 949,
+ "on_disk_equals_image_assets": true
+}
