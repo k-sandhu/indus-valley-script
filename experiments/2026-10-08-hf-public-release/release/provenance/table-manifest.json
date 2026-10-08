@@ -49,6 +49,41 @@
         "nullable": true
       },
       {
+        "name": "previous_rank",
+        "type": "int64",
+        "nullable": true
+      },
+      {
+        "name": "previous_code",
+        "type": "int64",
+        "nullable": true
+      },
+      {
+        "name": "previous_alternatives",
+        "type": "list<item: int64>",
+        "nullable": true
+      },
+      {
+        "name": "previous_rank_alternatives",
+        "type": "list<item: int64>",
+        "nullable": true
+      },
+      {
+        "name": "previous_numeric_confidence",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "changed_fields",
+        "type": "list<item: string>",
+        "nullable": true
+      },
+      {
+        "name": "change_note",
+        "type": "string",
+        "nullable": true
+      },
+      {
         "name": "dashed_auxiliary",
         "type": "bool",
         "nullable": true
@@ -65,6 +100,11 @@
       },
       {
         "name": "annotation_method",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "reference_version",
         "type": "string",
         "nullable": true
       },
@@ -90,10 +130,10 @@
       }
     ],
     "data_file": "data/chart_reference.parquet",
-    "sha256": "d84f633e27752b6805bc9c8f27c9796b1d22ca02d598c6abdd63d6a2cfec36aa",
+    "sha256": "0252d1d3d0bafa808aae5bdba3d50b4fa98cf94efce7d361fe36cd8043abe828",
     "license": "CC BY 4.0 edition content; CC0 1.0 project additions",
-    "description": "687 chart cells and 16 retained lower-code ambiguities.",
-    "logical_sha256": "36b84bdcaaad61e2d5799c90c21fc49e74f2932ad101388427841dfb94a4d53a"
+    "description": "687 reviewed chart cells: 8 code and 2 class corrections, 16 settled ambiguities; 33 medium-confidence cells.",
+    "logical_sha256": "7b9e990dbc53c3c6be72b5ca3d18fd1bd556c98bf3afa2aa4fdad07786b40ab7"
   },
   "benchmark_rows_v1": {
     "rows": 60,
@@ -145,6 +185,16 @@
         "nullable": true
       },
       {
+        "name": "reference_chart_correction_flags_json",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "prediction_chart_correction_flags_json",
+        "type": "string",
+        "nullable": true
+      },
+      {
         "name": "reference_kind",
         "type": "string",
         "nullable": true
@@ -166,10 +216,10 @@
       }
     ],
     "data_file": "data/benchmark_rows_v1.parquet",
-    "sha256": "349c6cee707a87eef08eed9523e27c8ea3cb2989a7a5253fe2c0d5600a999b0b",
+    "sha256": "b49985a4371279ebeb732028fbc4323df814da1f1cd34ac95598664ea09faf59",
     "license": "CC BY 4.0 edition content; CC0 1.0 project additions",
     "description": "60 source rows with immutable references and frozen predictions.",
-    "logical_sha256": "5b49e376b544186e9e83d0418c0c33456e47a8195f84b14e9fa7a63c38875b7e"
+    "logical_sha256": "8af5da39ae1435dc5cb049a5bb89819f2b19ca2b649f49d9f93a97804684cd34"
   },
   "benchmark_rows_v2": {
     "rows": 80,
@@ -221,6 +271,16 @@
         "nullable": true
       },
       {
+        "name": "reference_chart_correction_flags_json",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "prediction_chart_correction_flags_json",
+        "type": "string",
+        "nullable": true
+      },
+      {
         "name": "reference_kind",
         "type": "string",
         "nullable": true
@@ -247,10 +307,101 @@
       }
     ],
     "data_file": "data/benchmark_rows_v2.parquet",
-    "sha256": "708e8561e1b2374d81e15345fed4ceb32251af0e065ce26cce81b4249b3b778f",
+    "sha256": "2100dbbcbb699946f52646155c8aa2addbdfdfdde877b3f51023d72afade261b",
     "license": "CC BY 4.0 edition content; CC0 1.0 project additions",
     "description": "80 source rows with immutable references and frozen predictions.",
-    "logical_sha256": "4b1054bcca77d61f797692db49913d65d4ef0abe21c75538ead3f488bfbbd5ca"
+    "logical_sha256": "1e51d164d219af080fac9e0c2d6ff279b3c63a062ecddd936bbea4b8e6af1c46"
+  },
+  "benchmark_rows_v3": {
+    "rows": 80,
+    "split": "test",
+    "schema": [
+      {
+        "name": "sample_index",
+        "type": "int64",
+        "nullable": true
+      },
+      {
+        "name": "occurrence_key",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "pdf_page",
+        "type": "int64",
+        "nullable": true
+      },
+      {
+        "name": "section",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "context_image_path",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "exact_image_path",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "locator_json",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "reference_json",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "prediction_json",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "reference_chart_correction_flags_json",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "prediction_chart_correction_flags_json",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "reference_kind",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "original_ocr_locator_exposed",
+        "type": "bool",
+        "nullable": true
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "context_image",
+        "type": "struct<bytes: binary, path: string>",
+        "nullable": true
+      },
+      {
+        "name": "exact_image",
+        "type": "struct<bytes: binary, path: string>",
+        "nullable": true
+      }
+    ],
+    "data_file": "data/benchmark_rows_v3.parquet",
+    "sha256": "c1c3761848db9dce15176975b749a1e55b918f771f6aab763a7341c1e7bacf2a",
+    "license": "CC BY 4.0 edition content; CC0 1.0 project additions",
+    "description": "80 source rows with immutable references and frozen predictions.",
+    "logical_sha256": "b2a1b3a5bede52f88c23bee2883482e0b53298a856cd69e303c47d718b3f55a8"
   },
   "benchmark_readings": {
     "rows": 306,
@@ -282,6 +433,11 @@
         "nullable": true
       },
       {
+        "name": "chart_correction_flags_json",
+        "type": "string",
+        "nullable": true
+      },
+      {
         "name": "source_file",
         "type": "string",
         "nullable": true
@@ -293,13 +449,64 @@
       }
     ],
     "data_file": "data/benchmark_readings.parquet",
-    "sha256": "cf4c41ad9fa72f0c9f4706f6ef575ff9b515a2885a088f55abfa047fa987a5f4",
+    "sha256": "056e657ac1c5d4cee4ea82e2c3d0607a23d67ccd8e311ec7e90a74d88c9f6177",
     "license": "CC BY 4.0 edition content; CC0 1.0 project additions",
     "description": "Initial, repeated, independent and adjudicated readings; frozen endpoints remain distinct.",
-    "logical_sha256": "1aac19c12a4c4df6e97c512bc937334c44c4d1e553b8e51ff121195a0b718940"
+    "logical_sha256": "a53d5a1eb8711b404cc4a16563d38860e7aaa896483f2ea0f1f36a5067177504"
+  },
+  "benchmark_readings_v3": {
+    "rows": 240,
+    "split": "test",
+    "schema": [
+      {
+        "name": "benchmark",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "sample_index",
+        "type": "int64",
+        "nullable": true
+      },
+      {
+        "name": "reader",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "kind",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "reading_json",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "chart_correction_flags_json",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "source_file",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "data_file": "data/benchmark_readings_v3.parquet",
+    "sha256": "3f7241767a22cd2fbae07860b519fa62d8a98ecd5f818f294091a68d91e90348",
+    "license": "CC BY 4.0 edition content; CC0 1.0 project additions",
+    "description": "240 v3 readings: two independent readers and adjudication for all 80 rows.",
+    "logical_sha256": "0a7545c65bbb7d9222c0a3d9c180375899ae47e8e0114ce9e4d62d0c0c6fad5c"
   },
   "benchmark_chart_cards": {
-    "rows": 21,
+    "rows": 33,
     "split": "train",
     "schema": [
       {
@@ -324,10 +531,10 @@
       }
     ],
     "data_file": "data/benchmark_chart_cards.parquet",
-    "sha256": "8fd47f8f759f7b507ad0cfc242233cf3eaea4330d1570a329e826b3610aab0a5",
+    "sha256": "c14371a957bbb7ca3fed5a44d7fec26ce2ecf882216f22ebe729619a096771a8",
     "license": "CC BY 4.0 edition content; CC0 1.0 project additions",
     "description": "Original chart-only cards supplied to benchmark readers.",
-    "logical_sha256": "5a41a8dbc428d41d061597d04b96bc0614690faf949069c5165231a2b727845f"
+    "logical_sha256": "6e50f1c1246babdef7d1d11c8f9300b46ad8b137f13f1cb8c69a7c21454f0fbf"
   },
   "benchmark_count_pages": {
     "rows": 21,
@@ -396,10 +603,82 @@
       }
     ],
     "data_file": "data/benchmark_count_readings.parquet",
-    "sha256": "82f66710ea18e404c0e24adf3543f0cf2ec1c219f52864a7a62646d5238e8af5",
+    "sha256": "0f2b2ed3e4f1885eba5e7f7943173b8b8b43af9d5cc2e61d8cfc4ca3cb2a2dcc",
     "license": "CC BY 4.0 edition content; CC0 1.0 project additions",
     "description": "42 independent page inventories from the two readers.",
-    "logical_sha256": "a06e7f66fd5d2689c250fb1f32d09325b78d2e304c9d845625aa51ab1aaaf749"
+    "logical_sha256": "2053578ba1f75839364926640c537bada9fd382df85f0b860932b2bb972c36f8"
+  },
+  "benchmark_count_pages_v3": {
+    "rows": 21,
+    "split": "train",
+    "schema": [
+      {
+        "name": "pdf_page",
+        "type": "int64",
+        "nullable": true
+      },
+      {
+        "name": "frame",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "image_paths",
+        "type": "list<item: string>",
+        "nullable": true
+      },
+      {
+        "name": "reference_json",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "detections_json",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "data_file": "data/benchmark_count_pages_v3.parquet",
+    "sha256": "31d21b5fc004a4bdb6fdd35e0977e7353ff858f655aedb0b661b04559a11075e",
+    "license": "CC BY 4.0 edition content; CC0 1.0 project additions",
+    "description": "21 v3 pages: 18 fresh count pages and 3 stress pages; numbered and physical-line geometry.",
+    "logical_sha256": "4154ee47d0fc812e3370f483f8252b53097eba5310460cb0104405c39ed0480a"
+  },
+  "benchmark_count_readings_v3": {
+    "rows": 42,
+    "split": "train",
+    "schema": [
+      {
+        "name": "pdf_page",
+        "type": "int64",
+        "nullable": true
+      },
+      {
+        "name": "reader",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "reading_json",
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "source_file",
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "data_file": "data/benchmark_count_readings_v3.parquet",
+    "sha256": "73751102de99aa0d3ee9e830d8d85e554fb72732618a0305ae4055e318a941eb",
+    "license": "CC BY 4.0 edition content; CC0 1.0 project additions",
+    "description": "42 v3 independent numbered/physical-line page inventories.",
+    "logical_sha256": "4cddf350e7529715b38ae1fd8168dc66d779d3596195aa87f33cce82699c51b3"
   },
   "evidence_sites": {
     "rows": 115,
@@ -462,10 +741,10 @@
       }
     ],
     "data_file": "data/evidence_sites.parquet",
-    "sha256": "a2c50ccadefd2a8b0488b6ba61e8c72870e2f23eecde7a9d36815d97256072b7",
+    "sha256": "a7c623bda0fc9a03ffe5e34a14e2eb55a6c317c3caa2b9418858c490225b30b1",
     "license": "CC0 1.0",
     "description": "115 site/provenance entities from synthesis v6; aggregate counts in distinct source frames.",
-    "logical_sha256": "e9f205443c66063bc9a8954b9f3471a10d23f70ef66879a8a4f27e7a3e0b34d1"
+    "logical_sha256": "cbb7e04fb46a08e77d2a46b1a8cf19e423f3b85ce7c95da6aab7c95c96b67019"
   },
   "evidence_publications": {
     "rows": 17,
@@ -518,10 +797,10 @@
       }
     ],
     "data_file": "data/evidence_publications.parquet",
-    "sha256": "2517c10d4444afe641b02be72745a8b9dbed6335012f09e8c3557aa01775c264",
+    "sha256": "1c73df8b3f609742055273fc523f11416e84645b46b91fa2422497184646000b",
     "license": "CC0 1.0",
     "description": "17 bibliographic register entries; historical catalogue coverage is documented separately.",
-    "logical_sha256": "efe9ea55b067482334e6ba83e2530f15b5175953c3f0d42261add12ab66f8d4a"
+    "logical_sha256": "31f15c6bcab59f2728238b14fc82d37801235f5f89f774e98047055b805f24e2"
   },
   "evidence_collections": {
     "rows": 37,
@@ -574,10 +853,10 @@
       }
     ],
     "data_file": "data/evidence_collections.parquet",
-    "sha256": "417e9440eb281780cbe588366ad23b944f1d5eddebfdaa277dc10b985e180b43",
+    "sha256": "69f030450f7f3444fafccb04eb73b16989ae86fa63e0d480e66adf3f5f675e92",
     "license": "CC0 1.0",
     "description": "37 institution observations; null counts are unmeasured, zero counts are bounded queries.",
-    "logical_sha256": "4ae3dbb99916922353f9d3b688fa3c8b3337d446fdc73a25bb68461e2b090f58"
+    "logical_sha256": "cdd21bc1d7b802e93c4fdefe71f3c481c62762e41b1ad1d5c923e8a79728126f"
   },
   "evidence_datasets": {
     "rows": 15,
@@ -625,10 +904,10 @@
       }
     ],
     "data_file": "data/evidence_datasets.parquet",
-    "sha256": "50769c5b7ab266b4f1c261779639d35f940c212159547e6a95b4b69d08d3c5a3",
+    "sha256": "df6aca54475bea99b4805622942decac030202f4d062969cf09b76edfe466a1c",
     "license": "CC0 1.0",
     "description": "15 dataset observations with dated count bases; no underlying corpora bundled.",
-    "logical_sha256": "83474806a93add40e92456077849b327a4ee6901ecd1008dde546de13d2cf6af"
+    "logical_sha256": "d36819df545cf97bbc3f321f4a48d184dd22910251b03623e6a1dc8cbbfce860"
   },
   "evidence_catalogue_coverage": {
     "rows": 38,
@@ -726,10 +1005,10 @@
       }
     ],
     "data_file": "data/evidence_catalogue_coverage.parquet",
-    "sha256": "3893d681bb57e5cf9dd0a1b293e4928d8130aeec2c0a8cfbe91da8fa26dc46bb",
+    "sha256": "9214aa5d3c3362de28a7453faf5b6d606680752dcfbc7a2ac83d8eb6e22ad5d2",
     "license": "CC0 1.0",
     "description": "Synthesis v6 authored aggregate table; frame and measurement columns define denominators.",
-    "logical_sha256": "3717f32657fff64982bf79caae98b96838a7bbc11e0fe30db16fcaf8a5792eae"
+    "logical_sha256": "f0b1a10a6b7c2f2a46584a9eb2f2a19615f59a1ffb0385ec5fdf51cc85ff79bb"
   },
   "evidence_catalogue_sections": {
     "rows": 19,
@@ -792,10 +1071,10 @@
       }
     ],
     "data_file": "data/evidence_catalogue_sections.parquet",
-    "sha256": "5fc8c158f8edd46b577addf8cf75365139c86ba0b6dc557d9c8574b02d2ec40a",
+    "sha256": "c6ca77c5d3d945334bf33e4ce08857efa548339b118e22c4cf220c3eec850934",
     "license": "CC0 1.0",
     "description": "Synthesis v6 authored aggregate table; frame and measurement columns define denominators.",
-    "logical_sha256": "92da693f436b5845c23092da93720d47a6c6a3668637f9648d92682a7985b2eb"
+    "logical_sha256": "802773592a12269a473e0153530d96a9d65f3245ebe13a634f8288056031d4c9"
   },
   "evidence_field_completeness": {
     "rows": 140,
@@ -858,10 +1137,10 @@
       }
     ],
     "data_file": "data/evidence_field_completeness.parquet",
-    "sha256": "b221edd0c8da07c6d7bc512d8ae8886e35cdc06b63e982096ae85b0180b2985b",
+    "sha256": "9e4d27c7b3b00378a0b32ebfc254a6d28ffe01c881651a38fdea544eb2af732f",
     "license": "CC0 1.0",
     "description": "Synthesis v6 authored aggregate table; frame and measurement columns define denominators.",
-    "logical_sha256": "e118123d654269d4a8496206846c0acbe00ab2815bcbfc41bd68365a366efafa"
+    "logical_sha256": "320a339108d9b0c6fb4ceb998f0a966147886af764ef3a753f5fc62875e8b1fc"
   },
   "evidence_museum_joins": {
     "rows": 49,
@@ -924,10 +1203,10 @@
       }
     ],
     "data_file": "data/evidence_museum_joins.parquet",
-    "sha256": "fe1c4c52fe905ee68c2583b10cdf9220ce1773434b673bb7d62acae27f76049b",
+    "sha256": "c516a1475969604b0c3be2e335d6b58bd4bf3d601ac02efa3bbbca5689c92a2c",
     "license": "CC0 1.0",
     "description": "49 independently cited museum-to-CISI identifier correspondences: 42 earlier pairs and seven supplement rows.",
-    "logical_sha256": "35d2c289e59394874dd17696313e12f2ca8df8b8e56c6634a5aec2ab3edbc5aa"
+    "logical_sha256": "4035fb58853579506426a1552ecb1ff8a287105cb24a31f6a36d843febb402e2"
   },
   "evidence_sources": {
     "rows": 111,
@@ -980,10 +1259,10 @@
       }
     ],
     "data_file": "data/evidence_sources.parquet",
-    "sha256": "b0c6185b4b8f550ec232b8911c2fe08f96ae16e87e1cf124b3a0fbdb3ab353dd",
+    "sha256": "66daee9daab7b83e9213dff1b843bbe763e6d43b4b3dfe5fe1ec20216ce4fb0c",
     "license": "CC0 1.0",
     "description": "Bibliographic pointers and inherited access scopes; this packaging run did not reopen each archaeological source.",
-    "logical_sha256": "4e5469c13e8d9682d7a6caa7cdd8bb013344fe986838eaaf5bcd8312798b2203"
+    "logical_sha256": "c996f0c72fbe7a12ce3084815c4b0a07cf3b9c0e6c09fd077d1b6e8d4732f8d9"
   },
   "weight_mass_bands": {
     "rows": 4,
@@ -1046,10 +1325,10 @@
       }
     ],
     "data_file": "data/weight_mass_bands.parquet",
-    "sha256": "62635e9f4fa7a8889a11b48bc58ae9fbcb49402b1c4b4885034bcbf68c852681",
+    "sha256": "d257a2247c6c2b0b84709fe18bd1afd85234cf7b83e798541ef2091a3160d3f3",
     "license": "CC0 1.0",
     "description": "Aggregate metrology results after review; no Ascalone catalogue records included.",
-    "logical_sha256": "fd64734223573cde8425f0fed44af40ff2e4a97f47a2468c4bffa5e18a4a134a"
+    "logical_sha256": "e3df1c0c97db4946c15d6d403d53263a89fb4fc49ef015e8e55337d43fa0d9e4"
   },
   "weight_chance_controls": {
     "rows": 9,
@@ -1127,13 +1406,13 @@
       }
     ],
     "data_file": "data/weight_chance_controls.parquet",
-    "sha256": "2ea1988931cdc30a2bfbef574cf410a8a1e162b23c0f7e76893d043c7695f52a",
+    "sha256": "18d584cd793074ad69e5ae215c65cdf041c433f537d17d217e19b1c6469f2f9c",
     "license": "CC0 1.0",
     "description": "Aggregate metrology results after review; no Ascalone catalogue records included.",
-    "logical_sha256": "6614ad377d391966b05c386cfe1c7c3e43f26216f502e2933029faad9bb4063f"
+    "logical_sha256": "9502c53510deff6e9e7ca492c6c65673927f362c1b56fd1a059a9d0fc0edeeb5"
   },
   "image_assets": {
-    "rows": 949,
+    "rows": 1142,
     "split": "train",
     "schema": [
       {
@@ -1188,9 +1467,9 @@
       }
     ],
     "data_file": "data/image_assets.parquet",
-    "sha256": "24c346e450c536a4b070972c6cf24949a7ad171b055c39cae781ae55e3a229a3",
+    "sha256": "f026db6c355ab69bdd75de3f1ce15281671979ba33280d0a8146da174b555f75",
     "license": "CC BY 4.0 edition content; CC0 1.0 project additions",
-    "description": "949 licensed PNGs with logical names, storage, portable parent labels and SHA256.",
-    "logical_sha256": "735aed86249da29ed92fe96577a416c115fb1d930cc2a061036bd66118a2074a"
+    "description": "Licensed PNGs with logical names, storage, portable parent labels and SHA256.",
+    "logical_sha256": "e3a7ab56d3979178426b31ac001cde2301bbc00a67c1e4bcea773d896c4900c0"
   }
 }

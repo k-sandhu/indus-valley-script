@@ -1,6 +1,6 @@
 # Owner checklist and upload steps
 
-The owner confirmed own data/documentation CC0 1.0 and code Unlicense on 8 October 2026. Edition content retains CC BY 4.0. Author: k-sandhu, no affiliation or other personal details. The scorer and public methods are included. No upload, repository creation or visibility change was performed.
+The owner confirmed own data/documentation CC0 1.0 and code Unlicense on 8 October 2026. Edition content retains CC BY 4.0. Author: k-sandhu, no affiliation or other personal details. The scorer and public methods are included. The coordinator uploaded version 0.2.0 privately and reports all 19 configurations (2,720 rows) and images loading. Package O performs no upload, repository creation or visibility change.
 
 Three decisions remain open:
 
@@ -16,17 +16,17 @@ Use an authenticated owner session; upload only release/, excluding this checkli
 from huggingface_hub import HfApi
 api = HfApi()
 repo_id = "ksaw008/indus-reference-benchmarks"
-api.create_repo(repo_id, repo_type="dataset", private=True, exist_ok=False)
+# The private preview repository already exists; inspect it before updating.
 assert api.repo_info(repo_id, repo_type="dataset").private
 commit = api.upload_folder(
     repo_id=repo_id, repo_type="dataset",
     folder_path="experiments/2026-10-08-hf-public-release/release",
-    commit_message="Prepare reference benchmarks for private owner review",
+    commit_message="Update reference benchmarks to 0.3.0 for private owner review",
 )
 print(commit.oid)
 ```
 
-If that ID exists, inspect its contents/visibility before selecting an update; this recipe refuses an existing ID. Record the uploaded commit, download that private revision, compare every file against provenance/file-manifest.json and repeat loading/scoring. Inspect all 19 viewer configurations and embedded chart/row images. Confirm the issues URL and CFF citation, then upload the final reviewed revision while still private.
+The existing private preview holds 0.2.0. Record the updated uploaded commit, download that private revision, compare every file against provenance/file-manifest.json and repeat loading/scoring. Inspect all configurations, including v3 and the corrected chart, and embedded images. Confirm the issues URL and CFF citation while still private. Hosted 0.3.0 checks remain for the coordinator after this local handoff.
 
 After owner approval, use the dataset Settings visibility control to make **ksaw008/indus-reference-benchmarks** public and record its released commit. Keep ksaw008/indus-research-data and the current GitHub research repository private. Instructions follow https://huggingface.co/docs/huggingface_hub/guides/upload and https://huggingface.co/docs/hub/repositories-settings.
 

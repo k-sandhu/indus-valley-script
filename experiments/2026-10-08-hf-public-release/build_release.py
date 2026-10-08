@@ -15,6 +15,8 @@ ROOT = HERE.parents[1]
 RAW = ROOT / 'data/raw/2026-10-08-hf-public-release'
 M = ROOT / 'experiments/2026-10-07-helsinki1979-digitization'
 V2 = M / 'repair/2026-10-07-v2'
+V3 = M / 'repair/2026-10-08-v3'
+P = ROOT / 'experiments/2026-10-08-chart-reference-audit'
 B = ROOT / 'experiments/2026-10-06-evidence-census'
 S = B / 'synthesis/main-2026-10-07-v6'
 SOURCE = 'https://researchportal.helsinki.fi/en/publications/corpus-of-texts-in-the-indus-script/'
@@ -107,7 +109,8 @@ class Builder:
                         row['access_record']=(row['access_record'] or '')+'; project report omitted; public methods in docs/METHODS.md.'
         pairs = {'chart_reference':[('image_path','image')],
                  'benchmark_rows_v1':[('context_image_path','context_image')],
-                 'benchmark_rows_v2':[('context_image_path','context_image'),('exact_image_path','exact_image')]}.get(name,[])
+                 'benchmark_rows_v2':[('context_image_path','context_image'),('exact_image_path','exact_image')],
+                 'benchmark_rows_v3':[('context_image_path','context_image'),('exact_image_path','exact_image')]}.get(name,[])
         image_type=pa.struct([pa.field('bytes',pa.binary()),pa.field('path',pa.string())])
         for path_key,image_key in pairs:
             for row in rows:
@@ -150,25 +153,37 @@ class Builder:
             logical_sha256=hashlib.sha256(compact(rows).encode()).hexdigest())
 
     def chart(self):
+        from chart_changes import ChartChanges, cell_key
         manual = self.json(ROOT/'research/chart_reference/manual_numeric_reference.json', True)
+        current = self.json(P/'chart-reference-v2.1.json', True)
+        comparison = self.json(P/'comparison-v2.1.json', True)
+        impact = self.json(P/'impact-v2.1.json', True)
+        self.input(P/'RECOMMENDED-USE.md')
+        self.chart_changes = ChartChanges(manual, current, comparison, impact)
         atlas = self.json(ROOT/'output/chart_atlas/reference.json', True)
-        audit = self.json(ROOT/'research/corpus/primary/chart_complete/consolidated_atlas_audit.json')
-        assert len(manual['rows'])==len(atlas['rows'])==audit['frame_cells']==687
-        keyed = {(x['pdf_page'],x['column'],x['row']):x for x in manual['rows']}
+        assert len(current['rows']) == len(atlas['rows']) == 687
         rows=[]
+        numeric_fields=['rank','code','alternatives','rank_alternatives','numeric_confidence']
         for a in atlas['rows']:
-            key=(a['pdf_page'],a['column'],a['row']);m=keyed[key]
-            for field in ['rank','code','alternatives','numeric_confidence','rank_alternatives','dashed_auxiliary']:
-                assert a.get(field)==m.get(field),(key,field)
-            path = self.image(ROOT/'output/chart_atlas'/a['image'], 'images/chart/'+Path(a['image']).name, 'chart_reference','chart_cell',a['pdf_page'])
-            rows.append(dict(cell_id=f"p{key[0]}_c{key[1]}_r{key[2]}",pdf_page=key[0],column=key[1],row=key[2],
-                rank=m.get('rank'),code=m.get('code'),alternatives=m.get('alternatives',[]),rank_alternatives=m.get('rank_alternatives',[]),
-                numeric_confidence=m.get('numeric_confidence'),dashed_auxiliary=m.get('dashed_auxiliary'),
-                source_crop_pdf_points=a.get('source_crop_pdf_points'),image_path=path,annotation_method='AI-assisted numeric label reading; no expert certification',
-                source_url=SOURCE,source_pdf_sha256=atlas['source_sha256'],status='Exploratory'))
-        assert sum(bool(r['alternatives']) for r in rows)==16
+            cell=cell_key(a);m=self.chart_changes.new[cell];old=self.chart_changes.old[cell]
+            changed={k:dict(old=old.get(k),new=m.get(k)) for k in numeric_fields if old.get(k)!=m.get(k)}
+            assert changed == self.chart_changes.changes.get(cell, {})
+            path=self.image(ROOT/'output/chart_atlas'/a['image'],'images/chart/'+Path(a['image']).name,'chart_reference','chart_cell',a['pdf_page'])
+            previous={'previous_'+k:old.get(k) if k in changed else None for k in numeric_fields}
+            note='; '.join(f"{k}: {v['old']} to {v['new']}" for k,v in changed.items()) or None
+            rows.append(dict(cell_id=cell,pdf_page=a['pdf_page'],column=a['column'],row=a['row'],
+                **{k:m.get(k) for k in numeric_fields},**previous,changed_fields=list(changed),change_note=note,
+                dashed_auxiliary=m.get('dashed_auxiliary'),source_crop_pdf_points=a.get('source_crop_pdf_points'),image_path=path,
+                annotation_method='AI chart reading; second AI blind reading of 63 cells and whole-chart pixel check; no expert review',
+                reference_version='2.1',source_url=SOURCE,source_pdf_sha256=atlas['source_sha256'],status='Exploratory'))
         import pyarrow as pa
-        self.table('chart_reference',rows,{'alternatives':pa.list_(pa.int64()),'rank_alternatives':pa.list_(pa.int64()),'source_crop_pdf_points':pa.list_(pa.float64())},license=MIXED_LICENSE,description='687 chart cells and 16 retained lower-code ambiguities.')
+        types={k:pa.list_(pa.int64()) for k in ['alternatives','rank_alternatives','previous_alternatives','previous_rank_alternatives']}
+        types.update(previous_rank=pa.int64(),previous_code=pa.int64(),changed_fields=pa.list_(pa.string()),source_crop_pdf_points=pa.list_(pa.float64()))
+        self.table('chart_reference',rows,types,license=MIXED_LICENSE,description='687 reviewed chart cells: 8 code and 2 class corrections, 16 settled ambiguities; 33 medium-confidence cells.')
+        dump(self.out/'provenance/chart-changes.json',self.portable.value(dict(status='Exploratory',reference_version='2.1',
+            reference_sha256=sha(P/'chart-reference-v2.1.json'),comparison_summary=comparison['summary'],changes=comparison['changes'],
+            mapping_policy=impact['mapping_policy'],reference_impact=impact['M_references'],locator_conflicts=impact['M_v3_reported_location_conflicts'],
+            corrected_label_rescoring='Deferred pending candidate identity and locator review; frozen scores use original card labels.')))
 
     def benchmarks(self):
         readings=[];metadata=[]
@@ -185,7 +200,7 @@ class Builder:
             metadata.append(dict(benchmark=version,reader=reader,kind=kind,source_file=path.relative_to(ROOT).as_posix(),metadata=meta))
             for row in data:
                 readings.append(dict(benchmark=version,sample_index=row['sample_index'],reader=reader,kind=kind,
-                    reading_json=compact(row),source_file=path.relative_to(ROOT).as_posix(),status='Frozen evaluation'))
+                    reading_json=compact(row),chart_correction_flags_json=compact(self.chart_changes.reference_flags(row,version,kind=='adjudicated')),source_file=path.relative_to(ROOT).as_posix(),status='Frozen evaluation'))
             return data
         for letter in 'abc':
             refs1+=add_reading(M/f'blind/reference-{letter}.json','v1',letter.upper(),'primary')
@@ -198,7 +213,14 @@ class Builder:
         for letter in 'ab':
             for part in [1,2]:
                 add_reading(V2/f'blind/reader-{letter}/rows-part{part}.json','v2',letter.upper(),'independent')
-        for version,selection,preds,refs,base in [('v1',selection1,preds1,refs1,M/'blind'),('v2',selection2,preds2,refs2,V2/'blind')]:
+        preds3=self.json(V3/'predictions.json',True)['rows']
+        pfreeze3=self.json(V3/'prediction-freeze.json')
+        assert sha(V3/'predictions.json')==pfreeze3['prediction_sha256']
+        selection3=self.json(V3/'blind/selection.json',True)
+        refs3=add_reading(V3/'blind/adjudicated-reference.json','v3','C','adjudicated')
+        for letter in 'ab':
+            for part in [1,2]:add_reading(V3/f'blind/reader-{letter}/rows-part{part}.json','v3',letter.upper(),'independent')
+        for version,selection,preds,refs,base in [('v1',selection1,preds1,refs1,M/'blind'),('v2',selection2,preds2,refs2,V2/'blind'),('v3',selection3,preds3,refs3,V3/'blind')]:
             pmap={r['sample_index']:r for r in preds};rmap={r['sample_index']:r for r in refs};rows=[]
             for locator in selection['rows']:
                 i=locator['sample_index'];ref=rmap[i];pred=pmap[i]
@@ -210,13 +232,16 @@ class Builder:
                 if exact:assert sha(base/locator['exact_crop'])==locator['exact_crop_sha256']
                 rows.append(dict(sample_index=i,occurrence_key=pred['occurrence_key'],pdf_page=locator['pdf_page'],section=pred.get('section','number_order'),
                     context_image_path=context,exact_image_path=exact,locator_json=compact(locator),reference_json=compact(ref),prediction_json=compact(pred),
+                    reference_chart_correction_flags_json=compact(self.chart_changes.reference_flags(ref,version,True)),
+                    prediction_chart_correction_flags_json=compact(self.chart_changes.prediction_flags(pred)),
                     reference_kind='initial_disjoint_AI_reading' if version=='v1' else 'source_adjudication_after_two_AI_readings',
                     original_ocr_locator_exposed=bool(locator.get('ocr_number_witnesses')) if version=='v1' else False,status='Frozen evaluation'))
             assert len(rows)==(60 if version=='v1' else 80)
             self.table('benchmark_rows_'+version,rows,split='test',license=MIXED_LICENSE,description=f'{len(rows)} source rows with immutable references and frozen predictions.')
-        self.table('benchmark_readings',readings,split='test',license=MIXED_LICENSE,description='Initial, repeated, independent and adjudicated readings; frozen endpoints remain distinct.')
+        self.table('benchmark_readings',[r for r in readings if r['benchmark']!='v3'],split='test',license=MIXED_LICENSE,description='Initial, repeated, independent and adjudicated readings; frozen endpoints remain distinct.')
+        self.table('benchmark_readings_v3',[r for r in readings if r['benchmark']=='v3'],split='test',license=MIXED_LICENSE,description='240 v3 readings: two independent readers and adjudication for all 80 rows.')
         cards=[]
-        for version,base in [('v1',M/'blind/chart_sheets'),('v2',V2/'blind/position-chart')]:
+        for version,base in [('v1',M/'blind/chart_sheets'),('v2',V2/'blind/position-chart'),('v3',V3/'blind/position-chart')]:
             for p in sorted(base.glob('*.png')):
                 image=self.image(p,'images/cards/'+version+'_'+p.name,'benchmark_chart_cards','chart_card')
                 cards.append(dict(benchmark=version,card_id=p.stem,image_path=image,source_file=p.relative_to(ROOT).as_posix()))
@@ -240,6 +265,31 @@ class Builder:
                 countreadings.append(dict(pdf_page=row['pdf_page'],reader=letter.upper(),reading_json=compact(row),source_file=path.relative_to(ROOT).as_posix()))
         self.table('benchmark_count_pages',counts,license=MIXED_LICENSE,description='21 source-count pages: 18 random and 3 stress pages; geometric detections for recall.')
         self.table('benchmark_count_readings',countreadings,license=MIXED_LICENSE,description='42 independent page inventories from the two readers.')
+        countref3=self.json(V3/'blind/adjudicated-counts.json',True)
+        detections3=self.json(V3/'count-page-detections.json',True)
+        dmap3={r['pdf_page']:r for r in detections3['pages']};counts3=[];countreadings3=[]
+        for ref in countref3['pages']:
+            page=ref['pdf_page'];images=[]
+            for p in sorted((V3/'blind/page-count-source').glob(f'*{page}*')):
+                if p.suffix=='.png':images.append(self.image(p,'images/counts/v3_'+p.name,'benchmark_count_pages_v3','page_count_context',page))
+            det=[{k:r[k] for k in ['line_kind','row_anchor_y_2x','margin_pdf_box','glyph_pdf_box']} for r in dmap3[page]['rows']]
+            counts3.append(dict(pdf_page=page,frame='random' if page in selection3['random_count_pages'] else 'stress',image_paths=images,
+                reference_json=compact(ref),detections_json=compact(det),status='Frozen evaluation'))
+        for letter in 'ab':
+            path=V3/f'blind/reader-{letter}/counts.json';d=self.json(path,True)
+            metadata.append(dict(benchmark='v3',reader=letter.upper(),kind='count',source_file=path.relative_to(ROOT).as_posix(),metadata={k:v for k,v in d.items() if k!='pages'}))
+            for row in d['pages']:countreadings3.append(dict(pdf_page=row['pdf_page'],reader=letter.upper(),reading_json=compact(row),source_file=path.relative_to(ROOT).as_posix()))
+        assert len(counts3)==21 and len(countreadings3)==42
+        self.table('benchmark_count_pages_v3',counts3,license=MIXED_LICENSE,description='21 v3 pages: 18 fresh count pages and 3 stress pages; numbered and physical-line geometry.')
+        self.table('benchmark_count_readings_v3',countreadings3,license=MIXED_LICENSE,description='42 v3 independent numbered/physical-line page inventories.')
+        self.input(M/'evaluate_crop_v3.py','own-work','include-selected','Project-authored v3 physical-line recall rule; Unlicense.',['recall_page'])
+        (self.out/'code').mkdir(exist_ok=True)
+        (self.out/'benchmark').mkdir(exist_ok=True)
+        source=(M/'evaluate_crop_v3.py').read_text(encoding='utf8')
+        section=source[source.index('def recall_page('):source.index('def count_summary(')]
+        (self.out/'code/score_recall_v3.py').write_text(section,encoding='utf8')
+        self.input(V3/'blind/CONVENTIONS.md')
+        shutil.copyfile(V3/'blind/CONVENTIONS.md',self.out/'benchmark/CONVENTIONS-v3.md')
         for path,name in [(V2/'blind/CONVENTIONS.md','CONVENTIONS.md'),(M/'evaluate.py','score_core.py')]:
             self.input(path,'own-work','include','Project-authored reading rules or scoring code; data CC0 1.0 / code Unlicense.')
             target=self.out/('benchmark/'+name if name.endswith('.md') else 'code/'+name)
@@ -257,17 +307,35 @@ class Builder:
         for code in ['score_benchmark.py','extract_images.py']:
             shutil.copyfile(HERE/code,self.out/'code'/code)
         expected={}
-        for version,path in [('v1',M/'evaluation/2026-10-07-frozen-v1/metrics.json'),('v2',V2/'evaluation-2026-10-07-adjudicated/metrics.json')]:
+        for version,path in [('v1',M/'evaluation/2026-10-07-frozen-v1/metrics.json'),('v2',V2/'evaluation-2026-10-07-adjudicated/metrics.json'),('v3',V3/'evaluation-2026-10-08-adjudicated/metrics.json')]:
             d=self.json(path,True)
             expected[version]={k:d[k] for k in ['summary','row_bootstrap_95','negative_result_criteria']}
             expected[version]['rows']=d['rows']
             if version=='v1':expected[version]['exploratory_sensitivities']=d['exploratory_sensitivities']
-            if version=='v2':expected[version]['source_row_recall']=d['source_row_recall']
+            if version in ['v2','v3']:expected[version]['source_row_recall']=d['source_row_recall']
+            if version=='v3':expected[version]['physical_line_recall']=d['physical_line_recall']
         dump(self.out/'benchmark/expected-metrics.json',expected)
+        # Preserve the reviewer-described reading-choice check separately from scoring.
+        import copy
+        from importlib.util import spec_from_file_location, module_from_spec
+        spec=spec_from_file_location('release_score_core',self.out/'code/score_core.py')
+        core=module_from_spec(spec);spec.loader.exec_module(core)
+        altered=copy.deepcopy(refs3)
+        for row in altered:
+            for sample,unit in [(35,2),(70,4)]:
+                if row['sample_index']==sample:row['units'][unit]['strict_candidate_codes']=[23]
+        refmap={r['sample_index']:r for r in altered}
+        sensitivity=core.aggregate([core.score_row(p,refmap[p['sample_index']]) for p in preds3])
+        dump(self.out/'benchmark/v3-reading-choice-sensitivity.json',dict(status='Exploratory',
+            method='Accept code 23 for strict reference units 35:2 and 70:4, retaining all frozen predictions and other fields.',
+            altered_units=[dict(sample_index=35,unit_index=2,old=[],new=[23]),dict(sample_index=70,unit_index=4,old=[],new=[23])],
+            summary=sensitivity,chart_labels='Original frozen card vocabulary; no corrected-label mapping.'))
+        dump(self.out/'benchmark/v3-selection.json',self.portable.value(selection3))
         dump(self.out/'benchmark/reader-metadata.json',self.portable.value(metadata))
         for path,dest in [(V2/'blind/adjudication-notes.json','v2-adjudication-notes.json'),
                 (M/'follow-up/2026-10-07/analysis-v1/adjudication-overlay.json','v1-exploratory-adjudication-overlay.json'),
                 (M/'freeze-manifest.json','v1-freeze-manifest.json'),(M/'prediction-freeze.json','v1-prediction-freeze.json'),
+                (V3/'blind/adjudication-notes.json','v3-adjudication-notes.json'),(V3/'freeze-manifest.json','v3-freeze-manifest.json'),(V3/'prediction-freeze.json','v3-prediction-freeze.json'),
                 (V2/'freeze-manifest.json','v2-freeze-manifest.json'),(V2/'prediction-freeze.json','v2-prediction-freeze.json')]:
             self.licensed(path)
             d=read(path)
@@ -365,7 +433,7 @@ class Builder:
             self.table(name,rows,description='Aggregate metrology results after review; no Ascalone catalogue records included.')
 
     def finish(self):
-        self.table('image_assets',self.image_rows,license=MIXED_LICENSE,description='949 licensed PNGs with logical names, storage, portable parent labels and SHA256.')
+        self.table('image_assets',self.image_rows,license=MIXED_LICENSE,description='Licensed PNGs with logical names, storage, portable parent labels and SHA256.')
         self.audit.extend([
             dict(path='data/raw/2026-10-06-modern-restoration/main/**',rights_status='rights-unverified',decision='exclude',basis='Lipi-derived per-query predictions and model files; no source licence found.'),
             dict(path='data/raw/2026-10-06-modern-restoration/frozen-model/**',rights_status='rights-unverified',decision='exclude',basis='Lipi-derived fitted models and training register; existing private backup only.'),

@@ -1,0 +1,593 @@
+{
+  "status": "Adjudication notes",
+  "adjudicator": "C",
+  "started_utc": "2026-10-08T16:04:23Z",
+  "finished_utc": "2026-10-08T16:45:00Z",
+  "files_opened": [
+    "source-0064",
+    "source-0065",
+    "source-0017",
+    "source-0018",
+    "source-0056",
+    "source-0019",
+    "source-0020",
+    "source-0057",
+    "source-0066 ... exact_079.png (all 80, viewed in scripted contact sheets and zooms)",
+    "source-0042",
+    "source-0043",
+    "source-0044",
+    "source-0045",
+    "source-0046",
+    "source-0047",
+    "source-0048",
+    "source-0049",
+    "source-0050",
+    "source-0051",
+    "source-0052",
+    "source-0053",
+    "source-0106 ... row_079_pdf178.png (all 80 source crops opened by a script to build context sheets; the sheets were not viewed)",
+    "source-0058 (raster renders only through PyMuPDF at 130 to 600 dpi: pages 20 and 21, every page holding a selected row, the 21 count pages; image metadata; no text extraction)",
+    "source-0215 (own scratch folder; renders, helper scripts, contact sheets; deleted at the end)"
+  ],
+  "directory_listings": [
+    "directory listings (names only) of BLIND, BLIND/position-chart, BLIND/page-count-source, BLIND/reader-a and BLIND/reader-b"
+  ],
+  "not_opened": [
+    "BLIND/coordinator-task-ledger.jsonl (its name appeared in the listing; not opened)",
+    "BLIND/page-count-source/*.png (count pages were rendered from the original PDF instead)",
+    "BLIND/row_*.png were opened by script but not viewed",
+    "predictions.json, frame.json, prediction-freeze.json, count-page-detections.json, full-summary.json, anything else under source-0216 outside BLIND, source-0217, earlier evaluation folder, the row-verification pilot, the PDF text layer, anything under excluded local source area other than the scratch folder"
+  ],
+  "tools_used": [
+    "Python with PyMuPDF, Pillow, NumPy and OpenCV for renders, ink measurements and contact sheets",
+    "Tesseract OCR on two kinds of raster only (the label strips of the position-chart PNGs and raster renders of the printed code labels on PDF pages 20 and 21), used to flag possible card-label disagreements; no OCR of drawings or of the PDF text layer"
+  ],
+  "method": "Every row was compared with both readings side by side: the exact crop enlarged above the chart cards for the proposed codes, the number field cropped from the original page, and a boundary test of the crop box against the connected ink of the page at 600 dpi. Where the readers agreed, the shared reading was checked against these views and kept; where they disagreed, the disputed unit was enlarged next to the candidate cards and, for stroke groups, ticks and hatched patches, measured on the page raster (8.3 px per point) and compared with the same measurement of the printed sign list on PDF pages 20 and 21. No set was made unique by intersecting the readings. Coincident cards and the 144/244 pair stay together in the strict set; a unit that no card matches has an empty strict set with the reason in its note.",
+  "policy": {
+    "code_vocabulary": "position-chart card labels, as the conventions direct; composite labels contribute every listed code",
+    "strict_candidate_codes": "cards whose drawing, underline state and cell placement all agree with the source; coincident cards stay together",
+    "shape_only_candidate_codes": "strict codes plus cards that agree after ignoring underline or cell placement, and alternatives either reader named unless the source excluded them",
+    "unit_kind": "sign, loss_rectangle, hatched_span, hatched_span_with_sign",
+    "crop_correct": "true only when the box contains all drawing and underline ink and no neighbour or field ink; crop_issues are filled for every false crop, crop_observations hold remarks on accepted crops",
+    "narrow_hatched_patches": "the patch edge facing the neighbouring sign decides between 597/13 (left edge) and 598/542 (right edge): the patch ink lies 1.6 to 2.3 pt from the neighbouring cell, or about 5 pt from the neighbour ink, whichever the neighbour allows; the opposite edge would leave about 8 pt more. All 16 patch units were measured at 600 dpi (values in the unit notes) and agree with both readers.",
+    "two_column_patch_762": "rows 14 and 20 show two patch columns 2.52 pt apart; card 762 holds two columns 2.40 pt apart in one cell, whereas two abutting patch cells would show the 1.6 to 2.3 pt inter-cell gap. Read as one unit; the two-unit count is kept as an alternative."
+  },
+  "agreement_summary": {
+    "rows": 80,
+    "units": 369,
+    "printed_inscription_id_agreed": 80,
+    "classification_literal_agreed": 80,
+    "drawn_unit_count_agreed": 80,
+    "physical_line_membership_agreed": 80,
+    "crop_correct_agreed": 79,
+    "underline_flags_agreed": 369,
+    "strict_sets_agreed_units": 357,
+    "strict_sets_disagreed_units": 12,
+    "unit_kind_labels_agreed_raw": 337,
+    "unit_kind_labels_differing_raw": 32,
+    "rows_agreed_on_all_compared_fields": 67,
+    "rows_with_a_disagreement": 13,
+    "shape_only_sets": "not comparable raw: reader A listed only alternatives beyond the strict set in part 1 and little in part 2, reader B listed the strict codes plus alternatives and, in part 2, the underlined or plain twins; after adding the strict codes to both, 165 of 369 units agree exactly"
+  },
+  "disagreement_summary": {
+    "strict_disagreements_decided": 12,
+    "decided_as_single_reader_value": [
+      "28:0 (A)",
+      "37:1 (A)",
+      "48:0 (A)",
+      "51:8 (B)",
+      "60:1 (A)",
+      "65:3 (A)",
+      "61:1 (A)",
+      "70:4 (A)"
+    ],
+    "decided_as_set": [
+      "8:5",
+      "10:1",
+      "25:2 (coincident pairs kept)",
+      "54:0 (144/244 kept)"
+    ],
+    "crop_disagreement_decided": 1,
+    "shared_readings_changed": [
+      "35:2 (both readers 23; strict set emptied)"
+    ],
+    "strict_sets_left_empty": [
+      "3:5",
+      "35:2",
+      "70:4"
+    ],
+    "unresolved_candidate_sets": "coincident-card sets remain sets in 28 units (strict set with more than one code)"
+  },
+  "disagreements": [
+    {
+      "id": 1,
+      "type": "disagreement",
+      "sample_index": 8,
+      "unit_index": 5,
+      "field": "strict_candidate_codes",
+      "reader_a": [
+        9,
+        765
+      ],
+      "reader_b": [
+        765
+      ],
+      "decision": [
+        9,
+        765
+      ],
+      "basis": "Native-resolution stroke spacing is 4.01 pt in the source. On PDF page 20 card 765 measures 4.1 pt and card 9 measures 4.2 pt. The seven source occurrences of a two-stroke group span 4.01 to 4.17 pt, so a 0.1 pt difference between the cards cannot separate them; the coincident pair stays together. Reader B chose 765 from spacings of 4.1 and 4.4 pt measured on the 3.95 px/pt chart cards, a difference that the native-resolution measurement does not reproduce."
+    },
+    {
+      "id": 2,
+      "type": "disagreement",
+      "sample_index": 10,
+      "unit_index": 1,
+      "field": "strict_candidate_codes",
+      "reader_a": [
+        9,
+        765
+      ],
+      "reader_b": [
+        765
+      ],
+      "decision": [
+        9,
+        765
+      ],
+      "basis": "Same measurement as row 8 unit 5: source spacing 4.07 pt against card spacings 4.2 pt (9) and 4.1 pt (765); the set is kept."
+    },
+    {
+      "id": 3,
+      "type": "disagreement",
+      "sample_index": 25,
+      "unit_index": 2,
+      "field": "strict_candidate_codes",
+      "reader_a": [
+        543,
+        769
+      ],
+      "reader_b": [
+        769
+      ],
+      "decision": [
+        543,
+        769
+      ],
+      "basis": "Underlined two-stroke group with spacing 4.01 pt; cards 543 and 769 measure 4.2 and 4.1 pt at native resolution, so the set is kept."
+    },
+    {
+      "id": 4,
+      "type": "disagreement",
+      "sample_index": 28,
+      "unit_index": 0,
+      "field": "strict_candidate_codes",
+      "reader_a": [
+        143
+      ],
+      "reader_b": [
+        341
+      ],
+      "decision": [
+        143
+      ],
+      "basis": "The source figure has a horizontal bar with a triangular flap hanging at each end and a plain stem above. Card 143 shows that. Card 341 has a triangular apex above the figure, which the source does not have."
+    },
+    {
+      "id": 5,
+      "type": "disagreement",
+      "sample_index": 37,
+      "unit_index": 1,
+      "field": "strict_candidate_codes",
+      "reader_a": [
+        86
+      ],
+      "reader_b": [
+        36
+      ],
+      "decision": [
+        86
+      ],
+      "basis": "The source is a fish with a double chevron above the body. Reader B wrote chart location 20:2:28 beside its code 36, and 20:2:28 is the card labelled 86; card 36 (21:1:6) is a double bow-tie. The code 36 is a slip for 86."
+    },
+    {
+      "id": 6,
+      "type": "disagreement",
+      "sample_index": 48,
+      "unit_index": 0,
+      "field": "strict_candidate_codes",
+      "reader_a": [
+        526
+      ],
+      "reader_b": [
+        548
+      ],
+      "decision": [
+        526
+      ],
+      "basis": "The source U has the F-shaped flag on both arms and a five-dash underline (visible in the zoomed crop). Card 526 is the underlined U with flags; card 548 is a plain underlined U with no flag."
+    },
+    {
+      "id": 7,
+      "type": "disagreement",
+      "sample_index": 51,
+      "unit_index": 8,
+      "field": "strict_candidate_codes",
+      "reader_a": [],
+      "reader_b": [
+        350
+      ],
+      "decision": [
+        350
+      ],
+      "basis": "Card 350 (21:1:19) is a bow-tie with the right vertical complete and the left vertical reduced to top and bottom ticks, which is the drawing in the source (no underline). Reader A compared only with 241 and 234 and did not find it. Card 793 is the underlined twin and stays in the shape-only set."
+    },
+    {
+      "id": 8,
+      "type": "disagreement",
+      "sample_index": 54,
+      "unit_index": 0,
+      "field": "strict_candidate_codes",
+      "reader_a": [
+        144
+      ],
+      "reader_b": [
+        144,
+        244
+      ],
+      "decision": [
+        144,
+        244
+      ],
+      "basis": "The source figure has no triangle and no dots between the legs, so card 144 is the plain match. The conventions tell the adjudicator to preserve the documented 144/244 labelling uncertainty as a source observation; both codes therefore stay in the strict set. Reader A put 244 in the shape-only list, which does not preserve that uncertainty."
+    },
+    {
+      "id": 9,
+      "type": "disagreement",
+      "sample_index": 60,
+      "unit_index": 1,
+      "field": "strict_candidate_codes",
+      "reader_a": [
+        126
+      ],
+      "reader_b": [
+        443
+      ],
+      "decision": [
+        126
+      ],
+      "basis": "Zoomed source shows a third prong rising between the two arms of the Y. Card 126 has that prong; card 443 is a plain two-armed Y."
+    },
+    {
+      "id": 10,
+      "type": "disagreement",
+      "sample_index": 65,
+      "unit_index": 3,
+      "field": "strict_candidate_codes",
+      "reader_a": [
+        126
+      ],
+      "reader_b": [
+        443
+      ],
+      "decision": [
+        126
+      ],
+      "basis": "Same zoomed comparison as row 60 unit 1: the central prong is present, so card 126."
+    },
+    {
+      "id": 11,
+      "type": "disagreement",
+      "sample_index": 61,
+      "unit_index": 1,
+      "field": "strict_candidate_codes",
+      "reader_a": [
+        767
+      ],
+      "reader_b": [
+        12,
+        767
+      ],
+      "decision": [
+        767
+      ],
+      "basis": "The source has four strokes. Card 767 has four strokes; card 12 (20:7:21) has five on the chart and in the printed sign list. Reader B described the cards as coincident, but card 12 does not match the stroke count. The underlined four-stroke cards 294 and 771 are shape-only candidates."
+    },
+    {
+      "id": 12,
+      "type": "disagreement",
+      "sample_index": 70,
+      "unit_index": 4,
+      "field": "strict_candidate_codes",
+      "reader_a": [],
+      "reader_b": [
+        23
+      ],
+      "decision": [],
+      "basis": "The source tick is one continuous stroke 2.4 pt long at the top of the line, no underline. Card 23 is printed as a dot above a 1.4 pt stroke with a 0.5 pt gap (2.2 pt in all), which the source does not show; card 258 has the same long high stroke but is underlined; card 1 is a centred tick. No card matches all properties, so the strict set is empty (reader A) and 1, 23, 258 are shape-only candidates."
+    },
+    {
+      "id": 13,
+      "type": "disagreement",
+      "sample_index": 21,
+      "unit_index": null,
+      "field": "crop_correct",
+      "reader_a": true,
+      "reader_b": false,
+      "decision": false,
+      "basis": "Two ink components of 5 and 2 pixels at 600 dpi cross the bottom edge of the box; they belong to the tips of the next numbered line. The convention requires a correct crop to exclude neighbour ink; rows 44, 48, 55, 58 and 66 are rejected for the same reason with more ink."
+    },
+    {
+      "id": 14,
+      "type": "shared_reading_changed",
+      "sample_index": 35,
+      "unit_index": 2,
+      "field": "strict_candidate_codes",
+      "reader_a": [
+        23
+      ],
+      "reader_b": [
+        23
+      ],
+      "decision": [],
+      "basis": "Both readers chose card 23 for an isolated high tick. The source tick (row 35 unit 2) is one continuous stroke 2.2 pt long with no underline; native-resolution measurement of the printed sign list shows card 23 as a dot above a 1.4 pt stroke with a gap, and card 258 as a continuous 2.3 pt high stroke with an underline. The shared reading is replaced by an empty strict set with shape-only 1, 23, 258, the same treatment as row 70 unit 4."
+    },
+    {
+      "id": 15,
+      "type": "convention_difference",
+      "scope": "unit_kind",
+      "reader_a": "A used sign and hatched_span for almost everything",
+      "reader_b": "B used finer labels (loss_rectangle, tick_pair, tick_trio, tick_row, tick_group, single_tick, sign_with_corner_ticks, hatched_patch, hatched_sign, hatched_span_with_sign)",
+      "decision": "four kinds: sign (every chart sign including tick groups and ticks with corner marks), loss_rectangle (card 70), hatched_span (narrow patches and plain hatched blocks: 13, 542, 597, 598, 599, 762, 106) and hatched_span_with_sign (hatched blocks over a visible sign remnant: 596, 454)",
+      "basis": "32 of 369 units carried different raw labels, all differences of vocabulary rather than of reading; the conventions ask only for a unit kind and do not define a vocabulary."
+    },
+    {
+      "id": 16,
+      "type": "convention_difference",
+      "scope": "shape_only_candidate_codes",
+      "reader_a": "part 1: alternatives beyond the strict set (often empty); part 2: mostly empty",
+      "reader_b": "strict codes plus alternatives; part 2 also the underlined or plain twin cards",
+      "decision": "shape_only_candidate_codes = strict codes + alternatives named by either reader + the underlined or plain twin of each strict code + coincident cards, with codes dropped only where the zoomed source or chart excluded them (for example 341 for row 28 unit 0, 36 for row 37 unit 1, 12 for row 61 unit 1, 443 for rows 60 and 65)",
+      "basis": "The two readers applied the shape-only field differently in different parts. One rule over all 80 rows was needed. Twins were taken from reader B's part 2 sets, adjacent plain/underlined cards of the chart (image similarity of the card with the underline band removed, checked visually) and the stroke-count families (1: 8, 764, 501, 768; 2: 9, 765, 543, 769; 3: 10, 766, 424, 770; 4: 767, 294, 771). Narrow hatched patches carry the full family 13, 542, 597, 598."
+    },
+    {
+      "id": 17,
+      "type": "disagreement",
+      "scope": "count x_extent_pdf",
+      "reader_a": "page 62 column 1: [414.5, 546.0]; page 172 column 1: [299.0, 547.0]",
+      "reader_b": "page 62 column 1: [417.0, 546.0]; page 172 column 1: [299.0, 542.5]",
+      "decision": "page 62 column 1: [414.5, 546.0]; page 172 column 1: [299.0, 542.5]",
+      "basis": "At 600 dpi the 2.5 pt on the left of page 62 column 1 is the start of an underline dash under the first sign of a line, which is ink of the column. The 4.5 pt on the right of page 172 column 1 is two sparse specks (counts of 4 to 7 pixels) beyond the end of the number field; the strong ink ends at 542.6 pt. All other extents differ by 0.5 pt or less and the wider of the two was taken."
+    },
+    {
+      "id": 18,
+      "type": "disagreement",
+      "scope": "count centres",
+      "reader_a": "see counts_centre_overrides",
+      "reader_b": "see counts_centre_overrides",
+      "decision": "mean of the two readers rounded to 0.25 pt when they differ by less than 1.5 pt; measured ink run where they differ by 1.5 pt or more (page 58 col 0 row 16, page 92 col 0 row 8, page 129 col 2 rows 0-4, page 130 col 0 row 13, page 175 col 0 rows 6 and 23); continuation centre on page 175 column 0 taken from reader A",
+      "basis": "Each override was measured on the 600 dpi page raster as the vertical middle of the glyph-line ink run (underline of the neighbouring line excluded)."
+    },
+    {
+      "id": 19,
+      "type": "convention_difference",
+      "scope": "continuation parent confidence",
+      "reader_a": "parent confidence high (six lines) and medium-high (two gutter lines)",
+      "reader_b": "probable for all seven",
+      "decision": "probable for all seven; parents identical in both readings (1400, 2690, 2725, 2352, 3123, 2835, 2768)",
+      "basis": "The unnumbered line sits in the slot directly below its parent, carries no field and no printed link. The classification strings of all seven parents have five printed characters, as read by reader B and visible in the page crops. The convention the readers applied (parent = numbered line above) is the only one the geometry supports; it is not independently proven."
+    }
+  ],
+  "counts_comparison": {
+    "pages": 21,
+    "columns": 52,
+    "numbered_rows_reader_a": 1850,
+    "numbered_rows_reader_b": 1850,
+    "numbered_rows_adjudicated": 1850,
+    "physical_lines_reader_a": 1857,
+    "physical_lines_reader_b": 1857,
+    "physical_lines_adjudicated": 1857,
+    "continuation_lines": 7,
+    "per_column_counts": "identical in both readings for all 52 columns",
+    "independent_check": "Number-field blocks were counted in every column from the 600 dpi page raster (vertical runs of ink taller than 6 pt in the field window) and gave 1850; glyph-line slots on the 19.78 pt grid gave 1857, with the seven extra slots exactly in the columns of the seven continuation lines. Two columns gave a slot count off by one in opposite directions (page 92 column 1 has one line with only 157 ink pixels, page 129 column 4 double-counts one slot at the grid drift); the row and line centres of both readers show 36 lines in each.",
+    "centre_comparison": "3707 centres compared; 59 differ by 1.0 pt or more; the largest difference is 4.00 pt (page 130 column 0, inscription 289)"
+  },
+  "counts_centre_overrides": [
+    {
+      "page": 58,
+      "column": 0,
+      "row_index": 16,
+      "reader_a": 399.0,
+      "reader_b": 400.5,
+      "decision": 399.5,
+      "basis": "ink run 393.5-405.5 pt"
+    },
+    {
+      "page": 62,
+      "column": 1,
+      "field": "x_extent_pdf",
+      "reader_a": [
+        414.5,
+        546.0
+      ],
+      "reader_b": [
+        417.0,
+        546.0
+      ],
+      "decision": [
+        414.5,
+        546.0
+      ],
+      "basis": "left edge 414.5 pt is the start of an underline dash under the first sign of a line (reader B 417.0 pt starts at the glyph)"
+    },
+    {
+      "page": 92,
+      "column": 0,
+      "row_index": 8,
+      "reader_a": 237.75,
+      "reader_b": 239.25,
+      "decision": 239.25,
+      "basis": "ink run 231.6-247.2 pt; reader A included the underline of the line above"
+    },
+    {
+      "page": 129,
+      "column": 2,
+      "row_index": 0,
+      "reader_a": 81.75,
+      "reader_b": 79.75,
+      "decision": 81.75,
+      "basis": "measured ink run centre 81.8 pt matches reader A"
+    },
+    {
+      "page": 129,
+      "column": 2,
+      "row_index": 1,
+      "reader_a": 101.0,
+      "reader_b": 99.25,
+      "decision": 101.0,
+      "basis": "measured ink run centre 101.0 pt matches reader A"
+    },
+    {
+      "page": 129,
+      "column": 2,
+      "row_index": 2,
+      "reader_a": 120.5,
+      "reader_b": 118.75,
+      "decision": 120.5,
+      "basis": "measured ink run centre 120.5 pt matches reader A"
+    },
+    {
+      "page": 129,
+      "column": 2,
+      "row_index": 3,
+      "reader_a": 140.0,
+      "reader_b": 138.5,
+      "decision": 140.0,
+      "basis": "measured ink run centre 140.0 pt matches reader A"
+    },
+    {
+      "page": 129,
+      "column": 2,
+      "row_index": 4,
+      "reader_a": 159.75,
+      "reader_b": 158.25,
+      "decision": 159.75,
+      "basis": "measured ink run centre 159.8 pt matches reader A"
+    },
+    {
+      "page": 130,
+      "column": 0,
+      "row_index": 13,
+      "reader_a": 335.75,
+      "reader_b": 339.75,
+      "decision": 339.75,
+      "basis": "faint ruled-line sign spans 332.7-347.8 pt; reader A measured only the darker upper lines"
+    },
+    {
+      "page": 172,
+      "column": 1,
+      "field": "x_extent_pdf",
+      "reader_a": [
+        299.0,
+        547.0
+      ],
+      "reader_b": [
+        299.0,
+        542.5
+      ],
+      "decision": [
+        299.0,
+        542.5
+      ],
+      "basis": "right edge 542.5 pt is the end of the number field (strong ink ends at 542.6 pt); reader A 547.0 pt includes sparse specks"
+    },
+    {
+      "page": 175,
+      "column": 0,
+      "row_index": 6,
+      "reader_a": 197.5,
+      "reader_b": 199.0,
+      "decision": 199.0,
+      "basis": "ink run 191.4-207.8 pt"
+    },
+    {
+      "page": 175,
+      "column": 0,
+      "row_index": 23,
+      "reader_a": 533.0,
+      "reader_b": 534.5,
+      "decision": 534.5,
+      "basis": "ink run 527.1-542.4 pt"
+    }
+  ],
+  "card_label_observations": [
+    {
+      "card_location": "20:4:1",
+      "card_label": 506,
+      "printed_code_beside_cell": "508 (class 86)",
+      "used_in": [
+        "row 31 unit 0",
+        "row 32 units 0 and 2",
+        "row 58 unit 0"
+      ],
+      "note": "The sign list prints 508 beside this cell; 506 is printed beside card 21:7:5 (the two overlapping circles with corner ticks, class 350). The card label 506 is recorded as the code, as instructed; code 508 has no card in the chart."
+    },
+    {
+      "card_location": "21:6:1",
+      "card_label": 206,
+      "printed_code_beside_cell": "208 (class 327)",
+      "used_in": [
+        "row 60 unit 6",
+        "row 67 unit 4"
+      ],
+      "note": "The three-tick U carries the printed code 208; the printed 206 (class 326) sits beside the two-tick U, card 21:5:34, whose label is the composite 205/206/208. The card label 206 is recorded as the code."
+    },
+    {
+      "card_location": "20:4:13",
+      "card_label": 360,
+      "printed_code_beside_cell": "350 (class 93)",
+      "used_in": [],
+      "note": "350 is also printed beside card 21:1:19 (class 234), which the chart labels 350 and which row 51 unit 8 uses. Not used in any reference unit at 20:4:13."
+    },
+    {
+      "card_location": "21:6:31",
+      "card_label": 285,
+      "printed_code_beside_cell": "286 (class 345)",
+      "used_in": [],
+      "note": "Label and printed code differ by one digit; not used in any reference unit."
+    },
+    {
+      "card_location": "composite labels",
+      "card_label": "465/485/486 (20:4:21), 764/784 (20:7:22), 598/698 (21:0:1), 250/260 (21:0:18), 579/679 (21:0:29), 55/65 (21:3:2), 58/68 (21:3:4), 435/436 (21:4:6), 333/533 (21:4:22), 205/206/208 (21:5:34), 385/386 (21:6:9), 354/364 (21:6:17), 495/496 (21:7:6), 571/671 (21:8:5), 53/63 (21:8:16), 577/677 (21:9:5)",
+      "printed_code_beside_cell": "one code each: 486, 784, 598, 260, 679, 65, 68, 436, 333, 206, 386, 364, 496, 671, 63, 677",
+      "used_in": [
+        "row 15 unit 0 (465/485/486)",
+        "row 39 unit 4 (58/68)",
+        "row 51 unit 2 (435/436)"
+      ],
+      "note": "Each composite card merges cells with identical drawings; the sign list prints only one of the listed codes beside the cell from which the card was cropped, and the other codes sit beside separate cells (for example 465 beside 20:0:8 and 485 beside 20:7:24). The conventions treat these as coincident cards, so every listed code stays in the strict set of a unit read as that card."
+    },
+    {
+      "card_location": "20:0:0 and 20:0:5",
+      "card_label": "144 and 244",
+      "printed_code_beside_cell": "144 beside the plain figure and 244 beside the figure with a triangle on top",
+      "used_in": [
+        "row 54 unit 0"
+      ],
+      "note": "These are the cards of the documented 144/244 labelling uncertainty. The source figure matches the plain card; both codes stay in the strict set."
+    },
+    {
+      "card_location": "all 687 chart cards",
+      "card_label": "read by OCR of the label strip",
+      "printed_code_beside_cell": "read by OCR of a raster render of the printed code on PDF pages 20 and 21",
+      "used_in": [],
+      "note": "The two OCR readings of each card disagreed for 155 cards; all 155 were compared by eye on side-by-side crops. The disagreements listed above are the ones that survived; the others were OCR errors. The remaining 532 cards were not inspected beyond the agreement of the two OCR readings."
+    }
+  ],
+  "exposure": [
+    "The first listing of BLIND showed the file name coordinator-task-ledger.jsonl; the file was not opened.",
+    "A PowerShell process listing, used to stop my own OCR jobs, also printed command lines of unrelated processes from other projects; nothing in them concerned this experiment.",
+    "Reader files mention the prompt file source-0063 among their opened files; I did not open it.",
+    "I saw no prediction, frame, pipeline output, earlier evaluation reference or pilot material."
+  ]
+}

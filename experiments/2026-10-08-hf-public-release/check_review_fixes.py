@@ -27,26 +27,27 @@ def main():
         elif f.suffix!='.png':text=f.read_text(encoding='utf-8-sig')
         else:continue
         for m in pat.finditer(text):hits.append(dict(file=f.relative_to(a.release).as_posix(),match=m.group()))
-    rows=pq.read_table(a.release/'data/benchmark_rows_v2.parquet').to_pylist();pred=[json.loads(r['prediction_json']) for r in rows]
     cases=[]
-    for name in ['missing-confidence','missing-section','invalid-confidence','invalid-section','passing']:
-        copy=json.loads(json.dumps(pred))
-        if name=='missing-confidence':copy[0]['units'][0].pop('confidence')
-        if name=='missing-section':copy[0].pop('section')
-        if name=='invalid-confidence':copy[0]['units'][0]['confidence']=1.1
-        if name=='invalid-section':copy[0]['section']='unknown'
-        input_path=a.raw_out/(name+'.json');dump(input_path,copy);score=a.raw_out/(name+'-scores.json')
-        cmd=[sys.executable,'-B',str(a.release/'code/score_benchmark.py'),'--release',str(a.release),'--benchmark','v2','--predictions',str(input_path),'--out',str(score)]
-        result=subprocess.run(cmd,capture_output=True,text=True);(a.raw_out/(name+'.log')).write_text(result.stdout+result.stderr,encoding='utf8')
-        expected_pass=name=='passing';ok=(result.returncode==0)==expected_pass
-        record=dict(case=name,returncode=result.returncode,passed=ok,output_created=score.exists())
-        if expected_pass:
-            d=read(score);expected=read(a.release/'benchmark/expected-metrics.json')['v2']
-            from validate_release import equal
-            mismatch=equal(expected,{k:d[k] for k in expected});finite=all(math.isfinite(x) for interval in d['row_bootstrap_95'].values() for x in interval)
-            record.update(score_mismatches=len(mismatch),finite_bootstrap_intervals=finite,calibration_n=d['summary']['calibration']['n']);record['passed']=ok and not mismatch and finite
-        else:record['passed']=ok and not score.exists() and ('confidence' in result.stderr if 'confidence' in name else 'section' in result.stderr)
-        cases.append(record)
+    for version in ['v2','v3']:
+        rows=pq.read_table(a.release/'data'/f'benchmark_rows_{version}.parquet').to_pylist();pred=[json.loads(r['prediction_json']) for r in rows]
+        for name in ['missing-confidence','missing-section','invalid-confidence','invalid-section','passing']:
+            copy=json.loads(json.dumps(pred))
+            if name=='missing-confidence':copy[0]['units'][0].pop('confidence')
+            if name=='missing-section':copy[0].pop('section')
+            if name=='invalid-confidence':copy[0]['units'][0]['confidence']=1.1
+            if name=='invalid-section':copy[0]['section']='unknown'
+            input_path=a.raw_out/(version+'-'+name+'.json');dump(input_path,copy);score=a.raw_out/(version+'-'+name+'-scores.json')
+            cmd=[sys.executable,'-B',str(a.release/'code/score_benchmark.py'),'--release',str(a.release),'--benchmark',version,'--predictions',str(input_path),'--out',str(score)]
+            result=subprocess.run(cmd,capture_output=True,text=True);(a.raw_out/(version+'-'+name+'.log')).write_text(result.stdout+result.stderr,encoding='utf8')
+            expected_pass=name=='passing';ok=(result.returncode==0)==expected_pass
+            record=dict(benchmark=version,case=name,returncode=result.returncode,passed=ok,output_created=score.exists())
+            if expected_pass:
+                d=read(score);expected=read(a.release/'benchmark/expected-metrics.json')[version]
+                from validate_release import equal
+                mismatch=equal(expected,{k:d[k] for k in expected});finite=all(math.isfinite(x) for interval in d['row_bootstrap_95'].values() for x in interval)
+                record.update(score_mismatches=len(mismatch),finite_bootstrap_intervals=finite,calibration_n=d['summary']['calibration']['n']);record['passed']=ok and not mismatch and finite
+            else:record['passed']=ok and not score.exists() and ('confidence' in result.stderr if 'confidence' in name else 'section' in result.stderr)
+            cases.append(record)
     names={x.relative_to(a.release).as_posix() for x in a.release.rglob('*') if x.is_file()}
     prohibited={'RELEASE-CHECKLIST.md','LICENSE-MIT','provenance/rights-audit.json','provenance/input-manifest.json'}
     result=dict(status='Verified computation',cff=dict(schema='CFF 1.2.0',schema_sha256=sha(RAW/'review-fixes-2026-10-08-sources/cff-schema-1.2.0.json'),validator='jsonschema Draft7Validator',errors=errors,authors=cff['authors']),official_license_texts_equal=license_files,privacy=dict(hits=hits,authorized_public_identifiers=[AUTHOR,DATASET_ID,ISSUES_URL]),excluded_private_files_absent=not bool(names&prohibited),prediction_cases=cases,local_only=True)

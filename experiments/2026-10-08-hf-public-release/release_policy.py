@@ -35,6 +35,8 @@ class Portable:
         # Keep public release paths and URLs; replace repository-only evidence pointers.
         pat = r'(?<![\w/])(?:experiments|data/(?:raw|normalized)|research|output|raw)/[^\s\"\'<>;,)}\]]+'
         obj = re.sub(pat, lambda m:self.label(m.group()), obj.replace('\\','/'))
+        obj = re.sub(r'(?<![\w/])repair/20[^\s\"\'<>;,)}\]]+', lambda m:self.label(m.group()), obj)
+        obj = obj.replace('data/raw/', 'excluded local source area').replace('evaluation/', 'earlier evaluation folder')
         obj = re.sub(r'[A-Za-z]:/Users/[^\s\"\'<>;,)}\]]+', lambda m:self.label(m.group()), obj)
         obj = re.sub(r'https://github\.com/k-sandhu/indus-valley-script[^\s\"\'<>]*', 'Source method summarized in docs/METHODS.md', obj)
         return obj

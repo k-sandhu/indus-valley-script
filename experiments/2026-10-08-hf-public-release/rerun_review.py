@@ -29,7 +29,7 @@ def main():
     for row in rows:row['source_path']=mapping[row['source_path']]
     pq.write_table(__import__('pyarrow').Table.from_pylist(rows,schema=table.schema),view/'data/image_assets.parquet',compression='zstd')
     adaptations=['Redirect output paths and scratch caches in memory; original scripts remain unchanged.',
-        'Load/image checks and legacy snippets read a raw materialized snapshot with 907 embedded PNGs extracted.',
+        'Load/image checks and legacy snippets read a raw materialized snapshot with all embedded PNGs extracted.',
         'Parent image audit restores source_path from the private portable-source map in that raw view only.',
         'Privacy, field definitions, rights scans and manifest check read the actual public release.',
         'Hosted card examples are exercised through local-only Hub function substitutions. No network repository is created or queried.']

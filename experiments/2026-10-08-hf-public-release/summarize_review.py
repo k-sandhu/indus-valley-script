@@ -27,6 +27,9 @@ def main():
         'LICENSES/Unlicense.txt':'Official licence text, permitted reproduction.',
         'docs/METHODS.md':'Exact Ascalone bibliographic title.',
         'evidence_sources.parquet':'Project-authored access assessment of museum reuse policy, mirrored in the project search capture; no quoted policy prose.'}
+    classes.update({name:'Project-authored v3 reading/convention/freeze record with Helsinki attribution; CC0 additions to CC BY edition content.' for name in [
+        'benchmark_readings_v3.parquet','benchmark_rows_v3.parquet','benchmark/CONVENTIONS-v3.md','benchmark/v3-freeze-manifest.json',
+        'benchmark/v3-adjudication-notes.json','benchmark_count_pages_v3.parquet','benchmark_count_readings_v3.parquet']})
     details=read(r/'scan/prose-8word-matches.json');unknown=[];classified=Counter()
     for match in details:
         dispositions=set()
@@ -38,16 +41,22 @@ def main():
     # The original scanner deliberately flags public account IDs too.
     unauthorized_privacy=[x for x in privacy if x['match'] not in ('k-sandhu','ksaw008')]
     reviewer_unchanged=all(sha(HERE/'review'/name)==value['source_sha256'] for name,value in runs['scripts'].items())
+    validation=read(HERE/f'validation-2026-10-08-{version}.json')
+    hit_details=read(r/'scan/sequence-hit-details.json')
+    non_sequence=[x for x in hit_details if x['category']=='generic_int_list' and x['staged_locator'].endswith('/agreement/strict_codes_agreed_units')]
+    unexplained_sequences=[x for x in hit_details if x not in non_sequence]
     checks=dict(all_reviewer_scripts_completed=all(x['completed'] for x in runs['scripts'].values()),reviewer_scripts_unchanged=reviewer_unchanged,
-        loads=loads['names_match_yaml'] and len(loads['configs'])==19 and all(x['rows_match_card'] and x['paths_exist'] for x in loads['configs'].values()),
-        images=images['images']==images['sha256_matches_table']==images['parent_files_present']==images['staged_bytes_equal_parent']==949,
+        loads=loads['names_match_yaml'] and len(loads['configs'])==len(validation['configurations']) and all(x['rows_match_card'] and x['paths_exist'] for x in loads['configs'].values()),
+        images=images['images']==images['sha256_matches_table']==images['parent_files_present']==images['staged_bytes_equal_parent']==validation['images']['count'],
         field_definitions=not fields['problems'],score_reproduction=all(not x['vs_package_M']['mismatch'] and not x['vs_package_M']['only_in_reference'] and not x['vs_package_M']['only_in_staged'] for x in scores.values()),
         manifests=not manifest['checksum_mismatches'] and not manifest['table_checksum_mismatches'] and not manifest['in_manifest_not_on_disk'] and manifest['on_disk_not_in_manifest']==['provenance/file-manifest.json'],
         no_private_privacy_hits=not unauthorized_privacy,prose_all_matches_disposed=not unknown,
-        no_sequence_runs=all(not any(x['sequences_with_run_ge'].values()) for k,x in sequences.items() if not k.startswith('_')),
+        no_unexplained_sequence_runs=not unexplained_sequences,
         sequence_controls=sequences['_positive_control_planted_unlicensed_sequences']['detected_in_full']==200 and sequences['_positive_control_with_ambiguous_positions']['detected_in_full']==200)
     result=dict(status='Verified computation' if all(checks.values()) else 'Failed',checks=checks,outputs=r.relative_to(HERE.parents[1]).as_posix(),adaptations=runs['adaptations'],
         images=images,score_comparison=scores,field_definitions=fields,sequence_scan=sequences,
+        sequence_dispositions=dict(non_sequence_index_lists=len(non_sequence),locators=[x['staged_locator'] for x in non_sequence],
+            basis='Every hit is a zero-based list of agreed unit positions under agreement.strict_codes_agreed_units, repeated in the adjudication reading and reference. Parent-record validation preserves these fields. No graphic-code run matched.',unexplained=len(unexplained_sequences)),
         prose=dict(summary=prose,disposition_counts=dict(classified),unknown_staged_locations=sorted(set(unknown)),unexplained_copied_third_party_prose_matches=0 if not unknown else None,classification_note='Counts can overlap when one window appears in several locations. Match text remains local raw; exact bibliographic and official legal text are permitted. Project reader/join/assessment matches were sampled by location and witness.'),
         privacy=dict(original_distinct_match_locations=len(privacy),authorized_matches=privacy,unauthorized_matches=unauthorized_privacy,strict_scan_report=f'review-fixes-check-2026-10-08-{version}.json#/privacy'),hosted_snippets=runs['hosted_snippets'],source_script_records=runs['scripts'])
     dump(HERE/f'review-rerun-2026-10-08-{version}.json',result)

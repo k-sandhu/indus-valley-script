@@ -7,7 +7,8 @@ import pyarrow.parquet as pq
 def embedded_images(release):
     for name, pairs in [('chart_reference',[('image_path','image')]),
                         ('benchmark_rows_v1',[('context_image_path','context_image')]),
-                        ('benchmark_rows_v2',[('context_image_path','context_image'),('exact_image_path','exact_image')])]:
+                        ('benchmark_rows_v2',[('context_image_path','context_image'),('exact_image_path','exact_image')]),
+                        ('benchmark_rows_v3',[('context_image_path','context_image'),('exact_image_path','exact_image')])]:
         for row in pq.read_table(Path(release)/'data'/f'{name}.parquet').to_pylist():
             for path_key, image_key in pairs:
                 if row.get(path_key) and row.get(image_key):

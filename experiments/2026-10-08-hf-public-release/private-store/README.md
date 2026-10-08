@@ -17,6 +17,8 @@ tags:
 | helsinki1979-provisional-ledger-import | `experiments/2026-10-07-helsinki1979-digitization/integration/2026-10-07-v1/ledger-import.jsonl` | 1 | 91947028 |
 | helsinki1979-repair-v1-frame | `experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-07-v1/frame.json` | 1 | 61541918 |
 | helsinki1979-repair-v2-frame | `experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-07-v2/frame.json` | 1 | 60522244 |
+| helsinki1979-v3-frame | `experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/frame.json` | 1 | 15890946 |
+| helsinki1979-v3-full-proposals | `data/raw/2026-10-07-helsinki1979-digitization/2026-10-08-v3/full-v2/proposals.jsonl` | 1 | 106190599 |
 
 
 The 1,029 restoration files include query/fold JSONL, arrays, fitted counts and checkpoints; five frozen-model files hold counts, three seed weights and a training register. They derive from the Lipi export, for which no licence was found, and remain private. Four Helsinki outputs hold provisional occurrences, a ledger import and v1/v2 repair frames. Their 1979 source is CC BY 4.0; the full transcription failed evaluation and remains quarantined. No third-party PDF scans appear in the manifest.
@@ -38,7 +40,7 @@ from huggingface_hub import snapshot_download
 snapshot_download(
     "ksaw008/indus-research-data", repo_type="dataset",
     revision="OWNER_SELECTED_COMMIT", local_dir="RESTORE_DIRECTORY",
-    allow_patterns=['data/raw/2026-10-06-modern-restoration/main/**', 'data/raw/2026-10-06-modern-restoration/frozen-model/**', 'experiments/2026-10-07-helsinki1979-digitization/runs/2026-10-07-full-v1/occurrences.jsonl', 'experiments/2026-10-07-helsinki1979-digitization/integration/2026-10-07-v1/ledger-import.jsonl', 'experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-07-v1/frame.json', 'experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-07-v2/frame.json'],
+    allow_patterns=['data/raw/2026-10-06-modern-restoration/main/**', 'data/raw/2026-10-06-modern-restoration/frozen-model/**', 'experiments/2026-10-07-helsinki1979-digitization/runs/2026-10-07-full-v1/occurrences.jsonl', 'experiments/2026-10-07-helsinki1979-digitization/integration/2026-10-07-v1/ledger-import.jsonl', 'experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-07-v1/frame.json', 'experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-07-v2/frame.json', 'experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/frame.json', 'data/raw/2026-10-07-helsinki1979-digitization/2026-10-08-v3/full-v2/proposals.jsonl'],
 )
 ```
 

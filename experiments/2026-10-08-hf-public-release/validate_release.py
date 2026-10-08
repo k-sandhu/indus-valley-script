@@ -12,7 +12,7 @@ import sys
 import time
 import importlib.metadata
 
-from build_release import ROOT, HERE, RAW, M, V2, B, S, environment, read, sha, dump, compact, csv_rows
+from build_release import ROOT, HERE, RAW, M, V2, V3, P, B, S, environment, read, sha, dump, compact, csv_rows
 from release_policy import Portable
 from extract_images import embedded_images
 import score_benchmark
@@ -55,7 +55,7 @@ def sequence_scan(tables,out):
                     sequence=tuple(str(v).lstrip('0') or '0' for v in value)
                     origins.setdefault(sequence,[]).append(dict(input=p.relative_to(ROOT).as_posix(),record_id=record.get('record_id'),field=field))
     matches=[];tested=0
-    for config in ['benchmark_rows_v1','benchmark_rows_v2']:
+    for config in ['benchmark_rows_v1','benchmark_rows_v2','benchmark_rows_v3']:
         for row in tables[config]:
             ref=json.loads(row['reference_json'])
             units=ref.get('units',[])
@@ -141,7 +141,7 @@ def main():
     metadata=yaml.safe_load(card.split('---')[1])
     manifest=read(release/'provenance/table-manifest.json')
     records=args.records or HERE/'build-records'/release.name
-    if not records.exists():records=HERE/'build-records'/'r10'
+    if not records.exists():raise FileNotFoundError('Supply --records for the build associated with this release folder.')
     inputs=read(records/'input-manifest.json')
     portable=Portable();portable.mapping=read(records/'portable-source-map.json')
     pin_results=[dict(path=r['path'],matches=sha(ROOT/r['path'])==r['sha256']) for r in inputs]
@@ -191,11 +191,20 @@ def main():
         source_checks.append(dict(check=name,passed=bool(ok),detail=detail))
         if not ok:failures.append(name)
     check('source_pin_integrity',all(r['matches'] for r in pin_results),f'{len(pin_results)} source files')
-    chart=read(ROOT/'research/chart_reference/manual_numeric_reference.json')['rows']
+    chart=read(P/'chart-reference-v2.1.json')['rows']
     check('chart_source_rows',len(chart)==len(tables['chart_reference'])==687,'manual reference and staged chart')
     lookup={(r['pdf_page'],r['column'],r['row']):r for r in chart}
     check('chart_selected_fields',all(all(r[k]==lookup[(r['pdf_page'],r['column'],r['row'])].get(k) for k in ['rank','code','alternatives','rank_alternatives','numeric_confidence','dashed_auxiliary']) for r in tables['chart_reference']),'Every numeric label and uncertainty field compared directly.')
-    check('chart_ambiguities',sum(bool(r['alternatives']) for r in tables['chart_reference'])==16,'lower-code alternatives retained')
+    check('chart_ambiguities',sum(bool(r['alternatives']) for r in tables['chart_reference'])==0,'all 16 earlier lower-code ambiguities provisionally settled')
+    from chart_changes import ChartChanges,cell_key
+    changes=ChartChanges(read(ROOT/'research/chart_reference/manual_numeric_reference.json'),read(P/'chart-reference-v2.1.json'),read(P/'comparison-v2.1.json'),read(P/'impact-v2.1.json'))
+    previous_ok=True
+    for row in tables['chart_reference']:
+        old=changes.old[row['cell_id']];changed=changes.changes.get(row['cell_id'],{})
+        for key in ['code','rank','alternatives','rank_alternatives','numeric_confidence']:
+            previous_ok=previous_ok and row['previous_'+key]==(old.get(key) if key in changed else None)
+        previous_ok=previous_ok and set(row['changed_fields'])==set(changed) and bool(row['change_note'])==bool(changed)
+    check('chart_previous_fields',previous_ok,'All five numeric previous-value columns and notes match P field deltas.')
     cov=read(S/'coverage.json')
     check('site_register',len(tables['evidence_sites'])==len(cov['sites'])==115 and all(all(row[k]==src.get(k) for k in ['site','assigned_region','local_faces','local_families','local_cisi_identifiers','IM77_main_selected_objects','IM77_count_status','ICIT_object_count','worldwide_missing_objects']) for row,src in zip(tables['evidence_sites'],cov['sites'])),'v6 selected fields')
     for config,file in [('evidence_field_completeness','field-completeness.csv'),('evidence_catalogue_coverage','catalogue-coverage.csv'),('evidence_catalogue_sections','catalogue-section-split.csv')]:
@@ -213,25 +222,28 @@ def main():
     check('CISI1_BC_493_327_166',len(bc)==19 and sum(r['catalogue_entries'] for r in bc)==493 and sum(r['local_matching_entries'] for r in bc)==327 and sum(r['local_absent_entry_keys'] for r in bc)==166,'19 Gujarat/north India ranges')
     check('museum_join_lower_bound',len(tables['evidence_museum_joins'])==summary['museum_joins']['confirmed_identifier_joins']==49 and all(r['cisi'] and r['cisi']!='-' and r['join_method']!='shared_field_and_published_plate' and 'Lipi' not in r['join_evidence'] and r['identifier_sources_json'] for r in tables['evidence_museum_joins']),'42 independent earlier pairs + 7 printed-catalogue supplement pairs; 19 Lipi-only joins excluded')
     # Compare fields to their parents independently of the build manifest.
-    for version,base in [('v1',M),('v2',V2)]:
+    for version,base in [('v1',M),('v2',V2),('v3',V3)]:
         selection=read(base/'blind/selection.json')['rows']
-        predpath=M/'portable-inputs/data/raw/2026-10-07-helsinki1979-digitization/frozen-evaluation-predictions.json' if version=='v1' else V2/'predictions.json'
+        predpath=M/'portable-inputs/data/raw/2026-10-07-helsinki1979-digitization/frozen-evaluation-predictions.json' if version=='v1' else base/'predictions.json'
         preds={r['sample_index']:r for r in read(predpath)['rows']}
         refs=[]
         if version=='v1':
             for letter in 'abc':refs.extend(read(M/f'blind/reference-{letter}.json')['rows'])
-        else:refs=read(V2/'blind/adjudicated-reference.json')['rows']
+        else:refs=read(base/'blind/adjudicated-reference.json')['rows']
         refs={r['sample_index']:r for r in refs};locators={r['sample_index']:r for r in selection}
         rows=tables['benchmark_rows_'+version]
         ok=len(rows)==len(selection) and all(json.loads(r['reference_json'])==portable.value(refs[r['sample_index']]) and json.loads(r['prediction_json'])==portable.value(preds[r['sample_index']]) and json.loads(r['locator_json'])==portable.value(locators[r['sample_index']]) for r in rows)
         check('benchmark_'+version+'_parent_records',ok,'Every substantive frozen reference, prediction and locator field matches; repository-only pointers use portable labels.')
-    for config in ['benchmark_readings','benchmark_count_readings']:
+        flags_ok=all(json.loads(r['reference_chart_correction_flags_json'])==changes.reference_flags(refs[r['sample_index']],version,True)
+            and json.loads(r['prediction_chart_correction_flags_json'])==changes.prediction_flags(preds[r['sample_index']]) for r in rows)
+        check('benchmark_'+version+'_chart_flags',flags_ok,'All unit flags match P explicit joins or template-key changed-cell joins; frozen payloads remain unchanged.')
+    for config in ['benchmark_readings','benchmark_readings_v3','benchmark_count_readings','benchmark_count_readings_v3']:
         cache={};ok=True
         for row in tables[config]:
             path=portable.mapping[row['source_file']]
             if path not in cache:cache[path]=read(ROOT/path)
-            parent=cache[path]['rows' if config=='benchmark_readings' else 'pages']
-            key='sample_index' if config=='benchmark_readings' else 'pdf_page'
+            parent=cache[path]['rows' if config.startswith('benchmark_readings') else 'pages']
+            key='sample_index' if config.startswith('benchmark_readings') else 'pdf_page'
             original=next(r for r in parent if r[key]==row[key])
             ok=ok and json.loads(row['reading_json'])==portable.value(original)
         check(config+'_parent_records',ok,'Every reading field matches after portable pointer transformation.')
@@ -262,9 +274,18 @@ def main():
     countref=read(V2/'blind/adjudicated-counts.json')['pages'];detection=read(V2/'count-page-detections.json')['pages']
     lookup={r['pdf_page']:r for r in countref};dlookup={r['pdf_page']:r for r in detection}
     check('count_page_parent_geometry',all(json.loads(r['reference_json'])==portable.value(lookup[r['pdf_page']]) and json.loads(r['detections_json'])==[{k:v[k] for k in ['row_anchor_y_2x','margin_xyxy_2x']} for v in dlookup[r['pdf_page']]['rows']] for r in tables['benchmark_count_pages']),'All 21 adjudicated page records and detector geometry fields.')
+    countref3=read(V3/'blind/adjudicated-counts.json')['pages'];detection3=read(V3/'count-page-detections.json')['pages']
+    lookup3={r['pdf_page']:r for r in countref3};dlookup3={r['pdf_page']:r for r in detection3}
+    keys=['line_kind','row_anchor_y_2x','margin_pdf_box','glyph_pdf_box']
+    check('v3_count_page_parent_geometry',all(json.loads(r['reference_json'])==portable.value(lookup3[r['pdf_page']])
+        and json.loads(r['detections_json'])==[{k:v[k] for k in keys} for v in dlookup3[r['pdf_page']]['rows']]
+        for r in tables['benchmark_count_pages_v3']),'All 21 adjudicated page records and numbered/physical-line geometry fields.')
+    check('v3_frame',read(release/'benchmark/v3-selection.json')==portable.value(read(V3/'blind/selection.json')),'Every selection field matches the frozen v3 packet.')
+    old_pages={r['pdf_page'] for v in ['v1','v2'] for r in tables['benchmark_rows_'+v]}
+    check('v3_fresh_target_pages',not old_pages.intersection(r['pdf_page'] for r in tables['benchmark_rows_v3']),'No v3 target page occurred among the earlier 140 benchmark targets.')
     scores={}
     expected=read(release/'benchmark/expected-metrics.json')
-    for version in ['v1','v2']:
+    for version in ['v1','v2','v3']:
         start=time.perf_counter();result=score_benchmark.compute(release,version)
         dump(rawout/f'scores-{version}.json',result)
         compared={k:result[k] for k in expected[version]}
@@ -293,7 +314,7 @@ def main():
         source_checks=source_checks,source_pins=pin_results,benchmark_scores=scores,sequence_screen=sequence,prose_screen=prose,
         failures=failures,software={k:importlib.metadata.version(k) for k in ['datasets','pyarrow','numpy','PyYAML','Pillow','huggingface_hub']},
         python=sys.version,release_files=len(files)+1,release_bytes=sum(r['bytes'] for r in files)+(release/'provenance/file-manifest.json').stat().st_size,manifest_excludes_self=True,
-        unverified=['Hosted dataset viewer and remote loading: no upload performed.','No expert epigraphic review.','Prose-overlap matches require disposition; screen covers available witnesses only.','Public issues repository is awaiting confirmation.'])
+        unverified=['Hosted 0.3.0 loading/viewer awaits coordinator update; coordinator reports 0.2.0 all 19 configs load.','No expert epigraphic review.','Prose-overlap matches require disposition; screen covers available witnesses only.','Public issues repository is awaiting confirmation.'])
     dump(out,result)
     print(compact(dict(status=result['status'],configs=len(loads),rows=result['total_table_rows'],images=len(images),failures=failures,prose_overlap_windows=prose['overlap_windows'],sequence_matches=sequence['matching_directions'])))
     if failures:sys.exit(1)

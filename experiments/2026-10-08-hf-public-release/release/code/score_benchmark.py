@@ -34,8 +34,8 @@ def validate_predictions(predictions, version):
     sections={'number_order','end_sorted','beginning_sorted'}
     for row in predictions:
         sample=row.get('sample_index','unknown')
-        if version=='v2' and row.get('section') not in sections:
-            raise ValueError(f'Sample {sample}: v2 requires section in {sorted(sections)}')
+        if version in ['v2','v3'] and row.get('section') not in sections:
+            raise ValueError(f'Sample {sample}: {version} requires section in {sorted(sections)}')
         if not isinstance(row.get('units'),list):
             raise ValueError(f'Sample {sample}: units must be a list')
         for i,unit in enumerate(row['units']):
@@ -49,7 +49,7 @@ def compute(release,version,predictions=None,bootstrap=True):
     rows=[]
     for p,datum in zip(preds,data):
         ref=json.loads(datum['reference_json']);r=E.score_row(p,ref)
-        if version=='v2' and ref.get('valid_printed_target') is False:
+        if version in ['v2','v3'] and ref.get('valid_printed_target') is False:
             r.update(crop_correct=False,count_agrees=False,number_correct=False,classification_correct=False,uniquely_resolved_exact_sequence=False)
             for key in ('strict_top1','strict_top5','shape_only_top1','shape_only_top5'):r[key]['whole_row_compatible']=False
         rows.append(r)
@@ -65,7 +65,7 @@ def compute(release,version,predictions=None,bootstrap=True):
             number_90=summary['inscription_number_accuracy']['rate'] is not None and summary['inscription_number_accuracy']['rate']>=.90,
             count_95=summary['drawn_unit_count_agreement']['rate'] is not None and summary['drawn_unit_count_agreement']['rate']>=.95,
             top5_rows_80=summary['strict_top5']['whole_rows_all_sample']['rate']>=.80)
-    else:
+    elif version=='v2':
         countdata=pq.read_table(release/'data/benchmark_count_pages.parquet').to_pylist()
         pages=[R.recall_page(json.loads(d['detections_json']),json.loads(d['reference_json'])) for d in countdata]
         original_rng=random.Random(2026100791);random_pages=[]
@@ -80,10 +80,25 @@ def compute(release,version,predictions=None,bootstrap=True):
             count_95=summary['drawn_unit_count_agreement']['success']>=76,
             top5_rows_80=summary['strict_top5']['whole_rows_all_sample']['success']>=64,
             random_page_recall_95=recall['recall']['rate'] is not None and recall['recall']['rate']>=.95)
+    else:
+        import score_recall_v3 as RV3
+        countdata=pq.read_table(release/'data/benchmark_count_pages_v3.parquet').to_pylist()
+        pages=[RV3.recall_page(json.loads(d['detections_json']),json.loads(d['reference_json'])) for d in countdata]
+        physical=[RV3.recall_page(json.loads(d['detections_json']),json.loads(d['reference_json']),True) for d in countdata]
+        random_pages={d['pdf_page'] for d in countdata if d['frame']=='random'}
+        random_results=[p for p in pages if p['pdf_page'] in random_pages]
+        physical_random=[p for p in physical if p['pdf_page'] in random_pages]
+        for key,values in [('source_row_recall',pages),('physical_line_recall',physical)]:
+            result[key]=dict(random=R.page_summary([p for p in values if p['pdf_page'] in random_pages]),
+                stress=R.page_summary([p for p in values if p['pdf_page'] not in random_pages]),pages=values,matching_tolerance_pdf_points=9)
+        criteria={name:summary[key]['total']==80 and summary[key]['rate']>=threshold for name,key,threshold in [
+            ('crop_90','row_crop_correctness',.90),('number_90','inscription_number_accuracy',.90),('count_95','drawn_unit_count_agreement',.95)]}
+        criteria['top5_rows_80']=summary['strict_top5']['whole_rows_all_sample']['success']>=64
+        criteria['random_page_recall_95']=result['source_row_recall']['random']['recall']['rate'] is not None and result['source_row_recall']['random']['recall']['rate']>=.95
     result['negative_result_criteria']=criteria
     result['pipeline_status']='Verified computation' if all(criteria.values()) else 'Failed'
     if bootstrap:
-        rng=np.random.default_rng(20261008 if version=='v1' else 2026100781)
+        rng=np.random.default_rng({'v1':20261008,'v2':2026100781,'v3':2026100881}[version])
         sections={s:[i for i,p in enumerate(preds) if p.get('section')==s] for s in ['number_order','end_sorted','beginning_sorted']}
         boot=[]
         for _ in range(2000):
@@ -94,19 +109,22 @@ def compute(release,version,predictions=None,bootstrap=True):
         names=['strict_top1_aligned_recall','strict_top5_aligned_recall','strict_top1_same_position_equal_count','strict_top5_same_position_equal_count','calibration_brier','calibration_ece10']
         quantile=np.quantile if version=='v1' else np.nanquantile
         result['row_bootstrap_95']={name:quantile(np.array(boot,dtype=float)[:,i],[.025,.975]).tolist() for i,name in enumerate(names)}
-        if version=='v2':
-            count_boot=[]
-            for _ in range(2000):
-                sampled=[random_results[i] for i in rng.integers(0,len(random_results),len(random_results))]
-                a=R.page_summary(sampled);count_boot.append([a['recall']['rate'],a['precision']['rate']])
-            result['source_row_recall']['random_page_bootstrap_ci95']=dict(recall=np.quantile(np.array(count_boot)[:,0],[.025,.975]).tolist(),precision=np.quantile(np.array(count_boot)[:,1],[.025,.975]).tolist())
+        if version in ['v2','v3']:
+            frames=[('source_row_recall',random_results)]
+            if version=='v3':frames.append(('physical_line_recall',physical_random))
+            for key,values in frames:
+                count_boot=[]
+                for _ in range(2000):
+                    sampled=[values[i] for i in rng.integers(0,len(values),len(values))]
+                    a=R.page_summary(sampled);count_boot.append([a['recall']['rate'],a['precision']['rate']])
+                result[key]['random_page_bootstrap_ci95']=dict(recall=np.quantile(np.array(count_boot)[:,0],[.025,.975]).tolist(),precision=np.quantile(np.array(count_boot)[:,1],[.025,.975]).tolist())
     return result
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     base=Path(__file__).resolve().parent
     parser.add_argument('--release',type=Path,default=base.parent if base.name=='code' else base/'release')
-    parser.add_argument('--benchmark',choices=['v1','v2'],required=True)
+    parser.add_argument('--benchmark',choices=['v1','v2','v3'],required=True)
     parser.add_argument('--predictions',type=Path)
     parser.add_argument('--out',type=Path,required=True)
     parser.add_argument('--no-bootstrap',action='store_true')

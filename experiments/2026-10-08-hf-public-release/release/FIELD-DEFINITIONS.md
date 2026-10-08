@@ -19,10 +19,18 @@ Table `status` values are `Exploratory` and `Frozen evaluation`. Arithmetic vali
 | `alternatives` | `list<element: int64>` | Other retained readings of the lower numeric label. Empty means no additional label candidate was retained. |
 | `rank_alternatives` | `list<element: int64>` | Other retained upper-label readings. |
 | `numeric_confidence` | `string` | Qualitative AI label-reading judgment inherited from the reference; it is not a calibrated probability. |
+| `previous_rank` | `int64` | Original upper class when changed, otherwise null. |
+| `previous_code` | `int64` | Original chart code when changed, otherwise null. |
+| `previous_alternatives` | `list<element: int64>` | Original lower-code alternatives when changed; an empty list differs from null. |
+| `previous_rank_alternatives` | `list<element: int64>` | Original upper-class alternatives when changed, otherwise null. |
+| `previous_numeric_confidence` | `string` | Original qualitative confidence when changed, otherwise null. |
+| `changed_fields` | `list<element: string>` | Names of changed numeric fields relative to the original reference. |
+| `change_note` | `string` | Short old-to-new numeric change description; null when unchanged. |
 | `dashed_auxiliary` | `bool` | Whether the chart cell was annotated as a dashed auxiliary drawing; null preserves an unrecorded judgment. |
 | `source_crop_pdf_points` | `list<element: double>` | Chart crop [left, top, right, bottom] in PDF points. |
 | `image_path` | `string` | Logical PNG name; image_assets gives storage. Extract embedded images with code/extract_images.py. |
 | `annotation_method` | `string` | Authored description of how numeric chart labels were read. |
+| `reference_version` | `string` | Reviewed chart numeric-reference version; 2.1 in this release. |
 | `source_url` | `string` | Official source or licence attribution URL. |
 | `source_pdf_sha256` | `string` | SHA256 of the unchanged acquired 1979 PDF, which is not bundled. |
 | `status` | `string` | Exploratory or Frozen evaluation; see shared notes. |
@@ -32,7 +40,7 @@ Table `status` values are `Exploratory` and `Frozen evaluation`. Arithmetic vali
 
 | Field | Arrow type | Definition |
 |---|---|---|
-| `sample_index` | `int64` | Zero-based index within the v1 or v2 frozen benchmark. The two index spaces are separate. |
+| `sample_index` | `int64` | Zero-based index within v1, v2 or v3; each benchmark has a separate index space. |
 | `occurrence_key` | `string` | Pipeline locator for a printed occurrence; it does not establish a physical-object identity. |
 | `pdf_page` | `int64` | One-based page of the acquired PDF, including the repository cover. It differs from book pagination. |
 | `section` | `string` | number_order, end_sorted or beginning_sorted section of the edition. |
@@ -41,8 +49,10 @@ Table `status` values are `Exploratory` and `Frozen evaluation`. Arithmetic vali
 | `locator_json` | `string` | JSON object with sample coordinates, crop hashes and selection fields. See the nested-field notes below. |
 | `reference_json` | `string` | Frozen reference JSON with portable source pointers. |
 | `prediction_json` | `string` | Frozen chart-only prediction JSON with ranked alternatives and unit-level confidence. |
-| `reference_kind` | `string` | Initial disjoint AI reading in v1 or adjudication following two AI readings in v2. |
-| `original_ocr_locator_exposed` | `bool` | Whether v1 locator metadata contained OCR strings before the blinding correction; false in v2. |
+| `reference_chart_correction_flags_json` | `string` | Per-reference-unit flags from the chart impact: corrected cells, field changes, candidate-identity warnings and locator conflict. |
+| `prediction_chart_correction_flags_json` | `string` | Per-predicted-unit flags for alternatives whose template_key points to a changed chart cell. |
+| `reference_kind` | `string` | Initial disjoint AI reading in v1, or adjudication following two AI readings in v2/v3. |
+| `original_ocr_locator_exposed` | `bool` | Whether v1 locator metadata contained OCR strings before the blinding correction; false in v2/v3. |
 | `status` | `string` | Exploratory or Frozen evaluation; see shared notes. |
 | `context_image` | `struct<bytes: binary, path: string>` | Embedded wider-context PNG, exposed as a datasets Image feature. |
 
@@ -50,7 +60,7 @@ Table `status` values are `Exploratory` and `Frozen evaluation`. Arithmetic vali
 
 | Field | Arrow type | Definition |
 |---|---|---|
-| `sample_index` | `int64` | Zero-based index within the v1 or v2 frozen benchmark. The two index spaces are separate. |
+| `sample_index` | `int64` | Zero-based index within v1, v2 or v3; each benchmark has a separate index space. |
 | `occurrence_key` | `string` | Pipeline locator for a printed occurrence; it does not establish a physical-object identity. |
 | `pdf_page` | `int64` | One-based page of the acquired PDF, including the repository cover. It differs from book pagination. |
 | `section` | `string` | number_order, end_sorted or beginning_sorted section of the edition. |
@@ -59,21 +69,58 @@ Table `status` values are `Exploratory` and `Frozen evaluation`. Arithmetic vali
 | `locator_json` | `string` | JSON object with sample coordinates, crop hashes and selection fields. See the nested-field notes below. |
 | `reference_json` | `string` | Frozen reference JSON with portable source pointers. |
 | `prediction_json` | `string` | Frozen chart-only prediction JSON with ranked alternatives and unit-level confidence. |
-| `reference_kind` | `string` | Initial disjoint AI reading in v1 or adjudication following two AI readings in v2. |
-| `original_ocr_locator_exposed` | `bool` | Whether v1 locator metadata contained OCR strings before the blinding correction; false in v2. |
+| `reference_chart_correction_flags_json` | `string` | Per-reference-unit flags from the chart impact: corrected cells, field changes, candidate-identity warnings and locator conflict. |
+| `prediction_chart_correction_flags_json` | `string` | Per-predicted-unit flags for alternatives whose template_key points to a changed chart cell. |
+| `reference_kind` | `string` | Initial disjoint AI reading in v1, or adjudication following two AI readings in v2/v3. |
+| `original_ocr_locator_exposed` | `bool` | Whether v1 locator metadata contained OCR strings before the blinding correction; false in v2/v3. |
 | `status` | `string` | Exploratory or Frozen evaluation; see shared notes. |
 | `context_image` | `struct<bytes: binary, path: string>` | Embedded wider-context PNG, exposed as a datasets Image feature. |
-| `exact_image` | `struct<bytes: binary, path: string>` | Embedded proposed target-box PNG in v2, exposed as a datasets Image feature. |
+| `exact_image` | `struct<bytes: binary, path: string>` | Embedded proposed target-box PNG in v2/v3, exposed as a datasets Image feature. |
+
+## benchmark_rows_v3
+
+| Field | Arrow type | Definition |
+|---|---|---|
+| `sample_index` | `int64` | Zero-based index within v1, v2 or v3; each benchmark has a separate index space. |
+| `occurrence_key` | `string` | Pipeline locator for a printed occurrence; it does not establish a physical-object identity. |
+| `pdf_page` | `int64` | One-based page of the acquired PDF, including the repository cover. It differs from book pagination. |
+| `section` | `string` | number_order, end_sorted or beginning_sorted section of the edition. |
+| `context_image_path` | `string` | Logical context PNG name corresponding to context_image. |
+| `exact_image_path` | `string` | Logical target-box PNG name, null in v1. |
+| `locator_json` | `string` | JSON object with sample coordinates, crop hashes and selection fields. See the nested-field notes below. |
+| `reference_json` | `string` | Frozen reference JSON with portable source pointers. |
+| `prediction_json` | `string` | Frozen chart-only prediction JSON with ranked alternatives and unit-level confidence. |
+| `reference_chart_correction_flags_json` | `string` | Per-reference-unit flags from the chart impact: corrected cells, field changes, candidate-identity warnings and locator conflict. |
+| `prediction_chart_correction_flags_json` | `string` | Per-predicted-unit flags for alternatives whose template_key points to a changed chart cell. |
+| `reference_kind` | `string` | Initial disjoint AI reading in v1, or adjudication following two AI readings in v2/v3. |
+| `original_ocr_locator_exposed` | `bool` | Whether v1 locator metadata contained OCR strings before the blinding correction; false in v2/v3. |
+| `status` | `string` | Exploratory or Frozen evaluation; see shared notes. |
+| `context_image` | `struct<bytes: binary, path: string>` | Embedded wider-context PNG, exposed as a datasets Image feature. |
+| `exact_image` | `struct<bytes: binary, path: string>` | Embedded proposed target-box PNG in v2/v3, exposed as a datasets Image feature. |
 
 ## benchmark_readings
 
 | Field | Arrow type | Definition |
 |---|---|---|
-| `benchmark` | `string` | v1 or v2 benchmark identifier. |
-| `sample_index` | `int64` | Zero-based index within the v1 or v2 frozen benchmark. The two index spaces are separate. |
+| `benchmark` | `string` | v1, v2 or v3 frozen benchmark identifier. |
+| `sample_index` | `int64` | Zero-based index within v1, v2 or v3; each benchmark has a separate index space. |
 | `reader` | `string` | A, B or C research-role label. |
 | `kind` | `string` | primary, convenience_repeat, independent or adjudicated reading. Repeats were fixed convenience selections. |
 | `reading_json` | `string` | Original returned reading JSON with portable source pointers. |
+| `chart_correction_flags_json` | `string` | Per-unit chart-change flags for this reading, separate from the frozen reading JSON. |
+| `source_file` | `string` | Portable original reader/card witness label. |
+| `status` | `string` | Exploratory or Frozen evaluation; see shared notes. |
+
+## benchmark_readings_v3
+
+| Field | Arrow type | Definition |
+|---|---|---|
+| `benchmark` | `string` | v1, v2 or v3 frozen benchmark identifier. |
+| `sample_index` | `int64` | Zero-based index within v1, v2 or v3; each benchmark has a separate index space. |
+| `reader` | `string` | A, B or C research-role label. |
+| `kind` | `string` | primary, convenience_repeat, independent or adjudicated reading. Repeats were fixed convenience selections. |
+| `reading_json` | `string` | Original returned reading JSON with portable source pointers. |
+| `chart_correction_flags_json` | `string` | Per-unit chart-change flags for this reading, separate from the frozen reading JSON. |
 | `source_file` | `string` | Portable original reader/card witness label. |
 | `status` | `string` | Exploratory or Frozen evaluation; see shared notes. |
 
@@ -81,7 +128,7 @@ Table `status` values are `Exploratory` and `Frozen evaluation`. Arithmetic vali
 
 | Field | Arrow type | Definition |
 |---|---|---|
-| `benchmark` | `string` | v1 or v2 benchmark identifier. |
+| `benchmark` | `string` | v1, v2 or v3 frozen benchmark identifier. |
 | `card_id` | `string` | Original chart-card sheet stem; sheet sequence is not a train/test split. |
 | `image_path` | `string` | Logical PNG name; image_assets gives storage. Extract embedded images with code/extract_images.py. |
 | `source_file` | `string` | Portable original reader/card witness label. |
@@ -98,6 +145,26 @@ Table `status` values are `Exploratory` and `Frozen evaluation`. Arithmetic vali
 | `status` | `string` | Exploratory or Frozen evaluation; see shared notes. |
 
 ## benchmark_count_readings
+
+| Field | Arrow type | Definition |
+|---|---|---|
+| `pdf_page` | `int64` | One-based page of the acquired PDF, including the repository cover. It differs from book pagination. |
+| `reader` | `string` | A, B or C research-role label. |
+| `reading_json` | `string` | Original returned reading JSON with portable source pointers. |
+| `source_file` | `string` | Portable original reader/card witness label. |
+
+## benchmark_count_pages_v3
+
+| Field | Arrow type | Definition |
+|---|---|---|
+| `pdf_page` | `int64` | One-based page of the acquired PDF, including the repository cover. It differs from book pagination. |
+| `frame` | `string` | random or stress source-count page frame. |
+| `image_paths` | `list<element: string>` | List of licensed count-page PNGs relative to the dataset root. |
+| `reference_json` | `string` | Frozen reference JSON with portable source pointers. |
+| `detections_json` | `string` | JSON list containing only row_anchor_y_2x and margin_xyxy_2x, the geometry used for row-recall matching. |
+| `status` | `string` | Exploratory or Frozen evaluation; see shared notes. |
+
+## benchmark_count_readings_v3
 
 | Field | Arrow type | Definition |
 |---|---|---|
@@ -300,8 +367,8 @@ Table `status` values are `Exploratory` and `Frozen evaluation`. Arithmetic vali
 
 ## Nested benchmark fields
 
-References contain sample_index, printed_inscription_id, classification_literal, crop_correct, drawn_unit_count and ordered units. A unit's strict_candidate_codes combines drawing, underline and vertical-position evidence; shape_only_candidate_codes is a broader diagnostic set. Empty strict sets are unresolved. Damage/hatching is a modern editorial drawing unit with unknown ancient sign extent. valid_printed_target=false is scored as a false detection in v2.
+References contain sample_index, printed_inscription_id, classification_literal, crop_correct, drawn_unit_count and ordered units. A unit's strict_candidate_codes combines drawing, underline and vertical-position evidence; shape_only_candidate_codes is a broader diagnostic set. Empty strict sets are unresolved. Damage/hatching is a modern editorial drawing unit with unknown ancient sign extent. valid_printed_target=false is scored as a false detection in v2/v3.
 
-Prediction units contain confidence in [0, 1] and ranked alternatives, each with codes. Original template order, costs and confidence reproduce alignment/calibration. v2 section supplies stratified bootstrap membership. Classifications preserve five positions, including spaces. serialization records visual ordering; confidence and template scores describe model output.
+Prediction units contain confidence in [0, 1] and ranked alternatives, each with codes. Original template order, costs and confidence reproduce alignment/calibration. v2/v3 section supplies stratified bootstrap membership. Classifications preserve five positions, including spaces. serialization records visual ordering; confidence and template scores describe model output.
 
-Locator coordinates ending _2x use two pixels per PDF point; _pdf_box/_pdf_points use PDF points. Original crop filenames are locator observations; outer logical paths and image columns locate assets. Count references give columns, extents, counts and centers. Recall greedily matches nearest eligible centers within nine PDF points; continuation lines do not add numbered occurrences. Reader metadata retains process disclosures, and the v1 overlay is separate from frozen scoring.
+Locator coordinates ending _2x use two pixels per PDF point; _pdf_box/_pdf_points use PDF points. Original crop filenames are locator observations; outer logical paths and image columns locate assets. Count references give columns, extents, counts and centers. Recall greedily matches nearest eligible centers within nine PDF points; continuation lines do not add numbered occurrences. V3 numbered recall uses the numbered anchor, while physical-line recall uses glyph-box centers and includes continuations. Per-unit correction flags never change frozen codes: corrected_cell identifies a linked changed record; candidate_identity_review flags possible unlocated identities; locator_conflict retains conflicting witnesses. Reader metadata retains process disclosures, and the v1 overlay is separate from frozen scoring.
