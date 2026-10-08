@@ -3,9 +3,9 @@
   "theme": "licensed corpus font digitization",
   "status": "Failed",
   "question": "Does ink-aware v3 cropping pass the frozen Helsinki1979 release criteria on a fresh three-section sample?",
-  "outcome": "First:60 numbered-section rows PDF31–79,33 counts,23 numbers,24 top-five rows. V2:80 three-section rows,44 crops,59 counts,62 numbers,55 classifications,20 top-one/40 top-five rows. V3:80 fresh three-section rows,71 crops,72 counts,71 numbers,72 classifications,38 top-one/62 top-five,28/54 singleton exact;338/366 resolved unit top-five recall. Fresh random numbered recall1289/1289 and physical1296/1296;stress561/561. Four of five criteria fail, gaps1 crop,1 number,4 count,2 top-five rows. All11769 v3 proposals and11369 original occurrences quarantined;zero released.",
-  "challenge": "V3 top-five failures:8 rejected crops,7 segmentation/underline defects,3 unresolved strict-reference rows. Fields wrong in15/80. Four chart-card/printed-code differences remain frozen;row58 has conflicting cell locators. Compact stress pages have count evidence but no fresh recognition sample.",
-  "remedy": "Preserved all three frozen endpoints,recorded intervals/threshold gaps,inspected failure windows,computed reader agreement and task costs,and documented cell-keyed future chart correction and package N handoff. Unchanged evaluator replay;no chart correction,reference edit or full inference rerun.",
+  "outcome": "First:60 numbered-section rows PDF31–79,33 counts,23 numbers,24 top-five rows. V2:80 three-section rows,44 crops,59 counts,62 numbers,55 classifications,20 top-one/40 top-five rows. V3:80 fresh three-section rows,71 crops,72 counts,71 numbers,72 classifications,38 top-one/62 top-five,28/54 singleton exact;338/366 resolved unit top-five recall. Fresh random numbered recall1289/1289 and physical1296/1296;stress561/561. Four of five criteria fail, gaps1 crop,1 number,4 count,2 top-five rows. All11769 v3 proposals and11369 original occurrences quarantined;zero released. V3 rates use two Claude Sonnet 5.5 readers and a Claude adjudicator with shared conventions/cards and no human check; count scripts share the field-block cue with the pipeline. Reading sensitivity: strict top five 64/80 if 35:2 and 70:4 accept {23}; frozen shape-only 65/80. Count 72/80 against 76 and number 71/80 against 72 still fail. The original strict verdict remains Failed.",
+  "challenge": "V3 top-five failures:8 rejected crops,7 segmentation/underline defects,3 unresolved strict-reference rows. Fields wrong in15/80. Four chart-card/printed-code differences remain frozen;row58 has conflicting cell locators. Compact stress pages have count evidence but no fresh recognition sample. Row intervals omit page clustering; 8 random count pages carried earlier recognition targets. The first freeze commit follows reader starts despite earlier embedded/file timestamps.",
+  "remedy": "Preserved all three frozen endpoints,recorded intervals/threshold gaps,inspected failure windows,computed reader agreement and task costs,and documented cell-keyed future chart correction and package N handoff. Unchanged evaluator replay;no chart correction,reference edit or full inference rerun. Applied Sonnet v3 review without editing frozen/review witnesses; reported reading-choice sensitivities and the six-row trim recovery with its broken control.",
   "evidence": [
     "experiments/2026-10-07-helsinki1979-digitization/REPORT.md",
     "experiments/2026-10-07-helsinki1979-digitization/follow-up/2026-10-07/analysis-v1/preservation-check.json",
@@ -39,7 +39,13 @@
     "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-endpoint-record-v1/preservation-check.json",
     "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-endpoint-record-v1/verification-final.json",
     "experiments/2026-10-08-helsinki1979-row-verification/pilot/PILOT-RESULTS.md",
-    "experiments/2026-10-08-chart-reference-audit/PROTOCOL.md"
+    "experiments/2026-10-08-chart-reference-audit/PROTOCOL.md",
+    "experiments/2026-10-07-helsinki1979-digitization/REVIEW-V3.md",
+    "experiments/2026-10-07-helsinki1979-digitization/review-v3/recomputed-v3-claims.json",
+    "experiments/2026-10-07-helsinki1979-digitization/review-v3/counterfactual-bottom-edge.json",
+    "experiments/2026-10-07-helsinki1979-digitization/review-v3/counterfactual-bottom-edge-control.json",
+    "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-review-response-v1/review-response.json",
+    "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-review-response-v1/preservation-check.json"
   ],
   "retry_when": "Automatic release needs a separately frozen layout/unit/chart repair and fresh blind evaluation passing every global criterion plus each row rule. Package N needs a second screening pilot with v3,P-reviewed chart and clarified conventions,a validated acceptance rule,complete source-column coverage and human/expert checks. L additionally needs reviewed identity/surface concordances."
 }

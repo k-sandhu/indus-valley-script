@@ -76,6 +76,10 @@ def comparison_table():
 
 
 def main():
+    if (HERE / 'repair/2026-10-08-review-response-v1/review-response.json').exists():
+        from apply_v3_review import write_documents
+        write_documents()
+        return
     diag = read(HERE / D); audit = read(HERE / A); cost = read(HERE / C)
     full = read(HERE / RUN / 'full-summary.json'); table = comparison_table()
     criteria = '| V3 frozen criterion, all 80 rows unless stated | Observed | Minimum passing numerator | Additional passing rows needed |\n|---|---|---|---|\n'

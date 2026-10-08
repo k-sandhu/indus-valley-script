@@ -1,0 +1,12 @@
+# Fifth follow-up for package M from the coordinator: apply the v3 review
+
+A Claude Sonnet reviewer checked the v3 work and wrote `REVIEW-V3.md` with scripts and outputs in `review-v3/` (read and reuse them; do not edit them). The evaluator replay, endpoint record, freeze order, selection seeds, full inventory and every headline number reproduce. Read the review in full, add a dated amendment to `PROTOCOL.md`, and apply its required fixes without changing any frozen pipeline file, prediction, reference or metric:
+
+1. Next to the v3 headline numbers in `README.md` and `REPORT.md`, state where the reference comes from. Two Claude Sonnet 5.5 readers read the rows and a Claude adjudicator settled them, with no human check. The count reference was built with pixel scripts that use the same field-block cue as the pipeline.
+2. Report how the top-five criterion depends on reading choices. Rows 35 and 70 fail only because the adjudicator emptied the strict set of an isolated tick. Accepting {23} in both would give a strict top five of 64/80, which meets the threshold. The frozen metrics also contain a shape-only top five of 65/80 (81.3%; 71.3–88.3%). Count (72/80 against 76) and number (71/80 against 72) fail regardless. Report this as a sensitivity of the frozen result, and keep the frozen verdict.
+3. Correct "seven shifted unit windows" for row 31 to windows 3–6.
+4. Fix the missing spaces the review lists, mark the superseded opening paragraph of `RETROSPECTIVE.md`, repair the mojibake en dashes in `sources.json`, and reword the README's "immutable" description of `OPTION-B-INTERFACE.md` to match its amended history.
+5. Report the review's post hoc crop-trim probe as an exploratory diagnostic: six of eight crop-stage rows became top-five compatible with the lower edge trimmed, row 5 broke, and rows 76 and 77 were not probed. Add the optional points the review lists where they affect a stated claim: page clustering of the intervals, the eight count pages with earlier recognition targets, and the commit time of the freeze.
+6. Update `registry-entry.json` so it covers v3, and record this step in `RETROSPECTIVE.md`.
+
+Follow `knowledge/editorial/WRITING.md`: maximize reader comprehension; explain the idea directly in connected prose; keep necessary shared assumptions together; avoid repeated corrective comparisons or warnings that interrupt the argument. Finish with a short report of what changed.

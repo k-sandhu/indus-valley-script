@@ -429,3 +429,34 @@ human/expert review remain outside this package. Snapshot living documents,
 hash frozen witnesses before and after, verify exact evaluator replay in a
 new output directory, and run the repository prose scan. No new references,
 recognition run or large replay copy will be created.
+
+### Amendment: applying the v3 review, 8 October 2026
+
+Read and reuse `REVIEW-V3.md` and `review-v3/` without editing either. This
+step changes the living documentation and registry proposal, while preserving
+all frozen code, predictions, references, metrics and the review witnesses.
+Record the response in `repair/2026-10-08-review-response-v1/`, using a new
+directory on replay. Capture document snapshots and protected-file hashes.
+
+State reference provenance beside the v3 headlines: two Claude Sonnet 5.5
+readers, a Claude adjudicator, shared conventions/chart cards and no human
+check. The count readings use pixel scripts with the same field-block cue as
+the pipeline. Describe their agreement as agreement with that reference.
+
+Reuse the review's reading-choice sensitivity: accepting {23} for 35:2 and
+70:4 yields strict top five 64/80; the existing frozen shape-only score is
+65/80. Keep the declared strict result, Failed verdict and quarantine. Count
+and number criteria still fail under these alternatives. Reuse the stored
+Wilson interval for shape-only accuracy; do not replace the reference or
+compute a revised endpoint. Reuse the review's crop-trim probe as Exploratory
+post-outcome evidence, including the broken control row and unprobed cases;
+no trim rule or pipeline change is authorized by this amendment.
+
+Correct row 31's window description to indices 3–6, repair listed spacing and
+encoding defects, mark the retrospective's prepared-endpoint opening as
+superseded, and distinguish the fixed proposal payload from the amended
+interface document. Add sampling/interval qualifications and timing evidence
+where they affect claims: row intervals do not cluster by page; eight count
+pages carried earlier recognition targets; embedded timestamps predate the
+readers but the first recording commit follows their start. Record the
+review-response checks, preserve the original outcome and run the prose scan.
