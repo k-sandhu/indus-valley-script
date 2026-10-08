@@ -34,8 +34,9 @@ concatenate its reviewed lines top-to-bottom while retaining line breaks.
 Confidence uses the unchanged original development logistic coefficients.
 It has not been recalibrated for v3; the development bins are in
 [diagnosis.json](repair/2026-10-08-development-record-v1/diagnosis.json),
-`development_summary.calibration`. Fresh calibration awaits the blind
-reference. `minimum_unit_confidence` and `confidence_product` summarize that
+`development_summary.calibration`. The completed fresh evaluation reports Brier 0.1117 and ECE10
+0.1153 on 315 resolved equal-count positions; see [metrics](repair/2026-10-08-v3/evaluation-2026-10-08-adjudicated/metrics.json),
+`summary.calibration`, with stored row-bootstrap intervals. `minimum_unit_confidence` and `confidence_product` summarize that
 same fit and confer no release status.
 
 An empty recognition window can produce a non-finite score in the frozen
@@ -75,3 +76,26 @@ Script* (1979), University of Helsinki,
 [handle](http://hdl.handle.net/10138/342677),
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Raster cropping,
 numerical proposals and their arrangement are modifications by this project.
+
+
+## Completed endpoint and package N, 8 October 2026
+
+The fresh v3 endpoint fails four global criteria; all proposals remain
+quarantined. The proposal hash and source geometry are immutable. Package N
+should consume this inventory under its [contract](../2026-10-08-helsinki1979-row-verification/INPUT_CONTRACT.md),
+keeping its own chart-versioned source readings, missing-line additions,
+continuation adjudications and release decisions. Its [pilot](../2026-10-08-helsinki1979-row-verification/pilot/PILOT-RESULTS.md)
+recommends a second screening pilot with v3, clarified coincident-code and
+unit-kind conventions and package P's reviewed chart. The two-AI pilot has
+not measured or completed the authorized human/expert source check.
+
+Preserve alternative `template_key` values when adapting chart codes. The
+four disclosed cell-label differences affect five explicit reference-key
+units and 10 top-five proposed units in this sample, across three cells.
+The adjudication notes additionally name row 58 unit 0 at 20:4:1 while its
+reference records 21:7:5, both labelled 506. Resolve that locator against the
+source in the verification record. Never remap repeated code 506 or 206 by a
+global numeric substitution. The frozen proposals, cards and scored codes
+remain unchanged; corrected mappings enter N's declared vocabulary and a
+separately frozen future recognition pipeline. [Cell-use audit](repair/2026-10-08-endpoint-record-v1/diagnosis.json),
+`chart_label_audit`, `chart_location_witness_disagreement`.

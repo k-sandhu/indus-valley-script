@@ -382,3 +382,50 @@ These hashes are copied from the preserved method manifest:
 The [post-freeze transport manifest](repair/2026-10-08-v3/full-transport-manifest.json)
 separately identifies the full-export exception handler. The new scorer
 continues to consume the unchanged finite packet predictions.
+
+### Amendment: recording the completed v3 endpoint, 8 October 2026
+
+The coordinator supplied two independent 80-row and 21-page readings, a
+third-reader adjudication, task tokens/durations and the unchanged frozen
+evaluation in `repair/2026-10-08-v3/`. Record this completed endpoint beside
+the first two endpoints, preserving their different sampling frames and every
+frozen code, prediction, source reading and metric. The v3 chart vocabulary
+remains the position-chart card labels used by both reference and matcher.
+Package P owns chart correction; no chart correction or rescoring is part of
+this amendment.
+
+Write new aggregate diagnostics to `repair/2026-10-08-endpoint-record-v1/`
+(or a fresh directory on replay). Reuse `record_repaired_endpoint.py`'s
+earliest-observable-check partition and Wilson interval method, and the
+existing v2 diagnosis. Partition incompatible top-one and top-five rows by
+rejected crop, then unequal counts in an accepted crop, then candidate misses
+in an accepted crop with equal counts. Report unresolved strict-reference
+units separately: an empty strict set cannot be matched and does not establish
+a classifier defect. Equal counts alone do not prove correct unit boundaries;
+inspect the remaining accepted-crop top-five misses against exact source
+crops and unit-window geometry before assigning a specific segmentation or
+graphic-proposal defect. Keep these post-outcome diagnoses Exploratory.
+
+Report overlapping number/classification errors separately, with section,
+field side, page parity and source crop-issue tags. Use stored Wilson and
+bootstrap intervals unchanged. For each frozen point-rate criterion, compute
+the minimum passing integer numerator and its gap from the observed result;
+an unscorable row remains in the 80-row denominator. Failure of any criterion
+keeps every occurrence quarantined, including high-confidence proposals.
+
+Audit the four disclosed chart cells by position key, separately counting
+reference uses, top-one proposals and any top-five proposals. A shared card
+label does not alter this endpoint's scored vocabulary; it may differ from
+the edition's printed numerical code. Future corrected mapping must preserve
+cell identities, duplicate-code cases, source uncertainty and the old
+snapshot, then enter a separately frozen pipeline and fresh evaluation.
+
+Compute reader agreement after normalizing only schema field names and line
+numbering conventions, preserving both readers' original strings. Record
+adjudication changes, exposure/deviation notes and per-task ledger costs;
+tokens are task totals, not billed dollars. Link package N's measured pilot
+and input contract for the option-B handoff; its separate acceptance and
+human/expert review remain outside this package. Snapshot living documents,
+hash frozen witnesses before and after, verify exact evaluator replay in a
+new output directory, and run the repository prose scan. No new references,
+recognition run or large replay copy will be created.

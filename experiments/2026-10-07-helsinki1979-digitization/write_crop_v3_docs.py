@@ -11,6 +11,10 @@ def write(p,data):Path(p).write_text(json.dumps(data,indent=2,ensure_ascii=False
 def prop(p):return f"{p['success']}/{p['total']} ({100*p['rate']:.1f}%; {100*p['ci95'][0]:.1f}–{100*min(1,p['ci95'][1]):.1f}%)"
 
 def main():
+    if (HERE/'repair/2026-10-08-endpoint-record-v1/diagnosis.json').exists():
+        from write_v3_endpoint_docs import main as record_completed_endpoint
+        record_completed_endpoint()
+        return
     full=read(RUN/'full-summary.json');dev=read(HERE/'repair/2026-10-08-development-record-v1/diagnosis.json')
     sel=read(RUN/'blind/selection.json');freeze=read(RUN/'freeze-manifest.json');pf=read(RUN/'prediction-freeze.json')
     old=read(HERE/'evaluation/2026-10-07-frozen-v1/metrics.json')['summary'];v2=read(HERE/'repair/2026-10-07-v2/evaluation-2026-10-07-adjudicated/metrics.json')['summary'];v3=dev['development_summary']
