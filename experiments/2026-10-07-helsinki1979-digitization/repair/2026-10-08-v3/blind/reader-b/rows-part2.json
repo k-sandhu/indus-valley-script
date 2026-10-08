@@ -1,0 +1,4497 @@
+{
+ "reader": "B",
+ "part": 2,
+ "started_utc": "2026-10-08T15:29:58Z",
+ "finished_utc": "2026-10-08T15:58:59Z",
+ "assignment": "rows with sample_index 40 through 79 of selection.json",
+ "files_opened": [
+  "experiments/2026-10-06-research-program/prompts/M-blind-reader-v3.md",
+  "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/CONVENTIONS.md",
+  "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/selection.json",
+  "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/position-chart/chart_000.png",
+  "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/position-chart/chart_060.png",
+  "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/position-chart/chart_120.png",
+  "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/position-chart/chart_180.png",
+  "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/position-chart/chart_240.png",
+  "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/position-chart/chart_300.png",
+  "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/position-chart/chart_360.png",
+  "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/position-chart/chart_420.png",
+  "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/position-chart/chart_480.png",
+  "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/position-chart/chart_540.png",
+  "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/position-chart/chart_600.png",
+  "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/position-chart/chart_660.png",
+  "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/row_040_pdf101.png",
+  "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/exact_040.png",
+  "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/exact_044.png",
+  "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/exact_048.png",
+  "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/exact_055.png",
+  "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/exact_058.png",
+  "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/exact_076.png",
+  "research/corpus/primary/koskenniemi_parpola1979.pdf (rendered as page images with PyMuPDF at 4-30 pixels per point, pages 101, 103, 106, 108, 112, 113, 115, 118, 121, 122, 126, 134, 135, 140, 147, 148, 151, 153, 156, 157, 161, 164, 166, 168, 169, 172, 174, 177, 178; pixel renders only, no text layer or OCR extraction)"
+ ],
+ "notes": "Reader B, part 2: rows with sample_index 40 through 79. Method: for every row I rendered the context area of the original PDF page from the geometry in selection.json (context, glyph and field boxes) at several scales with PyMuPDF (raster pixels only), read the numbered line and its classification field, and compared each unit with the position-chart cards (candidate sets are listed per unit with the chart location). Crop judgments used the proposed glyph box against connected ink components in a higher-resolution render of the page: a crop is marked incorrect when it contains ink of a neighbouring row or field, or cuts off drawing or underline ink of the target. Conventions applied: units are listed in visual left-to-right order; underline presence is recorded per unit and 'strict_candidate_codes' include the underline state, while 'shape_only_candidate_codes' also list the underlined or plain partner codes. Coincident cards (8/764, 9/765, 10/766, 12/767, 501/768, 543/769, 205/206/208, 435/436, 144/244) are kept as sets. Underlines lie about 1 pt below the glyph line and span the sign cell; a dash line between two rows belongs to the upper row. Hatched patches (597/598 and partners): the right-edge variant (598) was chosen where the patch ink ended about 2 pt before the next sign's cell start (rows 53, 55, 77, 78 first unit); the left-edge variant (597) was chosen where the patch ink began about 1.5 pt after the previous sign's ink (rows 78 last unit, 79). In row 53 the patch position was also compared with the left cell origin of the page column (other rows start at about 351 pt, the patch at 359.5 pt). Printed digits: the typeface sometimes draws the digit 1 like an i (a stroke with a dot and no flag); these were read as 1 (rows 44, 46, 47, 49, 52, 60, 71, 75, 79). The classification literal keeps a blank third position as a space where printed (for example '11 40'). Row 48 prints the single digit 5 as its number. Hardest judgments: row 52 first unit (diamond with a stalk and hand-shaped patch, closest card 166 but the stalk differs); row 47 sixth unit (tick plus bent stroke, read as the single card 154); row 54 (144/244 label uncertainty kept as a set); the Y signs with a long centre prong in rows 43, 66 and 77 (card 126, with 151 as the underlined partner); the dot in row 64's fourth unit (read as a speck, 204, not the one-tick 205); and the 597/598 choices above. Crop findings: rows 44, 48, 55, 58 and 66 include a thin top strip of the next row's glyphs at the bottom edge of the box; rows 76 and 77 cut off the last unit (and, in 77, its underline) at the right edge and their field boxes overlap the drawing. Exposure: I did not open predictions, the frame, freeze files, pipeline outputs, other readers' folders, evaluation or repair references, or the PDF text layer, and I saw none of them. My own scratch folder was used for renders and helper scripts and was deleted at the end. A first attempt to append a row to a helper file hung on a stray shell command and was stopped; it touched nothing outside my scratch folder.",
+ "rows": [
+  {
+   "sample_index": 40,
+   "printed_inscription_id": "3890",
+   "classification_literal": "75699",
+   "valid_printed_target": true,
+   "drawn_unit_count": 5,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 5
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      246
+     ],
+     "shape_only_candidate_codes": [
+      246,
+      548
+     ],
+     "chart_locations": [
+      "21:5:3"
+     ],
+     "underlined": false,
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      9,
+      765
+     ],
+     "shape_only_candidate_codes": [
+      9,
+      765,
+      543,
+      769
+     ],
+     "chart_locations": [
+      "20:7:13",
+      "20:5:30"
+     ],
+     "underlined": false,
+     "uncertainty": "two full-height strokes; chart cards 9 and 765 are the same shape at card resolution",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      51
+     ],
+     "shape_only_candidate_codes": [
+      51,
+      465,
+      485,
+      486
+     ],
+     "chart_locations": [
+      "20:4:20"
+     ],
+     "underlined": false,
+     "note": "six horizontal bars on a left stem",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": [
+      "21:5:30"
+     ],
+     "underlined": false,
+     "note": "U with two short bars on each arm top",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      186
+     ],
+     "shape_only_candidate_codes": [
+      186,
+      434
+     ],
+     "chart_locations": [
+      "20:9:20"
+     ],
+     "underlined": false,
+     "index": 4
+    }
+   ],
+   "source_notes": "One line. Faint speck at the top of the two-stroke unit is noise. No underline ink under or above the glyph line inside or just outside the crop; the dashes above the crop belong to the previous row (3885)."
+  },
+  {
+   "sample_index": 41,
+   "printed_inscription_id": "3456",
+   "classification_literal": "75699",
+   "valid_printed_target": true,
+   "drawn_unit_count": 6,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 6
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      246
+     ],
+     "shape_only_candidate_codes": [
+      246,
+      548
+     ],
+     "chart_locations": [
+      "21:5:3"
+     ],
+     "underlined": false,
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      10,
+      766
+     ],
+     "shape_only_candidate_codes": [
+      10,
+      766,
+      424,
+      770
+     ],
+     "chart_locations": [
+      "20:7:16",
+      "20:5:34"
+     ],
+     "underlined": false,
+     "uncertainty": "three full-height strokes; cards 10 and 766 coincide",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      51
+     ],
+     "shape_only_candidate_codes": [
+      51,
+      465,
+      485,
+      486
+     ],
+     "chart_locations": [
+      "20:4:20"
+     ],
+     "underlined": false,
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": [
+      "21:5:30"
+     ],
+     "underlined": false,
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      543,
+      769
+     ],
+     "shape_only_candidate_codes": [
+      9,
+      765,
+      543,
+      769
+     ],
+     "chart_locations": [
+      "20:7:14",
+      "20:5:31"
+     ],
+     "underlined": true,
+     "uncertainty": "two full-height strokes with a five-dash underline spanning the cell",
+     "index": 4
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      492
+     ],
+     "shape_only_candidate_codes": [
+      492,
+      729
+     ],
+     "chart_locations": [
+      "20:7:5"
+     ],
+     "underlined": false,
+     "note": "3-3-2 tally, middle row shifted left",
+     "index": 5
+    }
+   ],
+   "source_notes": "One line. The underline sits inside the proposed crop under the two-stroke unit."
+  },
+  {
+   "sample_index": 42,
+   "printed_inscription_id": "3337",
+   "classification_literal": "62 60",
+   "valid_printed_target": true,
+   "drawn_unit_count": 5,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 5
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      283
+     ],
+     "shape_only_candidate_codes": [
+      283
+     ],
+     "chart_locations": [
+      "21:5:20"
+     ],
+     "underlined": false,
+     "note": "U whose bottom is closed by an inner arc",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      169
+     ],
+     "shape_only_candidate_codes": [
+      169,
+      533
+     ],
+     "chart_locations": [
+      "21:7:3"
+     ],
+     "underlined": false,
+     "note": "two overlapping ovals",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      51
+     ],
+     "shape_only_candidate_codes": [
+      51,
+      465,
+      485,
+      486
+     ],
+     "chart_locations": [
+      "20:4:20"
+     ],
+     "underlined": false,
+     "note": "six bars",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": [
+      "21:5:30"
+     ],
+     "underlined": false,
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      31
+     ],
+     "shape_only_candidate_codes": [
+      31,
+      502
+     ],
+     "chart_locations": [
+      "21:3:28"
+     ],
+     "underlined": false,
+     "note": "7-shape with a short stub down from the left end of the top bar; no separate inner tick (so not 477)",
+     "index": 4
+    }
+   ],
+   "source_notes": "One line. Classification printed with a blank third position. No underline ink around the line."
+  },
+  {
+   "sample_index": 43,
+   "printed_inscription_id": "1433",
+   "classification_literal": "23 99",
+   "valid_printed_target": true,
+   "drawn_unit_count": 6,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 6
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": [
+      "21:5:30"
+     ],
+     "underlined": false,
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      126
+     ],
+     "shape_only_candidate_codes": [
+      126,
+      151
+     ],
+     "chart_locations": [
+      "20:3:34"
+     ],
+     "underlined": false,
+     "uncertainty": "Y with three upper prongs, centre prong long; 151 would need an underline, none present",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      27
+     ],
+     "shape_only_candidate_codes": [
+      27,
+      491
+     ],
+     "chart_locations": [
+      "21:3:19"
+     ],
+     "underlined": false,
+     "note": "square with stem on top",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      86
+     ],
+     "shape_only_candidate_codes": [
+      86,
+      568
+     ],
+     "chart_locations": [
+      "20:2:28"
+     ],
+     "underlined": false,
+     "note": "fish with doubled chevron",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      25
+     ],
+     "shape_only_candidate_codes": [
+      25,
+      509
+     ],
+     "chart_locations": [
+      "20:5:18"
+     ],
+     "underlined": false,
+     "note": "pair of ticks at the top of the line (high pair)",
+     "index": 4
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      162
+     ],
+     "shape_only_candidate_codes": [
+      162,
+      510
+     ],
+     "chart_locations": [
+      "21:8:25"
+     ],
+     "underlined": false,
+     "note": "diamond with a hooked notch at the upper right",
+     "index": 5
+    }
+   ],
+   "source_notes": "One line. Classification printed with a blank third position. No underline ink around the line."
+  },
+  {
+   "sample_index": 44,
+   "printed_inscription_id": "310",
+   "classification_literal": "72 51",
+   "valid_printed_target": true,
+   "drawn_unit_count": 4,
+   "crop_correct": false,
+   "crop_issues": [
+    "Proposed box is 21 pt tall and about 119 pt wide; its bottom edge takes in roughly 1.3 pt of the tops of the next row's glyphs (311), so neighbour ink is inside the crop. The drawing itself is complete and the box is much wider than the drawing (empty right half). No own underline exists."
+   ],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 4
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": [
+      "21:5:30"
+     ],
+     "underlined": false,
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      218
+     ],
+     "shape_only_candidate_codes": [
+      218,
+      416
+     ],
+     "chart_locations": [
+      "20:8:24"
+     ],
+     "underlined": false,
+     "note": "plain crescent with flat ends",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      10,
+      766
+     ],
+     "shape_only_candidate_codes": [
+      10,
+      766,
+      424,
+      770
+     ],
+     "chart_locations": [
+      "20:7:16",
+      "20:5:34"
+     ],
+     "underlined": false,
+     "uncertainty": "three full-height strokes; cards 10 and 766 coincide",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      197
+     ],
+     "shape_only_candidate_codes": [
+      197,
+      532
+     ],
+     "chart_locations": [
+      "21:5:15"
+     ],
+     "underlined": false,
+     "note": "U with a stem and small ring inside",
+     "index": 3
+    }
+   ],
+   "source_notes": "One line. The dashes above the box belong to row 309; the long dashed line below belongs to row 311. Classification printed with a blank third position. The identifying number reads 310 (the digit 1 is drawn like an i in this typeface)."
+  },
+  {
+   "sample_index": 45,
+   "printed_inscription_id": "1279",
+   "classification_literal": "11 40",
+   "valid_printed_target": true,
+   "drawn_unit_count": 2,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 2
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": [
+      "21:5:30"
+     ],
+     "underlined": false,
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      186
+     ],
+     "shape_only_candidate_codes": [
+      186,
+      434
+     ],
+     "chart_locations": [
+      "20:9:20"
+     ],
+     "underlined": false,
+     "note": "leaf head, two horizontal barbs, one short diagonal barb, zigzag leg",
+     "index": 1
+    }
+   ],
+   "source_notes": "One line. The dashes above the crop belong to row 7007. Classification printed with a blank third position."
+  },
+  {
+   "sample_index": 46,
+   "printed_inscription_id": "2883",
+   "classification_literal": "11 40",
+   "valid_printed_target": true,
+   "drawn_unit_count": 5,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 5
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": [
+      "21:5:30"
+     ],
+     "underlined": false,
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      109
+     ],
+     "shape_only_candidate_codes": [
+      109,
+      308
+     ],
+     "chart_locations": [
+      "20:9:25"
+     ],
+     "underlined": false,
+     "note": "two overlapping slanted bars forming a chevron",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      86
+     ],
+     "shape_only_candidate_codes": [
+      86,
+      568
+     ],
+     "chart_locations": [
+      "20:2:28"
+     ],
+     "underlined": false,
+     "note": "fish with doubled chevron",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      25
+     ],
+     "shape_only_candidate_codes": [
+      25,
+      509
+     ],
+     "chart_locations": [
+      "20:5:18"
+     ],
+     "underlined": false,
+     "note": "pair of ticks at the top of the line (high pair); the left tick is lighter",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      164
+     ],
+     "shape_only_candidate_codes": [
+      164,
+      556
+     ],
+     "chart_locations": [
+      "21:8:19"
+     ],
+     "underlined": false,
+     "note": "diamond with notch at top and left, right and bottom lobes",
+     "index": 4
+    }
+   ],
+   "source_notes": "One line. The first classification digit is printed like an i; read as 1. Classification printed with a blank third position. No underline ink around the line."
+  },
+  {
+   "sample_index": 47,
+   "printed_inscription_id": "3118",
+   "classification_literal": "11 40",
+   "valid_printed_target": true,
+   "drawn_unit_count": 7,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 7
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": [
+      "21:5:30"
+     ],
+     "underlined": false,
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      232
+     ],
+     "shape_only_candidate_codes": [
+      232,
+      712
+     ],
+     "chart_locations": [
+      "21:2:12"
+     ],
+     "underlined": false,
+     "note": "X crossed by a pair of inward-pointing angle brackets",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      101
+     ],
+     "shape_only_candidate_codes": [
+      101,
+      306
+     ],
+     "chart_locations": [
+      "20:9:12"
+     ],
+     "underlined": false,
+     "note": "vertical stroke with a diagonal from its top to the lower right and a short tail at the lower left",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      184
+     ],
+     "shape_only_candidate_codes": [
+      184,
+      460
+     ],
+     "chart_locations": [
+      "20:3:14"
+     ],
+     "underlined": false,
+     "note": "seated figure, head with ears, two body bands, spread legs",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      1
+     ],
+     "shape_only_candidate_codes": [
+      1,
+      423
+     ],
+     "chart_locations": [
+      "20:5:22"
+     ],
+     "underlined": false,
+     "note": "single tick at mid height of the line",
+     "index": 4
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      154
+     ],
+     "shape_only_candidate_codes": [
+      154,
+      469
+     ],
+     "chart_locations": [
+      "20:5:20"
+     ],
+     "underlined": false,
+     "note": "short tick at upper left of a long stroke that bends down-left; the tick lies at the horizontal extent of the stroke's tail",
+     "index": 5
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      490
+     ],
+     "shape_only_candidate_codes": [
+      193,
+      490
+     ],
+     "chart_locations": [
+      "20:3:23"
+     ],
+     "underlined": true,
+     "note": "figure-eight with hatched band at upper right; five-dash underline under the cell",
+     "index": 6
+    }
+   ],
+   "source_notes": "One line. The underline of the last unit is inside the proposed crop. Classification printed with a blank third position."
+  },
+  {
+   "sample_index": 48,
+   "printed_inscription_id": "5",
+   "classification_literal": "11 40",
+   "valid_printed_target": true,
+   "drawn_unit_count": 5,
+   "crop_correct": false,
+   "crop_issues": [
+    "The proposed box was extended downward to take in the underline of the first unit, and its bottom edge now includes about 1.3 pt of the tops of the next row's glyphs (4085), so neighbour ink is inside the crop. All drawing and the underline are included."
+   ],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 5
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      548
+     ],
+     "shape_only_candidate_codes": [
+      246,
+      548
+     ],
+     "chart_locations": [
+      "21:5:4"
+     ],
+     "underlined": true,
+     "note": "plain U with a five-dash underline spanning its cell",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      27
+     ],
+     "shape_only_candidate_codes": [
+      27,
+      491
+     ],
+     "chart_locations": [
+      "21:3:19"
+     ],
+     "underlined": false,
+     "note": "square with stem on top",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      165
+     ],
+     "shape_only_candidate_codes": [
+      165,
+      726
+     ],
+     "chart_locations": [
+      "21:6:27"
+     ],
+     "underlined": false,
+     "note": "dome with an inner left curl",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      205
+     ],
+     "shape_only_candidate_codes": [
+      205,
+      209
+     ],
+     "chart_locations": [
+      "21:5:32"
+     ],
+     "underlined": false,
+     "note": "U with bars on both arm tops and one central tick between them (cards with two ticks are 205/206/208 and 413)",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      36
+     ],
+     "shape_only_candidate_codes": [
+      36
+     ],
+     "chart_locations": [
+      "21:1:6"
+     ],
+     "underlined": false,
+     "note": "double bow-tie with parallel vertical bars",
+     "index": 4
+    }
+   ],
+   "source_notes": "One line. The printed number is the single digit 5, right-aligned in the number field. Classification printed with a blank third position. The underline under the first unit lies inside the proposed box."
+  },
+  {
+   "sample_index": 49,
+   "printed_inscription_id": "1217",
+   "classification_literal": "11 40",
+   "valid_printed_target": true,
+   "drawn_unit_count": 2,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 2
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": [
+      "21:5:30"
+     ],
+     "underlined": false,
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      161
+     ],
+     "shape_only_candidate_codes": [
+      161,
+      537
+     ],
+     "chart_locations": [
+      "21:7:28"
+     ],
+     "underlined": false,
+     "note": "oval with a stem and small fork inside; no corner ticks and no underline",
+     "index": 1
+    }
+   ],
+   "source_notes": "One line. The first printed digit of the number and of the classification is drawn like an i (read as 1). The proposed box is about 158 pt wide while the drawing occupies the first 30 pt; the rest of the box is empty and carries no ink."
+  },
+  {
+   "sample_index": 50,
+   "printed_inscription_id": "2332",
+   "classification_literal": "11244",
+   "valid_printed_target": true,
+   "drawn_unit_count": 6,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 6
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      684
+     ],
+     "shape_only_candidate_codes": [
+      157,
+      684
+     ],
+     "chart_locations": [
+      "21:7:19"
+     ],
+     "underlined": true,
+     "note": "tall oval with a five-dash underline spanning its cell",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "hatched_sign",
+     "strict_candidate_codes": [
+      596
+     ],
+     "shape_only_candidate_codes": [
+      596,
+      454
+     ],
+     "chart_locations": [
+      "21:9:11"
+     ],
+     "underlined": false,
+     "note": "diagonally hatched square with a question-mark-shaped sign showing through",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "hatched_sign",
+     "strict_candidate_codes": [
+      596
+     ],
+     "shape_only_candidate_codes": [
+      596,
+      454
+     ],
+     "chart_locations": [
+      "21:9:11"
+     ],
+     "underlined": false,
+     "note": "second identical hatched unit, no underline",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      501,
+      768
+     ],
+     "shape_only_candidate_codes": [
+      8,
+      764,
+      501,
+      768
+     ],
+     "chart_locations": [
+      "20:7:12",
+      "20:5:27"
+     ],
+     "underlined": true,
+     "uncertainty": "single full-height stroke with a five-dash underline; cards 501 and 768 (the underlined versions of the coincident cards 8 and 764) coincide",
+     "note": "underline spans the cell of the stroke",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      25
+     ],
+     "shape_only_candidate_codes": [
+      25,
+      509
+     ],
+     "chart_locations": [
+      "20:5:18"
+     ],
+     "underlined": false,
+     "note": "pair of ticks at the top of the line",
+     "index": 4
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      420
+     ],
+     "shape_only_candidate_codes": [
+      420,
+      421
+     ],
+     "chart_locations": [
+      "21:8:26"
+     ],
+     "underlined": false,
+     "note": "oval with a V notch at the top",
+     "index": 5
+    }
+   ],
+   "source_notes": "One line. The proposed box is about 233 pt wide while the drawing fills the left 90 pt; the remainder is empty. Both underlines are inside the box. Classification has all five positions filled."
+  },
+  {
+   "sample_index": 51,
+   "printed_inscription_id": "3583",
+   "classification_literal": "79676",
+   "valid_printed_target": true,
+   "drawn_unit_count": 9,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 9
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      556
+     ],
+     "shape_only_candidate_codes": [
+      164,
+      556
+     ],
+     "chart_locations": [
+      "21:8:20"
+     ],
+     "underlined": true,
+     "note": "diamond with notch and three lobes, five-dash underline under its cell",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      9,
+      765
+     ],
+     "shape_only_candidate_codes": [
+      9,
+      765,
+      543,
+      769
+     ],
+     "chart_locations": [
+      "20:7:13",
+      "20:5:30"
+     ],
+     "underlined": false,
+     "uncertainty": "two full-height strokes; cards 9 and 765 coincide",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      435,
+      436
+     ],
+     "shape_only_candidate_codes": [
+      435,
+      436
+     ],
+     "chart_locations": [
+      "21:4:6"
+     ],
+     "underlined": false,
+     "note": "small cap on top, box of vertical bars, two legs; the card is labelled 435/436",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      42
+     ],
+     "shape_only_candidate_codes": [
+      42,
+      182
+     ],
+     "chart_locations": [
+      "20:4:11"
+     ],
+     "underlined": false,
+     "note": "five-toothed comb on a long stem",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": [
+      "21:5:30"
+     ],
+     "underlined": false,
+     "index": 4
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      248
+     ],
+     "shape_only_candidate_codes": [
+      248
+     ],
+     "chart_locations": [
+      "21:6:10"
+     ],
+     "underlined": false,
+     "note": "U whose arms end in two forks",
+     "index": 5
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      169
+     ],
+     "shape_only_candidate_codes": [
+      169,
+      533
+     ],
+     "chart_locations": [
+      "21:7:3"
+     ],
+     "underlined": false,
+     "note": "two overlapping ovals",
+     "index": 6
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      241
+     ],
+     "shape_only_candidate_codes": [
+      241,
+      593
+     ],
+     "chart_locations": [
+      "21:1:11"
+     ],
+     "underlined": false,
+     "note": "bow-tie, left side closed, right side open with short ticks",
+     "index": 7
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      350
+     ],
+     "shape_only_candidate_codes": [
+      350,
+      793
+     ],
+     "chart_locations": [
+      "21:1:19"
+     ],
+     "underlined": false,
+     "note": "bow-tie, left side open with short ticks, right side closed",
+     "index": 8
+    }
+   ],
+   "source_notes": "One line. The underline under the first unit lies inside the proposed box. The last printed classification digit has a small speck beside it and is read as 6."
+  },
+  {
+   "sample_index": 52,
+   "printed_inscription_id": "2187",
+   "classification_literal": "11 40",
+   "valid_printed_target": true,
+   "drawn_unit_count": 3,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 3
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      166
+     ],
+     "shape_only_candidate_codes": [
+      166,
+      426
+     ],
+     "chart_locations": [
+      "21:9:1"
+     ],
+     "underlined": false,
+     "uncertainty": "diamond with a stalk running from the upper right edge to a small fork and a four-toothed hand-shaped patch; closest chart card is 166, whose stalk is vertical",
+     "note": "no underline",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      9,
+      765
+     ],
+     "shape_only_candidate_codes": [
+      9,
+      765,
+      543,
+      769
+     ],
+     "chart_locations": [
+      "20:7:13",
+      "20:5:30"
+     ],
+     "underlined": false,
+     "uncertainty": "two full-height strokes; cards 9 and 765 coincide",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      123
+     ],
+     "shape_only_candidate_codes": [
+      123,
+      507
+     ],
+     "chart_locations": [
+      "21:2:14"
+     ],
+     "underlined": false,
+     "note": "X whose four arm ends are bent",
+     "index": 2
+    }
+   ],
+   "source_notes": "One line. A faint speck above the diamond is noise. No underline ink around the line. Classification printed with a blank third position."
+  },
+  {
+   "sample_index": 53,
+   "printed_inscription_id": "733",
+   "classification_literal": "97 99",
+   "valid_printed_target": true,
+   "drawn_unit_count": 3,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 3
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "hatched_patch",
+     "strict_candidate_codes": [
+      598
+     ],
+     "shape_only_candidate_codes": [
+      597,
+      598,
+      13,
+      542
+     ],
+     "chart_locations": [
+      "21:9:17"
+     ],
+     "underlined": false,
+     "uncertainty": "narrow hatched patch at the start of the line; right-edge variant (598) preferred over left-edge (597) because the patch ink starts about 8 pt right of the line's left cell origin (other rows of the column begin at x about 351 pt, this patch at 359.5 pt) and the next sign's ink follows the patch by 5.1 pt, close to the right-edge prediction; no underline",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      186
+     ],
+     "shape_only_candidate_codes": [
+      186,
+      434
+     ],
+     "chart_locations": [
+      "20:9:20"
+     ],
+     "underlined": false,
+     "note": "leaf head, two horizontal barbs, short diagonal barb, zigzag leg",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      157
+     ],
+     "shape_only_candidate_codes": [
+      157,
+      684
+     ],
+     "chart_locations": [
+      "21:7:16"
+     ],
+     "underlined": false,
+     "note": "tall plain oval",
+     "index": 2
+    }
+   ],
+   "source_notes": "One line. Every row of this column on this page begins with the same hatched patch at the same x position. The proposed box is wider than the drawing by about 49 pt on the right; the extra area is empty. No underline ink belongs to this line (dashes seen in the context belong to adjacent rows). Classification printed with a blank third position."
+  },
+  {
+   "sample_index": 54,
+   "printed_inscription_id": "2375",
+   "classification_literal": "11 40",
+   "valid_printed_target": true,
+   "drawn_unit_count": 3,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 3
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      144,
+      244
+     ],
+     "shape_only_candidate_codes": [
+      144,
+      244,
+      539,
+      320
+     ],
+     "chart_locations": [
+      "20:0:0",
+      "20:0:5"
+     ],
+     "underlined": false,
+     "uncertainty": "figure with a head stick above the arm bar and two ringed arms; the ink matches the plain card printed as 144 (no triangle on the head, no dots between the legs); candidate 244 is kept because of the 144/244 label uncertainty of the chart",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": [
+      "21:5:30"
+     ],
+     "underlined": false,
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      178
+     ],
+     "shape_only_candidate_codes": [
+      178,
+      461
+     ],
+     "chart_locations": [
+      "20:2:20"
+     ],
+     "underlined": false,
+     "note": "fish with a short vertical dash inside the body",
+     "index": 2
+    }
+   ],
+   "source_notes": "One line. In this section the number field lies to the right of the drawing. Dashes in the context above belong to the previous row. Classification printed with a blank third position."
+  },
+  {
+   "sample_index": 55,
+   "printed_inscription_id": "2303",
+   "classification_literal": "23 99",
+   "valid_printed_target": true,
+   "drawn_unit_count": 4,
+   "crop_correct": false,
+   "crop_issues": [
+    "The proposed box is 21 pt tall and its bottom edge takes in a sliver (about 0.5 pt) of the tops of the next row's glyphs, so neighbour ink is inside the crop; the drawing and the underline under the Y are fully inside. The box is also wider than the drawing (empty left part)."
+   ],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 4
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "hatched_patch",
+     "strict_candidate_codes": [
+      598
+     ],
+     "shape_only_candidate_codes": [
+      597,
+      598,
+      13,
+      542
+     ],
+     "chart_locations": [
+      "21:9:17"
+     ],
+     "underlined": false,
+     "uncertainty": "narrow hatched patch at the left of the line; right-edge variant (598) preferred: its ink ends 2.3 pt before the underline of the next sign, which marks that sign's cell start (about the 2 pt inter-cell gap); a left-edge patch would leave about 8 pt more space",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      151
+     ],
+     "shape_only_candidate_codes": [
+      126,
+      151
+     ],
+     "chart_locations": [
+      "20:4:0"
+     ],
+     "underlined": true,
+     "note": "Y with three prongs (centre prong long) and a five-dash underline spanning its cell",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      27
+     ],
+     "shape_only_candidate_codes": [
+      27,
+      491
+     ],
+     "chart_locations": [
+      "21:3:19"
+     ],
+     "underlined": false,
+     "note": "square with stem on top",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      179
+     ],
+     "shape_only_candidate_codes": [
+      179,
+      463
+     ],
+     "chart_locations": [
+      "20:2:24"
+     ],
+     "underlined": false,
+     "note": "fish with a crossbar at the waist and crossed legs",
+     "index": 3
+    }
+   ],
+   "source_notes": "One line. The number field is to the right of the drawing in this section. Classification printed with a blank third position."
+  },
+  {
+   "sample_index": 56,
+   "printed_inscription_id": "4123",
+   "classification_literal": "62699",
+   "valid_printed_target": true,
+   "drawn_unit_count": 6,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 6
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      164
+     ],
+     "shape_only_candidate_codes": [
+      164,
+      556
+     ],
+     "chart_locations": [
+      "21:8:19"
+     ],
+     "underlined": false,
+     "note": "diamond with notch at top and left, right and bottom lobes",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      81
+     ],
+     "shape_only_candidate_codes": [
+      81,
+      253
+     ],
+     "chart_locations": [
+      "20:9:0"
+     ],
+     "underlined": false,
+     "note": "D with a diagonal stroke crossing its upper part",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      26
+     ],
+     "shape_only_candidate_codes": [
+      26
+     ],
+     "chart_locations": [
+      "20:4:22"
+     ],
+     "underlined": false,
+     "note": "vertical stem with four horizontal bars",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      95
+     ],
+     "shape_only_candidate_codes": [
+      95,
+      549
+     ],
+     "chart_locations": [
+      "21:0:27"
+     ],
+     "underlined": false,
+     "note": "arrow with a hollow triangular head",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      177
+     ],
+     "shape_only_candidate_codes": [
+      177,
+      517
+     ],
+     "chart_locations": [
+      "20:2:11"
+     ],
+     "underlined": false,
+     "note": "fish with side fins and crossed tail",
+     "index": 4
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      42
+     ],
+     "shape_only_candidate_codes": [
+      42,
+      182
+     ],
+     "chart_locations": [
+      "20:4:11"
+     ],
+     "underlined": false,
+     "note": "five-toothed comb on a long stem",
+     "index": 5
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. There is a gap of about 23 pt between the fourth and fifth signs; no ink lies in it. No underline ink around the line. Classification has all five positions filled."
+  },
+  {
+   "sample_index": 57,
+   "printed_inscription_id": "3328",
+   "classification_literal": "67 70",
+   "valid_printed_target": true,
+   "drawn_unit_count": 4,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 4
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      8,
+      764
+     ],
+     "shape_only_candidate_codes": [
+      8,
+      764,
+      501,
+      768
+     ],
+     "chart_locations": [
+      "20:7:11",
+      "20:5:26"
+     ],
+     "underlined": false,
+     "uncertainty": "single full-height stroke; cards 8 and 764 coincide",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      299
+     ],
+     "shape_only_candidate_codes": [
+      299,
+      475
+     ],
+     "chart_locations": [
+      "20:9:3"
+     ],
+     "underlined": false,
+     "note": "plain inverted V",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      165
+     ],
+     "shape_only_candidate_codes": [
+      165,
+      726
+     ],
+     "chart_locations": [
+      "21:6:27"
+     ],
+     "underlined": false,
+     "note": "dome with an inner left curl",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      153
+     ],
+     "shape_only_candidate_codes": [
+      153,
+      511
+     ],
+     "chart_locations": [
+      "20:7:26"
+     ],
+     "underlined": false,
+     "note": "plain curved stroke bulging to the right",
+     "index": 3
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. No underline ink around the line. Classification printed with a blank third position."
+  },
+  {
+   "sample_index": 58,
+   "printed_inscription_id": "5033",
+   "classification_literal": "11 40",
+   "valid_printed_target": true,
+   "drawn_unit_count": 6,
+   "crop_correct": false,
+   "crop_issues": [
+    "The proposed box takes in about 0.8 pt of the tops of the next row's glyphs along its bottom edge, so neighbour ink is inside the crop; all drawing of the target is included."
+   ],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 6
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      506
+     ],
+     "shape_only_candidate_codes": [
+      506
+     ],
+     "chart_locations": [
+      "21:7:5"
+     ],
+     "underlined": false,
+     "note": "two overlapping ovals with a tick at each of the four corners",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      250
+     ],
+     "shape_only_candidate_codes": [
+      250
+     ],
+     "chart_locations": [
+      "20:7:23"
+     ],
+     "underlined": false,
+     "note": "two full-height strokes followed by an equally spaced slash, read as one composite card",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      536
+     ],
+     "shape_only_candidate_codes": [
+      536
+     ],
+     "chart_locations": [
+      "21:3:21"
+     ],
+     "underlined": false,
+     "note": "square with stem and four corner ticks",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      8,
+      764
+     ],
+     "shape_only_candidate_codes": [
+      8,
+      764,
+      501,
+      768
+     ],
+     "chart_locations": [
+      "20:7:11",
+      "20:5:26"
+     ],
+     "underlined": false,
+     "uncertainty": "single full-height stroke; cards 8 and 764 coincide",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      154
+     ],
+     "shape_only_candidate_codes": [
+      154,
+      469
+     ],
+     "chart_locations": [
+      "20:5:20"
+     ],
+     "underlined": false,
+     "note": "short tick at upper left of a long stroke that bends down-left",
+     "index": 4
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      220
+     ],
+     "shape_only_candidate_codes": [
+      220,
+      155
+     ],
+     "chart_locations": [
+      "20:8:2"
+     ],
+     "underlined": false,
+     "note": "curved stroke with a small loop on its left",
+     "index": 5
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. The corner ticks of the first and third units lie inside the box. No underline ink around the line. Classification printed with a blank third position."
+  },
+  {
+   "sample_index": 59,
+   "printed_inscription_id": "1024",
+   "classification_literal": "11 40",
+   "valid_printed_target": true,
+   "drawn_unit_count": 7,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 7
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": [
+      "21:5:30"
+     ],
+     "underlined": false,
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      134
+     ],
+     "shape_only_candidate_codes": [
+      134,
+      559
+     ],
+     "chart_locations": [
+      "20:0:16"
+     ],
+     "underlined": false,
+     "note": "stick figure with raised forked arms",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      86
+     ],
+     "shape_only_candidate_codes": [
+      86,
+      568
+     ],
+     "chart_locations": [
+      "20:2:28"
+     ],
+     "underlined": false,
+     "note": "fish with doubled chevron",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      179
+     ],
+     "shape_only_candidate_codes": [
+      179,
+      463
+     ],
+     "chart_locations": [
+      "20:2:24"
+     ],
+     "underlined": false,
+     "note": "fish with a crossbar at the waist",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      205
+     ],
+     "shape_only_candidate_codes": [
+      205,
+      209
+     ],
+     "chart_locations": [
+      "21:5:32"
+     ],
+     "underlined": false,
+     "note": "U with bars on both arm tops and one central tick",
+     "index": 4
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      154
+     ],
+     "shape_only_candidate_codes": [
+      154,
+      469
+     ],
+     "chart_locations": [
+      "20:5:20"
+     ],
+     "underlined": false,
+     "note": "short tick at upper left of a long stroke that bends down-left",
+     "index": 5
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      220
+     ],
+     "shape_only_candidate_codes": [
+      220,
+      155
+     ],
+     "chart_locations": [
+      "20:8:2"
+     ],
+     "underlined": false,
+     "note": "curved stroke with a small loop on its left",
+     "index": 6
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. The dashes above the crop belong to the previous row (2888). Classification printed with a blank third position."
+  },
+  {
+   "sample_index": 60,
+   "printed_inscription_id": "3104",
+   "classification_literal": "11 40",
+   "valid_printed_target": true,
+   "drawn_unit_count": 9,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 9
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": [
+      "21:5:30"
+     ],
+     "underlined": false,
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      443
+     ],
+     "shape_only_candidate_codes": [
+      443
+     ],
+     "chart_locations": [
+      "20:3:32"
+     ],
+     "underlined": false,
+     "note": "plain Y with two arms and a long stem",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      27
+     ],
+     "shape_only_candidate_codes": [
+      27,
+      491
+     ],
+     "chart_locations": [
+      "21:3:19"
+     ],
+     "underlined": false,
+     "note": "square with stem on top",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      517
+     ],
+     "shape_only_candidate_codes": [
+      177,
+      517
+     ],
+     "chart_locations": [
+      "20:2:12"
+     ],
+     "underlined": true,
+     "note": "fish with side fins and crossed tail; five-dash underline under its cell",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      180
+     ],
+     "shape_only_candidate_codes": [
+      180,
+      541
+     ],
+     "chart_locations": [
+      "20:2:31"
+     ],
+     "underlined": false,
+     "note": "fish with four short side strokes",
+     "index": 4
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      86
+     ],
+     "shape_only_candidate_codes": [
+      86,
+      568
+     ],
+     "chart_locations": [
+      "20:2:28"
+     ],
+     "underlined": false,
+     "note": "fish with doubled chevron",
+     "index": 5
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      206
+     ],
+     "shape_only_candidate_codes": [
+      206,
+      706
+     ],
+     "chart_locations": [
+      "21:6:1"
+     ],
+     "underlined": false,
+     "note": "U with bars on both arm tops and three ticks between them",
+     "index": 6
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      154
+     ],
+     "shape_only_candidate_codes": [
+      154,
+      469
+     ],
+     "chart_locations": [
+      "20:5:20"
+     ],
+     "underlined": false,
+     "note": "short tick at upper left of a long stroke that bends down-left",
+     "index": 7
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      220
+     ],
+     "shape_only_candidate_codes": [
+      220,
+      155
+     ],
+     "chart_locations": [
+      "20:8:2"
+     ],
+     "underlined": false,
+     "note": "curved stroke with a small loop on its left",
+     "index": 8
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. The proposed box is 215 pt wide while the drawing starts about 100 pt from its left edge; the left part is empty except for a small speck. The underline under the fourth unit lies inside the box. Classification printed with a blank third position."
+  },
+  {
+   "sample_index": 61,
+   "printed_inscription_id": "3882",
+   "classification_literal": "75699",
+   "valid_printed_target": true,
+   "drawn_unit_count": 5,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 5
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      246
+     ],
+     "shape_only_candidate_codes": [
+      246,
+      548
+     ],
+     "chart_locations": [
+      "21:5:3"
+     ],
+     "underlined": false,
+     "note": "plain U",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      12,
+      767
+     ],
+     "shape_only_candidate_codes": [
+      12,
+      767,
+      764,
+      784,
+      771
+     ],
+     "chart_locations": [
+      "20:7:21",
+      "20:6:5"
+     ],
+     "underlined": false,
+     "uncertainty": "four full-height strokes; the first stroke is lighter; cards 12 and 767 coincide",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      51
+     ],
+     "shape_only_candidate_codes": [
+      51,
+      465,
+      485,
+      486
+     ],
+     "chart_locations": [
+      "20:4:20"
+     ],
+     "underlined": false,
+     "note": "six horizontal bars on a left stem",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": [
+      "21:5:30"
+     ],
+     "underlined": false,
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      186
+     ],
+     "shape_only_candidate_codes": [
+      186,
+      434
+     ],
+     "chart_locations": [
+      "20:9:20"
+     ],
+     "underlined": false,
+     "note": "leaf head, two horizontal barbs, short diagonal barb, zigzag leg",
+     "index": 4
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. The proposed box is about 194 pt wide while the drawing occupies its right 80 pt; the empty left part carries only a speck. No underline ink around the line."
+  },
+  {
+   "sample_index": 62,
+   "printed_inscription_id": "1610",
+   "classification_literal": "72 46",
+   "valid_printed_target": true,
+   "drawn_unit_count": 4,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 4
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": [
+      "21:5:30"
+     ],
+     "underlined": false,
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      210
+     ],
+     "shape_only_candidate_codes": [
+      210,
+      395
+     ],
+     "chart_locations": [
+      "21:6:11"
+     ],
+     "underlined": false,
+     "note": "U with a closed flag-shaped hook on each arm top",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      69
+     ],
+     "shape_only_candidate_codes": [
+      69,
+      554
+     ],
+     "chart_locations": [
+      "21:2:30"
+     ],
+     "underlined": false,
+     "note": "grid of three columns and four rows",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      104
+     ],
+     "shape_only_candidate_codes": [
+      104,
+      389
+     ],
+     "chart_locations": [
+      "21:0:13"
+     ],
+     "underlined": false,
+     "note": "triangle with four interior bars and a base",
+     "index": 3
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. No underline ink around the line. Classification printed with a blank third position."
+  },
+  {
+   "sample_index": 63,
+   "printed_inscription_id": "1106",
+   "classification_literal": "11 40",
+   "valid_printed_target": true,
+   "drawn_unit_count": 5,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 5
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      165
+     ],
+     "shape_only_candidate_codes": [
+      165,
+      726
+     ],
+     "chart_locations": [
+      "21:6:27"
+     ],
+     "underlined": false,
+     "note": "dome with an inner left curl",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      205
+     ],
+     "shape_only_candidate_codes": [
+      205,
+      209
+     ],
+     "chart_locations": [
+      "21:5:32"
+     ],
+     "underlined": false,
+     "note": "U with bars on both arm tops and one central tick",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      8,
+      764
+     ],
+     "shape_only_candidate_codes": [
+      8,
+      764,
+      501,
+      768
+     ],
+     "chart_locations": [
+      "20:7:11",
+      "20:5:26"
+     ],
+     "underlined": false,
+     "uncertainty": "single full-height stroke; cards 8 and 764 coincide",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      154
+     ],
+     "shape_only_candidate_codes": [
+      154,
+      469
+     ],
+     "chart_locations": [
+      "20:5:20"
+     ],
+     "underlined": false,
+     "note": "short tick at upper left of a long stroke that bends down-left",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      123
+     ],
+     "shape_only_candidate_codes": [
+      123,
+      507
+     ],
+     "chart_locations": [
+      "21:2:14"
+     ],
+     "underlined": false,
+     "note": "X whose four arm ends are bent",
+     "index": 4
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. No underline ink around the line. Classification printed with a blank third position."
+  },
+  {
+   "sample_index": 64,
+   "printed_inscription_id": "3674",
+   "classification_literal": "62699",
+   "valid_printed_target": true,
+   "drawn_unit_count": 7,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 7
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      246
+     ],
+     "shape_only_candidate_codes": [
+      246,
+      548
+     ],
+     "chart_locations": [
+      "21:5:3"
+     ],
+     "underlined": false,
+     "note": "plain U",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      10,
+      766
+     ],
+     "shape_only_candidate_codes": [
+      10,
+      766,
+      424,
+      770
+     ],
+     "chart_locations": [
+      "20:7:16",
+      "20:5:34"
+     ],
+     "underlined": false,
+     "uncertainty": "three full-height strokes; cards 10 and 766 coincide",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      51
+     ],
+     "shape_only_candidate_codes": [
+      51,
+      465,
+      485,
+      486
+     ],
+     "chart_locations": [
+      "20:4:20"
+     ],
+     "underlined": false,
+     "note": "six horizontal bars on a left stem",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": [
+      "21:5:30"
+     ],
+     "underlined": false,
+     "uncertainty": "a round dot of about 0.7 pt sits between the two arm bars at the tick position; it is not tick-shaped and is read as a speck (as a tick the code would be 205)",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      81
+     ],
+     "shape_only_candidate_codes": [
+      81,
+      253
+     ],
+     "chart_locations": [
+      "20:9:0"
+     ],
+     "underlined": false,
+     "note": "D with a diagonal stroke crossing its upper part",
+     "index": 4
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      69
+     ],
+     "shape_only_candidate_codes": [
+      69,
+      554
+     ],
+     "chart_locations": [
+      "21:2:30"
+     ],
+     "underlined": false,
+     "note": "grid of three columns and four rows",
+     "index": 5
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      69
+     ],
+     "shape_only_candidate_codes": [
+      69,
+      554
+     ],
+     "chart_locations": [
+      "21:2:30"
+     ],
+     "underlined": false,
+     "note": "second grid of three columns and four rows",
+     "index": 6
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. The dashes above the crop belong to the previous row (3645). No underline ink around the line."
+  },
+  {
+   "sample_index": 65,
+   "printed_inscription_id": "1539",
+   "classification_literal": "11 40",
+   "valid_printed_target": true,
+   "drawn_unit_count": 5,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 5
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      10,
+      766
+     ],
+     "shape_only_candidate_codes": [
+      10,
+      766,
+      424,
+      770
+     ],
+     "chart_locations": [
+      "20:7:16",
+      "20:5:34"
+     ],
+     "underlined": false,
+     "uncertainty": "three full-height strokes; cards 10 and 766 coincide",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      10,
+      766
+     ],
+     "shape_only_candidate_codes": [
+      10,
+      766,
+      424,
+      770
+     ],
+     "chart_locations": [
+      "20:7:16",
+      "20:5:34"
+     ],
+     "underlined": false,
+     "uncertainty": "second group of three full-height strokes; separated from the first by an ordinary cell gap, so read as a separate unit; cards 10 and 766 coincide",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      53
+     ],
+     "shape_only_candidate_codes": [
+      53,
+      582
+     ],
+     "chart_locations": [
+      "20:9:33"
+     ],
+     "underlined": false,
+     "note": "slanted stroke with a hatched flag",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      443
+     ],
+     "shape_only_candidate_codes": [
+      443
+     ],
+     "chart_locations": [
+      "20:3:32"
+     ],
+     "underlined": false,
+     "note": "plain Y with two arms and a long stem",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      27
+     ],
+     "shape_only_candidate_codes": [
+      27,
+      491
+     ],
+     "chart_locations": [
+      "21:3:19"
+     ],
+     "underlined": false,
+     "note": "square with stem on top",
+     "index": 4
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. The proposed box is 129 pt wide while the drawing occupies its right 60 pt; the left part holds only specks. No underline ink around the line. Classification printed with a blank third position."
+  },
+  {
+   "sample_index": 66,
+   "printed_inscription_id": "1395",
+   "classification_literal": "11 99",
+   "valid_printed_target": true,
+   "drawn_unit_count": 6,
+   "crop_correct": false,
+   "crop_issues": [
+    "The proposed box is 21 pt tall and its bottom edge takes in about 1.1 pt of the tops of the next row's glyphs, so neighbour ink is inside the crop. The drawing of the target is complete."
+   ],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 6
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      126
+     ],
+     "shape_only_candidate_codes": [
+      126,
+      151
+     ],
+     "chart_locations": [
+      "20:3:34"
+     ],
+     "underlined": false,
+     "uncertainty": "Y with three upper prongs, centre prong long; 151 would need an underline, none present",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      4
+     ],
+     "shape_only_candidate_codes": [
+      4,
+      438
+     ],
+     "chart_locations": [
+      "20:6:1"
+     ],
+     "underlined": false,
+     "note": "row of four small ticks at mid height",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      25
+     ],
+     "shape_only_candidate_codes": [
+      25,
+      509
+     ],
+     "chart_locations": [
+      "20:5:18"
+     ],
+     "underlined": false,
+     "note": "pair of ticks at the top of the line (high pair)",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      187
+     ],
+     "shape_only_candidate_codes": [
+      187,
+      295
+     ],
+     "chart_locations": [
+      "20:4:26"
+     ],
+     "underlined": false,
+     "note": "curved stem with a leaf head and a side leaf",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      181
+     ],
+     "shape_only_candidate_codes": [
+      181
+     ],
+     "chart_locations": [
+      "20:3:1"
+     ],
+     "underlined": false,
+     "note": "fish-like oval with three oblique barbs on each side and crossed tail",
+     "index": 4
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      205
+     ],
+     "shape_only_candidate_codes": [
+      205,
+      209
+     ],
+     "chart_locations": [
+      "21:5:32"
+     ],
+     "underlined": false,
+     "note": "U with bars on both arm tops and one central tick",
+     "index": 5
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. No underline ink around the line. Classification printed with a blank third position."
+  },
+  {
+   "sample_index": 67,
+   "printed_inscription_id": "5004",
+   "classification_literal": "47299",
+   "valid_printed_target": true,
+   "drawn_unit_count": 5,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 5
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": [
+      "21:5:30"
+     ],
+     "underlined": false,
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      502
+     ],
+     "shape_only_candidate_codes": [
+      31,
+      502
+     ],
+     "chart_locations": [
+      "21:3:29"
+     ],
+     "underlined": true,
+     "note": "7-shape with a short stub down from the left end of the top bar; five-dash underline under its cell",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      177
+     ],
+     "shape_only_candidate_codes": [
+      177,
+      517
+     ],
+     "chart_locations": [
+      "20:2:11"
+     ],
+     "underlined": false,
+     "note": "fish with side fins and crossed tail",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      184
+     ],
+     "shape_only_candidate_codes": [
+      184,
+      460
+     ],
+     "chart_locations": [
+      "20:3:14"
+     ],
+     "underlined": false,
+     "note": "seated figure, head with ears, two body bands, spread legs",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      206
+     ],
+     "shape_only_candidate_codes": [
+      206,
+      706
+     ],
+     "chart_locations": [
+      "21:6:1"
+     ],
+     "underlined": false,
+     "note": "U with bars on both arm tops and three ticks between them",
+     "index": 4
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. The proposed box is 234 pt wide while the drawing occupies its right 120 pt; the left part is empty. The underline under the second unit lies inside the box. Classification has all five positions filled."
+  },
+  {
+   "sample_index": 68,
+   "printed_inscription_id": "3817",
+   "classification_literal": "67 60",
+   "valid_printed_target": true,
+   "drawn_unit_count": 11,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 11
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": [
+      "21:5:30"
+     ],
+     "underlined": false,
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      127
+     ],
+     "shape_only_candidate_codes": [
+      127,
+      506
+     ],
+     "chart_locations": [
+      "20:3:33"
+     ],
+     "underlined": false,
+     "note": "Y with a comb of ticks on the right arm",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      27
+     ],
+     "shape_only_candidate_codes": [
+      27,
+      491
+     ],
+     "chart_locations": [
+      "21:3:19"
+     ],
+     "underlined": false,
+     "note": "square with stem on top",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      232
+     ],
+     "shape_only_candidate_codes": [
+      232,
+      712
+     ],
+     "chart_locations": [
+      "21:2:12"
+     ],
+     "underlined": false,
+     "note": "X crossed by a pair of inward-pointing angle brackets",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      101
+     ],
+     "shape_only_candidate_codes": [
+      101,
+      306
+     ],
+     "chart_locations": [
+      "20:9:12"
+     ],
+     "underlined": false,
+     "note": "vertical stroke with a diagonal from its top to the lower right and a short tail at the lower left",
+     "index": 4
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      184
+     ],
+     "shape_only_candidate_codes": [
+      184,
+      460
+     ],
+     "chart_locations": [
+      "20:3:14"
+     ],
+     "underlined": false,
+     "note": "seated figure, head with ears, two body bands, spread legs",
+     "index": 5
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      220
+     ],
+     "shape_only_candidate_codes": [
+      220,
+      155
+     ],
+     "chart_locations": [
+      "20:8:2"
+     ],
+     "underlined": false,
+     "note": "curved stroke bulging right with a small loop on its left",
+     "index": 6
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      275
+     ],
+     "shape_only_candidate_codes": [
+      275,
+      519
+     ],
+     "chart_locations": [
+      "21:4:26"
+     ],
+     "underlined": false,
+     "note": "two uprights joined by a double horizontal bar with three short legs below",
+     "index": 7
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      177
+     ],
+     "shape_only_candidate_codes": [
+      177,
+      517
+     ],
+     "chart_locations": [
+      "20:2:11"
+     ],
+     "underlined": false,
+     "note": "fish with side fins and crossed tail",
+     "index": 8
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      42
+     ],
+     "shape_only_candidate_codes": [
+      42,
+      182
+     ],
+     "chart_locations": [
+      "20:4:11"
+     ],
+     "underlined": false,
+     "note": "five-toothed comb on a long stem",
+     "index": 9
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      161
+     ],
+     "shape_only_candidate_codes": [
+      161,
+      537
+     ],
+     "chart_locations": [
+      "21:7:28"
+     ],
+     "underlined": false,
+     "note": "oval with a stem and small fork inside; no corner ticks and no underline",
+     "index": 10
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. The long dashed line above the crop belongs to the previous row (3816). No underline ink belongs to this line."
+  },
+  {
+   "sample_index": 69,
+   "printed_inscription_id": "2568",
+   "classification_literal": "22 99",
+   "valid_printed_target": true,
+   "drawn_unit_count": 6,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 6
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "hatched_sign",
+     "strict_candidate_codes": [
+      599
+     ],
+     "shape_only_candidate_codes": [
+      599,
+      106
+     ],
+     "chart_locations": [
+      "21:9:13"
+     ],
+     "underlined": false,
+     "note": "full-cell diagonally hatched square, no underline",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      218
+     ],
+     "shape_only_candidate_codes": [
+      218,
+      416
+     ],
+     "chart_locations": [
+      "20:8:24"
+     ],
+     "underlined": false,
+     "note": "plain crescent with flat ends",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      375
+     ],
+     "shape_only_candidate_codes": [
+      375
+     ],
+     "chart_locations": [
+      "21:5:11"
+     ],
+     "underlined": false,
+     "note": "U with three feet: left diagonal, central vertical, right diagonal",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      10,
+      766
+     ],
+     "shape_only_candidate_codes": [
+      10,
+      766,
+      424,
+      770
+     ],
+     "chart_locations": [
+      "20:7:16",
+      "20:5:34"
+     ],
+     "underlined": false,
+     "uncertainty": "three full-height strokes; cards 10 and 766 coincide",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      197
+     ],
+     "shape_only_candidate_codes": [
+      197,
+      532
+     ],
+     "chart_locations": [
+      "21:5:15"
+     ],
+     "underlined": false,
+     "note": "U with a stem and small ring inside",
+     "index": 4
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      161
+     ],
+     "shape_only_candidate_codes": [
+      161,
+      537
+     ],
+     "chart_locations": [
+      "21:7:28"
+     ],
+     "underlined": false,
+     "note": "oval with a stem and small fork inside; no corner ticks and no underline",
+     "index": 5
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. The first printed digit pair of the number reads 25 (the 5 is drawn like an S). The proposed box is 117 pt wide while the drawing starts about 33 pt from its left edge; the left part is empty except for a speck. No underline ink around the line."
+  },
+  {
+   "sample_index": 70,
+   "printed_inscription_id": "1109",
+   "classification_literal": "11 40",
+   "valid_printed_target": true,
+   "drawn_unit_count": 6,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 6
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      133
+     ],
+     "shape_only_candidate_codes": [
+      133,
+      535
+     ],
+     "chart_locations": [
+      "20:0:26"
+     ],
+     "underlined": false,
+     "note": "plain stick figure with a head stick above the arms",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": [
+      "21:5:30"
+     ],
+     "underlined": false,
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      180
+     ],
+     "shape_only_candidate_codes": [
+      180,
+      541
+     ],
+     "chart_locations": [
+      "20:2:31"
+     ],
+     "underlined": false,
+     "note": "fish with four short side strokes",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      86
+     ],
+     "shape_only_candidate_codes": [
+      86,
+      568
+     ],
+     "chart_locations": [
+      "20:2:28"
+     ],
+     "underlined": false,
+     "note": "fish with doubled chevron",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      23
+     ],
+     "shape_only_candidate_codes": [
+      23,
+      258
+     ],
+     "chart_locations": [
+      "20:5:23"
+     ],
+     "underlined": false,
+     "note": "single tick near the top of the line",
+     "index": 4
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      163
+     ],
+     "shape_only_candidate_codes": [
+      163,
+      254
+     ],
+     "chart_locations": [
+      "21:8:12"
+     ],
+     "underlined": false,
+     "note": "oval with three crossing diameters",
+     "index": 5
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. No underline ink around the line. Classification printed with a blank third position."
+  },
+  {
+   "sample_index": 71,
+   "printed_inscription_id": "5014",
+   "classification_literal": "11 42",
+   "valid_printed_target": true,
+   "drawn_unit_count": 3,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 3
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      139
+     ],
+     "shape_only_candidate_codes": [
+      139,
+      390
+     ],
+     "chart_locations": [
+      "20:1:23"
+     ],
+     "underlined": false,
+     "note": "stick figure whose raised arm meets a D crossed by a diagonal stroke",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      25
+     ],
+     "shape_only_candidate_codes": [
+      25,
+      509
+     ],
+     "chart_locations": [
+      "20:5:18"
+     ],
+     "underlined": false,
+     "note": "pair of ticks at the top of the line (high pair)",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      162
+     ],
+     "shape_only_candidate_codes": [
+      162,
+      510
+     ],
+     "chart_locations": [
+      "21:8:25"
+     ],
+     "underlined": false,
+     "note": "diamond with a hooked notch at the upper right",
+     "index": 2
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. No underline ink around the line. The first sign is a single unit (figure and D are joined by the arm)."
+  },
+  {
+   "sample_index": 72,
+   "printed_inscription_id": "1096",
+   "classification_literal": "11 40",
+   "valid_printed_target": true,
+   "drawn_unit_count": 5,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 5
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      41
+     ],
+     "shape_only_candidate_codes": [
+      41,
+      479
+     ],
+     "chart_locations": [
+      "21:4:23"
+     ],
+     "underlined": false,
+     "note": "long left stem with a two-bar box and a right stem continuing downward",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      241
+     ],
+     "shape_only_candidate_codes": [
+      241,
+      593
+     ],
+     "chart_locations": [
+      "21:1:11"
+     ],
+     "underlined": false,
+     "note": "bow-tie, left side closed, right side open with short ticks",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      180
+     ],
+     "shape_only_candidate_codes": [
+      180,
+      541
+     ],
+     "chart_locations": [
+      "20:2:31"
+     ],
+     "underlined": false,
+     "note": "fish with four short side strokes",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      25
+     ],
+     "shape_only_candidate_codes": [
+      25,
+      509
+     ],
+     "chart_locations": [
+      "20:5:18"
+     ],
+     "underlined": false,
+     "note": "pair of ticks at the top of the line (high pair)",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      420
+     ],
+     "shape_only_candidate_codes": [
+      420,
+      421
+     ],
+     "chart_locations": [
+      "21:8:26"
+     ],
+     "underlined": false,
+     "note": "oval with a V notch at the top",
+     "index": 4
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. No underline ink around the line. Classification printed with a blank third position."
+  },
+  {
+   "sample_index": 73,
+   "printed_inscription_id": "1429",
+   "classification_literal": "23 99",
+   "valid_printed_target": true,
+   "drawn_unit_count": 12,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 12
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": [
+      "21:5:30"
+     ],
+     "underlined": false,
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      127
+     ],
+     "shape_only_candidate_codes": [
+      127,
+      506
+     ],
+     "chart_locations": [
+      "20:3:33"
+     ],
+     "underlined": false,
+     "note": "Y with a comb of ticks on the right arm",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      27
+     ],
+     "shape_only_candidate_codes": [
+      27,
+      491
+     ],
+     "chart_locations": [
+      "21:3:19"
+     ],
+     "underlined": false,
+     "note": "square with stem on top",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      8,
+      764
+     ],
+     "shape_only_candidate_codes": [
+      8,
+      764,
+      501,
+      768
+     ],
+     "chart_locations": [
+      "20:7:11",
+      "20:5:26"
+     ],
+     "underlined": false,
+     "uncertainty": "single full-height stroke with a small speck at its top; cards 8 and 764 coincide",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      276
+     ],
+     "shape_only_candidate_codes": [
+      276
+     ],
+     "chart_locations": [
+      "21:6:13"
+     ],
+     "underlined": false,
+     "note": "U whose arm tops carry flags with three horizontal bars",
+     "index": 4
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      10,
+      766
+     ],
+     "shape_only_candidate_codes": [
+      10,
+      766,
+      424,
+      770
+     ],
+     "chart_locations": [
+      "20:7:16",
+      "20:5:34"
+     ],
+     "underlined": false,
+     "uncertainty": "three full-height strokes; cards 10 and 766 coincide",
+     "index": 5
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      197
+     ],
+     "shape_only_candidate_codes": [
+      197,
+      532
+     ],
+     "chart_locations": [
+      "21:5:15"
+     ],
+     "underlined": false,
+     "note": "U with a stem and small ring inside",
+     "index": 6
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      177
+     ],
+     "shape_only_candidate_codes": [
+      177,
+      517
+     ],
+     "chart_locations": [
+      "20:2:11"
+     ],
+     "underlined": false,
+     "note": "fish with side fins and crossed tail",
+     "index": 7
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      42
+     ],
+     "shape_only_candidate_codes": [
+      42,
+      182
+     ],
+     "chart_locations": [
+      "20:4:11"
+     ],
+     "underlined": false,
+     "note": "five-toothed comb on a long stem",
+     "index": 8
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      168
+     ],
+     "shape_only_candidate_codes": [
+      168,
+      579
+     ],
+     "chart_locations": [
+      "20:3:17"
+     ],
+     "underlined": false,
+     "note": "small oval at the left with an open bracket-shaped pair of strokes at the right",
+     "index": 9
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      25
+     ],
+     "shape_only_candidate_codes": [
+      25,
+      509
+     ],
+     "chart_locations": [
+      "20:5:18"
+     ],
+     "underlined": false,
+     "note": "pair of ticks at the top of the line (high pair)",
+     "index": 10
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      162
+     ],
+     "shape_only_candidate_codes": [
+      162,
+      510
+     ],
+     "chart_locations": [
+      "21:8:25"
+     ],
+     "underlined": false,
+     "note": "diamond with a hooked notch at the upper right",
+     "index": 11
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. The dashes above the crop belong to the previous row (1581). No underline ink belongs to this line. Classification printed with a blank third position."
+  },
+  {
+   "sample_index": 74,
+   "printed_inscription_id": "1094",
+   "classification_literal": "11 40",
+   "valid_printed_target": true,
+   "drawn_unit_count": 7,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 7
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      95
+     ],
+     "shape_only_candidate_codes": [
+      95,
+      549
+     ],
+     "chart_locations": [
+      "21:0:27"
+     ],
+     "underlined": false,
+     "note": "arrow with a hollow triangular head",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      10,
+      766
+     ],
+     "shape_only_candidate_codes": [
+      10,
+      766,
+      424,
+      770
+     ],
+     "chart_locations": [
+      "20:7:16",
+      "20:5:34"
+     ],
+     "underlined": false,
+     "uncertainty": "three full-height strokes; cards 10 and 766 coincide",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      197
+     ],
+     "shape_only_candidate_codes": [
+      197,
+      532
+     ],
+     "chart_locations": [
+      "21:5:15"
+     ],
+     "underlined": false,
+     "note": "U with a stem and small ring inside",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      177
+     ],
+     "shape_only_candidate_codes": [
+      177,
+      517
+     ],
+     "chart_locations": [
+      "20:2:11"
+     ],
+     "underlined": false,
+     "note": "fish with side fins and crossed tail",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      42
+     ],
+     "shape_only_candidate_codes": [
+      42,
+      182
+     ],
+     "chart_locations": [
+      "20:4:11"
+     ],
+     "underlined": false,
+     "note": "five-toothed comb on a long stem",
+     "index": 4
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      25
+     ],
+     "shape_only_candidate_codes": [
+      25,
+      509
+     ],
+     "chart_locations": [
+      "20:5:18"
+     ],
+     "underlined": false,
+     "note": "pair of ticks at the top of the line (high pair)",
+     "index": 5
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      162
+     ],
+     "shape_only_candidate_codes": [
+      162,
+      510
+     ],
+     "chart_locations": [
+      "21:8:25"
+     ],
+     "underlined": false,
+     "note": "diamond with a hooked notch at the upper right",
+     "index": 6
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. No underline ink around the line. Classification printed with a blank third position."
+  },
+  {
+   "sample_index": 75,
+   "printed_inscription_id": "2323",
+   "classification_literal": "11 40",
+   "valid_printed_target": true,
+   "drawn_unit_count": 3,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 3
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      177
+     ],
+     "shape_only_candidate_codes": [
+      177,
+      517
+     ],
+     "chart_locations": [
+      "20:2:11"
+     ],
+     "underlined": false,
+     "note": "fish with side fins and crossed tail",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      52
+     ],
+     "shape_only_candidate_codes": [
+      52,
+      108
+     ],
+     "chart_locations": [
+      "20:9:31"
+     ],
+     "underlined": false,
+     "note": "slanted stroke with a short branch to the lower right",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      351
+     ],
+     "shape_only_candidate_codes": [
+      351
+     ],
+     "chart_locations": [
+      "21:9:6"
+     ],
+     "underlined": false,
+     "note": "tilted square notch-sign with a comb of ticks at the upper right",
+     "index": 2
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. The first printed digit of the classification is drawn like an i (read as 1). The proposed box is 167 pt wide while the drawing occupies its right 55 pt; the empty left part carries a speck. No underline ink around the line."
+  },
+  {
+   "sample_index": 76,
+   "printed_inscription_id": "2350",
+   "classification_literal": "23 99",
+   "valid_printed_target": true,
+   "drawn_unit_count": 6,
+   "crop_correct": false,
+   "crop_issues": [
+    "The proposed box ends at x = 510.6 pt but the last unit (the hatched square with the question-mark sign) extends to about 518 pt, so about 7 pt of the drawing, roughly half of the hatched square, lies outside the crop. The drawing is not complete in the crop.",
+    "The field box proposed for the number overlaps the right part of the hatched unit and cuts through the second printed line of the field, so it also does not isolate the number/classification field."
+   ],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 6
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      69
+     ],
+     "shape_only_candidate_codes": [
+      69,
+      554
+     ],
+     "chart_locations": [
+      "21:2:30"
+     ],
+     "underlined": false,
+     "note": "grid of three columns and four rows",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      69
+     ],
+     "shape_only_candidate_codes": [
+      69,
+      554
+     ],
+     "chart_locations": [
+      "21:2:30"
+     ],
+     "underlined": false,
+     "note": "second grid of three columns and four rows",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      136
+     ],
+     "shape_only_candidate_codes": [
+      136,
+      450
+     ],
+     "chart_locations": [
+      "20:1:18"
+     ],
+     "underlined": false,
+     "note": "stick figure whose raised arm meets a full-height vertical stroke at the right",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      1
+     ],
+     "shape_only_candidate_codes": [
+      1,
+      423
+     ],
+     "chart_locations": [
+      "20:5:22"
+     ],
+     "underlined": false,
+     "note": "single tick at mid height of the line",
+     "index": 3
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      207
+     ],
+     "shape_only_candidate_codes": [
+      207,
+      414
+     ],
+     "chart_locations": [
+      "21:6:2"
+     ],
+     "underlined": false,
+     "note": "U with bars on both arm tops and three slanted strokes inside",
+     "index": 4
+    },
+    {
+     "line": 1,
+     "kind": "hatched_sign",
+     "strict_candidate_codes": [
+      596
+     ],
+     "shape_only_candidate_codes": [
+      596,
+      454
+     ],
+     "chart_locations": [
+      "21:9:11"
+     ],
+     "underlined": false,
+     "note": "diagonally hatched square with a question-mark-shaped sign showing through; read from the page because the proposed box cuts it off",
+     "index": 5
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. A small ring mark stands above the printed number and is read as a stray mark. The last unit was read from the original page outside the crop. No underline ink around the line."
+  },
+  {
+   "sample_index": 77,
+   "printed_inscription_id": "7044",
+   "classification_literal": "92 77",
+   "valid_printed_target": true,
+   "drawn_unit_count": 3,
+   "crop_correct": false,
+   "crop_issues": [
+    "The proposed box ends at x = 251.1 pt but the hatched square and its underline extend to about 255.1 pt, so about 4 pt of the last unit and the last underline dash lie outside the crop; the drawing and the underline are not complete in the crop.",
+    "The field box proposed for the number overlaps the right part of the hatched unit."
+   ],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 3
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "hatched_patch",
+     "strict_candidate_codes": [
+      598
+     ],
+     "shape_only_candidate_codes": [
+      597,
+      598,
+      13,
+      542
+     ],
+     "chart_locations": [
+      "21:9:17"
+     ],
+     "underlined": false,
+     "uncertainty": "narrow hatched patch at the start of the line; right-edge variant (598) preferred: its ink ends at 225.7 pt, the next sign's cell then starts about 2 pt later and the next sign's ink begins 5.7 pt after the patch, as in other rows of this type; no underline",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      126
+     ],
+     "shape_only_candidate_codes": [
+      126,
+      151
+     ],
+     "chart_locations": [
+      "20:3:34"
+     ],
+     "underlined": false,
+     "uncertainty": "Y with three upper prongs, centre prong long; 151 would need an underline, none present",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "hatched_sign",
+     "strict_candidate_codes": [
+      106
+     ],
+     "shape_only_candidate_codes": [
+      599,
+      106
+     ],
+     "chart_locations": [
+      "21:9:14"
+     ],
+     "underlined": true,
+     "note": "full-cell diagonally hatched square with a five-dash underline spanning the cell; a small smudge at the upper left of the square is not a separate unit",
+     "index": 2
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. The last unit and its underline were read from the original page past the proposed box edge. Classification has the printed blank third position."
+  },
+  {
+   "sample_index": 78,
+   "printed_inscription_id": "3290",
+   "classification_literal": "23 99",
+   "valid_printed_target": true,
+   "drawn_unit_count": 4,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 4
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "hatched_patch",
+     "strict_candidate_codes": [
+      598
+     ],
+     "shape_only_candidate_codes": [
+      597,
+      598,
+      13,
+      542
+     ],
+     "chart_locations": [
+      "21:9:17"
+     ],
+     "underlined": false,
+     "uncertainty": "narrow hatched patch at the start of the line; right-edge variant (598) preferred: its ink ends at 203.5 pt and the underline of the next sign (the cell start) begins 2.2 pt later; no underline under the patch",
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      538
+     ],
+     "shape_only_candidate_codes": [
+      145,
+      538
+     ],
+     "chart_locations": [
+      "20:0:10"
+     ],
+     "underlined": true,
+     "note": "figure with a forked head, arm bar and two hanging rings; five-dash underline spanning its cell",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      195
+     ],
+     "shape_only_candidate_codes": [
+      195
+     ],
+     "chart_locations": [
+      "20:3:28"
+     ],
+     "underlined": false,
+     "note": "two striped bodies with legs (beetle-like sign)",
+     "index": 2
+    },
+    {
+     "line": 1,
+     "kind": "hatched_patch",
+     "strict_candidate_codes": [
+      597
+     ],
+     "shape_only_candidate_codes": [
+      597,
+      598,
+      13,
+      542
+     ],
+     "chart_locations": [
+      "21:9:15"
+     ],
+     "underlined": false,
+     "uncertainty": "narrow hatched patch at the end of the line; left-edge variant (597) preferred: its ink begins only 1.5 pt after the preceding sign's ink, which leaves no room for the extra 8 pt a right-edge patch would need; no underline",
+     "index": 3
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. The underline under the figure lies inside the box; dashes above the box belong to the previous row (3271). Classification printed with a blank third position."
+  },
+  {
+   "sample_index": 79,
+   "printed_inscription_id": "3697",
+   "classification_literal": "11 93",
+   "valid_printed_target": true,
+   "drawn_unit_count": 3,
+   "crop_correct": true,
+   "crop_issues": [],
+   "physical_lines": [
+    {
+     "line": 1,
+     "kind": "numbered",
+     "unit_count": 3
+    }
+   ],
+   "units": [
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      204
+     ],
+     "shape_only_candidate_codes": [
+      204,
+      526
+     ],
+     "chart_locations": [
+      "21:5:30"
+     ],
+     "underlined": false,
+     "index": 0
+    },
+    {
+     "line": 1,
+     "kind": "sign",
+     "strict_candidate_codes": [
+      203
+     ],
+     "shape_only_candidate_codes": [
+      203,
+      484
+     ],
+     "chart_locations": [
+      "21:5:23"
+     ],
+     "underlined": false,
+     "note": "U with a hatched wedge at the lower right inside the bowl, no underline",
+     "index": 1
+    },
+    {
+     "line": 1,
+     "kind": "hatched_patch",
+     "strict_candidate_codes": [
+      597
+     ],
+     "shape_only_candidate_codes": [
+      597,
+      598,
+      13,
+      542
+     ],
+     "chart_locations": [
+      "21:9:15"
+     ],
+     "underlined": false,
+     "uncertainty": "narrow hatched patch at the end of the line; left-edge variant (597) preferred: its ink begins 1.6 pt after the preceding sign's ink, which leaves no room for the extra 8 pt a right-edge patch would need; no underline",
+     "index": 2
+    }
+   ],
+   "source_notes": "One line, number field to the right of the drawing. The dashes above the box belong to the previous row (1226). No underline ink belongs to this line."
+  }
+ ]
+}
