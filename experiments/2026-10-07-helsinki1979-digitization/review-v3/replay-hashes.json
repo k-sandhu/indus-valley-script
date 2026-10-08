@@ -1,0 +1,57 @@
+{
+ "replays": [
+  {
+   "command_output": "review-v3/v3-evaluation-repeat/metrics.json",
+   "original": "repair/2026-10-08-v3/evaluation-2026-10-08-adjudicated/metrics.json",
+   "repeat_sha256": "60315317de3e9e967ad7b5182079aeb02fcb2a1fe1a7560115638fab38971b77",
+   "original_sha256": "60315317de3e9e967ad7b5182079aeb02fcb2a1fe1a7560115638fab38971b77",
+   "byte_identical": true,
+   "bytes": 228257
+  },
+  {
+   "command_output": "review-v3/v3-endpoint-record-repeat/diagnosis.json",
+   "original": "repair/2026-10-08-endpoint-record-v1/diagnosis.json",
+   "repeat_sha256": "bd51517b4ef3f92f2dac279d434c7debddb0c90254844c450178b481c525cb02",
+   "original_sha256": "bd51517b4ef3f92f2dac279d434c7debddb0c90254844c450178b481c525cb02",
+   "byte_identical": true,
+   "bytes": 781473
+  },
+  {
+   "command_output": "review-v3/v3-endpoint-record-repeat/reader-process-cost.json",
+   "original": "repair/2026-10-08-endpoint-record-v1/reader-process-cost.json",
+   "repeat_sha256": "7a3a6aa20df504cee701c64b7f5d0253656644a9ca55e623ed8f7a2aff3078a6",
+   "original_sha256": "7a3a6aa20df504cee701c64b7f5d0253656644a9ca55e623ed8f7a2aff3078a6",
+   "byte_identical": true,
+   "bytes": 26146
+  },
+  {
+   "command_output": "review-v3/v3-endpoint-record-repeat/chart-locator-inspection.json",
+   "original": "repair/2026-10-08-endpoint-record-v1/chart-locator-inspection.json",
+   "repeat_sha256": "45c9a8fb8d5ea922e54fec3cac969fd15ce86aa64f530a361ba303743dc39fca",
+   "original_sha256": "45c9a8fb8d5ea922e54fec3cac969fd15ce86aa64f530a361ba303743dc39fca",
+   "byte_identical": true,
+   "bytes": 1123
+  },
+  {
+   "command_output": "review-v3/v3-endpoint-record-repeat/preservation-check.json",
+   "original": "repair/2026-10-08-endpoint-record-v1/preservation-check.json",
+   "repeat_sha256": "088dbc878cd1db701aa54b761dd5935926f171a695af114c475ba105a005cb9c",
+   "original_sha256": "088dbc878cd1db701aa54b761dd5935926f171a695af114c475ba105a005cb9c",
+   "byte_identical": true,
+   "bytes": 61506
+  }
+ ],
+ "verify_crop_v3": {
+  "passed": 31,
+  "total": 32,
+  "failed_checks": [
+   "no_fresh_reference_or_reader_files"
+  ],
+  "note": "no_fresh_reference_or_reader_files is a freeze-time check; it fails by design now that reader and adjudication files exist in blind/. The original run at repair/2026-10-08-record-v1/verification.json passed 32/32 before the readers started."
+ },
+ "verify_v3_endpoint_record": {
+  "passed": 26,
+  "total": 26,
+  "failed": null
+ }
+}
