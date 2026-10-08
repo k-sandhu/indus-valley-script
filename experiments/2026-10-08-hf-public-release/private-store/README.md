@@ -3,12 +3,11 @@ pretty_name: Indus research private backup
 tags:
 - indus-script
 - private-backup
-- research-outputs
 ---
 
 # Indus research private backup
 
-`ksaw008/indus-research-data` is a private backup for large outputs from the private `k-sandhu/indus-valley-script` research repository. It stores 1,038 manifest-listed files totaling 3,406,008,409 bytes. The inventory below comes from the locally preserved hosting manifest, SHA256 `1408f92bbe38555e32a55aa1371a334fa70fc35dffe499a59d5d7d9f270103a2`. Its `verified` flags describe the earlier upload verification; Package O did not query the remote backup again.
+`ksaw008/indus-research-data` backs up large outputs from the private `k-sandhu/indus-valley-script` research repository. The manifest lists 1,038 files totaling 3,406,008,409 bytes. The 1,034 restoration files were removed locally with free-local after verification; the Hub now holds their only copy. The prediction/model groups total 3,083,272,144 and 3,214,711 bytes respectively. The four Helsinki backups remain locally.
 
 | Set | Repository-relative path | Files | Bytes |
 |---|---|---:|---:|
@@ -20,44 +19,49 @@ tags:
 | helsinki1979-repair-v2-frame | `experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-07-v2/frame.json` | 1 | 60522244 |
 
 
-The 1,029 restoration-prediction files include per-fold/query JSONL, probability arrays, fitted counts and neural checkpoints. The five frozen-model files hold counts, three seed weights and a training register. These depend on the pinned Lipi export, whose licence was not found, and must remain private. The four Helsinki files are large backup copies of provisional occurrences, a provisional ledger import and the v1/v2 repair frames. Their 1979 source is CC BY 4.0, but the transcription failed its evaluations and remains quarantined. No third-party PDF scans are listed in this backup manifest.
+The 1,029 restoration files include query/fold JSONL, arrays, fitted counts and checkpoints; five frozen-model files hold counts, three seed weights and a training register. They derive from the Lipi export, for which no licence was found, and remain private. Four Helsinki outputs hold provisional occurrences, a ledger import and v1/v2 repair frames. Their 1979 source is CC BY 4.0; the full transcription failed evaluation and remains quarantined. No third-party PDF scans appear in the manifest.
 
-The GitHub repository preserves code, protocols, aggregate results and research documentation. This backup preserves large generated payloads omitted from Git. Its path layout mirrors the local repository; it is not a set of `load_dataset` configurations. The separate public-release candidate selects licensed source derivatives and authored tables. Making that new dataset public would not change this backup’s rights or status.
+GitHub holds code, protocols and aggregate research outputs; this backup holds large payloads omitted from Git, in matching repository-relative paths. It is a restore layout. The separate ksaw008/indus-reference-benchmarks dataset selects licensed edition derivatives and own compilations; its release leaves this backup's rights and visibility unchanged.
 
-## Restore and verify
+## Restore and verification
 
-Use an authenticated owner session with `huggingface_hub`. Do not embed tokens in research files. Run from the repository root:
+From the private repository root, use an authenticated owner session:
 
 ```powershell
 python -B experiments/2026-10-06-research-program/hf_host.py restore --repo ksaw008/indus-research-data
 ```
 
-The existing `restore` implementation downloads **only** `data/raw/2026-10-06-modern-restoration/main/**` and `data/raw/2026-10-06-modern-restoration/frozen-model/**`. It does not restore the four Helsinki backups. It writes into the original repository paths and uses the current remote revision. Use a separate restore folder and a chosen revision with `snapshot_download` when checking a backup before replacing local files:
+restore downloads only the two restoration directories. For the four Helsinki files or a pinned restore to a separate folder:
 
 ```python
 from huggingface_hub import snapshot_download
 snapshot_download(
     "ksaw008/indus-research-data", repo_type="dataset",
-    revision="COMMIT_SHA_FROM_OWNER", local_dir="RESTORE_DIRECTORY",
-    allow_patterns=[
-        "data/raw/2026-10-06-modern-restoration/main/**",
-        "data/raw/2026-10-06-modern-restoration/frozen-model/**",
-        "experiments/2026-10-07-helsinki1979-digitization/runs/2026-10-07-full-v1/occurrences.jsonl",
-        "experiments/2026-10-07-helsinki1979-digitization/integration/2026-10-07-v1/ledger-import.jsonl",
-        "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-07-v1/frame.json",
-        "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-07-v2/frame.json",
-    ],
+    revision="OWNER_SELECTED_COMMIT", local_dir="RESTORE_DIRECTORY",
+    allow_patterns=['data/raw/2026-10-06-modern-restoration/main/**', 'data/raw/2026-10-06-modern-restoration/frozen-model/**', 'experiments/2026-10-07-helsinki1979-digitization/runs/2026-10-07-full-v1/occurrences.jsonl', 'experiments/2026-10-07-helsinki1979-digitization/integration/2026-10-07-v1/ledger-import.jsonl', 'experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-07-v1/frame.json', 'experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-07-v2/frame.json'],
 )
 ```
 
-To restore one part, retain only its path/pattern in `allow_patterns`. Restore paths must preserve their repository-relative layout. The local manifest does not record a remote commit SHA; obtain it from the backup repository before a pinned restore. The above example deliberately requires the owner to supply it.
-
-[checksums-manifest.json](checksums-manifest.json) lists every file’s path, byte count and SHA256, including `backed_up_files_kept_locally`. After downloading, verify all 1,038 files against it with the read-only checker:
+Retain only the needed pattern to restore one part. Obtain the remote commit before a pinned restore; the local manifest does not record one. [checksums-manifest.json](checksums-manifest.json) lists all paths, sizes and SHA-256 values, including four locally retained backups. After downloading, check all 1,038 files:
 
 ```powershell
 python -B experiments/2026-10-08-hf-public-release/verify_private_store.py --root RESTORE_DIRECTORY --out experiments/2026-10-08-hf-public-release/private-restore-check.json
 ```
 
-Missing or mismatched files fail that check. The original `hf_host.py verify --repo ksaw008/indus-research-data` checks the two restoration directories against the Hub; it does not check the four Helsinki backup files. Its `upload` command also regenerates a short README, so a coordinator installing this fuller card should do so after any such upload. No restore, verification against the Hub, upload or file deletion was performed during this documentation task.
+hf_host.py verify checks local restoration copies against the Hub. Since those files were removed, it currently finds nothing to check. The coordinator added verify-remote, which compares every manifest entry with Hub-reported size/SHA-256 and downloads/hashes the 122 small non-LFS files:
 
-Author/contact: TODO: owner-confirmed details. Keep this card and checksum manifest attached to the private backup. Source provenance and public-release exclusions are documented in the GitHub repository’s `knowledge/provenance/REDISTRIBUTION.md` and Package O’s rights audit.
+```powershell
+python -B experiments/2026-10-06-research-program/hf_host.py verify-remote --repo ksaw008/indus-research-data
+```
+
+The coordinator reports that this matched 1,038/1,038 files on 8 October 2026. Package O read the implementation and manifest but did not repeat the remote check. The coordinator's new publish-card command uploads this README:
+
+```powershell
+python -B experiments/2026-10-06-research-program/hf_host.py publish-card --repo ksaw008/indus-research-data --card experiments/2026-10-08-hf-public-release/private-store/README.md
+```
+
+## Owner note
+
+Whether Hugging Face's rights terms permit continued private storage of Lipi-derived files is an open owner decision. This card records recovery steps without resolving that question.
+
+Author: k-sandhu. Full source/rights decisions remain in the private research provenance records. This documentation revision performed no restore, upload, repository creation or visibility change.

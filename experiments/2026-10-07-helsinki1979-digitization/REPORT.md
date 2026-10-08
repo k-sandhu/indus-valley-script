@@ -1,3 +1,42 @@
+# Cropping v3: development and prepared blind endpoint, 8 October 2026
+
+V3 produces **11,769 physical-line proposals, 11,702 numbered occurrences, 67 continuation lines and 54,384 proposed unit windows (5 unresolved) across 159 pages (PDF22–180)**, with zero releases. Its new blind endpoint is prepared, and its accuracy awaits coordinator readings. The method was selected on all 80 v2 rows and the 21 existing count pages. [Full summary](repair/2026-10-08-v3/full-summary.json), `rows`, `numbered_occurrences`, `continuation_lines`, `units`, `pages`; [freeze](repair/2026-10-08-v3/freeze-manifest.json); [selection](repair/2026-10-08-v3/blind/selection.json).
+
+## Development findings and scope
+
+| Outcome, descriptive 95% Wilson interval | First frozen: 60 numbered rows, PDF31–79 | V2 frozen: 80 rows, 28/26/26 sections | V3 development: same 80 v2 targets |
+|---|---|---|---|
+| Matching unit count | 33/60 (55.0%; 42.5–66.9%) | 59/80 (73.8%; 63.2–82.1%) | 71/80 (88.8%; 80.0–94.0%) |
+| Literal inscription number | 23/60 (38.3%; 27.1–51.0%) | 62/80 (77.5%; 67.2–85.3%) | 69/80 (86.2%; 77.0–92.1%) |
+| Five-position classification | 19/60 (31.7%; 21.3–44.2%) | 55/80 (68.8%; 57.9–77.8%) | 67/80 (83.8%; 74.2–90.3%) |
+| Compatible whole row, top one | 13/60 (21.7%; 13.1–33.6%) | 20/80 (25.0%; 16.8–35.5%) | 33/80 (41.2%; 31.1–52.2%) |
+| Compatible whole row, top five | 24/60 (40.0%; 28.6–52.6%) | 40/80 (50.0%; 39.3–60.7%) | 60/80 (75.0%; 64.5–83.2%) |
+| Crop acceptance | 23/60 (38.3%; 27.1–51.0%) | 44/80 (55.0%; 44.1–65.4%) | No new independent crop labels |
+
+The first endpoint's 60-row frame covers the numbered section on PDF31–79 and no sorted row. V2's 80-row frame covers all three sections (28/26/26), and those same 80 targets and 352 units are reused for v3 development. The old predictions, references and metrics are preserved. Parameter selection prevents interpreting the v3 development intervals as held-out accuracy.
+
+V3 aligned strict unit recall is 280/352 at top one and 327/352 at top five. On matching-count rows, the same-position figures are 244/305 and 286/305. Calibration uses those 305 aligned positions: Brier 0.124876, ECE10 0.110060. It reuses the original coefficients without fitting on these rows. These development bins and bootstrap intervals are in [diagnosis.json](repair/2026-10-08-development-record-v1/diagnosis.json), `development_summary`, `development_intervals`. Fresh v3 calibration remains unmeasured.
+
+The 21 reused page counts yield 1,847/1,847 numbered recall and precision (Wilson 99.8–100.0%). That recovers the v2 omissions on pages 66 and 112 and retains 288 numbered rows on the eight-column page 129 and 201 on the compact page 130. The reference also records ten unnumbered continuations on these pages. V3 locates all 10 and agrees with all 10 preceding-numbered-row links (Wilson 72.2–100.0% for each measure); its 1,857 physical detections equal the old source count. This is development corroboration on the reused pages. [Continuation check](repair/2026-10-08-development-record-v1/continuation-check.json), `continuation_recall`, `continuation_precision`, `preceding_numbered_parent_agreement`, `physical_lines_detected`; [development file](repair/2026-10-08-development-v3h/development.json), `development_count_pages`, `pages`.
+
+## Diagnosis and crop changes
+
+The earlier 80-row endpoint rejected 36 crops; 34 of those are among the 40 top-five whole-row failures. The 34-row target set is therefore a failure-stage subset. Both full reader tag lists and their exact source locations are retained in [diagnosis.json](repair/2026-10-08-development-record-v1/diagnosis.json), `v2_rejected_crops`, `v2_top5_failure_starts_at_crop`, `crop_issue_observations`. The text-search families overlap and are a way to locate observations, not independent error labels.
+
+The field detector pairs print components and refines its horizontal band from repeated classification lines. It rejects components cut by the field-search boundary, masks every column's field and clamps row padding. Glyph components define each row's ink bounds; dashed underline components belong to the preceding drawing body. Unanchored tall components create explicit continuation lines without imposing a pitch or row count. Compact columns use the inherited print-column detector. Body segmentation removes underline groups temporarily, retains loss-rectangle strokes and separates short ticks next to tall units; matching restores each whole underline slot. The original CNN, template costs, code candidates and calibration are unchanged. [Implementation](crop_v3.py); [frozen parameters](repair/2026-10-08-v3/freeze-manifest.json), `parameters`, `inherited_column_parameters`, `code_hashes`.
+
+All five previously diagnosed unit-window failures (rows 3,25,50,52,58) now have matching counts and compatible top-five rows in development. Row72 retains a top-five graphic-code miss under the unchanged recognizer and chart labels. Known source/window defects remain on development rows 27 (field/next-row ink and incomplete final patch),53 (classification digit at the glyph edge),76 (final patch clipped by the field boundary). Their source contexts are local in `data/raw/2026-10-07-helsinki1979-digitization/2026-10-08-v3/2026-10-08-development-v3h/row_027.png`, `row_053.png`, `row_076.png`; the observations are recorded in [development inspection](repair/2026-10-08-development-record-v1/visual-inspection.json). Independent crop acceptance on v3 boxes awaits the fresh source readers.
+
+Development top-five compatible rows are 25/28 numbered,18/26 end-sorted,17/26 beginning-sorted. Count agreement is26/28,23/26,22/26. Field and graphic errors therefore remain after the principal crop repairs. These selected development strata supply no edition-level error census. [Diagnosis](repair/2026-10-08-development-record-v1/diagnosis.json), `development_by_section`.
+
+## Fresh reference and verification handoff
+
+The method froze at 2026-10-08T14:11:23.905485+00:00 and predictions at 2026-10-08T14:13:49.280280+00:00. The fresh selection has 80 numbered targets drawn from 572/2,004/2,004 section pools on 8/28/28 eligible pages. Page exclusions contain every earlier evaluation target page and the original ten development pages. Source-only exact/context images, 12 chart cards and21 count pages are frozen with hashes. All selected targets happen to have no detected continuation, so the physical-line count test and complete source pass supply the planned continuation check. [Selection](repair/2026-10-08-v3/blind/selection.json); [prediction freeze](repair/2026-10-08-v3/prediction-freeze.json), `packet_hashes`; [conventions](repair/2026-10-08-v3/blind/CONVENTIONS.md).
+
+Two source-only readers and a third adjudicator are required. No new reference or metrics were created here. The frozen evaluator reports the old metrics and both numbered/physical-line recall, with pooled and bootstrap intervals. It retains the original five criteria and prevents a pass on an incompletely scored crop/number/count frame. Every full proposal remains quarantined for the separate human-plus-independent-AI verification package. Its [contract](OPTION-B-INTERFACE.md) requires complete source-page coverage and explicit continuation review. Large output is listed in [HOST-FILES.txt](HOST-FILES.txt) for coordinator backup. L's carrier/surface concordance remains separate.
+
+## Earlier frozen endpoints, preserved record
+
 # Helsinki 1979 digitization: two failed frozen endpoints
 
 The repaired pipeline fails four of five frozen reliability criteria. In its **80-row frame across numbered, end-sorted and beginning-sorted sections (28/26/26)**, it has 44 accepted crops, 59 matching counts, 62 exact numbers, 55 exact classifications and 40 top-five compatible whole rows. Random-page row recall passes at 1,242/1,286; crop and unit-window handling remain the main limits. All occurrences remain quarantined. [Frozen repaired metrics](repair/2026-10-07-v2/evaluation-2026-10-07-adjudicated/metrics.json), `summary`, `source_row_recall`, `negative_result_criteria`.

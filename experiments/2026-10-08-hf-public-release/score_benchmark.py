@@ -2,6 +2,7 @@
 from __future__ import annotations
 import argparse
 import json
+import math
 from pathlib import Path
 import random
 import sys
@@ -22,11 +23,25 @@ def load_rows(release,version,predictions=None):
         if path.suffix=='.jsonl':preds=[json.loads(line) for line in path.read_text(encoding='utf8').splitlines() if line.strip()]
         else:
             obj=json.loads(path.read_text(encoding='utf-8-sig'));preds=obj['rows'] if isinstance(obj,dict) else obj
+    validate_predictions(preds, version)
     indices=[p['sample_index'] for p in preds]
     assert len(indices)==len(set(indices))==len(rows),'Supply exactly one prediction for every benchmark sample.'
     byid={p['sample_index']:p for p in preds}
     assert set(byid)=={r['sample_index'] for r in rows},'Prediction indices differ from the reference.'
     return rows,[byid[r['sample_index']] for r in rows]
+
+def validate_predictions(predictions, version):
+    sections={'number_order','end_sorted','beginning_sorted'}
+    for row in predictions:
+        sample=row.get('sample_index','unknown')
+        if version=='v2' and row.get('section') not in sections:
+            raise ValueError(f'Sample {sample}: v2 requires section in {sorted(sections)}')
+        if not isinstance(row.get('units'),list):
+            raise ValueError(f'Sample {sample}: units must be a list')
+        for i,unit in enumerate(row['units']):
+            confidence=unit.get('confidence')
+            if isinstance(confidence,bool) or not isinstance(confidence,(int,float)) or not math.isfinite(confidence) or not 0<=confidence<=1:
+                raise ValueError(f'Sample {sample}, unit {i}: requires unit-level confidence, a finite number in [0, 1]')
 
 def compute(release,version,predictions=None,bootstrap=True):
     E,R=setup(release)

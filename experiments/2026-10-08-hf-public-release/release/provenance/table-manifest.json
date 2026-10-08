@@ -82,13 +82,18 @@
         "name": "status",
         "type": "string",
         "nullable": true
+      },
+      {
+        "name": "image",
+        "type": "struct<bytes: binary, path: string>",
+        "nullable": true
       }
     ],
     "data_file": "data/chart_reference.parquet",
-    "sha256": "a13f19615c08f617187d56eede37ec4eaf690b9a25e7071d43b8cec82eb2877d",
-    "license": "CC BY 4.0 source; project annotations proposed CC BY 4.0",
+    "sha256": "d84f633e27752b6805bc9c8f27c9796b1d22ca02d598c6abdd63d6a2cfec36aa",
+    "license": "CC BY 4.0 edition content; CC0 1.0 project additions",
     "description": "687 chart cells and 16 retained lower-code ambiguities.",
-    "logical_sha256": "4e4c533e1a174339234d94a0d8f14a3adbfdfc64f4df67a57a16eb3fc50d7770"
+    "logical_sha256": "36b84bdcaaad61e2d5799c90c21fc49e74f2932ad101388427841dfb94a4d53a"
   },
   "benchmark_rows_v1": {
     "rows": 60,
@@ -153,13 +158,18 @@
         "name": "status",
         "type": "string",
         "nullable": true
+      },
+      {
+        "name": "context_image",
+        "type": "struct<bytes: binary, path: string>",
+        "nullable": true
       }
     ],
     "data_file": "data/benchmark_rows_v1.parquet",
-    "sha256": "f4661893583d27dc378712f51a553933d803c22ba31e487bbd52adfbe4b9da95",
-    "license": "CC BY 4.0 source; project readings proposed CC BY 4.0",
+    "sha256": "349c6cee707a87eef08eed9523e27c8ea3cb2989a7a5253fe2c0d5600a999b0b",
+    "license": "CC BY 4.0 edition content; CC0 1.0 project additions",
     "description": "60 source rows with immutable references and frozen predictions.",
-    "logical_sha256": "da6cd66df0aef28877e21f0de1ffd7cfb6ac85c57a69c227dfcd44a9c67f287e"
+    "logical_sha256": "5b49e376b544186e9e83d0418c0c33456e47a8195f84b14e9fa7a63c38875b7e"
   },
   "benchmark_rows_v2": {
     "rows": 80,
@@ -224,13 +234,23 @@
         "name": "status",
         "type": "string",
         "nullable": true
+      },
+      {
+        "name": "context_image",
+        "type": "struct<bytes: binary, path: string>",
+        "nullable": true
+      },
+      {
+        "name": "exact_image",
+        "type": "struct<bytes: binary, path: string>",
+        "nullable": true
       }
     ],
     "data_file": "data/benchmark_rows_v2.parquet",
-    "sha256": "6478c93ccfd908b04991986194fe110dbb808c6ff2d1c6e25bdc1762aaea6ee3",
-    "license": "CC BY 4.0 source; project readings proposed CC BY 4.0",
+    "sha256": "708e8561e1b2374d81e15345fed4ceb32251af0e065ce26cce81b4249b3b778f",
+    "license": "CC BY 4.0 edition content; CC0 1.0 project additions",
     "description": "80 source rows with immutable references and frozen predictions.",
-    "logical_sha256": "a9605b2588926edc1b8dabadd7fe42364271869e6958bd2d7e7831668db813e9"
+    "logical_sha256": "4b1054bcca77d61f797692db49913d65d4ef0abe21c75538ead3f488bfbbd5ca"
   },
   "benchmark_readings": {
     "rows": 306,
@@ -273,10 +293,10 @@
       }
     ],
     "data_file": "data/benchmark_readings.parquet",
-    "sha256": "b20733ed94ff6b0e1c09013abd61a3db316e8254ba219cd451d46abd80dabdef",
-    "license": "CC BY 4.0 proposed for own work",
+    "sha256": "cf4c41ad9fa72f0c9f4706f6ef575ff9b515a2885a088f55abfa047fa987a5f4",
+    "license": "CC BY 4.0 edition content; CC0 1.0 project additions",
     "description": "Initial, repeated, independent and adjudicated readings; frozen endpoints remain distinct.",
-    "logical_sha256": "689d179be21606d0954b07d9f82c3620eccdf1652e39dbc36c0385af86885ad9"
+    "logical_sha256": "1aac19c12a4c4df6e97c512bc937334c44c4d1e553b8e51ff121195a0b718940"
   },
   "benchmark_chart_cards": {
     "rows": 21,
@@ -304,10 +324,10 @@
       }
     ],
     "data_file": "data/benchmark_chart_cards.parquet",
-    "sha256": "d10a5cb38b6f08fd411f5d6a3b987edd048360d03d591a637c8860939d106401",
-    "license": "CC BY 4.0 proposed for own work",
+    "sha256": "8fd47f8f759f7b507ad0cfc242233cf3eaea4330d1570a329e826b3610aab0a5",
+    "license": "CC BY 4.0 edition content; CC0 1.0 project additions",
     "description": "Original chart-only cards supplied to benchmark readers.",
-    "logical_sha256": "aa3b2b84bf0b5762d1f8628e08fcc6c1ec451bf99f18c6896f39bccddd6b017e"
+    "logical_sha256": "5a41a8dbc428d41d061597d04b96bc0614690faf949069c5165231a2b727845f"
   },
   "benchmark_count_pages": {
     "rows": 21,
@@ -346,7 +366,7 @@
     ],
     "data_file": "data/benchmark_count_pages.parquet",
     "sha256": "b83136ec8b898ebb7376ed459a9679bbeca3ccf41400bea85d0e3e7fba040608",
-    "license": "CC BY 4.0 proposed for own work",
+    "license": "CC BY 4.0 edition content; CC0 1.0 project additions",
     "description": "21 source-count pages: 18 random and 3 stress pages; geometric detections for recall.",
     "logical_sha256": "cca2eee86e9d2f5cbe2cf8d2f40c6a34f0f1d17ab4c1c128006d229c0f19f46b"
   },
@@ -376,10 +396,10 @@
       }
     ],
     "data_file": "data/benchmark_count_readings.parquet",
-    "sha256": "5599d4d4905e5e2268d883bdcd4a475195a56a913ffb0b9242ca95eb0a3b6a26",
-    "license": "CC BY 4.0 proposed for own work",
+    "sha256": "82f66710ea18e404c0e24adf3543f0cf2ec1c219f52864a7a62646d5238e8af5",
+    "license": "CC BY 4.0 edition content; CC0 1.0 project additions",
     "description": "42 independent page inventories from the two readers.",
-    "logical_sha256": "d32de9d7837877210328f5ba7e461f6facf10b4a3334c8010efccd96a2147e32"
+    "logical_sha256": "a06e7f66fd5d2689c250fb1f32d09325b78d2e304c9d845625aa51ab1aaaf749"
   },
   "evidence_sites": {
     "rows": 115,
@@ -442,10 +462,10 @@
       }
     ],
     "data_file": "data/evidence_sites.parquet",
-    "sha256": "2b973dc03db1b35d777c6083078cac4de8d82490d102baf19e499711629cfd00",
-    "license": "CC BY 4.0 proposed for own work",
+    "sha256": "a2c50ccadefd2a8b0488b6ba61e8c72870e2f23eecde7a9d36815d97256072b7",
+    "license": "CC0 1.0",
     "description": "115 site/provenance entities from synthesis v6; aggregate counts in distinct source frames.",
-    "logical_sha256": "32350bfdee7ec6929d83e3ce2c73d053dea5966dfc5cbfd075c6f3846fa0c290"
+    "logical_sha256": "e9f205443c66063bc9a8954b9f3471a10d23f70ef66879a8a4f27e7a3e0b34d1"
   },
   "evidence_publications": {
     "rows": 17,
@@ -498,10 +518,10 @@
       }
     ],
     "data_file": "data/evidence_publications.parquet",
-    "sha256": "9b9e10d78f4e1e02a0eb49db81d92561b36d3557eeaf5bcfaf998e6eacb6d965",
-    "license": "CC BY 4.0 proposed for own work",
+    "sha256": "2517c10d4444afe641b02be72745a8b9dbed6335012f09e8c3557aa01775c264",
+    "license": "CC0 1.0",
     "description": "17 bibliographic register entries; historical catalogue coverage is documented separately.",
-    "logical_sha256": "a15292f1e2fcf362ac70b8cc4ce16a388d56b44f3300c062fbfee758e9ba3e0a"
+    "logical_sha256": "efe9ea55b067482334e6ba83e2530f15b5175953c3f0d42261add12ab66f8d4a"
   },
   "evidence_collections": {
     "rows": 37,
@@ -554,10 +574,10 @@
       }
     ],
     "data_file": "data/evidence_collections.parquet",
-    "sha256": "faac5f32079c850e69f1a407220490089813754d6283877a5fe425a53e88feb8",
-    "license": "CC BY 4.0 proposed for own work",
+    "sha256": "417e9440eb281780cbe588366ad23b944f1d5eddebfdaa277dc10b985e180b43",
+    "license": "CC0 1.0",
     "description": "37 institution observations; null counts are unmeasured, zero counts are bounded queries.",
-    "logical_sha256": "f90b6e84325bd1c540ba76c7d2b0fc5a2d220a5d4da12d0f742fe1035146a3bf"
+    "logical_sha256": "4ae3dbb99916922353f9d3b688fa3c8b3337d446fdc73a25bb68461e2b090f58"
   },
   "evidence_datasets": {
     "rows": 15,
@@ -605,10 +625,10 @@
       }
     ],
     "data_file": "data/evidence_datasets.parquet",
-    "sha256": "e157d91aca6cb18070b2ff590385eb09934b768464ca4bdbcc31cd8465c06ffe",
-    "license": "CC BY 4.0 proposed for own work",
+    "sha256": "50769c5b7ab266b4f1c261779639d35f940c212159547e6a95b4b69d08d3c5a3",
+    "license": "CC0 1.0",
     "description": "15 dataset observations with dated count bases; no underlying corpora bundled.",
-    "logical_sha256": "cdf6f51a11d7f39854deea6079951d6338d740262cc88d4b2ced69d54c97e194"
+    "logical_sha256": "83474806a93add40e92456077849b327a4ee6901ecd1008dde546de13d2cf6af"
   },
   "evidence_catalogue_coverage": {
     "rows": 38,
@@ -706,10 +726,10 @@
       }
     ],
     "data_file": "data/evidence_catalogue_coverage.parquet",
-    "sha256": "e2734e4f72ccd28f8dec5da4bb9d456ad741547c3d7ae664b5cdc6a78c2df1c9",
-    "license": "CC BY 4.0 proposed for own work",
+    "sha256": "3893d681bb57e5cf9dd0a1b293e4928d8130aeec2c0a8cfbe91da8fa26dc46bb",
+    "license": "CC0 1.0",
     "description": "Synthesis v6 authored aggregate table; frame and measurement columns define denominators.",
-    "logical_sha256": "ad18cd968116262c5739fb99e5043f330ab5fbef03b2dad119efc9919b712b7f"
+    "logical_sha256": "3717f32657fff64982bf79caae98b96838a7bbc11e0fe30db16fcaf8a5792eae"
   },
   "evidence_catalogue_sections": {
     "rows": 19,
@@ -772,10 +792,10 @@
       }
     ],
     "data_file": "data/evidence_catalogue_sections.parquet",
-    "sha256": "607bc3e3abfbae4d955284120e28dd6a00e107e4ca7c4d8479fc7265acc29535",
-    "license": "CC BY 4.0 proposed for own work",
+    "sha256": "5fc8c158f8edd46b577addf8cf75365139c86ba0b6dc557d9c8574b02d2ec40a",
+    "license": "CC0 1.0",
     "description": "Synthesis v6 authored aggregate table; frame and measurement columns define denominators.",
-    "logical_sha256": "bc535676a753b2c3fc652c8a9c2898f81344e3861b55435a6c20eecbba38e55a"
+    "logical_sha256": "92da693f436b5845c23092da93720d47a6c6a3668637f9648d92682a7985b2eb"
   },
   "evidence_field_completeness": {
     "rows": 140,
@@ -838,13 +858,13 @@
       }
     ],
     "data_file": "data/evidence_field_completeness.parquet",
-    "sha256": "942ae16f6f7e1f58cabd170a3e409fee809a9f4792ff70110dbf4d954cbbb356",
-    "license": "CC BY 4.0 proposed for own work",
+    "sha256": "b221edd0c8da07c6d7bc512d8ae8886e35cdc06b63e982096ae85b0180b2985b",
+    "license": "CC0 1.0",
     "description": "Synthesis v6 authored aggregate table; frame and measurement columns define denominators.",
-    "logical_sha256": "c108d0830e1842a52b9280207f43ef5d350a89b3a0b10c7b4ebdbe1620eb671e"
+    "logical_sha256": "e118123d654269d4a8496206846c0acbe00ab2815bcbfc41bd68365a366efafa"
   },
   "evidence_museum_joins": {
-    "rows": 68,
+    "rows": 49,
     "split": "train",
     "schema": [
       {
@@ -896,13 +916,18 @@
         "name": "source_locator",
         "type": "string",
         "nullable": true
+      },
+      {
+        "name": "identifier_sources_json",
+        "type": "string",
+        "nullable": true
       }
     ],
     "data_file": "data/evidence_museum_joins.parquet",
-    "sha256": "d503a601b765cdc5e5ddf64b459f5202b8e6c10d53a6ae91dba3b21264bd63cd",
-    "license": "CC BY 4.0 proposed for own work",
-    "description": "68 authored museum-accession to published CISI identifier joins; local corpus record contents excluded.",
-    "logical_sha256": "f96159a9238e75aa8059456a79dd12d2aa24df77dcb01c40213e09c505091f99"
+    "sha256": "fe1c4c52fe905ee68c2583b10cdf9220ce1773434b673bb7d62acae27f76049b",
+    "license": "CC0 1.0",
+    "description": "49 independently cited museum-to-CISI identifier correspondences: 42 earlier pairs and seven supplement rows.",
+    "logical_sha256": "35d2c289e59394874dd17696313e12f2ca8df8b8e56c6634a5aec2ab3edbc5aa"
   },
   "evidence_sources": {
     "rows": 111,
@@ -955,10 +980,10 @@
       }
     ],
     "data_file": "data/evidence_sources.parquet",
-    "sha256": "6bd6b9467bbe8c4afbd8da6e53b0f86a6b5ac5d622dfe7f76360fcf52e6360d5",
-    "license": "CC BY 4.0 proposed for own work",
+    "sha256": "b0c6185b4b8f550ec232b8911c2fe08f96ae16e87e1cf124b3a0fbdb3ab353dd",
+    "license": "CC0 1.0",
     "description": "Bibliographic pointers and inherited access scopes; this packaging run did not reopen each archaeological source.",
-    "logical_sha256": "99542c9834ebb71fa75ae079cc2fa7c9b97fbd385fba33e87e71e72136414f62"
+    "logical_sha256": "4e5469c13e8d9682d7a6caa7cdd8bb013344fe986838eaaf5bcd8312798b2203"
   },
   "weight_mass_bands": {
     "rows": 4,
@@ -1021,10 +1046,10 @@
       }
     ],
     "data_file": "data/weight_mass_bands.parquet",
-    "sha256": "1e287d06f969c2e823715eeb87b5cb799585c48bec435ba275b03e63e35b4376",
-    "license": "CC BY 4.0 proposed for own work",
+    "sha256": "62635e9f4fa7a8889a11b48bc58ae9fbcb49402b1c4b4885034bcbf68c852681",
+    "license": "CC0 1.0",
     "description": "Aggregate metrology results after review; no Ascalone catalogue records included.",
-    "logical_sha256": "e976e25e3a4329ad417bed98868bb83a57be812bcd02de972713599fb25baed7"
+    "logical_sha256": "fd64734223573cde8425f0fed44af40ff2e4a97f47a2468c4bffa5e18a4a134a"
   },
   "weight_chance_controls": {
     "rows": 9,
@@ -1032,11 +1057,6 @@
     "schema": [
       {
         "name": "frame",
-        "type": "string",
-        "nullable": true
-      },
-      {
-        "name": "null",
         "type": "string",
         "nullable": true
       },
@@ -1086,6 +1106,11 @@
         "nullable": true
       },
       {
+        "name": "null_model",
+        "type": "string",
+        "nullable": true
+      },
+      {
         "name": "method_path",
         "type": "string",
         "nullable": true
@@ -1102,10 +1127,10 @@
       }
     ],
     "data_file": "data/weight_chance_controls.parquet",
-    "sha256": "2d80b4f1b25cc49414f9236216a847201f6844a1be915049af13431cdaf6b093",
-    "license": "CC BY 4.0 proposed for own work",
+    "sha256": "2ea1988931cdc30a2bfbef574cf410a8a1e162b23c0f7e76893d043c7695f52a",
+    "license": "CC0 1.0",
     "description": "Aggregate metrology results after review; no Ascalone catalogue records included.",
-    "logical_sha256": "99498d78c68d67c0eb03bf9aa4b8df979bfcfac28f4b4361f7148b9b8e523391"
+    "logical_sha256": "6614ad377d391966b05c386cfe1c7c3e43f26216f502e2933029faad9bb4063f"
   },
   "image_assets": {
     "rows": 949,
@@ -1147,6 +1172,11 @@
         "nullable": true
       },
       {
+        "name": "storage",
+        "type": "string",
+        "nullable": true
+      },
+      {
         "name": "license",
         "type": "string",
         "nullable": true
@@ -1158,9 +1188,9 @@
       }
     ],
     "data_file": "data/image_assets.parquet",
-    "sha256": "64446bdaa26b2acce3f9232604d6aa8cbfab38f4f44db604e880220476a2ab63",
-    "license": "CC BY 4.0 proposed for own work",
-    "description": "Every staged licensed PNG with relative path, parent path and SHA256.",
-    "logical_sha256": "d87ae077cac7e9db378cddd7174553031e8260a1efca3d111d42ce2af38b6d0d"
+    "sha256": "24c346e450c536a4b070972c6cf24949a7ad171b055c39cae781ae55e3a229a3",
+    "license": "CC BY 4.0 edition content; CC0 1.0 project additions",
+    "description": "949 licensed PNGs with logical names, storage, portable parent labels and SHA256.",
+    "logical_sha256": "735aed86249da29ed92fe96577a416c115fb1d930cc2a061036bd66118a2074a"
   }
 }

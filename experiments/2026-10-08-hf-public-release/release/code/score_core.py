@@ -7,9 +7,7 @@ import math
 from pathlib import Path
 import numpy as np
 
-HERE=Path(__file__).resolve().parent
-ROOT=HERE.parents[1]
-RAW=ROOT/'data/raw/2026-10-07-helsinki1979-digitization'
+
 
 
 def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()

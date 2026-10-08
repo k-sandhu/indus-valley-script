@@ -1,35 +1,27 @@
-"""Expand the audit to individual exclusions and staged outputs; no external calls."""
-from pathlib import Path
+﻿"""Finalize the full owner-only audit outside the upload folder."""
 import argparse
-import shutil
+from pathlib import Path
 from build_release import HERE,ROOT,read,sha,dump
 
-def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--release',type=Path,default=HERE/'release');args=parser.parse_args()
-    release=args.release.resolve()
-    if not release.is_relative_to(HERE):raise ValueError('Use a Package O build.')
-    audit=read(release/'provenance/rights-audit.json')
-    manifest=read(ROOT/'experiments/2026-10-06-research-program/hf-hosting-manifest.json')
+def finalize(release,records):
+    audit=read(records/'rights-audit.json')
+    hosting=read(ROOT/'experiments/2026-10-06-research-program/hf-hosting-manifest.json')
     known={r['path'] for r in audit['files']}
-    for row in manifest['files']+manifest['backed_up_files_kept_locally']:
+    for row in hosting['files']+hosting['backed_up_files_kept_locally']:
         if row['path'] in known:continue
         licensed=row['set'].startswith('helsinki1979')
-        audit['files'].append(dict(path=row['path'],bytes=row['bytes'],sha256=row['sha256'],
-            rights_status='explicit-license' if licensed else 'rights-unverified',decision='exclude',
-            basis='CC BY 4.0 source but provisional/quarantined transcription or frame; no release.' if licensed else 'Lipi-derived predictions, fitted model or training register; source licence absent. Existing private backup retained.',
-            hash_basis='Preserved hosting manifest; remote backup not queried in Package O.'))
+        audit['files'].append(dict(path=row['path'],bytes=row['bytes'],sha256=row['sha256'],rights_status='explicit-license' if licensed else 'rights-unverified',decision='exclude',basis='Provisional/quarantined Helsinki transcription or frame.' if licensed else 'Lipi-derived record-level output; no redistribution licence.',hash_basis='Hosting manifest; coordinator reports 1038/1038 remote matches on 8 October 2026; not rerun by Package O.'))
     audit['staged_assets']=[]
+    mixed={'chart_reference','benchmark_rows_v1','benchmark_rows_v2','benchmark_readings','benchmark_chart_cards','benchmark_count_pages','benchmark_count_readings','image_assets'}
     for path in sorted(release.rglob('*')):
-        if not path.is_file():continue
-        rel=path.relative_to(release).as_posix()
-        if rel in ['provenance/rights-audit.json','provenance/file-manifest.json']:continue
-        derived=rel.startswith(('images/','benchmark/')) or rel in ['data/chart_reference.parquet','data/benchmark_rows_v1.parquet','data/benchmark_rows_v2.parquet','data/benchmark_readings.parquet','data/benchmark_chart_cards.parquet','data/benchmark_count_pages.parquet','data/benchmark_count_readings.parquet','data/image_assets.parquet']
-        audit['staged_assets'].append(dict(path=rel,sha256=sha(path),bytes=path.stat().st_size,
-            rights_status='explicit-license' if derived else 'own-work',
-            decision='stage-for-review',source_basis='Koskenniemi and Parpola 1979 CC BY 4.0' if derived else 'Project-authored compilation, code, documentation or factual bibliography',
-            project_contribution_license='MIT proposed' if rel.startswith('code/') else 'CC BY 4.0 proposed',
-            owner_confirmation_pending=True))
-    dump(release/'provenance/rights-audit.json',audit)
-    if release==HERE/'release':shutil.copyfile(release/'provenance/rights-audit.json',HERE/'rights-audit.json')
+        if not path.is_file() or path.name=='file-manifest.json':continue
+        rel=path.relative_to(release).as_posix();edition=rel.startswith(('images/','benchmark/')) or path.stem in mixed
+        legal_text=rel.startswith('LICENSES/')
+        audit['staged_assets'].append(dict(path=rel,bytes=path.stat().st_size,sha256=sha(path),rights_status='permission-recorded' if legal_text else ('explicit-license' if edition else 'own-work'),decision='include',basis='Official licence text, reproduced from the issuer; URLs and access record in sources.json.' if legal_text else 'Edition derivative or project-authored compilation/code/documentation.',edition_content_license='CC BY 4.0' if edition else None,project_contribution_license=None if legal_text else ('Unlicense' if rel.startswith('code/') else 'CC0 1.0'),owner_confirmation_pending=False))
+    audit['decision_record']='Owner and coordinator follow-up, 8 October 2026; museum fact extracts include 49 and exclude 19.'
+    dump(records/'rights-audit.json',audit);dump(HERE/'rights-audit.json',audit)
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+    p=argparse.ArgumentParser();p.add_argument('--release',type=Path,required=True);p.add_argument('--records',type=Path,required=True);a=p.parse_args()
+    if not a.release.resolve().is_relative_to(HERE) or not a.records.resolve().is_relative_to(HERE):raise ValueError('Owned paths required')
+    finalize(a.release,a.records)

@@ -225,3 +225,160 @@ inspection as a separate diagnostic witness; do not edit references. A
 graphic-only mismatch with a visibly complete unit is the residual proposal
 classification category. The inspection identifies repair targets and does
 not measure accuracy after a repair.
+### Amendment, 8 October 2026: v3 ink-aware crops and fresh packet
+
+The coordinator authorizes a new cropping pipeline and blind test, followed
+by a separate package that will verify every proposal. Disk space has been
+expanded; the previous 500 MB cap is withdrawn. Preserve both earlier frozen
+endpoints. Store new raw renders and large row-level payloads under the local
+raw directory, and list outputs exceeding 50 MB in HOST-FILES.txt for the
+coordinator's backup. Do not track large replay copies.
+
+All 80 v2 rows and their adjudicated source readings are development data for
+v3. Reuse the 34 rejected-crop top-five failures, all 36 crop rejections, the
+reader crop tags, the five segmentation/underline-association row failures
+and the source-count discrepancies on pages 66 and112. Report development
+scores on all 80 v2 rows, preserving the v2 printed-row estimand and recording
+continuations separately. They are Exploratory, not a new evaluation.
+
+Rebuild row boxes from printed ink, field blocks and observed whitespace:
+retain each row's own underlines; exclude neighbour and number/classification
+ink; preserve full drawings. Detect unnumbered continuation lines as printed
+lines, link them provisionally to the preceding numbered occurrence, and keep
+their own row records and crop geometry. Discover compact columns without
+assuming two columns or 36 rows. Keep the trained recognizer, chart candidate
+sets and existing calibration coefficients unchanged. Unit-window and
+underline segmentation may change where the prior inspection identified
+split loss rectangles, detached dash fragments, absorbed short ticks and
+truncated dashed sign slots. Document any additional specific matcher defect
+before changing it; no weights or calibration may be tuned on the 80 rows.
+
+Freeze the v3 code, parameters, evaluator, chart snapshot, model, digits and
+calibration hashes before selecting a new sample or creating any new source
+reference. Draw at least 80 numbered occurrences with seed 2026100880 and
+quotas 28 numbered,26 end-sorted,26 beginning-sorted; this retains the v2
+marked-line recognition estimand while the full output also includes linked
+continuation lines. Exclude all 60 first-endpoint targets and all 80 v2
+targets by page/column/anchor geometry, not merely by changing row indices.
+Keep earlier development pages excluded. Record the eligible frame and every
+exclusion. Use a fresh count-page seed 2026100891, six random pages per
+section excluding the previous random count pages, plus stress pages
+62,129,130. The count reference must distinguish numbered occurrences from
+all printed glyph lines. Report both recall denominators and keep the frozen
+v2-style numbered-occurrence comparison available.
+
+Supply the same source-only packet layout: selection.json, wide context and
+exact source crops, position-chart cards, count-page images and conventions.
+Clarify continuation ownership, explicit glyph/field boxes and the 597/598
+neighbour-spacing rule. Both source readers must independently read every
+selected row and count page; a third adjudicates before scoring. Unique
+scratch directories are required to avoid the earlier helper collisions.
+Do not create, infer or prefill reference files. Predictions and full output
+remain outside the blind directory.
+
+After freezing, run the full edition into quarantined JSONL, one record per
+printed glyph line, with stable occurrence/line keys, continuation links,
+coordinates, number/classification witnesses, candidate sets, editorial
+markers and existing-calibration confidence. Record unresolved ownership and
+layout flags. The option-B package receives this proposal interface; no row
+is released by development performance. A negative fresh result is failure
+of any frozen reliability criterion; it remains quarantined and identifies
+the limiting stage. Check code/source hashes, packet exclusion, schema and
+page coverage, preserve witnesses, and run the repository prose scan.
+#### Sample exclusion clarification, 8 October 2026
+
+The old inverted strips and the v2 box spanning two lines make a geometric
+target-only exclusion ambiguous. Use a stronger page exclusion for fresh
+recognition: omit every page carrying any of the first 60 or v2 80 targets,
+plus the previous ten development pages. The input lists leave 8 eligible
+numbered pages,28 end-sorted pages and28 beginning-sorted pages before v3
+layout detection. Report this narrower held-out-page frame. All old targets
+are consequently excluded even if the crop or row index changes. Random
+count pages use the fresh page seed and exclude the previous count pages;
+stress pages remain explicit development checks.
+
+#### Implementation clarification before v3 freeze, 8 October 2026
+
+The field search can cut a large glyph into small components that resemble
+digits. Reject components touching that search window's horizontal edges
+before pairing number and classification lines. Refine the field band from
+repeated classification bounds, use actual bounds from every column, mask
+all field blocks, and clamp crop padding inside the glyph column. This
+specific defect was visible on development page 76. Detect continuation
+lines from unanchored tall ink and retain provisional parent links; small
+unnumbered lines without a tall component can remain undetected and must be
+checked in the physical-line recall test and option-B source pass.
+
+The recognition sample retains numbered occurrences. Its proposal sequence
+concatenates any detected continuation lines in top-to-bottom order, while
+each physical line has its own exact crop and full-output record. Readers
+must check actual source continuation membership rather than accept those
+links. An omitted or wrongly attached line makes the occurrence crop fail.
+Keep the original five global criteria. A criterion cannot pass with an
+unscorable sampled crop, number or unit count; all 80 need those readings.
+Physical-line recall is reported separately from numbered-occurrence recall.
+All proposals remain quarantined for the separately authorized verification
+package, even if the new blind metrics pass.
+
+Use the final development run `repair/2026-10-08-development-v3h/` in the
+freeze manifest. It and the 21 reused count pages selected this method;
+their results are Exploratory. The learned matcher, digit library, chart
+snapshot and confidence coefficients remain unchanged. The inherited
+confidence calibration has no new held-out validation until the coordinator
+provides the fresh reference. Store new source renders locally; the packet
+contains only source crops and chart cards. No fresh reference is created.
+
+#### V3 freeze and prediction record, 8 October 2026
+
+The method freeze is [repair/2026-10-08-v3/freeze-manifest.json](repair/2026-10-08-v3/freeze-manifest.json),
+created at 2026-10-08T14:11:23.905485Z with SHA256
+`0e72c4fbad023457821df311946070b58a143c43b5fffe276d0c985669a99361`.
+It records every executable dependency, parameter, source, unchanged model,
+digit library, calibration and chart snapshot, including the new evaluator.
+The [prediction freeze](repair/2026-10-08-v3/prediction-freeze.json) was
+created at 2026-10-08T14:13:49.280280Z, before any fresh reference exists.
+Its packet hashes cover the source-only selection, conventions, exact and
+context crops, chart cards and count-page images. The source-only packet
+contains no source reference or recognition proposal.
+
+The [selection](repair/2026-10-08-v3/blind/selection.json) draws 28,26,26
+numbered occurrences from section pools of 572,2,004,2,004. Those pools cover
+8,28,28 eligible pages after the stronger page exclusions; the selected
+targets happen to have no detected continuation. This limits the fresh
+recognition frame's direct continuation evidence. Independent physical-line
+counts and the subsequent complete source pass remain required. The 18 new
+random count pages and three stress pages are listed separately in the
+selection. Do not create references here: the coordinator supplies two
+independent readings and adjudication, then runs the frozen evaluator.
+
+#### Full-export failure amendment, 8 October 2026, after v3 freezing
+
+The original full-export helper completed PDF22–38, then stopped on page39
+because an empty two-pixel recognition window produced a non-finite score
+that cannot be serialized as standard JSON. Preserve those completed pages
+and the partial page39 file. Do not change the frozen crop pipeline,
+recognizer, evaluator, packet or predictions. The packet has no non-finite
+values.
+
+Use a separate dated transport helper and manifest to continue unchanged
+inference. Any unit with a non-finite score or confidence exports no candidate
+alternatives and null confidence, with an unresolved-window flag. Preserve
+its original non-finite values as strings in a local witness file. All such
+rows remain quarantined. This post-freeze handling is Exploratory transport
+repair; it changes no valid recognition proposal, unit geometry or evaluated
+prediction. Reuse only complete page files whose freeze and content hashes
+match; retain the failed output rather than overwrite it.
+
+#### V3 principal hashes, 8 October 2026
+
+These hashes are copied from the preserved method manifest:
+
+| Input | SHA256 |
+|---|---|
+| Ink-aware crop code, `crop_v3.py` | `61075d47162d30cfb68af6effdf98b1b1579b60b7f50ba234d46c3c9d321dbd5` |
+| Frozen evaluator, `evaluate_crop_v3.py` | `ca4c2bf40bd3a7f5c4710fd07eadb39288f65ff95f7cd485a37ca329a55510ab` |
+| Unchanged chart snapshot | `09cc31162ff68ddb908953a612df3505a64c93b1ae5a472f236a0b52df240b29` |
+
+The [post-freeze transport manifest](repair/2026-10-08-v3/full-transport-manifest.json)
+separately identifies the full-export exception handler. The new scorer
+continues to consume the unchanged finite packet predictions.

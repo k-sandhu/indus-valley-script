@@ -1,3 +1,9 @@
+# V3 proposal transport, 8 October 2026
+
+The new physical-line JSONL and continuation links are specified in [OPTION-B-INTERFACE.md](OPTION-B-INTERFACE.md). Every row is quarantined and unreviewed. After complete verification, an adapter may supply L's source-qualified edition, literal letter-suffixed number, segment identifier and reviewed glyph/auxiliary fields. Reviewed carrier identity and surface concordance remain required. No ledger file changed and no new occurrence was imported. The large proposals and hashes are listed in [HOST-FILES.txt](HOST-FILES.txt).
+
+## Preserved first/v2 import record
+
 # Source-qualified occurrence import, corrected 7 October 2026
 
 The existing staging preserves the Finnish 1979 edition, exact recognized text-number string, occurrence coordinates and per-occurrence `segment_id`, inventory/version, candidate tokens, auxiliaries, visual order, boundary status, digitization version and CC BY attribution. Every first-run occurrence remains quarantined. The orientation overlay must accompany any use of those original rows.

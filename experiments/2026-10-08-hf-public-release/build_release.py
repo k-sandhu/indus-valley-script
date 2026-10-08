@@ -8,6 +8,7 @@ import os
 from pathlib import Path
 import shutil
 import sys
+from release_policy import Portable, MIXED_LICENSE, bytes_safe
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
@@ -41,7 +42,7 @@ def dump(path, data):
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
 def compact(data):
-    return json.dumps(data, ensure_ascii=False, sort_keys=True, separators=(',',':'))
+    return json.dumps(bytes_safe(data), ensure_ascii=False, sort_keys=True, separators=(',',':'))
 
 def csv_rows(path):
     with Path(path).open(encoding='utf-8-sig', newline='') as f:
@@ -55,8 +56,12 @@ class Builder:
         self.configs = []
         self.tables = {}
         self.image_rows = []
+        self.portable = Portable()
+        self.embedded = {}
+        self.records = HERE / "build-records" / out.name
+        self.records.mkdir(parents=True, exist_ok=False)
 
-    def input(self, path, status='own-work', decision='include-selected', basis='Project-authored facts, identifiers, aggregates or assessments; proposed CC BY 4.0.', fields=None):
+    def input(self, path, status='own-work', decision='include-selected', basis='Project-authored facts, identifiers, aggregates or assessments; CC0 1.0 own contributions.', fields=None):
         path = Path(path)
         rel = path.relative_to(ROOT).as_posix()
         if rel not in self.pins:
@@ -66,7 +71,7 @@ class Builder:
 
     def licensed(self, path, fields=None):
         return self.input(path, 'explicit-license', 'include-selected',
-            'Derived solely from Koskenniemi and Parpola 1979; institutional final-version CC BY 4.0. Cropping, numerical annotation or chart-only recognition identified in NOTICE. Project contributions use proposed CC BY 4.0.', fields)
+            'Derived solely from Koskenniemi and Parpola 1979; institutional final-version CC BY 4.0. Cropping, numerical annotation or chart-only recognition identified in NOTICE. Project additions are waived under CC0 1.0; edition content retains CC BY 4.0.', fields)
 
     def json(self, path, licensed=False, fields=None):
         return read(self.licensed(path, fields) if licensed else self.input(path, fields=fields))
@@ -75,18 +80,39 @@ class Builder:
         self.licensed(path, ['PNG pixels'])
         target = self.out / dest
         target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(path, target)
+        embedded = component=='chart_reference' or component.startswith('benchmark_rows_')
+        if embedded:self.embedded[dest] = path.read_bytes()
+        else:shutil.copyfile(path, target)
         self.image_rows.append(dict(image_path=dest, component=component, role=role, pdf_page=pdf_page,
-            source_path=path.relative_to(ROOT).as_posix(), sha256=sha(target), bytes=target.stat().st_size,
+            source_path=path.relative_to(ROOT).as_posix(), sha256=sha(path), bytes=path.stat().st_size,
+            storage='embedded' if embedded else 'loose_png',
             license='CC BY 4.0', source_url=SOURCE))
         return dest
 
-    def table(self, name, rows, types=None, split='train', license='CC BY 4.0 proposed for own work', description=''):
+    def table(self, name, rows, types=None, split='train', license='CC0 1.0', description=''):
         import pyarrow as pa
         import pyarrow.parquet as pq
         if not rows:
             raise ValueError('Empty configuration: '+name)
         types = types or {}
+        rows = self.portable.value(rows)
+        from write_release_docs import LOTHAL
+        for row in rows:
+            if isinstance(row.get('title'),str) and 'Lothal Sealings:' in row['title']:
+                row['title']=LOTHAL
+            for key in ['url','museum_url','source_url']:
+                if row.get(key) and not row[key].startswith(('https://','http://')):
+                    row[key]=None
+                    if key=='url' and 'access_record' in row:
+                        row['access_record']=(row['access_record'] or '')+'; project report omitted; public methods in docs/METHODS.md.'
+        pairs = {'chart_reference':[('image_path','image')],
+                 'benchmark_rows_v1':[('context_image_path','context_image')],
+                 'benchmark_rows_v2':[('context_image_path','context_image'),('exact_image_path','exact_image')]}.get(name,[])
+        image_type=pa.struct([pa.field('bytes',pa.binary()),pa.field('path',pa.string())])
+        for path_key,image_key in pairs:
+            for row in rows:
+                row[image_key]={'bytes':self.embedded[row[path_key]],'path':None} if row[path_key] else None
+            types[image_key]=image_type
         keys = list(rows[0])
         if any(set(r)!=set(keys) for r in rows):
             raise ValueError('Inconsistent fields: '+name)
@@ -112,6 +138,11 @@ class Builder:
         table = pa.Table.from_pylist(rows, schema=schema)
         target = self.out / 'data' / (name+'.parquet')
         target.parent.mkdir(parents=True, exist_ok=True)
+        if pairs:
+            from datasets import Features, Image
+            features=Features.from_arrow_schema(schema)
+            for _,image_key in pairs:features[image_key]=Image()
+            table=table.replace_schema_metadata(features.arrow_schema.metadata)
         pq.write_table(table, target, compression='zstd')
         self.configs.append(dict(config_name=name, data_files=[dict(split=split,path='data/'+name+'.parquet')]))
         self.tables[name] = dict(rows=len(rows), split=split, schema=[dict(name=f.name,type=str(f.type),nullable=f.nullable) for f in schema],
@@ -137,7 +168,7 @@ class Builder:
                 source_url=SOURCE,source_pdf_sha256=atlas['source_sha256'],status='Exploratory'))
         assert sum(bool(r['alternatives']) for r in rows)==16
         import pyarrow as pa
-        self.table('chart_reference',rows,{'alternatives':pa.list_(pa.int64()),'rank_alternatives':pa.list_(pa.int64()),'source_crop_pdf_points':pa.list_(pa.float64())},license='CC BY 4.0 source; project annotations proposed CC BY 4.0',description='687 chart cells and 16 retained lower-code ambiguities.')
+        self.table('chart_reference',rows,{'alternatives':pa.list_(pa.int64()),'rank_alternatives':pa.list_(pa.int64()),'source_crop_pdf_points':pa.list_(pa.float64())},license=MIXED_LICENSE,description='687 chart cells and 16 retained lower-code ambiguities.')
 
     def benchmarks(self):
         readings=[];metadata=[]
@@ -182,14 +213,14 @@ class Builder:
                     reference_kind='initial_disjoint_AI_reading' if version=='v1' else 'source_adjudication_after_two_AI_readings',
                     original_ocr_locator_exposed=bool(locator.get('ocr_number_witnesses')) if version=='v1' else False,status='Frozen evaluation'))
             assert len(rows)==(60 if version=='v1' else 80)
-            self.table('benchmark_rows_'+version,rows,split='test',license='CC BY 4.0 source; project readings proposed CC BY 4.0',description=f'{len(rows)} source rows with immutable references and frozen predictions.')
-        self.table('benchmark_readings',readings,split='test',description='Initial, repeated, independent and adjudicated readings; frozen endpoints remain distinct.')
+            self.table('benchmark_rows_'+version,rows,split='test',license=MIXED_LICENSE,description=f'{len(rows)} source rows with immutable references and frozen predictions.')
+        self.table('benchmark_readings',readings,split='test',license=MIXED_LICENSE,description='Initial, repeated, independent and adjudicated readings; frozen endpoints remain distinct.')
         cards=[]
         for version,base in [('v1',M/'blind/chart_sheets'),('v2',V2/'blind/position-chart')]:
             for p in sorted(base.glob('*.png')):
                 image=self.image(p,'images/cards/'+version+'_'+p.name,'benchmark_chart_cards','chart_card')
                 cards.append(dict(benchmark=version,card_id=p.stem,image_path=image,source_file=p.relative_to(ROOT).as_posix()))
-        self.table('benchmark_chart_cards',cards,description='Original chart-only cards supplied to benchmark readers.')
+        self.table('benchmark_chart_cards',cards,license=MIXED_LICENSE,description='Original chart-only cards supplied to benchmark readers.')
         countref=self.json(V2/'blind/adjudicated-counts.json',True)
         detections=self.json(V2/'count-page-detections.json',True)
         dmap={r['pdf_page']:r for r in detections['pages']};counts=[];countreadings=[]
@@ -207,22 +238,23 @@ class Builder:
             metadata.append(dict(benchmark='v2',reader=letter.upper(),kind='count',source_file=path.relative_to(ROOT).as_posix(),metadata={k:v for k,v in d.items() if k!='pages'}))
             for row in d['pages']:
                 countreadings.append(dict(pdf_page=row['pdf_page'],reader=letter.upper(),reading_json=compact(row),source_file=path.relative_to(ROOT).as_posix()))
-        self.table('benchmark_count_pages',counts,description='21 source-count pages: 18 random and 3 stress pages; geometric detections for recall.')
-        self.table('benchmark_count_readings',countreadings,description='42 independent page inventories from the two readers.')
+        self.table('benchmark_count_pages',counts,license=MIXED_LICENSE,description='21 source-count pages: 18 random and 3 stress pages; geometric detections for recall.')
+        self.table('benchmark_count_readings',countreadings,license=MIXED_LICENSE,description='42 independent page inventories from the two readers.')
         for path,name in [(V2/'blind/CONVENTIONS.md','CONVENTIONS.md'),(M/'evaluate.py','score_core.py')]:
-            self.input(path,'own-work','include','Project-authored reading rules or scoring code; proposed data CC BY 4.0 / code MIT.')
+            self.input(path,'own-work','include','Project-authored reading rules or scoring code; data CC0 1.0 / code Unlicense.')
             target=self.out/('benchmark/'+name if name.endswith('.md') else 'code/'+name)
             target.parent.mkdir(parents=True,exist_ok=True)
             text=path.read_text(encoding='utf8')
             if name=='score_core.py':
                 text=text.split('\ndef main():')[0]+'\n'
+                text=text.replace("HERE=Path(__file__).resolve().parent\nROOT=HERE.parents[1]\nRAW=ROOT/'data/raw/2026-10-07-helsinki1979-digitization'",'')
             target.write_text(text,encoding='utf8')
         # Copy the two unchanged repair geometry functions without its root-bound CLI.
         path=V2.parent.parent/'evaluate_repair.py'
-        self.input(path,'own-work','include-selected','Project-authored row-recall functions; proposed MIT.', ['recall_page','page_summary'])
+        self.input(path,'own-work','include-selected','Project-authored row-recall functions; Unlicense.', ['recall_page','page_summary'])
         text=path.read_text(encoding='utf8');start=text.index('\ndef recall_page(');end=text.index('\ndef main():')
         (self.out/'code/score_recall.py').write_text('import score_core as E\n'+text[start:end],encoding='utf8')
-        for code in ['score_benchmark.py']:
+        for code in ['score_benchmark.py','extract_images.py']:
             shutil.copyfile(HERE/code,self.out/'code'/code)
         expected={}
         for version,path in [('v1',M/'evaluation/2026-10-07-frozen-v1/metrics.json'),('v2',V2/'evaluation-2026-10-07-adjudicated/metrics.json')]:
@@ -232,13 +264,15 @@ class Builder:
             if version=='v1':expected[version]['exploratory_sensitivities']=d['exploratory_sensitivities']
             if version=='v2':expected[version]['source_row_recall']=d['source_row_recall']
         dump(self.out/'benchmark/expected-metrics.json',expected)
-        dump(self.out/'benchmark/reader-metadata.json',metadata)
+        dump(self.out/'benchmark/reader-metadata.json',self.portable.value(metadata))
         for path,dest in [(V2/'blind/adjudication-notes.json','v2-adjudication-notes.json'),
                 (M/'follow-up/2026-10-07/analysis-v1/adjudication-overlay.json','v1-exploratory-adjudication-overlay.json'),
                 (M/'freeze-manifest.json','v1-freeze-manifest.json'),(M/'prediction-freeze.json','v1-prediction-freeze.json'),
                 (V2/'freeze-manifest.json','v2-freeze-manifest.json'),(V2/'prediction-freeze.json','v2-prediction-freeze.json')]:
             self.licensed(path)
-            shutil.copyfile(path,self.out/'benchmark'/dest)
+            d=read(path)
+            if 'code_hashes' in d:d.pop('code_hashes')
+            dump(self.out/'benchmark'/dest,self.portable.value(d))
 
     def census(self):
         import pyarrow as pa
@@ -281,10 +315,28 @@ class Builder:
         for i,p in enumerate(self.json(supplement,fields=['institution','accession','record_id','source_cisi','method','source_evidence'])):
             url='https://museumsofindia.gov.in/repository/record/'+p['record_id'] if p['record_id'].startswith('nat_del-') else None
             rows.append(dict(institution=p['institution'],museum_record_id=p['record_id'],museum_accession=p['accession'],museum_url=url,cisi=p['source_cisi'],join_method=p['method'],shared_identifier=None,join_evidence=p['source_evidence'],status='Exploratory',source_locator=supplement.relative_to(ROOT).as_posix()+f'#/{i}'))
-        assert len(rows)==68
-        self.table('evidence_museum_joins',rows,description='68 authored museum-accession to published CISI identifier joins; local corpus record contents excluded.')
+        excluded=[];included=[]
+        for row in rows:
+            if row['cisi'] in ('-', '', None) or row['join_method']=='shared_field_and_published_plate':
+                excluded.append(dict(row=row, reason='Identifier join rests only on the unlicensed Lipi excavation-idno comparison; no independent published concordance retained.'))
+                continue
+            row={k:(None if v in ('','-','--','N/A') else v) for k,v in row.items()}
+            evidence=row['join_evidence'] or ''
+            evidence=evidence.split('; raw/')[0]
+            row['join_evidence']=evidence
+            row['identifier_sources_json']=compact(dict(museum_record_id=row['museum_url'] or 'Published museum catalogue record',
+                museum_accession=row['museum_url'] or 'Published museum catalogue accession',
+                cisi='CISI 1 (1987) catalogue identifier; '+evidence,
+                shared_identifier=evidence if row['shared_identifier'] else None))
+            included.append(row)
+        assert len(excluded)==19 and len(included)==49
+        dump(RAW/('museum-joins-excluded-'+self.out.name+'.json'),excluded)
+        self.audit.append(dict(path=path.relative_to(ROOT).as_posix(),rights_status='own-work',decision='include-selected-49-exclude-19',
+            basis='Coordinator decision 8 October 2026: publish small cited extracts of identifier facts from CISI 1 concordance and Marshall composite; omit 14 placeholder-CISI and five Penn Lipi-only joins. No museum prose or images.',
+            included_rows=49,excluded_rows=19,identifier_sources='Citation per identifier in identifier_sources_json'))
+        self.table('evidence_museum_joins',included,description='49 independently cited museum-to-CISI identifier correspondences: 42 earlier pairs and seven supplement rows.')
         summary=self.json(S/'join-summary.json')
-        dump(self.out/'provenance/census-summary.json',dict(coverage=coverage['summary'],museum_joins=summary))
+        dump(self.out/'provenance/census-summary.json',self.portable.value(dict(coverage=coverage['summary'],museum_joins=dict(confirmed_identifier_joins=49, earlier_pairs=42,supplement_rows=7,excluded_Lipi_only=19))))
         source_rows=[]
         for path,namespace in [(B/'synthesis/sources.json','synthesis'),(B/'collections-and-datasets/sources.json','collections')]:
             d=self.json(path,fields=['id','title','authors','year','venue','url','access','opened_in_B3','access_in_B3'])
@@ -306,13 +358,14 @@ class Builder:
                 for key,val in list(row.items()):
                     if key in ['group','frame','null'] or key.endswith('interval95'):continue
                     row[key]=int(val) if key=='n' or key=='draws' or key.endswith('_n') else float(val)
-                row['method_path']='experiments/2026-10-06-weight-metrology/REPORT.md'
+                if 'null' in row:row['null_model']=row.pop('null')
+                row['method_path']='docs/METHODS.md#weight-metrology'
                 row['source_locator']=path.relative_to(ROOT).as_posix()+f'#data-row={i+1}'
                 row['status']='Exploratory'
             self.table(name,rows,description='Aggregate metrology results after review; no Ascalone catalogue records included.')
 
     def finish(self):
-        self.table('image_assets',self.image_rows,description='Every staged licensed PNG with relative path, parent path and SHA256.')
+        self.table('image_assets',self.image_rows,license=MIXED_LICENSE,description='949 licensed PNGs with logical names, storage, portable parent labels and SHA256.')
         self.audit.extend([
             dict(path='data/raw/2026-10-06-modern-restoration/main/**',rights_status='rights-unverified',decision='exclude',basis='Lipi-derived per-query predictions and model files; no source licence found.'),
             dict(path='data/raw/2026-10-06-modern-restoration/frozen-model/**',rights_status='rights-unverified',decision='exclude',basis='Lipi-derived fitted models and training register; existing private backup only.'),
@@ -323,18 +376,19 @@ class Builder:
             dict(path='experiments/2026-10-08-helsinki1979-row-verification/PROTOCOL.md',rights_status='own-work',decision='not-included',basis='Only proposed verification protocol present at initial inspection; no new completed readings.'),
             dict(path='third-party PDFs, non-Helsinki page images, museum descriptions/images and Ascalone2022 catalogue rows',rights_status='rights-unverified',decision='exclude',basis='No permission basis supplied for those payloads. Bibliographic facts and authored aggregates only.'),
         ])
-        dump(self.out/'provenance/input-manifest.json',list(self.pins.values()))
-        dump(self.out/'provenance/rights-audit.json',dict(status='Verified computation',licences_for_own_work='Proposed; awaiting user confirmation',source_license_url=CC,files=self.audit))
+        dump(self.records/'input-manifest.json',list(self.pins.values()))
+        dump(self.records/'portable-source-map.json',self.portable.mapping)
+        dump(self.records/'rights-audit.json',dict(status='Verified computation',licences_for_own_work='Owner confirmed 8 October 2026: data/documentation CC0 1.0; code Unlicense',source_license_url=CC,files=self.audit))
         dump(self.out/'provenance/table-manifest.json',self.tables)
         # The descriptor gives a loader-readable configuration for each table.
         import yaml
-        metadata=dict(pretty_name='Indus chart, row-reading benchmarks and evidence census',license=['cc-by-4.0','mit'],
+        metadata=dict(pretty_name='Indus chart, row-reading benchmarks and evidence census',license=['cc0-1.0','cc-by-4.0','unlicense'],language=['en'],
             tags=['indus-script','epigraphy','archaeology','undeciphered-script','image-to-text','research-data'],
             task_categories=['image-to-text'],size_categories=['1K<n<10K'],configs=self.configs)
         header='---\n'+yaml.safe_dump(metadata,sort_keys=False,allow_unicode=True)+'---\n\n'
         (self.out/'README.md').write_text(header+'# Local release candidate\n\nDataset documentation is generated by write_documents.py before validation.\n',encoding='utf8')
         dump(self.out/'provenance/metadata.json',metadata)
-        (self.out/'requirements.txt').write_text('datasets==5.1.0\npyarrow==25.0.1\nnumpy==2.5.3\nPyYAML==6.0.3\nPillow>=12\n',encoding='utf8')
+        (self.out/'requirements.txt').write_text('numpy>=1.24,<3\npyarrow>=14,<26\n# Loading tables/images additionally uses datasets>=3,<6 and Pillow>=10.\n',encoding='utf8')
 
 def main():
     environment()
@@ -345,6 +399,11 @@ def main():
         raise ValueError('Choose a new output directory inside Package O.')
     out.mkdir(parents=True)
     b=Builder(out);b.chart();b.benchmarks();b.census();b.aggregates();b.finish()
+    from write_release_docs import generate
+    generate(out, b)
+    dump(b.records/'portable-source-map.json',b.portable.mapping)
+    from finalize_audit import finalize
+    finalize(out,b.records)
     print(compact(dict(configurations=len(b.tables),images=len(b.image_rows),rows={k:v['rows'] for k,v in b.tables.items()})))
 
 if __name__=='__main__':

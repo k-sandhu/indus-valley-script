@@ -18,6 +18,9 @@ def recall(d,interval):return f"{d['correct']}/{d['total']} ({100*d['rate']:.1f}
 
 
 def main():
+    if (HERE/'repair/2026-10-08-v3/freeze-manifest.json').exists():
+        import write_crop_v3_docs
+        return write_crop_v3_docs.main()
     old=read('evaluation/2026-10-07-frozen-v1/metrics.json');new=read(EVAL);d=read(RECORD+'/diagnosis.json');cost=read(RECORD+'/review-workload.json')
     o=old['summary'];n=new['summary'];b=old['row_bootstrap_95'];c=new['row_bootstrap_95']
     before=lambda name:(HERE/RECORD/(name+'.before-record.txt')).read_text(encoding='utf-8')

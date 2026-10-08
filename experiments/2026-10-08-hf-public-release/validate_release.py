@@ -13,6 +13,8 @@ import time
 import importlib.metadata
 
 from build_release import ROOT, HERE, RAW, M, V2, B, S, environment, read, sha, dump, compact, csv_rows
+from release_policy import Portable
+from extract_images import embedded_images
 import score_benchmark
 
 def equal(expected,actual,path=''):
@@ -126,7 +128,9 @@ def main():
     parser.add_argument('--release',type=Path,default=HERE/'release')
     parser.add_argument('--out',type=Path,default=HERE/'validation.json')
     parser.add_argument('--raw-out',type=Path,default=RAW/'validation-2026-10-08-v1')
+    parser.add_argument('--records',type=Path)
     args=parser.parse_args();release=args.release.resolve();out=args.out.resolve();rawout=args.raw_out.resolve()
+    if args.records:args.records=args.records.resolve()
     if not out.is_relative_to(HERE) or not rawout.is_relative_to(RAW) or out.exists() or rawout.exists():
         raise ValueError('Choose new Package O report and local-raw scratch paths.')
     rawout.mkdir(parents=True)
@@ -136,14 +140,20 @@ def main():
     card=(release/'README.md').read_text(encoding='utf8')
     metadata=yaml.safe_load(card.split('---')[1])
     manifest=read(release/'provenance/table-manifest.json')
-    inputs=read(release/'provenance/input-manifest.json')
+    records=args.records or HERE/'build-records'/release.name
+    if not records.exists():records=HERE/'build-records'/'r10'
+    inputs=read(records/'input-manifest.json')
+    portable=Portable();portable.mapping=read(records/'portable-source-map.json')
     pin_results=[dict(path=r['path'],matches=sha(ROOT/r['path'])==r['sha256']) for r in inputs]
     tables={};loads=[];failures=[]
     for config in metadata['configs']:
         name=config['config_name'];spec=manifest[name]
-        data=datasets.load_dataset(str(release),name,cache_dir=(rawout.relative_to(RAW)/'ds').as_posix(),download_mode='force_redownload')
+        data=datasets.load_dataset(str(release),name,cache_dir='revision-ds',download_mode='force_redownload')
         assert list(data)==[spec['split']]
-        table=data[spec['split']];rows=table.to_list();tables[name]=rows
+        table=data[spec['split']]
+        for key,feature in table.features.items():
+            if isinstance(feature,datasets.Image):table=table.cast_column(key,datasets.Image(decode=False))
+        rows=table.to_list();tables[name]=rows
         path=release/spec['data_file'];source=pq.read_table(path)
         schema=[dict(name=f.name,type=str(f.type),nullable=f.nullable) for f in source.schema]
         # Parquet renames a list child's default name from item to element.
@@ -154,14 +164,18 @@ def main():
         ok=ok and logical==spec['logical_sha256']
         loads.append(dict(config=name,rows=len(rows),split=spec['split'],schema=schema,passed=ok,logical_sha256=logical))
         if not ok:failures.append('configuration:'+name)
-    images=[]
+    images=[];embedded=dict(embedded_images(release))
+    import io
     for row in tables['image_assets']:
         p=(release/row['image_path']).resolve()
         assert p.is_relative_to(release)
-        with Image.open(p) as im:
+        content=embedded[row['image_path']] if row['storage']=='embedded' else p.read_bytes()
+        original=ROOT/portable.mapping[row['source_path']]
+        with Image.open(io.BytesIO(content)) as im:
             format=im.format;size=list(im.size);im.verify()
-        ok=p.exists() and format=='PNG' and sha(p)==row['sha256']
-        images.append(dict(path=row['image_path'],size=size,passed=ok))
+        ok=format=='PNG' and hashlib.sha256(content).hexdigest()==row['sha256'] and original.read_bytes()==content
+        if row['storage']=='embedded':ok=ok and not p.exists()
+        images.append(dict(path=row['image_path'],storage=row['storage'],size=size,passed=ok))
         if not ok:failures.append('image:'+row['image_path'])
     dump(rawout/'image-checks.json',images)
     all_paths={r['image_path'] for r in tables['image_assets']}
@@ -189,7 +203,7 @@ def main():
         ok=len(source)==len(staged)
         for a,b in zip(source,staged):
             for k,v in a.items():
-                actual=b[k]
+                actual=b[k];v=portable.value(v)
                 if isinstance(actual,(int,float)):ok=ok and float(v)==actual
                 elif actual is None:ok=ok and v==''
                 else:ok=ok and v==actual
@@ -197,7 +211,7 @@ def main():
     summary=read(release/'provenance/census-summary.json')
     bc=[r for r in tables['evidence_catalogue_coverage'] if r['edition']=='CISI1-1987' and r['batch'] in ['b-gujarat-kutch-maharashtra','c-north-india']]
     check('CISI1_BC_493_327_166',len(bc)==19 and sum(r['catalogue_entries'] for r in bc)==493 and sum(r['local_matching_entries'] for r in bc)==327 and sum(r['local_absent_entry_keys'] for r in bc)==166,'19 Gujarat/north India ranges')
-    check('museum_join_lower_bound',len(tables['evidence_museum_joins'])==summary['museum_joins']['confirmed_identifier_joins']==68,'61 original + 7 v6 supplement identifiers; no corpus payload')
+    check('museum_join_lower_bound',len(tables['evidence_museum_joins'])==summary['museum_joins']['confirmed_identifier_joins']==49 and all(r['cisi'] and r['cisi']!='-' and r['join_method']!='shared_field_and_published_plate' and 'Lipi' not in r['join_evidence'] and r['identifier_sources_json'] for r in tables['evidence_museum_joins']),'42 independent earlier pairs + 7 printed-catalogue supplement pairs; 19 Lipi-only joins excluded')
     # Compare fields to their parents independently of the build manifest.
     for version,base in [('v1',M),('v2',V2)]:
         selection=read(base/'blind/selection.json')['rows']
@@ -209,23 +223,27 @@ def main():
         else:refs=read(V2/'blind/adjudicated-reference.json')['rows']
         refs={r['sample_index']:r for r in refs};locators={r['sample_index']:r for r in selection}
         rows=tables['benchmark_rows_'+version]
-        ok=len(rows)==len(selection) and all(json.loads(r['reference_json'])==refs[r['sample_index']] and json.loads(r['prediction_json'])==preds[r['sample_index']] and json.loads(r['locator_json'])==locators[r['sample_index']] for r in rows)
-        check('benchmark_'+version+'_parent_records',ok,'Every staged reference, prediction and locator equals the frozen parent object.')
+        ok=len(rows)==len(selection) and all(json.loads(r['reference_json'])==portable.value(refs[r['sample_index']]) and json.loads(r['prediction_json'])==portable.value(preds[r['sample_index']]) and json.loads(r['locator_json'])==portable.value(locators[r['sample_index']]) for r in rows)
+        check('benchmark_'+version+'_parent_records',ok,'Every substantive frozen reference, prediction and locator field matches; repository-only pointers use portable labels.')
     for config in ['benchmark_readings','benchmark_count_readings']:
         cache={};ok=True
         for row in tables[config]:
-            path=row['source_file']
+            path=portable.mapping[row['source_file']]
             if path not in cache:cache[path]=read(ROOT/path)
             parent=cache[path]['rows' if config=='benchmark_readings' else 'pages']
             key='sample_index' if config=='benchmark_readings' else 'pdf_page'
             original=next(r for r in parent if r[key]==row[key])
-            ok=ok and json.loads(row['reading_json'])==original
-        check(config+'_parent_records',ok,'Every returned reading equals the original reader file.')
+            ok=ok and json.loads(row['reading_json'])==portable.value(original)
+        check(config+'_parent_records',ok,'Every reading field matches after portable pointer transformation.')
     for config,path,container,mapping in [
         ('evidence_publications',B/'sites-and-publications/publication-register.json','publications',{'publication_id':'id','title':'title','authors_editors':'authors_editors','year':'year','venue':'venue','url':'url','access_record':'opened'}),
         ('evidence_collections',B/'collections-and-datasets/collection-register.json','collections',{'institution':'institution','region':'region','confirmed_record_minimum':'result_count','count_basis':'count_basis','source_ids':'source_ids','query_date':'query_date'}),
         ('evidence_datasets',B/'collections-and-datasets/dataset-register.json','datasets',{'name':'name','count_basis':'count_basis','reported_reuse_terms':'licence','version_basis':'versioning','source_ids':'source_ids'})]:
-        original=read(path)[container];rows=tables[config]
+        original=portable.value(read(path)[container]);rows=tables[config]
+        if config=='evidence_publications':
+            from write_release_docs import LOTHAL
+            for p in original:
+                if 'Lothal Sealings:' in p['title']:p['title']=LOTHAL
         ok=len(original)==len(rows) and all(all(r[k]==p.get(v) for k,v in mapping.items()) for r,p in zip(rows,original))
         if config=='evidence_collections':ok=ok and all(json.loads(r['record_fields_json'])==p.get('record_fields') for r,p in zip(rows,original))
         if config=='evidence_datasets':ok=ok and all(json.loads(r['size_json'])==p.get('size') for r,p in zip(rows,original))
@@ -234,11 +252,16 @@ def main():
         original=csv_rows(ROOT/'experiments/2026-10-06-weight-metrology/summary-tables-review-response'/file);rows=tables[config]
         ok=len(original)==len(rows)
         for src,row in zip(original,rows):
-            for k,v in src.items():ok=ok and (float(v)==row[k] if isinstance(row[k],(int,float)) else v==row[k])
+            for k,v in src.items():
+                key='null_model' if k=='null' else k
+                if key.endswith('interval95'):
+                    ok=ok and json.loads(v)==json.loads(row[key])
+                else:
+                    ok=ok and (float(v)==row[key] if isinstance(row[key],(int,float)) else v==row[key])
         check(config+'_parent_values',ok,'Every original aggregate field compared directly.')
     countref=read(V2/'blind/adjudicated-counts.json')['pages'];detection=read(V2/'count-page-detections.json')['pages']
     lookup={r['pdf_page']:r for r in countref};dlookup={r['pdf_page']:r for r in detection}
-    check('count_page_parent_geometry',all(json.loads(r['reference_json'])==lookup[r['pdf_page']] and json.loads(r['detections_json'])==[{k:v[k] for k in ['row_anchor_y_2x','margin_xyxy_2x']} for v in dlookup[r['pdf_page']]['rows']] for r in tables['benchmark_count_pages']),'All 21 adjudicated page records and detector geometry fields.')
+    check('count_page_parent_geometry',all(json.loads(r['reference_json'])==portable.value(lookup[r['pdf_page']]) and json.loads(r['detections_json'])==[{k:v[k] for k in ['row_anchor_y_2x','margin_xyxy_2x']} for v in dlookup[r['pdf_page']]['rows']] for r in tables['benchmark_count_pages']),'All 21 adjudicated page records and detector geometry fields.')
     scores={}
     expected=read(release/'benchmark/expected-metrics.json')
     for version in ['v1','v2']:
@@ -256,7 +279,7 @@ def main():
             for key in row:
                 if key in deny:structural_hits.append(dict(config=name,field=key))
     check('prohibited_record_fields_absent',not structural_hits,'Top-level table schemas exclude corpus sequence, metadata and grapheme fields.')
-    audit=read(release/'provenance/rights-audit.json')
+    audit=read(records/'rights-audit.json')
     inclusions=[r for r in audit['files'] if r['decision'].startswith('include')]
     check('rights_allowlist',all(r['rights_status'] in ['own-work','explicit-license','permission-recorded'] for r in inclusions),'No mixed or unresolved rights asset included.')
     check('no_forbidden_payload_formats',not any(p.suffix.lower() in ['.pdf','.pt','.pkl','.npz','.jpg','.jpeg','.gif','.html','.body'] for p in release.rglob('*') if p.is_file()),'Stage contains Parquet, licensed PNG and authored documentation/code only.')
@@ -265,12 +288,12 @@ def main():
     files=[dict(path=p.relative_to(release).as_posix(),bytes=p.stat().st_size,sha256=sha(p)) for p in sorted(release.rglob('*')) if p.is_file() and p.relative_to(release).as_posix()!='provenance/file-manifest.json']
     dump(release/'provenance/file-manifest.json',files)
     result=dict(status='Verified computation' if not failures else 'Failed',local_only=True,release_ready_for_public_visibility=False,
-        required_user_decisions=['Own-work licences','Author/affiliation/contact','Code distribution','Hosted review and final visibility decision'],
+        required_user_decisions=['Public issues repository','Hub terms for private Lipi-derived store','Final visibility switch'],
         configurations=loads,total_table_rows=sum(x['rows'] for x in loads),images=dict(count=len(images),failed=sum(not r['passed'] for r in images),all_references_resolve=referenced<=all_paths),
         source_checks=source_checks,source_pins=pin_results,benchmark_scores=scores,sequence_screen=sequence,prose_screen=prose,
         failures=failures,software={k:importlib.metadata.version(k) for k in ['datasets','pyarrow','numpy','PyYAML','Pillow','huggingface_hub']},
         python=sys.version,release_files=len(files)+1,release_bytes=sum(r['bytes'] for r in files)+(release/'provenance/file-manifest.json').stat().st_size,manifest_excludes_self=True,
-        unverified=['Hosted dataset viewer and remote loading: no upload performed.','No expert epigraphic review.','Prose-overlap matches require disposition; screen covers available witnesses only.','Licences for own work remain proposed.'])
+        unverified=['Hosted dataset viewer and remote loading: no upload performed.','No expert epigraphic review.','Prose-overlap matches require disposition; screen covers available witnesses only.','Public issues repository is awaiting confirmation.'])
     dump(out,result)
     print(compact(dict(status=result['status'],configs=len(loads),rows=result['total_table_rows'],images=len(images),failures=failures,prose_overlap_windows=prose['overlap_windows'],sequence_matches=sequence['matching_directions'])))
     if failures:sys.exit(1)

@@ -49,6 +49,8 @@ BACKUP_FILES = {
     "helsinki1979-provisional-ledger-import": "experiments/2026-10-07-helsinki1979-digitization/integration/2026-10-07-v1/ledger-import.jsonl",
     "helsinki1979-repair-v1-frame": "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-07-v1/frame.json",
     "helsinki1979-repair-v2-frame": "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-07-v2/frame.json",
+    "helsinki1979-v3-frame": "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/frame.json",
+    "helsinki1979-v3-full-proposals": "data/raw/2026-10-07-helsinki1979-digitization/2026-10-08-v3/full-v2/proposals.jsonl",
 }
 
 
@@ -222,10 +224,13 @@ def cmd_backup_files(args):
     records = []
     for name, rel in BACKUP_FILES.items():
         path = ROOT / rel
-        hub.upload_file(path_or_fileobj=str(path), path_in_repo=rel, repo_id=args.repo, repo_type="dataset",
-                        commit_message=f"Back up {name}")
-        remote = remote_index(hub, args.repo, str(Path(rel).parent.as_posix())).get(rel)
         local_sha = sha256(path)
+        parent = str(Path(rel).parent.as_posix())
+        remote = remote_index(hub, args.repo, parent).get(rel) if hub.file_exists(args.repo, rel, repo_type="dataset") else None
+        if not (remote and remote["size"] == path.stat().st_size and remote["sha256"] == local_sha):
+            hub.upload_file(path_or_fileobj=str(path), path_in_repo=rel, repo_id=args.repo, repo_type="dataset",
+                            commit_message=f"Back up {name}")
+            remote = remote_index(hub, args.repo, parent).get(rel)
         ok = bool(remote) and remote["size"] == path.stat().st_size and remote["sha256"] in (None, local_sha)
         records.append({"set": name, "path": rel, "bytes": path.stat().st_size, "sha256": local_sha, "verified": ok})
         print(("verified " if ok else "NOT VERIFIED ") + rel)

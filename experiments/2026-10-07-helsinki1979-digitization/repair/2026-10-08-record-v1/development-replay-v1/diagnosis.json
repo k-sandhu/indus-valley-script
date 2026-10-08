@@ -1,0 +1,2439 @@
+{
+  "status": "Exploratory",
+  "development_only": true,
+  "all_v2_targets_reused": 80,
+  "new_reference_created": false,
+  "inputs": {
+    "development": "repair/2026-10-08-development-v3h/development.json",
+    "development_sha256": "17d8a056e64bdc62e45d15888b423fe6c3139fcdc5493caded702dbe4a4e6e22",
+    "v2_metrics_sha256": "c47ce17f25e7a69e19615d66241a8abb15478f7fe57ab0b646e29f5b03cdcd51",
+    "reference_sha256": "57082853f112ab1a38af933ff2f15f1254e31daa8627eac35ac26a64b1c98b23"
+  },
+  "v2_rejected_crops": [
+    0,
+    2,
+    5,
+    9,
+    10,
+    13,
+    15,
+    17,
+    19,
+    20,
+    21,
+    22,
+    27,
+    28,
+    33,
+    38,
+    39,
+    41,
+    42,
+    43,
+    45,
+    47,
+    48,
+    51,
+    53,
+    64,
+    65,
+    67,
+    69,
+    70,
+    71,
+    74,
+    75,
+    76,
+    77,
+    79
+  ],
+  "v2_top5_failure_starts_at_crop": [
+    0,
+    2,
+    9,
+    10,
+    13,
+    15,
+    17,
+    19,
+    20,
+    21,
+    22,
+    27,
+    28,
+    33,
+    38,
+    39,
+    41,
+    42,
+    43,
+    45,
+    47,
+    48,
+    51,
+    64,
+    65,
+    67,
+    69,
+    70,
+    71,
+    74,
+    75,
+    76,
+    77,
+    79
+  ],
+  "distinction": "36 crop rejections in all 80 targets; 34 crop rejections among the 40 incompatible top-five rows.",
+  "crop_issue_observations": [
+    {
+      "reader": "a",
+      "sample_index": 0,
+      "verbatim_crop_issue": "top edge includes the dashed underline of the printed row above (255C)",
+      "families": [
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=0].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 0,
+      "verbatim_crop_issue": "the row's own underlines (five-dash segments under units 1, 3, 4, 5) lie 5 px below the box bottom and are excluded",
+      "families": [
+        "own_underline_missing_or_cut",
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=0].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 0,
+      "verbatim_crop_issue": "right edge includes the left part of the first classification digit",
+      "families": [
+        "number_or_classification_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=0].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 2,
+      "verbatim_crop_issue": "right edge includes the first classification digit (x 256.8-259.4 pt against box edge 259.0 pt)",
+      "families": [
+        "number_or_classification_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=2].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 5,
+      "verbatim_crop_issue": "the underline under units 3 and 4 lies at y 186-189 px, below the box bottom at 182.5 px, so the box excludes it",
+      "families": [
+        "own_underline_missing_or_cut",
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=5].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 9,
+      "verbatim_crop_issue": "right edge includes the first digits of the inscription number and the classification (x 245.8-251.0 pt, box edge 251.0 pt)",
+      "families": [
+        "number_or_classification_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=9].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 10,
+      "verbatim_crop_issue": "right edge includes the first two digits of the inscription number and the first digits of the classification (x 507.5-514.7 pt, box edge 514.5 pt)",
+      "families": [
+        "number_or_classification_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=10].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 13,
+      "verbatim_crop_issue": "right edge cuts through unit 5: the straight side of the D lies at the box edge (525.0 pt) while the bowl and the diagonal reach 532.2 pt",
+      "families": [
+        "other_or_unclear"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=13].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 13,
+      "verbatim_crop_issue": "left edge includes part of the right-hand digits of the number and classification of the neighbouring left column (x 290.0-294.8 pt)",
+      "families": [
+        "neighbour_ink",
+        "number_or_classification_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=13].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 15,
+      "verbatim_crop_issue": "top edge includes the dashed underline of the printed row above (3156), x 516.3-530.1 pt",
+      "families": [
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=15].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 15,
+      "verbatim_crop_issue": "the row's own underline under unit 1 lies at y 197-203 px, below the box bottom at 192 px, so the box excludes it",
+      "families": [
+        "own_underline_missing_or_cut",
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=15].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 17,
+      "verbatim_crop_issue": "the underlines under units 1, 4 and 5 lie at y 183-187 px, below the box bottom at 180 px, so the box excludes them",
+      "families": [
+        "own_underline_missing_or_cut",
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=17].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 19,
+      "verbatim_crop_issue": "the underline under unit 1 lies at y 185-190 px, below the box bottom at 180 px, so the box excludes it",
+      "families": [
+        "own_underline_missing_or_cut",
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=19].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 20,
+      "verbatim_crop_issue": "top edge includes the dashed underline of the printed row above (3707), x 228.0-258.8 pt",
+      "families": [
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=20].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 20,
+      "verbatim_crop_issue": "the row's own underlines under units 1-4 lie at y 194-196 px, below the box bottom at 190 px, so the box excludes them",
+      "families": [
+        "own_underline_missing_or_cut",
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=20].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 21,
+      "verbatim_crop_issue": "top edge includes the dashed underline of the printed row above (3791), x 232.0-246.0 pt",
+      "families": [
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=21].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 21,
+      "verbatim_crop_issue": "the row's own underline under unit 2 lies at y 193-196 px, below the box bottom at 190 px, so the box excludes it",
+      "families": [
+        "own_underline_missing_or_cut",
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=21].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 22,
+      "verbatim_crop_issue": "top edge includes the dashed underline of the printed row above (4102), x 481.8-495.4 pt",
+      "families": [
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=22].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 27,
+      "verbatim_crop_issue": "top edge includes the dashed underline of the printed row above (8069), x 480.4-494.2 pt",
+      "families": [
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=27].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 27,
+      "verbatim_crop_issue": "right edge cuts unit 3: the patch reaches x 526.2 pt while the box ends at 525.0 pt",
+      "families": [
+        "drawing_cut"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=27].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 28,
+      "verbatim_crop_issue": "left edge includes the right-hand digits of the inscription number and the classification (x 346.0-354.4 pt, box edge 346.0 pt)",
+      "families": [
+        "number_or_classification_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=28].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 33,
+      "verbatim_crop_issue": "the underlines under units 1 and 3 lie at y 183-187 px, below the box bottom at 180 px, so the box excludes them",
+      "families": [
+        "own_underline_missing_or_cut",
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=33].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 38,
+      "verbatim_crop_issue": "left edge includes a 3 px (0.6 pt) sliver of the last classification digit (x 84.5-85.1 pt, box edge 84.5 pt)",
+      "families": [
+        "number_or_classification_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=38].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 39,
+      "verbatim_crop_issue": "top edge includes the dashed underline of the printed row above (6129), x 391.8-405.8 pt",
+      "families": [
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=39].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 39,
+      "verbatim_crop_issue": "the row's own underline under unit 4 lies at y 194-196 px, below the box bottom at 190 px, so the box excludes it",
+      "families": [
+        "own_underline_missing_or_cut",
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part1.json: rows[sample_index=39].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 41,
+      "verbatim_crop_issue": "number-field ink inside the box: the left edge cuts the last classification digit",
+      "families": [
+        "number_or_classification_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=41].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 42,
+      "verbatim_crop_issue": "number-field ink inside the box: the left edge cuts the last classification digit",
+      "families": [
+        "number_or_classification_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=42].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 43,
+      "verbatim_crop_issue": "number-field ink inside the box: the left edge cuts the last classification digit",
+      "families": [
+        "number_or_classification_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=43].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 45,
+      "verbatim_crop_issue": "target underline dashes lie below the box bottom",
+      "families": [
+        "own_underline_missing_or_cut",
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=45].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 47,
+      "verbatim_crop_issue": "target underline dashes lie below the box bottom",
+      "families": [
+        "own_underline_missing_or_cut",
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=47].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 48,
+      "verbatim_crop_issue": "target ink clipped: the left edge of the box passes through the first sign",
+      "families": [
+        "drawing_cut"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=48].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 51,
+      "verbatim_crop_issue": "neighbour ink inside the box: underline dashes of the row above sit at the box top",
+      "families": [
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=51].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 51,
+      "verbatim_crop_issue": "target underline dashes lie below the box bottom",
+      "families": [
+        "own_underline_missing_or_cut",
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=51].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 53,
+      "verbatim_crop_issue": "target ink clipped: the left edge of the box passes through the first hatched patch",
+      "families": [
+        "drawing_cut"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=53].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 64,
+      "verbatim_crop_issue": "target underline dashes lie below the box bottom",
+      "families": [
+        "own_underline_missing_or_cut",
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=64].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 65,
+      "verbatim_crop_issue": "target underline dashes lie below the box bottom",
+      "families": [
+        "own_underline_missing_or_cut",
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=65].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 67,
+      "verbatim_crop_issue": "neighbour ink inside the box: underline dashes of the row above sit at the box top",
+      "families": [
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=67].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 69,
+      "verbatim_crop_issue": "neighbour ink inside the box: underline dashes of the row above sit at the box top",
+      "families": [
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=69].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 70,
+      "verbatim_crop_issue": "neighbour ink inside the box: underline dashes of the row above sit at the box top",
+      "families": [
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=70].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 71,
+      "verbatim_crop_issue": "target underline dashes lie below the box bottom",
+      "families": [
+        "own_underline_missing_or_cut",
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=71].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 74,
+      "verbatim_crop_issue": "number-field ink inside the box: the right edge passes through the number digits",
+      "families": [
+        "number_or_classification_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=74].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 75,
+      "verbatim_crop_issue": "neighbour ink inside the box: the continuation line of the previous text fills the upper half",
+      "families": [
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=75].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 75,
+      "verbatim_crop_issue": "number-field ink inside the box: the right edge passes through the number digits",
+      "families": [
+        "number_or_classification_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=75].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 75,
+      "verbatim_crop_issue": "target underline dashes lie below the box bottom",
+      "families": [
+        "own_underline_missing_or_cut",
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=75].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 76,
+      "verbatim_crop_issue": "target underline dashes lie below the box bottom",
+      "families": [
+        "own_underline_missing_or_cut",
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=76].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 77,
+      "verbatim_crop_issue": "number-field ink inside the box: the right edge passes through the number digits",
+      "families": [
+        "number_or_classification_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=77].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 77,
+      "verbatim_crop_issue": "target underline dashes lie below the box bottom",
+      "families": [
+        "own_underline_missing_or_cut",
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=77].crop_issues"
+    },
+    {
+      "reader": "a",
+      "sample_index": 79,
+      "verbatim_crop_issue": "number-field ink inside the box: the first digit of the number and of the classification lie inside the right edge",
+      "families": [
+        "number_or_classification_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-a/rows-part2.json: rows[sample_index=79].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 41,
+      "verbatim_crop_issue": "number_ink",
+      "families": [
+        "number_or_classification_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=41].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 42,
+      "verbatim_crop_issue": "number_ink",
+      "families": [
+        "number_or_classification_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=42].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 43,
+      "verbatim_crop_issue": "number_ink",
+      "families": [
+        "number_or_classification_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=43].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 45,
+      "verbatim_crop_issue": "own_underline_missing",
+      "families": [
+        "own_underline_missing_or_cut"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=45].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 47,
+      "verbatim_crop_issue": "own_underline_missing",
+      "families": [
+        "own_underline_missing_or_cut"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=47].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 48,
+      "verbatim_crop_issue": "drawing_cut",
+      "families": [
+        "drawing_cut"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=48].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 51,
+      "verbatim_crop_issue": "neighbour_ink",
+      "families": [
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=51].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 51,
+      "verbatim_crop_issue": "own_underline_missing",
+      "families": [
+        "own_underline_missing_or_cut"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=51].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 53,
+      "verbatim_crop_issue": "drawing_cut",
+      "families": [
+        "drawing_cut"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=53].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 64,
+      "verbatim_crop_issue": "own_underline_missing",
+      "families": [
+        "own_underline_missing_or_cut"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=64].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 65,
+      "verbatim_crop_issue": "own_underline_missing",
+      "families": [
+        "own_underline_missing_or_cut"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=65].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 67,
+      "verbatim_crop_issue": "neighbour_ink",
+      "families": [
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=67].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 69,
+      "verbatim_crop_issue": "neighbour_ink",
+      "families": [
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=69].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 70,
+      "verbatim_crop_issue": "neighbour_ink",
+      "families": [
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=70].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 71,
+      "verbatim_crop_issue": "own_underline_missing",
+      "families": [
+        "own_underline_missing_or_cut"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=71].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 74,
+      "verbatim_crop_issue": "number_ink",
+      "families": [
+        "number_or_classification_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=74].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 75,
+      "verbatim_crop_issue": "number_ink",
+      "families": [
+        "number_or_classification_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=75].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 75,
+      "verbatim_crop_issue": "neighbour_ink",
+      "families": [
+        "neighbour_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=75].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 75,
+      "verbatim_crop_issue": "own_underline_missing",
+      "families": [
+        "own_underline_missing_or_cut"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=75].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 76,
+      "verbatim_crop_issue": "own_underline_missing",
+      "families": [
+        "own_underline_missing_or_cut"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=76].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 77,
+      "verbatim_crop_issue": "number_ink",
+      "families": [
+        "number_or_classification_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=77].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 77,
+      "verbatim_crop_issue": "own_underline_missing",
+      "families": [
+        "own_underline_missing_or_cut"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=77].crop_issues"
+    },
+    {
+      "reader": "b",
+      "sample_index": 79,
+      "verbatim_crop_issue": "number_ink",
+      "families": [
+        "number_or_classification_ink"
+      ],
+      "source": "repair/2026-10-07-v2/blind/reader-b/rows-part2.json: rows[sample_index=79].crop_issues"
+    }
+  ],
+  "crop_issue_family_rows_per_reader": {
+    "a": {
+      "drawing_cut": [
+        27,
+        48,
+        53
+      ],
+      "neighbour_ink": [
+        0,
+        5,
+        13,
+        15,
+        17,
+        19,
+        20,
+        21,
+        22,
+        27,
+        33,
+        39,
+        45,
+        47,
+        51,
+        64,
+        65,
+        67,
+        69,
+        70,
+        71,
+        75,
+        76,
+        77
+      ],
+      "number_or_classification_ink": [
+        0,
+        2,
+        9,
+        10,
+        13,
+        28,
+        38,
+        41,
+        42,
+        43,
+        74,
+        75,
+        77,
+        79
+      ],
+      "other_or_unclear": [
+        13
+      ],
+      "own_underline_missing_or_cut": [
+        0,
+        5,
+        15,
+        17,
+        19,
+        20,
+        21,
+        33,
+        39,
+        45,
+        47,
+        51,
+        64,
+        65,
+        71,
+        75,
+        76,
+        77
+      ]
+    },
+    "b": {
+      "drawing_cut": [
+        48,
+        53
+      ],
+      "neighbour_ink": [
+        51,
+        67,
+        69,
+        70,
+        75
+      ],
+      "number_or_classification_ink": [
+        41,
+        42,
+        43,
+        74,
+        75,
+        77,
+        79
+      ],
+      "own_underline_missing_or_cut": [
+        45,
+        47,
+        51,
+        64,
+        65,
+        71,
+        75,
+        76,
+        77
+      ]
+    }
+  },
+  "tag_classification": "Overlapping text-search families for finding observations; exact reader strings retained. No new crop correctness reference is inferred.",
+  "method_repairs": [
+    "Remove clipped components at field-search edges before field pairing",
+    "Fit repeated classification bounds per page column",
+    "Mask every column field and clamp row padding inside glyph-column bounds",
+    "Own glyph components and dashed underlines by source anchors",
+    "Separate continuation lines with provisional preceding-number ownership",
+    "Remove underlines for body segmentation and restore their whole slots for matching",
+    "Retain loss-rectangle strokes; separate short ticks next to tall drawings"
+  ],
+  "development_summary": {
+    "rows": 80,
+    "reference_drawn_units": 352,
+    "predicted_drawn_units": 358,
+    "reference_unresolved_units": 0,
+    "reference_ambiguous_units": 15,
+    "reference_fully_resolved_rows": 80,
+    "reference_unique_sequence_rows": 66,
+    "row_crop_correctness": {
+      "success": 0,
+      "total": 0,
+      "rate": null,
+      "ci95": null,
+      "unscorable_rows": 80
+    },
+    "drawn_unit_count_agreement": {
+      "success": 71,
+      "total": 80,
+      "rate": 0.8875,
+      "ci95": [
+        0.7998178190762713,
+        0.9396731305336952
+      ],
+      "unscorable_rows": 0
+    },
+    "inscription_number_accuracy": {
+      "success": 69,
+      "total": 80,
+      "rate": 0.8625,
+      "ci95": [
+        0.7703289993301339,
+        0.9214528567566089
+      ],
+      "unscorable_rows": 0
+    },
+    "classification_exact_accuracy": {
+      "success": 67,
+      "total": 80,
+      "rate": 0.8375,
+      "ci95": [
+        0.7415709565930229,
+        0.9025018059704963
+      ],
+      "unscorable_rows": 0
+    },
+    "strict_top1": {
+      "whole_rows_all_sample": {
+        "success": 33,
+        "total": 80,
+        "rate": 0.4125,
+        "ci95": [
+          0.3110585761276188,
+          0.5219595965410984
+        ]
+      },
+      "whole_rows_fully_resolved_reference": {
+        "success": 33,
+        "total": 80,
+        "rate": 0.4125,
+        "ci95": [
+          0.3110585761276188,
+          0.5219595965410984
+        ]
+      },
+      "summed_candidate_set_edits": 82,
+      "aligned_recall": {
+        "correct": 280,
+        "total": 352,
+        "rate": 0.7954545454545454
+      },
+      "same_position_equal_count": {
+        "correct": 244,
+        "total": 305,
+        "rate": 0.8
+      },
+      "candidate_width_mean": 1.0279329608938548,
+      "candidate_width_max": 3
+    },
+    "strict_top5": {
+      "whole_rows_all_sample": {
+        "success": 60,
+        "total": 80,
+        "rate": 0.75,
+        "ci95": [
+          0.6451532538076602,
+          0.8319376814245761
+        ]
+      },
+      "whole_rows_fully_resolved_reference": {
+        "success": 60,
+        "total": 80,
+        "rate": 0.75,
+        "ci95": [
+          0.6451532538076602,
+          0.8319376814245761
+        ]
+      },
+      "summed_candidate_set_edits": 34,
+      "aligned_recall": {
+        "correct": 327,
+        "total": 352,
+        "rate": 0.9289772727272727
+      },
+      "same_position_equal_count": {
+        "correct": 286,
+        "total": 305,
+        "rate": 0.9377049180327869
+      },
+      "candidate_width_mean": 5.184357541899441,
+      "candidate_width_max": 8
+    },
+    "shape_only_top1": {
+      "whole_rows_all_sample": {
+        "success": 45,
+        "total": 80,
+        "rate": 0.5625,
+        "ci95": [
+          0.4534113429694972,
+          0.6658613908385618
+        ]
+      },
+      "whole_rows_fully_resolved_reference": {
+        "success": 45,
+        "total": 80,
+        "rate": 0.5625,
+        "ci95": [
+          0.4534113429694972,
+          0.6658613908385618
+        ]
+      },
+      "summed_candidate_set_edits": 58,
+      "aligned_recall": {
+        "correct": 303,
+        "total": 352,
+        "rate": 0.8607954545454546
+      },
+      "same_position_equal_count": {
+        "correct": 265,
+        "total": 305,
+        "rate": 0.8688524590163934
+      },
+      "candidate_width_mean": 1.0279329608938548,
+      "candidate_width_max": 3
+    },
+    "shape_only_top5": {
+      "whole_rows_all_sample": {
+        "success": 62,
+        "total": 80,
+        "rate": 0.775,
+        "ci95": [
+          0.6721321021639265,
+          0.8526679265915337
+        ]
+      },
+      "whole_rows_fully_resolved_reference": {
+        "success": 62,
+        "total": 80,
+        "rate": 0.775,
+        "ci95": [
+          0.6721321021639265,
+          0.8526679265915337
+        ]
+      },
+      "summed_candidate_set_edits": 27,
+      "aligned_recall": {
+        "correct": 334,
+        "total": 352,
+        "rate": 0.9488636363636364
+      },
+      "same_position_equal_count": {
+        "correct": 293,
+        "total": 305,
+        "rate": 0.9606557377049181
+      },
+      "candidate_width_mean": 5.184357541899441,
+      "candidate_width_max": 8
+    },
+    "uniquely_resolved_exact_sequence": {
+      "success": 28,
+      "total": 66,
+      "rate": 0.42424242424242425,
+      "ci95": [
+        0.3124251014854188,
+        0.5443934677590571
+      ]
+    },
+    "calibration": {
+      "n": 305,
+      "brier": 0.12487641566444048,
+      "ece10": 0.11006029171898789,
+      "bins": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "n": 1,
+          "mean_confidence": 0.011452960361642808,
+          "accuracy": 0.0
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "n": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.3,
+          "n": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.3,
+          "upper": 0.4,
+          "n": 6,
+          "mean_confidence": 0.36325120159163243,
+          "accuracy": 0.3333333333333333
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "n": 9,
+          "mean_confidence": 0.45146988995303616,
+          "accuracy": 0.1111111111111111
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6,
+          "n": 15,
+          "mean_confidence": 0.5504971114197817,
+          "accuracy": 0.26666666666666666
+        },
+        {
+          "lower": 0.6,
+          "upper": 0.7,
+          "n": 75,
+          "mean_confidence": 0.6579353435781856,
+          "accuracy": 0.6666666666666666
+        },
+        {
+          "lower": 0.7,
+          "upper": 0.8,
+          "n": 95,
+          "mean_confidence": 0.7489445416580804,
+          "accuracy": 0.9263157894736842
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "n": 77,
+          "mean_confidence": 0.8481723787307675,
+          "accuracy": 0.935064935064935
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "n": 27,
+          "mean_confidence": 0.931077832901612,
+          "accuracy": 1.0
+        }
+      ]
+    }
+  },
+  "development_by_section": {
+    "beginning_sorted": {
+      "rows": 26,
+      "reference_drawn_units": 113,
+      "predicted_drawn_units": 113,
+      "reference_unresolved_units": 0,
+      "reference_ambiguous_units": 4,
+      "reference_fully_resolved_rows": 26,
+      "reference_unique_sequence_rows": 22,
+      "row_crop_correctness": {
+        "success": 0,
+        "total": 0,
+        "rate": null,
+        "ci95": null,
+        "unscorable_rows": 26
+      },
+      "drawn_unit_count_agreement": {
+        "success": 22,
+        "total": 26,
+        "rate": 0.8461538461538461,
+        "ci95": [
+          0.6646880067178652,
+          0.9384996627642165
+        ],
+        "unscorable_rows": 0
+      },
+      "inscription_number_accuracy": {
+        "success": 22,
+        "total": 26,
+        "rate": 0.8461538461538461,
+        "ci95": [
+          0.6646880067178652,
+          0.9384996627642165
+        ],
+        "unscorable_rows": 0
+      },
+      "classification_exact_accuracy": {
+        "success": 22,
+        "total": 26,
+        "rate": 0.8461538461538461,
+        "ci95": [
+          0.6646880067178652,
+          0.9384996627642165
+        ],
+        "unscorable_rows": 0
+      },
+      "strict_top1": {
+        "whole_rows_all_sample": {
+          "success": 11,
+          "total": 26,
+          "rate": 0.4230769230769231,
+          "ci95": [
+            0.2554444331365656,
+            0.6105138625340828
+          ]
+        },
+        "whole_rows_fully_resolved_reference": {
+          "success": 11,
+          "total": 26,
+          "rate": 0.4230769230769231,
+          "ci95": [
+            0.2554444331365656,
+            0.6105138625340828
+          ]
+        },
+        "summed_candidate_set_edits": 28,
+        "aligned_recall": {
+          "correct": 87,
+          "total": 113,
+          "rate": 0.7699115044247787
+        },
+        "same_position_equal_count": {
+          "correct": 69,
+          "total": 88,
+          "rate": 0.7840909090909091
+        },
+        "candidate_width_mean": 1.0,
+        "candidate_width_max": 1
+      },
+      "strict_top5": {
+        "whole_rows_all_sample": {
+          "success": 17,
+          "total": 26,
+          "rate": 0.6538461538461539,
+          "ci95": [
+            0.46220571188810816,
+            0.8058776967705947
+          ]
+        },
+        "whole_rows_fully_resolved_reference": {
+          "success": 17,
+          "total": 26,
+          "rate": 0.6538461538461539,
+          "ci95": [
+            0.46220571188810816,
+            0.8058776967705947
+          ]
+        },
+        "summed_candidate_set_edits": 11,
+        "aligned_recall": {
+          "correct": 104,
+          "total": 113,
+          "rate": 0.9203539823008849
+        },
+        "same_position_equal_count": {
+          "correct": 82,
+          "total": 88,
+          "rate": 0.9318181818181818
+        },
+        "candidate_width_mean": 5.185840707964601,
+        "candidate_width_max": 8
+      },
+      "shape_only_top1": {
+        "whole_rows_all_sample": {
+          "success": 14,
+          "total": 26,
+          "rate": 0.5384615384615384,
+          "ci95": [
+            0.35457938746858797,
+            0.7124414646960878
+          ]
+        },
+        "whole_rows_fully_resolved_reference": {
+          "success": 14,
+          "total": 26,
+          "rate": 0.5384615384615384,
+          "ci95": [
+            0.35457938746858797,
+            0.7124414646960878
+          ]
+        },
+        "summed_candidate_set_edits": 19,
+        "aligned_recall": {
+          "correct": 96,
+          "total": 113,
+          "rate": 0.8495575221238938
+        },
+        "same_position_equal_count": {
+          "correct": 76,
+          "total": 88,
+          "rate": 0.8636363636363636
+        },
+        "candidate_width_mean": 1.0,
+        "candidate_width_max": 1
+      },
+      "shape_only_top5": {
+        "whole_rows_all_sample": {
+          "success": 18,
+          "total": 26,
+          "rate": 0.6923076923076923,
+          "ci95": [
+            0.5001174167780164,
+            0.8349868440453624
+          ]
+        },
+        "whole_rows_fully_resolved_reference": {
+          "success": 18,
+          "total": 26,
+          "rate": 0.6923076923076923,
+          "ci95": [
+            0.5001174167780164,
+            0.8349868440453624
+          ]
+        },
+        "summed_candidate_set_edits": 10,
+        "aligned_recall": {
+          "correct": 105,
+          "total": 113,
+          "rate": 0.9292035398230089
+        },
+        "same_position_equal_count": {
+          "correct": 83,
+          "total": 88,
+          "rate": 0.9431818181818182
+        },
+        "candidate_width_mean": 5.185840707964601,
+        "candidate_width_max": 8
+      },
+      "uniquely_resolved_exact_sequence": {
+        "success": 10,
+        "total": 22,
+        "rate": 0.45454545454545453,
+        "ci95": [
+          0.2692029418081331,
+          0.6534020467926505
+        ]
+      },
+      "calibration": {
+        "n": 88,
+        "brier": 0.138539066309806,
+        "ece10": 0.10516321957164523,
+        "bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "n": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "n": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "n": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "n": 2,
+            "mean_confidence": 0.350120920909185,
+            "accuracy": 0.5
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "n": 4,
+            "mean_confidence": 0.46461367899747563,
+            "accuracy": 0.25
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "n": 5,
+            "mean_confidence": 0.5708719395630089,
+            "accuracy": 0.4
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "n": 15,
+            "mean_confidence": 0.6606056837279268,
+            "accuracy": 0.6
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "n": 34,
+            "mean_confidence": 0.7466393674726944,
+            "accuracy": 0.8529411764705882
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "n": 23,
+            "mean_confidence": 0.8513116155280728,
+            "accuracy": 0.9565217391304348
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "n": 5,
+            "mean_confidence": 0.9402777708766829,
+            "accuracy": 1.0
+          }
+        ]
+      }
+    },
+    "end_sorted": {
+      "rows": 26,
+      "reference_drawn_units": 124,
+      "predicted_drawn_units": 128,
+      "reference_unresolved_units": 0,
+      "reference_ambiguous_units": 6,
+      "reference_fully_resolved_rows": 26,
+      "reference_unique_sequence_rows": 21,
+      "row_crop_correctness": {
+        "success": 0,
+        "total": 0,
+        "rate": null,
+        "ci95": null,
+        "unscorable_rows": 26
+      },
+      "drawn_unit_count_agreement": {
+        "success": 23,
+        "total": 26,
+        "rate": 0.8846153846153846,
+        "ci95": [
+          0.7102409678828635,
+          0.9599675537638938
+        ],
+        "unscorable_rows": 0
+      },
+      "inscription_number_accuracy": {
+        "success": 21,
+        "total": 26,
+        "rate": 0.8076923076923077,
+        "ci95": [
+          0.6212374288068301,
+          0.9149293885105758
+        ],
+        "unscorable_rows": 0
+      },
+      "classification_exact_accuracy": {
+        "success": 21,
+        "total": 26,
+        "rate": 0.8076923076923077,
+        "ci95": [
+          0.6212374288068301,
+          0.9149293885105758
+        ],
+        "unscorable_rows": 0
+      },
+      "strict_top1": {
+        "whole_rows_all_sample": {
+          "success": 7,
+          "total": 26,
+          "rate": 0.2692307692307692,
+          "ci95": [
+            0.13704448322018375,
+            0.4608304037917617
+          ]
+        },
+        "whole_rows_fully_resolved_reference": {
+          "success": 7,
+          "total": 26,
+          "rate": 0.2692307692307692,
+          "ci95": [
+            0.13704448322018375,
+            0.4608304037917617
+          ]
+        },
+        "summed_candidate_set_edits": 34,
+        "aligned_recall": {
+          "correct": 94,
+          "total": 124,
+          "rate": 0.7580645161290323
+        },
+        "same_position_equal_count": {
+          "correct": 85,
+          "total": 113,
+          "rate": 0.7522123893805309
+        },
+        "candidate_width_mean": 1.03125,
+        "candidate_width_max": 3
+      },
+      "strict_top5": {
+        "whole_rows_all_sample": {
+          "success": 18,
+          "total": 26,
+          "rate": 0.6923076923076923,
+          "ci95": [
+            0.5001174167780164,
+            0.8349868440453624
+          ]
+        },
+        "whole_rows_fully_resolved_reference": {
+          "success": 18,
+          "total": 26,
+          "rate": 0.6923076923076923,
+          "ci95": [
+            0.5001174167780164,
+            0.8349868440453624
+          ]
+        },
+        "summed_candidate_set_edits": 18,
+        "aligned_recall": {
+          "correct": 110,
+          "total": 124,
+          "rate": 0.8870967741935484
+        },
+        "same_position_equal_count": {
+          "correct": 101,
+          "total": 113,
+          "rate": 0.8938053097345132
+        },
+        "candidate_width_mean": 5.2109375,
+        "candidate_width_max": 8
+      },
+      "shape_only_top1": {
+        "whole_rows_all_sample": {
+          "success": 10,
+          "total": 26,
+          "rate": 0.38461538461538464,
+          "ci95": [
+            0.22428594435712798,
+            0.5746514991488447
+          ]
+        },
+        "whole_rows_fully_resolved_reference": {
+          "success": 10,
+          "total": 26,
+          "rate": 0.38461538461538464,
+          "ci95": [
+            0.22428594435712798,
+            0.5746514991488447
+          ]
+        },
+        "summed_candidate_set_edits": 29,
+        "aligned_recall": {
+          "correct": 99,
+          "total": 124,
+          "rate": 0.7983870967741935
+        },
+        "same_position_equal_count": {
+          "correct": 90,
+          "total": 113,
+          "rate": 0.7964601769911505
+        },
+        "candidate_width_mean": 1.03125,
+        "candidate_width_max": 3
+      },
+      "shape_only_top5": {
+        "whole_rows_all_sample": {
+          "success": 19,
+          "total": 26,
+          "rate": 0.7307692307692307,
+          "ci95": [
+            0.5391695962082381,
+            0.8629555167798162
+          ]
+        },
+        "whole_rows_fully_resolved_reference": {
+          "success": 19,
+          "total": 26,
+          "rate": 0.7307692307692307,
+          "ci95": [
+            0.5391695962082381,
+            0.8629555167798162
+          ]
+        },
+        "summed_candidate_set_edits": 12,
+        "aligned_recall": {
+          "correct": 116,
+          "total": 124,
+          "rate": 0.9354838709677419
+        },
+        "same_position_equal_count": {
+          "correct": 107,
+          "total": 113,
+          "rate": 0.9469026548672567
+        },
+        "candidate_width_mean": 5.2109375,
+        "candidate_width_max": 8
+      },
+      "uniquely_resolved_exact_sequence": {
+        "success": 6,
+        "total": 21,
+        "rate": 0.2857142857142857,
+        "ci95": [
+          0.1381386295212213,
+          0.49956380716085597
+        ]
+      },
+      "calibration": {
+        "n": 113,
+        "brier": 0.12275006821471547,
+        "ece10": 0.1321339591136662,
+        "bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "n": 1,
+            "mean_confidence": 0.011452960361642808,
+            "accuracy": 0.0
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "n": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "n": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "n": 4,
+            "mean_confidence": 0.3698163419328561,
+            "accuracy": 0.25
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "n": 5,
+            "mean_confidence": 0.44095485871748463,
+            "accuracy": 0.0
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "n": 9,
+            "mean_confidence": 0.5347293854926175,
+            "accuracy": 0.2222222222222222
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "n": 25,
+            "mean_confidence": 0.6581377450605654,
+            "accuracy": 0.64
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "n": 25,
+            "mean_confidence": 0.7514125692083359,
+            "accuracy": 0.96
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "n": 31,
+            "mean_confidence": 0.8449090405401021,
+            "accuracy": 0.9354838709677419
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "n": 13,
+            "mean_confidence": 0.9271437577563337,
+            "accuracy": 1.0
+          }
+        ]
+      }
+    },
+    "number_order": {
+      "rows": 28,
+      "reference_drawn_units": 115,
+      "predicted_drawn_units": 117,
+      "reference_unresolved_units": 0,
+      "reference_ambiguous_units": 5,
+      "reference_fully_resolved_rows": 28,
+      "reference_unique_sequence_rows": 23,
+      "row_crop_correctness": {
+        "success": 0,
+        "total": 0,
+        "rate": null,
+        "ci95": null,
+        "unscorable_rows": 28
+      },
+      "drawn_unit_count_agreement": {
+        "success": 26,
+        "total": 28,
+        "rate": 0.9285714285714286,
+        "ci95": [
+          0.7735463743160095,
+          0.9801879358846942
+        ],
+        "unscorable_rows": 0
+      },
+      "inscription_number_accuracy": {
+        "success": 26,
+        "total": 28,
+        "rate": 0.9285714285714286,
+        "ci95": [
+          0.7735463743160095,
+          0.9801879358846942
+        ],
+        "unscorable_rows": 0
+      },
+      "classification_exact_accuracy": {
+        "success": 24,
+        "total": 28,
+        "rate": 0.8571428571428571,
+        "ci95": [
+          0.685101978364747,
+          0.9430099468025059
+        ],
+        "unscorable_rows": 0
+      },
+      "strict_top1": {
+        "whole_rows_all_sample": {
+          "success": 15,
+          "total": 28,
+          "rate": 0.5357142857142857,
+          "ci95": [
+            0.358126892344679,
+            0.7046843001720462
+          ]
+        },
+        "whole_rows_fully_resolved_reference": {
+          "success": 15,
+          "total": 28,
+          "rate": 0.5357142857142857,
+          "ci95": [
+            0.358126892344679,
+            0.7046843001720462
+          ]
+        },
+        "summed_candidate_set_edits": 20,
+        "aligned_recall": {
+          "correct": 99,
+          "total": 115,
+          "rate": 0.8608695652173913
+        },
+        "same_position_equal_count": {
+          "correct": 90,
+          "total": 104,
+          "rate": 0.8653846153846154
+        },
+        "candidate_width_mean": 1.0512820512820513,
+        "candidate_width_max": 3
+      },
+      "strict_top5": {
+        "whole_rows_all_sample": {
+          "success": 25,
+          "total": 28,
+          "rate": 0.8928571428571429,
+          "ci95": [
+            0.7280414845132785,
+            0.9628816331707
+          ]
+        },
+        "whole_rows_fully_resolved_reference": {
+          "success": 25,
+          "total": 28,
+          "rate": 0.8928571428571429,
+          "ci95": [
+            0.7280414845132785,
+            0.9628816331707
+          ]
+        },
+        "summed_candidate_set_edits": 5,
+        "aligned_recall": {
+          "correct": 113,
+          "total": 115,
+          "rate": 0.9826086956521739
+        },
+        "same_position_equal_count": {
+          "correct": 103,
+          "total": 104,
+          "rate": 0.9903846153846154
+        },
+        "candidate_width_mean": 5.153846153846154,
+        "candidate_width_max": 7
+      },
+      "shape_only_top1": {
+        "whole_rows_all_sample": {
+          "success": 21,
+          "total": 28,
+          "rate": 0.75,
+          "ci95": [
+            0.5664432968100104,
+            0.8732350508070668
+          ]
+        },
+        "whole_rows_fully_resolved_reference": {
+          "success": 21,
+          "total": 28,
+          "rate": 0.75,
+          "ci95": [
+            0.5664432968100104,
+            0.8732350508070668
+          ]
+        },
+        "summed_candidate_set_edits": 10,
+        "aligned_recall": {
+          "correct": 108,
+          "total": 115,
+          "rate": 0.9391304347826087
+        },
+        "same_position_equal_count": {
+          "correct": 99,
+          "total": 104,
+          "rate": 0.9519230769230769
+        },
+        "candidate_width_mean": 1.0512820512820513,
+        "candidate_width_max": 3
+      },
+      "shape_only_top5": {
+        "whole_rows_all_sample": {
+          "success": 25,
+          "total": 28,
+          "rate": 0.8928571428571429,
+          "ci95": [
+            0.7280414845132785,
+            0.9628816331707
+          ]
+        },
+        "whole_rows_fully_resolved_reference": {
+          "success": 25,
+          "total": 28,
+          "rate": 0.8928571428571429,
+          "ci95": [
+            0.7280414845132785,
+            0.9628816331707
+          ]
+        },
+        "summed_candidate_set_edits": 5,
+        "aligned_recall": {
+          "correct": 113,
+          "total": 115,
+          "rate": 0.9826086956521739
+        },
+        "same_position_equal_count": {
+          "correct": 103,
+          "total": 104,
+          "rate": 0.9903846153846154
+        },
+        "candidate_width_mean": 5.153846153846154,
+        "candidate_width_max": 7
+      },
+      "uniquely_resolved_exact_sequence": {
+        "success": 12,
+        "total": 23,
+        "rate": 0.5217391304347826,
+        "ci95": [
+          0.32962737336427406,
+          0.7076284258335335
+        ]
+      },
+      "calibration": {
+        "n": 104,
+        "brier": 0.11562606955892857,
+        "ece10": 0.12218713801318841,
+        "bins": [
+          {
+            "lower": 0.0,
+            "upper": 0.1,
+            "n": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "lower": 0.1,
+            "upper": 0.2,
+            "n": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "n": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "n": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "lower": 0.4,
+            "upper": 0.5,
+            "n": 0,
+            "mean_confidence": null,
+            "accuracy": null
+          },
+          {
+            "lower": 0.5,
+            "upper": 0.6,
+            "n": 1,
+            "mean_confidence": 0.5905325040481233,
+            "accuracy": 0.0
+          },
+          {
+            "lower": 0.6,
+            "upper": 0.7,
+            "n": 35,
+            "mean_confidence": 0.6566463395980252,
+            "accuracy": 0.7142857142857143
+          },
+          {
+            "lower": 0.7,
+            "upper": 0.8,
+            "n": 36,
+            "mean_confidence": 0.7494077425899346,
+            "accuracy": 0.9722222222222222
+          },
+          {
+            "lower": 0.8,
+            "upper": 0.9,
+            "n": 23,
+            "mean_confidence": 0.8494315542774011,
+            "accuracy": 0.9130434782608695
+          },
+          {
+            "lower": 0.9,
+            "upper": 1.0,
+            "n": 9,
+            "mean_confidence": 0.9316493092364193,
+            "accuracy": 1.0
+          }
+        ]
+      }
+    }
+  },
+  "development_intervals": {
+    "unit_top1_aligned": [
+      0.7473922561813188,
+      0.8428212659089942
+    ],
+    "unit_top5_aligned": [
+      0.8826979472140762,
+      0.9651213200699019
+    ],
+    "calibration_brier": [
+      0.10763134104726076,
+      0.14201476243656652
+    ],
+    "calibration_ece10": [
+      0.08935697715621137,
+      0.15009808346606948
+    ]
+  },
+  "interval_note": "Wilson and row bootstrap describe reused development rows; parameter selection prevents a held-out accuracy interpretation.",
+  "prior_five_segmentation_underline_failures": [
+    {
+      "sample_index": 3,
+      "pdf_page": 27,
+      "count_agrees": true,
+      "top5_whole_row": true,
+      "reference_units": 1,
+      "proposed_units": 1
+    },
+    {
+      "sample_index": 25,
+      "pdf_page": 74,
+      "count_agrees": true,
+      "top5_whole_row": true,
+      "reference_units": 6,
+      "proposed_units": 6
+    },
+    {
+      "sample_index": 50,
+      "pdf_page": 116,
+      "count_agrees": true,
+      "top5_whole_row": true,
+      "reference_units": 7,
+      "proposed_units": 7
+    },
+    {
+      "sample_index": 52,
+      "pdf_page": 120,
+      "count_agrees": true,
+      "top5_whole_row": true,
+      "reference_units": 5,
+      "proposed_units": 5
+    },
+    {
+      "sample_index": 58,
+      "pdf_page": 139,
+      "count_agrees": true,
+      "top5_whole_row": true,
+      "reference_units": 6,
+      "proposed_units": 6
+    }
+  ],
+  "development_numbered_recall": {
+    "pages": 21,
+    "matched": 1847,
+    "true_rows": 1847,
+    "detected_rows": 1847,
+    "recall": {
+      "success": 1847,
+      "total": 1847,
+      "rate": 1.0,
+      "ci95": [
+        0.9979244798076105,
+        1.0
+      ]
+    },
+    "precision": {
+      "success": 1847,
+      "total": 1847,
+      "rate": 1.0,
+      "ci95": [
+        0.9979244798076105,
+        1.0
+      ]
+    }
+  },
+  "development_count_pages": [
+    {
+      "pdf_page": 37,
+      "matched": 70,
+      "true": 70,
+      "detected": 70,
+      "columns": [
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 34,
+          "detected_rows": 34,
+          "matched_rows": 34
+        }
+      ]
+    },
+    {
+      "pdf_page": 38,
+      "matched": 72,
+      "true": 72,
+      "detected": 72,
+      "columns": [
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        }
+      ]
+    },
+    {
+      "pdf_page": 48,
+      "matched": 68,
+      "true": 68,
+      "detected": 68,
+      "columns": [
+        {
+          "reference_rows": 34,
+          "detected_rows": 34,
+          "matched_rows": 34
+        },
+        {
+          "reference_rows": 34,
+          "detected_rows": 34,
+          "matched_rows": 34
+        }
+      ]
+    },
+    {
+      "pdf_page": 62,
+      "matched": 72,
+      "true": 72,
+      "detected": 72,
+      "columns": [
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        }
+      ]
+    },
+    {
+      "pdf_page": 66,
+      "matched": 72,
+      "true": 72,
+      "detected": 72,
+      "columns": [
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        }
+      ]
+    },
+    {
+      "pdf_page": 70,
+      "matched": 72,
+      "true": 72,
+      "detected": 72,
+      "columns": [
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        }
+      ]
+    },
+    {
+      "pdf_page": 75,
+      "matched": 72,
+      "true": 72,
+      "detected": 72,
+      "columns": [
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        }
+      ]
+    },
+    {
+      "pdf_page": 79,
+      "matched": 72,
+      "true": 72,
+      "detected": 72,
+      "columns": [
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        }
+      ]
+    },
+    {
+      "pdf_page": 84,
+      "matched": 70,
+      "true": 70,
+      "detected": 70,
+      "columns": [
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 34,
+          "detected_rows": 34,
+          "matched_rows": 34
+        }
+      ]
+    },
+    {
+      "pdf_page": 112,
+      "matched": 72,
+      "true": 72,
+      "detected": 72,
+      "columns": [
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        }
+      ]
+    },
+    {
+      "pdf_page": 118,
+      "matched": 72,
+      "true": 72,
+      "detected": 72,
+      "columns": [
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        }
+      ]
+    },
+    {
+      "pdf_page": 121,
+      "matched": 72,
+      "true": 72,
+      "detected": 72,
+      "columns": [
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        }
+      ]
+    },
+    {
+      "pdf_page": 123,
+      "matched": 70,
+      "true": 70,
+      "detected": 70,
+      "columns": [
+        {
+          "reference_rows": 34,
+          "detected_rows": 34,
+          "matched_rows": 34
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        }
+      ]
+    },
+    {
+      "pdf_page": 129,
+      "matched": 288,
+      "true": 288,
+      "detected": 288,
+      "columns": [
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        }
+      ]
+    },
+    {
+      "pdf_page": 130,
+      "matched": 201,
+      "true": 201,
+      "detected": 201,
+      "columns": [
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 21,
+          "detected_rows": 21,
+          "matched_rows": 21
+        }
+      ]
+    },
+    {
+      "pdf_page": 132,
+      "matched": 72,
+      "true": 72,
+      "detected": 72,
+      "columns": [
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        }
+      ]
+    },
+    {
+      "pdf_page": 139,
+      "matched": 72,
+      "true": 72,
+      "detected": 72,
+      "columns": [
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        }
+      ]
+    },
+    {
+      "pdf_page": 142,
+      "matched": 72,
+      "true": 72,
+      "detected": 72,
+      "columns": [
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        }
+      ]
+    },
+    {
+      "pdf_page": 153,
+      "matched": 72,
+      "true": 72,
+      "detected": 72,
+      "columns": [
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        }
+      ]
+    },
+    {
+      "pdf_page": 160,
+      "matched": 72,
+      "true": 72,
+      "detected": 72,
+      "columns": [
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        }
+      ]
+    },
+    {
+      "pdf_page": 177,
+      "matched": 72,
+      "true": 72,
+      "detected": 72,
+      "columns": [
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        },
+        {
+          "reference_rows": 36,
+          "detected_rows": 36,
+          "matched_rows": 36
+        }
+      ]
+    }
+  ],
+  "unresolved_crop_accuracy": "No new independent crop labels on the development boxes; crop acceptance is reserved for the fresh blind evaluation.",
+  "reference_process": "Earlier adjudicated v2 reference reused unchanged; no fresh reader or adjudicator invoked by this package."
+}

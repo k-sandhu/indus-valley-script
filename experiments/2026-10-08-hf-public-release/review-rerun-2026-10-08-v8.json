@@ -1,0 +1,772 @@
+{
+  "status": "Verified computation",
+  "checks": {
+    "all_reviewer_scripts_completed": true,
+    "reviewer_scripts_unchanged": true,
+    "loads": true,
+    "images": true,
+    "field_definitions": true,
+    "score_reproduction": true,
+    "manifests": true,
+    "no_private_privacy_hits": true,
+    "prose_all_matches_disposed": true,
+    "no_sequence_runs": true,
+    "sequence_controls": true
+  },
+  "outputs": "data/raw/2026-10-08-hf-public-release/rr8",
+  "adaptations": [
+    "Redirect output paths and scratch caches in memory; original scripts remain unchanged.",
+    "Load/image checks and legacy snippets read a raw materialized snapshot with 907 embedded PNGs extracted.",
+    "Parent image audit restores source_path from the private portable-source map in that raw view only.",
+    "Privacy, field definitions, rights scans and manifest check read the actual public release.",
+    "Hosted card examples are exercised through local-only Hub function substitutions. No network repository is created or queried."
+  ],
+  "images": {
+    "images": 949,
+    "sha256_matches_table": 949,
+    "parent_files_present": 949,
+    "staged_bytes_equal_parent": 949,
+    "by_component_role": [
+      [
+        [
+          "chart_reference",
+          "chart_cell"
+        ],
+        687
+      ],
+      [
+        [
+          "benchmark_rows_v1",
+          "row_context"
+        ],
+        60
+      ],
+      [
+        [
+          "benchmark_rows_v2",
+          "row_context"
+        ],
+        80
+      ],
+      [
+        [
+          "benchmark_rows_v2",
+          "exact_proposal_crop"
+        ],
+        80
+      ],
+      [
+        [
+          "benchmark_chart_cards",
+          "chart_card"
+        ],
+        21
+      ],
+      [
+        [
+          "benchmark_count_pages",
+          "page_count_context"
+        ],
+        21
+      ]
+    ],
+    "source_prefixes": {
+      "output/chart_atlas/cells": 687,
+      "experiments/2026-10-07-helsinki1979-digitization/blind": 60,
+      "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-07-v2/blind": 160,
+      "experiments/2026-10-07-helsinki1979-digitization/blind/chart_sheets": 9,
+      "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-07-v2/blind/position-chart": 12,
+      "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-07-v2/blind/page-count-source": 21
+    },
+    "modes": {
+      "RGB": 708,
+      "L": 241
+    },
+    "png_info_keys": {
+      "dpi": 868
+    },
+    "images_with_colour_pixels": 0,
+    "larger_than_3000px": [],
+    "size_range_by_component": {
+      "chart_reference": [
+        [
+          220,
+          120
+        ],
+        [
+          228,
+          125
+        ]
+      ],
+      "benchmark_rows_v1": [
+        [
+          1078,
+          238
+        ],
+        [
+          1271,
+          273
+        ]
+      ],
+      "benchmark_rows_v2": [
+        [
+          1075,
+          101
+        ],
+        [
+          1393,
+          280
+        ]
+      ],
+      "benchmark_chart_cards": [
+        [
+          1200,
+          1000
+        ],
+        [
+          1200,
+          1200
+        ]
+      ],
+      "benchmark_count_pages": [
+        [
+          1190,
+          1682
+        ],
+        [
+          1190,
+          1682
+        ]
+      ]
+    },
+    "licences": [
+      "CC BY 4.0"
+    ],
+    "source_urls": [
+      "https://researchportal.helsinki.fi/en/publications/corpus-of-texts-in-the-indus-script/"
+    ]
+  },
+  "score_comparison": {
+    "v1": {
+      "vs_package_M": {
+        "mismatch": 0,
+        "only_in_reference": 0,
+        "only_in_staged": 0,
+        "stats": {
+          "numeric": 3528,
+          "discrete": 1101
+        }
+      },
+      "vs_package_M_mismatch_paths": [],
+      "vs_package_M_only_in_ref": [],
+      "vs_expected_metrics_copy": {
+        "mismatch": 0,
+        "only_in_reference": 0,
+        "only_in_staged": 0,
+        "stats": {
+          "numeric": 3528,
+          "discrete": 1100
+        }
+      },
+      "headline": {
+        "strict_top5_whole_rows": {
+          "success": 24,
+          "total": 60,
+          "rate": 0.4,
+          "ci95": [
+            0.2856949053488255,
+            0.5263394650795924
+          ]
+        },
+        "strict_top1_whole_rows": {
+          "success": 13,
+          "total": 60,
+          "rate": 0.21666666666666667,
+          "ci95": [
+            0.13123044048190308,
+            0.33620027573194783
+          ]
+        },
+        "crop": {
+          "success": 23,
+          "total": 60,
+          "rate": 0.38333333333333336,
+          "ci95": [
+            0.27088272374082023,
+            0.5098240417590008
+          ],
+          "unscorable_rows": 0
+        },
+        "count": {
+          "success": 33,
+          "total": 60,
+          "rate": 0.55,
+          "ci95": [
+            0.4249193588533434,
+            0.6690634559324476
+          ],
+          "unscorable_rows": 0
+        },
+        "number": {
+          "success": 23,
+          "total": 60,
+          "rate": 0.38333333333333336,
+          "ci95": [
+            0.27088272374082023,
+            0.5098240417590008
+          ],
+          "unscorable_rows": 0
+        },
+        "classification": {
+          "success": 19,
+          "total": 60,
+          "rate": 0.31666666666666665,
+          "ci95": [
+            0.21305867552366523,
+            0.44233767026176773
+          ],
+          "unscorable_rows": 0
+        },
+        "criteria": {
+          "crop_90": false,
+          "number_90": false,
+          "count_95": false,
+          "top5_rows_80": false
+        },
+        "pipeline_status": "Failed",
+        "frozen_status_in_M": "Frozen evaluation",
+        "M_pipeline_status": "Failed"
+      }
+    },
+    "v2": {
+      "vs_package_M": {
+        "mismatch": 0,
+        "only_in_reference": 0,
+        "only_in_staged": 0,
+        "stats": {
+          "numeric": 4470,
+          "discrete": 1376
+        }
+      },
+      "vs_package_M_mismatch_paths": [],
+      "vs_package_M_only_in_ref": [],
+      "vs_expected_metrics_copy": {
+        "mismatch": 0,
+        "only_in_reference": 0,
+        "only_in_staged": 0,
+        "stats": {
+          "numeric": 4470,
+          "discrete": 1375
+        }
+      },
+      "headline": {
+        "strict_top5_whole_rows": {
+          "success": 40,
+          "total": 80,
+          "rate": 0.5,
+          "ci95": [
+            0.3929741508611972,
+            0.6070258491388028
+          ]
+        },
+        "strict_top1_whole_rows": {
+          "success": 20,
+          "total": 80,
+          "rate": 0.25,
+          "ci95": [
+            0.16806231857542375,
+            0.3548467461923397
+          ]
+        },
+        "crop": {
+          "success": 44,
+          "total": 80,
+          "rate": 0.55,
+          "ci95": [
+            0.44119507889355963,
+            0.6542231081528878
+          ],
+          "unscorable_rows": 0
+        },
+        "count": {
+          "success": 59,
+          "total": 80,
+          "rate": 0.7375,
+          "ci95": [
+            0.6318104033557184,
+            0.8214259851149064
+          ],
+          "unscorable_rows": 0
+        },
+        "number": {
+          "success": 62,
+          "total": 80,
+          "rate": 0.775,
+          "ci95": [
+            0.6721321021639265,
+            0.8526679265915337
+          ],
+          "unscorable_rows": 0
+        },
+        "classification": {
+          "success": 55,
+          "total": 80,
+          "rate": 0.6875,
+          "ci95": [
+            0.5793222425531256,
+            0.7784959588710517
+          ],
+          "unscorable_rows": 0
+        },
+        "criteria": {
+          "crop_90": false,
+          "number_90": false,
+          "count_95": false,
+          "top5_rows_80": false,
+          "random_page_recall_95": true
+        },
+        "pipeline_status": "Failed",
+        "frozen_status_in_M": "Frozen evaluation",
+        "M_pipeline_status": "Failed",
+        "random_recall": {
+          "success": 1242,
+          "total": 1286,
+          "rate": 0.9657853810264385,
+          "ci95": [
+            0.9543813081813523,
+            0.9744150115580791
+          ]
+        },
+        "stress_recall": {
+          "success": 561,
+          "total": 561,
+          "rate": 1.0,
+          "ci95": [
+            0.9931990494665274,
+            1.0000000000000002
+          ]
+        },
+        "strict_top5_aligned_recall": {
+          "correct": 304,
+          "total": 352,
+          "rate": 0.8636363636363636
+        }
+      }
+    }
+  },
+  "field_definitions": {
+    "tables_documented": 19,
+    "problems": [],
+    "shared_definition_notes": [
+      "benchmark_count_pages.frame: one definition covering two tables",
+      "weight_chance_controls.frame: one definition covering two tables"
+    ]
+  },
+  "sequence_scan": {
+    "chart_code_column_order": {
+      "sequences": 20,
+      "total_positions": 687,
+      "sequences_with_run_ge": {
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "control_shuffled_expected_sequences_with_run_ge": {
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0
+      },
+      "longest_run": 0,
+      "hit_runs_by_family": {}
+    },
+    "chart_code_global_order": {
+      "sequences": 1,
+      "total_positions": 687,
+      "sequences_with_run_ge": {
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "control_shuffled_expected_sequences_with_run_ge": {
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0
+      },
+      "longest_run": 0,
+      "hit_runs_by_family": {}
+    },
+    "chart_code_row_order": {
+      "sequences": 70,
+      "total_positions": 687,
+      "sequences_with_run_ge": {
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "control_shuffled_expected_sequences_with_run_ge": {
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0
+      },
+      "longest_run": 0,
+      "hit_runs_by_family": {}
+    },
+    "chart_rank_column_order": {
+      "sequences": 20,
+      "total_positions": 687,
+      "sequences_with_run_ge": {
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "control_shuffled_expected_sequences_with_run_ge": {
+        "3": 0.13,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0
+      },
+      "longest_run": 0,
+      "hit_runs_by_family": {}
+    },
+    "chart_rank_global_order": {
+      "sequences": 1,
+      "total_positions": 687,
+      "sequences_with_run_ge": {
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "control_shuffled_expected_sequences_with_run_ge": {
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0
+      },
+      "longest_run": 0,
+      "hit_runs_by_family": {}
+    },
+    "chart_rank_row_order": {
+      "sequences": 70,
+      "total_positions": 687,
+      "sequences_with_run_ge": {
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "control_shuffled_expected_sequences_with_run_ge": {
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0
+      },
+      "longest_run": 0,
+      "hit_runs_by_family": {}
+    },
+    "generic_int_list": {
+      "sequences": 3075,
+      "total_positions": 13022,
+      "sequences_with_run_ge": {
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "control_shuffled_expected_sequences_with_run_ge": {
+        "3": 0.27,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0
+      },
+      "longest_run": 0,
+      "hit_runs_by_family": {}
+    },
+    "unit_shape": {
+      "sequences": 352,
+      "total_positions": 1815,
+      "sequences_with_run_ge": {
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "control_shuffled_expected_sequences_with_run_ge": {
+        "3": 0.47,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0
+      },
+      "longest_run": 0,
+      "hit_runs_by_family": {}
+    },
+    "unit_strict": {
+      "sequences": 352,
+      "total_positions": 1815,
+      "sequences_with_run_ge": {
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "control_shuffled_expected_sequences_with_run_ge": {
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0
+      },
+      "longest_run": 0,
+      "hit_runs_by_family": {}
+    },
+    "unit_top1": {
+      "sequences": 114,
+      "total_positions": 623,
+      "sequences_with_run_ge": {
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "control_shuffled_expected_sequences_with_run_ge": {
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0
+      },
+      "longest_run": 0,
+      "hit_runs_by_family": {}
+    },
+    "unit_top5": {
+      "sequences": 114,
+      "total_positions": 623,
+      "sequences_with_run_ge": {
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0
+      },
+      "control_shuffled_expected_sequences_with_run_ge": {
+        "3": 1.1,
+        "4": 0.0,
+        "5": 0.0,
+        "6": 0.0
+      },
+      "longest_run": 0,
+      "hit_runs_by_family": {}
+    },
+    "_complete_singleton_benchmark_reference_rows_equal_to_a_whole_unlicensed_sequence": {
+      "complete_singleton_rows": 88,
+      "equal": 0
+    },
+    "_unlicensed_index": {
+      "distinct_sequences_by_family": {
+        "lipi": 3667,
+        "mayig": 190,
+        "indus": 1902
+      },
+      "directional_sequences": 11518,
+      "three_gram_keys": 12464
+    },
+    "_positive_control_planted_unlicensed_sequences": {
+      "tested": 200,
+      "detected_in_full": 200
+    },
+    "_positive_control_with_ambiguous_positions": {
+      "tested": 200,
+      "detected_in_full": 200
+    }
+  },
+  "prose": {
+    "summary": {
+      "window_words": 8,
+      "staged_strings": 41301,
+      "staged_tokens": 167945,
+      "distinct_windows": 33297,
+      "witness_files": 3683,
+      "witness_bytes": 498795448,
+      "matching_windows": 9608,
+      "matches_by_staged_file": {
+        "benchmark_readings.parquet": 37217,
+        "benchmark_rows_v2.parquet": 35222,
+        "evidence_museum_joins.parquet": 12302,
+        "README.md": 805,
+        "NOTICE": 499,
+        "benchmark/CONVENTIONS.md": 428,
+        "CITATION.cff": 127,
+        "benchmark/v2-adjudication-notes.json": 58,
+        "benchmark/v1-exploratory-adjudication-overlay.json": 56,
+        "benchmark_count_pages.parquet": 8,
+        "LICENSES/CC-BY-4.0.txt": 6,
+        "docs/METHODS.md": 5,
+        "evidence_sources.parquet": 4,
+        "LICENSES/CC0-1.0.txt": 4,
+        "benchmark_rows_v1.parquet": 2,
+        "LICENSES/Unlicense.txt": 1,
+        "benchmark/reader-metadata.json": 1
+      },
+      "matches_by_witness": {
+        "data/raw/2026-10-08-helsinki1979-row-verification/pilot-2026-10-08-v1/coordinator/private-manifest.json": 754,
+        "data/raw/2026-10-08-helsinki1979-row-verification/pilot-2026-10-08-v2/coordinator/private-manifest.json": 754,
+        "data/raw/2026-10-06-evidence-census/synthesis/main-2026-10-07-v6/confirmed-object-joins.json": 227,
+        "data/raw/2026-10-06-evidence-census/synthesis/replay-2026-10-07-v6/confirmed-object-joins.json": 227,
+        "data/raw/2026-10-06-evidence-census/collections-and-datasets/focused-pass-2026-10-07/paired-comparisons.json": 193,
+        "data/raw/2026-10-06-evidence-census/synthesis/development-2026-10-07-v1/confirmed-object-joins.json": 188,
+        "data/raw/2026-10-06-evidence-census/synthesis/main-2026-10-07-v2/confirmed-object-joins.json": 188,
+        "data/raw/2026-10-06-evidence-census/synthesis/main-2026-10-07-v3/confirmed-object-joins.json": 188,
+        "data/raw/2026-10-06-evidence-census/synthesis/main-2026-10-07-v4/confirmed-object-joins.json": 188,
+        "data/raw/2026-10-06-evidence-census/synthesis/main-2026-10-07-v5/confirmed-object-joins.json": 188,
+        "data/raw/2026-10-06-evidence-census/synthesis/replay-2026-10-07-v1/confirmed-object-joins.json": 188,
+        "data/raw/2026-10-06-evidence-census/collections-and-datasets/focused-pass-2026-10-07/focused-records.json": 152,
+        "data/raw/2026-10-06-evidence-census/collections-and-datasets/focused-pass-2026-10-07/portal-record-review-v2.json": 149,
+        "data/raw/2026-10-06-evidence-census/collections-and-datasets/focused-pass-2026-10-07/portal-record-review.json": 149,
+        "data/raw/2026-10-06-evidence-census/collections-and-datasets/focused-pass-2026-10-07/portal-unique-review.json": 149
+      }
+    },
+    "disposition_counts": {
+      "Exact bibliographic publisher/title strings.": 127,
+      "Required exact source attribution.": 499,
+      "Exact bibliographic titles/publisher strings and own project descriptions.": 805,
+      "Project-authored reading rules and exact attribution.": 428,
+      "Project-authored access assessment of museum reuse policy, mirrored in the project search capture; no quoted policy prose.": 4,
+      "Project-authored citation strings and identifier facts; 49 independently supported pairs.": 3888,
+      "Exact Ascalone bibliographic title.": 5,
+      "Official licence text, permitted reproduction.": 7,
+      "Project-authored frozen readings mirrored by other project packages; CC0 additions to CC BY edition content.": 4659,
+      "Project-authored frozen predictions/readings mirrored in project manifests.": 4624,
+      "Project-authored source-count reading notes.": 6,
+      "Project-authored later correction notes.": 56,
+      "Project-authored source adjudication notes.": 58,
+      "Project-authored process disclosures.": 1,
+      "Project-authored frozen predictions/readings; edition-derived content retains CC BY.": 2
+    },
+    "unknown_staged_locations": [],
+    "unexplained_copied_third_party_prose_matches": 0,
+    "classification_note": "Counts can overlap when one window appears in several locations. Match text remains local raw; exact bibliographic and official legal text are permitted. Project reader/join/assessment matches were sampled by location and witness."
+  },
+  "privacy": {
+    "original_distinct_match_locations": 6,
+    "authorized_matches": [
+      {
+        "where": "./CITATION.cff",
+        "match": "k-sandhu",
+        "count": 2,
+        "example": "ntent.   Report errors through https://github.com/k-sandhu/indus-reference-benchmarks/issues. type: dataset title: Ind"
+      },
+      {
+        "where": "./CITATION.cff",
+        "match": "ksaw008",
+        "count": 1,
+        "example": " - Unlicense url: https://huggingface.co/datasets/ksaw008/indus-reference-benchmarks references: - type: book   title"
+      },
+      {
+        "where": "./LICENSE",
+        "match": "k-sandhu",
+        "count": 1,
+        "example": "Component licences, confirmed by k-sandhu on 8 October 2026  CC BY 4.0: Helsinki 1979 edition-derived"
+      },
+      {
+        "where": "./NOTICE",
+        "match": "k-sandhu",
+        "count": 1,
+        "example": "changes or endorsed the dataset.  Project author: k-sandhu. Project rights in data, compilations, readings, annotation"
+      },
+      {
+        "where": "./README.md",
+        "match": "k-sandhu",
+        "count": 3,
+        "example": "le except itself.  ## Citation and error reports  k-sandhu (2026). *Indus chart, row-reading benchmarks and evidence c"
+      },
+      {
+        "where": "./README.md",
+        "match": "ksaw008",
+        "count": 4,
+        "example": "rt load_dataset, get_dataset_config_names repo = \"ksaw008/indus-reference-benchmarks\" chart = load_dataset(repo, \"cha"
+      }
+    ],
+    "unauthorized_matches": [],
+    "strict_scan_report": "review-fixes-check-2026-10-08-v8.json#/privacy"
+  },
+  "hosted_snippets": [
+    {
+      "block": 0,
+      "passed": true
+    },
+    {
+      "block": 1,
+      "passed": true
+    },
+    {
+      "block": 2,
+      "checked": "CLI format separately tested with complete/incomplete prediction files"
+    }
+  ],
+  "source_script_records": {
+    "load_check.py": {
+      "source_sha256": "359c4d94784474d5ec9e79b25db58e5c595361ca9fa96ff06d43baa99c035255",
+      "executed_source_sha256": "2720bed413ca33bfaf358dcf4c2db9054f08c2d576e3e8f5b0b6f7744f1f3c22",
+      "completed": true,
+      "error": null
+    },
+    "readme_snippets.py": {
+      "source_sha256": "0020456a123ab906053e14e060ddbd39c290d0c331314ef7f93312d0c179f5f1",
+      "executed_source_sha256": "cf1c43d483509d06cc41e950e040f8d22505d009c4f8428589646152e9f8e719",
+      "completed": true,
+      "error": null
+    },
+    "image_audit.py": {
+      "source_sha256": "d128b173d0e005036788e56d9f03a1d281171b4cd53af770ac42bda8d11d71e4",
+      "executed_source_sha256": "deef4a8eb9a763cf15ef69898b199feca8e44851081f0b591d8c4aec17125593",
+      "completed": true,
+      "error": null
+    },
+    "rights_scan_sequences.py": {
+      "source_sha256": "d2fe019a6857be9f80941cf8babd25dedcd96d7f2a32a524df2b1582e84052ef",
+      "executed_source_sha256": "11fd082db5a8a419085e011edbf874803ff3fe0ddac3464e188b9494bbedf521",
+      "completed": true,
+      "error": null
+    },
+    "rights_scan_prose.py": {
+      "source_sha256": "b2d89cc68761b3cdab0c35f365b452f1e9ce62bd14fa4e03b24766c93c12f848",
+      "executed_source_sha256": "a5b8fd62840366cffd84f1b369f30b1472a11b5475922d044a0890dff5394bd8",
+      "completed": true,
+      "error": null
+    },
+    "rights_scan_fields.py": {
+      "source_sha256": "960ed57f13652b3f5c8e292b2253c36a53dd756ad825374b52bb410980a91aed",
+      "executed_source_sha256": "c96943bf12fadc060393b1b4abff727f0c5ed4ae91e085dac1541dce3dd3c20f",
+      "completed": true,
+      "error": null
+    },
+    "privacy_scan.py": {
+      "source_sha256": "d2e50b95bcc0fe00ffb6ce2558849332a1843b6bd00c727e1dc823e4f37d29db",
+      "executed_source_sha256": "8f3c77a5525a4797f7d188265308d7e116e831e4207bf3d0a3dfd95f869c5059",
+      "completed": true,
+      "error": null
+    },
+    "field_definitions_check.py": {
+      "source_sha256": "5b2eb56779bb64ef1a5dc34dde5e6c06ba1edf7f0167553632177763a8447aef",
+      "executed_source_sha256": "20ba56ff2e2276f347ad88bdf851064d1257a8c4bad2ece83f440d887ea0134e",
+      "completed": true,
+      "error": null
+    },
+    "compare_scores.py": {
+      "source_sha256": "358ba0961750a8ecb0d60486c8c0925d0fd07e8ccd8e9073cf386bbd97b8facb",
+      "executed_source_sha256": "a91b9ef9fbd752b3170c52e284191bcec0a0a8ce0fac5e934615192be93901f9",
+      "completed": true,
+      "error": null
+    },
+    "manifest_check.py": {
+      "source_sha256": "6d4c5433eadc0922b9dacb275228a388a1ff7a0d4780731ac869f97837e27ea6",
+      "executed_source_sha256": "38080f161159f5786d3e40a2f7193ad81261a5372bd9d6868adb9c27508aa526",
+      "completed": true,
+      "error": null
+    }
+  }
+}
