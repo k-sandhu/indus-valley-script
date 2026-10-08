@@ -2,9 +2,11 @@
 
 Each package proposed a registry entry in its own directory. This script copies
 those entries into knowledge/experiments/registry.json under normalized IDs,
-adds the package review files to each entry's evidence, records the proposed
-ID, and leaves every existing entry unchanged. A rerun adds only the entries
-that are not yet present.
+adds the package review files to each entry's evidence and records the
+proposed ID. A rerun adds only the entries that are not yet present, except
+that entries named in REFRESH are rebuilt from their package's current
+proposal (keeping their ID and status) because the package recorded new
+endpoints after integration. Other existing entries stay unchanged.
 Run from the repository root:
 
     python experiments/2026-10-06-research-program/integrate_registry.py
@@ -34,7 +36,27 @@ PACKAGES = [
     ("RESEMBLANCE-BASELINE-01", "experiments/2026-10-06-resemblance-baseline", "exploratory-pilot-reviewed"),
     ("OBJECT-LEDGER-PILOT-01", "experiments/2026-10-07-object-ledger", "exploratory-pilot-reviewed-with-amendments"),
     ("HELSINKI1979-DIGITIZATION-01", "experiments/2026-10-07-helsinki1979-digitization", "failed-frozen-evaluations-quarantined"),
+    ("HELSINKI1979-ROW-VERIFICATION-01", "experiments/2026-10-08-helsinki1979-row-verification", "two-pilots-run-screen-failed-awaiting-owner-decision"),
+    ("HELSINKI1979-CHART-REFERENCE-AUDIT-01", "experiments/2026-10-08-chart-reference-audit", "exploratory-reviewed-chart-v2.1"),
+    ("HF-PUBLIC-RELEASE-01", "experiments/2026-10-08-hf-public-release", "private-preview-awaiting-owner-decisions"),
 ]
+
+# Entries already integrated whose package has since recorded new endpoints. A rerun copies the
+# package's current proposed fields over the integrated entry, keeping its ID and adding the reviews.
+REFRESH = {
+    "HELSINKI1979-DIGITIZATION-01": "experiments/2026-10-07-helsinki1979-digitization",
+}
+
+# Coordinator results recorded after a package's own entry was written.
+COORDINATOR_NOTES = {
+    "HELSINKI1979-ROW-VERIFICATION-01": (
+        " Pilot 2 (coordinator record, experiments/2026-10-08-helsinki1979-row-verification/pilot-2/2026-10-08-v1/PILOT-2-RESULTS.md):"
+        " two blind readers with clarified conventions, chart v2.1 labels and v3 geometry agreed on 132 of 144 rows;"
+        " 12 (8.3%) went to adjudication. First-pass controls 10/12 all fields per role with one number misread;"
+        " after adjudication 12/12 on number, classification, count and crop and 11/12 on the strict sequence."
+        " 4,224,785 combined tokens; full-run projection about 340 million tokens."
+    ),
+}
 
 
 def load_entry(directory):
@@ -52,29 +74,39 @@ def main():
     registry = json.loads(raw)
     existing = {entry["id"] for entry in registry["experiments"]}
     added = 0
-    for pid, directory, status in PACKAGES:
-        if pid in existing:
-            continue
-        added += 1
+    def build(pid, directory, status):
         proposed = load_entry(directory)
         evidence = list(proposed.get("evidence", []))
-        for review in ("REVIEW.md", "REVIEW-2.md"):
+        for review in ("REVIEW.md", "REVIEW-2.md", "REVIEW-V3.md", "REVIEW-0.3.0.md"):
             path = f"{directory}/{review}"
             if (ROOT / path).exists() and path not in evidence:
                 evidence.append(path)
-        registry["experiments"].append({
+        return {
             "id": pid,
             "theme": proposed["theme"],
             "status": status,
             "question": proposed["question"],
-            "outcome": proposed["outcome"],
+            "outcome": proposed["outcome"] + COORDINATOR_NOTES.get(pid, ""),
             "challenge": proposed["challenge"],
             "remedy": proposed["remedy"],
             "evidence": evidence,
             "retry_when": proposed["retry_when"],
             "proposed_id": proposed.get("id"),
             "package": directory,
-        })
+        }
+
+    refreshed = 0
+    for i, entry in enumerate(registry["experiments"]):
+        if entry["id"] in REFRESH:
+            new = build(entry["id"], REFRESH[entry["id"]], entry["status"])
+            if new != entry:
+                registry["experiments"][i] = new
+                refreshed += 1
+    for pid, directory, status in PACKAGES:
+        if pid in existing:
+            continue
+        added += 1
+        registry["experiments"].append(build(pid, directory, status))
     program_entry = {
         "id": "RESEARCH-PROGRAM-2026-10-06",
         "theme": "multi-model research program, lecture check and integration",
@@ -97,7 +129,7 @@ def main():
         added += 1
     text = json.dumps(registry, indent=2, ensure_ascii=True) + "\n"
     REGISTRY.write_bytes(text.replace("\n", newline).encode("utf-8"))
-    print(f"added {added} entries; registry now has {len(registry['experiments'])}")
+    print(f"added {added} entries, refreshed {refreshed}; registry now has {len(registry['experiments'])}")
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-# October 6–7 research program: approach, problems and repairs
+# October 6–8 research program: approach, problems and repairs
 
 On 6 October 2026 the user asked for a wider program after the contribution assessment: stronger machine-learning models for the Paper 001 restoration benchmark, a census of where Indus evidence is indexed and with what metadata, an inventory of project results outside decipherment, the directions proposed by Dennys Frenez in a recorded lecture and by other researchers, a backward chronology from later South Asian scripts, and new analyses of the Indus civilization beyond the script. The user asked that substantive work go to GPT-6.1-Sol through the Codex CLI, token-heavy work to GPT-6-Luna, and checking to Claude Sonnet 5.5, with parallel agents. The program record, prompts and launch scripts are in [the program directory](../../experiments/2026-10-06-research-program/README.md).
 
@@ -23,6 +23,14 @@ Every finished package went to a Sonnet reviewer with a common checklist ([REVIE
 ## The 7 October continuation
 
 The ledger and digitization packages added three process lessons. Agents running in the same Claude session shared one scratch folder, so helper scripts written by different blind readers overwrote each other; the readings themselves were unaffected, and the adjudicator was given its own temporary folder. GitHub refused every push to the repository for about half an hour with HTTP 500, including an empty test commit, while the repository, credentials and status page were normal; the commits stayed local and went through on a later retry. Packages kept tracking replay copies of large outputs despite instructions, and two outputs exceeded Git limits; those were excluded by rule and backed up, verified, to the private Hugging Face dataset with `hf_host.py`, which also moved package A's 3.09 GB of predictions off the full disk.
+
+## The 8 October continuation
+
+The user chose to finish the 1979 digitization by two routes at once, a rebuilt cropping step (option A, package M v3) and two-reader verification of every row (option B, package N), and asked for the Hugging Face dataset to be readied for public release (package O). The coordinator ran every reading as a separate Claude Sonnet 5.5 subagent with its own delivery folder, helper folder and return path, so the scratch-folder collisions of 7 October did not recur. Readers still saw sibling folder names when they listed parent directories, and they disclosed those listings; instructions from pilot 2 on forbade listing the returns and helper parents. Claude Code reports one combined token total per subagent, so the coordinator kept a ledger of those totals beside the frozen returns, and package N's scorer was extended to read it.
+
+The most consequential finding came from the pilot adjudicators. They noticed that the project's chart reference labelled the three-tick U as 206 although the chart prints 208. A Codex audit of all 687 printed codes (package P) corrected eight codes and two class numbers, and a blind second reading of 63 cells agreed. The release then adopted the corrected chart in version 0.3.0 while keeping the frozen benchmark vocabulary. Reviews of the release caught a card that named the wrong prediction fields, so that a user following it would have scored zero numbers and classifications without any error; version 0.3.1 fixed the names and made the scorer reject such files.
+
+Two operational problems recurred. The Codex model reported that it was at capacity for about an hour. The coordinator resumed the interrupted sessions with a bounded retry script (at most eight attempts, ten minutes apart), and every run completed on its first to third attempt. In pilot 2, three reader tasks stayed open in the harness for about 104 minutes after the readers recorded finishing, so the pilot record uses the readers' own times for the time projection and reports the task durations separately.
 
 ## What the reviews changed
 
