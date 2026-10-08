@@ -237,7 +237,7 @@ class Builder:
                     reference_kind='initial_disjoint_AI_reading' if version=='v1' else 'source_adjudication_after_two_AI_readings',
                     original_ocr_locator_exposed=bool(locator.get('ocr_number_witnesses')) if version=='v1' else False,status='Frozen evaluation'))
             assert len(rows)==(60 if version=='v1' else 80)
-            self.table('benchmark_rows_'+version,rows,split='test',license=MIXED_LICENSE,description=f'{len(rows)} source rows with immutable references and frozen predictions.')
+            self.table('benchmark_rows_'+version,rows,split='test',license=MIXED_LICENSE,description={'v1':'60 numbered-section targets with context crops, initial reference and original template predictions.','v2':'80 targets across three sections with context/exact crops and the second frozen template pipeline.','v3':'80 fresh targets on previously unused target pages with context/exact crops and the third frozen template pipeline.'}[version])
         self.table('benchmark_readings',[r for r in readings if r['benchmark']!='v3'],split='test',license=MIXED_LICENSE,description='Initial, repeated, independent and adjudicated readings; frozen endpoints remain distinct.')
         self.table('benchmark_readings_v3',[r for r in readings if r['benchmark']=='v3'],split='test',license=MIXED_LICENSE,description='240 v3 readings: two independent readers and adjudication for all 80 rows.')
         cards=[]
@@ -351,7 +351,7 @@ class Builder:
             row={k:r.get(k) for k in fields}
             row.update(source_locator=f"experiments/2026-10-06-evidence-census/synthesis/main-2026-10-07-v6/coverage.json#/sites/{i}",status='Exploratory')
             rows.append(row)
-        self.table('evidence_sites',rows,{'ICIT_object_count':pa.int64(),'worldwide_missing_objects':pa.int64(),'IM77_main_selected_objects':pa.int64()},description='115 site/provenance entities from synthesis v6; aggregate counts in distinct source frames.')
+        self.table('evidence_sites',rows,{'ICIT_object_count':pa.int64(),'worldwide_missing_objects':pa.int64(),'IM77_main_selected_objects':pa.int64()},description='115 site/provenance entities in the reconciled census compilation; aggregate counts in distinct source frames.')
         path=B/'sites-and-publications/publication-register.json'
         pubs=self.json(path,fields=['id','title','authors_editors','year','venue','url','opened'])['publications']
         self.table('evidence_publications',[dict(publication_id=p['id'],title=p['title'],authors_editors=p['authors_editors'],year=p['year'],venue=p['venue'],url=p['url'],access_record=p['opened'],source_locator=path.relative_to(ROOT).as_posix()+f"#/publications/{i}",status='Exploratory') for i,p in enumerate(pubs)],description='17 bibliographic register entries; historical catalogue coverage is documented separately.')
@@ -373,7 +373,7 @@ class Builder:
                 for k in float_fields:
                     if k in row:row[k]=float(row[k]) if row[k] else None
                 row['status']='Exploratory'
-            self.table(config,rows,{k:pa.int64() for k in integer}|{k:pa.float64() for k in float_fields},description='Synthesis v6 authored aggregate table; frame and measurement columns define denominators.')
+            self.table(config,rows,{k:pa.int64() for k in integer}|{k:pa.float64() for k in float_fields},description={'evidence_catalogue_coverage':'Catalogue-to-export key coverage by site and publication, with explicit matched/absent denominators.','evidence_catalogue_sections':'19 inspected Gujarat/north India CISI 1 sections, separating pottery/graffiti from other catalogue keys.','evidence_field_completeness':'Measured and assessed field availability by source register and bounded query frame.'}[config])
         path=B/'collections-and-datasets/paired-full-audit.csv'
         keep=['institution','museum_record_id','museum_accession','museum_url','cisi','join_method','shared_identifier','join_evidence','status']
         self.input(path,fields=keep)
@@ -430,7 +430,7 @@ class Builder:
                 row['method_path']='docs/METHODS.md#weight-metrology'
                 row['source_locator']=path.relative_to(ROOT).as_posix()+f'#data-row={i+1}'
                 row['status']='Exploratory'
-            self.table(name,rows,description='Aggregate metrology results after review; no Ascalone catalogue records included.')
+            self.table(name,rows,description={'weight_mass_bands':'Four Dholavira mass-band fits with sample sizes, fitted units, signal estimates and intervals.','weight_chance_controls':'Nine western-screen control rows across three frames and three randomization rules, with observed and simulated hit counts.'}[name])
 
     def finish(self):
         self.table('image_assets',self.image_rows,license=MIXED_LICENSE,description='Licensed PNGs with logical names, storage, portable parent labels and SHA256.')
@@ -462,16 +462,17 @@ def main():
     environment()
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--out',type=Path,default=HERE/'release')
+    parser.add_argument('--update-owner-records',action='store_true',help='Also refresh the owner checklist, private card and full root audit.')
     args=parser.parse_args();out=args.out.resolve()
     if not out.is_relative_to(HERE) or out.exists():
         raise ValueError('Choose a new output directory inside Package O.')
     out.mkdir(parents=True)
     b=Builder(out);b.chart();b.benchmarks();b.census();b.aggregates();b.finish()
     from write_release_docs import generate
-    generate(out, b)
+    generate(out, b, update_owner=args.update_owner_records)
     dump(b.records/'portable-source-map.json',b.portable.mapping)
     from finalize_audit import finalize
-    finalize(out,b.records)
+    finalize(out,b.records,update_owner=args.update_owner_records)
     print(compact(dict(configurations=len(b.tables),images=len(b.image_rows),rows={k:v['rows'] for k,v in b.tables.items()})))
 
 if __name__=='__main__':

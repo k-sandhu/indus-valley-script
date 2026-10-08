@@ -3,7 +3,7 @@ import argparse
 from pathlib import Path
 from build_release import HERE,ROOT,read,sha,dump
 
-def finalize(release,records):
+def finalize(release,records,update_owner=False):
     audit=read(records/'rights-audit.json')
     hosting=read(ROOT/'experiments/2026-10-06-research-program/hf-hosting-manifest.json')
     known={r['path'] for r in audit['files']}
@@ -19,7 +19,8 @@ def finalize(release,records):
         legal_text=rel.startswith('LICENSES/')
         audit['staged_assets'].append(dict(path=rel,bytes=path.stat().st_size,sha256=sha(path),rights_status='permission-recorded' if legal_text else ('explicit-license' if edition else 'own-work'),decision='include',basis='Official licence text, reproduced from the issuer; URLs and access record in sources.json.' if legal_text else 'Edition derivative or project-authored compilation/code/documentation.',edition_content_license='CC BY 4.0' if edition else None,project_contribution_license=None if legal_text else ('Unlicense' if rel.startswith('code/') else 'CC0 1.0'),owner_confirmation_pending=False))
     audit['decision_record']='Owner and coordinator follow-up, 8 October 2026; museum fact extracts include 49 and exclude 19.'
-    dump(records/'rights-audit.json',audit);dump(HERE/'rights-audit.json',audit)
+    dump(records/'rights-audit.json',audit)
+    if update_owner:dump(HERE/'rights-audit.json',audit)
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--release',type=Path,required=True);p.add_argument('--records',type=Path,required=True);a=p.parse_args()

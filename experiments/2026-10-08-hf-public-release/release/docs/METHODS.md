@@ -2,7 +2,7 @@
 
 ## Evidence census
 
-Synthesis v6 reconciles site labels and counts separately for face records, provisional families, catalogue entries and bounded collection queries. CISI 1 coverage compares base keys in inspected ranges, with recorded prefix aliases and duplicate-caption exclusions. Field completeness distinguishes measured presence, structural schema absence and inherited assessments. Museum joins are small factual extracts of identifier pairs, with citations per identifier to museum records, CISI 1 concordances or Marshall composite tables.
+The census compilation reconciles site labels and counts separately for inscribed-surface records, provisional export groupings, catalogue entries and bounded collection queries. Its sixth consolidation combined the registers after copied source prose/search snippets were removed. CISI means Corpus of Indus Seals and Inscriptions. CISI 1 coverage compares base keys in inspected ranges, with recorded prefix aliases and duplicate-caption exclusions. Field completeness distinguishes measured presence, structural schema absence and inherited assessments. Museum joins are small factual extracts of identifier pairs, with citations per identifier to museum records, CISI 1 concordances or Marshall composite tables.
 
 ## Weight metrology
 

@@ -1,6 +1,6 @@
 # Owner checklist and upload steps
 
-The owner confirmed own data/documentation CC0 1.0 and code Unlicense on 8 October 2026. Edition content retains CC BY 4.0. Author: k-sandhu, no affiliation or other personal details. The scorer and public methods are included. The coordinator uploaded version 0.2.0 privately and reports all 19 configurations (2,720 rows) and images loading. Package O performs no upload, repository creation or visibility change.
+The owner confirmed own data/documentation CC0 1.0 and code Unlicense on 8 October 2026. Edition content retains CC BY 4.0. Author: k-sandhu, no affiliation or other personal details. The scorer and public methods are included. The coordinator uploaded version 0.3.0 privately. REVIEW-0.3.0.md verifies all 23 configurations (3,308 rows), decoded images and 136 local/Hub files at commit 541766d5ea8a4c3b3ec5fcc416ee764af8763afb. Package O performs no upload, repository creation or visibility change.
 
 Three decisions remain open:
 
@@ -21,12 +21,12 @@ assert api.repo_info(repo_id, repo_type="dataset").private
 commit = api.upload_folder(
     repo_id=repo_id, repo_type="dataset",
     folder_path="experiments/2026-10-08-hf-public-release/release",
-    commit_message="Update reference benchmarks to 0.3.0 for private owner review",
+    commit_message="Update reference benchmarks to 0.3.1 for private owner review",
 )
 print(commit.oid)
 ```
 
-The existing private preview holds 0.2.0. Record the updated uploaded commit, download that private revision, compare every file against provenance/file-manifest.json and repeat loading/scoring. Inspect all configurations, including v3 and the corrected chart, and embedded images. Confirm the issues URL and CFF citation while still private. Hosted 0.3.0 checks remain for the coordinator after this local handoff.
+The existing private preview holds verified 0.3.0. Record the updated uploaded commit, download that private revision, compare every file against provenance/file-manifest.json and repeat loading/scoring. Inspect all configurations, including v3 and the corrected chart, and embedded images. Confirm the issues URL and CFF citation while still private. Repeat these hosted checks for 0.3.1 after the coordinator updates the private preview. The private datasets-server viewer returned HTTP 501 during the 0.3.0 review; check every image-bearing viewer table after public visibility is approved.
 
 After owner approval, use the dataset Settings visibility control to make **ksaw008/indus-reference-benchmarks** public and record its released commit. Keep ksaw008/indus-research-data and the current GitHub research repository private. Instructions follow https://huggingface.co/docs/huggingface_hub/guides/upload and https://huggingface.co/docs/hub/repositories-settings.
 

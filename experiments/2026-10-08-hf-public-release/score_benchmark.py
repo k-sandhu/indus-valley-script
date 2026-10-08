@@ -34,6 +34,16 @@ def validate_predictions(predictions, version):
     sections={'number_order','end_sorted','beginning_sorted'}
     for row in predictions:
         sample=row.get('sample_index','unknown')
+        for canonical,alias in [('printed_inscription_id','inscription_number'),('classification_literal','classification_code')]:
+            if canonical not in row and alias not in row:
+                raise ValueError(f'Sample {sample}: requires {canonical} (frozen alias {alias}); null is allowed')
+            if canonical in row and alias in row and row[canonical]!=row[alias]:
+                raise ValueError(f'Sample {sample}: conflicting {canonical} and {alias}')
+            value=row[canonical] if canonical in row else row[alias]
+            if value is not None and not isinstance(value,str):
+                raise ValueError(f'Sample {sample}: {canonical} must be a string or null')
+            # Normalize the in-memory copy for the original scoring functions.
+            row[alias]=value
         if version in ['v2','v3'] and row.get('section') not in sections:
             raise ValueError(f'Sample {sample}: {version} requires section in {sorted(sections)}')
         if not isinstance(row.get('units'),list):

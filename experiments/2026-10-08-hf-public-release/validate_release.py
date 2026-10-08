@@ -314,7 +314,7 @@ def main():
         source_checks=source_checks,source_pins=pin_results,benchmark_scores=scores,sequence_screen=sequence,prose_screen=prose,
         failures=failures,software={k:importlib.metadata.version(k) for k in ['datasets','pyarrow','numpy','PyYAML','Pillow','huggingface_hub']},
         python=sys.version,release_files=len(files)+1,release_bytes=sum(r['bytes'] for r in files)+(release/'provenance/file-manifest.json').stat().st_size,manifest_excludes_self=True,
-        unverified=['Hosted 0.3.0 loading/viewer awaits coordinator update; coordinator reports 0.2.0 all 19 configs load.','No expert epigraphic review.','Prose-overlap matches require disposition; screen covers available witnesses only.','Public issues repository is awaiting confirmation.'])
+        unverified=['Hosted 0.3.0 is verified by REVIEW-0.3.0.md; hosted 0.3.1 remains a coordinator check after upload. Private viewer returned HTTP 501; public viewer remains unchecked.','No expert epigraphic review.','Prose-overlap matches require disposition; screen covers available witnesses only.','Public issues repository is awaiting confirmation.'])
     dump(out,result)
     print(compact(dict(status=result['status'],configs=len(loads),rows=result['total_table_rows'],images=len(images),failures=failures,prose_overlap_windows=prose['overlap_windows'],sequence_matches=sequence['matching_directions'])))
     if failures:sys.exit(1)

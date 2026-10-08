@@ -22,6 +22,29 @@ class ChartChanges:
             for code in [row['code']] + row['alternatives']:
                 self.code_cells[code].add(cell)
 
+    def candidate_changes(self, unit):
+        """Use field-specific explicit locations, intersected with old membership."""
+        changes=[];potential=[]
+        for field in ('strict_candidate_codes','shape_only_candidate_codes'):
+            locs=unit.get('shape_only_chart_locations') if field=='shape_only_candidate_codes' else None
+            if locs is None:locs=unit.get('chart_locations',unit.get('chart_references',[]))
+            if isinstance(locs,dict):
+                bycode={int(k):{cell_key(x) for x in (v if isinstance(v,list) else [v])} for k,v in locs.items()}
+                locations=set().union(*bycode.values()) if bycode else set()
+            else:locations={cell_key(x) for x in (locs or [])};bycode={}
+            codes=set(unit.get(field,[]));mapped=set()
+            for code in codes:
+                identities=self.code_cells[code]
+                candidates=bycode.get(code,locations).intersection(identities)
+                if candidates:
+                    mapped.update(c for cell in candidates for c in [self.new[cell]['code'],*self.new[cell]['alternatives']])
+                else:
+                    mapped.add(code)
+                    if identities.intersection(self.changes) and any({self.new[c]['code'],*self.new[c]['alternatives']}!={code} for c in identities):
+                        potential.append(dict(field=field,old_code=code,possible_cell_mappings={c:sorted({self.new[c]['code'],*self.new[c]['alternatives']}) for c in sorted(identities)}))
+            if mapped!=codes:changes.append(field)
+        return sorted(changes),potential
+
     def reference_flags(self, row, version=None, authoritative=False):
         """One flag per unit, keeping definite cell joins separate from possibilities."""
         group = self.impact['M_references'].get(version) if authoritative else None
@@ -40,13 +63,7 @@ class ChartChanges:
                              for x in group['potential_mappings'] if x['sample_index'] == row['sample_index'] and x['unit_index'] == unit_index]
                 changes = sorted({x['field'] for x in group['unit_changes'] if x['sample_index'] == row['sample_index'] and x['unit_index'] == unit_index})
             else:
-                changes = []
-                for field in ('strict_candidate_codes', 'shape_only_candidate_codes'):
-                    for code in unit.get(field, []):
-                        identities = self.code_cells[code]
-                        if not identities.intersection(cells) and identities.intersection(self.changes):
-                            potential.append(dict(field=field, old_code=code,
-                                possible_cell_mappings={c: sorted({self.new[c]['code'], *self.new[c]['alternatives']}) for c in sorted(identities)}))
+                changes,potential=self.candidate_changes(unit)
             conflict = version == 'v3' and any(x['sample_index'] == row['sample_index'] and x['unit_index'] == unit_index
                            for x in self.impact['M_v3_reported_location_conflicts'])
             flags.append(dict(unit_index=unit_index, corrected_cell=bool(affected), cells=affected,
