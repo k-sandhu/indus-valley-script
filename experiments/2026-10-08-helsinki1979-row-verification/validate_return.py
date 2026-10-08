@@ -14,7 +14,7 @@ if __name__ == '__main__':
     data = None
     try:
         data = W.read(args.return_file)
-        errors = W.validate_return(data, packet, W.code_universe())
+        errors = W.validate_return(data, packet, W.code_universe(packet))
     except (KeyError, TypeError, ValueError, AttributeError) as error:
         errors = [f'Malformed JSON/return: {error}']
     W.write(args.out, dict(status='Verified computation' if not errors else 'Failed', valid=not errors,

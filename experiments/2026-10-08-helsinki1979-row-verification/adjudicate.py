@@ -43,12 +43,16 @@ def prepare(run, returns, out):
         role = out / 'adjudicator'
         folder = role / bid
         folder.mkdir(parents=True)
-        instructions = (W.HERE / 'pilot/adjudication/INSTRUCTIONS.md').read_text(encoding='utf-8')
+        instructions_path = state['manifest'].get('adjudicator_instructions')
+        instructions = (W.ROOT / instructions_path if instructions_path else W.HERE / 'pilot/adjudication/INSTRUCTIONS.md').read_text(encoding='utf-8')
         if not (role / 'INSTRUCTIONS.md').exists():
             W.write_text(role / 'INSTRUCTIONS.md', instructions)
         # Copy images and chart only. No proposal file or original reader metadata is delivered.
         for asset in source_packet['assets']:
-            if not asset['path'].endswith('.png'):
+            if asset['path'] == '../INSTRUCTIONS.md':
+                continue
+            chart_metadata = asset['path'].startswith('../charts/') and Path(asset['path']).suffix in ('.md', '.json')
+            if not asset['path'].endswith('.png') and not chart_metadata:
                 continue
             target = (folder / asset['path']).resolve()
             W.owned(target)
@@ -83,13 +87,17 @@ def prepare(run, returns, out):
         W.write(folder / 'readings.json', dict(rows=readings, column_inventories=inventory))
         assets = [dict(path=Path(os.path.relpath(p, folder)).as_posix(), sha256=W.sha(p), bytes=p.stat().st_size)
                   for p in sorted(folder.glob('*.png')) + sorted((role / 'charts').glob('*.png'))
-                  + [folder / 'readings.json', role / 'INSTRUCTIONS.md']]
+                  + [folder / 'readings.json', role / 'INSTRUCTIONS.md']
+                  + sorted((role / 'charts').glob('*.json')) + sorted((role / 'charts').glob('*.md'))]
         packet = dict(schema_version=1, status='Proposed', batch_id=bid, role='adjudicator',
                       source_sha256=source_packet['source_sha256'], source_attribution=W.ATTRIBUTION,
                       license='CC BY 4.0', items=items, assets=assets,
                       assigned_column=source_packet['assigned_column'], page_dimensions=source_packet['page_dimensions'],
                       instructions='../INSTRUCTIONS.md', readings='readings.json', proposals=None,
                       requires_complete_inventory=not coverage)
+        if source_packet.get('chart_code_universe'):
+            packet['chart_code_universe'] = source_packet['chart_code_universe']
+            packet['chart_reference'] = source_packet['chart_reference']
         packet['packet_sha256'] = W.packet_hash(packet)
         W.write(folder / 'packet.json', packet)
         form = W.template(packet)

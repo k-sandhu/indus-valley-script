@@ -280,7 +280,9 @@ def validate_return(data, packet, codes):
     return errors
 
 
-def code_universe():
+def code_universe(packet=None):
+    if packet and packet.get('chart_code_universe'):
+        return set(packet['chart_code_universe'])
     return {c for row in read(M / 'chart-snapshot.json')['rows'] for c in [row['code']] + row['alternatives']}
 
 

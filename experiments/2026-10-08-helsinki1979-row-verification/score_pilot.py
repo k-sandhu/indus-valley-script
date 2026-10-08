@@ -8,12 +8,12 @@ import random
 from collections import defaultdict
 from pathlib import Path
 import workflow as W
+import usage_ledger as U
 
 
-def collect(run, returns, adjudications=None):
+def collect(run, returns, adjudications=None, usage_ledger=None):
     manifest = W.read(Path(run) / 'coordinator/private-manifest.json')
     result = dict(manifest=manifest, batches=[], errors=[], tasks=[])
-    codes = W.code_universe()
     for batch in manifest['batches']:
         state = dict(batch=batch, readings={}, packet={}, hashes={}, adjudication=None)
         for role in ('reader-1', 'reader-2'):
@@ -27,7 +27,7 @@ def collect(run, returns, adjudications=None):
                 continue
             try:
                 data = W.read(path)
-                errors = W.validate_return(data, packet, codes)
+                errors = W.validate_return(data, packet, W.code_universe(packet))
             except (ValueError, TypeError, KeyError, AttributeError) as e:
                 errors = [f'malformed return: {type(e).__name__}: {e}']
             if errors:
@@ -45,7 +45,7 @@ def collect(run, returns, adjudications=None):
                 packet = W.check_packet(packetpath)
                 try:
                     data = W.read(path)
-                    errors = W.validate_return(data, packet, codes)
+                    errors = W.validate_return(data, packet, W.code_universe(packet))
                 except (ValueError, TypeError, KeyError, AttributeError) as e:
                     errors = [f'malformed adjudication: {e}']
                 # Prevent applying an adjudication to different or changed initial readings.
@@ -61,6 +61,7 @@ def collect(run, returns, adjudications=None):
                     state['packet']['adjudicator'] = packet
                     result['tasks'].append(task_record(data, batch, path))
         result['batches'].append(state)
+    result['usage_ledger'] = U.attach(result['tasks'], usage_ledger)
     return result
 
 
@@ -146,9 +147,9 @@ def priced(task, rates):
             + output * rate['output_usd_per_million']) / 1000000
 
 
-def costs(tasks, pages, full_rows, concurrency, adjud_rate, rates):
+def costs(tasks, pages, full_rows, concurrency, adjud_rate, rates, expected_batches=None):
     roles = {}
-    metric_names = ('elapsed_seconds', 'input_tokens', 'cached_input_tokens', 'output_tokens', 'billed_usd', 'priced_usd')
+    metric_names = ('elapsed_seconds', 'input_tokens', 'cached_input_tokens', 'output_tokens', 'billed_usd', 'priced_usd', 'combined_tokens')
     rng = random.Random(2026100803)
     for role in ('reader-1', 'reader-2', 'adjudicator'):
         selected = [t for t in tasks if t['role'] == role]
@@ -157,7 +158,7 @@ def costs(tasks, pages, full_rows, concurrency, adjud_rate, rates):
         per_metric = {}
         for metric in metric_names:
             def value(t):
-                return t['elapsed_seconds'] if metric == 'elapsed_seconds' else priced(t, rates) if metric == 'priced_usd' else t['usage'].get(metric)
+                return t['elapsed_seconds'] if metric == 'elapsed_seconds' else t.get('combined_tokens') if metric == 'combined_tokens' else priced(t, rates) if metric == 'priced_usd' else t['usage'].get(metric)
             values = [value(t) for t in selected]
             complete = bool(values) and all(v is not None for v in values)
             total = sum(values) if complete else None
@@ -166,7 +167,8 @@ def costs(tasks, pages, full_rows, concurrency, adjud_rate, rates):
                                       per_target_row_including_controls=total / ntarget if total is not None and ntarget else None)
         roles[role] = dict(tasks=len(selected), assigned_rows=nassigned, target_rows=ntarget, metrics=per_metric)
     # No full projection until every initial column task has valid timing/identity.
-    initial_complete = all(roles[r]['tasks'] == len(pages) * 2 for r in ('reader-1', 'reader-2'))
+    expected_batches = len(pages) * 2 if expected_batches is None else expected_batches
+    initial_complete = all(roles[r]['tasks'] == expected_batches for r in ('reader-1', 'reader-2'))
     projections = {}
     for metric in metric_names:
         initial = None
@@ -182,7 +184,7 @@ def costs(tasks, pages, full_rows, concurrency, adjud_rate, rates):
                 for role in ('reader-1', 'reader-2'):
                     ts = [t for p in sampled for t in tasks if t['role'] == role and t['page'] == p]
                     def value(t):
-                        return t['elapsed_seconds'] if metric == 'elapsed_seconds' else priced(t, rates) if metric == 'priced_usd' else t['usage'][metric]
+                        return t['elapsed_seconds'] if metric == 'elapsed_seconds' else t.get('combined_tokens') if metric == 'combined_tokens' else priced(t, rates) if metric == 'priced_usd' else t['usage'][metric]
                     rate = sum(value(t) for t in ts) / sum(t['target_rows'] for t in ts)
                     role_rates.append(rate)
                     rate_sum += rate
@@ -203,7 +205,7 @@ def costs(tasks, pages, full_rows, concurrency, adjud_rate, rates):
             for i, initial_value in enumerate(initial_draws):
                 ats = [rng.choice(adjtasks) for __ in adjtasks]
                 def avalue(t):
-                    return t['elapsed_seconds'] if metric == 'elapsed_seconds' else priced(t, rates) if metric == 'priced_usd' else t['usage'].get(metric)
+                    return t['elapsed_seconds'] if metric == 'elapsed_seconds' else t.get('combined_tokens') if metric == 'combined_tokens' else priced(t, rates) if metric == 'priced_usd' else t['usage'].get(metric)
                 if any(avalue(t) is None for t in ats):
                     continue
                 adjrate_draw = sum(avalue(t) for t in ats) / sum(t['target_rows'] for t in ats)
@@ -236,14 +238,14 @@ def costs(tasks, pages, full_rows, concurrency, adjud_rate, rates):
                 rates_assumption=rates, monetary_cost_known=projections['billed_usd']['total'] is not None)
 
 
-def score(run, returns, out, adjudications=None, full_rows=11369, concurrency=1, rates=None):
+def score(run, returns, out, adjudications=None, full_rows=11369, concurrency=1, rates=None, usage_ledger=None, printed_columns=328, total_concurrency=12):
     out = W.owned(out)
     if out.exists():
         raise FileExistsError('Use a fresh aggregate output directory')
     if full_rows < 1 or concurrency < 1:
         raise ValueError('Full rows and concurrency must be positive')
     E = W.evaluator()
-    state = collect(run, returns, adjudications)
+    state = collect(run, returns, adjudications, usage_ledger)
     all_rows, page_disputes, coverage_rows, wrong_agreed_controls = [], defaultdict(lambda: [0, 0]), [], []
     roles, details = {}, []
     for role in ('reader-1', 'reader-2'):
@@ -312,17 +314,45 @@ def score(run, returns, out, adjudications=None, full_rows=11369, concurrency=1,
                         all_columns_complete=all(c['source_column_complete'] for c in coverage_rows))
         screening = dict(status='Verified computation' if all(criteria.values()) else 'Failed', criteria=criteria,
                          reason='Screening only; small reference controls and target agreement do not certify corpus accuracy')
-    cost = costs(state['tasks'], sorted(set(b['batch']['pdf_page'] for b in state['batches'])), full_rows, concurrency, load, rates)
+    cost = costs(state['tasks'], sorted(set(b['batch']['pdf_page'] for b in state['batches'])), full_rows, concurrency, load, rates, len(state['batches']))
+    cost['measured_totals'] = U.measurement(state['tasks'])
+    cost['coordinator_ledger'] = state['usage_ledger']
+    cost['column_task_projection'] = U.column_projection(state['tasks'], state['batches'], printed_columns, full_rows, total_concurrency)
+    final_controls = []
+    dispute_fields = defaultdict(int)
+    for b in state['batches']:
+        aj = {r['item_id']: r for r in b['adjudication']['rows']} if b['adjudication'] else {}
+        for item in comparison(b)[0]:
+            if item['control']:
+                row = aj.get(item['item_id']) or (item['a'] if item['agrees'] else None)
+                if row:
+                    final_controls.append(control_fields(row, b['batch']['controls'][item['item_id']]))
+            elif item['requires_adjudication']:
+                for field in item['differences']:
+                    dispute_fields[field] += 1
     summary = dict(status='Verified computation', reader_evaluation_status='Proposed' if not paired else 'Frozen evaluation',
                    control_accuracy=roles, target_agreement=agreement, adjudication_load=load,
+                   final_control_accuracy=dict(evaluated_controls=len(final_controls), assigned_controls=sum(len(b['batch']['controls']) for b in state['batches']),
+                       fields={k: E.wilson(sum(v[k] for v in final_controls), len(final_controls)) for k in ('number','classification','count','crop','strict_sequence','unit_kind_and_underline','all_required_fields')}),
+                   target_dispute_fields=dict(dispute_fields),
                    wrong_agreed_controls=wrong_agreed_controls, screening=screening,
                    progress=progress, cost=cost, score_code_sha256=W.sha(__file__), workflow_sha256=W.sha(W.HERE / 'workflow.py'),
                    private_manifest_sha256=W.sha(Path(run) / 'coordinator/private-manifest.json'),
                    input_reading_hashes=[b['hashes'] for b in state['batches']],
                    estimand_note='Unseen-target agreement is measured only after paired readings; target accuracy requires independent source adjudication.')
+    if state['manifest'].get('pilot_version') == 2:
+        checks = dict(screening['criteria'])
+        checks['all_assigned_returns_validate'] = not state['errors'] and progress['valid_reader_tasks'] == progress['expected_reader_tasks']
+        checks['target_adjudication_at_most_10_percent'] = load['rate'] is not None and load['rate'] <= .10
+        checks['final_controls_all_correct'] = (len(final_controls) == summary['final_control_accuracy']['assigned_controls']
+                                              and bool(final_controls) and all(v['all_required_fields'] for v in final_controls))
+        summary['revised_screening'] = dict(status='Proposed' if not paired else 'Verified computation' if all(checks.values()) else 'Failed', criteria=checks,
+            note='Post-pilot-1 revised workflow screen; final control criterion stays false until every control has an accepted final row.')
     if any(t['evidence_status'] == 'Synthetic' for t in state['tasks']):
         summary['reader_evaluation_status'] = 'Synthetic'
         summary['screening']['status'] = 'Synthetic'
+        if 'revised_screening' in summary:
+            summary['revised_screening']['status'] = 'Synthetic'
     W.write(out / 'metrics.json', summary)
     W.write(out / 'progress.json', progress)
     W.write(out / 'cost-ledger.json', dict(status='Verified computation', evidence_status=summary['reader_evaluation_status'], tasks=state['tasks'], aggregate=cost))
@@ -343,6 +373,9 @@ if __name__ == '__main__':
     parser.add_argument('--full-rows', type=int, default=11369)
     parser.add_argument('--workers-per-role', type=int, default=1)
     parser.add_argument('--rates', type=Path)
+    parser.add_argument('--usage-ledger', type=Path)
+    parser.add_argument('--printed-columns', type=int, default=328)
+    parser.add_argument('--total-concurrency', type=int, default=12)
     args = parser.parse_args()
     rates = W.read(args.rates) if args.rates else None
     if rates:
@@ -350,4 +383,6 @@ if __name__ == '__main__':
             for key in ('input_usd_per_million', 'cached_input_usd_per_million', 'output_usd_per_million'):
                 if not W.finite_nonnegative(rate.get(key)):
                     raise ValueError('Rate card requires all three finite nonnegative rates per model')
-    score(args.run, args.returns, args.out, args.adjudications, args.full_rows, args.workers_per_role, rates)
+    if args.printed_columns < 1 or args.total_concurrency < 1:
+        raise ValueError('Printed columns and total concurrency must be positive')
+    score(args.run, args.returns, args.out, args.adjudications, args.full_rows, args.workers_per_role, rates, args.usage_ledger, args.printed_columns, args.total_concurrency)

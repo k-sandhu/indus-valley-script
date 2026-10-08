@@ -6,13 +6,14 @@ from collections import Counter, defaultdict
 from pathlib import Path
 import workflow as W
 import score_pilot as S
+import usage_ledger as U
 
 
-def merge(run, returns, out, summary_out, adjudications=None):
+def merge(run, returns, out, summary_out, adjudications=None, usage_ledger=None):
     out = W.owned(out)
     if not out.is_relative_to(W.RAW) or out.exists():
         raise ValueError('Use a fresh local raw merge directory')
-    state = S.collect(run, returns, adjudications)
+    state = S.collect(run, returns, adjudications, usage_ledger)
     records, false_targets, batch_progress = [], [], []
     for b in state['batches']:
         rows, initial_coverage = S.comparison(b)
@@ -30,6 +31,8 @@ def merge(run, returns, out, summary_out, adjudications=None):
                               proposal_occurrence_key=b['batch']['target_keys'].get(iid),
                               packet_hashes={role: p['packet_sha256'] for role, p in b['packet'].items()},
                               reading_hashes=b['hashes'], differences=item['differences'])
+            if b['packet']['reader-2'].get('chart_reference'):
+                provenance['chart_reference'] = b['packet']['reader-2']['chart_reference']
             if row and row.get('valid_printed_target') is False:
                 false_targets.append(dict(provenance=provenance, final_row=row, candidate_readings=candidates))
                 continue
@@ -91,6 +94,8 @@ def merge(run, returns, out, summary_out, adjudications=None):
                    columns=batch_progress, invalid_returns=state['errors'], raw_output=W.relative(out),
                    merged_sha256=W.sha(out / 'merged-records.json'), ledger_staging_sha256=W.sha(out / 'ledger-staging.jsonl'),
                    script_sha256=W.sha(__file__), note='Staging requires reviewed object/surface concordance before Package L import.')
+    summary['cost'] = dict(measured_totals=U.measurement(state['tasks']), coordinator_ledger=state['usage_ledger'])
+    W.write(out / 'task-cost-ledger.json', dict(tasks=state['tasks'], aggregate=summary['cost']))
     W.write(summary_out, summary)
     print(f'Merged {len(records)} records; staged {len(ledger)} rows; imported 0')
     return summary
@@ -103,5 +108,6 @@ if __name__ == '__main__':
     p.add_argument('--adjudications', type=Path)
     p.add_argument('--out', type=Path, required=True)
     p.add_argument('--summary-out', type=Path, required=True)
+    p.add_argument('--usage-ledger', type=Path)
     args = p.parse_args()
-    merge(args.run, args.returns, args.out, args.summary_out, args.adjudications)
+    merge(args.run, args.returns, args.out, args.summary_out, args.adjudications, args.usage_ledger)
