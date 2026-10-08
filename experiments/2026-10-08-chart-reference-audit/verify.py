@@ -6,10 +6,87 @@ import ast
 import collections
 import importlib.metadata
 import json
+import argparse
 import platform
 import subprocess
 from audit import ROOT, OWN, RAW, read, write, sha, key
 from PIL import Image
+
+
+def verify_revision():
+    checks=[]
+    def check(name, condition, detail=None):
+        checks.append(dict(check=name, passed=bool(condition), detail=detail))
+        assert condition, (name, detail)
+    parent=read(OWN/'chart-reference-v2.json'); current=read(OWN/'chart-reference-v2.1.json')
+    comparison=read(OWN/'comparison-v2.1.json'); observations=read(OWN/'cell-observations-v2.1.json')['rows']
+    preserved=read(OWN/'preserved-inputs-v2.1.json')['inputs']
+    check('V2, legacy outputs and every reviewer file unchanged', all(sha(ROOT/p)==h for p,h in preserved.items()), len(preserved))
+    check('All current own JSON files parse', all(isinstance(read(p),(dict,list)) for p in OWN.glob('*.json')))
+    for p in OWN.glob('*.py'): ast.parse(p.read_text(encoding='utf8'))
+    check('Own Python files parse', True)
+    check('687 ordered cells and original row fields retained', len(current['rows'])==687 and
+          [key(r) for r in current['rows']]==[key(r) for r in parent['rows']] and
+          all(set(a).issubset(b) for a,b in zip(parent['rows'],current['rows'])))
+    check('No code or alternative changed from v2', all(a['code']==b['code'] and a['alternatives']==b['alternatives'] for a,b in zip(parent['rows'],current['rows'])))
+    rank_changes=[key(b) for a,b in zip(parent['rows'],current['rows']) if a['rank']!=b['rank']]
+    check('Only added class correction is p20_c3_r33, 85 to 86', rank_changes==['p20_c3_r33'] and
+          next(r['rank'] for r in current['rows'] if key(r)=='p20_c3_r33')==86)
+    check('687 unique codes', len({r['code'] for r in current['rows']})==687)
+    ranks=[r['rank'] for r in current['rows']]
+    check('Complete nondecreasing classes 1 to 401', ranks==sorted(ranks) and set(ranks)==set(range(1,402)))
+    check('Auxiliary flags preserved', all(a['dashed_auxiliary']==b['dashed_auxiliary'] for a,b in zip(parent['rows'],current['rows'])))
+    medium={key(r) for r in current['rows'] if r['numeric_confidence']=='medium'}
+    required={'p20_c4_r13','p21_c0_r1','p21_c0_r18','p21_c3_r4','p21_c5_r34','p21_c6_r1'}
+    check('Required cells medium and all medium reasons recorded', required.issubset(medium) and
+          medium==set(comparison['summary']['medium_confidence_cells']) and len(medium)==33)
+    check('15 first-pass reader errors and 630 once-read cells documented', comparison['summary']['first_pass_reader_errors']==15 and
+          comparison['summary']['original_audit_once_read_cells']==630)
+    reviewer=read(OWN/'review/independent-readings.json')['cells']
+    bycell={key(r):r for r in current['rows']}
+    check('Reviewer final blind sample agrees on all 63 codes and classes', len(reviewer)==63 and
+          all(bycell[r['cell']]['rank']==r['class_number'] and bycell[r['cell']]['code']==r['code'] for r in reviewer))
+    check('Reviewer nearest-neighbor witness reused unchanged', read(OWN/'review/knn-5-6-8-check.json')['summary']==
+          {'digits':939,'counts':{'5':368,'8':282,'6':289},'agree':938,'disagree':1})
+    manifest=read(RAW/'render-manifest.json')
+    check('Original PDF, atlas and reference pins unchanged', sha(ROOT/manifest['source_pdf'])==manifest['source_sha256'] and
+          sha(ROOT/'output/chart_atlas/reference.json')==manifest['atlas_sha256'] and
+          sha(ROOT/'research/chart_reference/manual_numeric_reference.json')==manifest['original_reference_sha256'])
+    check('First-pass observations preserved', sha(OWN/'visual-readings.json')==read(RAW/'review-selection.json')['visual_readings_sha256'])
+    native=read(RAW/'revision-2026-10-08-v2.1/native-render-manifest.json')
+    check('Eight native inspection crops retain recorded hashes', len(native['cells'])==8 and
+          all(sha(ROOT/r['path'])==r['sha256'] for r in native['cells']))
+    integrity=read(OWN/'consumer-input-integrity-v2.1.json')
+    check('Current consumer pins unchanged', integrity['unchanged'] and all(sha(ROOT/p)==v['sha256'] for p,v in integrity['inputs'].items()),integrity['files'])
+    generated=['chart-reference-v2.1.json','cell-observations-v2.1.json','comparison-v2.1.json','impact-v2.1.json','consumer-input-integrity-v2.1.json']
+    before={n:sha(OWN/n) for n in generated}
+    subprocess.run([sys.executable,'-B',str(OWN/'amend-reference.py'),'apply'],cwd=ROOT,check=True,capture_output=True)
+    subprocess.run([sys.executable,'-B',str(OWN/'impact.py'),'--reference',str(OWN/generated[0]),
+                    '--comparison',str(OWN/generated[2]),'--out',str(OWN/generated[3]),'--integrity-out',str(OWN/generated[4]),
+                    '--raw-subdir','revision-2026-10-08-v2.1'],cwd=ROOT,check=True,capture_output=True)
+    check('Amendment and impact replay byte-identically',before=={n:sha(OWN/n) for n in generated})
+    check('Preserved witnesses unchanged after replay',all(sha(ROOT/p)==h for p,h in preserved.items()))
+    images=list((RAW/'revision-2026-10-08-v2.1').glob('*.png'))
+    for p in images:
+        with Image.open(p) as im:im.verify()
+    check('All nine new PNGs decode',len(images)==9)
+    check('Current guidance and reports present',all((OWN/n).exists() for n in
+          ('README.md','REPORT.md','RETROSPECTIVE.md','PROTOCOL.md','RECOMMENDED-USE.md','registry-entry.json')))
+    payload=(RAW/'revision-2026-10-08-v2.1/prose-scan.txt').read_bytes()
+    encoding='utf-16' if payload.startswith((b'\xff\xfe',b'\xfe\xff')) else 'utf-8-sig'
+    prose=json.loads(payload.decode(encoding))
+    check('Prose scan completed with no flags',not prose['flags'],prose['files_scanned'])
+    write(OWN/'verification-v2.1.json',dict(status='Verified computation',checks_passed=len(checks),checks=checks,
+          scope='Mechanical replay and immutable witness checks. V2.1 numbering remains Exploratory, two AI readings, no expert review.'))
+    inventory=[]
+    for folder in (OWN,RAW):
+        for p in sorted(folder.rglob('*')):
+            if p.is_file() and p!=OWN/'file-inventory-v2.1.json':
+                disposition='reviewer-owned-readonly' if p.is_relative_to(OWN/'review') or p==OWN/'REVIEW.md' else ('own-work' if p.is_relative_to(OWN) else 'local-only')
+                inventory.append(dict(path=p.relative_to(ROOT).as_posix(),sha256=sha(p),bytes=p.stat().st_size,disposition=disposition))
+    write(OWN/'file-inventory-v2.1.json',dict(files=inventory,inventory_self='experiments/2026-10-08-chart-reference-audit/file-inventory-v2.1.json',
+          status='Verified computation'))
+    print(dict(checks_passed=len(checks),preserved_files=len(preserved),new_raw_pngs=len(images)))
 
 
 def main():
@@ -94,4 +171,6 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    parser=argparse.ArgumentParser();parser.add_argument('--version',choices=['2','2.1'],default='2')
+    args=parser.parse_args()
+    verify_revision() if args.version=='2.1' else main()

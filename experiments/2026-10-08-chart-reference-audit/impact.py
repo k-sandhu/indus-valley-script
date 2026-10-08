@@ -5,6 +5,8 @@ sys.dont_write_bytecode = True
 import collections
 import json
 import re
+import argparse
+from pathlib import Path
 from audit import ROOT, OWN, RAW, read, write, sha, key
 import pyarrow.parquet as pq
 
@@ -12,6 +14,19 @@ M = ROOT / 'experiments/2026-10-07-helsinki1979-digitization'
 N = ROOT / 'data/raw/2026-10-08-helsinki1979-row-verification'
 O = ROOT / 'experiments/2026-10-08-hf-public-release/release'
 inputs = {}
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--reference', type=Path, default=OWN / 'chart-reference-v2.json')
+parser.add_argument('--comparison', type=Path, default=OWN / 'comparison.json')
+parser.add_argument('--out', type=Path, default=OWN / 'impact.json')
+parser.add_argument('--integrity-out', type=Path, default=OWN / 'consumer-input-integrity.json')
+parser.add_argument('--raw-subdir', default='')
+args = parser.parse_args() if __name__ == '__main__' else parser.parse_args([])
+for field in ('reference', 'comparison', 'out', 'integrity_out'):
+    setattr(args, field, getattr(args, field).resolve())
+for output in (args.out, args.integrity_out):
+    assert output.resolve().is_relative_to(OWN.resolve()), 'Output must remain in owned directory.'
+RAWOUT = (RAW / args.raw_subdir).resolve()
+assert RAWOUT.is_relative_to(RAW.resolve()), 'Extracted rows must remain in local raw directory.'
 
 
 def rel(path):
@@ -41,9 +56,9 @@ def ck(value):
 
 
 old = {key(r): r for r in load(ROOT / 'research/chart_reference/manual_numeric_reference.json')['rows']}
-new = {key(r): r for r in load(OWN / 'chart-reference-v2.json')['rows']}
+new = {key(r): r for r in load(args.reference)['rows']}
 order = {cell: i for i, cell in enumerate(old)}
-changes = {c['cell']: c['fields'] for c in load(OWN / 'comparison.json')['changes']}
+changes = {c['cell']: c['fields'] for c in load(args.comparison)['changes']}
 old_labels = {cell: set([r['code']] + r['alternatives']) for cell, r in old.items()}
 new_labels = {cell: set([r['code']] + r['alternatives']) for cell, r in new.items()}
 code_cells = collections.defaultdict(set)
@@ -231,12 +246,12 @@ def main():
         refs = [json.loads(r['reference_json']) for r in rows]
         preds = [json.loads(r['prediction_json']) for r in rows]
         # Extracted source rows remain local for reviewer replay; tracked outputs contain locators and deltas.
-        write(RAW / f'public-{version}-extracted.json', rows)
+        write(RAWOUT / f'public-{version}-extracted.json', rows)
         orefs[version] = reference_changes(refs, rel(path) + ':reference_json')
         opreds[version] = prediction_changes(preds, rel(path) + ':prediction_json')
     readings_path = O / 'data/benchmark_readings.parquet'
     readings = table(readings_path)
-    write(RAW / 'public-reading-extracted.json', readings)
+    write(RAWOUT / 'public-reading-extracted.json', readings)
     reading_groups = collections.defaultdict(list)
     for r in readings:
         reading = json.loads(r['reading_json'])
@@ -293,13 +308,13 @@ def main():
                                                                         'drawn unit count', 'source row recall', 'confidence values',
                                                                         'reference ambiguous-unit and unique-reference-row counts under the direct joins'],
                                            scores_recomputed=False))
-    write(OWN / 'impact.json', result)
+    write(args.out, result)
     after = {path: sha(ROOT / path) for path in inputs}
     integrity = dict(status='Verified computation', files=len(inputs),
                      unchanged=all(after[p] == v['sha256'] for p, v in inputs.items()),
                      changed_inputs=[p for p, v in inputs.items() if after[p] != v['sha256']], inputs=inputs)
     assert integrity['unchanged'], integrity['changed_inputs']
-    write(OWN / 'consumer-input-integrity.json', integrity)
+    write(args.integrity_out, integrity)
     print(json.dumps(dict(M={v: d['summary'] for v, d in mrefs.items()},
                           public_references={v: d['summary'] for v, d in orefs.items()},
                           public_predictions={v: d['summary'] for v, d in opreds.items()},
