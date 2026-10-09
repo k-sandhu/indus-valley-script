@@ -1,1011 +1,136 @@
-# Claim ledger
-
-This ledger contains 126 authored claim records. Repeated illustrations of one assertion are grouped. [Coverage](ledger-coverage.json) identifies the unfinished exhaustive reading audit; [reading locators](reading-locators.json) preserve the parser’s source frame. All values are Bonta’s proposals. No direct quotations are used.
-
-## Q001: method
-
-He proposes a partial logosyllabic decipherment of an early Indo-Aryan language.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Introduction, segments 8–12. Offered evidence: Distributional segmentation, metrology anchors and Sanskrit names/titles.
-
-Test: D1, D2, L1 Identity: see source; glyph identity may remain unresolved.
-
-## Q002: historical, linguistic or archaeological
-
-He describes a Cornell linguistics PhD and earlier work on Dravidian and Indo-European languages.
-
-Source: [L01](https://www.youtube.com/watch?v=IjE6c9e9F_4), 0:02:54–0:05:20. Offered evidence: Autobiographical account, also in the introductory letter p. 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q003: segmentation or structure
-
-Most inscriptions are read right to left; seals and impressions require distinguishing the mirrored face.
-
-Source: [L03](https://www.youtube.com/watch?v=uAnI0SpLVeU), 0:06:26–0:08:20; B24 segment 16. Offered evidence: Sign crowding and orientation of source inscriptions.
-
-Test: D1 Identity: see source; glyph identity may remain unresolved.
-
-## Q004: segmentation or structure
-
-Patterned texts have recurring ordered fields; complex texts contain more variable, language-like sequences.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Sections 3–4, segments 15–33. Offered evidence: Repeated sign classes, junctures, substitutions and positional restrictions.
-
-Test: D1, D2 Identity: see source; glyph identity may remain unresolved.
-
-## Q005: method
-
-He distinguishes transcriptive writing from notational writing and treats both as present in Indus texts.
-
-Source: [L03](https://www.youtube.com/watch?v=uAnI0SpLVeU), 0:56:37–0:59:40. Offered evidence: Different ordering and repetition patterns across clusters.
-
-Test: D2 Identity: see source; glyph identity may remain unresolved.
-
-## Q006: segmentation or structure
-
-Reading-order fields are P, M, C and T, with optional omissions. P is a position label rather than a grammatical prefix.
-
-Source: [L04](https://www.youtube.com/watch?v=RsqPHySpBD0), 0:39:16–0:44:00; B24 segments 27–33. Offered evidence: Recurring complex clusters around M fields and final signs.
-
-Test: D2 Identity: see source; glyph identity may remain unresolved.
-
-## Q007: corpus-distributional
-
-M fields contain an oval subfield, a fish subfield and a mortar/pestle-plus-three-strokes subfield.
-
-Source: [L04](https://www.youtube.com/watch?v=RsqPHySpBD0), 0:02:10–0:09:35; B24 segments 18–20. Offered evidence: Illustrated recurrent clusters.
-
-Test: D2 Identity: see source; glyph identity may remain unresolved.
-
-## Q008: segmentation or structure
-
-Within a complete M field, the reading order is oval, fish, MS.
-
-Source: [L04](https://www.youtube.com/watch?v=RsqPHySpBD0), 0:09:55–0:10:17; B24 segment 20. Offered evidence: Repeated complete fields; manuscript explicitly reverses its printed left-to-right display.
-
-Test: D2 Identity: see source; glyph identity may remain unresolved.
-
-## Q009: corpus-distributional
-
-The fish subfield uses seven entries, has at most three entries and does not repeat an entry.
-
-Source: [L04](https://www.youtube.com/watch?v=RsqPHySpBD0), 0:06:00–0:09:35; B24 segments 18–19. Offered evidence: Selected sequences and a proposed compound-sign treatment of fish with paired strokes.
-
-Test: D2 Identity: see source; glyph identity may remain unresolved.
-
-## Q010: corpus-distributional
-
-The oval subfield uses three entries and has ordering restrictions comparable to fish.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Section 3, segments 19–20. Offered evidence: Illustrated oval clusters, absent from the available page text.
-
-Test: D2 Identity: see source; glyph identity may remain unresolved.
-
-## Q011: corpus-distributional
-
-The MS construction strongly associates the mortar/pestle-like sign with three long strokes.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Section 3, segments 21–25. Offered evidence: Co-occurrence and exceptional variants.
-
-Test: D2 Identity: see source; glyph identity may remain unresolved.
-
-## Q012: corpus-distributional
-
-Jar and arrow signs function as terminal-field signs and can accompany other fields.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Sections 3–4, segments 25–33. Offered evidence: High frequency in final positions and patterned texts.
-
-Test: D1 Identity: see source; glyph identity may remain unresolved.
-
-## Q013: segmentation or structure
-
-Short ticks and paired bars delimit parts of patterned inscriptions and express a case-like relationship.
-
-Source: [L09](https://www.youtube.com/watch?v=IYxFPmVUHDM), 0:04:17–0:13:00; B24 segments 55–65. Offered evidence: Positions between recurring fields; contrasts among juncture forms.
-
-Test: D1, D3 Identity: see source; glyph identity may remain unresolved.
-
-## Q014: method
-
-He clarifies that his CASE label represents a case-like relationship, perhaps dative/benefactive or genitive.
-
-Source: [L10](https://www.youtube.com/watch?v=YQ3Vm1oJZRE), 0:05:00–0:06:27. Offered evidence: Context of proposed patterned readings; exact relationship remains tentative.
-
-Test: D3 Identity: see source; glyph identity may remain unresolved.
-
-## Q015: method
-
-An earlier exhaustive CV dictionary approach failed to produce satisfactory readings and was abandoned.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Section 4, segments 34–37. Offered evidence: His retrospective account of dictionary searches and methodological difficulties.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q016: typology
-
-Reordered complex clusters are interpreted as compound elements rather than ordinary fixed suffix strings.
-
-Source: [L05](https://www.youtube.com/watch?v=XV3FKDmLxSw), 0:09:20–0:13:20; B24 segments 38–42. Offered evidence: Comparisons of recurring sequences in different positions.
-
-Test: D3 Identity: see source; glyph identity may remain unresolved.
-
-## Q017: typology
-
-The manuscript treats noun compounding as relatively rare in Dravidian and much more extensive in Sanskrit.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 6–7 discussion, segment 41. Offered evidence: A comparison with Sanskrit and Dravidian examples.
-
-Test: D3 Identity: see source; glyph identity may remain unresolved.
-
-## Q018: typology
-
-The lecture categorically says Dravidian lacks noun compounding.
-
-Source: [L05](https://www.youtube.com/watch?v=XV3FKDmLxSw), 0:29:39–0:29:48. Offered evidence: Typological argument excluding a Dravidian interpretation.
-
-Test: D3 Identity: see source; glyph identity may remain unresolved.
-
-## Q019: historical, linguistic or archaeological
-
-He identifies Indo-Aryan as the most likely language from inferred compounding, affix behavior and proposed lexical readings.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Sections 4–5, segments 42–54. Offered evidence: Selected typological observations and Sanskrit matches.
-
-Test: D3, L1 Identity: see source; glyph identity may remain unresolved.
-
-## Q020: method
-
-He uses M fields as an entering wedge because metrological referents could constrain candidate values.
-
-Source: [L06](https://www.youtube.com/watch?v=t5xPtb3FxTg), 0:01:27–0:04:58; B24 segments 43–49. Offered evidence: Short ordered non-repeating sequences and comparison with known weight systems.
-
-Test: M1 Identity: see source; glyph identity may remain unresolved.
-
-## Q021: sign value (phonetic or logographic)
-
-He proposes a binary fish series of 1, 2, 4, 8, 16, 32 and 64 units and higher oval denominations.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Metrological discussion, segments 23–24. Offered evidence: Inventory size and ordering compared with Harappan weight multiples.
-
-Test: M1 Identity: see source; glyph identity may remain unresolved.
-
-## Q022: sign value (phonetic or logographic)
-
-He proposes pala for the staff/fork-like sign, using a Sanskrit straw/weight association and its non-M uses.
-
-Source: [L06](https://www.youtube.com/watch?v=t5xPtb3FxTg), 0:08:52–0:10:15; B24 segments 49–51. Offered evidence: Pictorial identification, metrological vocabulary and pala/pala protector homophony.
-
-Test: L1, M1 Identity: see source; glyph identity may remain unresolved.
-
-## Q023: sign value (phonetic or logographic)
-
-He reads the MS construction as ma-tra and proposes matra, a measure or amount.
-
-Source: [L06](https://www.youtube.com/watch?v=t5xPtb3FxTg), 0:14:37–0:18:48; B24 segments 52–53. Offered evidence: The recurring two-part construction and proposed word-final tra behavior.
-
-Test: L1, D1, D2 Identity: see source; glyph identity may remain unresolved.
-
-## Q024: sign value (phonetic or logographic)
-
-He proposes dhana/dhanu-related values for the bow-bearing figure, linking bow and wealth.
-
-Source: [L06](https://www.youtube.com/watch?v=t5xPtb3FxTg), 0:18:48–0:24:00; B24 segments 53–54. Offered evidence: Graphic bow identification and Sanskrit lexical comparison.
-
-Test: L1 Identity: see source; glyph identity may remain unresolved.
-
-## Q025: method
-
-He obtains PU/bhu through the intersection of contexts ending in pala, ma, dhana and tra.
-
-Source: [L07](https://www.youtube.com/watch?v=WYu1lqwQ5B0), 0:10:06–0:18:32; B24 segments 67–71. Offered evidence: Candidate words must share the same initial sign value across contexts.
-
-Test: L2 Identity: see source; glyph identity may remain unresolved.
-
-## Q026: method
-
-He reports developing values on Mahadevan, then checking them on ICIT material with approximately 12–15 readable new inscriptions and one correction.
-
-Source: [L07](https://www.youtube.com/watch?v=WYu1lqwQ5B0), 0:18:32–0:24:37; B24 forewords, segments 2–7. Offered evidence: Personal account of the sequence of research and new catalogue consultation.
-
-Test: V1 Identity: see source; glyph identity may remain unresolved.
-
-## Q027: method
-
-An ICIT-first label generally means it was first encountered there, but can instead signal a more accurate transcription.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Catalogue conventions, segment 84. Offered evidence: Explicit source-labelling convention.
-
-Test: V1 Identity: see source; glyph identity may remain unresolved.
-
-## Q028: method
-
-A sign value is strengthened when it forms recognizable Sanskrit words in several independent sign contexts.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Cross-checking, segments 66–77. Offered evidence: Context intersections, names, titles and substitutions.
-
-Test: L1, L2 Identity: see source; glyph identity may remain unresolved.
-
-## Q029: method
-
-He lists 55 selected signs plus additional logographic/ligature constructions and leaves many frequent and rare signs unresolved.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, segments 78–81. Offered evidence: The published value table and later individual examples.
-
-Test: L1 Identity: see source; glyph identity may remain unresolved.
-
-## Q030: reading of a text
-
-Hundreds of catalogue examples are offered as names, titles, compounds or partial readings using the proposed values.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Section 6, segments 85–216. Offered evidence: A source-indexed series of individual proposed readings.
-
-Test: L1, V1 Identity: see source; glyph identity may remain unresolved.
-
-## Q031: method
-
-Some compound signs are interpreted as ligatures with honorific or lexical values; ordering alternatives may be admitted.
-
-Source: [L08](https://www.youtube.com/watch?v=pdcOOijvRwI), 0:59:59–1:04:00; B24 segment 81. Offered evidence: Proposed graphic compositions and readings such as shripati and related forms.
-
-Test: L1 Identity: see source; glyph identity may remain unresolved.
-
-## Q032: sign value (phonetic or logographic)
-
-He proposes AS for the jar, ISH for the arrow and ASTI for a group of asset-related signs.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Sections 5–6, segments 55–65 and 78–81. Offered evidence: Terminal distributions and Sanskrit predicates/property vocabulary.
-
-Test: D1, M1 Identity: see source; glyph identity may remain unresolved.
-
-## Q033: historical, linguistic or archaeological
-
-He links the proposed ASTI readings to property/asset vocabulary in Sanskrit and later languages.
-
-Source: [L09](https://www.youtube.com/watch?v=IYxFPmVUHDM), 0:36:37–0:37:42. Offered evidence: Lexical analogy and patterned contexts.
-
-Test: M1 Identity: see source; glyph identity may remain unresolved.
-
-## Q034: historical, linguistic or archaeological
-
-He interprets some very short seal inscriptions as asset or metrological notations.
-
-Source: [L10](https://www.youtube.com/watch?v=YQ3Vm1oJZRE), 0:01:07–0:03:36. Offered evidence: Numeral-like strokes and signs treated as measure markers.
-
-Test: D2, M1 Identity: see source; glyph identity may remain unresolved.
-
-## Q035: historical, linguistic or archaeological
-
-He proposes deposits, pledges and temple donations as uses of patterned inscriptions.
-
-Source: [L10](https://www.youtube.com/watch?v=YQ3Vm1oJZRE), 0:07:30–0:16:48; B24 segments 227–249. Offered evidence: Proposed names/amounts, asset predicates and analogy with later donative epigraphy.
-
-Test: M1 Identity: see source; glyph identity may remain unresolved.
-
-## Q036: reading of a text
-
-He interprets MH4470 and MH4603 as oblation-related records, including proposed chu offerings.
-
-Source: [L10](https://www.youtube.com/watch?v=YQ3Vm1oJZRE), 0:17:08–0:17:49. Offered evidence: Proposed readings of sign clusters and later sacrificial vocabulary.
-
-Test: M1 Identity: see source; glyph identity may remain unresolved.
-
-## Q037: historical, linguistic or archaeological
-
-He infers princes, monarchs and caste-related titles from his name and title readings.
-
-Source: [L10](https://www.youtube.com/watch?v=YQ3Vm1oJZRE), 0:28:25–0:31:14. Offered evidence: Readings including bahuja and royal honorifics.
-
-Test: L1 Identity: see source; glyph identity may remain unresolved.
-
-## Q038: historical, linguistic or archaeological
-
-He suggests some lunar-dynasty mythology could preserve features of Indus society.
-
-Source: [L10](https://www.youtube.com/watch?v=YQ3Vm1oJZRE), 0:30:32–0:31:14. Offered evidence: A proposed Somabhu royal name and later mythic narratives.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q039: evaluation criterion
-
-He explicitly leaves common context-invariant and infrequent signs unresolved.
-
-Source: [L10](https://www.youtube.com/watch?v=YQ3Vm1oJZRE), 0:31:14–0:32:19. Offered evidence: Insufficient contextual variation to cross-check their values.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q040: historical, linguistic or archaeological
-
-He describes the main language as early Indo-Aryan and leaves its relation to the Indo-Iranian split partly open.
-
-Source: [L11](https://www.youtube.com/watch?v=RCydNhfnfns), 0:00:22–0:03:57. Offered evidence: The proposed names and titles; no separate linguistic chronology test.
-
-Test: L1 Identity: see source; glyph identity may remain unresolved.
-
-## Q041: typology
-
-He infers prefix/preposition-like uses of proposed ati, para and related elements.
-
-Source: [L11](https://www.youtube.com/watch?v=RCydNhfnfns), 0:04:17–0:14:31. Offered evidence: Recurring graphic sequences interpreted using their proposed Sanskrit values.
-
-Test: D3 Identity: see source; glyph identity may remain unresolved.
-
-## Q042: historical, linguistic or archaeological
-
-He reconstructs earlier forms behind atman from the proposed atima spellings.
-
-Source: [L11](https://www.youtube.com/watch?v=RCydNhfnfns), 0:14:51–0:29:22. Offered evidence: Proposed phonetic reading plus historical sound-change reasoning.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q043: historical, linguistic or archaeological
-
-He derives sabha from a proposed earlier sahapa through metathesis.
-
-Source: [L11](https://www.youtube.com/watch?v=RCydNhfnfns), 0:30:48–0:33:40. Offered evidence: A proposed inscription reading and Sanskrit saha/pa decomposition.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q044: typology
-
-He proposes a possessive or genitive-like ka affix in selected readings.
-
-Source: [L11](https://www.youtube.com/watch?v=RCydNhfnfns), 0:34:00–0:38:00. Offered evidence: Name sequences interpreted with Sanskrit ka morphology.
-
-Test: D3 Identity: see source; glyph identity may remain unresolved.
-
-## Q045: evaluation criterion
-
-A claim of full decipherment should account for data that do not fit, including M-field distributions.
-
-Source: [L12](https://www.youtube.com/watch?v=HhD50nJDm1c), 0:04:17–0:04:40. Offered evidence: Examples of competing claims ignoring patterned notational clusters.
-
-Test: E1 Identity: see source; glyph identity may remain unresolved.
-
-## Q046: evaluation criterion
-
-Distributional evidence should determine script typology before assumptions about links to another script.
-
-Source: [L12](https://www.youtube.com/watch?v=HhD50nJDm1c), 0:12:07–0:12:51. Offered evidence: Criticism of Brahmi-related proto-abugida proposals.
-
-Test: E1 Identity: see source; glyph identity may remain unresolved.
-
-## Q047: evaluation criterion
-
-Proposed sign values should use distribution as well as graphology.
-
-Source: [L12](https://www.youtube.com/watch?v=HhD50nJDm1c), 0:28:36–0:28:57. Offered evidence: Different distributions of similarly drawn fish/oval/jar classes.
-
-Test: E1 Identity: see source; glyph identity may remain unresolved.
-
-## Q048: evaluation criterion
-
-A candidate language should not be imposed through a prior preference.
-
-Source: [L12](https://www.youtube.com/watch?v=HhD50nJDm1c), 0:37:10–0:37:30. Offered evidence: Comparison with unsuccessful aspirational readings.
-
-Test: E1 Identity: see source; glyph identity may remain unresolved.
-
-## Q049: evaluation criterion
-
-Readings should not require ad hoc explanations for implausible content.
-
-Source: [L12](https://www.youtube.com/watch?v=HhD50nJDm1c), 0:41:42–0:42:25. Offered evidence: Examples of bizarre readings excused as mystical formulas.
-
-Test: E1 Identity: see source; glyph identity may remain unresolved.
-
-## Q050: evaluation criterion
-
-Claims to read virtually every sign and every cited inscription deserve scrutiny.
-
-Source: [L12](https://www.youtube.com/watch?v=HhD50nJDm1c), 0:46:18–0:46:40. Offered evidence: Incomplete coverage persists in established decipherments.
-
-Test: E1 Identity: see source; glyph identity may remain unresolved.
-
-## Q051: method
-
-The earlier work develops distributional field analysis and markedness before the later phonetic value table.
-
-Source: [B10](https://www.academia.edu/8691385/The_Indus_Valley_Script_A_New_Interpretation), 2010 title page and distributional discussion. Offered evidence: Patterned texts and comparisons of sign combinations.
-
-Test: P1 Identity: see source; glyph identity may remain unresolved.
-
-## Q052: method
-
-The second edition reports expansion and correction of the first edition, including consideration of the larger ICIT corpus.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Forewords, segments 2–7. Offered evidence: Author’s edition history; first-edition full witness not available for a line-by-line comparison.
-
-Test: V1, P1 Identity: see source; glyph identity may remain unresolved.
-
-## Q053: method
-
-The undated introductory letter describes a couple of small modifications on later corpus checking.
-
-Source: [B-letter](https://www.jefflindsay.com/Bonta-introductory-letter.pdf), PDF p. 5. Offered evidence: Author’s research-history account; unlike the lecture’s singular correction count.
-
-Test: V1 Identity: see source; glyph identity may remain unresolved.
-
-## Q054: historical, linguistic or archaeological
-
-He presents Indo-Aryan speakers as a candidate for Indus and separates it from politically motivated arguments.
-
-Source: [L02](https://www.youtube.com/watch?v=8cgEO4CeoDE), 0:23:46–0:27:00. Offered evidence: Historical overview; no independent excavation-language join.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q055: sign value (phonetic or logographic)
-
-He assigns ka/kaa/kha/khaa to the illustrated Table 18 entry labelled ka.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 78. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q056: sign value (phonetic or logographic)
-
-He assigns dhu/dhuu to the illustrated Table 18 entry labelled dhu.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 78. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q057: sign value (phonetic or logographic)
-
-He assigns ni/nii/ne to the illustrated Table 18 entry labelled ni.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 78. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q058: sign value (phonetic or logographic)
-
-He assigns pa/paa/ba/baa/bha/bhaa to the illustrated Table 18 entry labelled PA.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 78. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q059: sign value (phonetic or logographic)
-
-He assigns pu/puu/bhu/bhuu to the illustrated Table 18 entry labelled PU.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 78. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: L1 Identity: candidate mapping recorded.
-
-## Q060: sign value (phonetic or logographic)
-
-He assigns ma/maa and word-initial maha/mahaa to the illustrated Table 18 entry labelled MA.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 78. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: L1 Identity: candidate mapping recorded.
-
-## Q061: sign value (phonetic or logographic)
-
-He assigns ja/jaa to the illustrated Table 18 entry labelled ja.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 78. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q062: sign value (phonetic or logographic)
-
-He assigns sa/saa to the illustrated Table 18 entry labelled sa.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 78. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q063: sign value (phonetic or logographic)
-
-He assigns su/suu/shu/so/sho to the illustrated Table 18 entry labelled SU1.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 78. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q064: sign value (phonetic or logographic)
-
-He assigns su to the illustrated Table 18 entry labelled SU2.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 79. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q065: sign value (phonetic or logographic)
-
-He assigns ra/raa to the illustrated Table 18 entry labelled ra.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 79. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q066: sign value (phonetic or logographic)
-
-He assigns vi/vii to the illustrated Table 18 entry labelled vi.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 79. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q067: sign value (phonetic or logographic)
-
-He assigns hu to the illustrated Table 18 entry labelled hu.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 79. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q068: sign value (phonetic or logographic)
-
-He assigns ana/aana/retroflex ana/aana to the illustrated Table 18 entry labelled ana.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 79. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q069: sign value (phonetic or logographic)
-
-He assigns ka/eka to the illustrated Table 18 entry labelled eka.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 79. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q070: sign value (phonetic or logographic)
-
-He assigns aat/ati/adhi/atii to the illustrated Table 18 entry labelled ati.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 79. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q071: sign value (phonetic or logographic)
-
-He assigns pala/paala/bala to the illustrated Table 18 entry labelled PALA.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 79. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: L1 Identity: candidate mapping recorded.
-
-## Q072: sign value (phonetic or logographic)
-
-He assigns dhana/dhaana/daana, first form to the illustrated Table 18 entry labelled DHANA.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 79. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: L1 Identity: candidate mapping recorded.
-
-## Q073: sign value (phonetic or logographic)
-
-He assigns dhana/dhaana/daana, second form to the illustrated Table 18 entry labelled DHANA2.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 79. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q074: sign value (phonetic or logographic)
-
-He assigns para/pra to the illustrated Table 18 entry labelled para.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 79. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q075: sign value (phonetic or logographic)
-
-He assigns jaya/jya to the illustrated Table 18 entry labelled jaya.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 79. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q076: sign value (phonetic or logographic)
-
-He assigns var/vara to the illustrated Table 18 entry labelled vara.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 79. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q077: sign value (phonetic or logographic)
-
-He assigns man/mana/maana to the illustrated Table 18 entry labelled mana.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 79. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q078: sign value (phonetic or logographic)
-
-He assigns shar/shara to the illustrated Table 18 entry labelled shara.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 79. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q079: sign value (phonetic or logographic)
-
-He assigns shri/suri to the illustrated Table 18 entry labelled shri.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 79. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q080: sign value (phonetic or logographic)
-
-He assigns tya/taya/taaya to the illustrated Table 18 entry labelled tya.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 80. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q081: sign value (phonetic or logographic)
-
-He assigns saha/saa to the illustrated Table 18 entry labelled saha.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 80. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q082: sign value (phonetic or logographic)
-
-He assigns nata/naatha to the illustrated Table 18 entry labelled natha.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 80. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q083: sign value (phonetic or logographic)
-
-He assigns miina/min to the illustrated Table 18 entry labelled mina.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 80. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q084: sign value (phonetic or logographic)
-
-He assigns vasu/vaasu to the illustrated Table 18 entry labelled vasu.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 80. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q085: sign value (phonetic or logographic)
-
-He assigns caru/caaru to the illustrated Table 18 entry labelled caru.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 80. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q086: sign value (phonetic or logographic)
-
-He assigns mana/maana/manaa to the illustrated Table 18 entry labelled mana2.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 80. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q087: sign value (phonetic or logographic)
-
-He assigns kara/kra/kar/kaara to the illustrated Table 18 entry labelled kara1.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 80. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q088: sign value (phonetic or logographic)
-
-He assigns kara/kar/kaara to the illustrated Table 18 entry labelled kara2.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 80. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q089: sign value (phonetic or logographic)
-
-He assigns pra to the illustrated Table 18 entry labelled pra.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 80. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q090: sign value (phonetic or logographic)
-
-He assigns tra/traa/tri to the illustrated Table 18 entry labelled TRA.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 80. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: L1 Identity: candidate mapping recorded.
-
-## Q091: sign value (phonetic or logographic)
-
-He assigns raashtra logogram to the illustrated Table 18 entry labelled rashtra.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 80. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q092: sign value (phonetic or logographic)
-
-He assigns laksha logogram to the illustrated Table 18 entry labelled laksha.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 80. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q093: sign value (phonetic or logographic)
-
-He assigns senaa logogram to the illustrated Table 18 entry labelled sena.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 80. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q094: sign value (phonetic or logographic)
-
-He assigns aarya logogram to the illustrated Table 18 entry labelled arya.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 80. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q095: sign value (phonetic or logographic)
-
-He assigns dhara logogram to the illustrated Table 18 entry labelled dhara.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 80. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q096: sign value (phonetic or logographic)
-
-He assigns sam logogram to the illustrated Table 18 entry labelled sam.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 80. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q097: sign value (phonetic or logographic)
-
-He assigns raksha logogram to the illustrated Table 18 entry labelled raksha.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 81. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q098: sign value (phonetic or logographic)
-
-He assigns raajan logogram to the illustrated Table 18 entry labelled raja.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 81. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q099: sign value (phonetic or logographic)
-
-He assigns dhaanya logogram to the illustrated Table 18 entry labelled dhanya.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 81. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q100: sign value (phonetic or logographic)
-
-He assigns deva logogram to the illustrated Table 18 entry labelled deva.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 81. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q101: sign value (phonetic or logographic)
-
-He assigns pati logogram to the illustrated Table 18 entry labelled PATI.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 81. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: L1 Identity: candidate mapping recorded.
-
-## Q102: sign value (phonetic or logographic)
-
-He assigns ashva logogram to the illustrated Table 18 entry labelled ashva.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 81. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q103: sign value (phonetic or logographic)
-
-He assigns go logogram to the illustrated Table 18 entry labelled go.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 81. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q104: sign value (phonetic or logographic)
-
-He assigns belong/be predicate to the illustrated Table 18 entry labelled AS.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 81. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: D1 Identity: see source; glyph identity may remain unresolved.
-
-## Q105: sign value (phonetic or logographic)
-
-He assigns be accepted/be worth; possible own/possess sense to the illustrated Table 18 entry labelled ISH.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 81. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: D1 Identity: see source; glyph identity may remain unresolved.
-
-## Q106: sign value (phonetic or logographic)
-
-He assigns property, with possible number distinctions to the illustrated Table 18 entry labelled ASTI.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 81. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q107: sign value (phonetic or logographic)
-
-He assigns shripati/suripati ligature to the illustrated Table 18 entry labelled shripati.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 81. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q108: sign value (phonetic or logographic)
-
-He assigns shripatideva or alternatives of compound order to the illustrated Table 18 entry labelled shripatideva.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 81. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q109: sign value (phonetic or logographic)
-
-He assigns paka/bhaka/bhaga ligature to the illustrated Table 18 entry labelled paka.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 81. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q110: sign value (phonetic or logographic)
-
-He assigns shripala ligature to the illustrated Table 18 entry labelled shripala.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 81. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q111: sign value (phonetic or logographic)
-
-He assigns aryaka ligature to the illustrated Table 18 entry labelled aryaka.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 81. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q112: sign value (phonetic or logographic)
-
-He assigns karapala ligature to the illustrated Table 18 entry labelled karapala.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Table 18, text segment 81. Offered evidence: The table and individual contextual examples in section 6.
-
-Test: No completed test in this package. Identity: see source; glyph identity may remain unresolved.
-
-## Q113: reading of a text
-
-He combines the proposed roles MA, TRA as a Sanskrit word, name or title.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), 2024 section III, segment 52–53; letter PDF 2. Offered evidence: Repeated contexts in Tables 13–17 and the MS discussion; proposed role values are checked together.
-
-Test: L1 Identity: candidate mapping recorded.
-
-## Q114: reading of a text
-
-He combines the proposed roles DHANA, PALA as a Sanskrit word, name or title.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), 2024 Table 13, segment 67–68; MH4624/H467, MH2449/M320. Offered evidence: Repeated contexts in Tables 13–17 and the MS discussion; proposed role values are checked together.
-
-Test: L1 Identity: candidate mapping recorded.
-
-## Q115: reading of a text
-
-He combines the proposed roles PU, PALA as a Sanskrit word, name or title.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), 2024 Table 14, segment 69; MH4650. Offered evidence: Repeated contexts in Tables 13–17 and the MS discussion; proposed role values are checked together.
-
-Test: L1 Identity: candidate mapping recorded.
-
-## Q116: reading of a text
-
-He combines the proposed roles PU, MA as a Sanskrit word, name or title.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), 2024 Table 15, segment 70; MH1056, MH1310, MH4447. Offered evidence: Repeated contexts in Tables 13–17 and the MS discussion; proposed role values are checked together.
-
-Test: L1 Identity: candidate mapping recorded.
-
-## Q117: reading of a text
-
-He combines the proposed roles PU, DHANA as a Sanskrit word, name or title.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), 2024 Table 15, segment 70; MH4260, MH2638. Offered evidence: Repeated contexts in Tables 13–17 and the MS discussion; proposed role values are checked together.
-
-Test: L1 Identity: candidate mapping recorded.
-
-## Q118: reading of a text
-
-He combines the proposed roles PU, TRA as a Sanskrit word, name or title.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), 2024 Table 16, segment 71; MH2109/M212, MH2348/M898, MH2564/M979. Offered evidence: Repeated contexts in Tables 13–17 and the MS discussion; proposed role values are checked together.
-
-Test: L1 Identity: candidate mapping recorded.
-
-## Q119: reading of a text
-
-He combines the proposed roles DHANA, PATI as a Sanskrit word, name or title.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), 2024 Table 17, segment 74–75. Offered evidence: Repeated contexts in Tables 13–17 and the MS discussion; proposed role values are checked together.
-
-Test: L1 Identity: candidate mapping recorded.
-
-## Q120: reading of a text
-
-He combines the proposed roles PALA, PATI as a Sanskrit word, name or title.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), 2024 Table 17, segment 74–75. Offered evidence: Repeated contexts in Tables 13–17 and the MS discussion; proposed role values are checked together.
-
-Test: L1 Identity: candidate mapping recorded.
-
-## Q121: reading of a text
-
-He combines the proposed roles PU, PATI as a Sanskrit word, name or title.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), 2024 Table 17, segment 74–75; MH8104. Offered evidence: Repeated contexts in Tables 13–17 and the MS discussion; proposed role values are checked together.
-
-Test: L1 Identity: candidate mapping recorded.
-
-## Q122: reading of a text
-
-He combines the proposed roles DHANA, PALA, PATI as a Sanskrit word, name or title.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), 2024 Table 17, segment 74–75; MH1400/M314 line 3. Offered evidence: Repeated contexts in Tables 13–17 and the MS discussion; proposed role values are checked together.
-
-Test: L1 Identity: candidate mapping recorded.
-
-## Q123: corpus-distributional
-
-He reports that the secondary U/pot-plus-numeral field has no stroke number above four.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Segment 43; Table 8, segments 44–45. Offered evidence: Examples on opposite faces or secondary lines.
-
-Test: D2 Identity: see source; glyph identity may remain unresolved.
-
-## Q124: corpus-distributional
-
-He treats two staff-like forms as allographs because they have similar distributions and do not co-occur.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Segment 47; Table 10, segments 47–49. Offered evidence: Separate catalogue entries with overlapping contexts.
-
-Test: D2 Identity: see source; glyph identity may remain unresolved.
-
-## Q125: method
-
-He acknowledges a plausible Dravidian bow/price comparison as well as a Sanskrit bow/wealth comparison.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Segment 46. Offered evidence: Candidate homophones appropriate to an assumed value context.
-
-Test: L1 Identity: see source; glyph identity may remain unresolved.
-
-## Q126: reading of a text
-
-He interprets complete patterned fields as assets belonging to a named owner, assigned to a deity or authority.
-
-Source: [B24](https://www.academia.edu/120435855/A_Partial_Decipherment_of_the_Indus_Valley_Script_Proposed_Phonetic_and_Logographic_Values_for_Selected_Indus_Signs_and_Readings_of_Indus_Texts_2nd_ed_), Segments 227–249; Tables 19–21. Offered evidence: The combined proposed P/C names, M quantities and terminal predicates.
-
-Test: D2, M1 Identity: see source; glyph identity may remain unresolved.
+# Bonta claim ledger
+
+Revised 8 October 2026 after the source review. All 126 original rows were checked; four rows were added. The [itemized audit](claim-source-audit-2026-10-08-v2.json) preserves the original wording, every changed field and sample membership. This scoped ledger contains proposed values and interpretations. Full reading and glyph coverage remains incomplete.
+
+| ID | Source location | Type | Claim | Offered evidence | Quotation | Tests |
+|---|---|---|---|---|---|---|
+| Q001 | B24: Sections III–IV, segments 33–35, 54 and 76–78 | method | He proposes a partial logosyllabic decipherment of an early Indo-Aryan language. | He proposes Indo-Aryan in segment 54 and CV/root signs with logograms in segments 76–78; segment 33 discusses a logosyllabic inventory. |  | D1, D2, L1 |
+| Q002 | L01: 0:02:54–0:05:20 | historical, linguistic or archaeological | He describes a Cornell linguistics PhD and earlier work on Dravidian and Indo-European languages. | Autobiographical account, also in the introductory letter p. 6. |  |  |
+| Q003 | L03: 0:06:26–0:08:34; B24 segment 15 | segmentation or structure | Most inscriptions are read right to left; seals and impressions require distinguishing the mirrored face. | A seal and its mirrored impression are compared; he uses the impression as the canonical right-to-left display. The grounds for direction are left largely unstated. |  | D1 |
+| Q004 | B24: Section III, segments 15–33 | segmentation or structure | Patterned texts have recurring ordered fields; complex texts contain more variable, language-like sequences. | Repeated sign classes, junctures, substitutions and positional restrictions. |  | D1, D2 |
+| Q005 | L03: 0:56:37–0:59:59 | method | He distinguishes transcriptive writing from notational writing and treats both as present in Indus texts. | English weights, prices, dates and mathematical formulas illustrate abbreviation, changed spoken order and mixed notation. He announces application to Harappan texts at 0:59:44. |  | D2 |
+| Q006 | L04: 0:36:28–0:39:58; B24 segments 16–20 | segmentation or structure | Reading-order fields are P, M, C and T, with optional omissions. P is a position label rather than a grammatical prefix. | Illustrated sequences show P–M–C–T and missing fields; P is explained as a positional convenience at 0:39:16. |  | D2 |
+| Q007 | L04: 0:02:10–0:10:38; B24 segment 20 | corpus-distributional | His M-field model has three optional components: an oval subfield, a fish subfield and an MS pair of a container with a central stick beside three long bars. | Illustrated recurrent clusters. |  | D2 |
+| Q008 | L04: 0:09:55–0:10:17; B24 segment 20 | segmentation or structure | Within a complete M field, the reading order is oval, fish, MS. | Repeated complete fields; manuscript explicitly reverses its printed left-to-right display. |  | D2 |
+| Q009 | L04: 0:06:00–0:09:35; B24 segments 18–19 | corpus-distributional | The fish subfield uses seven entries, has at most three entries and does not repeat an entry. | Selected sequences and a proposed compound-sign treatment of fish with paired strokes. |  | D2 |
+| Q010 | B24: Section III, segment 20; L06 0:01:27–0:02:31 | corpus-distributional | The oval subfield has at most two non-repeating members of a three-sign inventory. | The textual definition gives the inventory size and maximum count; the lecture supplies non-repetition. The available manuscript text omits the glyphs. |  | D2 |
+| Q011 | B24: Section III, segment 20 and segments 50–53; L04 0:03:34–0:04:15 | corpus-distributional | He treats the container-with-stick and three-long-bars pairing as an MS construction, usually concluding an M field. | The recurrent pair is defined in segment 20 and illustrated in Table 11; segments 52–53 propose mātra from its placement and the suggested tra value. |  | D2 |
+| Q012 | B24: Section III, segment 14; segments 55–60 | corpus-distributional | Jar and arrow signs function as terminal-field signs and can accompany other fields. | Segment 14 describes final or penultimate placement, including ends of embedded sequences; segments 55–60 argue for predicates from recurring terminal contexts. |  | D1 |
+| Q013 | L09: 0:04:17–0:13:31 | segmentation or structure | He doubts that the juncture signs are case endings and tentatively suggests honorific or benefactive functions; gender and number are additional possibilities. | He compares juncture combinations with P signs and reports exceptions to their mostly contrasting distributions. At 0:09:42 he doubts case endings; at 0:10:04 he labels his alternative tentative. | at a very very tentative guess | D1, D3 |
+| Q014 | L10: 0:05:00–0:06:27 | method | He clarifies that his CASE label represents a case-like relationship, perhaps dative/benefactive or genitive. | Context of proposed patterned readings; exact relationship remains tentative. |  | D3 |
+| Q015 | B24: Section III, segments 34–35 | method | He compared initial, medial and final CV-syllable frequencies in Monier-Williams and the Cologne Tamil lexicon with deduplicated Indus sign dossiers. Both comparisons largely failed, apart from a handful of signs. | He describes substring-frequency queries and dossiers for signs with roughly more than 20 occurrences; he attributes the failure partly to stylized inscriptions. |  |  |
+| Q016 | L05: 0:10:25–0:15:04; B24 Table 6, segments 38–40 | typology | Recurring shorter C-field sequences are concatenated in a longer C field, which he interprets as evidence for noun compounds. | Table 6 compares autonomous C sequences with their combination, especially MH4335; the passage supplies no reordering or suffix contrast. |  | D3 |
+| Q017 | B24: Table 6–7 discussion, segment 41 | typology | The manuscript treats noun compounding as relatively rare in Dravidian and much more extensive in Sanskrit. | A comparison with Sanskrit and Dravidian examples. |  | D3 |
+| Q018 | L05: 0:28:36–0:30:01; B24 segment 41 | typology | He categorically says attested Dravidian lacks noun compounding, while allowing that a Harappan-period ancestor could have had it. The paper makes a weaker comparison about extensive multi-noun name compounds. | He compares inferred compounding, gemination and prefixing with Indo-Aryan; the spoken hedge allows earlier typological change. Krishnamurti’s chapter summary documents noun-plus-noun compounds. | do not allow noun compounding in any form | D3 |
+| Q019 | B24: Section III, segments 42–54 | historical, linguistic or archaeological | He identifies Indo-Aryan as the most likely language from inferred compounding, affix behavior and proposed lexical readings. | Selected typological observations and Sanskrit matches. |  | D3, L1 |
+| Q020 | L06: 0:01:27–0:04:58; B24 segments 20–24 | method | He uses M fields as an entering wedge because metrological referents could constrain candidate values. | The lecture summarizes limited non-repeating fish/oval combinations and the invariant MS pair. Segment 23 separately compares the inventory sizes with Marshall’s weight series. |  | M1 |
+| Q021 | B24: Metrological discussion, segments 23–24 | sign value (phonetic or logographic) | He rates it very likely that seven fish signs correspond to Marshall’s 1, 2, 4, 8, 16, 32, 64 series and three oval signs to 160, 320, 640. | Matching inventory sizes and the absence of geminated fish signs motivate the hypothesis; he gives no sign-by-sign assignment to weighed objects. |  | M1 |
+| Q022 | L06: 0:08:52–0:13:53; B24 segments 47–50, 66–67 | sign value (phonetic or logographic) | He proposes pala for the staff/fork-like sign, using a Sanskrit straw/weight association and its non-M uses. | Grain-staff graphology, numeral adjacency and the Sanskrit pala weight motivate the first value; at 0:12:03–0:13:53 he adds pāla, protector, for non-metrological contexts. |  | L1, M1 |
+| Q023 | L06: 0:14:37–0:18:48; B24 segments 52–53 | sign value (phonetic or logographic) | He reads the MS construction as ma-tra and proposes matra, a measure or amount. | The recurring two-part construction and proposed word-final tra behavior. |  | L1, D1, D2 |
+| Q024 | L06: 0:18:48–0:24:42; B24 segments 44–46, 54 | sign value (phonetic or logographic) | He proposes dhana/dhanu-related values for the bow-bearing figure, linking bow and wealth. | At 0:19:30–0:21:58 he compares bow and bowman substitutions and asset-like contexts; the following Sanskrit bow/wealth comparison motivates near-related values. |  | L1 |
+| Q025 | L07: 0:05:28–0:11:55; B24 segments 69–70 | method | He obtains the proposed PU/bhu value by intersecting words ending in dhana, ma and pala, then requiring that the shared initial element also be common as a final or suffix element. | Three Cologne dictionary substring lists supply candidate X values; the fourth condition is final/suffix use. The same contexts helped choose PU and later appear in the tested panel. |  | L2 |
+| Q026 | L07: 0:18:32–0:24:37; B24 forewords, segments 2–7 | method | He reports developing values on Mahadevan, then checking them on ICIT material with approximately 12–15 readable new inscriptions and one correction. | His research-history account reports a dozen or fifteen readable inscriptions and one value withdrawn. The caption permits both no unreadable attempts and no readable counterexample; no attempted list resolves the ambiguity. | nothing that was not readable, nothing that that contradicted my results | V1 |
+| Q027 | B24: Catalogue conventions, segment 84 | method | An ICIT-first label generally means it was first encountered there, but can instead signal a more accurate transcription. | Explicit source-labelling convention. |  | V1 |
+| Q028 | B24: Cross-checking, segments 66–77 | method | He strengthens proposed values by repeated lexical cross-checking in different contexts, yielding recognizable Sanskrit names, titles and compounds. | PU and PATI are chosen by dictionary searches across their contexts; segment 76 describes trial and error and abandoned candidates. |  | L1, L2 |
+| Q029 | B24: Section IV introduction and Table 18, segments 77–81 | method | He lists 55 selected signs plus additional logographic/ligature constructions and leaves many frequent and rare signs unresolved. | He states 55 signs in segment 77; Table 18 adds certain logograms and ligatures. He also identifies omitted numerical compounds and unresolved signs. |  | L1 |
+| Q030 | B24: Section IV, segments 82–216 | reading of a text | He offers a long catalogue of complete or partial readings as names, titles and compounds, arranged under individual proposed sign values. | Segment 82 introduces the catalogue and segments 83–84 explain source labels, alternate readings and the format. The package’s occurrence parser supplies a separate count. |  | L1, V1 |
+| Q031 | L08: 0:59:59–1:04:00; B24 segment 81 | method | Some compound signs are interpreted as ligatures with honorific or lexical values; ordering alternatives may be admitted. | Proposed graphic compositions and readings such as shripati and related forms. |  | L1 |
+| Q032 | B24: Segments 55–65; Table 18, segment 81 | sign value (phonetic or logographic) | He proposes AS for the jar, ISH for the arrow and ASTI for a group of asset-related signs. | He argues for AS from terminal distributions and possessive copula analogies, ISH from valuation and arrow homophony, and ASTI from modified-jar distributions and property vocabulary. |  | D1, M1 |
+| Q033 | L09: 0:36:37–0:37:42 | historical, linguistic or archaeological | He links the proposed ASTI readings to property/asset vocabulary in Sanskrit and later languages. | Lexical analogy and patterned contexts. |  | M1 |
+| Q034 | L10: 0:01:07–0:03:36 | historical, linguistic or archaeological | He calls the short seal examples sufficient to show asset or metrological notations and says they cannot reasonably be interpreted otherwise. | Numeral-like strokes beside a staff sign on seals with bosses and animal figures are his stated evidence; 0:03:13–0:03:36 gives the categorical interpretation. | necessary and sufficient | D2, M1 |
+| Q035 | L10: 0:04:00–0:16:48; B24 segments 241–243 | historical, linguistic or archaeological | He proposes deposits, pledges and temple donations as uses of patterned inscriptions. | His proposed names and amounts are joined to analogies with temples as depositories/lenders and later donative epigraphy; 0:16:28–0:16:48 describes both functions. |  | M1 |
+| Q036 | L10: 0:16:48–0:18:10; 0:30:10–0:30:32 | reading of a text | He interprets MH4470 and MH4603 as oblation-related records, including proposed chu offerings. | The first passage gives proposed readings of MH4470 and MH4603; 0:30:10 separately links chu to a rice/grain offering or its preparation pot. |  | M1 |
+| Q037 | L10: 0:28:25–0:31:14 | historical, linguistic or archaeological | He infers princes, monarchs and caste-related titles from his name and title readings. | Readings including bahuja and royal honorifics. |  | L1 |
+| Q038 | L10: 0:30:32–0:31:14 | historical, linguistic or archaeological | He suggests some lunar-dynasty mythology could preserve features of Indus society. | A proposed Somabhu royal name and later mythic narratives. |  |  |
+| Q039 | L10: 0:31:14–0:32:19 | evaluation criterion | He explicitly leaves common context-invariant and infrequent signs unresolved. | Insufficient contextual variation to cross-check their values. |  |  |
+| Q040 | L11: 0:00:22–0:03:57 | historical, linguistic or archaeological | He describes the main language as early Indo-Aryan and leaves its relation to the Indo-Iranian split partly open. | The proposed names and titles; no separate linguistic chronology test. |  | L1 |
+| Q041 | L11: 0:04:17–0:14:31 | typology | He asserts that the language has prepositions beyond reasonable doubt, on his readings of ati, para, vi and related elements. He says the signs also occur elsewhere within words. | Selected readings suggest prepositional values. At 0:11:00 he rejects strictly prefix-only status; at 0:14:10 he asserts the language-level conclusion. | beyond any reasonable doubt | D3 |
+| Q042 | L11: 0:19:26–0:24:00 | historical, linguistic or archaeological | He proposes two possibilities for the suggested atima spelling: an approximate spelling of ātman or a phonetic rendering of an earlier form, with compensatory lengthening after vowel loss. | He offers the earlier-form etymology tentatively at 0:21:35, describes the sound-change mechanism and leaves the judgement to the listener at 0:23:40. |  |  |
+| Q043 | L11: 0:30:48–0:33:40 | historical, linguistic or archaeological | He derives sabha from a proposed earlier sahapa through metathesis. | A proposed inscription reading and Sanskrit saha/pa decomposition. |  |  |
+| Q044 | L11: 0:34:00–0:40:05 | typology | He proposes a non-case ka affix with possessive/genitive-like uses and suggests it explains velar-related genitives in several modern Indo-Aryan languages. | Selected readings such as Satyadevaka motivate possessive ka; later comparisons with Hindi, Sinhala, Marathi and Sindhi extend the claim to descent. |  | D3 |
+| Q045 | L12: 0:04:17–0:04:40 | evaluation criterion | A claim of full decipherment should account for data that do not fit, including M-field distributions. | Examples of competing claims ignoring patterned notational clusters. |  | C1-R |
+| Q046 | L12: 0:12:07–0:12:51 | evaluation criterion | Distributional evidence should determine script typology before assumptions about links to another script. | Criticism of Brahmi-related proto-abugida proposals. |  | C1-R |
+| Q047 | L12: 0:28:36–0:28:57 | evaluation criterion | Proposed sign values should use distribution as well as graphology. | Different distributions of similarly drawn fish/oval/jar classes. |  | C1-R |
+| Q048 | L12: 0:37:10–0:37:30 | evaluation criterion | A candidate language should not be imposed through a prior preference. | Comparison with unsuccessful aspirational readings. |  | C1-R |
+| Q049 | L12: 0:41:42–0:42:25 | evaluation criterion | Readings should not require ad hoc explanations for implausible content. | Examples of bizarre readings excused as mystical formulas. |  | C1-R |
+| Q050 | L12: 0:46:18–0:46:40 | evaluation criterion | Claims to read virtually every sign and every cited inscription deserve scrutiny. | Incomplete coverage persists in established decipherments. |  | C1-R |
+| Q051 | B24: Foreword, segment 3; earlier values restated and withdrawn in segments 54–65 | method | He reports developing metrological field analysis in the 1990s and arguing for Indo-Aryan by 2010, before his later expanded value system. | The 2024 author retrospective dates the field analysis and initial language argument; it describes a 2014 monograph and later methodological failure. This is his retrospective chronology, rather than a new direct collation of the 2010 witness. |  | C1-R |
+| Q052 | B24: Second-edition foreword, segments 6–7 | method | He describes the second edition as nearly identical to the first, with expanded fish/M-field discussion, one corrected sign and affected readings, and an added KARAPALA ligature. | The second-edition foreword identifies these changes; first-edition full text is unavailable for a line-by-line collation. |  | V1, C1-R |
+| Q053 | B-letter: PDF p. 5 | method | The undated letter says the later ICIT cross-check invalidated a couple of previously proposed sign values. | PDF p. 5 gives the author’s account; Lecture 7 and the first foreword each report one withdrawn value. The witnesses give differing correction counts. | invalidated only a couple of previously-proposed sign values | V1 |
+| Q054 | L02: 0:23:46–0:27:00 | historical, linguistic or archaeological | He presents Indo-Aryan speakers as a candidate for Indus and separates it from politically motivated arguments. | Historical overview; no independent excavation-language join. |  |  |
+| Q055 | B24: Table 18, text segment 78 | sign value (phonetic or logographic) | He assigns ka/kaa/kha/khaa to the Table 18 entry labelled kA. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q056 | B24: Table 18, text segment 78 | sign value (phonetic or logographic) | He assigns dhu/dhuu to the Table 18 entry labelled dhU. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q057 | B24: Table 18, text segment 78 | sign value (phonetic or logographic) | He assigns ni/nii/ne to the Table 18 entry labelled nI. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q058 | B24: Table 18, text segment 78 | sign value (phonetic or logographic) | He assigns pa/paa/ba/baa/bha/bhaa to the Table 18 entry labelled PA. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q059 | B24: Table 18, text segment 78 | sign value (phonetic or logographic) | He assigns pu/puu/bhu/bhuu to the Table 18 entry labelled PU. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  | L1 |
+| Q060 | B24: Table 18, text segment 78 | sign value (phonetic or logographic) | He assigns ma/maa and word-initial maha/mahaa to the Table 18 entry labelled mA. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  | L1 |
+| Q061 | B24: Table 18, text segment 78 | sign value (phonetic or logographic) | He assigns ja/jaa to the Table 18 entry labelled jA. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q062 | B24: Table 18, text segment 78 | sign value (phonetic or logographic) | He assigns sa/saa to the Table 18 entry labelled sA. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q063 | B24: Table 18, text segment 78 | sign value (phonetic or logographic) | He assigns su/suu/shu/so/sho to the Table 18 entry labelled SU1. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q064 | B24: Table 18, text segment 79 | sign value (phonetic or logographic) | He assigns su to the Table 18 entry labelled SU2. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q065 | B24: Table 18, text segment 79 | sign value (phonetic or logographic) | He assigns ra/raa to the Table 18 entry labelled rA. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q066 | B24: Table 18, text segment 79 | sign value (phonetic or logographic) | He assigns vi/vii to the Table 18 entry labelled vI. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q067 | B24: Table 18, text segment 79 | sign value (phonetic or logographic) | He assigns hu to the Table 18 entry labelled hu. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q068 | B24: Table 18, text segment 79 | sign value (phonetic or logographic) | He assigns ana/aana/retroflex ana/aana to the Table 18 entry labelled ANa. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q069 | B24: Table 18, text segment 79 | sign value (phonetic or logographic) | He assigns ka/eka to the Table 18 entry labelled (e)ka. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q070 | B24: Table 18, text segment 79 | sign value (phonetic or logographic) | He assigns aat/ati/adhi/atii to the Table 18 entry labelled ATI. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q071 | B24: Table 18, text segment 79 | sign value (phonetic or logographic) | He assigns pala/paala/bala to the Table 18 entry labelled PAla. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  | L1 |
+| Q072 | B24: Table 18, text segment 79 | sign value (phonetic or logographic) | He assigns dhana/dhaana/daana, first form to the Table 18 entry labelled DAna1. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  | L1 |
+| Q073 | B24: Table 18, text segment 79 | sign value (phonetic or logographic) | He assigns dhana/dhaana/daana, second form to the Table 18 entry labelled DAna2. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q074 | B24: Table 18, text segment 79 | sign value (phonetic or logographic) | He assigns para/pra to the Table 18 entry labelled p(a)ra. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q075 | B24: Table 18, text segment 79 | sign value (phonetic or logographic) | He assigns jaya/jya to the Table 18 entry labelled j(a)ya. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q076 | B24: Table 18, text segment 79 | sign value (phonetic or logographic) | He lists var(a), interpreted here as var/vara, for the Table 18 entry with that label. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q077 | B24: Table 18, text segment 79 | sign value (phonetic or logographic) | He assigns man/mana/maana to the Table 18 entry labelled mAn(a). | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q078 | B24: Table 18, text segment 79 | sign value (phonetic or logographic) | He assigns shar/shara to the Table 18 entry labelled Sar(a). | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q079 | B24: Table 18, text segment 79 | sign value (phonetic or logographic) | He assigns shri/suri to the Table 18 entry labelled S(u)ri. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q080 | B24: Table 18, text segment 80 | sign value (phonetic or logographic) | He assigns tya/taya/taaya to the Table 18 entry labelled t(a)ya. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q081 | B24: Table 18, text segment 80 | sign value (phonetic or logographic) | He assigns saha/saa to the Table 18 entry labelled sA(ha). | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q082 | B24: Table 18, text segment 80 | sign value (phonetic or logographic) | He assigns nata/naatha to the Table 18 entry labelled nATa. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q083 | B24: Table 18, text segment 80 | sign value (phonetic or logographic) | He assigns miina/min to the Table 18 entry labelled mIn(a). | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q084 | B24: Table 18, text segment 80 | sign value (phonetic or logographic) | He assigns vasu/vaasu to the Table 18 entry labelled vAsu. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q085 | B24: Table 18, text segment 80 | sign value (phonetic or logographic) | He assigns caru/caaru to the Table 18 entry labelled cAru. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q086 | B24: Table 18, text segment 80 | sign value (phonetic or logographic) | He assigns mana/maana/manaa to the Table 18 entry labelled mANA. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q087 | B24: Table 18, text segment 80 | sign value (phonetic or logographic) | He assigns kara/kra/kar/kaara to the Table 18 entry labelled kara1. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q088 | B24: Table 18, text segment 80 | sign value (phonetic or logographic) | He assigns kara/kar/kaara to the Table 18 entry labelled kAra2. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q089 | B24: Table 18, text segment 80 | sign value (phonetic or logographic) | He assigns pra to the Table 18 entry labelled pra. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q090 | B24: Table 18, text segment 80 | sign value (phonetic or logographic) | He assigns tra/traa/tri to the Table 18 entry labelled trA. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  | L1 |
+| Q091 | B24: Table 18, text segment 80 | sign value (phonetic or logographic) | He assigns raashtra logogram to the Table 18 entry labelled RASHTRA. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q092 | B24: Table 18, text segment 80 | sign value (phonetic or logographic) | He assigns laksha logogram to the Table 18 entry labelled LAKSH(A). | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q093 | B24: Table 18, text segment 80 | sign value (phonetic or logographic) | He assigns senaa logogram to the Table 18 entry labelled SENA. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q094 | B24: Table 18, text segment 80 | sign value (phonetic or logographic) | He assigns aarya logogram to the Table 18 entry labelled ARYA. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q095 | B24: Table 18, text segment 80 | sign value (phonetic or logographic) | He assigns dhara logogram to the Table 18 entry labelled DHAR(A). | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q096 | B24: Table 18, text segment 80 | sign value (phonetic or logographic) | He assigns sam logogram to the Table 18 entry labelled SAM. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q097 | B24: Table 18, text segment 81 | sign value (phonetic or logographic) | He assigns raksha logogram to the Table 18 entry labelled RAKSH(a). | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q098 | B24: Table 18, text segment 81 | sign value (phonetic or logographic) | He assigns raajan logogram to the Table 18 entry labelled RAJA(n). | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q099 | B24: Table 18, text segment 81 | sign value (phonetic or logographic) | He assigns dhaanya logogram to the Table 18 entry labelled DHANYA. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q100 | B24: Table 18, text segment 81 | sign value (phonetic or logographic) | He assigns deva logogram to the Table 18 entry labelled DEVA. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q101 | B24: Table 18, text segment 81 | sign value (phonetic or logographic) | He assigns pati logogram to the Table 18 entry labelled PATI. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  | L1 |
+| Q102 | B24: Table 18, text segment 81 | sign value (phonetic or logographic) | He assigns ashva logogram to the Table 18 entry labelled ASHVA. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q103 | B24: Table 18, text segment 81 | sign value (phonetic or logographic) | He assigns go logogram to the Table 18 entry labelled GO. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q104 | B24: Table 18, text segment 81 | sign value (phonetic or logographic) | He assigns belong/be predicate to the Table 18 entry labelled AS. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  | D1 |
+| Q105 | B24: Table 18, text segment 81 | sign value (phonetic or logographic) | He assigns be accepted/be worth; possible own/possess sense to the Table 18 entry labelled ISH. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  | D1 |
+| Q106 | B24: Table 18, text segment 81 | sign value (phonetic or logographic) | He assigns property, with possible number distinctions to the Table 18 entry labelled ASTI. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q107 | B24: Table 18, text segment 81 | sign value (phonetic or logographic) | He assigns shripati/suripati ligature to the Table 18 entry labelled ŚRIPATI/SURIPATI. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q108 | B24: Table 18, text segment 81 | sign value (phonetic or logographic) | He assigns shripatideva or alternatives of compound order to the Table 18 entry labelled ŚRIPATIDEVA. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q109 | B24: Table 18, text segment 81 | sign value (phonetic or logographic) | He assigns paka/bhaka/bhaga ligature to the Table 18 entry labelled PAKA. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q110 | B24: Table 18, text segment 81 | sign value (phonetic or logographic) | He assigns shripala ligature to the Table 18 entry labelled ŚRIPALA. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q111 | B24: Table 18, text segment 81 | sign value (phonetic or logographic) | He assigns aryaka ligature to the Table 18 entry labelled ARYAKA. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q112 | B24: Table 18, text segment 81 | sign value (phonetic or logographic) | He assigns karapala ligature to the Table 18 entry labelled KARAPALA. | Table 18 explicitly lists this proposed value; the available page text omits its glyph. This audit checks the table, without certifying all later readings offered for the sign. |  |  |
+| Q113 | B24: Segments 52–53; introductory letter PDF p. 2 | reading of a text | He proposes the reading mātra for the retained role sequence. | The MS discussion treats the pair as a measure/amount word and also mentions a masculine Brahmin sense. |  | L1 |
+| Q114 | B24: Table 13, segments 67–68; MH4624/H-467 and MH2449/M-320 | reading of a text | He proposes the reading dhanapāla for the retained role sequence. | He uses the bow-related dhana and staff-related pāla values to propose treasurer or an attested name. |  | L1 |
+| Q115 | B24: Table 14, segments 69–70; MH4650/M-1592 | reading of a text | He proposes the reading bhūpāla for the retained role sequence. | The unknown square sign is assigned bhū through dictionary-based cross-checking; this pair is one of its construction contexts. |  | L1 |
+| Q116 | B24: Table 15, segment 70; MH1056, MH1310 and MH4447 | reading of a text | He proposes the reading bhūma for the retained role sequence. | He treats the same unknown-sign-plus-ma contexts as supporting the dictionary-derived bhū value. |  | L1 |
+| Q117 | B24: Table 15, segment 70; MH4260 and MH2638 | reading of a text | He proposes the reading bhūdhana for the retained role sequence. | He treats the unknown-sign-plus-dhana contexts as supporting the dictionary-derived bhū value. |  | L1 |
+| Q118 | B24: Table 16, segments 71–72; catalogue notes 95–96: MH2109/M-1688, MH2348/M-958, MH2564/M-979 | reading of a text | He proposes the reading putra for the retained role sequence. | bhūtra is unattested; he prefers adding pu to the PU alternatives. Segments 95–96 question the three cited stroke shapes, explicitly calling the short-stroke reading doubtful. |  | L1 |
+| Q119 | B24: Table 17, segments 73–75 | reading of a text | He proposes the reading dhanapati for the retained role sequence. | He selects pati by dictionary searches against known preceding roles and standalone-title use; this pair helps construct the value. |  | L1 |
+| Q120 | B24: Table 17 discussion, segment 75 | reading of a text | He proposes the reading palapati/pālapati or balapati for the retained role sequence. | He notes that palapati and pālapati are absent from Sanskrit dictionaries, cites a surname, and adds the attested balapati reading by allowing bala. |  | L1 |
+| Q121 | B24: Table 17, segments 74–75; MH8104 | reading of a text | He proposes the reading bhūpati for the retained role sequence. | He selects pati by dictionary searches including this PU context; he calls bhūpati an attested monarch/prince term and name. |  | L1 |
+| Q122 | B24: Table 17, segments 73–75; MH1400/M-314 line 3 | reading of a text | He proposes the reading dhanapālapati for the retained role sequence. | He includes this sequence among the pati construction contexts; the package’s exact and normalized whole-headword tests find no match for it. |  | L1 |
+| Q123 | B24: Segment 43; Table 8, segments 44–45 | corpus-distributional | He reports that the secondary U/pot-plus-numeral field has no stroke number above four. | Examples on opposite faces or secondary lines. |  | D2 |
+| Q124 | B24: Segment 47; Table 10, segments 47–49 | corpus-distributional | He treats two staff-like forms as allographs because they have similar distributions and do not co-occur. | Separate catalogue entries with overlapping contexts. |  | D2 |
+| Q125 | B24: Segment 46 | method | He acknowledges a plausible Dravidian bow/price comparison as well as a Sanskrit bow/wealth comparison. | Candidate homophones appropriate to an assumed value context. |  | L1 |
+| Q126 | B24: Section VII, segments 231–249, especially 243 and 247–249 | reading of a text | He interprets complete patterned fields as assets belonging to a named owner, assigned to a deity or authority. | The combined proposed P/C names, M quantities and terminal predicates. |  | D2, M1 |
+| Q127 | L04: 0:45:40–0:46:24 | corpus-distributional | He says the jar always occurs in terminal context, apart from a couple of Middle Eastern seals that might represent another language. | His summary of extreme T-context rigidity; the caption garbles terminal as tran. The surrounding T-field discussion establishes the intended label. | always always always | D1, D1-R |
+| Q128 | B24: Segments 19–20 and 241–242 | segmentation or structure | The paper suggests a noun-case or case-like relationship for juncture signs, possibly genitive/dative, while also allowing an honorific sense. | Juncture position and the proposed relations between assets and a named recipient; this paper interpretation differs in emphasis from the tentative Lecture 9 alternatives. |  | D1, D3 |
+| Q129 | L09: 0:35:13–0:35:54 | corpus-distributional | He says the arrow occurs outside the terminal environment only once or twice, then revises that to a handful of times. | A spoken summary accompanying the proposed ISH/ĪŚ value; the positional exceptions are counted separately from unresolved T-field membership. |  | D1, D1-R |
+| Q130 | B24: Segments 71–72 and 95–96 | method | The PU-TRA context prompts him to prefer polyvalent PU, including pu, over an unattested earlier bhūtra form; the detailed catalogue notes express doubts about these stroke identities. | He contrasts unattested bhūtra with attested putra and uses the latter to broaden PU. The catalogue notes distinguish tall and short strokes. |  | L1, L1-R |
