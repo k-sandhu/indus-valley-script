@@ -1,0 +1,86 @@
+{
+  "status": "Verified computation",
+  "direct_code_joins": 659,
+  "offset_histogram": {
+    "-396": 1,
+    "0": 624,
+    "2": 34
+  },
+  "offset_rule_exceptions": [
+    {
+      "mayig": "P000",
+      "code": "599",
+      "cell_id": "p21_c9_r13",
+      "printed_rank": 396,
+      "Mayig_minus_rank": -396
+    }
+  ],
+  "Mayig_classes_373_374": {
+    "P373": {
+      "id": "P373",
+      "description": "Leaf with tooth off top-right, and tooth off bottom-left",
+      "parpola_graphemes": [
+        "V804"
+      ],
+      "wells_graphemes": [],
+      "mahadevan_graphemes": [],
+      "features": []
+    },
+    "P374": {
+      "id": "P374",
+      "description": "Leaf with stretched diamond overlapping from top right to top bottom",
+      "parpola_graphemes": [
+        "V805"
+      ],
+      "wells_graphemes": [],
+      "mahadevan_graphemes": [],
+      "features": []
+    }
+  },
+  "code369_chart": {
+    "p20_c2_r1": {
+      "pdf_page": 20,
+      "column": 2,
+      "row": 1,
+      "rank": 43,
+      "code": 369,
+      "alternatives": [],
+      "numeric_confidence": "high",
+      "source": "2026-10-08 Codex audit with Claude 63-cell blind reread and whole-chart pixel checks; no expert review.",
+      "dashed_auxiliary": null,
+      "rank_alternatives": []
+    }
+  },
+  "code369_Mayig_classes": [],
+  "Mayig_Parpola_codes_absent_from_chart": [
+    {
+      "mayig": "P251",
+      "Parpola_code": "803"
+    },
+    {
+      "mayig": "P373",
+      "Parpola_code": "804"
+    },
+    {
+      "mayig": "P374",
+      "Parpola_code": "805"
+    }
+  ],
+  "returned_cell_payload_errors": [],
+  "part_witnesses": [
+    {
+      "path": "data/raw/2026-10-08-bonta-review/second-coder-v1/returns/coder2-part1.json",
+      "sha256": "ba26be93926e84e869a23d97dcc6793f0df45e7ac8693f5bc7b3039986a61647",
+      "matches_declared_hash": true,
+      "notes": "Rows B001-B048 only, in template order. Formats: helsinki_candidates.code is the three-digit chart code as a zero-padded string, and class is the chart's class (rank) number as an integer; the chart-reference file calls this field rank. Candidate chart cells were taken from the Parpola codes (V numbers) that Mayig lists for each selected class, and only cells that look like the drawing are listed; other cells of the same class were left out. Class sheets and chart cells were compared against enlarged copies of the drawings. Mayig class descriptions were used as shape descriptions only. Confidence: high means one class matches in all visible strokes; medium means the class is clear but one feature differs (stroke count, outline shape or an extra mark); low means a candidate set or a loose match with stated differences. No row is unmapped. B020 lists both the compound class P035 and a decomposition P013 + P182 in visual left-to-right order; the decomposition is secondary. B035, B041, B003, B004 and B016 are the weakest rows. No drawing was found to be mirrored relative to its chart cell. No files outside second-coder-v1/ were opened, apart from the helper folder named above and a listing of its parent folder."
+    },
+    {
+      "path": "data/raw/2026-10-08-bonta-review/second-coder-v1/returns/coder2-part2.json",
+      "sha256": "d78abe6cf5eec5c196611872c988862e57ff3fe041edbdf2f1b78b0bac0115de",
+      "matches_declared_hash": true,
+      "notes": "Method: each drawing was compared with the four class sheets to narrow candidates, then with the individual chart cells of those classes, enlarged next to the drawing. In helsinki_candidates, 'class' is the class number printed on the chart cell (the 'rank' field of chart-reference-v2.1.json) and 'code' is the three-digit code. The chart class number equals the Mayig P-number up to P372 and is two lower from P375 onward (P378 is chart class 376, P382 is 380, P384 is 382, P385 is 383). Mayig IDs and the chart cells were joined by the Parpola codes that each Mayig class lists; chart cell 369 (class 43) is not listed under any Mayig class and is used for B053 as a chart cell only. wells_candidates copies the direct Wells list of each selected Mayig class. When a candidate set contains several classes, helsinki_candidates holds the cells of all of them and the first Mayig ID is the first candidate. Stroke-count signs (B075, B077, B078, B079, U012, U036, U066, U136) were separated into half-height and full-height classes by the height of the ink relative to its drawing box (for example 48 percent for B077, 42 percent for B079, 93 percent for U066, 63 percent for U136). This height rule is an inference about how the drawings were cropped and is the main uncertainty for those rows. Serrated or finely ticked strokes (B070, B074, B075, B078, U066, U136) are recorded as plain strokes with the serration flagged as possibly a rendering artefact. Mirrored form: B053 only. Compound drawings with component_sequence_candidates: B074, B075, B078; the sequence is the visual left-to-right order and does not imply a reading direction. Rows with candidate sets: B053, B062, B069, B078, U012, U036, U136. The reference class descriptions in mayig-classes.json were used for shape wording only. started_utc is the creation time of the helper folder, which was made a few tool calls after the first reads of the packet."
+    }
+  ],
+  "instruction_resolution": "class means chart rank; use v2 template. Explicit code/cell joins remain primary.",
+  "reference_sha256": "caed7aa087f2866b9698149be5fce38ec9b99ace4f2fb37fcca740c989531a97"
+}

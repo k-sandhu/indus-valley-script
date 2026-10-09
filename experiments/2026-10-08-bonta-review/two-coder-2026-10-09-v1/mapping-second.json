@@ -1,0 +1,2787 @@
+{
+  "status": "Exploratory",
+  "coder": "Claude Sonnet 5.5 (Claude Code subagents), independent second coder in two parts",
+  "parts": [
+    {
+      "file": "coder2-part1.json",
+      "sha256": "ba26be93926e84e869a23d97dcc6793f0df45e7ac8693f5bc7b3039986a61647",
+      "rows": 48,
+      "started_utc": "2026-10-09T05:01:16Z",
+      "finished_utc": "2026-10-09T05:14:25Z",
+      "notes": "Rows B001-B048 only, in template order. Formats: helsinki_candidates.code is the three-digit chart code as a zero-padded string, and class is the chart's class (rank) number as an integer; the chart-reference file calls this field rank. Candidate chart cells were taken from the Parpola codes (V numbers) that Mayig lists for each selected class, and only cells that look like the drawing are listed; other cells of the same class were left out. Class sheets and chart cells were compared against enlarged copies of the drawings. Mayig class descriptions were used as shape descriptions only. Confidence: high means one class matches in all visible strokes; medium means the class is clear but one feature differs (stroke count, outline shape or an extra mark); low means a candidate set or a loose match with stated differences. No row is unmapped. B020 lists both the compound class P035 and a decomposition P013 + P182 in visual left-to-right order; the decomposition is secondary. B035, B041, B003, B004 and B016 are the weakest rows. No drawing was found to be mirrored relative to its chart cell. No files outside second-coder-v1/ were opened, apart from the helper folder named above and a listing of its parent folder."
+    },
+    {
+      "file": "coder2-part2.json",
+      "sha256": "d78abe6cf5eec5c196611872c988862e57ff3fe041edbdf2f1b78b0bac0115de",
+      "rows": 48,
+      "started_utc": "2026-10-09T05:01:49Z",
+      "finished_utc": "2026-10-09T05:12:55Z",
+      "notes": "Method: each drawing was compared with the four class sheets to narrow candidates, then with the individual chart cells of those classes, enlarged next to the drawing. In helsinki_candidates, 'class' is the class number printed on the chart cell (the 'rank' field of chart-reference-v2.1.json) and 'code' is the three-digit code. The chart class number equals the Mayig P-number up to P372 and is two lower from P375 onward (P378 is chart class 376, P382 is 380, P384 is 382, P385 is 383). Mayig IDs and the chart cells were joined by the Parpola codes that each Mayig class lists; chart cell 369 (class 43) is not listed under any Mayig class and is used for B053 as a chart cell only. wells_candidates copies the direct Wells list of each selected Mayig class. When a candidate set contains several classes, helsinki_candidates holds the cells of all of them and the first Mayig ID is the first candidate. Stroke-count signs (B075, B077, B078, B079, U012, U036, U066, U136) were separated into half-height and full-height classes by the height of the ink relative to its drawing box (for example 48 percent for B077, 42 percent for B079, 93 percent for U066, 63 percent for U136). This height rule is an inference about how the drawings were cropped and is the main uncertainty for those rows. Serrated or finely ticked strokes (B070, B074, B075, B078, U066, U136) are recorded as plain strokes with the serration flagged as possibly a rendering artefact. Mirrored form: B053 only. Compound drawings with component_sequence_candidates: B074, B075, B078; the sequence is the visual left-to-right order and does not imply a reading direction. Rows with candidate sets: B053, B062, B069, B078, U012, U036, U136. The reference class descriptions in mayig-classes.json were used for shape wording only. started_utc is the creation time of the helper folder, which was made a few tool calls after the first reads of the packet."
+    }
+  ],
+  "rows": [
+    {
+      "sign_id": "B001",
+      "mayig_candidates": [
+        "P280"
+      ],
+      "wells_candidates": [
+        "595"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c3_r24",
+          "code": "028",
+          "class": 280,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c3_r25",
+          "code": "256",
+          "class": 280,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "medium",
+      "basis": "Vertical stem rising from the top centre of a rectangle that two interior horizontal bars divide into three compartments. Mayig P280 is a box with a top stem and horizontal striping; its chart cells (codes 028 and 256) show four compartments, so the stripe count here is one fewer. P275 has stems at both top and bottom, and P276 has no bars."
+    },
+    {
+      "sign_id": "B002",
+      "mayig_candidates": [
+        "P290"
+      ],
+      "wells_candidates": [
+        "578",
+        "579"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c4_r6",
+          "code": "436",
+          "class": 290,
+          "numeric_confidence": "medium"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Small open rectangle sitting on a wide band that three short verticals divide into four cells, with two long legs below the band. This is the table-with-lid form of P290 (small box on top, vertical hatches under the top bar); the chart cell (code 436, chart numeric confidence medium) has the same lid, ribbed band and two legs."
+    },
+    {
+      "sign_id": "B003",
+      "mayig_candidates": [
+        "P047"
+      ],
+      "wells_candidates": [
+        "517",
+        "518"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c2_r7",
+          "code": "323",
+          "class": 47,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c2_r8",
+          "code": "264",
+          "class": 47,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "low",
+      "basis": "Long slanted stroke with an oval attached to its right side below the middle, filled with three or four diagonal stripes. The nearest class is P047, a vertical line carrying a rounded hatched decoration. In P047 the decoration is centred on the line and a caret caps the top; here the oval hangs from one side and no caret is drawn. The hatched hearts P110 and P112 were checked and fit the one-sided attachment less well."
+    },
+    {
+      "sign_id": "B004",
+      "mayig_candidates": [
+        "P048"
+      ],
+      "wells_candidates": [
+        "243"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c2_r9",
+          "code": "087",
+          "class": 48,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "low",
+      "basis": "Slanted body with four diagonal bands, two rounded projections at the top, crossing strokes at the bottom, and an extra short bar with a small circle at lower left. The banded body and crossing tail agree with P048 (fish with caret hat and diagonal hatching, code 087, shown cleanly in B042). The top here is two rounded shapes in place of a caret, and the lower-left bar has no counterpart in the chart cell. Top and lower-left strokes are uncertain and may include overlap or damage."
+    },
+    {
+      "sign_id": "B005",
+      "mayig_candidates": [
+        "P276"
+      ],
+      "wells_candidates": [
+        "590"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c3_r19",
+          "code": "027",
+          "class": 276,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c3_r20",
+          "code": "491",
+          "class": 276,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Plain square with one stem rising from the top centre, no interior lines and no side strokes. Matches P276 (codes 027 and 491). P277 adds four small caging strokes and P275 has a stem at the bottom as well."
+    },
+    {
+      "sign_id": "B006",
+      "mayig_candidates": [
+        "P316"
+      ],
+      "wells_candidates": [
+        "704",
+        "705",
+        "706",
+        "707"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c5_r15",
+          "code": "197",
+          "class": 316,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c5_r16",
+          "code": "398",
+          "class": 316,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c5_r17",
+          "code": "532",
+          "class": 316,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "U shape with a long vertical stroke inserted into its opening that ends in a small oval at the bottom of the U. Matches P316 (U with a long vertical stroke inserted into the gap); all three chart cells show the same stroke with a terminal bulb. P317 adds strokes below the U."
+    },
+    {
+      "sign_id": "B007",
+      "mayig_candidates": [
+        "P255"
+      ],
+      "wells_candidates": [
+        "690"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c2_r12",
+          "code": "232",
+          "class": 255,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c2_r13",
+          "code": "712",
+          "class": 255,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Two parallel diagonal strokes on each side converge at a narrow waist, forming a doubled X in which the left pair and right pair read as nested chevrons meeting at the centre. Matches P255 (nested greater-than signs touching nested less-than signs); codes 232 and 712 show the same nested chevrons around the crossing."
+    },
+    {
+      "sign_id": "B008",
+      "mayig_candidates": [
+        "P092"
+      ],
+      "wells_candidates": [
+        "415"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c4_r11",
+          "code": "042",
+          "class": 92,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c4_r12",
+          "code": "182",
+          "class": 92,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Horizontal bar with five short teeth rising from it and one long stem descending from the middle, aligned with the central tooth. Matches P092 (pitchfork with tines; codes 042 and 182). P095 has two stacked heads and P094 has a triangular middle tine."
+    },
+    {
+      "sign_id": "B009",
+      "mayig_candidates": [
+        "P289"
+      ],
+      "wells_candidates": [
+        "575"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c4_r4",
+          "code": "030",
+          "class": 289,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c4_r5",
+          "code": "261",
+          "class": 289,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Small rectangle on a flat lintel that rests on two long legs, giving a tall open-bottomed table with a lid. Matches P289 (codes 030 and 261). P292 puts an arrow-like mark in place of the lid and P290 adds a ribbed band under the lid."
+    },
+    {
+      "sign_id": "B010",
+      "mayig_candidates": [
+        "P369"
+      ],
+      "wells_candidates": [
+        "812",
+        "813",
+        "814"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c8_r3",
+          "code": "160",
+          "class": 369,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c8_r4",
+          "code": "700",
+          "class": 369,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "medium",
+      "basis": "Pointed oval enclosing a small tilted square crossed by two short strokes. P369 is a leaf with a small hatched square inside; its chart cells (codes 160 and 700) show a small circle with strokes, so the inner mark is a looser match than the outline. P370 and P371 add a tooth or a pitchfork head, which are absent."
+    },
+    {
+      "sign_id": "B011",
+      "mayig_candidates": [
+        "P349"
+      ],
+      "wells_candidates": [
+        "840"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c7_r3",
+          "code": "169",
+          "class": 349,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c7_r4",
+          "code": "533",
+          "class": 349,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Two pointed ovals overlapping horizontally, with a lens-shaped overlap. Matches P349 (two vertical leaves, slightly overlapping; codes 169 and 533), which draw the leaves as rounder ovals."
+    },
+    {
+      "sign_id": "B012",
+      "mayig_candidates": [
+        "P145"
+      ],
+      "wells_candidates": [
+        "032"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c7_r13",
+          "code": "009",
+          "class": 145,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c7_r14",
+          "code": "543",
+          "class": 145,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Two long parallel vertical strokes. Matches P145 (codes 009 and 543)."
+    },
+    {
+      "sign_id": "B013",
+      "mayig_candidates": [
+        "P188"
+      ],
+      "wells_candidates": [
+        "435",
+        "436"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c9_r12",
+          "code": "101",
+          "class": 188,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c9_r13",
+          "code": "306",
+          "class": 188,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Slanted stem with a short stroke leaving its upper end toward the right and downward, and a short stroke leaving its lower end toward the left and upward, giving a Z-like outline. Matches P188 (vertical line with a diagonal going down from the top right and a diagonal going up from the bottom left; codes 101 and 306). The stroke directions agree with the chart cells, so the form is not mirrored."
+    },
+    {
+      "sign_id": "B014",
+      "mayig_candidates": [
+        "P065"
+      ],
+      "wells_candidates": [
+        "244"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c3_r2",
+          "code": "183",
+          "class": 65,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Pointed central oval divided by a vertical stroke, two hatched wings with notched ends sloping down on either side, and a three-stroke tail below. Matches P065 (fish with bird wings and a three-feather tail; code 183). The wings are hatched and angled downward where the chart draws open outlines spread sideways."
+    },
+    {
+      "sign_id": "B015",
+      "mayig_candidates": [
+        "P144"
+      ],
+      "wells_candidates": [
+        "031"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c7_r11",
+          "code": "008",
+          "class": 144,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c7_r12",
+          "code": "501",
+          "class": 144,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "medium",
+      "basis": "Single tall vertical stroke. P144 (one long vertical; codes 008 and 501) is chosen because the stroke spans nearly the full height of the drawing, as in B012 and B039. The drawings share no common scale, so the length cue is weak and P121 (a short single tick) cannot be excluded."
+    },
+    {
+      "sign_id": "B016",
+      "mayig_candidates": [
+        "P062",
+        "P064"
+      ],
+      "wells_candidates": [
+        "227",
+        "228",
+        "240",
+        "242"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c2_r31",
+          "code": "180",
+          "class": 62,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c2_r32",
+          "code": "236",
+          "class": 62,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c2_r33",
+          "code": "541",
+          "class": 62,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c3_r1",
+          "code": "181",
+          "class": 64,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "low",
+      "basis": "Pointed stroke on top, a stroke crossing at the upper left, a body made of two overlapping loops, and two diverging legs below. The nearest forms are the fish with extra whiskers P062 (codes 180, 236, 541) and the fish with extra legs P064 (code 181), which have a leaf-shaped body with crossing strokes at the flanks and a splayed tail. The body here is wider and the crossing sits at the head. Internal strokes are uncertain."
+    },
+    {
+      "sign_id": "B017",
+      "mayig_candidates": [
+        "P086"
+      ],
+      "wells_candidates": [
+        "390",
+        "392",
+        "405",
+        "406",
+        "407",
+        "408"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c3_r34",
+          "code": "126",
+          "class": 86,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c4_r0",
+          "code": "151",
+          "class": 86,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Short stem with three prongs at the top: two arms and a central stroke continuing the stem into the fork. Matches P086 (simple tree with branches at the top; codes 126 and 151). P085 is a plain two-armed fork with no central stroke."
+    },
+    {
+      "sign_id": "B018",
+      "mayig_candidates": [
+        "P086"
+      ],
+      "wells_candidates": [
+        "390",
+        "392",
+        "405",
+        "406",
+        "407",
+        "408"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c3_r33",
+          "code": "127",
+          "class": 86,
+          "numeric_confidence": "medium"
+        },
+        {
+          "cell_id": "p20_c4_r1",
+          "code": "508",
+          "class": 86,
+          "numeric_confidence": "medium"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "medium",
+      "basis": "Heavier stem forking into a long left arm and a right arm that carries two or three short strokes near its top. Matches the fan-topped forms of P086 (codes 127 and 508, both chart numeric confidence medium). The number and position of the short strokes are uncertain."
+    },
+    {
+      "sign_id": "B019",
+      "mayig_candidates": [
+        "P182"
+      ],
+      "wells_candidates": [
+        "892"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c9_r0",
+          "code": "081",
+          "class": 182,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c9_r1",
+          "code": "253",
+          "class": 182,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Vertical stroke on the left joined to a half-circle on the right, with a diagonal running from the mid-left of the vertical up through the curve and past the upper right. Matches P182 (bow and arrow; codes 081 and 253). P183 is the caged version and P178 has no diagonal. Straight side on the left and curve on the right agree with the chart cells, so the form is not mirrored."
+    },
+    {
+      "sign_id": "B020",
+      "mayig_candidates": [
+        "P035"
+      ],
+      "wells_candidates": [
+        "125",
+        "126"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c1_r23",
+          "code": "139",
+          "class": 35,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c1_r24",
+          "code": "390",
+          "class": 35,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [
+        [
+          "P013",
+          "P182"
+        ]
+      ],
+      "confidence": "high",
+      "basis": "Person with bent arms standing beside a straight-backed bow (vertical stroke with a curve on the right) crossed by a diagonal. Matches P035 (person with bow and arrow; codes 139 and 390), which treats the person and the bow as one class. As a decomposition the visual left-to-right order is person then bow; the person has a raised left arm, so the generic P013 is only approximate. Not mirrored."
+    },
+    {
+      "sign_id": "B021",
+      "mayig_candidates": [
+        "P270"
+      ],
+      "wells_candidates": [
+        "630",
+        "631",
+        "632",
+        "633",
+        "634",
+        "635",
+        "636",
+        "637",
+        "638",
+        "639"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c3_r1",
+          "code": "066",
+          "class": 270,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Tall rectangle with three short vertical teeth hanging inside the top edge and three standing inside the bottom edge. Matches P270 (rectangle with vertical strokes for teeth inside top and bottom); cell 066 shows three teeth at each edge. Cell 065 has two teeth at each edge and cell 067 adds a half-ring and small strokes, so neither was used."
+    },
+    {
+      "sign_id": "B022",
+      "mayig_candidates": [
+        "P114"
+      ],
+      "wells_candidates": [
+        "070",
+        "072"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c5_r8",
+          "code": "091",
+          "class": 114,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c5_r9",
+          "code": "373",
+          "class": 114,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Long vertical stem with a chevron at its top whose arms droop on both sides. Matches P114 (a single vertical line with two person arms; codes 091 and 373). Code 173 has a circle head and is not used."
+    },
+    {
+      "sign_id": "B023",
+      "mayig_candidates": [
+        "P091"
+      ],
+      "wells_candidates": [
+        "350",
+        "352",
+        "353",
+        "354"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c4_r10",
+          "code": "523",
+          "class": 91,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c4_r8",
+          "code": "045",
+          "class": 91,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c4_r9",
+          "code": "044",
+          "class": 91,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Three to four tall vertical strokes above a horizontal crossbar, with a U-shaped loop hanging below the bar. Matches P091 (horizontal line with lines out the top and lines or a U out the bottom). Codes 045 and 523 show the U below the bar but with converging upper strokes; code 044 has parallel verticals above and below the bar."
+    },
+    {
+      "sign_id": "B024",
+      "mayig_candidates": [
+        "P091"
+      ],
+      "wells_candidates": [
+        "350",
+        "352",
+        "353",
+        "354"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c4_r9",
+          "code": "044",
+          "class": 91,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "medium",
+      "basis": "Horizontal bar with four short teeth above it, two of them aligned with the two long stems that descend below the bar. Matches P091 through the code 044 layout (verticals above and below a bar), where the upper strokes are taller than the teeth drawn here."
+    },
+    {
+      "sign_id": "B025",
+      "mayig_candidates": [
+        "P205"
+      ],
+      "wells_candidates": [
+        "289",
+        "290",
+        "291",
+        "292",
+        "293",
+        "294",
+        "295",
+        "296",
+        "297",
+        "299",
+        "300",
+        "301",
+        "302",
+        "303",
+        "304",
+        "305",
+        "306"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c0_r4",
+          "code": "129",
+          "class": 205,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c0_r5",
+          "code": "233",
+          "class": 205,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Bundle of parallel strokes bent at a knee, two above the bend and four below, joined by a short stroke across the top. Matches P205 (prismed rays with opposite slants above and below the bend, more rays below; codes 129 and 233). P206 adds a decoration at the top."
+    },
+    {
+      "sign_id": "B026",
+      "mayig_candidates": [
+        "P076"
+      ],
+      "wells_candidates": [
+        "190",
+        "192",
+        "194"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c3_r20",
+          "code": "190",
+          "class": 76,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c3_r21",
+          "code": "544",
+          "class": 76,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Central oval with three strokes rising from the top, three descending from the bottom, and two long diagonal strokes spreading to the right in a K shape. Matches P076 (squashed spider with the right two legs further from the body; codes 190 and 544)."
+    },
+    {
+      "sign_id": "B027",
+      "mayig_candidates": [
+        "P256"
+      ],
+      "wells_candidates": [
+        "692"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c2_r14",
+          "code": "123",
+          "class": 256,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c2_r15",
+          "code": "507",
+          "class": 256,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "X drawn as two crossing outlined bars with hollow arms. Matches P256 (an X drawn in outline; codes 123 and 507)."
+    },
+    {
+      "sign_id": "B028",
+      "mayig_candidates": [
+        "P009"
+      ],
+      "wells_candidates": [
+        "100"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c0_r16",
+          "code": "134",
+          "class": 9,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c0_r17",
+          "code": "559",
+          "class": 9,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Upright figure whose head is a three-pronged fork, arms bent outward and downward from the neck, and two splayed legs. Matches P009 (person with three heads; codes 134 and 559). P010 adds bracketing parentheses."
+    },
+    {
+      "sign_id": "B029",
+      "mayig_candidates": [
+        "P095"
+      ],
+      "wells_candidates": [
+        "416"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c4_r16",
+          "code": "043",
+          "class": 95,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c4_r17",
+          "code": "404",
+          "class": 95,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Two stacked combs, each a horizontal bar with four short teeth above it, joined by a central stem that continues downward as a thin line. Matches P095 (pitchfork with two stacked heads; codes 043 and 404)."
+    },
+    {
+      "sign_id": "B030",
+      "mayig_candidates": [
+        "P204"
+      ],
+      "wells_candidates": [
+        "061",
+        "062",
+        "063"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c0_r2",
+          "code": "156",
+          "class": 204,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c0_r3",
+          "code": "119",
+          "class": 204,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Long stroke slanting from upper right to lower left, with a shorter stroke starting near its middle and heading lower right without touching it. Matches P204 (lambda reversed horizontally, leg possibly not connected to the stem; codes 156 and 119). The slant directions agree with the chart cells, so the form is not mirrored."
+    },
+    {
+      "sign_id": "B031",
+      "mayig_candidates": [
+        "P050"
+      ],
+      "wells_candidates": [
+        "220"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c2_r11",
+          "code": "177",
+          "class": 50,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c2_r12",
+          "code": "517",
+          "class": 50,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "medium",
+      "basis": "Elongated closed oval with a short stroke on each side near its lower end and two diverging legs below. Matches P050 (fish with no other decoration; codes 177 and 517). P049 lacks the side strokes and P056 has a vertical stroke inside the body. The body here is closed and round-topped where the chart draws a pointed lens, and the legs fork from a stem instead of crossing."
+    },
+    {
+      "sign_id": "B032",
+      "mayig_candidates": [
+        "P230"
+      ],
+      "wells_candidates": [
+        "550",
+        "555"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c1_r11",
+          "code": "241",
+          "class": 230,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c1_r12",
+          "code": "033",
+          "class": 230,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c1_r13",
+          "code": "412",
+          "class": 230,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "medium",
+      "basis": "Vertical stroke at the left joined by two diagonals to a point at the centre, continuing through the centre as a crossing and ending in small hooks at the upper right and lower right. Matches the pincer form of P230 (right-pointing triangle at the left, hooked ends at the right; codes 033, 412 and 241), with 033 and 412 the closest because they include the crossing. P227 has no hooks."
+    },
+    {
+      "sign_id": "B033",
+      "mayig_candidates": [
+        "P310"
+      ],
+      "wells_candidates": [
+        "700"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c5_r3",
+          "code": "246",
+          "class": 310,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c5_r4",
+          "code": "548",
+          "class": 310,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "medium",
+      "basis": "Open U-shaped curve with sloping sides meeting in a rounded point and no inner strokes. P310 (simple U; codes 246 and 548) is the only plain U class, and the chart cells have vertical sides and a round base where this drawing has a V-like profile."
+    },
+    {
+      "sign_id": "B034",
+      "mayig_candidates": [
+        "P268"
+      ],
+      "wells_candidates": [
+        "615"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c2_r30",
+          "code": "069",
+          "class": 268,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Rectangular grid of three columns by four rows. Matches P268 (grid of x by y cells), specifically cell 069 with the same layout; codes 062 and 092 have different cell counts."
+    },
+    {
+      "sign_id": "B035",
+      "mayig_candidates": [
+        "P226",
+        "P228"
+      ],
+      "wells_candidates": [
+        "531",
+        "533",
+        "545"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c1_r6",
+          "code": "036",
+          "class": 226,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c1_r9",
+          "code": "037",
+          "class": 228,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "low",
+      "basis": "Central vertical bar with a right-pointing triangle above and another below on its right, and a third triangle on its left whose apex meets the bar at mid-height. The stacked X pair joined by a central vertical (P228, code 037) and the bowtie with an attached triangle (P226, code 036) have a similar outline, but neither chart cell shows three closed triangles around a bar, so the match is loose."
+    },
+    {
+      "sign_id": "B036",
+      "mayig_candidates": [
+        "P227"
+      ],
+      "wells_candidates": [
+        "530"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c1_r7",
+          "code": "229",
+          "class": 227,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c1_r8",
+          "code": "298",
+          "class": 227,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "medium",
+      "basis": "Vertical stroke at the left joined to a centre point by two diagonals that continue as an X to the right, with the lower-left to upper-right diagonal drawn as a hollow outlined bar. Matches P227 (bowtie without the right-hand vertical; codes 229 and 298). The outlined arm does not appear in the chart cells and may be a drawing convention. P230 has hooked ends that are absent here."
+    },
+    {
+      "sign_id": "B037",
+      "mayig_candidates": [
+        "P265"
+      ],
+      "wells_candidates": [
+        "621",
+        "622"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c2_r26",
+          "code": "061",
+          "class": 265,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c2_r27",
+          "code": "687",
+          "class": 265,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Tall rectangle with a full-height vertical bar right of centre and a horizontal bar across the left compartment at mid-height. Matches P265 (codes 061 and 687). P266 adds a U in the other compartment."
+    },
+    {
+      "sign_id": "B038",
+      "mayig_candidates": [
+        "P342"
+      ],
+      "wells_candidates": [
+        "165"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c6_r27",
+          "code": "165",
+          "class": 342,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c6_r28",
+          "code": "726",
+          "class": 342,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "medium",
+      "basis": "Elongated closed oval open at the lower right, with the left wall curling around the bottom and up into the middle as an inner hook. Matches P342 (left and right parentheses joined at the top, the left one swooping upward into the centre; codes 165 and 726). The chart cells have a pointed top where this drawing is round, and P343 adds a tooth at the upper right that is absent here."
+    },
+    {
+      "sign_id": "B039",
+      "mayig_candidates": [
+        "P147"
+      ],
+      "wells_candidates": [
+        "033"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c7_r16",
+          "code": "010",
+          "class": 147,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c7_r17",
+          "code": "424",
+          "class": 147,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Three parallel vertical strokes. Matches P147 (codes 010 and 424)."
+    },
+    {
+      "sign_id": "B040",
+      "mayig_candidates": [
+        "P352"
+      ],
+      "wells_candidates": [
+        "845"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c7_r7",
+          "code": "170",
+          "class": 352,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c7_r8",
+          "code": "309",
+          "class": 352,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Two overlapping pointed ovals crossed by diagonal strokes through the left, central and right sections. Matches P352 (two overlapping leaves with diagonal hatches across the three midsections; codes 170 and 309)."
+    },
+    {
+      "sign_id": "B041",
+      "mayig_candidates": [
+        "P349",
+        "P350"
+      ],
+      "wells_candidates": [
+        "840"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c7_r3",
+          "code": "169",
+          "class": 349,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c7_r4",
+          "code": "533",
+          "class": 349,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c7_r5",
+          "code": "506",
+          "class": 350,
+          "numeric_confidence": "medium"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "low",
+      "basis": "Two overlapping pointed ovals with three short vertical ticks inside, one in each leaf and one in the overlap. P349 (two overlapping leaves) and P350 (the same with small vertical strokes bracketing the leaves; code 506, chart numeric confidence medium) are the nearest classes. In the chart the extra strokes lie outside the leaves and here they lie inside, so neither is a clean match."
+    },
+    {
+      "sign_id": "B042",
+      "mayig_candidates": [
+        "P048"
+      ],
+      "wells_candidates": [
+        "243"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c2_r9",
+          "code": "087",
+          "class": 48,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Chevron cap above a pointed oval filled with diagonal stripes, and two crossing strokes below. Matches P048 (fish with no arms, caret hat, diagonal hatching throughout; code 087)."
+    },
+    {
+      "sign_id": "B043",
+      "mayig_candidates": [
+        "P083"
+      ],
+      "wells_candidates": [
+        "204"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c3_r29",
+          "code": "194",
+          "class": 83,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Two small ovals stacked vertically, with three strokes fanning up and to the right from the upper oval and three fanning down and to the right from the lower. Matches P083 (two stacked leaves with lines coming away on the right of each; code 194)."
+    },
+    {
+      "sign_id": "B044",
+      "mayig_candidates": [
+        "P303"
+      ],
+      "wells_candidates": [
+        "322",
+        "323",
+        "324",
+        "325"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c4_r26",
+          "code": "275",
+          "class": 303,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c4_r27",
+          "code": "519",
+          "class": 303,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "H-shaped frame with two long uprights splaying outward, a hollow band of two horizontal bars across the upper part, and four legs below the band (the outer uprights continuing plus two inner strokes). Matches P303 (H with two horizontal bars and vertical lines dropping from the crossbar; codes 275 and 519). P295 has a closed top and P298 has a crossbar of small boxes."
+    },
+    {
+      "sign_id": "B045",
+      "mayig_candidates": [
+        "P366"
+      ],
+      "wells_candidates": [
+        "832"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c7_r32",
+          "code": "158",
+          "class": 366,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c7_r33",
+          "code": "431",
+          "class": 366,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Pointed oval with a short vertical stroke at its centre. Matches P366 (leaf with small vertical stroke inside; codes 158 and 431). P367 adds a tooth at the upper right."
+    },
+    {
+      "sign_id": "B046",
+      "mayig_candidates": [
+        "P165"
+      ],
+      "wells_candidates": [
+        "921"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c8_r9",
+          "code": "216",
+          "class": 165,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Left-facing arc with a small half-ring against its middle on the concave side. Matches P165 (left parenthesis with small semicircle at the very middle; code 216) without mirroring. B048 is the right-facing counterpart."
+    },
+    {
+      "sign_id": "B047",
+      "mayig_candidates": [
+        "P305"
+      ],
+      "wells_candidates": [
+        "420"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c4_r30",
+          "code": "058",
+          "class": 305,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c4_r31",
+          "code": "716",
+          "class": 305,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Four vertical strokes (two outer, two inner) joined along the bottom by a horizontal bar and open at the top. Matches P305 (long horizontal at the bottom with vertical lines along its length; codes 058 and 716). P306 has decorated tops and a segmented base."
+    },
+    {
+      "sign_id": "B048",
+      "mayig_candidates": [
+        "P160"
+      ],
+      "wells_candidates": [
+        "920"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c8_r2",
+          "code": "220",
+          "class": 160,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c8_r3",
+          "code": "155",
+          "class": 160,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Right-facing arc with a small leaf-shaped loop at its middle on the concave side. Matches P160 (right parenthesis with small leaf at the middle; codes 220 and 155) without mirroring. P161 adds a stroke across the top and P156 has only a short horizontal stroke."
+    },
+    {
+      "sign_id": "B049",
+      "mayig_candidates": [
+        "P036"
+      ],
+      "wells_candidates": [
+        "127"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c1_r25",
+          "code": "304",
+          "class": 36,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Two bow-shaped arcs bound the sign on the left and right, and a standing figure occupies the centre. Diagonal arrow strokes cross at the top of each outer arc. This is the structure of chart class 36 (code 304). Class 35 (codes 139 and 390) carries a single bow and a single arrow."
+    },
+    {
+      "sign_id": "B050",
+      "mayig_candidates": [
+        "P378"
+      ],
+      "wells_candidates": [
+        "820"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c8_r12",
+          "code": "163",
+          "class": 376,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c8_r13",
+          "code": "254",
+          "class": 376,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "An outlined oval with pointed top and bottom is divided into six sectors by one vertical and two diagonal diameters, which makes a six-spoke wheel. Code 254 draws the wheel as an oval and code 163 as a circle; the pointed oval here is closer to 254. Class 339 also has six spokes but adds strokes below the circle, and this drawing has none."
+    },
+    {
+      "sign_id": "B051",
+      "mayig_candidates": [
+        "P385"
+      ],
+      "wells_candidates": [
+        "817",
+        "861"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c8_r25",
+          "code": "162",
+          "class": 383,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c8_r28",
+          "code": "510",
+          "class": 383,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A diamond outline with a smaller diamond cut into its upper vertex, drawn as a V-shaped notch between the two upper sides. Codes 162 and 510 of chart class 383 are diamonds with this notch. Codes 420 and 421 of the same class draw the outline as an ellipse and fit this diamond less well."
+    },
+    {
+      "sign_id": "B052",
+      "mayig_candidates": [
+        "P044"
+      ],
+      "wells_candidates": [
+        "346"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c2_r2",
+          "code": "077",
+          "class": 44,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c2_r3",
+          "code": "452",
+          "class": 44,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A quadruped facing left, with a rectangular head on a ladder-striped neck, a ladder-striped body, four legs, and a full-height vertical stroke closing the right end. Chart class 44 (codes 77 and 452) has the same left-facing head, ladder neck and tall right-hand vertical. Code 452 draws the head as a rectangle with side ticks, which is the closer match to this head."
+    },
+    {
+      "sign_id": "B053",
+      "mayig_candidates": [
+        "P043",
+        "P044"
+      ],
+      "wells_candidates": [
+        "340",
+        "341",
+        "342",
+        "343",
+        "344",
+        "345",
+        "346",
+        "347",
+        "348"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c2_r1",
+          "code": "369",
+          "class": 43,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c2_r2",
+          "code": "077",
+          "class": 44,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c2_r3",
+          "code": "452",
+          "class": 44,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "medium",
+      "basis": "A quadruped with a ladder-striped body. The head sits at the right on a striped neck, and a Y-shaped ornament over a small triangle rises from the left end of the back. Mirrored form: with the drawing reversed left to right, the head and neck match class 43 cell 369 (neck with side ticks at one end, a forked upright at the other) and the ladder body matches class 44. Code 369 is not among the Parpola codes Mayig lists for P043 (only V288 is listed), so the assignment rests on the chart cell and on class 43 as printed on the chart. P044 is kept as the second candidate because the body and legs are the same as in class 44."
+    },
+    {
+      "sign_id": "B054",
+      "mayig_candidates": [
+        "P043"
+      ],
+      "wells_candidates": [
+        "340",
+        "341",
+        "342",
+        "343",
+        "344",
+        "345",
+        "347",
+        "348"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c2_r0",
+          "code": "288",
+          "class": 43,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "medium",
+      "basis": "A quadruped facing right with a cloverleaf-shaped head at the end of a diagonally hatched neck, a hatched body, and a barred upright at the rear. Chart class 43 code 288 shows an animal facing right with a similar clover-shaped head and hatched body. The branched stroke at the rear of cell 288 is replaced here by a barred upright, so the match is to the head and hatching rather than to every stroke."
+    },
+    {
+      "sign_id": "B055",
+      "mayig_candidates": [
+        "P324"
+      ],
+      "wells_candidates": [
+        "740"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c5_r30",
+          "code": "204",
+          "class": 324,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c5_r31",
+          "code": "526",
+          "class": 324,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A U-shaped jar with an outward-pointing horizontal handle at the top of each arm and nothing inside the mouth. This is chart class 324 (codes 204 and 526). Classes 325 to 328 add one to four small strokes inside the mouth."
+    },
+    {
+      "sign_id": "B056",
+      "mayig_candidates": [
+        "P217"
+      ],
+      "wells_candidates": [
+        "520"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c0_r27",
+          "code": "095",
+          "class": 217,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c0_r28",
+          "code": "549",
+          "class": 217,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A triangle with a flat base stands on a long vertical stroke, like an arrowhead on a shaft. Chart class 217 (codes 95 and 549) is a small triangle on a vertical line. The tall hollow triangles of classes 207 to 210 have no shaft."
+    },
+    {
+      "sign_id": "B057",
+      "mayig_candidates": [
+        "P325"
+      ],
+      "wells_candidates": [
+        "741"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c5_r32",
+          "code": "205",
+          "class": 325,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c5_r33",
+          "code": "209",
+          "class": 325,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Jar with outward handles at the top of both arms and one short vertical stroke in the mouth. This is chart class 325 (codes 205 and 209)."
+    },
+    {
+      "sign_id": "B058",
+      "mayig_candidates": [
+        "P326"
+      ],
+      "wells_candidates": [
+        "742",
+        "743",
+        "744"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c5_r34",
+          "code": "206",
+          "class": 326,
+          "numeric_confidence": "medium"
+        },
+        {
+          "cell_id": "p21_c6_r0",
+          "code": "413",
+          "class": 326,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Jar with outward handles at the top of both arms and two short vertical strokes in the mouth. This is chart class 326 (codes 206 and 413)."
+    },
+    {
+      "sign_id": "B059",
+      "mayig_candidates": [
+        "P327"
+      ],
+      "wells_candidates": [
+        "745",
+        "746",
+        "747"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c6_r1",
+          "code": "208",
+          "class": 327,
+          "numeric_confidence": "medium"
+        },
+        {
+          "cell_id": "p21_c6_r4",
+          "code": "706",
+          "class": 327,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Jar with outward handles at the top of both arms and three short vertical strokes in the mouth. Chart class 327 has three-stroke cells (208 and 706) and two cells that draw slanted hatching inside the jar (207 and 414); the vertical strokes here match 208 and 706."
+    },
+    {
+      "sign_id": "B060",
+      "mayig_candidates": [
+        "P382"
+      ],
+      "wells_candidates": [
+        "877"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c8_r19",
+          "code": "164",
+          "class": 380,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c8_r20",
+          "code": "556",
+          "class": 380,
+          "numeric_confidence": "medium"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A diamond outline crossed by a broad X-shaped band, which leaves a small diamond in each of the four corners. There is no ring of short strokes around the sign. Chart class 380 (codes 164 and 556) has this form. Class 381 draws the same figure caged by four short vertical strokes. Code 556 has medium numeric confidence in the chart reference."
+    },
+    {
+      "sign_id": "B061",
+      "mayig_candidates": [
+        "P384"
+      ],
+      "wells_candidates": [
+        "880"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c8_r23",
+          "code": "114",
+          "class": 382,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c8_r24",
+          "code": "797",
+          "class": 382,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A diamond with a small diamond at each of its four vertices and a circle with radiating spokes at the centre. Chart class 382 (codes 114 and 797) has this arrangement. Code 114 draws the central circle with an asterisk-like spoke pattern, as here; code 797 draws it with a darker centre."
+    },
+    {
+      "sign_id": "B062",
+      "mayig_candidates": [
+        "P073",
+        "P074"
+      ],
+      "wells_candidates": [
+        "255",
+        "256"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c3_r14",
+          "code": "184",
+          "class": 73,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c3_r15",
+          "code": "460",
+          "class": 73,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c3_r16",
+          "code": "368",
+          "class": 74,
+          "numeric_confidence": "medium"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "medium",
+      "basis": "A tall vertical stroke on the left is joined by one diagonal to a body filled with horizontal hatching. At the top of the body are a small pointed ear and a striped rectangular piece. At the bottom, crossed legs end in a small triangular foot, and one long diagonal runs out to the lower right. This is the animal of chart classes 73 and 74, which have a hatched body, ears, crossed legs and a triangular foot. Class 74 (code 368) adds a tall vertical stroke on the left, which this drawing has, so P074 is the first candidate and P073 (codes 184 and 460) the second. The rectangle at the top right and the diagonal link are drawn differently from the chart cells."
+    },
+    {
+      "sign_id": "B063",
+      "mayig_candidates": [
+        "P258"
+      ],
+      "wells_candidates": [
+        "693"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c2_r17",
+          "code": "574",
+          "class": 258,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "An X drawn as an outline, with a long stem rising from the lower right arm and ending in a small three-pronged tree. This is chart class 258 (code 574). Class 256 is the plain outlined X and class 257 has three small triangles on the upper right arm."
+    },
+    {
+      "sign_id": "B064",
+      "mayig_candidates": [
+        "P304"
+      ],
+      "wells_candidates": [
+        "321"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c4_r28",
+          "code": "079",
+          "class": 304,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c4_r29",
+          "code": "800",
+          "class": 304,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A tall vertical stroke on the left is joined by a short diagonal to a frame of two horizontal bars with legs. The two outer legs splay outward and the inner legs hang from the lower bar. This is chart class 304 (codes 79 and 800), the framed sign with a vertical stroke and diagonal link. Class 303 has the same frame without the vertical and diagonal. The outer legs are curved in this drawing and straight in the chart."
+    },
+    {
+      "sign_id": "B065",
+      "mayig_candidates": [
+        "P223"
+      ],
+      "wells_candidates": [
+        "457"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c1_r2",
+          "code": "343",
+          "class": 223,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Three triangles meet at one central point: a large one on the left pointing right and two stacked on the right. A curved stem leaves the lower right triangle and ends in a small three-pronged tree. This is chart class 223 (code 343). Class 221 has the three triangles without the tree."
+    },
+    {
+      "sign_id": "B066",
+      "mayig_candidates": [
+        "P364"
+      ],
+      "wells_candidates": [
+        "803",
+        "805",
+        "806"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c7_r28",
+          "code": "161",
+          "class": 364,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c7_r29",
+          "code": "537",
+          "class": 364,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A pointed oval (leaf) contains a stem that starts at the bottom vertex and ends in a three-pronged tree. This is chart class 364 (codes 161 and 537), a leaf with a tree at the bottom. Class 365 adds four short strokes around the leaf, and none appear here."
+    },
+    {
+      "sign_id": "B067",
+      "mayig_candidates": [
+        "P364"
+      ],
+      "wells_candidates": [
+        "803",
+        "805",
+        "806"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c7_r28",
+          "code": "161",
+          "class": 364,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c7_r29",
+          "code": "537",
+          "class": 364,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "medium",
+      "basis": "A pointed oval contains a stem that starts at the bottom vertex and ends in a three-pronged tree. The stem and prongs lean to the left, whereas the chart cells of class 364 (codes 161 and 537) draw them upright and symmetric. Internal strokes: the tilt of the tree and the number of prongs are uncertain at this resolution."
+    },
+    {
+      "sign_id": "B068",
+      "mayig_candidates": [
+        "P075"
+      ],
+      "wells_candidates": [
+        "193",
+        "797",
+        "798"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c3_r17",
+          "code": "168",
+          "class": 75,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c3_r18",
+          "code": "579",
+          "class": 75,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A pointed oval on the left, with a pair of diverging strokes attached at its right vertex, forming a bracket that opens to the right. This is chart class 75 (codes 168 and 579), a leaf with pincers on its right. Cell 695 of the same chart class has radiating legs and is not the form drawn here."
+    },
+    {
+      "sign_id": "B069",
+      "mayig_candidates": [
+        "P364",
+        "P366"
+      ],
+      "wells_candidates": [
+        "803",
+        "805",
+        "806",
+        "832"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c7_r28",
+          "code": "161",
+          "class": 364,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c7_r29",
+          "code": "537",
+          "class": 364,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c7_r32",
+          "code": "158",
+          "class": 366,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c7_r33",
+          "code": "431",
+          "class": 366,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "medium",
+      "basis": "A pointed oval contains a single vertical stroke that rises from the bottom vertex to about the middle of the oval. The stroke has fine ticks along its edge. Chart class 366 (codes 158 and 431) is a leaf with one short vertical stroke inside, but its stroke floats in the middle of the oval. Class 364 has a stem attached at the bottom vertex, with a tree on top, and the stem here has no branches. The assignment is to a candidate set, with P366 first. Internal strokes: whether the ticks are part of the sign is uncertain."
+    },
+    {
+      "sign_id": "B070",
+      "mayig_candidates": [
+        "P056"
+      ],
+      "wells_candidates": [
+        "231"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c2_r20",
+          "code": "178",
+          "class": 56,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c2_r21",
+          "code": "461",
+          "class": 56,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A fish: a pointed oval body, two short arms at the waist and crossed legs below, with one short serrated vertical stroke inside the body. This is chart class 56 (codes 178 and 461), the fish with a small vertical stroke in its body. The serration of the internal stroke may be a drawing artefact."
+    },
+    {
+      "sign_id": "B071",
+      "mayig_candidates": [
+        "P058"
+      ],
+      "wells_candidates": [
+        "233"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c2_r24",
+          "code": "179",
+          "class": 58,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c2_r25",
+          "code": "463",
+          "class": 58,
+          "numeric_confidence": "medium"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A fish with a pointed oval body, short arms and crossed legs, with one horizontal bar across the body in its upper half. This is chart class 58 (codes 179 and 463), the fish with a horizontal line through its body. Code 463 has medium numeric confidence in the chart reference."
+    },
+    {
+      "sign_id": "B072",
+      "mayig_candidates": [
+        "P060"
+      ],
+      "wells_candidates": [
+        "235"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c2_r28",
+          "code": "086",
+          "class": 60,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c2_r29",
+          "code": "568",
+          "class": 60,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A fish with a narrow body, short arms and crossed legs, with a caret (inverted V) above the head. This is chart class 60 (codes 86 and 568), the fish with a caret-shaped hat."
+    },
+    {
+      "sign_id": "B073",
+      "mayig_candidates": [
+        "P062"
+      ],
+      "wells_candidates": [
+        "240",
+        "242"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c2_r31",
+          "code": "180",
+          "class": 62,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c2_r32",
+          "code": "236",
+          "class": 62,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c2_r33",
+          "code": "541",
+          "class": 62,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A fish with a pointed oval body whose upper corners carry diagonal strokes that flare outward, and a lower pair of arms above crossed legs. Chart class 62 (codes 180, 236 and 541) is the fish with extra whiskers at the cheeks. Class 64 has several short fins on each side of the lower body, and these are absent."
+    },
+    {
+      "sign_id": "B074",
+      "mayig_candidates": [
+        "P050",
+        "P092"
+      ],
+      "wells_candidates": [
+        "220",
+        "415"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c2_r11",
+          "code": "177",
+          "class": 50,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c2_r12",
+          "code": "517",
+          "class": 50,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c4_r11",
+          "code": "042",
+          "class": 92,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c4_r12",
+          "code": "182",
+          "class": 92,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [
+        [
+          "P050",
+          "P092"
+        ]
+      ],
+      "confidence": "medium",
+      "basis": "Two separate components. The left one is a fish with a pointed oval body, short arms and crossed legs and no marks inside. The right one is a horizontal bar with four short upright teeth along it and a long stem hanging from its middle, which is the pitchfork of chart class 92 (codes 42 and 182). The fish matches class 50 (codes 177 and 517). Chart classes list no combined cell for this pair, so the candidate is the sequence P050 then P092 in visual left-to-right order. The teeth of the right component carry fine ticks that may be a drawing artefact."
+    },
+    {
+      "sign_id": "B075",
+      "mayig_candidates": [
+        "P050",
+        "P145"
+      ],
+      "wells_candidates": [
+        "032",
+        "220"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c2_r11",
+          "code": "177",
+          "class": 50,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c2_r12",
+          "code": "517",
+          "class": 50,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c7_r13",
+          "code": "009",
+          "class": 145,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c7_r14",
+          "code": "543",
+          "class": 145,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [
+        [
+          "P050",
+          "P145"
+        ]
+      ],
+      "confidence": "medium",
+      "basis": "Two separate components. The left one is a plain fish (pointed oval body, short arms, crossed legs), class 50 (codes 177 and 517). The right one is two adjacent vertical strokes of about the same height as the fish, class 145 (codes 9 and 543). The left stroke carries fine ticks along its left edge that may be a drawing artefact. Chart classes list no combined cell for this pair, so the candidate is the sequence P050 then P145 in visual left-to-right order."
+    },
+    {
+      "sign_id": "B076",
+      "mayig_candidates": [
+        "P142"
+      ],
+      "wells_candidates": [
+        "055"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c7_r8",
+          "code": "024",
+          "class": 142,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c7_r9",
+          "code": "280",
+          "class": 142,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Twelve short vertical strokes arranged in three rows of four. This is chart class 142 (codes 24 and 280), four strokes above the same above the same. Class 141 has three rows of slanted or off-centre strokes."
+    },
+    {
+      "sign_id": "B077",
+      "mayig_candidates": [
+        "P122"
+      ],
+      "wells_candidates": [
+        "002"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c5_r28",
+          "code": "002",
+          "class": 122,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c5_r29",
+          "code": "231",
+          "class": 122,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "medium",
+      "basis": "Two adjacent vertical strokes that fill only the upper half of the drawing box, at about the height of the short strokes of chart class 122 (codes 2 and 231). The tall two-stroke cells of the same class (765 and 769) and class 145 draw full-height strokes, which this drawing does not. The assignment depends on the stroke height relative to its box."
+    },
+    {
+      "sign_id": "B078",
+      "mayig_candidates": [
+        "P121",
+        "P154"
+      ],
+      "wells_candidates": [
+        "001",
+        "900"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c7_r26",
+          "code": "153",
+          "class": 154,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c7_r27",
+          "code": "265",
+          "class": 154,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c7_r28",
+          "code": "289",
+          "class": 154,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c7_r29",
+          "code": "511",
+          "class": 154,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [
+        [
+          "P121",
+          "P154"
+        ]
+      ],
+      "confidence": "low",
+      "basis": "Two components. On the left is a short vertical stroke with serrated edges that reaches about half the height of the drawing. On the right is a tall stroke that runs down and bends to the left at the bottom, ending in a short foot. The right component resembles chart class 154 (codes 153, 265, 289, 511), a right parenthesis that may have a backward curve at the bottom. The left stroke would be class 121, the half-height single stroke. Neither assignment is firm, because the right component is a bend with a foot rather than a smooth arc and no chart cell combines the two. The component order is a candidate only."
+    },
+    {
+      "sign_id": "B079",
+      "mayig_candidates": [
+        "P121"
+      ],
+      "wells_candidates": [
+        "001"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c5_r22",
+          "code": "001",
+          "class": 121,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c5_r23",
+          "code": "023",
+          "class": 121,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c5_r24",
+          "code": "258",
+          "class": 121,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c5_r25",
+          "code": "423",
+          "class": 121,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "medium",
+      "basis": "A single short vertical stroke that fills about the upper 40 percent of its drawing box. This is chart class 121 (the half-height single stroke), shown by codes 1, 23, 258 and 423. A full-height stroke would be class 144. Cells 764 and 768 of class 121 draw tall strokes and are left out because of the height of this drawing."
+    },
+    {
+      "sign_id": "U011",
+      "mayig_candidates": [
+        "P270"
+      ],
+      "wells_candidates": [
+        "630",
+        "631",
+        "632",
+        "633",
+        "634",
+        "635",
+        "636",
+        "637",
+        "638",
+        "639"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c3_r1",
+          "code": "066",
+          "class": 270,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c3_r2",
+          "code": "065",
+          "class": 270,
+          "numeric_confidence": "medium"
+        },
+        {
+          "cell_id": "p21_c3_r6",
+          "code": "400",
+          "class": 270,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c3_r7",
+          "code": "693",
+          "class": 270,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A tall rectangle with two short vertical teeth hanging inside the top edge and two rising inside the bottom edge. This is chart class 270 (rectangle with vertical teeth at top and bottom). Code 400 has two teeth at top and bottom, as here; codes 65, 66 and 693 have three."
+    },
+    {
+      "sign_id": "U012",
+      "mayig_candidates": [
+        "P121",
+        "P144"
+      ],
+      "wells_candidates": [
+        "001",
+        "031"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c5_r26",
+          "code": "764",
+          "class": 121,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c5_r27",
+          "code": "768",
+          "class": 121,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c7_r11",
+          "code": "008",
+          "class": 144,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c7_r12",
+          "code": "501",
+          "class": 144,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "medium",
+      "basis": "A single thin vertical stroke that runs the full height of the drawing. The first candidate is chart class 144 (codes 8 and 501), the full-height single stroke. Class 121 also contains two tall single-stroke cells (764 and 768), so P121 is the second candidate. The stroke is thinner than the strokes of the other drawings."
+    },
+    {
+      "sign_id": "U036",
+      "mayig_candidates": [
+        "P091"
+      ],
+      "wells_candidates": [
+        "350",
+        "352",
+        "353",
+        "354"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c4_r10",
+          "code": "523",
+          "class": 91,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c4_r8",
+          "code": "045",
+          "class": 91,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c4_r9",
+          "code": "044",
+          "class": 91,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "medium",
+      "basis": "A three-pronged top (two curved outer arms and a straight middle prong) is crossed by a horizontal bar, and a pointed oval hangs below the bar. This is the pattern of chart class 91, a horizontal line with several lines above it and lines or a U below. Codes 45 and 523 draw a U below the bar, code 44 draws straight lines. The pointed oval here matches none of these exactly, so the class is a candidate."
+    },
+    {
+      "sign_id": "U044",
+      "mayig_candidates": [
+        "P076"
+      ],
+      "wells_candidates": [
+        "190",
+        "192",
+        "194"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c3_r20",
+          "code": "190",
+          "class": 76,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c3_r21",
+          "code": "544",
+          "class": 76,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A central oval with three upright strokes rising from the top and three falling from the bottom, and two long diagonal strokes leaving the right side upward and downward. This is chart class 76 (codes 190 and 544), the oval body with radiating legs of which the two on the right extend further than the rest. Cell 695 of class 75 joins its two right strokes into a bracket and is not the form drawn here."
+    },
+    {
+      "sign_id": "U066",
+      "mayig_candidates": [
+        "P144"
+      ],
+      "wells_candidates": [
+        "031"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c7_r11",
+          "code": "008",
+          "class": 144,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c7_r12",
+          "code": "501",
+          "class": 144,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "low",
+      "basis": "A single full-height vertical stroke with serrated edges along both sides, much thicker than the plain stroke of U012. The first candidate is chart class 144 (codes 8 and 501), the single full-height stroke. The serration may be a drawing artefact or may stand for a bundle of strokes, which this coder cannot decide from the shape."
+    },
+    {
+      "sign_id": "U068",
+      "mayig_candidates": [
+        "P385"
+      ],
+      "wells_candidates": [
+        "817",
+        "861"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c8_r25",
+          "code": "162",
+          "class": 383,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c8_r28",
+          "code": "510",
+          "class": 383,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A diamond outline with a smaller diamond cut into its upper vertex by a V-shaped notch, drawn with thin lines. This is chart class 383 (diamond cells 162 and 510), and the drawing differs from B051 only in line weight."
+    },
+    {
+      "sign_id": "U069",
+      "mayig_candidates": [
+        "P316"
+      ],
+      "wells_candidates": [
+        "704",
+        "705",
+        "706",
+        "707"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c5_r15",
+          "code": "197",
+          "class": 316,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c5_r16",
+          "code": "398",
+          "class": 316,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c5_r17",
+          "code": "532",
+          "class": 316,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A U-shaped outline with a long vertical stroke running down the middle and ending in a small pointed oval near the bottom. This is chart class 316 (codes 197, 398 and 532), a U with a long vertical stroke inserted in it that ends in a small ring. Code 398 draws the inserted stroke inside a doubled-line U."
+    },
+    {
+      "sign_id": "U072",
+      "mayig_candidates": [
+        "P270"
+      ],
+      "wells_candidates": [
+        "630",
+        "631",
+        "632",
+        "633",
+        "634",
+        "635",
+        "636",
+        "637",
+        "638",
+        "639"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c3_r1",
+          "code": "066",
+          "class": 270,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c3_r2",
+          "code": "065",
+          "class": 270,
+          "numeric_confidence": "medium"
+        },
+        {
+          "cell_id": "p21_c3_r6",
+          "code": "400",
+          "class": 270,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c3_r7",
+          "code": "693",
+          "class": 270,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A tall rectangle with four short vertical teeth inside the top edge and four inside the bottom edge. This is chart class 270 (rectangle with vertical teeth at top and bottom). The chart cells 65, 66 and 693 draw three teeth on each edge and 400 draws two, so the tooth count here is not matched exactly."
+    },
+    {
+      "sign_id": "U075",
+      "mayig_candidates": [
+        "P326"
+      ],
+      "wells_candidates": [
+        "742",
+        "743",
+        "744"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c5_r34",
+          "code": "206",
+          "class": 326,
+          "numeric_confidence": "medium"
+        },
+        {
+          "cell_id": "p21_c6_r0",
+          "code": "413",
+          "class": 326,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Jar with outward handles at the top of both arms and two short, thick vertical strokes in the mouth. This is chart class 326 (codes 206 and 413)."
+    },
+    {
+      "sign_id": "U109",
+      "mayig_candidates": [
+        "P270"
+      ],
+      "wells_candidates": [
+        "630",
+        "631",
+        "632",
+        "633",
+        "634",
+        "635",
+        "636",
+        "637",
+        "638",
+        "639"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c3_r4",
+          "code": "068",
+          "class": 270,
+          "numeric_confidence": "medium"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A tall rectangle with two vertical teeth inside the top edge and two inside the bottom edge, and two horizontal bars across the middle. This matches chart class 270 code 68, a toothed rectangle with a pair of horizontal bars inside. Class 264 draws two horizontal bars in a rectangle without teeth."
+    },
+    {
+      "sign_id": "U136",
+      "mayig_candidates": [
+        "P123",
+        "P147"
+      ],
+      "wells_candidates": [
+        "003",
+        "033"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c5_r32",
+          "code": "003",
+          "class": 123,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c5_r33",
+          "code": "199",
+          "class": 123,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c5_r34",
+          "code": "766",
+          "class": 123,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c6_r0",
+          "code": "770",
+          "class": 123,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c7_r16",
+          "code": "010",
+          "class": 147,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c7_r17",
+          "code": "424",
+          "class": 147,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "medium",
+      "basis": "Three vertical strokes spaced apart, with the middle stroke serrated and a small tick at the top left of the first stroke. The strokes fill about 60 percent of the drawing height. Chart class 123 (three strokes) has short cells (3 and 199) and tall cells (766 and 770); class 147 (codes 10 and 424) has three full-height strokes. The height does not decide between the classes, so both are listed."
+    },
+    {
+      "sign_id": "U137",
+      "mayig_candidates": [
+        "P051"
+      ],
+      "wells_candidates": [
+        "226"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c2_r13",
+          "code": "513",
+          "class": 51,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c2_r14",
+          "code": "321",
+          "class": 51,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "medium",
+      "basis": "A fish (pointed oval body, short arms, crossed legs) with no mark inside the body, in a blurred rendering, with a short vertical stroke at each of the four corners of the sign. This is chart class 51 (codes 513 and 321), the fish with four small vertical strokes at its corners. A further small mark appears at the right edge and may belong to a neighbouring sign. The blur makes the absence of internal strokes less certain."
+    },
+    {
+      "sign_id": "U149",
+      "mayig_candidates": [
+        "P221"
+      ],
+      "wells_candidates": [
+        "455"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c0_r33",
+          "code": "040",
+          "class": 221,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c0_r34",
+          "code": "504",
+          "class": 221,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "Three triangles meet at one point: a large one on the left pointing right and two stacked on the right. There is no tree and no cap. This is chart class 221 (codes 40 and 504). Class 222 has a table-like cap and class 223 a small tree."
+    },
+    {
+      "sign_id": "U177",
+      "mayig_candidates": [
+        "P304"
+      ],
+      "wells_candidates": [
+        "321"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c4_r28",
+          "code": "079",
+          "class": 304,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c4_r29",
+          "code": "800",
+          "class": 304,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A tall vertical stroke on the left joined by a short diagonal to a frame of two horizontal bars with legs, with splayed outer legs and inner legs below the lower bar. This is chart class 304 (codes 79 and 800). It is the same form as B064, in a different rendering."
+    },
+    {
+      "sign_id": "U180",
+      "mayig_candidates": [
+        "P050"
+      ],
+      "wells_candidates": [
+        "220"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p20_c2_r11",
+          "code": "177",
+          "class": 50,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p20_c2_r12",
+          "code": "517",
+          "class": 50,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A fish with a pointed oval body, short arms at the waist, crossed legs and no mark inside. This is chart class 50 (codes 177 and 517). Class 49 (code 354) is the same fish without arms."
+    },
+    {
+      "sign_id": "U190",
+      "mayig_candidates": [
+        "P271"
+      ],
+      "wells_candidates": [
+        "640"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c3_r8",
+          "code": "405",
+          "class": 271,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A tall rectangle with three vertical teeth inside the top edge and three inside the bottom edge, and two right-hand parentheses in the middle. This is chart class 271 (code 405)."
+    },
+    {
+      "sign_id": "U192",
+      "mayig_candidates": [
+        "P385"
+      ],
+      "wells_candidates": [
+        "817",
+        "861"
+      ],
+      "helsinki_candidates": [
+        {
+          "cell_id": "p21_c8_r26",
+          "code": "420",
+          "class": 383,
+          "numeric_confidence": "high"
+        },
+        {
+          "cell_id": "p21_c8_r27",
+          "code": "421",
+          "class": 383,
+          "numeric_confidence": "high"
+        }
+      ],
+      "component_sequence_candidates": [],
+      "confidence": "high",
+      "basis": "A pointed oval with a smaller diamond cut into its upper end by a V-shaped notch. This is the oval variant of chart class 383 (codes 420 and 421). Diamond cells 162 and 510 of the same class share the notch but draw the outline as a diamond."
+    }
+  ]
+}
