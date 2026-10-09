@@ -1,0 +1,11 @@
+# Completion scope, 9 October 2026
+
+The supplied PDF resolves the missing manuscript-glyph limit. Completed work includes witness verification, a page map, all 58 Table 18 assignments and their 65 drawings, 17 caption-associated forms, 14 field targets, frozen candidate mapping, a 96-target neutral packet, a 1,200-row source inventory, explicit object joins, canonical field and fish tests, expanded lexical comparisons, derivation sensitivity, source consistency, a qualified ICIT audit and a 1,021-row ledger. Numerical endpoints and source rows are versioned.
+
+The inventory includes 859 attempted/partial/deferred reading rows; unlabelled or damaged figures and some caption attachments still need manual adjudication. These source rows leave Bonta's historical success/failure denominator unknown. The 103 unclear/unattested flags include compounds he accepts; they supply no failed-reading rate. Thirty-three joined entries contain source qualifiers needing object review.
+
+The independent AI coding has arrived and is integrated. Agreement and three-mapping sensitivities are complete; disputed targets await specialist adjudication. Endpoints remain Exploratory, with surviving qualitative findings supported by two AI coding rounds without specialist review. Wider Table 19 field templates, contextual boundary selection, comprehensive phonological or multiword acceptance, the historical ICIT check batch, independently reserved predictions, first/second-edition collation and physical quantity joins remain unavailable or unfinished. These limits are retained beside the affected results in REPORT.md. No source-provided list permits a held-out lexical endpoint.
+
+The first-pass, inventory contributors, chart audit, shared registry and indexes remain unchanged. All earlier frozen numerical endpoints, reviewer files and selections retain their pre-PDF hashes. PDF-FILES.json records the current follow-up's created and changed paths; pdf-checks-2026-10-09-v3.json records the checks and replays.
+
+The second-coding outputs are in two-coder-2026-10-09-v1/. SECOND-CODER-FILES.json inventories this phase. Historical PDF checks remain applicable to their frozen outputs.
