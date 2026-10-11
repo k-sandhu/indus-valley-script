@@ -20,7 +20,9 @@ The large numerical/khipu JSONL files inspected in this package describe synthet
 
 ## Preservation and history
 
-The local-only `data/raw/2026-10-11-public-release/` contains the original all-ref bundle, selected-working-tree ZIP, hash manifest and per-file audit inventory. The two quarantined files remain in their original working-tree locations, ignored by Git. History is filtered in a separate mirror under that local directory, with only those exact paths omitted. Public branch updates use explicit recorded old heads as leases. No archive refs are pushed.
+The local-only `data/raw/2026-10-11-public-release/` contains the original all-ref bundle, selected-working-tree ZIP, hash manifest and per-file audit inventory. The two quarantined files remain in their original working-tree locations, ignored by Git. The [history preparation](history-preparation.json) filtered a separate mirror under that local directory, omitting only those exact paths and preserving the reviewed current tree. The [atomic public branch update](push-execution.json) used the recorded old heads as explicit leases. No archive refs were pushed.
+
+The [final history screen](clean-history-v2.json) checked 14,465 reachable blobs and 1,378,190,949 bytes across the two publication branches, with zero known credential/signed-URL matches, forbidden paths or oversized blobs. The [fresh-checkout summary](clean-clone-summary-v1.json) and [anonymous visibility verification](visibility-execution-v2.json) passed. [Windows path handling](subreviews/clean-clone-diagnosis.md) required a verifier correction; no evidence bytes or frozen hashes were changed. GitHub now reports public visibility, and anonymous access returned the reviewed commit tree and README.
 
 The release audit applies to the published branch histories and selected payload. A rewritten branch history does not establish deletion from GitHub's internal storage or third-party copies. No active API key was identified in the initial signature scan; the signed URL was removed as an access artifact.
 
