@@ -1,0 +1,86 @@
+{
+  "status": "Verified post-outcome context arithmetic; no new permutations or independent semantic validation.",
+  "code": {
+    "path": "experiments/2026-10-11-bonta-adversarial/context_review.py",
+    "sha256": "ccf32e4f2f185520ff560476dbbbfbeed80e6a2862d33869f38dfd86ad2aae3c"
+  },
+  "inputs": [
+    {
+      "path": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+      "sha256": "9e539daef4d5a7efbe3c5f34b73e14058eec1c5e888c749bc2eafb0f08084ba8"
+    },
+    {
+      "path": "experiments/2026-10-11-bonta-adversarial/context-diagnostics-v1/PROTOCOL.json",
+      "sha256": "2ca6e98402eabd969b6acc402812ccb3e5e07d2cd7ba01fa6963a8b6f1780b76"
+    },
+    {
+      "path": "experiments/2026-10-11-bonta-adversarial/run-v2/position-audit.json",
+      "sha256": "73170b373ee7c98a1094a0020c70bc8457d6b80a02370264cfae2192035f8cc5"
+    },
+    {
+      "path": "experiments/2026-10-11-bonta-adversarial/run-v2/robustness.json",
+      "sha256": "5cfafb368234423739220032b9832f314e8c70c8fc9533c026675ff23ddfba74"
+    }
+  ],
+  "frame": {
+    "clean_faces": 2930,
+    "object_families": 2469,
+    "distinct_strings": 1859,
+    "inventory_codes": 713,
+    "codes_present_in_clean_frame": 577
+  },
+  "development_note": "An initial pre-output assertion incorrectly required every inventory code to occur in the clean frame. It was corrected to require every observed code to belong to that inventory; no results had been written and no analytic assumptions changed.",
+  "verification": {
+    "pooled_counts_match_run_v2_all_713_codes": true,
+    "pooled_analytic_expectations_match_run_v2": true,
+    "position_token_conservation": true,
+    "substitution_pair_symmetry": true,
+    "W154_W158_terminal_fisher_matches_run_v2": true
+  },
+  "outputs": [
+    {
+      "path": "experiments/2026-10-11-bonta-adversarial/context-diagnostics-v1/catalogue-summary.json",
+      "sha256": "7773bc7efbdf77e2cd364fd64829e770232ab370f36284a16b821f4fcfae2bdb"
+    },
+    {
+      "path": "experiments/2026-10-11-bonta-adversarial/context-diagnostics-v1/context-counts.json",
+      "sha256": "a2e8fd4955ac8addae5c2f31c92c9e4bde304b83de419653e003fd24d01e6e91"
+    },
+    {
+      "path": "experiments/2026-10-11-bonta-adversarial/context-diagnostics-v1/context_review.py",
+      "sha256": "ccf32e4f2f185520ff560476dbbbfbeed80e6a2862d33869f38dfd86ad2aae3c"
+    },
+    {
+      "path": "experiments/2026-10-11-bonta-adversarial/context-diagnostics-v1/descriptive-contrasts.json",
+      "sha256": "c13648100ed58421a09a78e8d5d93b24906df6ef71bcf3a838f5c80bea3ecf7f"
+    },
+    {
+      "path": "experiments/2026-10-11-bonta-adversarial/context-diagnostics-v1/formula-clusters.json",
+      "sha256": "3f718c50d3b93da9a684f085f58eb17ef306753c115f059771d82ad7f29c2391"
+    },
+    {
+      "path": "experiments/2026-10-11-bonta-adversarial/context-diagnostics-v1/orientation-and-examples.json",
+      "sha256": "df6889fa2415f09a35942a7706b33f4a82c0c561c7f73043cbf44d58459278f0"
+    },
+    {
+      "path": "experiments/2026-10-11-bonta-adversarial/context-diagnostics-v1/position-by-length.json",
+      "sha256": "fb820a75efb1c7798c056ff3f1c3a439587fcdc9152779ba7eee64f94e9131ec"
+    },
+    {
+      "path": "experiments/2026-10-11-bonta-adversarial/context-diagnostics-v1/PROTOCOL.json",
+      "sha256": "2ca6e98402eabd969b6acc402812ccb3e5e07d2cd7ba01fa6963a8b6f1780b76"
+    },
+    {
+      "path": "experiments/2026-10-11-bonta-adversarial/context-diagnostics-v1/REPORT.md",
+      "sha256": "f8b67ded83950982285142a85244491ce8f23d3b6c5834859a3193bb9e3525bb"
+    },
+    {
+      "path": "experiments/2026-10-11-bonta-adversarial/context-diagnostics-v1/substitution-aggregates.json",
+      "sha256": "5248ab39c0edae4cdfdaab1a8009fb31850e79dd4b2dd5bbd3f3b0c9749b5caa"
+    },
+    {
+      "path": "experiments/2026-10-11-bonta-adversarial/context-diagnostics-v1/W617-recoding.json",
+      "sha256": "5e6f45f7b2cf95a1eeb08e7cbbbc8f55d7f8322e5e85567dc5fce7b6d55f51d0"
+    }
+  ]
+}

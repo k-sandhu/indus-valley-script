@@ -1,0 +1,13 @@
+# Retrospective
+
+The user's clarification narrowed visual reasoning to relational comparisons of inscription groups, boundaries, substitutions and possible functions. The audit found related object-level visual comparisons in the original corpus and copper work, plus extensive later transcription tasks, but no completed evaluation of models doing the whole relational inference task from photograph groups.
+
+Saved source records established that public discussion, museum pages, independent repositories, journalism and lecture material had been considered. The Tell Jokha lead had progressed to inspected object pixels. Several other community proposals remained links or metadata. The source census provided concrete local coverage gaps while leaving worldwide recall unknown.
+
+A new bounded search identified public excavation images, visitor photographs and reposts. Four photographs were inspected in the in-app browser: two HARP objects, Gary Todd's museum display and the Rakhigarhi elephant sealing in Disha Ahluwalia's public field account. A direct downloader received 403 for HARP images and 429 for Flickr. Its failed acquisition log remains local. Browser rendering supplied the visual observations without a tracked third-party payload. The web fetch for the Rakhigarhi image failed, but the browser displayed it. Its upper inscription band and damaged elephant relief are visible; its accession and corpus membership remain open.
+
+An exploratory literal-prefix search found H97-3433 in one and H2001-5082 in two Lipi face-record lines. This check was devised after seeing the source identifiers, not preregistered. A reusable aggregate-only script records the input hashes and preserves an existing output if inputs change. No normalized catalogue match or new sign transcription was attempted.
+
+The paper list was rebuilt from the retrieval log, identity index and package source files. The audit retained abstract-only access for Tamkiya and Laursen, distinguished Mahesh's fully accessed v1 from v3 metadata, and separated recent papers from books, booklets, slides and lectures. Current publisher/arXiv records verified selected titles and publication/version dates. Source age, upload age and the date of a photographed discovery remain separate fields.
+
+Changed paths are this package, an index link and an appended registry entry. Raw material remains local under `data/raw/2026-10-08-public-image-audit/`. Frozen endpoints, existing corpora, the separate Bonta program prompt and the site-map work were preserved. Local-link, JSON and prose checks are package checks; no new model accuracy result is reported.

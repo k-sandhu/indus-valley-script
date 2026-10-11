@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-08",
+  "status": "Exploratory hypothesis construction",
+  "authorization": "The user asks for imaginative candidate meanings for the remaining signs, following Bonta's recommendations and choosing working interpretations on the balance of available evidence.",
+  "objective": "Give every observed non-editorial Wells code and every additional directly mapped catalogue code a ranked working interpretation. Preserve Bonta's proposed values as inherited hypotheses and supply new semantic and lexical candidates for the rest.",
+  "new_inputs": "The retained manuscript now has glyph crops and a first-coder candidate crosswalk. The task also expands from six anchor roles to the full graphic inventory. This permits new hypothesis construction; previous lexical construction-set results are not rerun as validation.",
+  "inputs": [
+    "data/normalized/lipi_observed_faces.jsonl",
+    "data/normalized/lipi_clean_rtl_singleline.jsonl",
+    "data/normalized/mayig_sign_schema.json",
+    "data/normalized/mayig_wells_class_crosswalk.json",
+    "data/raw/2026-10-08-bonta-review/pdf-2026-10-09-v1/sign-catalogue-v2.json",
+    "experiments/2026-10-08-bonta-review/pdf-2026-10-09-v1/mapping-v1-frozen.json",
+    "data/raw/2026-10-08-bonta-review/acquisition-2026-10-08-v1/mw.txt",
+    "experiments/2026-10-08-chart-reference-audit/chart-reference-v2.1.json"
+  ],
+  "assumptions": [
+    "Bonta's early Indo-Aryan and mixed logographic/phonetic interpretation is the working scenario for this exercise.",
+    "A sign can function as a lexical sign, sound component, measure or field marker in different contexts. A sound component need not have its own word meaning.",
+    "Known Bonta values are provisional anchors. Direct many-to-many catalogue candidates remain alternatives; no transitive allograph merge is applied.",
+    "Pictorial resemblance supplies candidate senses. It is combined with observed position, neighbours, numeral adjacency and repeated contexts.",
+    "Modifiers such as enclosures, repetition, internal ticks and added plant/implement components generate administrative, quantitative or compound hypotheses. Their proposed effects are explicitly speculative.",
+    "Dictionary matches constrain candidate sounds under this scenario. Modern dictionary attestation supplies vocabulary, not Bronze Age dating. Classical and later names remain possible comparison forms, not authenticated historical readings."
+  ],
+  "procedure": [
+    "Pin every input by SHA256. Read only observational fields from the derivative corpus.",
+    "Construct aggregate sign dossiers, retaining whole-corpus coverage and a separate complete single-line reading-order frame. Count unique sequences and distinct object families separately.",
+    "Import the manuscript's proposed sign variants through its candidate graphic crosswalk. Preserve alternatives and source confidence.",
+    "Search two- and three-sign windows with one unknown against Monier-Williams headwords, first exactly and then with an explicit Bonta-like normalization. Rank candidate residual sounds by the distinct lexical contexts they satisfy; retain conflicts and alternatives.",
+    "Compute preceding/following context similarity and positional distributions. Use these to propose roles and related semantic families.",
+    "Choose preferred semantic hypotheses from the inspected shapes, functional context and lexical candidates. Give alternatives and distinguish specific lexical proposals from broad role proposals.",
+    "Publish a local reviewable catalogue, selected worked examples, source manifest, construction outputs, and a retrospective. Do not overwrite any earlier endpoint."
+  ],
+  "ranking": "Ordinal preferences: inherited anchor, supported working candidate, tentative working candidate, or minimal-evidence placeholder. These are uncalibrated judgments within the assumed scenario, not numerical posterior probabilities.",
+  "stopping": "Complete coverage of the declared graphic inventory, an explicit preferred interpretation and alternatives for each code, an automated anchor-based lexical pass, and checked links to the observations and sources used. Weakly evidenced codes can have broad semantic-role assignments; lack of a specific lexeme stays visible.",
+  "storage": "Acquired material, complete context strings and full lexical-search outputs remain under data/raw/2026-10-08-bonta-extension/. Original analysis code, aggregate dossiers and project-authored candidate interpretations are retained in the dated experiment directory.",
+  "validation_scope": "Check coverage, input integrity, category counts, crosswalk bounds, dictionary match reconstruction and output links. This is a construction exercise, not an independent decipherment evaluation."
+}

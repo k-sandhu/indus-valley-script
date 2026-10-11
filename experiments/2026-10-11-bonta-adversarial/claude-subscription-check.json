@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-11",
+  "user_constraint": "Search the internet for CLI usage and do not use an API key; leave review out if unavailable",
+  "official_sources": [
+    "https://code.claude.com/docs/en/authentication",
+    "https://code.claude.com/docs/en/cli-reference",
+    "https://support.claude.com/en/articles/12304248-manage-api-key-environment-variables-in-claude-code"
+  ],
+  "check": "claude --safe-mode --settings with empty apiKeyHelper auth status --json; child process excludes API-key, auth-token, custom endpoint and cloud-provider variables",
+  "loggedIn": false,
+  "authMethod": "none",
+  "apiProvider": "firstParty",
+  "exit_code": 1,
+  "account_settings_modified": false,
+  "new_api_key_requested": false,
+  "model_request_attempted_in_this_check": false,
+  "result": "No existing subscription login. Skip Claude review under the user’s instruction."
+}

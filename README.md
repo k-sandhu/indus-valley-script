@@ -2,12 +2,14 @@
 
 This repository preserves evidence, methods, manuscripts, exploratory ideas and failed approaches from an ongoing Indus script investigation. It currently contains **no authenticated translation, sound value, language identification or decipherment**.
 
-The repository is private. Its local equivalent is this project folder. No CI/CD workflows are included; scripts are reusable research tools run manually. Review input and derived material before any future public release.
+The public research package retains the manuscripts, code, protocols and reviewed outputs. Acquired corpora, source photographs and downloaded witnesses remain local. The [public asset review](experiments/2026-10-11-public-release/ASSET-REVIEW.md) records the source exclusions and preservation backups. Scripts run manually; no CI/CD workflows are included.
 
 ## Start here
 
 | Purpose | Read |
 |---|---|
+| Strongest reviewed sign hypotheses, Sanskrit anchors and inscription examples | [Visual catalogue](experiments/2026-10-11-bonta-adversarial/run-v6/catalogue.html), [adversarial report](experiments/2026-10-11-bonta-adversarial/REPORT.md) |
+| Public release scope and source attribution | [Asset review](experiments/2026-10-11-public-release/ASSET-REVIEW.md), [third-party notices](THIRD_PARTY_NOTICES.md) |
 | Findings available for reuse and discussion | [Research contributions](knowledge/research-contributions.md) |
 | October 6–7 program: stronger restoration models, evidence census, tests of Frenez's lecture, weights, backward chronology | [Program report](experiments/2026-10-06-research-program/REPORT.md), [packages and reviews](experiments/2026-10-06-research-program/README.md) |
 | Is the Indus evidence completely indexed, and with what metadata? | [Census synthesis](experiments/2026-10-06-evidence-census/synthesis/REPORT.md) |

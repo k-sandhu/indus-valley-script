@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-11",
+  "status": "Post-outcome context diagnostic. Claude's hand tallies and all earlier positional outcomes were read before selecting this audit.",
+  "freeze": "This file was written before calculating the new outputs. It does not describe a preregistered test. The implementation refuses existing result files.",
+  "source": {
+    "path": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+    "sha256": "9e539daef4d5a7efbe3c5f34b73e14058eec1c5e888c749bc2eafb0f08084ba8",
+    "expected_faces": 2930,
+    "expected_distinct_strings": 1859,
+    "sequence_field": "signs_reading_rtl",
+    "orientation": "Use the supplied reading-order field without reversing it again. Check its relation to signs_visual_ltr and preserve the orientation_basis metadata. No new physical orientation adjudication is claimed."
+  },
+  "targets": ["151", "154", "156", "158", "161", "400", "527", "617", "130", "142"],
+  "carrier_and_tool_context_targets": ["151", "154", "156", "158", "161", "130"],
+  "shared_assumptions": [
+    "The primary frame is distinct complete code strings; multiple occurrences of a code within one string remain distinct tokens. Face and object-family support are reported separately.",
+    "Exact preceding-two-sign contexts define descriptive formula clusters, with a START marker for missing predecessors. Their count is not an established number of independent archaeological observations.",
+    "The stroke classifier is a narrow conditional graphic class. Both W001-W005 and W002-W005 are reported; dotted strokes and W035 are excluded from these two sets. No result-dependent classifier selection is permitted.",
+    "A closing-block member is the last token, or the token directly before a terminal W400 or W740. Internal occurrences before a nonterminal W400/W740 do not qualify.",
+    "Analytic means and variances refer to independently uniform within-string arrangements preserving length and code multiplicity. They describe ordering under that reference, not probabilities of meanings.",
+    "No new permutations are generated. Fisher table comparisons are descriptive after selection, with formula and production dependence unresolved.",
+    "The W617 sensitivity replaces every instance with the ordered abstract tokens G617a and G617b. These names do not assert an exact Wells/Mayig crosswalk. Re-deduplication follows recoding. The individual-token analytic reference breaks the grid pair's adjacency; pair-block counts are therefore reported separately."
+  ],
+  "analyses": [
+    "Recount both immediate-stroke predecessor definitions, W806 predecessors and W465-W475/W806/target formula occurrences.",
+    "Retain terminal-only counts and compare closing-block counts, including the W154/W158 descriptive Fisher contrast.",
+    "Report initial, medial and final counts, analytic expectations, variances and z scores separately for length-two and length-at-least-three strings.",
+    "Check W130/W035 and terminal-W171 claims against the reading-order field; report IDs/CISI and orientation summaries without source strings.",
+    "Report W142 final avoidance and choose up to three genuinely medial example candidates plus W158-before-terminal-W400 candidates, publishing IDs/CISI only.",
+    "Enumerate exact one-slot substitution templates for all ten targets; publish length distributions, alternative-code counts and conditional alternative classes, without residual templates.",
+    "Report W151/W740 shared-template counts and lengths explicitly.",
+    "Report exact preceding-pair clusters using opaque IDs, declared class flags and per-category support/closing rates. Do not publish the unbounded list of raw preceding pairs.",
+    "Recode W617 as two abstract tokens, re-deduplicate, and report analytic position summaries and pair terminal/closing-block counts.",
+    "Emit a per-code catalogue summary joining context, analytic position, formula-cluster and substitution aggregates for the next viewer."
+  ],
+  "storage": "Public outputs contain aggregate counts, opaque formula-cluster identifiers and selected source IDs/CISI. They contain no full inscription strings, residual substitution templates or corpus rows. Reproduction needs the local pinned corpus input.",
+  "verification": "Assert pinned input hash, declared frame sizes, agreement of pooled counts and expectations with frozen run-v2, conservation of token positions, substitution symmetry and Fisher terminal-table agreement. Hash code, protocol, used inputs and outputs."
+}

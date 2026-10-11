@@ -1,0 +1,157 @@
+{
+  "status": "Exploratory post-outcome lexical repair; original outcomes and external critique already observed",
+  "written_utc": "2026-10-11T05:20:31.437068+00:00",
+  "scope": "All original searched patterns of motivating W233/W151, W231/W151 and W204/W540 refinements; semantic comparison anchors receive dictionary-productivity stress tests without asserted phonetic windows.",
+  "selected_cases": [
+    {
+      "code": "233",
+      "anchor_code": "151",
+      "residual_slp1": "ati",
+      "alternative_anchor_iast": [
+        "bhāra",
+        "vāha",
+        "bhārika",
+        "māna",
+        "tulā"
+      ]
+    },
+    {
+      "code": "231",
+      "anchor_code": "151",
+      "residual_slp1": "sam",
+      "alternative_anchor_iast": [
+        "bhāra",
+        "vāha",
+        "bhārika",
+        "māna",
+        "tulā"
+      ]
+    },
+    {
+      "code": "204",
+      "anchor_code": "540",
+      "residual_slp1": "sa",
+      "alternative_anchor_iast": [
+        "bhāga",
+        "saṃyoga",
+        "aṃśa"
+      ]
+    }
+  ],
+  "models": {
+    "literal": "Concatenate original full SLP1 components unchanged; residual length 1..6 SLP1 letters and at least one vowel. Preserve literal attestation and support.",
+    "limited_join": "At every component boundary, retain the literal join and optionally apply only: final m before a consonant -> anusvara M or the corresponding stop-row nasal; a/A + a/A -> A; i/I before a heterogeneous vowel -> y; i/I + i/I -> I. Apply the same boundary rules to all rivals. No aspiration, voicing, retroflexion, consonant deletion, morphological stems, arbitrary edit distance or global phonological normalization.",
+    "sam_specific": "Anusvara option is permitted before consonants; homorganic options are N for kKgGN, Y for cCjJY, R for wWqQR, n for tTdDn and m for pPbBm. A forward join must reproduce an exact dictionary headword.",
+    "inverse_scope": "Generate underlying residual candidates only by inversion of the stated finite boundary rules; forward-verify every recovered candidate. No claim of full Sanskrit sandhi coverage."
+  },
+  "rank_metrics": "For each code and model, union all recovered residual candidates across its original searched patterns, count pattern-level support once, rank descending with ties retained, report selected rank, tie count and support histogram. Score ALL rivals; publish only top 20 bounded residuals and aggregates. Complete rankings/windows stay local.",
+  "crosswalk_sensitivity": "Select Bonta Table18 source rows whose frozen first and second Wells candidate sets are both nonempty and disjoint. Mark disputed imported codes from the first mapping used by import_seeds. Exclude any original pattern containing a disputed code anywhere, including the proposed residual code, and recompute support/ranking/intersection. Report zero-pattern frames as undefined intersections.",
+  "new_semantic_anchors": [
+    {
+      "anchor": "bhārin",
+      "alternatives": [
+        "bhāra",
+        "bhārika",
+        "vāha"
+      ]
+    },
+    {
+      "anchor": "varga",
+      "alternatives": [
+        "gaṇa",
+        "gaṇanā",
+        "samūha"
+      ]
+    },
+    {
+      "anchor": "dvāra",
+      "alternatives": [
+        "koṣṭha",
+        "koṣa",
+        "gṛha"
+      ]
+    },
+    {
+      "anchor": "kṛṣi",
+      "alternatives": [
+        "kṛṣaka",
+        "matya",
+        "lāṅgala"
+      ]
+    },
+    {
+      "anchor": "lāṅgala",
+      "alternatives": [
+        "matya",
+        "kṛṣi",
+        "kṛṣaka"
+      ]
+    }
+  ],
+  "productivity": "Generic two-component dictionary joins [? + anchor] and [anchor + ?], literal and limited-join models, same residual bound 1..6 SLP1 letters with a vowel. These comparisons stress lexical flexibility; no new Sanskrit sound is assigned to a sign.",
+  "controls": {
+    "type": "Uniform samples without replacement from distinct alphabetic MW headwords of identical SLP1 length to each tested anchor stem; reused sample for each length across anchors/orientations/models.",
+    "count_per_length": "min(1000, pool size)",
+    "seed": 2026101103,
+    "rng": "Python random.Random independent of positional permutations and earlier run RNG; earlier sampled controls were not persisted as identities."
+  },
+  "attestation_checks": [
+    {
+      "headword_iast": "saṃvāha",
+      "entry_id": "226133"
+    },
+    {
+      "headword_iast": "sāṃśa",
+      "entry_id": "240923"
+    }
+  ],
+  "public_storage": "Aggregates, top bounded headword/residual rivals, exact dictionary entry/page identifiers, source hashes, protocol, code hash and authored summary. No full source definition or complete corpus window strings.",
+  "local_storage": "data/raw/2026-10-11-bonta-adversarial/lexical-diagnostics-v3/ for complete search windows, ranks and witnesses.",
+  "nonoverwrite": "Refuse any existing public result or local directory; preserve all earlier outputs.",
+  "inputs": [
+    {
+      "path": "data/raw/2026-10-08-bonta-extension/run-2026-10-08-v1/dictionary-index.json",
+      "sha256": "f6c42b48dd7fff724f785572ea66db078fee51f587bde09facda88237e13546a"
+    },
+    {
+      "path": "data/raw/2026-10-08-bonta-extension/run-2026-10-09-v2/preferred-lexical-witnesses.json",
+      "sha256": "e320a42e76759729a9d570dac3a77ad421aeab2cb1d0adea2d9ae57e8c762525"
+    },
+    {
+      "path": "data/raw/2026-10-08-bonta-review/acquisition-2026-10-08-v1/mw.txt",
+      "sha256": "555ecf5aadaaf21e5965d6b3b419f428fc9ab9237f563627001ceca468d0cff8"
+    },
+    {
+      "path": "experiments/2026-10-08-bonta-extension/analyze.py",
+      "sha256": "99e660aa91a89c7c6b0e1918d3533372f037c45f56ec7e45331b1f72799fd3ac"
+    },
+    {
+      "path": "experiments/2026-10-08-bonta-extension/run-2026-10-09-v5/new-anchors.json",
+      "sha256": "e448dc6009cf44af6e8f5cb3e0799f22d1aeeb795fc6aa84efbdd503ab2e0e16"
+    },
+    {
+      "path": "experiments/2026-10-08-bonta-review/two-coder-2026-10-09-v1/mapping-first.json",
+      "sha256": "80715c021e18243fff839c072f212de580fd6afe69ebac958c1d1be408da097e"
+    },
+    {
+      "path": "experiments/2026-10-08-bonta-review/two-coder-2026-10-09-v1/mapping-second.json",
+      "sha256": "8b8aca3f968811ec3f58211b5143afc5e79bc49f03f72bde8b24711ea99b249a"
+    },
+    {
+      "path": "data/raw/2026-10-08-bonta-review/pdf-2026-10-09-v1/sign-catalogue-v2.json",
+      "sha256": "f5c14d375dda47697392c348eeb2820d56c6611021b618bedcfbb1f794b957d6"
+    },
+    {
+      "path": "experiments/2026-10-08-bonta-review/pdf-2026-10-09-v1/mapping-v1-frozen.json",
+      "sha256": "500764e176d7ae0e00f635e1ae38f1e3f62b0df55fd115c3100f3a41dbf441b8"
+    },
+    {
+      "path": "experiments/2026-10-11-bonta-adversarial/run-v2/lexical-adversarial.json",
+      "sha256": "ebd0a98c06d7dce60b88d09a296a41f36cf44f98a53f9e2458b790448632d84e"
+    },
+    {
+      "path": "experiments/2026-10-11-bonta-adversarial/claude-review.md",
+      "sha256": "9990bea03834378fd1020cff61c95a22314fb6e73dab6588b5fe7891afcddf47"
+    }
+  ]
+}

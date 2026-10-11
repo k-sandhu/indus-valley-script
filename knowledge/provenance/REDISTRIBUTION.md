@@ -1,6 +1,6 @@
 # Redistribution record
 
-The private repository preserves our research record. Bulk acquired corpora, downloaded papers, source images and OCR remain in the local project. A future public release needs an asset-level review using [SOURCES.md](SOURCES.md) and the acquisition manifests. This document records observed license evidence and the repository's current handling; it provides no blanket clearance for third-party material.
+The public repository preserves the reviewed research record under the user's October 11 authorization. Bulk acquired corpora, downloaded papers, source images and OCR remain in the local project. The [October 11 asset review](../../experiments/2026-10-11-public-release/ASSET-REVIEW.md) and [publication manifest](../../experiments/2026-10-11-public-release/publication-manifest.json) document the current release. This policy records source-specific terms and handling.
 
 ## Current handling
 
@@ -30,7 +30,7 @@ Use one of these statuses: `own-work`, `explicit-license`, `permission-recorded`
 
 Our source summaries are useful tracked records, while a JSON field can still contain a copied third-party passage or a full sequence. Review payloads, including generated manifests, rather than relying on extensions. Short source examples should have a purpose, attribution and a checked quotation scope. Large OCR files remain local.
 
-## Before a future public release
+## Before adding material to the public repository
 
 1. Inspect the proposed tracked file list, including exceptions and extensionless files. Check the import manifest and all parent-source records.
 2. Separate our writing/code/aggregates from raw inputs, source-derived corpora, photographs and reproduced pages. Review the report's embedded figures and the atlas's attribution.

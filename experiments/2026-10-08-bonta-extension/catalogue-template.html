@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Indus sign hypotheses · Bonta extension</title>
+<style>
+:root{color-scheme:light;--ink:#21342d;--muted:#59675e;--paper:#f4f2e9;--line:#dadcd0;--green:#285c48;--warm:#a06331}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 system-ui,"Segoe UI",sans-serif}
+header,main,footer{max-width:1480px;margin:auto;padding:28px 34px}header{padding-top:38px;padding-bottom:14px}
+.eyebrow{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--green)}h1{font:600 clamp(28px,3vw,45px)/1.15 Georgia,serif;margin:10px 0 18px}
+p{max-width:1050px;margin:12px 0}a{color:var(--green)}.lead{font-size:18px}.metrics{display:flex;gap:14px;flex-wrap:wrap;margin:24px 0}
+.metric{border-top:2px solid var(--green);padding:8px 22px 0 0;min-width:150px}.metric strong{font-size:29px;display:block;font-weight:600}.metric span{color:var(--muted);font-size:14px}
+.note{padding:15px 18px;background:#e9ece1;border-left:3px solid var(--green);font-size:14px;max-width:1180px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:end;margin:14px 0 20px;position:sticky;top:0;background:var(--paper);z-index:2;padding:14px 0;border-bottom:1px solid var(--line)}
+label{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:5px}input,select{border:1px solid #bfc7b9;background:white;color:var(--ink);font:inherit;border-radius:4px;padding:10px 12px}
+input{width:min(410px,70vw)}select{min-width:145px}.count{font-size:14px;align-self:center;margin-left:auto;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}.card{background:#fffef9;border:1px solid var(--line);border-radius:7px;padding:18px;overflow-wrap:anywhere}
+.top{display:flex;justify-content:space-between;align-items:center}.code{font-size:20px;font-weight:650}.badge{font-size:11px;letter-spacing:.05em;border:1px solid #c4d3c7;background:#edf3e9;border-radius:3px;padding:3px 7px}.badge.new{border-color:#d3bf9f;background:#f8eee0;color:#835125}
+.drawing{height:135px;display:flex;align-items:center;justify-content:center;margin:10px 0}.drawing img{width:160px;height:130px;object-fit:contain;mix-blend-mode:multiply}.drawing-source{font-size:11px;color:var(--muted);text-align:center;margin-top:-9px;margin-bottom:13px}
+.meaning{font-size:17px;font-weight:600;line-height:1.4;margin:0 0 7px}.words{font-family:Georgia,serif;font-size:17px;color:var(--green);margin:0 0 8px}.meta{font-size:12px;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:10px}
+details{font-size:13px;margin-top:10px}summary{cursor:pointer;color:var(--green);font-weight:600}.detail{padding-top:6px}.detail p{margin:9px 0}.detail ul{padding-left:20px;margin:8px 0}.dictionary{font-size:12px}.near{font-size:12px;background:#f3f4ed;padding:8px}
+.empty{padding:35px;border:1px solid var(--line);grid-column:1/-1}footer{font-size:13px;color:var(--muted);padding-bottom:45px}button{font:inherit;border:1px solid #bec9bd;border-radius:4px;padding:10px 15px;background:white;color:var(--green);cursor:pointer}
+@media(max-width:700px){header,main,footer{padding-left:18px;padding-right:18px}.toolbar{position:static}.count{margin-left:0;width:100%}.metric{min-width:120px}.grid{grid-template-columns:1fr}}
+</style></head><body>
+<header><div class="eyebrow">Indus research knowledge base · 9 October 2026</div>
+<h1>A working meaning map for the full sign inventory</h1>
+<p class="lead">Explore preferred meanings, Sanskrit comparisons and competing readings for 713 catalogue codes. New anchors extend Bonta’s approach to labour, crops, goods, measures, institutions and grammatical relations.</p>
+<div id="metrics" class="metrics"></div>
+<p class="note">This is an exploratory map within a mixed sound/logogram and administrative model. Meanings and sounds are hypotheses. A, B and C order the current working cases by recurrence and role/shape fit; they are not calibrated probabilities. Every card keeps the alternative readings and exact search denominator.</p>
+<p><a href="REPORT.md">Read the report</a> · <a href="candidates.csv" download>Download the table</a> · <a href="candidates.json" download>Download the structured catalogue</a> · <a href="new-anchors.json">Inspect the new anchors</a></p></header>
+<main><div class="toolbar">
+<label>Find a sign or idea<input id="query" type="search" placeholder="W151, porter, bhāra, cloth…" aria-label="Search sign meanings"></label>
+<label>Assignment<select id="origin"><option value="all">All entries</option><option value="new">New assignments</option><option value="anchor">New anchor codes</option><option value="connected">Anchor-connected forms</option><option value="bonta">Bonta proposals</option></select></label>
+<label>Function<select id="role"><option value="all">Every function</option></select></label>
+<label>Priority<select id="priority"><option value="all">A, B and C</option><option>A</option><option>B</option><option>C</option></select></label>
+<button id="reset">Reset filters</button><div id="count" class="count" aria-live="polite"></div></div>
+<div id="grid" class="grid"></div></main>
+<footer>The main drawings are local Lipi font witnesses, rendered with its documented Wells-code encoding. Optional Helsinki chart images represent candidate graphic classes and may not show a fine Wells variant. Source drawings and complete corpus contexts remain local; this page stores project interpretations and aggregate observations. <a href="sources.json">Source record</a>.</footer>
+<script id="data" type="application/json">__CATALOGUE_DATA__</script>
+<script>
+const data=JSON.parse(document.querySelector('#data').textContent),rows=data.rows,S=data.summary;
+const E=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const plain=x=>String(x??'').normalize('NFD').replace(/\p{Diacritic}/gu,'').toLowerCase();
+const local=p=>'../../../'+p;
+const element=id=>document.getElementById(id);
+element('metrics').innerHTML=[[S.catalogue_codes,'catalogue codes'],[S.new_assignment_codes,'new working assignments'],[S.new_anchor_families,'new anchor families'],[S.codes_with_new_anchor_lexical_windows,'codes in new lexical windows']].map(([n,t])=>`<div class="metric"><strong>${n}</strong><span>${E(t)}</span></div>`).join('');
+Object.keys(S.role_counts).sort().forEach(role=>element('role').insertAdjacentHTML('beforeend',`<option value="${E(role)}">${E(role)}</option>`));
+rows.forEach(r=>r.searchText=plain([r.sign_id,r.preferred_meaning,...r.sanskrit_comparisons,...r.alternatives,r.new_anchor_id,...r.new_anchor_connections,r.shape_rationale].join(' ')));
+function lexical(r){const l=r.lexical_search;if(!l.preferred_patterns)return '<p>No two/three-sign window with exactly one unknown slot was available for this code in the expanded lexical search.</p>';
+const candidates=l.preferred_top.map(c=>`${E(c.slot_iast)}: ${c.context_count}/${l.preferred_patterns} windows (${c.exact_context_count} exact)`).join('<br>');
+return `<p>${l.preferred_patterns} windows; ${l.new_anchor_windows} involve a new anchor. ${l.preferred_candidate_classes.toLocaleString()} residual classes were generated.</p><p>${candidates||'No matching completion.'}</p><p>Common to every window: ${l.preferred_full_intersection_classes} classes with preferred anchors; ${l.alternative_full_intersection_classes} with alternative anchors.</p><p>Residuals are optional sound/name comparisons. A dictionary completion does not determine a sign’s meaning.</p>`;}
+function dictionary(r){return Object.entries(r.dictionary_attestations).map(([w,es])=>`<p class="dictionary"><strong>${E(w)}</strong> · ${es.length?es.slice(0,3).map(e=>`MW ${E(e.entry_id)} (p. ${E(e.page_column)})`).join('; '):'sound fragment; no standalone headword asserted'}</p>`).join('');}
+function card(r){const o=r.observations,peers=o.context_neighbours.slice(0,3).map(p=>`${E('W'+p.code)} (${p.cosine})`).join(', '),fallback=r.reference_class_drawings[0]?.path;
+return `<article class="card" id="${E(r.sign_id)}"><div class="top"><span class="code">${E(r.sign_id)}</span><span class="badge ${r.inherited?'':'new'}">${r.inherited?'Bonta':r.new_anchor_id?E(r.new_anchor_id):'New'} · ${E(r.priority)}</span></div>
+<div class="drawing"><img loading="lazy" src="${E(local(r.font_drawing.path))}" alt="Catalogue drawing for ${E(r.sign_id)}" ${fallback?`onerror="this.onerror=null;this.src='${E(local(fallback))}';this.closest('article').querySelector('.drawing-source').textContent='Helsinki candidate-class drawing'"`:''}></div><div class="drawing-source">Lipi Wells drawing · local witness</div>
+<h2 class="meaning">${E(r.preferred_meaning)}</h2><p class="words">${r.sanskrit_comparisons.map(E).join(' · ')}</p>
+<div class="meta">${E(r.role)} · ${o.complete_unique_frame_tokens} tokens in distinct complete sequences · ${o.whole_corpus_tokens} face tokens</div>
+<details><summary>Reasoning and alternatives</summary><div class="detail"><p>${E(r.shape_rationale)}</p>${r.lexical_refinement?`<p>${E(r.lexical_refinement.rationale)}</p>`:''}<ul>${r.alternatives.map(a=>`<li>${E(a)}</li>`).join('')}</ul>${r.modifier_hypotheses.map(m=>`<p>Modifier: ${E(m.effect)}. Alternative: ${E(m.alternative)}.</p>`).join('')}<p>${E(r.basis)}${r.new_anchor_connections.length?'<br>Anchor links: '+r.new_anchor_connections.map(E).join(', '):''}</p></div></details>
+<details><summary>Observed position and neighbours</summary><div class="detail"><p>${Object.entries(o.positions).map(([k,n])=>`${E(k)} ${n}`).join(' · ')||'Absent from clean complete-sequence frame.'}</p><p>Object-family observations: ${o.whole_corpus_object_families}.</p><p>Preceding: ${Object.entries(o.preceding).map(([k,n])=>`W${E(k)} × ${n}`).join(', ')||'none'}.<br>Following: ${Object.entries(o.following).map(([k,n])=>`W${E(k)} × ${n}`).join(', ')||'none'}.</p><p class="near">Context neighbours: ${peers||'none in the available frame'}. Cosine similarity compares preceding/following counts; it does not establish meaning.</p></div></details>
+<details><summary>Sanskrit entries and dictionary search</summary><div class="detail">${dictionary(r)}${lexical(r)}</div></details>
+${r.inherited_proposals.length?`<details><summary>Preserved Bonta values</summary><div class="detail">${r.inherited_proposals.map(p=>`<p>${E(p.label)} · ${p.slp1.map(E).join(', ')} (SLP1)<br>Table 18, PDF leaf ${p.pdf_page}; graphic mapping ${E(p.graphic_mapping_confidence)}.</p>`).join('')}</div></details>`:''}
+</article>`;}
+function render(){const q=plain(element('query').value),origin=element('origin').value,role=element('role').value,priority=element('priority').value;
+const selected=rows.filter(r=>(!q||r.searchText.includes(q))&&(role==='all'||r.role===role)&&(priority==='all'||r.priority===priority)&&(origin==='all'||origin==='new'&&!r.inherited||origin==='bonta'&&r.inherited||origin==='anchor'&&r.new_anchor_id||origin==='connected'&&r.new_anchor_connections.length));
+element('count').textContent=`${selected.length} of ${rows.length} entries`;
+element('grid').innerHTML=selected.map(card).join('')||'<div class="empty">No entries match these filters.</div>';
+}
+['query','origin','role','priority'].forEach(id=>element(id).addEventListener(id==='query'?'input':'change',render));
+element('reset').addEventListener('click',()=>{element('query').value='';['origin','role','priority'].forEach(id=>element(id).value='all');render();});render();
+</script></body></html>

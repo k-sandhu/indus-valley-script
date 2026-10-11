@@ -1,0 +1,11 @@
+# Third-party material in the public research record
+
+The project preserves the source-specific rights and qualifications in [REDISTRIBUTION.md](knowledge/provenance/REDISTRIBUTION.md) and the [October 11 asset review](experiments/2026-10-11-public-release/ASSET-REVIEW.md). Its downloaded source corpus, unlicensed font, papers and archaeological photographs remain local.
+
+The chart atlas, selected digitization crops and new catalogue detail crops derive from Kimmo Koskenniemi and Asko Parpola, *Corpus of Texts in the Indus Script* (1979), the [University of Helsinki edition](https://researchportal.helsinki.fi/en/publications/corpus-of-texts-in-the-indus-script/), licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The recorded source SHA256 is `7bfc35f2a8bbcb58f13c42e1835f5b3ebd17a1f9947786b6c5933623df83cf27`. Transformations include cropping, code/class annotations and model predictions. Ambiguous chart numbers and crosswalk variants retain their qualifications. The new [crop manifest](experiments/2026-10-11-bonta-adversarial/run-v6/chart-crop-manifest.json) identifies every focused drawing's parent and rectangle.
+
+Selected plate-selection/restoration metadata and Mayig-derived examples use the pinned [Mayig corpus](https://github.com/mayig/indus-valley-script-corpus/tree/ad2f1e218a34b8c33c57de0d6cb8d99272765bbb), copyright Michael Carlson 2024, under its [MIT notice](LICENSES/Mayig-MIT.md). Its licence does not grant rights in separately sourced archaeological photographs.
+
+The new sign catalogue publishes twenty short, attributed Lipi code windows, at most three consecutive codes each, to identify the inscriptions supporting specific reviewed hypotheses. The [example ledger](experiments/2026-10-11-bonta-adversarial/run-v6/example-provenance.json) supplies the purpose, pin, record and source CISI identifiers. No bulk Lipi corpus or font is included. Those source-derived excerpts remain outside any licence for original project material.
+
+Bibliographic records, URLs, hashes and authored source summaries identify further dependencies. Quoted source wording retains the source's rights. Sanskrit sense paraphrases point to selected Monier-Williams 1899 dictionary entries in the pinned Cologne edition; the full digital index is excluded.

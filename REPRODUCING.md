@@ -10,6 +10,8 @@ No CI/CD is configured. Run scripts explicitly from repository root. Most analys
 
 Detailed slot-audit and context-prediction JSONL files stay local because their codes or sequences can reconstruct the source corpus. Their aggregate results are tracked. A paired benchmark reanalysis needs those preserved local audit files or a separately acquired input with matching hashes.
 
+The [reviewed sign catalogue](experiments/2026-10-11-bonta-adversarial/run-v6/catalogue.html) embeds its data and can be opened directly from a clone. Its attributed chart detail crops are included. For browser serving, run `python -m http.server 8769 --bind 127.0.0.1` from repository root and open `/experiments/2026-10-11-bonta-adversarial/run-v6/catalogue.html`. The [adversarial report](experiments/2026-10-11-bonta-adversarial/REPORT.md) gives the local-input requirements for rebuilding and recomputation.
+
 ## Inputs and environment
 
 See [source inventory](knowledge/provenance/SOURCES.md), [redistribution review](knowledge/provenance/REDISTRIBUTION.md), and [historical environment](output/environment.json). The first run used Python 3.13.5 on Windows. `requirements.txt` records observed versions; plotting originally used a separate `.vendor` tree. A single pip environment is a convenience rather than an exact reconstruction of that historical layering.

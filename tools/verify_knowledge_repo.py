@@ -6,34 +6,79 @@ import json
 import re
 import subprocess
 from urllib.parse import unquote
+from verify_checkout_navigation import destinations
 
 ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--verify-import", action="store_true", help="Hash every imported local source file; may take several minutes")
+    parser.add_argument("--output", default="knowledge/provenance/repository-verification.json", help="Use a new dated path to preserve earlier verification records")
+    parser.add_argument("--public-checkout", action="store_true", help="Check only Git-selected availability; report exact reviewed local omissions separately")
     args = parser.parse_args()
+    dest = ROOT/args.output
+    if dest.exists():
+        raise SystemExit('Preserve earlier verification records; choose a new --output')
     errors = []
+    selected = set(subprocess.check_output(['git','ls-files','--cached','-z'],cwd=ROOT).decode('utf-8').split('\0'))
+    selected.discard('')
+    public_omissions = set()
+    omission_register = ROOT/'experiments/2026-10-11-public-release/public-omissions.json'
+    if omission_register.is_file():
+        public_omissions = set(json.loads(omission_register.read_text(encoding='utf-8'))['targets'])
+    unavailable_local = []
+    def available(path):
+        if not args.public_checkout:
+            return path.exists()
+        try:
+            relative = path.resolve().relative_to(ROOT).as_posix()
+        except ValueError:
+            return False
+        return path.exists() and (relative in selected or any(p.startswith(relative.rstrip('/')+'/') for p in selected))
+    def omitted(path, referring):
+        if not args.public_checkout:
+            return False
+        try:
+            relative = path.resolve().relative_to(ROOT).as_posix()
+        except ValueError:
+            return False
+        if relative not in public_omissions:
+            return False
+        unavailable_local.append(dict(referring=referring, target=relative, classification='reviewed-local-only'))
+        return True
     required = ["README.md", "knowledge/INDEX.md", "knowledge/experiments/registry.json", "REPRODUCING.md",
                 "papers/001-artifact-aware-prediction/manuscript.md", "papers/001-artifact-aware-prediction/methods.md",
                 "papers/001-artifact-aware-prediction/claim-evidence-map.md",
                 "knowledge/provenance/REDISTRIBUTION.md", "knowledge/directions/research-roadmap.md"]
-    errors += [f"Missing required file: {p}" for p in required if not (ROOT/p).is_file()]
+    errors += [f"Missing required file: {p}" for p in required if not available(ROOT/p)]
     registry = json.loads((ROOT / "knowledge/experiments/registry.json").read_text(encoding="utf-8"))
     ids = [row["id"] for row in registry["experiments"]]
     if len(ids) != len(set(ids)):
         errors.append("Duplicate experiment IDs")
     for row in registry["experiments"]:
         for p in row["evidence"]:
-            if not (ROOT/p).exists():
+            if not available(ROOT/p) and not omitted(ROOT/p, row['id']):
                 errors.append(f"Missing evidence for {row['id']}: {p}")
     # Check the new navigational material, not historical archives whose original links are preserved.
     docs = [ROOT/p for p in ("README.md", "REPRODUCING.md", "CONTRIBUTING.md", "REUSE.md")]
     docs += list((ROOT/"knowledge").rglob("*.md")) + list((ROOT/"papers").rglob("*.md"))
     docs += list((ROOT/"experiments").rglob("*.md"))
+    if args.public_checkout:
+        docs = sorted(ROOT/p for p in selected if p.lower().endswith('.md'))
     broken = []
     frozen_link_contexts = []
     document_snapshot_contexts = {}
+    public_contexts = ROOT/'experiments/2026-10-11-public-release/navigation-contexts.json'
+    for version in [2,3]:
+        if (public_contexts.parent/f'navigation-contexts-v{version}.json').is_file():
+            public_contexts = public_contexts.parent/f'navigation-contexts-v{version}.json'
+    if public_contexts.is_file():
+        for row in json.loads(public_contexts.read_text(encoding='utf-8'))['rows']:
+            snapshot_path = ROOT/row['document']
+            if not snapshot_path.is_file() or hashlib.sha256(snapshot_path.read_bytes()).hexdigest() != row['sha256']:
+                errors.append('Frozen navigation document hash mismatch: ' + row['document'])
+            else:
+                document_snapshot_contexts[snapshot_path] = ROOT/row['source_context']
     capture_root = ROOT/'experiments/2026-10-02-six-hour/integration-review/checkout-availability'
     for summary_path in capture_root.glob('captured-*/summary.json'):
         captured = json.loads(summary_path.read_text(encoding='utf-8'))
@@ -71,15 +116,15 @@ def main():
                     frozen_link_contexts.append({"snapshot":doc.relative_to(ROOT).as_posix(),
                                                  "source_context":link_base.relative_to(ROOT).as_posix()})
                     break
-        for target in re.findall(r"\[[^\]]*\]\(([^)]+)\)", content):
+        for _, _, target in destinations(content):
             target = target.split("#",1)[0].strip().strip("<>")
             if not target or re.match(r"[a-zA-Z][\w+.-]*:", target):
                 continue
             target = unquote(target)
-            if not (link_base/target).exists():
+            if not available(link_base/target) and not omitted(link_base/target,doc.relative_to(ROOT).as_posix()):
                 broken.append({"file": doc.relative_to(ROOT).as_posix(), "target": target})
     errors += [f"Broken link: {r['file']} -> {r['target']}" for r in broken]
-    listed = subprocess.run(["git", "ls-files", "--cached", "--others", "--exclude-standard"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.splitlines()
+    listed = sorted(selected) if args.public_checkout else subprocess.run(["git", "ls-files", "--cached", "--others", "--exclude-standard"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.splitlines()
     forbidden = [p for p in listed if p.startswith(".github/workflows/") or (p.startswith("data/") and p != "data/README.md")]
     if forbidden:
         errors.append(f"Forbidden distributed paths: {forbidden}")
@@ -112,8 +157,9 @@ def main():
               "historical_selected_files_hashed": historical_selected, "errors": errors,
               "frozen_protocol_link_contexts":frozen_link_contexts,
               "document_snapshot_link_contexts":resolved_document_contexts,
+              "public_checkout":args.public_checkout,"unavailable_local_witnesses":unavailable_local,
+              "exact_reviewed_omission_count":len(public_omissions),
               "scope": "repository structure, local links, preserved evidence and distribution checks; not peer review or archaeological validation"}
-    dest = ROOT/"knowledge/provenance/repository-verification.json"
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(result, indent=2))
