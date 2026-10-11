@@ -3,12 +3,16 @@ from pathlib import Path
 import argparse
 import hashlib
 import json
+import os
 import re
 import subprocess
 from urllib.parse import unquote
 from verify_checkout_navigation import destinations
 
 ROOT = Path(__file__).resolve().parents[1]
+if os.name == 'nt' and not str(ROOT).startswith('\\\\?\\'):
+    root_path = str(ROOT)
+    ROOT = Path('\\\\?\\UNC\\' + root_path[2:] if root_path.startswith('\\\\') else '\\\\?\\' + root_path)
 
 def main():
     parser = argparse.ArgumentParser()
@@ -28,6 +32,8 @@ def main():
         public_omissions = set(json.loads(omission_register.read_text(encoding='utf-8'))['targets'])
     unavailable_local = []
     def available(path):
+        # Extended Windows paths need explicit normalization of relative links.
+        path = path.resolve()
         if not args.public_checkout:
             return path.exists()
         try:
