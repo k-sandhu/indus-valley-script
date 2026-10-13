@@ -1,0 +1,21 @@
+{
+  "id": "SITE-GENERATOR-2026-10-13",
+  "theme": "static project website generated from tracked repository files",
+  "status": "completed-published",
+  "question": "Can the repository be presented as a website that is generated only from tracked files, deterministic, and published without a CI workflow?",
+  "outcome": "tools/build_site.py with Jinja templates builds 139 pages and 879 files (about 16 MB) from HEAD: home, findings, working model, conjectures, open-questions board with filters, registry, data, timeline, papers, the sign catalogue and chart atlas, contribute and reuse pages, JSON indexes, llms.txt and a sitemap. Repeated builds are byte-identical; the check verifies links, assets, pinned GitHub links, exclusions and the absence of external resources. Published to the gh-pages branch and served by GitHub Pages at https://k-sandhu.github.io/indus-valley-script/. Built by Codex CLI (GPT-6.1-Sol) from a written prompt; the coordinator fixed a headline pattern that matched across lines, switched conjecture tables to card titles and attributed site commits to the source commit's author.",
+  "challenge": "Generated HTML must never reach main; local-only and omitted paths must not be copied; .gitignore ignores html and txt files by default; line endings differ between preview and HEAD builds.",
+  "remedy": "Reads only Git-tracked files at HEAD (or the non-ignored worktree for previews); publishes with git plumbing to gh-pages; templates use .jinja; working-model text normalised to LF before parsing.",
+  "evidence": [
+    "experiments/2026-10-13-site-generator/CODEX-PROMPT.md",
+    "experiments/2026-10-13-site-generator/PLAN.md",
+    "experiments/2026-10-13-site-generator/check-final.json",
+    "experiments/2026-10-13-site-generator/determinism-final.json",
+    "experiments/2026-10-13-site-generator/RETROSPECTIVE.md",
+    "tools/build_site.py",
+    "site/README.md"
+  ],
+  "retry_when": "The site needs new page types, or a check fails on a later build.",
+  "status_class": "record",
+  "area": "methods"
+}
