@@ -780,8 +780,9 @@ def publish(root=ROOT):
                                     stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         old = old_result.stdout.decode().strip() if old_result.returncode == 0 else None
         env = os.environ.copy()
-        env.update(GIT_AUTHOR_NAME='Indus website generator', GIT_AUTHOR_EMAIL='site-generator@users.noreply.github.com',
-                   GIT_COMMITTER_NAME='Indus website generator', GIT_COMMITTER_EMAIL='site-generator@users.noreply.github.com',
+        # The site commit carries the identity of the source commit's author, so it is attributed to the maintainer who published it.
+        name, email = git('log', '-1', '--format=%an%x00%ae', source.commit, root=root).decode('utf-8').strip().split('\0')
+        env.update(GIT_AUTHOR_NAME=name, GIT_AUTHOR_EMAIL=email, GIT_COMMITTER_NAME=name, GIT_COMMITTER_EMAIL=email,
                    GIT_AUTHOR_DATE=source.date, GIT_COMMITTER_DATE=source.date)
         args = ['commit-tree', tree] + (['-p', old] if old else [])
         new = git(*args, root=root, payload=f'Build website from {source.commit}\n'.encode(), env=env).decode().strip()
