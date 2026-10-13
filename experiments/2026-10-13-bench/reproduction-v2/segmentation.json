@@ -1,0 +1,201 @@
+{
+  "schema_version": "1.0",
+  "task": "segmentation",
+  "synthetic": false,
+  "provenance": [
+    {
+      "path": "bench/common.py",
+      "sha256": "b4c0751691af14e663eb34b2d5393fd44dede2d36c2dd39933d8b7bcd6f0ec07"
+    },
+    {
+      "path": "bench/__main__.py",
+      "sha256": "501b6df8aa8b0f4afe80adf95416d7055630b17b013183b63cdc48e498196f47"
+    },
+    {
+      "path": "bench/segmentation.py",
+      "sha256": "1e9d77d75f43b9bbd1a65d9e0ed43f7fe861188f349409119a06bf5019d59b56"
+    },
+    {
+      "path": "experiments/2026-10-12-structure-first/segmenters.py",
+      "sha256": "82817da3cfa48c071bc35db317f9f79d80afac766f2d01b2c671c5debcd0c12c"
+    },
+    {
+      "path": "experiments/2026-10-12-structure-first/step5-rehearsal/run-segmentation-2026-10-12/summary.json",
+      "sha256": "0700d974ce23609df4ea96b3841fb10ad5475d3ea114f234178285e3e3e5a9d6"
+    },
+    {
+      "path": "data/raw/2026-10-12-bronze-age-comparison/normalized-v4/records.jsonl",
+      "sha256": "dedb9c3967d6bd2fe725406e2a46234673fcd8e5a3de2817dee27bc8ce1d899c"
+    }
+  ],
+  "cohorts": {
+    "sumerian_seals_all": {
+      "texts": 309,
+      "units": 3383,
+      "scores": {
+        "branching_entropy": {
+          "reference": "complete word boundaries",
+          "boundary_precision": 0.6350210970464135,
+          "boundary_recall": 0.7607413647851727,
+          "boundary_f1": 0.6922192410885397,
+          "word_precision": 0.41767764298093585,
+          "word_recall": 0.4832887700534759,
+          "word_f1": 0.4480942051440967
+        },
+        "greedy_ngram": {
+          "reference": "complete word boundaries",
+          "boundary_precision": 0.42170542635658914,
+          "boundary_recall": 0.45829823083403537,
+          "boundary_f1": 0.43924101735970933,
+          "word_precision": 0.16760475297060662,
+          "word_recall": 0.17914438502673796,
+          "word_f1": 0.17318255250403877
+        },
+        "all_boundaries": {
+          "reference": "complete word boundaries",
+          "boundary_precision": 0.38614183474300584,
+          "boundary_recall": 1.0,
+          "boundary_f1": 0.5571462098099037,
+          "word_precision": 0.1350872007094295,
+          "word_recall": 0.3054812834224599,
+          "word_f1": 0.18733346997335518
+        },
+        "no_boundaries": {
+          "reference": "complete word boundaries",
+          "boundary_precision": 0.0,
+          "boundary_recall": 0.0,
+          "boundary_f1": 0.0,
+          "word_precision": 0.003236245954692557,
+          "word_recall": 0.0006684491978609625,
+          "word_f1": 0.0011080332409972298
+        }
+      }
+    },
+    "sumerian_lines_matched": {
+      "texts": 1859,
+      "units": 8535,
+      "scores": {
+        "branching_entropy": {
+          "reference": "complete word boundaries",
+          "boundary_precision": 0.49384787472035796,
+          "boundary_recall": 0.259400705052879,
+          "boundary_f1": 0.3401386748844376,
+          "word_precision": 0.22676172196325747,
+          "word_recall": 0.15713471404142124,
+          "word_f1": 0.1856341189674523
+        },
+        "greedy_ngram": {
+          "reference": "complete word boundaries",
+          "boundary_precision": 0.555501102670914,
+          "boundary_recall": 0.6659811985898942,
+          "boundary_f1": 0.605744822979292,
+          "word_precision": 0.36902356902356903,
+          "word_recall": 0.41649249477484324,
+          "word_f1": 0.39132375256627694
+        },
+        "all_boundaries": {
+          "reference": "complete word boundaries",
+          "boundary_precision": 0.5098861593768724,
+          "boundary_recall": 1.0,
+          "boundary_f1": 0.6753968253968254,
+          "word_precision": 0.39449326303456356,
+          "word_recall": 0.6397491924757742,
+          "word_f1": 0.4880417451804609
+        },
+        "no_boundaries": {
+          "reference": "complete word boundaries",
+          "boundary_precision": 0.0,
+          "boundary_recall": 0.0,
+          "boundary_f1": 0.0,
+          "word_precision": 0.15814954276492738,
+          "word_recall": 0.05586167585027551,
+          "word_f1": 0.08256107834877843
+        }
+      }
+    },
+    "egyptian_glyph_sentences_matched": {
+      "texts": 940,
+      "units": 5252,
+      "scores": {
+        "branching_entropy": {
+          "reference": "complete word boundaries",
+          "boundary_precision": 0.25353846153846155,
+          "boundary_recall": 0.45076586433260396,
+          "boundary_f1": 0.32453721937770774,
+          "word_precision": 0.16842105263157894,
+          "word_recall": 0.23300970873786409,
+          "word_f1": 0.19551934826883913
+        },
+        "greedy_ngram": {
+          "reference": "complete word boundaries",
+          "boundary_precision": 0.27401001365498406,
+          "boundary_recall": 0.6586433260393874,
+          "boundary_f1": 0.3870138219222115,
+          "word_precision": 0.16831367548613324,
+          "word_recall": 0.284789644012945,
+          "word_f1": 0.21158084552193948
+        },
+        "all_boundaries": {
+          "reference": "complete word boundaries",
+          "boundary_precision": 0.21196660482374768,
+          "boundary_recall": 1.0,
+          "boundary_f1": 0.34978951396861846,
+          "word_precision": 0.10491241431835491,
+          "word_recall": 0.2971952535059331,
+          "word_f1": 0.1550802139037433
+        },
+        "no_boundaries": {
+          "reference": "complete word boundaries",
+          "boundary_precision": 0.0,
+          "boundary_recall": 0.0,
+          "boundary_f1": 0.0,
+          "word_precision": 0.37553191489361704,
+          "word_recall": 0.19039913700107874,
+          "word_f1": 0.2526843235504653
+        }
+      }
+    },
+    "akkadian_letter_lines_matched": {
+      "texts": 1223,
+      "units": 6697,
+      "scores": {
+        "branching_entropy": {
+          "reference": "complete word boundaries",
+          "boundary_precision": 0.305941143808995,
+          "boundary_recall": 0.462248322147651,
+          "boundary_f1": 0.36819244904777815,
+          "word_precision": 0.226521164021164,
+          "word_recall": 0.2836438923395445,
+          "word_f1": 0.2518845375988233
+        },
+        "greedy_ngram": {
+          "reference": "complete word boundaries",
+          "boundary_precision": 0.28680371352785144,
+          "boundary_recall": 0.7256711409395973,
+          "boundary_f1": 0.4111216730038023,
+          "word_precision": 0.18282613824015098,
+          "word_recall": 0.32091097308488614,
+          "word_f1": 0.23294259092275327
+        },
+        "all_boundaries": {
+          "reference": "complete word boundaries",
+          "boundary_precision": 0.21775666788454512,
+          "boundary_recall": 1.0,
+          "boundary_f1": 0.3576357635763576,
+          "word_precision": 0.09705838435120204,
+          "word_recall": 0.2691511387163561,
+          "word_f1": 0.14266900790166812
+        },
+        "no_boundaries": {
+          "reference": "complete word boundaries",
+          "boundary_precision": 0.0,
+          "boundary_recall": 0.0,
+          "boundary_f1": 0.0,
+          "word_precision": 0.3744889615699101,
+          "word_recall": 0.189648033126294,
+          "word_f1": 0.251786695986806
+        }
+      }
+    }
+  }
+}

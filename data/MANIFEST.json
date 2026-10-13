@@ -3079,6 +3079,64 @@
     "Q-1004",
     "Q-1020"
    ]
+  },
+  {
+   "id": "bench-evaluation-harness",
+   "title": "Shared calibrated evaluation harness, version 1.0",
+   "kind": "project-output",
+   "status": "project-output",
+   "location": "tracked",
+   "local_paths": [
+    "bench/",
+    "experiments/2026-10-13-bench/"
+   ],
+   "version": {
+    "schema_version": "1.0",
+    "date": "2026-10-13"
+   },
+   "size": {
+    "task_commands": 5,
+    "local_comparisons": 50
+   },
+   "identifiers": [
+    "task",
+    "split_id",
+    "prediction SHA-256",
+    "input SHA-256"
+   ],
+   "metadata_fields": [
+    "rearrangement score",
+    "Monte Carlo p-value",
+    "distance SD",
+    "split-half reliability",
+    "power",
+    "influence",
+    "boundary scores",
+    "known-slot recovery",
+    "statistic-family spending"
+   ],
+   "rights": {
+    "status": "own-work",
+    "licence": "Unlicense (code); CC0 1.0 (documentation, generated controls and aggregates)",
+    "detail": "Reads local third-party inputs in place. No acquired texts, source images or full real sign sequences are copied into this package."
+   },
+   "fetch": {
+    "method": "rebuild",
+    "steps": [
+     "Run python -m bench selftest --out experiments/NEW-DATE-my-study/selftest.json from the repository root.",
+     "For source comparisons restore the local inputs listed in bench task guides, then run python experiments/2026-10-13-bench/reproduce.py NEW-RUN-NAME."
+    ]
+   },
+   "hashes": {
+    "bench/README.md": "5b5cc369245a82fd0300bb86946c88b8f6c09dbf5e3b3120cb4dd8e3e4d48632",
+    "bench/schema.json": "4b32c38d93e65c58eff01fb164bb1052a27d7d42addda9351fb84e4788ee2042"
+   },
+   "evidence": [
+    "bench/README.md",
+    "experiments/2026-10-13-bench/REPORT.md",
+    "experiments/2026-10-13-bench/CHANGES.json"
+   ],
+   "questions": []
   }
  ]
 }

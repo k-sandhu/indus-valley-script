@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "pass": false,
+  "stage": "final package JSON parsing",
+  "error": "UnicodeDecodeError: UTF-8 cannot decode byte 0xff at position 0",
+  "cause": "The verifier attempted to read PowerShell UTF-16 stdout captures with utf-8-sig. Task --out JSON files are UTF-8.",
+  "remedy": "Use json.loads on captured bytes so the checker detects the BOM; leave all recorded captures unchanged."
+}

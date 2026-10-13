@@ -1,0 +1,428 @@
+{
+  "schema_version": "1.0",
+  "task": "restoration",
+  "synthetic": false,
+  "provenance": [
+    {
+      "path": "bench/common.py",
+      "sha256": "ad67cb4453e2a9f436881d7fdd8d8f427e509c0e2bbb80c8f4736d1c51d9370a"
+    },
+    {
+      "path": "bench/__main__.py",
+      "sha256": "1df901f95ddbe76ebbc56868a640eccfac89addb568e74ade74e4fec1c2de11a"
+    },
+    {
+      "path": "bench/restoration.py",
+      "sha256": "085db1ed5ccae03a29770562550e405af137444e3581a6425bdb34fec39d379a"
+    },
+    {
+      "path": "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/predictions.json",
+      "sha256": "a50ac72e2a1b08f5e12c98f5a3870ecf71dfdc63632326dec0f590084c0672ed"
+    },
+    {
+      "path": "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/adjudicated-reference.json",
+      "sha256": "c3db628e1470787bec548db9cac9b875594fcd8c1e522a65f6422aa473a06303"
+    },
+    {
+      "path": "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/adjudicated-counts.json",
+      "sha256": "3c0641d6cb5ca1b63a03e95021fead1a09d05f0afce97589f1aae8c098b44746"
+    },
+    {
+      "path": "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/count-page-detections.json",
+      "sha256": "2bab2b2a06198db11644d3ed9b1c188074b3c53a7d232a4a78e2432cabcd50f0"
+    },
+    {
+      "path": "experiments/2026-10-07-helsinki1979-digitization/repair/2026-10-08-v3/blind/selection.json",
+      "sha256": "00dbfae49b1432409a8dd7c5f87bbb8d9f9d415d9b89a554d2fd5de896072754"
+    },
+    {
+      "path": "experiments/2026-10-08-hf-public-release/release/code/score_recall.py",
+      "sha256": "1f7bb1d429dd13ca53174ce7d67fa68fa67c50d34d9680f1b3242a215135337a"
+    },
+    {
+      "path": "experiments/2026-10-08-hf-public-release/release/code/score_recall_v3.py",
+      "sha256": "5976238adffb9afd559a4bb9218a32a16e13182a265592aa4b187d4c6c47f398"
+    },
+    {
+      "path": "experiments/2026-10-08-hf-public-release/release/code/score_core.py",
+      "sha256": "d1b76d71dfbaad48187173b4d76d693813edd6c52952e9b625881ade7328ede7"
+    }
+  ],
+  "visual_row": {
+    "rows": 80,
+    "reference_drawn_units": 369,
+    "predicted_drawn_units": 374,
+    "reference_unresolved_units": 3,
+    "reference_ambiguous_units": 28,
+    "reference_fully_resolved_rows": 77,
+    "reference_unique_sequence_rows": 54,
+    "row_crop_correctness": {
+      "success": 71,
+      "total": 80,
+      "rate": 0.8875,
+      "ci95": [
+        0.7998178190762713,
+        0.9396731305336952
+      ],
+      "unscorable_rows": 0
+    },
+    "drawn_unit_count_agreement": {
+      "success": 72,
+      "total": 80,
+      "rate": 0.9,
+      "ci95": [
+        0.8148931119389591,
+        0.9484523844326191
+      ],
+      "unscorable_rows": 0
+    },
+    "inscription_number_accuracy": {
+      "success": 71,
+      "total": 80,
+      "rate": 0.8875,
+      "ci95": [
+        0.7998178190762713,
+        0.9396731305336952
+      ],
+      "unscorable_rows": 0
+    },
+    "classification_exact_accuracy": {
+      "success": 72,
+      "total": 80,
+      "rate": 0.9,
+      "ci95": [
+        0.8148931119389591,
+        0.9484523844326191
+      ],
+      "unscorable_rows": 0
+    },
+    "strict_top1": {
+      "whole_rows_all_sample": {
+        "success": 38,
+        "total": 80,
+        "rate": 0.475,
+        "ci95": [
+          0.36924733297407564,
+          0.5830435735027005
+        ]
+      },
+      "whole_rows_fully_resolved_reference": {
+        "success": 38,
+        "total": 77,
+        "rate": 0.4935064935064935,
+        "ci95": [
+          0.38483020307212373,
+          0.6027999063471285
+        ]
+      },
+      "summed_candidate_set_edits": 83,
+      "aligned_recall": {
+        "correct": 293,
+        "total": 366,
+        "rate": 0.8005464480874317
+      },
+      "same_position_equal_count": {
+        "correct": 263,
+        "total": 315,
+        "rate": 0.834920634920635
+      },
+      "candidate_width_mean": 1.0213903743315509,
+      "candidate_width_max": 3
+    },
+    "strict_top5": {
+      "whole_rows_all_sample": {
+        "success": 62,
+        "total": 80,
+        "rate": 0.775,
+        "ci95": [
+          0.6721321021639265,
+          0.8526679265915337
+        ]
+      },
+      "whole_rows_fully_resolved_reference": {
+        "success": 62,
+        "total": 77,
+        "rate": 0.8051948051948052,
+        "ci95": [
+          0.7031488665717038,
+          0.8782359907234338
+        ]
+      },
+      "summed_candidate_set_edits": 38,
+      "aligned_recall": {
+        "correct": 338,
+        "total": 366,
+        "rate": 0.9234972677595629
+      },
+      "same_position_equal_count": {
+        "correct": 301,
+        "total": 315,
+        "rate": 0.9555555555555556
+      },
+      "candidate_width_mean": 5.208556149732621,
+      "candidate_width_max": 8
+    },
+    "shape_only_top1": {
+      "whole_rows_all_sample": {
+        "success": 45,
+        "total": 80,
+        "rate": 0.5625,
+        "ci95": [
+          0.4534113429694972,
+          0.6658613908385618
+        ]
+      },
+      "whole_rows_fully_resolved_reference": {
+        "success": 43,
+        "total": 77,
+        "rate": 0.5584415584415584,
+        "ci95": [
+          0.44738236156130345,
+          0.6639466536654248
+        ]
+      },
+      "summed_candidate_set_edits": 66,
+      "aligned_recall": {
+        "correct": 310,
+        "total": 369,
+        "rate": 0.8401084010840109
+      },
+      "same_position_equal_count": {
+        "correct": 277,
+        "total": 318,
+        "rate": 0.8710691823899371
+      },
+      "candidate_width_mean": 1.0213903743315509,
+      "candidate_width_max": 3
+    },
+    "shape_only_top5": {
+      "whole_rows_all_sample": {
+        "success": 65,
+        "total": 80,
+        "rate": 0.8125,
+        "ci95": [
+          0.7134167737100688,
+          0.8829468953302267
+        ]
+      },
+      "whole_rows_fully_resolved_reference": {
+        "success": 62,
+        "total": 77,
+        "rate": 0.8051948051948052,
+        "ci95": [
+          0.7031488665717038,
+          0.8782359907234338
+        ]
+      },
+      "summed_candidate_set_edits": 28,
+      "aligned_recall": {
+        "correct": 348,
+        "total": 369,
+        "rate": 0.943089430894309
+      },
+      "same_position_equal_count": {
+        "correct": 309,
+        "total": 318,
+        "rate": 0.9716981132075472
+      },
+      "candidate_width_mean": 5.208556149732621,
+      "candidate_width_max": 8
+    },
+    "uniquely_resolved_exact_sequence": {
+      "success": 28,
+      "total": 54,
+      "rate": 0.5185185185185185,
+      "ci95": [
+        0.3885170019812708,
+        0.6460602725338812
+      ]
+    },
+    "calibration": {
+      "n": 315,
+      "brier": 0.11167235357623748,
+      "ece10": 0.11529516042461338,
+      "bins": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "n": 1,
+          "mean_confidence": 0.028548514228449586,
+          "accuracy": 0.0
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "n": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.3,
+          "n": 2,
+          "mean_confidence": 0.26049501975912515,
+          "accuracy": 0.0
+        },
+        {
+          "lower": 0.3,
+          "upper": 0.4,
+          "n": 4,
+          "mean_confidence": 0.3727923179879669,
+          "accuracy": 0.25
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "n": 4,
+          "mean_confidence": 0.44510271817477215,
+          "accuracy": 0.0
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6,
+          "n": 7,
+          "mean_confidence": 0.5583693492227363,
+          "accuracy": 0.14285714285714285
+        },
+        {
+          "lower": 0.6,
+          "upper": 0.7,
+          "n": 76,
+          "mean_confidence": 0.6583363181621461,
+          "accuracy": 0.7105263157894737
+        },
+        {
+          "lower": 0.7,
+          "upper": 0.8,
+          "n": 101,
+          "mean_confidence": 0.7490963214595557,
+          "accuracy": 0.8712871287128713
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "n": 77,
+          "mean_confidence": 0.8419717450691632,
+          "accuracy": 0.987012987012987
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "n": 43,
+          "mean_confidence": 0.927618967235809,
+          "accuracy": 1.0
+        }
+      ]
+    }
+  },
+  "source_row_recall": {
+    "random": {
+      "pages": 18,
+      "matched": 1289,
+      "true_rows": 1289,
+      "detected_rows": 1289,
+      "recall": {
+        "success": 1289,
+        "total": 1289,
+        "rate": 1.0,
+        "ci95": [
+          0.9970286698384515,
+          0.9999999999999999
+        ]
+      },
+      "precision": {
+        "success": 1289,
+        "total": 1289,
+        "rate": 1.0,
+        "ci95": [
+          0.9970286698384515,
+          0.9999999999999999
+        ]
+      }
+    },
+    "stress": {
+      "pages": 3,
+      "matched": 561,
+      "true_rows": 561,
+      "detected_rows": 561,
+      "recall": {
+        "success": 561,
+        "total": 561,
+        "rate": 1.0,
+        "ci95": [
+          0.9931990494665274,
+          1.0000000000000002
+        ]
+      },
+      "precision": {
+        "success": 561,
+        "total": 561,
+        "rate": 1.0,
+        "ci95": [
+          0.9931990494665274,
+          1.0000000000000002
+        ]
+      }
+    },
+    "matching_tolerance_pdf_points": 9
+  },
+  "physical_line_recall": {
+    "random": {
+      "pages": 18,
+      "matched": 1296,
+      "true_rows": 1296,
+      "detected_rows": 1296,
+      "recall": {
+        "success": 1296,
+        "total": 1296,
+        "rate": 1.0,
+        "ci95": [
+          0.9970446712600018,
+          1.0000000000000002
+        ]
+      },
+      "precision": {
+        "success": 1296,
+        "total": 1296,
+        "rate": 1.0,
+        "ci95": [
+          0.9970446712600018,
+          1.0000000000000002
+        ]
+      }
+    },
+    "stress": {
+      "pages": 3,
+      "matched": 561,
+      "true_rows": 561,
+      "detected_rows": 561,
+      "recall": {
+        "success": 561,
+        "total": 561,
+        "rate": 1.0,
+        "ci95": [
+          0.9931990494665274,
+          1.0000000000000002
+        ]
+      },
+      "precision": {
+        "success": 561,
+        "total": 561,
+        "rate": 1.0,
+        "ci95": [
+          0.9931990494665274,
+          1.0000000000000002
+        ]
+      }
+    },
+    "matching_tolerance_pdf_points": 9
+  },
+  "negative_result_criteria": {
+    "crop_90": false,
+    "number_90": false,
+    "count_95": false,
+    "top5_rows_80": false,
+    "random_page_recall_95": true
+  },
+  "pipeline_pass": false
+}

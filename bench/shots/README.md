@@ -1,0 +1,22 @@
+# Conjecture shots
+
+This task records a discovery/confirmation split and prevents the procedural loader from opening confirmation until every registered shot has frozen its predictions. It imports the October 12 closure rules: CISI aliases join families, identical complete texts of at least three signs join all object types, and identical two-sign texts join seals. Two-sign tablet copies can cross halves, preserving the original exception that avoids a giant tablet component. The new default seed is `2026-10-13-bench-round-1`.
+
+```text
+python -m bench shots --synthetic --directory experiments/NEW-DATE-my-study/shot-fixtures --out experiments/NEW-DATE-my-study/shots-synthetic.json
+python -m bench shots --action create --split experiments/NEW-DATE-my-study/round.json --out experiments/NEW-DATE-my-study/split-summary.json
+python -m bench shots --action register --split experiments/NEW-DATE-my-study/round.json --shot a --predictions experiments/NEW-DATE-my-study/PREDICTIONS.json
+python -m bench shots --action freeze --split experiments/NEW-DATE-my-study/round.json --shot a --artifact data/raw/my-study/map.json --artifact bench/meaning_map.py
+python -m bench shots --action load --split experiments/NEW-DATE-my-study/round.json --shot a --half discovery
+python -m bench shots --action load --split experiments/NEW-DATE-my-study/round.json --shot a --half confirmation
+```
+
+Register every participant before the first confirmation read. A predictions JSON contains `statistic_families`, `predictions`, `joint_credence_rule` and, when applicable, `withhold_site`. Every prediction specifies `statistic`, `null` and `pass_rule`. Shared rounds require the same nonempty joint credence rule. Freeze also hashes any `--artifact` files containing maps, models or scoring code. Later confirmation reads recheck every participant's prediction and artifact hashes. Amendments need a new experiment record; the recorded freeze remains unchanged.
+
+The manifest stores the source path/hash, seed, assignment hash, counts and registered freezes. Assignment is recomputed in memory from the pinned local input, so the manifest exports no acquired sign sequences. The Python API `bench.shots.load_half(...)` returns rows and the access event; the CLI prints only counts and the event. Every successful or denied half read is appended to the manifest's `.access.jsonl` sibling. When site is withheld, discovery removes site, region, CISI identifiers, excavation locators and record-order fields; component and row identifiers are replaced by opaque hashes. Confirmation makes site available to the frozen scorer while continuing to strip identity proxies.
+
+`bench/spent.json` records the families used by each confirmation split. The October 12 half is recorded as spent for `seal_size`, `site` and `motif`, as required by [review rule 7](../../experiments/2026-10-12-conjecture-shots/REVIEW-RESPONSE.md). A new seed on the same input inherits those exposures. The loader rejects affected reads unless `--allow-spent` explicitly requests exploratory/reproduction access; the event then records that freshness is false. For real inputs, population freshness always needs independent source and object-identity review. The ledger protects recorded workflow, and contributors retain responsibility for reads performed outside it.
+
+The pass rule for a shot comes from its frozen predictions. Loader compliance requires all participants frozen before confirmation, unchanged source/assignment/artifact hashes, a shared credence rule, complete read logs and a reviewed population-use history. Synthetic mode checks these guards, alias closure, the two-sign tablet exception, site-proxy stripping, spending and rejection of a second seed's spent statistic.
+
+Local creation defaults to `data/normalized/lipi_observed_faces.jsonl`. Alternate `--input` files use that normalized face schema. The same path/hash creates only one ledger entry for a given seed; manifests and result outputs must use new paths. Consult [DATA.md](../../knowledge/DATA.md), `python tools/fetch_data.py --show lipi` and [REPRODUCING.md](../../REPRODUCING.md) for acquisition and normalization. The [original design](../../experiments/2026-10-12-conjecture-shots/DESIGN.md), [loader](../../experiments/2026-10-12-conjecture-shots/shots_common.py) and [split summary](../../experiments/2026-10-12-conjecture-shots/split-summary.json) supplied the method. The historical reproduction recovers 4,104 components and 2,349/2,346 discovery/confirmation families. The October 12 package is untouched.

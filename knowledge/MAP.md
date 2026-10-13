@@ -372,6 +372,7 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 
 ### methods
 
+- [BENCH-HARNESS-2026-10-13](registry/attempts/BENCH-HARNESS-2026-10-13.json) · verified-computation · Can contributors evaluate keys, meaning maps, conjectures, restorations and segmentations thro…
 - [BYPRODUCT-INVENTORY-01](registry/attempts/BYPRODUCT-INVENTORY-01.json) · source-review · Which project results outside script decipherment have field-specific publication potential, a…
 - [CRYPTO-01](registry/attempts/CRYPTO-01.json) · synthetic · Can an internally fitted structural score select semantic labels?
 - [CRYPTO-02](registry/attempts/CRYPTO-02.json) · synthetic · When can a known reference and correct anchors recover an eight-symbol encoding?
@@ -571,6 +572,7 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 - [experiments/2026-10-13-cisi2-basic-data-pilot/RETROSPECTIVE.md](../experiments/2026-10-13-cisi2-basic-data-pilot/RETROSPECTIVE.md) · document · Retrospective: CISI 2 basic-data pilot, 13 October 2026
 - [experiments/2026-10-13-image-index-and-units/RETROSPECTIVE.md](../experiments/2026-10-13-image-index-and-units/RETROSPECTIVE.md) · document · Retrospective: image index and dimension units, 13 October 2026
 - [experiments/2026-10-13-mackay-marshall-tables/RETROSPECTIVE.md](../experiments/2026-10-13-mackay-marshall-tables/RETROSPECTIVE.md) · document · Retrospective: Mackay and Marshall seal tables, 13 October 2026
+- [experiments/2026-10-13-museum-open-access/RETROSPECTIVE.md](../experiments/2026-10-13-museum-open-access/RETROSPECTIVE.md) · document · Retrospective
 - [experiments/2026-10-13-plate-checks/RETROSPECTIVE.md](../experiments/2026-10-13-plate-checks/RETROSPECTIVE.md) · document · Retrospective: plate checks of 13 October 2026
 - [experiments/2026-10-13-publication-screen/RETROSPECTIVE.md](../experiments/2026-10-13-publication-screen/RETROSPECTIVE.md) · document · Retrospective: publication screen, 13 October 2026
 - [experiments/2026-10-13-site-generator/RETROSPECTIVE.md](../experiments/2026-10-13-site-generator/RETROSPECTIVE.md) · document · Website generator record

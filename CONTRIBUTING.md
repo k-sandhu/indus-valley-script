@@ -10,6 +10,8 @@ Choose the next unused experiment ID and a new dated directory, `experiments/YYY
 
 Data contributions follow [knowledge/DATA.md](knowledge/DATA.md) and record sources, metadata fields and coverage changes in [data/MANIFEST.json](data/MANIFEST.json). Conjectures follow [their card rules](knowledge/conjectures/README.md) and the [two-stage design](experiments/2026-10-12-conjecture-shots/DESIGN.md).
 
+Choose the relevant [bench task](bench/README.md) when recording a protocol. Every submitted reading, key, meaning map or conjecture attaches its bench JSON and frozen specification. Restoration and segmentation proposals attach scorer outputs and declared comparisons. Inputs and code hashes, construction data, population freshness and failed predictions remain part of the evidence record.
+
 ## Files and claims for parallel work
 
 A contribution adds files in its own new experiment directory plus its own card files. Contributors never edit generated [registry.json](knowledge/experiments/registry.json), [MAP.md](knowledge/MAP.md) or another contribution's files. Maintainers run `python tools/kb.py build` after merging. Propose any shared-document change in your own package so a maintainer can integrate it.
@@ -40,6 +42,8 @@ Raw acquired sources and detailed unresolved-rights derivatives remain local und
 Result verification has four tiers: **submitted** records the author's result; **reproduced** means another contributor reran it from recorded inputs; **reviewed** means an adversarial review is recorded; **accepted** is the maintainer's decision. Verification is itself a contribution, done by someone other than the author, in its own dated directory. These tiers are separate from a finding's status class.
 
 Before opening a pull request run `python tools/kb.py check`, `python tools/review_prose.py --path <your directory> --no-write`, `python tools/verify_knowledge_repo.py --output <your new verification path>` and the analysis-specific checks. Paste the `kb.py check` summary into the pull request. New cards and entries make the generated files stale: report that drift in the summary and leave generation to maintainers. Fix card, evidence and link errors in your owned files. Maintainers rebuild after merging and check the combined tree.
+
+Changes to the shared harness also run `python -m bench selftest` into a new dated output file. A contributor who changes a scorer reproduces its pinned source endpoint and records any population or definition difference. Bench outputs and freeze records enter the attempt's `evidence`; maintainers integrate cards and rebuild the knowledge map after review.
 
 Add registry and card records, and propose index and claim-evidence-map updates for maintainer integration. Give each failure a concrete retry input. Inspect the proposed Git payload before pushing completed private research contents.
 

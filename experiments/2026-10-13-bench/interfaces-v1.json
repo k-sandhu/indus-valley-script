@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "task": "interface-checks",
+  "synthetic": true,
+  "provenance": [
+    {
+      "path": "bench/common.py",
+      "sha256": "ad67cb4453e2a9f436881d7fdd8d8f427e509c0e2bbb80c8f4736d1c51d9370a"
+    },
+    {
+      "path": "bench/__main__.py",
+      "sha256": "1df901f95ddbe76ebbc56868a640eccfac89addb568e74ade74e4fec1c2de11a"
+    },
+    {
+      "path": "bench/key_calibration.py",
+      "sha256": "e32437b13f0db8454aa9616d9acffcf7137dcdbcc7f8db3c67d1670f331faf96"
+    },
+    {
+      "path": "bench/meaning_map.py",
+      "sha256": "1a28e10e956b794c7a5a9eb33aea1c45e4d4107e15201fdfbc6661233aa73b29"
+    },
+    {
+      "path": "bench/restoration.py",
+      "sha256": "085db1ed5ccae03a29770562550e405af137444e3581a6425bdb34fec39d379a"
+    },
+    {
+      "path": "bench/segmentation.py",
+      "sha256": "901ee087148d1611fa3fa3a36ca2c8dca1662e0370bee419a5fbecb1118bd02b"
+    }
+  ],
+  "cases": {
+    "duplicate boundary": true,
+    "external boundary": true,
+    "missing segmentation row": true,
+    "empty text": true,
+    "duplicate mask query": true,
+    "unranked probabilities": true,
+    "nonfinite probability": true,
+    "paired target mismatch": true,
+    "identical paired models have zero interval and fail": true,
+    "undefined rearrangements cannot win": true,
+    "empty key": true,
+    "bad alphabet": true,
+    "design-shaped large effect passes": true,
+    "categorical planted effect passes": true,
+    "site policy omitted": true,
+    "existing output refused": true,
+    "existing bytes preserved": true
+  },
+  "pass": true,
+  "design_power": [
+    {
+      "effect": 0.0,
+      "effect_scale": {
+        "larger_official": "response noise SD"
+      },
+      "law": "Component outcomes depend on the mapped-label share; all signs on a component share its response. Concentration plants a sign-specific category mixed with the original background.",
+      "success": 0,
+      "total": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.43448246478317476
+      ]
+    },
+    {
+      "effect": 1.5,
+      "effect_scale": {
+        "larger_official": "response noise SD"
+      },
+      "law": "Component outcomes depend on the mapped-label share; all signs on a component share its response. Concentration plants a sign-specific category mixed with the original background.",
+      "success": 5,
+      "total": 5,
+      "rate": 1.0,
+      "ci95": [
+        0.5655175352168251,
+        1.0
+      ]
+    }
+  ],
+  "categorical_power": [
+    {
+      "effect": 0.0,
+      "effect_scale": {
+        "local": "category-mixture strength; mixture probability 1-exp(-effect*exposure)"
+      },
+      "law": "Component outcomes depend on the mapped-label share; all signs on a component share its response. Concentration plants a sign-specific category mixed with the original background.",
+      "success": 0,
+      "total": 5,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.43448246478317476
+      ]
+    },
+    {
+      "effect": 3.0,
+      "effect_scale": {
+        "local": "category-mixture strength; mixture probability 1-exp(-effect*exposure)"
+      },
+      "law": "Component outcomes depend on the mapped-label share; all signs on a component share its response. Concentration plants a sign-specific category mixed with the original background.",
+      "success": 5,
+      "total": 5,
+      "rate": 1.0,
+      "ci95": [
+        0.5655175352168251,
+        1.0
+      ]
+    }
+  ]
+}

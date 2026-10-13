@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "task": "segmentation",
+  "synthetic": false,
+  "provenance": [
+    {
+      "path": "bench/common.py",
+      "sha256": "b4c0751691af14e663eb34b2d5393fd44dede2d36c2dd39933d8b7bcd6f0ec07"
+    },
+    {
+      "path": "bench/__main__.py",
+      "sha256": "501b6df8aa8b0f4afe80adf95416d7055630b17b013183b63cdc48e498196f47"
+    },
+    {
+      "path": "bench/segmentation.py",
+      "sha256": "1e9d77d75f43b9bbd1a65d9e0ed43f7fe861188f349409119a06bf5019d59b56"
+    },
+    {
+      "path": "experiments/2026-10-12-structure-first/review/review_step3_segmenter_breaks.py",
+      "sha256": "72572d9999497bfc0644cbf24be5a809ea0dfd1adf6752945cf15f49bb373393"
+    },
+    {
+      "path": "data/raw/2026-10-12-structure-first/step3-linebreak-faces.json",
+      "sha256": "679abee36f99dc25937bbe4ef95f774ee79b72e47432dc24b42ec77725be3d7e"
+    }
+  ],
+  "line_divisions": {
+    "clean_texts": 1859,
+    "joined_faces_per_order": 69,
+    "scores": {
+      "branching_entropy": {
+        "forward": {
+          "reference": "required line divisions; other positions unlabelled",
+          "required_boundaries": 73,
+          "hits": 26,
+          "boundary_recall": 0.3561643835616438,
+          "boundary_precision": null,
+          "boundary_f1": null,
+          "boundary_rate_elsewhere": 0.36901408450704226,
+          "reason": "Catalogue line breaks supply positive boundary evidence; no negative labels"
+        },
+        "reverse": {
+          "reference": "required line divisions; other positions unlabelled",
+          "required_boundaries": 73,
+          "hits": 41,
+          "boundary_recall": 0.5616438356164384,
+          "boundary_precision": null,
+          "boundary_f1": null,
+          "boundary_rate_elsewhere": 0.36619718309859156,
+          "reason": "Catalogue line breaks supply positive boundary evidence; no negative labels"
+        }
+      },
+      "greedy_ngram": {
+        "forward": {
+          "reference": "required line divisions; other positions unlabelled",
+          "required_boundaries": 73,
+          "hits": 70,
+          "boundary_recall": 0.958904109589041,
+          "boundary_precision": null,
+          "boundary_f1": null,
+          "boundary_rate_elsewhere": 0.476056338028169,
+          "reason": "Catalogue line breaks supply positive boundary evidence; no negative labels"
+        },
+        "reverse": {
+          "reference": "required line divisions; other positions unlabelled",
+          "required_boundaries": 73,
+          "hits": 64,
+          "boundary_recall": 0.8767123287671232,
+          "boundary_precision": null,
+          "boundary_f1": null,
+          "boundary_rate_elsewhere": 0.48450704225352115,
+          "reason": "Catalogue line breaks supply positive boundary evidence; no negative labels"
+        }
+      },
+      "all_boundaries": {
+        "forward": {
+          "reference": "required line divisions; other positions unlabelled",
+          "required_boundaries": 73,
+          "hits": 73,
+          "boundary_recall": 1.0,
+          "boundary_precision": null,
+          "boundary_f1": null,
+          "boundary_rate_elsewhere": 1.0,
+          "reason": "Catalogue line breaks supply positive boundary evidence; no negative labels"
+        },
+        "reverse": {
+          "reference": "required line divisions; other positions unlabelled",
+          "required_boundaries": 73,
+          "hits": 73,
+          "boundary_recall": 1.0,
+          "boundary_precision": null,
+          "boundary_f1": null,
+          "boundary_rate_elsewhere": 1.0,
+          "reason": "Catalogue line breaks supply positive boundary evidence; no negative labels"
+        }
+      },
+      "no_boundaries": {
+        "forward": {
+          "reference": "required line divisions; other positions unlabelled",
+          "required_boundaries": 73,
+          "hits": 0,
+          "boundary_recall": 0.0,
+          "boundary_precision": null,
+          "boundary_f1": null,
+          "boundary_rate_elsewhere": 0.0,
+          "reason": "Catalogue line breaks supply positive boundary evidence; no negative labels"
+        },
+        "reverse": {
+          "reference": "required line divisions; other positions unlabelled",
+          "required_boundaries": 73,
+          "hits": 0,
+          "boundary_recall": 0.0,
+          "boundary_precision": null,
+          "boundary_f1": null,
+          "boundary_rate_elsewhere": 0.0,
+          "reason": "Catalogue line breaks supply positive boundary evidence; no negative labels"
+        }
+      }
+    }
+  }
+}

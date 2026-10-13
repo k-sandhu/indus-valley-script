@@ -1,0 +1,23 @@
+# Restoration and visual-row scoring
+
+This task scores a deliberately masked known slot against its observed graphic, or a printed-row prediction against the release's independent candidate-set reference. The two modes retain their original observation laws. Known-slot masks fix the number and position of missing signs; visual rows allow edit alignment, candidate ambiguity and an uncertain number of drawn units.
+
+```text
+python -m bench restoration --synthetic --out experiments/NEW-DATE-my-study/restoration-synthetic.json
+python -m bench restoration --predictions data/raw/my-study/masks.jsonl --baseline data/raw/my-study/baseline.jsonl --out experiments/NEW-DATE-my-study/restoration.json
+python -m bench restoration --local-paper order2 --out experiments/NEW-DATE-my-study/paper001.json
+python -m bench restoration --local-release v3 --out experiments/NEW-DATE-my-study/release-v3.json
+python -m bench restoration --mode visual-row --version v3 --predictions data/raw/my-study/rows.json --references data/raw/my-study/references.json --out experiments/NEW-DATE-my-study/visual.json
+```
+
+Known-slot rows carry `id` or `record_id`, integer `slot`, `target` or `actual`, and ranked `predictions` or `suggestions`. Each suggestion has a graphic-string `code` and a `probability` or `model_mass`. Probabilities are finite, nonincreasing and total at most one; duplicate candidates and queries are rejected. Exact graphic recovery counts an unseen target as a failure even when `UNKNOWN` receives mass. Output gives slot top-1/5/10 with Wilson intervals, equal-text and equal-code top-1, and confidence calibration. Saved bucket losses are reported when supplied.
+
+`--baseline` requires precisely matched query identities, targets and closure components. The paired component bootstrap reports the top-1 difference and its 95% interval. A statistical pass requires its lower endpoint above zero. A claim also needs a frozen model recipe and a population excluded from model selection. The saved Paper 001 masks remain development benchmarks for later model revisions; their original folds and comparisons must stay visible.
+
+Visual rows use the release schema: `sample_index`, `occurrence_key`, `pdf_page`, printed inscription and classification strings or null, `units`, ranked `alternatives` with `codes`, and unit confidence. V2/v3 also require `section`. Canonical `printed_inscription_id`/`classification_literal` and frozen aliases are accepted; missing or conflicting fields are rejected. References carry `drawn_unit_count` and units with `strict_candidate_codes` and optional `shape_only_candidate_codes`. The imported release scorer supplies candidate-set edit alignment, exact-row compatibility, aligned recall, equal-count positional accuracy, Wilson intervals and calibration. `--local-release` reads the original JSON parents of the released Parquet rows, which avoids an extra dependency.
+
+The release's pipeline pass rules additionally require crop and inscription-number accuracy ≥90%, count agreement ≥95%, top-five whole-row compatibility ≥80%, and random-page row recall ≥95% in v2/v3. Local release runs also import the source page-recall scorer, report random/stress page metrics and the frozen pipeline's pass criteria; v3 includes physical-line recall. New visual-row predictions need their own page-detection evaluation for a pipeline claim. Artificial known-slot recovery and printed-row recognition do not establish the number of genuinely lost signs. The [Paper 001 methods](../../papers/001-artifact-aware-prediction/methods.md) specify masks, closure, fitting and the failed gap-count estimator.
+
+Synthetic mode reproduces hand calculations: top-1 1/3, top-five 2/3, equal-text top-1 1/4, Brier 1.4/3, and candidate-set visual recalls 1/2 and 1. Local Paper 001 modes read the preserved slot audits for `order2`, `order1`, `pm` and `pmb`. The order2 audit reproduces 0.3727057060806593 top-1 across 8,009 queries from [MARKOV-03](../../experiments/2026-10-02-six-hour/markov-order2/main/results.json). The [release scorer](../../experiments/2026-10-08-hf-public-release/release/code/score_core.py) and [expected metrics](../../experiments/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) reproduce inscription/classification successes 23/19 of 60, 62/55 of 80 and 71/72 of 80 in v1/v2/v3. Frozen original predictions and references are the inputs, with unchanged labels.
+
+[DATA.md](../../knowledge/DATA.md) and `python tools/fetch_data.py --list` identify source holdings and rights. [REPRODUCING.md](../../REPRODUCING.md) supplies normalization and private-restore routes for the saved audits. Scoring an acquired dataset writes only aggregates; detailed masks and graphic predictions remain local.
