@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conditional reference laws for short inscriptions: copies, selection and fitting feasibility · Indus research</title>
+  <link rel="stylesheet" href="../../assets/site.css">
+  <script src="../../assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../../index.html">Indus research</a>
+  <nav aria-label="Main navigation"><a href="../../index.html">Home</a><a href="../../findings/index.html">Findings</a><a href="../../working-model/index.html">Working model</a><a href="../../conjectures/index.html">Conjectures</a><a href="../../questions/index.html">Open questions</a><a href="../../attempts/index.html">Registry</a><a href="../../data.html">Data</a><a href="../../timeline/index.html">Timeline</a><a href="../index.html">Papers</a><a href="../../explore/index.html">Explore</a><a href="../../contribute/index.html">Contribute</a><a href="../../reuse/index.html">Reuse</a></nav>
+</header>
+<main id="content">
+  <h1>Conditional reference laws for short inscriptions: copies, selection and fitting feasibility</h1>
+  
+  
+<p><a href="methods.html">methods</a></p>
+<h2 id="conditional-reference-laws-for-short-inscriptions-copies-selection-and-fitting-feasibility">Conditional reference laws for short inscriptions: copies, selection and fitting feasibility</h2>
+<p>Private working manuscript, 2 October 2026. Main comparisons, finite calculations and shared-quality follow-ups have completed independent audits. Authorship, affiliations and venue remain to be supplied. Computational analysis and writing used AI assistance. Code snapshots, finite tables, proposals, results and audits are retained in the project repository.</p>
+<h3 id="abstract">Abstract</h3>
+<p>Permutation references for short inscriptions depend on the process that produced and selected the records. We examine those dependencies through finite enumeration and known simulated populations. Across 1,000 literal-copy populations, individual-record shuffling rejects 15.9% at nominal 5%, while object shuffling rejects 5.4%; the paired excess is 10.5 percentage points, with a 95% interval of 8.5–12.6. With two imperfect faces per object, rates are 11.0% and 5.0%, excess 6.0 points, interval 4.3–7.7. Six balanced binary records admit 8,000 column tables, including 2,880 distinct-string tables. Rejection sampling is uniform on that subset. Deduplicating seven independent draws into six retained strings instead gives unequal subset masses: a uniform-unique reference rejects 5.1537% at its 5% cutoff, while a matched selected-law reference gives 4.9407%. A same-margin witness exposes an undefined fit, and explicit score extension and feasibility conditioning give different rejection fractions among usable observations. With quality shared across slots, the preserved prediction statistic rejects 4% versus 3% under broad and quality-conditioned vector references on 300 populations. A post-outcome observed-agreement statistic, fixed before 1,000 fresh populations, gives 94.2% versus 1.0%; exact conditional tails give 95.0% versus .8%. The collection specifies sampling law, fitting domain and statistic sensitivity together.</p>
+<h3 id="1-the-record-process-belongs-in-the-reference-question">1. The record process belongs in the reference question</h3>
+<p>A catalogue can contain independent objects, several impressions from one stamp, two faces of one object, or several descriptions of the same inscription. A reference that moves each row independently gives those cases the same freedom. A reference that keeps object observations together preserves a different set of possible tables. The question is whether those tables follow the law claimed for the observed population.</p>
+<p>The project previously measured held-out local predictive gain in selected Indus transcriptions. Its main reference shuffles exact length/slot columns within site/type strata and rebuilds physical/text groups, folds and model selection for every proposal. A unique-string sensitivity rejects proposals that introduce a repeated whole string. <a href="../001-artifact-aware-prediction/methods.html">Original methods</a>. The present study examines the conditional sampling laws underlying that procedure. Its data are finite combinatorial tables and generated populations with specified dependence. They permit exact probabilities and independent replay.</p>
+<p>The statistical principles have established precedents. Phipson and Smyth describe finite random-reference p-values, including the observed score in the rank calculation. Hemerik and Goeman develop exact random-permutation testing. Winkler and colleagues give block permutation methods for related observations. Hurlbert's experimental-design treatment explains how replicated observations depend on the experimental unit. Our contribution is the collection of explicit table laws, measured calibration outcomes and preserved domain failures for this short-record fitting procedure. <a href="https://gksmyth.github.io/pubs/PermPValuesPreprint.pdf">Primary rank source</a>, <a href="https://link.springer.com/article/10.1007/s11749-017-0571-1">exact testing</a>, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4644991/">block permutation</a>, <a href="https://doi.org/10.2307/1942661">experimental units</a>.</p>
+<h3 id="2-statistic-sampling-and-checks">2. Statistic, sampling and checks</h3>
+<h4 id="21-the-preserved-fitting-statistic">2.1 The preserved fitting statistic</h4>
+<p>The statistic is held-out dependent-minus-independent log score, measured in bits per noninitial sign. Physical aliases and identical whole strings define edges in a transitive component graph. Five outer folds keep components intact. Three inner folds select an independent unigram, length/slot or length/slot/metadata model and the local-dependency strength. The smoothing grid is 5, 20, 100, 500 and 2,000. Every observed and reference corpus repeats grouping, fold allocation, training-only selection and scoring from unchanged method snapshots. <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/MAIN_PROTOCOL.md">Main protocol</a>, <a href="https://github.com/k-sandhu/indus-valley-script/tree/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/sources">snapshot hashes</a>.</p>
+<p>For 99 independently drawn reference scores, the one-sided Monte Carlo p-value is <code>(1 + exceedances)/100</code>, with equality included in the exceedance count. Exact finite calculations instead sum the full declared tail probability. Rejection fractions are reported at 1%, 5% and 10%. Monte Carlo rate intervals describe the generated trial collection. The conditional rank argument assumes that the observed and reference tables follow the same conditional law and that the fitting statistic is defined on its support.</p>
+<p>Physical sampling blocks and held-out components serve different purposes. A physical block identifies observations tied by the generating process. A component identifies records excluded together from fitting. Rebuilding the latter on a shuffled table prevents a fitting leak; it does not alter that table's sampling probability. Both structures are saved and audited.</p>
+<h4 id="22-conditional-column-spaces">2.2 Conditional column spaces</h4>
+<p>Within a fixed length/slot/metadata cell, independent categorical draws give a table probability determined by the sign counts. Conditioning on those counts makes every labeled arrangement equiprobable. If a cell has <code>n</code> entries and category counts <code>m(v)</code>, it has <code>n!/∏m(v)!</code> distinct arrangements. Every arrangement has <code>∏m(v)!</code> generating labeled permutations. Repeated values therefore have equal multiplicity across arrangements.</p>
+<p>Whole-string uniqueness restricts the complete table space. Uniform column proposals accepted only when all row strings differ remain uniform on that subset. This follows by conditioning a uniform proposal on its acceptance event. The waiting time changes computational cost; the accepted table law follows the restriction. We verify those probabilities by full enumeration and independent sampler counts. <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/MATHEMATICS.md">Mathematical derivation</a>.</p>
+<h4 id="23-physical-observations-and-imperfect-faces">2.3 Physical observations and imperfect faces</h4>
+<p>Literal copies share a latent object's signs. Their matched reference permutes slot columns among objects within strata, then expands each object to its declared records. Equal copy counts preserve latent and expanded margins together. Unequal counts require weighted constraints or a reference conditioned on additional copy classes.</p>
+<p>The imperfect-face experiment has twenty objects, two faces per object, three slots and eight categories. An observed face retains the latent sign with probability .9; otherwise it selects uniformly among the other seven signs. Face errors are independent conditional on that sign. The ordered vector of both face signs has probability <code>r(a,b)=Σ p(x)K(a|x)K(b|x)</code>. Conditioning on vector counts in a cell makes its labeled vector arrangements uniform. Permuting whole vectors preserves that joint margin and each face's scalar margin. <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/noisy-faces/METHODS.md">Observation law</a>.</p>
+<p>This experiment compares vector shuffling with individual-record column shuffling on the same 1,000 observed populations. Each case has 99 reference corpora per method. The original score and nested procedure are unchanged. Distinct seed namespaces prevent overlap between reference streams. An audit reconstructs all observations and proposals, joint margins, aliases, graph components, fold loads, p-values and aggregates, then repeats fifteen complete fits.</p>
+<h3 id="3-finite-spaces-expose-the-sampling-distinctions">3. Finite spaces expose the sampling distinctions</h3>
+<h4 id="31-uniqueness-conditioning">3.1 Uniqueness conditioning</h4>
+<p>Six labeled binary records with three ones in each of three columns have <code>20³=8,000</code> complete tables. There are eight possible whole strings. Selecting six distinct strings with balanced columns requires omitting one complementary pair. Four possible omitted pairs and <code>6!</code> label arrangements give 2,880 unique tables. The exact rejection-sampler acceptance probability is .36, and every accepted table has probability <code>1/2,880</code>.</p>
+<p>The preserved nested statistic was fitted on all 2,880 unique tables. Its inclusive tails reject exactly 5% at the 5% cutoff. Independent enumeration checks table identity, permutation multiplicity, acceptance and every saved tail. The ordinary tiny space includes component counts too small for the original five-fold fit; those cases motivated the separately specified domain experiment below. <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/exact/results.json">Exact endpoint</a>, <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/verification_exact.json">independent audit</a>.</p>
+<h4 id="32-deduplication-as-an-observed-selection-process">3.2 Deduplication as an observed selection process</h4>
+<p>Drawing seven raw independent strings and retaining each distinct string once supplies a different law. Let the three binary slot probabilities be .2, .3 and .4. Condition on six retained strings with three ones in each retained column, then assign their row labels uniformly. The four support masses are 21.3333%, 24.6667%, 26.6667% and 27.3333%, ordered by omitted pairs <code>000/111</code>, <code>001/110</code>, <code>010/101</code> and <code>011/100</code>. A population directly conditioned on six unique strings gives 25% to each.</p>
+<p>For support <code>S</code>, the seven-draw probability is proportional to <code>∏q(x) Σq(x)</code> over its retained strings. The fixed retained margins fix the product, while the sum varies. Each support spreads its mass over 720 row arrangements. Reweighting the existing nested scores gives a 5.1537% rejection fraction when the uniform-unique reference is retained. Matching the reference to the selected law gives 4.9407%. The largest excess over a nominal attainable cutoff is .6046 percentage points in this finite process. <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/dedup-selection/results.json">Exact probabilities and tails</a>.</p>
+<p>An independent recurrence propagates probabilities over the set of strings seen after each raw draw. It verifies the four support masses without using the occupancy formula and checks all 11,520 stored tail values. This example identifies the selection assumption required to interpret a uniqueness-conditioned reference beyond its selected population.</p>
+<h4 id="33-copies-and-weighted-margins">3.3 Copies and weighted margins</h4>
+<p>Four binary latent objects with balanced columns have 216 tables. Two copies per object expand them into eight records. Ordinary record columns admit 343,000 balanced tables, of which 216 preserve the declared copy pairs. Their supported-space probability is about .000630 under that ordinary reference. The matched object law stays on the copy-supported space.</p>
+<p>An integer adjacency statistic permits exact expanded-space tails as copy count grows. Three copies per object give a 25% false-rejection fraction under the ordinary reference at its 5% cutoff. The matched object reference rejects 2.78%. Its smallest tail occupies six of the 216 tables, so tied ranks make it conservative. A separate integer dynamic program verifies the ordinary distributions for one through five copies. <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/copy-tail-counts/README.md">Exact copy experiment</a>.</p>
+<p>With unequal multiplicities <code>[1,1,1,2,2,3]</code>, fixing three latent ones and five expanded ones leaves six compatible columns. Unrestricted object shuffling preserves the expanded margin in only six of its twenty possible columns. A continuation-count sampler chooses each next sign in proportion to its exact number of legal completions. Every final column has probability <code>1/6</code>; three slots give 216 equiprobable tables. Both direct and rejection samplers preserve the constraints in 100,000 draws each. The direct stream's Pearson statistic is 263.5194 on 215 degrees of freedom, with p=.01336 at its declared seed. Exact branch probabilities and an independent replay remain available beside that uneven sample count. <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/unequal-copy-counts/README.md">Weighted conditional space</a>.</p>
+<h3 id="4-calibration-in-the-full-fitting-procedure">4. Calibration in the full fitting procedure</h3>
+<h4 id="41-independent-records-selected-unique-records-and-literal-copies">4.1 Independent records, selected unique records and literal copies</h4>
+<p>The original main study generates 1,000 populations for each of three laws: independent slot draws, those draws conditioned on distinct whole strings, and two identical records per latent object. Each population has forty three-slot records and eight categories in two equal site/type strata. Slot probabilities are <code>[.20,.16,.14,.12,.11,.10,.09,.08]</code>, cyclically shifted right by <code>site index + 2 × slot index</code>. Unique populations reject and redraw the complete forty-record proposal when any whole string repeats. Copied populations have twenty latent objects, ten per stratum, each expanded into two identical records. Each population receives 99 reference draws; copied populations receive both record-column and object-column references. This gives 3,000 observed fits and 396,000 reference fits. All methods repeat the complete nested statistic.</p>
+<table>
+<thead>
+<tr>
+<th>Population and reference</th>
+<th style="text-align: right;">Rejection at 1%</th>
+<th style="text-align: right;">At 5%</th>
+<th style="text-align: right;">At 10%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Independent records, record columns</td>
+<td style="text-align: right;">1.1%</td>
+<td style="text-align: right;">5.0%</td>
+<td style="text-align: right;">9.9%</td>
+</tr>
+<tr>
+<td>Unique records, uniqueness-conditioned columns</td>
+<td style="text-align: right;">1.1%</td>
+<td style="text-align: right;">5.9%</td>
+<td style="text-align: right;">10.6%</td>
+</tr>
+<tr>
+<td>Literal copies, object columns</td>
+<td style="text-align: right;">1.1%</td>
+<td style="text-align: right;">5.4%</td>
+<td style="text-align: right;">10.3%</td>
+</tr>
+<tr>
+<td>Literal copies, record columns</td>
+<td style="text-align: right;">4.8%</td>
+<td style="text-align: right;">15.9%</td>
+<td style="text-align: right;">27.0%</td>
+</tr>
+</tbody>
+</table>
+<p>At 5%, the marginal Wilson intervals for copied populations are 4.162–6.979% with object references and 13.765–18.296% with record references. Their paired excess is 10.5 percentage points, with a 20,000-draw interval of 8.5–12.6 points. The saved seed schedule links object-reference trial <code>i</code> to record-reference trial <code>i+500</code> in 500 pairs. Each method's marginal trials have distinct streams; the paired calculation resamples the 500 linked clusters to preserve the covariance between methods. The independent audit reconstructs all 928,424 proposals, all 396,000 accepted graph/fold allocations and every p-value, and repeats 33 complete fits. <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/main/results.json">Frozen endpoint</a>, <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/verification_main.json">full audit</a>, <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/paired_seed_audit.json">paired seed audit</a>.</p>
+<h4 id="42-imperfect-faces">4.2 Imperfect faces</h4>
+<p><img alt="Observed rejection fractions for independent, unique, literal-copy and imperfect-face populations" src="../../experiments/2026-10-02-six-hour/null-calibration/plots/main/calibration.png" loading="lazy"></p>
+<p>Figure 1. Rejection fractions at nominal 1%, 5% and 10% for the original and imperfect-face studies. Bars give each method's marginal Wilson interval. The paired literal-copy interval uses the linked-cluster calculation described in Section 4.1. <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/plots/main/figure.json">Numeric points and input hashes</a>.</p>
+<p>At nominal 1%, 5% and 10% thresholds, the matched face-vector reference rejects 0.5%, 5.0% and 10.4% of the 1,000 simulated populations. The individual-record reference rejects 2.5%, 11.0% and 19.6%. At 5%, the Wilson intervals are 3.813–6.531% and 9.208–13.091%, respectively. The paired difference is 6.0 percentage points, with a 20,000-draw bootstrap interval of 4.3–7.7 points. There are 41 joint rejections, 69 record-only, nine vector-only and 881 joint nonrejections. <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/noisy-faces/main/results.json">Frozen main result</a>, <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/noisy-faces/verification_main.json">full audit and paired calculations</a>.</p>
+<p>All 99,000 individual-record references change the joint vector margins. The 99,000 matched references preserve them. Recomputed components range from fifteen to twenty in observed tables, nine to twenty in record references, and thirteen to twenty in vector references. Thus both methods account for their proposed tables during fitting, while their proposal laws still differ.</p>
+<p>Across 60,000 observed object slots, 48,821 pairs agree. The observation kernel predicts agreement probability <code>142/175</code>, and whole-string agreement probability <code>(142/175)³</code>. Among 20,000 objects, 10,817 observed strings are equal. The audit also records 11,868 replacements in 120,000 face slots. Those checks locate the simulation's supplied error law; they are not fitted archaeological error rates.</p>
+<h3 id="5-fitting-feasibility-and-observed-abstention">5. Fitting feasibility and observed abstention</h3>
+<p>The original fitting algorithm requires enough groups for nonempty outer folds and inner selection. A twenty-object witness connects consecutive objects through shared complete strings. Transitive physical/text closure makes one component, and the preserved fit raises <code>ZeroDivisionError</code>. A within-stratum ordered-vector shuffle creates twenty components and a finite score with the same vector margins. Both tables have positive probability under the declared imperfect-face generator. <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/domain-support/main-v2/results.json">Witness, failure and shuffled table</a>.</p>
+<p>The conditional sampler's table law is well defined in that witness, while the original statistic is only partially defined. A subsequent frozen protocol compares two explicit responses on all 8,000 binary tables. The first assigns zero gain to reference tables with fewer than five components and abstains when the observed table is unusable. The second conditions the reference on the usable subset. Of all tables, 5,760 are usable and 2,240 trigger abstention.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Nominal cutoff</th>
+<th style="text-align: right;">Extended law over all observations</th>
+<th style="text-align: right;">Extended law among usable observations</th>
+<th style="text-align: right;">Feasibility-conditioned reference among usable observations</th>
+<th style="text-align: right;">Conditioned reference over all observations, including abstention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1%</td>
+<td style="text-align: right;">.3250%</td>
+<td style="text-align: right;">.4514%</td>
+<td style="text-align: right;">.4514%</td>
+<td style="text-align: right;">.3250%</td>
+</tr>
+<tr>
+<td style="text-align: right;">5%</td>
+<td style="text-align: right;">5.0000%</td>
+<td style="text-align: right;">6.9444%</td>
+<td style="text-align: right;">4.7917%</td>
+<td style="text-align: right;">3.4500%</td>
+</tr>
+<tr>
+<td style="text-align: right;">10%</td>
+<td style="text-align: right;">9.8750%</td>
+<td style="text-align: right;">13.7153%</td>
+<td style="text-align: right;">9.9653%</td>
+<td style="text-align: right;">7.1750%</td>
+</tr>
+</tbody>
+</table>
+<p>At 5%, 400 extended-law rejections occupy 5% of all tables and 6.9444% of usable tables. A feasibility-conditioned reference changes the denominator and rejects 276 of 5,760 usable tables. Independent graph traversal checks all component counts, and score-frequency counting checks all full and conditional tails. The experiment reuses 2,880 frozen unique scores and adds the 2,880 five-component fits. <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/domain-support/GUARD_PROTOCOL.md">Guard protocol</a>, <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/domain-support/guard-exact/results.json">exact result</a>, <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/domain-support/verification.json">verification</a>.</p>
+<p>The finite example distinguishes calibration over a declared population from calibration after reporting only usable observations. A future reference implementation needs its score extension, abstention policy or selection law specified before fitting.</p>
+<p>A separate constructive bound establishes fitting feasibility for some original main reference laws. If each physical block contains one complete string and blocks have no other physical links, joining equal strings yields one component per distinct string. The number of codes used in any fixed slot bounds that component count below. Singleton-record column references preserve this premise; matched literal-copy references preserve it at the object level. The original independent and unique margins supply a bound of eight components, and copied-object margins supply six to eight. Five positive-weight components suffice for the actual greedy outer and inner allocations to remain nonempty. An audit checks all 3,000 margins, all 396,000 saved reference groupings and 29,169 allocation cases. Record-column references on copies violate the one-string-per-block premise in all 99,000 sampled tables, so the bound applies to their object comparator only. The same premise fails in the imperfect-face domain witness. <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/domain-support/SUPPORT_PROTOCOL.md">Bound protocol</a>, <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/domain-support/support-bound/results.json">completed support audit</a>.</p>
+<h3 id="6-estimating-the-supplied-observation-channel">6. Estimating the supplied observation channel</h3>
+<p>A bounded follow-up fits the known symmetric kernel to the 1,000 frozen imperfect-face populations. Agreement identifies the shared replacement rate on its positive-association branch. If <code>H</code> is observed agreement, the direct estimate is <code>(7/8)[1−sqrt((8H−1)/7)]</code>, with the declared endpoint handling. A penalized ordered-pair likelihood jointly estimates the rate and each cell's latent distribution. It uses fixed Dirichlet(1.5) cell penalties, a Beta(1.5,1.5) rate penalty and three starts. A matched shrinkage baseline was added before fitting. <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/noisy-channel/PROTOCOL.md">Protocol and comparison amendment</a>, <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/noisy-channel/README.md">method and results</a>.</p>
+<p>The true rate is .1. Agreement and joint mean estimates are .099261 and .101605, with mean absolute errors .023162 and .022195. Direct known-rate frequency inversion yields 10,335 negative components across 5,466 of 6,000 ten-object cells. Exact absence probabilities predict 10,331.87 negatives across these 1,000 populations. A constrained joint estimate has mean frequency total variation .245280, compared with .334097 for projected inversion using the agreement-estimated rate and .227690 for matched shrinkage. Pooling each of the six site/slot cells across the 1,000 populations uses sixty thousand observed pairs in total. Mean cell total variation is then .012236 for joint correction and .020967 for raw marginals. Small-cell estimation and pooled correction therefore have different measured outcomes.</p>
+<p>An independent audit reconstructs every pair table, four thousand objectives and traces, six thousand projection checks, eight fits and the 20,000 bootstrap draws. Exact agreement-count and category-set recurrences supply separate sampling checks. Uniform latent frequencies also give an explicit unequal-observer rate ambiguity; nonuniform marginals identify the rate ratio under the declared kernel. <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/noisy-channel/main/verification.json">Recovery audit</a>, <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/noisy-channel/IDENTIFICATION.md">identification calculation</a>. A kernel with correlated faces or shared object quality needs its own observation model.</p>
+<h4 id="61-quality-shared-across-slots">6.1 Quality shared across slots</h4>
+<p>A fresh follow-up assigns each object a fixed observed low-error or high-error class, with replacement rates .025 and .60. Each site has five objects of each class. Latent slots have the same distribution in both classes and remain independent. Both references move complete ordered face vectors; one moves them within broad site/type strata, and the other also preserves quality-specific vector counts. The fitting statistic continues to use its original site/type stratum and ignores quality. A zero-gain extension below five components and observed abstention were declared before generation.</p>
+<p>At nominal 5%, broad references reject twelve of 300 populations, or 4.0%, and quality-conditioned references reject nine, or 3.0%. The paired difference is one percentage point, interval −1 to 3. Their marginal Wilson intervals are 2.303–6.860% and 1.586–5.602%. No observed or reference table used the guard. All 29,700 broad proposals change the quality-specific vector margins, while all 29,700 conditioned proposals preserve them. The independent audit reconstructs every population and all 59,400 references, then replays sixteen fits. <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/shared-quality/main/results.json">Frozen quality comparison</a>, <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/shared-quality/verification_main.json">audit</a>.</p>
+<p>The exact small space has six columns with unequal probabilities given broad counts. Additional quality-specific counts leave four uniform columns and sixty-four uniform three-slot tables. An independent replay checks all 20,000 sampler draws. The maximum adjacent single-face event covariance is .0006072704 under the supplied mixture; the ordered-vector maximum is .0057955982. The reference law and the preserved score's sensitivity therefore have separate measured evidence: exact unequal table weights coexist with a small paired calibration difference in this main. <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/shared-quality/exact/results.json">Exact laws</a>, <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/shared-quality/analytic-moments/results.json">exact moments</a>.</p>
+<h4 id="62-a-statistic-directed-at-shared-quality">6.2 A statistic directed at shared quality</h4>
+<p>The small nested-score difference motivated a separately specified diagnostic on 1,000 fresh populations. Let <code>A(o,i)</code> indicate agreement between object <code>o</code>'s two observed faces at slot <code>i</code>. The integer statistic <code>S=Σ_o[A(o,0)A(o,1)+A(o,1)A(o,2)]</code> counts adjacent agreement events and ranges from zero to forty. It uses the observed signs and fixed object pairs. Quality labels enter the reference grouping only. The score, sample budget and exact-tail calculation were fixed before these populations were generated. This is a post-outcome sensitivity experiment following Section 6.1. <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/shared-quality/agreement-diagnostic/PROTOCOL.md">Diagnostic protocol</a>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Nominal cutoff</th>
+<th style="text-align: right;">Broad reference, 99 draws</th>
+<th style="text-align: right;">Quality reference, 99 draws</th>
+<th style="text-align: right;">Broad reference, exact tail</th>
+<th style="text-align: right;">Quality reference, exact tail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1%</td>
+<td style="text-align: right;">79.0%</td>
+<td style="text-align: right;">0.0%</td>
+<td style="text-align: right;">84.8%</td>
+<td style="text-align: right;">0.0%</td>
+</tr>
+<tr>
+<td style="text-align: right;">5%</td>
+<td style="text-align: right;">94.2%</td>
+<td style="text-align: right;">1.0%</td>
+<td style="text-align: right;">95.0%</td>
+<td style="text-align: right;">0.8%</td>
+</tr>
+<tr>
+<td style="text-align: right;">10%</td>
+<td style="text-align: right;">97.2%</td>
+<td style="text-align: right;">2.2%</td>
+<td style="text-align: right;">97.6%</td>
+<td style="text-align: right;">2.1%</td>
+</tr>
+</tbody>
+</table>
+<p>At 5%, the Monte Carlo paired difference is 93.2 percentage points, with a 20,000-draw population-bootstrap interval of 91.6–94.7. The supplied generator's expected score is 18.9712, while its average broad-reference conditional expectation is 13.5058. Their difference is 5.4654. The fresh run has mean observed score 18.855, broad conditional mean 13.4469 and quality conditional mean 18.8614. Broad column shuffling redistributes the high- and low-agreement vectors separately at each slot. Quality-conditioned shuffling retains their concentration within each object's fixed class. <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/shared-quality/agreement-diagnostic/main/results.json">Frozen diagnostic</a>.</p>
+<p>For a reference cell with <code>n</code> objects and agreement counts <code>a0,a1,a2</code>, the conditional score mean is <code>(a0*a1+a1*a2)/n</code>. A row-state dynamic program gives exact integer multiplicities for all count triples at cell sizes five and ten. A second calculation conditions on the middle column and convolves two hypergeometric overlap distributions. It independently verifies all 1,547 cell distributions. Convolving the appropriate cell distributions supplies the 2,000 exact population tails. The audit also reconstructs all 1,000 populations, 198,000 reference tables, 199,000 scores and every reported tail and interval. <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-02-six-hour/null-calibration/shared-quality/agreement-diagnostic/verification.json">Independent audit</a>.</p>
+<p>Inclusive integer ties and constant-score configurations make the quality-conditioned tails conservative. The original nested statistic's 4% versus 3% result remains alongside this agreement statistic's 94.2% versus 1.0%. The two experiments show how strongly a reported calibration rate can depend on the statistic's sensitivity to the supplied recording mechanism.</p>
+<h3 id="7-application-and-availability">7. Application and availability</h3>
+<p>An archaeological application needs an observation model for which records belong to one artifact, which objects are literal copies, how uncertain faces were encoded, and how catalogue selection or deduplication changed the population. These inputs determine the conditional table law. A new archive with unequal record multiplicities can use the weighted-count calculation once those physical relations are established. A candidate-error model can preserve ordered alternative vectors when its observation premises are stated.</p>
+<p>The results here support selecting and testing those premises with explicit counterexamples. The original Indus analyses remain conditional on their selected transcription population. Their predictive gains and p-values have separate evidence files; the present synthetic studies supply measured behavior under known laws and identify changes needed for broader sampling claims.</p>
+<p>All finite tables, authored code, method snapshots, generated results, protocols and retrospectives are preserved privately. The <a href="methods.html">methods and evidence map</a> gives reproduction paths and exact claim files. Raw archaeological corpora and unresolved-rights witnesses remain local under their source manifests. Frozen endpoints preserve failed fits and earlier designs beside their documented refinements.</p>
+<h2>PDFs</h2><ul><li><a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/output/pdf/indus_script_research_report.pdf">indus_script_research_report.pdf</a></li><li><a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/output/pdf/indus_settlement_survey_gaps_2026-10-11.pdf">indus_settlement_survey_gaps_2026-10-11.pdf</a></li></ul>
+
+</main>
+<footer class="site-footer">
+  <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/papers/002-conditional-reference-laws/manuscript.md">Source on GitHub</a>
+  <span>86ad64f6cfe4 · 2026-10-13T01:33:38-04:00</span>
+</footer>
+</body>
+</html>

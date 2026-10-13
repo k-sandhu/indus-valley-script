@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contribute · Indus research</title>
+  <link rel="stylesheet" href="../assets/site.css">
+  <script src="../assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../index.html">Indus research</a>
+  <nav aria-label="Main navigation"><a href="../index.html">Home</a><a href="../findings/index.html">Findings</a><a href="../working-model/index.html">Working model</a><a href="../conjectures/index.html">Conjectures</a><a href="../questions/index.html">Open questions</a><a href="../attempts/index.html">Registry</a><a href="../data.html">Data</a><a href="../timeline/index.html">Timeline</a><a href="../papers/index.html">Papers</a><a href="../explore/index.html">Explore</a><a href="index.html">Contribute</a><a href="../reuse/index.html">Reuse</a></nav>
+</header>
+<main id="content">
+  <h1>Contribute</h1>
+  
+  
+<h2 id="contributing-research-and-data">Contributing research and data</h2>
+<p>This is a knowledge repository with manually run research code. It has no CI/CD or deployment configuration. Begin with <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/AGENTS.md">AGENTS.md</a>, <a href="../data.html">data coverage</a> and the <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/MAP.md">map</a>.</p>
+<h3 id="before-starting">Before starting</h3>
+<p>Read the <a href="../attempts/index.html">registry</a>, the relevant <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/retrospectives/README.md">retrospective</a> and the linked paper methods. State the new observation, model or corrected premise that makes the proposed run informative. The registry's <code>retry_when</code> field identifies useful reasons to revisit earlier failures.</p>
+<p>Choose the next unused experiment ID and a new dated directory, <code>experiments/YYYY-MM-DD-short-slug/</code>. Copy the <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/templates/EXPERIMENT.md">experiment template</a>, then record the target, inputs, selection rule, controls, outcomes and stopping conditions before outcomes. State whether the work is a proposal, simulation, source replication, exploratory refinement or frozen evaluation. Keep its graphic, functional, numerical or linguistic target explicit and use the <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/registry/VOCABULARY.md">status classes</a>.</p>
+<p>Data contributions follow <a href="../data.html">knowledge/DATA.md</a> and record sources, metadata fields and coverage changes in <span class="unavailable">data/MANIFEST.json (not in the public repository)</span>. Conjectures follow <a href="../conjectures/rules.html">their card rules</a> and the <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-12-conjecture-shots/DESIGN.md">two-stage design</a>.</p>
+<h3 id="files-and-claims-for-parallel-work">Files and claims for parallel work</h3>
+<p>A contribution adds files in its own new experiment directory plus its own card files. Contributors never edit generated <a href="../attempts/index.html">registry.json</a>, <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/MAP.md">MAP.md</a> or another contribution's files. Maintainers run <code>python tools/kb.py build</code> after merging. Propose any shared-document change in your own package so a maintainer can integrate it.</p>
+<p>Registry entries are new files in <a href="https://github.com/k-sandhu/indus-valley-script/tree/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/registry/attempts">knowledge/registry/attempts/</a>. Findings, questions and conjectures are new cards; use <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/templates/FINDING.md">finding</a>, <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/templates/QUESTION.md">question</a> and <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/conjectures/TEMPLATE.md">conjecture</a> templates. A later pull request resolves an ID collision by taking the next free number. General question IDs are Q-0001–Q-0999; specific data acquisition cards use Q-1001 onward. Agents disclose model and harness in the registry entry or card <code>authors</code> field.</p>
+<p>Claim work by opening or commenting on the GitHub issue for the question, with its Q-ID in the title. A claim lapses after seven days without an update. Record the claim in the card only when the work is merged; always check the issue before starting.</p>
+<p>Assign each contributor distinct owned paths. Tell them that others share the workspace and that their implementation must accommodate those changes. Include this requirement in every assignment:</p>
+<blockquote>
+<p>Maximize reader comprehension. Explain the idea directly in connected prose, keep necessary shared assumptions together, and avoid repeated corrective comparisons or warnings that interrupt the argument. Read <code>knowledge/editorial/WRITING.md</code> before writing. Preserve exact source titles and frozen evidence wording.</p>
+</blockquote>
+<p>The integrating contributor reviews returned prose, numbers, links and source scope. Describe the result early, followed by the method and evidence needed to assess it. Necessary limitations belong together with the affected claim or shared methods premises. Follow the verbatim subagent requirement in <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/AGENTS.md">AGENTS.md</a>.</p>
+<h3 id="during-a-run">During a run</h3>
+<ol>
+<li>Preserve source identity, physical-object aliases, all available faces and uncertain cases. Record how the analytical representation was made from the source observations.</li>
+<li>Keep source observations, proposed interpretations and evaluator answers in distinct inputs. Describe exactly what the fitted model and any acquisition selector receive.</li>
+<li>Save commands, seeds, code/helper snapshots, source hashes and environment versions. A copied helper needs its own hash in the run record.</li>
+<li>Write each run or repair to a new endpoint. Retain earlier results and identify the defect or premise changed by the repair.</li>
+<li>Check the computation with an appropriate independent implementation, exact certificate or source inspection. Report the independent unit and keep repeated conditions together when calculating uncertainty.</li>
+<li>Record the observable approach, challenges, fixes and outcomes in a retrospective. Link each conclusion to exact outputs and source coordinates.</li>
+</ol>
+<p>Raw acquired sources and detailed unresolved-rights derivatives remain local under the <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/provenance/REDISTRIBUTION.md">redistribution record</a>. Track our code, prose, protocols, generated controls, aggregate results and acquisition manifests. Review payload contents as well as extensions. <a href="../reuse/index.html">REUSE.md</a> states the current licence and publication status.</p>
+<h3 id="verification-and-completion">Verification and completion</h3>
+<p>Result verification has four tiers: <strong>submitted</strong> records the author's result; <strong>reproduced</strong> means another contributor reran it from recorded inputs; <strong>reviewed</strong> means an adversarial review is recorded; <strong>accepted</strong> is the maintainer's decision. Verification is itself a contribution, done by someone other than the author, in its own dated directory. These tiers are separate from a finding's status class.</p>
+<p>Before opening a pull request run <code>python tools/kb.py check</code>, <code>python tools/review_prose.py --path &lt;your directory&gt; --no-write</code>, <code>python tools/verify_knowledge_repo.py --output &lt;your new verification path&gt;</code> and the analysis-specific checks. Paste the <code>kb.py check</code> summary into the pull request. New cards and entries make the generated files stale: report that drift in the summary and leave generation to maintainers. Fix card, evidence and link errors in your owned files. Maintainers rebuild after merging and check the combined tree.</p>
+<p>Add registry and card records, and propose index and claim-evidence-map updates for maintainer integration. Give each failure a concrete retry input. Inspect the proposed Git payload before pushing completed private research contents.</p>
+<p>Use the next unused numbered directory under <a href="https://github.com/k-sandhu/indus-valley-script/tree/86ad64f6cfe487295d9f7588b77910bef6138134/papers">papers/</a> for a new manuscript. Keep its draft status, contribution, source access and exact evidence map visible. Future public release or external submission requires the user's decision and the recorded source-specific packaging review.</p>
+<h3 id="licence-of-contributions">Licence of contributions</h3>
+<p>By opening a pull request you agree that your contribution is released under the repository's terms in <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/LICENSE">LICENSE</a>: code under the <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/LICENSES/Unlicense.txt">Unlicense</a> and everything else under <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/LICENSES/CC0-1.0.txt">CC0 1.0</a>. Do not submit third-party material you cannot release on those terms; record such sources in <code>knowledge/DATA.md</code> and keep them local as <code>knowledge/provenance/REDISTRIBUTION.md</code> describes.</p>
+<h2>Agent entry</h2><p class="bootstrap">For agents: Clone https://github.com/k-sandhu/indus-valley-script, read AGENTS.md and follow it.</p>
+<h2>Repository skills</h2><p>Agents without skill support can read these as ordinary files.</p>
+<ul>
+<li><a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/.claude/skills/orient/SKILL.md">orient</a>: find the task and its evidence.</li>
+<li><a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/.claude/skills/pick-task/SKILL.md">pick-task</a>: select and claim a question.</li>
+<li><a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/.claude/skills/add-data/SKILL.md">add-data</a>: improve metadata and coverage.</li>
+<li><a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/.claude/skills/start-study/SKILL.md">start-study</a>: record a protocol and attempt.</li>
+<li><a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/.claude/skills/test-conjecture/SKILL.md">test-conjecture</a>: run a two-stage test.</li>
+<li><a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/.claude/skills/verify-study/SKILL.md">verify-study</a>: reproduce or review independently.</li>
+<li><a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/.claude/skills/write-retrospective/SKILL.md">write-retrospective</a>: preserve approaches and repairs.</li>
+</ul>
+<p><a href="https://github.com/k-sandhu/indus-valley-script/issues">Issues</a> · <a href="https://github.com/k-sandhu/indus-valley-script/discussions">Discussions</a></p>
+
+</main>
+<footer class="site-footer">
+  <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/CONTRIBUTING.md">Source on GitHub</a>
+  <span>86ad64f6cfe4 · 2026-10-13T01:33:38-04:00</span>
+</footer>
+</body>
+</html>

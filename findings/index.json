@@ -1,0 +1,842 @@
+[
+  {
+    "area": "structure",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "Previous-sign information improved held-out log score by 0.848 bits per noninitial sign on 1,596 distinct strings and 6,413 noninitial signs.",
+    "date": "2026-10-02",
+    "evidence": [
+      "research/methods/results/joint_nested_unique_conditioned_1000/joint_nested_results.json#/observed/gain_bits_per_noninitial_sign",
+      "research/methods/results/joint_nested_unique_conditioned_1000/joint_nested_results.json#/observed/records",
+      "research/methods/results/joint_nested_unique_conditioned_1000/joint_nested_results.json#/observed/noninitial_tokens"
+    ],
+    "id": "F-0001",
+    "path": "knowledge/findings/F-0001-sequential-prediction-on-unique-texts.md",
+    "population": "1,596 distinct complete right-to-left single-line strings, 6,413 noninitial signs",
+    "registry_ids": [
+      "ROOT-02"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0001-sequential-prediction-on-unique-texts.md",
+    "status": "verified-computation",
+    "status_class": "verified-computation",
+    "title": "Sequential prediction on unique texts",
+    "url": "F-0001.html"
+  },
+  {
+    "area": "structure",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "Second-order context reached 37.27% exact top-one recovery, against 34.59% for first order, on the same 8,009 masks.",
+    "date": "2026-10-02",
+    "evidence": [
+      "experiments/2026-10-02-six-hour/markov-order2/main/results.json#/models/Markov2/top1",
+      "experiments/2026-10-02-six-hour/markov-order2/main/results.json#/models/Markov1/top1",
+      "experiments/2026-10-02-six-hour/markov-order2/main/results.json#/correspondence/verified_queries_per_model"
+    ],
+    "id": "F-0002",
+    "path": "knowledge/findings/F-0002-second-order-known-slot-restoration.md",
+    "population": "8,009 artificial known-slot masks in 1,596 distinct strings",
+    "registry_ids": [
+      "MARKOV-03"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0002-second-order-known-slot-restoration.md",
+    "status": "verified-computation",
+    "status_class": "verified-computation",
+    "title": "Second-order known-slot restoration",
+    "url": "F-0002.html"
+  },
+  {
+    "area": "structure",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "Bucket probability loss rose from 5.1194 bits per slot for first order to 5.2472 for second order.",
+    "date": "2026-10-02",
+    "evidence": [
+      "experiments/2026-10-02-six-hour/markov-order2/main/results.json#/models/Markov1/bucket_cross_entropy_bits",
+      "experiments/2026-10-02-six-hour/markov-order2/main/results.json#/models/Markov2/bucket_cross_entropy_bits"
+    ],
+    "id": "F-0003",
+    "path": "knowledge/findings/F-0003-second-order-probability-loss-worsens.md",
+    "population": "8,009 artificial known-slot masks in 1,596 distinct strings",
+    "registry_ids": [
+      "MARKOV-03"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0003-second-order-probability-loss-worsens.md",
+    "status": "verified-computation",
+    "status_class": "verified-computation",
+    "title": "Second-order probability loss worsens",
+    "url": "F-0003.html"
+  },
+  {
+    "area": "structure",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "All five folds selected backoff-only when second-order smoothing was chosen by inner probability loss. The outcome reproduced first-order top-one recovery of 34.5861%.",
+    "date": "2026-10-02",
+    "evidence": [
+      "experiments/2026-10-02-six-hour/markov-order2/loss-selected/main/results.json#/folds",
+      "experiments/2026-10-02-six-hour/markov-order2/loss-selected/main/results.json#/models/Markov2/top1"
+    ],
+    "id": "F-0004",
+    "path": "knowledge/findings/F-0004-loss-selection-returns-first-order.md",
+    "population": "8,009 artificial known-slot masks in 1,596 distinct strings",
+    "registry_ids": [
+      "MARKOV-04"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0004-loss-selection-returns-first-order.md",
+    "status": "exploratory",
+    "status_class": "exploratory",
+    "title": "Loss selection returns first order",
+    "url": "F-0004.html"
+  },
+  {
+    "area": "structure",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "The sampling-matched local estimator recovered the count in 46.30% of queries, below the constant-one control’s 51.07%.",
+    "date": "2026-10-02",
+    "evidence": [
+      "research/methods/results/gap_design_matched/gap_design_matched.json#/design_matched_models/local/exact_count_accuracy",
+      "research/methods/results/gap_design_matched/gap_design_matched.json#/design_matched_models/local/constant_one_glyph_design_control_accuracy"
+    ],
+    "id": "F-0005",
+    "path": "knowledge/findings/F-0005-gap-count-estimator-loses-to-constant-one.md",
+    "population": "1,596 artificial missing-count queries, counts restricted to one through three",
+    "registry_ids": [
+      "ROOT-08",
+      "METHODS-gap_design_matched"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0005-gap-count-estimator-loses-to-constant-one.md",
+    "status": "failed",
+    "status_class": "failed",
+    "title": "Gap-count estimator loses to constant one",
+    "url": "F-0005.html"
+  },
+  {
+    "area": "numerals",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "The exact audit retained four positive-integer solutions. Restricting L to 8–13 retained only (L, S, v) = (10, 8, 6).",
+    "date": "2026-10-02",
+    "evidence": [
+      "research/methods/results/numerical_equalities/numerical_equalities_audit.json#/all_admissible_solutions",
+      "research/methods/results/numerical_equalities/numerical_equalities_audit.json#/range_sensitivities/L_8_to_13"
+    ],
+    "id": "F-0006",
+    "path": "knowledge/findings/F-0006-four-conditional-numeral-solutions.md",
+    "population": "Positive integer solutions of the published assumed equalities",
+    "registry_ids": [
+      "ROOT-13",
+      "METHODS-numerical_equalities"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0006-four-conditional-numeral-solutions.md",
+    "status": "verified-computation",
+    "status_class": "verified-computation",
+    "title": "Four conditional numeral solutions",
+    "url": "F-0006.html"
+  },
+  {
+    "area": "data",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "Of 493 catalogue identifiers, 327 matched local keys and 166 were absent. The absent keys comprised 75 in pottery/graffiti sections and 91 in other sections.",
+    "date": "2026-10-07",
+    "evidence": [
+      "experiments/2026-10-06-evidence-census/synthesis/coverage.json#/summary/CISI1_BC_entries",
+      "experiments/2026-10-06-evidence-census/synthesis/coverage.json#/summary/CISI1_BC_matching_keys",
+      "experiments/2026-10-06-evidence-census/synthesis/coverage.json#/summary/CISI1_BC_absent_keys",
+      "experiments/2026-10-06-evidence-census/synthesis/coverage.json#/summary/CISI1_BC_absent_graffiti_or_pottery_sections",
+      "experiments/2026-10-06-evidence-census/synthesis/coverage.json#/summary/CISI1_BC_absent_seal_impression_tablet_other_sections"
+    ],
+    "id": "F-0007",
+    "path": "knowledge/findings/F-0007-catalogue-identifiers-missing-from-export.md",
+    "population": "493 identifiers across 19 CISI volume 1 ranges in Gujarat and north India",
+    "registry_ids": [
+      "EVIDENCE-CENSUS-SYNTHESIS-01"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0007-catalogue-identifiers-missing-from-export.md",
+    "status": "source-review",
+    "status_class": "source-review",
+    "title": "Catalogue identifiers missing from export",
+    "url": "F-0007.html"
+  },
+  {
+    "area": "data",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "The reviewed museum join count was 68 of 114 original records, leaving 46 unresolved records.",
+    "date": "2026-10-07",
+    "evidence": [
+      "experiments/2026-10-06-evidence-census/synthesis/join-summary.json#/museum_original_records",
+      "experiments/2026-10-06-evidence-census/synthesis/join-summary.json#/confirmed_identifier_joins",
+      "experiments/2026-10-06-evidence-census/synthesis/join-summary.json#/unconfirmed_records"
+    ],
+    "id": "F-0008",
+    "path": "knowledge/findings/F-0008-museum-joins-are-a-lower-bound.md",
+    "population": "114 inspected inscription-confirmed original museum records",
+    "registry_ids": [
+      "EVIDENCE-CENSUS-SYNTHESIS-01"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0008-museum-joins-are-a-lower-bound.md",
+    "status": "source-review",
+    "status_class": "source-review",
+    "title": "Museum joins are a lower bound",
+    "url": "F-0008.html"
+  },
+  {
+    "area": "data",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "The census frame represented 5,652 of 5,680 local faces across 115 site/provenance entities assembled from 123 batch rows.",
+    "date": "2026-10-07",
+    "evidence": [
+      "experiments/2026-10-06-evidence-census/synthesis/coverage.json#/summary/represented_local_faces",
+      "experiments/2026-10-06-evidence-census/synthesis/coverage.json#/summary/local_all_faces",
+      "experiments/2026-10-06-evidence-census/synthesis/coverage.json#/summary/site_or_provenance_entities_after_aliases",
+      "experiments/2026-10-06-evidence-census/synthesis/coverage.json#/summary/raw_batch_rows"
+    ],
+    "id": "F-0009",
+    "path": "knowledge/findings/F-0009-site-frame-coverage-in-the-local-export.md",
+    "population": "5,680 local face rows compared with the census site-label frame",
+    "registry_ids": [
+      "EVIDENCE-CENSUS-SYNTHESIS-01"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0009-site-frame-coverage-in-the-local-export.md",
+    "status": "source-review",
+    "status_class": "source-review",
+    "title": "Site frame coverage in the local export",
+    "url": "F-0009.html"
+  },
+  {
+    "area": "structure",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "Coder 1’s base families improved prediction by 0.0219 bits per sign beyond the ungrouped model, with p = 0.005 against size-matched random groupings.",
+    "date": "2026-10-12",
+    "evidence": [
+      "experiments/2026-10-12-structure-first/step1-signs/run-2026-10-12/summary.json#/grouping_tests/B_coder1/gain_bits",
+      "experiments/2026-10-12-structure-first/step1-signs/run-2026-10-12/summary.json#/grouping_tests/B_coder1/p_value"
+    ],
+    "id": "F-0010",
+    "path": "knowledge/findings/F-0010-graphic-base-families-improve-prediction.md",
+    "population": "1,859 distinct clean texts, 8,535 signs, held out by dependence component",
+    "registry_ids": [
+      "SIGN-FAMILIES-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0010-graphic-base-families-improve-prediction.md",
+    "status": "frozen-evaluation",
+    "status_class": "frozen-evaluation",
+    "title": "Graphic base families improve prediction",
+    "url": "F-0010.html"
+  },
+  {
+    "area": "images",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "The two codings had adjusted Rand agreement 0.884 unweighted and 0.975 token-weighted across 577 codes.",
+    "date": "2026-10-12",
+    "evidence": [
+      "experiments/2026-10-12-structure-first/step1-signs/run-2026-10-12/summary.json#/coder_agreement/ari_unweighted",
+      "experiments/2026-10-12-structure-first/step1-signs/run-2026-10-12/summary.json#/coder_agreement/ari_token_weighted",
+      "experiments/2026-10-12-structure-first/step1-signs/run-2026-10-12/summary.json#/coder_agreement/codes_compared"
+    ],
+    "id": "F-0011",
+    "path": "knowledge/findings/F-0011-agreement-between-the-two-sign-codings.md",
+    "population": "577 attested codes coded by two instances of one model",
+    "registry_ids": [
+      "SIGN-FAMILIES-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0011-agreement-between-the-two-sign-codings.md",
+    "status": "verified-computation",
+    "status_class": "verified-computation",
+    "title": "Agreement between the two sign codings",
+    "url": "F-0011.html"
+  },
+  {
+    "area": "structure",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "Grouping by modifier signature failed the random-grouping test, with p = 0.11.",
+    "date": "2026-10-12",
+    "evidence": [
+      "experiments/2026-10-12-structure-first/step1-signs/run-2026-10-12/summary.json#/grouping_tests/modifier_signature/p_value",
+      "experiments/2026-10-12-structure-first/step1-signs/run-2026-10-12/summary.json#/grouping_tests/modifier_signature/passes"
+    ],
+    "id": "F-0012",
+    "path": "knowledge/findings/F-0012-modifier-signatures-fail-the-grouping-test.md",
+    "population": "1,859 distinct clean texts, 8,535 signs, held out by dependence component",
+    "registry_ids": [
+      "SIGN-FAMILIES-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0012-modifier-signatures-fail-the-grouping-test.md",
+    "status": "failed",
+    "status_class": "failed",
+    "title": "Modifier signatures fail the grouping test",
+    "url": "F-0012.html"
+  },
+  {
+    "area": "structure",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "For unseen codes, base-family backoff lowered loss from 14.60 to 14.19 bits per sign.",
+    "date": "2026-10-12",
+    "evidence": [
+      "experiments/2026-10-12-structure-first/step1-signs/run-2026-10-12/summary.json#/grouping_tests/B_coder1/by_training_frequency/seen0/tokens",
+      "experiments/2026-10-12-structure-first/step1-signs/run-2026-10-12/summary.json#/grouping_tests/B_coder1/by_training_frequency/seen0/baseline_bits",
+      "experiments/2026-10-12-structure-first/step1-signs/run-2026-10-12/summary.json#/grouping_tests/B_coder1/by_training_frequency/seen0/class_bits"
+    ],
+    "id": "F-0013",
+    "path": "knowledge/findings/F-0013-base-families-reduce-unseen-code-loss.md",
+    "population": "267 held-out signs with no training occurrence of their Wells code",
+    "registry_ids": [
+      "SIGN-FAMILIES-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0013-base-families-reduce-unseen-code-loss.md",
+    "status": "frozen-evaluation",
+    "status_class": "frozen-evaluation",
+    "title": "Base families reduce unseen-code loss",
+    "url": "F-0013.html"
+  },
+  {
+    "area": "tablets",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "Held-out image-class prediction reached 24.8% against a 21.5% majority comparator.",
+    "date": "2026-10-12",
+    "evidence": [
+      "experiments/2026-10-12-structure-first/step2-image-text/run-2026-10-12-v3/summary.json#/bas_relief/2c/accuracy",
+      "experiments/2026-10-12-structure-first/step2-image-text/run-2026-10-12-v3/summary.json#/bas_relief/2c/majority_rate",
+      "experiments/2026-10-12-structure-first/step2-image-text/run-2026-10-12-v3/summary.json#/bas_relief/2c/text_types"
+    ],
+    "id": "F-0014",
+    "path": "knowledge/findings/F-0014-bas-relief-image-prediction.md",
+    "population": "149 text types in the bas relief tablet cohort",
+    "registry_ids": [
+      "IMAGE-TEXT-TABLETS-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0014-bas-relief-image-prediction.md",
+    "status": "frozen-evaluation",
+    "status_class": "frozen-evaluation",
+    "title": "Bas-relief image prediction",
+    "url": "F-0014.html"
+  },
+  {
+    "area": "tablets",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "Held-out image-class prediction reached 57.4% against a 48.1% majority comparator.",
+    "date": "2026-10-12",
+    "evidence": [
+      "experiments/2026-10-12-structure-first/step2-image-text/run-2026-10-12-v3/summary.json#/incised/2c/accuracy",
+      "experiments/2026-10-12-structure-first/step2-image-text/run-2026-10-12-v3/summary.json#/incised/2c/majority_rate",
+      "experiments/2026-10-12-structure-first/step2-image-text/run-2026-10-12-v3/summary.json#/incised/2c/text_types"
+    ],
+    "id": "F-0015",
+    "path": "knowledge/findings/F-0015-incised-tablet-image-prediction.md",
+    "population": "54 text types in the incised tablet cohort",
+    "registry_ids": [
+      "IMAGE-TEXT-TABLETS-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0015-incised-tablet-image-prediction.md",
+    "status": "frozen-evaluation",
+    "status_class": "frozen-evaluation",
+    "title": "Incised-tablet image prediction",
+    "url": "F-0015.html"
+  },
+  {
+    "area": "tablets",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "Held-out image-class prediction reached 19.2% against a 26.9% majority comparator.",
+    "date": "2026-10-12",
+    "evidence": [
+      "experiments/2026-10-12-structure-first/step2-image-text/run-2026-10-12-v3/summary.json#/copper/2c/accuracy",
+      "experiments/2026-10-12-structure-first/step2-image-text/run-2026-10-12-v3/summary.json#/copper/2c/majority_rate",
+      "experiments/2026-10-12-structure-first/step2-image-text/run-2026-10-12-v3/summary.json#/copper/2c/text_types"
+    ],
+    "id": "F-0016",
+    "path": "knowledge/findings/F-0016-copper-image-prediction-fails.md",
+    "population": "26 text types in the copper tablet cohort",
+    "registry_ids": [
+      "IMAGE-TEXT-TABLETS-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0016-copper-image-prediction-fails.md",
+    "status": "failed",
+    "status_class": "failed",
+    "title": "Copper image prediction fails",
+    "url": "F-0016.html"
+  },
+  {
+    "area": "seals",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "Copper class-specific sign groups occurred on matching-animal seals 3 times against 3.01 expected, with p = 0.62.",
+    "date": "2026-10-12",
+    "evidence": [
+      "experiments/2026-10-12-structure-first/step2-image-text/run-2026-10-12-v3/summary.json#/2d_copper_to_seals/matching_hits",
+      "experiments/2026-10-12-structure-first/step2-image-text/run-2026-10-12-v3/summary.json#/2d_copper_to_seals/null_mean",
+      "experiments/2026-10-12-structure-first/step2-image-text/run-2026-10-12-v3/summary.json#/2d_copper_to_seals/p_value",
+      "experiments/2026-10-12-structure-first/step2-image-text/run-2026-10-12-v3/summary.json#/2d_copper_to_seals/seal_text_animal_pairs"
+    ],
+    "id": "F-0017",
+    "path": "knowledge/findings/F-0017-copper-groups-do-not-transfer-to-seal-animals.md",
+    "population": "1,209 seal text/animal pairs in classes shared with copper tablets",
+    "registry_ids": [
+      "IMAGE-TEXT-TABLETS-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0017-copper-groups-do-not-transfer-to-seal-animals.md",
+    "status": "failed",
+    "status_class": "failed",
+    "title": "Copper groups do not transfer to seal animals",
+    "url": "F-0017.html"
+  },
+  {
+    "area": "structure",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "Under the conservative line order, 23 faces had higher line recurrence, 4 had higher crossing-window recurrence and 42 tied; p = 0.0003.",
+    "date": "2026-10-12",
+    "evidence": [
+      "experiments/2026-10-12-structure-first/step3-segmentation/run-linebreaks-2026-10-12-v3/summary.json#/conservative_best_order/faces_line_higher",
+      "experiments/2026-10-12-structure-first/step3-segmentation/run-linebreaks-2026-10-12-v3/summary.json#/conservative_best_order/faces_straddle_higher",
+      "experiments/2026-10-12-structure-first/step3-segmentation/run-linebreaks-2026-10-12-v3/summary.json#/conservative_best_order/ties",
+      "experiments/2026-10-12-structure-first/step3-segmentation/run-linebreaks-2026-10-12-v3/summary.json#/conservative_best_order/sign_test_two_sided_p",
+      "experiments/2026-10-12-structure-first/step3-segmentation/run-linebreaks-2026-10-12-v3/summary.json#/faces_used"
+    ],
+    "id": "F-0018",
+    "path": "knowledge/findings/F-0018-lines-recur-more-than-crossing-windows.md",
+    "population": "69 usable faces with catalogue line divisions",
+    "registry_ids": [
+      "LINE-BREAKS-SEGMENTATION-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0018-lines-recur-more-than-crossing-windows.md",
+    "status": "frozen-evaluation",
+    "status_class": "frozen-evaluation",
+    "title": "Lines recur more than crossing windows",
+    "url": "F-0018.html"
+  },
+  {
+    "area": "structure",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "Only 2 of 68 segment-derived stems alternated, a rate of 0.029. The rate lay inside all four matched comparison ranges.",
+    "date": "2026-10-12",
+    "evidence": [
+      "experiments/2026-10-12-structure-first/step3-segmentation/run-alternation-2026-10-12/summary.json#/ivs_chosen_alternation/stems",
+      "experiments/2026-10-12-structure-first/step3-segmentation/run-alternation-2026-10-12/summary.json#/ivs_chosen_alternation/alternating_stems",
+      "experiments/2026-10-12-structure-first/step3-segmentation/run-alternation-2026-10-12/summary.json#/ivs_chosen_alternation/alternation_rate",
+      "experiments/2026-10-12-structure-first/step3-segmentation/run-alternation-2026-10-12/summary.json#/comparisons"
+    ],
+    "id": "F-0019",
+    "path": "knowledge/findings/F-0019-indus-alternation-has-few-stems.md",
+    "population": "68 stems from Dirichlet-process segments of the distinct clean texts",
+    "registry_ids": [
+      "LINE-BREAKS-SEGMENTATION-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0019-indus-alternation-has-few-stems.md",
+    "status": "frozen-evaluation",
+    "status_class": "frozen-evaluation",
+    "title": "Indus alternation has few stems",
+    "url": "F-0019.html"
+  },
+  {
+    "area": "methods",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "The best mean boundary F1 was 0.531 for the Dirichlet-process segmenter, against 0.485 for a boundary everywhere.",
+    "date": "2026-10-12",
+    "evidence": [
+      "experiments/2026-10-12-structure-first/step5-rehearsal/run-segmentation-2026-10-12/summary.json#/mean_boundary_f1/dp_unigram",
+      "experiments/2026-10-12-structure-first/step5-rehearsal/run-segmentation-2026-10-12/summary.json#/cohorts"
+    ],
+    "id": "F-0020",
+    "path": "knowledge/findings/F-0020-mean-segmentation-accuracy-at-indus-scale.md",
+    "population": "Four readable cohorts with word boundaries hidden and lengths matched where feasible",
+    "registry_ids": [
+      "REHEARSAL-SEGMENTATION-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0020-mean-segmentation-accuracy-at-indus-scale.md",
+    "status": "frozen-evaluation",
+    "status_class": "frozen-evaluation",
+    "title": "Mean segmentation accuracy at Indus scale",
+    "url": "F-0020.html"
+  },
+  {
+    "area": "methods",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "On Ur III seal legends, branching entropy reached boundary F1 0.692 against 0.557 for a boundary everywhere.",
+    "date": "2026-10-12",
+    "evidence": [
+      "experiments/2026-10-12-structure-first/step5-rehearsal/run-segmentation-2026-10-12/summary.json#/cohorts/sumerian_seals_all/scores/branching_entropy/boundary_f1",
+      "experiments/2026-10-12-structure-first/step5-rehearsal/run-segmentation-2026-10-12/summary.json#/cohorts/sumerian_seals_all/scores/all_boundaries/boundary_f1",
+      "experiments/2026-10-12-structure-first/step5-rehearsal/run-segmentation-2026-10-12/summary.json#/cohorts/sumerian_seals_all/texts"
+    ],
+    "id": "F-0021",
+    "path": "knowledge/findings/F-0021-seal-legend-segmentation-rehearsal.md",
+    "population": "309 distinct Ur III seal legends with complete edited word units",
+    "registry_ids": [
+      "REHEARSAL-SEGMENTATION-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0021-seal-legend-segmentation-rehearsal.md",
+    "status": "frozen-evaluation",
+    "status_class": "frozen-evaluation",
+    "title": "Seal-legend segmentation rehearsal",
+    "url": "F-0021.html"
+  },
+  {
+    "area": "structure",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "Normalized initial-minus-final sign entropy was +0.260, against a shuffle range of −0.017 to +0.018.",
+    "date": "2026-10-12",
+    "evidence": [
+      "experiments/2026-10-12-structure-first/step6-language/run-2026-10-12/summary.json#/profiles/ivs_all_clean/edge_asymmetry/asymmetry_initial_minus_final",
+      "experiments/2026-10-12-structure-first/step6-language/run-2026-10-12/summary.json#/profiles/ivs_all_clean/edge_asymmetry/shuffle_p2_5",
+      "experiments/2026-10-12-structure-first/step6-language/run-2026-10-12/summary.json#/profiles/ivs_all_clean/edge_asymmetry/shuffle_p97_5"
+    ],
+    "id": "F-0022",
+    "path": "knowledge/findings/F-0022-initial-and-final-sign-concentration-differs.md",
+    "population": "1,859 distinct clean Indus texts",
+    "registry_ids": [
+      "STRUCTURAL-TYPOLOGY-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0022-initial-and-final-sign-concentration-differs.md",
+    "status": "frozen-evaluation",
+    "status_class": "frozen-evaluation",
+    "title": "Initial and final sign concentration differs",
+    "url": "F-0022.html"
+  },
+  {
+    "area": "comparative",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "Ur III seal-legend edge asymmetry was −0.204 by sign and +0.079 by word.",
+    "date": "2026-10-12",
+    "evidence": [
+      "experiments/2026-10-12-structure-first/step6-language/run-2026-10-12/summary.json#/profiles/sumerian_seals/sign_level/edge_asymmetry/asymmetry_initial_minus_final",
+      "experiments/2026-10-12-structure-first/step6-language/run-2026-10-12/summary.json#/profiles/sumerian_seals/word_level/edge_asymmetry/asymmetry_initial_minus_final"
+    ],
+    "id": "F-0023",
+    "path": "knowledge/findings/F-0023-edge-asymmetry-changes-with-the-unit.md",
+    "population": "Edited Ur III seal legends at sign and word level",
+    "registry_ids": [
+      "STRUCTURAL-TYPOLOGY-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0023-edge-asymmetry-changes-with-the-unit.md",
+    "status": "frozen-evaluation",
+    "status_class": "frozen-evaluation",
+    "title": "Edge asymmetry changes with the unit",
+    "url": "F-0023.html"
+  },
+  {
+    "area": "numerals",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "Indus had 3.61 distinct values per qualifying item, against 4.53–5.15 in the size-matched Ur III interval.",
+    "date": "2026-10-12",
+    "evidence": [
+      "experiments/2026-10-12-structure-first/step4-numerals/run-2026-10-12/summary.json#/ivs_clean/mean_distinct_values_per_item",
+      "experiments/2026-10-12-structure-first/step4-numerals/run-2026-10-12/summary.json#/ur3_subsampled_to_ivs/mean_distinct_values_per_item/p2_5",
+      "experiments/2026-10-12-structure-first/step4-numerals/run-2026-10-12/summary.json#/ur3_subsampled_to_ivs/mean_distinct_values_per_item/p97_5"
+    ],
+    "id": "F-0024",
+    "path": "knowledge/findings/F-0024-stroke-values-are-tied-to-following-items.md",
+    "population": "Clean Indus stroke tokens with the next sign treated as item; size-matched Ur III counts",
+    "registry_ids": [
+      "NUMERAL-BEHAVIOUR-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0024-stroke-values-are-tied-to-following-items.md",
+    "status": "frozen-evaluation",
+    "status_class": "frozen-evaluation",
+    "title": "Stroke values are tied to following items",
+    "url": "F-0024.html"
+  },
+  {
+    "area": "numerals",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "Code 520 followed three strokes in 38 of 41 cases, and code 585 followed seven in 16 of 17 cases.",
+    "date": "2026-10-12",
+    "evidence": [
+      "experiments/2026-10-12-structure-first/step4-numerals/run-2026-10-12/summary.json#/ivs_clean/items",
+      "experiments/2026-10-12-structure-first/step4-numerals/REPORT.md"
+    ],
+    "id": "F-0025",
+    "path": "knowledge/findings/F-0025-two-near-fixed-stroke-combinations.md",
+    "population": "Clean stroke tokens followed by code 520 or code 585",
+    "registry_ids": [
+      "NUMERAL-BEHAVIOUR-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0025-two-near-fixed-stroke-combinations.md",
+    "status": "exploratory",
+    "status_class": "exploratory",
+    "title": "Two near-fixed stroke combinations",
+    "url": "F-0025.html"
+  },
+  {
+    "area": "seals",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "There were 65 recurring texts on 174 of 1,430 eligible seals; 41 of the recurring texts spanned sites.",
+    "date": "2026-10-12",
+    "evidence": [
+      "experiments/2026-10-12-seal-text-identity/run-2026-10-12/summary.json#/eligible_seal_objects",
+      "experiments/2026-10-12-seal-text-identity/run-2026-10-12/summary.json#/shared_texts",
+      "experiments/2026-10-12-seal-text-identity/run-2026-10-12/summary.json#/seal_objects_in_shared_texts",
+      "experiments/2026-10-12-seal-text-identity/run-2026-10-12/summary.json#/shared_texts_spanning_sites/all"
+    ],
+    "id": "F-0026",
+    "path": "knowledge/findings/F-0026-recurring-seal-texts-span-sites.md",
+    "population": "1,430 complete single-line seals from named South Asian sites, one face per family",
+    "registry_ids": [
+      "SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0026-recurring-seal-texts-span-sites.md",
+    "status": "frozen-evaluation",
+    "status_class": "frozen-evaluation",
+    "title": "Recurring seal texts span sites",
+    "url": "F-0026.html"
+  },
+  {
+    "area": "seals",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "No two of the 445 seals with six or more signs shared their complete text.",
+    "date": "2026-10-12",
+    "evidence": [
+      "experiments/2026-10-12-seal-text-identity/run-2026-10-12/summary.json#/S3_whole_text_reuse/by_length"
+    ],
+    "id": "F-0027",
+    "path": "knowledge/findings/F-0027-long-seal-texts-do-not-repeat.md",
+    "population": "445 eligible seals with six or more signs",
+    "registry_ids": [
+      "SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0027-long-seal-texts-do-not-repeat.md",
+    "status": "frozen-evaluation",
+    "status_class": "frozen-evaluation",
+    "title": "Long seal texts do not repeat",
+    "url": "F-0027.html"
+  },
+  {
+    "area": "seals",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "The mean same-site share was 0.473 against 0.448 under shuffled site labels, with p = 0.31 and ratio to chance 1.06.",
+    "date": "2026-10-12",
+    "evidence": [
+      "experiments/2026-10-12-seal-text-identity/run-2026-10-12/summary.json#/S1_all/text_weighted/observed",
+      "experiments/2026-10-12-seal-text-identity/run-2026-10-12/summary.json#/S1_all/text_weighted/null_mean",
+      "experiments/2026-10-12-seal-text-identity/run-2026-10-12/summary.json#/S1_all/text_weighted/p_one_sided",
+      "experiments/2026-10-12-seal-text-identity/run-2026-10-12/summary.json#/S1_all/text_weighted/ratio_to_null_mean"
+    ],
+    "id": "F-0028",
+    "path": "knowledge/findings/F-0028-frozen-duplicate-locality-test-does-not-pass.md",
+    "population": "65 recurring texts among the 1,430 eligible seals",
+    "registry_ids": [
+      "SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0028-frozen-duplicate-locality-test-does-not-pass.md",
+    "status": "frozen-evaluation",
+    "status_class": "frozen-evaluation",
+    "title": "Frozen duplicate-locality test does not pass",
+    "url": "F-0028.html"
+  },
+  {
+    "area": "seals",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "Of 89 matching-motif pairs, 88 were unicorn pairs. Only 1 of 42 pairs involving another animal shared its motif.",
+    "date": "2026-10-12",
+    "evidence": [
+      "experiments/2026-10-12-seal-text-identity/run-2026-10-12/review-response.json#/E_motif_pairs/pairs_with_both_motifs",
+      "experiments/2026-10-12-seal-text-identity/run-2026-10-12/review-response.json#/E_motif_pairs/same_motif",
+      "experiments/2026-10-12-seal-text-identity/run-2026-10-12/review-response.json#/E_motif_pairs/unicorn_unicorn",
+      "experiments/2026-10-12-seal-text-identity/run-2026-10-12/review-response.json#/E_motif_pairs/pairs_involving_non_unicorn",
+      "experiments/2026-10-12-seal-text-identity/run-2026-10-12/review-response.json#/E_motif_pairs/same_motif_among_non_unicorn"
+    ],
+    "id": "F-0029",
+    "path": "knowledge/findings/F-0029-unicorn-pairs-account-for-motif-matches.md",
+    "population": "130 identical-text seal pairs with both field motifs recorded",
+    "registry_ids": [
+      "SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0029-unicorn-pairs-account-for-motif-matches.md",
+    "status": "exploratory",
+    "status_class": "exploratory",
+    "title": "Unicorn pairs account for motif matches",
+    "url": "F-0029.html"
+  },
+  {
+    "area": "seals",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "Of 16 matching sealings or tags, 13 matched only seals found elsewhere. Those 13 carried 4 of the 6 distinct matching texts.",
+    "date": "2026-10-12",
+    "evidence": [
+      "experiments/2026-10-12-seal-text-identity/run-2026-10-12/review-response.json#/G_S5_recount/rows",
+      "experiments/2026-10-12-seal-text-identity/run-2026-10-12/review-response.json#/G_S5_recount/rows_matching_only_other_site_seals",
+      "experiments/2026-10-12-seal-text-identity/run-2026-10-12/review-response.json#/G_S5_recount/distinct_texts",
+      "experiments/2026-10-12-seal-text-identity/run-2026-10-12/review-response.json#/G_S5_recount/texts_matching_only_other_site_seals"
+    ],
+    "id": "F-0030",
+    "path": "knowledge/findings/F-0030-sealings-match-seals-from-other-cities.md",
+    "population": "16 sealings or tags whose texts match an eligible seal, representing six texts",
+    "registry_ids": [
+      "SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0030-sealings-match-seals-from-other-cities.md",
+    "status": "verified-computation",
+    "status_class": "verified-computation",
+    "title": "Sealings match seals from other cities",
+    "url": "F-0030.html"
+  },
+  {
+    "area": "methods",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "At nominal 5%, matched object references rejected 5.4% of literal-copy populations, against 15.9% for record-wise references.",
+    "date": "2026-10-02",
+    "evidence": [
+      "experiments/2026-10-02-six-hour/null-calibration/main/results.json#/aggregate/physical_copies~1block_columns/rejections/0.05/rate",
+      "experiments/2026-10-02-six-hour/null-calibration/main/results.json#/aggregate/physical_copies~1record_columns/rejections/0.05/rate"
+    ],
+    "id": "F-0031",
+    "path": "knowledge/findings/F-0031-literal-copy-reference-calibration.md",
+    "population": "1,000 generated literal-copy populations under a known law",
+    "registry_ids": [
+      "NULL-08"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0031-literal-copy-reference-calibration.md",
+    "status": "synthetic",
+    "status_class": "synthetic",
+    "title": "Literal-copy reference calibration",
+    "url": "F-0031.html"
+  },
+  {
+    "area": "methods",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "At nominal 5%, matched face-vector references rejected 5% of populations, against 11% for record-wise references.",
+    "date": "2026-10-02",
+    "evidence": [
+      "experiments/2026-10-02-six-hour/null-calibration/noisy-faces/main/results.json#/aggregate/noisy_faces~1face_vectors/rejections/0.05/rate",
+      "experiments/2026-10-02-six-hour/null-calibration/noisy-faces/main/results.json#/aggregate/noisy_faces~1record_columns/rejections/0.05/rate"
+    ],
+    "id": "F-0032",
+    "path": "knowledge/findings/F-0032-imperfect-face-reference-calibration.md",
+    "population": "1,000 generated populations with two imperfect faces per object",
+    "registry_ids": [
+      "NULL-05"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0032-imperfect-face-reference-calibration.md",
+    "status": "synthetic",
+    "status_class": "synthetic",
+    "title": "Imperfect-face reference calibration",
+    "url": "F-0032.html"
+  },
+  {
+    "area": "methods",
+    "authors": [
+      "Codex CLI (GPT-6.1-Sol)"
+    ],
+    "claim": "The reference-only selector recovered 309 of 384 symbol maps, against 283 for fixed graph mapping and 168 for fixed slot mapping.",
+    "date": "2026-10-02",
+    "evidence": [
+      "experiments/2026-10-02-six-hour/reference-selector/main/results.json#/rows"
+    ],
+    "id": "F-0033",
+    "path": "knowledge/findings/F-0033-reference-only-symbol-map-selection.md",
+    "population": "384 generated mapping conditions in 48 fresh systems",
+    "registry_ids": [
+      "CRYPTO-08"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0033-reference-only-symbol-map-selection.md",
+    "status": "synthetic",
+    "status_class": "synthetic",
+    "title": "Reference-only symbol-map selection",
+    "url": "F-0033.html"
+  },
+  {
+    "area": "meaning",
+    "authors": [
+      "Claude Opus 5.5 in Claude Code (Shot B agent and coordinator)"
+    ],
+    "claim": "A map assigning the 118 commonest signs to seven classes (numerals, links, households, name elements, commodities, offices, closing determinatives), built without seeing site, size, animal, material or period, did not predict where confirmation-half seals were found or how large they were better than rearrangements of its own labels within frequency and position bands: S = −0.567, 33.0th percentile of 10,000 rearrangements, 0.44 standard deviations below their mean (pass required the 95th percentile). The same code on the discovery half's real withheld fields gives +0.88 standard deviations, also a fail.",
+    "date": "2026-10-13",
+    "evidence": [
+      "experiments/2026-10-12-conjecture-shots/shot-b-reading/confirmation/results.json#/primary",
+      "experiments/2026-10-12-conjecture-shots/shot-b-reading/confirmation/results.json#/components",
+      "experiments/2026-10-12-conjecture-shots/shot-b-reading/verification.json",
+      "experiments/2026-10-12-conjecture-shots/review/shot-b-reliability.json"
+    ],
+    "id": "F-0034",
+    "path": "knowledge/findings/F-0034-gloss-map-fails-to-predict-seal-site-and-size.md",
+    "population": "Confirmation-half seals of the 12 October split: 1,086 site units and 846 size units",
+    "registry_ids": [
+      "CONJECTURE-SHOT-B-WORKING-READING-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0034-gloss-map-fails-to-predict-seal-site-and-size.md",
+    "status": "failed",
+    "status_class": "failed",
+    "title": "A class-and-gloss map of 118 signs fails to predict seal site and size",
+    "url": "F-0034.html"
+  },
+  {
+    "area": "seals",
+    "authors": [
+      "Claude Opus 5.5 in Claude Code (Shot A agent and coordinator)"
+    ],
+    "claim": "On the confirmation half, the 11 seals whose legend ends in sign 001, 595, 679 or 820, a set chosen on the discovery half before the confirmation half was read, average +0.346 in residual log face area against −0.007 for the other 571 seals of the same type, site class and length class (p = 0.021, frozen one-sided permutation test). Measured against the null mean of +0.056, the excess is ×1.35 in face area.",
+    "date": "2026-10-13",
+    "evidence": [
+      "experiments/2026-10-12-conjecture-shots/shot-a-rank/confirmation/results.json#/P4",
+      "experiments/2026-10-12-conjecture-shots/shot-a-rank/verification.json",
+      "experiments/2026-10-12-conjecture-shots/review/shot-a-robustness.json#/confirmation/variants"
+    ],
+    "id": "F-0035",
+    "path": "knowledge/findings/F-0035-legends-closing-in-four-signs-sit-on-larger-seals.md",
+    "population": "620 confirmation-half seals in 582 components with both face dimensions and a complete single-line legend of two or more signs",
+    "registry_ids": [
+      "CONJECTURE-SHOT-A-SEAL-GRADE-2026-10-12"
+    ],
+    "source_url": "https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0035-legends-closing-in-four-signs-sit-on-larger-seals.md",
+    "status": "frozen-evaluation",
+    "status_class": "frozen-evaluation",
+    "title": "Legends closing in 001, 595, 679 or 820 sit on larger seals in a held-out half",
+    "url": "F-0035.html"
+  }
+]

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>F-0013: Base families reduce unseen-code loss · Indus research</title>
+  <link rel="stylesheet" href="../assets/site.css">
+  <script src="../assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../index.html">Indus research</a>
+  <nav aria-label="Main navigation"><a href="../index.html">Home</a><a href="index.html">Findings</a><a href="../working-model/index.html">Working model</a><a href="../conjectures/index.html">Conjectures</a><a href="../questions/index.html">Open questions</a><a href="../attempts/index.html">Registry</a><a href="../data.html">Data</a><a href="../timeline/index.html">Timeline</a><a href="../papers/index.html">Papers</a><a href="../explore/index.html">Explore</a><a href="../contribute/index.html">Contribute</a><a href="../reuse/index.html">Reuse</a></nav>
+</header>
+<main id="content">
+  <h1>F-0013: Base families reduce unseen-code loss</h1>
+  
+  
+<dl class="metadata">
+
+<div><dt>status class</dt><dd><span class="badge frozen-evaluation">frozen evaluation</span></dd></div>
+
+
+
+<div><dt>area</dt><dd>structure</dd></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+<h2 id="finding">Finding</h2>
+<p>For unseen codes, base-family backoff lowered loss from 14.60 to 14.19 bits per sign.</p>
+<h2 id="evidence">Evidence</h2>
+<ul>
+<li><a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-12-structure-first/step1-signs/run-2026-10-12/summary.json">experiments/2026-10-12-structure-first/step1-signs/run-2026-10-12/summary.json</a>, JSON field <code>/grouping_tests/B_coder1/by_training_frequency/seen0/tokens</code>.</li>
+<li><a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-12-structure-first/step1-signs/run-2026-10-12/summary.json">experiments/2026-10-12-structure-first/step1-signs/run-2026-10-12/summary.json</a>, JSON field <code>/grouping_tests/B_coder1/by_training_frequency/seen0/baseline_bits</code>.</li>
+<li><a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/experiments/2026-10-12-structure-first/step1-signs/run-2026-10-12/summary.json">experiments/2026-10-12-structure-first/step1-signs/run-2026-10-12/summary.json</a>, JSON field <code>/grouping_tests/B_coder1/by_training_frequency/seen0/class_bits</code>.</li>
+</ul>
+<h2 id="scope">Scope</h2>
+<p>These are held-out tokens whose fine code is absent from the training fold. The comparator is the ungrouped Kneser–Ney baseline. Published Parpola and Mahadevan groupings are separate alternatives in the same output.</p>
+
+</main>
+<footer class="site-footer">
+  <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/findings/F-0013-base-families-reduce-unseen-code-loss.md">Source on GitHub</a>
+  <span>86ad64f6cfe4 · 2026-10-13T01:33:38-04:00</span>
+</footer>
+</body>
+</html>

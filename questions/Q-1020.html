@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Q-1020: Record the unit, precision and source of every dimension value · Indus research</title>
+  <link rel="stylesheet" href="../assets/site.css">
+  <script src="../assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../index.html">Indus research</a>
+  <nav aria-label="Main navigation"><a href="../index.html">Home</a><a href="../findings/index.html">Findings</a><a href="../working-model/index.html">Working model</a><a href="../conjectures/index.html">Conjectures</a><a href="index.html">Open questions</a><a href="../attempts/index.html">Registry</a><a href="../data.html">Data</a><a href="../timeline/index.html">Timeline</a><a href="../papers/index.html">Papers</a><a href="../explore/index.html">Explore</a><a href="../contribute/index.html">Contribute</a><a href="../reuse/index.html">Reuse</a></nav>
+</header>
+<main id="content">
+  <h1>Q-1020: Record the unit, precision and source of every dimension value</h1>
+  
+  
+<dl class="metadata">
+
+
+
+<div><dt>status</dt><dd><span class="badge open">open</span></dd></div>
+
+<div><dt>area</dt><dd>data</dd></div>
+
+
+
+
+
+<div><dt>kind</dt><dd>metadata</dd></div>
+
+<div><dt>difficulty</dt><dd>starter</dd></div>
+
+<div><dt>data access</dt><dd>local-only</dd></div>
+
+<div><dt>priority</dt><dd>3</dd></div>
+
+
+
+
+
+</dl>
+<p><a class="action" href="https://github.com/k-sandhu/indus-valley-script/issues/new?template=claim-question.yml&amp;title=%5BQ-1020%5D+Claim%3A+Record+the+unit%2C+precision+and+source+of+every+dimension+value">Claim or discuss on GitHub</a></p>
+
+<h2 id="question">Question</h2>
+<p>For each local dimension value, what unit and precision was it recorded in, which source does it come from, and where do the local sources disagree?</p>
+<h2 id="why-it-matters">Why it matters</h2>
+<p>The export's millimetre fields are mostly conversions: where both are present, 5,206 of 5,434 millimetre values equal the inch field times 25.4 within 0.6 mm, so their real precision is a tenth or a twentieth of an inch. Another 228 differ from the conversion, 452 inch values have no millimetre value, 530 thickness values are printed ranges such as <code>5 - 9</code>, and zeros stand for missing values in 1,810 horizontal, 1,681 vertical and 3,586 thickness fields. Against the older website export, 2,018 objects agree and 206 disagree. Size comparisons, such as the seal-dimension test in conjecture C-0004, need the precision and the source of each number.</p>
+<h2 id="what-is-needed">What is needed</h2>
+<p>Read <a href="../data.html">DATA.md</a>. Inputs: <code>data/normalized/lipi_observed_faces.jsonl</code>, <code>data/normalized/indus_website_observed.jsonl</code>, and the coverage outputs cited above. Classify each value as converted-from-inch, metric, range or placeholder; list the 228 conversion mismatches and the 206 cross-export disagreements with both values; check 30 of them against CISI basic data or the excavation tables once Q-1005 or Q-1003 is available.</p>
+<h2 id="how-to-decide">How to decide</h2>
+<p>Done when every dimension value has a unit class and a precision, and the mismatch lists carry a likely cause (transcription, rounding, different measurement) with the sample checks reported.</p>
+<h2 id="prior-attempts">Prior attempts</h2>
+<p>The October context audit separated placeholder zeros from measurements; this inventory measured the conversion pattern and the cross-export agreement.</p>
+
+</main>
+<footer class="site-footer">
+  <a href="https://github.com/k-sandhu/indus-valley-script/blob/86ad64f6cfe487295d9f7588b77910bef6138134/knowledge/questions/Q-1020-dimension-units-audit.md">Source on GitHub</a>
+  <span>86ad64f6cfe4 · 2026-10-13T01:33:38-04:00</span>
+</footer>
+</body>
+</html>
