@@ -10,7 +10,7 @@ compute: hours
 difficulty: standard
 claimed_by: ""
 claim_expires: ""
-prior_attempts: [CONTEXT-01]
+prior_attempts: [CONTEXT-01, MACKAY-MARSHALL-TABLES-2026-10-13]
 related: [Q-1003, Q-1021]
 sources: [knowledge/DATA.md, experiments/2026-10-12-data-inventory/run-2026-10-12/summary.json]
 ---
@@ -34,3 +34,5 @@ Done when every usable depth string has a parsed value and unit, a datum or an e
 # Prior attempts
 
 The October context audit separated the `- -` placeholder from informative depths but did not parse units or datums.
+
+13 October 2026: the Mackay and Marshall join gives 1,101 Mohenjo-daro objects a level with its datum (Mackay: DK datum, or the SD bench mark 2.2 ft above it for the SD area; Marshall: below the modern surface), keyed by Lipi family in [join-table.csv](../../experiments/2026-10-13-mackay-marshall-tables/run-2026-10-13/join-table.csv). The export's depth strings agree with the table levels for 1,107 of 1,110 comparable rows.

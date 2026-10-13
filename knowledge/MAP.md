@@ -123,8 +123,6 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 - [Q-0020](questions/Q-0020-review-complete-harappa-short-modules.md) · open · tablets · Review complete Harappa short modules
 - [Q-0027](questions/Q-0027-audit-catalogue-line-division-locators.md) · open · data · Audit catalogue line-division locators
 - [Q-0035](questions/Q-0035-audit-completeness-for-a-quantity-inventory.md) · open · data · Audit completeness for a quantity inventory
-- [Q-1002](questions/Q-1002-acquire-mackay-marshall-seal-tables.md) · open · data · Acquire the machine-readable Mackay 1938 and Marshall 1931 seal tables at a pinned commit
-- [Q-1003](questions/Q-1003-join-mackay-marshall-to-cisi.md) · open · data · Join the Mackay and Marshall seal tables to CISI M-numbers and the local Mohenjo-daro objects
 - [Q-1005](questions/Q-1005-cisi1-basic-data-table.md) · open · data · Transcribe the CISI 1 basic-data pages into an object table with museum and excavation numbers
 - [Q-1006](questions/Q-1006-cisi2-basic-data-table.md) · open · data · Transcribe the CISI 2 basic-data pages for the Pakistan collections
 - [Q-1008](questions/Q-1008-acquire-cisi-3-1.md) · open · data · Acquire CISI 3.1 (2010), the Mohenjo-daro and Harappa new-material volume
@@ -187,6 +185,8 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 - [Q-0013](questions/Q-0013-verify-the-lothal-and-m-895-text-match.md) · done · Verify the Lothal and M-895 text match
 - [Q-0015](questions/Q-0015-compare-m-895-with-the-impressed-seal.md) · done · Compare M-895 with the impressed seal
 - [Q-1001](questions/Q-1001-cisi-plates-l161-m895.md) · done · Assemble the held CISI witnesses for the Lothal L-161 to L-170 sealings and seal M-895
+- [Q-1002](questions/Q-1002-acquire-mackay-marshall-seal-tables.md) · done · Acquire the machine-readable Mackay 1938 and Marshall 1931 seal tables at a pinned commit
+- [Q-1003](questions/Q-1003-join-mackay-marshall-to-cisi.md) · done · Join the Mackay and Marshall seal tables to CISI M-numbers and the local Mohenjo-daro objects
 
 ## Conjectures
 

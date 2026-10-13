@@ -1,7 +1,7 @@
 ---
 id: Q-1002
 title: Acquire the machine-readable Mackay 1938 and Marshall 1931 seal tables at a pinned commit
-status: open
+status: done
 area: data
 kind: data-acquisition
 priority: 1
@@ -10,7 +10,7 @@ compute: minutes
 difficulty: starter
 claimed_by: ""
 claim_expires: ""
-prior_attempts: []
+prior_attempts: [MACKAY-MARSHALL-TABLES-2026-10-13]
 related: [Q-1003, Q-1030]
 sources: [knowledge/DATA.md, data/MANIFEST.json, experiments/2026-10-12-data-inventory/sources.json]
 ---
@@ -34,3 +34,5 @@ Done when the copy is local, its hashes and row counts are in the manifest entry
 # Prior attempts
 
 None. The repository was identified during the 12 October 2026 inventory; the evidence census had listed it only as a search result.
+
+13 October 2026, [package](../../experiments/2026-10-13-mackay-marshall-tables/README.md). The repository is cloned at `5c14a01f44296a01256a34e7e5e5e9fd82d9a67f` into `data/raw/2026-10-13-mackay-marshall-tables/epachayan-indus-script/` (local); the clone was made by hand rather than with `tools/fetch_data.py`, to keep it in the package's own directory. `LICENSE-DATA` places the transcribed tables under CC BY 4.0 with a stated attribution, `LICENSE` places the code under MIT, and `docs/DATA_NOTICE.md` limits MIT to `scripts/`. Row counts: `outputs/mackay_seal_table.csv` 709, `outputs/marshall_seal_table_transcribed.csv` 560, the superseded `outputs/marshall_seal_table.csv` 356, `outputs/findspots_mackay.csv` 130. The Marshall table this card names is the superseded OCR version; the transcribed file is the one to use. Hashes are in [acquisition.json](../../experiments/2026-10-13-mackay-marshall-tables/acquisition.json) and the manifest entry `epachayan-mackay-marshall`. Against the print, 0 of 30 sampled Mackay rows and 3 of 30 Marshall rows were wrong.

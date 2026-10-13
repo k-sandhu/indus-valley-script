@@ -1,7 +1,7 @@
 ---
 id: Q-1003
 title: Join the Mackay and Marshall seal tables to CISI M-numbers and the local Mohenjo-daro objects
-status: open
+status: done
 area: data
 kind: metadata
 priority: 1
@@ -10,7 +10,7 @@ compute: hours
 difficulty: standard
 claimed_by: ""
 claim_expires: ""
-prior_attempts: [EVIDENCE-CENSUS-COLLECTIONS-01, OBJECT-LEDGER-PILOT-01]
+prior_attempts: [EVIDENCE-CENSUS-COLLECTIONS-01, OBJECT-LEDGER-PILOT-01, MACKAY-MARSHALL-TABLES-2026-10-13]
 related: [Q-1002, Q-1006, Q-1013, Q-1022]
 sources: [knowledge/DATA.md, experiments/2026-10-12-data-inventory/run-2026-10-12/field-coverage-by-site.csv, experiments/2026-10-06-evidence-census/synthesis/join-summary.json]
 ---
@@ -34,3 +34,12 @@ Done when every table row has a disposition (joined to one CISI number, candidat
 # Prior attempts
 
 No join of these tables has been attempted. The object ledger pilot and the museum census joined a few Mohenjo-daro objects through Marshall's tabulation by hand.
+
+13 October 2026, [package](../../experiments/2026-10-13-mackay-marshall-tables/README.md). Every one of the 1,269 rows has a disposition ([row-dispositions.csv](../../experiments/2026-10-13-mackay-marshall-tables/run-2026-10-13/row-dispositions.csv)): 1,108 exact, 38 confirmed, 2 ambiguous and 121 unmatched with a reason. The joined rows cover 1,134 Lipi families and CISI numbers, 1,122 of them seals (85.1% of the 1,318 Mohenjo-daro seals). The key is the export's registration, which writes the field number followed by the excavator's catalogue number; the CISI basic data served as the check. Of 30 randomly sampled joins checked against the printed tables and the CISI excavation numbers, 29 are correct, none wrong and one unresolved, within the card's limit of two errors. Mohenjo-daro objects gain both face dimensions (+12), material (+5), a spatial unit (+10) and a level (+2); 1,134 gain a separated field number and a publication reference, 1,091 a size traced to the printed table in inches and 1,101 a level with its datum. The rules were amended three times after development runs (registration forms, variant keys, adjudication of contradicted candidates against the print); the amendments are in the package protocol.
+
+Remaining items, for a successor card:
+
+- Mackay No. 181: the printed table gives DK 14921, CISI gives DK 11492 for M-1195, and the export joins them. Compare Mackay's vol. II plate photograph of No. 181 with the CISI photograph of M-1195.
+- Two ambiguous rows: Mackay No. 434 (two Lipi families, 2301 and 4045, carry the same registration DK5081434) and Marshall No. 483 (registration only; the print gives yellow faience, the export steatite).
+- Mackay's plate volume is not held, and objects numbered above M-1659 (CISI 3.1) have no catalogue entry here, so joins to them were checked on the print and the registration alone.
+- The 14 differences between the transcription and the print ([print-corrections.csv](../../experiments/2026-10-13-mackay-marshall-tables/verification/print-corrections.csv)) are recorded but not applied to the join table.
