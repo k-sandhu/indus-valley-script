@@ -1,0 +1,33 @@
+# Retrospective: CISI 2 basic-data pilot, 13 October 2026
+
+## Approach
+
+The package set out to transcribe at least 200 consecutive basic-data entries of CISI 2 from M-621, measure the error rate of a single reading, join the rows to the local corpus and write a procedure for the rest of CISI 1 and CISI 2. The protocol was written and hashed after reading the column key on printed p. 434 and one strip of p. 435, and before any row was recorded. Pages were rendered at the pixel size of the scan's foreground layer and read in 1:1 strips of about fourteen lines, one half-column at a time. The first reading covered the whole of printed pp. 435 (from M-621) and 436, 327 entries, and was frozen by hash before a random sample of 33 entries was drawn for an independent second reading by a separate Claude instance that saw only the page renders.
+
+## Problems and fixes
+
+The scan limits accuracy more than the reading method. The foreground text layer of the archive.org PDF is a 3,252 × 4,542 px JPEG 2000 image of 50 to 64 KB on the pilot pages, and its digits are soft. Enlarging, sharpening and extracting the binary mask did not make them clearer, so strips were read at 1:1 and doubtful characters were bracketed. The pairs 3/5, 3/8, 0/6/9, 4/8 and 1/3 cause most of the doubt.
+
+The key on p. 434 showed that the basic data has five columns: CISI number, FC number, excavation number, museum number and photograph sources. It prints no findspot, depth, material or dimensions, although the manifest, the question cards and the target-record table had listed those fields as coming from the basic data. The schema keeps those parsed fields with the value `not-printed` so that CISI 1 and CISI 2 tables merge, and the package proposes corrections to the manifest and DATA.md.
+
+Before transcription began, the exploration printed the Lipi metadata of about 28 objects in the block and the text layer of p. 436, so the first pass was not blind to those sources for a few cells. The README states this. No value was taken from them.
+
+Testing the join code against the first pass exposed a pattern in the Lipi `excavation-idno` field: for objects whose FC number is 1000 or above, the Lipi string is the printed excavation number followed by the FC number without its first digit. The comparison was rewritten to allow for that suffix and for area prefixes that one source writes and the other omits (DK against DK-B or DK-C), after which the remaining disagreements were few enough to re-read against the page. That recheck was not blind, so it was allowed only to confirm, correct or bracket a cell, and it is kept apart from the error rate. It found two pairs of objects whose excavation numbers are crossed between Lipi and CISI 2 (M-653 with M-655, M-656 with M-707; the recheck took Lipi to be wrong, but plate measurements after review showed the crossing is in CISI 2), three clear disagreements, several first-pass misreadings of FC numbers, and about thirty cells where the scan cannot separate the Lipi reading from the first pass.
+
+Because the recheck suggested that a single reading misses digits at a rate that matters for joins, Amendment 1 started a full second reading of all 327 entries by another separate instance before the sampled results were known. The protocol had already required double reading if the sampled error rate for excavation or museum numbers exceeded 2%.
+
+The protocol's first line gives 01:45 as the time it was written; the file's time stamp is 01:41:41, and the hash was taken at 01:41. The time in the text is wrong; the order of events (protocol, then first row) holds.
+
+The second readers took different routes to the same scan. The sampled reader built digit templates from the CISI numbers in column 1 and found they identified only about 78% of held-out digits, so it used them as a guide and bracketed freely, especially italic digits; this lowered its agreement with the first pass on the museum column (72.7%) without adding errors. The full reader read blurred, slightly enlarged crops and preferred them to 1:1 views. Comparing the two second readings on the 33 sampled rows gave 87.9% agreement, close to the first-pass comparisons, so the disagreement rate reflects the scan rather than any one reader.
+
+Adjudication of the full comparison showed that most disagreements cannot be settled from this scan: 108 of 156 remained open and were kept as bracketed alternatives rather than resolved by preference. The non-blind Lipi recheck had marked one cell (M-634) ambiguous between two readings that differ in every digit; after both blind readers agreed on the printed reading it was reclassified as confirmed, and the reason is recorded in the local recheck file.
+
+The parser needed two repairs after the final table was built: a museum suffix written as alternatives (`[B/II]`) was not recognized, and the swap detector ignored entries whose FC number was bracketed. Both were fixed in `parse.py` and `join.py` and the join was rerun.
+
+## Outcome
+
+327 entries transcribed, double-read and adjudicated; 90.5% cell agreement between blind readers; 119 cells left bracketed; museum numbers for 202 more objects (corpus 5.8% to 10.1%) and FC numbers for 283; a description of the Lipi `excavation-idno` construction and six substantive disagreements with it; a block procedure and merge script for the remaining 1,760 CISI 2 and 1,533 CISI 1 entries. Details are in [README.md](README.md).
+
+## After review
+
+The author session ended at 02:29 while it was checking `join.py` for transcribed values, so the package went to an independent verifier unreviewed. The verifier reproduced every output and count, and found four places where tracked files quoted CISI values (two protocol examples, docstring examples in `join.py`, a schema example and the FC endpoints of two groups), two miscounted rows in the excavation comparison (9 and 3, not 8 and 4), an overstated holding-institution gain (209 added, not 283) and a page-header count that did not reproduce (418, not 412). The coordinator applied the corrections, kept the frozen originals locally and recorded the protocol's changed hash ([REVIEW-CHANGES.md](REVIEW-CHANGES.md)). A cross-check against the Mackay and Marshall join then showed that the digits Lipi appends are the excavator's catalogue number, since the FC number is 1000 plus Marshall's or 2000 plus Mackay's number for Mohenjo-daro. The three objects that broke that rule belonged to the two crossed pairs, and measuring those seals on the CISI 2 plates reversed the recheck's verdict: CISI 2's table, not Lipi, has the pairs crossed.

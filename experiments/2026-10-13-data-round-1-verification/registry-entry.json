@@ -1,0 +1,29 @@
+{
+  "id": "DATA-ROUND-1-VERIFICATION-2026-10-13",
+  "theme": "Independent offline reproduction, metadata counts and publication payload review of the museum and CISI 2 pilot packages",
+  "status": "completed-offline-review-requires-publication-fixes-builder-parser-stage-unverified",
+  "question": "Do the two data-round packages reproduce their outputs, report correct coverage and agreement counts, and satisfy the source-handling rules before public commit?",
+  "outcome": "Five museum commands and the CISI join and two scores reproduce all package outputs byte for byte. A guarded final-builder attempt reproduces its text/change outputs and stops at the explicitly prohibited parser dependency. Independent agreement and principal coverage totals pass. The excavation-area table needs 9 subarea additions and 3 dropped DK prefixes, and the holding-institution gain is 209. Combined museum-number coverage is 541 of 4695 families including bracketed readings, 518 under the whole-cell certainty rule, or 533 when any definite registration suffices. Nineteen findings comprise 9 publication blockers, 6 should-fix issues and 4 minor issues.",
+  "challenge": "Restricted source values occur in examples and observed group endpoints; copied museum prose propagates through generated CSVs. Harvest flags differ from the report's classifications. The instructions require a builder that internally calls a prohibited parser, and another reviewer owns museum identity checking.",
+  "remedy": "Preserved 75 starting files locally and verified matching before/after hashes. Reimplemented agreement, joining, usable coverage, source-set unions and excavation categories independently. Kept detailed source matches and membership rows local; proposed exact redactions and numerical/flag corrections without editing package or shared files. Stopped the parser dependency and reported its remaining scope explicitly.",
+  "evidence": [
+    "experiments/2026-10-13-data-round-1-verification/PLAN.md",
+    "experiments/2026-10-13-data-round-1-verification/REPORT.md",
+    "experiments/2026-10-13-data-round-1-verification/findings.json",
+    "experiments/2026-10-13-data-round-1-verification/combined-coverage.json",
+    "experiments/2026-10-13-data-round-1-verification/independent-counts.json",
+    "experiments/2026-10-13-data-round-1-verification/check_counts.py",
+    "experiments/2026-10-13-data-round-1-verification/RETROSPECTIVE.md",
+    "experiments/2026-10-13-data-round-1-verification/ARTIFACTS.json"
+  ],
+  "retry_when": "The coordinator authorizes the internal parser call, prepares redacted public counterparts and corrected harvest flags, or the separate join review changes accepted memberships. Preserve this endpoint and record any follow-up as a new verification output.",
+  "status_class": "source-review",
+  "area": "data",
+  "authors": [
+    {
+      "role": "independent verifier",
+      "model": "GPT-6 as specified by harness instructions; GPT-6.1-Sol requested but runtime label not independently exposed",
+      "harness": "Codex primary agent using PowerShell and Python 3.13.5"
+    }
+  ]
+}

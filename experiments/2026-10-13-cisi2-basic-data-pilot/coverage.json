@@ -1,0 +1,113 @@
+{
+ "corpus_level": {
+  "objects": 4695,
+  "museum_number_objects_before": 274,
+  "museum_number_objects_added_by_block": 202,
+  "museum_number_objects_after": 476,
+  "museum_percent_before": 5.8,
+  "museum_percent_after": 10.1,
+  "fc_number_objects_after": 283
+ },
+ "input_rows": "data/raw/2026-10-13-cisi2-basic-data-pilot/final.jsonl",
+ "input_rows_sha256": "ef038abf1962925b1c7a3a6ace2bf1a981014e481b0d5524e3a4d56e8cb48d63",
+ "lipi_faces_sha256": "1220f5591a42abe7c6696ac014aba90e7c49fdce6b0ccba0b85bb45f950c30db",
+ "lipi_faces_hash_matches_inventory": true,
+ "rows": 327,
+ "range": "M-621 to M-947",
+ "join_status": {
+  "one-family": 283,
+  "no-lipi-family": 44
+ },
+ "lipi_families_in_range_without_row": [],
+ "joined_objects": 283,
+ "coverage_before": {
+  "excavation": 278,
+  "museum_number": 74,
+  "holding_institution": 74,
+  "fc_number": 0,
+  "findspot": 269,
+  "depth": 231,
+  "material": 235,
+  "dimensions_any": 271,
+  "dimensions_all3": 126
+ },
+ "coverage_after": {
+  "excavation": 278,
+  "museum_number": 276,
+  "holding_institution": 283,
+  "fc_number": 283,
+  "findspot": 269,
+  "depth": 231,
+  "material": 235,
+  "dimensions_any": 271,
+  "dimensions_all3": 126
+ },
+ "coverage_gain": {
+  "excavation": 0,
+  "museum_number": 202,
+  "holding_institution": 209,
+  "fc_number": 283,
+  "findspot": 0,
+  "depth": 0,
+  "material": 0,
+  "dimensions_any": 0,
+  "dimensions_all3": 0
+ },
+ "coverage_before_percent": {
+  "excavation": 98.2,
+  "museum_number": 26.1,
+  "holding_institution": 26.1,
+  "fc_number": 0.0,
+  "findspot": 95.1,
+  "depth": 81.6,
+  "material": 83.0,
+  "dimensions_any": 95.8,
+  "dimensions_all3": 44.5
+ },
+ "coverage_after_percent": {
+  "excavation": 98.2,
+  "museum_number": 97.5,
+  "holding_institution": 100.0,
+  "fc_number": 100.0,
+  "findspot": 95.1,
+  "depth": 81.6,
+  "material": 83.0,
+  "dimensions_any": 95.8,
+  "dimensions_all3": 44.5
+ },
+ "cisi2_supplies": {
+  "excavation": 278,
+  "museum_number": 275,
+  "holding_institution": 283,
+  "fc_number": 283,
+  "findspot": 0,
+  "depth": 0,
+  "material": 0,
+  "dimensions_any": 0,
+  "dimensions_all3": 0
+ },
+ "comparisons": {
+  "excavation": {
+   "cisi-cell-uncertain": 26,
+   "lipi-adds-fc-tail": 182,
+   "area-prefix-differs": 12,
+   "number-differs-tail-agrees": 3,
+   "exact": 40,
+   "matches-another-entry": 4,
+   "cisi-fc-uncertain": 9,
+   "lipi-incomplete": 1,
+   "same-number-tail-differs": 1
+  },
+  "museum": {
+   "agree": 71,
+   "cisi-cell-uncertain": 2
+  }
+ },
+ "rules": {
+  "join": "Lipi metadata cisi, whitespace-normalized, base number (prefix and digits without leading zeros) equals the printed CISI number; one family per number, one number per family.",
+  "before": "Lipi usable excavation-idno; older-export MUSEUM for the same raw CISI key (museum number and institution); Lipi area-section, block-house or room-grid (findspot); depth; material; positive millimetre dimensions; usable as in the data inventory.",
+  "after": "before, or a usable value in the CISI 2 row: printed excavation number (not ???), a museum code with a number or NMP accession, a museum code, a four-digit FC number. CISI 2 prints no findspot, depth, material or dimension column.",
+  "excavation_comparison": "exact: equal after removing spaces, hyphens, slashes, dots, commas and case; lipi-adds-fc-tail: the Lipi string is the printed number followed by the FC number without its first digit (with or without leading zeros); area-prefix-differs: the same after removing the leading letters of both; lipi-incomplete: the Lipi string lacks the area letters or the number; matches-another-entry: the Lipi string equals another entry's printed number plus FC tail; cisi-fc-uncertain: the FC cell is bracketed and no rule above applies; same-number-tail-differs: the Lipi string starts with the printed number but the appended digits differ from the FC tail; number-differs-tail-agrees: the appended digits match the FC tail but the number differs; different: none of these; cisi-cell-uncertain: the printed excavation cell has a bracketed character.",
+  "museum_comparison": "agree: an older-export (code, number) pair equals a CISI 2 pair after mapping MJD to MD, LHR to L, NMK to NMP and removing dots and P- prefixes; same-number-different-code; different; cisi-cell-uncertain."
+ }
+}

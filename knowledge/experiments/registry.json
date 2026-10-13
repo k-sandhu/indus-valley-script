@@ -4047,6 +4047,36 @@
       "area": "methods"
     },
     {
+      "id": "CISI2-BASIC-DATA-PILOT-2026-10-13",
+      "theme": "CISI 2 basic-data transcription pilot (Mohenjo-daro M-621 to M-947) with measured double-reading accuracy, joins to the local corpus and a parallel-block procedure for CISI 1 and CISI 2",
+      "status": "completed-pilot-values-local-pending-rights",
+      "question": "Can the basic-data section of CISI 2 be transcribed from the held archive.org scan into one row per catalogue entry at a measured cell-level error rate, and what does a block of it add to the local object record?",
+      "outcome": "The basic data (printed pp. 434-447, PDF 469-482) has five columns: CISI number, FC concordance number, excavation number, museum and registration numbers, photograph sources; it prints no findspot, depth, material or dimensions, and CISI 1 (p. 366) has the same columns. The scan's catalogue page order holds at both ends (printed = PDF - 35; 418 of 447 headers confirm it). All 327 entries M-621 to M-947 were transcribed and read twice by independent AI readers: cell agreement 90.5% (CISI number 100%, FC 92.7%, excavation 91.4%, museum 85.6%, photographs 82.6%); of 156 disagreements 48 were decided from the page and 108 were not; 119 of 1,635 final cells stay bracketed. Sampled first-pass error rate (33 rows): excavation 3.0% (1/33), FC 6.1%, museum 0%, all cells 1.8% (up to 4.2% counting undecidable cells); full comparison: first-pass errors 0.2% of cells, up to 6.2%. 283 entries join one Lipi family each, 44 have none. Museum number for the joined objects 26.1% to 97.5% (202 objects gained, 179 without an uncertain digit); corpus museum coverage 5.8% to 10.1% (274 to 476 objects); holding institution supplied for all 283 (added for 209) and FC number for all 283. Lipi excavation-idno equals the printed number for 40 objects and is the printed number plus the FC number without its first digit for 182, and those digits are the excavator's catalogue number (FC = 1000 + Marshall 1931 No. or 2000 + Mackay 1938 No. for 216 of 219 checkable objects); two pairs of records are crossed between Lipi and CISI 2, and plate measurements show CISI 2's basic data to be the source in error; two differ where the page confirms CISI 2. Museum numbers agree with the older export for all 71 comparable objects. Projected agent time for the rest: about 2.8 h for CISI 2 (1,760 entries) and 2.4 h for CISI 1 (1,533), at 5.7 s per entry. Independently verified on 13 October; four rights redactions and three count corrections applied (REVIEW-CHANGES.md).",
+      "challenge": "The archive.org foreground layer blurs small digits (3/5, 6/8, 0/9, italic 1/7), so two readers often cannot be adjudicated from the page; all readers are instances of one model, so shared misreadings are possible; the first reader had seen the text layer of p. 436 and the Lipi metadata of about 28 objects in the range before transcribing; the expected findspot, depth, material and dimension fields do not exist in the basic data; CISI rights are unresolved, so values cannot be tracked.",
+      "remedy": "Protocol hashed before the first row; first pass frozen by hash before a seeded 10% sample; isolated second readers with copies of the page renders only; a full second reading added by a hashed amendment before the sampled results were known; disagreements adjudicated with outcome codes and undecidable cells kept as bracketed alternatives; a non-blind Lipi cross-check allowed only to confirm, correct or bracket cells not decided blind; schema keeps not-printed fields so CISI 1 and 2 tables merge; tracked outputs hold counts and per-object field flags only.",
+      "evidence": [
+        "experiments/2026-10-13-cisi2-basic-data-pilot/README.md",
+        "experiments/2026-10-13-cisi2-basic-data-pilot/PROTOCOL.md",
+        "experiments/2026-10-13-cisi2-basic-data-pilot/AMENDMENT-1.md",
+        "experiments/2026-10-13-cisi2-basic-data-pilot/PROTOCOL.sha256",
+        "experiments/2026-10-13-cisi2-basic-data-pilot/schema.json",
+        "experiments/2026-10-13-cisi2-basic-data-pilot/sample.json",
+        "experiments/2026-10-13-cisi2-basic-data-pilot/accuracy.json",
+        "experiments/2026-10-13-cisi2-basic-data-pilot/accuracy-full.json",
+        "experiments/2026-10-13-cisi2-basic-data-pilot/coverage.json",
+        "experiments/2026-10-13-cisi2-basic-data-pilot/object-flags.csv",
+        "experiments/2026-10-13-cisi2-basic-data-pilot/PROCEDURE.md",
+        "experiments/2026-10-13-cisi2-basic-data-pilot/RETROSPECTIVE.md",
+        "experiments/2026-10-13-cisi2-basic-data-pilot/REVIEW-CHANGES.md",
+        "experiments/2026-10-13-data-round-1-verification/REPORT.md",
+        "experiments/2026-10-13-data-round-1-verification/fc-crosswalk.json",
+        "experiments/2026-10-13-data-round-1-verification/swap-check.md"
+      ],
+      "retry_when": "Continue, do not repeat: claim the open half-column blocks in PROCEDURE.md (CISI 2 pp. 437-447, CISI 1 pp. 366-375) and read each twice blind. Re-read the bracketed cells of M-621 to M-947 only with a better witness (the printed volume or a higher-resolution scan). Track transcribed values only after a rights decision on CISI.",
+      "status_class": "source-review",
+      "area": "data"
+    },
+    {
       "id": "CONJECTURE-SHOT-A-SEAL-GRADE-2026-10-12",
       "theme": "conjecture shot: seal size and closing signs as marks of grade",
       "status": "completed-frozen-confirmation-with-independent-check-and-exploratory-amendment",
@@ -4134,6 +4164,76 @@
       "area": "data"
     },
     {
+      "id": "DATA-ROUND-1-FOLLOW-UP-2026-10-13",
+      "theme": "Corrections after the data round 1 verification, the FC-number crosswalk to the Mackay and Marshall tables, and a plate measurement of four seals CISI 2 and Lipi pair differently",
+      "status": "completed-corrections-applied-crosswalk-and-plate-check",
+      "status_class": "verified-computation",
+      "area": "data",
+      "question": "After the verification, are the museum and CISI 2 packages fit to publish, how does the CISI FC concordance number relate to the excavators' catalogue numbers, and which source pairs the four Mohenjo-daro seals M-653, M-655, M-656 and M-707 with the right excavation records?",
+      "outcome": "All 19 verification findings were resolved: museum record prose and CISI 2 values were removed from tracked files with the originals kept locally, harvest flags were corrected through a logged override file, and counts were corrected (9 and 3 DK prefix cases, 209 holding-institution gains, 418 confirmed page headers). The CISI 2 final builder, including its parser step, regenerated final.jsonl byte for byte. The independent join check found the 26 museum joins supported and one missed join, now added, giving 87 joined museum records. Combined museum-number coverage is 542 of 4,695 objects (11.5%), 519 (11.1%) without CISI 2 cells that have an uncertain digit; seals 20.1%, Mohenjo-daro 24.8%. For Mohenjo-daro the FC number is 1000 plus Marshall's 1931 catalogue number or 2000 plus Mackay's 1938 number for 216 of 219 checkable objects. The three exceptions belong to two pairs whose records CISI 2 and Lipi cross; measured on the CISI 2 plates at 2:1, each of the four seals is within 0.8 mm of the size in Lipi's pairing and 3.1 to 4.8 mm from CISI 2's, against controls within 0.7 mm (one 2.2 mm), so CISI 2's basic data has the pairs crossed and the Mackay and Marshall join stands.",
+      "challenge": "The packages' authors had stopped, so their files were corrected by the coordinator and by the verifier's second run rather than by the authors. The CISI 2 protocol was frozen by hash and contained a transcribed value. The PDF's declared page size is not the printed size, so the plate scale had to come from seals whose pairing is undisputed. The pilot's recheck had blamed Lipi for the crossed pairs.",
+      "remedy": "Every changed package file was copied with hashes to a local pre-review directory before editing; each package lists its corrections in REVIEW-CHANGES.md, and the CISI 2 protocol keeps its original hash with a second hash for the redacted text. The plate scale was fixed from five control seals with leave-one-out checks and confirmed by a scale-free width ratio. Statements that Lipi had swapped the pairs were reversed in the package, the cards and the data page.",
+      "evidence": [
+        "experiments/2026-10-13-data-round-1-verification/README.md",
+        "experiments/2026-10-13-data-round-1-verification/MUSEUM-FIXES.md",
+        "experiments/2026-10-13-data-round-1-verification/combined-coverage-post-fix.json",
+        "experiments/2026-10-13-data-round-1-verification/fc-crosswalk.json",
+        "experiments/2026-10-13-data-round-1-verification/fc_crosswalk_check.py",
+        "experiments/2026-10-13-data-round-1-verification/swap-check.md",
+        "experiments/2026-10-13-data-round-1-verification/swap-check.csv",
+        "experiments/2026-10-13-museum-open-access/REVIEW-CHANGES.md",
+        "experiments/2026-10-13-museum-open-access/verification/independent-check.md",
+        "experiments/2026-10-13-cisi2-basic-data-pilot/REVIEW-CHANGES.md"
+      ],
+      "retry_when": "The excavators' natural-size plates of Mackay Nos. 98, 231 and 491 and Marshall No. 57 are obtained (to confirm the crossed pairs by design), the recall candidates' printed rows are read, or more CISI basic data is transcribed, when the FC rule should be rechecked on the new rows. Record follow-ups in a new dated directory.",
+      "authors": [
+        {
+          "role": "coordinator, CISI 2 corrections, FC crosswalk",
+          "model": "Claude Opus 5.5",
+          "harness": "Claude Code (desktop)"
+        },
+        {
+          "role": "museum corrections",
+          "model": "GPT-6.1-Sol (requested)",
+          "harness": "Codex CLI 0.160.1"
+        },
+        {
+          "role": "museum join check and plate measurement",
+          "model": "Claude Opus 5.5 subagents",
+          "harness": "Claude Code"
+        }
+      ]
+    },
+    {
+      "id": "DATA-ROUND-1-VERIFICATION-2026-10-13",
+      "theme": "Independent offline reproduction, metadata counts and publication payload review of the museum and CISI 2 pilot packages",
+      "status": "completed-offline-review-requires-publication-fixes-builder-parser-stage-unverified",
+      "question": "Do the two data-round packages reproduce their outputs, report correct coverage and agreement counts, and satisfy the source-handling rules before public commit?",
+      "outcome": "Five museum commands and the CISI join and two scores reproduce all package outputs byte for byte. A guarded final-builder attempt reproduces its text/change outputs and stops at the explicitly prohibited parser dependency. Independent agreement and principal coverage totals pass. The excavation-area table needs 9 subarea additions and 3 dropped DK prefixes, and the holding-institution gain is 209. Combined museum-number coverage is 541 of 4695 families including bracketed readings, 518 under the whole-cell certainty rule, or 533 when any definite registration suffices. Nineteen findings comprise 9 publication blockers, 6 should-fix issues and 4 minor issues.",
+      "challenge": "Restricted source values occur in examples and observed group endpoints; copied museum prose propagates through generated CSVs. Harvest flags differ from the report's classifications. The instructions require a builder that internally calls a prohibited parser, and another reviewer owns museum identity checking.",
+      "remedy": "Preserved 75 starting files locally and verified matching before/after hashes. Reimplemented agreement, joining, usable coverage, source-set unions and excavation categories independently. Kept detailed source matches and membership rows local; proposed exact redactions and numerical/flag corrections without editing package or shared files. Stopped the parser dependency and reported its remaining scope explicitly.",
+      "evidence": [
+        "experiments/2026-10-13-data-round-1-verification/PLAN.md",
+        "experiments/2026-10-13-data-round-1-verification/REPORT.md",
+        "experiments/2026-10-13-data-round-1-verification/findings.json",
+        "experiments/2026-10-13-data-round-1-verification/combined-coverage.json",
+        "experiments/2026-10-13-data-round-1-verification/independent-counts.json",
+        "experiments/2026-10-13-data-round-1-verification/check_counts.py",
+        "experiments/2026-10-13-data-round-1-verification/RETROSPECTIVE.md",
+        "experiments/2026-10-13-data-round-1-verification/ARTIFACTS.json"
+      ],
+      "retry_when": "The coordinator authorizes the internal parser call, prepares redacted public counterparts and corrected harvest flags, or the separate join review changes accepted memberships. Preserve this endpoint and record any follow-up as a new verification output.",
+      "status_class": "source-review",
+      "area": "data",
+      "authors": [
+        {
+          "role": "independent verifier",
+          "model": "GPT-6 as specified by harness instructions; GPT-6.1-Sol requested but runtime label not independently exposed",
+          "harness": "Codex primary agent using PowerShell and Python 3.13.5"
+        }
+      ]
+    },
+    {
       "id": "IMAGE-INDEX-AND-UNITS-2026-10-13",
       "theme": "face-level index of the 8,722 local Lipi CISI crops (Q-1004) and unit, precision and source of every local size value (Q-1020)",
       "status": "completed-verified-computation-with-ai-caption-readings",
@@ -4184,6 +4284,33 @@
         "experiments/2026-10-13-mackay-marshall-tables/verification/print-corrections.csv"
       ],
       "retry_when": "Mackay's vol. II plates or CISI 3.1 are acquired (to check Mackay No. 181 and joins above M-1659), the CISI basic data are transcribed (Q-1005, Q-1006) and can replace the registration key with a published concordance, or the epachayan tables are revised. Rerun join_tables.py into a new dated directory; do not overwrite run-2026-10-13."
+    },
+    {
+      "id": "MUSEUM-OPEN-ACCESS-2026-10-13",
+      "theme": "Open museum records for Indus inscribed objects and joins to the local corpus",
+      "status": "completed-source-review-with-joins",
+      "question": "Which Indus inscribed objects do museums with open data or keyless APIs publish, which local objects do they and the census's 46 unresolved museum records describe, and which object fields do the joins add?",
+      "outcome": "Seven institutions harvested on 13 October 2026. Inscribed Indus originals: Metropolitan 5 and Cleveland 3 (CC0 with photographs, no findspot or number), Penn 5 Chanhu-daro seals (CC BY 4.0 CSV of 430,871 rows; plus 4 uninscribed seal-amulets and 38 casts), V&A 2 inscribed originals among 4 reviewed attributed records (one modern impression and figurine head IS.9-1951 outside inscription scope), British Museum 7 with a stated inscription among 27 listed Indus stamp-seals, Art Institute of Chicago 0, Smithsonian 0 (20 casts in 539,615 bulk records). 86 museum records were decided: 27 exact or confirmed joins, 19 of them new against the census, raising the confirmed museum-join lower bound from 68 to 87. Of the census's 46 open records, 16 are confirmed, 21 ambiguous with candidate sets, 8 unmatched and 1 uninscribed. Objects with a museum accession rise from 5.84% (older export) and 6.90% (with census joins) to 7.24% (340 of 4,695). Sixteen families gain their first museum number. Six newly joined families gain an axis, including two that had no dimension before; the other four already had at least one axis. One gains a finer provenance note, and none gains an openly licensed image. Five museum objects are candidate additions to the corpus (CISI H-224; Banawali NM 3714; Dholavira DHR-22198, DHR-6032, DHR-7860). The original 26 joins were supported, 0 qualified and 0 wrong (100%, one-sided 95% lower bound 89%). The reviewer recovered Indian Museum 10377/A7252/C.2803 as family 2194 through Marshall 1931 vol. II p. 403 row 199, bringing the census-scope lower bound to 84. Recall search found hits for 10 of 59 non-joined rows, four confined to one family, with no search-derived join. See verification/independent-check.md and REVIEW-CHANGES.md.",
+      "challenge": "The British Museum served a Cloudflare challenge to scripted requests, so most of its records were read only from a saved listing; the Smithsonian API required a key; the Penn CSV lacks field numbers and bibliography; the V&A API terms forbid storing responses for more than four weeks; OCR of the CISI 1 basic-data pages missed many numbers; the CC0 Met and Cleveland seals carry no findspot or number; several joins rest on CISI 3.1 numbers that the project cannot check.",
+      "remedy": "Used the keyless Smithsonian bulk bucket, saved British Museum witnesses and search-engine text without bypassing the challenge, and Penn object pages for field numbers. Read the CISI 1 table pages by eye from 300 dpi renders and checked numbers painted on objects in CISI photographs; used the Marshall 1931 and Mackay 1938 tables for British Museum field numbers. Kept description-only matches ambiguous with candidate counts. Tracked only CC0 and CC BY metadata; other museums' values stay local, and V&A raw data carry a deletion date. After review on 13 October, preserved 49 starting files with SHA256 lists, rewrote all 69 restricted-source decision rows as classifications and locators, applied 45 logged flag overrides, reused the inventory type-group rule and regenerated the package outputs offline.",
+      "evidence": [
+        "experiments/2026-10-13-museum-open-access/README.md",
+        "experiments/2026-10-13-museum-open-access/PROTOCOL.md",
+        "experiments/2026-10-13-museum-open-access/harvest/summary.csv",
+        "experiments/2026-10-13-museum-open-access/harvest/acquisition-record.json",
+        "experiments/2026-10-13-museum-open-access/joins/join-table.csv",
+        "experiments/2026-10-13-museum-open-access/joins/q1019-decisions.csv",
+        "experiments/2026-10-13-museum-open-access/coverage/summary.json",
+        "experiments/2026-10-13-museum-open-access/coverage/museum-coverage.json",
+        "experiments/2026-10-13-museum-open-access/verification/independent-check.md",
+        "experiments/2026-10-13-data-round-1-verification/REPORT.md",
+        "experiments/2026-10-13-museum-open-access/REVIEW-CHANGES.md",
+        "experiments/2026-10-13-museum-open-access/harvest/review-overrides.json",
+        "experiments/2026-10-13-museum-open-access/joins/recall-candidates.csv"
+      ],
+      "retry_when": "CISI 3.1 is acquired (Q-1008), the British Museum object pages can be read, a clearer copy of Mackay 1943 plates LI-LII is available, or a museum adds Indus records to an open API. Rerun into a new dated directory; keep this package unchanged.",
+      "status_class": "source-review",
+      "area": "data"
     },
     {
       "id": "PLATE-CHECKS-C0004-SHOTA-RIVALS-2026-10-13",

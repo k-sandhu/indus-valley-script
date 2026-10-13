@@ -1,0 +1,41 @@
+{
+  "id": "DATA-ROUND-1-FOLLOW-UP-2026-10-13",
+  "theme": "Corrections after the data round 1 verification, the FC-number crosswalk to the Mackay and Marshall tables, and a plate measurement of four seals CISI 2 and Lipi pair differently",
+  "status": "completed-corrections-applied-crosswalk-and-plate-check",
+  "status_class": "verified-computation",
+  "area": "data",
+  "question": "After the verification, are the museum and CISI 2 packages fit to publish, how does the CISI FC concordance number relate to the excavators' catalogue numbers, and which source pairs the four Mohenjo-daro seals M-653, M-655, M-656 and M-707 with the right excavation records?",
+  "outcome": "All 19 verification findings were resolved: museum record prose and CISI 2 values were removed from tracked files with the originals kept locally, harvest flags were corrected through a logged override file, and counts were corrected (9 and 3 DK prefix cases, 209 holding-institution gains, 418 confirmed page headers). The CISI 2 final builder, including its parser step, regenerated final.jsonl byte for byte. The independent join check found the 26 museum joins supported and one missed join, now added, giving 87 joined museum records. Combined museum-number coverage is 542 of 4,695 objects (11.5%), 519 (11.1%) without CISI 2 cells that have an uncertain digit; seals 20.1%, Mohenjo-daro 24.8%. For Mohenjo-daro the FC number is 1000 plus Marshall's 1931 catalogue number or 2000 plus Mackay's 1938 number for 216 of 219 checkable objects. The three exceptions belong to two pairs whose records CISI 2 and Lipi cross; measured on the CISI 2 plates at 2:1, each of the four seals is within 0.8 mm of the size in Lipi's pairing and 3.1 to 4.8 mm from CISI 2's, against controls within 0.7 mm (one 2.2 mm), so CISI 2's basic data has the pairs crossed and the Mackay and Marshall join stands.",
+  "challenge": "The packages' authors had stopped, so their files were corrected by the coordinator and by the verifier's second run rather than by the authors. The CISI 2 protocol was frozen by hash and contained a transcribed value. The PDF's declared page size is not the printed size, so the plate scale had to come from seals whose pairing is undisputed. The pilot's recheck had blamed Lipi for the crossed pairs.",
+  "remedy": "Every changed package file was copied with hashes to a local pre-review directory before editing; each package lists its corrections in REVIEW-CHANGES.md, and the CISI 2 protocol keeps its original hash with a second hash for the redacted text. The plate scale was fixed from five control seals with leave-one-out checks and confirmed by a scale-free width ratio. Statements that Lipi had swapped the pairs were reversed in the package, the cards and the data page.",
+  "evidence": [
+    "experiments/2026-10-13-data-round-1-verification/README.md",
+    "experiments/2026-10-13-data-round-1-verification/MUSEUM-FIXES.md",
+    "experiments/2026-10-13-data-round-1-verification/combined-coverage-post-fix.json",
+    "experiments/2026-10-13-data-round-1-verification/fc-crosswalk.json",
+    "experiments/2026-10-13-data-round-1-verification/fc_crosswalk_check.py",
+    "experiments/2026-10-13-data-round-1-verification/swap-check.md",
+    "experiments/2026-10-13-data-round-1-verification/swap-check.csv",
+    "experiments/2026-10-13-museum-open-access/REVIEW-CHANGES.md",
+    "experiments/2026-10-13-museum-open-access/verification/independent-check.md",
+    "experiments/2026-10-13-cisi2-basic-data-pilot/REVIEW-CHANGES.md"
+  ],
+  "retry_when": "The excavators' natural-size plates of Mackay Nos. 98, 231 and 491 and Marshall No. 57 are obtained (to confirm the crossed pairs by design), the recall candidates' printed rows are read, or more CISI basic data is transcribed, when the FC rule should be rechecked on the new rows. Record follow-ups in a new dated directory.",
+  "authors": [
+    {
+      "role": "coordinator, CISI 2 corrections, FC crosswalk",
+      "model": "Claude Opus 5.5",
+      "harness": "Claude Code (desktop)"
+    },
+    {
+      "role": "museum corrections",
+      "model": "GPT-6.1-Sol (requested)",
+      "harness": "Codex CLI 0.160.1"
+    },
+    {
+      "role": "museum join check and plate measurement",
+      "model": "Claude Opus 5.5 subagents",
+      "harness": "Claude Code"
+    }
+  ]
+}

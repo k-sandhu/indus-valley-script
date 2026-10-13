@@ -1,7 +1,7 @@
 ---
 id: Q-1019
 title: Resolve the 46 museum records that have no checked join to a local object
-status: open
+status: done
 area: data
 kind: metadata
 priority: 3
@@ -10,7 +10,7 @@ compute: hours
 difficulty: starter
 claimed_by: ""
 claim_expires: ""
-prior_attempts: [EVIDENCE-CENSUS-COLLECTIONS-01, EVIDENCE-CENSUS-SYNTHESIS-01]
+prior_attempts: [EVIDENCE-CENSUS-COLLECTIONS-01, EVIDENCE-CENSUS-SYNTHESIS-01, MUSEUM-OPEN-ACCESS-2026-10-13]
 related: [Q-0005, Q-1005, Q-1018]
 sources: [knowledge/DATA.md, experiments/2026-10-06-evidence-census/synthesis/join-summary.json, experiments/2026-10-06-evidence-census/synthesis/review/museum-join-check.md]
 ---
@@ -34,3 +34,5 @@ Done when each of the 46 records is joined, has a candidate set, or is recorded 
 # Prior attempts
 
 The museum census and the synthesis review produced the 68 confirmed joins and left these 46 open.
+
+13 October 2026, outcome: Each of the 46 records has a decision with its basis ([q1019-decisions.csv](../../experiments/2026-10-13-museum-open-access/joins/q1019-decisions.csv)). Sixteen are confirmed through CISI 1 basic-data rows read by eye (Lothal LTH SRG numbers, NMI and IM numbers, Banawali and Chanhu-daro rows), the Marshall 1931 and Mackay 1938 seal tables, and numbers written on the objects in CISI photographs (L-29 B "SRG 989", L-122 B "2845"). Twenty-one have candidate sets (the Met seals, seven Indian Museum seals without a confirmed identifier join, the Louvre seals from Susa and Girsu, two British Museum seals and three National Museum records), eight are unmatched and one is uninscribed. The confirmed lower bound rises from 68 to 84 for the census's 114 records. Five unmatched records are candidate additions to the corpus: CISI H-224 (NMI 1296), Banawali 3714 and Dholavira DHR-22198, DHR-6032 and DHR-7860. The National Museum record DK12995 shares its number with CISI H-13, a Harappa unicorn seal, and is not that object. The independent reviewer added Indian Museum 10377/A7252/C.2803 as family 2194 (M-1809), through Marshall 1931 vol. II p. 403 row 199. The recall search leaves 10 non-joined records with hits, four confined to one family; printed-page checks are pending. Retry when CISI 3.1 or the British Museum object pages are available, or with better copies of the Mackay 1943 plates.

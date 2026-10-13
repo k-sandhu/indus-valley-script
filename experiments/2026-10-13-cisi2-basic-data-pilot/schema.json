@@ -1,0 +1,83 @@
+{
+ "schema": "cisi-basic-data-row v1 (13 October 2026)",
+ "applies_to": [
+  "CISI 2 (Shah and Parpola 1991) printed pp. 435-447, PDF 470-482",
+  "CISI 1 (Joshi and Parpola 1987) printed pp. 366-375, PDF 402-411 (same five columns, checked on printed p. 366)"
+ ],
+ "unit": "one record per catalogue entry (CISI number); pieces of a broken object printed on separate lines stay in the same record, their cells joined with ' // ' in printed order",
+ "printed_columns": [
+  {
+   "field": "col1",
+   "printed_heading": "Column 1",
+   "key_text_summary": "CISI number assigned to the object illustrated; piece numbers (1), (2) inserted between columns 1 and 2 when separate loose pieces of one broken object have different museum or excavation numbers",
+   "example_form": "M-nnn; M-nnn (1) // (2) for pieces"
+  },
+  {
+   "field": "col2_fc",
+   "printed_heading": "Column 2",
+   "key_text_summary": "number of the object in the current version of the FC (Finnish concordance; Koskenniemi and Parpola 1979, 1980, 1982); FC numbers for Mohenjo-daro and Harappa are keyed to object numbers in the plates of the excavation reports; the key on p. 434 gives the FC ranges that belong to the old excavations of Mohenjo-daro and Harappa",
+   "example_form": "four digits, nnnn"
+  },
+  {
+   "field": "col3_excavation",
+   "printed_heading": "Column 3",
+   "key_text_summary": "excavation number or corresponding data; a surface-find mark; numbers in parentheses usually layers; ??? when data are not available or the object carries a wrong excavation number (discussion postponed to CISI 3); bold face marks an indistinct or uncertain number",
+   "example_form": "letter code and number: DK nnnn, DK-C nnnn, DK-i nnn, HR nnnn, VS nnnn, SD nnnn, DM nnn, MN nn-nnn, UPM/MD-nnn, RWTH nnnn-nnnn; ??? when not available"
+  },
+  {
+   "field": "col4_museum",
+   "printed_heading": "Column 4",
+   "key_text_summary": "museum where the object is kept and its registration number(s); italic numbers beginning with a two-digit year (50 = 1950) refer to the accession catalogue of the National Museum of Pakistan, from which the object was transferred",
+   "example_form": "code and number: MD nnn; MD nnn, 50.nnn; MD 50.nnn, MM nnn; MD, MM nnn; NMP 50.nnn; L, P-nnnn; HM nnnnn; EXB nnnn; (MD nnn, 50.nnn) now: KHP; a bare code (EXB, NMP) when no number is printed"
+  },
+  {
+   "field": "col5_photographs",
+   "printed_heading": "Column 5",
+   "key_text_summary": "sources of the photographs (and the one drawing) published in the volume; the first reference covers all unspecified photographs; negative numbers follow the source name; side letters (A, a for impression, bis for a second photograph) precede the reference they qualify",
+   "example_form": "source code and negative number, side letters before the reference: JL nnn; A: Si. n:nnnn; a: Si. nn:nnn; AV nnn; a: P nnnn; a bis: P nnn"
+  }
+ ],
+ "abbreviations_in_columns_4_and_5": {
+  "MD": "Moenjo-daro Museum (with old accession numbers)",
+  "MM": "Moenjo-daro Museum (with new accession numbers)",
+  "NMP": "National Museum of Pakistan, Karachi",
+  "L": "Lahore Museum",
+  "HM": "Harappa Museum",
+  "EXB": "Excavation Branch, Department of Archaeology and Museums, Government of Pakistan, Karachi",
+  "KHP": "Khairpur University",
+  "LF": "Office of the Northern Circle, Department of Archaeology and Museums, Government of Pakistan, Old Fort, Lahore",
+  "PC": "private collection",
+  "PSW": "Department of Archaeology, University of Peshawar",
+  "SM/SS": "Swat Museum (Saidu Sharif)",
+  "JL": "photograph taken by Mr Jyrki Lyytikäinen for the CISI project",
+  "AV": "photograph taken by Mr Arto Vuohelainen for the CISI project",
+  "EL": "photograph taken by Ms Erja Lahdenperä for the CISI project",
+  "P": "Department of Archaeology and Museums, Government of Pakistan, photograph taken by Mr S.M. Ilyas for the CISI project",
+  "Si.": "Sind Series, Photo Archive of the Director General, ASI, Janpath, New Delhi",
+  "Pu.": "Punjab Series, Photo Archive of the Director General, ASI, Janpath, New Delhi",
+  "Aachen": "photograph supplied by the Research Project Mohenjo-daro of the Technical University of Aachen",
+  "FEM": "Ernest Mackay, Further Excavations at Mohenjo-daro I-II, Delhi 1938",
+  "MIC": "John Marshall (ed.), Mohenjo-daro and the Indus Civilization I-III, London 1931",
+  "???": "data not available",
+  "source": "CISI 2 printed p. 434 (PDF 469), 'Abbreviations used'; the list also names Allchin, ASI, Baloch 1973, Brunswig, Casal 1964, CISI, D&K, Dales, Dales 1967, Dani 1971, DPhUH, EH, Fairservis, FC, FdP, Franke 1984, Jarrige, Khan, Knox, LF, Mahadevan 1977, PA, Stacul, Vidale, VSI and Wheeler 1968; excavation-number prefixes in column 3 are not explained in this volume (deferred to CISI 3)"
+ },
+ "transcription_conventions": {
+  "uncertain_character": "[a/b] two candidates; [?] one unreadable character; [??] an unreadable stretch; whole alternatives [candidate_a/candidate_b] where a reading and a competing reading differ in more than one character (used only in the recheck)",
+  "typeface": "bold (uncertain number) and italic (NMP accession) are recorded only when visibly distinct; at the scan's resolution they mostly are not, so the parser identifies NMP accessions by the two-digit-year form instead",
+  "continuation": "lines of one column within an entry joined by one space",
+  "pieces": "piece lines joined by ' // '"
+ },
+ "parsed_fields": {
+  "fc_number": "column 2 as printed",
+  "excavation": "per piece: printed, status (printed, not-available, blank), area_code (leading letters, e.g. DK, DK-C, DK-i, HR, VS, SD, DM, MN, UPM/MD, RWTH, L), surface_find, layer",
+  "museum_holdings": "per piece: list of {code, number, nmp_accession, former, current, query_mark}; '(..) now: X' marks the bracketed holding as former and X as current",
+  "holding_institutions": "names of the current holding institutions from the codes",
+  "museum_number_usable": "a code with a number, or an NMP accession",
+  "photo_sources": "photograph source codes present in column 5",
+  "findspot": "not-printed",
+  "depth": "not-printed",
+  "material": "not-printed",
+  "dimensions": "not-printed"
+ },
+ "rights": "The transcribed values are a derivative of a copyrighted catalogue (1991 Finnish Academy of Science and Letters) whose reuse status is unverified; they stay in data/raw/2026-10-13-cisi2-basic-data-pilot/. This schema, written by the project, describes the columns and is CC0 like the rest of the project's prose."
+}

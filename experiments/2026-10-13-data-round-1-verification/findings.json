@@ -1,0 +1,173 @@
+[
+  {
+    "id": "F01",
+    "package": "museum-open-access",
+    "file": "experiments/2026-10-13-museum-open-access/joins/decisions.py",
+    "location": "lines 70, 117, 119 and 134; evidence strings",
+    "severity": "blocking",
+    "finding": "The evidence strings reproduce restricted museum record prose. Exact description fragments match the Indian Museum records and the National Museum record 1713 DHR; line 70 copies V&A record titles. Source fields: description and title.",
+    "fix": "Replace the copied descriptions and titles with project-written classifications and locators. For 1713 DHR record inscription_status=uninscribed and the local source locator. For the two Indian Museum records use material, object class and face-count flags. For the V&A impression use originality=modern-impression and its relation to IS.8:1-1951. Preserve the starting witness locally and rebuild both join CSVs."
+  },
+  {
+    "id": "F02",
+    "package": "museum-open-access",
+    "file": "experiments/2026-10-13-museum-open-access/joins/join-table.csv",
+    "location": "evidence column; lines 20, 54, 56 and 63",
+    "severity": "blocking",
+    "finding": "Copied description and title text from decisions.py propagates into the proposed public join table.",
+    "fix": "After redacting decisions.py, regenerate this CSV from the corrected decisions and confirm the evidence cells contain classifications and source locators only. Keep the original table locally."
+  },
+  {
+    "id": "F03",
+    "package": "museum-open-access",
+    "file": "experiments/2026-10-13-museum-open-access/joins/q1019-decisions.csv",
+    "location": "evidence column; lines 14, 16 and 23",
+    "severity": "blocking",
+    "finding": "Copied Indian Museum and National Museum description text propagates into the Q-1019 table.",
+    "fix": "Regenerate this CSV from the redacted decisions.py and retain only project-written classifications and locators in evidence."
+  },
+  {
+    "id": "F04",
+    "package": "cisi2-basic-data-pilot",
+    "file": "experiments/2026-10-13-cisi2-basic-data-pilot/PROTOCOL.md",
+    "location": "line 21, the two numeric code examples",
+    "severity": "blocking",
+    "finding": "The first example reproduces the excavation reading of M-626. The second is an unattributed museum-registration example; it does not match a pilot value exactly and its apparent source above the pilot block was not authenticated. The tracked protocol therefore fails its stated rule that transcribed values stay local.",
+    "fix": "Preserve the frozen protocol and its original hash locally. Publish a clearly labelled redacted protocol with the two examples replaced by DK-C nnnn and L, P-nnnn. Record a separate public-file hash and retain the original freeze hash as identifying the local original."
+  },
+  {
+    "id": "F05",
+    "package": "cisi2-basic-data-pilot",
+    "file": "experiments/2026-10-13-cisi2-basic-data-pilot/join.py",
+    "location": "docstrings at lines 56-57, 77 and 92-93",
+    "severity": "blocking",
+    "finding": "The docstring examples contain a museum accession from M-631, an older-export alias of a registration from M-626, a bracketed FC reading from M-655, and FC numbers from M-625 and M-636. These are source values, although they occur only in examples.",
+    "fix": "Replace the website_pairs, expand and fc_tails docstring examples with explanations using variable names or n placeholders. Preserve the original file locally. No change to the executable comparison logic is needed for this finding."
+  },
+  {
+    "id": "F06",
+    "package": "cisi2-basic-data-pilot",
+    "file": "experiments/2026-10-13-cisi2-basic-data-pilot/schema.json",
+    "location": "transcription_conventions.uncertain_character",
+    "severity": "blocking",
+    "finding": "The whole-cell alternative example contains the two excavation readings recorded in the M-634 recheck. One is the final CISI reading and the other comes from the local corpus.",
+    "fix": "Replace the numeric whole-cell example with [candidate_a/candidate_b] and explain that alternatives can span several characters. Preserve the source-derived example only in the local recheck record."
+  },
+  {
+    "id": "F07",
+    "package": "cisi2-basic-data-pilot",
+    "file": "experiments/2026-10-13-cisi2-basic-data-pilot/README.md",
+    "location": "line 11, observed FC range endpoints",
+    "severity": "blocking",
+    "finding": "The result paragraph prints observed FC number endpoints for the appended-tail group and the later excavation group. Those endpoints are transcribed CISI values rather than counts.",
+    "fix": "Remove the observed FC endpoints. Retain the counts 182, 32 and 7 and explain the suffix rule using its algorithmic threshold or excavation-series labels. Keep the exact group bounds local."
+  },
+  {
+    "id": "F08",
+    "package": "cisi2-basic-data-pilot",
+    "file": "experiments/2026-10-13-cisi2-basic-data-pilot/DATA-UPDATE.md",
+    "location": "line 51, observed FC range endpoints",
+    "severity": "blocking",
+    "finding": "The proposed DATA.md paragraph includes observed FC number endpoints that the package promises to keep local.",
+    "fix": "Delete the observed FC endpoints from this proposal. Retain the count 182 and the description of removing the first FC digit."
+  },
+  {
+    "id": "F09",
+    "package": "cisi2-basic-data-pilot",
+    "file": "experiments/2026-10-13-cisi2-basic-data-pilot/question-updates.md",
+    "location": "line 9, observed FC range endpoints",
+    "severity": "blocking",
+    "finding": "The proposed Q-1006 note includes observed FC number endpoints that would propagate restricted catalogue values into the knowledge layer.",
+    "fix": "Remove the observed endpoints before integrating the note. Retain the count 182 and the suffix rule."
+  },
+  {
+    "id": "F10",
+    "package": "cisi2-basic-data-pilot",
+    "file": "experiments/2026-10-13-cisi2-basic-data-pilot/README.md",
+    "location": "excavation comparison table, lines 91-92",
+    "severity": "should-fix",
+    "finding": "The DK subarea and dropped-prefix counts are 9 and 3, rather than 8 and 4. The 12-family combined count is correct. Independent normalization identifies nine DK-B/DK-C additions and three removals of DK-.",
+    "fix": "Change the subarea row to 9 and the dropped-DK-prefix row to 3. Source: this verification package independent-counts.json, cisi2.excavation_comparison_table; local independent-excavation-detail.json lists the families and comparisons."
+  },
+  {
+    "id": "F11",
+    "package": "cisi2-basic-data-pilot",
+    "file": "experiments/2026-10-13-cisi2-basic-data-pilot/README.md",
+    "location": "line 11, holding-institution gain sentence",
+    "severity": "should-fix",
+    "finding": "The sentence says all 283 objects gain a holding institution. The package before table already counts 74, so the gain is 209. All 283 gain an FC number.",
+    "fix": "Replace the sentence with: The block supplies a holding institution for all 283 joined objects, adding that field to 209, and adds an FC number to all 283. Source: coverage.json coverage_gain and the independently recomputed before/after counts."
+  },
+  {
+    "id": "F12",
+    "package": "museum-open-access",
+    "file": "experiments/2026-10-13-museum-open-access/harvest/met-records.json",
+    "location": "records 49.40.6 and 49.40.10; indus_attributed and in_scope",
+    "severity": "should-fix",
+    "finding": "Both later-period objects are flagged as Indus and in scope because their geographic label contains Indus. Their CC0 records date them to the second century CE and first century BCE. They are excluded by the report but remain included in the machine-readable flags.",
+    "fix": "Set indus_attributed=false and in_scope=false for these two records with an explicit later-period exclusion. Save the manual override in a reproducible classification record or revise the classifier to account for the dates, then rebuild the derived harvest counts."
+  },
+  {
+    "id": "F13",
+    "package": "museum-open-access",
+    "file": "experiments/2026-10-13-museum-open-access/harvest/vam-records.json",
+    "location": "IS.8:2-1951 originality; IS.8:1-1951 object_class",
+    "severity": "should-fix",
+    "finding": "The modern impression is flagged original, and the original seal is classified sealing-or-impression. The decisions table and README give the intended distinctions, but the harvest flags do not carry them.",
+    "fix": "Set IS.8:2-1951 originality=modern-impression and IS.8:1-1951 object_class=seal. Store and apply these manual overrides before calculating originals and casts/impressions."
+  },
+  {
+    "id": "F14",
+    "package": "museum-open-access",
+    "file": "experiments/2026-10-13-museum-open-access/harvest/aic-records.json",
+    "location": "records 1920.711 and 1920.712; indus_attributed",
+    "severity": "should-fix",
+    "finding": "The two later coins are flagged Indus-attributed although the harvest summary and report say zero Indus objects. Their geographic relation to the Indus region does not establish Harappan attribution.",
+    "fix": "Set indus_attributed=false for both coins and preserve the later-period exclusion in the classification record. Derive the zero count from those reviewed flags."
+  },
+  {
+    "id": "F15",
+    "package": "museum-open-access",
+    "file": "experiments/2026-10-13-museum-open-access/harvest/summary.csv",
+    "location": "V&A row, indus_attributed_records; harvest_summary.py line 60",
+    "severity": "should-fix",
+    "finding": "The summary hard-codes 4 Indus-attributed records, but vam-records.json has 12 flags set to true. The two-original/one-impression result is a separate count and is supported by the three decided records.",
+    "fix": "Derive indus_attributed_records from the reviewed record flags. With the frozen flags the count is 12. If those geographic matches need exclusions, record the overrides first and publish the resulting count consistently in the JSON and CSV."
+  },
+  {
+    "id": "F16",
+    "package": "museum-open-access",
+    "file": "experiments/2026-10-13-museum-open-access/coverage_museum.py",
+    "location": "group() and coverage/museum-coverage.json by_type",
+    "severity": "minor",
+    "finding": "The type grouping misses family 609 with a mixed-case pottery code. It reports pottery denominators of 629 and other denominators of 188, while the inventory gives 630 and 187. The overall museum-number totals are unaffected.",
+    "fix": "Use the inventory type_group() rule, including whitespace/case normalization and the POST: alias. Regenerate the by-type fractions with pottery denominators 630 and other denominators 187; the numerators stay 5/6/8 and 2/3/3 across the three stages."
+  },
+  {
+    "id": "F17",
+    "package": "museum-open-access",
+    "file": "experiments/2026-10-13-museum-open-access/README.md",
+    "location": "line 20",
+    "severity": "minor",
+    "finding": "The draft still contains the precision-paragraph placeholder.",
+    "fix": "Replace the placeholder with the separate museum reviewer's final checked numerator, denominator and disposition counts after that review is finished. Do not infer a precision score from this numerical audit."
+  },
+  {
+    "id": "F18",
+    "package": "cisi2-basic-data-pilot",
+    "file": "experiments/2026-10-13-cisi2-basic-data-pilot/README.md",
+    "location": "line 27; PROCEDURE.md line 7; manifest-additions.json changed[cisi-2].replace.notes",
+    "severity": "minor",
+    "finding": "The stated text-layer page-number count of 412 was not reproduced. The retained PDF has 418 expected page numbers in corner headers and 29 headers unverified by this check, rather than 35. The source SHA256 matches the package.",
+    "fix": "Replace the OCR header count with 418 and the unreadable-header count with 29, naming the counting rule: exact expected printed-page token in the top 5 percent and outer 16 percent of page width. Keep full catalogue completeness separate from the header count; inspect the remaining 29 pages before claiming this check proves every page is present."
+  },
+  {
+    "id": "F19",
+    "package": "museum-open-access",
+    "file": "experiments/2026-10-13-museum-open-access/registry-entry.json",
+    "location": "outcome dimension-gain wording; also DATA-UPDATE.md line 23",
+    "severity": "minor",
+    "finding": "The phrase six further dimensions can be read as six additional families beyond the two with no prior dimension. The six-family axis-gain set already includes those two, leaving four families that add axes to existing dimensions.",
+    "fix": "Write: Six newly joined families gain an axis, including two that previously had no dimension. The other four already had at least one axis. Source: coverage/summary.json and this verification independent-counts.json museum.more_axes_families."
+  }
+]

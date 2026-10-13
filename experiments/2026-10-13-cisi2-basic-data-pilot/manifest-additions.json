@@ -1,0 +1,62 @@
+{
+ "note": "Proposed changes to data/MANIFEST.json from the CISI 2 basic-data pilot of 13 October 2026. 'changed' entries list only the fields to replace; 'new' entries follow the manifest schema.",
+ "changed": [
+  {
+   "id": "cisi-2",
+   "replace": {
+    "identifiers": [
+     "CISI references (M-595, M-621 to M-1659, H-266 to H-275, H-356, H-383 to H-1019 and other sites)",
+     "FC (Finnish concordance) numbers, excavation numbers, museum and NMP accession numbers and photograph negative numbers in the basic-data section"
+    ],
+    "metadata_fields": [
+     "photographs of each side and impression",
+     "basic data (printed pp. 434-447, PDF 469-482): five columns, CISI number, FC number, excavation number or corresponding data, museum and registration numbers, photograph sources; no findspot, depth, material or dimension column"
+    ],
+    "notes": "Printed page = PDF page - 35 for printed pp. 1-447 (PDF 36-482); 418 of the 447 pages show the expected number in the corner header of the scan's text layer and the offset is the same at both ends; the 29 pages with unreadable headers have not been inspected. The scan's foreground layer is a 3252 x 4542 px JPEG 2000 image of 42 to 65 KB on printed pp. 434-437, so small digits in the basic data are blurred."
+   },
+   "add_evidence": ["experiments/2026-10-13-cisi2-basic-data-pilot/README.md", "experiments/2026-10-13-cisi2-basic-data-pilot/schema.json"]
+  },
+  {
+   "id": "cisi-1",
+   "replace": {
+    "metadata_fields": [
+     "photographs of each side and impression",
+     "basic data (printed pp. 365-375, PDF 401-411): the same five columns as CISI 2, CISI number, FC number, excavation number (with (o) for the number written on the object and (t) for the number in the excavation report's tabulation), museum and registration numbers, photograph sources; no findspot, depth, material or dimension column"
+    ]
+   },
+   "add_evidence": ["experiments/2026-10-13-cisi2-basic-data-pilot/schema.json"]
+  }
+ ],
+ "new": [
+  {
+   "id": "cisi2-basic-data-pilot",
+   "title": "CISI 2 basic data, Mohenjo-daro M-621 to M-947: pilot transcription (13 October 2026)",
+   "kind": "project-derivative",
+   "status": "project-output",
+   "location": "local-only",
+   "local_paths": ["data/raw/2026-10-13-cisi2-basic-data-pilot/"],
+   "size": {"rows": 327, "printed_pages": 2, "lipi_families_joined": 283},
+   "identifiers": ["CISI number", "FC number", "excavation number", "museum code and number", "NMP accession", "photograph negative numbers"],
+   "metadata_fields": ["five printed columns as printed", "parsed holding institution, museum number, NMP accession, excavation number and area code", "uncertain-character marks"],
+   "rights": {
+    "status": "rights-unverified",
+    "licence": null,
+    "detail": "Transcribed values are a derivative of CISI 2 (copyright 1991 Finnish Academy of Science and Letters) and stay local pending a rights decision. The tracked package holds the schema, procedure, accuracy counts, coverage counts and per-object field flags without values (own work, CC0)."
+   },
+   "fetch": {
+    "method": "rebuild",
+    "steps": [
+     "Fetch CISI 2 with python tools/fetch_data.py --fetch cisi-2.",
+     "The first and second readings are manual; rerun the tracked scripts in experiments/2026-10-13-cisi2-basic-data-pilot/ (render.py, parse.py, sample.py, score.py, build_final.py, join.py) on the local reading files as described in its README."
+    ]
+   },
+   "evidence": [
+    "experiments/2026-10-13-cisi2-basic-data-pilot/README.md",
+    "experiments/2026-10-13-cisi2-basic-data-pilot/accuracy.json",
+    "experiments/2026-10-13-cisi2-basic-data-pilot/coverage.json",
+    "experiments/2026-10-13-cisi2-basic-data-pilot/object-flags.csv"
+   ],
+   "questions": ["Q-1005", "Q-1006", "Q-1007", "Q-1013"]
+  }
+ ]
+}

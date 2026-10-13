@@ -1,0 +1,39 @@
+{
+ "rule": "FC number = 1000 + Marshall 1931 catalogue number, or 2000 + Mackay 1938 catalogue number",
+ "inputs": {
+  "cisi2_final": "data/raw/2026-10-13-cisi2-basic-data-pilot/final.jsonl",
+  "join_table": "experiments/2026-10-13-mackay-marshall-tables/run-2026-10-13/join-table.csv"
+ },
+ "counts": {
+  "mackay1938|differ": 2,
+  "mackay1938|fc-uncertain": 8,
+  "mackay1938|match": 119,
+  "marshall1931|differ": 1,
+  "marshall1931|fc-uncertain": 3,
+  "marshall1931|match": 97
+ },
+ "differ": [
+  {
+   "cisi": "M-707",
+   "lipi_family_id": "2377",
+   "source": "mackay1938",
+   "catalogue_no": "231",
+   "fc_prefix": "2"
+  },
+  {
+   "cisi": "M-656",
+   "lipi_family_id": "2257",
+   "source": "mackay1938",
+   "catalogue_no": "491",
+   "fc_prefix": "2"
+  },
+  {
+   "cisi": "M-653",
+   "lipi_family_id": "3096",
+   "source": "marshall1931",
+   "catalogue_no": "57",
+   "fc_prefix": "2"
+  }
+ ],
+ "note": "The objects listed under differ belong to two pairs whose CISI 2 basic-data rows are crossed; measured on the CISI 2 plates, each seal fits the size of the excavator's row in Lipi's pairing (swap-check.md)."
+}

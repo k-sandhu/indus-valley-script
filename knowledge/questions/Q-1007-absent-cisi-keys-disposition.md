@@ -10,7 +10,7 @@ compute: days
 difficulty: standard
 claimed_by: ""
 claim_expires: ""
-prior_attempts: [EVIDENCE-CENSUS-SYNTHESIS-01]
+prior_attempts: [EVIDENCE-CENSUS-SYNTHESIS-01, CISI2-BASIC-DATA-PILOT-2026-10-13]
 related: [Q-1005, Q-1006, Q-1027, Q-1030]
 sources: [knowledge/DATA.md, experiments/2026-10-06-evidence-census/synthesis/catalogue-coverage.csv, experiments/2026-10-06-evidence-census/synthesis/catalogue-section-split.csv]
 ---
@@ -34,3 +34,5 @@ Done when all 1,032 entries carry one disposition with a page locator and the re
 # Prior attempts
 
 The evidence census counted the absent keys and split them by catalogue section without resolving individual entries.
+
+13 October 2026. In M-621 to M-947 the CISI 2 basic data has rows for all 327 numbers; 44 of them have no Lipi family. Their excavation, museum and FC numbers are now in the local pilot table and can be used to look for them in other sources. The CISI numbers are listed in the pilot's [object-flags.csv](../../experiments/2026-10-13-cisi2-basic-data-pilot/object-flags.csv) with `join = no-lipi-family`.

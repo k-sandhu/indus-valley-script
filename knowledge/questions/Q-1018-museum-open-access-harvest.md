@@ -1,7 +1,7 @@
 ---
 id: Q-1018
 title: Harvest open museum records and images for Indus inscribed objects
-status: open
+status: done
 area: data
 kind: data-acquisition
 priority: 2
@@ -10,7 +10,7 @@ compute: hours
 difficulty: starter
 claimed_by: ""
 claim_expires: ""
-prior_attempts: [EVIDENCE-CENSUS-COLLECTIONS-01]
+prior_attempts: [EVIDENCE-CENSUS-COLLECTIONS-01, MUSEUM-OPEN-ACCESS-2026-10-13]
 related: [Q-1004, Q-1019, Q-1030]
 sources: [knowledge/DATA.md, experiments/2026-10-12-data-inventory/sources.json, experiments/2026-10-06-evidence-census/synthesis/join-summary.json]
 ---
@@ -34,3 +34,5 @@ Done when each listed institution has a dated harvest record, every inscribed In
 # Prior attempts
 
 The museum census inspected 114 original records at six institutions and confirmed 68 joins; it did not use the Cleveland, V&A or Penn bulk routes.
+
+13 October 2026, outcome: Seven institutions have a dated harvest record ([package](../../experiments/2026-10-13-museum-open-access/README.md)). Inscribed Indus originals found: Metropolitan 5 and Cleveland 3 (CC0, with photographs, no findspot or number), Penn 5 (CC BY 4.0 data; plus 4 uninscribed seal-amulets and 38 casts or impressions), V&A 2 inscribed originals among 4 reviewed attributed records (plus a modern impression and figurine head IS.9-1951 outside inscription scope), British Museum 7 with a stated inscription among 27 listed Indus stamp-seals, Art Institute of Chicago 0, Smithsonian 0 (20 casts in 539,615 bulk records). Every record has a row with its data and image licence in `harvest/` and `joins/join-table.csv`. Joins beside the census's 68: 27 exact or confirmed records in this package, 19 new, so 87 museum records are joined. Casts and impressions are recorded and not counted as originals. Left open: the British Museum's object pages are behind a Cloudflare challenge, so 20 of its Indus seals lack a reachable description and five cannot yet be joined; reading their Miscellaneous numbers in a browser would settle them. Raw V&A responses must be deleted by 10 November 2026 under the V&A API terms.

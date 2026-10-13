@@ -10,7 +10,7 @@ compute: hours
 difficulty: standard
 claimed_by: ""
 claim_expires: ""
-prior_attempts: [EVIDENCE-CENSUS-COLLECTIONS-01, OBJECT-LEDGER-PILOT-01, MACKAY-MARSHALL-TABLES-2026-10-13]
+prior_attempts: [EVIDENCE-CENSUS-COLLECTIONS-01, OBJECT-LEDGER-PILOT-01, MACKAY-MARSHALL-TABLES-2026-10-13, DATA-ROUND-1-FOLLOW-UP-2026-10-13]
 related: [Q-1002, Q-1006, Q-1013, Q-1022]
 sources: [knowledge/DATA.md, experiments/2026-10-12-data-inventory/run-2026-10-12/field-coverage-by-site.csv, experiments/2026-10-06-evidence-census/synthesis/join-summary.json]
 ---
@@ -43,3 +43,5 @@ Remaining items, for a successor card:
 - Two ambiguous rows: Mackay No. 434 (two Lipi families, 2301 and 4045, carry the same registration DK5081434) and Marshall No. 483 (registration only; the print gives yellow faience, the export steatite).
 - Mackay's plate volume is not held, and objects numbered above M-1659 (CISI 3.1) have no catalogue entry here, so joins to them were checked on the print and the registration alone.
 - The 14 differences between the transcription and the print ([print-corrections.csv](../../experiments/2026-10-13-mackay-marshall-tables/verification/print-corrections.csv)) are recorded but not applied to the join table.
+
+13 October 2026, follow-up ([verification](../../experiments/2026-10-13-data-round-1-verification/README.md)). The CISI basic data gives an independent check on this join: for Mohenjo-daro the FC concordance number is 1000 plus Marshall's catalogue number or 2000 plus Mackay's, and it agrees with the joined row for 216 of 219 objects in M-621 to M-947. The three exceptions, with M-655, are two pairs of seals whose records CISI 2 assigns the other way round from Lipi; measured on the CISI 2 plates, all four seals fit the sizes of the rows this join gives them, so the join stands and CISI 2's basic data has the pairs crossed.

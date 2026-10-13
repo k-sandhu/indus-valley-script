@@ -28,10 +28,10 @@
   "rebuild": "Regenerate from tracked code and other manifest sources."
  },
  "counts": {
-  "held": 33,
-  "partly-held": 11,
-  "not-held": 32,
-  "project-output": 12
+  "held": 34,
+  "partly-held": 14,
+  "not-held": 30,
+  "project-output": 14
  },
  "sources": [
   {
@@ -494,7 +494,7 @@
    ],
    "metadata_fields": [
     "photographs of each side and impression",
-    "basic data: museum number, excavation number, findspot, material, dimensions"
+    "basic data (printed pp. 365-375, PDF 401-411): the same five columns as CISI 2, CISI number, FC number, excavation number (with (o) for the number written on the object and (t) for the number in the excavation report's tabulation), museum and registration numbers, photograph sources; no findspot, depth, material or dimension column"
    ],
    "rights": {
     "status": "rights-unverified",
@@ -514,7 +514,8 @@
    "evidence": [
     "knowledge/provenance/SOURCES.md",
     "research/literature/cisi1_counting_and_errata.md",
-    "experiments/2026-10-06-evidence-census/synthesis/catalogue-coverage.csv"
+    "experiments/2026-10-06-evidence-census/synthesis/catalogue-coverage.csv",
+    "experiments/2026-10-13-cisi2-basic-data-pilot/schema.json"
    ],
    "questions": [
     "Q-1001",
@@ -536,12 +537,12 @@
     "bytes": 60132087
    },
    "identifiers": [
-    "CISI references (M-621 to M-1659, H-266 to H-1019 and other sites)",
-    "museum and excavation numbers"
+    "CISI references (M-595, M-621 to M-1659, H-266 to H-275, H-356, H-383 to H-1019 and other sites)",
+    "FC (Finnish concordance) numbers, excavation numbers, museum and NMP accession numbers and photograph negative numbers in the basic-data section"
    ],
    "metadata_fields": [
-    "photographs",
-    "basic data: museum number, excavation number, findspot, material, dimensions"
+    "photographs of each side and impression",
+    "basic data (printed pp. 434-447, PDF 469-482): five columns, CISI number, FC number, excavation number or corresponding data, museum and registration numbers, photograph sources; no findspot, depth, material or dimension column"
    ],
    "rights": {
     "status": "rights-unverified",
@@ -560,7 +561,9 @@
    },
    "evidence": [
     "experiments/2026-10-06-evidence-census/synthesis/sources.json",
-    "experiments/2026-10-06-evidence-census/synthesis/catalogue-coverage.csv"
+    "experiments/2026-10-06-evidence-census/synthesis/catalogue-coverage.csv",
+    "experiments/2026-10-13-cisi2-basic-data-pilot/README.md",
+    "experiments/2026-10-13-cisi2-basic-data-pilot/schema.json"
    ],
    "questions": [
     "Q-1001",
@@ -569,7 +572,8 @@
     "Q-1027"
    ],
    "status": "held",
-   "location": "local-only"
+   "location": "local-only",
+   "notes": "Printed page = PDF page - 35 for printed pp. 1-447 (PDF 36-482); 418 of the 447 pages show the expected number in the corner header of the scan's text layer and the offset is the same at both ends; the 29 pages with unreadable headers have not been inspected. The scan's foreground layer is a 3252 x 4542 px JPEG 2000 image of 42 to 65 KB on printed pp. 434-437, so small digits in the basic data are blurred."
   },
   {
    "id": "cisi-3-1-harappa-introduction",
@@ -2329,7 +2333,7 @@
   },
   {
    "id": "kjaerum-1983",
-   "title": "Kj\u00e6rum 1983, Failaka/Dilmun. The Second Millennium Settlements, Volume 1:1: The Stamp and Cylinder Seals",
+   "title": "Kjærum 1983, Failaka/Dilmun. The Second Millennium Settlements, Volume 1:1: The Stamp and Cylinder Seals",
    "kind": "excavation-catalogue",
    "metadata_fields": [
     "seal catalogue numbers",
@@ -2707,152 +2711,298 @@
   },
   {
    "id": "met-open-access",
-   "title": "Metropolitan Museum of Art Collection API (v1.1 search): Indus seals 49.40.1-4 and 1984.482",
+   "status": "partly-held",
+   "location": "tracked",
+   "title": "Metropolitan Museum of Art Collection API (v1.1 search, v1 objects): Indus seals 49.40.1-4 and 1984.482",
    "kind": "museum-records",
+   "local_paths": [
+    "data/raw/2026-10-13-museum-open-access/met/"
+   ],
    "size": {
-    "indus_seals_found": 5
+    "queries": 20,
+    "object_records_read": 176,
+    "indus_inscribed_originals": 5,
+    "joined": 0
    },
+   "identifiers": [
+    "Met objectID",
+    "accession number"
+   ],
+   "metadata_fields": [
+    "accessionNumber",
+    "title",
+    "objectName",
+    "culture",
+    "period",
+    "objectDate",
+    "medium",
+    "dimensions",
+    "measurements",
+    "region/subregion",
+    "creditLine",
+    "primaryImage",
+    "additionalImages",
+    "isPublicDomain"
+   ],
    "rights": {
     "status": "explicit-license",
-    "licence": "CC0 for objects flagged isPublicDomain (Met Open Access)"
+    "licence": "CC0 for objects with isPublicDomain true",
+    "detail": "All five Indus seals are flagged public domain; image URLs recorded; images kept local for comparison only."
    },
    "fetch": {
-    "method": "manual",
+    "method": "rebuild",
     "steps": [
-     "Query https://collectionapi.metmuseum.org/public/collection/v1.1/search and v1 object records; the v1 search endpoint was retired on 1 October 2026."
+     "python experiments/2026-10-13-museum-open-access/harvest_met.py (new cache; about 2 s between requests)"
     ]
    },
+   "evidence": [
+    "experiments/2026-10-13-museum-open-access/README.md",
+    "experiments/2026-10-13-museum-open-access/harvest/summary.csv",
+    "experiments/2026-10-13-museum-open-access/joins/join-table.csv",
+    "experiments/2026-10-13-museum-open-access/coverage/summary.json",
+    "experiments/2026-10-13-museum-open-access/REVIEW-CHANGES.md",
+    "experiments/2026-10-13-museum-open-access/harvest/review-overrides.json",
+    "experiments/2026-10-13-museum-open-access/verification/independent-check.md",
+    "experiments/2026-10-13-data-round-1-verification/REPORT.md"
+   ],
+   "questions": [
+    "Q-1018",
+    "Q-1019"
+   ],
    "web_checks": [
     "W17"
    ],
-   "questions": [
-    "Q-1018"
-   ],
-   "status": "not-held",
-   "location": "external",
-   "evidence": [
-    "experiments/2026-10-12-data-inventory/sources.json"
-   ],
-   "local_paths": [],
    "hashes": {}
   },
   {
    "id": "cleveland-open-access",
-   "title": "Cleveland Museum of Art Open Access API: seals 1964.104, 1973.160, 1973.161",
+   "status": "partly-held",
+   "location": "tracked",
+   "title": "Cleveland Museum of Art Open Access API: Indus seals 1964.104, 1973.160, 1973.161",
    "kind": "museum-records",
+   "local_paths": [
+    "data/raw/2026-10-13-museum-open-access/cleveland/"
+   ],
    "size": {
-    "inscribed_indus_seals": 3
+    "queries": 13,
+    "records_read": 23,
+    "indus_inscribed_originals": 3,
+    "joined": 0
    },
+   "identifiers": [
+    "CMA id",
+    "accession_number"
+   ],
+   "metadata_fields": [
+    "title",
+    "type",
+    "technique",
+    "measurements",
+    "culture",
+    "creation_date",
+    "provenance",
+    "citations",
+    "images",
+    "share_license_status"
+   ],
    "rights": {
     "status": "explicit-license",
-    "licence": "CC0"
+    "licence": "CC0",
+    "detail": "share_license_status CC0 on all three records"
    },
    "fetch": {
-    "method": "manual",
+    "method": "rebuild",
     "steps": [
-     "Query https://openaccess-api.clevelandart.org/api/artworks/?q=Indus."
+     "python experiments/2026-10-13-museum-open-access/harvest_cleveland.py"
     ]
    },
-   "web_checks": [
-    "W24"
+   "evidence": [
+    "experiments/2026-10-13-museum-open-access/README.md",
+    "experiments/2026-10-13-museum-open-access/harvest/summary.csv",
+    "experiments/2026-10-13-museum-open-access/joins/join-table.csv",
+    "experiments/2026-10-13-museum-open-access/coverage/summary.json",
+    "experiments/2026-10-13-museum-open-access/REVIEW-CHANGES.md",
+    "experiments/2026-10-13-museum-open-access/harvest/review-overrides.json",
+    "experiments/2026-10-13-museum-open-access/verification/independent-check.md",
+    "experiments/2026-10-13-data-round-1-verification/REPORT.md"
    ],
    "questions": [
     "Q-1018"
    ],
-   "status": "not-held",
-   "location": "external",
-   "evidence": [
-    "experiments/2026-10-12-data-inventory/sources.json"
+   "web_checks": [
+    "W24"
    ],
-   "local_paths": [],
    "hashes": {}
   },
   {
    "id": "penn-collections-data",
-   "title": "Penn Museum collections data download (full metadata CSV)",
+   "status": "held",
+   "location": "local-only",
+   "title": "Penn Museum collections data download (full metadata CSV, updated 2026-10-07)",
    "kind": "museum-records",
-   "size": {
-    "csv_megabytes": 144.26,
-    "records_tagged_indus_script": 34
+   "local_paths": [
+    "data/raw/2026-10-13-museum-open-access/penn/cache/2be92ad456f8d4de582e22ba.body"
+   ],
+   "version": {
+    "last_updated": "2026-10-07",
+    "retrieved_utc": "2026-10-13T05:52:38+00:00"
    },
+   "size": {
+    "bytes": 151266760,
+    "rows": 430871,
+    "indus_pattern_rows": 942,
+    "seal_like_indus_rows": 47,
+    "inscribed_originals": 5,
+    "uninscribed_originals": 4,
+    "casts_or_impressions": 38
+   },
+   "identifiers": [
+    "identifier (object number)",
+    "Record URL"
+   ],
+   "metadata_fields": [
+    "objectName",
+    "title",
+    "creditLine",
+    "description",
+    "placeName",
+    "siteName",
+    "culture",
+    "period",
+    "material",
+    "inscriptionMarkLanguage",
+    "dateMade",
+    "earlyDate",
+    "lateDate",
+    "length",
+    "width",
+    "height",
+    "thickness",
+    "weight",
+    "measurementUnit"
+   ],
    "rights": {
     "status": "explicit-license",
-    "licence": "Data CC BY 4.0 (download page); images for non-profit and educational use with credit"
+    "licence": "Data CC BY 4.0 (download page); images for non-profit, education or personal use with credit",
+    "detail": "The CSV lacks Other Number and Bibliography; those come from the object pages of the nine originals."
    },
    "fetch": {
-    "method": "manual",
-    "steps": [
-     "Download from https://collections.penn.museum/collections/objects/data.php (updated 2026-10-07) into a new data/raw directory and filter locally."
-    ]
+    "method": "http",
+    "url": "https://collections.penn.museum/collections/assets/data/Penn_Museum_Collections_Data.csv",
+    "sha256": "a24614d511b88067bc5bc0163e9ab6e65f8332273a14f9ffe551e012252a3778",
+    "bytes": 151266760
    },
+   "hashes": {
+    "data/raw/2026-10-13-museum-open-access/penn/cache/2be92ad456f8d4de582e22ba.body": "a24614d511b88067bc5bc0163e9ab6e65f8332273a14f9ffe551e012252a3778"
+   },
+   "evidence": [
+    "experiments/2026-10-13-museum-open-access/README.md",
+    "experiments/2026-10-13-museum-open-access/harvest/summary.csv",
+    "experiments/2026-10-13-museum-open-access/joins/join-table.csv",
+    "experiments/2026-10-13-museum-open-access/coverage/summary.json",
+    "experiments/2026-10-13-museum-open-access/REVIEW-CHANGES.md",
+    "experiments/2026-10-13-museum-open-access/harvest/review-overrides.json",
+    "experiments/2026-10-13-museum-open-access/verification/independent-check.md",
+    "experiments/2026-10-13-data-round-1-verification/REPORT.md"
+   ],
+   "questions": [
+    "Q-1018"
+   ],
    "web_checks": [
     "W19"
    ],
-   "questions": [
-    "Q-1018"
-   ],
-   "status": "not-held",
-   "location": "external",
-   "evidence": [
-    "experiments/2026-10-12-data-inventory/sources.json"
-   ],
-   "local_paths": [],
-   "hashes": {}
+   "notes": "The museum replaces the file in place; the hash identifies the 2026-10-07 edition."
   },
   {
    "id": "british-museum-collection",
-   "title": "British Museum Collection Online (e.g. 1947,0416.1-8)",
+   "status": "not-held",
+   "location": "external",
+   "title": "British Museum Collection Online: 27 stamp-seals labelled Indus Valley Civilisation in the 'indus seal' listing",
    "kind": "museum-records",
+   "local_paths": [
+    "data/raw/2026-10-13-museum-open-access/bm/"
+   ],
+   "size": {
+    "listing_results": 59,
+    "indus_stamp_seals": 27,
+    "inscription_stated": 7,
+    "cast_sets": 2,
+    "joined": 6
+   },
    "rights": {
     "status": "mixed-assets",
-    "licence": "CC BY-NC-SA 4.0 only for content marked with the CC logo"
+    "licence": "CC BY-NC-SA 4.0 only for content marked with the CC logo",
+    "detail": "Scripted access returned a Cloudflare challenge on 13 October; robots.txt content signal search=yes, ai-train=no, use=reference. Identifiers and Miscellaneous numbers only are tracked."
    },
    "fetch": {
     "method": "manual",
     "steps": [
-     "Search https://www.britishmuseum.org/collection; 59 keyword hits for 'indus seal', mixed with casts and non-Indus seals; no public API found."
+     "Open https://www.britishmuseum.org/collection/search?keyword=indus%20seal in a browser and record the Museum number and Miscellaneous number of each seal."
     ]
    },
+   "evidence": [
+    "experiments/2026-10-13-museum-open-access/README.md",
+    "experiments/2026-10-13-museum-open-access/harvest/summary.csv",
+    "experiments/2026-10-13-museum-open-access/joins/join-table.csv",
+    "experiments/2026-10-13-museum-open-access/coverage/summary.json",
+    "experiments/2026-10-13-museum-open-access/REVIEW-CHANGES.md",
+    "experiments/2026-10-13-museum-open-access/harvest/review-overrides.json",
+    "experiments/2026-10-13-museum-open-access/verification/independent-check.md",
+    "experiments/2026-10-13-data-round-1-verification/REPORT.md"
+   ],
+   "questions": [
+    "Q-1018",
+    "Q-1019"
+   ],
    "web_checks": [
     "W18"
    ],
-   "questions": [
-    "Q-1018"
-   ],
-   "status": "not-held",
-   "location": "external",
-   "evidence": [
-    "experiments/2026-10-12-data-inventory/sources.json"
-   ],
-   "local_paths": [],
    "hashes": {}
   },
   {
    "id": "va-collections",
-   "title": "Victoria and Albert Museum Collections API: Mohenjo-daro seal IS.8:1-1951, fragment IS.8A-1951, impression IS.8:2-1951",
+   "status": "partly-held",
+   "location": "local-only",
+   "title": "Victoria and Albert Museum Collections API v2: seal IS.8:1-1951 (CISI M-1727), fragment IS.8A-1951, impression IS.8:2-1951",
    "kind": "museum-records",
+   "local_paths": [
+    "data/raw/2026-10-13-museum-open-access/vam/"
+   ],
+   "size": {
+    "queries": 14,
+    "records_read": 199,
+    "reviewed_indus_attributed_records": 4,
+    "indus_originals": 2,
+    "modern_impressions": 1,
+    "joined": 1
+   },
    "rights": {
     "status": "rights-unverified",
-    "licence": "V&A terms: non-commercial personal and educational use"
+    "licence": "V&A websites terms section 9: non-commercial use; API content may not be stored beyond four weeks",
+    "detail": "Delete data/raw/2026-10-13-museum-open-access/vam/ by 2026-11-10; tracked files hold identifiers, flags and joins only."
    },
    "fetch": {
-    "method": "manual",
+    "method": "rebuild",
     "steps": [
-     "Query https://api.vam.ac.uk/v2/objects/search?q=Mohenjo-daro."
+     "python experiments/2026-10-13-museum-open-access/harvest_vam.py"
     ]
    },
-   "web_checks": [
-    "W28"
+   "evidence": [
+    "experiments/2026-10-13-museum-open-access/README.md",
+    "experiments/2026-10-13-museum-open-access/harvest/summary.csv",
+    "experiments/2026-10-13-museum-open-access/joins/join-table.csv",
+    "experiments/2026-10-13-museum-open-access/coverage/summary.json",
+    "experiments/2026-10-13-museum-open-access/REVIEW-CHANGES.md",
+    "experiments/2026-10-13-museum-open-access/harvest/review-overrides.json",
+    "experiments/2026-10-13-museum-open-access/verification/independent-check.md",
+    "experiments/2026-10-13-data-round-1-verification/REPORT.md"
    ],
    "questions": [
     "Q-1018"
    ],
-   "status": "not-held",
-   "location": "external",
-   "evidence": [
-    "experiments/2026-10-12-data-inventory/sources.json"
+   "web_checks": [
+    "W28"
    ],
-   "local_paths": [],
    "hashes": {}
   },
   {
@@ -3247,6 +3397,206 @@
     "Q-1030"
    ],
    "notes": "Join precision on a 30-join random sample: 29 correct, 0 wrong, 1 unresolved. Values keep the excavators' units (inches; feet against the stated datum)."
+  },
+  {
+   "id": "cisi2-basic-data-pilot",
+   "title": "CISI 2 basic data, Mohenjo-daro M-621 to M-947: pilot transcription (13 October 2026)",
+   "kind": "project-derivative",
+   "status": "project-output",
+   "location": "local-only",
+   "local_paths": [
+    "data/raw/2026-10-13-cisi2-basic-data-pilot/"
+   ],
+   "size": {
+    "rows": 327,
+    "printed_pages": 2,
+    "lipi_families_joined": 283
+   },
+   "identifiers": [
+    "CISI number",
+    "FC number",
+    "excavation number",
+    "museum code and number",
+    "NMP accession",
+    "photograph negative numbers"
+   ],
+   "metadata_fields": [
+    "five printed columns as printed",
+    "parsed holding institution, museum number, NMP accession, excavation number and area code",
+    "uncertain-character marks"
+   ],
+   "rights": {
+    "status": "rights-unverified",
+    "licence": null,
+    "detail": "Transcribed values are a derivative of CISI 2 (copyright 1991 Finnish Academy of Science and Letters) and stay local pending a rights decision. The tracked package holds the schema, procedure, accuracy counts, coverage counts and per-object field flags without values (own work, CC0)."
+   },
+   "fetch": {
+    "method": "rebuild",
+    "steps": [
+     "Fetch CISI 2 with python tools/fetch_data.py --fetch cisi-2.",
+     "The first and second readings are manual; rerun the tracked scripts in experiments/2026-10-13-cisi2-basic-data-pilot/ (render.py, parse.py, sample.py, score.py, build_final.py, join.py) on the local reading files as described in its README."
+    ]
+   },
+   "evidence": [
+    "experiments/2026-10-13-cisi2-basic-data-pilot/README.md",
+    "experiments/2026-10-13-cisi2-basic-data-pilot/accuracy.json",
+    "experiments/2026-10-13-cisi2-basic-data-pilot/coverage.json",
+    "experiments/2026-10-13-cisi2-basic-data-pilot/object-flags.csv"
+   ],
+   "questions": [
+    "Q-1005",
+    "Q-1006",
+    "Q-1007",
+    "Q-1013"
+   ]
+  },
+  {
+   "id": "aic-open-access",
+   "status": "not-held",
+   "location": "external",
+   "title": "Art Institute of Chicago API: no Indus object found (13 October 2026)",
+   "kind": "museum-records",
+   "local_paths": [
+    "data/raw/2026-10-13-museum-open-access/aic/"
+   ],
+   "size": {
+    "queries": 13,
+    "indus_objects": 0
+   },
+   "rights": {
+    "status": "explicit-license",
+    "licence": "API data CC0 except the description field (CC BY 4.0)",
+    "detail": "Stated in https://api.artic.edu/docs/ (saved 13 October)"
+   },
+   "fetch": {
+    "method": "rebuild",
+    "steps": [
+     "python experiments/2026-10-13-museum-open-access/harvest_aic.py"
+    ]
+   },
+   "evidence": [
+    "experiments/2026-10-13-museum-open-access/README.md",
+    "experiments/2026-10-13-museum-open-access/harvest/summary.csv",
+    "experiments/2026-10-13-museum-open-access/joins/join-table.csv",
+    "experiments/2026-10-13-museum-open-access/coverage/summary.json",
+    "experiments/2026-10-13-museum-open-access/REVIEW-CHANGES.md",
+    "experiments/2026-10-13-museum-open-access/harvest/review-overrides.json",
+    "experiments/2026-10-13-museum-open-access/verification/independent-check.md",
+    "experiments/2026-10-13-data-round-1-verification/REPORT.md"
+   ],
+   "questions": [
+    "Q-1018"
+   ],
+   "hashes": {}
+  },
+  {
+   "id": "smithsonian-open-access",
+   "status": "not-held",
+   "location": "external",
+   "title": "Smithsonian Open Access metadata (bulk bucket s3://smithsonian-open-access): Indus casts only",
+   "kind": "museum-records",
+   "local_paths": [
+    "data/raw/2026-10-13-museum-open-access/smithsonian/"
+   ],
+   "size": {
+    "bulk_files_scanned": 770,
+    "bytes_scanned": 1204328192,
+    "records_scanned": 539615,
+    "indus_records": 20,
+    "indus_seal_casts": 5,
+    "originals": 0
+   },
+   "rights": {
+    "status": "explicit-license",
+    "licence": "CC0",
+    "detail": "The API needs an api.data.gov key and was not used; the public bucket needs none."
+   },
+   "fetch": {
+    "method": "rebuild",
+    "steps": [
+     "python experiments/2026-10-13-museum-open-access/harvest_smithsonian.py nmnhanthro fsg nmaa",
+     "python experiments/2026-10-13-museum-open-access/harvest_smithsonian.py --summarize"
+    ]
+   },
+   "evidence": [
+    "experiments/2026-10-13-museum-open-access/README.md",
+    "experiments/2026-10-13-museum-open-access/harvest/summary.csv",
+    "experiments/2026-10-13-museum-open-access/joins/join-table.csv",
+    "experiments/2026-10-13-museum-open-access/coverage/summary.json",
+    "experiments/2026-10-13-museum-open-access/REVIEW-CHANGES.md",
+    "experiments/2026-10-13-museum-open-access/harvest/review-overrides.json",
+    "experiments/2026-10-13-museum-open-access/verification/independent-check.md",
+    "experiments/2026-10-13-data-round-1-verification/REPORT.md"
+   ],
+   "questions": [
+    "Q-1018"
+   ],
+   "web_checks": [
+    "W23"
+   ],
+   "hashes": {},
+   "notes": "Only matching lines are kept locally; per-file SHA256 values are in bulk-files.jsonl."
+  },
+  {
+   "id": "museum-open-access-2026-10-13",
+   "status": "project-output",
+   "location": "tracked",
+   "title": "Museum open-access harvest and joins, 13 October 2026 (Q-1018, Q-1019)",
+   "kind": "project-register",
+   "local_paths": [
+    "experiments/2026-10-13-museum-open-access/",
+    "data/raw/2026-10-13-museum-open-access/"
+   ],
+   "size": {
+    "records_decided": 86,
+    "exact_or_confirmed": 27,
+    "new_joins": 19,
+    "q1019_confirmed": 16,
+    "museum_join_lower_bound": 87,
+    "census_scope_join_lower_bound": 84,
+    "objects_with_museum_accession": 340,
+    "families_gaining_first_museum_number": 16,
+    "candidate_additions": 5
+   },
+   "identifiers": [
+    "museum accession",
+    "Lipi family",
+    "CISI number"
+   ],
+   "metadata_fields": [
+    "join class",
+    "method",
+    "evidence locator",
+    "conflicts",
+    "candidate counts",
+    "field-presence and coverage-gain flags"
+   ],
+   "rights": {
+    "status": "mixed-assets",
+    "licence": null,
+    "detail": "Project tables CC0; CC0 museum metadata (Met, Cleveland, AIC, Smithsonian) and CC BY 4.0 Penn metadata tracked with attribution; values from other museums stay local."
+   },
+   "fetch": {
+    "method": "rebuild",
+    "steps": [
+     "See experiments/2026-10-13-museum-open-access/README.md, 'Reproducing'."
+    ]
+   },
+   "evidence": [
+    "experiments/2026-10-13-museum-open-access/README.md",
+    "experiments/2026-10-13-museum-open-access/harvest/summary.csv",
+    "experiments/2026-10-13-museum-open-access/joins/join-table.csv",
+    "experiments/2026-10-13-museum-open-access/coverage/summary.json",
+    "experiments/2026-10-13-museum-open-access/REVIEW-CHANGES.md",
+    "experiments/2026-10-13-museum-open-access/harvest/review-overrides.json",
+    "experiments/2026-10-13-museum-open-access/verification/independent-check.md",
+    "experiments/2026-10-13-data-round-1-verification/REPORT.md"
+   ],
+   "questions": [
+    "Q-1018",
+    "Q-1019"
+   ],
+   "hashes": {}
   }
  ]
 }

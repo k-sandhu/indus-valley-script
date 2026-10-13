@@ -1,0 +1,27 @@
+{
+  "id": "MUSEUM-OPEN-ACCESS-2026-10-13",
+  "theme": "Open museum records for Indus inscribed objects and joins to the local corpus",
+  "status": "completed-source-review-with-joins",
+  "question": "Which Indus inscribed objects do museums with open data or keyless APIs publish, which local objects do they and the census's 46 unresolved museum records describe, and which object fields do the joins add?",
+  "outcome": "Seven institutions harvested on 13 October 2026. Inscribed Indus originals: Metropolitan 5 and Cleveland 3 (CC0 with photographs, no findspot or number), Penn 5 Chanhu-daro seals (CC BY 4.0 CSV of 430,871 rows; plus 4 uninscribed seal-amulets and 38 casts), V&A 2 inscribed originals among 4 reviewed attributed records (one modern impression and figurine head IS.9-1951 outside inscription scope), British Museum 7 with a stated inscription among 27 listed Indus stamp-seals, Art Institute of Chicago 0, Smithsonian 0 (20 casts in 539,615 bulk records). 86 museum records were decided: 27 exact or confirmed joins, 19 of them new against the census, raising the confirmed museum-join lower bound from 68 to 87. Of the census's 46 open records, 16 are confirmed, 21 ambiguous with candidate sets, 8 unmatched and 1 uninscribed. Objects with a museum accession rise from 5.84% (older export) and 6.90% (with census joins) to 7.24% (340 of 4,695). Sixteen families gain their first museum number. Six newly joined families gain an axis, including two that had no dimension before; the other four already had at least one axis. One gains a finer provenance note, and none gains an openly licensed image. Five museum objects are candidate additions to the corpus (CISI H-224; Banawali NM 3714; Dholavira DHR-22198, DHR-6032, DHR-7860). The original 26 joins were supported, 0 qualified and 0 wrong (100%, one-sided 95% lower bound 89%). The reviewer recovered Indian Museum 10377/A7252/C.2803 as family 2194 through Marshall 1931 vol. II p. 403 row 199, bringing the census-scope lower bound to 84. Recall search found hits for 10 of 59 non-joined rows, four confined to one family, with no search-derived join. See verification/independent-check.md and REVIEW-CHANGES.md.",
+  "challenge": "The British Museum served a Cloudflare challenge to scripted requests, so most of its records were read only from a saved listing; the Smithsonian API required a key; the Penn CSV lacks field numbers and bibliography; the V&A API terms forbid storing responses for more than four weeks; OCR of the CISI 1 basic-data pages missed many numbers; the CC0 Met and Cleveland seals carry no findspot or number; several joins rest on CISI 3.1 numbers that the project cannot check.",
+  "remedy": "Used the keyless Smithsonian bulk bucket, saved British Museum witnesses and search-engine text without bypassing the challenge, and Penn object pages for field numbers. Read the CISI 1 table pages by eye from 300 dpi renders and checked numbers painted on objects in CISI photographs; used the Marshall 1931 and Mackay 1938 tables for British Museum field numbers. Kept description-only matches ambiguous with candidate counts. Tracked only CC0 and CC BY metadata; other museums' values stay local, and V&A raw data carry a deletion date. After review on 13 October, preserved 49 starting files with SHA256 lists, rewrote all 69 restricted-source decision rows as classifications and locators, applied 45 logged flag overrides, reused the inventory type-group rule and regenerated the package outputs offline.",
+  "evidence": [
+    "experiments/2026-10-13-museum-open-access/README.md",
+    "experiments/2026-10-13-museum-open-access/PROTOCOL.md",
+    "experiments/2026-10-13-museum-open-access/harvest/summary.csv",
+    "experiments/2026-10-13-museum-open-access/harvest/acquisition-record.json",
+    "experiments/2026-10-13-museum-open-access/joins/join-table.csv",
+    "experiments/2026-10-13-museum-open-access/joins/q1019-decisions.csv",
+    "experiments/2026-10-13-museum-open-access/coverage/summary.json",
+    "experiments/2026-10-13-museum-open-access/coverage/museum-coverage.json",
+    "experiments/2026-10-13-museum-open-access/verification/independent-check.md",
+    "experiments/2026-10-13-data-round-1-verification/REPORT.md",
+    "experiments/2026-10-13-museum-open-access/REVIEW-CHANGES.md",
+    "experiments/2026-10-13-museum-open-access/harvest/review-overrides.json",
+    "experiments/2026-10-13-museum-open-access/joins/recall-candidates.csv"
+  ],
+  "retry_when": "CISI 3.1 is acquired (Q-1008), the British Museum object pages can be read, a clearer copy of Mackay 1943 plates LI-LII is available, or a museum adds Indus records to an open API. Rerun into a new dated directory; keep this package unchanged.",
+  "status_class": "source-review",
+  "area": "data"
+}

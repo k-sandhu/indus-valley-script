@@ -1,0 +1,30 @@
+{
+ "id": "CISI2-BASIC-DATA-PILOT-2026-10-13",
+ "theme": "CISI 2 basic-data transcription pilot (Mohenjo-daro M-621 to M-947) with measured double-reading accuracy, joins to the local corpus and a parallel-block procedure for CISI 1 and CISI 2",
+ "status": "completed-pilot-values-local-pending-rights",
+ "question": "Can the basic-data section of CISI 2 be transcribed from the held archive.org scan into one row per catalogue entry at a measured cell-level error rate, and what does a block of it add to the local object record?",
+ "outcome": "The basic data (printed pp. 434-447, PDF 469-482) has five columns: CISI number, FC concordance number, excavation number, museum and registration numbers, photograph sources; it prints no findspot, depth, material or dimensions, and CISI 1 (p. 366) has the same columns. The scan's catalogue page order holds at both ends (printed = PDF - 35; 418 of 447 headers confirm it). All 327 entries M-621 to M-947 were transcribed and read twice by independent AI readers: cell agreement 90.5% (CISI number 100%, FC 92.7%, excavation 91.4%, museum 85.6%, photographs 82.6%); of 156 disagreements 48 were decided from the page and 108 were not; 119 of 1,635 final cells stay bracketed. Sampled first-pass error rate (33 rows): excavation 3.0% (1/33), FC 6.1%, museum 0%, all cells 1.8% (up to 4.2% counting undecidable cells); full comparison: first-pass errors 0.2% of cells, up to 6.2%. 283 entries join one Lipi family each, 44 have none. Museum number for the joined objects 26.1% to 97.5% (202 objects gained, 179 without an uncertain digit); corpus museum coverage 5.8% to 10.1% (274 to 476 objects); holding institution supplied for all 283 (added for 209) and FC number for all 283. Lipi excavation-idno equals the printed number for 40 objects and is the printed number plus the FC number without its first digit for 182, and those digits are the excavator's catalogue number (FC = 1000 + Marshall 1931 No. or 2000 + Mackay 1938 No. for 216 of 219 checkable objects); two pairs of records are crossed between Lipi and CISI 2, and plate measurements show CISI 2's basic data to be the source in error; two differ where the page confirms CISI 2. Museum numbers agree with the older export for all 71 comparable objects. Projected agent time for the rest: about 2.8 h for CISI 2 (1,760 entries) and 2.4 h for CISI 1 (1,533), at 5.7 s per entry. Independently verified on 13 October; four rights redactions and three count corrections applied (REVIEW-CHANGES.md).",
+ "challenge": "The archive.org foreground layer blurs small digits (3/5, 6/8, 0/9, italic 1/7), so two readers often cannot be adjudicated from the page; all readers are instances of one model, so shared misreadings are possible; the first reader had seen the text layer of p. 436 and the Lipi metadata of about 28 objects in the range before transcribing; the expected findspot, depth, material and dimension fields do not exist in the basic data; CISI rights are unresolved, so values cannot be tracked.",
+ "remedy": "Protocol hashed before the first row; first pass frozen by hash before a seeded 10% sample; isolated second readers with copies of the page renders only; a full second reading added by a hashed amendment before the sampled results were known; disagreements adjudicated with outcome codes and undecidable cells kept as bracketed alternatives; a non-blind Lipi cross-check allowed only to confirm, correct or bracket cells not decided blind; schema keeps not-printed fields so CISI 1 and 2 tables merge; tracked outputs hold counts and per-object field flags only.",
+ "evidence": [
+  "experiments/2026-10-13-cisi2-basic-data-pilot/README.md",
+  "experiments/2026-10-13-cisi2-basic-data-pilot/PROTOCOL.md",
+  "experiments/2026-10-13-cisi2-basic-data-pilot/AMENDMENT-1.md",
+  "experiments/2026-10-13-cisi2-basic-data-pilot/PROTOCOL.sha256",
+  "experiments/2026-10-13-cisi2-basic-data-pilot/schema.json",
+  "experiments/2026-10-13-cisi2-basic-data-pilot/sample.json",
+  "experiments/2026-10-13-cisi2-basic-data-pilot/accuracy.json",
+  "experiments/2026-10-13-cisi2-basic-data-pilot/accuracy-full.json",
+  "experiments/2026-10-13-cisi2-basic-data-pilot/coverage.json",
+  "experiments/2026-10-13-cisi2-basic-data-pilot/object-flags.csv",
+  "experiments/2026-10-13-cisi2-basic-data-pilot/PROCEDURE.md",
+  "experiments/2026-10-13-cisi2-basic-data-pilot/RETROSPECTIVE.md",
+  "experiments/2026-10-13-cisi2-basic-data-pilot/REVIEW-CHANGES.md",
+  "experiments/2026-10-13-data-round-1-verification/REPORT.md",
+  "experiments/2026-10-13-data-round-1-verification/fc-crosswalk.json",
+  "experiments/2026-10-13-data-round-1-verification/swap-check.md"
+ ],
+ "retry_when": "Continue, do not repeat: claim the open half-column blocks in PROCEDURE.md (CISI 2 pp. 437-447, CISI 1 pp. 366-375) and read each twice blind. Re-read the bracketed cells of M-621 to M-947 only with a better witness (the printed volume or a higher-resolution scan). Track transcribed values only after a rights decision on CISI.",
+ "status_class": "source-review",
+ "area": "data"
+}

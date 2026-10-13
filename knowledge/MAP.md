@@ -153,7 +153,6 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 - [Q-1015](questions/Q-1015-lothal-rao-1985-tables.md) · open · data · Acquire Rao's Lothal report volumes and tabulate the seals and sealings
 - [Q-1016](questions/Q-1016-kalibangan-catalogue.md) · open · data · Extract the inscribed-object catalogue from the Kalibangan final reports
 - [Q-1017](questions/Q-1017-harp-harappa-context-registers.md) · open · data · Obtain HARP excavation registers for the Harappa inscribed objects
-- [Q-1018](questions/Q-1018-museum-open-access-harvest.md) · open · data · Harvest open museum records and images for Indus inscribed objects
 - [Q-1021](questions/Q-1021-chronology-calendar-ranges.md) · open · data · Map site period, phase and stratum labels to cited calendar ranges
 - [Q-1026](questions/Q-1026-post-catalogue-finds.md) · open · data · List inscribed objects published after the catalogues, 1987 to 2026
 - [Q-1028](questions/Q-1028-lipi-reuse-basis.md) · open · data · Establish a reuse basis for the Lipi export's record-level metadata
@@ -167,7 +166,6 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 - [Q-0037](questions/Q-0037-design-a-head-direction-seal-comparison.md) · open · language · Design a head-direction seal comparison
 - [Q-1010](questions/Q-1010-acquire-cisi-3-3.md) · open · data · Acquire the full CISI 3.3 (2022) catalogue for the Indo-Iranian borderlands
 - [Q-1012](questions/Q-1012-im77-web-application.md) · open · data · Record the IM77/IDF80 web application's contents and terms
-- [Q-1019](questions/Q-1019-unjoined-museum-records.md) · open · data · Resolve the 46 museum records that have no checked join to a local object
 - [Q-1020](questions/Q-1020-dimension-units-audit.md) · open · data · Record the unit, precision and source of every dimension value
 - [Q-1022](questions/Q-1022-depth-normalization.md) · open · data · Convert depth strings to metres against a named datum
 - [Q-1024](questions/Q-1024-finds-outside-south-asia.md) · open · data · Build an object table for Indus and Indus-style inscribed finds outside South Asia
@@ -187,6 +185,8 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 - [Q-1001](questions/Q-1001-cisi-plates-l161-m895.md) · done · Assemble the held CISI witnesses for the Lothal L-161 to L-170 sealings and seal M-895
 - [Q-1002](questions/Q-1002-acquire-mackay-marshall-seal-tables.md) · done · Acquire the machine-readable Mackay 1938 and Marshall 1931 seal tables at a pinned commit
 - [Q-1003](questions/Q-1003-join-mackay-marshall-to-cisi.md) · done · Join the Mackay and Marshall seal tables to CISI M-numbers and the local Mohenjo-daro objects
+- [Q-1018](questions/Q-1018-museum-open-access-harvest.md) · done · Harvest open museum records and images for Indus inscribed objects
+- [Q-1019](questions/Q-1019-unjoined-museum-records.md) · done · Resolve the 46 museum records that have no checked join to a local object
 
 ## Conjectures
 
@@ -207,8 +207,11 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 
 ### data
 
+- [CISI2-BASIC-DATA-PILOT-2026-10-13](registry/attempts/CISI2-BASIC-DATA-PILOT-2026-10-13.json) · source-review · Can the basic-data section of CISI 2 be transcribed from the held archive.org scan into one ro…
 - [CONTEXT-01](registry/attempts/CONTEXT-01.json) · source-review · Which physical-use and chronological comparisons can the preserved corpus support?
 - [DATA-INVENTORY-2026-10-12](registry/attempts/DATA-INVENTORY-2026-10-12.json) · source-review · What data does the project hold, how complete is the metadata for each inscribed object and fa…
+- [DATA-ROUND-1-FOLLOW-UP-2026-10-13](registry/attempts/DATA-ROUND-1-FOLLOW-UP-2026-10-13.json) · verified-computation · After the verification, are the museum and CISI 2 packages fit to publish, how does the CISI F…
+- [DATA-ROUND-1-VERIFICATION-2026-10-13](registry/attempts/DATA-ROUND-1-VERIFICATION-2026-10-13.json) · source-review · Do the two data-round packages reproduce their outputs, report correct coverage and agreement…
 - [DATASET-LANDSCAPE-01](registry/attempts/DATASET-LANDSCAPE-01.json) · source-review · Does a holistic Indus dataset already exist, how does the local collection compare, and what w…
 - [EVIDENCE-CENSUS-COLLECTIONS-01](registry/attempts/EVIDENCE-CENSUS-COLLECTIONS-01.json) · source-review · Do public museum catalogues, corpora and image archives index findable evidence for the Indus…
 - [EVIDENCE-CENSUS-SITES-01](registry/attempts/EVIDENCE-CENSUS-SITES-01.json) · superseded · Is all findable evidence for the Indus script indexed somewhere, and with how much archaeologi…
@@ -222,6 +225,7 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 - [HF-PUBLIC-RELEASE-01](registry/attempts/HF-PUBLIC-RELEASE-01.json) · record · Can the licensed chart, three frozen benchmarks and authored census/aggregate tables form a re…
 - [IMAGE-INDEX-AND-UNITS-2026-10-13](registry/attempts/IMAGE-INDEX-AND-UNITS-2026-10-13.json) · verified-computation · Which local image files show each face, as object photograph or impression, of which side, fro…
 - [MACKAY-MARSHALL-TABLES-2026-10-13](registry/attempts/MACKAY-MARSHALL-TABLES-2026-10-13.json) · verified-computation · What do the epachayan/indus-script transcriptions of Mackay's 1938 and Marshall's 1931 seal ta…
+- [MUSEUM-OPEN-ACCESS-2026-10-13](registry/attempts/MUSEUM-OPEN-ACCESS-2026-10-13.json) · source-review · Which Indus inscribed objects do museums with open data or keyless APIs publish, which local o…
 - [OBJECT-LEDGER-PILOT-01](registry/attempts/OBJECT-LEDGER-PILOT-01.json) · exploratory · Can a 200-carrier local pilot connect corpus faces, source-qualified aliases, museum records a…
 - [ROOT-19](registry/attempts/ROOT-19.json) · source-review · Which historical source joins are physically defensible?
 
@@ -570,6 +574,7 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 - [experiments/2026-10-12-transmission-hypothesis/review/RETROSPECTIVE.md](../experiments/2026-10-12-transmission-hypothesis/review/RETROSPECTIVE.md) · document · Review retrospective
 - [experiments/2026-10-13-bench/RETROSPECTIVE.md](../experiments/2026-10-13-bench/RETROSPECTIVE.md) · document · Shared harness retrospective
 - [experiments/2026-10-13-cisi2-basic-data-pilot/RETROSPECTIVE.md](../experiments/2026-10-13-cisi2-basic-data-pilot/RETROSPECTIVE.md) · document · Retrospective: CISI 2 basic-data pilot, 13 October 2026
+- [experiments/2026-10-13-data-round-1-verification/RETROSPECTIVE.md](../experiments/2026-10-13-data-round-1-verification/RETROSPECTIVE.md) · document · Retrospective: data round 1 verification
 - [experiments/2026-10-13-image-index-and-units/RETROSPECTIVE.md](../experiments/2026-10-13-image-index-and-units/RETROSPECTIVE.md) · document · Retrospective: image index and dimension units, 13 October 2026
 - [experiments/2026-10-13-mackay-marshall-tables/RETROSPECTIVE.md](../experiments/2026-10-13-mackay-marshall-tables/RETROSPECTIVE.md) · document · Retrospective: Mackay and Marshall seal tables, 13 October 2026
 - [experiments/2026-10-13-museum-open-access/RETROSPECTIVE.md](../experiments/2026-10-13-museum-open-access/RETROSPECTIVE.md) · document · Retrospective
