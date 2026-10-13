@@ -17,9 +17,9 @@ CLAIMS = E + '2026-10-12-published-claim-tests/'
 SAT = E + '2026-10-12-satellite-prospection/'
 ANCHOR = E + '2026-10-12-anchor-expansion/'
 
-CONDITION_NOTICES = ('THIRD_PARTY_NOTICES.md, knowledge/provenance/REDISTRIBUTION.md and knowledge/DATA.md section 7 '
-                     'still describe twenty published Lipi windows; update them to cover these 44 examples and keep '
-                     'them outside the CC0 dedication that REUSE.md now applies to project material.')
+CONDITION_NOTICES = ('THIRD_PARTY_NOTICES.md and knowledge/DATA.md section 7 describe twenty published Lipi windows; '
+                     'update them to cover these 44 examples and keep them outside the CC0 dedication that REUSE.md '
+                     'now applies to project material.')
 
 RULES = [
     # Keep local.
@@ -33,8 +33,8 @@ RULES = [
     # Track after an edit.
     ([E + '2026-10-12-seal-text-identity/review/REVIEW.md'], 'track-after-edit',
      'Line 32 gives a complete four-sign Lipi text with its CISI number (L-161). The October 11 rule allows complete '
-     'texts of at most three signs. Replace "(817-002-048-740)" with "(four signs; codes in the local Lipi record for '
-     'CISI L-161)" and append "Publication note, 13 October 2026: one code sequence was replaced by a pointer; the '
+     'texts of at most three signs. Replace the parenthesized four-code string after "for a four-sign text" with '
+     '"(four signs; codes in the local Lipi record for CISI L-161)" and append "Publication note, 13 October 2026: one code sequence was replaced by a pointer; the '
      'original review is preserved locally." The original bytes are backed up under '
      'data/raw/2026-10-13-publication-screen/originals/.', None),
     # Track, with file-level evidence worth recording.

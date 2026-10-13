@@ -15,7 +15,7 @@
 </div>
 {% else %}
 <div class="table-wrap"><table><thead><tr><th scope="col">ID</th><th scope="col">{{ 'Claim' if kind == 'conjecture' else 'Question' }}</th><th scope="col">Area</th><th scope="col">Status</th>{% if kind == 'conjecture' %}<th scope="col">Credence</th><th scope="col">Risk</th>{% else %}<th scope="col">Outcome</th>{% endif %}</tr></thead><tbody>
-{% for row in rows %}<tr data-id="{{ row.id }}"><td><a href="{{ row.url }}">{{ row.id }}</a></td><td>{{ row.claim if kind == 'conjecture' else row.question }}</td><td>{{ row.area }}</td><td><span class="badge {{ row.status }}">{{ row.status|label }}</span></td>{% if kind == 'conjecture' %}<td>{{ row.credence }}</td><td>{{ row.risk|label }}</td>{% else %}<td>{{ row.outcome }}</td>{% endif %}</tr>{% endfor %}
+{% for row in rows %}<tr data-id="{{ row.id }}"><td><a href="{{ row.url }}">{{ row.id }}</a></td><td>{{ row.title if kind == 'conjecture' else row.question }}</td><td>{{ row.area }}</td><td><span class="badge {{ row.status }}">{{ row.status|label }}</span></td>{% if kind == 'conjecture' %}<td>{{ row.credence }}</td><td>{{ row.risk|label }}</td>{% else %}<td>{{ row.outcome }}</td>{% endif %}</tr>{% endfor %}
 </tbody></table></div>
 {% endif %}
 <p><a href="{{ index_url }}">JSON index</a></p>

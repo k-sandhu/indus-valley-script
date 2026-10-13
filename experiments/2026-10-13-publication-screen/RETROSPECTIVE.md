@@ -16,6 +16,8 @@ The first email check ran over binary files and reported thirty random strings f
 
 Parallel contributors added 41 files and changed 83 within twelve minutes of the first freeze, and later changed `REUSE.md` to dedicate project material to CC0. The scans were rerun on a final inventory frozen at 05:18 UTC, and the conditions were revised for components that cannot carry a CC0 dedication. Files added after that freeze are outside the decisions and are listed in the report to the coordinator. A glob rule meant for satellite coordinates first captured the vendored Natural Earth files because `fnmatch` lets `*` cross directories; reordering the rules fixed it.
 
+The last step ran the three scanners over this package's own files. They found the four-sign text that decision D02 removes from the seal-text review, quoted in D02's own reason in `build_decisions.py` and `decisions.json`. By then the coordinator had already committed those versions in `feacf405` and pushed them with `34d680ac`, so the four codes are in the public history of those two files. The reason now points to the string without reproducing it, and the rescan of the working files found no sequence matches; removing the string from history would need the kind of filtered rewrite used on October 11. The credential hits in `PROTOCOL.md` and `scan_payloads.py` are the pattern names themselves.
+
 ## What a later screen should reuse
 
 The scanners take an inventory name and an output name, so a later screen can rerun them on a new freeze. The key-and-reading scan should run alongside the sequence scan whenever a package works with the Lipi export, since its key and readings are as unlicensed as its texts.

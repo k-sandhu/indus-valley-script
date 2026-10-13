@@ -10,7 +10,14 @@ Three files should stay local, one needs a one-line edit, and the remaining 3,57
 
 ## What stays local or changes
 
-The three allograph pair tables in `experiments/2026-10-12-published-claim-tests/allographs/run-2026-10-12/` (`pairs_k1.csv`, `pairs_k3.csv`, `pairs_k5.csv`) give each sign pair's root and letter value in the key published in the Lipi repository (`xlits.csv`, commit `fc8813a5`). Across its 2,259 rows, `pairs_k1.csv` names 440 of the key's 681 lettered signs; the roots agree with the key for 412 and the letter values for 311, and the k3 and k5 tables are subsets. The Lipi repository has no licence, so these tables stay local. The run's `summary.json`, `verification.json` and `REPORT.md` hold the aggregate results and stay tracked. Because `REPORT.md` links the tables, they are listed in [proposed-public-omissions.json](proposed-public-omissions.json), and [proposed-gitignore.txt](proposed-gitignore.txt) gives the ignore lines. A check with that file as `core.excludesFile` removed exactly these three paths from the untracked list.
+The three allograph pair tables in `experiments/2026-10-12-published-claim-tests/allographs/run-2026-10-12/` (`pairs_k1.csv`, `pairs_k3.csv`, `pairs_k5.csv`) give each sign pair's root and letter value in the key published in the Lipi repository (`xlits.csv`, commit `fc8813a5`). Across its 2,259 rows, `pairs_k1.csv` names 440 of the key's 681 lettered signs; the roots agree with the key for 412 and the letter values for 311, and the k3 and k5 tables are subsets. The Lipi repository has no licence, so these tables stay local. The run's `summary.json`, `verification.json` and `REPORT.md` hold the aggregate results and stay tracked. Because `REPORT.md` links the tables, they are listed in [proposed-public-omissions.json](proposed-public-omissions.json). The proposed ignore lines are below; `proposed-gitignore.txt` holds the same lines but is itself local under the existing `*.txt` rule. A check with that file as `core.excludesFile` removed exactly the three tables from the untracked list.
+
+```text
+/experiments/2026-10-12-published-claim-tests/allographs/run-2026-10-12/pairs_k1.csv
+/experiments/2026-10-12-published-claim-tests/allographs/run-2026-10-12/pairs_k3.csv
+/experiments/2026-10-12-published-claim-tests/allographs/run-2026-10-12/pairs_k5.csv
+/.claude/worktrees/
+```
 
 `experiments/2026-10-12-seal-text-identity/review/REVIEW.md` quotes one complete four-sign Lipi text with its CISI number, L-161, on line 32. The October 11 rule allows complete texts of at most three signs. The edit in decision D02 replaces the code string with a pointer to the local record and adds a dated publication note. The original bytes are preserved in `data/raw/2026-10-13-publication-screen/originals/`.
 
@@ -32,13 +39,17 @@ Sixteen files contain five or more distinct complete Lipi texts of two or three 
 
 ## Conditions and owner decisions
 
-Decisions D04, D06, D07, D09, D12 and D13 carry conditions. The notices (`THIRD_PARTY_NOTICES.md`, `knowledge/provenance/REDISTRIBUTION.md`, `knowledge/DATA.md` section 7) need to cover the 44 new Lipi examples, the twenty key examples, the CC BY-SA Cologne fragments and the Copernicus and WorldCover derivatives. `REUSE.md`, changed during this screen, now dedicates project material to CC0; it should exclude these components alongside the catalogue examples it already names. The payload audit tool needs `data/MANIFEST.json` allowed.
+Decisions D04, D06, D07, D09, D12 and D13 carry conditions. `THIRD_PARTY_NOTICES.md` and `knowledge/DATA.md` section 7 need to cover the 44 new Lipi examples, the twenty key examples, the CC BY-SA Cologne fragments and the Copernicus and WorldCover derivatives. `REUSE.md`, changed during this screen, now dedicates project material to CC0; it should exclude these components alongside the catalogue examples it already names. The payload audit tool needs `data/MANIFEST.json` allowed.
 
 The owner should decide three questions. The satellite exports publish 30 m coordinates of screened anomalies and two reconnaissance prospects near Ganweriwala, and the package does not discuss whether candidate locations should be public. The site generator's `--publish` command writes a local `gh-pages` branch; it adds no workflow, but AGENTS.md rules out deployment scaffolding. The four-sign text in the seal-text review could instead be accepted as one more bounded, attributed example.
 
 Outside this screen's scope, five files already published at HEAD (the privacy scanners and `check_review_fixes.py` in `experiments/2026-10-08-hf-public-release/`, including two history copies) contain the local part of the owner's personal address next to the word `gmail` inside regular expressions. The full address does not appear. Removing it from the public record would need edits to tracked files and a decision about history.
 
 The satellite viewer's `index.html` and its Sentinel-derived panel images are ignored by extension rules, so a fresh checkout has the viewer's scripts and data but cannot display it. Exceptions for them would be an owner choice; they are open-licensed derivatives with notices.
+
+## After the final freeze
+
+Contributors added 28 files and changed 8 after 05:18 UTC: the licence texts, `CITATION.cff`, `llms.txt`, the revised `REUSE.md`, `THIRD_PARTY_NOTICES.md`, `public-omissions.json` and `tools/audit_git_payload.py`, site-generator records, and the edited seal-text review. The same three scanners found no sequence, key, credential or address match in them, and the review now carries the D02 edit exactly. In commit `feacf405` the notices, `DATA.md` section 7 and the audit tool meet conditions D04, D06, D07 and D12, and the coordinator withheld the satellite candidate exports, which `THIRD_PARTY_NOTICES.md` now states. A sweep of every file added since `0f8a1734` for anomaly identifiers within 150 characters of coordinates at four or more decimals found one remaining case: line 29 of `experiments/2026-10-12-satellite-prospection/research/terrain-audit.md` gives B04-T0136 to six decimals, a terrain support whose peak lies 167 m from the Kalibangan census reference. These checks are outside `decisions.json`; their outputs are in the raw directory under `delta-post/`.
 
 ## Files
 
@@ -50,7 +61,7 @@ The satellite viewer's `index.html` and its Sentinel-derived panel images are ig
 | [scan_lipi_key.py](scan_lipi_key.py), [lipi-key-scan.json](lipi-key-scan.json) | Lipi key and reading counts per file |
 | [scan_payloads.py](scan_payloads.py), [payload-scan.json](payload-scan.json) | Credentials, addresses, embedded images, record fields, quotation candidates, earlier omissions and size |
 | [build_decisions.py](build_decisions.py), [decisions.json](decisions.json), [summary.json](summary.json) | Decision rules, per-entry evidence and totals |
-| [proposed-gitignore.txt](proposed-gitignore.txt), [proposed-public-omissions.json](proposed-public-omissions.json) | Lines and targets for the coordinator |
+| `proposed-gitignore.txt` (local), [proposed-public-omissions.json](proposed-public-omissions.json) | Lines and targets for the coordinator |
 | [RETROSPECTIVE.md](RETROSPECTIVE.md) | Approach, problems and repairs |
 
 Matched stretches, quotation candidates, key matches, the inventories and the backed-up originals are in the ignored `data/raw/2026-10-13-publication-screen/`. To reproduce from the repository root with the local corpora present: `python experiments/2026-10-13-publication-screen/freeze_inventory.py inventory-final.json`, then each scanner with `inventory-final.json` and its output name, then `build_decisions.py`. The scans find the encodings they were written for, and a file was opened by hand wherever a check fired or an asset's origin was not recorded.

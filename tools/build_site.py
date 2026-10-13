@@ -483,8 +483,9 @@ class Builder:
         readme = self.source.text('README.md')
         purpose = readme.split('\n', 1)[1].split('\n## ', 1)[0].strip()
         model = self.source.text('knowledge/WORKING-MODEL.md') if self.source.allowed('knowledge/WORKING-MODEL.md') else ''
+        model = model.replace('\r\n', '\n')
         headlines = []
-        for m in re.finditer(r'^## (.+)\n+(.+?)(?=\n\n|\Z)', model, re.M | re.S):
+        for m in re.finditer(r'^## ([^\n]+)\n+(.+?)(?=\n\n|\Z)', model, re.M | re.S):
             if re.search(r'\bCredence\s+[0-9]', m[2]):
                 headlines.append({'heading': m[1], 'body': self.rendered(m[2], 'knowledge/WORKING-MODEL.md', 'index.html')})
         bootstrap = next((line for line in readme.splitlines() if line.startswith('For agents:')), '')
