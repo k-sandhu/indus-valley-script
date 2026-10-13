@@ -1,0 +1,253 @@
+# Data: what the project holds, what exists elsewhere, and what each object record contains
+
+Inventory of 12 October 2026. The most recent published count with a stated basis is ICIT's 4,665 inscribed objects carrying 5,650 texts, reported in 2023 ([CAA 2023 abstract 76, p. 281](https://2023.caaconference.org/wp-content/uploads/sites/29/2023/04/abstract_book_v13.pdf#page=281)). It counts the objects in that database, and no source gives a current worldwide total. Against the local corpus, 1,032 of the 3,620 measured entries of CISI 1 and 2 have no identifier match, some of them aliases or non-script marks ([catalogue-coverage.csv](../experiments/2026-10-06-evidence-census/synthesis/catalogue-coverage.csv)), and objects found after the catalogues closed are recorded only in excavation reports. The project holds a transcription corpus of 4,695 provisional objects and 5,680 faces from 78 site labels, 8,722 photograph crops named by CISI number or by CISI volume and page, complete scans of CISI 1 and CISI 2, the Mahadevan 1977 concordance and the three Helsinki editions. For each object the site is almost always known (99.4%) and a CISI number usually (86.8%), but only 28.8% have all three dimensions, 50.6% a depth, 55.8% a period or phase label, 53.4% a local image, 5.8% a museum number, and none a calendar date. [Coverage summary](../experiments/2026-10-12-data-inventory/run-2026-10-12/summary.json), `headline_object_coverage_percent`.
+
+Machine-readable versions of this page are [data/MANIFEST.json](../data/MANIFEST.json), which lists 85 sources (33 held, 9 partly held, 9 project outputs and 34 not held), and `python tools/fetch_data.py --list`. The measurements come from the [data inventory package](../experiments/2026-10-12-data-inventory/README.md); numbers attributed to earlier packages link to their reports. Work on these gaps is listed as question cards [Q-1001](questions/Q-1001-cisi-plates-l161-m895.md) to [Q-1030](questions/Q-1030-object-register-build.md), ranked in section 5.
+
+**Units used throughout.** A *face* is one row of the pinned Lipi export: one inscribed side or view as that export records it. An *object* is one Lipi family (`object_family_id`); families group faces by the export's numbering, and physical identity across catalogues has not been adjudicated, so object counts are provisional. A *catalogue entry* is a numbered item in a printed catalogue such as CISI; an entry missing from the local index can be an alias, an extra photograph, a non-script mark or a genuinely missing object. A value is *usable* when it is neither empty nor a placeholder (`-`, `--`, `- -`, `?`, `??`, `Unknown`, or a zero dimension); `None` in the motif fields is an asserted absence and counts as usable. These rules are fixed in the [protocol](../experiments/2026-10-12-data-inventory/PROTOCOL.md).
+
+## 1. Data we have
+
+### Inscribed-object corpora and catalogues
+
+| Source | Version and size | Where | Rights | Identifiers and fields | Known defects |
+|---|---|---|---|---|---|
+| [Lipi export](https://github.com/yajnadevam/lipi) | Commit `fc8813a`; 5,680 faces, 4,695 objects, 78 sites, 19,946 sign positions; 8,722 image files, of which 6,570 are indexed under 3,318 CISI keys | Local-only `data/lipi/` | No licence at the pin; image crops reproduce CISI photographs | Lipi family and face ids, raw CISI reference, `excavation-idno`; 33 metadata keys: region, site, area, block, room, depth, time, period, phase, material, colour, shape, cross-section, boss, preservation, motif (`symbol`, `cult`), object type, sides, condition, completeness, direction, sizes in inches and millimetres | Families are not adjudicated physical objects; `excavation-idno` mixes registrations, citations (146 hyphen-led strings) and lots; zeros stand for missing sizes; interpretive columns (Sanskrit, translation) must stay out of observational work |
+| [Mayig corpus](https://github.com/mayig/indus-valley-script-corpus) | Commit `ad2f1e2`; 179 Mohenjo-daro unicorn-seal faces, 186 lines, 1,003 tokens | Local-only `data/mayig/` | MIT, Michael Carlson 2024; photographs separate | CISI number with side; per-sign features, damage and uncertainty | Restricted to one site and motif; default uncertainty values; shares photographs with Lipi |
+| [Earlier Indus website export](https://github.com/yajnadevam/indus-website) | Commit `2434249`; 2,543 records, 299 with a museum value | Local-only `data/indus_website/` | GPL-3.0 repository; imported data coverage unresolved | SEALID, CISI, site, material, museum, width, height, thickness | SQL contains destructive statements; parse as text |
+| Project normalized files | 20 files incl. `lipi_observed_faces.jsonl` (SHA256 `1220f559…`) | Local-only `data/normalized/` | Mixed: our transformations of the above | Lipi, Mayig and website records with parsed direction, completeness and line flags | Regenerating needs fresh clones; normalizers call `git rev-parse` |
+| Koskenniemi and Parpola 1979, *Corpus of Texts in the Indus Script* | 180 PDF pages | Local-only `research/corpus/primary/` | CC BY 4.0 | 1979 text numbers, Finnish sign codes | Printed glyphs; OCR unusable for signs |
+| Koskenniemi and Parpola 1980, *Documentation and Duplicates* | 98 pages | Local-only | Unverified | Source and duplicate documentation | None recorded |
+| Koskenniemi and Parpola 1982, *A Concordance to the Texts in the Indus Script* | 201 pages, image-only | Local-only | CC BY 4.0 | Concordance | No text layer |
+| [Chart atlas and reference v2.1](../output/chart_atlas/index.html) | 687 cells, 33 medium-confidence | Tracked | CC BY 4.0 derivative | Cell `(page, column, row)`, class, code | AI annotation without expert check ([package P](../experiments/2026-10-08-chart-reference-audit/PROTOCOL.md)) |
+| 1979 transcription proposals (package M v3) | 11,769 line proposals, 54,384 unit windows, 0 released | Local-only and private Hugging Face backup | CC BY 4.0 parent | Page, line and occurrence keys | Fails four of five frozen release criteria ([report](../experiments/2026-10-07-helsinki1979-digitization/README.md)) |
+| Joshi and Parpola 1987, *Corpus of Indus Seals and Inscriptions. 1. Collections in India* (CISI 1) | Complete IGNCA scan, 862 PDF pages | Local-only `research/literature/sources/` | Copyright 1987 Finnish Academy; photographs owned by institutions | CISI numbers; basic data with museum and excavation numbers | The scan repeats one 431-page book scan; errata on printed p. 375 ([counting notes](../research/literature/cisi1_counting_and_errata.md)) |
+| Shah and Parpola 1991, *Corpus of Indus Seals and Inscriptions. 2. Collections in Pakistan* (CISI 2) | archive.org scan, 60.1 MB | Local-only `data/raw/2026-10-06-evidence-census/…/cisi2-archive.pdf` | Copyright 1991 Finnish Academy | CISI numbers M-621–M-1659, H-266–H-1019 and other Pakistani sites | Page completeness not yet checked against contents |
+| CISI 3.1 Harappa introduction (Kenoyer and Meadow 2010) | 15-page excerpt and 17-page HARP version | Local-only | Unverified | HARP year/item and lot numbers | Catalogue plates of CISI 3.1 not held |
+| CISI 3.3 (2022) excerpt | 40 pages (Desset), no plates | Local-only | Unverified | None | Catalogue not held |
+| Mahadevan 1977, *The Indus Script: Texts, Concordance and Tables* | archive.org PDF, 36.3 MB; 2,906 selected objects from a 3,455-object card catalogue | Local-only | Unverified | M77 text numbers, site table | No per-object crosswalk extracted |
+| Fuls 2010 ICIT help | 16 pages | Local-only | Unverified | ICIT field definitions | None recorded |
+
+Hashes, pins and acquisition routes for every row are in the [manifest](../data/MANIFEST.json); the earlier source account is [SOURCES.md](provenance/SOURCES.md).
+
+### Project registers, frames and releases
+
+| Source | Size | Where | Notes |
+|---|---|---|---|
+| [Evidence census](../experiments/2026-10-06-evidence-census/synthesis/REPORT.md) (6–7 October) | 115 site or provenance entities; 3,620 CISI 1 and 2 entries measured, 2,588 matched; 114 museum originals, 68 confirmed joins | Tracked registers; raw museum responses and scans local | The museum join count is a lower bound; 46 records unresolved |
+| [Object ledger pilot](../experiments/2026-10-07-object-ledger/README.md) | Two 200-carrier ledgers, 6,991 and 7,004 assertions | Tracked without payloads; full registers local | Schema version 2 and validator are the starting point for the register (Q-1030) |
+| [Lothal sealing frame](../experiments/2026-10-02-six-hour/lothal-physical-use/README.md) | 93 sealings, 68 joined objects, 86 faces | Coding tracked; Frenez and Tosi 2005 PDF local | Table and prose totals differ (133 vs 130 impressions) |
+| [Harappa tablet frame](../experiments/2026-10-02-six-hour/harappa-object-frame/README.md) | 22 objects, 66 faces (H2218–H2239) | Tracked | Secondary-dump qualification |
+| [Kanmer witnesses](../experiments/2026-10-02-six-hour/kanmer-physical-use/SOURCES.md) | 2010–2023 reports and source history | Local | Final report object pages not held |
+| [Hugging Face release 0.3.1](../experiments/2026-10-08-hf-public-release/README.md) `ksaw008/indus-reference-benchmarks` | 23 configurations, 3,308 rows, 1,142 images | Release folder tracked; hosted copy private (HTTP 401 to an anonymous request on 12 October) | CC BY 4.0 edition content, CC0 project data, Unlicense code |
+| Private backup `ksaw008/indus-research-data` | 1,034 package A files, 3.09 GB, and large frozen files | Private Hugging Face | Restore steps in [REPRODUCING.md](../REPRODUCING.md) |
+
+### Excavation reports, comparison corpora and context data held locally
+
+The local copies include Marshall 1931 (*Mohenjo-daro and the Indus Civilization*, with the seal tabulation on vol. II pp. 402–405), Vats 1940 (*Excavations at Harappa*, text and plates), Mackay 1943 (*Chanhu-daro Excavations*), a 127 MB scan uploaded to the Internet Archive as a preliminary January 2015 Dholavira report, 938 pages without a title page, which the census used in place of Bisht 2015, *Excavations at Dholavira (1989–90 to 2004–05)*, without confirming that the two are the same text, *Excavations at Kalibangan: The Harappans (1960–69), Part II* (876 pages), Rao 1963 on Rangpur, Frenez and Tosi 2005 on the Lothal sealings, the 2018 Nuhato report, the Shikarpur 2008–09 report, Jansen and Urban 1987, Gadd 1932 on the Ur seals, Laursen 2010, Meadow and Kenoyer 2000, Parpola 2011 and Airavati 2008. Across all packages there are 365 local PDF files, 299 distinct by SHA256 (2.7 GB of distinct content); the full hash list is local in `data/raw/2026-10-12-data-inventory/holdings-v1/pdf-hashes.jsonl` and the counts are in the [holdings summary](../experiments/2026-10-12-data-inventory/run-2026-10-12/holdings/holdings-summary.json).
+
+| Kind | Source and size | Rights |
+|---|---|---|
+| Comparative marks | Tamil Nadu graffiti portal snapshot (48 API reads; 42 base forms, 546 variants, 1,522 composites, 9,345 summed occurrences; the portal states 15,184 graffiti-bearing potsherds from 140 sites); Rajan and Sivanantham 2026, *Inscribed Potsherds of Tamil Nadu: Graffiti and Tamiḻi*, vols I–II; Rajan and Sivanantham 2025, *Indus signs and graffiti marks of Tamil Nadu: a morphological study* ([report](../experiments/2026-10-02-connections-and-priority/south-india/REPORT-reviewed-v1.md)) | Unverified |
+| Non-linguistic controls | Sproat 2014 corpora: 10,142 weather forecasts, 180 totem strings | Apache 2.0 |
+| Bronze Age editions | ORACC Ur III (80,181 entries; 3,000 sampled), Old Babylonian letters (121), Rīm-Anum (378); AES and AED-TEI Egyptian; LiBER Linear B (5,638 catalogue entries, 512 documents) ([sources](../experiments/2026-10-12-bronze-age-comparison/SOURCES.md)) | ORACC CC0; AES and AED-TEI CC BY-SA 4.0; LiBER limited scholarly reuse |
+| Language corpora | Digital Corpus of Sanskrit texts, Monier-Williams (Cologne), four Perseus Latin texts, a Sangam Tamil table ([package](../experiments/2026-10-12-published-claim-tests/README.md)) | Recorded in that package |
+| Numerical control | Puruchuco khipu repository and database snapshot | Code MIT; database unresolved |
+| Weights | Parse of Ascalone 2022: 2,058 entries, 938 Greater Indus, plus a Gulf supplement ([package](../experiments/2026-10-06-weight-metrology/README.md)) | Source PDF local; parse tracked |
+| Sites and settlement | Census site register (115 entities); settlement prospection source register (72 records, 50 local witnesses, 21 survey regions); satellite inputs (Copernicus DEM, ESA WorldCover) and MAHSA query responses ([settlement package](../experiments/2026-10-11-settlement-prospection/README.md)) | WorldCover CC BY 4.0; MAHSA database not obtained |
+
+## 2. Metadata coverage
+
+Measured on 12 October 2026 from `data/normalized/lipi_observed_faces.jsonl` (hash verified), the Lipi image index and the older website export. The table gives the percentage of objects with a usable value; the full face-level and object-level results for every field, object type and site are in the [run directory](../experiments/2026-10-12-data-inventory/run-2026-10-12/). Excavation number means a usable `excavation-idno` string; spatial unit means any of area, block or room; chronology means any of `time`, `period` or `phase`; image means at least one indexed Lipi crop under the object's CISI key; museum means a `MUSEUM` value in the older export for the same CISI key.
+
+| Group | Objects | CISI | Excav. no. | Spatial unit | Depth | Chronology | Material | Any size | All 3 sizes | Image | Museum |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| All objects | 4,695 | 86.8 | 89.6 | 76.3 | 50.6 | 55.8 | 82.5 | 76.6 | 28.8 | 53.4 | 5.8 |
+| Seals | 2,239 | 89.7 | 90.5 | 85.6 | 72.3 | 55.0 | 81.7 | 92.5 | 43.0 | 69.5 | 9.5 |
+| Tablets, bas-relief | 709 | 96.3 | 95.6 | 75.6 | 41.2 | 63.9 | 72.8 | 91.7 | 26.5 | 50.8 | 2.5 |
+| Tablets, incised | 527 | 92.8 | 94.3 | 85.6 | 45.0 | 83.9 | 81.4 | 89.2 | 17.3 | 33.8 | 1.1 |
+| Tablets, copper | 190 | 94.2 | 80.0 | 77.4 | 27.4 | 10.5 | 99.5 | 94.2 | 11.6 | 88.4 | 15.3 |
+| Tags and sealings | 213 | 59.2 | 63.8 | 45.1 | 35.2 | 40.4 | 74.6 | 40.8 | 8.9 | 43.2 | 0.9 |
+| Pottery | 630 | 70.2 | 85.9 | 49.7 | 7.9 | 50.5 | 92.4 | 14.4 | 7.3 | 16.8 | 0.8 |
+| Other | 187 | 79.1 | 93.6 | 65.8 | 27.3 | 38.0 | 88.8 | 26.2 | 11.2 | 26.7 | 1.1 |
+| Harappa | 1,921 | 90.2 | 97.4 | 73.0 | 38.6 | 71.8 | 82.2 | 73.4 | 14.1 | 42.6 | 0.9 |
+| Mohenjo-daro | 1,795 | 97.2 | 95.7 | 91.0 | 72.4 | 41.6 | 88.9 | 86.9 | 41.0 | 73.8 | 12.0 |
+| Dholavira | 230 | 0.9 | 18.7 | 69.6 | 40.9 | 59.6 | 51.7 | 65.2 | 35.7 | 0.9 | 0.0 |
+| Kalibangan | 197 | 100.0 | 91.9 | 84.3 | 25.9 | 77.7 | 91.4 | 66.5 | 52.8 | 42.6 | 1.0 |
+| Lothal | 182 | 98.4 | 98.9 | 50.5 | 46.7 | 53.3 | 79.7 | 72.5 | 14.3 | 90.1 | 1.1 |
+| Chanhu-daro | 72 | 100.0 | 100.0 | 95.8 | 94.4 | 0.0 | 100.0 | 97.2 | 83.3 | 45.8 | 34.7 |
+| 72 other sites | 298 | 49.3 | 47.0 | 20.1 | 11.7 | 36.2 | 60.4 | 48.7 | 23.8 | 28.2 | 4.0 |
+
+Source: [compact-object-table.csv](../experiments/2026-10-12-data-inventory/run-2026-10-12/compact-object-table.csv). Object type follows the export's `type` code (`SEAL*`, `TAB:B`, `TAB:I`, `TAB:C`, `TAG*`, `POT*`); no object mixes type groups or sites across its faces.
+
+**Fields not in the table.** Colour is usable for 34.9% of objects, cross-section 29.7%, boss 31.5%, shape 75.1%, room or grid 39.7%, block or house 30.3%, motif (`symbol`, including asserted absence) 89.4%. No local file carries a calendar date, a radiocarbon sample link, a mass, an item-level image licence or a bibliography reference per object ([summary](../experiments/2026-10-12-data-inventory/run-2026-10-12/summary.json), `headline_object_coverage_percent`). Face-level percentages are close to the object-level ones because faces repeat their object's metadata.
+
+**Placeholders and units.** Missing values are written as `-` (period 3,362 faces, colour 3,672, boss 4,168), `--` (room or grid 3,489, block or house 4,167), `- -` (depth 2,870), `?` (completeness 667) and `0` (horizontal size 1,810, vertical 1,681, thickness 3,586) ([placeholders.csv](../experiments/2026-10-12-data-inventory/run-2026-10-12/placeholders.csv)). The millimetre sizes are mostly conversions: 5,206 of 5,434 paired values equal the inch field times 25.4 within 0.6 mm, so their precision is that of the original inch record. Thickness is printed as a range such as `5 - 9` on 530 faces; this inventory counts a range as usable, and the census's plain-number rule gives 4,441 faces with any size and 1,151 with all three, as the census reported. Depths mix feet (2,557 usable faces), metres (72) and other forms (181, with 50 surface finds), measured from different datums at different excavations ([cross-source.json](../experiments/2026-10-12-data-inventory/run-2026-10-12/cross-source.json), `lipi_inch_vs_mm_fields`; [summary](../experiments/2026-10-12-data-inventory/run-2026-10-12/summary.json), `flags`).
+
+**Conflicts.** Among the 902 objects with more than one face, the faces never disagree on an object-level field; they differ only on the face-level fields completeness (107 objects) and direction (94) ([conflicts.json](../experiments/2026-10-12-data-inventory/run-2026-10-12/conflicts.json)). Against the older website export (2,375 shared CISI keys), site agrees for all keys once the spelling Chanhujo-daro is aliased to Chanhu-daro, material agrees wherever both have a value (2,029), and sizes agree for 2,018 objects and differ for 206. Mayig and Lipi agree on site for all 179 Mayig faces. These are derivatives of shared upstream records, so agreement does not verify a value against the object. The census's comparison with museum records found one site, four material, five dimension and nine sign-count disagreements among 61 joined records ([join-summary.json](../experiments/2026-10-06-evidence-census/synthesis/join-summary.json), `comparisons`).
+
+**Images.** The 8,722 local image files are photograph crops whose names give a CISI number and side or a CISI volume 1 or 2 page. The index names 3,318 CISI keys, all with existing files; 2,152 files are outside the index, 297 of them named only by volume and page. By exact CISI key 2,509 objects (53.4%) have an image, and 2,483 have at least as many side labels in their file names as the export's side count, an approximate measure of complete side coverage. Dholavira's objects lack CISI keys and therefore images. The October 2 readiness audit counted 2,507 objects under an exact raw key; the difference of two comes from whitespace trimming here ([summary](../experiments/2026-10-12-data-inventory/run-2026-10-12/summary.json), `images`).
+
+**Museum records.** The census saved 114 online records of original objects (National Museum New Delhi 76, Indian Museum Kolkata 18, British Museum 6, Penn 5, Metropolitan 5, Louvre 4) and confirmed 68 joins to local objects by published concordance, excavation number or plate; 46 remain open. Of the 114, all have an accession and material, 108 a date label, 89 dimensions and 13 a bibliography ([field-completeness.csv](../experiments/2026-10-06-evidence-census/synthesis/field-completeness.csv)).
+
+## 3. Data that exists and we do not have
+
+The tables group sources by kind. Entries come from the evidence census and from web checks made on 12 October 2026; each check's exact page title, URL, retrieval state (opened or search snippet) and saved witness are in [sources.json](../experiments/2026-10-12-data-inventory/sources.json) under the ID given in the first column, and each source has a manifest entry with its access route. "Effort" is the work needed to make the source usable for the object record once access is settled.
+
+### Corpora, concordances and databases
+
+| Source (check) | Contents and size | Access and terms | Adds per object | Effort | Card |
+|---|---|---|---|---|---|
+| ICIT, *Interactive Corpus of Indus Texts* (W05) | 4,665 objects, 5,650 texts, 17,966 legible sign occurrences and 16,015 photographs or drawings in 29 tables (CAA 2023); 4,537 objects and 5,509 texts in 2021 | Database returns HTTP 401; access by request to the administrator; guest access was limited to ten records in 2010; no stated terms | ICIT id, CISI and excavation numbers, findspot, material, type, preservation, iconography, images | Days after access; the request is an owner decision | [Q-1011](questions/Q-1011-icit-access-and-fuls-wells-corpora.md) |
+| Koshy, machine-readable seal catalogues from Mackay (1938) and Marshall (1931): GitHub `epachayan/indus-script` at `5c14a01`, Zenodo DOI 10.5281/zenodo.23281781 (D01, W60) | 709 Mackay and 560 Marshall table rows; 531 plate codings | Public; transcribed tables CC BY 4.0, code MIT; produced by an AI model with OCR cross-checks, field numbers and depths unverified | Size, material, block/house/room, level or depth, field number for Mohenjo-daro seals | Minutes to acquire, hours to join and check | [Q-1002](questions/Q-1002-acquire-mackay-marshall-seal-tables.md), [Q-1003](questions/Q-1003-join-mackay-marshall-to-cisi.md) |
+| *The Indus Script (IM77)* web application, IndusScript.in (W01) | Mahadevan's corpus updated as IM77/IDF80, with concordance and pair and triplet statistics; harappa.com reports 2,906 objects, 2,911 with IDF80 | Public browser application (RMRL, 2021); no export, API or stated terms | M77 and IDF80 numbers, site group, object and field-symbol categories | Hours for a field and terms record | [Q-1012](questions/Q-1012-im77-web-application.md) |
+| RMRL expanded Indus concordance (W02, W03) | Listed as planned by the Iravatham Mahadevan Chair, established 2025; the *Journal of Indus Studies* started in October 2025 | No release found | Unknown | Watch | [Q-1012](questions/Q-1012-im77-web-application.md) |
+| Fuls 2023, *Corpus of Indus Inscriptions* and *A Catalog of Indus Signs* (W14) | Printed ICIT derivatives; a reviewer reports each inscription listed by find place with its CISI identifier | Purchase, print or Kindle | ICIT and CISI ids, find place, type | Days | [Q-1011](questions/Q-1011-icit-access-and-fuls-wells-corpora.md) |
+| Wells 2011 and 2015 (W12, W13) | Sign list and corpus analyses based on ICIT; only the 2015 publisher sample is held | Purchase | Wells numbering (print) | Hours | [Q-1011](questions/Q-1011-icit-access-and-fuls-wells-corpora.md) |
+
+### Printed catalogues not held or held in part
+
+| Source (check) | Contents and size | Access and terms | Adds per object | Effort | Card |
+|---|---|---|---|---|---|
+| CISI 3.1 (2010), *Part 1: Mohenjo-daro and Harappa* (W08) | New Mohenjo-daro and Harappa material including HARP finds; 3,761 black-and-white and 125 colour photographs, 154 drawings | Print only (Tiedekirja, Helsinki); volumes 1, 2, 3.1 and 3.2 offered together for 300 EUR in 2020; no open access | Photographs of every side, CISI and excavation numbers | Purchase decision; days to transcribe | [Q-1008](questions/Q-1008-acquire-cisi-3-1.md) |
+| CISI 3.2 (2019) (W09) | Shahr-i Sokhta, Mundigak, Mehrgarh, Nausharo, Sibri, Dauda-damb, Chanhu-daro, Ahar, Balathal, Gilund, Kalibangan, Rojdi; 1,472 photographs, 535 drawings | Print only, 160 EUR (2020) | Photographs, CISI and excavation numbers for these sites | Purchase; days | [Q-1009](questions/Q-1009-acquire-cisi-3-2.md) |
+| CISI 3.3 (2022), Indo-Iranian borderlands (W10) | Eastern Iran, Turkmenistan, Tajikistan, Uzbekistan, Afghanistan; a 40-page excerpt is held | Print only | Photographs and collections for finds outside India and Pakistan | Purchase; days | [Q-1010](questions/Q-1010-acquire-cisi-3-3.md) |
+| CISI 3.4 (W11) | Called the final part in a review (snippet only); not published by 12 October 2026 | None | Unknown | Watch | [Q-1024](questions/Q-1024-finds-outside-south-asia.md) |
+| Kjærum 1983, *Failaka/Dilmun. The Second Millennium Settlements, Volume 1:1: The Stamp and Cylinder Seals* (W54) | Failaka seal catalogue | Print; no digital copy found | Catalogue numbers, findspots, plates for Gulf finds | Library; days | [Q-1024](questions/Q-1024-finds-outside-south-asia.md) |
+| SAHI Tell Jokha 2017 report, Fig. 6.61 | Object TJ17-PRO-S56, a community lead ([SOURCES.md](provenance/SOURCES.md)) | Not located | Registration, layer, material | Hours once found | [Q-1024](questions/Q-1024-finds-outside-south-asia.md) |
+
+The CISI series has no open-access edition, and HathiTrust lists volumes 1 and 2 as search-only (W06, W07); the project's copies of CISI 1 and 2 are public scans whose reuse status is unverified.
+
+### Excavation reports and archives
+
+| Source (check) | Contents | Access and terms | Adds per object | Effort | Card |
+|---|---|---|---|---|---|
+| Mackay 1938, *Further Excavations at Mohenjo-daro* (W30) | Seal tabulation in vol. I pp. 369–391; plates in vol. II | Internet Archive scans; the uploaders' CC0 tags do not settle copyright | Findspots, levels, field numbers; the check for the Koshy tables | Hours | [Q-1003](questions/Q-1003-join-mackay-marshall-to-cisi.md) |
+| Rao, *Lothal: A Harappan Port Town*, MASI 78, Parts 1 (1979) and 2 (1985) (W32) | Seal and sealing catalogue; the Part 1 scan lacks its plates | Internet Archive | Registrations, findspots, phases for Lothal | Days | [Q-1015](questions/Q-1015-lothal-rao-1985-tables.md) |
+| Kalibangan: *The Early Harappans* (2003, MASI 98) and *The Harappans (1960–69), Part I* (W33) | Part II is held; the 2003 volume is on the Internet Archive; Part I is known from a PDF address in a search result and a bookseller listing | Public scan (2003); Part I unconfirmed | Strata and registrations | Days | [Q-1016](questions/Q-1016-kalibangan-catalogue.md) |
+| Farmana 2006–08; Nath, Rakhigarhi 1997–2000; Surkotada (MASI 87); Kanmer chapter 6; Wheeler's Harappa 1946 report (W35, W36, W37, W39, W41) | Excavation reports with expected, unverified inscribed-object entries | Internet Archive | Registrations and contexts for post-catalogue finds | Days each | [Q-1026](questions/Q-1026-post-catalogue-finds.md) |
+| Bagasra/Gola Dhoro, Banawali, Kotada Bhadli, Khirsara, Rakhigarhi 2011–16 (W36, W38, W40, W43) | No final report found | Interim reports, IAR entries and articles | Partial contexts | Days | [Q-1026](questions/Q-1026-post-catalogue-finds.md) |
+| HARP excavation registers (W29) | Item, lot and context records for Harappa since 1986 | No public dataset found; harappa.com images by permission, usually free for non-commercial scholarship | Lots, deposits, associated finds | A request is an owner decision | [Q-1017](questions/Q-1017-harp-harappa-context-registers.md) |
+| Aachen Mohenjo-daro documentation; ASI prints at the British Library (Photo 685) (W48, W49) | Photographic and field archives | No online catalogue found | Images, field registers | Institutional request | [Q-1017](questions/Q-1017-harp-harappa-context-registers.md) |
+
+### Museum collections and image archives
+
+| Source (check) | Indus inscribed objects found | Terms | Card |
+|---|---|---|---|
+| Metropolitan Museum, Collection API v1.1 (W17) | Five seals (49.40.1–4, 1984.482), flagged public domain, with images; the v1 search was retired on 1 October 2026 | CC0 | [Q-1018](questions/Q-1018-museum-open-access-harvest.md) |
+| Cleveland Museum of Art, Open Access API (W24) | Three inscribed seals (1964.104, 1973.160, 1973.161) | CC0 | [Q-1018](questions/Q-1018-museum-open-access-harvest.md) |
+| Penn Museum, collections data download (W19) | 34 records tagged Indus Script, many of them Chanhu-daro items on loan from MFA Boston; full CSV 144 MB, updated 7 October 2026 | Data CC BY 4.0; images for non-profit and educational use | [Q-1018](questions/Q-1018-museum-open-access-harvest.md) |
+| British Museum Collection Online (W18) | 59 keyword hits for "indus seal", mixed with casts; for example 1947,0416.7 | CC BY-NC-SA 4.0 only where marked | [Q-1018](questions/Q-1018-museum-open-access-harvest.md) |
+| Victoria and Albert Museum API (W28) | Mohenjo-daro seal, fragment and impression (IS.8:1-1951, IS.8A-1951, IS.8:2-1951) | Non-commercial use | [Q-1018](questions/Q-1018-museum-open-access-harvest.md) |
+| Louvre; MFA Boston (W20, W25) | Not counted; scripted search was blocked | Louvre record text Etalab, images restricted; MFA non-commercial | [Q-1018](questions/Q-1018-museum-open-access-harvest.md) |
+| National Museum New Delhi, Indian Museum Kolkata, Pakistani museums (W21, W22, W27) | No online catalogue of Indus objects found | Not applicable | [Q-1005](questions/Q-1005-cisi1-basic-data-table.md), [Q-1006](questions/Q-1006-cisi2-basic-data-table.md) |
+| Wikimedia Commons, Category:Indus civilization seals (W50) | 51 files in the main category | Mixed per file: 14 CC BY-SA 3.0, 12 public domain, 12 CC BY-SA 4.0, 9 CC0, 4 other | [Q-1018](questions/Q-1018-museum-open-access-harvest.md) |
+| Smithsonian Open Access (W23) | Five seal casts only | CC0 | None |
+
+### Studies with object-level data, and recent material
+
+Jamison, Uesugi and Yamaguchi 2023, "Unicorns and seals: New multivariate approaches to exploring patterned stylistic variation in the Indus Civilization" (*Archaeological Research in Asia* 36, 100486) is under Elsevier copyright, and its supplementary files were not reachable (W45). A public GitHub repository (`dmahesh2869/harappan-seal-analysis`) republishes per-seal unicorn attributes that a search snippet traces to Jamison's 2017 dissertation, with no licence asserted (W46). Konasukawa and Koiso 2018, "The size of Indus seals and its significance", is a purchase (W47). These are the routes to carving-style and size data for seals ([Q-1025](questions/Q-1025-seal-size-and-style-data.md)).
+
+The 12 October searches found no newly reported inscribed Indus seal or new corpus for 2024–2026 and no newer Mahadevan concordance (W61). Tamil Nadu announced a US$1 million decipherment prize on 5 January 2025, with no data release found (W57, news snippets). Recent derived datasets on Hugging Face and Zenodo (W51, W53) repackage the Lipi, website or Mayig exports or trace published photographs; they add no independent objects. Dixit and colleagues (2025, *Journal of Computer Applications in Archaeology*) report 963 annotated seal images whose public release was not verified (W52). Objects published after the CISI site ranges closed appear only in excavation reports and *Indian Archaeology – A Review*; collecting them is [Q-1026](questions/Q-1026-post-catalogue-finds.md).
+
+## 4. Target object record
+
+The project aims for one record per physical object, with separate rows for faces, images, identifiers and contexts and a `value_status` for every field (`observed`, `catalogued`, `inferred`, `unknown`, `conflicting`, `not-applicable`, with a reason for unknowns). This follows the observation model in [context-data-plan.md](directions/context-data-plan.md) and schema version 2 of the [object ledger pilot](../experiments/2026-10-07-object-ledger/README.md). Each assertion carries its source, page or record locator and observer. Current coverage is the object-level share in the local corpus unless stated.
+
+| Field | Definition and values | Current coverage | Best source to fill it |
+|---|---|---|---|
+| `object_id` | Project key for one physical object | Provisional (Lipi family), 100% | Register build (Q-1030) |
+| `identifiers` | Every catalogue and registration id with relation type (`same-object`, `extra-photo`, `impression-of`, `possible-match`) | CISI 86.8%; M77, 1979 and ICIT numbers not linked per object | CISI basic data, Mahadevan 1977, Helsinki 1980 (Q-1005, Q-1006, Q-1013) |
+| `excavation_registration` | Excavator's item number, separate from lot and citation | 89.6% raw strings, mixed with citations | CISI basic data; excavation tables (Q-1003, Q-1014, Q-1016) |
+| `museum` | Holding institution and accession number | 5.8% (older export); 68 census joins | CISI basic data; museum catalogues (Q-1005, Q-1018, Q-1019) |
+| `publications` | Report, plate, figure or table where the object is published | Not recorded per object | Excavation reports, CISI, M77 (Q-1013) |
+| `object_type` | Manufacture class: seal (square, rectangular, cylinder), tablet (bas-relief, incised, copper), tag or sealing, pottery, other | 99.98% | CISI; excavation reports |
+| `material` | Controlled list: steatite, faience, clay, terracotta, copper, ivory, bone, stone, shell, other | 82.5% | CISI basic data; museum records |
+| `shape`, `cross_section`, `boss` | Controlled shape terms; boss and perforation type | 75.1%, 29.7%, 31.5% | CISI plates; museum records |
+| `dimensions` | Length, width, thickness in mm, with unit of record, precision and source | Any 76.6%; all three 28.8% | Mackay and Marshall tables; CISI basic data; museum (Q-1003, Q-1020) |
+| `mass` | Grams, with instrument and date of weighing | 0% | Museum records; new measurement |
+| `preservation` | complete, chipped, fragment, damaged; completeness of each face | 99.8% | CISI plates |
+| `faces` | One row per side: label (A, B, C), inscribed or iconographic or plain, line count, direction | Side count 100%; per-side description partial | CISI plates and captions (Q-1004) |
+| `images` | Per face: source, page or URL, polarity (seal or impression), scale, file hash, rights | Any image 53.4% | CISI scans, museum open access, excavation plates (Q-1004, Q-1018) |
+| `motif` | Animal or scene, with descriptive features separate from catalogue names | 89.4% incl. asserted absence | CISI plates; Mayig features for unicorns |
+| `site` | Site name with alias table | 99.4% | Census site register |
+| `findspot` | Area, block, house, room, trench, grid as published | Any unit 76.3%; room or grid 39.7% | Excavation tables (Q-1003, Q-1014, Q-1016, Q-1017) |
+| `depth` | Value in metres, datum, original string | 50.6% (strings, mixed units, no datum) | Excavation tables (Q-1022) |
+| `stratum_phase` | Excavator's label, kept in its own site sequence | 55.8% | Excavation reports; HARP |
+| `date_interval` | Calendar interval with dating basis and citation | 0% | Published phasing and radiocarbon models (Q-1021) |
+| `deposit` | Primary or secondary context, disturbance, associated finds | Not recorded | Excavation reports; HARP registers (Q-1017) |
+| `transcription` | Sign sequence per face and line, in its source namespace, with uncertainty | Lipi codes for all faces; Mayig for 179 | Kept as a separate layer; not part of object metadata |
+| `rights` | Per asset: licence or permission for data and for each image | Not recorded per object | Source records; REDISTRIBUTION.md |
+
+## 5. Acquisition and enrichment priorities
+
+The ranking weighs three things: how many objects gain a field the open questions need, whether a conjecture or finding is waiting on the result, and how cheaply the work can start. Work on sources already held comes first, because the largest gains (museum and excavation numbers from the CISI basic data, excavation tables for Mohenjo-daro, images for half the corpus) need no purchase or permission. Acquisitions that depend on the owner's decision (purchases, data requests to ICIT, HARP or the Lipi maintainer) follow, with their cards preparing the request.
+
+| Rank | Card | Task | Access and cost | What it changes |
+|---:|---|---|---|---|
+| 1 | [Q-1001](questions/Q-1001-cisi-plates-l161-m895.md) | Locate the CISI witnesses for L-161 to L-170 and M-895 | Held; hours; starter | Lets Q-0013 to Q-0015 decide conjecture C-0004 |
+| 2 | [Q-1002](questions/Q-1002-acquire-mackay-marshall-seal-tables.md), [Q-1003](questions/Q-1003-join-mackay-marshall-to-cisi.md) | Acquire and join the Mackay and Marshall seal tables | Public, CC BY 4.0; minutes plus hours | Size, findspot, level and field number for up to 1,269 Mohenjo-daro table rows |
+| 3 | [Q-1005](questions/Q-1005-cisi1-basic-data-table.md), [Q-1006](questions/Q-1006-cisi2-basic-data-table.md) | Transcribe the CISI 1 and CISI 2 basic data | Held; days | Museum and excavation numbers for the Indian and Pakistani collections, where museum coverage is now 5.8% |
+| 4 | [Q-1013](questions/Q-1013-cross-catalogue-identifier-crosswalk.md) | Cross-catalogue identifier crosswalk | Held; days; expert | Every later join; aliases across CISI, M77, 1979, ICIT, excavation and museum numbers |
+| 5 | [Q-1030](questions/Q-1030-object-register-build.md) | Build the object register in the target schema | Held; days; expert | One regenerable record per object for all coverage reports |
+| 6 | [Q-1004](questions/Q-1004-face-level-image-index.md) | Face-level index of the 8,722 local image crops | Held; hours | Images per face, seal or impression, with gaps listed |
+| 7 | [Q-1018](questions/Q-1018-museum-open-access-harvest.md) | Harvest open museum records (Met, Cleveland, Penn CSV, V&A, British Museum) | Public; hours; starter | Accessions, measured sizes and openly licensed photographs |
+| 8 | [Q-1008](questions/Q-1008-acquire-cisi-3-1.md) | Acquire CISI 3.1 | Purchase (owner decision) | Photographs and numbers for later Harappa and Mohenjo-daro finds, the two largest sites |
+| 9 | [Q-1014](questions/Q-1014-dholavira-inventory.md) | Join Dholavira objects to Bisht's inventory | Held; days | Registrations and stages for the worst-described major site |
+| 10 | [Q-1011](questions/Q-1011-icit-access-and-fuls-wells-corpora.md) | Request ICIT access; record the Fuls and Wells corpora | Owner decision; purchase for print | The fullest object database and the denominator for completeness |
+| 11 | [Q-1007](questions/Q-1007-absent-cisi-keys-disposition.md) | Disposition of 1,032 unmatched CISI entries | Held; days | First measured count of catalogued objects the corpus lacks |
+| 12 | [Q-1021](questions/Q-1021-chronology-calendar-ranges.md) | Calendar ranges for period, phase and stratum labels | Public literature; days; expert | Dates for the 55.8% of objects with a chronology label |
+| 13 | [Q-1015](questions/Q-1015-lothal-rao-1985-tables.md) | Rao's Lothal volumes | Public scans; days | Lothal registrations; the 111 unmatched Lothal entries |
+| 14 | [Q-1016](questions/Q-1016-kalibangan-catalogue.md) | Kalibangan report catalogue | Part II held; days | Strata and registrations for 197 objects |
+| 15 | [Q-1017](questions/Q-1017-harp-harappa-context-registers.md) | HARP registers | Owner decision | Find contexts for Harappa; C-0005's clustering test |
+| 16 | [Q-1026](questions/Q-1026-post-catalogue-finds.md) | Objects published after the catalogues | Public; days | Additional objects; C-0003's prospective test |
+| 17 | [Q-1028](questions/Q-1028-lipi-reuse-basis.md) | Reuse basis for the Lipi metadata | Owner decision | Whether the register can be published at record level |
+| 18 | [Q-1009](questions/Q-1009-acquire-cisi-3-2.md) | Acquire CISI 3.2 | Purchase | Kalibangan, Chanhu-daro, Nausharo, Mehrgarh and western sites |
+| 19 | [Q-1019](questions/Q-1019-unjoined-museum-records.md) | Resolve 46 unjoined museum records | Held; hours; starter | Accessions and photographs for joined objects |
+| 20 | [Q-1020](questions/Q-1020-dimension-units-audit.md) | Units, precision and source of each dimension | Held; hours; starter | Comparable sizes for seal tests |
+| 21 | [Q-1022](questions/Q-1022-depth-normalization.md) | Depths in metres against a datum | Held; hours | Comparable depths within Mohenjo-daro and Harappa |
+| 22 | [Q-1025](questions/Q-1025-seal-size-and-style-data.md) | Seal size and carving-style datasets | Library or purchase | Workshop and style tests (C-0003) |
+| 23 | [Q-1012](questions/Q-1012-im77-web-application.md) | IM77/IDF80 application fields and terms | Public; hours | M77 numbers and field-symbol categories |
+| 24 | [Q-1024](questions/Q-1024-finds-outside-south-asia.md) | Object table for finds outside South Asia | Mixed; days | Dated foreign contexts |
+| 25 | [Q-1010](questions/Q-1010-acquire-cisi-3-3.md) | Acquire the full CISI 3.3 | Purchase | Borderland finds |
+| 26 | [Q-1027](questions/Q-1027-marked-pottery-classification.md) | Classify Rehman Dheri, Pirak, Mehrgarh, Sarai Khola entries | Held; hours; starter | Separates script from other marks among 344 unmatched entries |
+| 27 | [Q-1029](questions/Q-1029-local-literature-index.md) | Identify every local PDF | Held; hours; starter | A usable index of 299 held documents |
+| 28 | [Q-1023](questions/Q-1023-tamil-nadu-graffiti-specimens.md) | Specimen-level Tamil Nadu graffiti records | Public; hours | Comparative marks, not Indus objects |
+
+The general question cards Q-0001 to Q-0038 hold block-scale pilots of several of these tasks (identity joins, face completeness, dimension normalization, chronology labels, duplicate photographs); the data cards cross-reference them in their `related` field. Q-0003, which asks for the object-level metadata recount, is answered by this inventory's [run directory](../experiments/2026-10-12-data-inventory/run-2026-10-12/).
+
+## 6. How data is stored and fetched
+
+Git tracks the project's own code, protocols, aggregate results, source records and a small set of reviewed derivatives with clear rights (the chart atlas and attributed crops, for example). Everything under `data/` is ignored except `data/README.md` and `data/MANIFEST.json`, and so, apart from listed exceptions, are PDFs, images, HTML and text files anywhere in the tree; the rules are in [.gitignore](../.gitignore) and the reasons in [REDISTRIBUTION.md](provenance/REDISTRIBUTION.md). A fresh clone therefore has the manifest and the code but none of the acquired corpora.
+
+[data/MANIFEST.json](../data/MANIFEST.json) lists every source in this page, held or not, with its status (`held`, `partly-held`, `not-held`, `project-output`), location (`tracked`, `local-only`, `hf-private`, `external`), version or commit, size, identifiers, rights status, SHA256 of key files and an acquisition route. [tools/fetch_data.py](../tools/fetch_data.py) reads it:
+
+```text
+python tools/fetch_data.py --list [--status held|partly-held|not-held|project-output]
+python tools/fetch_data.py --show lipi
+python tools/fetch_data.py --fetch lipi --dry-run
+python tools/fetch_data.py --fetch lipi            # clones into data/raw/<today>-fetch/lipi/ and verifies hashes
+python tools/fetch_data.py --verify cisi-1         # hashes the existing local copy, read-only
+```
+
+`--fetch` handles sources with a public pinned location: a git commit (Lipi, Mayig, the website export, the epachayan tables) or a public file with a recorded hash (the 1980 and 1982 Helsinki editions, CISI 1, CISI 2, Mahadevan 1977 and others). It writes only into a new directory and never touches an existing copy; for every other source it prints the acquisition steps. A hash mismatch keeps the file for inspection and reports failure.
+
+New acquisitions go into a new dated directory, `data/raw/YYYY-MM-DD-<package>/`, with an acquisition record giving URL, retrieval time, bytes, SHA256, page count and the observed rights notice ([REDISTRIBUTION.md](provenance/REDISTRIBUTION.md), "Asset record to keep"). Add the source to the manifest (through [build_manifest.py](../experiments/2026-10-12-data-inventory/build_manifest.py) and [not_held.py](../experiments/2026-10-12-data-inventory/not_held.py), or by hand) and update this page's tables and numbers in the same change. Coverage numbers are recomputed with [coverage.py](../experiments/2026-10-12-data-inventory/coverage.py) into a new dated output directory; earlier runs stay as they are.
+
+## 7. Rights
+
+| Source | Status | Handling |
+|---|---|---|
+| Our code, protocols, aggregates, registers and this manifest | Own work; the project has not adopted a licence for its research record ([REUSE.md](../REUSE.md)); the Hugging Face release uses CC0 for project data and Unlicense for code | Tracked |
+| Helsinki 1979 and 1982 editions; chart atlas and crops | Explicit licence: CC BY 4.0 | Crops tracked with attribution ([THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md)); PDFs local |
+| Mayig | Explicit licence: MIT | Local; notice in [LICENSES/Mayig-MIT.md](../LICENSES/Mayig-MIT.md) |
+| Earlier website export | GPL-3.0 repository; data coverage unresolved | Local |
+| Lipi export and its image crops | No licence; crops reproduce CISI photographs | Bulk export and crops local; tracked files hold aggregates, identifiers, the object ledger's attributed metadata, the twenty short code windows of 11 October, the 44 attributed examples of the 12 October anchor-expansion catalogues and twenty published key entries, all outside the CC0 dedication ([THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md)); a reuse basis is sought in Q-1028 |
+| CISI volumes, Mahadevan 1977, excavation reports, author PDFs | Rights unverified or publisher copyright | Local; page locators and our observations tracked |
+| Museum records | Mixed: Metropolitan and Cleveland open-access objects CC0; Penn downloadable data CC BY 4.0; Louvre record text Etalab; British Museum images CC BY-NC-SA 4.0 only where marked; Indian and Pakistani museum records unverified | Raw responses local; CC0 and CC BY items can be tracked with attribution after review |
+| epachayan Mackay and Marshall tables (not yet held) | Transcribed data CC BY 4.0, code MIT (repository notice) | Can be tracked with attribution after review |
+| Tamil Nadu graffiti portal and volumes | Unverified | Local |
+| Sproat corpora | Apache 2.0 | Local; notices retained |
+| ORACC; AES and AED-TEI; LiBER | CC0; CC BY-SA 4.0; limited scholarly reuse | Local |
+
+Rights decisions follow [REDISTRIBUTION.md](provenance/REDISTRIBUTION.md); this table summarizes them and changes none.

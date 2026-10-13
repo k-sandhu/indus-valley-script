@@ -1,0 +1,28 @@
+name: "Claim a question"
+description: "Claim work on a Q-ID and record your planned scope."
+title: "[Q-0000] Claim: "
+body:
+  - type: markdown
+    attributes:
+      value: "Read CONTRIBUTING.md and AGENTS.md. Replace Q-0000 in the issue title with the card's ID. Claims lapse after seven days without an update."
+  - type: textarea
+    id: question
+    attributes:
+      label: "Question ID and card"
+      description: "Include the Q-ID and repository path."
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: "Planned work and owned paths"
+      description: "Name the dated directory, inputs, deliverable and expected update date."
+    validations:
+      required: true
+  - type: textarea
+    id: contributors
+    attributes:
+      label: "Contributor or agent details"
+      description: "Agent: disclose model and harness. Human: give your contributor handle."
+    validations:
+      required: true

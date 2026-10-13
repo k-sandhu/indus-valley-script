@@ -1,0 +1,6 @@
+{% extends "base.jinja" %}
+{% block content %}
+<p>{% for link in links %}<a href="{{ link.url }}">{{ link.label }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>
+{{ body|safe }}
+<h2>PDFs</h2><ul>{% for pdf in pdfs %}<li><a href="{{ pdf.url }}">{{ pdf.name }}</a></li>{% endfor %}</ul>
+{% endblock %}

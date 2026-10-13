@@ -1,0 +1,31 @@
+{
+  "id": "METHODS-totem_nested",
+  "theme": "original-methods-run",
+  "status": "completed-analysis-see-source-design",
+  "question": "Post-pilot training-only nested model-selection robustness",
+  "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+  "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+  "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+  "evidence": [
+    "research/methods/results/totem_nested/nested_results.json"
+  ],
+  "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+  "parameters": [
+    {
+      "input": "research/literature/nonlinguistic_controls/TotemPoles_author_ordered.jsonl",
+      "output": "research/methods/results/totem_nested",
+      "min_length": 3,
+      "seed": 20261001,
+      "bootstrap": 5000,
+      "permutations": 100,
+      "position_permutations": 100,
+      "unique": false,
+      "reverse": false,
+      "collapse": null
+    }
+  ],
+  "source_index": "research/methods/RESULT_INDEX.json",
+  "status_class": "exploratory",
+  "area": "seals",
+  "registry_order": 57
+}

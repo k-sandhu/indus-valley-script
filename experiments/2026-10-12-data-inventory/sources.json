@@ -1,0 +1,1441 @@
+{
+  "package": "experiments/2026-10-12-data-inventory",
+  "access_date_local": "2026-10-12",
+  "retrieval_window_utc": "2026-10-13T03:25Z to 2026-10-13T03:59Z (late on 12 October local time, UTC-4)",
+  "definitions": {
+    "opened": "The page or API response was fetched and read.",
+    "snippet_only": "The entry's main facts rest on search-result snippets. Entries with both flags true combine an opened check (often a negative search or catalogue record) with snippet-derived main facts; such details are marked as snippets in the text."
+  },
+  "scope": "Web sources consulted on 12 October 2026 to check unheld or recent data sources. Earlier packages' source records are cited separately in knowledge/DATA.md. Saved witnesses are local-only; their manifest is data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/manifest.jsonl.",
+  "agent_check_note": "Witnesses were retrieved 2026-10-13T03:25:44Z to 2026-10-13T03:59:30Z UTC, i.e. late on 2026-10-12 local time (UTC-4); access_date uses the local date as instructed. 'opened' means the page or API response was fetched and read (by curl/WebFetch); 'snippet_only' is true when an entry's main facts rest on search-result snippets; entries with both flags true combine an opened check (often a negative search or a catalogue record) with snippet-derived main facts. Snippet-derived details inside opened entries are labelled 'snippet' in the text. Witness files, URLs, UTC times, byte counts and SHA256 are in witnesses/manifest.jsonl. Large PDFs were checked with HEAD requests only.",
+  "direct_checks": [
+    {
+      "id": "D01",
+      "item": "epachayan/indus-script repository (machine-readable Mackay 1938 and Marshall 1931 seal tables)",
+      "title": "indus-script (GitHub repository epachayan/indus-script); README description begins 'Machine-readable Mohenjo-daro seal catalogues'",
+      "url": "https://github.com/epachayan/indus-script",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "method": "WebFetch summary of the repository page; GitHub REST API for the latest commit, repository metadata and file tree; raw README.md, docs/DATA_NOTICE.md, docs/DATASETS.md and LICENSE at the pinned commit saved locally",
+      "pinned_commit": "5c14a01f44296a01256a34e7e5e5e9fd82d9a67f",
+      "commit_date": "2026-10-10T11:58:09Z",
+      "witnesses": [
+        {
+          "path": "data/raw/2026-10-12-data-inventory/web-checks-own/epachayan-README.md",
+          "sha256": "9ea875beafcbf3db9a4dfae41d580226df2aa614f6b15f3c5097adc3d77592e5"
+        },
+        {
+          "path": "data/raw/2026-10-12-data-inventory/web-checks-own/epachayan-docs_DATA_NOTICE.md",
+          "sha256": "b10390ab9eea816b371dda058e47ecff08efcb95097e462ce0d60573d131255a"
+        },
+        {
+          "path": "data/raw/2026-10-12-data-inventory/web-checks-own/epachayan-docs_DATASETS.md",
+          "sha256": "bfda616fec5edcbdc622e11c937029356315193877161ee966ddeb6fc143373d"
+        },
+        {
+          "path": "data/raw/2026-10-12-data-inventory/web-checks-own/epachayan-LICENSE",
+          "sha256": "799612d75938aa9368d91f284920015b56c7a00af9a6c718d4907cb4e2e2c0cc"
+        }
+      ],
+      "finding": "Repository created 2026-09-19; GitHub licence field MIT. File tree includes outputs/mackay_seal_table.csv, outputs/marshall_seal_table.csv, outputs/findspots_mackay.csv and per-page transcriptions. DATASETS.md describes Mackay (1938) vol. I 'Tabulation of Seals', printed pp. 369-391, 709 rows (Nos. 1-704), with size in inches, level relative to the DK datum and excavation field number; and Marshall (1931) vol. II 'Tabulation of Seals', printed pp. 402-405, 560 rows (Nos. 1-557), with size in inches and depth below the modern surface. DATA_NOTICE.md states that the MIT licence covers code in scripts/ only and that the committed transcribed tables are CC BY 4.0; it lists Mackay 1938 as out of copyright. The README reports AI transcription with OCR cross-checks (95.7% type agreement on 596 of 709 Mackay rows) and says depth and field numbers are not independently verified.",
+      "reuse_terms": "Transcribed data CC BY 4.0 (DATA_NOTICE.md); code MIT"
+    },
+    {
+      "id": "D02",
+      "item": "Hugging Face dataset ksaw008/indus-reference-benchmarks visibility",
+      "title": "Hugging Face Hub API, datasets/ksaw008/indus-reference-benchmarks",
+      "url": "https://huggingface.co/api/datasets/ksaw008/indus-reference-benchmarks",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "retrieved_utc": "2026-10-13T03:34:03Z",
+      "method": "Anonymous HTTP GET with curl; status code only",
+      "finding": "HTTP 401 to an anonymous request: the dataset is not public."
+    },
+    {
+      "id": "D03",
+      "item": "Hugging Face dataset ksaw008/indus-research-data visibility",
+      "title": "Hugging Face Hub API, datasets/ksaw008/indus-research-data",
+      "url": "https://huggingface.co/api/datasets/ksaw008/indus-research-data",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "retrieved_utc": "2026-10-13T03:34:03Z",
+      "method": "Anonymous HTTP GET with curl; status code only",
+      "finding": "HTTP 401 to an anonymous request: private, as recorded in REPRODUCING.md."
+    }
+  ],
+  "web_checks": [
+    {
+      "id": "W01",
+      "item": "1 IndusScript.in",
+      "title": "The Indus Script(IM77) [HTML title]; in-app heading 'TEXTS, CONCORDANCE AND TABLES (IM77/IDF80)'",
+      "url": "https://indusscript.in/",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "live",
+      "contents": "Flutter web application; the HTML is a loader shell and all content is in main.dart.js (3,550,289 bytes, Last-Modified 30 Sep 2021, sha256 5861d053...ff687b, not retained) with a Firebase/Firestore backend (project id 'theindusscript'). Strings extracted from the bundle state that RMRL, with support of the Department of Archaeology, Govt. of Tamil Nadu, publishes Mahadevan's updated corpus IM77/IDF80; that 'the texts and concordance are made available along with statistics pertaining to pairs and triplets'; and that IDF80 improved the categorization of field symbols. The bundle contains a sign concordance view, field-symbol descriptions, site groupings including 'Other Sites & West Asian Finds', Mahadevan's introduction and an obituary text. AssetManifest.json lists 418 numbered sign images in each of .jpg and .png plus field-symbol icons; no object photographs are bundled as assets. No object or text counts were found in the extracted strings. Counts from a secondary source (harappa.com blog, opened, item 2 witness): Mahadevan 'gathered 2,906 inscribed objects', 417 signs; IDF-80 adds five late texts, giving 419 signs 'across 2,911 objects in total'.",
+      "access_route": "Public URL in a browser. App text: 'No signup is required for the application. If you already have a gmail/google account, you can login using those details' (Firebase Google sign-in; browsing without login not tested). The client can generate PDFs ('Loading images for PDF creation..'). No documented export or API. Bundle links to https://rmrl.in/wp-content/uploads/IM77-Manual.pdf and intro.pdf both returned HTTP 404; /privacypolicy.html returns the same SPA shell (identical sha256).",
+      "reuse_terms": "not stated (no licence or terms string found in extracted bundle strings); rights-unverified. In-app citation: 'Mahadevan, Iravatham & Roja Muthiah Research Library (2021), The Indus Script Web Application(IM77/IDF80). https://indusscript.in'",
+      "metadata_it_would_add": [
+        "identity/aliases: IM77 text numbers, IDF80 codes (per app descriptors 'IDF80 code (Input Data File 1980)')",
+        "site / site group",
+        "object type and field symbol (IDF80 categories)",
+        "sign sequence and sign concordance",
+        "not seen at record level: dimensions, material, stratum, accession, images of objects"
+      ],
+      "notes": "Maintainer per RMRL IRC page: 'developed by the Indus Research Centre' with 'funding support from the Tamil Nadu State Department of Archaeology'. Record-level content was not inspected because the app must be run in a browser; Firestore was not queried directly.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/indusscript-home.html",
+        "bytes": 3502,
+        "sha256": "d75ae86388b06f3f0447c89b69159722cfcbc791ca6b5a56891bbde235e34335"
+      }
+    },
+    {
+      "id": "W02",
+      "item": "2 RMRL Indus Research Centre page",
+      "title": "Indus Research Centre (section heading); subsection 'Iravatham Mahadevan Chair'",
+      "url": "https://www.rmrl.in/en/irc",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "live",
+      "contents": "IRC started 2007 under Iravatham Mahadevan; R. Balakrishnan is honorary consultant. Links tngraffiti.in and IndusScript.in. The Iravatham Mahadevan (IM) Chair 'was established ... in 2025 by the Government of Tamil Nadu'. Planned activities listed: 'Creating a new, expanded Indus concordance'; annual Iravatham Mahadevan Memorial Lecture; a biannual journal titled Journal of Indus Studies; research in script, linguistics and ancient Tamil literature; translating the Indus knowledge corpus into Tamil; outreach; courses. No date, scope or status is given for the expanded concordance. Extracted page text is identical to the 2026-10-02 witness (data/raw/2026-10-02-dataset-landscape/witnesses-v1/rmrl-irc.html), although the HTML bytes differ. harappa.com blog 'An Indus Concordance and Tamil Potsherds, Now Online' (opened; undated, written in 2026 since it says the chair was endowed 'Last year') states: 'Its first stated project is a new and expanded concordance.' RMRL /en/events and /en/publications pages list no Indus concordance release.",
+      "access_route": "Public web page.",
+      "reuse_terms": "'© 2026 Roja Muthiah Research Library. All rights reserved.'",
+      "metadata_it_would_add": [
+        "none yet: the expanded concordance is announced as planned, with no release found"
+      ],
+      "notes": "January 2025 news snippets (not opened) report a Rs 2 crore allocation for the chair announced with the prize (item 14).",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/rmrl-irc.html",
+        "bytes": 59635,
+        "sha256": "842d32c1976fe5ed020d147877906c0e6dd209ba82ba8e9e22b2804234f39b96"
+      }
+    },
+    {
+      "id": "W03",
+      "item": "2b Journal of Indus Studies (RMRL, IM Chair)",
+      "title": "Journal of Indus Studies | Journal",
+      "url": "https://indusstudies.in/",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "live",
+      "contents": "Home page lists ISSN 3139-9843 (Online), frequency 'Biannual Journal', 'Started: October 2025', language English, maintained by RMRL; linked from the RMRL home page. About page: published by the IRC under the IM Chair, with R. Balakrishnan as Chairperson of the IM Chair; scope includes Indus scripts, archaeology, Dravidian and Uralic hypotheses and computational approaches. The /issues page loads its list client-side; no issue, article or data release was visible in the fetched HTML.",
+      "access_route": "Public web site; issue contents load dynamically.",
+      "reuse_terms": "not stated",
+      "metadata_it_would_add": [
+        "none verified; possible venue for the expanded concordance or new corpus papers"
+      ],
+      "notes": "Search engines did not index the journal at check time (WebSearch returned unrelated 'Journal of Indian Studies' titles).",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/indusstudies-home.html",
+        "bytes": 47020,
+        "sha256": "6580004feca6a8ccd18ef74c21f89322947a29db033849a697326cf7f5cf3ada"
+      }
+    },
+    {
+      "id": "W04",
+      "item": "3 tngraffiti.in (Graffiti Marks of Tamil Nadu)",
+      "title": "Welcome to the web portal for Graffiti Marks of Tamil Nadu [in-app heading; HTML has no title element]",
+      "url": "https://tngraffiti.in/",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "live",
+      "contents": "Vite/React client; client bundle filename index-D7vrsNCw.js is unchanged from the 2026-10-02 snapshot (Last-Modified 5 Aug 2026; sitemap lastmod 2026-08-05). API https://api.tamilknowledgecampus.in/graffiti/base-sign returned 200 and is byte-identical (sha256 15dcdfab...) to the 2026-10-02 snapshot. Stated size (About page strings): TNSDA 'documented the complete Graffiti Marks of Tamil Nadu: 15,184 graffiti-bearing potsherds', 'Across 140 archaeological sites', 'Containing 2,107 unique signs', 'Classified into: 42 base signs, 544 variants, and 1,521 composites from 9486 recognised graffiti data'. The 15,184 figure counts potsherds documented by TNSDA; the 9,486 figure is the recognised-graffiti set used for classification. Per-sign data fields stated: number of occurrences, site, site type (habitation/burial), pottery type, depth range.",
+      "access_route": "Public web site and unauthenticated JSON API (GET endpoints under api.tamilknowledgecampus.in/graffiti/).",
+      "reuse_terms": "not stated (no licence/terms strings found in client bundle); rights-unverified",
+      "metadata_it_would_add": [
+        "sign identity (base/variant/composite)",
+        "site and site type",
+        "pottery type",
+        "depth range",
+        "occurrence counts"
+      ],
+      "notes": "Run by: footer 'Designed, developed, and maintained by' 'Indus Research Centre'; subtitle 'Joint publication from Tamil Nadu State Dept. of Archaeology and RMRL'. Credits list T. Udhayachandran, R. Balakrishnan, K. Rajan, R. Sivanantham, G. Sundar, V. P. Yathees Kumar (conception and direction) and TNSDA (data collection). Linked from the RMRL IRC page: yes ('Indus Research Centre has developed the portal tngraffiti.in'). Underlying publications: see item 14 (Rajan and Sivanantham 2025 and 2026 volumes on tamildigitallibrary.in).",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/tngraffiti-home.html",
+        "bytes": 1769,
+        "sha256": "b3a3803108d235880142cd87b4a8a0a13b3a78435e3f41bf2cffc0752f80d43b"
+      }
+    },
+    {
+      "id": "W05",
+      "item": "4 ICIT, Interactive Corpus of Indus Texts",
+      "title": "Indus Writing [HTML title]; 'Interactive Corpus of Indus Text (ICIT)'",
+      "url": "https://www.epigraphica.de/indus/menueindus.htm",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "live (landing page); database behind authentication",
+      "contents": "Landing page is byte-identical (sha256 2ec75bc7...) to the 2026-10-02 witness. It describes the database as developed by Bryan K. Wells and Andreas Fuls, with software by Fuls, and lists publications using ICIT. A linked page, video_2025_09_11.htm, embeds 'Fuls_Andreas_IndusScript_audiofile.mp4' under the link text 'Video: Bridging the gap between archaeology, epigraphy, and linguistics of the Indus script' (video not played). Counts: none newer than the CAA 2023 abstract were found. CAA 2023 abstract (local witness data/raw/2026-10-02-dataset-landscape/witnesses-v1/caa2023.pdf p.281): 4,665 inscribed objects, 5,650 texts, 17,966 legible sign occurrences, 16,015 images; relational database with 29 tables. Older: 2021 Digital Classicist seminar notice (opened): 4,537 inscribed objects, 5,509 texts, 19,616 sign occurrences. Sign list: ICIT documentation (2010, opened) says the Wells (2006) list 'contains 676 signs'; harappa.com review of Fuls 2023 says 'some 700'; a ResearchGate snippet (not opened) says 713 signs as of May 2023.",
+      "access_route": "Database URL http://www.indus.epigraphica.de returns HTTP 401. Page text: 'Ask the administrator (email: fuls(at)epigraphica.de) to get access to the database.' Documentation (help_onlinedatabase.pdf, 2010): two logins; guest access limited to 10 data; registration through the administrator.",
+      "reuse_terms": "not stated; rights-unverified",
+      "metadata_it_would_add": [
+        "identity/aliases: ICIT ID, CISI number, excavation number (per CAA 2023 abstract)",
+        "find spot",
+        "material",
+        "artefact type",
+        "preservation status",
+        "sign coding, reading direction, completeness",
+        "iconography and facing direction",
+        "images (16,015 photos/drawings per CAA 2023)"
+      ],
+      "notes": "No data paper, export or public dump found. harappa.com blog (2026) describes the database as 'not open, but can be accessed by scholars and is largely based on the CISI volumes'.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/icit-menueindus.html",
+        "bytes": 4343,
+        "sha256": "2ec75bc709306252dd3d668bee31150d65cbb5bfcfe1cda841ae52225bd1ead2"
+      }
+    },
+    {
+      "id": "W06",
+      "item": "5a CISI volume 1",
+      "title": "Corpus of Indus Seals and Inscriptions. Volume 1: Collections in India",
+      "url": "https://acadsci.fi/en/publications/the-corpus-of-indus-seals-and-inscriptions-3-2-humaniora-383-has-been-published/",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "published 1987",
+      "contents": "Eds Jagat Pati Joshi and Asko Parpola. Annales Academiae Scientiarum Fennicae, Series B 239 & Memoirs of the Archaeological Survey of India, No. 86. Helsinki: Suomalainen Tiedeakatemia, 1987. xxxii, 392 pp., 'c. 3900 b/w and 35 colour photographs', one table, a map. ISBN 951-41-0555-9. Covers collections in India.",
+      "access_route": "Print only; sold through Tiedekirja (Helsinki). acadsci.fi 2020 notice: volumes 1, 2, 3.1 and 3.2 together 300 EUR. HathiTrust holds v.1 and v.2 as 'Limited (search-only)'. No open-access edition found.",
+      "reuse_terms": "publisher copyright; not open access",
+      "metadata_it_would_add": [
+        "photographs of each face",
+        "CISI number",
+        "collection/museum accession",
+        "site",
+        "dimensions/material in catalogue entries (not re-verified here)"
+      ],
+      "notes": "Basis: Finnish Academy notice of 28.01.2020 and the 2020 flyer posted to the Indology list; HathiTrust record 002518146.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/acadsci-cisi-3-2-published.html",
+        "bytes": 59047,
+        "sha256": "49bc5d0a63143a90e3ec380ba3d5d09d613746cd7ed35a5995aef67d6b07a96a"
+      }
+    },
+    {
+      "id": "W07",
+      "item": "5b CISI volume 2",
+      "title": "Corpus of Indus Seals and Inscriptions. Volume 2: Collections in Pakistan",
+      "url": "https://acadsci.fi/en/publications/the-corpus-of-indus-seals-and-inscriptions-3-2-humaniora-383-has-been-published/",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "published 1991",
+      "contents": "Eds Sayid Ghulam Mustafa Shah and Asko Parpola. Annales Academiae Scientiarum Fennicae, Series B 240 & Memoirs of the Department of Archaeology and Museums, Government of Pakistan, 5. Helsinki 1991. xxxii, 448 pp., '5417 b/w and 36 colour photographs', two tables, a map. ISBN 951-41-0556-7. Covers collections in Pakistan.",
+      "access_route": "Print only; sold through Tiedekirja (Helsinki). acadsci.fi 2020 notice: volumes 1, 2, 3.1 and 3.2 together 300 EUR. HathiTrust holds v.1 and v.2 as 'Limited (search-only)'. No open-access edition found.",
+      "reuse_terms": "publisher copyright; not open access",
+      "metadata_it_would_add": [
+        "photographs",
+        "CISI number",
+        "collection/museum accession",
+        "site"
+      ],
+      "notes": "Same basis as 5a.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/acadsci-cisi-3-2-published.html",
+        "bytes": 59047,
+        "sha256": "49bc5d0a63143a90e3ec380ba3d5d09d613746cd7ed35a5995aef67d6b07a96a"
+      }
+    },
+    {
+      "id": "W08",
+      "item": "5c CISI volume 3.1",
+      "title": "Corpus of Indus Seals and Inscriptions: Volume 3: New material, untraced objects, and collections outside India and Pakistan, Part 1: Mohenjo-daro and Harappa",
+      "url": "https://researchportal.helsinki.fi/en/publications/corpus-of-indus-seals-and-inscriptions-volume-3-new-material-untr/",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "published 2010 (released June 2010)",
+      "contents": "Eds Asko Parpola, B. M. Pande and Petteri Koskikallio, in collaboration with Richard H. Meadow and J. Mark Kenoyer. Annales Academiae Scientiarum Fennicae, Humaniora 359 & Memoirs of the Archaeological Survey of India, No. 96. Lx, 444 pp. with '3761 b/w and 125 colour photographs, 154 line drawings and 2 tables' (Helsinki portal gives 504 pages). ISBN 978-951-41-1040-5. Covers new Mohenjo-daro and Harappa material (including HARP finds) and untraced objects.",
+      "access_route": "Print only; sold through Tiedekirja (Helsinki). acadsci.fi 2020 notice: volumes 1, 2, 3.1 and 3.2 together 300 EUR. HathiTrust holds v.1 and v.2 as 'Limited (search-only)'. No open-access edition found.",
+      "reuse_terms": "publisher copyright; not open access",
+      "metadata_it_would_add": [
+        "photographs",
+        "CISI number",
+        "excavation/registration numbers",
+        "site"
+      ],
+      "notes": "Basis: Helsinki research portal record; Indology list announcement of 1 Oct 2010; Finnish Academy notice.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/helsinki-portal-cisi-3-1.html",
+        "bytes": 36602,
+        "sha256": "40d46b9afcdb8c4ae417fbc3d1e4131dcbb891505f842b7ca1575d086c721bad"
+      }
+    },
+    {
+      "id": "W09",
+      "item": "5d CISI volume 3.2",
+      "title": "Corpus of Indus Seals and Inscriptions: 3.2 Shahr-i Sokhta; Mundigak; Mehrgarh, Nausharo, Sibri, Dauda-damb; Chanhudaro; Ahar, Balathal, Gilund; Kalibangan; Rojdi",
+      "url": "https://researchportal.helsinki.fi/en/publications/corpus-of-indus-seals-and-inscriptions-32-shahr-i-sokhta-mundigak/",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "published 2019 (released January 2020)",
+      "contents": "Eds Parpola, Pande and Koskikallio, in collaboration with Massimo Vidale & Alessandra Lazzari; Catherine & Jean-Francois Jarrige, Gonzague Quivron & Helene Tromparent; Museum of Fine Arts, Boston; Marta Ameri; and Gregory L. Possehl. Humaniora 383 & Memoirs of the Archaeological Survey of India, No. 116. xxxvii, 394 pp. with '1472 b/w and 32 colour photographs, 535 line drawings' (Helsinki portal gives 432 pages). Hardbound 160 EUR. ISBN 978-951-41-1134-1. Sites as in title (Iran, Afghanistan, Baluchistan, Sindh, Rajasthan, Gujarat).",
+      "access_route": "Print only; sold through Tiedekirja (Helsinki). acadsci.fi 2020 notice: volumes 1, 2, 3.1 and 3.2 together 300 EUR. HathiTrust holds v.1 and v.2 as 'Limited (search-only)'. No open-access edition found.",
+      "reuse_terms": "publisher copyright; not open access",
+      "metadata_it_would_add": [
+        "photographs and line drawings",
+        "CISI number",
+        "excavation numbers",
+        "site"
+      ],
+      "notes": "Basis: Helsinki portal record (exact title above), 2020 flyer, Finnish Academy notice of 28.01.2020. The Helsinki portal title spells 'Chanhudaro'; the flyer spells 'Chanhu-daro'.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/helsinki-portal-cisi-3-2.html",
+        "bytes": 37354,
+        "sha256": "8fd34e1475b0aa3de4dd185c5cdc9db5d0d14e27fcbad9900b01edf3362edbb7"
+      }
+    },
+    {
+      "id": "W10",
+      "item": "5e CISI volume 3.3",
+      "title": "Corpus of Indus Seals and Inscriptions, 3. New material, untraced objects, and collections outside India and Pakistan. Pt.3. Indo-Iranian borderlands (Eastern Iran, Turkmenistan, Tajikistan, Uzbekistan, Afghanistan) [Penn Libraries contents note]",
+      "url": "https://find.library.upenn.edu/catalog/995991203503681",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "published 2022",
+      "contents": "Eds Asko Parpola and Petteri Koskikallio (reviews). Humaniora 386 (Penn series note lists 'Humaniora ; 359, 383, 386'). Penn holdings: 'v.3:pt.1-v.3:pt.3'. Andreas Fuls reviewed it as 'Corpus of Indus Seals and Inscriptions. Volume 3.3 Indo-Iranian Borderlands' in Iranian Journal of Archaeological Studies 12(2), 2022, pp. 139-143, DOI 10.22111/ijas.2022.45467.1268 (article page opened). Page count 'lxxxvii, 683' appears only in a search snippet of an OeAW catalogue record (bot-walled when fetched).",
+      "access_route": "Print only; Tiedekirja. No open-access edition found.",
+      "reuse_terms": "publisher copyright; not open access",
+      "metadata_it_would_add": [
+        "photographs",
+        "CISI number",
+        "site and collection for finds in Iran, Central Asia and Afghanistan"
+      ],
+      "notes": "No Helsinki research-portal record for 3.3 was located (guessed URLs 404; portal search returned 403). The Finnish Academy site search for 'Indus' returns only the 3.2 notice.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/penn-library-catalog-cisi.html",
+        "bytes": 31432,
+        "sha256": "93a39dd67e02b69f96638a286b3408fce9a846e788057ca43c74fb0500e0c4fc"
+      }
+    },
+    {
+      "id": "W11",
+      "item": "5f CISI volume 3.4 (announced final part)",
+      "title": "not published; no title found",
+      "url": "https://the-past.com/review/books/corpus-of-indus-seals-and-inscriptions-volume-3-3/",
+      "opened": true,
+      "snippet_only": true,
+      "access_date": "2026-10-12",
+      "status": "forthcoming per a 2023 review; no publication found through 2026-10-12",
+      "contents": "Search snippet of the Minerva / The Past review of 3.3 (page returned HTTP 403): 'This massive new volume, 3.3, is the penultimate in the project, to be followed by the final volume, 3.4.' No publisher notice, ISBN, catalogue record or holding for 3.4 was found; Penn holdings stop at v.3:pt.3.",
+      "access_route": "n/a",
+      "reuse_terms": "n/a",
+      "metadata_it_would_add": [],
+      "notes": "Coverage of 3.4 is not stated in anything opened. Gulf, Mesopotamian and Gujarat material is not covered by the titles of 1-3.3, but any statement that 3.4 will cover them would be inference.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/acadsci-search-indus.html",
+        "bytes": 61328,
+        "sha256": "6671036378974125eeb719335137db11d2c3cf4aed42fb8efaeaaa21a64eb5e0"
+      }
+    },
+    {
+      "id": "W12",
+      "item": "6a Wells 2011",
+      "title": "Epigraphic Approaches to Indus Writing",
+      "url": "https://www.oxbowbooks.com/9781842179949/epigraphic-approaches-to-indus-writing/",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "in print (publisher page live)",
+      "contents": "Oxbow Books; by Bryan Wells; 272 pages, figs, tbls; GBP 35.00 hardcover; ISBN 9781842179949. Publisher description: 'analysis of a comprehensive, computer-based corpus using the most detailed sign list yet compiled'. Chapters include '3. Defining an Indus Sign List' and 'Indus Numeral Signs'. Publication date 15 January 2011 appears only in a search snippet.",
+      "access_route": "Purchase (print). No data files, sign-list download or supplementary material offered on the publisher page.",
+      "reuse_terms": "not stated on page; commercial publication",
+      "metadata_it_would_add": [
+        "sign list with Wells numbering (print)",
+        "corpus statistics (print)"
+      ],
+      "notes": "The machine-readable sign list and corpus are held in ICIT (item 4), access by request.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/oxbow-9781842179949-wells-2011.html",
+        "bytes": 95160,
+        "sha256": "24883883da523d3d072c43e9b3cde10132cdef92d5a7cd2d96ccbae0a2c27099"
+      }
+    },
+    {
+      "id": "W13",
+      "item": "6b Wells 2015",
+      "title": "The Archaeology and Epigraphy of Indus Writing",
+      "url": "https://www.archaeopress.com/Archaeopress/Products/9781784910464",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "in print (publisher page live)",
+      "contents": "Archaeopress Archaeology; by Bryan K. Wells; Published Feb 2015; 158 pages; Paperback GBP 25.00 'Includes PDF'; PDF eBook GBP 16.00 (personal) / GBP 25.00 (institutional); ISBN 9781784910464. Appendices by Andreas Fuls: 'Automated Segmentation Of Indus Texts', 'Positional Analysis of Indus Signs', 'Classifying Undeciphered Writing Systems'. A sample PDF is offered.",
+      "access_route": "Purchase (print or PDF eBook). Not listed as open access.",
+      "reuse_terms": "not stated on page; commercial publication",
+      "metadata_it_would_add": [
+        "analyses based on the ICIT corpus; no per-object data distributed"
+      ],
+      "notes": "No machine-readable sign list or corpus distributed by either publisher.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/archaeopress-9781784910464-wells-2015.html",
+        "bytes": 21465,
+        "sha256": "e7c50d2bee958ca5f4c3147fd0b892a21503991bef0fdfea579a5d67a94d9ff4"
+      }
+    },
+    {
+      "id": "W14",
+      "item": "7a Fuls, Corpus of Indus Inscriptions and A Catalog of Indus Signs (2023)",
+      "title": "Corpus of Indus Inscriptions. MATHEMATICA EPIGRAPHICA vol. 3 (2nd edition 2023); A Catalog of Indus Signs. MATHEMATICA EPIGRAPHICA vol. 4 (2023)",
+      "url": "https://www.epigraphica.de/indus/menueindus.htm",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "published (independently, Berlin)",
+      "contents": "ICIT page lists both as 'Independently published, Berlin 2023' with Amazon links. harappa.com reviews (opened): Corpus first edition 2022, second 2023, 'Over 500 pages', each inscription listed by find place with CISI identifier; Catalog lists 'some 700' signs versus roughly 400 in earlier lists, with distinct-sign counts by site 'Mohenjo-daro (541) and Harappa (431), followed by Kalibangan (161), Dholavira (158) and Lothal (152)'; both 'also available as Kindle editions'.",
+      "access_route": "Purchase (print/Kindle).",
+      "reuse_terms": "not stated; commercial self-publication",
+      "metadata_it_would_add": [
+        "ICIT/CISI identifiers",
+        "find spot",
+        "artefact type",
+        "sign sequences",
+        "temporal distribution tables for Harappa and Mohenjo-daro"
+      ],
+      "notes": "Counts above are the reviewer's report of the books, not checked against the books.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/icit-menueindus.html",
+        "bytes": 4343,
+        "sha256": "2ec75bc709306252dd3d668bee31150d65cbb5bfcfe1cda841ae52225bd1ead2"
+      }
+    },
+    {
+      "id": "W15",
+      "item": "7b Fuls journal papers 2020-2024",
+      "title": "Comparison of Linear Elamite and Indus Writing Systems",
+      "url": "https://ijas.usb.ac.ir/article_8463.html",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "published 2024",
+      "contents": "Andreas Fuls, Iranian Journal of Archaeological Studies 14(1), 2024, pp. 3-16, DOI 10.22111/ijas.2024.48980.1305 (article page opened; abstract gives no ICIT counts and no supplementary data). The numerical paper listed on the ICIT page is 'Ancient Writing and Modern Technologies - Structural Analysis of Numerical Indus Inscriptions', in Studies on Indus Script, National Fund for Mohenjodaro 2020, pp. 57-90. The reference list of Fuls's 2024 article (opened) cites, for himself: 2009 (Megalithos), 2020 numerical paper (in K. Lashari (ed.), Studies on Indus Script), 2022a review of CISI 3.3, 2022b Corpus of Indus Inscriptions, 2023 A Catalog of Indus Signs; no 2023 numerical paper. The 2023 items found are the two books (7a) and the CAA 2023 abstract 'The Interactive Corpus of Indus Texts (ICIT) as an epigraphical database and online tool for Indus script research'.",
+      "access_route": "Journal page open; PDF (5.08 MB per page) not downloaded.",
+      "reuse_terms": "not stated on page",
+      "metadata_it_would_add": [],
+      "notes": "If the inventory needs a specific '2023 numerical paper', its citation should be supplied; the searches did not locate one.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/ijas-article_8463-fuls-2024.html",
+        "bytes": 55271,
+        "sha256": "40e39016911a3db2d00315d517cddca2c1f205855a2c53ad2e5956282f361484"
+      }
+    },
+    {
+      "id": "W16",
+      "item": "7c Fuls open datasets",
+      "title": "The Dravidian Database: Reconstructed Lexicon of the Dravidian Subgroups Linked to the Dravidian Etymological Dictionary",
+      "url": "https://zenodo.org/records/22682542",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "published 2026-09-10 (v1.2)",
+      "contents": "Zenodo creator search for 'Fuls, Andreas' returns one record: Louis L. Merriam and Andreas Fuls, v1.2, CC BY 4.0, DOI 10.5281/zenodo.22682542; Dravidian lexicon (15,629 reconstructions linked to 72,091 DEDR lemma records), not Indus inscriptions. No ICIT-derived public file was found on Zenodo, GitHub searches were not run, and the ICIT page offers no download. Fuls and Wells both gave online talks at the IMSc 2nd Workshop on Computational Epigraphy (13-24 March 2025): Fuls 'Development of an Epigraphical Database of the Indus Script'; Wells 'The Interactive Concordance of Indus Texts Database'.",
+      "access_route": "Zenodo download.",
+      "reuse_terms": "CC BY 4.0 (Dravidian Database)",
+      "metadata_it_would_add": [
+        "none for Indus objects"
+      ],
+      "notes": "The Dravidian Database could matter for language-side tests but adds no object metadata.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/zenodo-search-creator-fuls.json",
+        "bytes": 13697,
+        "sha256": "ae408da999effa902ea0b5f1ebb15b1eec9347464d4718062a3eedbce13ebfd8"
+      }
+    },
+    {
+      "id": "W17",
+      "item": "8a Metropolitan Museum of Art Open Access",
+      "title": "The Met Collection API (v1.1 search; v1 object records)",
+      "url": "https://collectionapi.metmuseum.org/public/collection/v1.1/search?q=Indus%20seal",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "live; v1 search endpoint retired 2026-10-01",
+      "contents": "The v1 search endpoint returns HTTP 410 with the message that it 'was retired on 2026-10-01' and points to /public/collection/v1.1/search (paginated). v1.1 'Indus seal' returned 11 IDs; v1.1 'Indus' returned 76. Indus-attributed seals among object records fetched: 49.40.1 'Stamp seal and modern impression: unicorn and incense burner (?)'; 49.40.2 'Stamp seal: buffalo with incense burner (?)'; 49.40.3 'Stamp seal fragment: unicorn and incense-burner (?), inscription'; 49.40.4 'Bar-shaped rectangular plaque seal' (all culture 'Indus', period 'Mature Harappan', region 'Indus Valley', Dodge Fund 1949); 1984.482 'Seal with an Ox' (culture Pakistan, period 'Indus civilization'). All five have isPublicDomain true and a primary image. Only 49.40.3's title mentions an inscription; inscriptions on the others were not checked. Requests were blocked by Incapsula (HTTP 403) after about 80 calls, so 49.40.5 and 49.40.7 were not fetched.",
+      "access_route": "Public REST API (no key).",
+      "reuse_terms": "CC0 for objects flagged isPublicDomain (Met Open Access); licence page itself not re-fetched",
+      "metadata_it_would_add": [
+        "accession number",
+        "images",
+        "dimensions",
+        "culture/period",
+        "region (coarse)",
+        "credit line"
+      ],
+      "notes": "Also returned: Dilmun stamp seal 1987.96.22 and Akkadian cylinder seal 1999.325.4 with a water buffalo (not Indus script).",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/met-api-v1-search-retired-410.json",
+        "bytes": 438,
+        "sha256": "2db821873cb4abdda7c21568d0268044bd2f9cbe90517ea8e491e6013d370bed"
+      }
+    },
+    {
+      "id": "W18",
+      "item": "8b British Museum Collection Online",
+      "title": "Collection search 'indus seal'; object 1947,0416.7",
+      "url": "https://www.britishmuseum.org/collection/search?keyword=indus%20seal",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "live",
+      "contents": "Keyword search 'indus seal' reports '59 Results' (mixed: includes casts and non-Indus seals). Example record 1947,0416.7: 'Seal. Short-horned bull and inscription. Made of stone (steatite).' Indus Valley Civilisation, 2500BC-2000BC, findspot Mohenjo-daro, height 2.30 cm, width 2.30 cm, donated by Sir R E Mortimer Wheeler 1947. Other Indus records seen: 1947,0416.1-8, 1939,0619.207, 1979,0627.86.1-10, 1994,0601.1.1-18 (cast set).",
+      "access_route": "Public web search; no public API found in this check.",
+      "reuse_terms": "Copyright page: the Museum 'increasingly' releases website content under 'Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)', applying only to content marked with the CC logo. A per-image licence marker was not found in the static object HTML; rights-unverified per image.",
+      "metadata_it_would_add": [
+        "museum number",
+        "description incl. inscription presence",
+        "findspot",
+        "material",
+        "dimensions",
+        "acquisition",
+        "images"
+      ],
+      "notes": "Exact count of inscribed Indus objects not established (search is keyword-based).",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/bm-collection-search-indus-seal.html",
+        "bytes": 247160,
+        "sha256": "3180a0db9daf3a61d1651676b4ffc0e37148393c6ef73300c462bd757ba81836"
+      }
+    },
+    {
+      "id": "W19",
+      "item": "8c Penn Museum online collections",
+      "title": "Search Digital Collections; Download Collections Data - Penn Museum",
+      "url": "https://collections.penn.museum/collections/objects/data.php",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "live",
+      "contents": "Data download page: full collections metadata CSV, 'Last Updated: 2026-10-07 | File Size: 144.26 MB' (not downloaded); 'The Creative Commons Attribution 4.0 Unported (CC BY 4.0) license applies to all downloaded datasets. Images are not included.' Search for \"Indus Script\" returns 34 records (mostly seal impressions, plus seals). Object L-141-177 (Seal (Object), Chanhu-Daro, Harappan, 2800-2000 BCE, 'Inscription Language: Indus Script', other numbers '36.0967 - Boston Museum of Fine Arts Number | 3051 - Field No SF | 2558 - Field No SF', bibliography to Mackay, Chanhu-daro Excavations 1935-36, pl. LI no. 24 and pl. LII no. 12). Place filter Mohenjo-daro: 47 records (no seals in the listing); Chanhu-daro place with object name 'seal impression': 7.",
+      "access_route": "Public web search; bulk CSV download.",
+      "reuse_terms": "Data: CC BY 4.0 (stated on download page). Images: terms page allows downloadable collection images for 'non-profit, education, or personal uses' with credit line 'Object [number]. Courtesy of the Penn Museum.'",
+      "metadata_it_would_add": [
+        "object number and field numbers",
+        "MFA loan numbers",
+        "site/provenience",
+        "date range",
+        "material",
+        "inscription language flag",
+        "bibliography with plate numbers"
+      ],
+      "notes": "www.penn.museum/collections/search.php returned 403 to scripted requests; collections.penn.museum worked.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/penn-collections-data.html",
+        "bytes": 23101,
+        "sha256": "4a32293f03de90f17caa65f08d0f0ac718dd918b5cca95ddb2f9501bc741fedf"
+      }
+    },
+    {
+      "id": "W20",
+      "item": "8d Louvre collections",
+      "title": "Conditions generales d'utilisation - Louvre site des collections",
+      "url": "https://collections.louvre.fr/page/cgu",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "live; search blocked for scripted access",
+      "contents": "Search pages returned HTTP 429 with a robot-verification page, so Indus holdings were not counted. Terms (CGU, opened): textual content of object records is published under 'licence Ouverte « Etalab »' (commercial and non-commercial reuse with attribution); medium-definition photographs of out-of-copyright works may be downloaded and reused free for private use and a closed list of museum, scientific and teaching uses, including scientific publications by EU-based publishers up to 1,500 copies; other uses go through GrandPalaisRmn for a fee.",
+      "access_route": "Public web; per-record JSON exists on the site but was not reached.",
+      "reuse_terms": "Text data: Licence Ouverte / Etalab. Images: restricted free reuse per CGU art. 4.1.1.2.",
+      "metadata_it_would_add": [
+        "accession (inventory number)",
+        "description",
+        "provenance",
+        "images (restricted)"
+      ],
+      "notes": "Indus content at the Louvre not established in this check.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/louvre-collections-cgu.html",
+        "bytes": 51435,
+        "sha256": "899c5d19ee4c5b03d098135cc3679bfff5a5a981913d59790955818e63fe109b"
+      }
+    },
+    {
+      "id": "W21",
+      "item": "8e Museums of India portal / National Museum New Delhi",
+      "title": "National Portal and Digital Repository (museumsofindia.gov.in/repository)",
+      "url": "https://museumsofindia.gov.in/repository",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "live; Indus records not located",
+      "contents": "Portal lists National Museum New Delhi, Indian Museum Kolkata and eight other museums. Pages are rendered client-side (record links use a template /repository/record/{recordIdentifier}); the object-type page's static HTML shows a counter '1 - 50 of 2600' records but no Harappan or seal category. No keyword search endpoint was found. nationalmuseumindia.gov.in did not respond (connection timeout). A search snippet (not opened) shows an NVLI page for the Pashupati seal with dimensions about 3.5 x 3.5 x 0.6 cm.",
+      "access_route": "Public web portal (JavaScript).",
+      "reuse_terms": "'Copyright © 2020 All Rights Reserved'; rights-unverified",
+      "metadata_it_would_add": [
+        "accession, dimensions, material, images if records exist (not verified)"
+      ],
+      "notes": "Needs a browser session or the portal's JSON endpoint to test for Indus seal records.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/museumsofindia-repository-home.html",
+        "bytes": 109827,
+        "sha256": "2ec75b1ec65916a2e1d56b99d14c15a917c5cc6f3edf4f37862d263480e15ed6"
+      }
+    },
+    {
+      "id": "W22",
+      "item": "8f Indian Museum Kolkata",
+      "title": "Indian Museum Kolkata (home page)",
+      "url": "https://indianmuseumkolkata.org/",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "live; no online object database found",
+      "contents": "Site lists gallery pages (e.g. Bharhut, Gandhara, coin, 'l-archaeology-gallery') and a virtual gallery; no searchable object catalogue or Indus seal records were found. The museum is one of the institutions on the Museums of India portal (8e).",
+      "access_route": "Public web site.",
+      "reuse_terms": "not stated",
+      "metadata_it_would_add": [],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/indianmuseum-kolkata-home.html",
+        "bytes": 178791,
+        "sha256": "447d68cc79503f9093c07790042a7402116bcd4f84e26caf658b57387df050c7"
+      }
+    },
+    {
+      "id": "W23",
+      "item": "8g Smithsonian Open Access",
+      "title": "Smithsonian Open Access API search",
+      "url": "https://api.si.edu/openaccess/api/v1.0/search?q=Harappan&api_key=DEMO_KEY",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "live",
+      "contents": "Searches for Harappan, Mohenjo-daro, Harappa and 'Indus seal' return mostly library catalogue records. NMNH Anthropology holds 5 'Seal Cast' records noted 'Cast/replica.' (4 Mohenjo-Daro, 1 Multan; catalogue numbers A482805-A482808, A482815), with no media. No original inscribed Indus objects found.",
+      "access_route": "Public API (api.data.gov key; DEMO_KEY used).",
+      "reuse_terms": "CC0 (metadata_usage access value in records)",
+      "metadata_it_would_add": [
+        "catalogue numbers of casts only"
+      ],
+      "notes": "Casts are not independent witnesses of original objects.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/si-openaccess-nmnh-seal-casts.json",
+        "bytes": 21839,
+        "sha256": "ae65963c326bd38eec5317bc829092b80ca29018c0f841f9861646e7d0a2e119"
+      }
+    },
+    {
+      "id": "W24",
+      "item": "8h Cleveland Museum of Art Open Access",
+      "title": "CMA Open Access API artworks search 'Indus'",
+      "url": "https://openaccess-api.clevelandart.org/api/artworks/?q=Indus&limit=50",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "live",
+      "contents": "Three inscribed Indus seals: 1973.161 'Seal with Unicorn and Inscription'; 1964.104 'Seal with Unicorn and Inscription'; 1973.160 'Seal with Two-Horned Bull and Inscription'; culture 'Pakistan, Indus Valley civilization', c. 2000 BCE, share_license_status CC0. Searches 'Harappan' and 'Mohenjo-daro' return 0.",
+      "access_route": "Public REST API (no key).",
+      "reuse_terms": "CC0",
+      "metadata_it_would_add": [
+        "accession number",
+        "images",
+        "dimensions and description in full records (not expanded here)",
+        "provenance text"
+      ],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/cma-openaccess-search-indus.json",
+        "bytes": 57972,
+        "sha256": "c4d42d093bf0fb068981cabf7db650795b9ef27adbc0d876bbc6fa8c20eb7641"
+      }
+    },
+    {
+      "id": "W25",
+      "item": "8i Museum of Fine Arts Boston (Chanhu-daro)",
+      "title": "www.mfa.org Terms of Use; collections.mfa.org search",
+      "url": "https://collections.mfa.org/search/objects/*/Chanhu-daro",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "terms page live; collection search returned a bot-check page (HTTP 202)",
+      "contents": "Collection search could not be read by script. Search snippets (not opened) list Chanhu-daro seals 36.935 (clay seal with two couchant antelopes), 36.952 (steatite seal-amulet) and 36.1907 (on loan to Penn since 1976). The Penn record L-141-177 (opened, 8c) carries MFA number 36.0967, confirming MFA-owned Chanhu-daro seals on loan to Penn.",
+      "access_route": "Public web (browser).",
+      "reuse_terms": "Terms of Use: materials 'made available for limited non-commercial, educational, and personal use only, or for fair use'; commercial copying prohibited; licensing via MFA Images.",
+      "metadata_it_would_add": [
+        "accession",
+        "excavation/field numbers",
+        "images (restricted)",
+        "provenance"
+      ],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/mfa-terms-of-use.html",
+        "bytes": 69691,
+        "sha256": "b168a126dc79b9c9c968422f02f3b8b9352cefa97460c8ca5144f91a7d9febed"
+      }
+    },
+    {
+      "id": "W26",
+      "item": "8j Musee Guimet",
+      "title": "The Musee Guimet Indus and Amri Collection in Paris [harappa.com blog]",
+      "url": "https://www.harappa.com/blog/musee-guimet-indus-and-amri-collection-paris",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "holdings described by a secondary source; museum online catalogue not located",
+      "contents": "harappa.com blog (2018 visit) describes 'three nice seals found at Mohenjo-daro, showing a unicorn, a bison with feeding trough, and a rather dynamic elephant, and the associated sealings', plus Harappa figurines and Amri pottery from Casal's 1959-62 excavations.",
+      "access_route": "No Guimet online collection search was tested.",
+      "reuse_terms": "not stated (harappa.com images under harappa.com terms, item 9)",
+      "metadata_it_would_add": [
+        "none verified"
+      ],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/harappa-blog-musee-guimet.html",
+        "bytes": 35892,
+        "sha256": "32177b43c84953fae2111c355ae49304b74577bb101d47b353255c06d5c7a5e7"
+      }
+    },
+    {
+      "id": "W27",
+      "item": "8k Pakistani museums (National Museum of Pakistan, Karachi; site museums)",
+      "title": "Indus Objects at the National Museum of Pakistan, Karachi [harappa.com blog]",
+      "url": "https://www.harappa.com/blog/indus-objects-national-museum-pakistan-karachi",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "no online object catalogue found",
+      "contents": "harappa.com blog announces a 37-slide section on Indus objects at the NMP Karachi and notes that Pakistan's Indus holdings 'are actually scattered across provincial, national and site museum collections'. The Department of Archaeology and Museums page doam.gov.pk/heritage-sites/792 redirects to a Google Play app. No online catalogue for NMP Karachi, Harappa or Mohenjo-daro site museums was found (search-based).",
+      "access_route": "None online; CISI vol. 2 is the printed route.",
+      "reuse_terms": "not stated",
+      "metadata_it_would_add": [],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/harappa-blog-nmp-karachi.html",
+        "bytes": 29206,
+        "sha256": "44c86d7ce88bd099167ae9cc6768eb0f52c4e105273e45a3e9500355a193991b"
+      }
+    },
+    {
+      "id": "W28",
+      "item": "8l Victoria and Albert Museum (added)",
+      "title": "V&A Collections API v2 search 'Mohenjo-daro'",
+      "url": "https://api.vam.ac.uk/v2/objects/search?q=Mohenjo-daro&page_size=50",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "live",
+      "contents": "5 records for Mohenjo-daro, including IS.8:1-1951 'Seal' (Mohenjo Daro, ca. 2500 BC), IS.8A-1951 'Seal fragment', IS.8:2-1951 'Seal impression'; all with images.",
+      "access_route": "Public REST API.",
+      "reuse_terms": "V&A terms: APIs for 'non-commercial personal and educational purposes'; V&A-owned content usable free for non-commercial purposes.",
+      "metadata_it_would_add": [
+        "accession",
+        "images",
+        "object type",
+        "date",
+        "place"
+      ],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/vam-api-search-mohenjo-daro.json",
+        "bytes": 7169,
+        "sha256": "edf0c385dc896eaf19d4076a00ad5243382510212f7b96a661433230e0d641bf"
+      }
+    },
+    {
+      "id": "W29",
+      "item": "9 Harappa Archaeological Research Project / harappa.com",
+      "title": "Indus Image Rights | Harappa; Credits | Harappa",
+      "url": "https://www.harappa.com/indus-image-rights",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "live",
+      "contents": "Image rights page: 'We represent commercial rights to the images on this site'; 'Prices vary for commercial and non-profit clients and use. Non-commercial scholarly works are usually free.' Credits page: 'All photographs are copyright and watermarked. Images may not be used for any purpose without asking for permission.' No HARP object database or open dataset was found: Zenodo searches returned no HARP deposit; the Open Context query endpoint served an Anubis bot challenge to scripted requests, so Open Context was not checked; tDAR was not queried.",
+      "access_route": "Contact harappa.com for image permissions.",
+      "reuse_terms": "permission required (no open licence)",
+      "metadata_it_would_add": [
+        "images only, by permission"
+      ],
+      "notes": "HARP inscribed objects are published in CISI 3.1 (item 5c).",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/harappa-indus-image-rights.html",
+        "bytes": 27643,
+        "sha256": "b712a981c2b0daa2bb0c052f257b9a676d5f5b328ee8ebbc5a0e3381d5a64a89"
+      }
+    },
+    {
+      "id": "W30",
+      "item": "10a Mackay 1938",
+      "title": "Further Excavations at Mohenjo-daro: being an official account of archaeological excavations at Mohenjo-daro carried out by the Government of India between the years 1927 and 1931 [archive.org title form]",
+      "url": "https://archive.org/details/in.ernet.dli.2015.70071",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "full scans public on archive.org",
+      "contents": "Multiple archive.org scans: vol. I text (in.ernet.dli.2015.70071, 51 MB PDF; furtherexcavationsatmohenjodaro192731vol1ejhmackay_989_f) and vol. II plates (furtherexcavationsatmohenjodaro192731vol2ejhmackay_191_N; in.gov.ignca.9954). The Koshy 2026 Zenodo record (item 14) reports a Mackay seal table of '709 rows with block/house/room and level', i.e. the report lists seals with find-spots; the scan itself was not opened here.",
+      "access_route": "Free download (archive.org).",
+      "reuse_terms": "archive.org Digital Library of India uploads carry uploader-assigned licenseurl CC0; this does not establish copyright status of the underlying ASI publication.",
+      "metadata_it_would_add": [
+        "seal numbers",
+        "find-spot (block/house/room)",
+        "level/depth",
+        "plate references"
+      ],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/archiveorg-search-mackay1938.json",
+        "bytes": 6063,
+        "sha256": "2f1b44e0e41377d50d10685d8a8c08861c3d16d7baeeecfd64a5bcbd6cbb0973"
+      }
+    },
+    {
+      "id": "W31",
+      "item": "10b Marshall 1931 and Vats 1940 (added for completeness)",
+      "title": "Mohenjo-daro and the Indus Civilization (3 vols, 1931); Excavations at Harappa (2 vols, 1940)",
+      "url": "https://archive.org/details/in.gov.ignca.48270",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "full scans public on archive.org",
+      "contents": "archive.org search returns DLI and IGNCA scans of Marshall 1931 vols I-III and Vats 1940 vols 1-2; Koshy 2026 reports a Marshall seal table of '560 rows with excavation area and depth'.",
+      "access_route": "Free download (archive.org).",
+      "reuse_terms": "archive.org Digital Library of India uploads carry uploader-assigned licenseurl CC0; this does not establish copyright status of the underlying ASI publication.",
+      "metadata_it_would_add": [
+        "seal numbers",
+        "excavation area",
+        "depth"
+      ],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/archiveorg-search-marshall1931.json",
+        "bytes": 10932,
+        "sha256": "de8cb61d1b9f8e8a5550d1e491498b12ec8b4c98c8748c4b6733329498ae2535"
+      }
+    },
+    {
+      "id": "W32",
+      "item": "10c Rao, Lothal (MASI 78)",
+      "title": "Lothal: A Harappan Port Town, Memoirs of the Archaeological Survey of India No. 78, Parts 1 (1979) and 2 (1985) [as given in task; archive.org titles 'MASI 78 Lothal A Harappan Port Town Rao S. R. Part 1 ( Plates Missing)' and '... Part 2']",
+      "url": "https://archive.org/details/masi78lothalaharappanporttownraos.r.part2_531_D",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "scans public on archive.org; Part 1 scan lacks plates",
+      "contents": "Part 1 PDF 18.7 MB labelled 'Plates Missing'; Part 2 PDF 28.7 MB.",
+      "access_route": "Free download (archive.org).",
+      "reuse_terms": "archive.org Digital Library of India uploads carry uploader-assigned licenseurl CC0; this does not establish copyright status of the underlying ASI publication.",
+      "metadata_it_would_add": [
+        "seal/sealing registration numbers and plates (expected; not verified in scan)"
+      ],
+      "notes": "Exact subtitle and years should be checked against the scans before citation.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/archiveorg-search-lothal.json",
+        "bytes": 1145,
+        "sha256": "3d82be4e3a97b288c6856febe19fbdac8ed54f9572f3ef8fe53f756154cdc213"
+      }
+    },
+    {
+      "id": "W33",
+      "item": "10d Kalibangan final reports",
+      "title": "MASI 98 Excavations at Kalibangan: The Early Harappans (1960-1969) (2003); Excavations at Kalibangan: The Harappans (1960-69): Part 1 (2015)",
+      "url": "https://archive.org/details/masi98excavationsatkalibhanganearlyharappanslalb.b.etall_747_Z",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "2003 volume scanned on archive.org; 2015 volume print only",
+      "contents": "archive.org holds 'MASI 98 Excavations At Kalibhangan Early Harappans Lal B. B. Et All' (19.5 MB). The 2015 volume (Lal, Joshi, Bala, Sharma, Ramachandran; ASI) is known from search snippets only; one bookseller snippet gives Memoirs No. 110 and 721 pages. No later volume (Part 2) was found.",
+      "access_route": "2003: free download (archive.org). 2015: purchase.",
+      "reuse_terms": "archive.org Digital Library of India uploads carry uploader-assigned licenseurl CC0; this does not establish copyright status of the underlying ASI publication.",
+      "metadata_it_would_add": [
+        "Early Harappan finds (2003)",
+        "Mature Harappan seals/sealings with registration numbers (2015, expected; not verified)"
+      ],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/archiveorg-search-masi98-108.json",
+        "bytes": 892,
+        "sha256": "ceefd6d414edc6d136fb0fd385107cf94f0ea9e79495e257e9f9a85d04827bbb"
+      }
+    },
+    {
+      "id": "W34",
+      "item": "10e Bisht 2015 Dholavira",
+      "title": "Excavations at Dholavira (1989-90 to 2004-05) [as given in task]; archive.org item 'Dholavira Report (preliminary, Jan 2015)'",
+      "url": "https://archive.org/details/dholavirareportpreliminaryjan2015_860_K",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "a 127 MB PDF labelled 'preliminary, Jan 2015' is on archive.org",
+      "contents": "Whether the archive.org PDF is the ASI 2015 report was not verified (not downloaded). A Scribd copy titled 'Excavations at Dholavifra 1989-2005 (RS Bisht, 2015)', about 940 pages, appears in a search snippet only. No ASI-hosted PDF was found.",
+      "access_route": "archive.org download (unverified identity); ASI print.",
+      "reuse_terms": "archive.org Digital Library of India uploads carry uploader-assigned licenseurl CC0; this does not establish copyright status of the underlying ASI publication.",
+      "metadata_it_would_add": [
+        "seal and inscribed-object registers (expected; not verified)"
+      ],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/archiveorg-search-dholavira.json",
+        "bytes": 7353,
+        "sha256": "05255a8357fd756bc21609ed68fd4e5559ce8eb5b3282caf0f13118fbc39377b"
+      }
+    },
+    {
+      "id": "W35",
+      "item": "10f Farmana (Shinde, Osada and Kumar)",
+      "title": "Excavations at Farmana, 2006-08 [archive.org title 'Excavations At Farmana, 2006 08 V Shinde Et Al']; also 'Harappan Necropolis At Farmana In Ghaggar Basin'",
+      "url": "https://archive.org/details/excavationsatfarmana200608vshindeetal_212_v",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "scan public on archive.org",
+      "contents": "107 MB PDF on archive.org (DLI upload).",
+      "access_route": "Free download (archive.org).",
+      "reuse_terms": "archive.org Digital Library of India uploads carry uploader-assigned licenseurl CC0; this does not establish copyright status of the underlying ASI publication.",
+      "metadata_it_would_add": [
+        "seals and sealings with registration numbers (expected; not verified)"
+      ],
+      "notes": "Publisher (RIHN Kyoto) and year 2011 per task; not re-verified here.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/archiveorg-search-farmana.json",
+        "bytes": 3416,
+        "sha256": "9284380193f021f6d1262cc03c905df8260c6193755d5bfb89fd40863b593a3b"
+      }
+    },
+    {
+      "id": "W36",
+      "item": "10g Rakhigarhi",
+      "title": "Excavations at Rakhigarhi, 1997-2000 - Amarendra Nath [archive.org title]",
+      "url": "https://archive.org/details/excavationsatrakhigarhi19972000amarendranath_457_Z",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "Nath report scanned on archive.org; Shinde et al. final report not found",
+      "contents": "10.5 MB PDF on archive.org. For the 2011-2016 Deccan College work, searches found journal articles and news, but no final excavation report (snippets only).",
+      "access_route": "Free download (archive.org).",
+      "reuse_terms": "archive.org Digital Library of India uploads carry uploader-assigned licenseurl CC0; this does not establish copyright status of the underlying ASI publication.",
+      "metadata_it_would_add": [
+        "seals from 1997-2000 seasons (expected; not verified)"
+      ],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/archiveorg-search-rakhigarhi.json",
+        "bytes": 2090,
+        "sha256": "3489452dfb1a1908eaa7bb36adb2f5d8c92b155580864fad8e8513ea3a679b47"
+      }
+    },
+    {
+      "id": "W37",
+      "item": "10h Kanmer (Kharakwal et al.)",
+      "title": "Excavations at Kanmer, 2005-09, ch 6 - A Uesugi & S Meena [archive.org title]",
+      "url": "https://archive.org/details/excavationsatkanmer200509ch6auesugismeena_648_B",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "only chapter 6 found on archive.org",
+      "contents": "Chapter 6 PDF 30.3 MB. A Kharakwal CV snippet lists 'Kanmer Excavation (2005-09). Kyoto (Japan): Research Institute for Humanity and Nature (ISBN 978-4-902325-72-0)' and a 2012 book 'Kanmer A Unique Harappan Township in Kachchh, Gujarat' (Himanshu Publication); neither verified.",
+      "access_route": "archive.org (chapter only).",
+      "reuse_terms": "archive.org Digital Library of India uploads carry uploader-assigned licenseurl CC0; this does not establish copyright status of the underlying ASI publication.",
+      "metadata_it_would_add": [
+        "unknown"
+      ],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/archiveorg-search-kanmer.json",
+        "bytes": 890,
+        "sha256": "9a36eba3655a847a64d13f60d36754dcde41ab7a42f906a8a825a400fef57219"
+      }
+    },
+    {
+      "id": "W38",
+      "item": "10i Bagasra / Gola Dhoro (Sonawane et al.)",
+      "title": "no final report found",
+      "url": "https://www.harappa.com/content/inscribed-unicorn-seals-bagasra-gujarat-comparative-analysis-morphology-carving-styles-and",
+      "opened": true,
+      "snippet_only": true,
+      "access_date": "2026-10-12",
+      "status": "no final report located",
+      "contents": "Search snippets mention 'Excavations at Bagasra 1996-2003: A preliminary Report' (2004) and a seal study by Jamison, Sharma, Ajithprasad, Krishnan, Bhan and Sonawane on seven inscribed unicorn seals. No archive.org scan.",
+      "access_route": "n/a",
+      "reuse_terms": "n/a",
+      "metadata_it_would_add": [],
+      "notes": "Bagasra and Gola Dhoro are the same site.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/archiveorg-search-bagasra.json",
+        "bytes": 264,
+        "sha256": "cef81b36827a86f4fd25a5b2b0cd13cd41ecae93912c192174bdf3d8c088ae01"
+      }
+    },
+    {
+      "id": "W39",
+      "item": "10j Surkotada (Joshi 1990)",
+      "title": "MASI 87 Excavations At Surkotada And Kutch Jagat Pati Joshi [archive.org title]",
+      "url": "https://archive.org/details/masi87excavationsatsurkotadaandkutchjagatpatijoshi_841_t",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "scan public on archive.org",
+      "contents": "28.6 MB PDF plus text PDF.",
+      "access_route": "Free download (archive.org).",
+      "reuse_terms": "archive.org Digital Library of India uploads carry uploader-assigned licenseurl CC0; this does not establish copyright status of the underlying ASI publication.",
+      "metadata_it_would_add": [
+        "seals/sealings with registration numbers (expected; not verified)"
+      ],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/archiveorg-search-surkotada.json",
+        "bytes": 611,
+        "sha256": "5d2c3d871e83d2e12aacf57c3632495071e5385c1eb03a94cb60d6e93b42acf4"
+      }
+    },
+    {
+      "id": "W40",
+      "item": "10k Banawali (Bisht)",
+      "title": "no final report found",
+      "url": "https://en.wikipedia.org/wiki/Banawali",
+      "opened": true,
+      "snippet_only": true,
+      "access_date": "2026-10-12",
+      "status": "no final report located",
+      "contents": "Snippets give excavation by R. S. Bisht from 1974 and later seasons with Haryana Archaeology; no ASI memoir or catalogue record found. archive.org search: 0.",
+      "access_route": "n/a",
+      "reuse_terms": "n/a",
+      "metadata_it_would_add": [],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/archiveorg-search-banawali.json",
+        "bytes": 266,
+        "sha256": "40fb36ee0874c4a68373b19cdc4aad5514f0738dd26ad592eb5d7eff95196d21"
+      }
+    },
+    {
+      "id": "W41",
+      "item": "10l Wheeler 1947 Harappa",
+      "title": "Ancient India Vol. 3 Bulletin Of The Archaeological Survey Of India [archive.org title; Wheeler's Harappa 1946 report appears in this issue]",
+      "url": "https://archive.org/details/ancientindiavol.3bulletinofthearchaeologicalsurveyofindia_832_k",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "scan public on archive.org",
+      "contents": "16.7 MB PDF; several other scans of 'Ancient India 1946' (issued 1947). Article title not re-verified from the scan.",
+      "access_route": "Free download (archive.org).",
+      "reuse_terms": "archive.org Digital Library of India uploads carry uploader-assigned licenseurl CC0; this does not establish copyright status of the underlying ASI publication.",
+      "metadata_it_would_add": [
+        "stratigraphic context for Harappa finds (seal catalogue not expected)"
+      ],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/archiveorg-search-wheeler1947.json",
+        "bytes": 9787,
+        "sha256": "12d147b464cb120d58a54be42d5dcf3cfb6949ab5673b57c689e790f68cfa574"
+      }
+    },
+    {
+      "id": "W42",
+      "item": "10m Dales and Kenoyer, Mohenjo-daro",
+      "title": "Excavations at Mohenjo Daro, Pakistan : the pottery [archive.org title]",
+      "url": "https://archive.org/details/excavationsatmoh0000dale",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "archive.org lending copy only (access-restricted)",
+      "contents": "1986 volume in 'inlibrary, printdisabled' collections; access-restricted-item true. No inscribed-object catalogue from the 1964-65 Dales excavations was found.",
+      "access_route": "Controlled digital lending.",
+      "reuse_terms": "copyright (lending only)",
+      "metadata_it_would_add": [
+        "pottery (not inscribed-object catalogue)"
+      ],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/archiveorg-search-dalesmohenjo.json",
+        "bytes": 867,
+        "sha256": "439ba18966ea2c83c470592d8f365ec5394f8b1fc5abec33874b8ff17df90739"
+      }
+    },
+    {
+      "id": "W43",
+      "item": "10n Kotada Bhadli and Khirsara",
+      "title": "no excavation reports found",
+      "url": "https://anantamias.com/current-affairs/kotada-bhadli-harappan-caravanserai-2025/",
+      "opened": true,
+      "snippet_only": true,
+      "access_date": "2026-10-12",
+      "status": "no reports located",
+      "contents": "Kotada Bhadli: a 2012 news item (snippet) on Deccan College / Gujarat State Archaeology excavation; an exam-prep blog (snippet) on 2025 ASI and IIT Gandhinagar work lists steatite seals 'citing an ASI inventory' (unverified). Khirsara: ASI excavation reported in news; no report or seal catalogue found. archive.org searches: no relevant items.",
+      "access_route": "n/a",
+      "reuse_terms": "n/a",
+      "metadata_it_would_add": [],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/archiveorg-search-kotadabhadli.json",
+        "bytes": 2239,
+        "sha256": "51711c7ec265f6459b8d4168ed2dd2590cf407c09a688b266dd36f0dc64d7e37"
+      }
+    },
+    {
+      "id": "W44",
+      "item": "10o Mackay 1943 Chanhu-daro (added)",
+      "title": "Chanhu-daro Excavations 1935-36 (American Oriental Series Vol. 20, 1943)",
+      "url": "https://archive.org/details/in.ernet.dli.2015.105167",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "scans public on archive.org",
+      "contents": "DLI scan 27.8 MB (1943) and several other copies including a 1976 reprint. Penn record L-141-177 cites its plates LI-LII for a seal now on loan from MFA.",
+      "access_route": "Free download (archive.org).",
+      "reuse_terms": "archive.org Digital Library of India uploads carry uploader-assigned licenseurl CC0; this does not establish copyright status of the underlying ASI publication.",
+      "metadata_it_would_add": [
+        "seal numbers, plates, field numbers (cross-linkable to MFA/Penn records)"
+      ],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/archiveorg-search-chanhudaro.json",
+        "bytes": 2371,
+        "sha256": "3a6894baaec7384ed1bd5d5d80930cbdc8a71c56c0ecaed93852e6b489f9d68d"
+      }
+    },
+    {
+      "id": "W45",
+      "item": "11a Jamison, Uesugi and Yamaguchi 2023",
+      "title": "Unicorns and seals: New multivariate approaches to exploring patterned stylistic variation in the Indus Civilization",
+      "url": "https://doi.org/10.1016/j.ara.2023.100486",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "published (Archaeological Research in Asia 36, December 2023, article 100486)",
+      "contents": "Crossref metadata (opened): authors Gregg Jamison, Akinori Uesugi, Yuji Yamaguchi; licences listed are Elsevier TDM and STM policy links; copyright assertion '(c) 2023 Elsevier Ltd. All rights reserved.' ScienceDirect returned HTTP 403, so supplementary files and any data-availability statement were not seen.",
+      "access_route": "Subscription (ScienceDirect).",
+      "reuse_terms": "Elsevier copyright, all rights reserved; supplementary data licence not verified",
+      "metadata_it_would_add": [
+        "per-seal stylistic attributes (if supplementary data exist; unverified)"
+      ],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/crossref-10.1016-j.ara.2023.100486.json",
+        "bytes": 25174,
+        "sha256": "d53fca5c4b4f69765e6d369a3bbe113b0ca58fae96c8cacbcd10b893153daaef"
+      }
+    },
+    {
+      "id": "W46",
+      "item": "11b Public re-use of Jamison unicorn-seal attribute data",
+      "title": "dmahesh2869/harappan-seal-analysis (GitHub); arXiv 2604.23582 'Asynchronous Barter, Periodic Reconciliation: Evidence for a Scale-Free Commercial Network in the Indus Valley Civilization'",
+      "url": "https://github.com/dmahesh2869/harappan-seal-analysis",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "live",
+      "contents": "arXiv abstract page (v3, revised 18 Aug 2026) by Mahesh T C; repository created 2026-04-26, last push 2026-08-22, licence field 'Other' (NOASSERTION). Files include appendix7.1.txt, unicorn_attributes.txt, diachronic_seal_data.txt and attribute contingency tables. A search snippet says the unicorn-seal data come from Gregg M. Jamison's 2017 dissertation; not checked in the files.",
+      "access_route": "Public GitHub repository.",
+      "reuse_terms": "licence not asserted (GitHub 'Other'); underlying dissertation data rights-unverified",
+      "metadata_it_would_add": [
+        "per-seal unicorn carving attributes (ear, eye, halter, head, hoof, horn, leg, neck, pizzle, tail)",
+        "site",
+        "offering-stand type"
+      ],
+      "notes": "Interpretive claims in the preprint are the author's; only the data transcription is relevant here.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/github-dmahesh2869-harappan-seal-analysis.json",
+        "bytes": 5927,
+        "sha256": "cf36552b6c7525bad87ac732130debedc80972a033a891c754bd12f5367dd2d2"
+      }
+    },
+    {
+      "id": "W47",
+      "item": "11c Other seal size/style studies",
+      "title": "The size of Indus seals and its significance (Konasukawa and Koiso), in Walking with the Unicorn (Archaeopress 2018), pp. 292-317",
+      "url": "https://www.archaeopress.com/Archaeopress/Products/9781784919177",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "published; supplementary data not found",
+      "contents": "Chapter citation and page range come from a search snippet. Publisher page (opened): 666 pages, Published Aug 2018, GBP 110.00 including PDF, PDF eBook GBP 16.00. An ISMEO-hosted 'FS-Kenoyer.pdf' is only 773,077 bytes (HEAD request), so probably not the full volume. Jamison's 2017 dissertation and any Marta Ameri per-seal dataset were not located.",
+      "access_route": "Purchase.",
+      "reuse_terms": "not stated",
+      "metadata_it_would_add": [
+        "seal dimensions (if tabulated in chapter; unverified)"
+      ],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/archaeopress-9781784919177-walking-with-the-unicorn.html",
+        "bytes": 22450,
+        "sha256": "de88fb95b546b8b8994c035b63acddb2884991f93c4c81fbb3a30400e02a1541"
+      }
+    },
+    {
+      "id": "W48",
+      "item": "12a RWTH Aachen Mohenjo-daro documentation archive",
+      "title": "no online archive found",
+      "url": "https://zenon.dainst.org/Record/000052747",
+      "opened": false,
+      "snippet_only": true,
+      "access_date": "2026-10-12",
+      "status": "no online archive located",
+      "contents": "Snippets show only publications: 'Interim Reports' of the Aachen University Mission (vol. 1 1984, vol. 2 1987) and 'Mohenjo Daro: report of the Aachen University Mission 1979-1985' (Brill 1985), which includes 'The HR-area field register 1925-1927'.",
+      "access_route": "n/a",
+      "reuse_terms": "n/a",
+      "metadata_it_would_add": [],
+      "notes": ""
+    },
+    {
+      "id": "W49",
+      "item": "12b ASI photo archives",
+      "title": "no ASI online photo portal found",
+      "url": "https://searcharchives.bl.uk/catalog/032-003100825",
+      "opened": false,
+      "snippet_only": true,
+      "access_date": "2026-10-12",
+      "status": "no ASI portal located",
+      "contents": "Snippets: British Library Photo 685 (ASI prints, 144 loose gelatin silver prints, Harappa focus, some digitised); MAA Cambridge Hargreaves Collection prints of Mohenjo-daro 1925-26; prints also reported at the Alkazi Collection and Durham University.",
+      "access_route": "n/a",
+      "reuse_terms": "per holding institution; not checked",
+      "metadata_it_would_add": [],
+      "notes": ""
+    },
+    {
+      "id": "W50",
+      "item": "12c Wikimedia Commons",
+      "title": "Category:Indus civilization seals (and related categories)",
+      "url": "https://commons.wikimedia.org/wiki/Category:Indus_civilization_seals",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "live",
+      "contents": "categoryinfo: Indus civilization seals 51 files + 6 subcategories; Indus civilization seal impressions 15 files; Indus script tablets 8; Unicorns on seals of the Indus Valley Civilization 16; Pashupati seal 8; Indus Valley cylinder seals 1; Indus script 58. Licence mix of the 51 direct files in Indus civilization seals: CC BY-SA 3.0 14, Public domain 12, CC BY-SA 4.0 12, CC0 9, CC BY 3.0 2, CC BY 4.0 1, CC BY-SA 2.0 1.",
+      "access_route": "MediaWiki API.",
+      "reuse_terms": "mixed per file (counts above)",
+      "metadata_it_would_add": [
+        "images; captions sometimes give museum and accession"
+      ],
+      "notes": "Files overlap across categories; subcategory files not counted.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/commons-categoryinfo.json",
+        "bytes": 1047,
+        "sha256": "260a1c3c012e7670a5395795c2d180fde22e5f470476dd05261e79e4b8422b35"
+      }
+    },
+    {
+      "id": "W51",
+      "item": "12d Hugging Face datasets",
+      "title": "Hugging Face dataset search (indus-script, indus-valley, indus_decipher, harappa, mohenjo)",
+      "url": "https://huggingface.co/api/datasets?search=indus-script",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "live",
+      "contents": "No image dataset of Indus inscribed objects found. Text/tabular: joyboseroy/indus_decipher (created 2026-09-07, MIT) - 'Indus Script Corpora (indus_website and CISI)', derived CSVs: 2,543 inscriptions from 52 sites ('indus_website') and 179 Mohenjo-daro unicorn seals from CISI in three sign-segmentation variants; card says both are derived from two named source repositories. Previously known: hellosindh/indus-script-synthetic (2026-04-10, CC BY 4.0, synthetic) and Zer0pa/Indus-Valley-lane-state (2026-05-12, licence other). 'harappa', 'harappan', 'mohenjo' searches: 0.",
+      "access_route": "HF Hub.",
+      "reuse_terms": "per dataset (MIT; CC BY 4.0; other)",
+      "metadata_it_would_add": [
+        "sign sequences and site (derived)"
+      ],
+      "notes": "The 'indus' search is dominated by unrelated 'industrial' datasets.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/hf-datasets-search-indus-script.json",
+        "bytes": 1291,
+        "sha256": "50858060060ac7cee56dc0786944efdf683e51251ac1ccb1bda7f8da9c57dbad"
+      }
+    },
+    {
+      "id": "W52",
+      "item": "12e Kaggle / Roboflow",
+      "title": "no Kaggle Indus image dataset found",
+      "url": "https://universe.roboflow.com/indusvalleyscript/indus_valley_script",
+      "opened": true,
+      "snippet_only": true,
+      "access_date": "2026-10-12",
+      "status": "unknown",
+      "contents": "Search found no Kaggle dataset; a Roboflow Universe project 'indus_valley_script' exists with no description (snippet). A 2025 JCAA paper, Dixit et al. 'Deep Learning in Archiving Indus Script and Motif Information' (JCAA 8(1), DOI 10.5334/jcaa.175, Crossref opened, no licence in metadata), reportedly trained on 963 manually annotated seal images with 40 grapheme classes (snippet); public release of those images not verified.",
+      "access_route": "n/a",
+      "reuse_terms": "unknown",
+      "metadata_it_would_add": [],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/crossref-10.5334-jcaa.175.json",
+        "bytes": 9401,
+        "sha256": "0952b42c1a70150f31ffc8afc4376aca49f234590ee3e406946ec0dc9faa51ba"
+      }
+    },
+    {
+      "id": "W53",
+      "item": "12f Zenodo 2025-2026 Indus records with images or data",
+      "title": "Zenodo search ('Indus script', 'Indus seals', 'Harappan seals', 'Indus inscriptions', 'Mohenjo-daro', 'Indus Valley script')",
+      "url": "https://zenodo.org/search?q=%22Indus%20script%22",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "live",
+      "contents": "Most 2025-2026 hits are decipherment-claim preprints. Records with data: (1) Karunakaran, 'Supplementary Epigraphical Corpus V5: 7 Indus Tablets, Fish and other Sign Variations for Tamil-Brahmi Comparative Analysis' (2026-09-09, CC BY 4.0) - PNG trace overlays and mirror images labelled M 282, M 414, M 472, H 46, H 57, H 66; source photographs not identified in the description read. (2) Lakkadi Reddy, 'Code and data for: Quantifying Structural Similarity between Indus and Tibetan-Yi Scripts Using Hybrid Vision Embeddings' (2026-07-03, MIT, 118 MB zip). (3) Koshy, machine-readable Mackay/Marshall seal catalogues (2026-10-10, CC BY 4.0) - see item 14.",
+      "access_route": "Zenodo download.",
+      "reuse_terms": "per record (CC BY 4.0; MIT)",
+      "metadata_it_would_add": [
+        "derived sign images; identifiers in CISI-style M/H numbering"
+      ],
+      "notes": "Images derived from published photographs may carry the original publishers' rights regardless of the deposit licence.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/zenodo-search-1-p1.json",
+        "bytes": 257626,
+        "sha256": "af72e54100eb8caa6b2b68a3220fcd6d1243c8df87e6efc944630f546fa4f975"
+      }
+    },
+    {
+      "id": "W54",
+      "item": "13a Kjaerum 1983",
+      "title": "Failaka/Dilmun. The Second Millennium Settlements. Volume 1:1: The Stamp and Cylinder Seals. Plates and Catalogue Descriptions",
+      "url": "https://keibi.uni-tuebingen.de/Record/KEI00052377",
+      "opened": true,
+      "snippet_only": true,
+      "access_date": "2026-10-12",
+      "status": "published 1983; no digital copy found",
+      "contents": "Catalogue snippets: Jutland Archaeological Society Publications XVII:1, Aarhus 1983, 171 p., 425 ill. archive.org search: 0 hits.",
+      "access_route": "Print.",
+      "reuse_terms": "copyright",
+      "metadata_it_would_add": [
+        "seal catalogue numbers, Failaka findspots, plates"
+      ],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/archiveorg-search-kjaerum.json",
+        "bytes": 388,
+        "sha256": "f416209831cdb5347d799f8fa0ba27456205485798e07ce941171b18fdace8da"
+      }
+    },
+    {
+      "id": "W55",
+      "item": "13b Laursen 2010",
+      "title": "The westward transmission of Indus Valley sealing technology: origin and development of the 'Gulf Type' seal and other administrative technologies in Early Dilmun, c.2100-2000 BC",
+      "url": "https://doi.org/10.1111/j.1600-0471.2010.00329.x",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "published",
+      "contents": "Crossref (opened): Arabian Archaeology and Epigraphy 21(2): 96-134, published 2010-10-18, Wiley terms link. Crossref also returns Laursen's chapter 'Seals and Sealing Technology in the Dilmun Culture: The Post-Harappan Life of the Indus Valley Sealing Tradition', in Seals and Sealing in the Ancient World (Cambridge), pp. 204-226, DOI 10.1017/9781108160186.015. A harappa.com-hosted PDF of the 2010 article appears in a snippet (not opened).",
+      "access_route": "Subscription (Wiley); possible harappa.com copy.",
+      "reuse_terms": "Wiley copyright",
+      "metadata_it_would_add": [
+        "Gulf Type seal catalogue/morphology (per title)"
+      ],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/crossref-query-laursen-2010.json",
+        "bytes": 24418,
+        "sha256": "77293a3d6e4ac0cf17b1a7fcc7bbabb9906177a0fa933a132a12fac852402f09"
+      }
+    },
+    {
+      "id": "W56",
+      "item": "13c Catalogues of Indus-type seals in the Gulf, Mesopotamia, Iran, Central Asia; CISI coverage",
+      "title": "no consolidated catalogue found",
+      "url": "https://www.harappa.com/content/indus-seals-and-glyptic-studies-overview",
+      "opened": false,
+      "snippet_only": true,
+      "access_date": "2026-10-12",
+      "status": "no consolidated catalogue found",
+      "contents": "CISI coverage verified from titles: 3.2 includes Shahr-i Sokhta and Mundigak; 3.3 covers 'Indo-Iranian borderlands (Eastern Iran, Turkmenistan, Tajikistan, Uzbekistan, Afghanistan)'; 3.1's series title includes 'collections outside India and Pakistan'. Gulf and Mesopotamian finds are not named in any published volume title; 3.4 content unannounced. IndusScript.in has a 'West Asian Finds' grouping (item 1). Snippets cite Parpola's 'Indus seals and glyptic studies' overview on round Gulf-type seals and Salvatori's survey of Bactria-Margiana seals.",
+      "access_route": "n/a",
+      "reuse_terms": "n/a",
+      "metadata_it_would_add": [],
+      "notes": ""
+    },
+    {
+      "id": "W57",
+      "item": "14a Tamil Nadu Indus-script prize (2025)",
+      "title": "news reports of the 5 January 2025 announcement",
+      "url": "https://scroll.in/latest/1077596/tamil-nadu-announces-1-million-prize-for-deciphering-indus-valley-civilisation-script",
+      "opened": false,
+      "snippet_only": true,
+      "access_date": "2026-10-12",
+      "status": "announced 5 January 2025",
+      "contents": "Snippets from several outlets: Chief Minister M. K. Stalin announced a US$1 million prize for a decipherment accepted by archaeological experts, at a seminar marking the centenary of the civilisation's discovery; also Rs 2 crore for an Iravatham Mahadevan chair. No rules, jury, data release or claim of the prize found.",
+      "access_route": "n/a",
+      "reuse_terms": "n/a",
+      "metadata_it_would_add": [],
+      "notes": "The chair is now listed on the RMRL IRC page (item 2)."
+    },
+    {
+      "id": "W58",
+      "item": "14b Rajan and Sivanantham 2025",
+      "title": "Indus signs and graffiti marks of Tamil Nadu : a morphological study [MARC 245]",
+      "url": "https://tamildigitallibrary.in/Marc-Articles/Indus%20signs%20and%20graffiti%20marks%20of%20Tamil%20Nadu",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "published 2025; full PDF public on Tamil Digital Library",
+      "contents": "MARC: Chennai, Department of Archaeology, Government of Tamil Nadu, 2025; field 300 reads '8 pages' (a bookseller snippet gives 145 pages). Linked PDF TVA_BOK_0065888 is 21,360,423 bytes (HEAD; Last-Modified 22 Aug 2025), not downloaded. This is the publication behind the January 2025 prize announcement and tngraffiti.in.",
+      "access_route": "Free PDF download from tamildigitallibrary.in.",
+      "reuse_terms": "Tamil Virtual Academy page: 'Copyright © 2026, All rights reserved by Tamil Virtual' [Academy]; PDF reuse terms not stated",
+      "metadata_it_would_add": [
+        "sign classes and Indus comparisons (not object-level, presumably)"
+      ],
+      "notes": "",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/tdl-marc-indus-signs-graffiti-marks.html",
+        "bytes": 302955,
+        "sha256": "05373c4505220ea9e55155941ae6d8c75af61614ab41ed6d6e518f7f628acd34"
+      }
+    },
+    {
+      "id": "W59",
+      "item": "14c Rajan and Sivanantham 2026",
+      "title": "Inscribed Potsherds of Tamil Nadu : Graffiti and Tamili, Vol. 1 and Vol. 2 [MARC 245]",
+      "url": "https://tamildigitallibrary.in/Marc-Articles/062969_Inscribed_Potsherds_of_Tamil_Nadu_Vol_1",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "published 2026; full PDFs public on Tamil Digital Library",
+      "contents": "MARC: first edition, Chennai, Department of Archaeology, Government of Tamil Nadu, 2026; ISBN 9788197784231 (both records); Vol. 1 'xxxviii, 699 p.' illustrations; Vol. 2 'xxiv, [684] p.', Rs. 2900. PDFs uploaded 2 Mar 2026: Vol. 1 35,390,765 bytes, Vol. 2 20,735,805 bytes (HEAD only, not downloaded). Likely the object-level catalogue behind tngraffiti.in, but contents not inspected.",
+      "access_route": "Free PDF download from tamildigitallibrary.in.",
+      "reuse_terms": "page copyright Tamil Virtual Academy; PDF reuse terms not stated; rights-unverified",
+      "metadata_it_would_add": [
+        "per-sherd site, context, depth and graffiti images (expected; not verified)"
+      ],
+      "notes": "Not Indus inscriptions; relevant to the South Indian graffiti comparison corpus.",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/tdl-marc-inscribed-potsherds-vol1.html",
+        "bytes": 303645,
+        "sha256": "223e0098500adcdf8d85a418e65af74695827e2a6ddad94a45555b1f0681f3aa"
+      }
+    },
+    {
+      "id": "W60",
+      "item": "14d Koshy 2026 machine-readable Mackay/Marshall seal catalogues",
+      "title": "Indus script: machine-readable seal catalogues from Mackay (1938) and Marshall (1931), with photo-coded text features and a reproducible analysis pipeline",
+      "url": "https://zenodo.org/records/23281781",
+      "opened": true,
+      "snippet_only": false,
+      "access_date": "2026-10-12",
+      "status": "published 2026-10-10 (v0.2.6)",
+      "contents": "Nitin Stephen Koshy, CC BY 4.0, DOI 10.5281/zenodo.23281781. Description: Mackay 1938 '709 rows with block/house/room and level', Marshall 1931 '560 rows with excavation area and depth', text features coded from 13 Mackay seal plates '(531 seals, 419 joined to find-spots...)'. v0.2.6 note states the seal tables and plate codings 'were produced by an AI model, not by hand or by eye as v0.2.5 stated'. The v0.2.6 record lists one file, indus-script-preprint-v0.2.6.pdf (278,154 bytes); the tables themselves were not found in this record.",
+      "access_route": "Zenodo.",
+      "reuse_terms": "CC BY 4.0 (deposit); source reports' rights separate",
+      "metadata_it_would_add": [
+        "seal number, find-spot (block/house/room), level/depth (AI-transcribed, needs verification)"
+      ],
+      "notes": "Useful as a cross-check list only after manual verification against the scans (item 10a/10b).",
+      "witness": {
+        "path": "data/raw/2026-10-12-data-inventory/web-checks-v1/witnesses/zenodo-23281781-koshy-mackay-marshall.json",
+        "bytes": 7413,
+        "sha256": "d59f7f6bb2a0f932d8f941bc8a3e13abe7ff7469dcdc4ec886ea523ac00cda61"
+      }
+    },
+    {
+      "id": "W61",
+      "item": "14e Other 2024-2026 announcements",
+      "title": "news searches for new Indus seals and corpora",
+      "url": "https://www.businesstoday.in/india/story/worlds-oldest-known-signboard-ministry-of-culture-shares-remarkable-indus-discovery-from-dholavira-542412-2026-07-12",
+      "opened": false,
+      "snippet_only": true,
+      "access_date": "2026-10-12",
+      "status": "no new inscribed-object corpus found",
+      "contents": "No report of a newly excavated inscribed Indus seal in 2024-2026 was found by the searches run. A July 2026 Ministry of Culture post about the Dholavira 'signboard' (snippets) concerns the 1991 find, now at the National Museum, New Delhi. Kotada Bhadli 2025 (item 10n) is from an unverified blog. No newer version of the Mahadevan concordance has been released; RMRL lists it as planned (item 2).",
+      "access_route": "n/a",
+      "reuse_terms": "n/a",
+      "metadata_it_would_add": [],
+      "notes": ""
+    }
+  ],
+  "counts": {
+    "direct": 3,
+    "web_checks": 61,
+    "web_checks_opened": 56,
+    "web_checks_snippet_only": 11
+  }
+}

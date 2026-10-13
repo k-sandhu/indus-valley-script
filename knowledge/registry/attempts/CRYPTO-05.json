@@ -1,0 +1,19 @@
+{
+  "id": "CRYPTO-05",
+  "theme": "Reserved prediction and mapping verification",
+  "status": "completed-synthetic-grid",
+  "question": "Can an additional identity observation detect a wrong mapping after conditional model confidence has crossed 95%?",
+  "outcome": "48 new systems yield 576 conditions and 4,032 audit records. Under 70% administrative change, a two-identity audit chosen by the frozen posterior rejects all 60 wrong proposals; a random two-identity audit rejects 56. Correct proposals all pass. A conservative random rule has an exact conditional probability bound of at most 5% for accepting a wrong map, with one wrong acceptance in 288 administrative proposals. All 12 independent review checks pass.",
+  "challenge": "Model confidence can stop on a wrong map, while verification cost and selection affect detection. A rejection leaves the mapping unresolved. The first verifier contained an unnecessarily complex code-availability expression and a redundant assertion.",
+  "remedy": "Frozen proposals were checked against separately acquired identities; exact uniform-subset probabilities were enumerated. System-level paired summaries retain all size conditions. The original review was preserved and a simpler verifier replayed the same checks and results.",
+  "evidence": [
+    "experiments/2026-10-02-six-hour/reserved-verification/FINDINGS.md",
+    "experiments/2026-10-02-six-hour/reserved-verification/main/results.json",
+    "experiments/2026-10-02-six-hour/reserved-verification/review-clean/checks.json",
+    "experiments/2026-10-02-six-hour/reserved-verification/review-clean/paired-system-comparisons.json"
+  ],
+  "retry_when": "Specify measurement errors, sequential proposal correction or multiple generative models in a fresh protocol; acquire an archaeological observation with an independently justified identity likelihood.",
+  "status_class": "synthetic",
+  "area": "methods",
+  "registry_order": 69
+}

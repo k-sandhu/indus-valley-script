@@ -1,0 +1,20 @@
+{
+  "id": "MARKOV-03",
+  "theme": "restoration-comparator",
+  "status": "completed-with-independent-review",
+  "question": "Does second-order context improve restoration on the saved artifact-held-out masks?",
+  "outcome": "Top-one-selected second order reaches 37.2706%, compared with first-order 34.5861%; paired gain 2.6845 points, interval 1.9902–3.3968. Bucket loss worsens by 0.1277 bits, interval 0.0965–0.1589. Top-five and top-ten differences are small. All 8,009 query outcomes independently checked.",
+  "challenge": "Full-record floating-point likelihoods reordered two lower-ranked candidates in one query despite matching target outcomes and losses.",
+  "remedy": "Preserved the failed reviewer and original predictions. Exact rational full-record likelihoods certified the two ties in a separately saved review endpoint.",
+  "evidence": [
+    "experiments/2026-10-02-six-hour/markov-order2/README.md",
+    "experiments/2026-10-02-six-hour/markov-order2/PROTOCOL.md",
+    "experiments/2026-10-02-six-hour/markov-order2/main/results.json",
+    "experiments/2026-10-02-six-hour/markov-order2/review-ties/verification.json",
+    "experiments/2026-10-02-six-hour/markov-order2/RETROSPECTIVE.md"
+  ],
+  "retry_when": "A declared new smoothing model or independent evaluation corpus is available; retain probability loss beside exact guesses.",
+  "status_class": "verified-computation",
+  "area": "structure",
+  "registry_order": 78
+}

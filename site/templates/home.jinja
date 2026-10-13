@@ -1,0 +1,14 @@
+{% extends "base.jinja" %}
+{% block content %}
+{{ purpose|safe }}
+<dl class="counts">{% for label, count in counts.items() %}<div><dt>{{ label }}</dt><dd>{{ count }}</dd></div>{% endfor %}</dl>
+<h2>Where things stand</h2>
+{{ standing|safe }}
+<h2>Working model</h2>
+{% for headline in headlines %}<section><h3>{{ headline.heading }}</h3>{{ headline.body|safe }}</section>{% endfor %}
+<p><a href="working-model/index.html">Working model</a></p>
+<h2>Conjectures</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">ID</th><th scope="col">Claim</th><th scope="col">Status</th><th scope="col">Credence</th></tr></thead><tbody>{% for row in conjectures %}<tr><td><a href="conjectures/{{ row.url }}">{{ row.id }}</a></td><td>{{ row.claim }}</td><td><span class="badge {{ row.status }}">{{ row.status|label }}</span></td><td>{{ row.credence }}</td></tr>{% endfor %}</tbody></table></div>
+<p><a href="contribute/index.html">Contribute</a> · <a href="data.html">Data</a></p>
+<p class="bootstrap">{{ bootstrap }}</p>
+{% endblock %}

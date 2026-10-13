@@ -1,5 +1,7 @@
 # Knowledge index
 
+The [repository map](MAP.md) lists the full navigation layer. Read [findings](findings/), [open questions](questions/), [conjectures](conjectures/), the [working model](WORKING-MODEL.md), [data coverage](DATA.md) and the [timeline](TIMELINE.md) for the next step. Attempts and findings use the [status-class vocabulary](registry/VOCABULARY.md).
+
 The project distinguishes **observed graphics**, **statistical structure**, **possible function** and **phonetic/lexical interpretation**. The first two have useful evidence here. No authenticated phonetic or lexical interpretation has been established.
 
 ## Research memory
@@ -12,7 +14,7 @@ The project distinguishes **observed graphics**, **statistical structure**, **po
 
 ## Manuscripts and reproducibility
 
-The [research-contribution overview](research-contributions.md) explains the results available for reuse and connects them to the four papers.
+The [research-contribution overview](research-contributions.md) explains the inscription-related results available for reuse. The settlement investigation below adds a fifth manuscript with its own source and calculation package.
 
 The [decipherment readiness review](directions/decipherment-readiness-2026-10-02.md) assesses all 101 previously registered entries, identifies short records outside the main benchmark and names the independent observations required for a restricted reading.
 
@@ -40,6 +42,7 @@ The [exploratory Bonta extension](../experiments/2026-10-08-bonta-extension/READ
 - [Conditional reference laws](../papers/002-conditional-reference-laws/manuscript.md): related objects, uniqueness selection and the fitting domain, with [claim files](../papers/002-conditional-reference-laws/methods.md).
 - [Physical observations in numerical decoding](../papers/003-physical-observations/manuscript.md), [methods](../papers/003-physical-observations/methods.md), [claim files](../papers/003-physical-observations/claim-evidence-map.md).
 - [Reference model selection before symbol mapping](../papers/004-reference-model-selection/manuscript.md), [methods and evidence](../papers/004-reference-model-selection/methods.md).
+- [Testing a published Sanskrit key against its own rearrangements](../papers/006-sanskrit-key-calibration/manuscript.md), [evidence guide](../papers/006-sanskrit-key-calibration/methods.md).
 - [Mapping method precedents](directions/mapping-method-precedents.md): primary sources for latent inference, search and parameter identification.
 - [Manual reproduction](../REPRODUCING.md), [historical environment](../output/environment.json), [original evidence manifest](../output/evidence_manifest.json).
 - [Original report](../output/pdf/indus_script_research_report.pdf), [chart atlas](../output/chart_atlas/index.html).
@@ -71,3 +74,44 @@ The repository can be shared privately as a knowledge record. Public release and
 ## October 11 review and publication
 
 The [adversarial Bonta extension](../experiments/2026-10-11-bonta-adversarial/REPORT.md) leads with seven candidate families after Claude Opus 5.5 review, with checked context counts, new pictorial Sanskrit anchors and lexical/crosswalk sensitivities. Open the [reviewed catalogue](../experiments/2026-10-11-bonta-adversarial/run-v6/catalogue.html) for Sanskrit senses and examples. The [public asset review](../experiments/2026-10-11-public-release/ASSET-REVIEW.md) records source exclusions, backups and publication checks.
+
+## Two approaches beyond the Bonta work
+
+The [October 11 parallel investigation](../experiments/2026-10-11-two-approaches/REPORT.md) develops Rao and colleagues' grammar recommendation and Mukhopadhyay's semantic-scope recommendation. Its [20-source census](../experiments/2026-10-11-two-approaches/literature/LANDSCAPE.md) records 22 recommendations and recent HMM, contextual-class and administrative precedents. A learned class grammar loses to tuned Markov in the frozen comparison; an exploratory class/Markov mixture improves mapped-token loss by 0.0557 bits over matched positional backoff. Whole-object analysis finds recurring bundles, while a post-outcome face-role control removes adjusted sign-pair evidence beyond that role. [Grammar](../experiments/2026-10-11-two-approaches/grammar/REPORT.md), [carrier analysis](../experiments/2026-10-11-two-approaches/administrative/REPORT.md).
+
+The proposed [standing-capacity token life cycle](../experiments/2026-10-11-two-approaches/administrative/HYPOTHESES.md) connects authorization before use with a possible receipt afterwards. Its predictions require independent handling, cancellation, attachment, content or issuing-group evidence. An [exact synthetic anchor example](../experiments/2026-10-11-two-approaches/ANCHORS.md) distinguishes new contextual information from copied witnesses. The [adversarial review](../experiments/2026-10-11-two-approaches/review/REVIEW.md), [response](../experiments/2026-10-11-two-approaches/REVIEW-RESPONSE.md) and [retrospective](retrospectives/2026-10-11-two-approaches.md) preserve failed outcomes, reference-law corrections and the fixed next-data tests.
+
+## Excavation and hidden settlement landscapes
+
+The [October 11 settlement paper](../papers/005-settlement-survey-gaps/manuscript.md) examines historical excavation counts, site-area definitions and overlooked archaeology beneath later cities, alluvium, piedmont sediment and changing coasts. Its [33-page export](../output/pdf/indus_settlement_survey_gaps_2026-10-11.pdf) has 69 cited references from a 72-record source register. Twenty-one [regions of interest](../experiments/2026-10-11-settlement-prospection/candidates-v5.json) organize source-linked comparisons and demotion rules. Their geometry indexes questions; no new site, field access or national artifact estimate was established.
+
+The [package](../experiments/2026-10-11-settlement-prospection/README.md) preserves aggregate code, inline calculations, source observations, original figures and an unrun block-level preservation pilot. Two actual Claude Code Opus 5.5 reviews and commissioned Codex passes precede the final version; the [response](../experiments/2026-10-11-settlement-prospection/review/response-to-reviewers.md) records each finding. The [retrospective](retrospectives/2026-10-11-settlement-prospection.md) explains source-access failures, geographic and chronological corrections, shared-frame sampling and print inspection. Use that record before repeating this path.
+
+## Early Indian institutions and cultural memory
+
+The [October 11 continuity study](../experiments/2026-10-11-early-indian-continuity/REPORT.md) develops two problems beyond decipherment: survival of practical and institutional knowledge through settlement change, and preservation or reconstruction of origins in early Indian texts. Its [manuscript](../experiments/2026-10-11-early-indian-continuity/MANUSCRIPT.md) proposes selective inheritance combined with intellectual recombination. Farming and craft comparisons, ritual responsibilities, Buddhist institutional reasoning, Manu, river passages and DN27 supply source-qualified cases; no diagnostic Harappan-to-textual join was established.
+
+The [institutional package](../experiments/2026-10-11-early-indian-continuity/institutions/README.md) retains its first filter defect and corrected endpoint. The [memory package](../experiments/2026-10-11-early-indian-continuity/memory/README.md) preserves a typed dating audit and explicitly synthetic history construction. A separate [textual control and retention model](../experiments/2026-10-11-early-indian-continuity/coordinator/CONTROL-AND-MODEL.md), [adversarial review](../experiments/2026-10-11-early-indian-continuity/review/REVIEW.md), [response](../experiments/2026-10-11-early-indian-continuity/REVIEW-RESPONSE.md) and [retrospective](retrospectives/2026-10-11-early-indian-continuity.md) record source scope and repairs. Prospective tests require unusual linked operations, independent branches, dated intermediates and matched alternatives; numerical checks do not authenticate a lineage.
+
+## Societal persistence and renewal, October 11
+
+The [reviewed theory](../experiments/2026-10-11-societal-persistence/REPORT.md) and [manuscript](../experiments/2026-10-11-societal-persistence/MANUSCRIPT.md) develop minimum functional conditions relative to an outcome, boundary and horizon. A 25-work scoped primary survey identifies direct precedents; a separate 14-work Harappan application codes 34 observations of renewal, dependence and changing use.
+
+The [finite constructions](../experiments/2026-10-11-societal-persistence/MODEL-RESULTS.md) distinguish current service from replacement capacity, shared deadlines and shared inputs. A post-baseline repair/learning variant changes the result under explicit alternative costs. Independent model and source reviews are preserved. The [empirical design](../experiments/2026-10-11-societal-persistence/EMPIRICAL-PROTOCOL.md) requires independently bounded delivery and dated operations before a numerical archaeological minimum can be estimated. [Retrospective](retrospectives/2026-10-11-societal-persistence.md).
+
+## Four Bronze Age records and known-category controls
+
+The [October 12 comparison](../experiments/2026-10-12-bronze-age-comparison/README.md) supplies primary source frames, a [manuscript](../experiments/2026-10-12-bronze-age-comparison/MANUSCRIPT.md), [methods](../experiments/2026-10-12-bronze-age-comparison/METHODS.md) and [exact outcomes](../experiments/2026-10-12-bronze-age-comparison/TABLES.md). Complete edited objects and natural subdivisions retain different units. Known-category success partly follows repeated identities; equal-entry spelling inventories all match most IVS equality patterns under independently chosen per-face keys. Source repairs and every earlier endpoint remain preserved. [Retrospective](retrospectives/2026-10-12-bronze-age-comparison.md).
+
+## Published-claim tests, 12 October
+
+The [published-claim tests](../experiments/2026-10-12-published-claim-tests/README.md) evaluate Yajnadevam's Sanskrit key and unicity argument ([Study A](../experiments/2026-10-12-published-claim-tests/sanskrit-key/REPORT.md)), Indus-script texts found outside South Asia ([Study B](../experiments/2026-10-12-published-claim-tests/foreign-finds/REPORT.md)) and the key's allograph and homophone groups ([Study C](../experiments/2026-10-12-published-claim-tests/allographs/REPORT.md)). A lexical emulation of the readability criterion accepts random strings; the key scores far below Sanskrit text and 1.2 to 2.4 standard deviations above rearrangements of its own values; a power analysis on synthetic Indus-shaped corpora shows that a correct homophonic key would stand 27 to 72 standard deviations clear; and the corpus is fitted equally by unrelated languages, also after near-duplicate texts are removed. An adversarial review and response accompany Study A. The [key calibration memo](directions/key-calibration-2026-10-12.md) turns these checks into a procedure for any future key; the [retrospective](retrospectives/2026-10-12-published-claim-tests.md) records failures and repairs.
+
+
+## Structure before meaning, 12 October
+
+The [diagnosis and plan](directions/structure-first-2026-10-12.md) explains why earlier work did not reach a substantive result, and the [six-step program](../experiments/2026-10-12-structure-first/README.md) tests the sign list, image–text pairing, line divisions, stroke numerals, method calibration on readable scripts and a structural language comparison. Graphic families improve prediction of rare signs, mostly through information already in the Wells order; Harappa tablet texts pair with their images within genre while copper-specific sign groups show no detectable transfer to seals; catalogued line divisions fall between recurring units; stroke values are more tied to neighbouring signs than Ur III counts; unsupervised segmentation and alternation do not discriminate at Indus scale; and Indus texts close on a small sign class, a descriptive property that leaves every candidate language tied. Each ledger description failed at least one frozen prediction. [Integrated report](../experiments/2026-10-12-structure-first/REPORT.md), [review and responses](../experiments/2026-10-12-structure-first/review/RESPONSE.md), [retrospective](retrospectives/2026-10-12-structure-first.md).
+
+## Seal-text identity and the 12 October synthesis
+
+The [seal-text identity study](../experiments/2026-10-12-seal-text-identity/REPORT.md) measures where identical seal texts are found, how often long texts repeat, whether identical texts share the field animal, and which sealings match seals elsewhere; an adversarial review and response accompany it, and the [retrospective](retrospectives/2026-10-12-seal-text-identity.md) records the repairs. [What the 12 October tests established](directions/what-12-october-established.md) reads the day's packages together and lists where effort now pays.

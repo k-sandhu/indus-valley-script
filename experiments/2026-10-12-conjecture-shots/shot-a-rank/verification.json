@@ -1,0 +1,93 @@
+{
+ "stage": "independent verification after the frozen confirmation run",
+ "method": "Independent recomputation of Shot A's P1a, P4 and kill decision on the confirmation half.\n\nWritten after the confirmation run. It does not import confirm.py, rank_lib.py or\nseal_table.py: the population, residual model, statistics and permutations are coded\nagain here from the rules stated in PREDICTIONS.md. Permutations use Python's\nrandom.Random with seed 777 (confirm.py uses numpy's default generator with seed\n20261013). Reading the confirmation half goes through shots_common.load_half, which logs\nthe access. Output: verification.json.",
+ "permutations": 9999,
+ "seed": 777,
+ "checks": [
+  {
+   "quantity": "population_seals",
+   "verification": 620,
+   "confirm_py": 620,
+   "rule": "exact",
+   "agree": true
+  },
+  {
+   "quantity": "components",
+   "verification": 582,
+   "confirm_py": 582,
+   "rule": "exact",
+   "agree": true
+  },
+  {
+   "quantity": "P4_n_high",
+   "verification": 11,
+   "confirm_py": 11,
+   "rule": "exact",
+   "agree": true
+  },
+  {
+   "quantity": "P1a_verdict",
+   "verification": "pass",
+   "confirm_py": "pass",
+   "rule": "exact",
+   "agree": true
+  },
+  {
+   "quantity": "P4_verdict",
+   "verification": "pass",
+   "confirm_py": "pass",
+   "rule": "exact",
+   "agree": true
+  },
+  {
+   "quantity": "kill_condition_met",
+   "verification": false,
+   "confirm_py": false,
+   "rule": "exact",
+   "agree": true
+  },
+  {
+   "quantity": "residual_sd",
+   "verification": 0.4911495462993023,
+   "confirm_py": 0.4911495462993023,
+   "rule": "abs diff <= 1e-9",
+   "agree": true
+  },
+  {
+   "quantity": "P1a_observed",
+   "verification": 12.344067764122874,
+   "confirm_py": 12.344067764122821,
+   "rule": "abs diff <= 1e-9",
+   "agree": true
+  },
+  {
+   "quantity": "P4_difference",
+   "verification": 0.3526949899243347,
+   "confirm_py": 0.3526949899243355,
+   "rule": "abs diff <= 1e-9",
+   "agree": true
+  },
+  {
+   "quantity": "P1a_ratio",
+   "verification": 1.8048226079960041,
+   "confirm_py": 1.807569362018763,
+   "rule": "relative diff <= 0.02 (null mean is a Monte Carlo estimate)",
+   "agree": true
+  },
+  {
+   "quantity": "P1a_p",
+   "verification": 0.006,
+   "confirm_py": 0.0074,
+   "rule": "abs diff <= 4 Monte Carlo SE of a difference of two p estimates (0.0048)",
+   "agree": true
+  },
+  {
+   "quantity": "P4_p",
+   "verification": 0.022,
+   "confirm_py": 0.0209,
+   "rule": "abs diff <= 4 Monte Carlo SE of a difference of two p estimates (0.0081)",
+   "agree": true
+  }
+ ],
+ "all_agree": true
+}

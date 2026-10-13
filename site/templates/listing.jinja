@@ -1,0 +1,23 @@
+{% extends "base.jinja" %}
+{% block content %}
+<div class="listing" data-index="{{ index_url }}">
+<form class="filters" role="search">
+  <label>Search <input type="search" name="search" autocomplete="off"></label>
+  {% for field, values in filters.items() %}<label>{{ field|label }} <select name="{{ field }}"><option value="">All</option>{% for value in values %}<option value="{{ value }}">{{ value|label }}</option>{% endfor %}</select></label>{% endfor %}
+  <button type="reset">Reset</button>
+</form>
+<p class="filter-count" role="status" aria-live="polite">{{ rows|length }} {{ 'questions' if kind == 'question' else 'attempts' if kind == 'attempt' else 'cards' }}</p>
+{% if kind == 'finding' %}
+{% for area, group in rows|groupby('area') %}<section><h2>{{ area|capitalize }}</h2><ul class="cards">{% for row in group %}<li data-id="{{ row.id }}"><a href="{{ row.url }}">{{ row.id }}: {{ row.title }}</a> <span class="badge {{ row.status }}">{{ row.status|label }}</span></li>{% endfor %}</ul></section>{% endfor %}
+{% elif kind == 'question' %}
+<div class="question-board">
+{% for row in rows %}<article class="question" data-id="{{ row.id }}"><h2><a href="{{ row.url }}">{{ row.id }}: {{ row.title }}</a></h2><p>{{ row.claim }}</p><p><span class="badge {{ row.status }}">{{ row.status|label }}</span> · {{ row.area }} · {{ row.kind|label }} · Priority {{ row.priority }}</p><dl><dt>Claimed by</dt><dd>{{ row.claimed_by or 'Unclaimed' }}</dd><dt>Claim expires</dt><dd>{{ row.claim_expires or '—' }}</dd><dt>Data access</dt><dd>{{ row.data_access|label }}</dd><dt>Difficulty</dt><dd>{{ row.difficulty }}</dd></dl></article>{% endfor %}
+</div>
+{% else %}
+<div class="table-wrap"><table><thead><tr><th scope="col">ID</th><th scope="col">{{ 'Claim' if kind == 'conjecture' else 'Question' }}</th><th scope="col">Area</th><th scope="col">Status</th>{% if kind == 'conjecture' %}<th scope="col">Credence</th><th scope="col">Risk</th>{% else %}<th scope="col">Outcome</th>{% endif %}</tr></thead><tbody>
+{% for row in rows %}<tr data-id="{{ row.id }}"><td><a href="{{ row.url }}">{{ row.id }}</a></td><td>{{ row.claim if kind == 'conjecture' else row.question }}</td><td>{{ row.area }}</td><td><span class="badge {{ row.status }}">{{ row.status|label }}</span></td>{% if kind == 'conjecture' %}<td>{{ row.credence }}</td><td>{{ row.risk|label }}</td>{% else %}<td>{{ row.outcome }}</td>{% endif %}</tr>{% endfor %}
+</tbody></table></div>
+{% endif %}
+<p><a href="{{ index_url }}">JSON index</a></p>
+</div>
+{% endblock %}

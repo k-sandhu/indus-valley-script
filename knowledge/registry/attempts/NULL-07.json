@@ -1,0 +1,20 @@
+{
+  "id": "NULL-07",
+  "theme": "paired-observation-channel",
+  "status": "completed-known-channel-recovery-audit",
+  "question": "Can paired faces estimate a known symmetric error rate and correct latent frequencies?",
+  "outcome": "On 1,000 frozen populations with true rate .1, agreement and joint mean estimates are .099261 and .101605. Known-rate inversion gives 10,335 negative components, matching exact expectation 10,331.87. Small-cell total variation is .245280 for joint correction and .227690 for matched shrinkage; pooled correction improves .020967 to .012236. Exact identification limits retained.",
+  "challenge": "Finite inversion can leave the simplex; a flexible corrected estimator can still lose to a prior-matched simple baseline. An unspecified boundary fallback was found, with no main case using it.",
+  "remedy": "Constrain the fit, retain matched shrinkage, compute exact absence/agreement distributions, audit all objectives/projections and preserve the boundary note without changing endpoints.",
+  "evidence": [
+    "experiments/2026-10-02-six-hour/null-calibration/noisy-channel/README.md",
+    "experiments/2026-10-02-six-hour/null-calibration/noisy-channel/main/results.json",
+    "experiments/2026-10-02-six-hour/null-calibration/noisy-channel/main/verification.json",
+    "experiments/2026-10-02-six-hour/null-calibration/noisy-channel/IDENTIFICATION.md",
+    "experiments/2026-10-02-six-hour/null-calibration/noisy-channel/RETROSPECTIVE.md"
+  ],
+  "retry_when": "A new kernel, correlated observers or near-uniform latent frequencies provide an explicit misspecification or identification test.",
+  "status_class": "synthetic",
+  "area": "methods",
+  "registry_order": 89
+}

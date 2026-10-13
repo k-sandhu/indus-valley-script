@@ -1,68 +1,87 @@
 # Indus Valley script research knowledge base
 
-This repository preserves evidence, methods, manuscripts, exploratory ideas and failed approaches from an ongoing Indus script investigation. It currently contains **no authenticated translation, sound value, language identification or decipherment**.
+This project tests whether many AI agents, working from shared evidence and a common evaluation harness, can make measurable progress on the Indus script and the archaeology around it. Progress means verified results: new observations linked to sources, structural findings that survive held-out tests and controls, and proposed readings that stand clear of rearrangements of themselves. Every attempt is recorded, including failures, so the next contributor starts from what is already known.
 
-The public research package retains the manuscripts, code, protocols and reviewed outputs. Acquired corpora, source photographs and downloaded witnesses remain local. The [public asset review](experiments/2026-10-11-public-release/ASSET-REVIEW.md) records the source exclusions and preservation backups. Scripts run manually; no CI/CD workflows are included.
+## Where things stand
 
-## Start here
+A held-out test scores cases withheld while a model is fitted. Each linked card defines its score, population and chance control; a p-value measures how unusual the result is under that control.
 
-| Purpose | Read |
+- Across 19 catalogue ranges, 166 of 493 identifiers are absent from the held export’s keys. [Finding](knowledge/findings/F-0007-catalogue-identifiers-missing-from-export.md)
+- The reviewed census joins 68 of 114 inspected original museum records to corpus families. [Finding](knowledge/findings/F-0008-museum-joins-are-a-lower-bound.md)
+- Previous-sign information improves held-out prediction by 0.848 bits per noninitial sign in the selected unique texts. [Finding](knowledge/findings/F-0001-sequential-prediction-on-unique-texts.md)
+- Second-order context recovers the highest-ranked graphic in 37.27% of 8,009 artificial known-slot masks, against first order’s 34.59%. [Finding](knowledge/findings/F-0002-second-order-known-slot-restoration.md)
+- Missing-count prediction fails its comparator: 46.30% recovery against 51.07% for always guessing one. [Finding](knowledge/findings/F-0005-gap-count-estimator-loses-to-constant-one.md)
+- Graphic base families improve prediction by 0.0219 bits per sign against size-matched random groups (p = 0.005). [Finding](knowledge/findings/F-0010-graphic-base-families-improve-prediction.md)
+- Lines recur more than crossing windows on 23 catalogue-divided faces, less on 4, with 42 ties (p = 0.0003). [Finding](knowledge/findings/F-0018-lines-recur-more-than-crossing-windows.md)
+- Stroke groups take 3.61 values per following item, against 4.53–5.15 for size-matched Ur III counts. [Finding](knowledge/findings/F-0024-stroke-values-are-tied-to-following-items.md)
+- None of 445 eligible seals with six or more signs shares its complete text with another seal. [Finding](knowledge/findings/F-0027-long-seal-texts-do-not-repeat.md)
+- Of 16 sealings or tags with texts matching eligible seals, 13 match only seals found elsewhere. [Finding](knowledge/findings/F-0030-sealings-match-seals-from-other-cities.md)
+
+No reading, sound value or language has been established.
+
+## What we currently think
+
+The [working model](knowledge/WORKING-MODEL.md) states the project’s current ideas about seal legends, offices, affiliations and tablet tiers. [Conjecture cards](knowledge/conjectures/) give each claim a credence, predictions and a kill condition, and record how tests change it.
+
+The first two [conjecture shots](experiments/2026-10-12-conjecture-shots/REVIEW-RESPONSE.md), on 12–13 October, each explored one half of the corpus and made one frozen prediction about the other half. A full working reading of 118 signs failed to predict where seals were found or how large they were. Legends closing in a small set of signs sat on larger seals, a pass that an adversarial review traced to three large seals ending in sign 820. A [plate check](experiments/2026-10-13-plate-checks/README.md) of the published photographs found that the Lothal sealings and the Mohenjo-daro seal M-895 carry the same four-sign legend from two different seals.
+
+## Explore
+
+Open the [reviewed sign catalogue](experiments/2026-10-11-bonta-adversarial/run-v6/catalogue.html) for sign hypotheses and examples, or the [687-cell chart atlas](output/chart_atlas/index.html) for source-linked chart cells and transcription uncertainty. The [repository map](knowledge/MAP.md) lists findings, questions, attempts, papers and retrospectives. The [original report PDF](output/pdf/indus_script_research_report.pdf) and [settlement paper PDF](output/pdf/indus_settlement_survey_gaps_2026-10-11.pdf) are retained alongside their methods.
+
+| Manuscript draft | Subject |
 |---|---|
-| Strongest reviewed sign hypotheses, Sanskrit anchors and inscription examples | [Visual catalogue](experiments/2026-10-11-bonta-adversarial/run-v6/catalogue.html), [adversarial report](experiments/2026-10-11-bonta-adversarial/REPORT.md) |
-| Public release scope and source attribution | [Asset review](experiments/2026-10-11-public-release/ASSET-REVIEW.md), [third-party notices](THIRD_PARTY_NOTICES.md) |
-| Findings available for reuse and discussion | [Research contributions](knowledge/research-contributions.md) |
-| October 6–7 program: stronger restoration models, evidence census, tests of Frenez's lecture, weights, backward chronology | [Program report](experiments/2026-10-06-research-program/REPORT.md), [packages and reviews](experiments/2026-10-06-research-program/README.md) |
-| Is the Indus evidence completely indexed, and with what metadata? | [Census synthesis](experiments/2026-10-06-evidence-census/synthesis/REPORT.md) |
-| Evidence we have and need for decipherment | [Decipherment readiness review](knowledge/directions/decipherment-readiness-2026-10-02.md) |
-| New numerical connections and independent publication assessment | [Regional connection findings](knowledge/directions/regional-numerical-connections-2026-10-02.md), [study records](experiments/2026-10-02-connections-and-priority/README.md) |
-| Original sources that change the numerical candidates | [Source recovery findings](knowledge/directions/source-recovery-2026-10-02.md), [source audits and registered views](experiments/2026-10-02-source-recovery/README.md) |
-| Graphic prediction and restoration | [Paper 001](papers/001-artifact-aware-prediction/manuscript.md) |
-| Conditional sampling and related records | [Paper 002](papers/002-conditional-reference-laws/manuscript.md) |
-| Numerical constraints and physical observations | [Paper 003](papers/003-physical-observations/manuscript.md) |
-| Selecting a record model before mapping symbols | [Paper 004](papers/004-reference-model-selection/manuscript.md) |
-| Detailed statistical methods | [Methods](papers/001-artifact-aware-prediction/methods.md) |
-| What is established, exploratory, failed or untested | [Knowledge index](knowledge/INDEX.md), [experiment registry](knowledge/experiments/registry.json) |
-| What we tried and how problems were resolved | [Retrospectives](knowledge/retrospectives/README.md) |
-| New research directions and priorities | [Research roadmap](knowledge/directions/research-roadmap.md) |
-| Cryptography framing and recent model results | [Cryptography memo](knowledge/directions/cryptography.md) |
-| Completed six-hour investigation | [Session record](experiments/2026-10-02-six-hour/SESSION_LOG.md) |
-| Source identity, rights and catalogue caveats | [Sources](knowledge/provenance/SOURCES.md), [redistribution](knowledge/provenance/REDISTRIBUTION.md) |
-| Original completed report | [18-page report](output/pdf/indus_script_research_report.pdf) |
-| Inspect the 687-cell chart | [Local interactive atlas](output/chart_atlas/index.html) |
-| Repeat an analysis without rediscovering prior failures | [Reproduction guide](REPRODUCING.md), [contribution guide](CONTRIBUTING.md) |
+| [001](papers/001-artifact-aware-prediction/manuscript.md) | Graphic prediction and artificial restoration |
+| [002](papers/002-conditional-reference-laws/manuscript.md) | Reference laws for copies, selection and recording quality |
+| [003](papers/003-physical-observations/manuscript.md) | Physical observations and numerical ambiguity |
+| [004](papers/004-reference-model-selection/manuscript.md) | Reference choice before symbol mapping |
+| [005](papers/005-settlement-survey-gaps/manuscript.md) | Excavation counts, survey gaps and overlooked settings |
+| [006](papers/006-sanskrit-key-calibration/manuscript.md) | A published Sanskrit key and its rearrangement controls |
 
-## Current empirical position
+## Data
 
-The first investigation began October 1, 2026 and ran for four hours and two minutes. Its code and evidence paths are preserved under `src/`, `research/`, `results/` and `output/`. The original README and import manifest are retained in [the archive](archive/2026-10-01-investigation/README.md).
+The first priority is a complete record of inscribed objects and their metadata: catalogue aliases, every face and image, dimensions, material, context, dating, accession and publication references. [DATA.md](knowledge/DATA.md) records held inputs and coverage gaps. A clone contains reviewed prose, code, protocols, aggregates, source pointers and selected attributed resources; acquired corpora, most photographs, downloaded witnesses and detailed corpus-derived audit tables must be acquired separately under their source terms. [REPRODUCING.md](REPRODUCING.md) gives pinned inputs and replay requirements; [rights records](knowledge/provenance/REDISTRIBUTION.md) describe what can be shared.
 
-- In the unique-text evaluation, local sequential dependencies improved predictive log score by approximately **0.848 bits per noninitial sign** under the declared filters and controls.
-- Artificial one-known-slot restoration reaches **37.27% exact top-one** with second-order context, compared with **34.59%** for first order and **33.81%** for the earlier local model on the same **8,009 masks**. Second order has greater probability loss; loss-based tuning selects first order in every fold.
-- A different annotation of shared archaeological sources retained a positive candidate-event score gain after source/text-overlap exclusions.
-- Unknown gap-count prediction **failed** to beat the constant-one control: **46.3% versus 51.1%**.
-- A published numerical proposal has four positive-integer solutions before an additional archaeological range restriction. The selected 10/8/6 values remain conditional on the proposal's unverified premises.
-
-These measurements describe graphic-code prediction in selected transcriptions, including artificial masking and alternate annotation of shared sources. The manuscript's claim-evidence map defines each population and outcome; the [priority audit](research/literature/evidence_and_novelty_matrix.md) places the methods alongside earlier Markov, duplication-control and administrative-system research.
-
-The current continuation also has exact sampling-law examples, known-system mapping controls, numerical acquisition studies and source frames for Harappa, Lothal and Kanmer. At a nominal 5% threshold, literal-copy simulations reject 5.4% with matched object references and 15.9% with record-wise references; imperfect-face simulations give 5% and 11%. A reference-only model selector recovers 309 of 384 simulated symbol maps, compared with 283 for graph mapping and 168 for slot mapping alone. A complete-inventory constraint increases numerical recovery from 133 to 190 of 200 worlds with four incorrect local assignments. The [session record](experiments/2026-10-02-six-hour/SESSION_LOG.md) links each experiment, its preserved failures and its independent review.
-
-## Repository organization
+For a smaller initial checkout:
 
 ```text
-papers/       complete manuscript drafts, detailed methods, evidence maps
-knowledge/    indexed findings, retrospectives, directions, source caveats
-experiments/  dated new protocols and their separately recorded results
-research/     preserved original plans, audits, source notes and experiments
-src/          reusable original and exploratory analysis code
-results/      preserved root experiment outputs, including superseded results
-output/       original report, atlas, summaries and verification manifests
-archive/      original README, import record, historical documentation
-tools/        manual preservation, indexing and verification utilities
-data/         locally preserved inputs; bulk inputs excluded from Git
-templates/    experiment and source-review templates for future work
+git clone --filter=blob:none --sparse https://github.com/k-sandhu/indus-valley-script.git
+cd indus-valley-script
+git sparse-checkout set knowledge papers tools templates
 ```
 
-No top-level blanket licence is assigned to third-party material. See [reuse status](REUSE.md). The local import preserves acquired inputs and source witnesses; Git contains our written findings, reusable code, selected resources, summaries, and acquisition/provenance records. A GitHub checkout alone therefore does not contain every input required for all original analyses.
+This checkout supports browsing the knowledge layer. Add experiment directories and required inputs before inspecting their outputs or reproducing a study.
 
-## Research memory rule
+## Contribute
 
-Before a new run, search [the registry](knowledge/experiments/registry.json), the retrospectives and `research/`. Revisit an unsuccessful path when a named new dataset, method, corrected assumption or independent source makes the retry informative. Keep the old endpoint and explain the change. Interesting imaginative proposals belong in the knowledge base with an explicit test and a status; they do not become readings by repetition.
+People can [open an issue](https://github.com/k-sandhu/indus-valley-script/issues/new/choose), discuss an [open question](knowledge/questions/) or independently verify a recorded result. Data and metadata corrections are especially useful. [CONTRIBUTING.md](CONTRIBUTING.md) explains claims, owned files, review tiers and pull-request checks.
+
+For agents: Clone https://github.com/k-sandhu/indus-valley-script, read AGENTS.md and follow it.
+
+## Repository layout
+
+| Directory | Contents |
+|---|---|
+| `papers/` | Manuscript drafts, detailed methods and evidence maps |
+| `knowledge/` | Findings, questions, conjectures, registry entries, directions and source caveats |
+| `experiments/` | Dated protocols, outputs, reviews and retrospectives |
+| `research/` | Preserved original plans, audits, source notes and experiments |
+| `src/` | Reusable original and exploratory analysis code |
+| `results/` | Preserved root outputs, including superseded endpoints |
+| `output/` | Reports, chart atlas, summaries and verification manifests |
+| `archive/` | Original README, import record and historical documentation |
+| `tools/` | Manual knowledge-base, preservation and verification utilities |
+| `data/` | Local inputs and acquisition records; bulk inputs excluded from Git |
+| `templates/` | Experiment, finding, question and source-review templates |
+| `.claude/skills/` | Short task guides linked from AGENTS.md |
+| `.github/ISSUE_TEMPLATE/` | Question claims, data corrections, result errors and conjecture forms |
+
+Scripts run manually. The project has no CI/CD workflow or recurring automation; the [project website](https://k-sandhu.github.io/indus-valley-script/) is generated from the repository with `tools/build_site.py` and served by GitHub Pages from the `gh-pages` branch. Discussion takes place in [GitHub Discussions](https://github.com/k-sandhu/indus-valley-script/discussions).
+
+## Reuse and licence
+
+Code written for the project is released under the [Unlicense](LICENSES/Unlicense.txt), and the project's prose, data, cards and documentation under [CC0 1.0](LICENSES/CC0-1.0.txt); material derived from the 1979 Helsinki edition keeps [CC BY 4.0](LICENSES/CC-BY-4.0.txt) and its attribution ([LICENSE](LICENSE)). Contributions are accepted under the same terms. Third-party material keeps its own terms. [REUSE.md](REUSE.md), [third-party notices](THIRD_PARTY_NOTICES.md) and the [asset review](experiments/2026-10-11-public-release/ASSET-REVIEW.md) describe the current package and excluded sources. Manuscripts remain AI-assisted research drafts.
+
+## History
+
+The [research timeline](knowledge/TIMELINE.md) preserves the earlier README’s research summaries and navigation links. The [knowledge index](knowledge/INDEX.md) and [retrospectives](knowledge/retrospectives/README.md) retain the detailed record of results, failures and repairs.

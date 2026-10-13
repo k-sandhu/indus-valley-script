@@ -1,0 +1,18 @@
+{
+  "id": "NULL-03",
+  "theme": "weighted-copy-margins",
+  "status": "completed-exact-sampler-audit",
+  "question": "Can a reference preserve both latent and expanded margins with unequal copy counts?",
+  "outcome": "For multiplicities 1,1,1,2,2,3, fixing three latent and five expanded ones leaves six columns. Integer continuation sampling gives exact uniform 1/6 column probabilities. Direct and rejection streams each preserve 100,000 sampled tables.",
+  "challenge": "Unrestricted object shuffles change expanded margins in fourteen of twenty columns. The direct stream has a retained .01336 chi-square diagnostic.",
+  "remedy": "Count legal completions exactly, verify every branch probability and independently replay streams. Preserve the uneven sample diagnostic beside the exact law.",
+  "evidence": [
+    "experiments/2026-10-02-six-hour/null-calibration/unequal-copy-counts/README.md",
+    "experiments/2026-10-02-six-hour/null-calibration/unequal-copy-counts/results.json",
+    "experiments/2026-10-02-six-hour/null-calibration/unequal-copy-counts/verification.json"
+  ],
+  "retry_when": "An established copy process has additional count/stratum constraints requiring a new conditional sampler.",
+  "status_class": "synthetic",
+  "area": "methods",
+  "registry_order": 85
+}

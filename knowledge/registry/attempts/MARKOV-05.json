@@ -1,0 +1,20 @@
+{
+  "id": "MARKOV-05",
+  "theme": "rare-history-shrinkage",
+  "status": "completed-negative-comparison-and-independent-review",
+  "question": "Can extra training-count-dependent shrinkage improve probability prediction while retaining useful second-order histories?",
+  "outcome": "All five outer folds select pure first-order backoff from eighteen frozen candidates. All 8,009 distributions equal M1. The closest finite candidate is .00846–.00929 inner bits worse. Independent flat counts, complete-chain probabilities, calibration and 10,000 paired component-bootstrap draws pass.",
+  "challenge": "The extra history weight is algebraically equivalent to effective strength alpha+kappa+alpha*kappa/N, leaving equivalent grid pairs. The benchmark had already guided earlier model development.",
+  "remedy": "Freeze the equivalence, remove duplicate candidates before fitting, reuse documented masks/folds, and preserve the negative result without changing the loss objective. Verify 13,045 contexts and 3,859 exact rational identities.",
+  "evidence": [
+    "experiments/2026-10-02-six-hour/markov-adaptive/README.md",
+    "experiments/2026-10-02-six-hour/markov-adaptive/PROTOCOL.md",
+    "experiments/2026-10-02-six-hour/markov-adaptive/main/results.json",
+    "experiments/2026-10-02-six-hour/markov-adaptive/review/verification.json",
+    "experiments/2026-10-02-six-hour/markov-adaptive/RETROSPECTIVE.md"
+  ],
+  "retry_when": "A different probability model or new independently reviewed observation block changes the test beyond this completed count-shrinkage family.",
+  "status_class": "failed",
+  "area": "structure",
+  "registry_order": 99
+}

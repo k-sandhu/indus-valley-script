@@ -1,0 +1,21 @@
+{
+  "id": "MARKOV-01",
+  "theme": "conventional restoration comparator",
+  "status": "verified-computation-on-preserved-queries",
+  "question": "How does a conventional first-order Markov model compare on the exact earlier known-slot queries?",
+  "outcome": "Markov top-one 34.5861%, PMB 33.8120%, PM 16.9934% on the same 8,009 masks. PMB minus Markov top-one interval includes zero; Markov top-five and bucket log loss improve. This is the conceptual Markov family with unigram-prior smoothing, distinct from the published modified Kneser–Ney estimator.",
+  "challenge": "A stronger conventional comparator had to retain the existing query identities, grouping, folds and training-only selection.",
+  "remedy": "Exact correspondence checks, nested smoothing selection, paired component intervals and independent recalculation of every query prediction.",
+  "evidence": [
+    "experiments/2026-10-02-six-hour/markov-baseline/PROTOCOL.md",
+    "experiments/2026-10-02-six-hour/markov-baseline/README.md",
+    "experiments/2026-10-02-six-hour/markov-baseline/main/results.json",
+    "experiments/2026-10-02-six-hour/markov-baseline/verification.json",
+    "experiments/2026-10-02-six-hour/markov-baseline/RETROSPECTIVE.md",
+    "src/six_hour/markov_baseline.py"
+  ],
+  "retry_when": "A declared new estimator, independently tuned start distribution or changed observation population supplies a distinct comparison. Reuse saved masks and predictions.",
+  "status_class": "verified-computation",
+  "area": "structure",
+  "registry_order": 61
+}

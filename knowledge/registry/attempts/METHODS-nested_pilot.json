@@ -1,0 +1,30 @@
+{
+  "id": "METHODS-nested_pilot",
+  "theme": "original-methods-run",
+  "status": "completed-analysis-see-source-design",
+  "question": "Post-pilot training-only nested model-selection robustness",
+  "outcome": "Endpoint preserved; use methods FINDINGS and exact result, not the most favorable variant.",
+  "challenge": "Population, selection and null-reference changes make endpoints noninterchangeable.",
+  "remedy": "Run-specific parameters, design, seeds and hashes remain in the original result index.",
+  "evidence": [
+    "research/methods/results/nested_pilot/nested_results.json"
+  ],
+  "retry_when": "A named new input or changed protocol justifies a new run; preserve this endpoint.",
+  "parameters": [
+    {
+      "input": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+      "output": "research/methods/results/nested_pilot",
+      "min_length": 3,
+      "seed": 20261001,
+      "bootstrap": 1000,
+      "permutations": 0,
+      "unique": false,
+      "reverse": false,
+      "collapse": null
+    }
+  ],
+  "source_index": "research/methods/RESULT_INDEX.json",
+  "status_class": "exploratory",
+  "area": "structure",
+  "registry_order": 46
+}

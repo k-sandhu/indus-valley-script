@@ -1,0 +1,21 @@
+{
+  "id": "MARKOV-02",
+  "theme": "boundary and order mechanisms",
+  "status": "verified-post-outcome-mechanism-study",
+  "question": "Which learned boundaries and interior transitions support restoration?",
+  "outcome": "Removing only the end factor lowers final-slot top-one from 53.95% to 48.25%. Interior-only training shuffles average 24.52% overall versus 34.59% full Markov; all-slot shuffles average 14.88%. Unigram start replacement lowers initial top-one while improving initial bucket loss. Rare-target calibration remains poor despite low overall calibration error.",
+  "challenge": "Deleting an inference factor and refitting without end events have different effects. Training transformations can incidentally recreate held-out texts.",
+  "remedy": "Separate interventions, fixed original groups and smoothing, twenty saved training orders per control, logged accidental text coincidences and independent prediction checks.",
+  "evidence": [
+    "experiments/2026-10-02-six-hour/markov-ablation/PROTOCOL.md",
+    "experiments/2026-10-02-six-hour/markov-ablation/README.md",
+    "experiments/2026-10-02-six-hour/markov-ablation/main/results.json",
+    "experiments/2026-10-02-six-hour/markov-ablation/verification.json",
+    "experiments/2026-10-02-six-hour/markov-ablation/RETROSPECTIVE.md",
+    "src/six_hour/markov_ablation.py"
+  ],
+  "retry_when": "A training-only start-shrinkage or historical transition estimator changes the comparison; retain all existing mechanism endpoints.",
+  "status_class": "exploratory",
+  "area": "structure",
+  "registry_order": 62
+}

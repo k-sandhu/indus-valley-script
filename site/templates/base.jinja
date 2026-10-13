@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} · Indus research</title>
+  <link rel="stylesheet" href="{{ css }}">
+  <script src="{{ js }}" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="{{ home }}">Indus research</a>
+  <nav aria-label="Main navigation">{% for label, url in nav %}<a href="{{ url }}">{{ label }}</a>{% endfor %}</nav>
+</header>
+<main id="content">
+  <h1>{{ title }}</h1>
+  {% if worktree %}<p class="preview">Worktree preview</p>{% endif %}
+  {% block content %}{{ body|safe }}{% endblock %}
+</main>
+<footer class="site-footer">
+  <a href="{{ source_url }}">Source on GitHub</a>
+  <span>{{ commit[:12] }} · {{ commit_date }}</span>
+</footer>
+</body>
+</html>

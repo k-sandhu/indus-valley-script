@@ -1,0 +1,20 @@
+{
+  "id": "KEY-CALIBRATION-POWER-SYNTHETIC-2026-10-12",
+  "theme": "identifiability of phonetic keys at Indus corpus scale",
+  "status": "completed-exploratory-synthetic-reference",
+  "question": "On synthetic corpora with the Indus shape (1,859 texts, Indus lengths, Indus sign frequencies) encoding held-out Sanskrit, Latin, Old Tamil or Sumerian, how far does the true key stand above its permutations, how much does blind annealing recover, and does half-split transfer identify the language?",
+  "outcome": "True homophonic keys exceed their within-stratum rearrangements by 27.4, 33.2, 37.1 and 72.5 standard deviations; the published key on the real corpus by 1.2-2.4. Annealing under the correct model recovered 37-83% of tokens in seven runs and 7% in one. Language identification by half-split transfer depends on seeds: Stage 5 identified Old Tamil and Sumerian but not Sanskrit or Latin; the near-duplicate rerun identified Latin and Old Tamil, tied Sanskrit with Latin and missed Sumerian. No wrong-language model exceeded z 3.1 on novel half-B texts, while the real corpus transfers at 6.3-7.0 under all four models. Indus half B reuses 37.4% of half-A trigrams against 8.2-10.1% for synthetic corpora.",
+  "challenge": "Synthetic corpora are homophonic consonant encodings of running text; real inscriptions may be formulaic, logographic or nonlinguistic. Three runs per cell.",
+  "remedy": "Same procedure, strata and step counts as Stage 3g; held-out text not used in model training; designed after outcomes and labelled exploratory (Amendment 3).",
+  "evidence": [
+    "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage5/summary.json",
+    "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage5/derived.json",
+    "experiments/2026-10-12-published-claim-tests/sanskrit-key/AMENDMENT-3.md",
+    "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage5/ngram_reuse.json",
+    "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage3g/novel_transfer.json"
+  ],
+  "retry_when": "A formulaic or logographic synthetic generator, or segmented Indus units, change the alternative under test.",
+  "status_class": "synthetic",
+  "area": "language",
+  "registry_order": 154
+}

@@ -1,0 +1,19 @@
+{
+  "id": "MARKOV-04",
+  "theme": "restoration-selection-objective",
+  "status": "completed-post-outcome-comparison",
+  "question": "Does selecting second-order smoothing by inner probability loss retain the extra context?",
+  "outcome": "All five folds choose backoff-only and reproduce every first-order query outcome: 34.5861% top-one and 5.11943 bits bucket loss. All 8,009 masks independently reviewed.",
+  "challenge": "The preceding top-one-selected second-order model improved accuracy while worsening probability estimates.",
+  "remedy": "Froze a separate loss-selection protocol before execution; retained model class, grid, folds and queries. Recorded reused-benchmark model-development status and both outcomes.",
+  "evidence": [
+    "experiments/2026-10-02-six-hour/markov-order2/loss-selected/PROTOCOL.md",
+    "experiments/2026-10-02-six-hour/markov-order2/loss-selected/main/results.json",
+    "experiments/2026-10-02-six-hour/markov-order2/loss-selected/review/verification.json",
+    "experiments/2026-10-02-six-hour/markov-order2/FINDINGS.md"
+  ],
+  "retry_when": "New smoothing or a fresh evaluation population can test the accuracy/loss tradeoff without another adaptive comparison on the same masks.",
+  "status_class": "exploratory",
+  "area": "structure",
+  "registry_order": 79
+}

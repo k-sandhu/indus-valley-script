@@ -1,0 +1,28 @@
+name: "Data source or metadata correction"
+description: "Report a source, missing field or corrected object join."
+title: "Data: "
+body:
+  - type: markdown
+    attributes:
+      value: "Read CONTRIBUTING.md. Link source records and keep acquired images, sign sequences and third-party passages out of this issue."
+  - type: textarea
+    id: objects
+    attributes:
+      label: "Objects, fields and existing records"
+      description: "Keep catalogue namespaces and aliases explicit. Include DATA gap or Q-ID if available."
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: "Source and exact locator"
+      description: "Give title, edition, URL and page/plate/registration. Describe access and rights; link to source records."
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: "Proposed change and coverage"
+      description: "State the observation, competing assertions, completeness and the coverage count affected. Keep unresolved-rights images and corpus text local."
+    validations:
+      required: true

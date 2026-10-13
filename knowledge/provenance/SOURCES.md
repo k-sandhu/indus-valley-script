@@ -95,7 +95,7 @@ The local-only JSONL derivatives under `research/literature/nonlinguistic_contro
 
 ## Gaps carried forward
 
-No open independently coded complete EBUDS/Mahadevan/Wells corpus was acquired through the searched primary supplements. ICIT bulk access required registration. CISI2/3 complete photographic volumes were not acquired. Several author PDFs were accessible only as indexed text or browser views, so source coordinates may refer to text inspection rather than figure pixels. The retrospective records each affected object and acquisition route.
+No open independently coded complete EBUDS/Mahadevan/Wells corpus was acquired through the searched primary supplements. ICIT bulk access required registration. CISI2/3 complete photographic volumes were not acquired. (Update, 13 October 2026: a complete CISI 2 scan was later acquired and is held locally; CISI 3 is still not held. Current holdings are in [DATA.md](../DATA.md).) Several author PDFs were accessible only as indexed text or browser views, so source coordinates may refer to text inspection rather than figure pixels. The retrospective records each affected object and acquisition route.
 
 The new [Kenoyer/Meadow HARP introduction](https://www.harappa.com/sites/default/files/pdf/Kenoyer-Meadow-2010-HARP.pdf) is a 17-page lead distinct from our 15-page excerpt. Jamison, Uesugi and Yamaguchi's 2023 unicorn study, DOI `10.1016/j.ara.2023.100486`, is a context-coding lead. The community-suggested Tell Jokha TJ17-PRO-S56 object requires inspection of Fig. 6.61 in the SAHI 2017 report before entering an archaeological table. These were leads at handoff, with no claimed object verification here.
 

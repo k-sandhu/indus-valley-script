@@ -1,0 +1,7 @@
+# Amendment 1, 13 October 2026: sources for set seals without a Lipi crop
+
+Written after the protocol was hashed and before any image was viewed.
+
+The CISI 2 text layer was searched for the seven set seals without a Lipi crop. Its Mohenjo-daro plates end at M-1658 (page heading on PDF 287), none of its page headings names Chanhu-daro, and no caption matches M-1701, M-1720, M-1761, M-1764, M-1989, H-1708 or C-56. CISI 1 has no text layer, so it cannot be searched by caption text. The five Mohenjo-daro numbers and H-1708 lie beyond the ranges of both volumes; their Lipi records cite field numbers (DK, HR, DK-A, DK-C and H99-3819 "Figure 32.02") from publications that are not held. These six and the Dholavira seal (DHR-16412) are recorded as having no held image.
+
+C-56 is the exception. Its Lipi record cites "CH 3485 (a) Pl. LI:30", Mackay 1943, *Chanhu-daro Excavations 1935-36*, plate LI no. 30, and the project holds that report as an image-only scan (`research/literature/sources/mackay_1943_chandaro.pdf`, 466 PDF pages, SHA-256 `93a76551…`). The Lipi crops for Chanhu-daro run from C-1 to C-50, so C-56 may also be absent from CISI 1. The search therefore adds two steps: the end of the CISI 1 Chanhu-daro section is checked visually for C-56, and Mackay 1943 plate LI is located and its item 30 read. Either view is read unblinded, after the blinded set, and flagged as such in `observations.json`; its verdict is reported with the set seals and also separately, so that the group counts can be read with and without it.

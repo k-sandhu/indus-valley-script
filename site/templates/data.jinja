@@ -1,0 +1,5 @@
+{% extends "base.jinja" %}
+{% block content %}
+{{ body|safe }}
+{% if rows %}<h2>Source manifest</h2><div class="table-wrap"><table><thead><tr><th scope="col">ID</th><th scope="col">Source</th><th scope="col">Status</th><th scope="col">Location</th><th scope="col">Rights</th><th scope="col">Size</th></tr></thead><tbody>{% for row in rows %}<tr><td>{{ row.id }}</td><td>{{ row.title }}</td><td>{{ row.status }}</td><td>{{ row.location }}</td><td>{{ row.rights.status }}{% if row.rights.licence %}: {{ row.rights.licence }}{% endif %}</td><td>{{ row.size }}</td></tr>{% endfor %}</tbody></table></div>{% endif %}
+{% endblock %}

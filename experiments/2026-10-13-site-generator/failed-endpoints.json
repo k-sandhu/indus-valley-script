@@ -1,0 +1,11 @@
+{
+  "scope": "Observed implementation and harness failures before the passing endpoints",
+  "endpoints": [
+    {"command": "python tools/build_site.py --worktree --out _site", "failure": "Git rejected the repository owner under CodexSandboxOffline", "repair": "Pass safe.directory for the exact repository path on each Git invocation; no global configuration changed"},
+    {"command": "python tools/build_site.py --worktree --out _site", "failure": "Untracked settlement manuscript image rejected by an asset check intended for Explore", "repair": "Allow eligible preview images; retain the tracked-only rule for Explore assets"},
+    {"output": "build-01.json", "failure": "llms.txt was absent from Git's eligible preview inventory", "repair": "Record the omission and emit the README bootstrap line and JSON-index links"},
+    {"outputs": ["publish-test-01.json", "publish-test-02.json", "publish-test-03.json", "publish-test-04.json"], "failure": "Direct local clone failed its separate upload-pack ownership check; stdout files are empty", "repair": "Create a local bundle in the temporary directory and clone it; publish-test-05.json passed"},
+    {"output": "filters-01.json", "failure": "Searching Q-0001 found two cards because another card references it; the test assumed one match", "repair": "Test the unique card title; filters-03.json passed"},
+    {"scope": "Shell captures", "failure": "PowerShell redirection stored early records as UTF-16; an explicit UTF-8 read failed", "repair": "Later captures use subprocess stdout bytes with PYTHONIOENCODING=utf-8; early captures remain unchanged"}
+  ]
+}

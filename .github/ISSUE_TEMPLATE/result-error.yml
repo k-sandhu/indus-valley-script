@@ -1,0 +1,28 @@
+name: "Error in a result"
+description: "Report a reproducible error in a measured finding or study."
+title: "Result error: "
+body:
+  - type: markdown
+    attributes:
+      value: "Read CONTRIBUTING.md. Link source records and keep acquired images, sign sequences and third-party passages out of this issue."
+  - type: textarea
+    id: result
+    attributes:
+      label: "Finding or attempt ID and output"
+      description: "Give the F-ID or registry ID, path and JSON field or table."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: "Reproduction and expected outcome"
+      description: "Record command, input hashes, environment and the observed discrepancy."
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: "Affected claim and proposed check"
+      description: "Identify the exact affected population and suggest an independent check. Preserve the original endpoint."
+    validations:
+      required: true

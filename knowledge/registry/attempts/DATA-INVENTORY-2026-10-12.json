@@ -1,0 +1,22 @@
+{
+  "id": "DATA-INVENTORY-2026-10-12",
+  "theme": "Data holdings, metadata coverage per inscribed object, unheld sources and acquisition priorities",
+  "status": "completed-inventory-verified-computation",
+  "question": "What data does the project hold, how complete is the metadata for each inscribed object and face, which known sources are missing, and which acquisitions would most improve the object record?",
+  "outcome": "The local corpus holds 4,695 provisional objects and 5,680 faces from 78 site labels, with 8,722 CISI image crops. Object-level coverage: site 99.4%, CISI number 86.8%, excavation string 89.6%, material 82.5%, any spatial unit 76.3%, any dimension 76.6%, all three dimensions 28.8%, depth 50.6%, chronology label 55.8%, any local image 53.4%, museum value 5.8%, calendar date 0%. Faces of one object never disagree on object fields; 5,206 of 5,434 paired millimetre values equal inch values times 25.4. CISI 1 and CISI 2 are held as complete scans, so the C-0004 plate check needs no acquisition. Web checks (61 agent entries, 3 direct) found a public CC BY 4.0 transcription of the Mackay 1938 and Marshall 1931 seal tables (709 and 560 rows), CC0 or CC BY museum routes at the Met, Cleveland and Penn, public scans of several excavation reports, no open CISI edition, ICIT closed to anonymous access and no new corpus for 2024-2026. data/MANIFEST.json lists 85 sources (33 held, 9 partly held, 9 project outputs, 34 not held); tools/fetch_data.py lists, fetches and verifies them; 30 question cards Q-1001 to Q-1030 rank the work.",
+  "challenge": "Earlier packages recorded acquisitions in different schemas, so a heuristic harvest linked only 62 of 3,127 distinct source titles to a local PDF path. Some data/raw directories were unreadable to the walker. Thickness values printed as ranges and a site-name spelling variant were not anticipated by the protocol's rules. The web-check agent sent the owner's email address in a User-Agent header on four Wikimedia requests before correcting itself.",
+  "remedy": "Counted 299 distinct PDFs by SHA256 instead of relying on harvested titles. Counted range thickness values as usable after the first development run and reported the plain-number totals beside them, which reproduce the census's 4,441 and 1,151 face counts. Added one recorded site alias for the cross-export comparison. Development outputs are preserved under data/raw/2026-10-12-data-inventory/.",
+  "evidence": [
+    "experiments/2026-10-12-data-inventory/run-2026-10-12/summary.json",
+    "experiments/2026-10-12-data-inventory/run-2026-10-12/compact-object-table.csv",
+    "experiments/2026-10-12-data-inventory/run-2026-10-12/cross-source.json",
+    "experiments/2026-10-12-data-inventory/run-2026-10-12/holdings/holdings-summary.json",
+    "experiments/2026-10-12-data-inventory/sources.json",
+    "knowledge/DATA.md",
+    "data/MANIFEST.json",
+    "experiments/2026-10-12-data-inventory/run-2026-10-12/holdings/literature-harvest-summary.json"
+  ],
+  "retry_when": "A new source is acquired or transcribed, the object register (Q-1030) is built, or a field's rule changes. Rerun coverage.py and holdings.py into new dated directories and update DATA.md and the manifest; do not overwrite run-2026-10-12.",
+  "status_class": "source-review",
+  "area": "data"
+}

@@ -32,6 +32,8 @@ State uncertainty where it changes the claim. Keep the source, scope and unresol
 
 The user also rejected repeated corrective comparisons in the archaeology memo. Assume an attentive reader. Develop the observation, hypothesis and test; collect shared assumptions in one methods block. Repeated reminders that an idea is not a translation, not a discovery, or not automatically evidence interrupt the argument. State publication priority in related work and evidential scope in the appropriate methods section.
 
+On October 12 the user asked for bolder claims. Conjectures and the working model are written in the indicative, as if true: "Sign 740 closes a title", not "sign 740 may possibly be associated with". The uncertainty is carried by one credence number and by the predictions, so the claim itself needs no qualifying phrases. A report states what was measured and then the boldest reading the measurement supports, with the test that would decide it; it does not stop at what was not established.
+
 Keep source titles and direct quotations accurate even when their wording breaks these preferences. A bibliographic title is evidence, not prose we are free to rewrite.
 
 ## Examples from this project

@@ -1,0 +1,25 @@
+{
+  "id": "GITHUB-PUBLIC-RELEASE-2026-10-11",
+  "theme": "repository preservation and public asset review",
+  "status": "completed-public-release",
+  "question": "Can the research repository be made public while preserving frozen local evidence and excluding unresolved-rights payloads and access artifacts?",
+  "outcome": "Filtered exactly two local-only source/access paths from the two published branch histories. The final screen checked 14,465 blobs, with zero known credential/signed-URL matches, forbidden paths or oversized blobs. A pristine checkout passed 983 Markdown documents, 50 catalogue manifest hashes and 362 drawing paths. GitHub public visibility and anonymous commit/README access were verified.",
+  "challenge": "A mixed comparison retained full Lipi sequences and an access record contained a signed download URL. Nested Windows paths caused false file/link omissions; a concurrent working README edit affected the first anonymous-content comparison.",
+  "remedy": "Keep original local bytes, private all-ref bundles and selected-working-tree backup. Filter only exact paths in an isolated mirror, correct Windows path handling without editing frozen evidence, verify a pristine checkout, use an atomic two-branch push with explicit leases, and check anonymous access against the immutable publication commit.",
+  "evidence": [
+    "experiments/2026-10-11-public-release/ASSET-REVIEW.md",
+    "experiments/2026-10-11-public-release/audit-initial.json",
+    "experiments/2026-10-11-public-release/publication-manifest.json",
+    "experiments/2026-10-11-public-release/access-sanitized.json",
+    "experiments/2026-10-11-public-release/README.md",
+    "experiments/2026-10-11-public-release/preservation-final.json",
+    "experiments/2026-10-11-public-release/clean-history-v2.json",
+    "experiments/2026-10-11-public-release/clean-clone-summary-v1.json",
+    "experiments/2026-10-11-public-release/push-execution.json",
+    "experiments/2026-10-11-public-release/visibility-execution-v2.json"
+  ],
+  "retry_when": "Any newly acquired or copied source material needs its own asset review; no automatic public upload of raw corpora.",
+  "status_class": "record",
+  "area": "data",
+  "registry_order": 137
+}

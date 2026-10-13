@@ -1,0 +1,17 @@
+{
+  "id": "REHEARSAL-SEGMENTATION-2026-10-12",
+  "theme": "method calibration on readable scripts at Indus scale",
+  "status": "frozen-evaluation",
+  "question": "At the size and length distribution of the Indus corpus, do unsupervised segmenters recover word boundaries and inflectional alternation in Sumerian, Egyptian and Akkadian records?",
+  "outcome": "Mean boundary F1 is 0.531 (Dirichlet process), 0.461 (greedy n-gram) and 0.431 (branching entropy), against 0.485 for a boundary everywhere. On Ur III seal legends, branching entropy reaches 0.692 against 0.557. Gold-word alternation is 0.056-0.069 in all four cohorts and does not separate them. On predicted segments it falls to 16-48% of the gold rate.",
+  "challenge": "The first loader read Egyptian transliterations instead of glyph units, and the Linear B sample was too small to include.",
+  "remedy": "The loader was corrected before the run, and the Linear B omission is stated.",
+  "evidence": [
+    "experiments/2026-10-12-structure-first/step5-rehearsal/REPORT.md",
+    "experiments/2026-10-12-structure-first/step5-rehearsal/run-segmentation-2026-10-12/summary.json"
+  ],
+  "retry_when": "A segmenter is trained with boundary evidence or the corpus grows substantially.",
+  "status_class": "frozen-evaluation",
+  "area": "methods",
+  "registry_order": 162
+}
