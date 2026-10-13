@@ -1,0 +1,23 @@
+# Opening the repository and the first conjecture shots, 12–13 October
+
+The owner asked for three things in one session: a repository that many people and agents can work on in parallel from one entry point, bolder research, and a data-first priority. The coordinating Claude Code session planned the work, wrote the briefs and prompts, delegated packages to Claude subagents and to the Codex CLI (GPT-6.1-Sol), reviewed every return, and integrated, committed and published the results. This record covers what was done, what went wrong and how it was repaired.
+
+## What was done
+
+The repository gained a single entry point (`AGENTS.md`), a README for people, a generated map, one file per registry entry, finding, question and conjecture cards, a command-line index (`tools/kb.py`), agent skills, issue forms and `llms.txt`; Codex carried out this restructure from a written prompt, and every old README link and all 165 registry entries were preserved ([restructure](../../experiments/2026-10-12-repo-restructure/CODEX-PROMPT.md)). A data inventory measured what is held and what exists elsewhere ([DATA.md](../DATA.md)). A conjecture lane and a working model were added, and two shots tested bold claims with frozen predictions on a held-out half of the corpus ([shots](../../experiments/2026-10-12-conjecture-shots/README.md)): a full working reading failed, and a seal-size claim passed narrowly on three seals. An adversarial review and plate checks of the CISI photographs followed. A publication screen cleared the never-committed packages of 11–12 October, a website was generated and published on GitHub Pages, Discussions were enabled, the wiki was disabled, and the project adopted the component licences the owner had confirmed for the October 8 release.
+
+## Problems and repairs
+
+- **Order of freezing.** Shot B read the shared confirmation half before Shot A froze its predictions. The coordinator recorded that it would make no change to Shot A's related site prediction ([amendment](../../experiments/2026-10-12-conjecture-shots/AMENDMENT-2026-10-13-coordinator.md)); later shots must all freeze before any read.
+- **Overweighted pass.** Shot A's credence rules counted two passes that shared the same seals, and the pass depended on three seals. The review's figures were added beside the frozen ones and the claim was narrowed.
+- **Leak record.** Shot B's agent believed the `class` field encoded the field animal; it is a text classification, and CISI identifiers that carry site prefixes were not stripped. An amendment corrected the record.
+- **Report files refused.** The harness refused report files written by subagents, so the coordinator placed those reports from the returned text.
+- **Privacy.** A helper agent spawned by the data inventory put the owner's email address in the User-Agent header of four requests to the Wikimedia Commons API. No file contains it. Later prompts fix a generic User-Agent and forbid personal information in requests. The screen also found that five files published before this session contain the local part of the address inside privacy-scanner patterns; they were left unchanged pending the owner's decision on history.
+- **Rights.** Three tables reproducing most of an unlicensed key were kept local, and one four-sign corpus text in a review was replaced by a pointer. The screen's own decision record quoted that text and was pushed in two commits before being reworded; history was not rewritten.
+- **Sensitive locations.** Satellite-screening files that locate candidate anomalies were withheld, and one coordinate in prose was redacted, so that the repository does not point to possible unrecorded archaeological remains.
+- **Line endings.** `.gitattributes` keeps bytes as written, and the coordinator's Python edits on Windows had switched 23 files to CRLF; they were restored. The site generator's working-model headlines failed on the same difference, and its heading pattern matched across lines; both were fixed.
+- **Site commit identity.** The generator first signed `gh-pages` commits with an invented GitHub noreply address that an unrelated account could own; it now uses the source commit's author.
+
+## Outcomes
+
+Five commits and a `gh-pages` branch were pushed. `kb.py check` passes with 450 items and no errors, and the website builds 139 pages from tracked files only. The next round, running at the end of this record, works on data completeness (Mackay and Marshall seal tables, open museum records, a face-level image index and dimension audit, and a CISI 2 basic-data transcription pilot) and on a shared evaluation harness.

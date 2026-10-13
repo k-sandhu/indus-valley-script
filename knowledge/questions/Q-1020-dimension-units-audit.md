@@ -34,3 +34,7 @@ Done when every dimension value has a unit class and a precision, and the mismat
 # Prior attempts
 
 The October context audit separated placeholder zeros from measurements; this inventory measured the conversion pattern and the cross-export agreement.
+
+# Outcome
+
+13 October 2026, [image index and units](../../experiments/2026-10-13-image-index-and-units/README.md): each of 17,040 face-axis size values has a source, unit of record, precision, conversion fit and flags (the record-level table is local; counts are in [summary.json](../../experiments/2026-10-13-image-index-and-units/run-2026-10-13/dimensions/summary.json)). 5,643 values were recorded in inches (2,295 to 0.1 in, 3,298 to 0.01 in), 389 in millimetres and 102 in centimetres, 4,250 exist only in millimetres, and 6,656 are empty or zero. In Shot A's size population, 135 of 590 discovery seals and 146 of 582 confirmation seals have both face sizes rounded to 0.1 in. The check against an independent source waits for the Mackay and Marshall tables ([Q-1003](Q-1003-join-mackay-marshall-to-cisi.md)).

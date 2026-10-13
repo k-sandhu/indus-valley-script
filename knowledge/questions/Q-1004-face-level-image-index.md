@@ -34,3 +34,7 @@ Done when every image file has a parsed record or an explicit parse failure, eve
 # Prior attempts
 
 The October 2 readiness audit counted the image index and its exact-key matches without building a face-level join. This inventory repeated the object-level count.
+
+# Outcome
+
+13 October 2026, [image index and units](../../experiments/2026-10-13-image-index-and-units/README.md): every one of the 8,722 crops has a record with hash, parsed name, kind and CISI volume; 3,664 catalogue keys are placed on their plate pages, giving a page for 97% of 8,444 face–image links. 23 file names point at the wrong object and are corrected, and 231 of 299 volume/page files were assigned by reading their printed caption. Objects with any image rise from 53.4% to 54.6%, and objects with a photograph of the inscribed side from 17.6% (Lipi index files only) to 46.0%; seals from 10.5% to 68.3%. A random sample of 60 links had 60 correct identities and kinds. The sides of faces on 881 objects with several faces remain open: [Q-1031](Q-1031-assign-faces-to-sides.md).

@@ -1,0 +1,81 @@
+{
+ "new_entries": [
+  {
+   "id": "image-index-and-dimension-audit",
+   "title": "Face-level image index of the Lipi CISI crops and dimension units audit (13 October 2026)",
+   "kind": "project-derivative",
+   "status": "project-output",
+   "local_paths": [
+    "data/raw/2026-10-13-image-index-and-units/"
+   ],
+   "tracked_paths": [
+    "experiments/2026-10-13-image-index-and-units/"
+   ],
+   "size": {
+    "image_files": 8722,
+    "face_image_links": 8444,
+    "keys_on_plate_pages": 3664,
+    "dimension_values": 17040,
+    "dimension_table_rows": 14085
+   },
+   "identifiers": [
+    "file",
+    "sha256",
+    "record_id",
+    "object_family_id",
+    "cisi key",
+    "cisi volume",
+    "cisi pdf page"
+   ],
+   "metadata_fields": [
+    "image kind (object or impression)",
+    "side letters",
+    "side relation to face",
+    "inscription and part numbers",
+    "printed scale",
+    "OCR caption check",
+    "unit of record",
+    "recorded precision",
+    "conversion fit",
+    "website relation",
+    "flags"
+   ],
+   "rights": {
+    "status": "mixed-assets",
+    "licence": null,
+    "detail": "Own work (CC0 prose and aggregates, Unlicense code) except the dimension table, mismatch lists and split detail, which carry record-level Lipi size values (no licence at the pin) and stay outside the CC0 dedication; images, OCR text and page renders are local only."
+   },
+   "fetch": {
+    "method": "rebuild",
+    "steps": [
+     "Hold the Lipi export at fc8813a, the older website export at 2434249, CISI 1 and CISI 2 scans, and the October 12 split.",
+     "python -P experiments/2026-10-13-image-index-and-units/cisi_pages.py; python -P experiments/2026-10-13-image-index-and-units/crop_ocr.py",
+     "python -P experiments/2026-10-13-image-index-and-units/page_index.py --out <new run>/pages; build_index.py --out <new run>/images; dimensions.py --out <new run>/dimensions"
+    ]
+   },
+   "hashes": {
+    "run-2026-10-13/images/face-image-links.csv": "00295c9d5670fb05f02956f3cb4810df44d0ffa7403c761fd16b91dae0cc9f75",
+    "run-2026-10-13/images/image-files.csv": "97605a87be0f0095ebe09828a54c4817db30eba250a63e0c19dc1138a8f64b27",
+    "run-2026-10-13/pages/key-pages.csv": "7f5bd00051cbdb2294bccbe650dd62aebadfdfb12d962798c200c197676303c3",
+    "run-2026-10-13/dimensions/dimension-table.csv": "38be37f4bf025907b3efbda61b85263eb4ad6087a3aaa94dc49ee465ac4ddf83"
+   },
+   "evidence": [
+    "experiments/2026-10-13-image-index-and-units/README.md",
+    "experiments/2026-10-13-image-index-and-units/PROTOCOL.md",
+    "experiments/2026-10-13-image-index-and-units/verification-results.json"
+   ],
+   "location": "tracked",
+   "questions": [
+    "Q-1004",
+    "Q-1020"
+   ]
+  }
+ ],
+ "changed_entries": [
+  {
+   "id": "lipi",
+   "change": "append to known defects",
+   "text": "23 crop file names name the wrong object and 8 write I for l in the prefix (corrected in experiments/2026-10-13-image-index-and-units/name-overrides.tsv); fields h, v, th hold each size as recorded in inches, millimetres or centimetres"
+  }
+ ]
+}

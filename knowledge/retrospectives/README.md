@@ -65,3 +65,7 @@ The [societal persistence program](2026-10-11-societal-persistence.md) records d
 [Diagnosis, six steps and review corrections](2026-10-12-structure-first.md) records the scoping around the concurrent allograph study, hand sign coding with a second coder, corrected copper and line-division endpoints, the segmentation rehearsal and the seventeen accepted review findings.
 
 [Seal-text identity](2026-10-12-seal-text-identity.md) records the locality test of duplicate seal texts, the segment analysis, the review's site breakdown and the corrected sealing counts.
+
+## 12–13 October: opening the repository and the first conjecture shots
+
+[Restructure, data inventory, conjecture shots, publication screen and website](2026-10-13-open-collaboration-and-first-shots.md) records the coordinated session that opened the repository to parallel contributors, its delegation to Claude subagents and the Codex CLI, the shots and their review, the publication screen, and the privacy, rights and line-ending repairs.

@@ -13,6 +13,7 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 - `.playwright-cli/`: local support directory; inspect before use.
 - `LICENSES/`: local support directory; inspect before use.
 - [archive/](../archive/): preserved historical documentation.
+- `bench/`: local support directory; inspect before use.
 - [data/](../data/): local inputs and acquisition records.
 - [experiments/](../experiments/): dated protocols, outputs and reviews.
 - [knowledge/](../knowledge/): cards, navigation and research memory.
@@ -158,6 +159,7 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 - [Q-1021](questions/Q-1021-chronology-calendar-ranges.md) · open · data · Map site period, phase and stratum labels to cited calendar ranges
 - [Q-1026](questions/Q-1026-post-catalogue-finds.md) · open · data · List inscribed objects published after the catalogues, 1987 to 2026
 - [Q-1028](questions/Q-1028-lipi-reuse-basis.md) · open · data · Establish a reuse basis for the Lipi export's record-level metadata
+- [Q-1031](questions/Q-1031-assign-faces-to-sides.md) · open · data · Assign the faces of the 881 multi-face objects to their sides
 
 ### Priority 3
 
@@ -218,6 +220,7 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 - [GITHUB-PUBLIC-RELEASE-2026-10-11](registry/attempts/GITHUB-PUBLIC-RELEASE-2026-10-11.json) · record · Can the research repository be made public while preserving frozen local evidence and excludin…
 - [HARP-LOTHAL-SOURCE-02](registry/attempts/HARP-LOTHAL-SOURCE-02.json) · source-review · Can better original views resolve the selected tablet counts and Lothal contact geometry?
 - [HF-PUBLIC-RELEASE-01](registry/attempts/HF-PUBLIC-RELEASE-01.json) · record · Can the licensed chart, three frozen benchmarks and authored census/aggregate tables form a re…
+- [IMAGE-INDEX-AND-UNITS-2026-10-13](registry/attempts/IMAGE-INDEX-AND-UNITS-2026-10-13.json) · verified-computation · Which local image files show each face, as object photograph or impression, of which side, fro…
 - [OBJECT-LEDGER-PILOT-01](registry/attempts/OBJECT-LEDGER-PILOT-01.json) · exploratory · Can a 200-carrier local pilot connect corpus faces, source-qualified aliases, museum records a…
 - [ROOT-19](registry/attempts/ROOT-19.json) · source-review · Which historical source joins are physically defensible?
 
@@ -563,6 +566,10 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 - [experiments/2026-10-12-transmission-hypothesis/RETROSPECTIVE.md](../experiments/2026-10-12-transmission-hypothesis/RETROSPECTIVE.md) · document · Research retrospective
 - [experiments/2026-10-12-transmission-hypothesis/material/RETROSPECTIVE.md](../experiments/2026-10-12-transmission-hypothesis/material/RETROSPECTIVE.md) · document · Material transmission study: retrospective
 - [experiments/2026-10-12-transmission-hypothesis/review/RETROSPECTIVE.md](../experiments/2026-10-12-transmission-hypothesis/review/RETROSPECTIVE.md) · document · Review retrospective
+- [experiments/2026-10-13-bench/RETROSPECTIVE.md](../experiments/2026-10-13-bench/RETROSPECTIVE.md) · document · Shared harness retrospective
+- [experiments/2026-10-13-cisi2-basic-data-pilot/RETROSPECTIVE.md](../experiments/2026-10-13-cisi2-basic-data-pilot/RETROSPECTIVE.md) · document · Retrospective: CISI 2 basic-data pilot, 13 October 2026
+- [experiments/2026-10-13-image-index-and-units/RETROSPECTIVE.md](../experiments/2026-10-13-image-index-and-units/RETROSPECTIVE.md) · document · Retrospective: image index and dimension units, 13 October 2026
+- [experiments/2026-10-13-mackay-marshall-tables/RETROSPECTIVE.md](../experiments/2026-10-13-mackay-marshall-tables/RETROSPECTIVE.md) · document · Retrospective: Mackay and Marshall seal tables, 13 October 2026
 - [experiments/2026-10-13-plate-checks/RETROSPECTIVE.md](../experiments/2026-10-13-plate-checks/RETROSPECTIVE.md) · document · Retrospective: plate checks of 13 October 2026
 - [experiments/2026-10-13-publication-screen/RETROSPECTIVE.md](../experiments/2026-10-13-publication-screen/RETROSPECTIVE.md) · document · Retrospective: publication screen, 13 October 2026
 - [experiments/2026-10-13-site-generator/RETROSPECTIVE.md](../experiments/2026-10-13-site-generator/RETROSPECTIVE.md) · document · Website generator record
@@ -577,6 +584,7 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 - [knowledge/retrospectives/2026-10-12-seal-text-identity.md](retrospectives/2026-10-12-seal-text-identity.md) · document · Seal-text identity, 12 October 2026
 - [knowledge/retrospectives/2026-10-12-structure-first.md](retrospectives/2026-10-12-structure-first.md) · document · Structure before meaning
 - [knowledge/retrospectives/2026-10-12-transmission-hypothesis.md](retrospectives/2026-10-12-transmission-hypothesis.md) · document · Transmission after the Indus cities, 12 October 2026
+- [knowledge/retrospectives/2026-10-13-open-collaboration-and-first-shots.md](retrospectives/2026-10-13-open-collaboration-and-first-shots.md) · document · Opening the repository and the first conjecture shots, 12–13 October
 - [knowledge/retrospectives/corpus-and-transcription.md](retrospectives/corpus-and-transcription.md) · document · Corpus and transcription retrospective
 - [knowledge/retrospectives/literature.md](retrospectives/literature.md) · document · Literature and source work
 - [knowledge/retrospectives/methods.md](retrospectives/methods.md) · document · Methods retrospective
