@@ -4136,6 +4136,32 @@
       "area": "data"
     },
     {
+      "id": "MACKAY-MARSHALL-TABLES-2026-10-13",
+      "theme": "Acquisition, print check and join of the Mackay 1938 and Marshall 1931 seal tables to Lipi object families and CISI numbers",
+      "status": "completed-join-sample-verified",
+      "status_class": "verified-computation",
+      "area": "data",
+      "question": "What do the epachayan/indus-script transcriptions of Mackay's 1938 and Marshall's 1931 seal tables contain and under what terms, how accurately do they follow the print, which rows correspond to which CISI numbers and Lipi objects, and what size, material, findspot, level and field number does each joined object gain?",
+      "outcome": "The repository is held at commit 5c14a01; LICENSE-DATA gives the transcribed tables CC BY 4.0 and LICENSE gives the code MIT. Against the print, 0 of 30 sampled Mackay rows and 3 of 30 Marshall rows were wrong (size, serial, type); 11 further differences were found in the join sample and in rows read beside sampled rows, 7 of them Marshall serials. Of 1,269 rows, 1,146 joined (1,108 exact, 38 confirmed) to 1,134 Mohenjo-daro objects, 1,122 of them seals (85.1% of the export's 1,318 Mohenjo-daro seals); 2 rows are ambiguous and 121 unmatched with reasons. A random sample of 30 joins checked against the print and the CISI basic-data excavation numbers had 29 correct, 0 wrong and 1 unresolved (Wilson 95% 83.3-99.4%; exact joins 20 of 20). Because the export's metadata for these objects already derives from the same tables, coverage of size, material, findspot and level rises only slightly (Mohenjo-daro: both face dimensions +12, material +5, spatial unit +10, level +2), but 1,134 objects gain a field number separated from the catalogue number and a publication reference, 1,091 a size traced to the print in inches and 1,101 a level with its datum. The table and the export disagree for 27 objects on field number, 15 on size, 14 on type, 5 on material, 5 on findspot, 3 on level and 3 on thickness.",
+      "challenge": "The export writes registrations and catalogue numbers run together, lists duplicate catalogue numbers in one string and writes Marshall's areas under other prefixes. A first development run misread the Lipi SEAL:C code (circular) as a cylinder and misparsed block-and-house strings, which made 18 rows ambiguous and 386 findspot comparisons disagree. A loose variant key matched copper tablets. Eleven exact-key candidates were contradicted on material or size. The census's binarized Marshall scan dropped letter strokes, OCR misplaced row numbers on both tables, and the CISI 2 scan hides its page under a faint layer.",
+      "remedy": "Three protocol amendments, recorded before the final run and the join sample: Marshall area aliases and multi-number registration parsing; defined variant keys with the loose form dropped; adjudication of contradicted candidates against the print, with decisions in a tracked file. The type comparator and block parser were corrected to the protocol's wording. Rows were located with a Theil-Sen fit through OCR-read row numbers; Marshall rows were read on a second scan through the Internet Archive IIIF service; CISI 2 pages were rendered rather than extracted. Each regeneration of the run was checked to leave the row dispositions unchanged by hash.",
+      "evidence": [
+        "experiments/2026-10-13-mackay-marshall-tables/README.md",
+        "experiments/2026-10-13-mackay-marshall-tables/PROTOCOL.md",
+        "experiments/2026-10-13-mackay-marshall-tables/acquisition.json",
+        "experiments/2026-10-13-mackay-marshall-tables/run-2026-10-13/summary.json",
+        "experiments/2026-10-13-mackay-marshall-tables/run-2026-10-13/coverage.csv",
+        "experiments/2026-10-13-mackay-marshall-tables/run-2026-10-13/join-table.csv",
+        "experiments/2026-10-13-mackay-marshall-tables/run-2026-10-13/row-dispositions.csv",
+        "experiments/2026-10-13-mackay-marshall-tables/verification/summary.json",
+        "experiments/2026-10-13-mackay-marshall-tables/verification/join-verification.csv",
+        "experiments/2026-10-13-mackay-marshall-tables/verification/transcription-check.csv",
+        "experiments/2026-10-13-mackay-marshall-tables/verification/contradiction-adjudication.csv",
+        "experiments/2026-10-13-mackay-marshall-tables/verification/print-corrections.csv"
+      ],
+      "retry_when": "Mackay's vol. II plates or CISI 3.1 are acquired (to check Mackay No. 181 and joins above M-1659), the CISI basic data are transcribed (Q-1005, Q-1006) and can replace the registration key with a published concordance, or the epachayan tables are revised. Rerun join_tables.py into a new dated directory; do not overwrite run-2026-10-13."
+    },
+    {
       "id": "PLATE-CHECKS-C0004-SHOTA-RIVALS-2026-10-13",
       "theme": "visual checks on CISI photographs: Lothal elephant sealings against seal M-895 (C-0004), and the closing sign on Shot A's large seals (C-0001 layout and direction rivals)",
       "status": "completed-ai-visual-readings-pending-specialist-confirmation",

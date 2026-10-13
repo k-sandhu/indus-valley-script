@@ -1,0 +1,192 @@
+{
+  "package": "2026-10-13-mackay-marshall-tables",
+  "date": "2026-10-13",
+  "instructions": "Replace the entries 'epachayan-mackay-marshall', 'mackay-1938' and 'marshall-1931' in data/MANIFEST.json with the entries under 'changed', append the entry under 'new', and update 'counts' and 'updated' as given. All other fields follow the existing schema (schema_version 1).",
+  "counts_after": {"held": 33, "partly-held": 11, "not-held": 32, "project-output": 10},
+  "counts_note": "epachayan-mackay-marshall moves from not-held to held; mackay-1938 moves from not-held to partly-held (vol. I held, vol. II plates not held); marshall-1931 moves from held to partly-held (vols. I and II held, vol. III plates not held); one project output is added. Total 86 sources. These counts assume no other package changes the manifest in the same round.",
+  "updated": "2026-10-13",
+  "changed": [
+    {
+      "id": "epachayan-mackay-marshall",
+      "title": "Koshy (epachayan/indus-script), machine-readable seal catalogues from Mackay (1938) and Marshall (1931)",
+      "kind": "derived-dataset",
+      "version": {
+        "commit": "5c14a01f44296a01256a34e7e5e5e9fd82d9a67f",
+        "committed": "2026-10-10",
+        "zenodo_doi": "10.5281/zenodo.22852769 (concept DOI in README and CITATION.cff); version record 10.5281/zenodo.23281781 holds only a preprint PDF"
+      },
+      "size": {
+        "mackay_1938_rows": 709,
+        "marshall_1931_rows": 560,
+        "marshall_1931_superseded_ocr_rows": 356,
+        "mackay_narrative_findspot_rows": 130,
+        "plate_codings": 531,
+        "files_tracked_at_pin": 168
+      },
+      "identifiers": [
+        "Mackay 1938 seal number (Nos. 1-704 and addenda 378A-D, 604B, 686A-C)",
+        "Marshall 1931 plate number (Nos. 1-557, 526b, 528b, 557b)",
+        "excavation field number (Mackay DK, SD, DK.H.; Marshall area and serial)"
+      ],
+      "metadata_fields": [
+        "seal type",
+        "size as printed (inches)",
+        "material (Marshall with colour)",
+        "block, house, room or street (Mackay); excavation area (Marshall)",
+        "level relative to the DK datum or SD bench mark (Mackay); depth below the modern surface (Marshall)",
+        "field number",
+        "source page"
+      ],
+      "rights": {
+        "status": "explicit-license",
+        "licence": "Transcribed tables CC BY 4.0 (LICENSE-DATA at the pin); code MIT (LICENSE; docs/DATA_NOTICE.md says MIT covers scripts/ only)",
+        "detail": "LICENSE-DATA covers transcriptions/mackay1938_seal_table/, transcriptions/marshall1931_seal_table/, transcriptions/mackay1938_plates/ and outputs/mackay_seal_table.csv, marshall_seal_table.csv, marshall_seal_table_transcribed.csv, findspots_mackay.csv, concordance_parpola_G.csv, concordance_m77_G_inferred.csv, constraints.csv. Required attribution: Nitin Stephen Koshy, \"Indus script: seal catalogues and text-structure analysis\" (2026), https://github.com/epachayan/indus-script. The tables were transcribed by an AI model; a 13 October check found 0 of 30 Mackay rows and 3 of 30 Marshall rows in error against the print."
+      },
+      "fetch": {
+        "method": "git",
+        "url": "https://github.com/epachayan/indus-script",
+        "commit": "5c14a01f44296a01256a34e7e5e5e9fd82d9a67f",
+        "verify": {
+          "outputs/mackay_seal_table.csv": "0d2499b2079d05fd9d67c9e5f694799827234712f242b6a14e47a22d0a03f518",
+          "outputs/marshall_seal_table_transcribed.csv": "5a339a7884d34cc9c0c94a402f191e09ad28667aeb560d00acf82f6cb0c09ca2",
+          "outputs/marshall_seal_table.csv": "145154784093efcdf7be4efbd93ed4e838309c3d584625be23d97db51e16bcf9",
+          "outputs/findspots_mackay.csv": "d1bff7d0a23925427ff056c65b92b2c6f930c970972b40f049902812f144949b"
+        }
+      },
+      "hashes": {
+        "data/raw/2026-10-13-mackay-marshall-tables/epachayan-indus-script/outputs/mackay_seal_table.csv": "0d2499b2079d05fd9d67c9e5f694799827234712f242b6a14e47a22d0a03f518",
+        "data/raw/2026-10-13-mackay-marshall-tables/epachayan-indus-script/outputs/marshall_seal_table_transcribed.csv": "5a339a7884d34cc9c0c94a402f191e09ad28667aeb560d00acf82f6cb0c09ca2",
+        "data/raw/2026-10-13-mackay-marshall-tables/epachayan-indus-script/outputs/marshall_seal_table.csv": "145154784093efcdf7be4efbd93ed4e838309c3d584625be23d97db51e16bcf9",
+        "data/raw/2026-10-13-mackay-marshall-tables/epachayan-indus-script/outputs/findspots_mackay.csv": "d1bff7d0a23925427ff056c65b92b2c6f930c970972b40f049902812f144949b"
+      },
+      "committed_blob_sha256": {
+        "LICENSE": "799612d75938aa9368d91f284920015b56c7a00af9a6c718d4907cb4e2e2c0cc",
+        "LICENSE-DATA": "4b2edeb8a56905fad787a9e83471d63883e8a01d0469b59c2efb36d640273077",
+        "docs/DATA_NOTICE.md": "b10390ab9eea816b371dda058e47ecff08efcb95097e462ce0d60573d131255a",
+        "docs/DATASETS.md": "bfda616fec5edcbdc622e11c937029356315193877161ee966ddeb6fc143373d",
+        "README.md": "9ea875beafcbf3db9a4dfae41d580226df2aa614f6b15f3c5097adc3d77592e5"
+      },
+      "web_checks": ["D01", "W60"],
+      "questions": ["Q-1002", "Q-1003"],
+      "status": "held",
+      "location": "local-only",
+      "local_paths": ["data/raw/2026-10-13-mackay-marshall-tables/epachayan-indus-script/"],
+      "evidence": [
+        "experiments/2026-10-13-mackay-marshall-tables/acquisition.json",
+        "experiments/2026-10-13-mackay-marshall-tables/README.md",
+        "experiments/2026-10-13-mackay-marshall-tables/verification/summary.json",
+        "experiments/2026-10-12-data-inventory/sources.json"
+      ],
+      "notes": "Notice files are hashed as committed blobs because Git may convert their line endings on checkout; the four CSV files carry eol=lf and hash the same in any checkout. Use outputs/marshall_seal_table_transcribed.csv for Marshall; the repository marks outputs/marshall_seal_table.csv as a superseded OCR version. Known transcription errors against the print are listed in experiments/2026-10-13-mackay-marshall-tables/verification/print-corrections.csv. The clone may also be made with tools/fetch_data.py --fetch epachayan-mackay-marshall."
+    },
+    {
+      "id": "mackay-1938",
+      "title": "Mackay 1938, Further Excavations at Mohenjo-daro (vol. I text, vol. II plates)",
+      "kind": "excavation-report",
+      "size": {"vol1_pdf_pages": 746, "vol1_bytes": 51267309},
+      "metadata_fields": [
+        "Tabulation of Seals, vol. I pp. 369-391 (PDF pages 392-414, counting from 1; PDF page = printed page + 23)",
+        "plates (vol. II, not held)",
+        "findspots",
+        "levels"
+      ],
+      "rights": {
+        "status": "rights-unverified",
+        "licence": null,
+        "detail": "The archive.org item's Digital Library of India record states 'dc.rights: Out_of_copyright'; uploader-assigned tags and that record do not settle the copyright status of the 1938 Government of India publication."
+      },
+      "fetch": {
+        "method": "http",
+        "url": "https://archive.org/download/in.ernet.dli.2015.70071/2015.70071.Further-Excavations-At-Mohenjo-daro-Vol-i-Text.pdf",
+        "filename": "mackay1938_vol1_dli70071.pdf",
+        "sha256": "064029e3e0dd820cdf56d20963859ea8d97ba6f48422b267ff92bc13badc1993",
+        "bytes": 51267309
+      },
+      "hashes": {
+        "data/raw/2026-10-13-mackay-marshall-tables/mackay1938/mackay1938_vol1_dli70071.pdf": "064029e3e0dd820cdf56d20963859ea8d97ba6f48422b267ff92bc13badc1993"
+      },
+      "web_checks": ["W30"],
+      "questions": ["Q-1003", "Q-1022"],
+      "status": "partly-held",
+      "location": "local-only",
+      "local_paths": ["data/raw/2026-10-13-mackay-marshall-tables/mackay1938/mackay1938_vol1_dli70071.pdf"],
+      "evidence": [
+        "experiments/2026-10-13-mackay-marshall-tables/acquisition.json",
+        "experiments/2026-10-12-data-inventory/sources.json"
+      ],
+      "notes": "Vol. I retrieved 2026-10-13T05:40:33Z; SHA1 fc554d3dbcc44f6851d4749193cde56a27141f8f matches the archive.org file metadata. Vol. II (plates LXXXII-XCIX hold the seal photographs) remains at archive.org items furtherexcavationsatmohenjodaro192731vol2ejhmackay_191_N and in.gov.ignca.9954."
+    },
+    {
+      "id": "marshall-1931",
+      "title": "Marshall (ed.) 1931, Mohenjo-daro and the Indus Civilization (3 vols; seal tabulation in vol. II pp. 402-405)",
+      "kind": "excavation-report-or-study",
+      "local_paths": [
+        "research/literature/sources/marshall_1931_govscan_14985.pdf",
+        "data/raw/2026-10-06-evidence-census/collections-and-datasets/focused-pass-2026-10-07/marshall-alt-pdf.body",
+        "data/raw/2026-10-13-mackay-marshall-tables/marshall1931/olmh/"
+      ],
+      "rights": {"status": "rights-unverified", "licence": null},
+      "fetch": {
+        "method": "manual",
+        "steps": [
+          "Vol. II: archive.org item in.ernet.dli.2015.62023 (PDF, 20,088,153 bytes); the tabulation is on PDF pages 53-56. A clearer copy is archive.org item OLMh_mohenjo-daro-and-the-indus-civilization-edited-by-sir-john-marshall-vol.-2-1931-, IIIF canvases 59-62 for pp. 402-405.",
+          "The government scan in research/literature/sources/ is vol. I and does not contain the tabulation."
+        ]
+      },
+      "hashes": {
+        "research/literature/sources/marshall_1931_govscan_14985.pdf": "163dd20937256470e3e652c5dcc0c8061c28d57bf75d0c0ae7ee1d42ef5d4600",
+        "data/raw/2026-10-06-evidence-census/collections-and-datasets/focused-pass-2026-10-07/marshall-alt-pdf.body": "9398565d99faf18508771aabb9df1cc75c9d554e4095d55345be9104406e828c"
+      },
+      "evidence": [
+        "experiments/2026-10-12-data-inventory/run-2026-10-12/holdings/holdings-summary.json",
+        "experiments/2026-10-13-mackay-marshall-tables/acquisition.json"
+      ],
+      "questions": ["Q-1003"],
+      "status": "partly-held",
+      "location": "local-only",
+      "notes": "Status changes from held to partly-held: vol. I (government scan) and vol. II (census DLI copy, binarized, 368 pages) are local, vol. III (plates) is not; eight vol. II page images from the OLMh copy (pp. 396-399 and 402-405) are local with hashes in the package's acquisition.json."
+    }
+  ],
+  "new": [
+    {
+      "id": "mackay-marshall-join-2026-10-13",
+      "title": "Join of the Mackay 1938 and Marshall 1931 seal-table rows to Lipi object families and CISI numbers",
+      "kind": "project-derivative",
+      "status": "project-output",
+      "location": "tracked",
+      "local_paths": [
+        "experiments/2026-10-13-mackay-marshall-tables/run-2026-10-13/",
+        "experiments/2026-10-13-mackay-marshall-tables/verification/"
+      ],
+      "size": {
+        "table_rows": 1269,
+        "joined_rows": 1146,
+        "exact": 1108,
+        "confirmed": 38,
+        "ambiguous": 2,
+        "unmatched": 121,
+        "joined_lipi_families": 1134
+      },
+      "identifiers": ["Lipi object_family_id", "CISI number", "source_row_id (mackay1938:<no>, marshall1931:<plate no>)", "field number"],
+      "metadata_fields": ["size as printed (inches)", "material", "area and locus", "level with datum", "seal type", "join basis and per-attribute checks"],
+      "rights": {
+        "status": "mixed-assets",
+        "licence": null,
+        "detail": "Join keys, dispositions, checks and counts are own work (CC0 per LICENSE). The table values in join-table.csv are from Koshy's transcription, CC BY 4.0, with the attribution in the package README. No Lipi field values are included."
+      },
+      "fetch": {"method": "rebuild", "steps": ["python -P experiments/2026-10-13-mackay-marshall-tables/join_tables.py --out <new dir> --local <new local dir>"]},
+      "hashes": {
+        "experiments/2026-10-13-mackay-marshall-tables/run-2026-10-13/join-table.csv": "b24e08c7ac7ceab47bf5e9fd7df2ee53fd9b3f7ec6262c20598b5521a618c231",
+        "experiments/2026-10-13-mackay-marshall-tables/run-2026-10-13/row-dispositions.csv": "3824b39421f68e53525c317fe08c710161bba29c27988639b4cc481eedc3c0fa",
+        "experiments/2026-10-13-mackay-marshall-tables/run-2026-10-13/coverage.csv": "962306761b8a5b23c8eb149d6c0eb3a81c5594b1cb2f5c40f3c9ed66847353ae",
+        "experiments/2026-10-13-mackay-marshall-tables/run-2026-10-13/summary.json": "1d9458596635f3ae2962b62fb0a54c7bf9b235917ab008199e738b2dc338e911"
+      },
+      "evidence": [
+        "experiments/2026-10-13-mackay-marshall-tables/README.md",
+        "experiments/2026-10-13-mackay-marshall-tables/verification/summary.json"
+      ],
+      "questions": ["Q-1003", "Q-1013", "Q-1022", "Q-1030"],
+      "notes": "Join precision on a 30-join random sample: 29 correct, 0 wrong, 1 unresolved. Values keep the excavators' units (inches; feet against the stated datum)."
+    }
+  ]
+}
