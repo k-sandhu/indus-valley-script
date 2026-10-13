@@ -1,0 +1,118 @@
+# Response to the author-commissioned adversarial reviews
+
+11 October 2026. The first complete manuscript, its registers and numerical endpoints remain frozen. Subsequent drafts, corrected registers and supplemental calculations are separate artifacts. This response records the revisions for `sources-v6.json`, `candidates-v5.json`, `review/revised-v4.md` and `papers/005-settlement-survey-gaps/manuscript.md`. Final manuscript assembly and inspection of the rendered PDF are pending at this revision of the response.
+
+The reviewers were commissioned AI agents within this project. Their work was separate from the main drafting pass, but source and design contributors also helped shape the revisions. These passes are not archaeological peer review or field validation. Their roles and access were:
+
+| Pass | Role, scope and access | Preserved record |
+|---|---|---|
+| Codex source audit | AI research subagent; four central evidence claims, acquired primary witnesses and publisher passages. Used source retrieval, local file inspection and separate arithmetic. | `research/independent-source-audit.md` |
+| Codex first manuscript review | Separate AI reviewer; frozen manuscript, registers, code, outputs, manifests, selected primary sources and figures. Used local reads, source checks and independent calculations. | `review/codex-adversarial-review.md`; `codex-checks.json` |
+| Codex mountain integration and bounded design reviews | AI research contributor; mountain chronology, named anchors, revised sampling and demotion rules. Used source checks for the geographic review; the design review inspected supplied prose and script without new field or access evidence. | `mountain-integration-review.md`; `revised-design-review-v2.md` |
+| Claude Code first review | Canonical model `claude-opus-5-5`; broad adversarial review of the supplied authored packet. Tools disabled: no external retrieval, code execution or repository inspection. | `claude-opus55-v1/review.md`; `invocation.json` |
+| Claude Code second review | Canonical model `claude-opus-5-5`; targeted review of the revised supplied packet. Tools disabled; arithmetic was checked from the packet, without source retrieval, code execution or figure inspection. | `claude-opus55-v2/review.md`; `invocation.json` |
+
+The Claude CLI results report `success` and terminal reason `completed` for both passes. The first result and review were saved before a local metadata-path exception. Metadata were recovered from that result without rerunning the review; its unavailable invocation timestamps and subprocess exit code remain null. The runner now resolves input paths before invocation. The second pass completed with exit code 0. The Codex reports identify the reviewers by AI role; they do not separately record a canonical model identifier. Original review titles and wording are preserved with this provenance clarification.
+
+## Claude first review: numbered findings
+
+| Finding | Decision and revision | Evidence or output |
+|---|---|---|
+| F1: repeat-survey evidence omitted | Accepted. Table 2 separates unmatched, off-map and matched comparisons from Masudpur's mound-unit refinement. Each row identifies its period, selection and identity limits. | Section 4.3; `run-v3/resurvey-descriptives.json`; R08/R10/R11/R29 |
+| F2: overlap estimators and discovery curves omitted | Added as proposed methods, with common-footprint, matching, closure, dependence, heterogeneous detection and structural-zero requirements. A constructed finite-sample counterexample shows why a naive estimate is not a guaranteed lower bound. No Indus total is fitted. | Section 8.1; `research/estimation-frameworks.md`; R56–R60 |
+| F3: rectangles too broad or overlapping for sampling | Accepted. Rectangles are regions of interest; their areas are not summed. Eligible local landforms enter a shared sampling frame, including every overlap. | Sections 2.3/6; `candidates-v5.json` |
+| F4: sampling and decision rules missing | Added units, comparisons, effort, practical blinding and demotion rules. Negatives apply only to adequately inspected units. The proposed 24-block workload carries no power claim; local effort limits must be calibrated and fixed before outcomes. | Appendix A; `candidates-v5.json`; `PILOT-DESIGN-v4.md` |
+| F5: evidence classes confused with priorities | Evidence class is separate from editorial information and preservation assessments. The final register defines ordinal levels and records feasibility as unverified. Archive and effort concordance precede conditional field tasks. | Sections 2.3/8.2; `candidates-v5.json` |
+| F6: standard anchors and controversy missing | Added source-supported cases: deep Mohenjo-daro, Rakhigarhi village overlay, Harappa railway damage, Dholavira, Sutkagen-dor/Sotka-koh, Manda, Ropar, Shortugaï and the original Khambhat report. Clay-kiln and looting examples were not verified in the bounded follow-up. Detailed Gomal and high-Himalayan inventories remain outside this audit. | Sections 3.3/5; R48/R61–R72; `research/additional-anchors.md` |
+| F7: mountain evidence omitted or misjoined | P18 extends north to 26.6° and includes the registered Kai and Ghazi Shah points. Removed R44 as local P18 evidence. Besenval supports the Kech process discussion; the date-seed study no longer carries that claim. Swat remains a cultural boundary comparison. | Sections 5.4/5.5; R41/R46/R49/R50; `candidates-v5.json` |
+| F8: chronology scale unclear | Added a convention table with calibrated intervals, conventional shell dates and reservoir status. Direct Lothal Table 1 reading supplies the interval endpoints. OSL-based ka ages retain their reference-year qualification. | Section 2.2; R15/R16/R31/R32/R40; inline arithmetic |
+| F9: synthetic artifact examples invite anchoring | Removed numerical synthetic yields and their figure from the paper. Retained a planning identity with defined units and a context, diagnostic and failure table. Earlier synthetic outputs remain preserved as supplements. | Section 7; unchanged earlier runs and figures |
+| F10: inscription metadata distracts from the settlement question | Removed numerical inscription cohorts from the manuscript. Preserved metadata outputs and the repaired record-level cohort comparison in the run record. | Appendix B; `run-v3/metadata-coverage.json`; `cohort-comparison.json` |
+| F11: witnesses and historical attribution unclear | The final register has 72 records and 50 local witnesses, with actual reading depth stated. R01 now has an acquired chapter witness. The historical 1,022 and 1,056 figures retain their different provenance; Gadekar's count is attributed to an extension of Uesugi through 2024. | Sections 2.1/3.1; `sources-v6.json` |
+| F12: review independence overstated | Reviews are identified as commissioned AI-model passes. Source and design contributors' roles are disclosed alongside separate manuscript reviewers. | Review and reproducibility section; invocation records |
+| F13: repeated caveats and assembly artifacts | Shared region assumptions are stated together. Repeated access boilerplate, metadata asides, malformed headings and compressed spacing were removed from the revised prose. | Revised manuscript; prose scan and artifact QA |
+| F14: geographic labels and bounds need checks | P11 was renamed without Badin; P01's broad and border-crossing geometry is disclosed; P18 was corrected. Verified coarse anchors are distinguished from proposal points and landforms still awaiting validation. | `candidates-v5.json`; geographic check records |
+| F15: prior effort confounds discovery | Prior effort becomes a recorded attribute. Archive reconciliation comes first, with comparable low-prior-effort strata where documented and effort-normalized outcomes. No current effort layer is assumed. | Sections 2.3/6/8.3; candidate defaults |
+| F16: detector validation needs size strata | Proposed checks stratify size and visibility, report phase-supported outcomes among adequate checks, and retain unresolved checks. Recall requires separate sampling of missed locations. | Sections 2.3/8.2; P01/P03/P07 designs |
+| F17: mobility, incidental exposure, uplift and borders | Mobility and changing archaeological units enter the introduction; modern cuts and incidental exposure enter the preservation discussion. Makran assessment prioritizes dated raised or inland surfaces while testing submergence as a rival. Current access, border and marine feasibility remain unverified. | Sections 1/3/5.5/8; R64–R66; candidate defaults |
+| F18: landslide targets lack archaeological evidence | Retained the formation-process discussion and removed slide-target and comparison labels. Reviewed sources did not establish an Indus landslide-burial example. | Section 5.4; P17 design |
+
+## Claude first review: source and code checks
+
+The first review's unnumbered source and implementation findings are accounted for below.
+
+| Review item | Revision or limit |
+|---|---|
+| Six proposals above 20 ha lacked a locator | Added the Discussion subsection “Villages and Towns: Mound Size Estimates” and Figure 9A. These are published remote interpretations, without new field dates. |
+| The 71 matches include 25 reference mounds | Table 2 additionally reports 46 matches among 312 non-reference proposals. |
+| Table 1 integers were reconstructed | Text and output identify recovery from rounded percentages. The primary table was visually checked. |
+| The 199 positives span other periods | The abstract and comparison text identify the period scope. |
+| Small-feature stopping and filtering were unclear | Stopping after ten negatives per regional grid unit and historical-map review are stated. Expected filtering effects are discussed; the direction of stopping-rule bias remains unresolved. |
+| Lothal calibration and period boundary | Direct Table 1 and Methods reading supplies intervals and ΔR. The environmental transition is placed from later Mature into post-urban time. |
+| Foothill ages of 3.9–3.8 ka | Approximate calendar orientation and its relationship to the later Mature boundary are stated. |
+| Conventional marine-shell BP | Retained in its original convention without an unsupported calendar conversion. |
+| Srivastava's inconsistent age association | The exact association remains in the source audit and register; it does not support the main chronological argument. |
+| Mehrgarh chronology occupied too much space | Shortened to a process and chronology comparison, with a convention-table row. |
+| Date-seed cohort and decipherment aside | Removed from the manuscript; original observations and draft preserved. |
+| Unsupported current “active” mission wording | Replaced with “established archaeological research history.” |
+| Legacy area label | Revised figure uses “Legacy area estimate.” The original figure is preserved. |
+| MAHSA's 10,000-entry scope | Identified as an all-period legacy-entry scale. |
+| Rakhigarhi's 127 sites | Added the 15 km survey radius and overlapping phase membership. |
+| Coastal source fit | P15 uses local evidence; P21 adds local settlement and uplift sources and identifies external analogues. P14 is evidence class C. P12 requires existing-project coordination. |
+| Bibliography joins and unused references | Numeric reference order and a source crosswalk are retained. Unused R35 is excluded; R46 supports the boundary comparison. Source-title spacing is corrected in a new register. |
+| “Approximately 96” | Retained the source qualification; the revised historical ratio is approximately 9.4%. |
+| Heading, identifier and word spacing | Revised prose uses normal spacing; printable-artifact status is recorded below. |
+| The 85- and 86-entry cohorts were conflated | Replaced aggregate comparison with record-level keys and the declared Gharo Bhiro/Nuhato alias relationship. |
+| Ratio guard checked only labels | Added required source, phase, inventory and unit metadata. These checks enforce calculation scope without authenticating archaeological classifications. |
+| Totals were checked against the same table | Labelled as implementation consistency; separate source audit and recount remain preserved. |
+| Amendment provenance was unconditional | Amendment and history arguments are explicit CLI options. Ordinary replay asserts no retrospective amendment. |
+| Exact floating-point comparisons | Relevant checks now use numerical tolerances. |
+| Large check counts were presented as evidential weight | Counts are described as bookkeeping; archaeological conclusions do not depend on their number. |
+
+## Codex source-audit response
+
+The source audit's four central corrections are retained. Historical excavation ratios remain attributed to their compilation and period scope; the newer 142-site Early-and-Mature count is not divided by an old Mature-only inventory. Excavation counts also do not measure the proportion of surviving deposits investigated. The 266 unmatched Cholistan proposals retain unresolved identity and period attribution, and selected validation cannot establish regional recall. Green's historical-map comparisons remain descriptive: their changing selection rules and off-map encounters cannot supply a national rate or a regional false-negative denominator. Later-city, mountain and coastal proposals require dated local surfaces and contextual occupation evidence. The identified chronological source hazard remains in the register, outside the main age argument.
+
+The new R01 witness sharpens the first correction: its paragraph says at least 1,022 locations and about 96 excavated, cites Possehl (2002), and supplies no title-bearing reference list. The exact 2002 work and its relationship to R38's compilation therefore remain unverified. R38's publisher Introduction was read by the commissioned Codex source-audit pass; the full chapter was not obtained.
+
+## Codex first manuscript review
+
+| Finding | Resolution |
+|---|---|
+| F1: P18 excludes Ghazi Shah | Extended the northern bound to 26.6° and renamed the region. Primary inventory points for Kai and Ghazi Shah are recorded. The original 23-passing/one-failing check record is preserved. |
+| F2: imagery confused with historical-map review | Corrected the narrative and source observation. |
+| F3: surface-age rejection and unsupported cost claim | Removed the “inexpensive” claim. Cap, substrate, channel activity and occupation ages are separated; demotion requires adequate inspected units. |
+| F4: partial geographic support for P21 | Added Sutkagen-dor, Dales and local earthquake-uplift evidence, retaining partial validation and external-analogue labels. |
+| F5: density and recovery duplicated | Density means surviving in-ground material before collection; recovery means collection and retention. Numerical forecasts were removed from the paper. |
+| F6: current-status wording for the 266 proposals | Attributed to the 2020 analysis. No exhaustive 2026 confirmation status is asserted. |
+| F7: unreadable diagram | Preserved map-v1. A dark-label revision exposed a P11/P18 label overlap, corrected in map-v3. The corrected map and its earlier QA record are preserved. |
+| F8: assembly and promised files | Accepted. The final package contains review provenance, reproduction commands, a README, manuscript and rendered PDF, with export checks recorded after assembly. |
+
+## Bounded design-review response
+
+The design review's related corrections are incorporated into the final design: separate attempted, adequate and preserved denominators; adequacy in lateral coverage, depth and chronology; unidentified classes invisible to every method; separate natural-feature and Indus-attribution decisions for P04; separate burial and cultural decisions for P16; substrate and cap qualifications for P17; an explicit channel-use relationship for P09; and synchronized comparison fields. Correlated units stay together. The second Claude review further clarifies that blocks are the inferential units and the eight held-aside blocks evaluate a fitted prediction rule only. `PILOT-DESIGN-v4.md` carries this revision; v3 remains preserved and is superseded for the final design. No field power or access conclusion was added.
+
+## Claude second review: all 12 findings
+
+| Finding | Decision and revision | Evidence or output |
+|---|---|---|
+| V2-F1: Ganweriwala's 33 ha attribution | Corrected the register attribution. R07 supports the 81.5 ha legacy estimate and 66.7 ha December 2015 ground survey. R08 directly reports approximately 33 ha in the 2020 paper: Discussion, “Villages and Towns: Mound Size Estimates,” sentence beginning “Our data suggest.” | R07/R08 in `sources-v6.json`; Section 4.1; Figure 1 |
+| V2-F2: historical lineage, precision and reader role | The acquired R01 chapter witness reports at least 1,022 and about 96; its ratio is described as approximately 9.4%. Its Possehl (2002) citation lacks a title-bearing reference in the excerpt. Whether R01 and R38 represent successive gazetteer versions remains unverified. R38's reading is attributed to the commissioned Codex source-audit pass. | Sections 2.1/3.1; R01/R38; final register comparison |
+| V2-F3: Ghazi Shah containment undocumented | Added the official inventory point, 26.454762389° N, 67.464134722° E, to the source and candidate geographic record. It lies inside P18's bounds [67.0, 25.0, 68.1, 26.6]. The reviewer's approximately 26.7° N recollection was explicitly unverified and is not adopted. | R41; P18 geographic check; [official inventory](https://doam.gov.pk/public/sites/7279) |
+| V2-F4: ambiguous demotion rules | P06 tests loss of the target interval or younger terrestrial availability; older substrate leaves later use unresolved. P07 separates catchment contemporaneity from off-mound concentration. P09 tests contemporaneous channel use and permits later margin occupation. P13 tests phase-specific exterior extent because the alias is already resolved. P14 separates natural deposits from another period's occupation. The shared negative rule includes spatial coverage, and P17's punctuation is repaired. | Sections 2.3/6; Appendix A; `candidates-v5.json` |
+| V2-F5: pilot inference and holdout use | Blocks are the inferential units; profiles are nested observations. Descriptive summaries use all adequately resolved blocks among the 24 sampled blocks, with cluster-aware uncertainty and separate adequacy counts. Eight blocks are held aside only for prediction-model evaluation. A stratum with no adequate blocks is unresolved. | Section 8.3; `PILOT-DESIGN-v4.md` |
+| V2-F6: ordinal assessments lacked a rubric | Added I0/I1/I2 for mechanism-only leads, incomplete regional connections and documented candidates with a specific comparison. P0/P1/P2 describe absent local preservation evidence, documented regional processes and documented surviving contexts. Each region has F0, current feasibility unverified. Ratings are editorial AI-assisted judgments; their high category is not a probability or ranking of expected discoveries. | Sections 2.3/6; Appendix A preamble; register rubric and per-region levels |
+| V2-F7: incomplete overlap rules | Any eligible 1 km² cell enters one shared frame, carries all applicable region labels and is sampled once. P02's known-margin transects are excluded from P01's negative draw. The rule also covers P03/P04/P07 and P05/P06, alongside the previously addressed overlaps. | Sections 2.3/6; `candidates-v5.json` shared-frame rule |
+| V2-F8: numerical provenance gaps | The final comparison verifies all 32 consumed crosswalk fields across v2, v4 and v5 against the recorded run: 96 matching version comparisons. Numerical constants are curated in the preserved code rather than parsed from register prose; code, inputs and result hashes remain unchanged. A separate output records calendar orientation, 2.08 ha, 0.6 ha, 11.9 m and approximately 6050 BCE. | `final-register-numeric-comparison.json` and `.md`: 12 checks passed; `run-v3-inline-arithmetic/`: 17 checks passed |
+| V2-F9: review provenance and premature verification | Both Claude passes and the Codex source, manuscript, mountain and design roles are disclosed with their actual access. Final export checks are recorded only after rendering and inspection. Source, numerical and export checks have distinct records; actual artifact status is given below. | Review provenance above; invocation records; final artifact record when completed |
+| V2-F10: “omissions” combined unlike observations | The abstract distinguishes archaeological locations absent from earlier reports in the field-checked landscape from unconfirmed remote candidates, uncertain legacy matches and changed mound units. The PAS-to-map comparison concerns omission from maps of known sites. Section 4.3 separates field-checked additions, unconfirmed remote candidates and changed physical units. | Abstract; Sections 4.3/9; Table 2 |
+| V2-F11: origin of ka-scale ages | Added a note that ka ages receive approximate calendar orientation. Where OSL-based, the reference year differs from 1950 by decades, below the stated precision. Inline arithmetic documents the chosen orientation without treating it as exact recalibration. | Section 2.2 table note; inline arithmetic |
+| V2-F12: residual prose and register gaps | Khambhat now states that the reported evidence includes cores. R42 is described as a 2025 archaeometric report abstract recording excavation. R21 now registers the four 2017 trenches, disturbance and modern pits mixing material. Appendix comparison and mechanism labels are separated from their text. | Sections 3.3/5.4/5.5; R21/R42; Appendix A |
+
+## Verification status and remaining limits
+
+The final-register comparison reports 12 passing checks and no material mismatch; final package verification extends the 32-field metadata comparison through sources-v6. The separate inline-arithmetic output reports 17 passing checks. These are implementation records; their counts do not measure archaeological support. The source/region audit preserves its original 127 passes and two clarifications. Successor registers correct the R08 sentence locator and apply the documentary P2 criterion consistently, with a basis for every region. P2 is common because many regions contain known archaeology, including other periods; it does not rank target-parcel survival or Indus affiliation. See `final-source-region-audit.md` and `final-audit-resolutions.json`.
+
+The final PDF has 33 pages, 69 verified reference URLs, zero out-of-margin text spans and no remaining observed visual defect. All pages were inspected through contact sheets, with full-size checks of the coordinate diagram, observation diagram and corrected references. DOI-parenthesis parsing and a diagram border were repaired in separate print versions. The last changes affect only pages 33 and 17; other rendered pages have identical PNG bytes and inherit their completed inspection. The frozen final text is revised-v5, whose change from revised-v4 is the diagram path. No numerical result changed. `pdf-inspection.json`, `pdf-layout.json` and the final manifest retain the actual hashes and checks.
+
+Current primary site inventories and row-level supplements remain incomplete. MAHSA and partner data have not been exported. Exact proposal coordinates, local coast and fan ages, current parcel preservation and access require further evidence. The historical inventory lineage remains unresolved as described above. No source material was published externally, and no excavation, permit application, deployment or automation was undertaken.

@@ -1,0 +1,496 @@
+{
+  "description": "Independent recomputation of structure-first headline numbers; code in recompute.py and compare.py.",
+  "tolerances": {
+    "count": 1e-06,
+    "ratio": 0.001
+  },
+  "inputs_sha256": {
+    "data/normalized/lipi_clean_rtl_singleline.jsonl": "9e539daef4d5a7efbe3c5f34b73e14058eec1c5e888c749bc2eafb0f08084ba8",
+    "data/normalized/lipi_observed_faces.jsonl": "1220f5591a42abe7c6696ac014aba90e7c49fdce6b0ccba0b85bb45f950c30db",
+    "step1-signs/sign_components_v1.tsv": "c2d55fb56e25b8d7f630f2680f9b85b9122cfa15b8718e08fa5b72c11f509f7d",
+    "step1-signs/second-coder/components_coder2.tsv": "c26c5b656b2f84ef46c4d30cd279b6e01dc1ba5787f5526f481d95b030a01a9e",
+    "data/raw/2026-10-12-bronze-age-comparison/normalized-v4/records.jsonl": "dedb9c3967d6bd2fe725406e2a46234673fcd8e5a3de2817dee27bc8ce1d899c"
+  },
+  "frame": {
+    "distinct_texts": 1859,
+    "signs": 8535,
+    "faces": 5680
+  },
+  "assigned_checks_agree": true,
+  "all_checks_agree": false,
+  "checks": [
+    {
+      "check": 1,
+      "name": "profile W: attested types",
+      "definition": "Distinct clean reading-order texts (1,859 texts, 8,535 signs); W = font code, B = coder-1 base family.",
+      "my_value": 577,
+      "run_value": 577,
+      "run_key": "step1 summary profiles.W.types",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 1,
+      "name": "profile W: share of types occurring once",
+      "definition": "Distinct clean reading-order texts (1,859 texts, 8,535 signs); W = font code, B = coder-1 base family.",
+      "my_value": 0.3708838821490468,
+      "run_value": 0.3708838821490468,
+      "run_key": "step1 summary profiles.W.once_share",
+      "tolerance": 0.001,
+      "agree": true
+    },
+    {
+      "check": 1,
+      "name": "profile W: token share of 30 commonest types",
+      "definition": "Distinct clean reading-order texts (1,859 texts, 8,535 signs); W = font code, B = coder-1 base family.",
+      "my_value": 0.5780902167545401,
+      "run_value": 0.5780902167545401,
+      "run_key": "step1 summary profiles.W.top30_token_share",
+      "tolerance": 0.001,
+      "agree": true
+    },
+    {
+      "check": 1,
+      "name": "profile B: attested types",
+      "definition": "Distinct clean reading-order texts (1,859 texts, 8,535 signs); W = font code, B = coder-1 base family.",
+      "my_value": 78,
+      "run_value": 78,
+      "run_key": "step1 summary profiles.B.types",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 1,
+      "name": "profile B: share of types occurring once",
+      "definition": "Distinct clean reading-order texts (1,859 texts, 8,535 signs); W = font code, B = coder-1 base family.",
+      "my_value": 0.0641025641025641,
+      "run_value": 0.0641025641025641,
+      "run_key": "step1 summary profiles.B.once_share",
+      "tolerance": 0.001,
+      "agree": true
+    },
+    {
+      "check": 1,
+      "name": "profile B: token share of 30 commonest types",
+      "definition": "Distinct clean reading-order texts (1,859 texts, 8,535 signs); W = font code, B = coder-1 base family.",
+      "my_value": 0.9128295254833041,
+      "run_value": 0.9128295254833041,
+      "run_key": "step1 summary profiles.B.top30_token_share",
+      "tolerance": 0.001,
+      "agree": true
+    },
+    {
+      "check": 2,
+      "name": "coder ARI, unweighted",
+      "definition": "Adjusted Rand index between coder-1 and coder-2 base labels over the 577 attested codes; weighted version builds the contingency table with each code contributing its token count.",
+      "my_value": 0.8840775217605779,
+      "run_value": 0.8840775217605779,
+      "run_key": "step1 summary coder_agreement.ari_unweighted",
+      "tolerance": 0.001,
+      "agree": true
+    },
+    {
+      "check": 2,
+      "name": "coder ARI, token-weighted",
+      "definition": "Adjusted Rand index between coder-1 and coder-2 base labels over the 577 attested codes; weighted version builds the contingency table with each code contributing its token count.",
+      "my_value": 0.9753363186840355,
+      "run_value": 0.9753363186840355,
+      "run_key": "step1 summary coder_agreement.ari_token_weighted",
+      "tolerance": 0.001,
+      "agree": true
+    },
+    {
+      "check": 3,
+      "name": "2a copper: texts on 2+ single-class objects",
+      "definition": "TAB:C faces grouped by object_family_id; normalized symbol labels unioned per object; texts are complete, known-sign, nonempty faces. Among single-class objects with a text, distinct texts on 2+ objects, and those whose objects share one class.",
+      "my_value": 12,
+      "run_value": 12,
+      "run_key": "step2 v2 summary copper.2a.texts_on_2plus_objects",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 3,
+      "name": "2a copper: of those, all objects one class",
+      "definition": "TAB:C faces grouped by object_family_id; normalized symbol labels unioned per object; texts are complete, known-sign, nonempty faces. Among single-class objects with a text, distinct texts on 2+ objects, and those whose objects share one class.",
+      "my_value": 10,
+      "run_value": 10,
+      "run_key": "step2 v2 summary copper.2a.class_pure",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 3,
+      "name": "2a copper: single-class objects with a text",
+      "definition": "TAB:C faces grouped by object_family_id; normalized symbol labels unioned per object; texts are complete, known-sign, nonempty faces. Among single-class objects with a text, distinct texts on 2+ objects, and those whose objects share one class.",
+      "my_value": 65,
+      "run_value": 65,
+      "run_key": "step2 v2 summary copper.2a.objects_with_one_class_and_text",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 4,
+      "name": "2d: matching hits summed over classes",
+      "definition": "Copper-class-specific contiguous bigrams and trigrams (one-sign text contributes itself), specific against other labelled copper classes; distinct (text, class) pairs on single-class seal objects of types SEAL, SEAL:S, SEAL:R, SEAL:C, SEAL:CY; hits are pairs whose class matches and whose text contains a specific n-gram of that class.",
+      "my_value": 3,
+      "run_value": 3,
+      "run_key": "step2 v2 summary 2d_copper_to_seals.matching_hits",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 4,
+      "name": "2d: seal (text, class) pairs",
+      "definition": "Copper-class-specific contiguous bigrams and trigrams (one-sign text contributes itself), specific against other labelled copper classes; distinct (text, class) pairs on single-class seal objects of types SEAL, SEAL:S, SEAL:R, SEAL:C, SEAL:CY; hits are pairs whose class matches and whose text contains a specific n-gram of that class.",
+      "my_value": 1209,
+      "run_value": 1209,
+      "run_key": "step2 v2 summary 2d_copper_to_seals.seal_text_animal_pairs",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 4,
+      "name": "2d: hits for Anth (supplementary)",
+      "definition": "Copper-class-specific contiguous bigrams and trigrams (one-sign text contributes itself), specific against other labelled copper classes; distinct (text, class) pairs on single-class seal objects of types SEAL, SEAL:S, SEAL:R, SEAL:C, SEAL:CY; hits are pairs whose class matches and whose text contains a specific n-gram of that class.",
+      "my_value": 0,
+      "run_value": 0,
+      "run_key": "step2 v2 summary 2d_copper_to_seals.per_class.Anth.hits_matching",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 4,
+      "name": "2d: specific n-grams for Anth (supplementary)",
+      "definition": "Copper-class-specific contiguous bigrams and trigrams (one-sign text contributes itself), specific against other labelled copper classes; distinct (text, class) pairs on single-class seal objects of types SEAL, SEAL:S, SEAL:R, SEAL:C, SEAL:CY; hits are pairs whose class matches and whose text contains a specific n-gram of that class.",
+      "my_value": 8,
+      "run_value": 8,
+      "run_key": "step2 v2 summary 2d_copper_to_seals.per_class.Anth.specific_ngrams",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 4,
+      "name": "2d: hits for Buff (supplementary)",
+      "definition": "Copper-class-specific contiguous bigrams and trigrams (one-sign text contributes itself), specific against other labelled copper classes; distinct (text, class) pairs on single-class seal objects of types SEAL, SEAL:S, SEAL:R, SEAL:C, SEAL:CY; hits are pairs whose class matches and whose text contains a specific n-gram of that class.",
+      "my_value": 0,
+      "run_value": 0,
+      "run_key": "step2 v2 summary 2d_copper_to_seals.per_class.Buff.hits_matching",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 4,
+      "name": "2d: specific n-grams for Buff (supplementary)",
+      "definition": "Copper-class-specific contiguous bigrams and trigrams (one-sign text contributes itself), specific against other labelled copper classes; distinct (text, class) pairs on single-class seal objects of types SEAL, SEAL:S, SEAL:R, SEAL:C, SEAL:CY; hits are pairs whose class matches and whose text contains a specific n-gram of that class.",
+      "my_value": 5,
+      "run_value": 5,
+      "run_key": "step2 v2 summary 2d_copper_to_seals.per_class.Buff.specific_ngrams",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 4,
+      "name": "2d: hits for Comp (supplementary)",
+      "definition": "Copper-class-specific contiguous bigrams and trigrams (one-sign text contributes itself), specific against other labelled copper classes; distinct (text, class) pairs on single-class seal objects of types SEAL, SEAL:S, SEAL:R, SEAL:C, SEAL:CY; hits are pairs whose class matches and whose text contains a specific n-gram of that class.",
+      "my_value": 1,
+      "run_value": 1,
+      "run_key": "step2 v2 summary 2d_copper_to_seals.per_class.Comp.hits_matching",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 4,
+      "name": "2d: specific n-grams for Comp (supplementary)",
+      "definition": "Copper-class-specific contiguous bigrams and trigrams (one-sign text contributes itself), specific against other labelled copper classes; distinct (text, class) pairs on single-class seal objects of types SEAL, SEAL:S, SEAL:R, SEAL:C, SEAL:CY; hits are pairs whose class matches and whose text contains a specific n-gram of that class.",
+      "my_value": 29,
+      "run_value": 29,
+      "run_key": "step2 v2 summary 2d_copper_to_seals.per_class.Comp.specific_ngrams",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 4,
+      "name": "2d: hits for Elep (supplementary)",
+      "definition": "Copper-class-specific contiguous bigrams and trigrams (one-sign text contributes itself), specific against other labelled copper classes; distinct (text, class) pairs on single-class seal objects of types SEAL, SEAL:S, SEAL:R, SEAL:C, SEAL:CY; hits are pairs whose class matches and whose text contains a specific n-gram of that class.",
+      "my_value": 0,
+      "run_value": 0,
+      "run_key": "step2 v2 summary 2d_copper_to_seals.per_class.Elep.hits_matching",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 4,
+      "name": "2d: specific n-grams for Elep (supplementary)",
+      "definition": "Copper-class-specific contiguous bigrams and trigrams (one-sign text contributes itself), specific against other labelled copper classes; distinct (text, class) pairs on single-class seal objects of types SEAL, SEAL:S, SEAL:R, SEAL:C, SEAL:CY; hits are pairs whose class matches and whose text contains a specific n-gram of that class.",
+      "my_value": 2,
+      "run_value": 2,
+      "run_key": "step2 v2 summary 2d_copper_to_seals.per_class.Elep.specific_ngrams",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 4,
+      "name": "2d: hits for Gaur (supplementary)",
+      "definition": "Copper-class-specific contiguous bigrams and trigrams (one-sign text contributes itself), specific against other labelled copper classes; distinct (text, class) pairs on single-class seal objects of types SEAL, SEAL:S, SEAL:R, SEAL:C, SEAL:CY; hits are pairs whose class matches and whose text contains a specific n-gram of that class.",
+      "my_value": 0,
+      "run_value": 0,
+      "run_key": "step2 v2 summary 2d_copper_to_seals.per_class.Gaur.hits_matching",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 4,
+      "name": "2d: specific n-grams for Gaur (supplementary)",
+      "definition": "Copper-class-specific contiguous bigrams and trigrams (one-sign text contributes itself), specific against other labelled copper classes; distinct (text, class) pairs on single-class seal objects of types SEAL, SEAL:S, SEAL:R, SEAL:C, SEAL:CY; hits are pairs whose class matches and whose text contains a specific n-gram of that class.",
+      "my_value": 12,
+      "run_value": 12,
+      "run_key": "step2 v2 summary 2d_copper_to_seals.per_class.Gaur.specific_ngrams",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 4,
+      "name": "2d: hits for Goat (supplementary)",
+      "definition": "Copper-class-specific contiguous bigrams and trigrams (one-sign text contributes itself), specific against other labelled copper classes; distinct (text, class) pairs on single-class seal objects of types SEAL, SEAL:S, SEAL:R, SEAL:C, SEAL:CY; hits are pairs whose class matches and whose text contains a specific n-gram of that class.",
+      "my_value": 0,
+      "run_value": 0,
+      "run_key": "step2 v2 summary 2d_copper_to_seals.per_class.Goat.hits_matching",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 4,
+      "name": "2d: specific n-grams for Goat (supplementary)",
+      "definition": "Copper-class-specific contiguous bigrams and trigrams (one-sign text contributes itself), specific against other labelled copper classes; distinct (text, class) pairs on single-class seal objects of types SEAL, SEAL:S, SEAL:R, SEAL:C, SEAL:CY; hits are pairs whose class matches and whose text contains a specific n-gram of that class.",
+      "my_value": 6,
+      "run_value": 6,
+      "run_key": "step2 v2 summary 2d_copper_to_seals.per_class.Goat.specific_ngrams",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 4,
+      "name": "2d: hits for Rhin (supplementary)",
+      "definition": "Copper-class-specific contiguous bigrams and trigrams (one-sign text contributes itself), specific against other labelled copper classes; distinct (text, class) pairs on single-class seal objects of types SEAL, SEAL:S, SEAL:R, SEAL:C, SEAL:CY; hits are pairs whose class matches and whose text contains a specific n-gram of that class.",
+      "my_value": 0,
+      "run_value": 0,
+      "run_key": "step2 v2 summary 2d_copper_to_seals.per_class.Rhin.hits_matching",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 4,
+      "name": "2d: specific n-grams for Rhin (supplementary)",
+      "definition": "Copper-class-specific contiguous bigrams and trigrams (one-sign text contributes itself), specific against other labelled copper classes; distinct (text, class) pairs on single-class seal objects of types SEAL, SEAL:S, SEAL:R, SEAL:C, SEAL:CY; hits are pairs whose class matches and whose text contains a specific n-gram of that class.",
+      "my_value": 6,
+      "run_value": 6,
+      "run_key": "step2 v2 summary 2d_copper_to_seals.per_class.Rhin.specific_ngrams",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 4,
+      "name": "2d: hits for Unicorn (supplementary)",
+      "definition": "Copper-class-specific contiguous bigrams and trigrams (one-sign text contributes itself), specific against other labelled copper classes; distinct (text, class) pairs on single-class seal objects of types SEAL, SEAL:S, SEAL:R, SEAL:C, SEAL:CY; hits are pairs whose class matches and whose text contains a specific n-gram of that class.",
+      "my_value": 2,
+      "run_value": 2,
+      "run_key": "step2 v2 summary 2d_copper_to_seals.per_class.Unicorn.hits_matching",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 4,
+      "name": "2d: specific n-grams for Unicorn (supplementary)",
+      "definition": "Copper-class-specific contiguous bigrams and trigrams (one-sign text contributes itself), specific against other labelled copper classes; distinct (text, class) pairs on single-class seal objects of types SEAL, SEAL:S, SEAL:R, SEAL:C, SEAL:CY; hits are pairs whose class matches and whose text contains a specific n-gram of that class.",
+      "my_value": 14,
+      "run_value": 14,
+      "run_key": "step2 v2 summary 2d_copper_to_seals.per_class.Unicorn.specific_ngrams",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 5,
+      "name": "line breaks: faces used",
+      "definition": "Faces with '/' and no '[', ']' or '000'; lines split on '/', signs on '-', reversed unless L/R. Found = contiguous in a distinct clean text whose family set is not exactly this face's family. Line windows: each line of length >= 2. Straddle windows: per adjacent pair and order, windows of length len(A) and len(B) (each >= 2) crossing the junction. Better order = higher of the per-face forward and reverse straddle rates.",
+      "my_value": 72,
+      "run_value": 72,
+      "run_key": "step3 v2 summary faces_used",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 5,
+      "name": "line breaks: faces line rate > better-order straddle",
+      "definition": "Faces with '/' and no '[', ']' or '000'; lines split on '/', signs on '-', reversed unless L/R. Found = contiguous in a distinct clean text whose family set is not exactly this face's family. Line windows: each line of length >= 2. Straddle windows: per adjacent pair and order, windows of length len(A) and len(B) (each >= 2) crossing the junction. Better order = higher of the per-face forward and reverse straddle rates.",
+      "my_value": 23,
+      "run_value": 23,
+      "run_key": "step3 v2 summary conservative_best_order.faces_line_higher",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 5,
+      "name": "line breaks: faces better-order straddle > line rate",
+      "definition": "Faces with '/' and no '[', ']' or '000'; lines split on '/', signs on '-', reversed unless L/R. Found = contiguous in a distinct clean text whose family set is not exactly this face's family. Line windows: each line of length >= 2. Straddle windows: per adjacent pair and order, windows of length len(A) and len(B) (each >= 2) crossing the junction. Better order = higher of the per-face forward and reverse straddle rates.",
+      "my_value": 4,
+      "run_value": 4,
+      "run_key": "step3 v2 summary conservative_best_order.faces_straddle_higher",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 5,
+      "name": "line breaks: two-sided exact sign-test p (better order)",
+      "definition": "Faces with '/' and no '[', ']' or '000'; lines split on '/', signs on '-', reversed unless L/R. Found = contiguous in a distinct clean text whose family set is not exactly this face's family. Line windows: each line of length >= 2. Straddle windows: per adjacent pair and order, windows of length len(A) and len(B) (each >= 2) crossing the junction. Better order = higher of the per-face forward and reverse straddle rates.",
+      "my_value": 0.000310748815536499,
+      "run_value": 0.000310748815536499,
+      "run_key": "step3 v2 summary conservative_best_order.sign_test_two_sided_p",
+      "tolerance": 0.001,
+      "agree": true
+    },
+    {
+      "check": 5,
+      "name": "line breaks: faces line rate > pooled straddle (supplementary)",
+      "definition": "Faces with '/' and no '[', ']' or '000'; lines split on '/', signs on '-', reversed unless L/R. Found = contiguous in a distinct clean text whose family set is not exactly this face's family. Line windows: each line of length >= 2. Straddle windows: per adjacent pair and order, windows of length len(A) and len(B) (each >= 2) crossing the junction. Better order = higher of the per-face forward and reverse straddle rates.",
+      "my_value": 25,
+      "run_value": 25,
+      "run_key": "step3 v2 summary faces_line_higher",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 5,
+      "name": "line breaks: faces pooled straddle > line rate (supplementary)",
+      "definition": "Faces with '/' and no '[', ']' or '000'; lines split on '/', signs on '-', reversed unless L/R. Found = contiguous in a distinct clean text whose family set is not exactly this face's family. Line windows: each line of length >= 2. Straddle windows: per adjacent pair and order, windows of length len(A) and len(B) (each >= 2) crossing the junction. Better order = higher of the per-face forward and reverse straddle rates.",
+      "my_value": 3,
+      "run_value": 3,
+      "run_key": "step3 v2 summary faces_straddle_higher",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 5,
+      "name": "line breaks: mean better-order straddle rate (supplementary)",
+      "definition": "Faces with '/' and no '[', ']' or '000'; lines split on '/', signs on '-', reversed unless L/R. Found = contiguous in a distinct clean text whose family set is not exactly this face's family. Line windows: each line of length >= 2. Straddle windows: per adjacent pair and order, windows of length len(A) and len(B) (each >= 2) crossing the junction. Better order = higher of the per-face forward and reverse straddle rates.",
+      "my_value": 0.1222222222222222,
+      "run_value": 0.12222222222222223,
+      "run_key": "step3 v2 summary conservative_best_order.mean_straddle_rate_best_order",
+      "tolerance": 0.001,
+      "agree": true
+    },
+    {
+      "check": 5,
+      "name": "line breaks: mean pooled straddle rate (supplementary)",
+      "definition": "Faces with '/' and no '[', ']' or '000'; lines split on '/', signs on '-', reversed unless L/R. Found = contiguous in a distinct clean text whose family set is not exactly this face's family. Line windows: each line of length >= 2. Straddle windows: per adjacent pair and order, windows of length len(A) and len(B) (each >= 2) crossing the junction. Better order = higher of the per-face forward and reverse straddle rates.",
+      "my_value": 0.08078703703703703,
+      "run_value": 0.08078703703703703,
+      "run_key": "step3 v2 summary mean_straddle_rate",
+      "tolerance": 0.001,
+      "agree": true
+    },
+    {
+      "check": 5,
+      "name": "line breaks: pooled straddle rate (supplementary)",
+      "definition": "Faces with '/' and no '[', ']' or '000'; lines split on '/', signs on '-', reversed unless L/R. Found = contiguous in a distinct clean text whose family set is not exactly this face's family. Line windows: each line of length >= 2. Straddle windows: per adjacent pair and order, windows of length len(A) and len(B) (each >= 2) crossing the junction. Better order = higher of the per-face forward and reverse straddle rates.",
+      "my_value": 0.056862745098039215,
+      "run_value": 0.056862745098039215,
+      "run_key": "step3 v2 summary pooled_straddle_rate",
+      "tolerance": 0.001,
+      "agree": true
+    },
+    {
+      "check": 5,
+      "name": "line breaks: mean line rate (supplementary)",
+      "definition": "Faces with '/' and no '[', ']' or '000'; lines split on '/', signs on '-', reversed unless L/R. Found = contiguous in a distinct clean text whose family set is not exactly this face's family. Line windows: each line of length >= 2. Straddle windows: per adjacent pair and order, windows of length len(A) and len(B) (each >= 2) crossing the junction. Better order = higher of the per-face forward and reverse straddle rates.",
+      "my_value": 0.22685185185185183,
+      "run_value": 0.22916666666666666,
+      "run_key": "step3 v2 summary mean_line_rate",
+      "tolerance": 0.001,
+      "agree": false
+    },
+    {
+      "check": 5,
+      "name": "line breaks: pooled line rate (supplementary)",
+      "definition": "Faces with '/' and no '[', ']' or '000'; lines split on '/', signs on '-', reversed unless L/R. Found = contiguous in a distinct clean text whose family set is not exactly this face's family. Line windows: each line of length >= 2. Straddle windows: per adjacent pair and order, windows of length len(A) and len(B) (each >= 2) crossing the junction. Better order = higher of the per-face forward and reverse straddle rates.",
+      "my_value": 0.24060150375939848,
+      "run_value": 0.24817518248175183,
+      "run_key": "step3 v2 summary pooled_line_rate",
+      "tolerance": 0.001,
+      "agree": false
+    },
+    {
+      "check": 6,
+      "name": "numerals: tokens",
+      "definition": "Numeral codes: coder-1 base B001 or B031 with nonempty count. Item = next sign or </s>; tokens followed by a numeral are skipped. Items with >= 5 tokens qualify; top share is token-weighted over qualifying items.",
+      "my_value": 1265,
+      "run_value": 1265,
+      "run_key": "step4 summary ivs_clean.tokens",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 6,
+      "name": "numerals: items with >= 5 tokens",
+      "definition": "Numeral codes: coder-1 base B001 or B031 with nonempty count. Item = next sign or </s>; tokens followed by a numeral are skipped. Items with >= 5 tokens qualify; top share is token-weighted over qualifying items.",
+      "my_value": 56,
+      "run_value": 56,
+      "run_key": "step4 summary ivs_clean.qualifying_items",
+      "tolerance": 1e-06,
+      "agree": true
+    },
+    {
+      "check": 6,
+      "name": "numerals: mean distinct values per item",
+      "definition": "Numeral codes: coder-1 base B001 or B031 with nonempty count. Item = next sign or </s>; tokens followed by a numeral are skipped. Items with >= 5 tokens qualify; top share is token-weighted over qualifying items.",
+      "my_value": 3.607142857142857,
+      "run_value": 3.607142857142857,
+      "run_key": "step4 summary ivs_clean.mean_distinct_values_per_item",
+      "tolerance": 0.001,
+      "agree": true
+    },
+    {
+      "check": 6,
+      "name": "numerals: token-weighted commonest-value share",
+      "definition": "Numeral codes: coder-1 base B001 or B031 with nonempty count. Item = next sign or </s>; tokens followed by a numeral are skipped. Items with >= 5 tokens qualify; top share is token-weighted over qualifying items.",
+      "my_value": 0.606425702811245,
+      "run_value": 0.606425702811245,
+      "run_key": "step4 summary ivs_clean.token_weighted_top_value_share",
+      "tolerance": 0.001,
+      "agree": true
+    },
+    {
+      "check": 7,
+      "name": "edge asymmetry: IVS clean",
+      "definition": "Normalized entropy (bits / log2 of distinct signs in the set) of first sign minus that of last sign, over distinct texts of length >= 2. Sumerian: corpus sumerian, kind seal, concatenated word_units, records with an empty word unit skipped, deduplicated.",
+      "my_value": 0.2597938244763818,
+      "run_value": 0.2597938244763818,
+      "run_key": "step6 summary profiles.ivs_all_clean.edge_asymmetry.asymmetry_initial_minus_final",
+      "tolerance": 0.001,
+      "agree": true
+    },
+    {
+      "check": 7,
+      "name": "edge asymmetry: Sumerian seal legends, sign level",
+      "definition": "Normalized entropy (bits / log2 of distinct signs in the set) of first sign minus that of last sign, over distinct texts of length >= 2. Sumerian: corpus sumerian, kind seal, concatenated word_units, records with an empty word unit skipped, deduplicated.",
+      "my_value": -0.2036657592003871,
+      "run_value": -0.20366575920038676,
+      "run_key": "step6 summary profiles.sumerian_seals.sign_level.edge_asymmetry.asymmetry_initial_minus_final",
+      "tolerance": 0.001,
+      "agree": true
+    },
+    {
+      "check": 7,
+      "name": "edge asymmetry: Sumerian distinct texts (supplementary)",
+      "definition": "Normalized entropy (bits / log2 of distinct signs in the set) of first sign minus that of last sign, over distinct texts of length >= 2. Sumerian: corpus sumerian, kind seal, concatenated word_units, records with an empty word unit skipped, deduplicated.",
+      "my_value": 309,
+      "run_value": 309,
+      "run_key": "step6 summary profiles.sumerian_seals.sign_level.edge_asymmetry.texts",
+      "tolerance": 1e-06,
+      "agree": true
+    }
+  ],
+  "diagnosis": {
+    "line_rate_disagreement": "The run's linebreaks.py appends line windows inside the loop over adjacent line pairs (for L in (A, B)), so a line between two others is counted twice. Four of the 72 faces have three or more lines. Counting each line once gives 133 line windows, mean line rate 0.22685 and pooled line rate 0.24060; the run reports 137, 0.22917 and 0.24818. recompute.py reproduces the run's values exactly when interior lines are counted twice (check5_diagnostic_interior_lines_twice). The face-level sign counts (23 vs 4 and 25 vs 3) and p-values are the same under both countings."
+  }
+}

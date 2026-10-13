@@ -1,0 +1,1281 @@
+{
+  "reviewed_utc": "2026-10-11T06:04:27.817155+00:00",
+  "scope": "Compare sources-v2, sources-v4 and final sources-v5 against the fields recorded by run-v3; preserve existing numerical and inline endpoints.",
+  "inputs": [
+    {
+      "path": "experiments/2026-10-11-settlement-prospection/sources-v2.json",
+      "bytes": 44366,
+      "sha256": "104ec9eace5d5bc9db421ff8ccc142ae8c112b174e9d374df6f954ae835df979"
+    },
+    {
+      "path": "experiments/2026-10-11-settlement-prospection/sources-v4.json",
+      "bytes": 74045,
+      "sha256": "96e13b06ae7e35adda829218a98c61c895fa732d46b965f94c23d46f54af8bc7"
+    },
+    {
+      "path": "experiments/2026-10-11-settlement-prospection/sources-v5.json",
+      "bytes": 75086,
+      "sha256": "1a5270162b43a6ae8135f183bc47ab32f836cd0f2ac3334aed5a32393ba5683c"
+    },
+    {
+      "path": "experiments/2026-10-11-settlement-prospection/run-v3/source-id-crosswalk.json",
+      "bytes": 2565,
+      "sha256": "e5713c88d10db8dfbcd854e6d1744c3d5cb9295561c9a838e2b53649b23b3a70"
+    },
+    {
+      "path": "experiments/2026-10-11-settlement-prospection/run-v3/manifest.json",
+      "bytes": 8275,
+      "sha256": "586a25207f7033a39c3cfb44cdfebc3f44befa557ecf14fab06242a40d7d5c7a"
+    },
+    {
+      "path": "experiments/2026-10-11-settlement-prospection/run-v3-inline-arithmetic/manifest.json",
+      "bytes": 2231,
+      "sha256": "a27ce2e8c0cb95d6343c433bd9504f6cddfc2b2423f9c0fc263c94e7aad19f77"
+    },
+    {
+      "path": "experiments/2026-10-11-settlement-prospection/analysis.py",
+      "bytes": 59913,
+      "sha256": "0ac7e275883314a1599a9d22beff30331dcabe33ebd117c942be7c301a960762"
+    }
+  ],
+  "code_consumption": {
+    "source_crosswalk_lines": [
+      236,
+      245
+    ],
+    "source_fields_consumed": [
+      "id",
+      "title",
+      "url",
+      "observation_id"
+    ],
+    "numeric_register_fields_consumed": [],
+    "numerical_input_origin": "The source register supplies crosswalk metadata. Source-reported numerical values are curated constants in green_table, published_arithmetic and resurvey_descriptives; selected census/dating files supply the separate metadata audit. No calculation reads numerical values from the source register prose.",
+    "code_hash_conclusion": "The current analysis code and original run-v3 input files retain their recorded hashes. The final register therefore supplies no changed numerical parameter to the preserved calculation."
+  },
+  "consumed_field_comparisons": [
+    {
+      "source_id": "R01",
+      "field": "id",
+      "recorded_run_v3_value": "R01",
+      "register_values": {
+        "v2": "R01",
+        "v4": "R01",
+        "v5": "R01"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R01",
+      "field": "title",
+      "recorded_run_v3_value": "HARAPPAN CIVILIZATION",
+      "register_values": {
+        "v2": "HARAPPAN CIVILIZATION",
+        "v4": "HARAPPAN CIVILIZATION",
+        "v5": "HARAPPAN CIVILIZATION"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R01",
+      "field": "url",
+      "recorded_run_v3_value": "https://www.lkouniv.ac.in/site/writereaddata/siteContent/202003241550006972anil_kumar_HARAPPAN_CIVILIZATION%201.pdf",
+      "register_values": {
+        "v2": "https://www.lkouniv.ac.in/site/writereaddata/siteContent/202003241550006972anil_kumar_HARAPPAN_CIVILIZATION%201.pdf",
+        "v4": "https://www.lkouniv.ac.in/site/writereaddata/siteContent/202003241550006972anil_kumar_HARAPPAN_CIVILIZATION%201.pdf",
+        "v5": "https://www.lkouniv.ac.in/site/writereaddata/siteContent/202003241550006972anil_kumar_HARAPPAN_CIVILIZATION%201.pdf"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R01",
+      "field": "observation_id",
+      "recorded_run_v3_value": "R01-O1",
+      "register_values": {
+        "v2": "R01-O1",
+        "v4": "R01-O1",
+        "v5": "R01-O1"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R02",
+      "field": "id",
+      "recorded_run_v3_value": "R02",
+      "register_values": {
+        "v2": "R02",
+        "v4": "R02",
+        "v5": "R02"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R02",
+      "field": "title",
+      "recorded_run_v3_value": "Where Are the “Lithics” of Chalcolithic Indus Civilization? A Comprehensive Review of Published Data",
+      "register_values": {
+        "v2": "Where Are the “Lithics” of Chalcolithic Indus Civilization? A Comprehensive Review of Published Data",
+        "v4": "Where Are the “Lithics” of Chalcolithic Indus Civilization? A Comprehensive Review of Published Data",
+        "v5": "Where Are the “Lithics” of Chalcolithic Indus Civilization? A Comprehensive Review of Published Data"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R02",
+      "field": "url",
+      "recorded_run_v3_value": "https://doi.org/10.1080/01977261.2025.2523610",
+      "register_values": {
+        "v2": "https://doi.org/10.1080/01977261.2025.2523610",
+        "v4": "https://doi.org/10.1080/01977261.2025.2523610",
+        "v5": "https://doi.org/10.1080/01977261.2025.2523610"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R02",
+      "field": "observation_id",
+      "recorded_run_v3_value": "R02-O1",
+      "register_values": {
+        "v2": "R02-O1",
+        "v4": "R02-O1",
+        "v5": "R02-O1"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R07",
+      "field": "id",
+      "recorded_run_v3_value": "R07",
+      "register_values": {
+        "v2": "R07",
+        "v4": "R07",
+        "v5": "R07"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R07",
+      "field": "title",
+      "recorded_run_v3_value": "Harappan Cities: Landscape and Surface Survey at Ganweriwala",
+      "register_values": {
+        "v2": "Harappan Cities: Landscape and Surface Survey at Ganweriwala",
+        "v4": "Harappan Cities: Landscape and Surface Survey at Ganweriwala",
+        "v5": "Harappan Cities: Landscape and Surface Survey at Ganweriwala"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R07",
+      "field": "url",
+      "recorded_run_v3_value": "https://easaa.org/wp-content/uploads/2023/01/Sidra-Gulzar-3.pdf",
+      "register_values": {
+        "v2": "https://easaa.org/wp-content/uploads/2023/01/Sidra-Gulzar-3.pdf",
+        "v4": "https://easaa.org/wp-content/uploads/2023/01/Sidra-Gulzar-3.pdf",
+        "v5": "https://easaa.org/wp-content/uploads/2023/01/Sidra-Gulzar-3.pdf"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R07",
+      "field": "observation_id",
+      "recorded_run_v3_value": "R07-O1",
+      "register_values": {
+        "v2": "R07-O1",
+        "v4": "R07-O1",
+        "v5": "R07-O1"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R08",
+      "field": "id",
+      "recorded_run_v3_value": "R08",
+      "register_values": {
+        "v2": "R08",
+        "v4": "R08",
+        "v5": "R08"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R08",
+      "field": "title",
+      "recorded_run_v3_value": "Automated detection of archaeological mounds using machine-learning classification of multisensor and multitemporal satellite data",
+      "register_values": {
+        "v2": "Automated detection of archaeological mounds using machine-learning classification of multisensor and multitemporal satellite data",
+        "v4": "Automated detection of archaeological mounds using machine-learning classification of multisensor and multitemporal satellite data",
+        "v5": "Automated detection of archaeological mounds using machine-learning classification of multisensor and multitemporal satellite data"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R08",
+      "field": "url",
+      "recorded_run_v3_value": "https://doi.org/10.1073/pnas.2005583117",
+      "register_values": {
+        "v2": "https://doi.org/10.1073/pnas.2005583117",
+        "v4": "https://doi.org/10.1073/pnas.2005583117",
+        "v5": "https://doi.org/10.1073/pnas.2005583117"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R08",
+      "field": "observation_id",
+      "recorded_run_v3_value": "R08-O1",
+      "register_values": {
+        "v2": "R08-O1",
+        "v4": "R08-O1",
+        "v5": "R08-O1"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R10",
+      "field": "id",
+      "recorded_run_v3_value": "R10",
+      "register_values": {
+        "v2": "R10",
+        "v4": "R10",
+        "v5": "R10"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R10",
+      "field": "title",
+      "recorded_run_v3_value": "Re-Discovering Ancient Landscapes: Archaeological Survey of Mound Features from Historical Maps in Northwest India and Implications for Investigating the Large-Scale Distribution of Cultural Heritage Sites in South Asia",
+      "register_values": {
+        "v2": "Re-Discovering Ancient Landscapes: Archaeological Survey of Mound Features from Historical Maps in Northwest India and Implications for Investigating the Large-Scale Distribution of Cultural Heritage Sites in South Asia",
+        "v4": "Re-Discovering Ancient Landscapes: Archaeological Survey of Mound Features from Historical Maps in Northwest India and Implications for Investigating the Large-Scale Distribution of Cultural Heritage Sites in South Asia",
+        "v5": "Re-Discovering Ancient Landscapes: Archaeological Survey of Mound Features from Historical Maps in Northwest India and Implications for Investigating the Large-Scale Distribution of Cultural Heritage Sites in South Asia"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R10",
+      "field": "url",
+      "recorded_run_v3_value": "https://doi.org/10.3390/rs11182089",
+      "register_values": {
+        "v2": "https://doi.org/10.3390/rs11182089",
+        "v4": "https://doi.org/10.3390/rs11182089",
+        "v5": "https://doi.org/10.3390/rs11182089"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R10",
+      "field": "observation_id",
+      "recorded_run_v3_value": "R10-O1",
+      "register_values": {
+        "v2": "R10-O1",
+        "v4": "R10-O1",
+        "v5": "R10-O1"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R11",
+      "field": "id",
+      "recorded_run_v3_value": "R11",
+      "register_values": {
+        "v2": "R11",
+        "v4": "R11",
+        "v5": "R11"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R11",
+      "field": "title",
+      "recorded_run_v3_value": "Reconstructing long-term settlement histories on complex alluvial floodplains by integrating historical map analysis and remote-sensing: an archaeological analysis of the landscape of the Indus River Basin",
+      "register_values": {
+        "v2": "Reconstructing long-term settlement histories on complex alluvial floodplains by integrating historical map analysis and remote-sensing: an archaeological analysis of the landscape of the Indus River Basin",
+        "v4": "Reconstructing long-term settlement histories on complex alluvial floodplains by integrating historical map analysis and remote-sensing: an archaeological analysis of the landscape of the Indus River Basin",
+        "v5": "Reconstructing long-term settlement histories on complex alluvial floodplains by integrating historical map analysis and remote-sensing: an archaeological analysis of the landscape of the Indus River Basin"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R11",
+      "field": "url",
+      "recorded_run_v3_value": "https://doi.org/10.1186/s40494-023-00985-6",
+      "register_values": {
+        "v2": "https://doi.org/10.1186/s40494-023-00985-6",
+        "v4": "https://doi.org/10.1186/s40494-023-00985-6",
+        "v5": "https://doi.org/10.1186/s40494-023-00985-6"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R11",
+      "field": "observation_id",
+      "recorded_run_v3_value": "R11-O1",
+      "register_values": {
+        "v2": "R11-O1",
+        "v4": "R11-O1",
+        "v5": "R11-O1"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R29",
+      "field": "id",
+      "recorded_run_v3_value": "R29",
+      "register_values": {
+        "v2": "R29",
+        "v4": "R29",
+        "v5": "R29"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R29",
+      "field": "title",
+      "recorded_run_v3_value": "2009 Season",
+      "register_values": {
+        "v2": "2009 Season",
+        "v4": "2009 Season",
+        "v5": "2009 Season"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R29",
+      "field": "url",
+      "recorded_run_v3_value": "https://www.arch.cam.ac.uk/research/projects/past-projects/land-water-and-settlement/2009-season",
+      "register_values": {
+        "v2": "https://www.arch.cam.ac.uk/research/projects/past-projects/land-water-and-settlement/2009-season",
+        "v4": "https://www.arch.cam.ac.uk/research/projects/past-projects/land-water-and-settlement/2009-season",
+        "v5": "https://www.arch.cam.ac.uk/research/projects/past-projects/land-water-and-settlement/2009-season"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R29",
+      "field": "observation_id",
+      "recorded_run_v3_value": "R29-O1",
+      "register_values": {
+        "v2": "R29-O1",
+        "v4": "R29-O1",
+        "v5": "R29-O1"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R38",
+      "field": "id",
+      "recorded_run_v3_value": "R38",
+      "register_values": {
+        "v2": "R38",
+        "v4": "R38",
+        "v5": "R38"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R38",
+      "field": "title",
+      "recorded_run_v3_value": "Harappans and hunters: economic interaction and specialization in prehistoric India",
+      "register_values": {
+        "v2": "Harappans and hunters: economic interaction and specialization in prehistoric India",
+        "v4": "Harappans and hunters: economic interaction and specialization in prehistoric India",
+        "v5": "Harappans and hunters: economic interaction and specialization in prehistoric India"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R38",
+      "field": "url",
+      "recorded_run_v3_value": "https://doi.org/10.1017/CBO9780511489631.005",
+      "register_values": {
+        "v2": "https://doi.org/10.1017/CBO9780511489631.005",
+        "v4": "https://doi.org/10.1017/CBO9780511489631.005",
+        "v5": "https://doi.org/10.1017/CBO9780511489631.005"
+      },
+      "all_match": true
+    },
+    {
+      "source_id": "R38",
+      "field": "observation_id",
+      "recorded_run_v3_value": "R38-O1",
+      "register_values": {
+        "v2": "R38-O1",
+        "v4": "R38-O1",
+        "v5": "R38-O1"
+      },
+      "all_match": true
+    }
+  ],
+  "nonconsumed_source_metadata_changes": [
+    {
+      "source_id": "R01",
+      "field": "access_depth",
+      "consumed_by_analysis": false,
+      "register_values": {
+        "v2": "secondary teaching chapter; relevant passage checked in October 8 review",
+        "v4": "secondary teaching chapter; relevant passage checked in October 8 review",
+        "v5": "Full 37-page institutional-hosted scanned chapter PDF acquired. Printed p.41 visually inspected and text read; first and final pages inspected in extraction; all-page text search for reference-list markers and Possehl citations."
+      }
+    },
+    {
+      "source_id": "R01",
+      "field": "locator",
+      "consumed_by_analysis": false,
+      "register_values": {
+        "v2": "printed p.41 / PDF p.3; citations to Possehl 2002 and Settar & Korisettar 2002",
+        "v4": "printed p.41 / PDF p.3; citations to Possehl 2002 and Settar & Korisettar 2002",
+        "v5": "Printed p.41 / PDF p.3, first paragraph; excerpt runs printed pp.39–75; chapter heading on PDF p.1 and ending on PDF p.37"
+      }
+    },
+    {
+      "source_id": "R01",
+      "field": "observation",
+      "consumed_by_analysis": false,
+      "register_values": {
+        "v2": "1022 Mature Harappan sites and 96 excavated are a historical compilation. No current compatible excavation census is established here.",
+        "v4": "Teaching chapter p.41 reports 1022 Mature Harappan locations and approximately 96 excavated, citing 2002 sources; 406+616 and 41+55 subtotals. Underlying inventory not traced to a common compilation with R38.",
+        "v5": "The count paragraph cites Possehl (2002) and Setter and Korisettar (2002), reports at least 1,022 Mature-Harappan sites split 406 Pakistan / 616 India, and about 96 excavated split 41 / 55. The supplied chapter excerpt includes no bibliography or title-bearing Possehl reference."
+      }
+    },
+    {
+      "source_id": "R01",
+      "field": "raw_witness",
+      "consumed_by_analysis": false,
+      "register_values": {
+        "v2": null,
+        "v4": null,
+        "v5": {
+          "local_path": "data/raw/2026-10-11-settlement-prospection/HISTORY_LUCKNOW_HARAPPAN.pdf",
+          "bytes": 5056143,
+          "sha256": "5d85a7b72f900ffc3ce11f1074978df448e5bba97a1c58b58382f8690b828845",
+          "rights": "unverified; local-only"
+        }
+      }
+    },
+    {
+      "source_id": "R02",
+      "field": "observation",
+      "consumed_by_analysis": false,
+      "register_values": {
+        "v2": "142 excavated Early and Mature Harappan sites through 2024 in the review population. Period scope differs from R01; incomplete lithic reporting constrains comparison.",
+        "v4": "142 excavated Early and Mature Harappan sites through 2024 in the review population. Period scope differs from R01; incomplete lithic reporting constrains comparison. The 142 count extends Uesugi’s compilation through 2024; publisher-indexed count passage p.156.",
+        "v5": "142 excavated Early and Mature Harappan sites through 2024 in the review population. Period scope differs from R01; incomplete lithic reporting constrains comparison. The 142 count extends Uesugi’s compilation through 2024; publisher-indexed count passage p.156."
+      }
+    },
+    {
+      "source_id": "R07",
+      "field": "observation",
+      "consumed_by_analysis": false,
+      "register_values": {
+        "v2": "Ground surface survey estimates 66.7 ha. Legacy 81.5 ha and satellite-visible 33 ha use different boundaries and observations. Border access and desert conditions constrain fieldwork.",
+        "v4": "Ground surface survey estimates 66.7 ha. Legacy 81.5 ha and satellite-visible 33 ha use different boundaries and observations. Border access and desert conditions constrain fieldwork.",
+        "v5": "December 2015 total-station/cultural-material survey gives 66.7 ha; discusses older 81.5 ha estimate and uncertain boundary procedure. The 33 ha visible-mound estimate is R08, not this source."
+      }
+    },
+    {
+      "source_id": "R08",
+      "field": "observation",
+      "consumed_by_analysis": false,
+      "register_values": {
+        "v2": "337 proposed mound clusters include 25 training/validation mounds;71 legacy matches include those 25;246 clusters are under 5 ha. Khundowala 29 ha and Mulhiawala 20.5 ha are remote proposals with untested period attribution. The20 selected validation mounds were visible in the first iteration; subsequent refinements and a visually chosen threshold mean this was not an untouched regional test.",
+        "v4": "337 proposed mound clusters include 25 training/validation mounds;71 legacy matches include those 25;246 clusters are under 5 ha. Khundowala 29 ha and Mulhiawala 20.5 ha are remote proposals with untested period attribution. The 20 selected validation mounds were visible in the first iteration; subsequent refinements and a visually chosen threshold mean this was not an untouched regional test. Discussion “Villages and Towns: Mound Size Estimates” and Fig.9 A identify six mounds >20 ha. These remain the source’s mound/settlement interpretations, not new field dates here.",
+        "v5": "337 proposed mound clusters include 25 training/validation mounds;71 legacy matches include those 25;246 clusters are under 5 ha. Khundowala 29 ha and Mulhiawala 20.5 ha are remote proposals with untested period attribution. The 20 selected validation mounds were visible in the first iteration; subsequent refinements and a visually chosen threshold mean this was not an untouched regional test. Discussion “Villages and Towns: Mound Size Estimates” and Fig.9 A identify six mounds >20 ha. These remain the source’s mound/settlement interpretations, not new field dates here. Discussion “Villages and Towns: Mound Size Estimates,” paragraph beginning “Our data suggest,” directly reports Ganweriwala mounded area circa 33 ha in the 2020 paper."
+      }
+    },
+    {
+      "source_id": "R10",
+      "field": "locator",
+      "consumed_by_analysis": false,
+      "register_values": {
+        "v2": "Table 1 / PDF p.15;2017-18 survey methods/results and suggested priority areas",
+        "v4": "Table 1 / PDF p.15; PDF p.10 stopping rule and map review, p.11 site definition, pp.7–14 encounters",
+        "v5": "Table 1 / PDF p.15; PDF p.10 stopping rule and map review, p.11 site definition, pp.7–14 encounters"
+      }
+    },
+    {
+      "source_id": "R10",
+      "field": "observation",
+      "consumed_by_analysis": false,
+      "register_values": {
+        "v2": "779 map features were checked;199 yielded archaeological material;169 were unlinked to earlier reports;64 additional locations were off-map. Counts span periods. Table percentages permit unique integer recovery. Small-feature checks stopped after ten negatives per regional unit in2017;2018 imagery prefilter removed apparent ponds/dunes. These selection rules limit generalization.",
+        "v4": "779 historical-map features were checked; 199 archaeological positives of several periods; 169 not securely linked to earlier reports; 64 additional off-map encounters. Table 1 rounded percentages uniquely recover the positive integers. In 2017 smallest-feature checks stopped after ten negatives per regional grid unit; in 2018 rechecking Survey of India historical maps excluded apparent ponds/dunes before visits. These selection rules restrict transfer of checked rates.",
+        "v5": "779 historical-map features were checked; 199 archaeological positives of several periods; 169 not securely linked to earlier reports; 64 additional off-map encounters. Table 1 rounded percentages uniquely recover the positive integers. In 2017 smallest-feature checks stopped after ten negatives per regional grid unit; in 2018 rechecking Survey of India historical maps excluded apparent ponds/dunes before visits. These selection rules restrict transfer of checked rates."
+      }
+    },
+    {
+      "source_id": "R38",
+      "field": "access_depth",
+      "consumed_by_analysis": false,
+      "register_values": {
+        "v2": "Primary publisher Introduction extract read by independent Codex source auditor; full chapter not obtained",
+        "v4": "Primary publisher Introduction extract read by separate author-commissioned Codex source-check pass; full chapter not obtained",
+        "v5": "Primary publisher Introduction extract read by separate author-commissioned Codex source-check pass; full chapter not obtained"
+      }
+    },
+    {
+      "source_id": "R38",
+      "field": "locator",
+      "consumed_by_analysis": false,
+      "register_values": {
+        "v2": "Forager-Traders in South and Southeast Asia, pp.62-76; Introduction citingPossehl1999AppendixA",
+        "v4": "Forager-Traders in South and Southeast Asia, pp.62-76; Introduction citingPossehl 1999 AppendixA",
+        "v5": "Forager-Traders in South and Southeast Asia, pp.62-76; Introduction citingPossehl 1999 AppendixA"
+      }
+    },
+    {
+      "source_id": "R38",
+      "field": "observation",
+      "consumed_by_analysis": false,
+      "register_values": {
+        "v2": "1056 Mature sites /96 excavated differs from the teaching chapter1022 /96. Online2009 date does not update this2002 chapter.",
+        "v4": "Primary 2002 Introduction extract reports 1056 Mature locations and 96 excavated, citing Possehl 1999 AppendixA. A different historical 1022 total appears in R01; a common underlying compilation was not traced. Online 2009 publication does not update field counts.",
+        "v5": "Primary 2002 Introduction extract reports 1056 Mature locations and 96 excavated, citing Possehl 1999 AppendixA. A different historical 1022 total appears in R01; a common underlying compilation was not traced. Online 2009 publication does not update field counts."
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "all_consumed_fields_match_recorded_run_v3",
+      "passed": true,
+      "evidence": {
+        "source_count": 8,
+        "fields_per_source": 4,
+        "field_rows": 32,
+        "version_value_comparisons": 96
+      }
+    },
+    {
+      "name": "numerical_code_witness_unchanged",
+      "passed": true,
+      "evidence": {
+        "recorded": {
+          "path": "experiments/2026-10-11-settlement-prospection/analysis.py",
+          "bytes": 59913,
+          "sha256": "0ac7e275883314a1599a9d22beff30331dcabe33ebd117c942be7c301a960762",
+          "role": "own analysis code"
+        },
+        "observed": {
+          "path": "experiments/2026-10-11-settlement-prospection/analysis.py",
+          "bytes": 59913,
+          "sha256": "0ac7e275883314a1599a9d22beff30331dcabe33ebd117c942be7c301a960762"
+        }
+      }
+    },
+    {
+      "name": "original_run_v3_inputs_unchanged",
+      "passed": true,
+      "evidence": {
+        "records": [
+          {
+            "path": "experiments/2026-10-08-site-map-and-overview/data/sites-census.json",
+            "expected_sha256": "8f6bb9485bbfb1d016370eab777fcb1a839524673004ef01d5f7aaba05f4c3b9",
+            "exists": true,
+            "observed_sha256": "8f6bb9485bbfb1d016370eab777fcb1a839524673004ef01d5f7aaba05f4c3b9",
+            "bytes_match": true,
+            "passed": true
+          },
+          {
+            "path": "experiments/2026-10-08-site-map-and-overview/data/dating-south-asia.json",
+            "expected_sha256": "66ee87d34cd392292888fadca8e4e9a339f42f88171c799d2318d8d5b36cc1eb",
+            "exists": true,
+            "observed_sha256": "66ee87d34cd392292888fadca8e4e9a339f42f88171c799d2318d8d5b36cc1eb",
+            "bytes_match": true,
+            "passed": true
+          },
+          {
+            "path": "experiments/2026-10-11-settlement-prospection/sources-v2.json",
+            "expected_sha256": "104ec9eace5d5bc9db421ff8ccc142ae8c112b174e9d374df6f954ae835df979",
+            "exists": true,
+            "observed_sha256": "104ec9eace5d5bc9db421ff8ccc142ae8c112b174e9d374df6f954ae835df979",
+            "bytes_match": true,
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "run_v3_source_witnesses_unchanged",
+      "passed": true,
+      "evidence": {
+        "records": [
+          {
+            "path": "data/raw/2026-10-11-settlement-prospection/GREEN2019.pdf",
+            "expected_sha256": "fee0281b64335fc3c33ec3ab01a0a28c4a377118b0ad8d794e6d66e96b5c8c65",
+            "exists": true,
+            "observed_sha256": "fee0281b64335fc3c33ec3ab01a0a28c4a377118b0ad8d794e6d66e96b5c8c65",
+            "bytes_match": true,
+            "passed": true
+          },
+          {
+            "path": "data/raw/2026-10-11-settlement-prospection/ORENGO2020.xml",
+            "expected_sha256": "80fefbff848e5bbaad9a3e496610e3a97ea9e9440ad5c6d4879d799fa0c596f9",
+            "exists": true,
+            "observed_sha256": "80fefbff848e5bbaad9a3e496610e3a97ea9e9440ad5c6d4879d799fa0c596f9",
+            "bytes_match": true,
+            "passed": true
+          },
+          {
+            "path": "data/raw/2026-10-11-settlement-prospection/GARCIA2023.pdf",
+            "expected_sha256": "79a2e7c8c48221c7c00864ef39af6bcbf2628840db4f2cf3e6e0ad9c2ec82508",
+            "exists": true,
+            "observed_sha256": "79a2e7c8c48221c7c00864ef39af6bcbf2628840db4f2cf3e6e0ad9c2ec82508",
+            "bytes_match": true,
+            "passed": true
+          },
+          {
+            "path": "data/raw/2026-10-11-settlement-prospection/GULZAR2018.pdf",
+            "expected_sha256": "f1b241400c0474d326782589df566a8c76e02837b21153b59f1a8cb4adf1fbe0",
+            "exists": true,
+            "observed_sha256": "f1b241400c0474d326782589df566a8c76e02837b21153b59f1a8cb4adf1fbe0",
+            "bytes_match": true,
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "run_v1_outputs_preserved",
+      "passed": true,
+      "evidence": {
+        "output_count": 13
+      }
+    },
+    {
+      "name": "run_v2_outputs_preserved",
+      "passed": true,
+      "evidence": {
+        "output_count": 13
+      }
+    },
+    {
+      "name": "run_v3_outputs_preserved",
+      "passed": true,
+      "evidence": {
+        "output_count": 17
+      }
+    },
+    {
+      "name": "inline_endpoint_unchanged",
+      "passed": true,
+      "evidence": {
+        "records": [
+          {
+            "path": "experiments/2026-10-11-settlement-prospection/run-v3-inline-arithmetic/arithmetic.json",
+            "expected_sha256": "ad9fe5a1d0eddbddb8437d0d77ae23e1108cbebac6f2747a1efd347698234b80",
+            "exists": true,
+            "observed_sha256": "ad9fe5a1d0eddbddb8437d0d77ae23e1108cbebac6f2747a1efd347698234b80",
+            "bytes_match": true,
+            "passed": true
+          },
+          {
+            "path": "experiments/2026-10-11-settlement-prospection/run-v3-inline-arithmetic/source-register-comparison.json",
+            "expected_sha256": "f2f254fd472d49b191e4307cd82eff86515a81f2d2ab2913cdccb7a2529d1883",
+            "exists": true,
+            "observed_sha256": "f2f254fd472d49b191e4307cd82eff86515a81f2d2ab2913cdccb7a2529d1883",
+            "bytes_match": true,
+            "passed": true
+          },
+          {
+            "path": "experiments/2026-10-11-settlement-prospection/run-v3-inline-arithmetic/verification.json",
+            "expected_sha256": "24537780c2895d8925608c91c40e58ff2f541dd0e52e7bae9b29fec0958cfc09",
+            "exists": true,
+            "observed_sha256": "24537780c2895d8925608c91c40e58ff2f541dd0e52e7bae9b29fec0958cfc09",
+            "bytes_match": true,
+            "passed": true
+          },
+          {
+            "path": "experiments/2026-10-11-settlement-prospection/run-v3-inline-arithmetic/calculate.py",
+            "expected_sha256": "61c715fae24c5b4ba250113abfe3a0dabb62934fc2100b62db3a5a3960667872",
+            "exists": true,
+            "observed_sha256": "61c715fae24c5b4ba250113abfe3a0dabb62934fc2100b62db3a5a3960667872",
+            "bytes_match": true,
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "earlier_manuscript_endpoints_preserved",
+      "passed": true,
+      "evidence": {
+        "manifest_count": 3,
+        "listed_entries": 16
+      }
+    },
+    {
+      "name": "R38_1056_96_already_present_in_v2",
+      "passed": true,
+      "evidence": {
+        "v2_observation_id": "R38-O1",
+        "v2_observation": "1056 Mature sites /96 excavated differs from the teaching chapter1022 /96. Online2009 date does not update this2002 chapter."
+      }
+    },
+    {
+      "name": "Ganweriwala_numeric_attributions_match_final_source_observations",
+      "passed": true,
+      "evidence": {
+        "run_v3_areas": [
+          {
+            "measure": "legacy area estimate",
+            "area_ha": 81.5,
+            "source_id": "R07",
+            "source_alias": "GULZAR2018",
+            "method": "Earlier site-area estimate discussed in Gulzar 2018"
+          },
+          {
+            "measure": "December 2015 ground survey",
+            "area_ha": 66.7,
+            "source_id": "R07",
+            "source_alias": "GULZAR2018",
+            "method": "Total-station and surface-artifact site boundary; published 2018"
+          },
+          {
+            "measure": "2020 visible-mound detection",
+            "area_ha": 33.0,
+            "source_id": "R08",
+            "source_alias": "ORENGO2020",
+            "method": "Remote delineation of visible mounded area"
+          }
+        ],
+        "v5_R07_observation": "December 2015 total-station/cultural-material survey gives 66.7 ha; discusses older 81.5 ha estimate and uncertain boundary procedure. The 33 ha visible-mound estimate is R08, not this source.",
+        "v5_R08_observation": "337 proposed mound clusters include 25 training/validation mounds;71 legacy matches include those 25;246 clusters are under 5 ha. Khundowala 29 ha and Mulhiawala 20.5 ha are remote proposals with untested period attribution. The 20 selected validation mounds were visible in the first iteration; subsequent refinements and a visually chosen threshold mean this was not an untouched regional test. Discussion “Villages and Towns: Mound Size Estimates” and Fig.9 A identify six mounds >20 ha. These remain the source’s mound/settlement interpretations, not new field dates here. Discussion “Villages and Towns: Mound Size Estimates,” paragraph beginning “Our data suggest,” directly reports Ganweriwala mounded area circa 33 ha in the 2020 paper."
+      }
+    },
+    {
+      "name": "new_R01_witness_matches_final_register",
+      "passed": true,
+      "evidence": {
+        "records": [
+          {
+            "path": "data/raw/2026-10-11-settlement-prospection/HISTORY_LUCKNOW_HARAPPAN.pdf",
+            "expected_sha256": "5d85a7b72f900ffc3ce11f1074978df448e5bba97a1c58b58382f8690b828845",
+            "exists": true,
+            "observed_sha256": "5d85a7b72f900ffc3ce11f1074978df448e5bba97a1c58b58382f8690b828845",
+            "bytes_match": true,
+            "passed": true
+          }
+        ],
+        "v5_observation": "The count paragraph cites Possehl (2002) and Setter and Korisettar (2002), reports at least 1,022 Mature-Harappan sites split 406 Pakistan / 616 India, and about 96 excavated split 41 / 55. The supplied chapter excerpt includes no bibliography or title-bearing Possehl reference."
+      }
+    }
+  ],
+  "preserved_output_details": [
+    {
+      "endpoint": "run-v1",
+      "output_count": 13,
+      "records": [
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v1/chronology-metadata-by-country.csv",
+          "expected_sha256": "864cdedd7c512d6afe977399dab510e70f896c3c5d069675fc1b9c44d44edd5d",
+          "exists": true,
+          "observed_sha256": "864cdedd7c512d6afe977399dab510e70f896c3c5d069675fc1b9c44d44edd5d",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v1/coordinate-metadata-by-country.csv",
+          "expected_sha256": "c7ab016c9d0452b8cc0a761629f6c8929eea46431bc2ec332c7eaaefa57f5823",
+          "exists": true,
+          "observed_sha256": "c7ab016c9d0452b8cc0a761629f6c8929eea46431bc2ec332c7eaaefa57f5823",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v1/historical-map-checks-by-size-class.csv",
+          "expected_sha256": "0ec2ee65759bf3b012096adb95ef628d6df66dcfa34a501133c4f50a4643d9a2",
+          "exists": true,
+          "observed_sha256": "0ec2ee65759bf3b012096adb95ef628d6df66dcfa34a501133c4f50a4643d9a2",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v1/historical-map-checks-by-symbol.csv",
+          "expected_sha256": "4988271c099a81f09019dd4c011e63dd1d2e44db81fd5bbe3c6539c96e2c482f",
+          "exists": true,
+          "observed_sha256": "4988271c099a81f09019dd4c011e63dd1d2e44db81fd5bbe3c6539c96e2c482f",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v1/historical-map-checks-cells.csv",
+          "expected_sha256": "b6c7083d95b78e46489090b496955675a87ec3fa007da3f31f4db0c784af36f4",
+          "exists": true,
+          "observed_sha256": "b6c7083d95b78e46489090b496955675a87ec3fa007da3f31f4db0c784af36f4",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v1/historical-map-checks.json",
+          "expected_sha256": "fdf805395be77a74c9d58692c920148b107c5adf608a87cbde51d9a54e99eefb",
+          "exists": true,
+          "observed_sha256": "fdf805395be77a74c9d58692c920148b107c5adf608a87cbde51d9a54e99eefb",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v1/metadata-coverage.json",
+          "expected_sha256": "a0471506980493fb62027e45136a1f9089a799218a560b1a0f79abce906e5bc6",
+          "exists": true,
+          "observed_sha256": "a0471506980493fb62027e45136a1f9089a799218a560b1a0f79abce906e5bc6",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v1/published-count-arithmetic.json",
+          "expected_sha256": "f68e131329b31da9060621374c25208a59c723a8b9af4576b51034caca4dba48",
+          "exists": true,
+          "observed_sha256": "f68e131329b31da9060621374c25208a59c723a8b9af4576b51034caca4dba48",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v1/square-equivalent-geometry.csv",
+          "expected_sha256": "9087426a14b7b90ab830bbda7e34f34b5ba950acbf4b17ecdbae4572ba0516de",
+          "exists": true,
+          "observed_sha256": "9087426a14b7b90ab830bbda7e34f34b5ba950acbf4b17ecdbae4572ba0516de",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v1/synthetic-fragment-yields.csv",
+          "expected_sha256": "e68cbfe886f124a2f1384051c36be4796a755e561a7a79834aa2a2c32318827c",
+          "exists": true,
+          "observed_sha256": "e68cbfe886f124a2f1384051c36be4796a755e561a7a79834aa2a2c32318827c",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v1/synthetic-repeat-detection.csv",
+          "expected_sha256": "74bbc8a2acaf38c336fb3479f38db51f00b88cff4260ff430a625035b3df666c",
+          "exists": true,
+          "observed_sha256": "74bbc8a2acaf38c336fb3479f38db51f00b88cff4260ff430a625035b3df666c",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v1/synthetic-scenarios.json",
+          "expected_sha256": "512ccb794cda221a1bfe4b884f33161937271e7035274c68a1fe64591ff40267",
+          "exists": true,
+          "observed_sha256": "512ccb794cda221a1bfe4b884f33161937271e7035274c68a1fe64591ff40267",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v1/verification.json",
+          "expected_sha256": "82d42e1dbbdbccc1e9aec6de6887adad1e00d2a3e02b759a608177285a6a293d",
+          "exists": true,
+          "observed_sha256": "82d42e1dbbdbccc1e9aec6de6887adad1e00d2a3e02b759a608177285a6a293d",
+          "bytes_match": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "endpoint": "run-v2",
+      "output_count": 13,
+      "records": [
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/chronology-metadata-by-country.csv",
+          "expected_sha256": "864cdedd7c512d6afe977399dab510e70f896c3c5d069675fc1b9c44d44edd5d",
+          "exists": true,
+          "observed_sha256": "864cdedd7c512d6afe977399dab510e70f896c3c5d069675fc1b9c44d44edd5d",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/coordinate-metadata-by-country.csv",
+          "expected_sha256": "c7ab016c9d0452b8cc0a761629f6c8929eea46431bc2ec332c7eaaefa57f5823",
+          "exists": true,
+          "observed_sha256": "c7ab016c9d0452b8cc0a761629f6c8929eea46431bc2ec332c7eaaefa57f5823",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/historical-map-checks-by-size-class.csv",
+          "expected_sha256": "0ec2ee65759bf3b012096adb95ef628d6df66dcfa34a501133c4f50a4643d9a2",
+          "exists": true,
+          "observed_sha256": "0ec2ee65759bf3b012096adb95ef628d6df66dcfa34a501133c4f50a4643d9a2",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/historical-map-checks-by-symbol.csv",
+          "expected_sha256": "4988271c099a81f09019dd4c011e63dd1d2e44db81fd5bbe3c6539c96e2c482f",
+          "exists": true,
+          "observed_sha256": "4988271c099a81f09019dd4c011e63dd1d2e44db81fd5bbe3c6539c96e2c482f",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/historical-map-checks-cells.csv",
+          "expected_sha256": "b6c7083d95b78e46489090b496955675a87ec3fa007da3f31f4db0c784af36f4",
+          "exists": true,
+          "observed_sha256": "b6c7083d95b78e46489090b496955675a87ec3fa007da3f31f4db0c784af36f4",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/historical-map-checks.json",
+          "expected_sha256": "fdf805395be77a74c9d58692c920148b107c5adf608a87cbde51d9a54e99eefb",
+          "exists": true,
+          "observed_sha256": "fdf805395be77a74c9d58692c920148b107c5adf608a87cbde51d9a54e99eefb",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/metadata-coverage.json",
+          "expected_sha256": "a0471506980493fb62027e45136a1f9089a799218a560b1a0f79abce906e5bc6",
+          "exists": true,
+          "observed_sha256": "a0471506980493fb62027e45136a1f9089a799218a560b1a0f79abce906e5bc6",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/published-count-arithmetic.json",
+          "expected_sha256": "ae70f9774a42586cf683d9604c8711c4558ab52b8639f225d51588de5b7f77be",
+          "exists": true,
+          "observed_sha256": "ae70f9774a42586cf683d9604c8711c4558ab52b8639f225d51588de5b7f77be",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/square-equivalent-geometry.csv",
+          "expected_sha256": "9087426a14b7b90ab830bbda7e34f34b5ba950acbf4b17ecdbae4572ba0516de",
+          "exists": true,
+          "observed_sha256": "9087426a14b7b90ab830bbda7e34f34b5ba950acbf4b17ecdbae4572ba0516de",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/synthetic-fragment-yields.csv",
+          "expected_sha256": "e68cbfe886f124a2f1384051c36be4796a755e561a7a79834aa2a2c32318827c",
+          "exists": true,
+          "observed_sha256": "e68cbfe886f124a2f1384051c36be4796a755e561a7a79834aa2a2c32318827c",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/synthetic-repeat-detection.csv",
+          "expected_sha256": "74bbc8a2acaf38c336fb3479f38db51f00b88cff4260ff430a625035b3df666c",
+          "exists": true,
+          "observed_sha256": "74bbc8a2acaf38c336fb3479f38db51f00b88cff4260ff430a625035b3df666c",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/synthetic-scenarios.json",
+          "expected_sha256": "512ccb794cda221a1bfe4b884f33161937271e7035274c68a1fe64591ff40267",
+          "exists": true,
+          "observed_sha256": "512ccb794cda221a1bfe4b884f33161937271e7035274c68a1fe64591ff40267",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/verification.json",
+          "expected_sha256": "1f2f5abdf3a64c9534827872336fedccfef8fa42cdecebc1d53630986626114e",
+          "exists": true,
+          "observed_sha256": "1f2f5abdf3a64c9534827872336fedccfef8fa42cdecebc1d53630986626114e",
+          "bytes_match": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "endpoint": "run-v3",
+      "output_count": 17,
+      "records": [
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v3/chronology-metadata-by-country.csv",
+          "expected_sha256": "864cdedd7c512d6afe977399dab510e70f896c3c5d069675fc1b9c44d44edd5d",
+          "exists": true,
+          "observed_sha256": "864cdedd7c512d6afe977399dab510e70f896c3c5d069675fc1b9c44d44edd5d",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v3/cohort-comparison.json",
+          "expected_sha256": "8229f8bef1cabdeb60600323f5ce256b36b49fa2ead10e0313aea0c5cc5fdb82",
+          "exists": true,
+          "observed_sha256": "8229f8bef1cabdeb60600323f5ce256b36b49fa2ead10e0313aea0c5cc5fdb82",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v3/coordinate-metadata-by-country.csv",
+          "expected_sha256": "c7ab016c9d0452b8cc0a761629f6c8929eea46431bc2ec332c7eaaefa57f5823",
+          "exists": true,
+          "observed_sha256": "c7ab016c9d0452b8cc0a761629f6c8929eea46431bc2ec332c7eaaefa57f5823",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v3/historical-map-checks-by-size-class.csv",
+          "expected_sha256": "0ec2ee65759bf3b012096adb95ef628d6df66dcfa34a501133c4f50a4643d9a2",
+          "exists": true,
+          "observed_sha256": "0ec2ee65759bf3b012096adb95ef628d6df66dcfa34a501133c4f50a4643d9a2",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v3/historical-map-checks-by-symbol.csv",
+          "expected_sha256": "4988271c099a81f09019dd4c011e63dd1d2e44db81fd5bbe3c6539c96e2c482f",
+          "exists": true,
+          "observed_sha256": "4988271c099a81f09019dd4c011e63dd1d2e44db81fd5bbe3c6539c96e2c482f",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v3/historical-map-checks-cells.csv",
+          "expected_sha256": "b6c7083d95b78e46489090b496955675a87ec3fa007da3f31f4db0c784af36f4",
+          "exists": true,
+          "observed_sha256": "b6c7083d95b78e46489090b496955675a87ec3fa007da3f31f4db0c784af36f4",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v3/historical-map-checks.json",
+          "expected_sha256": "ae9f8f7be94af1250f6354b3915a3e2f3fb4cd39ece0fe8434d1182e10e62f25",
+          "exists": true,
+          "observed_sha256": "ae9f8f7be94af1250f6354b3915a3e2f3fb4cd39ece0fe8434d1182e10e62f25",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v3/metadata-coverage.json",
+          "expected_sha256": "fa3b154e09269e1fccecf72907273bf262b9d2d6c253d39f4417b05dd6682800",
+          "exists": true,
+          "observed_sha256": "fa3b154e09269e1fccecf72907273bf262b9d2d6c253d39f4417b05dd6682800",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v3/published-count-arithmetic.json",
+          "expected_sha256": "03c7b22d5b475d9c19da6ad2ccdda3b190361051e7da7420cf0ddd4214635ada",
+          "exists": true,
+          "observed_sha256": "03c7b22d5b475d9c19da6ad2ccdda3b190361051e7da7420cf0ddd4214635ada",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v3/resurvey-descriptives.csv",
+          "expected_sha256": "2cb621ac0067384e1f67d51f560b6f6d3c74527fa21eebe74149d243abb49133",
+          "exists": true,
+          "observed_sha256": "2cb621ac0067384e1f67d51f560b6f6d3c74527fa21eebe74149d243abb49133",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v3/resurvey-descriptives.json",
+          "expected_sha256": "5e511eaf1613222f37484b5b7243c9758a0de1522ac729ae0cab97835fc2e8a7",
+          "exists": true,
+          "observed_sha256": "5e511eaf1613222f37484b5b7243c9758a0de1522ac729ae0cab97835fc2e8a7",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v3/source-id-crosswalk.json",
+          "expected_sha256": "e5713c88d10db8dfbcd854e6d1744c3d5cb9295561c9a838e2b53649b23b3a70",
+          "exists": true,
+          "observed_sha256": "e5713c88d10db8dfbcd854e6d1744c3d5cb9295561c9a838e2b53649b23b3a70",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v3/square-equivalent-geometry.csv",
+          "expected_sha256": "9087426a14b7b90ab830bbda7e34f34b5ba950acbf4b17ecdbae4572ba0516de",
+          "exists": true,
+          "observed_sha256": "9087426a14b7b90ab830bbda7e34f34b5ba950acbf4b17ecdbae4572ba0516de",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v3/synthetic-fragment-yields.csv",
+          "expected_sha256": "efe60b8468c9142ec3536ca46f8f0f54b08c8a1f9a86751fb1b6f4b47e4279f2",
+          "exists": true,
+          "observed_sha256": "efe60b8468c9142ec3536ca46f8f0f54b08c8a1f9a86751fb1b6f4b47e4279f2",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v3/synthetic-repeat-detection.csv",
+          "expected_sha256": "74bbc8a2acaf38c336fb3479f38db51f00b88cff4260ff430a625035b3df666c",
+          "exists": true,
+          "observed_sha256": "74bbc8a2acaf38c336fb3479f38db51f00b88cff4260ff430a625035b3df666c",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v3/synthetic-scenarios.json",
+          "expected_sha256": "f5463a16c14a6fccf1f58c5109902297fa22d862b7d9eb5484445402415aa8d3",
+          "exists": true,
+          "observed_sha256": "f5463a16c14a6fccf1f58c5109902297fa22d862b7d9eb5484445402415aa8d3",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v3/verification.json",
+          "expected_sha256": "e5c747860c1dd457028bbe6a175ef94c02cd1942bf5e1a272763ae0de0b86914",
+          "exists": true,
+          "observed_sha256": "e5c747860c1dd457028bbe6a175ef94c02cd1942bf5e1a272763ae0de0b86914",
+          "bytes_match": true,
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "preserved_manuscript_details": [
+    {
+      "endpoint": "draft-v1",
+      "records": [
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/review/draft-v1.md",
+          "expected_sha256": "dee0212d5b3c93b34a523c445404660a79eeaf72e5bda28dcadfcbfffaf5ac06",
+          "exists": true,
+          "observed_sha256": "dee0212d5b3c93b34a523c445404660a79eeaf72e5bda28dcadfcbfffaf5ac06",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/sources-v2.json",
+          "expected_sha256": "104ec9eace5d5bc9db421ff8ccc142ae8c112b174e9d374df6f954ae835df979",
+          "exists": true,
+          "observed_sha256": "104ec9eace5d5bc9db421ff8ccc142ae8c112b174e9d374df6f954ae835df979",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/candidates-v2.json",
+          "expected_sha256": "04a2442bee8565d0cc56ba484122c829e891645a59d057f265678b574add63bb",
+          "exists": true,
+          "observed_sha256": "04a2442bee8565d0cc56ba484122c829e891645a59d057f265678b574add63bb",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/manifest.json",
+          "expected_sha256": "07b265987a390de5b2c1f99b794232edf07dbc470deca0f9891a69651d1075b2",
+          "exists": true,
+          "observed_sha256": "07b265987a390de5b2c1f99b794232edf07dbc470deca0f9891a69651d1075b2",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/verification.json",
+          "expected_sha256": "1f2f5abdf3a64c9534827872336fedccfef8fa42cdecebc1d53630986626114e",
+          "exists": true,
+          "observed_sha256": "1f2f5abdf3a64c9534827872336fedccfef8fa42cdecebc1d53630986626114e",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/PROTOCOL.md",
+          "expected_sha256": "3e1892e43053a8fac35538299ddcc3c8333fe8cfa2136ca9a26b54ad80ce3085",
+          "exists": true,
+          "observed_sha256": "3e1892e43053a8fac35538299ddcc3c8333fe8cfa2136ca9a26b54ad80ce3085",
+          "bytes_match": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "endpoint": "revised-v2",
+      "records": [
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/review/revised-v2.md",
+          "expected_sha256": "9b3e5a9295525b9e5daa333fc79bca6d1b6cd78a2b714786567ec092c1c2d772",
+          "exists": true,
+          "observed_sha256": "9b3e5a9295525b9e5daa333fc79bca6d1b6cd78a2b714786567ec092c1c2d772",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/sources-v3.json",
+          "expected_sha256": "60ff3bc93eaffe346cc5c6bc12282597e3206d302586886370756a5a1ea0563f",
+          "exists": true,
+          "observed_sha256": "60ff3bc93eaffe346cc5c6bc12282597e3206d302586886370756a5a1ea0563f",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/candidates-v3.json",
+          "expected_sha256": "458cea98939d13725b9c94aaf57b4002d1f216607f5e3feec1683596da1bbae7",
+          "exists": true,
+          "observed_sha256": "458cea98939d13725b9c94aaf57b4002d1f216607f5e3feec1683596da1bbae7",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/map-v3/manifest.json",
+          "expected_sha256": "8106d87b9e0a021b7f05627b610f2d6e44b4221517557fbf6ae4b0e141cc470b",
+          "exists": true,
+          "observed_sha256": "8106d87b9e0a021b7f05627b610f2d6e44b4221517557fbf6ae4b0e141cc470b",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v3/manifest.json",
+          "expected_sha256": "586a25207f7033a39c3cfb44cdfebc3f44befa557ecf14fab06242a40d7d5c7a",
+          "exists": true,
+          "observed_sha256": "586a25207f7033a39c3cfb44cdfebc3f44befa557ecf14fab06242a40d7d5c7a",
+          "bytes_match": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "endpoint": "revised-v3",
+      "records": [
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/review/revised-v3.md",
+          "expected_sha256": "a614b227f5eee08a17e5e75f4be1df99ea76cdce3f39b05b5c8281a7afa46d14",
+          "exists": true,
+          "observed_sha256": "a614b227f5eee08a17e5e75f4be1df99ea76cdce3f39b05b5c8281a7afa46d14",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/sources-v4.json",
+          "expected_sha256": "96e13b06ae7e35adda829218a98c61c895fa732d46b965f94c23d46f54af8bc7",
+          "exists": true,
+          "observed_sha256": "96e13b06ae7e35adda829218a98c61c895fa732d46b965f94c23d46f54af8bc7",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/candidates-v3.json",
+          "expected_sha256": "458cea98939d13725b9c94aaf57b4002d1f216607f5e3feec1683596da1bbae7",
+          "exists": true,
+          "observed_sha256": "458cea98939d13725b9c94aaf57b4002d1f216607f5e3feec1683596da1bbae7",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/map-v3/manifest.json",
+          "expected_sha256": "8106d87b9e0a021b7f05627b610f2d6e44b4221517557fbf6ae4b0e141cc470b",
+          "exists": true,
+          "observed_sha256": "8106d87b9e0a021b7f05627b610f2d6e44b4221517557fbf6ae4b0e141cc470b",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v3/manifest.json",
+          "expected_sha256": "586a25207f7033a39c3cfb44cdfebc3f44befa557ecf14fab06242a40d7d5c7a",
+          "exists": true,
+          "observed_sha256": "586a25207f7033a39c3cfb44cdfebc3f44befa557ecf14fab06242a40d7d5c7a",
+          "bytes_match": true,
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "passed_count": 12,
+  "failed_count": 0,
+  "interpretation": "Check and comparison counts are bookkeeping. The source registers have different hashes and corrected narrative observations; identity is claimed only for the consumed metadata fields and the preserved calculation inputs.",
+  "remaining_material_issues": [],
+  "limits": [
+    "This audit does not rerun the main analysis or establish new archaeological measurements.",
+    "R01 v5 qualifies 1022 as at least and 96 as about; these qualifications constrain interpretation of the historical arithmetic while retaining its source-reported scalars.",
+    "R07/R08 corrections specify source attribution and locators for existing Ganweriwala area values."
+  ]
+}

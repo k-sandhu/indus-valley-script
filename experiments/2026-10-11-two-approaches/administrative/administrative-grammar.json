@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "status": "Proposed operational interpretation constrained by measured graphic architecture",
+  "scope": "Multiface carriers in the selected Lipi observational export; no authenticated sign reading or language assignment",
+  "observation_types": {
+    "carrier": "source-qualified physical family after full alias closure",
+    "face_module": "complete source-attributed single-line string, retained as one module",
+    "bundle": "unordered multiset of face modules with side-count and orientation uncertainty",
+    "tall_stroke_w700_face": {
+      "inventory_namespace": "Wells labels in pinned Lipi export",
+      "graphic_labels": ["032", "033", "034", "700"],
+      "construction": "one of the documented two-, three- or four-tall-stroke classes beside W700; source-qualified end reversal allowed only in the declared sensitivity",
+      "semantic_parameter": "tier-shaped field; fee, grade, quota, quantity and canonical packet remain alternatives",
+      "source_convention": "PROTOCOL.md; earlier paired-surface protocol and source graphic audits"
+    }
+  },
+  "observed_constraints": [
+    {"claim": "The clean selected set has copied whole bundles.", "output": "run-v1/rtl-all.json", "observed_collisions": 423, "reference_mean": 141.19161916191618, "p_holm": 0.001},
+    {"claim": "Most W700-bearing selected carriers have one such face.", "output": "role-control-v1/rtl-all.json", "histogram": {"0": 109, "1": 305, "2": 3}},
+    {"claim": "Seventeen complete two-face anchor classes permit more than one tall-stroke/W700 value.", "output": "run-v1/frame-audit.json", "anchor_classes": 17},
+    {"claim": "The role-preserving prototype control leaves no corrected sign-pair maximum below .05.", "output": "role-control-v1/rtl-prototypes.json", "enrichment_p_holm": 0.0804, "depletion_p_holm": 0.6306}
+  ],
+  "proposed_fields": [
+    {"field": "administrative_descriptor", "interpretation_candidates": ["issuing authority", "bearer name or formal class", "licensed service", "controlled commodity", "canonical task or packet"], "mapped_signs": []},
+    {"field": "tier", "interpretation_candidates": ["entitlement slab", "fee class", "quantity limit", "quality grade", "canonical transferred amount"], "mapped_signs": []},
+    {"field": "additional_module", "interpretation_candidates": ["additional service right", "second controlled class", "production-stage condition", "second component of a canonical packet"], "mapped_signs": []},
+    {"field": "affiliation_emblem", "interpretation_candidates": ["issuer", "formal identity", "commodity association"], "mapped_signs": [], "status": "possible separate pictorial channel; not an observed issuer label"}
+  ],
+  "record_variants": [
+    {"name": "standing_capacity", "fields": ["administrative_descriptor", "tier"], "operation": "authorize a recurring service or controlled capacity"},
+    {"name": "bundled_entitlements", "fields": ["administrative_descriptor", "tier", "additional_module"], "operation": "bind more than one right, class or production condition on one carrier"},
+    {"name": "canonical_exchange_token", "fields": ["administrative_descriptor", "tier"], "operation": "present and optionally surrender a token for a standard packet or task"},
+    {"name": "identity_with_status", "fields": ["administrative_descriptor", "tier"], "operation": "bind an issuer or bearer designation to a status field"},
+    {"name": "sealed_package_or_branded_group", "fields": ["administrative_descriptor", "tier"], "operation": "associate a producer, closure or package class with an attached carrier or impression; physical attachment requires independent evidence"}
+  ],
+  "proposed_life_cycle": {
+    "states": ["unissued", "active", "presented", "redeemed_or_checked", "retained_or_returned", "cancelled_or_discarded"],
+    "transitions": [
+      {"from": "unissued", "to": "active", "action": "issue a copied or selected standard carrier"},
+      {"from": "active", "to": "presented", "action": "bearer presents the carrier"},
+      {"from": "presented", "to": "redeemed_or_checked", "action": "check permission or transfer the canonical entitlement"},
+      {"from": "redeemed_or_checked", "to": "retained_or_returned", "action": "preserve authorization or keep the redeemed token"},
+      {"from": "retained_or_returned", "to": "active", "action": "repeat under an explicit reuse rule"},
+      {"from": "redeemed_or_checked", "to": "cancelled_or_discarded", "action": "consume, cancel or discard under an explicit one-use rule"}
+    ],
+    "graphic_change_required": false,
+    "independent_observations_required": ["registered manufacture/stamping relations", "handling or suspension wear", "attachment/removal traces", "cancellation or breakage operation", "individually joined content or task", "deposition and recovery process"],
+    "evidence_status": "Proposed causal mechanism; ancient use transitions have not been observed by this analysis"
+  },
+  "identification_certificate": "run-v1/identifiability.json",
+  "context_predictions": "HYPOTHESES.md",
+  "verification": "verification.json"
+}

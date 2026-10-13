@@ -1,0 +1,122 @@
+{
+  "fold": 0,
+  "selected_grammar_weight": 0.2,
+  "validation_tokens": 6406,
+  "inner_cross_entropy_bits": {
+    "0": 5.855082412703296,
+    "0.05": 5.80948258355728,
+    "0.1": 5.786015813164733,
+    "0.2": 5.765508466971475,
+    "0.3": 5.76650787179977,
+    "0.5": 5.815112991134824,
+    "0.75": 5.9679747693809295,
+    "1.0": 6.373064830948313
+  },
+  "outer_summary": {
+    "texts": 386,
+    "tokens": 1603,
+    "components": 207,
+    "cross_entropy_bits_per_token": {
+      "POSITION": 6.6513882489497185,
+      "MARKOV": 5.9595181521946445,
+      "GRAMMAR": 5.839217688095135
+    },
+    "contrasts": {
+      "GRAMMAR_minus_MARKOV": {
+        "bits_per_token": 0.12030046409951323,
+        "conditional_component_bootstrap_95_ci": [
+          0.09314729328113228,
+          0.18356362094773598
+        ],
+        "equal_text_weight_bits_per_token": 0.119807744705677,
+        "noninitial_bits_per_token": 0.12239364671879024
+      },
+      "GRAMMAR_minus_POSITION": {
+        "bits_per_token": 0.8121705608545777,
+        "conditional_component_bootstrap_95_ci": [
+          0.681012461249118,
+          0.8826116746027842
+        ],
+        "equal_text_weight_bits_per_token": 0.7803097103483715,
+        "noninitial_bits_per_token": 1.033706518615548
+      }
+    },
+    "OOV_tokens": 66,
+    "OOV_rate": 0.041172800998128506,
+    "strata": {
+      "OOV_target": {
+        "tokens": 66,
+        "cross_entropy_bits_per_token": {
+          "POSITION": 15.419210178235174,
+          "MARKOV": 16.225434581728823,
+          "GRAMMAR": 16.42691470166754,
+          "PRIMARY_GRAMMAR": 18.43322994366663
+        },
+        "GRAMMAR_minus_MARKOV_bits_per_token": -0.20148011993871656
+      },
+      "final": {
+        "tokens": 386,
+        "cross_entropy_bits_per_token": {
+          "POSITION": 5.056309006347036,
+          "MARKOV": 4.061150188707501,
+          "GRAMMAR": 4.02541699037492,
+          "PRIMARY_GRAMMAR": 4.628720780203155
+        },
+        "GRAMMAR_minus_MARKOV_bits_per_token": 0.03573319833258081
+      },
+      "initial": {
+        "tokens": 386,
+        "cross_entropy_bits_per_token": {
+          "POSITION": 7.803517605553737,
+          "MARKOV": 7.803517605553737,
+          "GRAMMAR": 7.6898166317331125,
+          "PRIMARY_GRAMMAR": 7.820901421411545
+        },
+        "GRAMMAR_minus_MARKOV_bits_per_token": 0.1137009738206251
+      },
+      "internal": {
+        "tokens": 831,
+        "cross_entropy_bits_per_token": {
+          "POSITION": 6.857138737512252,
+          "MARKOV": 5.984772357861834,
+          "GRAMMAR": 5.822124880725389,
+          "PRIMARY_GRAMMAR": 6.436311104869226
+        },
+        "GRAMMAR_minus_MARKOV_bits_per_token": 0.16264747713644453
+      },
+      "known_target": {
+        "tokens": 1537,
+        "cross_entropy_bits_per_token": {
+          "POSITION": 6.274891015811868,
+          "MARKOV": 5.518691552097523,
+          "GRAMMAR": 5.384573574304781,
+          "PRIMARY_GRAMMAR": 5.814922265248918
+        },
+        "GRAMMAR_minus_MARKOV_bits_per_token": 0.13411797779274146
+      },
+      "seen_bigram_known_target": {
+        "tokens": 795,
+        "cross_entropy_bits_per_token": {
+          "POSITION": 5.212464302527999,
+          "MARKOV": 3.13135508048184,
+          "GRAMMAR": 3.222987666598134,
+          "PRIMARY_GRAMMAR": 4.27056051922016
+        },
+        "GRAMMAR_minus_MARKOV_bits_per_token": -0.09163258611629403
+      },
+      "unseen_bigram_known_target": {
+        "tokens": 388,
+        "cross_entropy_bits_per_token": {
+          "POSITION": 7.683968889009637,
+          "MARKOV": 8.952533981271852,
+          "GRAMMAR": 8.369444182645978,
+          "PRIMARY_GRAMMAR": 8.020867993369919
+        },
+        "GRAMMAR_minus_MARKOV_bits_per_token": 0.5830897986258744
+      }
+    },
+    "bootstrap_draws": 5000,
+    "bootstrap_seed": 20261011,
+    "bootstrap_scope": "Conditional on fitted models and observed fold design; component resampling with fixed benchmark weights."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "created_utc": "2026-10-11T07:20:33.840284+00:00",
+  "status": "preserved failed locator check",
+  "code": "source_audit_v2.py",
+  "code_sha256": "5de8aeb62f97c7ebe1b00f94813efd5d26c9bcaae185c663cbf32e5bb84b2e5f",
+  "exit_code": 1,
+  "exception": "AssertionError: Ostrom printed 420 institutional rules locus",
+  "observed_issue": "pypdf inserts a space between the initial glyph and the remaining letters (i nformation). Lowercasing and word-spacing normalization alone did not repair the locator. Source text and visual inspection were unchanged.",
+  "correction_to_v1_failure_description": "The initial-letter capitalization explanation was incomplete; the decisive issue is inserted interglyph whitespace.",
+  "original_stderr_note": "Ignoring wrong pointing object 38 0 (offset 0)",
+  "endpoint_written_before_failure": false,
+  "next_attempt": "source_audit_v3.py; source-checks-v3"
+}

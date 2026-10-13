@@ -1,0 +1,529 @@
+{
+ "inventory": {
+  "path": "data/raw/2026-10-13-publication-screen/inventory-final.json",
+  "frozen_at_utc": "2026-10-13T05:18:01+00:00",
+  "head": "0f8a1734560e0ee1ab0ca6edcc4e92c9960fd9ef",
+  "untracked_files": 3563,
+  "modified_tracked_files": 13,
+  "bytes": 206992283
+ },
+ "scans": [
+  "sequence-scan.json",
+  "lipi-key-scan.json",
+  "payload-scan.json"
+ ],
+ "rule": "First matching entry wins; every inventoried file matched exactly one entry.",
+ "decisions": [
+  {
+   "id": "D01",
+   "decision": "keep-local",
+   "glob": [
+    "experiments/2026-10-12-published-claim-tests/allographs/run-2026-10-12/pairs_k1.csv",
+    "experiments/2026-10-12-published-claim-tests/allographs/run-2026-10-12/pairs_k3.csv",
+    "experiments/2026-10-12-published-claim-tests/allographs/run-2026-10-12/pairs_k5.csv"
+   ],
+   "reason": "Each row gives a sign pair with its root and letter value in the key from the Lipi repository (xlits.csv, yajnadevam/lipi commit fc8813a5). Together the rows reproduce that unlicensed key for 440 of its 681 lettered signs in pairs_k1.csv (roots agree for 412, letter values for 311); pairs_k3 and pairs_k5 are subsets. The tracked summary.json, verification.json and REPORT.md carry the aggregate results. REPORT.md links the three tables, so they join the public omission list.",
+   "evidence": {
+    "files": 3,
+    "bytes": 285596,
+    "max_distinct_short_texts_in_a_file": 7,
+    "lipi_key_pairs_max_in_a_file": 63,
+    "largest_file_bytes": 190771
+   },
+   "matched_paths": [
+    "experiments/2026-10-12-published-claim-tests/allographs/run-2026-10-12/pairs_k1.csv",
+    "experiments/2026-10-12-published-claim-tests/allographs/run-2026-10-12/pairs_k3.csv",
+    "experiments/2026-10-12-published-claim-tests/allographs/run-2026-10-12/pairs_k5.csv"
+   ]
+  },
+  {
+   "id": "D02",
+   "decision": "track-after-edit",
+   "path": "experiments/2026-10-12-seal-text-identity/review/REVIEW.md",
+   "reason": "Line 32 gives a complete four-sign Lipi text with its CISI number (L-161). The October 11 rule allows complete texts of at most three signs. Replace \"(817-002-048-740)\" with \"(four signs; codes in the local Lipi record for CISI L-161)\" and append \"Publication note, 13 October 2026: one code sequence was replaced by a pointer; the original review is preserved locally.\" The original bytes are backed up under data/raw/2026-10-13-publication-screen/originals/.",
+   "evidence": {
+    "files": 1,
+    "bytes": 10609,
+    "lipi_4code_windows_strict": 1,
+    "lipi_full_texts_ge4_strict": 1,
+    "proximity_only_windows": 1,
+    "max_distinct_short_texts_in_a_file": 4,
+    "long_quote_candidate_files": 1,
+    "largest_file_bytes": 10609
+   },
+   "matched_paths": [
+    "experiments/2026-10-12-seal-text-identity/review/REVIEW.md"
+   ]
+  },
+  {
+   "id": "D03",
+   "decision": "track",
+   "path": "experiments/2026-10-12-structure-first/step3-segmentation/run-alternation-2026-10-12/summary.json",
+   "reason": "Frequency table of the commonest segmented units with their counts. One four-code unit that recurs 15 to 18 times also equals a complete Lipi text; it is reported as a recurrent formula count, not as a record, and the file holds no record identifiers.",
+   "evidence": {
+    "files": 1,
+    "bytes": 10553,
+    "lipi_4code_windows_strict": 2,
+    "lipi_full_texts_ge4_strict": 1,
+    "proximity_only_windows": 18,
+    "max_distinct_short_texts_in_a_file": 26,
+    "largest_file_bytes": 10553
+   },
+   "matched_paths": [
+    "experiments/2026-10-12-structure-first/step3-segmentation/run-alternation-2026-10-12/summary.json"
+   ]
+  },
+  {
+   "id": "D04",
+   "decision": "track",
+   "glob": [
+    "experiments/2026-10-12-anchor-expansion/run-v*/example-provenance.json",
+    "experiments/2026-10-12-anchor-expansion/run-v*/catalogue-data.json"
+   ],
+   "reason": "Per-code aggregates, Monier-Williams sense paraphrases with entry and line pointers (the October 11 practice) and 36 attributed Lipi examples per run, each a complete text or excerpt of two or three codes with CISI number, pin and stated purpose. Across both runs there are 44 distinct examples, 42 of them not among the twenty published on October 11. No embedded images.",
+   "evidence": {
+    "files": 4,
+    "bytes": 47838577,
+    "max_distinct_short_texts_in_a_file": 34,
+    "largest_file_bytes": 23892810
+   },
+   "condition": "THIRD_PARTY_NOTICES.md, knowledge/provenance/REDISTRIBUTION.md and knowledge/DATA.md section 7 still describe twenty published Lipi windows; update them to cover these 44 examples and keep them outside the CC0 dedication that REUSE.md now applies to project material."
+  },
+  {
+   "id": "D05",
+   "decision": "track",
+   "glob": [
+    "experiments/2026-10-12-anchor-expansion/context/*summary.json",
+    "experiments/2026-10-12-anchor-expansion/context/run-v*/summary.json",
+    "experiments/2026-10-12-anchor-expansion/context/quantity-sensitivity-v1/summary.json"
+   ],
+   "reason": "Per-code and per-family aggregate counts (positions, role scores, co-occurrence and substitution counts). The 38.2 MB files are below the GitHub 50 MB warning; context/summary.json and context/run-v2/summary.json are byte-identical and share one Git blob. The eight anchor-expansion files over 5 MB compress to about 5 MB in total. They are frozen endpoints computed from the local Lipi export and cannot be regenerated from a public checkout.",
+   "evidence": {
+    "files": 4,
+    "bytes": 101015190,
+    "largest_file_bytes": 38241843
+   }
+  },
+  {
+   "id": "D06",
+   "decision": "track",
+   "path": "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage4/demo.json",
+   "reason": "Twelve demonstration rows carry 115 first-gloss fragments (78 distinct, at most 60 characters each) copied from the Cologne digital Monier-Williams (csl-orig), which is licensed CC BY-SA 4.0 (licence witness data/raw/2026-10-08-bonta-review/acquisition-2026-10-08-v1/csl-LICENSE).",
+   "evidence": {
+    "files": 1,
+    "bytes": 9324,
+    "largest_file_bytes": 9324
+   },
+   "condition": "Record the CC BY-SA 4.0 attribution and share-alike scope for these fragments in THIRD_PARTY_NOTICES.md and exclude them from the CC0 dedication in REUSE.md.",
+   "matched_paths": [
+    "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage4/demo.json"
+   ]
+  },
+  {
+   "id": "D07",
+   "decision": "track",
+   "path": "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage3f/summary.json",
+   "reason": "Lists twenty frequent signs with their letter in the published key under test: a bounded illustration of the claim, alongside aggregate fit statistics.",
+   "evidence": {
+    "files": 1,
+    "bytes": 4825,
+    "largest_file_bytes": 4825
+   },
+   "condition": "These twenty Lipi key entries are source material under unresolved terms; keep them outside the CC0 dedication alongside the catalogue examples.",
+   "matched_paths": [
+    "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage3f/summary.json"
+   ]
+  },
+  {
+   "id": "D08",
+   "decision": "track",
+   "glob": [
+    "experiments/2026-10-12-satellite-prospection/atlas/vendor/**",
+    "experiments/2026-10-12-satellite-prospection/atlas/viewer-v1/vendor/**",
+    "experiments/2026-10-12-satellite-prospection/atlas/viewer-v1/geography-data.js"
+   ],
+   "reason": "Leaflet 1.9.4 (BSD-2-Clause, LICENSE included) and Natural Earth 1:110m (public domain, NOTICE and acquisition record included). The only embedded images are Leaflet's own icons inside leaflet.js.",
+   "evidence": {
+    "files": 19,
+    "bytes": 3819851,
+    "largest_file_bytes": 1074291
+   }
+  },
+  {
+   "id": "D09",
+   "decision": "track",
+   "glob": [
+    "experiments/2026-10-12-satellite-prospection/*.geojson",
+    "experiments/2026-10-12-satellite-prospection/*/*.geojson",
+    "experiments/2026-10-12-satellite-prospection/atlas/viewer-v1/atlas-data.*",
+    "experiments/2026-10-12-satellite-prospection/atlas/viewer-v1/input-export.json",
+    "experiments/2026-10-12-satellite-prospection/exports*/atlas-data-v*.json"
+   ],
+   "reason": "Coordinates of screened spectral and terrain anomalies (30 m stated uncertainty), two reconnaissance prospects near Ganweriwala and eighteen published reference locations of known sites. Geometry is derived from Copernicus Sentinel-2, Copernicus GLO-30 and ESA WorldCover (CC BY 4.0) with notices in the package; no imagery is embedded. The package does not discuss whether precise candidate locations should be public.",
+   "evidence": {
+    "files": 17,
+    "bytes": 9672674,
+    "largest_file_bytes": 5094872
+   },
+   "condition": "Owner decision: publish candidate coordinates at 30 m precision, or coarsen or withhold them. If tracked, REUSE.md should exclude the Copernicus and ESA WorldCover derivatives from the CC0 dedication and point to the package THIRD-PARTY-NOTICES.md."
+  },
+  {
+   "id": "D10",
+   "decision": "track",
+   "glob": "experiments/2026-10-12-bronze-age-comparison/acquisition/*",
+   "reason": "Access logs (URL, status, byte count, SHA-256, local path, rights status \"local-only\") for ORACC, AES, AED-TEI, LiBER and DAMOS requests. Each is byte-identical to the request record in the local raw directory; no response content is included.",
+   "evidence": {
+    "files": 1703,
+    "bytes": 1479045,
+    "largest_file_bytes": 946
+   }
+  },
+  {
+   "id": "D11",
+   "decision": "track",
+   "glob": "experiments/2026-10-11-settlement-prospection/review/claude-opus55-v*/cli-*",
+   "reason": "Claude CLI result records: model, usage, cost, session and message UUIDs and the review text. No account identifiers or tokens; the stderr files are empty.",
+   "evidence": {
+    "files": 4,
+    "bytes": 52955,
+    "largest_file_bytes": 36535
+   }
+  },
+  {
+   "id": "D12",
+   "decision": "track",
+   "path": "data/MANIFEST.json",
+   "reason": "Project-authored source manifest. The pending .gitignore exception admits it, but tools/audit_git_payload.py still treats every data/ path except data/README.md as a violation and currently reports review-required.",
+   "evidence": {
+    "files": 1,
+    "bytes": 100372,
+    "largest_file_bytes": 100372
+   },
+   "condition": "Update the forbidden-path rule in tools/audit_git_payload.py (and any clean-history verifier reused for this push) to allow data/MANIFEST.json.",
+   "matched_paths": [
+    "data/MANIFEST.json"
+   ]
+  },
+  {
+   "id": "D13",
+   "decision": "track",
+   "glob": [
+    "tools/build_site.py",
+    "site/**",
+    "experiments/2026-10-13-site-generator/**"
+   ],
+   "reason": "Static website generator, templates and its test record. No credentials; committer addresses are placeholders (a users.noreply.github.com bot name and example.invalid). The --publish command writes a local gh-pages branch and does not push or add a workflow.",
+   "evidence": {
+    "files": 50,
+    "bytes": 296027,
+    "email_files": 2,
+    "largest_file_bytes": 50631
+   },
+   "condition": "Owner or coordinator decision: whether a gh-pages publishing command fits the AGENTS.md rule against deployment scaffolding."
+  },
+  {
+   "id": "D14",
+   "decision": "track",
+   "glob": ".github/ISSUE_TEMPLATE/*",
+   "reason": "Issue forms only; no .github/workflows directory exists.",
+   "evidence": {
+    "files": 5,
+    "bytes": 4116,
+    "largest_file_bytes": 1115
+   }
+  },
+  {
+   "id": "D15",
+   "decision": "track",
+   "glob": ".claude/skills/**",
+   "reason": "Project skill instructions. The adjacent .claude/worktrees holds two Git worktrees and is excluded only by the local .git/info/exclude.",
+   "evidence": {
+    "files": 7,
+    "bytes": 3803,
+    "largest_file_bytes": 604
+   }
+  },
+  {
+   "id": "D16",
+   "decision": "track",
+   "glob": "output/pdf/*",
+   "reason": "The settlement working paper (33 pages, ReportLab) embeds four images, all the project's own charts and editorial-rectangle maps; its .gitignore exception is in the pending change. The layout JSON belongs to the Sanskrit-key paper.",
+   "evidence": {
+    "files": 2,
+    "bytes": 646432,
+    "largest_file_bytes": 646260
+   },
+   "matched_paths": [
+    "output/pdf/indus_sanskrit_key_calibration_2026-10-12.layout.json",
+    "output/pdf/indus_settlement_survey_gaps_2026-10-11.pdf"
+   ]
+  },
+  {
+   "id": "D17",
+   "decision": "track",
+   "glob": "experiments/2026-10-11-early-indian-continuity/**",
+   "reason": "Authored protocols, reports, retention grids and checks; downloaded texts and renders stay in the local raw directory. baseline-v1.json is a workspace hash inventory (paths, sizes, hashes).",
+   "evidence": {
+    "files": 94,
+    "bytes": 5284224,
+    "largest_file_bytes": 3611924
+   }
+  },
+  {
+   "id": "D18",
+   "decision": "track",
+   "glob": "experiments/2026-10-11-settlement-prospection/**",
+   "reason": "Authored prose, registers, own figures and editorial maps with no basemap, review packets of our manuscript and registers; acquired witnesses stay local as the package ASSET-REVIEW.md records.",
+   "evidence": {
+    "files": 219,
+    "bytes": 5750946,
+    "long_quote_candidate_files": 9,
+    "largest_file_bytes": 244664
+   }
+  },
+  {
+   "id": "D19",
+   "decision": "track",
+   "glob": "experiments/2026-10-11-societal-persistence/**",
+   "reason": "Authored observations with locators and inference limits, synthetic worlds, checks and source records; downloads stay local.",
+   "evidence": {
+    "files": 151,
+    "bytes": 8763921,
+    "long_quote_candidate_files": 4,
+    "largest_file_bytes": 3642749
+   }
+  },
+  {
+   "id": "D20",
+   "decision": "track",
+   "glob": "experiments/2026-10-11-two-approaches/**",
+   "reason": "Aggregates and synthetic checks. The frame audit hashes its anchor sequences; prototype lists contain only two-sign texts.",
+   "evidence": {
+    "files": 167,
+    "bytes": 2013348,
+    "max_distinct_short_texts_in_a_file": 6,
+    "largest_file_bytes": 188777
+   }
+  },
+  {
+   "id": "D21",
+   "decision": "track",
+   "glob": "experiments/2026-10-12-anchor-expansion/**",
+   "reason": "Family ledgers, sense pointers, review records and verification; no sequence windows longer than three codes and no images.",
+   "evidence": {
+    "files": 89,
+    "bytes": 3197872,
+    "long_quote_candidate_files": 1,
+    "largest_file_bytes": 595278
+   }
+  },
+  {
+   "id": "D22",
+   "decision": "track",
+   "glob": "experiments/2026-10-12-bronze-age-comparison/**",
+   "reason": "Protocols, aggregate category and structural results and census manifests whose examples are identifiers, URLs, counts and dates. Edition texts (ORACC, AES, AED-TEI, LiBER) stay local.",
+   "evidence": {
+    "files": 83,
+    "bytes": 1277310,
+    "largest_file_bytes": 249405
+   }
+  },
+  {
+   "id": "D23",
+   "decision": "track",
+   "glob": "experiments/2026-10-12-published-claim-tests/**",
+   "reason": "Protocols, aggregate results, figures generated from those results and source records. Quoted wording is short and cited.",
+   "evidence": {
+    "files": 81,
+    "bytes": 1183966,
+    "proximity_only_windows": 2,
+    "long_quote_candidate_files": 2,
+    "largest_file_bytes": 252699
+   }
+  },
+  {
+   "id": "D24",
+   "decision": "track",
+   "glob": "experiments/2026-10-12-satellite-prospection/**",
+   "reason": "Code, protocols, review records, layout manifests and notices; raster windows and rendered panels are ignored by extension rules and stay local.",
+   "evidence": {
+    "files": 62,
+    "bytes": 1101451,
+    "largest_file_bytes": 236243
+   }
+  },
+  {
+   "id": "D25",
+   "decision": "track",
+   "glob": "experiments/2026-10-12-seal-text-identity/**",
+   "reason": "Authored report and review record; no other sequence of four or more codes.",
+   "evidence": {
+    "files": 19,
+    "bytes": 99321,
+    "largest_file_bytes": 18847
+   }
+  },
+  {
+   "id": "D26",
+   "decision": "track",
+   "glob": "experiments/2026-10-12-semantic-sign-comparison/**",
+   "reason": "The project's own sign inventory and family crosswalk (three identical runs share one blob); acquired pages and token extracts stay local.",
+   "evidence": {
+    "files": 64,
+    "bytes": 2576316,
+    "largest_file_bytes": 607429
+   }
+  },
+  {
+   "id": "D27",
+   "decision": "track",
+   "glob": "experiments/2026-10-12-structure-first/**",
+   "reason": "Aggregate outputs and short examples; sequences, glyph sheets and the map output stay local as the package states.",
+   "evidence": {
+    "files": 68,
+    "bytes": 544389,
+    "long_quote_candidate_files": 2,
+    "largest_file_bytes": 41292
+   }
+  },
+  {
+   "id": "D28",
+   "decision": "track",
+   "glob": "experiments/2026-10-12-transmission-hypothesis/**",
+   "reason": "Authored readings of textual and material sources with loci; source passages stay in local paired witnesses.",
+   "evidence": {
+    "files": 149,
+    "bytes": 5468387,
+    "largest_file_bytes": 4086193
+   }
+  },
+  {
+   "id": "D29",
+   "decision": "track",
+   "glob": "experiments/2026-10-12-conjecture-shots/**",
+   "reason": "Discovery and confirmation outputs are per-sign and per-unit aggregates; the split list and full legends stay local as the package states. Proximity matches are dictionary keys, not sequences.",
+   "evidence": {
+    "files": 101,
+    "bytes": 1343107,
+    "proximity_only_windows": 35,
+    "max_distinct_short_texts_in_a_file": 41,
+    "long_quote_candidate_files": 1,
+    "largest_file_bytes": 265306
+   }
+  },
+  {
+   "id": "D30",
+   "decision": "track",
+   "glob": "experiments/2026-10-12-data-inventory/**",
+   "reason": "Counts and acquisition priorities; the full file list and harvested index stay local.",
+   "evidence": {
+    "files": 22,
+    "bytes": 485270,
+    "largest_file_bytes": 192129
+   }
+  },
+  {
+   "id": "D31",
+   "decision": "track",
+   "glob": "experiments/2026-10-12-repo-restructure/**",
+   "reason": "Restructure prompt, launcher and verification records. They contain the local Windows path with the user name, as do 89 files already published.",
+   "evidence": {
+    "files": 38,
+    "bytes": 918110,
+    "long_quote_candidate_files": 1,
+    "largest_file_bytes": 181034
+   }
+  },
+  {
+   "id": "D32",
+   "decision": "track",
+   "glob": "experiments/2026-10-13-plate-checks/**",
+   "reason": "Authored visual descriptions of CISI and Lipi photographs, image file names and hashes; no images, crops or code sequences. Transcribed basic-data rows stay local.",
+   "evidence": {
+    "files": 21,
+    "bytes": 287887,
+    "largest_file_bytes": 107062
+   }
+  },
+  {
+   "id": "D33",
+   "decision": "track",
+   "glob": "knowledge/**",
+   "reason": "Cards, memos, registry entries and retrospectives. Conjecture cards cite two-sign phrases and short bibliographic titles.",
+   "evidence": {
+    "files": 307,
+    "bytes": 1231230,
+    "proximity_only_windows": 1,
+    "max_distinct_short_texts_in_a_file": 1,
+    "long_quote_candidate_files": 7,
+    "largest_file_bytes": 352733
+   }
+  },
+  {
+   "id": "D34",
+   "decision": "track",
+   "glob": "papers/**",
+   "reason": "Manuscripts, methods and the paper renderer.",
+   "evidence": {
+    "files": 7,
+    "bytes": 144038,
+    "largest_file_bytes": 97697
+   }
+  },
+  {
+   "id": "D35",
+   "decision": "track",
+   "glob": [
+    "CLAUDE.md",
+    "templates/*",
+    "tools/kb.py",
+    "tools/fetch_data.py"
+   ],
+   "reason": "Navigation and tooling.",
+   "evidence": {
+    "files": 6,
+    "bytes": 40875,
+    "largest_file_bytes": 27791
+   }
+  },
+  {
+   "id": "D36",
+   "decision": "track",
+   "path": ".gitignore",
+   "reason": "Pending change adds exceptions for the settlement figures, viewers, packets and PDF, data/MANIFEST.json and an /_site/ exclusion; it removes no existing exclusion.",
+   "evidence": {
+    "files": 1,
+    "bytes": 5069,
+    "largest_file_bytes": 5069
+   },
+   "matched_paths": [
+    ".gitignore"
+   ]
+  },
+  {
+   "id": "D37",
+   "decision": "track",
+   "glob": [
+    "AGENTS.md",
+    "CONTRIBUTING.md",
+    "README.md",
+    "knowledge/INDEX.md",
+    "knowledge/editorial/WRITING.md",
+    "knowledge/experiments/README.md",
+    "knowledge/experiments/registry.json",
+    "knowledge/provenance/git-payload-review.json",
+    "knowledge/provenance/SOURCES.md",
+    "knowledge/retrospectives/README.md",
+    "templates/EXPERIMENT.md",
+    "tools/register_experiment.py"
+   ],
+   "reason": "Modified navigation, registry and tooling; no sequence, key, credential or address matches. git-payload-review.json records the data/MANIFEST.json violation above.",
+   "evidence": {
+    "files": 4,
+    "bytes": 25297,
+    "long_quote_candidate_files": 1,
+    "largest_file_bytes": 8379
+   }
+  }
+ ]
+}

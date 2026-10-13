@@ -1,0 +1,780 @@
+{
+  "reviewed_utc": "2026-10-11T05:27:31.841696+00:00",
+  "reviewed_endpoint": "draft-v1 / sources-v2 / candidates-v2 / run-v2",
+  "method": "Independent reads, exact-rational rounding, raw-register recounts, manifest hash comparisons, dimensional arithmetic, and selected anchor containment. analysis.py was read but not imported or rerun.",
+  "checks": [
+    {
+      "name": "frozen_draft_inputs_match_manifest",
+      "passed": true,
+      "scope": "provenance",
+      "evidence": [
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/review/draft-v1.md",
+          "exists": true,
+          "expected_sha256": "dee0212d5b3c93b34a523c445404660a79eeaf72e5bda28dcadfcbfffaf5ac06",
+          "observed_sha256": "dee0212d5b3c93b34a523c445404660a79eeaf72e5bda28dcadfcbfffaf5ac06",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/sources-v2.json",
+          "exists": true,
+          "expected_sha256": "104ec9eace5d5bc9db421ff8ccc142ae8c112b174e9d374df6f954ae835df979",
+          "observed_sha256": "104ec9eace5d5bc9db421ff8ccc142ae8c112b174e9d374df6f954ae835df979",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/candidates-v2.json",
+          "exists": true,
+          "expected_sha256": "04a2442bee8565d0cc56ba484122c829e891645a59d057f265678b574add63bb",
+          "observed_sha256": "04a2442bee8565d0cc56ba484122c829e891645a59d057f265678b574add63bb",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/manifest.json",
+          "exists": true,
+          "expected_sha256": "07b265987a390de5b2c1f99b794232edf07dbc470deca0f9891a69651d1075b2",
+          "observed_sha256": "07b265987a390de5b2c1f99b794232edf07dbc470deca0f9891a69651d1075b2",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/verification.json",
+          "exists": true,
+          "expected_sha256": "1f2f5abdf3a64c9534827872336fedccfef8fa42cdecebc1d53630986626114e",
+          "observed_sha256": "1f2f5abdf3a64c9534827872336fedccfef8fa42cdecebc1d53630986626114e",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/PROTOCOL.md",
+          "exists": true,
+          "expected_sha256": "3e1892e43053a8fac35538299ddcc3c8333fe8cfa2136ca9a26b54ad80ce3085",
+          "observed_sha256": "3e1892e43053a8fac35538299ddcc3c8333fe8cfa2136ca9a26b54ad80ce3085",
+          "bytes_match": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "analysis_inputs_match_manifest",
+      "passed": true,
+      "scope": "provenance",
+      "evidence": [
+        {
+          "path": "experiments/2026-10-08-site-map-and-overview/data/sites-census.json",
+          "exists": true,
+          "expected_sha256": "8f6bb9485bbfb1d016370eab777fcb1a839524673004ef01d5f7aaba05f4c3b9",
+          "observed_sha256": "8f6bb9485bbfb1d016370eab777fcb1a839524673004ef01d5f7aaba05f4c3b9",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-08-site-map-and-overview/data/dating-south-asia.json",
+          "exists": true,
+          "expected_sha256": "66ee87d34cd392292888fadca8e4e9a339f42f88171c799d2318d8d5b36cc1eb",
+          "observed_sha256": "66ee87d34cd392292888fadca8e4e9a339f42f88171c799d2318d8d5b36cc1eb",
+          "bytes_match": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "aggregate_outputs_match_manifest",
+      "passed": true,
+      "scope": "provenance",
+      "evidence": [
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/chronology-metadata-by-country.csv",
+          "exists": true,
+          "expected_sha256": "864cdedd7c512d6afe977399dab510e70f896c3c5d069675fc1b9c44d44edd5d",
+          "observed_sha256": "864cdedd7c512d6afe977399dab510e70f896c3c5d069675fc1b9c44d44edd5d",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/coordinate-metadata-by-country.csv",
+          "exists": true,
+          "expected_sha256": "c7ab016c9d0452b8cc0a761629f6c8929eea46431bc2ec332c7eaaefa57f5823",
+          "observed_sha256": "c7ab016c9d0452b8cc0a761629f6c8929eea46431bc2ec332c7eaaefa57f5823",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/historical-map-checks-by-size-class.csv",
+          "exists": true,
+          "expected_sha256": "0ec2ee65759bf3b012096adb95ef628d6df66dcfa34a501133c4f50a4643d9a2",
+          "observed_sha256": "0ec2ee65759bf3b012096adb95ef628d6df66dcfa34a501133c4f50a4643d9a2",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/historical-map-checks-by-symbol.csv",
+          "exists": true,
+          "expected_sha256": "4988271c099a81f09019dd4c011e63dd1d2e44db81fd5bbe3c6539c96e2c482f",
+          "observed_sha256": "4988271c099a81f09019dd4c011e63dd1d2e44db81fd5bbe3c6539c96e2c482f",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/historical-map-checks-cells.csv",
+          "exists": true,
+          "expected_sha256": "b6c7083d95b78e46489090b496955675a87ec3fa007da3f31f4db0c784af36f4",
+          "observed_sha256": "b6c7083d95b78e46489090b496955675a87ec3fa007da3f31f4db0c784af36f4",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/historical-map-checks.json",
+          "exists": true,
+          "expected_sha256": "fdf805395be77a74c9d58692c920148b107c5adf608a87cbde51d9a54e99eefb",
+          "observed_sha256": "fdf805395be77a74c9d58692c920148b107c5adf608a87cbde51d9a54e99eefb",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/metadata-coverage.json",
+          "exists": true,
+          "expected_sha256": "a0471506980493fb62027e45136a1f9089a799218a560b1a0f79abce906e5bc6",
+          "observed_sha256": "a0471506980493fb62027e45136a1f9089a799218a560b1a0f79abce906e5bc6",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/published-count-arithmetic.json",
+          "exists": true,
+          "expected_sha256": "ae70f9774a42586cf683d9604c8711c4558ab52b8639f225d51588de5b7f77be",
+          "observed_sha256": "ae70f9774a42586cf683d9604c8711c4558ab52b8639f225d51588de5b7f77be",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/square-equivalent-geometry.csv",
+          "exists": true,
+          "expected_sha256": "9087426a14b7b90ab830bbda7e34f34b5ba950acbf4b17ecdbae4572ba0516de",
+          "observed_sha256": "9087426a14b7b90ab830bbda7e34f34b5ba950acbf4b17ecdbae4572ba0516de",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/synthetic-fragment-yields.csv",
+          "exists": true,
+          "expected_sha256": "e68cbfe886f124a2f1384051c36be4796a755e561a7a79834aa2a2c32318827c",
+          "observed_sha256": "e68cbfe886f124a2f1384051c36be4796a755e561a7a79834aa2a2c32318827c",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/synthetic-repeat-detection.csv",
+          "exists": true,
+          "expected_sha256": "74bbc8a2acaf38c336fb3479f38db51f00b88cff4260ff430a625035b3df666c",
+          "observed_sha256": "74bbc8a2acaf38c336fb3479f38db51f00b88cff4260ff430a625035b3df666c",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/synthetic-scenarios.json",
+          "exists": true,
+          "expected_sha256": "512ccb794cda221a1bfe4b884f33161937271e7035274c68a1fe64591ff40267",
+          "observed_sha256": "512ccb794cda221a1bfe4b884f33161937271e7035274c68a1fe64591ff40267",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/run-v2/verification.json",
+          "exists": true,
+          "expected_sha256": "1f2f5abdf3a64c9534827872336fedccfef8fa42cdecebc1d53630986626114e",
+          "observed_sha256": "1f2f5abdf3a64c9534827872336fedccfef8fa42cdecebc1d53630986626114e",
+          "bytes_match": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "local_source_witnesses_match_manifest",
+      "passed": true,
+      "scope": "provenance",
+      "evidence": [
+        {
+          "path": "data/raw/2026-10-11-settlement-prospection/GREEN2019.pdf",
+          "exists": true,
+          "expected_sha256": "fee0281b64335fc3c33ec3ab01a0a28c4a377118b0ad8d794e6d66e96b5c8c65",
+          "observed_sha256": "fee0281b64335fc3c33ec3ab01a0a28c4a377118b0ad8d794e6d66e96b5c8c65",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "data/raw/2026-10-11-settlement-prospection/ORENGO2020.xml",
+          "exists": true,
+          "expected_sha256": "80fefbff848e5bbaad9a3e496610e3a97ea9e9440ad5c6d4879d799fa0c596f9",
+          "observed_sha256": "80fefbff848e5bbaad9a3e496610e3a97ea9e9440ad5c6d4879d799fa0c596f9",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "data/raw/2026-10-11-settlement-prospection/GARCIA2023.pdf",
+          "exists": true,
+          "expected_sha256": "79a2e7c8c48221c7c00864ef39af6bcbf2628840db4f2cf3e6e0ad9c2ec82508",
+          "observed_sha256": "79a2e7c8c48221c7c00864ef39af6bcbf2628840db4f2cf3e6e0ad9c2ec82508",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "data/raw/2026-10-11-settlement-prospection/GULZAR2018.pdf",
+          "exists": true,
+          "expected_sha256": "f1b241400c0474d326782589df566a8c76e02837b21153b59f1a8cb4adf1fbe0",
+          "observed_sha256": "f1b241400c0474d326782589df566a8c76e02837b21153b59f1a8cb4adf1fbe0",
+          "bytes_match": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "analysis_script_match_manifest",
+      "passed": true,
+      "scope": "provenance",
+      "evidence": [
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/analysis.py",
+          "exists": true,
+          "expected_sha256": "50f016216dc49cd4e807f5d31cb1c3063f95aba9ff4049a8f2b00bf0dcafa0dc",
+          "observed_sha256": "50f016216dc49cd4e807f5d31cb1c3063f95aba9ff4049a8f2b00bf0dcafa0dc",
+          "bytes_match": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "figure_manifest_match_manifest",
+      "passed": true,
+      "scope": "provenance",
+      "evidence": [
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/figures/manifest.json",
+          "exists": true,
+          "expected_sha256": "de7f84093b3322c414f02e0c7ea50a75c09ee36abfdd2d2bd844f2153994c7fe",
+          "observed_sha256": "de7f84093b3322c414f02e0c7ea50a75c09ee36abfdd2d2bd844f2153994c7fe",
+          "bytes_match": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "numerical_figure_files_match_manifest",
+      "passed": true,
+      "scope": "provenance",
+      "evidence": [
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/figures/ganweriwala-area-definitions.png",
+          "exists": true,
+          "expected_sha256": "5579dbb1d86976a736e93db4249a7237d3737ba25946d3d017063d9106bd5b23",
+          "observed_sha256": "5579dbb1d86976a736e93db4249a7237d3737ba25946d3d017063d9106bd5b23",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/figures/ganweriwala-area-definitions.svg",
+          "exists": true,
+          "expected_sha256": "856bb81f0d8cdc33ab764b7a4c81dc3e2cf204e374970d3326a9c61ae40e9238",
+          "observed_sha256": "856bb81f0d8cdc33ab764b7a4c81dc3e2cf204e374970d3326a9c61ae40e9238",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/figures/historical-map-checks.png",
+          "exists": true,
+          "expected_sha256": "69976e79a430b5e12dd1c2ad8bb1799bea199cff002fe8235ef3b61fadb9bf2b",
+          "observed_sha256": "69976e79a430b5e12dd1c2ad8bb1799bea199cff002fe8235ef3b61fadb9bf2b",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/figures/historical-map-checks.svg",
+          "exists": true,
+          "expected_sha256": "789dbc098cdf00e4db35b95cf9b9c2208f1e8dcd07af9a8a35f06d9f26668b4e",
+          "observed_sha256": "789dbc098cdf00e4db35b95cf9b9c2208f1e8dcd07af9a8a35f06d9f26668b4e",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/figures/observation-chain.png",
+          "exists": true,
+          "expected_sha256": "122ee675a15e4eb1761dc084426126f20abf940b74138f5af0ed89bb4ed1f8a4",
+          "observed_sha256": "122ee675a15e4eb1761dc084426126f20abf940b74138f5af0ed89bb4ed1f8a4",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/figures/observation-chain.svg",
+          "exists": true,
+          "expected_sha256": "1dee702033fc3fb6c487e87fd52f532fe81a04fa541c8592df5ed6d15f32b56c",
+          "observed_sha256": "1dee702033fc3fb6c487e87fd52f532fe81a04fa541c8592df5ed6d15f32b56c",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/figures/synthetic-find-yield.png",
+          "exists": true,
+          "expected_sha256": "20722fb1fd98577199b298781b9c80e0a8ee8269e830bb145f15710c5e773ca4",
+          "observed_sha256": "20722fb1fd98577199b298781b9c80e0a8ee8269e830bb145f15710c5e773ca4",
+          "bytes_match": true,
+          "passed": true
+        },
+        {
+          "path": "experiments/2026-10-11-settlement-prospection/figures/synthetic-find-yield.svg",
+          "exists": true,
+          "expected_sha256": "3a3cdb033c9752749ce6fe215bb04fa460c50b5b65cb4d5bbabc4e654b082ec5",
+          "observed_sha256": "3a3cdb033c9752749ce6fe215bb04fa460c50b5b65cb4d5bbabc4e654b082ec5",
+          "bytes_match": true,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "independent_coordinate_cohort_totals",
+      "passed": true,
+      "scope": "computational",
+      "evidence": {
+        "entries": 115,
+        "accepted_coordinate_present": 85,
+        "coordinate_status_counts": {
+          "census-verified": 72,
+          "census-partial": 13,
+          "missing": 27,
+          "census-candidate-unresolved": 3
+        },
+        "south_asian_entries": 85,
+        "south_asian_accepted_coordinate_present": 76
+      }
+    },
+    {
+      "name": "accepted_coordinate_rows_have_valid_ranges",
+      "passed": true,
+      "scope": "computational",
+      "evidence": {
+        "row_count": 85,
+        "limit": "Range and null checks do not establish geolocation accuracy."
+      }
+    },
+    {
+      "name": "independent_chronology_cohort_totals",
+      "passed": true,
+      "scope": "computational",
+      "evidence": {
+        "site_entries": 86,
+        "phase_entries": 213,
+        "phase_basis_counts": {
+          "radiocarbon": 49,
+          "typological/conventional": 107,
+          "report-stated": 57
+        },
+        "site_entries_with_radiocarbon_basis_phase": 28
+      }
+    },
+    {
+      "name": "primary_Green_Table1_integer_transcription",
+      "passed": true,
+      "scope": "source_arithmetic",
+      "evidence": {
+        "locator": "Green et al.2019 Table1, PDFp15, DOI10.3390/rs11182089",
+        "cells": [
+          {
+            "symbol": "combined",
+            "size": 3,
+            "tested": 2,
+            "percent": "50",
+            "compatible_positive_integers": [
+              1
+            ],
+            "passed": true
+          },
+          {
+            "symbol": "combined",
+            "size": 2,
+            "tested": 3,
+            "percent": "33.33",
+            "compatible_positive_integers": [
+              1
+            ],
+            "passed": true
+          },
+          {
+            "symbol": "combined",
+            "size": 1,
+            "tested": 0,
+            "percent": null,
+            "compatible_positive_integers": [
+              0
+            ],
+            "passed": true
+          },
+          {
+            "symbol": "form line",
+            "size": 3,
+            "tested": 37,
+            "percent": "54.05",
+            "compatible_positive_integers": [
+              20
+            ],
+            "passed": true
+          },
+          {
+            "symbol": "form line",
+            "size": 2,
+            "tested": 116,
+            "percent": "58.62",
+            "compatible_positive_integers": [
+              68
+            ],
+            "passed": true
+          },
+          {
+            "symbol": "form line",
+            "size": 1,
+            "tested": 240,
+            "percent": "25.83",
+            "compatible_positive_integers": [
+              62
+            ],
+            "passed": true
+          },
+          {
+            "symbol": "shaded",
+            "size": 3,
+            "tested": 18,
+            "percent": "5.56",
+            "compatible_positive_integers": [
+              1
+            ],
+            "passed": true
+          },
+          {
+            "symbol": "shaded",
+            "size": 2,
+            "tested": 76,
+            "percent": "15.79",
+            "compatible_positive_integers": [
+              12
+            ],
+            "passed": true
+          },
+          {
+            "symbol": "shaded",
+            "size": 1,
+            "tested": 60,
+            "percent": "13.33",
+            "compatible_positive_integers": [
+              8
+            ],
+            "passed": true
+          },
+          {
+            "symbol": "hachure",
+            "size": 3,
+            "tested": 1,
+            "percent": "0",
+            "compatible_positive_integers": [
+              0
+            ],
+            "passed": true
+          },
+          {
+            "symbol": "hachure",
+            "size": 2,
+            "tested": 25,
+            "percent": "40",
+            "compatible_positive_integers": [
+              10
+            ],
+            "passed": true
+          },
+          {
+            "symbol": "hachure",
+            "size": 1,
+            "tested": 201,
+            "percent": "7.96",
+            "compatible_positive_integers": [
+              16
+            ],
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "independent_unique_rounded_integers",
+      "passed": true,
+      "scope": "source_arithmetic",
+      "evidence": {
+        "method": "Exact rational half-open rounding interval; no analysis.py import."
+      }
+    },
+    {
+      "name": "independent_Green_aggregates",
+      "passed": true,
+      "scope": "computational",
+      "evidence": {
+        "by_symbol": {
+          "form line": [
+            393,
+            150
+          ],
+          "combined": [
+            5,
+            2
+          ],
+          "shaded": [
+            154,
+            21
+          ],
+          "hachure": [
+            227,
+            26
+          ]
+        },
+        "tested": 779,
+        "positive": 199
+      }
+    },
+    {
+      "name": "historical_ratios_keep_scopes_separate",
+      "passed": true,
+      "scope": "computational",
+      "evidence": {
+        "historical_1022_percent": 9.393346379647749,
+        "primary_1056_percent": 9.090909090909092,
+        "recent_142_ratio": null
+      }
+    },
+    {
+      "name": "Cholistan_cluster_arithmetic",
+      "passed": true,
+      "scope": "computational",
+      "evidence": {
+        "unmatched": 266,
+        "under_5ha_percent": 72.99703264094956,
+        "limit": "Arithmetic only; no present-day field validation claimed."
+      }
+    },
+    {
+      "name": "independent_square_equivalent_geometry",
+      "passed": true,
+      "scope": "computational",
+      "evidence": [
+        {
+          "area_ha": 1.0,
+          "square_equivalent_side_m": 100.0
+        },
+        {
+          "area_ha": 5.0,
+          "square_equivalent_side_m": 223.60679774997897
+        },
+        {
+          "area_ha": 30.0,
+          "square_equivalent_side_m": 547.7225575051662
+        },
+        {
+          "area_ha": 66.7,
+          "square_equivalent_side_m": 816.7006795638167
+        },
+        {
+          "area_ha": 200.0,
+          "square_equivalent_side_m": 1414.213562373095
+        }
+      ]
+    },
+    {
+      "name": "independent_synthetic_volume_and_yield",
+      "passed": true,
+      "scope": "computational",
+      "evidence": {
+        "fragment_counts": [
+          12000.0,
+          120000.0,
+          1200000.0
+        ],
+        "status": "SYNTHETIC: constructed sensitivity examples, not estimates of archaeological quantities"
+      }
+    },
+    {
+      "name": "independent_repeated_detection_values",
+      "passed": true,
+      "scope": "computational",
+      "evidence": {
+        "row_count": 15,
+        "assumptions": "The formula assumes a constant per-visit probability and independent visits. Shared seasonal visibility, prior survey choices and inaccessible or deeply buried deposits can violate it. A method with p=0 remains uninformative on repetition."
+      }
+    },
+    {
+      "name": "declared_49_checks_count_and_status",
+      "passed": true,
+      "scope": "computational",
+      "evidence": {
+        "count": 49,
+        "scope": "Computational checks of declared counts, units, rounding and output type. Archaeological source interpretation and field validation require separate review."
+      }
+    },
+    {
+      "name": "unique_registered_sources_and_candidate_references",
+      "passed": true,
+      "scope": "computational",
+      "evidence": {
+        "source_count": 47,
+        "candidate_count": 21
+      }
+    },
+    {
+      "name": "candidate_rectangles_order_and_ranges",
+      "passed": true,
+      "scope": "geospatial_structure",
+      "evidence": {
+        "candidate_count": 21,
+        "limit": "Valid rectangles do not establish appropriate geological boundaries."
+      }
+    },
+    {
+      "name": "map_v1_polygons_match_frozen_v2_windows",
+      "passed": true,
+      "scope": "geospatial_structure",
+      "evidence": {
+        "feature_count": 21
+      }
+    },
+    {
+      "name": "selected_prior_register_anchor_containment",
+      "passed": true,
+      "scope": "selected_anchor_containment",
+      "evidence": [
+        {
+          "target": "P02",
+          "id": "ganweriwala",
+          "lat": 28.598889,
+          "lon": 71.15,
+          "coord_status": "census-verified",
+          "passed": true,
+          "source_id": "RWU-X003",
+          "locator": "officialgazetteer Latitude/Longitude fields"
+        },
+        {
+          "target": "P07",
+          "id": "rakhigarhi",
+          "lat": 29.289417,
+          "lon": 76.111917,
+          "coord_status": "census-verified",
+          "passed": true,
+          "source_id": "masudpur2021",
+          "locator": "p. 42"
+        },
+        {
+          "target": "P07",
+          "id": "masudpur",
+          "lat": 29.233333,
+          "lon": 76.0,
+          "coord_status": "census-partial",
+          "passed": true,
+          "source_id": "masudpur2021",
+          "locator": "p. 42"
+        },
+        {
+          "target": "P08",
+          "id": "harappa",
+          "lat": 30.633333,
+          "lon": 72.866667,
+          "coord_status": "census-verified",
+          "passed": true,
+          "source_id": "RMA-UESUGI2010",
+          "locator": "p.96/PDF2;coordinatefield,citingPossehl1999p.764"
+        },
+        {
+          "target": "P10",
+          "id": "lakhanjo-daro",
+          "lat": 27.723889,
+          "lon": 68.846431,
+          "coord_status": "census-verified",
+          "passed": true,
+          "source_id": "RMA-LAKGEO",
+          "locator": "Latitude/Longitude fields"
+        },
+        {
+          "target": "P16",
+          "id": "miri-qalat",
+          "lat": 26.033333,
+          "lon": 63.0125,
+          "coord_status": "census-verified",
+          "passed": true,
+          "source_id": "RCO-MIRI-GAZ",
+          "locator": "p126, entry36;26°02′00″N63°00′45″E citing Possehl1999p797"
+        },
+        {
+          "target": "P17",
+          "id": "nausharo",
+          "lat": 29.358811,
+          "lon": 67.596394,
+          "coord_status": "census-verified",
+          "passed": true,
+          "source_id": "RMA-NAUGEO",
+          "locator": "Latitude/Longitude fields"
+        },
+        {
+          "target": "P20",
+          "id": "lothal",
+          "lat": 22.5236,
+          "lon": 72.2497,
+          "coord_status": "census-verified",
+          "passed": true,
+          "source_id": "GAZETTEER2018",
+          "locator": "Table1,row151,p.8"
+        },
+        {
+          "target": "P21",
+          "id": "sutkagen-dor",
+          "lat": 25.516667,
+          "lon": 61.966667,
+          "coord_status": "census-verified",
+          "passed": true,
+          "source_id": "RWU-S130",
+          "locator": "officialgazetteer Latitude/Longitude fields"
+        },
+        {
+          "target": "P21",
+          "id": "sotka-koh",
+          "lat": 25.3875,
+          "lon": 63.454167,
+          "coord_status": "census-verified",
+          "passed": true,
+          "source_id": "RWU-S154",
+          "locator": "officialgazetteer Latitude/Longitude fields"
+        }
+      ]
+    },
+    {
+      "name": "P18_contains_primary_Ghazi_Shah_anchor",
+      "passed": false,
+      "scope": "primary_anchor_containment",
+      "evidence": {
+        "bbox_lonlat": [
+          67.0,
+          25.0,
+          68.1,
+          26.3
+        ],
+        "lat": 26.454762389,
+        "lon": 67.464134722,
+        "source": "https://doam.gov.pk/public/sites/7279",
+        "witness": "data/raw/2026-10-11-settlement-prospection/MOUNTAIN_GHAZI_GOV2026.html",
+        "finding": "Ghazi Shah lies north of P18; a new candidate version must correct the window."
+      }
+    }
+  ],
+  "passed_count": 23,
+  "failed_count": 1,
+  "limitations": [
+    "This is not a full bibliographic or geological validation of all 21 rectangles.",
+    "Kai/Naig cave anchors and Khundowala/Mulhiawala point concordance remain unverified.",
+    "Prior-register points are source-reported coarse locations; containment does not validate their measurement accuracy.",
+    "No new imagery classification, core data, fieldwork, demographic prediction or marine survey was performed.",
+    "The final revised manuscript and rendered artifact require a final targeted check."
+  ]
+}

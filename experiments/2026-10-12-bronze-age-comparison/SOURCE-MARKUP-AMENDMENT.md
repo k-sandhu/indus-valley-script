@@ -1,0 +1,7 @@
+# Linear B display markup after the first statistical run
+
+An audit after run-v1 found that LiBER search-link query strings can remove uncertainty dots and supplied-letter brackets from the displayed transcription. The initial parser assessed certainty from the query string. A scan of the acquired document pages flagged 298 anchors whose query-based assessment accepted displayed uncertainty, missing text or an unsupported annotation. This is an audit-flag count, including non-word annotations; it is not a count of uncertain words in the final cohort.
+
+The successor assesses both the displayed text and the query spelling, rejecting uncertainty/restoration markers in either. Uninterpreted bullets and arrow annotations are also retained as unresolved rather than treated as syllables. Source text, document selection, physical/source grouping, models, seeds, length filters and comparison rules remain fixed. No replacement documents are acquired to replenish exclusions.
+
+Preserve normalized-v3, run-v1, sign-control-v1 and their executable snapshots in history/statistical-endpoint-v1. Write corrected inputs to normalized-v4, statistical outputs to run-v2, and the same boundary-concealed category control to sign-control-v2. Compare every non-Greek cohort with its original numeric endpoint to check that the source correction did not change other observations. This is a post-result source repair, not a newly prospective test.

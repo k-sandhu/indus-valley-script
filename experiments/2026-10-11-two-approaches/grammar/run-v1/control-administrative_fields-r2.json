@@ -1,0 +1,112 @@
+{
+  "replicate": 2,
+  "mechanism": "administrative_fields",
+  "seed": 20313011,
+  "generated_texts": 1600,
+  "fit_texts": 1360,
+  "test_texts": 240,
+  "selected": {
+    "POSITION": 5,
+    "MARKOV": [
+      1,
+      100,
+      1.0
+    ],
+    "GRAMMAR": [
+      8,
+      5,
+      true
+    ]
+  },
+  "summary": {
+    "texts": 240,
+    "tokens": 1305,
+    "components": 240,
+    "cross_entropy_bits_per_token": {
+      "POSITION": 4.399870812118314,
+      "MARKOV": 4.4013304040274175,
+      "GRAMMAR": 4.085583852050214
+    },
+    "contrasts": {
+      "GRAMMAR_minus_MARKOV": {
+        "bits_per_token": 0.315746551977203,
+        "conditional_component_bootstrap_95_ci": [
+          0.27807501422759834,
+          0.35328390355028794
+        ],
+        "equal_text_weight_bits_per_token": 0.3088220624199759,
+        "noninitial_bits_per_token": 0.29352120582191166
+      },
+      "GRAMMAR_minus_POSITION": {
+        "bits_per_token": 0.3142869600681005,
+        "conditional_component_bootstrap_95_ci": [
+          0.26250212189299793,
+          0.3684384060508529
+        ],
+        "equal_text_weight_bits_per_token": 0.3084141652430153,
+        "noninitial_bits_per_token": 0.34169211926268384
+      }
+    },
+    "OOV_tokens": 0,
+    "OOV_rate": 0.0,
+    "strata": {
+      "final": {
+        "tokens": 240,
+        "cross_entropy_bits_per_token": {
+          "POSITION": 1.9995113973206218,
+          "MARKOV": 2.2355018571824283,
+          "GRAMMAR": 2.1702256055258013
+        },
+        "GRAMMAR_minus_MARKOV_bits_per_token": 0.06527625165662698
+      },
+      "initial": {
+        "tokens": 240,
+        "cross_entropy_bits_per_token": {
+          "POSITION": 4.5854764151613585,
+          "MARKOV": 4.80717137456052,
+          "GRAMMAR": 4.392799849019216
+        },
+        "GRAMMAR_minus_MARKOV_bits_per_token": 0.41437152554130324
+      },
+      "internal": {
+        "tokens": 825,
+        "cross_entropy_bits_per_token": {
+          "POSITION": 5.0441628300833115,
+          "MARKOV": 4.913326789863597,
+          "GRAMMAR": 4.553407051920873
+        },
+        "GRAMMAR_minus_MARKOV_bits_per_token": 0.35991973794272397
+      },
+      "known_target": {
+        "tokens": 1305,
+        "cross_entropy_bits_per_token": {
+          "POSITION": 4.399870812118312,
+          "MARKOV": 4.401330404027419,
+          "GRAMMAR": 4.085583852050211
+        },
+        "GRAMMAR_minus_MARKOV_bits_per_token": 0.31574655197720886
+      },
+      "seen_bigram_known_target": {
+        "tokens": 969,
+        "cross_entropy_bits_per_token": {
+          "POSITION": 4.211191356447291,
+          "MARKOV": 4.053394325246127,
+          "GRAMMAR": 3.871425632834861
+        },
+        "GRAMMAR_minus_MARKOV_bits_per_token": 0.18196869241126645
+      },
+      "unseen_bigram_known_target": {
+        "tokens": 96,
+        "cross_entropy_bits_per_token": {
+          "POSITION": 5.840340060190258,
+          "MARKOV": 6.89870777289327,
+          "GRAMMAR": 5.479203384832631
+        },
+        "GRAMMAR_minus_MARKOV_bits_per_token": 1.4195043880606388
+      }
+    },
+    "bootstrap_draws": 2000,
+    "bootstrap_seed": 20313011,
+    "bootstrap_scope": "Conditional on fitted models and observed fold design; component resampling with fixed benchmark weights."
+  }
+}

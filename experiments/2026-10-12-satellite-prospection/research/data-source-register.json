@@ -1,0 +1,693 @@
+{
+  "generated_utc": "2026-10-12T05:11:23.516528+00:00",
+  "as_of": "2026-10-12",
+  "scope": "Current official source/data access methods for satellite settlement prospection; bounded metadata only.",
+  "primary_sources_only": true,
+  "sources": [
+    {
+      "id": "D01",
+      "title": "Earth Search STAC API",
+      "provider": "Element 84",
+      "url": "https://github.com/Element84/earth-search/blob/main/README.md",
+      "source_kind": "documentation",
+      "access_depth": "Full bounded official source document acquired and relevant sections inspected",
+      "locator": "General Notes, Collections and Earth Search v 2 (Beta)",
+      "observation_id": "D01-O1",
+      "observation": "Public STAC service is a best-effort index. Dataset-specific collection pages describe changes and known omissions. The current README links v 1 and v 2.",
+      "as_of": "2026-10-12",
+      "request_status": 200,
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050220406150Z_D01.md",
+        "bytes": 10782,
+        "sha256": "b642b5aa18d501e74a988e3e3ded21d1e04157667abdd504a12f2b6b1abfbec4",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "raw_handling": "local-only; no source payload publication"
+    },
+    {
+      "id": "D02",
+      "title": "Sentinel-2 L2A (sentinel-2-l2a and sentinel-2-c1-l2a)",
+      "provider": "Element 84",
+      "url": "https://github.com/Element84/earth-search/blob/main/docs/collections/sentinel-2-l2a.md",
+      "source_kind": "documentation",
+      "access_depth": "Full bounded official source document acquired and relevant sections inspected",
+      "locator": "v 1 vs v 2; Collection 1; Gain/Offset in Items after Jan 25, 2022",
+      "observation_id": "D02-O1",
+      "observation": "v 1 Collection 1 has COGs processed to at least baseline 5.0. v 2 beta maps this data to sentinel-2-l 2 a, retains item IDs and excludes baseline 05.09. v 1 uses raster:bands scale and offset; v 2 updates STAC and extensions. Some original COGs have offsets already applied, so the asset metadata determines decoding.",
+      "as_of": "2026-10-12",
+      "request_status": 200,
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050220406150Z_D02.md",
+        "bytes": 5338,
+        "sha256": "6d84216c545eac491e511c24abff6830f28cff7715c94b92cebf589aa42fbbc6",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "raw_handling": "local-only; no source payload publication"
+    },
+    {
+      "id": "D03",
+      "title": "Copernicus DEM 30m (cop-dem-glo-30)",
+      "provider": "Element 84",
+      "url": "https://github.com/Element84/earth-search/blob/main/docs/collections/cop-dem-glo-30.md",
+      "source_kind": "documentation",
+      "access_depth": "Full bounded official source document acquired and relevant sections inspected",
+      "locator": "Collection description and linked public dataset",
+      "observation_id": "D03-O1",
+      "observation": "cop-dem-glo-30 is the 30 metre elevation collection; the paired GLO-90 collection has a different sampling resolution. The first guessed documentation path returned 404; the actual README-linked page was then acquired.",
+      "as_of": "2026-10-12",
+      "request_status": 200,
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050601446924Z_D03-corrected.md",
+        "bytes": 579,
+        "sha256": "4f37d68708c8d36e4d01e787357f75a25e852450101652c5037861d05d4fdbf1",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "raw_handling": "local-only; no source payload publication"
+    },
+    {
+      "id": "D04",
+      "title": "S2 Products",
+      "provider": "Copernicus SentiWiki",
+      "url": "https://sentiwiki.copernicus.eu/web/s2-products",
+      "source_kind": "documentation",
+      "access_depth": "Full bounded official source document acquired and relevant sections inspected",
+      "locator": "Level-2 A Products; radiometry formula; product quality formats",
+      "observation_id": "D04-O1",
+      "observation": "L2A surface reflectance uses (DN + BOA_ADD_OFFSET) / QUANTIFICATION_VALUE, with DN=0 retained as no data. Baseline 04.00 introduced the radiometric shift. Quality masks and cloud/snow probabilities accompany SAFE products; band B10 is absent from L2A surface data.",
+      "as_of": "2026-10-12",
+      "request_status": 200,
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050220406150Z_D04.html",
+        "bytes": 97613,
+        "sha256": "b9bb77e4da317d35d3bff585898c4e1abf19629de3bae33e95bcb6d06cf38680",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "raw_handling": "local-only; no source payload publication"
+    },
+    {
+      "id": "D05",
+      "title": "S2 Processing",
+      "provider": "Copernicus SentiWiki",
+      "url": "https://sentiwiki.copernicus.eu/web/s2-processing",
+      "source_kind": "documentation",
+      "access_depth": "Full bounded official source document acquired and relevant sections inspected",
+      "locator": "Scene Classification; Table 3; cloud and shadow dilation",
+      "observation_id": "D05-O1",
+      "observation": "SCL is generated at 20 m. Labels 0–11 distinguish no data, defects, shadows, vegetation, nonvegetated land, water, unclassified, clouds, cirrus and snow. Sen 2 Cor also generates cloud/snow probabilities. Existing dilation and exceptions depend on processing baseline.",
+      "as_of": "2026-10-12",
+      "request_status": 200,
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050220406150Z_D05.html",
+        "bytes": 228069,
+        "sha256": "60173991070f6873e3dad7b38f165fc06ed39f8c2ace1f736110a6817b74afc0",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "raw_handling": "local-only; no source payload publication"
+    },
+    {
+      "id": "D06",
+      "title": "Legal notice on the use of Copernicus Sentinel Data and Service Information",
+      "provider": "European Commission",
+      "url": "https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice",
+      "source_kind": "sentinel-license",
+      "access_depth": "Full bounded official source document acquired and relevant sections inspected",
+      "locator": "pp.1–2; use permissions and modified-data notice",
+      "observation_id": "D06-O1",
+      "observation": "The linked notice permits reproduction, distribution, public communication, adaptation and combination under its conditions. Modified data must identify Copernicus Sentinel as the source with the applicable year.",
+      "as_of": "2026-10-12",
+      "request_status": 200,
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050220406150Z_D06.pdf",
+        "bytes": 115881,
+        "sha256": "fa2955ff48a1d82e77fc7296d63681670ecdb9d2811a0505ae60d0683b62fa64",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "raw_handling": "local-only; no source payload publication"
+    },
+    {
+      "id": "D07",
+      "title": "Sentinel-2 Cloud-Optimized GeoTIFFs",
+      "provider": "AWS Registry of Open Data / Element84",
+      "url": "https://registry.opendata.aws/sentinel-2-l2a-cogs/",
+      "source_kind": "catalogue",
+      "access_depth": "Full bounded official source document acquired and relevant sections inspected",
+      "locator": "Resources on AWS; License; How to Cite",
+      "observation_id": "D07-O1",
+      "observation": "Collection 1 is hosted in e 84-earth-search-sentinel-data; the original COG bucket is sentinel-cogs. Both have unsigned access listed. Dataset licence links lead to the Copernicus Sentinel notice.",
+      "as_of": "2026-10-12",
+      "request_status": 200,
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050220406150Z_D07.html",
+        "bytes": 19928,
+        "sha256": "4f513724548f27495d83d99ff3548eb1bf7c877c552ba04721ebe2f37d7dbf6f",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "raw_handling": "local-only; no source payload publication"
+    },
+    {
+      "id": "D08",
+      "title": "Copernicus Digital Elevation Model (DEM)",
+      "provider": "AWS Registry of Open Data / Sinergise",
+      "url": "https://registry.opendata.aws/copernicus-dem/",
+      "source_kind": "catalogue",
+      "access_depth": "Full bounded official source document acquired and relevant sections inspected",
+      "locator": "Description, Licence and Resources",
+      "observation_id": "D08-O1",
+      "observation": "The AWS mirror supplies GLO-30 Public and GLO-90 COGs. Its description identifies the 2021 release and incomplete public coverage for a small set of restricted tiles; the access example is unsigned. This mirror is distinct from later CDSE deliveries.",
+      "as_of": "2026-10-12",
+      "request_status": 200,
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050220406150Z_D08.html",
+        "bytes": 9202,
+        "sha256": "c9215f2e18745ffcb33a2ed16c3f2ef5fab4dce70babace9132afe402c149320",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "raw_handling": "local-only; no source payload publication"
+    },
+    {
+      "id": "D09",
+      "title": "Copernicus Digital Elevation Model datasets",
+      "provider": "Sinergise AWS dataset documentation",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/readme.html",
+      "source_kind": "documentation",
+      "access_depth": "Full bounded official source document acquired and relevant sections inspected",
+      "locator": "Data processing; grid; naming; Licence",
+      "observation_id": "D09-O1",
+      "observation": "COGs remove original shared east/south posts. GLO-30 has 3600 rows per degree at low latitudes; overview downsampling averages. Naming component 10 represents 1.0 arcsec. Original post centres require using the actual raster affine transform.",
+      "as_of": "2026-10-12",
+      "request_status": 200,
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050220406150Z_D09.html",
+        "bytes": 8536,
+        "sha256": "922461d55070e3c7e0cf2903ec54190d69e3773da2dc9e776a3f03566cfd56d2",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "raw_handling": "local-only; no source payload publication"
+    },
+    {
+      "id": "D10",
+      "title": "Copernicus DEM - Global and European Digital Elevation Model",
+      "provider": "Copernicus Data Space Ecosystem",
+      "url": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+      "source_kind": "documentation",
+      "access_depth": "Full bounded official source document acquired and relevant sections inspected",
+      "locator": "Dataset specifications, Horizontal resolution and vertical accuracy, CRS, Releases and user obligations",
+      "observation_id": "D10-O1",
+      "observation": "This edited DSM includes buildings/vegetation and principally 2011–2015 TanDEM-X data plus infills. GLO-30 has 1 arcsec latitude sampling, WGS 84-G 1150 horizontal CRS, EGM 2008 vertical heights in metres. Published specifications give <4 m absolute vertical LE90, <2 m relative error on slopes≤20%, <4 m above 20% and <6 m horizontal CE90. Current CDSE releases include 2024_1.",
+      "as_of": "2026-10-12",
+      "request_status": 200,
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050220406150Z_D10.html",
+        "bytes": 110694,
+        "sha256": "65b696de1329ab92f90db465fdd7a88e10a7e537c155e3f5e5a272db33c179d8",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "raw_handling": "local-only; no source payload publication"
+    },
+    {
+      "id": "D11",
+      "title": "Copernicus Digital Elevation Model Product Handbook, Version 5.0",
+      "provider": "Airbus Defence and Space / Copernicus",
+      "url": "https://dataspace.copernicus.eu/sites/default/files/media/files/2024-06/geo1988-copernicusdem-spe-002_producthandbook_i5.0.pdf",
+      "source_kind": "documentation",
+      "access_depth": "Full bounded official source document acquired and relevant sections inspected",
+      "locator": "29 November 2022; §1.2.5.3, printedp.20; product structure and quality layers",
+      "observation_id": "D11-O1",
+      "observation": "The HEM represents random height uncertainty derived from interferometric coherence and geometry. It excludes systematic offsets and phase-unwrapping errors; edited cells use a special mask value. Original packages include HEM/edit/fill/water layers. A mirror exposing only elevation cannot supply those local error fields.",
+      "as_of": "2026-10-12",
+      "request_status": 200,
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050220406150Z_D11.pdf",
+        "bytes": 3541026,
+        "sha256": "b5a0b027bddef7122e39de368dba9cf10adce8631a2e3026d246b4be98c3f0c4",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "raw_handling": "local-only; no source payload publication"
+    },
+    {
+      "id": "D12",
+      "title": "CSCDA ESA Mission-specific Annex, 31 October 2022",
+      "provider": "European Space Agency",
+      "url": "https://s3.waw3-1.cloudferro.com/swift/v1/portal_uploads_prod/CSCDA_ESA_Mission-specific_Annex_31_Oct_22_latest.pdf",
+      "source_kind": "dem-license",
+      "access_depth": "Full bounded official source document acquired and relevant sections inspected",
+      "locator": "PDFpp.21–23, COP-DEM-GLO-30-F Global 30 m Full, Free & Open; Articles 4–6",
+      "observation_id": "D12-O1",
+      "observation": "The GLO-30-F licence grants free worldwide rights to reproduce, distribute, communicate, adapt and combine. Source/modification notices and subsequent-user liability/endorsement conditions apply. This is a provider licence rather than a Creative Commons licence.",
+      "as_of": "2026-10-12",
+      "request_status": 200,
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050220406150Z_D12.pdf",
+        "bytes": 532208,
+        "sha256": "d8284dfa026f192c1d4f212b2846168720363dbe0ee112bfbceeb66d870a77b7",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "raw_handling": "local-only; no source payload publication"
+    },
+    {
+      "id": "D13",
+      "title": "DATA | WORLDCOVER",
+      "provider": "ESA WorldCover consortium / VITO",
+      "url": "https://esa-worldcover.org/en/data-access",
+      "source_kind": "worldcover-license",
+      "access_depth": "Full bounded official source document acquired and relevant sections inspected",
+      "locator": "Product versions; License; Citation; delivery; InputQuality availability",
+      "observation_id": "D13-O1",
+      "observation": "WorldCover 2021 v 200 and 2020 v 100 use different algorithms. Maps are 10 m categorical COGs in 3×3 degree tiles underCCBY 4.0. The website gives notices and dataset citations; InputQuality is described as available through viewer/Terrascope download routes rather than its unsigned AWS map route.",
+      "as_of": "2026-10-12",
+      "request_status": 200,
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050220406150Z_D13.html",
+        "bytes": 49866,
+        "sha256": "7645b74f70102799bad26dc751706f630cfee7e3e3d60bc25f343053a7a57d5e",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "raw_handling": "local-only; no source payload publication"
+    },
+    {
+      "id": "D14",
+      "title": "WorldCover Product User Manual, V2.0",
+      "provider": "ESA WorldCover consortium",
+      "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/docs/WorldCover_PUM_V2.0.pdf",
+      "source_kind": "documentation",
+      "access_depth": "Full bounded official source document acquired and relevant sections inspected",
+      "locator": "§3.3 Table 3, printedp.15; §3.3.2 InputQuality, p.16; known limitations",
+      "observation_id": "D14-O1",
+      "observation": "Class 50 includes buildings/roads/railways; dump and extraction sites are class 60 bare. Class 80 denotes permanent water. InputQuality gives S1/S2 observation counts and invalid-S2 percentage, not a calibrated class-membership probability.",
+      "as_of": "2026-10-12",
+      "request_status": 200,
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050220406150Z_D14.pdf",
+        "bytes": 4102952,
+        "sha256": "4301a3d95260d88bd4315f43ccf2a12ef74ad391109b9f36e22b6e51d8490107",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "raw_handling": "local-only; no source payload publication"
+    },
+    {
+      "id": "D15",
+      "title": "WorldCover Product Validation Report, V2.0",
+      "provider": "ESA WorldCover consortium / Wageningen University / IIASA",
+      "url": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/docs/WorldCover_PVR_V2.0.pdf",
+      "source_kind": "validation",
+      "access_depth": "Full bounded official source document acquired and relevant sections inspected",
+      "locator": "§3.1; Table 2, global sample-weighted confusion matrix",
+      "observation_id": "D15-O1",
+      "observation": "Global overall accuracy is 76.7±0.5%; built-up user accuracy is 65.9±3.3% in the global validation. These estimates do not establish correctness of an individual pixel in the study region.",
+      "as_of": "2026-10-12",
+      "request_status": 200,
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050220406150Z_D15.pdf",
+        "bytes": 2671365,
+        "sha256": "05700af5f1462beebf3007ead5b68bccc5f4c016a7bdb26d5c9b6e3db4a1f4a9",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "raw_handling": "local-only; no source payload publication"
+    },
+    {
+      "id": "D16",
+      "title": "ESA WorldCover",
+      "provider": "AWS Registry of Open Data",
+      "url": "https://registry.opendata.aws/esa-worldcover/",
+      "source_kind": "catalogue",
+      "access_depth": "Full bounded official source document acquired and relevant sections inspected",
+      "locator": "Resources and Licence",
+      "observation_id": "D16-O1",
+      "observation": "The public esa-worldcover bucket supports unsigned access to map products. Actual files are attributed under the WorldCover CC licence, independently of the licence text attached to an unrelated STAC collection.",
+      "as_of": "2026-10-12",
+      "request_status": 200,
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050220406150Z_D16.html",
+        "bytes": 2234,
+        "sha256": "3bc86d23c61881576b78be00f45300b177b0e7a70fa1065b623b566bb198582b",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "raw_handling": "local-only; no source payload publication"
+    },
+    {
+      "id": "D17",
+      "title": "boa_offset_applied is seems wrong in the ‘sentinel-2-l2a ’collection, Issue #66",
+      "provider": "Element84 Earth Search issue tracker; user report",
+      "url": "https://github.com/Element84/earth-search/issues/66",
+      "source_kind": "issue-report",
+      "access_depth": "Primary project issue body and state; commenter pixel claims not independently reanalysed",
+      "locator": "Issue body/state retrieved via GitHub API; current issue state",
+      "observation_id": "D17-O1",
+      "observation": "The project tracker records user-reported legacy offset/flag inconsistencies. The access probe independently observes a true boa_offset_applied flag alongside an explicit−0.1 offset. No legacy raster pixels were compared in this methods audit.",
+      "as_of": "2026-10-12",
+      "request_status": 200,
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050220406150Z_D17.json",
+        "bytes": 5082,
+        "sha256": "579518f1ba13826f62df0c882aee9e258a6aae092bab32bf9f11c072b77a70ea",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "raw_handling": "local-only; no source payload publication"
+    },
+    {
+      "id": "D18",
+      "title": "Raster Extension Specification, v1.1.0",
+      "provider": "STAC Extensions maintainers",
+      "url": "https://github.com/stac-extensions/raster/blob/v1.1.0/README.md",
+      "source_kind": "documentation",
+      "access_depth": "Full bounded official source document acquired and relevant sections inspected",
+      "locator": "Raster Band Object: scale and offset",
+      "observation_id": "D18-O1",
+      "observation": "Physical values use offset plus scale times stored pixel values. Apply this conversion once, with no-data handling preceding it.",
+      "as_of": "2026-10-12",
+      "request_status": 200,
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050220406150Z_D18.md",
+        "bytes": 11582,
+        "sha256": "ab096d039f72f9493545b2e458a5d44ac70dc1f1774bc6ecb900e12124c9d910",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "raw_handling": "local-only; no source payload publication"
+    }
+  ],
+  "data_access_probe": {
+    "path": "experiments/2026-10-12-satellite-prospection/research/data-access-probe.json",
+    "bytes": 236243,
+    "sha256": "d9d79768f7bd87f347a7f46dc918e75603399610c436eda9a0dcca0796b699bf"
+  },
+  "supplemental_access_index": {
+    "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050601446924Z_followup-index.json",
+    "bytes": 7974,
+    "sha256": "90aff061dc68995bddb3f3457d7765ba8438a1dc8481396232d26180bf03b383"
+  },
+  "supplemental_observations": [
+    {
+      "id": "D03-corrected",
+      "method": "GET",
+      "url": "https://raw.githubusercontent.com/Element84/earth-search/main/docs/collections/cop-dem-glo-30.md",
+      "params": null,
+      "unsigned": true,
+      "authentication_sent": false,
+      "response_cap_bytes": 100000,
+      "status_code": 200,
+      "final_url": "https://raw.githubusercontent.com/Element84/earth-search/main/docs/collections/cop-dem-glo-30.md",
+      "response_headers": {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Length": "344",
+        "Content-Range": null,
+        "Accept-Ranges": "bytes",
+        "ETag": "W/\"b7b94e0e75aa94d4b39b6f48571c2c2a79bfb37c53df154d49d1ef6e67cb5d2a\"",
+        "Last-Modified": null
+      },
+      "bytes_read": 579,
+      "cap_exceeded": false,
+      "body_sha256": "4f37d68708c8d36e4d01e787357f75a25e852450101652c5037861d05d4fdbf1",
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050601446924Z_D03-corrected.md",
+        "bytes": 579,
+        "sha256": "4f37d68708c8d36e4d01e787357f75a25e852450101652c5037861d05d4fdbf1",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "elapsed_seconds": 0.603
+    },
+    {
+      "id": "C1-product-metadata",
+      "method": "GET",
+      "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/42/R/XS/2024/12/S2A_T42RXS_20241225T055244_L2A/product_metadata.xml",
+      "params": null,
+      "unsigned": true,
+      "authentication_sent": false,
+      "response_cap_bytes": 100000,
+      "status_code": 200,
+      "final_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/42/R/XS/2024/12/S2A_T42RXS_20241225T055244_L2A/product_metadata.xml",
+      "response_headers": {
+        "Content-Type": "application/xml",
+        "Content-Length": "55019",
+        "Content-Range": null,
+        "Accept-Ranges": "bytes",
+        "ETag": "\"703942020e11c1977f075fd9dbb3cf33\"",
+        "Last-Modified": "Wed, 25 Dec 2024 10:30:48 GMT"
+      },
+      "bytes_read": 55019,
+      "cap_exceeded": false,
+      "body_sha256": "6a745db59f9829386816ec56a08d20bddefff830812ce5c7e694fc54d2f9e424",
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050601446924Z_C1-product-metadata.xml",
+        "bytes": 55019,
+        "sha256": "6a745db59f9829386816ec56a08d20bddefff830812ce5c7e694fc54d2f9e424",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "elapsed_seconds": 0.876,
+      "extracted_metadata_fields": [
+        {
+          "tag": "PROCESSING_BASELINE",
+          "attributes": {},
+          "value": "05.11"
+        },
+        {
+          "tag": "BOA_QUANTIFICATION_VALUE",
+          "attributes": {
+            "unit": "none"
+          },
+          "value": "10000"
+        },
+        {
+          "tag": "BOA_ADD_OFFSET",
+          "attributes": {
+            "band_id": "0"
+          },
+          "value": "-1000"
+        },
+        {
+          "tag": "BOA_ADD_OFFSET",
+          "attributes": {
+            "band_id": "1"
+          },
+          "value": "-1000"
+        },
+        {
+          "tag": "BOA_ADD_OFFSET",
+          "attributes": {
+            "band_id": "2"
+          },
+          "value": "-1000"
+        },
+        {
+          "tag": "BOA_ADD_OFFSET",
+          "attributes": {
+            "band_id": "3"
+          },
+          "value": "-1000"
+        },
+        {
+          "tag": "BOA_ADD_OFFSET",
+          "attributes": {
+            "band_id": "4"
+          },
+          "value": "-1000"
+        },
+        {
+          "tag": "BOA_ADD_OFFSET",
+          "attributes": {
+            "band_id": "5"
+          },
+          "value": "-1000"
+        },
+        {
+          "tag": "BOA_ADD_OFFSET",
+          "attributes": {
+            "band_id": "6"
+          },
+          "value": "-1000"
+        },
+        {
+          "tag": "BOA_ADD_OFFSET",
+          "attributes": {
+            "band_id": "7"
+          },
+          "value": "-1000"
+        },
+        {
+          "tag": "BOA_ADD_OFFSET",
+          "attributes": {
+            "band_id": "8"
+          },
+          "value": "-1000"
+        },
+        {
+          "tag": "BOA_ADD_OFFSET",
+          "attributes": {
+            "band_id": "9"
+          },
+          "value": "-1000"
+        },
+        {
+          "tag": "BOA_ADD_OFFSET",
+          "attributes": {
+            "band_id": "10"
+          },
+          "value": "-1000"
+        },
+        {
+          "tag": "BOA_ADD_OFFSET",
+          "attributes": {
+            "band_id": "11"
+          },
+          "value": "-1000"
+        },
+        {
+          "tag": "BOA_ADD_OFFSET",
+          "attributes": {
+            "band_id": "12"
+          },
+          "value": "-1000"
+        }
+      ]
+    },
+    {
+      "id": "C1-cloud-header",
+      "method": "GET",
+      "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/42/R/XS/2024/12/S2A_T42RXS_20241225T055244_L2A/CLD_20m.tif",
+      "params": null,
+      "unsigned": true,
+      "authentication_sent": false,
+      "response_cap_bytes": 512,
+      "status_code": 206,
+      "final_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/42/R/XS/2024/12/S2A_T42RXS_20241225T055244_L2A/CLD_20m.tif",
+      "response_headers": {
+        "Content-Type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "Content-Length": "512",
+        "Content-Range": "bytes 0-511/176689",
+        "Accept-Ranges": "bytes",
+        "ETag": "\"c8fddd59a7a07f754bb2d706c61a5676\"",
+        "Last-Modified": "Wed, 25 Dec 2024 10:30:48 GMT"
+      },
+      "bytes_read": 512,
+      "cap_exceeded": false,
+      "body_sha256": "051bba3a7ce3df18e829f78da6a1234b0c39ff002e4b2efbbe20d418a49d2b19",
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050601446924Z_C1-cloud-header.bin",
+        "bytes": 512,
+        "sha256": "051bba3a7ce3df18e829f78da6a1234b0c39ff002e4b2efbbe20d418a49d2b19",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "elapsed_seconds": 0.721
+    },
+    {
+      "id": "V2-equivalent-red-header",
+      "method": "GET",
+      "url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/42/R/XS/2024/12/S2A_T42RXS_20241225T055244_L2A/B04.tif",
+      "params": null,
+      "unsigned": true,
+      "authentication_sent": false,
+      "response_cap_bytes": 512,
+      "status_code": 206,
+      "final_url": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/42/R/XS/2024/12/S2A_T42RXS_20241225T055244_L2A/B04.tif",
+      "response_headers": {
+        "Content-Type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "Content-Length": "512",
+        "Content-Range": "bytes 0-511/159830408",
+        "Accept-Ranges": "bytes",
+        "ETag": "\"5c3a0435025f156bb1bcf7b928aa79b1-20\"",
+        "Last-Modified": "Wed, 25 Dec 2024 10:30:32 GMT"
+      },
+      "bytes_read": 512,
+      "cap_exceeded": false,
+      "body_sha256": "57ed48466c1daa143067a143ceec74c099c7dece4658d8d32a35eb6ab56b61c9",
+      "raw_witness": {
+        "path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_DATA_20261012T050601446924Z_V2-equivalent-red-header.bin",
+        "bytes": 512,
+        "sha256": "57ed48466c1daa143067a143ceec74c099c7dece4658d8d32a35eb6ab56b61c9",
+        "handling": "ignored local-only metadata or source document"
+      },
+      "elapsed_seconds": 1.052
+    }
+  ],
+  "licensing": {
+    "Sentinel2": {
+      "rights_status": "explicit-license",
+      "license_name": "Copernicus Sentinel Data legal notice, linked by AWS provider",
+      "source_ids": [
+        "D06",
+        "D07"
+      ],
+      "transformed_notice_template": "Contains modified Copernicus Sentinel data [Year]",
+      "year_scope": "Use the acquisition years of data present in the transformed product. Record COG conversion by Element84 and this project's transformations separately.",
+      "attribution_example": "Contains modified Copernicus Sentinel data (2019, 2024, 2026). COGs accessed through Element84 Earth Search on 12 October 2026.",
+      "dataset_citation_url": "https://registry.opendata.aws/sentinel-2-l2a-cogs/"
+    },
+    "CopernicusGLO30": {
+      "rights_status": "explicit-license",
+      "license_name": "Copernicus WorldDEM-30 GLO-30-F free/open provider licence",
+      "source_ids": [
+        "D10",
+        "D12"
+      ],
+      "transformed_notice_components": [
+        "produced using Copernicus WorldDEM-30",
+        "© DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018",
+        "provided under COPERNICUS by the European Union and ESA; all rights reserved"
+      ],
+      "assembly_instruction": "Join the components with spaces and preserve the provider notice from Article6(b). Full notice is in the local licence witness and linked CDSE page.",
+      "liability_requirement": "Carry Article6(c) liability wording or its translation in a licence/notice when communicating or distributing covered data; avoid suggesting provider endorsement and pass obligations to subsequent users.",
+      "dataset_DOI": "10.5270/ESA-c5d3d65",
+      "mirror_release": "AWS 2021 release as described by the mirror; current CDSE releases differ",
+      "dataset_citation_url": "https://registry.opendata.aws/copernicus-dem/"
+    },
+    "ESAWorldCover2021v200": {
+      "rights_status": "explicit-license",
+      "license_name": "Creative Commons Attribution 4.0 International",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "source_ids": [
+        "D13",
+        "D16"
+      ],
+      "transformed_notice_components": [
+        "© ESA WorldCover project 2021",
+        "Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium"
+      ],
+      "dataset_DOI": "10.5281/zenodo.7254221",
+      "dataset_title": "ESA WorldCover 10 m 2021 v200",
+      "changes_to_record": [
+        "cropping",
+        "resampling",
+        "reprojection",
+        "classification masking",
+        "derived built-up fraction or distance"
+      ],
+      "no_pixel_probability_claim": true
+    },
+    "handling": {
+      "acquired_raws": "ignored local-only by task instruction",
+      "authored_outputs": "Own code, source observations, licence pointers, selected schema metadata and access results. Actual derived imagery should carry each contributing dataset's notice.",
+      "mixed_layer_products": "Record the component licences separately rather than treating the combined Sentinel/DEM/WorldCover product as covered by one blanket licence.",
+      "collection_license_field_interpretation": "v1 collections label several datasets proprietary and v2 Sentinel labels other. Applicable provider terms remain the governing source for reuse."
+    }
+  },
+  "schema_pointers": {
+    "v1": "assets.<name>.raster:bands[0].scale/offset/nodata/data_type; properties.proj:epsg; asset proj:shape and proj:transform",
+    "v2": "assets.<name>.raster:scale/raster:offset; core asset nodata/data_type/name; properties.proj:code; properties.storage:schemes referenced by asset storage:refs",
+    "reflectance_formula": "DN * scale + offset after no-data exclusion",
+    "native_nir": "nir is B08 at10m; nir08 is B8A at20m",
+    "quality_assets_observed": [
+      "scl",
+      "cloud",
+      "snow"
+    ],
+    "DEM_asset_observed": "data only; no per-pixel height/edit/fill/water masks exposed in the three inspected items"
+  },
+  "verified_access": {
+    "original_raster_header_reads": 13,
+    "supplemental_raster_header_reads": 2,
+    "raster_header_bytes_total": 7680,
+    "status": "All15 requests returned206 with512byte bodies; no raster image window was downloaded",
+    "actual_C1_product_metadata": {
+      "item_id": "S2A_T42RXS_20241225T055244_L2A",
+      "processing_baseline": "05.11",
+      "BOA_QUANTIFICATION_VALUE": 10000,
+      "BOA_ADD_OFFSET_listed_bands": -1000,
+      "resulting_scale": 0.0001,
+      "resulting_offset": -0.1
+    }
+  },
+  "retrieval_notes": [
+    "D03's initial guessed path returned 404. The actual README-linked cop-dem-glo-30.md was then acquired; both attempts remain local.",
+    "v1 sentinel-2-pre-c1-l2a returned zero in this bounded 2019 query. Query absence does not estimate geographic collection coverage.",
+    "The metadata probe code and report retain their original hashes; supplemental requests are separately preserved."
+  ]
+}

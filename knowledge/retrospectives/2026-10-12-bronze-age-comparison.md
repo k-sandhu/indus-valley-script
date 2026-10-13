@@ -1,0 +1,5 @@
+# Four Bronze Age documentary comparisons
+
+The [program retrospective](../../experiments/2026-10-12-bronze-age-comparison/RETROSPECTIVE.md) records source selection, acquisition, format repairs, category recovery, source-markup correction and preservation. Read the [manuscript](../../experiments/2026-10-12-bronze-age-comparison/MANUSCRIPT.md), [methods](../../experiments/2026-10-12-bronze-age-comparison/METHODS.md) and [next tests](../../experiments/2026-10-12-bronze-age-comparison/NEXT-TESTS.md) before repeating this path.
+
+Primary institutional editions changed the input problem from invented laws to source-observed records with annotation keys. The original word control, the post-outcome boundary-concealed control and the later Greek markup repair have separate endpoints. Dictionary-pattern compatibility remains ambiguous across all four source inventories. No historical language or IVS meaning was authenticated, and no CI/CD, recurring automation or publication action was added.

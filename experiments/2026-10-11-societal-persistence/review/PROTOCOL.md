@@ -1,0 +1,11 @@
+# Independent adversarial review protocol, 11 October 2026
+
+This review examines the coordinator's proposed theory of present service capacity and feasible renewal under shared budgets, horizons, imports and shocks. It was written before new source coding and numerical review examples. The review is independent of the preceding early Indian continuity and script studies.
+
+The source search is purposive. The literature contributor owns the broad persistence survey and the Smith 2021 and Lawrence 2025 studies; the coordinator owns Deffuant 2004 and the formal model. This branch seeks primary counterprecedents in polycentric provision, interdependent infrastructure, material reproduction and maintenance. Access scope and failures will be recorded. Complete publications and extractions remain in the owned local-only raw directory.
+
+The review will distinguish a conditional mathematical theorem, a stipulated numerical example, an operational historical hypothesis and a universal social necessity claim. It will inspect horizon and stock exhaustion, the unit of persistence, open boundaries and external subsidies, allocation and power, changing preferences/technology, survivorship selection, common causes, the difference between separate and joint service plans, and centralized feasibility versus decentralized implementation. Any counterexample states the particular claim it can reject.
+
+After the root model is frozen, an independent checker will reconstruct its finite transition law without importing root model code and compare enumerated outputs. It will examine disturbance/action quantifiers and observation timing, and retain unsuccessful attempts in separate outputs. Numerical examples generated here are invented laws, not estimates of ancient services or historical collapse probabilities.
+
+Deliverables are REVIEW.md, a source ledger and witness checks, sharp prospective falsifiers, independent checker code and output, verification and retrospective. All writes belong to experiments/2026-10-11-societal-persistence/review/ and data/raw/2026-10-11-societal-persistence/review/. No global navigation, publication, commit, push, automation or CI/CD is authorized for this branch.

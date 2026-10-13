@@ -1,0 +1,221 @@
+{
+  "status": "Explicitly synthetic logical construction; no historical frequency or probability",
+  "input_space": {
+    "routes": [
+      "local_transmission",
+      "acquisition_from_neighbors",
+      "reconstruction_from_current_practice",
+      "recent_invention"
+    ],
+    "depths_in_invented_generations": [
+      1,
+      5,
+      20,
+      100
+    ],
+    "distinct_agent_assignments": 24,
+    "three_gap_assignments": 27,
+    "gap_units": [
+      1,
+      2,
+      9
+    ],
+    "historical_calibration": null
+  },
+  "history_count": 10368,
+  "retention_variants": {
+    "operation_only": {
+      "distinct_outputs": 1,
+      "preimage_sizes": {
+        "10368": 1
+      }
+    },
+    "route_retained": {
+      "distinct_outputs": 4,
+      "preimage_sizes": {
+        "2592": 4
+      }
+    },
+    "time_retained": {
+      "distinct_outputs": 108,
+      "preimage_sizes": {
+        "96": 108
+      }
+    },
+    "agents_retained": {
+      "distinct_outputs": 24,
+      "preimage_sizes": {
+        "432": 24
+      }
+    },
+    "all_annotations_retained": {
+      "distinct_outputs": 10368,
+      "preimage_sizes": {
+        "1": 10368
+      }
+    }
+  },
+  "account_description": "A primordial community stores grain, defines shares, censures taking and delegates enforcement, in the retained dependency order. Named actors, times and acquisition route are omitted by the declared rewrite.",
+  "examples": [
+    {
+      "history": {
+        "route": "local_transmission",
+        "depth": 100,
+        "agents": [
+          "invented_actor_A",
+          "invented_actor_B",
+          "invented_actor_C",
+          "invented_actor_D"
+        ],
+        "gaps": [
+          1,
+          1,
+          1
+        ]
+      },
+      "account": [
+        "primordial_community",
+        "grain",
+        [
+          "store_grain",
+          "define_shares",
+          "censure_taking",
+          "delegate_enforcement"
+        ]
+      ]
+    },
+    {
+      "history": {
+        "route": "acquisition_from_neighbors",
+        "depth": 1,
+        "agents": [
+          "invented_actor_A",
+          "invented_actor_B",
+          "invented_actor_C",
+          "invented_actor_D"
+        ],
+        "gaps": [
+          1,
+          1,
+          1
+        ]
+      },
+      "account": [
+        "primordial_community",
+        "grain",
+        [
+          "store_grain",
+          "define_shares",
+          "censure_taking",
+          "delegate_enforcement"
+        ]
+      ]
+    },
+    {
+      "history": {
+        "route": "reconstruction_from_current_practice",
+        "depth": 1,
+        "agents": [
+          "invented_actor_A",
+          "invented_actor_B",
+          "invented_actor_C",
+          "invented_actor_D"
+        ],
+        "gaps": [
+          1,
+          1,
+          1
+        ]
+      },
+      "account": [
+        "primordial_community",
+        "grain",
+        [
+          "store_grain",
+          "define_shares",
+          "censure_taking",
+          "delegate_enforcement"
+        ]
+      ]
+    },
+    {
+      "history": {
+        "route": "recent_invention",
+        "depth": 1,
+        "agents": [
+          "invented_actor_A",
+          "invented_actor_B",
+          "invented_actor_C",
+          "invented_actor_D"
+        ],
+        "gaps": [
+          1,
+          1,
+          1
+        ]
+      },
+      "account": [
+        "primordial_community",
+        "grain",
+        [
+          "store_grain",
+          "define_shares",
+          "censure_taking",
+          "delegate_enforcement"
+        ]
+      ]
+    }
+  ],
+  "structural_positive_control": {
+    "base_edges": [
+      [
+        "store_grain",
+        "define_shares"
+      ],
+      [
+        "define_shares",
+        "censure_taking"
+      ],
+      [
+        "censure_taking",
+        "delegate_enforcement"
+      ]
+    ],
+    "revised_edges": [
+      [
+        "store_grain",
+        "define_shares"
+      ],
+      [
+        "define_shares",
+        "delegate_enforcement"
+      ],
+      [
+        "delegate_enforcement",
+        "censure_taking"
+      ]
+    ],
+    "base_account": [
+      "primordial_community",
+      "grain",
+      [
+        "store_grain",
+        "define_shares",
+        "censure_taking",
+        "delegate_enforcement"
+      ]
+    ],
+    "revised_account": [
+      "primordial_community",
+      "grain",
+      [
+        "store_grain",
+        "define_shares",
+        "delegate_enforcement",
+        "censure_taking"
+      ]
+    ],
+    "distinguished": true
+  },
+  "interpretation": "A coherent operation account cannot identify its route or depth after those annotations are erased; retaining a genuine independent annotation or changing a retained relation can separate outputs. The erasure rule was stipulated, not inferred from ancient texts."
+}

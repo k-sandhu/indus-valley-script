@@ -1,0 +1,9 @@
+# Control for a distinct W700-bearing face role
+
+This design was written after the four `run-v1` populations completed. Their strongest full-search depletion was cross-face W034/W700. It persisted among copied-bundle prototypes. A carrier with a single W700-bearing quantity-shaped module would produce that avoidance even if its other modules were assigned independently. The next test asks whether binding remains after preserving this observable face role. It is a post-outcome refinement and receives a separate endpoint.
+
+Reuse the frozen physical closure, filters, allocation cells, module identity, minimum-five sign marginals, exact-bundle prototypes and uniqueness conditioning. Replace each cell's length bucket by `(length, presence of W700 in the whole module)`. A reference then preserves which slots carry a W700-bearing face and each object's number of such faces. It preserves no semantic licence, commodity, bearer, issuer or transaction label.
+
+Run 1,999 independent pilot allocations and 4,999 independent tail allocations for each of the four representations. Recompute pilot means, full-search enrichment, full-search depletion and all-object collisions. Keep the 1,000,000 cell-proposal cap. Holm adjustment across the ten completed control tests describes the control family; it does not repair the post-outcome choice of the W700 partition. Compare the original and controlled outcomes to separate face-role occupancy from associations between particular module choices.
+
+Record the W700-role occupancy histogram, observed collisions, declared-side-count-compatible object count and exact source/cohort coverage. Retain `run-v1` byte for byte. Save code, amendment hashes, seed ranges, aggregate outputs and local allocation witnesses under `role-control-v1`. Independent verification will reconstruct both reference laws from their saved allocations.

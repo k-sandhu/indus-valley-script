@@ -1,0 +1,34 @@
+# Sources, versions and reading depth
+
+12 October 2026 UTC. Raw witnesses, record-level derivatives and source images are local. The acquisition plans and request records retain exact routes, times, byte counts and hashes. Public request status means a response was obtained; it does not establish that its content was a valid edition. The parsers separately count invalid payloads and missing transcription tables.
+
+## Editions used in calculations
+
+| ID | Source and exact version | Observations used | Rights observed |
+|---|---|---|---|
+| S01 | [ORACC epsd2/admin/ur3 JSON archive](https://oracc.museum.upenn.edu/json/epsd2-admin-ur3.zip), acquired witness in acquisition/sumerian-ur3-v1.json | Catalogue, token-language fields, source readings, word/POS annotations, object/surface/line markers. Fixed 3,000-entry sample from 80,181 entries. | Embedded JSON declares CC0; downloaded archive and derivatives remain local. |
+| A01 | [ORACC obabat/atletters JSON archive](https://oracc.museum.upenn.edu/json/obabat-atletters.zip) | All 121 acquired Old Babylonian letter editions and their annotations. | Embedded JSON declares CC0; local-only payloads. |
+| A02 | [ORACC rimanum JSON archive](https://oracc.museum.upenn.edu/json/rimanum.zip) | 378 named corpus JSON entries, including 40 invalid payloads and 338 parsed administrative editions. Token-language fields retain embedded Sumerian formulae. | Embedded valid JSON declares CC0; local-only payloads. |
+| E01 | Simon D. Schweitzer, [AES – Ancient Egyptian Sentences](https://github.com/simondschweitzer/aes), commit 35276d2527cca1a055e31ed5f6683e777717170f | Archive and tomb-inscription subcorpora, date labels, lexical/POS annotation and complete-word hieroglyph encodings. The letter subcorpus was acquired for availability review and is outside the numerical cohort. | README states CC BY-SA 4.0. |
+| E02 | Schweitzer, [AED-TEI](https://github.com/simondschweitzer/aed-tei), commit 462c722e0323e05641aea2eee8cdf1e27303d939 | 1,160 requested source-text witnesses for the Old Kingdom/First Intermediate Period archive. Vessel type, physical support ID, dates and source sentence/word IDs test the extent of an edited inscription. | README and inspected TEI availability statements specify CC BY-SA 4.0. |
+| G01 | Maurizio Del Freo, Francesco Di Filippo and Françoise Rougemont, [Linear B Electronic Resources (LiBER)](https://liber.cnr.it/), CNR Edizioni, 2024; dated catalogue and document-page witnesses | Catalogue of 5,638 entries, deterministic 512-document site-stratified acquisition, displayed transcriptions, their search-link forms, line layout and chronology metadata. | Site permits limited text reuse in scholarly work according to academic practice. Images have separate Hellenic Ministry terms; no source images are redistributed. |
+| I01 | Local Lipi observed-face corpus, SHA256 1220f5591a42abe7c6696ac014aba90e7c49fdce6b0ccba0b85bb45f950c30db | Existing complete/clean/direction flags, Wells reading-order codes and full-register object/text closure. | Unresolved-rights corpus and record-level derivatives remain local under the repository's redistribution rules. |
+
+The cuneiform cohort names identify documentary collections. They are not assertions that every token belongs to one language: the Rīm-Anum source contains Akkadian text and Sumerian formulae. Likewise, a cuneiform sign reading is not a uniquely identified physical glyph. The normalization census preserves token-language counts and the chosen representation.
+
+AES is a transformed corpus based on a January 2018 TLA extract. The source description and contributors are recorded in its README. The later AES and AED-TEI encodings do not always align. A complete vessel text requires an exact sentence-ID match and coverage of its word IDs. An unmatched version is kept as a sentence-level observation where readable, with the mismatch counted. Full edited text means the extent of that edition; it is not an independent examination of every surface of the vessel.
+
+## Documentary and methodological sources
+
+| ID | Exact source | Reading depth and use |
+|---|---|---|
+| D01 | Henry G. Fischer, [*Old Kingdom Cylinder Seals for the Lower Classes*](https://resources.metmuseum.org/resources/metpublications/pdf/old_kingdom_cylinder_seals_for_the_lower_classes_the_metropolitan_museum_journal_v_6_1972.pdf), *Metropolitan Museum Journal* 6, 1972 | Acquired 12-page witness; inspected introductory account and official-name/title examples, printed pp. 5–9. Qualitative seal comparison, outside the numerical Egyptian jar cohort. |
+| D02 | Federico Aurora, [DĀMOS database documentation](https://damos.hf.uio.no/about/database/) and [search instructions](https://damos.hf.uio.no/howto) | Documentation, annotation/edition scope and license read. No independent DAMOS corpus benchmark was run; LiBER supplies the measured Greek cohort. |
+| D03 | Katerina Papavassiliou, Gareth Owens and Dimitrios Kosmopoulos, [*A Dataset of Mycenaean Linear B Sequences*](https://aclanthology.org/2020.lrec-1.311/), 2020, pp. 2552–2561 | Acquired paper, inspected dataset description, sequence units and source routes. Establishes a prior sequence/restoration study; its reported results were not replicated. |
+| M01 | Rajesh P. N. Rao and colleagues, [*Entropic Evidence for Linguistic Structure in the Indus Script*](https://homes.cs.washington.edu/~rao/ScienceIndus.pdf), *Science* 324, 2009, p. 1165 and supplement | Primary main text and supplement's data/unit descriptions read. The Sumerian comparator used selected literary compositions. This study uses a different record-level and annotation task, without claiming first use of Sumerian comparison. |
+| M02 | Richard Sproat, [*Last Words: Ancient Symbols, Computational Linguistics, and the Reviewing Practices of the General Science Journals*](https://aclanthology.org/J10-3012/), *Computational Linguistics* 36, 2010, pp. 585–594 | Publication metadata rechecked; substantive critique carried forward from the project's preserved source review and evidence matrix. No new reproduction of its examples. |
+| M03 | Jiaming Luo, Yuan Cao and Regina Barzilay, [*Neural Decipherment via Minimum-Cost Flow: From Ugaritic to Linear B*](https://aclanthology.org/P19-1303/), 2019, pp. 3146–3155 | Primary abstract and model/data premises inspected. Cognate matching to a related known language supplies a different observation problem from anonymous IVS records. No numerical reproduction. |
+
+## Asset handling
+
+Our prose, code, protocols, numerical aggregates and source pointers are the reusable package. Acquired witnesses, detailed lexical inventories, anonymous-ID maps, source rows and predictions remain under ignored data/raw/2026-10-12-bronze-age-comparison/. No repository visibility change or external publication occurred during this study. The source-specific handling follows [REDISTRIBUTION.md](../../knowledge/provenance/REDISTRIBUTION.md).

@@ -1,0 +1,254 @@
+{
+  "created_utc": "2026-10-11T07:03:17.990108+00:00",
+  "scope": "Invented reviewer laws; no historical verification",
+  "input_hashes": {
+    "PROTOCOL.md": "5bce2aa3f3be0f13040292993d7c2bcdf40011fdc8c0a97dd3c29c2ea6b3a344",
+    "COUNTEREXAMPLES-PROTOCOL.md": "2c2ea84dec99586935a50f64cba91cf21d9c80c35404aef278cc18b05eecb989",
+    "counterexamples.py": "35240d0f108eb3fd564e8e5e7e6853cc4bfcf7f7cdf8a14d1830e220d0763e1b"
+  },
+  "results": {
+    "finite_stock": {
+      "cases": {
+        "3": {
+          "path": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "safe": true,
+          "renewal_actions_available": 0
+        },
+        "4": {
+          "path": [
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "safe": false,
+          "renewal_actions_available": 0
+        }
+      },
+      "rejected_implication": "Finite-horizon survival always requires an available renewal route."
+    },
+    "joint_budget": {
+      "cases": {
+        "1": {
+          "admissible_actions": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "joint_safe_actions": [],
+          "separate_safe_actions": [
+            [
+              1
+            ],
+            [
+              1
+            ]
+          ]
+        },
+        "2": {
+          "admissible_actions": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "joint_safe_actions": [
+            [
+              1,
+              1
+            ]
+          ],
+          "separate_safe_actions": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        }
+      },
+      "rejected_implication": "A feasible plan for each service separately implies one jointly feasible plan."
+    },
+    "observation_timing": {
+      "safe_matrix": {
+        "0": {
+          "0": true,
+          "1": false
+        },
+        "1": {
+          "0": false,
+          "1": true
+        }
+      },
+      "action_before_shock": false,
+      "shock_observed_before_action": true,
+      "rejected_implication": "Robust feasibility is unchanged when current-shock observation timing changes."
+    },
+    "implementation": {
+      "feasible_profiles": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "safe_profiles": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "pure_generalized_nash_equilibria": [
+        [
+          0,
+          0
+        ]
+      ],
+      "equilibrium_safe_profiles": [],
+      "payoffs": {
+        "(0, 0)": [
+          0,
+          0
+        ],
+        "(1, 0)": [
+          -1,
+          1
+        ],
+        "(0, 1)": [
+          1,
+          -1
+        ]
+      },
+      "rejected_implication": "Existence of a joint resource-feasible repair plan establishes voluntary implementation."
+    },
+    "distribution": {
+      "allocations": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "aggregate_safe": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "resident_safe": [
+        [
+          1,
+          1
+        ]
+      ],
+      "rejected_implication": "Aggregate provision implies every selected resident receives its stated minimum."
+    },
+    "open_boundary": {
+      "cases": {
+        "h3_imports0": {
+          "safe_paths": []
+        },
+        "h3_imports1": {
+          "safe_paths": [
+            {
+              "imports": [
+                1,
+                1,
+                1
+              ],
+              "state_path": [
+                [
+                  1,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0
+                ]
+              ]
+            }
+          ]
+        },
+        "h4_imports0": {
+          "safe_paths": []
+        },
+        "h4_imports1": {
+          "safe_paths": []
+        }
+      },
+      "rejected_implication": "Local safe supply proves local self-sufficiency or unlimited upstream renewability."
+    }
+  },
+  "assertions": {
+    "stock_3_safe_4_unsafe": true,
+    "budget_1_no_joint_budget_2_joint": true,
+    "quantifier_order_differs": true,
+    "feasible_safety_without_safe_equilibrium": true,
+    "aggregate_does_not_imply_resident_safety": true,
+    "imports_hide_finite_external_stock": true
+  }
+}

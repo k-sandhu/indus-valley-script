@@ -1,0 +1,13 @@
+# Complete frame and split accounting
+
+The first context endpoint retains 1,859 complete distinct strings from 2,930 eligible faces. They contain 8,535 tokens and 577 observed codes from the 713-code inventory. The other 136 codes remain in the summary with empty support. This is the same whole-string frame used by the earlier adversarial review; the new calculations add fixed role expectations, full-register closure and the deterministic stability split.
+
+Closure begins with all 5,680 registered faces. Family identifiers and simple CISI bases give 4,695 physical components. Physical links and identical nonempty strings give 2,819 final components before eligibility filtering. Five nonblank CISI references remain unresolved. The largest raw component contains 1,913 face records; 237 eligible distinct strings and 802 tokens occupy the largest retained component. The placeholder-link sensitivity gives 3,156 raw and 1,554 eligible components, compared with 1,544 eligible components in the primary closure.
+
+The fixed 70/30 component hash assigns 1,144 eligible strings and 5,407 tokens to discovery, and 715 strings and 3,128 tokens to transfer. No physical component or identical full-register string crosses the split. The actual text weights differ from the component fraction because components have different sizes. These partitions are a stability comparison of previously exposed material.
+
+The length-at-least-three frame contains 1,596 strings and 8,009 tokens, reproducing the earlier grammar population. The representative-object frame chooses one longest eligible face from each of 2,469 physical objects, giving 10,835 tokens. This frame can reintroduce identical inscriptions from separate objects and does not require every other recorded face of an object to be eligible.
+
+All 713 pooled positional counts match the frozen adversarial run-v2. Fourteen actual whole-record substitution witness comparisons reproduce the selected W151/W740, W154/W156 and W154/W158 relations with one changed slot and the remaining inscription intact. The genuine medial W142 and before-closing W158 records also pass their source checks. Public and local output hashes were independently checked, and the local complete-record/template files are ignored by Git.
+
+[Run-v1 summaries](run-v1/summary.json) expose every fixed role for every code, including contradictions and empty frames. `family_rows` is empty until the visual-family map is frozen. Family integration will use a separate endpoint with the same source and split rules. [Input accounting](run-v1/input-accounting.json), [verification](run-v1/verification.json) and [local companion schema](SCHEMA.md) identify the exact calculations and denominators.

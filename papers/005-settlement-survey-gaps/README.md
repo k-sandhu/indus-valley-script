@@ -1,0 +1,9 @@
+# The Indus excavation gap
+
+The [manuscript](manuscript.md) examines why the recorded and excavated site counts differ, what published area estimates measure, and how investigation could recover overlooked settlement evidence. It compares later-city construction, alluvium, low-relief rural occupation, piedmont and cave contexts, landslides, and changing coasts. The printable version is [the reviewed paper](../../output/pdf/indus_settlement_survey_gaps_2026-10-11.pdf).
+
+This is a structured narrative review with descriptive aggregate calculations and an unrun survey design, completed on 11 October 2026. It has 69 cited references from a 72-record register. Twenty-one overlapping editorial regions organize hypotheses and comparisons. No new location was discovered, satellite scene analyzed, field access obtained or missing-site total fitted.
+
+The first complete draft was frozen before commissioned Codex and Claude Code Opus 5.5 adversarial review. A second actual Opus 5.5 CLI pass reviewed the complete revision before the final text. The [response to reviewers](../../experiments/2026-10-11-settlement-prospection/review/response-to-reviewers.md) links findings to repairs and unresolved source questions. These commissioned AI reviews are documented with their access limits; they are not archaeological peer review.
+
+Use the [methods and evidence guide](methods.md) for source depth, units and output links, and the [experiment package](../../experiments/2026-10-11-settlement-prospection/README.md) for manual reproduction and preserved versions. The final claim map is [claims-v3.json](../../experiments/2026-10-11-settlement-prospection/claims-v3.json). The [offline region viewer](../../experiments/2026-10-11-settlement-prospection/map-v5/survey-hypotheses.html) provides the source-linked questions and comparison rules.

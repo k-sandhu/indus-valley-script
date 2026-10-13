@@ -1,0 +1,9 @@
+# Final source-register comparison with the preserved numerical run
+
+The final `sources-v5.json` preserves every source field consumed by `run-v3`. For each of the eight numerical crosswalk entries, its ID, title, URL and observation ID match `sources-v2.json`, `sources-v4.json` and the values recorded in `run-v3/source-id-crosswalk.json`. All 32 field rows agree across the three registers, representing 96 comparisons with the recorded run. The [machine-readable comparison](final-register-numeric-comparison.json) records every value and the source-file hashes.
+
+The source register supplies crosswalk metadata. The main analysis uses curated source-reported constants in its numerical functions and the separate selected census and dating files for its metadata audit. It does not parse numerical inputs from register observations. The current `analysis.py`, the original run inputs and all 43 result files across runs v1–v3 retain their declared hashes. The separate inline-arithmetic code and outputs also remain unchanged. No numerical rerun was needed.
+
+The final source descriptions refine the provenance of existing numbers. R38 already appears in v2 with 1,056 Mature locations and 96 excavated. R07 attributes Ganweriwala's 81.5-hectare legacy estimate and 66.7-hectare ground survey; R08 now includes the exact locator for its approximately 33-hectare mounded area. These attributions match the preserved run's three area records. R01 adds a checked local source witness and retains the original paragraph's qualifiers: at least 1,022 locations and about 96 excavated. Those qualifiers guide interpretation of the historical ratio. They do not replace its recorded numerical scalars.
+
+All 12 checks pass, with no material mismatch. These check counts describe bookkeeping. Earlier manuscript endpoints, numerical outputs and the inline-arithmetic endpoint were preserved.

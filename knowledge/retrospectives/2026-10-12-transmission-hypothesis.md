@@ -1,0 +1,9 @@
+# Transmission after the Indus cities, 12 October 2026
+
+The user asked for a further development of the transmission hypothesis, with parallel rival tests and adversarial review. The new [report](../../experiments/2026-10-12-transmission-hypothesis/REPORT.md) and [manuscript](../../experiments/2026-10-12-transmission-hypothesis/MANUSCRIPT.md) distinguish practical operations, organizing relationships, terminology and explanations.
+
+New material loci supply intermediate working-stage objects, ceramic traces and directly dated crop specimens. Three complete Rigvedic hymns, comparative controls and a later non-Vedic classification give particular textual endpoints. RV 10.71.2 directly uses a sifting relation to depict shaping speech. Its conceptual incorporation is represented, while a specific Harappan donor remains unresolved.
+
+The [seven comparisons](../../experiments/2026-10-12-transmission-hypothesis/coordinator/comparisons-v1.json) test compatible component routes rather than assign one ancestry to an entire text. Independent review supplies inherited-role controls and assesses source support. A deliberately mislabeled observation exposed the automated validator's semantic boundary; its checks concern IDs, schema and declarations.
+
+Read the [full retrospective](../../experiments/2026-10-12-transmission-hypothesis/RETROSPECTIVE.md) for acquisition, pairing, source-anchor and code corrections, the [review response](../../experiments/2026-10-12-transmission-hypothesis/REVIEW-RESPONSE.md) for resolved criticism, and the [prospective tests](../../experiments/2026-10-12-transmission-hypothesis/EMPIRICAL-TESTS.md) before a continuation. Preserve the dated package, source lineages, old endpoints and local-only witnesses. A new useful test needs an operation signature, independent chronology, carrier evidence or a held-out comparative image.

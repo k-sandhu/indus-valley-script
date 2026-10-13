@@ -1,0 +1,33 @@
+# Administrative module study, 11 October 2026
+
+The earlier paired-surface study asked whether tablet dimensions followed graphic stroke counts. Context studies compared short strings or motifs with broad metadata, and the Harappa prism audit left physical turning conventions unresolved. The registry and those retrospectives showed why repeating a dimensions fit or a motif classifier would add little. This study changed the unit of observation to the physical carrier and tested allocations of intact face modules, retaining all recorded rows before eligibility filters.
+
+## Design and source handling
+
+The protocol was written after coverage inspection and before outcome counts or reference tails. Full closure used current families and simple CISI bases before any row was removed. The primary set required every recorded row to be clean, right-to-left and single-line. The wider sensitivity retained complete known single-line faces with end-reversal-invariant modules. Neither representation assigned a physical order to the carrier's faces. Parent review identified contradictory declared side counts before outcomes; the frozen protocol added their accounting and a descriptive exclusion check.
+
+The final populations contain 417 primary carriers and 543 wider carriers. They are selections from 902 multirecord families, rather than a census of complete archaeological objects. Primary Harappa tablets account for 363 carriers. Copy dependence is substantial: primary selection gives 312 matched prototypes, while a single shared-face component contains 222 of them. That prevented a meaningful claim based on ordinary row-wise held-out prediction.
+
+All source strings and allocation witnesses were saved under the owned local-only directory. Tracked deliverables contain the method, code, aggregates, source pointers and hashes. The rights review permitted our prose and measurements while keeping unresolved-rights corpora and third-party witnesses local. No external publication or repository visibility change was made.
+
+## Outcomes and the role refinement
+
+The original full-module allocation gives 423 copied-bundle collisions against a reference mean of 141.192 in the primary population, Holm p=.001. Every representation selects W034/W700 cross-face depletion. The primary observed exposure is zero against 23.485 expected. Within faces, however, 103 contain both codes and only one contains W034 without W700. The original allocation can put another W700-bearing module opposite an amount-shaped module. The observed effect therefore called for an explicit face-role control.
+
+After the original endpoint completed, the dated amendment preserved each slot's W700 presence and reran the full maximum search into a new directory. Primary expected W034/W700 exposure fell to 0.957. No corrected sign-pair maximum remained below .05. Copied bundles still exceeded the controlled reference, with 423 collisions against 190.940 expected, Holm p=.002. This narrowed the interpretation to copying and face-role occupancy. The amendment remains a post-outcome diagnostic, and the original endpoint is unchanged. [Original results](run-v1/summary.json), [role control](role-control-v1/summary.json), [independent decomposition](../review/allocation-checks-v1.json).
+
+The descriptive two-face audit found 17 complete anchor classes with more than one source-qualified tall-stroke/W700 value. This gives a constructive class/tier representation without identifying its social fields. The known three-face Harappa cohort is outside that audit, and declared-side-compatible exclusion changes none of its tall-stroke counts.
+
+## Adversarial review and repairs
+
+Independent review identified a necessary distinction in the prototype interpretation. Direct permutation of a selected prototype module bag conditional on within-cell uniqueness does not reproduce the distribution obtained by permuting the original copy-weighted bag and then deduplicating it. An exact invented AB, AB, CD population gives total variation distance 2/3 between the two conditional procedures. The report describes the prototype endpoint as the separately declared selected-bag law. The frozen protocol and code remain intact; their original wording is preserved as evidence of the design. [Counterexample](../review/prototype-counterexample.json).
+
+The local independent verifier used sparse incidence multiplication rather than the analysis's counting implementation. It reproduced every pilot mean, tail maximum, collision, module margin, prototype uniqueness condition and tail probability across all 75,984 saved allocations. Its 85 checks pass. The separate adversarial audit's 104 checks also pass. Review requested sharper physical alternatives, so the hypothesis table now includes issuer/identity, sealed-package, commodity and canonical ration mechanisms together, with production handling and post-deposition abrasion included in prospective wear controls. [Verification](verification.json), [review](../review/allocation-checks-v1.json), [physical predictions](HYPOTHESES.md).
+
+## What the extension contributes
+
+The reusable observational grammar binds complete class-like and tier-shaped modules on a source-qualified carrier. The operational proposal adds a possible token history: issue, present, check or redeem, retain or return, and cancel or discard. A standard carrier can authorize an action before a transfer and survive as a redeemed token afterwards. This phase ambiguity explains a concrete overlap between the licence and canonical ration accounts, while registered cancellation, attachment, manufacture and repeated-use traces could distinguish specific mechanisms.
+
+The synthetic certificate shows four field interpretations with identical finite distributions over visible bundles. Their equal-prior optimal classification from graphics alone is .25. Additional samples from that same observable distribution preserve the equivalence. The proposed field names are therefore parameters for independent physical tests. The source register documents existing administrative-grammar and SIGIL precedents; this package's empirical result is the measured carrier-allocation contrast and its role decomposition.
+
+Future work should acquire registered carrier histories or the pointed-base vessel measurements requested by Mukhopadhyay. It should freeze the physical observations and operational variants before a comparison. It should preserve source-specific numerical classes, missing surfaces and stamp-derived context labels. More fits to the same broad catalogue metadata would leave the central field and phase ambiguity unresolved.

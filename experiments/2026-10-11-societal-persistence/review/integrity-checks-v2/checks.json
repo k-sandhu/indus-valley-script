@@ -1,0 +1,206 @@
+{
+  "created_utc": "2026-10-11T07:26:56.774257+00:00",
+  "status": "passed",
+  "checks_passed": 37,
+  "checks": [
+    {
+      "check": "all 5218 model checks pass",
+      "passed": true
+    },
+    {
+      "check": "all six counterexample assertions pass",
+      "passed": true
+    },
+    {
+      "check": "all 90 source checks pass",
+      "passed": true
+    },
+    {
+      "check": "root result pin unchanged",
+      "passed": true
+    },
+    {
+      "check": "checker code unchanged",
+      "passed": true
+    },
+    {
+      "check": "checker protocol unchanged",
+      "passed": true
+    },
+    {
+      "check": "counterexample input PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "counterexample input COUNTEREXAMPLES-PROTOCOL.md",
+      "passed": true
+    },
+    {
+      "check": "counterexample input counterexamples.py",
+      "passed": true
+    },
+    {
+      "check": "source-audit input sources.json",
+      "passed": true
+    },
+    {
+      "check": "source-audit input claims.json",
+      "passed": true
+    },
+    {
+      "check": "source-audit input falsifiers.json",
+      "passed": true
+    },
+    {
+      "check": "source-audit input source_audit_v3.py",
+      "passed": true
+    },
+    {
+      "check": "severity variant 10 modes and 118 removed",
+      "passed": true
+    },
+    {
+      "check": "eligibility variant 14 modes and 56 removed",
+      "passed": true
+    },
+    {
+      "check": "severity variant nonzero supports have empty robust kernels",
+      "passed": true
+    },
+    {
+      "check": "severity variant possible kernels unchanged",
+      "passed": true
+    },
+    {
+      "check": "AST parses check_model.py",
+      "passed": true
+    },
+    {
+      "check": "AST parses counterexamples.py",
+      "passed": true
+    },
+    {
+      "check": "AST parses source_audit.py",
+      "passed": true
+    },
+    {
+      "check": "AST parses source_audit_v2.py",
+      "passed": true
+    },
+    {
+      "check": "AST parses source_audit_v3.py",
+      "passed": true
+    },
+    {
+      "check": "AST parses verify_package.py",
+      "passed": true
+    },
+    {
+      "check": "claim output pointer C01 model-checks-v1/checks.json#/checks",
+      "passed": true
+    },
+    {
+      "check": "claim output pointer C01 ../coordinator/run-v1/results.json",
+      "passed": true
+    },
+    {
+      "check": "claim output pointer C02 model-checks-v1/checks.json#/sensitivities",
+      "passed": true
+    },
+    {
+      "check": "claim output pointer C03 counterexamples-v1/counterexamples.json#/results",
+      "passed": true
+    },
+    {
+      "check": "claim output pointer C03 counterexamples-v1/counterexamples.json#/assertions",
+      "passed": true
+    },
+    {
+      "check": "claim output pointer C05 counterexamples-v1/counterexamples.json#/results/implementation",
+      "passed": true
+    },
+    {
+      "check": "claim output pointer C05 counterexamples-v1/counterexamples.json#/results/distribution",
+      "passed": true
+    },
+    {
+      "check": "claim output pointer C07 model-checks-v1/checks.json#/inverse_bound_controls",
+      "passed": true
+    },
+    {
+      "check": "claim output pointer C08 falsifiers.json",
+      "passed": true
+    },
+    {
+      "check": "overwrite refusal counterexamples.py",
+      "passed": true
+    },
+    {
+      "check": "overwrite refusal check_model.py",
+      "passed": true
+    },
+    {
+      "check": "overwrite refusal source_audit_v3.py",
+      "passed": true
+    },
+    {
+      "check": "prose scan no stock flags",
+      "passed": true
+    },
+    {
+      "check": "all raw witnesses and derivatives ignored",
+      "passed": true
+    }
+  ],
+  "independent_model_checks": 5218,
+  "counterexample_assertions": 6,
+  "source_checks": 90,
+  "sensitivity_summary": [
+    {
+      "variant": "shock_severity_two",
+      "changed_world_modes": 10,
+      "removed_state_memberships": 118,
+      "added_state_memberships": 0
+    },
+    {
+      "variant": "eligibility_after_skill_age",
+      "changed_world_modes": 14,
+      "removed_state_memberships": 56,
+      "added_state_memberships": 0
+    }
+  ],
+  "overwrite_guard_checks": [
+    {
+      "code": "counterexamples.py",
+      "returncode": 1,
+      "refused_existing_output": true,
+      "endpoint_sha256_before_after": "3fe38787e0a960b55186d47abab8bf8cba24911d6488856111fe93e6ff6f8ecf"
+    },
+    {
+      "code": "check_model.py",
+      "returncode": 1,
+      "refused_existing_output": true,
+      "endpoint_sha256_before_after": "d9d9384c7c6a56f0f6d75d546837236f193a6e12094972285badc530ec7c2e84"
+    },
+    {
+      "code": "source_audit_v3.py",
+      "returncode": 1,
+      "refused_existing_output": true,
+      "endpoint_sha256_before_after": "5fc6dc0f94388202b1e8f24b3d977de6bdf9935f8757afe6f99e57e6178a7cfa"
+    }
+  ],
+  "root_model_result_sha256": "e4f1cd067241980184723ccd23f6bff9dbf0e1881df5c75e4d32becf7a10bb6d",
+  "code_sha256": "41a49c13771c61ae27fa234994c6bf0b401ed486b5f4edb4c33a4c964c8e9764",
+  "own_input_sha256": {
+    "model-checks-v1/checks.json": "d9d9384c7c6a56f0f6d75d546837236f193a6e12094972285badc530ec7c2e84",
+    "counterexamples-v1/counterexamples.json": "3fe38787e0a960b55186d47abab8bf8cba24911d6488856111fe93e6ff6f8ecf",
+    "source-checks-v3/checks.json": "5fc6dc0f94388202b1e8f24b3d977de6bdf9935f8757afe6f99e57e6178a7cfa",
+    "prose-review-v2.json": "2700be9ee92a8703e645fcddb286235056b1e72b64868cc44c51bc2999528864"
+  },
+  "rights_handling": "All 14 raw witnesses/derivatives checked against exact ignore paths; own code/prose/metadata/aggregate outputs remain separate.",
+  "preserved_attempts": [
+    "source-checks-v1/failure.json",
+    "source-checks-v2/failure.json",
+    "integrity-checks-v1/failure.json"
+  ]
+}

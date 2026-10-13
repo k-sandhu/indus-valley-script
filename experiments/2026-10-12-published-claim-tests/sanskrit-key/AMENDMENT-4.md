@@ -1,0 +1,12 @@
+# Amendment 4: analyses added in response to the adversarial review
+
+Recorded 12 October 2026, after the [review](review/REVIEW.md). All earlier outputs remain; new outputs have new file names. These analyses were chosen after the outcomes they address and are exploratory.
+
+1. **Training text and projection** ([`stage3_sens_training.py`](stage3_sens_training.py), [output](stage3/sensitivity_training.json)). The key and the same 1,000 rearrangements as Stage 3 are rescored under models trained on the unsandhied texts only (Ṛgveda, Atharvaveda, Arthaśāstra; 723,483 consonants), with anusvara projected to *m*, and with both. Each setting also reports an order-only statistic: order gain minus the mean order gain of the same texts after 20 within-text shuffles of their signs.
+2. **Fitted readability** ([`stage2b_fitted.py`](stage2b_fitted.py), [output](stage2/fitted_readability.json)). Three hill-climbing runs of 20,000 within-stratum swaps per lexicon maximize the share of texts readable with two-consonant stems.
+3. **Deletion and composition** ([`stage3_token_check.py`](stage3_token_check.py), [output](stage3/token_check.json)). Token-level class shares, empty tokens, empty texts and divergence from the Sanskrit unigram for the key under greedy choice and for every saved Stage 3 optimum, and each optimum's order gain after shuffling its own consonants within texts.
+4. **Local ranks by both rankings** ([`stage3f_local_v2.py`](stage3f_local_v2.py), [output](stage3f/summary-v2.json)). Version 1 is unchanged.
+5. **Near-duplicate control** ([`stage3h_novel_transfer.py`](stage3h_novel_transfer.py), [output](stage3g/novel_transfer.json)). Half-B texts within one substitution, insertion or deletion of a half-A text, or contained in a half-A text, are removed. Constrained fits on half A (Stage 3g seeds) and 30 token-matched random starts are scored on all of B and on the remaining "novel" B, for the real corpus and for the Stage 5 synthetic corpora regenerated from the same seed.
+6. **Verification version 2** ([`verify.py`](verify.py)). Greedy and exhaustive scores are each compared with an independently computed path at 10⁻⁹, and dense-table scores with direct model scores on 396 sequences. The first verification output is kept as `verification-v1.json`.
+
+The protocol's statement that the key table has 715 sign rows is corrected here: `xlits.csv` has 716 rows, 714 signs plus the placeholders 000 and 999.

@@ -41,5 +41,27 @@ The [six-hour continuation](../../experiments/2026-10-02-six-hour/SESSION_LOG.md
 | [October 6–7 research program](2026-10-06-research-program.md) | Multi-model packages, review-driven repairs, a full disk, a broken running script, and caption-based checking of a lecture |
 | [Connections and publication priority](../../experiments/2026-10-02-connections-and-priority/RETROSPECTIVE.md) | Independent precedent review; Susa marked-weight census; Oxus source recovery; South Indian digital/print comparison; Harappa and Lothal source observations |
 | [Original source recovery](../../experiments/2026-10-02-source-recovery/RETROSPECTIVE.md) | Original Gonur and Altyn Depe figures; historical Susa disagreements; South Indian numerical contexts; registered physical views and archive requests |
+| [October 11 grammar and carrier records](2026-10-11-two-approaches.md) | Grammar failure and exploratory class backoff; repeated bundles; face-role control; prototype-law counterexample; proposed token use cycle |
+
+The [October 11 settlement investigation](2026-10-11-settlement-prospection.md) records historical excavation counts, source-access limits, field and remote survey comparisons, mountain/coastal context checks, two actual Opus 5.5 reviews, block-level design repairs and final PDF inspection.
 
 A retry should name the new observation or method that changes the test. The registry preserves each earlier result and the evidence needed to assess that change.
+
+The [early Indian institutions and cultural-memory study](2026-10-11-early-indian-continuity.md) records selective practical transmission, changing origin explanations, a post-audit reset hypothesis, preserved filtering corrections, source-access repairs and independent chronology and arithmetic review. Its next tests compare unusual linked operations and independently dated carriers.
+
+The [societal persistence program](2026-10-11-societal-persistence.md) records direct theoretical predecessors, source-qualified Harappan renewal, conditional output and work-window bounds, shared repair/learning, preserved access failures and independent counterexample and numerical review. Its next tests need measured delivery, renewal windows and participation rather than a generic complexity score.
+
+## 12 October: four Bronze Age documentary comparisons
+
+[Source acquisition, category controls and lexical ambiguity](2026-10-12-bronze-age-comparison.md) records the new Sumerian, Akkadian, Egyptian and Greek study, its source-format repairs, unchanged non-Greek successor outcomes and frozen next-data tests. [Detailed program retrospective](../../experiments/2026-10-12-bronze-age-comparison/RETROSPECTIVE.md).
+
+## 12 October: published-claim tests
+
+[Sanskrit key, foreign finds and allograph tests](2026-10-12-published-claim-tests.md) records the unattended Claude Opus 5.5 package, its source-access repairs, the failed free-assignment language comparison and its constrained replacement, the exploratory power analysis and the subagent reports saved by the coordinating session.
+
+
+## 12 October: structure before meaning
+
+[Diagnosis, six steps and review corrections](2026-10-12-structure-first.md) records the scoping around the concurrent allograph study, hand sign coding with a second coder, corrected copper and line-division endpoints, the segmentation rehearsal and the seventeen accepted review findings.
+
+[Seal-text identity](2026-10-12-seal-text-identity.md) records the locality test of duplicate seal texts, the segment analysis, the review's site breakdown and the corrected sealing counts.

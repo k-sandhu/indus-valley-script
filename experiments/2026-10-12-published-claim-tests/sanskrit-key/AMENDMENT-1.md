@@ -1,0 +1,15 @@
+# Amendment 1: additions after Stage 3 outcomes
+
+Recorded 12 October 2026. The frozen [protocol](../PROTOCOL.md) and all earlier outputs remain in place. The items below were added or changed after particular outcomes had been seen, and are reported as exploratory where stated.
+
+1. **Reference scores in Stage 3.** A timing run printed the key's order gain (−0.393 bits per consonant) and one short annealing result before the full Stage 3 run. Before the full run, three references were added: held-out Sanskrit spans of one to four words scored from the start symbol (line-initial and mid-line), i.i.d. strings at Sanskrit class frequencies with the key's skeleton lengths, and the skeletons of the published readings from Stage 0. The decision rules were not changed.
+
+2. **Validation check.** After Stage 3, random Monier-Williams headwords and the word forms in the published glossing were scored under the same model to confirm that real dictionary words do not receive negative order gain by construction. This check is reported in the verification output.
+
+3. **Stage 3e implementation.** The protocol listed the cross-language comparison as secondary with Sanskrit, Latin and Old Tamil. It was implemented after Stage 3 outcomes with free assignment of one consonant class per sign (no empty values, so the per-consonant objective cannot be improved by deleting signs), three full-corpus fits, three half-A fits and two scrambled fits per language. Sumerian Ur III administrative text from the concurrent Bronze Age package's local ORACC archive (read in place, not modified) was added as a contemporaneous administrative comparator. The Old Tamil text comes from the Hugging Face `starhopp3r/sangam` dataset and the Latin text from four Perseus TEI files (Caesar, Vergil, Cicero, Livy); all remain local.
+
+4. **Stage 3f local ranks.** Added after Stage 3 outcomes. For each sign whose key value is one consonant class, the other signs are held at their key values and the key's class is ranked among fifteen by total order-5 log-likelihood of the texts containing the sign. The same ranks are computed for 20 frequency-stratified permuted keys and for the best annealed key. Exploratory.
+
+5. **Stage 4 presentation.** The first demonstration segmented random-key skeletons into the most frequent lemmas of any part of speech with a weak per-stem penalty, which produced chains of particles such as *as*, *mā* and *eva*, and the gloss extraction printed grammatical notes. That first output was overwritten before this amendment; its code is not preserved. The current version, fixed before rerunning, uses noun, adjective and verb lemmas attested at least three times, prefers longer stems, and strips Monier-Williams markup. The random key and its seed were fixed before either run, and both runs segmented all twelve texts.
+
+6. **Stage 2 glossing cap.** The calibrated readability variant uses the maximum lemma count per reading-skeleton length from Stage 0's description of the published glossing. It was defined after Stage 0 and before any Stage 2 outcome.

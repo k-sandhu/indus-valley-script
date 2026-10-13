@@ -1,0 +1,97 @@
+[
+  {
+    "id": "PUBLISHED-KEY-READABILITY-UNICITY-2026-10-12",
+    "theme": "published decipherment claims, acceptance criteria and unicity distance",
+    "status": "completed-frozen-decision-rules-met-revised-after-review",
+    "question": "Does Yajnadevam's Sanskrit key read the Indus corpus more readily than rearrangements of its own values, and does his unicity-distance argument hold for the representation the key fixes?",
+    "outcome": "With two-consonant stems, random consonant strings at Sanskrit letter frequencies are readable from attested DCS lemmas in 91.8-96.4% of cases at lengths 4-16 and from Monier-Williams headwords in 98.5-99.7%; with one-consonant stems every non-empty skeleton is readable. The key reads 94.8% (DCS) of 1,859 unique texts, above all 1,000 within-stratum permutations (mean 88.9%, max 94.1%), but within-stratum hill-climbing reaches 99.4-99.6%; Monier-Williams: key 96.0%, permutations 93.9%, fitted 99.5%. Held-out redundancy is 0.573 for full text and 0.167 for the fifteen-class skeleton; the preprint's formula gives at most 1,980 consonants (about 790-1,760 under corrections) against 473 in the 50 longest texts. 69.2% of 1,747 published readings match the key's skeleton; most departures add unwritten consonants.",
+    "challenge": "The readability criterion is an emulation with Monier-Williams and DCS lexicons and a small ending set; the preprint's practice adds further freedom (inserted consonants, sandhi, other dictionaries), which would only raise the acceptance rate.",
+    "remedy": "Exact reproduction of the app's key and inherent-vowel rule, independent verification of skeletons and readability shares, local-only raw sources.",
+    "evidence": [
+      "experiments/2026-10-12-published-claim-tests/PROTOCOL.md",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/REPORT.md",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage0/summary.json",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage1/summary.json",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage2/summary.json",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/verification.json",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage2/fitted_readability.json",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/review/REVIEW.md",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/review/RESPONSE.md"
+    ],
+    "retry_when": "A proposed key specifies an acceptance criterion with measured redundancy, or a new lexicon-free criterion is defined; repeating dictionary-readability tests without random-string calibration does not inform."
+  },
+  {
+    "id": "PUBLISHED-KEY-SANSKRIT-LIKELIHOOD-2026-10-12",
+    "theme": "published decipherment claims, language-model likelihood and achievable fit",
+    "status": "completed-frozen-decision-rules-met-revised-after-review",
+    "question": "Are the key's consonant sequences Sanskrit-like under an independent model, compared with permutations of its values, optimized keys, scrambled corpora and other languages under matched freedom?",
+    "outcome": "Order gain under an order-5 DCS model: key -0.393, 1.2 sd above 1,000 within-stratum rearrangements of its own values (89.5th percentile); 2.0-2.4 sd under unsandhied-only training or anusvara->m; an order-only statistic places it inside its rearrangements in all settings (z -0.55 to +0.60). Held-out Sanskrit spans +0.29 to +0.42; i.i.d. strings -0.435; published readings -0.442. Within-stratum optima with unchanged consonant counts reach +0.19 to +0.23; fits to scrambled texts +0.02 to +0.04 (real order -0.22 to -0.33). Unconstrained optima (+0.47 to +0.69) delete 22-46% of signs as vowels. Under matched freedom, half-split transfer z is 7.7 Sanskrit, 8.6 Latin, 8.1 Old Tamil, 6.4 Sumerian, and 6.3-7.0 on half-B texts without near-duplicates. Stage 3e failed through a rare-class artefact and is preserved.",
+    "challenge": "Inscriptions may be formulaic names or titles rather than running speech; the model is built from Vedic and classical text. Annealed optima partly exploit the model, so they bound achievable fit rather than estimate a true key.",
+    "remedy": "References from held-out spans, single words and random headwords; exhaustive-choice sensitivity; token-frequency-constrained repair (Amendment 2); independent verification; adversarial review.",
+    "evidence": [
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage3/summary.json",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage3/validation.json",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage3/sensitivity_exhaustive.json",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage3f/summary.json",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage3e/summary.json",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage3g/derived.json",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/AMENDMENT-1.md",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/AMENDMENT-2.md",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage3/sensitivity_training.json",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage3/token_check.json",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage3f/summary-v2.json",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage3g/novel_transfer.json",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/AMENDMENT-4.md"
+    ],
+    "retry_when": "A new key, a model of seal-formula language, or independently segmented texts allow a held-out comparison; the same key needs no rerun."
+  },
+  {
+    "id": "KEY-CALIBRATION-POWER-SYNTHETIC-2026-10-12",
+    "theme": "identifiability of phonetic keys at Indus corpus scale",
+    "status": "completed-exploratory-synthetic-reference",
+    "question": "On synthetic corpora with the Indus shape (1,859 texts, Indus lengths, Indus sign frequencies) encoding held-out Sanskrit, Latin, Old Tamil or Sumerian, how far does the true key stand above its permutations, how much does blind annealing recover, and does half-split transfer identify the language?",
+    "outcome": "True homophonic keys exceed their within-stratum rearrangements by 27.4, 33.2, 37.1 and 72.5 standard deviations; the published key on the real corpus by 1.2-2.4. Annealing under the correct model recovered 37-83% of tokens in seven runs and 7% in one. Language identification by half-split transfer depends on seeds: Stage 5 identified Old Tamil and Sumerian but not Sanskrit or Latin; the near-duplicate rerun identified Latin and Old Tamil, tied Sanskrit with Latin and missed Sumerian. No wrong-language model exceeded z 3.1 on novel half-B texts, while the real corpus transfers at 6.3-7.0 under all four models. Indus half B reuses 37.4% of half-A trigrams against 8.2-10.1% for synthetic corpora.",
+    "challenge": "Synthetic corpora are homophonic consonant encodings of running text; real inscriptions may be formulaic, logographic or nonlinguistic. Three runs per cell.",
+    "remedy": "Same procedure, strata and step counts as Stage 3g; held-out text not used in model training; designed after outcomes and labelled exploratory (Amendment 3).",
+    "evidence": [
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage5/summary.json",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage5/derived.json",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/AMENDMENT-3.md",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage5/ngram_reuse.json",
+      "experiments/2026-10-12-published-claim-tests/sanskrit-key/stage3g/novel_transfer.json"
+    ],
+    "retry_when": "A formulaic or logographic synthetic generator, or segmented Indus units, change the alternative under test."
+  },
+  {
+    "id": "FOREIGN-FINDS-SEQUENCE-STATISTICS-2026-10-12",
+    "theme": "Indus-script texts found outside South Asia",
+    "status": "completed-frozen-primary-tests-with-exploratory-checks",
+    "question": "Do Indus-script texts found in Mesopotamia, the Gulf, Iran and Central Asia follow South Asian sign-sequence statistics, and is any deviation larger than regional variation inside South Asia?",
+    "outcome": "28 West Asian objects: mean u 0.770 (0.660-0.866), excess 2.11 bits per transition, p at the 1/20,000 floor; round seals 0.870 (0.776-0.945). South Asian regions 0.49-0.57; all four regional differences exclude zero. South Asian round seals 0.704 (0.531-0.872); foreign-minus-South-Asian round 0.165 (-0.026 to 0.357). Central Asian square seals 0.403. Common signs in unusual orders: 3 of 22 foreign texts end with W740 against 34.9% of comparators.",
+    "challenge": "Small subgroup sizes, transcriptions from published drawings, incomplete join to Laursen's seal numbers, and several rival accounts (another language, names, pseudo-writing, genre, date) predict the same statistic.",
+    "remedy": "Frozen protocol with hashes, damage-matched comparators, eight sensitivities, independent verifier (22/22 checks).",
+    "evidence": [
+      "experiments/2026-10-12-published-claim-tests/foreign-finds/PROTOCOL.md",
+      "experiments/2026-10-12-published-claim-tests/foreign-finds/REPORT.md",
+      "experiments/2026-10-12-published-claim-tests/foreign-finds/run-2026-10-12/summary.json",
+      "experiments/2026-10-12-published-claim-tests/foreign-finds/verify-2026-10-12.json"
+    ],
+    "retry_when": "Plate-checked transcriptions of the Gulf-type seals, Laursen's Table 1 joins, or dated contexts for South Asian circular seals become available."
+  },
+  {
+    "id": "KEY-ALLOGRAPH-HOMOPHONE-SUBSTITUTION-2026-10-12",
+    "theme": "sign-list structure asserted by a published key",
+    "status": "completed-frozen-primary-tests-with-post-outcome-diagnostics",
+    "question": "Do the key's variant groups and same-value (homophone) groups substitute in identical frames and share neighbours more than frequency-matched sign pairs?",
+    "outcome": "Variant pairs: 0.199 minimal pairs per pair against 0.018 (p 0.0005); out-of-Mayig-class variants still 4.6 times the null. Homophone base pairs: 0.083 against 0.053 (p 0.13) and neighbour divergence 0.668 against 0.677 (p 0.21). Adjacent Wells codes in different key roots, mostly stroke numerals, show the same excess as out-of-class variants. Jar-stroke ordering holds in 94 of 97 eligible texts. Table has 88 bases, 412 variants and 214 ligatures; 18 pooled values.",
+    "challenge": "Substitution marks distributional relatedness, which numerals or title sets also produce; the Mayig classes are one annotator's grouping; conjunct test had no power.",
+    "remedy": "Stratified relabelling null preserving pair structure, cluster bootstrap, Holm correction, independent verification (43/43 checks).",
+    "evidence": [
+      "experiments/2026-10-12-published-claim-tests/allographs/PROTOCOL.md",
+      "experiments/2026-10-12-published-claim-tests/allographs/REPORT.md",
+      "experiments/2026-10-12-published-claim-tests/allographs/run-2026-10-12/summary.json",
+      "experiments/2026-10-12-published-claim-tests/allographs/run-2026-10-12/verification.json"
+    ],
+    "retry_when": "A second sign list's groupings or a data-driven clustering supplies a comparison set; local-context conjunct tests are designed."
+  }
+]

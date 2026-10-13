@@ -1,0 +1,122 @@
+{
+  "fold": 3,
+  "selected_grammar_weight": 0.2,
+  "validation_tokens": 6409,
+  "inner_cross_entropy_bits": {
+    "0": 5.897118944819302,
+    "0.05": 5.85651100750616,
+    "0.1": 5.835273467513589,
+    "0.2": 5.817858836524281,
+    "0.3": 5.82115906017986,
+    "0.5": 5.873009514686901,
+    "0.75": 6.027413226367421,
+    "1.0": 6.425307714393555
+  },
+  "outer_summary": {
+    "texts": 299,
+    "tokens": 1600,
+    "components": 289,
+    "cross_entropy_bits_per_token": {
+      "POSITION": 6.633602396787433,
+      "MARKOV": 5.849674530418521,
+      "GRAMMAR": 5.73558986407364
+    },
+    "contrasts": {
+      "GRAMMAR_minus_MARKOV": {
+        "bits_per_token": 0.11408466634487774,
+        "conditional_component_bootstrap_95_ci": [
+          0.08577661194785266,
+          0.14409901743965606
+        ],
+        "equal_text_weight_bits_per_token": 0.1182983560195484,
+        "noninitial_bits_per_token": 0.1156359129427521
+      },
+      "GRAMMAR_minus_POSITION": {
+        "bits_per_token": 0.8980125327137907,
+        "conditional_component_bootstrap_95_ci": [
+          0.7894902465449731,
+          1.0037505063596508
+        ],
+        "equal_text_weight_bits_per_token": 0.8367840526272963,
+        "noninitial_bits_per_token": 1.079728600252712
+      }
+    },
+    "OOV_tokens": 50,
+    "OOV_rate": 0.03125,
+    "strata": {
+      "OOV_target": {
+        "tokens": 50,
+        "cross_entropy_bits_per_token": {
+          "POSITION": 15.247351682919396,
+          "MARKOV": 16.116987761073162,
+          "GRAMMAR": 16.310630651661892,
+          "PRIMARY_GRAMMAR": 18.450134639380455
+        },
+        "GRAMMAR_minus_MARKOV_bits_per_token": -0.19364289058872827
+      },
+      "final": {
+        "tokens": 299,
+        "cross_entropy_bits_per_token": {
+          "POSITION": 4.705020801721727,
+          "MARKOV": 3.89234369950533,
+          "GRAMMAR": 3.847515375614629,
+          "PRIMARY_GRAMMAR": 4.4961993045861615
+        },
+        "GRAMMAR_minus_MARKOV_bits_per_token": 0.044828323890700884
+      },
+      "initial": {
+        "tokens": 299,
+        "cross_entropy_bits_per_token": {
+          "POSITION": 7.5853756569332065,
+          "MARKOV": 7.5853756569332065,
+          "GRAMMAR": 7.478040729129565,
+          "PRIMARY_GRAMMAR": 7.543993145994461
+        },
+        "GRAMMAR_minus_MARKOV_bits_per_token": 0.10733492780364214
+      },
+      "internal": {
+        "tokens": 1002,
+        "cross_entropy_bits_per_token": {
+          "POSITION": 6.925085123475106,
+          "MARKOV": 5.915809542010489,
+          "GRAMMAR": 5.779044418362589,
+          "PRIMARY_GRAMMAR": 6.517449106340886
+        },
+        "GRAMMAR_minus_MARKOV_bits_per_token": 0.13676512364790036
+      },
+      "known_target": {
+        "tokens": 1550,
+        "cross_entropy_bits_per_token": {
+          "POSITION": 6.355739516589632,
+          "MARKOV": 5.518470877816754,
+          "GRAMMAR": 5.394459516086915,
+          "PRIMARY_GRAMMAR": 5.940641816327846
+        },
+        "GRAMMAR_minus_MARKOV_bits_per_token": 0.12401136172983951
+      },
+      "seen_bigram_known_target": {
+        "tokens": 861,
+        "cross_entropy_bits_per_token": {
+          "POSITION": 5.427570308060862,
+          "MARKOV": 3.2571941851329846,
+          "GRAMMAR": 3.3516821099928618,
+          "PRIMARY_GRAMMAR": 4.524689085059143
+        },
+        "GRAMMAR_minus_MARKOV_bits_per_token": -0.09448792485987675
+      },
+      "unseen_bigram_known_target": {
+        "tokens": 408,
+        "cross_entropy_bits_per_token": {
+          "POSITION": 7.809594369179006,
+          "MARKOV": 9.208926358745094,
+          "GRAMMAR": 8.629424592866316,
+          "PRIMARY_GRAMMAR": 8.307109440547816
+        },
+        "GRAMMAR_minus_MARKOV_bits_per_token": 0.5795017658787776
+      }
+    },
+    "bootstrap_draws": 5000,
+    "bootstrap_seed": 20261014,
+    "bootstrap_scope": "Conditional on fitted models and observed fold design; component resampling with fixed benchmark weights."
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "status": "SYNTHETIC: constructed sensitivity examples, not estimates of archaeological quantities",
+  "square_equivalent_geometry": [
+    {
+      "area_ha": 1.0,
+      "square_equivalent_side_m": 100.0
+    },
+    {
+      "area_ha": 5.0,
+      "square_equivalent_side_m": 223.60679774997897
+    },
+    {
+      "area_ha": 30.0,
+      "square_equivalent_side_m": 547.7225575051662
+    },
+    {
+      "area_ha": 66.7,
+      "square_equivalent_side_m": 816.7006795638167
+    },
+    {
+      "area_ha": 200.0,
+      "square_equivalent_side_m": 1414.213562373095
+    }
+  ],
+  "geometry_definition": "The side length of a square with the stated area; it does not describe a site's actual shape, phase, or surviving extent.",
+  "yield_formula": "recovered_fragments = 10000 * area_ha * excavated_area_fraction * deposit_thickness_m * deposited_fragment_density_per_m3 * recovery_fraction",
+  "density_definition": "Deposited in-ground fragment density before excavation, collection or retention losses; recovery is applied once as a separate fraction.",
+  "yield_scenarios": [
+    {
+      "area_ha": 30.0,
+      "excavated_area_fraction": 0.01,
+      "deposit_thickness_m": 1.0,
+      "excavated_volume_m3": 3000.0,
+      "assumed_deposited_fragment_density_per_m3": 5.0,
+      "assumed_recovery_fraction": 0.8,
+      "synthetic_recovered_fragments": 12000.0
+    },
+    {
+      "area_ha": 30.0,
+      "excavated_area_fraction": 0.01,
+      "deposit_thickness_m": 1.0,
+      "excavated_volume_m3": 3000.0,
+      "assumed_deposited_fragment_density_per_m3": 50.0,
+      "assumed_recovery_fraction": 0.8,
+      "synthetic_recovered_fragments": 120000.0
+    },
+    {
+      "area_ha": 30.0,
+      "excavated_area_fraction": 0.01,
+      "deposit_thickness_m": 1.0,
+      "excavated_volume_m3": 3000.0,
+      "assumed_deposited_fragment_density_per_m3": 500.0,
+      "assumed_recovery_fraction": 0.8,
+      "synthetic_recovered_fragments": 1200000.0
+    }
+  ],
+  "yield_assumptions": "All values are selected for illustration. No source-derived fragment-density calibration, rare-object rate, whole-site forecast or civilization-wide total is supplied.",
+  "observation_nonidentifiability_examples": [
+    {
+      "constructed_true_sites": 200,
+      "constructed_overall_recording_probability": 0.5,
+      "expected_recorded_sites": 100.0
+    },
+    {
+      "constructed_true_sites": 1000,
+      "constructed_overall_recording_probability": 0.1,
+      "expected_recorded_sites": 100.0
+    }
+  ],
+  "observation_statement": "Different true totals and overall recording probabilities give the same expected record count. Without restrictions on the recording process, an observed count does not identify the missing total.",
+  "conditional_observation_chain": [
+    "occupied places",
+    "surviving deposits",
+    "surveyed deposits",
+    "method-detected deposits",
+    "dated or attributed evidence",
+    "published records"
+  ],
+  "conditional_chain_formula": "P(record|occupied) = P(survives|occupied) * P(surveyed|survives,occupied) * P(detected|surveyed,survives,occupied) * P(dated|detected,surveyed,survives,occupied) * P(published|dated,detected,surveyed,survives,occupied)",
+  "conditional_chain_assumption": "This is the chain rule for conditional probabilities; it does not require independent stages.",
+  "repeat_detection": [
+    {
+      "constructed_per_visit_detection_probability": 0.0,
+      "visits": 1,
+      "constructed_at_least_once_detection_probability": 0.0
+    },
+    {
+      "constructed_per_visit_detection_probability": 0.0,
+      "visits": 2,
+      "constructed_at_least_once_detection_probability": 0.0
+    },
+    {
+      "constructed_per_visit_detection_probability": 0.0,
+      "visits": 3,
+      "constructed_at_least_once_detection_probability": 0.0
+    },
+    {
+      "constructed_per_visit_detection_probability": 0.0,
+      "visits": 5,
+      "constructed_at_least_once_detection_probability": 0.0
+    },
+    {
+      "constructed_per_visit_detection_probability": 0.0,
+      "visits": 10,
+      "constructed_at_least_once_detection_probability": 0.0
+    },
+    {
+      "constructed_per_visit_detection_probability": 0.1,
+      "visits": 1,
+      "constructed_at_least_once_detection_probability": 0.09999999999999998
+    },
+    {
+      "constructed_per_visit_detection_probability": 0.1,
+      "visits": 2,
+      "constructed_at_least_once_detection_probability": 0.18999999999999995
+    },
+    {
+      "constructed_per_visit_detection_probability": 0.1,
+      "visits": 3,
+      "constructed_at_least_once_detection_probability": 0.2709999999999999
+    },
+    {
+      "constructed_per_visit_detection_probability": 0.1,
+      "visits": 5,
+      "constructed_at_least_once_detection_probability": 0.40950999999999993
+    },
+    {
+      "constructed_per_visit_detection_probability": 0.1,
+      "visits": 10,
+      "constructed_at_least_once_detection_probability": 0.6513215599
+    },
+    {
+      "constructed_per_visit_detection_probability": 0.5,
+      "visits": 1,
+      "constructed_at_least_once_detection_probability": 0.5
+    },
+    {
+      "constructed_per_visit_detection_probability": 0.5,
+      "visits": 2,
+      "constructed_at_least_once_detection_probability": 0.75
+    },
+    {
+      "constructed_per_visit_detection_probability": 0.5,
+      "visits": 3,
+      "constructed_at_least_once_detection_probability": 0.875
+    },
+    {
+      "constructed_per_visit_detection_probability": 0.5,
+      "visits": 5,
+      "constructed_at_least_once_detection_probability": 0.96875
+    },
+    {
+      "constructed_per_visit_detection_probability": 0.5,
+      "visits": 10,
+      "constructed_at_least_once_detection_probability": 0.9990234375
+    }
+  ],
+  "repeat_formula": "P(detected at least once) = 1 - (1-p)^k",
+  "repeat_assumptions": "The formula assumes a constant per-visit probability and independent visits. Shared seasonal visibility, prior survey choices and inaccessible or deeply buried deposits can violate it. A method with p=0 remains uninformative on repetition."
+}

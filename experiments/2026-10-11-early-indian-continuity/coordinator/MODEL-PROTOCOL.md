@@ -1,0 +1,13 @@
+# Separate retention channels: synthetic calculation
+
+Specified before calculating the outputs, 11 October 2026.
+
+An invented tradition starts with the correct version of a procedure and the correct attribution of that procedure to one of two invented origins. Neither origin represents a historical people. The four states record correctness of the procedure and correctness of the attribution. A transmission step can flip each channel. Procedure errors can then be repaired through feedback; attribution errors have no repair channel in this model.
+
+For procedural flip probability `e` and repair probability `r`, the probability of a correct procedure next step is `1-e(1-r)` from a correct state, and `e+(1-e)r` from an incorrect state. For attribution flip probability `d`, the corresponding probabilities are `1-d` and `d`. The two transitions are independent by construction. These parameters and transmission steps are invented. They are not estimates of oral transmission, chronological duration or Harappan continuity.
+
+The primary scenario has `e=1/10`, `r=9/10`, `d=1/10` and 20 transmission steps. Its matched unprotected reference sets `r=0`. The sensitivity grid is the Cartesian product `e in {1/100,1/10,3/10}`, `r in {0,1/2,9/10}`, `d in {0,1/100,1/10,3/10}`, and steps `{0,1,5,20,100}`: 180 scenarios. Endpoints are probability of the correct procedure, probability of the correct attribution, their joint probability and probability of a correct procedure with incorrect attribution. All calculations use rational arithmetic on the four-state transition matrix.
+
+A second endpoint compares the observable procedural marginal under the two different initial origins. It has total variation distance zero because the procedural process does not depend on origin. The attribution-label distributions can differ: without attribution repair, their total variation distance is `|1-2d|^n`. This measures discrimination under the specified synthetic law, not reliability of an ancient narrative. A repeated copy of the same surviving attribution supplies one observation in this model.
+
+The model establishes a counterexample to a logical inference: procedure preservation need not entail historical-attribution preservation. It does not produce literary complexity, reconstruct a real institution or demonstrate that any ancient tradition lost its attribution. Both protected and unprotected procedures, and stable and unstable attributions, remain in the grid. Independent review will check the transition law, matrix enumeration, closed-form attribution formula, boundary cases and interpretation.

@@ -1,0 +1,1827 @@
+{
+  "scope": "Narrow final source/region audit of sources-v5 and candidates-v4 against Claude V2 F1/F2/F3/F4/F6/F7 and history addendum; no broad research or full analysis rerun.",
+  "checked_utc": "2026-10-11T06:07:32.613672+00:00",
+  "audit_author": "Commissioned Codex subagent; AI source/metadata and design check, not archaeological expert elicitation or formal peer review.",
+  "inputs": [
+    {
+      "path": "experiments/2026-10-11-settlement-prospection/sources-v4.json",
+      "bytes": 74045,
+      "sha256": "96e13b06ae7e35adda829218a98c61c895fa732d46b965f94c23d46f54af8bc7"
+    },
+    {
+      "path": "experiments/2026-10-11-settlement-prospection/sources-v5.json",
+      "bytes": 75086,
+      "sha256": "1a5270162b43a6ae8135f183bc47ab32f836cd0f2ac3334aed5a32393ba5683c"
+    },
+    {
+      "path": "experiments/2026-10-11-settlement-prospection/candidates-v3.json",
+      "bytes": 55319,
+      "sha256": "458cea98939d13725b9c94aaf57b4002d1f216607f5e3feec1683596da1bbae7"
+    },
+    {
+      "path": "experiments/2026-10-11-settlement-prospection/candidates-v4.json",
+      "bytes": 62952,
+      "sha256": "81d936b7ab3f60970f80e580a236c438a2159810b200304067aa742e50be0a1e"
+    },
+    {
+      "path": "experiments/2026-10-11-settlement-prospection/research/history-source-addendum.json",
+      "bytes": 3292,
+      "sha256": "cc71bf19a2b11b69bcfa5907e36079bd487f7aec319b04f75fe2e3480254dda1"
+    },
+    {
+      "path": "experiments/2026-10-11-settlement-prospection/review/claude-opus55-v2/review.md",
+      "bytes": 14476,
+      "sha256": "750349c3c293756fd0a83c67bd90955f653c09b3fd5438ba8fa2454b5e38a1b2"
+    }
+  ],
+  "summary": {
+    "pass": 127,
+    "clarify": 2
+  },
+  "checks_count_interpretation": "Implementation bookkeeping; shared sources and assumptions mean these checks are not independent evidential weight.",
+  "checks": [
+    {
+      "id": "source_ids_preserved",
+      "status": "pass",
+      "description": "The 72 source IDs are preserved.",
+      "evidence": {
+        "count": 72
+      }
+    },
+    {
+      "id": "region_ids_preserved",
+      "status": "pass",
+      "description": "The 21 region IDs are preserved.",
+      "evidence": {
+        "count": 21
+      }
+    },
+    {
+      "id": "source_change_scope",
+      "status": "pass",
+      "description": "Register changes are confined to the documented access and observation corrections.",
+      "evidence": {
+        "R01": [
+          "access_depth",
+          "locator",
+          "observation",
+          "raw_witness"
+        ],
+        "R07": [
+          "observation"
+        ],
+        "R08": [
+          "observation"
+        ],
+        "R21": [
+          "observation"
+        ],
+        "R41": [
+          "observation"
+        ]
+      }
+    },
+    {
+      "id": "raw_R01",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R01",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/HISTORY_LUCKNOW_HARAPPAN.pdf",
+        "bytes": 5056143,
+        "sha256": "5d85a7b72f900ffc3ce11f1074978df448e5bba97a1c58b58382f8690b828845",
+        "rights": "unverified; local-only"
+      }
+    },
+    {
+      "id": "raw_R03",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R03",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/ICOMOS1990.pdf",
+        "sha256": "f760f1a6f952b2ea5804d07a7b761eba1b274ed7d118eda0b51814ddd5e4c865",
+        "bytes": 88674,
+        "retrieved_utc": "2026-10-11T04:55:46.672131+00:00"
+      }
+    },
+    {
+      "id": "raw_R04",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R04",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/UNESCO2026.html",
+        "sha256": "60e8854d81cea506389416acd9392b21aea596dc0c9f411e1ae2049c65d052d9",
+        "bytes": 160024,
+        "retrieved_utc": "2026-10-11T04:51:31.685718+00:00"
+      }
+    },
+    {
+      "id": "raw_R05",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R05",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/RIHN2007.pdf",
+        "sha256": "fed4ce49a2127097aaf5314671ddc7d023cc22ded119fab70bf5943f99e00dcb",
+        "bytes": 3557472,
+        "retrieved_utc": "2026-10-11T04:51:35.466053+00:00"
+      }
+    },
+    {
+      "id": "raw_R07",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R07",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/GULZAR2018.pdf",
+        "sha256": "f1b241400c0474d326782589df566a8c76e02837b21153b59f1a8cb4adf1fbe0",
+        "bytes": 882062,
+        "retrieved_utc": "2026-10-11T04:45:56.408633+00:00"
+      }
+    },
+    {
+      "id": "raw_R08",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R08",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/ORENGO2020.xml",
+        "sha256": "80fefbff848e5bbaad9a3e496610e3a97ea9e9440ad5c6d4879d799fa0c596f9",
+        "bytes": 163355,
+        "retrieved_utc": "2026-10-11T04:44:28.006229+00:00"
+      }
+    },
+    {
+      "id": "raw_R09",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R09",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/PETRIE2019.pdf",
+        "sha256": "4c8badd6ef1ef71c30cfbbb7ba532413f375b1d2da7700dc468890ee4bb60063",
+        "bytes": 7107129,
+        "retrieved_utc": "2026-10-11T04:45:18.454239+00:00"
+      }
+    },
+    {
+      "id": "raw_R10",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R10",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/GREEN2019.pdf",
+        "sha256": "fee0281b64335fc3c33ec3ab01a0a28c4a377118b0ad8d794e6d66e96b5c8c65",
+        "bytes": 9111864,
+        "retrieved_utc": "2026-10-11T04:45:18.454795+00:00"
+      }
+    },
+    {
+      "id": "raw_R11",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R11",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/GARCIA2023.pdf",
+        "sha256": "79a2e7c8c48221c7c00864ef39af6bcbf2628840db4f2cf3e6e0ad9c2ec82508",
+        "bytes": 11395175,
+        "retrieved_utc": "2026-10-11T04:51:32.902447+00:00"
+      }
+    },
+    {
+      "id": "raw_R12",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R12",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/BERGANZO2023.xml",
+        "sha256": "cbe094a69d4182b13687febd3d6ada8a87d363d1301c73cbc088321cfca74398",
+        "bytes": 103685,
+        "retrieved_utc": "2026-10-11T04:52:33.898648+00:00"
+      }
+    },
+    {
+      "id": "raw_R13",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R13",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/HIDDEN2025_VOR.pdf",
+        "sha256": "7361a1e7ba29c76e091dbe9a677ecd5e32d5f6e99c5511d70bf9ea9947ad58dd",
+        "bytes": 5647375,
+        "retrieved_utc": "2026-10-11T04:49:51.325115+00:00"
+      }
+    },
+    {
+      "id": "raw_R15",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R15",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/SINGH2017.pdf",
+        "sha256": "e8fb896c5405aba29c958e143547a092b605bb0746c0eec488814dda4a646478",
+        "bytes": 17139060,
+        "retrieved_utc": "2026-10-11T04:45:19.168678+00:00"
+      }
+    },
+    {
+      "id": "raw_R16",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R16",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/SINGH2020.pdf",
+        "sha256": "7c3c45a01726e0e5b84c838bca75450850c071a0ee494708e392ba7a57193490",
+        "bytes": 932117,
+        "retrieved_utc": "2026-10-11T04:49:51.042080+00:00"
+      }
+    },
+    {
+      "id": "raw_R18",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R18",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/CONESA2014.pdf",
+        "sha256": "d2f858ea4eaae8db27612568a6319504525efc63dcbb59062fe92648e108f3aa",
+        "bytes": 18220661,
+        "retrieved_utc": "2026-10-11T04:49:50.563695+00:00"
+      }
+    },
+    {
+      "id": "raw_R19",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R19",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/RAJESH2025.pdf",
+        "sha256": "af6bfabf6ea97978c539e0e7bb85c72b92b1e27d807f92f3e9dfe5ab2a55bab2",
+        "bytes": 742098,
+        "retrieved_utc": "2026-10-11T04:49:51.429231+00:00"
+      }
+    },
+    {
+      "id": "raw_R20",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R20",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/GIAP2024.html",
+        "sha256": "d9e1f9313c8ab3119b473ad8c1a9029f35088e6ba36767477ab32ddf76c2ca23",
+        "bytes": 471431,
+        "retrieved_utc": "2026-10-11T04:56:37.372500+00:00"
+      }
+    },
+    {
+      "id": "raw_R21",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R21",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/SINDH2022.html",
+        "sha256": "20bb8c65fb3cd03ab8929ed4eeaf1504460e5628669600a868b652ba68a8dacc",
+        "bytes": 203937,
+        "retrieved_utc": "2026-10-11T04:51:33.500632+00:00"
+      }
+    },
+    {
+      "id": "raw_R22",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R22",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/BIAGI2008.pdf",
+        "sha256": "a3ad478214b34be2b2f7d73cf49c05007582fb89d59b65d0ee43dc49705ae5b1",
+        "bytes": 2571386,
+        "retrieved_utc": "2026-10-11T04:56:38.131946+00:00"
+      }
+    },
+    {
+      "id": "raw_R24",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R24",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/BATES2017.pdf",
+        "sha256": "f03bfea5ca8df4bb3a8ae86674513d6d38808ec086a458f08a49938d17699c22",
+        "bytes": 1141036,
+        "retrieved_utc": "2026-10-11T04:55:47.009382+00:00"
+      }
+    },
+    {
+      "id": "raw_R27",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R27",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/MAHSA2026.html",
+        "sha256": "585f622fad4a99b90551e1dd723271edf5a4f4ff21e3a72280ef10a82354fab8",
+        "bytes": 110976,
+        "retrieved_utc": "2026-10-11T04:56:37.046441+00:00"
+      }
+    },
+    {
+      "id": "raw_R30",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R30",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/HARP1993.pdf",
+        "sha256": "9a246e9ad60b8ff4528be31663c436e7828d015a2a251461bf27bd05b4d04f71",
+        "bytes": 4295953,
+        "retrieved_utc": "2026-10-11T04:45:57.023369+00:00"
+      }
+    },
+    {
+      "id": "raw_R33",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R33",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/SRIVASTAVA2023.pdf",
+        "sha256": "a2b198fcb588ae7cd46def6bfc165a8ad36498b65addb04a7b030064fcb0dd68",
+        "bytes": 3573979,
+        "retrieved_utc": "2026-10-11T05:04:53.137684+00:00"
+      }
+    },
+    {
+      "id": "raw_R35",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R35",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/ENVIRONMENT2026.pdf",
+        "sha256": "f44eb426f2418880ba92b3feb577e63cbc938499f4206e176b24b3dec48009c0",
+        "bytes": 2619837,
+        "retrieved_utc": "2026-10-11T05:03:48.638851+00:00"
+      }
+    },
+    {
+      "id": "raw_R39",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R39",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/MOUNTAIN_MEHRGARH1980.html",
+        "sha256": "4e88c879f0c5fe5c74672f176e778a66016fa59db57a101b2c3a8c87f2d2b0e7",
+        "bytes": 80044
+      }
+    },
+    {
+      "id": "raw_R40",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R40",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/MOUNTAIN_MUTIN2025.pdf",
+        "sha256": "131e85b4c354de1e0b2a911205bd308f83a0bbc501f230fda47642b2a4acd933",
+        "bytes": 1649672
+      }
+    },
+    {
+      "id": "raw_R41",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R41",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/MOUNTAIN_GHAZI_GOV2026.html",
+        "sha256": "99e0423f0316fa8799a1ded26478cbed229e9975984af5a5926967446c058e86",
+        "bytes": 20946
+      }
+    },
+    {
+      "id": "raw_R42",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R42",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/MOUNTAIN_HAL2026.json",
+        "sha256": "a1244d953fb41a4b60d2c092572cfad2fef21988d30c2f3dae9fee92e211e3c7",
+        "bytes": 2632
+      }
+    },
+    {
+      "id": "raw_R47",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R47",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/MOUNTAIN_IVORRA2024.pdf",
+        "sha256": "e2b6dd9cf70169b637d2444977fee62b3346c2c0a62e237348f16601a5a229f7",
+        "bytes": 844732
+      }
+    },
+    {
+      "id": "raw_R46",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R46",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/MOUNTAIN_OLIVIERI2011.pdf",
+        "sha256": "a64cd36a409bab3238c87b74f18fc137820cc1fca2af2d11ab724a20aff6821d",
+        "bytes": 12327158
+      }
+    },
+    {
+      "id": "raw_R44",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R44",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/MOUNTAIN_KAKAR2005.pdf",
+        "sha256": "27d749e2aa7b18386987f20fb4f90f6791d67b6529334fefa5cea553343a2eaa",
+        "bytes": 1385995
+      }
+    },
+    {
+      "id": "raw_R45",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R45",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/MOUNTAIN_NAUSHARO_GOV2026.html",
+        "sha256": "7fe9972cab2a669e332a66b80821a1b9b0a54fe2a7a2ca3261dbb76120927a87",
+        "bytes": 19878
+      }
+    },
+    {
+      "id": "raw_R48",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R48",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/SUTKAGEN2026.html",
+        "bytes": 19669,
+        "sha256": "d17807aa508fc97e4fe68335d8cf3f636bbcd686a9fb78d3da50e0777e4e8090"
+      }
+    },
+    {
+      "id": "raw_R50",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R50",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/MOUNTAIN_BESENVAL1997.html",
+        "sha256": "cebcbf7a41e6d94ac0c1e23c07988c94c74311bd4bf7d988e6451b14f46215e1",
+        "bytes": 123627
+      }
+    },
+    {
+      "id": "raw_R51",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R51",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/RECENT_UW2025.html",
+        "sha256": "67bdd73b6da058e9d78e89a3ae0739ee5c79bf40844581ff326fb6896bf05cf8",
+        "bytes": 240556
+      }
+    },
+    {
+      "id": "raw_R52",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R52",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/RECENT_PARTICIPANT2026.html",
+        "sha256": "25957e5e2403c3c48ab440337a7fce5599ed3e83d54505ed940f5bcfcb42f4a4",
+        "bytes": 193524
+      }
+    },
+    {
+      "id": "raw_R53",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R53",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/RECENT_GREEN2026.html",
+        "sha256": "6c35e8d858701621aef0a25ba4027d257ac239203c940fc1e67479ab253e79c5",
+        "bytes": 1150565
+      }
+    },
+    {
+      "id": "raw_R56",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R56",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/ESTIMATION_CENSUS2020PES.pdf",
+        "bytes": 1059961,
+        "sha256": "e127d618980af0411533c6c2463f6b64e6726fd0e22f5b28f34a3b1be7ff9e99"
+      }
+    },
+    {
+      "id": "raw_R59",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R59",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/ESTIMATION_COLWELL2004.pdf",
+        "bytes": 325739,
+        "sha256": "a30b95ef27f83272024a8ff60959d19ea555c4df5bb088f0405660e5c017215c"
+      }
+    },
+    {
+      "id": "raw_R61",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R61",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/ANCHOR_DALES1965.html",
+        "bytes": 52069,
+        "sha256": "62b817c000dc8f7bf26d995c3173f394eee71598aac68f67a2495b3205dffb6c",
+        "rights": "unverified; local-only"
+      }
+    },
+    {
+      "id": "raw_R62",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R62",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/ANCHOR_RAKHIGARHI_INVENTORY.pdf",
+        "bytes": 11744633,
+        "sha256": "7febeb954f4a141ce2c1b1259fbb54b6dbd586bd57ba4d0a6ad7a69342830445",
+        "rights": "unverified; local-only"
+      }
+    },
+    {
+      "id": "raw_R63",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R63",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/ANCHOR_HARAPPA1997.pdf",
+        "bytes": 3042895,
+        "sha256": "4ce604f7ed11d247a6ab88e49da946d00cdc1b2787b3dd2c58b327c95a7a51d3",
+        "rights": "unverified; local-only"
+      }
+    },
+    {
+      "id": "raw_R64",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R64",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/ANCHOR_USGS_MAKRAN1979.html",
+        "bytes": 77424,
+        "sha256": "39032dc82118ed5f1301cc12dfd32d45cf38db3357beef62da79108f6d7883ae",
+        "rights": "unverified; local-only"
+      }
+    },
+    {
+      "id": "raw_R65",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R65",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/ANCHOR_MAKRAN2019.html",
+        "bytes": 941519,
+        "sha256": "e8bc976dc1022258aaf637d0f1889e205235b496910adb9cf094cd41afd7ef27",
+        "rights": "unverified; local-only"
+      }
+    },
+    {
+      "id": "raw_R66",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R66",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/ANCHOR_DALES1962.html",
+        "bytes": 60095,
+        "sha256": "2b9c97812a870a1fee1423db7f5d6b1111cb42b34f5ebfe7644961e6e53c0fe6",
+        "rights": "unverified; local-only"
+      }
+    },
+    {
+      "id": "raw_R67",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R67",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/ANCHOR_MANDA.html",
+        "bytes": 136083,
+        "sha256": "d12bb02382da55fb1fef6eb2073204c71a31b807c8e567e0e1f91d1dad0ad67c",
+        "rights": "unverified; local-only"
+      }
+    },
+    {
+      "id": "raw_R68",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R68",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/ANCHOR_ROPAR.html",
+        "bytes": 127011,
+        "sha256": "2fc8b7c33817a8f4d5bdbb202880baac1806594745fa17f00c19f5efbb51bbaa",
+        "rights": "unverified; local-only"
+      }
+    },
+    {
+      "id": "raw_R69",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R69",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/ANCHOR_SHORTUGAI.html",
+        "bytes": 93137,
+        "sha256": "e7adfde1b39d94b804fd5a88454a4716004796a4c12f0f75ed30cc9d286d2bd0",
+        "rights": "unverified; local-only"
+      }
+    },
+    {
+      "id": "raw_R70",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R70",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/ANCHOR_KALIBANGAN_NIGAM.pdf",
+        "bytes": 12643271,
+        "sha256": "669d18490b8a996c43520f228a2110ec0fd674a045bc3dad0dab6f5575dd7684",
+        "rights": "unverified; local-only"
+      }
+    },
+    {
+      "id": "raw_R71",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R71",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/ANCHOR_CAMBAY2003.pdf",
+        "bytes": 797589,
+        "sha256": "92651f37a15349520e5563bec7524e4f4d8369e4ddcfcc070871653c2cb19a01",
+        "rights": "unverified; local-only"
+      }
+    },
+    {
+      "id": "raw_R72",
+      "status": "pass",
+      "description": "Registered witness exists and matches byte count and SHA-256.",
+      "evidence": {
+        "source_id": "R72",
+        "local_path": "data/raw/2026-10-11-settlement-prospection/ANCHOR_DHOLAVIRA.html",
+        "bytes": 174866,
+        "sha256": "ce2e61f215af0a2de88061c3551187bf0d0b726bc70c2467c09dd54e7b239b97",
+        "rights": "unverified; local-only"
+      }
+    },
+    {
+      "id": "witness_count",
+      "status": "pass",
+      "description": "Declared local witness count matches inspected records.",
+      "evidence": {
+        "count": 50,
+        "without_local_witness": [
+          "R02",
+          "R06",
+          "R14",
+          "R17",
+          "R23",
+          "R25",
+          "R26",
+          "R28",
+          "R29",
+          "R31",
+          "R32",
+          "R34",
+          "R36",
+          "R37",
+          "R38",
+          "R43",
+          "R49",
+          "R54",
+          "R55",
+          "R57",
+          "R58",
+          "R60"
+        ]
+      }
+    },
+    {
+      "id": "history_access_depth",
+      "status": "pass",
+      "description": "R01 preserves the independently inspected history addendum field.",
+      "evidence": {
+        "field": "access_depth"
+      }
+    },
+    {
+      "id": "history_locator",
+      "status": "pass",
+      "description": "R01 preserves the independently inspected history addendum field.",
+      "evidence": {
+        "field": "locator"
+      }
+    },
+    {
+      "id": "history_observation",
+      "status": "pass",
+      "description": "R01 preserves the independently inspected history addendum field.",
+      "evidence": {
+        "field": "observation"
+      }
+    },
+    {
+      "id": "history_raw_witness",
+      "status": "pass",
+      "description": "R01 preserves the independently inspected history addendum field.",
+      "evidence": {
+        "field": "raw_witness"
+      }
+    },
+    {
+      "id": "historical_work_unresolved",
+      "status": "pass",
+      "description": "R01 retains the observed attribution and absence of a title-bearing bibliography; no specific Possehl 2002 book lineage is asserted.",
+      "evidence": {
+        "source": "R01",
+        "reading": "Acquired full excerpt; printed p.41 visually inspected in prior bounded pass."
+      }
+    },
+    {
+      "id": "R38_access_scope",
+      "status": "pass",
+      "description": "R38 commissioned-pass extract reading and full-text limit remain explicit."
+    },
+    {
+      "id": "R07_area_provenance",
+      "status": "pass",
+      "description": "Gulzar PDF pp.3–4 records December 2015 methods and total-station/cultural-material survey area 66.7 ha; PDF p.2 discusses the legacy 81.5 ha boundary.",
+      "evidence": {
+        "source": "R07",
+        "registered_publication_year": 2018,
+        "method_and_value_locators": [
+          "PDF p.3, Methods",
+          "PDF p.4, Measurements"
+        ]
+      }
+    },
+    {
+      "id": "R08_33ha_provenance",
+      "status": "pass",
+      "description": "The 2020 primary XML directly reports the ca.33-ha mounded-area estimate in Villages and Towns: Mound Size Estimates.",
+      "evidence": {
+        "source": "R08",
+        "paragraph_first_words": "An important result of the automated site detection has been the delineation",
+        "sentence_anchor": "Our data suggest"
+      }
+    },
+    {
+      "id": "R08_paragraph_locator",
+      "status": "clarify",
+      "description": "The observation calls Our data suggest the paragraph beginning; in the acquired XML it is an internal sentence of the paragraph beginning An important result. Change paragraph beginning to sentence beginning."
+    },
+    {
+      "id": "geometry_P01",
+      "status": "pass",
+      "description": "Bounds and registered anchor points are unchanged from candidate-v3.",
+      "evidence": {
+        "bbox_lonlat": [
+          70.0,
+          27.8,
+          72.0,
+          29.8
+        ]
+      }
+    },
+    {
+      "id": "geometry_P02",
+      "status": "pass",
+      "description": "Bounds and registered anchor points are unchanged from candidate-v3.",
+      "evidence": {
+        "bbox_lonlat": [
+          70.8,
+          28.3,
+          71.5,
+          29.0
+        ]
+      }
+    },
+    {
+      "id": "geometry_P03",
+      "status": "pass",
+      "description": "Bounds and registered anchor points are unchanged from candidate-v3.",
+      "evidence": {
+        "bbox_lonlat": [
+          75.3,
+          29.3,
+          76.2,
+          30.0
+        ]
+      }
+    },
+    {
+      "id": "geometry_P04",
+      "status": "pass",
+      "description": "Bounds and registered anchor points are unchanged from candidate-v3.",
+      "evidence": {
+        "bbox_lonlat": [
+          75.8,
+          29.8,
+          76.3,
+          30.5
+        ]
+      }
+    },
+    {
+      "id": "geometry_P05",
+      "status": "pass",
+      "description": "Bounds and registered anchor points are unchanged from candidate-v3.",
+      "evidence": {
+        "bbox_lonlat": [
+          74.7,
+          29.8,
+          75.5,
+          30.4
+        ]
+      }
+    },
+    {
+      "id": "geometry_P06",
+      "status": "pass",
+      "description": "Bounds and registered anchor points are unchanged from candidate-v3.",
+      "evidence": {
+        "bbox_lonlat": [
+          74.0,
+          29.1,
+          75.2,
+          29.9
+        ]
+      }
+    },
+    {
+      "id": "geometry_P07",
+      "status": "pass",
+      "description": "Bounds and registered anchor points are unchanged from candidate-v3.",
+      "evidence": {
+        "bbox_lonlat": [
+          75.7,
+          29.1,
+          76.2,
+          29.6
+        ]
+      }
+    },
+    {
+      "id": "geometry_P08",
+      "status": "pass",
+      "description": "Bounds and registered anchor points are unchanged from candidate-v3.",
+      "evidence": {
+        "bbox_lonlat": [
+          71.5,
+          29.8,
+          73.0,
+          30.9
+        ]
+      }
+    },
+    {
+      "id": "geometry_P09",
+      "status": "pass",
+      "description": "Bounds and registered anchor points are unchanged from candidate-v3.",
+      "evidence": {
+        "bbox_lonlat": [
+          71.3,
+          29.8,
+          72.6,
+          30.8
+        ]
+      }
+    },
+    {
+      "id": "geometry_P10",
+      "status": "pass",
+      "description": "Bounds and registered anchor points are unchanged from candidate-v3.",
+      "evidence": {
+        "bbox_lonlat": [
+          68.7,
+          27.3,
+          69.2,
+          27.9
+        ]
+      }
+    },
+    {
+      "id": "geometry_P11",
+      "status": "pass",
+      "description": "Bounds and registered anchor points are unchanged from candidate-v3.",
+      "evidence": {
+        "bbox_lonlat": [
+          67.5,
+          24.7,
+          68.7,
+          27.0
+        ]
+      }
+    },
+    {
+      "id": "geometry_P12",
+      "status": "pass",
+      "description": "Bounds and registered anchor points are unchanged from candidate-v3.",
+      "evidence": {
+        "bbox_lonlat": [
+          68.6,
+          23.5,
+          69.2,
+          24.0
+        ]
+      }
+    },
+    {
+      "id": "geometry_P13",
+      "status": "pass",
+      "description": "Bounds and registered anchor points are unchanged from candidate-v3.",
+      "evidence": {
+        "bbox_lonlat": [
+          70.4,
+          23.7,
+          71.0,
+          24.1
+        ]
+      }
+    },
+    {
+      "id": "geometry_P14",
+      "status": "pass",
+      "description": "Bounds and registered anchor points are unchanged from candidate-v3.",
+      "evidence": {
+        "bbox_lonlat": [
+          71.2,
+          23.2,
+          72.6,
+          24.6
+        ]
+      }
+    },
+    {
+      "id": "geometry_P15",
+      "status": "pass",
+      "description": "Bounds and registered anchor points are unchanged from candidate-v3.",
+      "evidence": {
+        "bbox_lonlat": [
+          70.4,
+          20.6,
+          71.1,
+          21.2
+        ]
+      }
+    },
+    {
+      "id": "geometry_P16",
+      "status": "pass",
+      "description": "Bounds and registered anchor points are unchanged from candidate-v3.",
+      "evidence": {
+        "bbox_lonlat": [
+          62.7,
+          25.5,
+          63.5,
+          26.3
+        ]
+      }
+    },
+    {
+      "id": "geometry_P17",
+      "status": "pass",
+      "description": "Bounds and registered anchor points are unchanged from candidate-v3.",
+      "evidence": {
+        "bbox_lonlat": [
+          67.0,
+          29.0,
+          68.0,
+          30.2
+        ]
+      }
+    },
+    {
+      "id": "geometry_P18",
+      "status": "pass",
+      "description": "Bounds and registered anchor points are unchanged from candidate-v3.",
+      "evidence": {
+        "bbox_lonlat": [
+          67.0,
+          25.0,
+          68.1,
+          26.6
+        ]
+      }
+    },
+    {
+      "id": "geometry_P19",
+      "status": "pass",
+      "description": "Bounds and registered anchor points are unchanged from candidate-v3.",
+      "evidence": {
+        "bbox_lonlat": [
+          66.3,
+          24.9,
+          67.0,
+          26.1
+        ]
+      }
+    },
+    {
+      "id": "geometry_P20",
+      "status": "pass",
+      "description": "Bounds and registered anchor points are unchanged from candidate-v3.",
+      "evidence": {
+        "bbox_lonlat": [
+          71.9,
+          21.8,
+          72.8,
+          22.8
+        ]
+      }
+    },
+    {
+      "id": "geometry_P21",
+      "status": "pass",
+      "description": "Bounds and registered anchor points are unchanged from candidate-v3.",
+      "evidence": {
+        "bbox_lonlat": [
+          61.7,
+          25.0,
+          64.0,
+          25.7
+        ]
+      }
+    },
+    {
+      "id": "anchor_Kalibangan_published_coarse_point",
+      "status": "pass",
+      "description": "Registered coarse anchor point lies within the editorial region.",
+      "evidence": {
+        "region_id": "P06",
+        "name": "Kalibangan published coarse point",
+        "lon": 74.133333,
+        "lat": 29.483333,
+        "source_id": "R70",
+        "inside": true,
+        "bbox_lonlat": [
+          74.0,
+          29.1,
+          75.2,
+          29.9
+        ]
+      }
+    },
+    {
+      "id": "anchor_Ghazi_Shah",
+      "status": "pass",
+      "description": "Registered coarse anchor point lies within the editorial region.",
+      "evidence": {
+        "region_id": "P18",
+        "name": "Ghazi Shah",
+        "lon": 67.464134722,
+        "lat": 26.454762389,
+        "source_id": "R41",
+        "inside": true,
+        "bbox_lonlat": [
+          67.0,
+          25.0,
+          68.1,
+          26.6
+        ]
+      }
+    },
+    {
+      "id": "anchor_Kai_Caves_inventory",
+      "status": "pass",
+      "description": "Registered coarse anchor point lies within the editorial region.",
+      "evidence": {
+        "region_id": "P18",
+        "name": "Kai Caves inventory",
+        "lon": 67.560472,
+        "lat": 26.305583,
+        "source_id": "R49",
+        "inside": true,
+        "bbox_lonlat": [
+          67.0,
+          25.0,
+          68.1,
+          26.6
+        ]
+      }
+    },
+    {
+      "id": "anchor_Sutkagen-Dor",
+      "status": "pass",
+      "description": "Registered coarse anchor point lies within the editorial region.",
+      "evidence": {
+        "region_id": "P21",
+        "name": "Sutkagen-Dor",
+        "lon": 61.966666667,
+        "lat": 25.516666667,
+        "source_id": "R48",
+        "inside": true,
+        "bbox_lonlat": [
+          61.7,
+          25.0,
+          64.0,
+          25.7
+        ]
+      }
+    },
+    {
+      "id": "Kai_DMS_rounding",
+      "status": "pass",
+      "description": "Kai indexed inventory DMS agrees with six-decimal registered point; no new full-PDF reading claimed.",
+      "evidence": {
+        "source": "R49",
+        "access_depth": "Primary indexed coordinate-table text read; direct PDF unavailable"
+      }
+    },
+    {
+      "id": "Kalibangan_DMS_rounding",
+      "status": "pass",
+      "description": "Kalibangan published DMS agrees with the registered coarse point.",
+      "evidence": {
+        "source": "R70"
+      }
+    },
+    {
+      "id": "decision_P06",
+      "status": "pass",
+      "description": "Revised decision separates the premises targeted by Claude V2-F4.",
+      "evidence": {
+        "rule": "Demote the tested surface-survival premise where adequate logs establish scour/truncation of the target-age interval or show only younger terrestrial ground was available; older substrate alone leaves later use unresolved."
+      }
+    },
+    {
+      "id": "decision_P07",
+      "status": "pass",
+      "description": "Revised decision separates the premises targeted by Claude V2-F4.",
+      "evidence": {
+        "rule": "Demote a contemporaneous catchment-link prediction if independent context dates show different periods. Demote an off-mound concentration prediction only if equal-effort comparison has adequate sensitivity and precision to exclude the proposed excess."
+      }
+    },
+    {
+      "id": "decision_P09",
+      "status": "pass",
+      "description": "Revised decision separates the premises targeted by Claude V2-F4.",
+      "evidence": {
+        "rule": "Demote contemporaneous active-channel use supplying an occupation if adequately constrained activity and occupation intervals do not overlap. Earlier abandonment does not reject later occupation of the channel margin; a later fill date alone can postdate use."
+      }
+    },
+    {
+      "id": "decision_P13",
+      "status": "pass",
+      "description": "Revised decision separates the premises targeted by Claude V2-F4.",
+      "evidence": {
+        "rule": "Test phase-specific exterior extent: demote a proposed contemporaneous fort/exterior footprint if dated contexts differ or adequate boundary tests contradict its predicted extent. Kotada/Morodharo identity is already resolved in R19."
+      }
+    },
+    {
+      "id": "decision_P14",
+      "status": "pass",
+      "description": "Revised decision separates the premises targeted by Claude V2-F4.",
+      "evidence": {
+        "rule": "Demote an ancient-occupation interpretation if adequate dated deposits support recent wetness or natural sediments. Demote only the Indus attribution if dated cultural deposits belong to another period."
+      }
+    },
+    {
+      "id": "P17_typo",
+      "status": "pass",
+      "description": "P17 decision has one final full stop."
+    },
+    {
+      "id": "negative_scope",
+      "status": "pass",
+      "description": "General negative-evidence rule retains effort, visibility, spatial coverage, depth and chronology together.",
+      "evidence": {
+        "rule": "Fix effort and intervention limits after local method calibration and before outcome inspection. Record prior effort, size, inaccessible/undatable/negative units. Blind observers and phase assessors where practical. A negative demotes a premise only for inspected units with adequate effort, visibility, spatial coverage, depth and chronology. Unreached or inadequately dated/covered units remain unresolved; a nonsignificant difference alone does not reject concentration."
+      }
+    },
+    {
+      "id": "assessment_P01",
+      "status": "pass",
+      "description": "Region has valid information/preservation/feasibility levels, rationales and unverified feasibility.",
+      "evidence": {
+        "I": "I2",
+        "P": "P1",
+        "F": "F0"
+      }
+    },
+    {
+      "id": "assessment_P02",
+      "status": "pass",
+      "description": "Region has valid information/preservation/feasibility levels, rationales and unverified feasibility.",
+      "evidence": {
+        "I": "I2",
+        "P": "P2",
+        "F": "F0"
+      }
+    },
+    {
+      "id": "assessment_P03",
+      "status": "pass",
+      "description": "Region has valid information/preservation/feasibility levels, rationales and unverified feasibility.",
+      "evidence": {
+        "I": "I2",
+        "P": "P1",
+        "F": "F0"
+      }
+    },
+    {
+      "id": "assessment_P04",
+      "status": "pass",
+      "description": "Region has valid information/preservation/feasibility levels, rationales and unverified feasibility.",
+      "evidence": {
+        "I": "I2",
+        "P": "P1",
+        "F": "F0"
+      }
+    },
+    {
+      "id": "assessment_P05",
+      "status": "pass",
+      "description": "Region has valid information/preservation/feasibility levels, rationales and unverified feasibility.",
+      "evidence": {
+        "I": "I2",
+        "P": "P1",
+        "F": "F0"
+      }
+    },
+    {
+      "id": "assessment_P06",
+      "status": "pass",
+      "description": "Region has valid information/preservation/feasibility levels, rationales and unverified feasibility.",
+      "evidence": {
+        "I": "I2",
+        "P": "P1",
+        "F": "F0"
+      }
+    },
+    {
+      "id": "assessment_P07",
+      "status": "pass",
+      "description": "Region has valid information/preservation/feasibility levels, rationales and unverified feasibility.",
+      "evidence": {
+        "I": "I2",
+        "P": "P2",
+        "F": "F0"
+      }
+    },
+    {
+      "id": "assessment_P08",
+      "status": "pass",
+      "description": "Region has valid information/preservation/feasibility levels, rationales and unverified feasibility.",
+      "evidence": {
+        "I": "I2",
+        "P": "P1",
+        "F": "F0"
+      }
+    },
+    {
+      "id": "assessment_P09",
+      "status": "pass",
+      "description": "Region has valid information/preservation/feasibility levels, rationales and unverified feasibility.",
+      "evidence": {
+        "I": "I1",
+        "P": "P1",
+        "F": "F0"
+      }
+    },
+    {
+      "id": "assessment_P10",
+      "status": "pass",
+      "description": "Region has valid information/preservation/feasibility levels, rationales and unverified feasibility.",
+      "evidence": {
+        "I": "I2",
+        "P": "P2",
+        "F": "F0"
+      }
+    },
+    {
+      "id": "assessment_P11",
+      "status": "pass",
+      "description": "Region has valid information/preservation/feasibility levels, rationales and unverified feasibility.",
+      "evidence": {
+        "I": "I1",
+        "P": "P0",
+        "F": "F0"
+      }
+    },
+    {
+      "id": "assessment_P12",
+      "status": "pass",
+      "description": "Region has valid information/preservation/feasibility levels, rationales and unverified feasibility.",
+      "evidence": {
+        "I": "I2",
+        "P": "P2",
+        "F": "F0"
+      }
+    },
+    {
+      "id": "assessment_P13",
+      "status": "pass",
+      "description": "Region has valid information/preservation/feasibility levels, rationales and unverified feasibility.",
+      "evidence": {
+        "I": "I2",
+        "P": "P2",
+        "F": "F0"
+      }
+    },
+    {
+      "id": "assessment_P14",
+      "status": "pass",
+      "description": "Region has valid information/preservation/feasibility levels, rationales and unverified feasibility.",
+      "evidence": {
+        "I": "I1",
+        "P": "P0",
+        "F": "F0"
+      }
+    },
+    {
+      "id": "assessment_P15",
+      "status": "pass",
+      "description": "Region has valid information/preservation/feasibility levels, rationales and unverified feasibility.",
+      "evidence": {
+        "I": "I1",
+        "P": "P1",
+        "F": "F0"
+      }
+    },
+    {
+      "id": "assessment_P16",
+      "status": "pass",
+      "description": "Region has valid information/preservation/feasibility levels, rationales and unverified feasibility.",
+      "evidence": {
+        "I": "I1",
+        "P": "P1",
+        "F": "F0"
+      }
+    },
+    {
+      "id": "assessment_P17",
+      "status": "pass",
+      "description": "Region has valid information/preservation/feasibility levels, rationales and unverified feasibility.",
+      "evidence": {
+        "I": "I1",
+        "P": "P1",
+        "F": "F0"
+      }
+    },
+    {
+      "id": "assessment_P18",
+      "status": "pass",
+      "description": "Region has valid information/preservation/feasibility levels, rationales and unverified feasibility.",
+      "evidence": {
+        "I": "I2",
+        "P": "P2",
+        "F": "F0"
+      }
+    },
+    {
+      "id": "assessment_P19",
+      "status": "pass",
+      "description": "Region has valid information/preservation/feasibility levels, rationales and unverified feasibility.",
+      "evidence": {
+        "I": "I1",
+        "P": "P1",
+        "F": "F0"
+      }
+    },
+    {
+      "id": "assessment_P20",
+      "status": "pass",
+      "description": "Region has valid information/preservation/feasibility levels, rationales and unverified feasibility.",
+      "evidence": {
+        "I": "I1",
+        "P": "P1",
+        "F": "F0"
+      }
+    },
+    {
+      "id": "assessment_P21",
+      "status": "pass",
+      "description": "Region has valid information/preservation/feasibility levels, rationales and unverified feasibility.",
+      "evidence": {
+        "I": "I1",
+        "P": "P0",
+        "F": "F0"
+      }
+    },
+    {
+      "id": "editorial_author",
+      "status": "pass",
+      "description": "The source of the ordinal judgments is explicit.",
+      "evidence": {
+        "definition": "Editorial judgments of the AI-assisted drafting/research process; not elicited archaeological expert ratings"
+      }
+    },
+    {
+      "id": "P18_cave_component",
+      "status": "pass",
+      "description": "Piedmont and cave attribution retain distinct classes and information levels."
+    },
+    {
+      "id": "preservation_rubric_scope",
+      "status": "clarify",
+      "description": "Literal P2 region-wide surviving-context criterion does not clearly explain P16/P17 P1 and P21 P0 despite known anchors. Clarify whether the scale concerns known contexts anywhere in the box or survival of the proposed target-surface class.",
+      "evidence": {
+        "P2_definition": "A source documents surviving archaeological contexts somewhere in this region; untested parcels remain unknown",
+        "region_examples": {
+          "P16": "P1",
+          "P17": "P1",
+          "P21": "P0"
+        },
+        "classification": "hypothesis-design/metadata clarification, not a source-confirmed archaeological error"
+      }
+    },
+    {
+      "id": "shared_frame_all_overlaps",
+      "status": "pass",
+      "description": "Universal cell rule covers all eight positive-area rectangle overlaps, including P01/P02 exclusion.",
+      "evidence": {
+        "rule": "A1km²cell eligible under more than one region belongs to one shared frame, carries every applicable label and is selected once. Correlated contexts remain together. P02known-margin transects are excluded from P01negative draws. Other overlaps follow this same shared-frame rule.",
+        "overlap_pairs": [
+          [
+            "P01",
+            "P02"
+          ],
+          [
+            "P03",
+            "P04"
+          ],
+          [
+            "P03",
+            "P05"
+          ],
+          [
+            "P03",
+            "P07"
+          ],
+          [
+            "P05",
+            "P06"
+          ],
+          [
+            "P08",
+            "P09"
+          ],
+          [
+            "P11",
+            "P18"
+          ],
+          [
+            "P16",
+            "P21"
+          ]
+        ],
+        "meaning": "Editorial rectangle overlaps are bookkeeping; final eligible landform cells still require local frames."
+      }
+    },
+    {
+      "id": "region_source_refs",
+      "status": "pass",
+      "description": "All region source IDs join the final source register.",
+      "evidence": {
+        "unresolved": []
+      }
+    },
+    {
+      "id": "no_forecasts",
+      "status": "pass",
+      "description": "No empirical count, site-area or artifact-total forecast is added."
+    },
+    {
+      "id": "analysis_consumed_metadata",
+      "status": "pass",
+      "description": "All 32 source fields used by analysis crosswalk are identical between v2 and v5; analysis source_crosswalk consumes only id/title/url/observation_id.",
+      "evidence": {
+        "fields": [
+          "id",
+          "title",
+          "url",
+          "observation_id"
+        ],
+        "comparisons": [
+          {
+            "source_id": "R01",
+            "field": "id",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R01",
+            "field": "title",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R01",
+            "field": "url",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R01",
+            "field": "observation_id",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R02",
+            "field": "id",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R02",
+            "field": "title",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R02",
+            "field": "url",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R02",
+            "field": "observation_id",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R07",
+            "field": "id",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R07",
+            "field": "title",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R07",
+            "field": "url",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R07",
+            "field": "observation_id",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R08",
+            "field": "id",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R08",
+            "field": "title",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R08",
+            "field": "url",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R08",
+            "field": "observation_id",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R10",
+            "field": "id",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R10",
+            "field": "title",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R10",
+            "field": "url",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R10",
+            "field": "observation_id",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R11",
+            "field": "id",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R11",
+            "field": "title",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R11",
+            "field": "url",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R11",
+            "field": "observation_id",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R29",
+            "field": "id",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R29",
+            "field": "title",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R29",
+            "field": "url",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R29",
+            "field": "observation_id",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R38",
+            "field": "id",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R38",
+            "field": "title",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R38",
+            "field": "url",
+            "equal_v2_v5": true
+          },
+          {
+            "source_id": "R38",
+            "field": "observation_id",
+            "equal_v2_v5": true
+          }
+        ],
+        "numeric_register_fields_consumed": []
+      }
+    },
+    {
+      "id": "run_input_sites-census.json",
+      "status": "pass",
+      "description": "Frozen v3 analysis input still matches its manifest; no new numerical input used.",
+      "evidence": {
+        "path": "experiments/2026-10-08-site-map-and-overview/data/sites-census.json",
+        "bytes": 569453,
+        "sha256": "8f6bb9485bbfb1d016370eab777fcb1a839524673004ef01d5f7aaba05f4c3b9",
+        "role": "selected coordinate metadata"
+      }
+    },
+    {
+      "id": "run_input_dating-south-asia.json",
+      "status": "pass",
+      "description": "Frozen v3 analysis input still matches its manifest; no new numerical input used.",
+      "evidence": {
+        "path": "experiments/2026-10-08-site-map-and-overview/data/dating-south-asia.json",
+        "bytes": 305780,
+        "sha256": "66ee87d34cd392292888fadca8e4e9a339f42f88171c799d2318d8d5b36cc1eb",
+        "role": "separate selected chronological metadata"
+      }
+    },
+    {
+      "id": "run_input_sources-v2.json",
+      "status": "pass",
+      "description": "Frozen v3 analysis input still matches its manifest; no new numerical input used.",
+      "evidence": {
+        "path": "experiments/2026-10-11-settlement-prospection/sources-v2.json",
+        "bytes": 44366,
+        "sha256": "104ec9eace5d5bc9db421ff8ccc142ae8c112b174e9d374df6f954ae835df979",
+        "role": "authored R-numbered source register"
+      }
+    },
+    {
+      "id": "analysis_script_unchanged",
+      "status": "pass",
+      "description": "Analysis script matches the preserved v3-run hash; this audit does not rerun the study."
+    }
+  ],
+  "scope_limits": [
+    "R49 remains an indexed primary coordinate reading; no full inventory PDF was newly read.",
+    "No manuscript or rendered PDF release-readiness check is asserted.",
+    "No field interpretation, current feasibility verification or exact site-boundary validation is added."
+  ],
+  "preservation_followup": {
+    "criterion": "Literal documentary P2: a source documents surviving archaeological contexts somewhere in the region; untested parcels remain unknown. This is not a target-parcel survival prediction or priority rating.",
+    "upgrade_recommendations": [
+      {
+        "region_id": "P01",
+        "recommended_preservation_level": "P2",
+        "support": [
+          "R08"
+        ],
+        "basis": "Known Ganweriwala mound inside nested P02, which lies inside P01."
+      },
+      {
+        "region_id": "P03",
+        "recommended_preservation_level": "P2",
+        "support": [
+          "R10"
+        ],
+        "basis": "Extant archaeological positives in Tohana–Agroha corridor (PDF p.14); Ancient Agroha Figure3 / PDF p.5."
+      },
+      {
+        "region_id": "P06",
+        "recommended_preservation_level": "P2",
+        "support": [
+          "R70"
+        ],
+        "basis": "Known Kalibangan excavation contexts; published coordinate directly verified inside P06."
+      },
+      {
+        "region_id": "P08",
+        "recommended_preservation_level": "P2",
+        "support": [
+          "R11"
+        ],
+        "basis": "Known Harappa and regional excavated contexts; prior coarse-anchor containment was preserved."
+      },
+      {
+        "region_id": "P09",
+        "recommended_preservation_level": "P2",
+        "support": [
+          "R11"
+        ],
+        "basis": "Tulamba excavation and preserved medieval sites in the study landscape (PDF pp.6/21); named regional anchor, not a new precise point."
+      },
+      {
+        "region_id": "P15",
+        "recommended_preservation_level": "P2",
+        "support": [
+          "R25"
+        ],
+        "basis": "Kanjetar/Kaj excavation contexts in the named estuary region; source remains indexed primary reading, not a newly acquired full report."
+      },
+      {
+        "region_id": "P16",
+        "recommended_preservation_level": "P2",
+        "support": [
+          "R26"
+        ],
+        "basis": "Miri Qalat excavated Indus occupation; prior coarse-anchor containment preserved."
+      },
+      {
+        "region_id": "P17",
+        "recommended_preservation_level": "P2",
+        "support": [
+          "R39",
+          "R40",
+          "R45"
+        ],
+        "basis": "Mehrgarh cemetery/buried mound analogue and Nausharo; documentary criterion includes pre-Indus contexts. Prior Nausharo containment preserved."
+      },
+      {
+        "region_id": "P19",
+        "recommended_preservation_level": "P2",
+        "support": [
+          "R31"
+        ],
+        "basis": "Siranda middens, lithic and occupation contexts; reading depth and varied cultural attribution unchanged."
+      },
+      {
+        "region_id": "P20",
+        "recommended_preservation_level": "P2",
+        "support": [
+          "R32",
+          "R54",
+          "R55"
+        ],
+        "basis": "Known Lothal archaeology named in regional studies; prior coarse-anchor containment preserved."
+      },
+      {
+        "region_id": "P21",
+        "recommended_preservation_level": "P2",
+        "support": [
+          "R48",
+          "R66"
+        ],
+        "basis": "Known Sutkagen-Dor/Sotka-koh contexts; directly inspected inventory point confirms Sutkagen containment."
+      }
+    ],
+    "existing_P2_regions": [
+      "P02",
+      "P07",
+      "P10",
+      "P12",
+      "P13",
+      "P18"
+    ],
+    "retain_current_with_existing_registered_observations": [
+      "P04",
+      "P05",
+      "P14"
+    ],
+    "conditional": [
+      {
+        "region_id": "P11",
+        "possible_level": "P2",
+        "support": "R42 full deposited abstract explicitly mentions past and present Chanhu-daro excavations.",
+        "required_completion": "P11 currently cites only R17 and no Chanhu-daro coordinate is registered; source/containment concordance should be added before upgrading. No new coordinate was inferred in this check."
+      }
+    ],
+    "successor_status": "Parent plans preserved sources-v6/candidates-v5; those files did not exist at the last check, so no successor verification is claimed."
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "generated_utc": "2026-10-12T05:43:56.754795+00:00",
+  "method": "Post-run independent geometry, bookkeeping, source-hash and selected image-layout inspection; no screen parameter changes or rerun.",
+  "input_manifest": {
+    "path": "experiments/2026-10-12-satellite-prospection/outputs-terrain-v1/manifest.json",
+    "bytes": 14805,
+    "sha256": "aac48db571093f23e87b1e0db2e3207f0382db2c2ad0124cd9d9659961b4e5df"
+  },
+  "checks": [
+    {
+      "name": "run_outputs_match_original_manifest",
+      "passed": true,
+      "evidence": {
+        "output_count": 47,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "code_matches_run_witness",
+      "passed": true,
+      "evidence": {
+        "code": {
+          "path": "experiments/2026-10-12-satellite-prospection/terrain_screen.py",
+          "bytes": 35313,
+          "sha256": "65f29d887b250f71d917d7fb1a64b44c31453edc821236545fd96f852d098d80"
+        }
+      }
+    },
+    {
+      "name": "all_support_geometries_valid_cover_peak_and_preserve_metric_area",
+      "passed": true,
+      "evidence": {
+        "support_count": 852,
+        "mismatch_ids": [],
+        "area_tolerance": "relative1e-7 or absolute0.005square_metres"
+      }
+    },
+    {
+      "name": "review_subset_area_and_flags_match_parameters",
+      "passed": true,
+      "evidence": {
+        "review_count": 24,
+        "area_scope_ha": [
+          0.5,
+          30
+        ]
+      }
+    },
+    {
+      "name": "block_counts_reconcile",
+      "passed": true,
+      "evidence": {
+        "blocks": [
+          {
+            "id": "B01",
+            "connected_components": 294,
+            "subminimum_support_components": 87,
+            "retained_support_components": 207,
+            "review_eligible_components": 16,
+            "selected_for_review": 6,
+            "screening_flag_counts": {
+              "block-edge context": 76,
+              "connected to extensive lower-threshold height support": 58,
+              "elongated support": 29,
+              "incomplete surrounding ring": 42,
+              "low perimeter compactness": 15,
+              "oversize connected support": 16,
+              "weak annulus prominence": 46,
+              "weak local residual": 141
+            }
+          },
+          {
+            "id": "B02",
+            "connected_components": 372,
+            "subminimum_support_components": 164,
+            "retained_support_components": 208,
+            "review_eligible_components": 13,
+            "selected_for_review": 6,
+            "screening_flag_counts": {
+              "block-edge context": 63,
+              "built-land overlap": 143,
+              "connected to extensive lower-threshold height support": 15,
+              "elongated support": 7,
+              "incomplete surrounding ring": 23,
+              "low perimeter compactness": 1,
+              "near built-land pixels": 142,
+              "oversize connected support": 1,
+              "weak annulus prominence": 19,
+              "weak local residual": 124
+            }
+          },
+          {
+            "id": "B03",
+            "connected_components": 255,
+            "subminimum_support_components": 44,
+            "retained_support_components": 211,
+            "review_eligible_components": 63,
+            "selected_for_review": 6,
+            "screening_flag_counts": {
+              "block-edge context": 90,
+              "connected to extensive lower-threshold height support": 30,
+              "elongated support": 17,
+              "incomplete surrounding ring": 40,
+              "low perimeter compactness": 23,
+              "near built-land pixels": 1,
+              "oversize connected support": 29,
+              "weak annulus prominence": 9,
+              "weak local residual": 33
+            }
+          },
+          {
+            "id": "B04",
+            "connected_components": 351,
+            "subminimum_support_components": 125,
+            "retained_support_components": 226,
+            "review_eligible_components": 42,
+            "selected_for_review": 6,
+            "screening_flag_counts": {
+              "block-edge context": 87,
+              "built-land overlap": 60,
+              "connected to extensive lower-threshold height support": 22,
+              "elongated support": 8,
+              "incomplete surrounding ring": 48,
+              "low perimeter compactness": 3,
+              "near built-land pixels": 59,
+              "oversize connected support": 2,
+              "weak annulus prominence": 29,
+              "weak local residual": 136
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "reference_and_context_records_reconcile",
+      "passed": true,
+      "evidence": {
+        "reference_records": 8,
+        "context_records": 50,
+        "seeded_context_records": 32,
+        "selected_rival_records": 18,
+        "interpretation": "Context records are diagnostic; duplicate coordinates and overlap with review examples are retained transparently."
+      }
+    },
+    {
+      "name": "WorldCover_and_local_array_witnesses_intact_and_ignored",
+      "passed": true,
+      "evidence": {
+        "WorldCover_window_count": 5,
+        "derived_local_array_count": 4,
+        "raw_mismatches": [],
+        "ignored_count": 9
+      }
+    },
+    {
+      "name": "program_verification_passed",
+      "passed": true,
+      "evidence": {
+        "passed": 74,
+        "failed": 0,
+        "included_checks": "Constant-height/plane invariance, constructed-hill peak, hectare units, original input/result hashes and proposal-field guards."
+      }
+    },
+    {
+      "name": "archaeological_date_and_probability_fields_unassigned",
+      "passed": true,
+      "evidence": {
+        "support_count": 852
+      }
+    },
+    {
+      "name": "four_panel_layouts_visually_inspected",
+      "passed": true,
+      "evidence": {
+        "inspected_panel_ids": [
+          "B01-T0115",
+          "B04-T0136",
+          "B03-T0159",
+          "B02-T0113"
+        ],
+        "inspection": "Four-date RGB, DSM residual and WorldCover labels render with visible coordinates, dates, thresholds and peaks. No title/axis collision found. Saturated DSM display colours do not replace the reported peak-minus-annulus values.",
+        "scope": "Layout and georeferenced layer alignment; final target/context classification belongs to the coordinator."
+      }
+    }
+  ],
+  "passed_count": 10,
+  "failed_count": 0,
+  "remaining_material_issues": [],
+  "rendering_scope": "Screen panels use a fixed raw-reflectance RGB stretch from the source clips. They exclude DN zero in the RGB read but do not reapply SCL/cloud masks; the coordinator's final renderer and visual classification handle the optical-quality decisions. Optical values do not enter the terrain rank.",
+  "count_interpretation": "Implementation and file accounting only."
+}

@@ -1,0 +1,13 @@
+# Post-review quantity-family sensitivity
+
+October 12, 2026. The Sanskrit adversarial review identified two omitted graphic contexts: W130 on M-16 follows W035, and W383 on M-389 follows W031. Both predecessors belong to the already frozen visual `quantity_strokes` family, while the primary counted-entity proxy used only W001–W005. The primary run-v1/run-v2 outputs, split and grades remain unchanged. This amendment was written before the expanded-proxy results were calculated.
+
+The new proxy is exactly the complete 32-code `quantity_strokes` membership from `visual/families.json`, SHA256 `022db17e93741edb3bba098cbba286a6723c544d64d2bbc19e99c43a4908f6a3`: W001, W002, W003, W004, W005, W006, W007, W012, W013, W014, W015, W016, W017, W018, W019, W020, W025, W026, W027, W028, W029, W031, W032, W033, W034, W035, W036, W037, W039, W055, W056 and W059. There are no additions selected from the new contexts. This graphic family allows unknown count, tier, tall-stroke and other quantity-like interpretations; it does not authenticate numerical values.
+
+Compute immediate-predecessor matches under both W001–W005 and the expanded family for every one of the 713 inventory codes and every one of the 70 frozen visual families. Reuse the exact all-string, length-at-least-three, discovery, transfer and representative-object frames from run-v2. In a length-L string with n occurrences of code c and Q expanded-proxy tokens, the expected match count is n(Q−I[c∈proxy])/L. Family expectations sum those code contributions. There are no new draws or tail probabilities.
+
+Retain matching and contradicting tokens, whole inscriptions with every candidate occurrence matching, inscriptions with any exception and mixed inscriptions. Empty support remains separate from observed zero matches. Report side-by-side direction flags and every change in direction, with the expanded result labelled as a post-review sensitivity. Those flags do not replace the fixed primary grade or choose the better proxy retrospectively.
+
+Check the source-selected M-16/W130/W035 and M-389/W383/W031 examples against intact local records and their source metadata. Full sequences, occurrence lists and complete per-record proxy comparisons remain in the ignored local companion. Public verification gives bounded source identifiers and these selected predecessor relationships, without republishing full strings.
+
+The narrower failure means absence of the selected short-stroke proxy. It cannot be generalized to absence of every quantity-like graphic or counting convention. The sensitivity can identify that scope difference while leaving the original result and the unverified meanings available for comparison.

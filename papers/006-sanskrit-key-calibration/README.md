@@ -1,0 +1,7 @@
+# Testing a published Sanskrit key against its own rearrangements
+
+The [manuscript](manuscript.md) evaluates the complete sign-to-sound table behind Yajnadevam's 2024 Sanskrit decipherment of the Indus script, and the unicity-distance argument offered for it, on 1,859 distinct complete inscriptions. It measures the redundancy of the consonant skeleton the key fixes, calibrates the acceptance criterion on random strings, places the key among frequency-matched rearrangements of its own values under a Sanskrit language model, compares Sanskrit, Latin, Old Tamil and Sumerian under matched freedom, builds synthetic Indus-shaped encodings to show what a correct key would score, and tests whether the key's same-value signs substitute for one another.
+
+The work was done on 12 October 2026 in the [published-claim tests package](../../experiments/2026-10-12-published-claim-tests/README.md), whose Study A was revised after an [adversarial review](../../experiments/2026-10-12-published-claim-tests/sanskrit-key/review/REVIEW.md). The [evidence guide](methods.md) maps each claim to its output. The printable version is rendered locally by [render_paper.py](render_paper.py) to `output/pdf/indus_sanskrit_key_calibration_2026-10-12.pdf`; it is not tracked, because the repository ignores PDFs that are not explicitly listed in `.gitignore`.
+
+Prepared with AI research and writing assistance; author names, affiliations and a submission venue have not been assigned. The study evaluates one key and its argument. It assigns no sound value, meaning or language to Indus signs.

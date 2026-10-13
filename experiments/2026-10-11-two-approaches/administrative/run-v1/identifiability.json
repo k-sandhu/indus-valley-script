@@ -1,0 +1,219 @@
+{
+  "status": "Synthetic exact equivalence certificate",
+  "visible_states": 12,
+  "probability_sum": 1.0,
+  "role_interpretations": {
+    "bearer-standing-entitlement": [
+      "bearer class",
+      "service entitlement",
+      "entitlement tier"
+    ],
+    "issuer-licensed-service": [
+      "issuing authority",
+      "licensed service",
+      "licence grade"
+    ],
+    "commodity-grade": [
+      "producer or controlled class",
+      "commodity class",
+      "quality or quantity grade"
+    ],
+    "canonical-transaction-receipt": [
+      "transferring office",
+      "canonical packet",
+      "completed transfer tier"
+    ]
+  },
+  "finite_distribution": [
+    {
+      "invented_visible_bundle": [
+        "A0",
+        "B0",
+        "C00"
+      ],
+      "probability": 0.22499999999999998
+    },
+    {
+      "invented_visible_bundle": [
+        "A0",
+        "B0",
+        "C01"
+      ],
+      "probability": 0.075
+    },
+    {
+      "invented_visible_bundle": [
+        "A0",
+        "B1",
+        "C10"
+      ],
+      "probability": 0.054
+    },
+    {
+      "invented_visible_bundle": [
+        "A0",
+        "B1",
+        "C11"
+      ],
+      "probability": 0.126
+    },
+    {
+      "invented_visible_bundle": [
+        "A0",
+        "B2",
+        "C20"
+      ],
+      "probability": 0.036
+    },
+    {
+      "invented_visible_bundle": [
+        "A0",
+        "B2",
+        "C21"
+      ],
+      "probability": 0.08399999999999999
+    },
+    {
+      "invented_visible_bundle": [
+        "A1",
+        "B0",
+        "C00"
+      ],
+      "probability": 0.15000000000000002
+    },
+    {
+      "invented_visible_bundle": [
+        "A1",
+        "B0",
+        "C01"
+      ],
+      "probability": 0.05
+    },
+    {
+      "invented_visible_bundle": [
+        "A1",
+        "B1",
+        "C10"
+      ],
+      "probability": 0.036
+    },
+    {
+      "invented_visible_bundle": [
+        "A1",
+        "B1",
+        "C11"
+      ],
+      "probability": 0.08399999999999999
+    },
+    {
+      "invented_visible_bundle": [
+        "A1",
+        "B2",
+        "C20"
+      ],
+      "probability": 0.024000000000000004
+    },
+    {
+      "invented_visible_bundle": [
+        "A1",
+        "B2",
+        "C21"
+      ],
+      "probability": 0.05600000000000001
+    }
+  ],
+  "likelihood_vectors": {
+    "bearer-standing-entitlement": [
+      0.22499999999999998,
+      0.075,
+      0.054,
+      0.126,
+      0.036,
+      0.08399999999999999,
+      0.15000000000000002,
+      0.05,
+      0.036,
+      0.08399999999999999,
+      0.024000000000000004,
+      0.05600000000000001
+    ],
+    "issuer-licensed-service": [
+      0.22499999999999998,
+      0.075,
+      0.054,
+      0.126,
+      0.036,
+      0.08399999999999999,
+      0.15000000000000002,
+      0.05,
+      0.036,
+      0.08399999999999999,
+      0.024000000000000004,
+      0.05600000000000001
+    ],
+    "commodity-grade": [
+      0.22499999999999998,
+      0.075,
+      0.054,
+      0.126,
+      0.036,
+      0.08399999999999999,
+      0.15000000000000002,
+      0.05,
+      0.036,
+      0.08399999999999999,
+      0.024000000000000004,
+      0.05600000000000001
+    ],
+    "canonical-transaction-receipt": [
+      0.22499999999999998,
+      0.075,
+      0.054,
+      0.126,
+      0.036,
+      0.08399999999999999,
+      0.15000000000000002,
+      0.05,
+      0.036,
+      0.08399999999999999,
+      0.024000000000000004,
+      0.05600000000000001
+    ]
+  },
+  "pairwise_total_variation": {
+    "bearer-standing-entitlement | issuer-licensed-service": 0.0,
+    "bearer-standing-entitlement | commodity-grade": 0.0,
+    "bearer-standing-entitlement | canonical-transaction-receipt": 0.0,
+    "issuer-licensed-service | commodity-grade": 0.0,
+    "issuer-licensed-service | canonical-transaction-receipt": 0.0,
+    "commodity-grade | canonical-transaction-receipt": 0.0
+  },
+  "equal_prior_optimal_accuracy_without_anchor": 0.25,
+  "mutual_information_bits_role_visible_bundle": 0.0,
+  "mechanism_specific_acquisition_counterexample": {
+    "mechanisms": [
+      "standing reusable credential",
+      "single-use consumed receipt"
+    ],
+    "prior": [
+      0.5,
+      0.5
+    ],
+    "new_observation": "same registered carrier independently documented in a second use",
+    "positive_probabilities_assumed": [
+      0.9,
+      0.1
+    ],
+    "positive_posterior": [
+      0.9,
+      0.1
+    ],
+    "negative_posterior": [
+      0.1,
+      0.9
+    ],
+    "optimal_single_observation_accuracy": 0.9,
+    "status": "Synthetic mechanism-specific example. A receipt model permitting reuse overlaps the credential model and would not be separated by this observation."
+  },
+  "implication": "A field interpretation is a latent relabelling unless it restricts an additional observable. More face drawings sampled from the same distribution preserve the equivalence."
+}

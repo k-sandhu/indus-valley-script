@@ -1,0 +1,51 @@
+# A carrier that changes role during use
+
+A repeated inscription need not describe a single moment in a transaction. A standard token can authorize a service before it is presented, specify a canonical entitlement when it is checked, and stand as a redeemed token afterwards. The graphic fields can remain constant while the object's role changes. This proposed use cycle connects the licence and ration models to a shared record design. It also explains why a recovered pile of identical carriers cannot identify the phase in which they were deposited.
+
+The empirical constraints are specific. The clean population has 417 carriers with all recorded faces eligible. Whole bundles are copied, and most W700-bearing carriers have one such face. There are 17 complete two-face anchor classes with more than one source-qualified tall-stroke value in the opposite W700 module. The W700-role control leaves no corrected sign-pair maximum below .05. These results license a structural representation with reusable modules and distinct roles; the social field names below are proposed interpretations. [Measurements and limits](REPORT.md).
+
+## The proposed fields
+
+Represent a carrier as a binding of an administrative descriptor, a tier-shaped face and optional additional modules. The binding is the physical object itself. Neither surface order nor a particular sign needs to encode a connector between those fields.
+
+The descriptor could name the issuer, bearer, service, commodity or a formal class combining more than one of them. A separate icon or pictorial emblem could narrow the issuing affiliation, as in Frenez's identity model, but it is not an observed issuer label in this dataset. The tier-shaped face could express an entitlement slab, a canonical packet, a quality grade, a duty or a fee class. The catalogue's stroke counts give observable levels under its graphic convention; they do not establish equal distances between those levels or a transferable numerical unit.
+
+An optional third face can bind a second service class or a second constraint to the same carrier. This offers a conditional account of a permission that covers several stages of production or exchange. The earlier three-face Harappa profile could instantiate such a bundle, or a canonical package involving several goods or tasks. Its strokes belong to source-qualified graphic groups and its physical orientation remains unresolved. The quantities cannot be summed to choose between those accounts.
+
+At the observational level this grammar is useful now. It records whole modules, source-specific stroke groups, same-object membership, possible reversal and missing faces. At the semantic level the fields remain parameters to be constrained by new physical observations. [Machine-readable schema](administrative-grammar.json).
+
+## A possible life cycle
+
+First an issuing institution makes or selects a standard carrier. It assigns a service or commodity class and a tier, using a stock of forms that can be reproduced. Several identical physical tokens can be held ready for issue. A concentration of pristine copies near an administrative or production area would fit unissued stock, though shared deposition alone cannot establish it.
+
+Next a bearer presents the carrier at a gate, workshop or distribution point. A standing credential may survive many presentations. A canonical entitlement token may be surrendered on one occasion. Either design predicts repeated class/tier combinations, because the institutional categories remain stable while different people perform or request the action. Under this mechanism, diversity of people need not produce diversity of graphic strings.
+
+During checking or redemption, the carrier's authorization is consumed, maintained or replaced. A permit for repeated access keeps its authorization. A token for one canonical ration loses it. A work credential can combine a reusable affiliation module with a renewed entitlement level, while a producer's token can combine a persistent class with a tier of allowed delivery. These are alternative operational rules, not claimed Indus translations.
+
+Finally the authority or bearer keeps, returns, breaks, marks or discards the object. A recovered carrier can then be an active credential, a redeemed exchange token, unissued stock or an expired authorization. The same class/tier combination can occur in each phase. Graphic repetition cannot distinguish those states unless a phase leaves a separately observed trace. The exact [equivalence certificate](run-v1/identifiability.json) formalizes this limit for four field interpretations.
+
+## Rival predictions with independent observations
+
+| Operational hypothesis | Additional observation that could select it | Result that would undermine the specified mechanism |
+|---|---|---|
+| Standing bearer credential | Individually registered suspension or handling wear and repeated use, compared with matched unused carriers; different attachments without cancellation | A source-defined class consistently destroyed at its first verified use under a consumption rule |
+| Issuer or formal identity credential | Same graphic affiliation associated with independently identified issuing tools, workshops or controlled production groups across several uses | Proposed affiliation follows a commodity or attachment class after issuer and production variation are held fixed |
+| Sealed package or branded group | Individually registered cord, fastening and contact traces link the carrier or impression to a package or storage closure; recurrent modules follow independently identified producers across attachment types | No attachment or closure relation is possible for the claimed carrier class, or the proposed brand follows only measured content after production groups are controlled |
+| Licensed service or commodity with a tier | The same descriptor is reused for a defined activity; independently recorded capacity, duration or permitted operation varies with the tier | Tier follows actual transferred content within the same activity and permit context while authorization rules do not change |
+| Commodity and actual quantity | Individually joined container content, count, residue or capacity predicts the stroke class after container type, preservation and issuer are controlled | Identical tier is applied to independently measured widely different contents under the proposed unit |
+| Canonical transaction token or receipt | Individually registered tokens are linked to transfers of standard packets or tasks and to a consistent redemption or cancellation operation | Repeated independent use of the same carrier conflicts with an explicit single-use rule |
+| Individual name with status | Independent person-linked contexts explain a stable descriptor across variable tiers; names and tiers are evaluated as separate fields | A particular proposed name behaves as an activity class across independently distinct bearers |
+
+These predictions apply to sharpened mechanisms. A reusable receipt, a transferable bearer credential or an issuer that specializes in one commodity can produce overlapping evidence. Each archaeological test must declare those variants in advance. Broad nouns alone make no identifiable statistical model.
+
+The Lothal source audit already records a recurrent stamped string across seven physical categories and another repeated group on wooden boxes. A universal model in which the first string simply identifies one fixed container capacity faces that observed variation. A commodity rule, an issuer's mark, a storage-control mark and a token for a canonical transaction can accommodate it through different operations. Individually measured contents and removal traces would decide more than a new classifier of broad site/type labels. [Earlier physical-use audit](../../2026-10-02-six-hour/lothal-physical-use/README.md).
+
+The pointed-base goblet test recommended by Mukhopadhyay is a direct acquisition route for a capacity model. It requires identified vessels, capacity measurements, their stamps, date and use context, with shape and preservation recorded separately. The current module analysis does not supply those observations. A positive stamp/capacity association would still need comparison with issuer marks and manufacture batches; a capacity-independent class could identify a rule applied to vessels rather than their contents.
+
+## A relation between the licence and ration accounts
+
+Under a standing-capacity model, a licence and a canonical ration token occupy different stages of a common operation. Before redemption the object states what its bearer may receive or perform. After redemption it can certify that the right was used. The tier could be a rate, a limit or a standard packet depending on that rule. This makes the two models testable through the handling and transformation of registered carriers, instead of requiring a graphic feature that distinguishes the same encoding under two names.
+
+One practical experiment would compare traces on unused copies, repeatedly handled credentials and single-use clay tokens through blinded replica handling. It would include production handling and post-deposition abrasion as comparison processes, matched for material, manufacture and exposure. A repeated-use mechanism predicts localized wear at independently documented handling or suspension points beyond those processes; a consumption mechanism predicts a registered cancellation or removal operation after first use. The experiment would freeze observed wear and breakage features before assigning outcomes. The archaeological comparison then needs same-object registrations, manufacture evidence and source-defined deposition cohorts. Catalogue-number adjacency is insufficient: publications and catalogues can place similar inscriptions together.
+
+The main prospective data object is therefore a carrier history: source-qualified identity, every observed surface, manufacture or stamping relation, attachment and removal traces, possible suspension wear, independently joined content, and reasoned use phase with alternatives. An event label derived from the inscription itself would repeat the proposed meaning as its evidence. The life-cycle model becomes informative when its transitions have independent witnesses.

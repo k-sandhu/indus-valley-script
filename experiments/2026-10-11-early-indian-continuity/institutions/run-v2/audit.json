@@ -1,0 +1,751 @@
+{
+  "created_utc": "2026-10-11T06:30:52.194977+00:00",
+  "input_hashes": {
+    "PROTOCOL.md": "493894e3880990946c6e328bad52de486bda33ddee459239be78481c5e6843f6",
+    "AMENDMENT-eligibility.md": "a03c2a61eb04f206c0fa47365aae3c56a82a645b9f14ee7fa580240e3b65b8c8",
+    "assemble-ledger.py": "6540225d1d5da3c81efb416d59ac9d35d01d421f9180ad139e758fb7afdf80c9",
+    "audit-v2.py": "7f2679d2e3ac42e3fcc86caf5d8841c29bba49a4b8124188803942db4cf75589",
+    "sources.json": "cf06ab910627f78ce391f8a3ee1cd79d751424808c80a5cabe12639a42db6edb",
+    "observations.json": "b45c3056f52d3c5e4c02ddb4823039100174333950d37dff542fa8b6165d0eca",
+    "claims.json": "c846b0cb667e9efe69c991143689577c6732572cf7ffdd2971cd71f2e16d17d5"
+  },
+  "counts": {
+    "sources": 14,
+    "observations": 30,
+    "claims": 7,
+    "witnesses_verified": 31,
+    "checks_passed": 146
+  },
+  "evidence_type_counts": {
+    "archaeology": 13,
+    "rv_family_unflagged": 4,
+    "rv_family_late_addition": 1,
+    "rv_later_book": 1,
+    "brahmana": 2,
+    "buddhist": 4,
+    "scholarship": 5
+  },
+  "sensitivity": [
+    {
+      "policy": "all_curated",
+      "observations_retained": 30,
+      "textual_observations_retained": 12,
+      "represented_text_components": [
+        "agriculture",
+        "assemblies",
+        "craft",
+        "patronage",
+        "priestly_specialization"
+      ],
+      "candidate_hypotheses_passing_declared_requirements": [
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05"
+      ],
+      "interpretation": "Eligibility of curated hypotheses under named restrictions; not proof or probability of transmission."
+    },
+    {
+      "policy": "exclude_late_RV_and_later_text",
+      "observations_retained": 22,
+      "textual_observations_retained": 4,
+      "represented_text_components": [
+        "assemblies",
+        "craft",
+        "patronage",
+        "priestly_specialization"
+      ],
+      "candidate_hypotheses_passing_declared_requirements": [
+        "H02",
+        "H03",
+        "H04",
+        "H05"
+      ],
+      "interpretation": "Eligibility of curated hypotheses under named restrictions; not proof or probability of transmission."
+    },
+    {
+      "policy": "also_require_locus_specific_core_authentication",
+      "observations_retained": 18,
+      "textual_observations_retained": 0,
+      "represented_text_components": [],
+      "candidate_hypotheses_passing_declared_requirements": [],
+      "interpretation": "Eligibility of curated hypotheses under named restrictions; not proof or probability of transmission."
+    },
+    {
+      "policy": "require_intermediate_archaeological_witness",
+      "observations_retained": 30,
+      "textual_observations_retained": 12,
+      "represented_text_components": [
+        "agriculture",
+        "assemblies",
+        "craft",
+        "patronage",
+        "priestly_specialization"
+      ],
+      "candidate_hypotheses_passing_declared_requirements": [
+        "H01",
+        "H02"
+      ],
+      "interpretation": "Eligibility of curated hypotheses under named restrictions; not proof or probability of transmission."
+    },
+    {
+      "policy": "require_intermediate_and_cross_domain_diagnostic",
+      "observations_retained": 30,
+      "textual_observations_retained": 12,
+      "represented_text_components": [
+        "agriculture",
+        "assemblies",
+        "craft",
+        "patronage",
+        "priestly_specialization"
+      ],
+      "candidate_hypotheses_passing_declared_requirements": [],
+      "interpretation": "Eligibility of curated hypotheses under named restrictions; not proof or probability of transmission."
+    }
+  ],
+  "rice_classification_sensitivity": {
+    "unit": "reported percentage points, not raw independent trials",
+    "bounds": [
+      {
+        "observation": "A03",
+        "phase": "Mature",
+        "context": "514",
+        "wild": 75.84,
+        "domesticated": 9.55,
+        "immature": 14.61,
+        "uncertain": 0.0,
+        "contexts": 1,
+        "domesticated_lower": 9.55,
+        "domesticated_upper": 9.55
+      },
+      {
+        "observation": "A03",
+        "phase": "Late",
+        "context": "515",
+        "wild": 0.0,
+        "domesticated": 28.57,
+        "immature": 42.86,
+        "uncertain": 28.57,
+        "contexts": 1,
+        "domesticated_lower": 28.57,
+        "domesticated_upper": 57.14
+      },
+      {
+        "observation": "A04",
+        "phase": "Mature",
+        "context": "six retained contexts",
+        "wild": 39.46,
+        "domesticated": 9.99,
+        "immature": 4.51,
+        "uncertain": 46.03,
+        "contexts": 6,
+        "domesticated_lower": 9.99,
+        "domesticated_upper": 56.02
+      },
+      {
+        "observation": "A05",
+        "phase": "Late",
+        "context": "six retained contexts",
+        "wild": 6.92,
+        "domesticated": 33.15,
+        "immature": 0.0,
+        "uncertain": 59.93,
+        "contexts": 6,
+        "domesticated_lower": 33.15,
+        "domesticated_upper": 93.08
+      }
+    ],
+    "masudpur_VII_late_exceeds_mature_for_all_uncertain_assignments": true,
+    "masudpur_I_vs_bahola_order_guaranteed": false,
+    "within_site_comparison_survives_removal_of_either_Masudpur_VII_context": false,
+    "pgw_domestication_endpoint_available": false,
+    "limitations": "Only uncertain bases are reassigned. Immature bases retain source classification; published rounding retained. No inferential confidence interval, rate of historical change or pooled chronological regression fitted."
+  },
+  "checks": [
+    {
+      "check": "unique source identifiers",
+      "passed": true
+    },
+    {
+      "check": "unique observation identifiers",
+      "passed": true
+    },
+    {
+      "check": "unique claim identifiers",
+      "passed": true
+    },
+    {
+      "check": "A01 source references",
+      "passed": true
+    },
+    {
+      "check": "A01 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "A01 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "A02 source references",
+      "passed": true
+    },
+    {
+      "check": "A02 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "A02 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "A03 source references",
+      "passed": true
+    },
+    {
+      "check": "A03 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "A03 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "A04 source references",
+      "passed": true
+    },
+    {
+      "check": "A04 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "A04 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "A05 source references",
+      "passed": true
+    },
+    {
+      "check": "A05 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "A05 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "A06 source references",
+      "passed": true
+    },
+    {
+      "check": "A06 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "A06 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "A07 source references",
+      "passed": true
+    },
+    {
+      "check": "A07 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "A07 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "A08 source references",
+      "passed": true
+    },
+    {
+      "check": "A08 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "A08 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "C01 source references",
+      "passed": true
+    },
+    {
+      "check": "C01 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "C01 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "C02 source references",
+      "passed": true
+    },
+    {
+      "check": "C02 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "C02 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "C03 source references",
+      "passed": true
+    },
+    {
+      "check": "C03 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "C03 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "C04 source references",
+      "passed": true
+    },
+    {
+      "check": "C04 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "C04 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "C05 source references",
+      "passed": true
+    },
+    {
+      "check": "C05 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "C05 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "T01 source references",
+      "passed": true
+    },
+    {
+      "check": "T01 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "T01 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "T02 source references",
+      "passed": true
+    },
+    {
+      "check": "T02 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "T02 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "T03 source references",
+      "passed": true
+    },
+    {
+      "check": "T03 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "T03 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "T04 source references",
+      "passed": true
+    },
+    {
+      "check": "T04 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "T04 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "T05 source references",
+      "passed": true
+    },
+    {
+      "check": "T05 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "T05 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "T06 source references",
+      "passed": true
+    },
+    {
+      "check": "T06 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "T06 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "B01 source references",
+      "passed": true
+    },
+    {
+      "check": "B01 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "B01 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "B02 source references",
+      "passed": true
+    },
+    {
+      "check": "B02 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "B02 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "N01 source references",
+      "passed": true
+    },
+    {
+      "check": "N01 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "N01 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "N02 source references",
+      "passed": true
+    },
+    {
+      "check": "N02 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "N02 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "N03 source references",
+      "passed": true
+    },
+    {
+      "check": "N03 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "N03 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "N04 source references",
+      "passed": true
+    },
+    {
+      "check": "N04 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "N04 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "P01 source references",
+      "passed": true
+    },
+    {
+      "check": "P01 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "P01 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "P02 source references",
+      "passed": true
+    },
+    {
+      "check": "P02 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "P02 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "P03 source references",
+      "passed": true
+    },
+    {
+      "check": "P03 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "P03 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "P04 source references",
+      "passed": true
+    },
+    {
+      "check": "P04 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "P04 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "P05 source references",
+      "passed": true
+    },
+    {
+      "check": "P05 five separate date axes",
+      "passed": true
+    },
+    {
+      "check": "P05 locus and scope",
+      "passed": true
+    },
+    {
+      "check": "H01 observation references",
+      "passed": true
+    },
+    {
+      "check": "H01 alternatives explicit",
+      "passed": true
+    },
+    {
+      "check": "H01 intermediate references are archaeological",
+      "passed": true
+    },
+    {
+      "check": "H02 observation references",
+      "passed": true
+    },
+    {
+      "check": "H02 alternatives explicit",
+      "passed": true
+    },
+    {
+      "check": "H02 intermediate references are archaeological",
+      "passed": true
+    },
+    {
+      "check": "H03 observation references",
+      "passed": true
+    },
+    {
+      "check": "H03 alternatives explicit",
+      "passed": true
+    },
+    {
+      "check": "H03 intermediate references are archaeological",
+      "passed": true
+    },
+    {
+      "check": "H04 observation references",
+      "passed": true
+    },
+    {
+      "check": "H04 alternatives explicit",
+      "passed": true
+    },
+    {
+      "check": "H04 intermediate references are archaeological",
+      "passed": true
+    },
+    {
+      "check": "H05 observation references",
+      "passed": true
+    },
+    {
+      "check": "H05 alternatives explicit",
+      "passed": true
+    },
+    {
+      "check": "H05 intermediate references are archaeological",
+      "passed": true
+    },
+    {
+      "check": "M01 observation references",
+      "passed": true
+    },
+    {
+      "check": "R01 observation references",
+      "passed": true
+    },
+    {
+      "check": "S01 witness bates2017-rice.pdf",
+      "passed": true
+    },
+    {
+      "check": "S02 witness petrie-bates2017.pdf",
+      "passed": true
+    },
+    {
+      "check": "S03 witness kenoyer1998-craft.pdf",
+      "passed": true
+    },
+    {
+      "check": "S04 witness kenoyer2007-beads.pdf",
+      "passed": true
+    },
+    {
+      "check": "S05 witness witzel1995-kuru-author-tls-exception.pdf",
+      "passed": true
+    },
+    {
+      "check": "S06 witness witzel1995-early-history-author-tls-exception.pdf",
+      "passed": true
+    },
+    {
+      "check": "S07 witness jamison-book2.pdf",
+      "passed": true
+    },
+    {
+      "check": "S07 witness jamison-book4.pdf",
+      "passed": true
+    },
+    {
+      "check": "S07 witness jamison-book5.pdf",
+      "passed": true
+    },
+    {
+      "check": "S07 witness jamison-book6.pdf",
+      "passed": true
+    },
+    {
+      "check": "S07 witness jamison-book10.pdf",
+      "passed": true
+    },
+    {
+      "check": "S08 witness rv02-restored.html",
+      "passed": true
+    },
+    {
+      "check": "S08 witness rv04-restored.html",
+      "passed": true
+    },
+    {
+      "check": "S08 witness rv05-restored.html",
+      "passed": true
+    },
+    {
+      "check": "S08 witness rv06-restored.html",
+      "passed": true
+    },
+    {
+      "check": "S08 witness rv10-restored.html",
+      "passed": true
+    },
+    {
+      "check": "S09 witness wilson-rv05029-15.html",
+      "passed": true
+    },
+    {
+      "check": "S09 witness wilson-rv06028-6.html",
+      "passed": true
+    },
+    {
+      "check": "S10 witness eggeling-sb531.html",
+      "passed": true
+    },
+    {
+      "check": "S11 witness iranica-aryans.html",
+      "passed": true
+    },
+    {
+      "check": "S12 witness allon2022.html",
+      "passed": true
+    },
+    {
+      "check": "S13 witness dn2-pali.json",
+      "passed": true
+    },
+    {
+      "check": "S13 witness dn2-sujato.json",
+      "passed": true
+    },
+    {
+      "check": "S13 witness dn5-pali.json",
+      "passed": true
+    },
+    {
+      "check": "S13 witness dn5-sujato.json",
+      "passed": true
+    },
+    {
+      "check": "S13 witness dn16-pali.json",
+      "passed": true
+    },
+    {
+      "check": "S13 witness dn16-sujato.json",
+      "passed": true
+    },
+    {
+      "check": "S13 witness bilara-license.md",
+      "passed": true
+    },
+    {
+      "check": "S13 witness bilara-head.json",
+      "passed": true
+    },
+    {
+      "check": "S14 witness jamison2014-2-15.pdf",
+      "passed": true
+    },
+    {
+      "check": "S14 witness jamison2014-13-22.pdf",
+      "passed": true
+    },
+    {
+      "check": "A03 percentage sum 514",
+      "passed": true
+    },
+    {
+      "check": "A03 percentage sum 515",
+      "passed": true
+    },
+    {
+      "check": "A04 percentage sum six retained contexts",
+      "passed": true
+    },
+    {
+      "check": "A05 percentage sum six retained contexts",
+      "passed": true
+    },
+    {
+      "check": "no PGW spikelet endpoint invented",
+      "passed": true
+    }
+  ]
+}

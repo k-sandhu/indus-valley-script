@@ -1,0 +1,9 @@
+# Purpose and selection rule
+
+This is a purposive survey of mechanisms that could support continued habitation, urban services and intergenerational practical capacities. It starts with resilience, archaeological settlement duration and collective action, then follows their references and close counterprecedents into economic reproduction, learning and maintenance. The survey seeks direct predecessors to the proposed joint replacement test. It does not estimate the prevalence of a theme across all scholarship.
+
+The selection gives priority to original theoretical arguments, mathematical models, archaeological studies and experiments whose primary text can be inspected. Author reviews supply the authors' synthesis and recommendations. Publisher summaries and excerpts retain their limited access depth. A downloadable file is checked for identity before it supports a claim. Alternate routes and failed or incorrect witnesses are recorded. Publications acquired by collaborators may be independently read through their existing local witnesses, with those dependencies declared.
+
+For each substantive source, the ledger records the persistence unit, mechanism, observed or modeled outcome, assumptions, relevant locators and inspected scope. Shared assumptions concern the unit, boundary, time horizon, disturbance and distribution of service. Continued occupation alone does not determine which residents, institutions or traditions continued. Claims about a comparison being underemphasized apply to this inspected sample and require a further systematic survey before a field-wide prevalence claim.
+
+The survey was planned after the root protocol and source searches had identified Smith et al. 2021, Lawrence et al. 2025, Anderies et al. 2004 and Pichancourt et al. 2025. It is exploratory and has no blinded outcome test or preregistered hypothesis ranking.
