@@ -1,0 +1,15 @@
+# Retrospective
+
+The run set out to finish both CISI basic-data tables in one sitting with the pilot's double-blind method, using many reader instances in parallel. Readings were fast: sixteen readers produced both passes of 42 blocks in about 40 minutes. Most of the work went into making two independent readings comparable, and most of the cost into adjudicating CISI 2.
+
+**A second model as reader.** Codex with GPT-6.1-Sol was calibrated on 30 pilot entries before the protocol was frozen, to give the second pass a different model. It misread museum codes and accession forms systematically, so the second pass stayed with Claude and Codex wrote the pipeline, which passed 53 self-tests and reproduced the pilot's coverage exactly.
+
+**Strips that stopped short.** The strip cutter used a darkness threshold that missed faint lines at the foot of 17 CISI 2 pages, up to fifteen entries on p. 446. A reader noticed the gap at p. 438; Amendment 1 cut tail strips and two further instances read them before any comparison. Every block's text extent should be checked against the page heading and a lighter threshold before readers start.
+
+**Conventions, not readings.** The first comparison failed on things no reader got wrong: a CISI number printed with a full stop, a number or site prefix a reader bracketed, entries printed across a block boundary and written differently by the two readers, a corrigenda heading counted as a line by one reader only, and readers who put their crop scripts under the same name in a shared scratch folder. The assembly step absorbed these by rule, leaving the readers' files untouched. The brief should fix these conventions in advance and give each reader a private folder.
+
+**Cost.** CISI 1 is sharp, and its readers agreed on 98.6% of cells, so its 112 disagreements were adjudicated quickly. On CISI 2's blurred pages the readers bracketed so freely that they agreed on only 65% of cells, and adjudicating 3,126 disagreements one by one proved too expensive; it was stopped at the owner's request after three blocks, and Amendment 2 kept the union of the two readings for the rest. Most of those disagreements were a bracket against a definite reading of the same digit. A cheaper design for a blurred scan would adjudicate only cells whose readings exclude each other, or only the columns that the joins use, and accept a bracketed union elsewhere from the start.
+
+**Labels.** Adjudicators used "both-wrong" for cells where one reader had bracketed the right digit without choosing it, which the bracket rule does not count as an error. The outcome labels were recomputed from the decided readings, keeping the adjudicators' labels, and a "both-consistent" outcome was added; error rates were unaffected because they are computed from the readings.
+
+**Outcome.** Both tables have a row for every printed entry; 2,602 entries join the corpus; museum-number coverage rises from 7.2% to between 42.5% and 52.2% of objects depending on how uncertain digits are counted; and all three frozen predictions hold, including the long shot that Lipi built its Harappa registrations from the FC number as it did for Mohenjo-daro.

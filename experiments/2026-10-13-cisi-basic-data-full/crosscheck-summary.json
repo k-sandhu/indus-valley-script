@@ -1,0 +1,58 @@
+{
+  "rows": 3680,
+  "join_status": {
+    "one-family": 2602,
+    "no-lipi-family": 1078
+  },
+  "comparison_counts": {
+    "excavation-different": 160,
+    "excavation-lipi-incomplete": 92,
+    "excavation-same-number-tail-differs": 153,
+    "excavation-cisi-number-not-printed": 33,
+    "excavation-number-differs-tail-agrees": 25,
+    "museum-different": 15,
+    "excavation-cisi-cell-uncertain": 548,
+    "museum-same-number-different-code": 47,
+    "museum-cisi-number-not-printed": 5,
+    "fc-table-match": 776,
+    "fc-table-differ": 24,
+    "fc-rule-differs": 24,
+    "museum-cisi-cell-uncertain": 34,
+    "excavation-cisi-fc-uncertain": 60,
+    "excavation-matches-another-entry": 5,
+    "fc-table-fc-uncertain": 65,
+    "fc-rule-bracket-excludes": 6,
+    "fc-table-catalogue-nonnumeric": 2
+  },
+  "recheck_cells": 1206,
+  "recheck_rows": 1144,
+  "by_column": {
+    "col3": 1076,
+    "col4": 101,
+    "col2": 29
+  },
+  "protected_cells": 604,
+  "count_rule": "Recheck cells are unique CISI/column pairs. Comparison counts count each source comparison, including distinct face values and catalogue rows.",
+  "inputs": {
+    "lipi": {
+      "path": "data/normalized/lipi_observed_faces.jsonl",
+      "sha256": "1220f5591a42abe7c6696ac014aba90e7c49fdce6b0ccba0b85bb45f950c30db"
+    },
+    "website": {
+      "path": "data/normalized/indus_website_observed.jsonl",
+      "sha256": "ff842377a6b98d51ee2b6cf3355977e7b31dc4e701bef705b178990b0f4ed162"
+    },
+    "table_join": {
+      "path": "experiments/2026-10-13-mackay-marshall-tables/run-2026-10-13/join-table.csv",
+      "sha256": "b24e08c7ac7ceab47bf5e9fd7df2ee53fd9b3f7ec6262c20598b5521a618c231"
+    },
+    "cisi1": {
+      "path": "data/raw/2026-10-13-cisi-basic-data-full/assembled/cisi1-basic-data.jsonl",
+      "sha256": "15cb18a7d539d7ce181dba9e83e5172ecc056ac3ce4415f15642e7fce35b8370"
+    },
+    "cisi2": {
+      "path": "data/raw/2026-10-13-cisi-basic-data-full/assembled/cisi2-basic-data.jsonl",
+      "sha256": "12254fff539499b9b78e37b67c98aec6da1d9c7240824095e3667da2fa6137b2"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 ---
 id: Q-1005
 title: Transcribe the CISI 1 basic-data pages into an object table with museum and excavation numbers
-status: open
+status: done
 area: data
 kind: metadata
 priority: 1
@@ -10,7 +10,7 @@ compute: days
 difficulty: standard
 claimed_by: ""
 claim_expires: ""
-prior_attempts: [EVIDENCE-CENSUS-SYNTHESIS-01, OBJECT-LEDGER-PILOT-01, CISI2-BASIC-DATA-PILOT-2026-10-13]
+prior_attempts: [EVIDENCE-CENSUS-SYNTHESIS-01, OBJECT-LEDGER-PILOT-01, CISI2-BASIC-DATA-PILOT-2026-10-13, CISI-BASIC-DATA-FULL-2026-10-13]
 related: [Q-1006, Q-1007, Q-1013, Q-1030]
 sources: [knowledge/DATA.md, experiments/2026-10-06-evidence-census/synthesis/catalogue-coverage.csv, experiments/2026-10-06-evidence-census/synthesis/join-summary.json]
 ---
@@ -36,3 +36,5 @@ Done when every catalogue number in the volume's site ranges has a row or a reco
 The evidence census read selected basic-data pages for site ranges and museum joins; the object ledger pilot used them for single objects. No complete transcription exists.
 
 13 October 2026. The [CISI 2 pilot](../../experiments/2026-10-13-cisi2-basic-data-pilot/README.md)'s schema and procedure apply to CISI 1 unchanged: printed p. 366 (PDF 402) shows the same five columns, with (o) and (t) markers in column 3 for the number written on the object and the number in the excavation report's tabulation. CISI 1's basic data prints no findspot, depth, material or dimensions either, so this card's targets now name the museum, FC and excavation numbers. The basic data runs from printed p. 365 to p. 375 (PDF 401–411), about 1,533 entries by the census count, in about 20 half-column blocks. At the CISI 2 pilot's rate (5.7 seconds of agent time per entry for two blind readings, adjudication and cross-check) the section needs about 2.4 hours; a double-read pilot block should come first, since CISI 1's scan differs in resolution and type. The museum package of the same day read CISI 1 pp. 365–375 by eye for 46 museum records and confirmed 15 joins through it.
+
+13–14 October 2026, [full transcription](../../experiments/2026-10-13-cisi-basic-data-full/README.md). All 1,543 entries of CISI 1 pp. 366–375 were transcribed twice blind by separate Claude instances and every disagreement was adjudicated against the page: 98.6% cell agreement, 7 definite wrong readings per reader in 7,715 cells, 5 cells left bracketed; the corrigenda (49 lines) are transcribed as text. CISI 1 prints two pointers to CISI 2 (a bracketed cross-reference "{H-356}" and "M-595 deleted, see vol. 2") and refers H-266 to H-275 to vol. 2. Values are local; counts, coverage and per-object flags are tracked.

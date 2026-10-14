@@ -1,0 +1,165 @@
+{
+  "prediction_1_mohenjo_daro": {
+    "counts": {
+      "outside_pilot_mohenjo_daro_entries": 1332,
+      "entries_with_catalogue_join": 627,
+      "eligible_entries": 573,
+      "eligible_catalogue_rows": 581,
+      "excluded_catalogue_rows_on_eligible_entries": 1,
+      "matching_catalogue_rows": 560,
+      "entries_with_all_scorable_rows_matching": 553,
+      "entries_with_conflicting_catalogue_checks": 7,
+      "matching_entries": 560,
+      "no_catalogue_join": 705,
+      "unscorable_entries": 54,
+      "fc-uncertain": 53,
+      "catalogue-nonnumeric": 1
+    },
+    "numerator": 560,
+    "denominator": 573,
+    "share": 0.9773123909249564,
+    "percent": 97.731,
+    "exceptions": [
+      "M-9",
+      "M-107",
+      "M-955",
+      "M-963",
+      "M-973",
+      "M-975",
+      "M-1010",
+      "M-1061",
+      "M-1196",
+      "M-1278",
+      "M-1315",
+      "M-1316",
+      "M-1370"
+    ],
+    "threshold_met": true,
+    "kill_condition_met": false,
+    "exception_explanation": "Coordinator must review the page and record crossed-record or correction evidence for each exception; these causes are not inferred from a mismatch.",
+    "all_scorable_rows_share": {
+      "numerator": 553,
+      "denominator": 573,
+      "share": 0.9650959860383944,
+      "percent": 96.51
+    },
+    "unit": "Unique CISI entry outside M-621 to M-947; exact or confirmed Mackay/Marshall joins; four numeric unbracketed FC digits and at least one numeric catalogue number. An entry satisfies the stated OR rule if at least one joined row satisfies its arithmetic rule. Conflicting checks and the stricter all-rows share are reported separately."
+  },
+  "prediction_2_harappa": {
+    "counts": {
+      "joined_harappa_entries": 831,
+      "extension_entries": 276,
+      "scorable_extension_entries": 226,
+      "matching_entries": 221,
+      "multiple_distinct_extensions": 0,
+      "no_definite_numeric_extension": 219,
+      "bracketed_printed_excavation_excluded": 336,
+      "unresolved_fc": 50
+    },
+    "observed_matches_over_all_extensions": {
+      "numerator": 221,
+      "denominator": 276,
+      "share": 0.8007246376811594,
+      "percent": 80.072
+    },
+    "scorable_share": {
+      "numerator": 221,
+      "denominator": 226,
+      "share": 0.9778761061946902,
+      "percent": 97.788
+    },
+    "share_bounds_from_unresolved_fc": {
+      "lower": 0.8007246376811594,
+      "upper": 0.9818840579710145
+    },
+    "threshold_met": true,
+    "kill_condition_met": false,
+    "exceptions": [
+      "H-230",
+      "H-253",
+      "H-261",
+      "H-262",
+      "H-359"
+    ],
+    "unresolved": [
+      "H-268",
+      "H-383",
+      "H-392",
+      "H-408",
+      "H-416",
+      "H-424",
+      "H-426",
+      "H-446",
+      "H-447",
+      "H-449",
+      "H-451",
+      "H-456",
+      "H-459",
+      "H-465",
+      "H-468",
+      "H-469",
+      "H-475",
+      "H-480",
+      "H-482",
+      "H-504",
+      "H-510",
+      "H-559",
+      "H-570",
+      "H-589",
+      "H-593",
+      "H-596",
+      "H-600",
+      "H-601",
+      "H-610",
+      "H-641",
+      "H-642",
+      "H-644",
+      "H-656",
+      "H-658",
+      "H-689",
+      "H-698",
+      "H-705",
+      "H-707",
+      "H-731",
+      "H-748",
+      "H-766",
+      "H-770",
+      "H-771",
+      "H-773",
+      "H-814",
+      "H-820",
+      "H-878",
+      "H-885",
+      "H-888",
+      "H-987"
+    ],
+    "normalization": "Remove whitespace, hyphens, slashes, dots and commas, uppercase, remove leading area letters, and remove printed (o)/(t) markers. Require the remaining identifiers to be digits. A strict extension starts with a printed numeric identifier and has one or more appended digits. With multiple printed numbers use the longest prefix. All distinct extensions across family faces must match. Compare appended digits to the FC digits after removing the first digit, as integers to allow leading-zero padding. Bracketed excavation cells cannot define an extension; uncertain or missing FC leaves that extension unresolved in the full denominator."
+  },
+  "stage": "Final merged table after permitted rechecks; the blind error rates remain separate.",
+  "inputs": {
+    "lipi": {
+      "path": "data/normalized/lipi_observed_faces.jsonl",
+      "sha256": "1220f5591a42abe7c6696ac014aba90e7c49fdce6b0ccba0b85bb45f950c30db"
+    },
+    "website": {
+      "path": "data/normalized/indus_website_observed.jsonl",
+      "sha256": "ff842377a6b98d51ee2b6cf3355977e7b31dc4e701bef705b178990b0f4ed162"
+    },
+    "table_join": {
+      "path": "experiments/2026-10-13-mackay-marshall-tables/run-2026-10-13/join-table.csv",
+      "sha256": "b24e08c7ac7ceab47bf5e9fd7df2ee53fd9b3f7ec6262c20598b5521a618c231"
+    },
+    "source_sets": {
+      "path": "experiments/2026-10-13-data-round-1-verification/combined-coverage-post-fix.json",
+      "sha256": "2973cf8800165a310671e4892fd221930c41057d2858c9b00602509bae14957a"
+    },
+    "cisi1": {
+      "path": "data/raw/2026-10-13-cisi-basic-data-full/assembled/cisi1-basic-data.jsonl",
+      "sha256": "15cb18a7d539d7ce181dba9e83e5172ecc056ac3ce4415f15642e7fce35b8370"
+    },
+    "cisi2": {
+      "path": "data/raw/2026-10-13-cisi-basic-data-full/assembled/cisi2-basic-data.jsonl",
+      "sha256": "12254fff539499b9b78e37b67c98aec6da1d9c7240824095e3667da2fa6137b2"
+    }
+  }
+}
