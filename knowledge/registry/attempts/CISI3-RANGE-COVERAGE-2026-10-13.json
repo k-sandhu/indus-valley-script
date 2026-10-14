@@ -1,0 +1,21 @@
+{
+  "id": "CISI3-RANGE-COVERAGE-2026-10-13",
+  "theme": "Local coverage of the CISI 3.1 and 3.2 number ranges that follow CISI 1 and 2",
+  "status": "completed-verified-computation",
+  "question": "How many of the CISI numbers after the CISI 1 and 2 ranges for Mohenjo-daro, Harappa, Kalibangan, Chanhu-daro, Nausharo and Rojdi does the pinned export cite, and what kind of object surrounds each absent number?",
+  "outcome": "Slots run from the number after CISI 1 or 2 to the export's highest number. CISI 3.1: 1,291 of 2,040 present (63.3%; M-1660-2129 389 of 470, H-1020-2589 902 of 1,570), 1,788 faces. CISI 3.2: 172 of 550 (31.3%; K-123-476 101 of 354, C-51-94 36 of 44, Ns-11-87 32 of 77, Rjd-2-76 3 of 75). Of 749 absent CISI 3.1 numbers, 340 lie between present pottery, 244 between seals, tablets or sealings, 165 other or mixed; of 378 absent CISI 3.2 numbers, 294 pottery, 73 seal-tablet, 11 other or mixed. Seventeen runs of ten or more hold 736 of 1,127 absent slots, the largest H-2406-2547 (142, pottery). An independent implementation from the raw Lipi CSV agreed on every count and every absent-slot context.",
+  "challenge": "CISI 3.1 and 3.2 are not held, so slot bounds are inferred from the export and the class of an absent number from its neighbours. The first chat count started the Harappa range at the lowest local number (H-1021). The neighbour classification was added after the per-hundred counts were seen. Fourteen prefixes with 19 numbers have no measured CISI 1 or 2 range.",
+  "remedy": "Started every range at the number after CISI 1 or 2 (1,570 Harappa slots), labelled the neighbour classification exploratory, listed the 14 unmeasured prefixes separately, and checked the counts with a second parser over the raw export.",
+  "evidence": [
+    "experiments/2026-10-13-cisi3-range-coverage/README.md",
+    "experiments/2026-10-13-cisi3-range-coverage/count_ranges.py",
+    "experiments/2026-10-13-cisi3-range-coverage/check_raw.py",
+    "experiments/2026-10-13-cisi3-range-coverage/run-2026-10-13/range-coverage.csv",
+    "experiments/2026-10-13-cisi3-range-coverage/run-2026-10-13/absent-numbers.csv",
+    "experiments/2026-10-13-cisi3-range-coverage/run-2026-10-13/summary.json",
+    "experiments/2026-10-13-cisi3-range-coverage/run-2026-10-13/verification.json"
+  ],
+  "retry_when": "CISI 3.1 or 3.2 is acquired (Q-1008, Q-1009): classify each absent number from its plate, predicting at least 80% potsherds among the 340 pottery-context numbers and at least 80% seals, tablets or sealings among the 244 seal-tablet-context numbers. Also rerun when the export pin or the census ranges change. Write to a new dated directory.",
+  "status_class": "verified-computation",
+  "area": "data"
+}

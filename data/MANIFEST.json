@@ -31,7 +31,7 @@
   "held": 34,
   "partly-held": 14,
   "not-held": 30,
-  "project-output": 14
+  "project-output": 15
  },
  "sources": [
   {
@@ -2226,10 +2226,12 @@
    "status": "not-held",
    "location": "external",
    "evidence": [
-    "experiments/2026-10-12-data-inventory/sources.json"
+    "experiments/2026-10-12-data-inventory/sources.json",
+    "experiments/2026-10-13-cisi3-range-coverage/README.md"
    ],
    "local_paths": [],
-   "hashes": {}
+   "hashes": {},
+   "notes": "The pinned Lipi export cites 1,291 of the 2,040 numbers after CISI 2 in this volume's series (M-1660 to M-2129: 389 of 470; H-1020 to H-2589: 902 of 1,570), with the range end taken from the export's highest number. Of the 749 absent numbers, 340 lie between present pottery and 244 between present seals, tablets or sealings (cisi3-range-coverage-2026-10-13)."
   },
   {
    "id": "cisi-3-2",
@@ -2265,10 +2267,12 @@
    "status": "not-held",
    "location": "external",
    "evidence": [
-    "experiments/2026-10-12-data-inventory/sources.json"
+    "experiments/2026-10-12-data-inventory/sources.json",
+    "experiments/2026-10-13-cisi3-range-coverage/README.md"
    ],
    "local_paths": [],
-   "hashes": {}
+   "hashes": {},
+   "notes": "The pinned Lipi export cites 172 of the 550 numbers after CISI 1 and 2 for four of this volume's sites (Kalibangan K-123 to K-476: 101 of 354; Chanhu-daro C-51 to C-94: 36 of 44; Nausharo Ns-11 to Ns-87: 32 of 77; Rojdi Rjd-2 to Rjd-76: 3 of 75), with each range end taken from the export's highest number. Of the 378 absent numbers, 294 lie between present pottery and 73 between present seals or tablets (cisi3-range-coverage-2026-10-13)."
   },
   {
    "id": "cisi-3-3",
@@ -3597,6 +3601,70 @@
     "Q-1019"
    ],
    "hashes": {}
+  },
+  {
+   "id": "cisi3-range-coverage-2026-10-13",
+   "status": "project-output",
+   "location": "tracked",
+   "title": "Local coverage of the CISI 3.1 and 3.2 number ranges, 13 October 2026",
+   "kind": "project-derivative",
+   "local_paths": [
+    "experiments/2026-10-13-cisi3-range-coverage/",
+    "data/raw/2026-10-13-cisi3-range-coverage/"
+   ],
+   "size": {
+    "cisi_3_1_slots": 2040,
+    "cisi_3_1_present": 1291,
+    "cisi_3_1_faces": 1788,
+    "cisi_3_1_absent": 749,
+    "cisi_3_1_absent_between_pottery": 340,
+    "cisi_3_1_absent_between_seal_tablet": 244,
+    "cisi_3_2_slots": 550,
+    "cisi_3_2_present": 172,
+    "cisi_3_2_absent": 378,
+    "cisi_3_2_absent_between_pottery": 294,
+    "cisi_3_2_absent_between_seal_tablet": 73,
+    "absent_numbers_listed": 1127
+   },
+   "identifiers": [
+    "CISI prefix and number",
+    "Lipi family id (local table only)"
+   ],
+   "metadata_fields": [
+    "present or absent in the export",
+    "faces per present number",
+    "nearest present numbers below and above an absent number",
+    "absent-number context (pottery, seal-tablet, other, mixed)"
+   ],
+   "rights": {
+    "status": "mixed-assets",
+    "licence": null,
+    "detail": "Code under the Unlicense; counts, absent-number list and prose CC0. The per-number table with Lipi family ids and object classes stays local under the Lipi rule in REDISTRIBUTION.md."
+   },
+   "fetch": {
+    "method": "rebuild",
+    "steps": [
+     "Hold data/normalized/lipi_observed_faces.jsonl (SHA256 1220f559...), the raw Lipi export at fc8813a and experiments/2026-10-06-evidence-census/synthesis/catalogue-coverage.csv.",
+     "python -P experiments/2026-10-13-cisi3-range-coverage/count_ranges.py --out <new tracked run> --local <new local run>; check_raw.py --run <new tracked run> --local <new local run>"
+    ]
+   },
+   "hashes": {
+    "run-2026-10-13/range-coverage.csv": "f460f19d953d33e61786854ff814bde635ce131ec39de7f1addd606ceaca049c",
+    "run-2026-10-13/absent-numbers.csv": "3a120fac0dbcc9c3ec7a470d7f21f2770d3ca142a0152fbc41e04af947331964",
+    "run-2026-10-13/summary.json": "37569b80180053845bdafb036d23d327ebffef1f86abc6dbed3263b284d7326a",
+    "run-2026-10-13/verification.json": "d7f1103a65e4717b76a4ad4ed13dc8b7016d10d17edbb67adc6cd9fcfc726f05"
+   },
+   "evidence": [
+    "experiments/2026-10-13-cisi3-range-coverage/README.md",
+    "experiments/2026-10-13-cisi3-range-coverage/run-2026-10-13/range-coverage.csv",
+    "experiments/2026-10-13-cisi3-range-coverage/run-2026-10-13/absent-numbers.csv",
+    "experiments/2026-10-13-cisi3-range-coverage/run-2026-10-13/verification.json"
+   ],
+   "questions": [
+    "Q-1008",
+    "Q-1009",
+    "Q-1026"
+   ]
   }
  ]
 }

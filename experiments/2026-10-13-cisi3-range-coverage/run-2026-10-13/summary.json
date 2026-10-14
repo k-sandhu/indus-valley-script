@@ -1,0 +1,170 @@
+{
+  "package": "experiments/2026-10-13-cisi3-range-coverage",
+  "rule": "For each prefix with a CISI 1 or 2 range in the census catalogue-coverage table, slots run from the highest CISI 1 or 2 number plus one to the highest base number in the export; a slot is present when a local face cites it. Letter suffixes are dropped (H-1951A counts as 1951). An absent slot takes the object class of the nearest present numbers below and above it when they agree, otherwise mixed; classes come from the first segment of the export's type code (POT pottery; SEAL, TAB, TAG seal-tablet; anything else other).",
+  "inputs": {
+    "data/normalized/lipi_observed_faces.jsonl": "1220f5591a42abe7c6696ac014aba90e7c49fdce6b0ccba0b85bb45f950c30db",
+    "experiments/2026-10-06-evidence-census/synthesis/catalogue-coverage.csv": "aa136b84eb6d5358dbadd5c922301ac85f029b60866b04e9c52259898cc2c6f4"
+  },
+  "script_sha256": "06469f1dc4f5d4801c7519990092eb711bfd4e3222a93608a09333156c1479de",
+  "local_number_slots": {
+    "data/raw/2026-10-13-cisi3-range-coverage/run-2026-10-13/number-slots.csv": "1e3200adf1d519d37b99fa062363e3e4430d141d121dabebdc710887b4490b19"
+  },
+  "python": "3.13.5",
+  "export_faces": 5680,
+  "export_families": 4695,
+  "faces_without_parsable_cisi": 666,
+  "unparsed_references": {
+    "-": 661,
+    "?-3": 1,
+    "?-4": 1,
+    "?-5": 1,
+    "?-6": 2
+  },
+  "ranges": [
+    {
+      "prefix": "M",
+      "site": "Mohenjo-daro",
+      "later_volume": "CISI 3.1",
+      "cisi12_last": 1659,
+      "slot_first": 1660,
+      "slot_last": 2129,
+      "slots": 470,
+      "numbers_present": 389,
+      "numbers_absent": 81,
+      "share_present": 0.8277,
+      "families": 389,
+      "faces": 410,
+      "absent_between_pottery": 3,
+      "absent_between_seal-tablet": 51,
+      "absent_between_other": 12,
+      "absent_between_mixed": 15
+    },
+    {
+      "prefix": "H",
+      "site": "Harappa",
+      "later_volume": "CISI 3.1",
+      "cisi12_last": 1019,
+      "slot_first": 1020,
+      "slot_last": 2589,
+      "slots": 1570,
+      "numbers_present": 902,
+      "numbers_absent": 668,
+      "share_present": 0.5745,
+      "families": 902,
+      "faces": 1378,
+      "absent_between_pottery": 337,
+      "absent_between_seal-tablet": 193,
+      "absent_between_other": 9,
+      "absent_between_mixed": 129
+    },
+    {
+      "prefix": "K",
+      "site": "Kalibangan",
+      "later_volume": "CISI 3.2",
+      "cisi12_last": 122,
+      "slot_first": 123,
+      "slot_last": 476,
+      "slots": 354,
+      "numbers_present": 101,
+      "numbers_absent": 253,
+      "share_present": 0.2853,
+      "families": 101,
+      "faces": 101,
+      "absent_between_pottery": 217,
+      "absent_between_seal-tablet": 27,
+      "absent_between_other": 1,
+      "absent_between_mixed": 8
+    },
+    {
+      "prefix": "C",
+      "site": "Chanhu-daro",
+      "later_volume": "CISI 3.2",
+      "cisi12_last": 50,
+      "slot_first": 51,
+      "slot_last": 94,
+      "slots": 44,
+      "numbers_present": 36,
+      "numbers_absent": 8,
+      "share_present": 0.8182,
+      "families": 36,
+      "faces": 37,
+      "absent_between_pottery": 1,
+      "absent_between_seal-tablet": 5,
+      "absent_between_other": 0,
+      "absent_between_mixed": 2
+    },
+    {
+      "prefix": "Ns",
+      "site": "Nausharo",
+      "later_volume": "CISI 3.2",
+      "cisi12_last": 10,
+      "slot_first": 11,
+      "slot_last": 87,
+      "slots": 77,
+      "numbers_present": 32,
+      "numbers_absent": 45,
+      "share_present": 0.4156,
+      "families": 32,
+      "faces": 32,
+      "absent_between_pottery": 4,
+      "absent_between_seal-tablet": 41,
+      "absent_between_other": 0,
+      "absent_between_mixed": 0
+    },
+    {
+      "prefix": "Rjd",
+      "site": "Rojdi",
+      "later_volume": "CISI 3.2",
+      "cisi12_last": 1,
+      "slot_first": 2,
+      "slot_last": 76,
+      "slots": 75,
+      "numbers_present": 3,
+      "numbers_absent": 72,
+      "share_present": 0.04,
+      "families": 3,
+      "faces": 3,
+      "absent_between_pottery": 72,
+      "absent_between_seal-tablet": 0,
+      "absent_between_other": 0,
+      "absent_between_mixed": 0
+    }
+  ],
+  "by_volume": {
+    "CISI 3.1": {
+      "prefixes": [
+        "M",
+        "H"
+      ],
+      "slots": 2040,
+      "numbers_present": 1291,
+      "numbers_absent": 749,
+      "families": 1291,
+      "faces": 1788,
+      "absent_between_pottery": 340,
+      "absent_between_seal-tablet": 244,
+      "absent_between_other": 21,
+      "absent_between_mixed": 144,
+      "share_present": 0.6328
+    },
+    "CISI 3.2": {
+      "prefixes": [
+        "K",
+        "C",
+        "Ns",
+        "Rjd"
+      ],
+      "slots": 550,
+      "numbers_present": 172,
+      "numbers_absent": 378,
+      "families": 172,
+      "faces": 173,
+      "absent_between_pottery": 294,
+      "absent_between_seal-tablet": 73,
+      "absent_between_other": 1,
+      "absent_between_mixed": 10,
+      "share_present": 0.3127
+    }
+  },
+  "prefixes_outside_measured_ranges": 14
+}
