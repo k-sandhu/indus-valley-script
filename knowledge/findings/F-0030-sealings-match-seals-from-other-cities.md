@@ -23,4 +23,4 @@ Of 16 matching sealings or tags, 13 matched only seals found elsewhere. Those 13
 
 # Scope
 
-The review recount corrects the original summary’s other-site count. Matching concerns catalogue text identity and recorded find sites. It leaves movement of the seal, sealed goods or formula unresolved.
+A sealing is a seal's impression in clay. The review recount corrects the original summary's count of other-site matches. A match means identical catalogue texts at recorded find sites. Whether the seal, the goods or only the text travelled remains open.

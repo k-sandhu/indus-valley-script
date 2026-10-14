@@ -17,11 +17,11 @@ sources: [knowledge/DATA.md, experiments/2026-10-06-evidence-census/synthesis/ca
 
 # Question
 
-Which of the 347 CISI 2 entries for Rehman Dheri (270), Pirak (49), Mehrgarh (18) and Sarai Khola (10) carry Indus signs, which carry potter's marks or other marks, and on what object and in which phase?
+Which of the 347 entries in CISI 2 (the volume of the *Corpus of Indus Seals and Inscriptions* for collections in Pakistan) for Rehman Dheri (270), Pirak (49), Mehrgarh (18) and Sarai Khola (10) carry Indus signs, which carry potter's marks or other marks, and on what object and in which phase?
 
 # Why it matters
 
-These four sites contribute 344 of the 1,032 catalogue entries missing from the local index, so they dominate any count of what the project lacks. Rehman Dheri's marked pottery is early comparative material whose classification decides whether it belongs in the inscribed-object register or in a related-marks register.
+These four sites contribute 344 of the 1,032 catalogue entries that match no identifier in the local corpus, so they dominate any count of what the project lacks. Rehman Dheri's marked pottery is early comparative material whose classification decides whether it belongs in the inscribed-object register or in a related-marks register.
 
 # What is needed
 
@@ -33,4 +33,4 @@ Done when all 347 entries have a class (Indus sign sequence, single sign, potter
 
 # Prior attempts
 
-The census counted these entries as absent keys; the backward-chronology assembly recounted Rehman Dheri phases for a different question.
+The project's evidence census counted these entries as catalogue numbers absent from the local corpus; the backward-chronology assembly recounted Rehman Dheri phases for a different question.

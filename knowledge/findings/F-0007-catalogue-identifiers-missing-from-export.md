@@ -1,6 +1,6 @@
 ---
 id: "F-0007"
-title: "Catalogue identifiers missing from export"
+title: "166 of 493 checked CISI volume 1 numbers have no corpus match"
 status_class: "source-review"
 area: "data"
 date: "2026-10-07"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-Of 493 catalogue identifiers, 327 matched local keys and 166 were absent. The absent keys comprised 75 in pottery/graffiti sections and 91 in other sections.
+Of 493 numbers in 19 sections of volume 1 of the Corpus of Indus Seals and Inscriptions (CISI), for Gujarat and north India, 327 matched identifiers in our corpus and 166 did not: 75 in pottery and graffiti sections and 91 in sections for seals, impressions, tablets and other objects.
 
 # Evidence
 
@@ -24,4 +24,4 @@ Of 493 catalogue identifiers, 327 matched local keys and 166 were absent. The ab
 
 # Scope
 
-The reviewed source census compares selected catalogue ranges with the pinned export and source-attested aliases. An absent key is an unresolved object join. This denominator covers those ranges and supplies no worldwide recall estimate.
+The census compared these sections with a fixed version of the Lipi export, our working corpus, accepting exact matches and source-recorded aliases. An unmatched number may be an object under another number or a missing one. The counts cover only these sections.

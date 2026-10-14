@@ -1,6 +1,6 @@
 ---
 id: "Q-0037"
-title: "Design a head-direction seal comparison"
+title: "Design a seal-legend comparison of head-initial and head-final languages"
 status: "open"
 area: "language"
 kind: "analysis"
@@ -18,22 +18,22 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Question
 
-What matched seal-legend protocol would compare at least two head-initial and two head-final traditions at both sign and word level?
+What matched seal-legend protocol would compare at least two head-initial and two head-final traditions, at sign and word level? Head-initial languages put the head of a phrase, such as a noun, before its modifiers, and head-final ones after.
 
 # Why it matters
 
-The observed edge statistic changes sign with unit and genre.
+The edge statistic we observed, the difference in sign variety between the start and end of texts, changes direction with unit and genre.
 
 # What is needed
 
-Write the protocol from the held rehearsal and typology records. Define object identity, genre, sampling, gold word units and required metadata; route any external acquisition gaps to DATA and the data contributor. Read [DATA.md](../DATA.md) for the gaps this task depends on.
+Write the protocol from the rehearsal and typology records we hold. Define object identity, genre, sampling, reference word units and required metadata; send external acquisition gaps to DATA.md and the data contributor. Read [DATA.md](../DATA.md) for the gaps this task depends on.
 
 Sources: [experiments/2026-10-12-structure-first/REPORT.md](../../experiments/2026-10-12-structure-first/REPORT.md); [knowledge/directions/what-12-october-established.md](../directions/what-12-october-established.md).
 
 # How to decide
 
-Stop at the protocol and feasibility ledger. Do not rank Indus language candidates until the matched controls pass their predeclared discrimination test.
+Stop at the protocol and a feasibility ledger. Do not rank candidate languages for the Indus texts until the matched controls pass their predeclared discrimination test.
 
 # Prior attempts
 
-[STRUCTURAL-TYPOLOGY-2026-10-12](../registry/attempts/STRUCTURAL-TYPOLOGY-2026-10-12.json). Read their outcomes and `retry_when` before running this task.
+[STRUCTURAL-TYPOLOGY-2026-10-12](../registry/attempts/STRUCTURAL-TYPOLOGY-2026-10-12.json). Read its outcome and `retry_when` condition before running this task.

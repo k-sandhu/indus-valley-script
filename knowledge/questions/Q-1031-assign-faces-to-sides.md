@@ -17,7 +17,7 @@ sources: [experiments/2026-10-13-image-index-and-units/README.md, experiments/20
 
 # Question
 
-For each of the 881 objects with several faces in the local export, which face row corresponds to which physical side (A, B, C) of the object, as shown on the CISI photographs?
+The Lipi export, our local transcription corpus, gives each inscribed side or view of an object its own row, called a face. For each of the 881 objects with several faces, which face row corresponds to which physical side (A, B, C) of the object, as shown on the photographs of the *Corpus of Indus Seals and Inscriptions* (CISI)?
 
 # Why it matters
 

@@ -1,6 +1,6 @@
 ---
 id: "F-0029"
-title: "Unicorn pairs account for motif matches"
+title: "Seals sharing a text share their animal almost only when it is a unicorn"
 status_class: "exploratory"
 area: "seals"
 date: "2026-10-12"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-Of 89 matching-motif pairs, 88 were unicorn pairs. Only 1 of 42 pairs involving another animal shared its motif.
+Among 130 pairs of identical-text seals with an animal recorded on both, 89 show the same animal, and 88 of these are unicorn pairs. Of 42 pairs involving another animal, only 1 shares it.
 
 # Evidence
 
@@ -24,4 +24,4 @@ Of 89 matching-motif pairs, 88 were unicorn pairs. Only 1 of 42 pairs involving 
 
 # Scope
 
-This is the post-review breakdown of motif concordance within identical-text pairs. Catalogue motif classes and within-site shuffling define the comparison; the breakdown itself was selected after the pooled endpoint.
+This breakdown was made after an independent review and chosen after the pooled result. Catalogue motif classes and shuffling within sites define the comparison.

@@ -1,6 +1,6 @@
 ---
 id: "F-0011"
-title: "Agreement between the two sign codings"
+title: "Two codings of the signs into families agree closely"
 status_class: "verified-computation"
 area: "images"
 date: "2026-10-12"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-The two codings had adjusted Rand agreement 0.884 unweighted and 0.975 token-weighted across 577 codes.
+Two codings of 577 sign codes into graphic families agreed with adjusted Rand index 0.884 unweighted and 0.975 weighted by occurrences; the index is one for identical groupings and near zero for chance.
 
 # Evidence
 
@@ -22,4 +22,4 @@ The two codings had adjusted Rand agreement 0.884 unweighted and 0.975 token-wei
 
 # Scope
 
-The statistic compares assignments to graphic families, with token weighting favoring common codes. Both coders worked from code-ordered sheets, so a human coding from shuffled sheets is the proposed independent check.
+Both coders were instances of the same AI model working from sheets in code order, so a human coding from shuffled sheets is the proposed independent check.

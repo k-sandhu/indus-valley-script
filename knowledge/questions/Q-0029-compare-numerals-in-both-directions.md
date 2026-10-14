@@ -1,6 +1,6 @@
 ---
 id: "Q-0029"
-title: "Compare numerals in both directions"
+title: "Test stroke-number fixity with the preceding and the following sign"
 status: "open"
 area: "numerals"
 kind: "analysis"
@@ -18,7 +18,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Question
 
-Does stroke-value fixity survive site and period stratification when both preceding and following signs are treated as items?
+Does stroke-value fixity survive stratification by site and period when both the preceding and the following sign are treated as the counted item?
 
 # Why it matters
 
@@ -26,14 +26,14 @@ Direction changes which combinations appear near-fixed.
 
 # What is needed
 
-Retain short/tall stroke distinctions, multi-face objects, site and period uncertainty. Freeze strata and comparators before confirmation; preserve the original following-item endpoint. Read [DATA.md](../DATA.md) for the gaps this task depends on.
+Retain the short–tall stroke distinction, objects with several faces, and the uncertainty in site and period. Freeze strata and comparisons before confirmation; keep the original result that treats the following sign as the item. Read [DATA.md](../DATA.md) for the gaps this task depends on.
 
 Sources: [experiments/2026-10-12-structure-first/REPORT.md](../../experiments/2026-10-12-structure-first/REPORT.md).
 
 # How to decide
 
-Report both directions under the same sample-size and unit controls. Stop strata with inadequate support; any interpretation must predict a new object relation beyond these conditional counts.
+Report both directions under the same sample-size and unit controls. Drop strata with too little support; any interpretation must predict a new relation between objects beyond these conditional counts.
 
 # Prior attempts
 
-[NUMERAL-BEHAVIOUR-2026-10-12](../registry/attempts/NUMERAL-BEHAVIOUR-2026-10-12.json). Read their outcomes and `retry_when` before running this task.
+[NUMERAL-BEHAVIOUR-2026-10-12](../registry/attempts/NUMERAL-BEHAVIOUR-2026-10-12.json). Read its outcome and `retry_when` condition before running this task.

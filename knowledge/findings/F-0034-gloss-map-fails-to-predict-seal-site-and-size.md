@@ -12,7 +12,7 @@ authors: ["Claude Opus 5.5 in Claude Code (Shot B agent and coordinator)"]
 
 # Finding
 
-A map assigning the 118 commonest signs to seven classes (numerals, links, households, name elements, commodities, offices, closing determinatives), built without seeing site, size, animal, material or period, did not predict where confirmation-half seals were found or how large they were better than rearrangements of its own labels within frequency and position bands: S = −0.567, 33.0th percentile of 10,000 rearrangements, 0.44 standard deviations below their mean (pass required the 95th percentile). The same code on the discovery half's real withheld fields gives +0.88 standard deviations, also a fail.
+We built a map assigning the 118 commonest signs to seven classes (numerals, links, households, name elements, commodities, offices, closing determinatives) without seeing site, size, animal, material or period. On the confirmation half of the seals, read once after the predictions were frozen, the map predicted where seals were found and how large they were no better than rearrangements of its own labels within frequency and position bands. Its score S, the sum of the standardised site and size contrasts, was −0.567, at the 33.0th percentile of 10,000 rearrangements and 0.44 standard deviations below their mean; a pass required the 95th percentile. On the discovery half, used for exploration, the same code with the real withheld fields gives +0.88 standard deviations, also a fail.
 
 # Evidence
 
@@ -22,4 +22,4 @@ A map assigning the 118 commonest signs to seven classes (numerals, links, house
 
 # Scope
 
-The test detects large effects only: a planted size effect of 1.2 times the face area fails and 1.5 times passes. It scores class contrasts against object properties; it does not test the grammar of the texts or individual glosses. Report: [Shot B](../../experiments/2026-10-12-conjecture-shots/shot-b-reading/REPORT.md).
+The test detects only large effects: a size effect planted in the discovery data at 1.2 times the face area fails, and 1.5 times passes. It scores class contrasts against object properties, not the grammar of the texts or individual glosses. Report: [Shot B](../../experiments/2026-10-12-conjecture-shots/shot-b-reading/REPORT.md).

@@ -21,7 +21,7 @@ For each of the 299 distinct local PDFs, what is its exact title, edition, page 
 
 # Why it matters
 
-Earlier packages acquired 365 PDF files (299 distinct by SHA256, 2.7 GB of distinct content) and wrote source records in many schemas. A heuristic harvest of those records found 3,127 distinct titles but could link only 62 of them to a local PDF path, so contributors cannot easily see which reports are already on disk. At least one file is of uncertain identity: `rakhigarhi_inventory.pdf`, an image-only IGNCA scan whose catalogue page carried a different site name in a search result.
+Earlier packages acquired 365 PDF files (299 distinct by SHA256, 2.7 GB of distinct content) and wrote source records in many schemas. An automatic pass over those records, using approximate matching rules, found 3,127 distinct titles but could link only 62 of them to a local PDF path, so contributors cannot easily see which reports are already on disk. At least one file is of uncertain identity: `rakhigarhi_inventory.pdf`, an image-only IGNCA scan whose catalogue page carried a different site name in a search result.
 
 # What is needed
 

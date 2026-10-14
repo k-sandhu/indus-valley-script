@@ -4047,6 +4047,49 @@
       "area": "methods"
     },
     {
+      "id": "CISI-BASIC-DATA-FULL-2026-10-13",
+      "theme": "Double-blind transcription of the complete CISI 1 and CISI 2 basic-data tables, joined to the local corpus",
+      "status": "completed-cisi1-adjudicated-cisi2-partly-adjudicated",
+      "status_class": "source-review",
+      "area": "data",
+      "question": "What does each CISI basic-data table print for every catalogue entry outside the pilot block, read twice blind, what does the whole table add to the local object record, and do the frozen predictions about the FC number and reading quality hold?",
+      "outcome": "Rows for every printed entry: CISI 1 1,543, CISI 2 2,139 (with the pilot's 327). 2,602 of 3,680 entries join one Lipi family; among them museum number 226 to 2,373, holding institution 226 to 2,560, FC number 0 to 2,599, excavation 2,459 to 2,483. Corpus museum-number coverage, combined with earlier sources, 340 (7.2%) to 2,450 (52.2%) counting uncertain digits, 2,079 (44.3%) with a definite number, 1,994 (42.5%) with a bracket-free cell. CISI 1: 98.6% cell agreement, all 112 disagreements adjudicated, 7 definite wrong readings per reader, 5 cells bracketed. CISI 2: 65.3% agreement; 256 disagreements in three blocks adjudicated (54 and 29 definite wrong readings in 1,205 cells), the other 2,870 kept as the union of both readings (Amendment 2). Predictions: FC = 2000 + Mackay No. or 1000 + Marshall No. for 560 of 573 Mohenjo-daro entries (97.7%, threshold 95%); Lipi's Harappa registration extensions equal the FC tail for 221 of 226 scorable (80.1% to 97.8%, threshold 80%); CISI 1 agreement 98.6% against the pilot's 90.5%.",
+      "challenge": "Faint lines at the foot of 17 CISI 2 pages fell outside the first strips; readers' conventions (printed full stops in CISI numbers, bracketed prefixes, entries split across blocks, corrigenda headings) blocked alignment; CISI 2's blur made the readers bracket a third of cells, and adjudicating every disagreement was too costly; adjudicators' outcome labels did not follow the bracket rule.",
+      "remedy": "Tail strips read by two further instances (Amendment 1); an assembly step that applies tails and normalizes conventions by rule without changing the readers' files; a bracketed union for the unadjudicated CISI 2 blocks (Amendment 2); outcome labels recomputed from the decided readings with the adjudicators' labels kept. A second model (GPT-6.1-Sol) was calibrated as reader and rejected; it wrote the pipeline, selftest 53/53.",
+      "evidence": [
+        "experiments/2026-10-13-cisi-basic-data-full/README.md",
+        "experiments/2026-10-13-cisi-basic-data-full/PROTOCOL.md",
+        "experiments/2026-10-13-cisi-basic-data-full/PROTOCOL.sha256",
+        "experiments/2026-10-13-cisi-basic-data-full/AMENDMENT-1.md",
+        "experiments/2026-10-13-cisi-basic-data-full/AMENDMENT-2.md",
+        "experiments/2026-10-13-cisi-basic-data-full/accuracy-summary.json",
+        "experiments/2026-10-13-cisi-basic-data-full/merge-summary.json",
+        "experiments/2026-10-13-cisi-basic-data-full/coverage.json",
+        "experiments/2026-10-13-cisi-basic-data-full/combined-coverage.json",
+        "experiments/2026-10-13-cisi-basic-data-full/predictions.json",
+        "experiments/2026-10-13-cisi-basic-data-full/crosscheck-summary.json",
+        "experiments/2026-10-13-cisi-basic-data-full/selftest.json"
+      ],
+      "retry_when": "Adjudicate the 2,870 bracketed CISI 2 disagreements (the todo and adjudication files are local; auto-decided records are marked auto), starting with cells whose readings exclude each other in the FC, excavation and museum columns; re-read the 1,206 cross-check flags; re-read the 13 Mohenjo-daro FC-rule exceptions; transcribe Vats 1940 to test the Harappa FC link. Rebuild with build_finals.py, merge_volumes.py and join_full.py into a new dated directory.",
+      "authors": [
+        {
+          "role": "coordinator, assembly and amendments",
+          "model": "Claude Opus 5.5",
+          "harness": "Claude Code (desktop)"
+        },
+        {
+          "role": "readers and adjudicators",
+          "model": "Claude Opus 5.5 subagents",
+          "harness": "Claude Code"
+        },
+        {
+          "role": "pipeline code",
+          "model": "GPT-6.1-Sol (requested)",
+          "harness": "Codex CLI 0.160.1"
+        }
+      ]
+    },
+    {
       "id": "CISI2-BASIC-DATA-PILOT-2026-10-13",
       "theme": "CISI 2 basic-data transcription pilot (Mohenjo-daro M-621 to M-947) with measured double-reading accuracy, joins to the local corpus and a parallel-block procedure for CISI 1 and CISI 2",
       "status": "completed-pilot-values-local-pending-rights",

@@ -1,6 +1,6 @@
 ---
 id: "F-0033"
-title: "Reference-only symbol-map selection"
+title: "Reference-based model choice recovers most simulated symbol maps"
 status_class: "synthetic"
 area: "methods"
 date: "2026-10-02"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-The reference-only selector recovered 309 of 384 symbol maps, against 283 for fixed graph mapping and 168 for fixed slot mapping.
+In 48 simulated scripts, choosing the mapping method by how well it predicted held-out reference records recovered the hidden one-to-one symbol map in 309 of 384 conditions, against 283 for graph mapping alone and 168 for slot mapping alone.
 
 # Evidence
 
@@ -20,4 +20,4 @@ The reference-only selector recovered 309 of 384 symbol maps, against 283 for fi
 
 # Scope
 
-The generated systems supply a known reference whose held-out score chooses the mapping objective. The source-family diagnostic is separate. Recovery measures the hidden generated bijection and depends on the supplied reference process.
+Graph mapping matches symbol successions, slot mapping symbol frequencies by position; the selector sees only the reference records and inventory size. A diagnostic run given each system's generator is reported separately. Recovery depends on the supplied reference process.

@@ -1,6 +1,6 @@
 ---
 id: "F-0016"
-title: "Copper image prediction fails"
+title: "Copper tablet texts do not predict their image"
 status_class: "failed"
 area: "tablets"
 date: "2026-10-12"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-Held-out image-class prediction reached 19.2% against a 26.9% majority comparator.
+Predicting each copper tablet text's image class from the other texts was right in 19.2% of cases, below the 26.9% for always guessing the commonest class.
 
 # Evidence
 
@@ -22,4 +22,4 @@ Held-out image-class prediction reached 19.2% against a 26.9% majority comparato
 
 # Scope
 
-The classifier predicts an image class from other text types in the same tablet genre. Class normalization and corrected populations follow the v3 endpoint. Recurrent-text purity is a separate measurement; this outcome is confined to the recorded genre.
+Each distinct text receives the image class of the same-genre text sharing most sign pairs with it; classes and counts follow the corrected third run (v3). Whether copies of a text keep one image is measured separately. The result applies to this genre.

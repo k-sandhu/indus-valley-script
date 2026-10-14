@@ -18,25 +18,25 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Question
 
-Can measured impression dimensions or carving features distinguish the seal that made the Lothal group from M-895?
+Can measured impression dimensions or carving features tell the seal that stamped the Lothal sealings apart from M-895?
 
 # Why it matters
 
-A different die carrying the same legend would change the competing movement explanations.
+If a different seal carried the same legend, the competing explanations of how the text moved change.
 
 # What is needed
 
-Use held scaled views, impression distortion bounds and a feature protocol frozen before comparison. Retain missing scale and damaged-edge uncertainty. Read [DATA.md](../DATA.md) for the gaps this task depends on.
+Use scaled views we hold, bounds on impression distortion and a feature protocol frozen before comparing. Keep the uncertainty from missing scales and damaged edges. Read [DATA.md](../DATA.md) for the gaps this task depends on.
 
 Sources: [knowledge/conjectures/C-0004-m895-office-text.md](../conjectures/C-0004-m895-office-text.md); [knowledge/directions/context-data-plan.md](../directions/context-data-plan.md).
 
 # How to decide
 
-Use C-0004 P3: width differs by more than 10% or carved forms differ. If scale or contact distortion makes that test impossible, stop with an observation-gap record.
+Use C-0004 P3: width differs by more than 10% or the carved forms differ. If scale or contact distortion makes the test impossible, stop and record the observation gap.
 
 # Prior attempts
 
-[SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12](../registry/attempts/SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12.json). Read their outcomes and `retry_when` before running this task.
+[SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12](../registry/attempts/SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12.json). Read its outcome and `retry_when` condition before running this task.
 
 # Outcome
 

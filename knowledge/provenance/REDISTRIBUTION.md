@@ -1,12 +1,12 @@
 # Redistribution record
 
-The public repository preserves the reviewed research record under the user's October 11 authorization. Bulk acquired corpora, downloaded papers, source images and OCR remain in the local project. The [October 11 asset review](../../experiments/2026-10-11-public-release/ASSET-REVIEW.md) and [publication manifest](../../experiments/2026-10-11-public-release/publication-manifest.json) document the current release. This policy records source-specific terms and handling.
+Since 11 October 2026 the public repository has held the reviewed research record. Bulk acquired corpora, downloaded papers, source images and OCR remain in the local project. The [October 11 asset review](../../experiments/2026-10-11-public-release/ASSET-REVIEW.md) and [publication manifest](../../experiments/2026-10-11-public-release/publication-manifest.json) document the current release. This policy records source-specific terms and handling.
 
 ## Current handling
 
 | Material | Evidence | Current handling | Public-release preparation |
 |---|---|---|---|
-| Our prose, code, protocols, aggregate results and source manifests | Written during this project; source dependencies cited | Tracked, subject to the user's repository policy | Choose the project's own license separately; review copied passages, embedded witnesses and source-derived payloads. |
+| Our prose, code, protocols, aggregate results and source manifests | Written during this project; source dependencies cited | Tracked, subject to the project's repository policy | Choose the project's own license separately; review copied passages, embedded witnesses and source-derived payloads. |
 | 1979 and 1982 Helsinki editions | Official entries explicitly link CC BY 4.0 | Original downloaded PDFs remain local; selected 1979 atlas crops and annotations are tracked | Retain author/title/source/license attribution and identify cropping/annotation. Carry forward numerical ambiguities and editorial markers. |
 | 1980 Helsinki documentation | Public file; explicit reuse license unverified | Local-only PDF, extracted text and crops; own source notes tracked | Resolve the edition's rights or publish bibliographic pointers and our summaries without the downloaded witness. |
 | Mayig source repository | Actual MIT license, Michael Carlson 2024 | Bulk `data/` local; own normalizer and summaries tracked | Preserve the MIT notice for covered copies. Trace any CISI photographs to their separate rights record. |

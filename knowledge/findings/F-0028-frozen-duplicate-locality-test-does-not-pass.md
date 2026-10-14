@@ -1,6 +1,6 @@
 ---
 id: "F-0028"
-title: "Frozen duplicate-locality test does not pass"
+title: "Planned test finds no site concentration of identical seal texts"
 status_class: "frozen-evaluation"
 area: "seals"
 date: "2026-10-12"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-The mean same-site share was 0.473 against 0.448 under shuffled site labels, with p = 0.31 and ratio to chance 1.06.
+For texts on two or more seals, the share of seal pairs from the same site averaged 0.473, against 0.448 with site labels shuffled (p = 0.31; ratio to chance 1.06).
 
 # Evidence
 
@@ -23,4 +23,4 @@ The mean same-site share was 0.473 against 0.448 under shuffled site labels, wit
 
 # Scope
 
-The frozen statistic weights each recurring text equally and shuffles sites among all eligible seals. A later length-stratified null and site breakdown give different results and remain exploratory. This card records the original primary locality endpoint.
+The statistic, fixed before the outcome was seen, weights each recurring text equally and shuffles sites among all eligible seals. A later null that holds text length fixed and a site breakdown give different results and remain exploratory. This card records the original primary test.

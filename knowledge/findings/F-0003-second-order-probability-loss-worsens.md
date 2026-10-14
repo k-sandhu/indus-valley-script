@@ -1,6 +1,6 @@
 ---
 id: "F-0003"
-title: "Second-order probability loss worsens"
+title: "The two-sign model gives the correct sign less probability"
 status_class: "verified-computation"
 area: "structure"
 date: "2026-10-02"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-Bucket probability loss rose from 5.1194 bits per slot for first order to 5.2472 for second order.
+On the 8,009 hidden-sign tests of F-0002, the second-order model (two signs of context) gave the correct sign less probability: the loss rose from 5.1194 bits per hidden sign for first order to 5.2472 for second order.
 
 # Evidence
 
@@ -21,4 +21,4 @@ Bucket probability loss rose from 5.1194 bits per slot for first order to 5.2472
 
 # Scope
 
-The models use the same held-out masks and the saved alphabet with an unknown-target bucket. This endpoint measures assigned probability, whereas the preceding card measures the highest-ranked graphic. It is conditional on the recorded masks and fitted models.
+Loss is the negative log probability of the correct sign, with signs unseen in training pooled in one unknown bucket. It measures assigned probability; F-0002 scores only whether the correct sign ranks first. It is conditional on the recorded tests and fitted models.

@@ -1,6 +1,6 @@
 ---
 id: "Q-0024"
-title: "Test different-animal cross-site pairs"
+title: "Test whether identical texts with different animals cross sites more often"
 status: "open"
 area: "seals"
 kind: "analysis"
@@ -18,22 +18,22 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Question
 
-Do identical texts on different non-unicorn animals cross sites more often than identical texts on the same animal?
+Do identical texts on seals with different non-unicorn animals occur at different sites more often than identical texts on seals with the same animal?
 
 # Why it matters
 
-C-0003 P2 tests whether a legend transfers across affiliations.
+Prediction P2 of conjecture C-0003, which reads the seal animal as the holder's affiliation, tests whether a legend crosses affiliations.
 
 # What is needed
 
-Keep exact and variant-merged text definitions separate, use the held object registry and freeze a pair-weighting rule on discovery before confirmation. Read [DATA.md](../DATA.md) for the gaps this task depends on.
+Keep exact and variant-merged text definitions separate, use the object register we hold, and freeze a pair-weighting rule on the discovery half before confirmation. Read [DATA.md](../DATA.md) for the gaps this task depends on.
 
 Sources: [knowledge/conjectures/C-0003-unicorn-affiliation.md](../conjectures/C-0003-unicorn-affiliation.md).
 
 # How to decide
 
-Apply C-0003 P2’s one-sided permutation p below 0.05. Report every eligible pair and stop if there is no supported same-animal comparator.
+Apply C-0003 P2's one-sided permutation p below 0.05. Report every eligible pair, and stop if no supported same-animal comparison exists.
 
 # Prior attempts
 
-[SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12](../registry/attempts/SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12.json). Read their outcomes and `retry_when` before running this task.
+[SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12](../registry/attempts/SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12.json). Read its outcome and `retry_when` condition before running this task.

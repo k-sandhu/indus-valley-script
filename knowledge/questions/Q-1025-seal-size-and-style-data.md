@@ -25,11 +25,11 @@ Seal size and carving style test workshop and affiliation hypotheses, including 
 
 # What is needed
 
-Read [DATA.md](../DATA.md). Obtain the articles through a library or the publishers, check for supplementary tables and their terms, and confirm the provenance of the GitHub attribute files against the dissertation before any use. Record which seals each dataset identifies by CISI or excavation number.
+Read [DATA.md](../DATA.md). Obtain the articles through a library or the publishers, check for supplementary tables and their terms, and confirm the provenance of the GitHub attribute files against the dissertation before any use. Record which seals each dataset identifies by CISI number (its entry in the *Corpus of Indus Seals and Inscriptions*) or by excavation number.
 
 # How to decide
 
-Done when each candidate has a recorded data status (held with terms, available on request, or none), and the held datasets are joined to local seals with a coverage count.
+Done when each candidate has a recorded data status (held with terms, available on request, or none), and the held datasets are joined to local seals, each match recorded with its basis, with a count of the seals covered.
 
 # Prior attempts
 

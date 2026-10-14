@@ -1,6 +1,6 @@
 ---
 id: "Q-0032"
-title: "Test gap geometry on held damaged cases"
+title: "Use gap width and traces to count lost signs in damaged texts"
 status: "open"
 area: "images"
 kind: "analysis"
@@ -18,22 +18,22 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Question
 
-Can measured gap width and surviving traces improve missing-count prediction on a newly reserved block of held images?
+On a newly reserved block of images we hold, can measured gap width and surviving traces improve prediction of how many signs are missing?
 
 # Why it matters
 
-The statistical count estimator lost to constant one without physical geometry.
+Without physical evidence, the statistical count estimator did worse than always guessing one sign.
 
 # What is needed
 
-Freeze source-only crop, scale, segmentation and physical span rules before independent count references are opened. Keep acquisition and count outcomes separate. Read [DATA.md](../DATA.md) for the gaps this task depends on.
+Before opening the independent counts that serve as answers, freeze rules for crop, scale, segmentation and physical span using the source images only. Keep acquisition separate from count outcomes. Read [DATA.md](../DATA.md) for the gaps this task depends on.
 
 Sources: [knowledge/directions/research-roadmap.md](../directions/research-roadmap.md); [knowledge/directions/decipherment-readiness-2026-10-02.md](../directions/decipherment-readiness-2026-10-02.md).
 
 # How to decide
 
-Pass requires the declared improvement over a sampling-matched constant control on reference-withheld cases. Stop when gap boundaries are unbounded or a count cannot be independently resolved.
+A pass requires the declared improvement over always guessing one, matched to the case sampling, on cases with withheld answers. Stop where a gap has no clear edges or a count cannot be independently resolved.
 
 # Prior attempts
 
-[ROOT-08](../registry/attempts/ROOT-08.json); [ROOT-17](../registry/attempts/ROOT-17.json). Read their outcomes and `retry_when` before running this task.
+[ROOT-08](../registry/attempts/ROOT-08.json); [ROOT-17](../registry/attempts/ROOT-17.json). Read their outcomes and `retry_when` conditions before running this task.

@@ -1,6 +1,6 @@
 ---
 id: "F-0002"
-title: "Second-order known-slot restoration"
+title: "Two-sign context restores hidden signs better than one-sign context"
 status_class: "verified-computation"
 area: "structure"
 date: "2026-10-02"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-Second-order context reached 37.27% exact top-one recovery, against 34.59% for first order, on the same 8,009 masks.
+In 8,009 tests each hiding one sign of an intact text, a second-order model (each sign depends on the two before it) ranked the correct sign first in 37.27% of cases, against 34.59% for a first-order model (one sign before).
 
 # Evidence
 
@@ -22,4 +22,4 @@ Second-order context reached 37.27% exact top-one recovery, against 34.59% for f
 
 # Scope
 
-The benchmark hides one known position, holds physical aliases and repeated texts together and tunes on training folds. First order is the matched comparator. A known position and count are supplied; physical damage recovery requires additional observations.
+Each test (a known-slot mask) tells the model where the gap is and that one sign is missing. Copies of one object and repeated texts stayed in the same fold, and tuning used training folds only. Restoring signs lost to real damage needs further observations.

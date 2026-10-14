@@ -1,6 +1,6 @@
 ---
 id: "F-0010"
-title: "Graphic base families improve prediction"
+title: "Grouping sign variants by base shape improves prediction"
 status_class: "frozen-evaluation"
 area: "structure"
 date: "2026-10-12"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-Coder 1’s base families improved prediction by 0.0219 bits per sign beyond the ungrouped model, with p = 0.005 against size-matched random groupings.
+Grouping sign codes into families with a shared base shape, as drawn up by coder 1 of two, improved held-out prediction by 0.0219 bits per sign over the ungrouped model, more than random groupings of the same sizes (p = 0.005).
 
 # Evidence
 
@@ -21,4 +21,4 @@ Coder 1’s base families improved prediction by 0.0219 bits per sign beyond the
 
 # Scope
 
-The endpoint predicts original Wells codes using a family backoff feature. Both coders used ordered glyph sheets and were instances of one model. A later contiguous-cut comparison found that Wells ordering carries much of the gain; it remains a separate exploratory check.
+The model predicts codes in Wells's sign list and falls back on the family for rare codes. Both coders were instances of one AI model working from sheets in Wells code order. A later exploratory check found that cuts of the Wells number line, which already groups similar shapes, carry much of the gain.

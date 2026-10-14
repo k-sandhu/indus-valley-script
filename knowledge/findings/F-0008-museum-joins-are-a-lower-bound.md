@@ -1,6 +1,6 @@
 ---
 id: "F-0008"
-title: "Museum joins are a lower bound"
+title: "At least 68 of 114 museum records match objects in our corpus"
 status_class: "source-review"
 area: "data"
 date: "2026-10-07"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-The reviewed museum join count was 68 of 114 original records, leaving 46 unresolved records.
+Of 114 online museum records of original inscribed objects that we inspected, 68 could be linked with confidence to objects in our corpus; 46 remain unlinked.
 
 # Evidence
 
@@ -22,4 +22,4 @@ The reviewed museum join count was 68 of 114 original records, leaving 46 unreso
 
 # Scope
 
-The count follows the reviewed identifier and concordance joins in the census. The first comparison block had fewer joins; additional joins did not receive all paired-field comparisons. These are inspected-record minima and unresolved matches within the bounded collection frame.
+A link rests on a reviewed identifier or a published concordance. The first comparison pass found fewer links, and later links lack the full field-by-field comparison. The 68 is a minimum for the inspected records, and the 46 are unresolved within this selected set.

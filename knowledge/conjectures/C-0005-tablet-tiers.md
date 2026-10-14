@@ -17,11 +17,11 @@ tests: []
 
 # Claim
 
-Harappa's moulded and incised tablets are standard tokens issued in series. One face names what the token is for, and the face with two, three or four tall strokes before sign 700 states its tier: two, three or four of a standard unit. On seals, by contrast, stroke groups are fixed parts of names and titles, and do not count goods.
+Harappa's moulded and incised tablets are standard tokens issued in series. One face names what the token is for, and the face with two, three or four tall strokes before sign 700 states its tier: two, three or four of a standard unit. On seals, by contrast, stroke groups are fixed parts of names and titles and do not count goods.
 
 # Why it might be true
 
-The three commonest texts in the corpus are two, three and four tall strokes followed by sign 700: 93, 127 and 111 faces, all but five on Harappa tablets. On multi-face tablets the W700 face takes several tall-stroke values against a fixed descriptor face, in 17 complete two-face classes ([two approaches, administrative](../../experiments/2026-10-11-two-approaches/administrative/REPORT.md)). Elsewhere stroke values are more tied to the neighbouring sign than Ur III counts are to their commodity: 3.61 values per item against 4.53–5.15 ([structure-first step 4](../../experiments/2026-10-12-structure-first/step4-numerals/REPORT.md)).
+The three commonest texts in the corpus are two, three and four tall strokes followed by sign 700, on 93, 127 and 111 faces (inscribed sides), all but five of them on Harappa tablets. On tablets with more than one face, the face with sign 700 (W700) takes several tall-stroke values opposite an identical descriptor face, the face naming what the token is for: there are 17 classes of complete two-face tablets in which the descriptor face, site and object type are the same and the number of strokes differs ([two approaches, administrative](../../experiments/2026-10-11-two-approaches/administrative/REPORT.md)). Elsewhere a stroke group's value is more tied to the sign that follows it than a count in the Sumerian Ur III administrative records is to its commodity: 3.61 distinct values per following sign against 4.53–5.15 ([structure-first step 4](../../experiments/2026-10-12-structure-first/step4-numerals/REPORT.md)).
 
 # Predictions
 

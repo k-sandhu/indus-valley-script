@@ -17,15 +17,15 @@ sources: [knowledge/DATA.md, experiments/2026-10-12-data-inventory/sources.json]
 
 # Question
 
-What does the Roja Muthiah Research Library's web application of Mahadevan's corpus (IndusScript.in, titled *The Indus Script (IM77)* with the in-app heading "TEXTS, CONCORDANCE AND TABLES (IM77/IDF80)") contain per text and object, how does it differ from the printed 1977 edition, and on what terms can its records be used?
+What does the web application of the Roja Muthiah Research Library (RMRL) for Mahadevan's corpus (IndusScript.in, titled *The Indus Script (IM77)* with the in-app heading "TEXTS, CONCORDANCE AND TABLES (IM77/IDF80)") contain per text and object, how does it differ from the printed 1977 edition, and on what terms can its records be used?
 
 # Why it matters
 
-Mahadevan's numbering is one of the main catalogue namespaces, and the web application presents an updated version (IDF80) with field-symbol categories, site groupings including West Asian finds and a sign concordance. The project holds the printed 1977 edition but no per-object M77 numbers in its local records. The RMRL Indus Research Centre also lists a new, expanded Indus concordance among the planned activities of the Iravatham Mahadevan Chair, established in 2025; no release date was found.
+Mahadevan's 1977 text numbers (M77) are one of the main numbering systems used to cite Indus texts. The web application presents an updated version (IDF80) with field-symbol categories (Mahadevan's classes of the pictorial motif on the object), site groupings including West Asian finds and a sign concordance. The project holds the printed 1977 edition but has no M77 number for individual objects in its local records. The RMRL Indus Research Centre also lists a new, expanded Indus concordance among the planned activities of the Iravatham Mahadevan Chair, established in 2025; no release date was found.
 
 # What is needed
 
-Read [DATA.md](../DATA.md). The application is a Flutter client with a Firebase back end; its bundle states that no signup is required and mentions Google sign-in; no export, API documentation or licence was found, and the linked manual returned 404. Open the application in a browser, record its record-level fields for a sample of texts, and note any terms shown in the interface. Do not bulk-extract records without stated terms; ask the owner before contacting RMRL. Watch the RMRL page and the *Journal of Indus Studies* (started October 2025) for the expanded concordance.
+Read [DATA.md](../DATA.md). The application is a Flutter client with a Firebase back end; its bundle states that no signup is required and mentions Google sign-in; no export, API documentation or licence was found, and the linked manual returned 404. Open the application in a browser, record the fields it shows for each text in a sample of texts, and note any terms shown in the interface. Do not bulk-extract records without stated terms; ask a maintainer before contacting RMRL. Watch the RMRL page and the *Journal of Indus Studies* (started October 2025) for the expanded concordance.
 
 # How to decide
 
@@ -33,4 +33,4 @@ Done when a dated record lists the application's per-record fields and terms, a 
 
 # Prior attempts
 
-The dataset landscape confirmed the application's institutional provenance but did not inspect its records.
+The dataset landscape survey confirmed which institution publishes the application but did not inspect its records.

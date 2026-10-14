@@ -1,6 +1,6 @@
 ---
 id: "F-0020"
-title: "Mean segmentation accuracy at Indus scale"
+title: "At Indus scale, the best segmenter only slightly beats cutting everywhere"
 status_class: "frozen-evaluation"
 area: "methods"
 date: "2026-10-12"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-The best mean boundary F1 was 0.531 for the Dirichlet-process segmenter, against 0.485 for a boundary everywhere.
+With word divisions hidden in four readable corpora at Indus scale, the best segmenter (Dirichlet process) reached mean boundary F1 0.531, against 0.485 for a boundary between every pair of signs.
 
 # Evidence
 
@@ -21,4 +21,4 @@ The best mean boundary F1 was 0.531 for the Dirichlet-process segmenter, against
 
 # Scope
 
-F1 combines boundary precision and recall against edited word divisions. The mean weights the four cohorts equally; it does not estimate Indus word-boundary accuracy. The recorded cohorts omit the acquired Linear B sample.
+Boundary F1 combines precision and recall against the editions' word divisions in Ur III seal legends, Sumerian lines, Egyptian sentences and Akkadian letters. The mean weights the four equally and does not estimate Indus accuracy. The acquired Linear B sample was not included.

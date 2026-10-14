@@ -1,16 +1,24 @@
 # Conjectures
 
-This directory holds the project's own claims about what the Indus inscriptions are and what they say, stated at full strength. The evidence record elsewhere in the repository answers what has been measured; this directory answers what the project currently thinks is true and how it would find out it is wrong. Working readings and meanings of signs belong here.
+This directory holds our own claims about what the Indus inscriptions are and what they say, stated at full strength. The evidence record elsewhere in the repository reports what has been measured; this directory states what we currently think is true and how we would find out that it is wrong. Working readings and meanings of signs belong here.
 
-Each conjecture is one file, `C-NNNN-short-name.md`, copied from [TEMPLATE.md](TEMPLATE.md). The claim is written plainly, as if true. Its uncertainty is the single `credence` number, the author's probability that the claim holds as stated, and the predictions that would move it. Qualifying phrases in the claim itself are unnecessary.
+Each conjecture is one file, `C-NNNN-short-name.md`, copied from [TEMPLATE.md](TEMPLATE.md). The claim is written plainly, as if true, with no qualifying phrases. Its uncertainty is carried by the single `credence` number, the author's probability that the claim holds as stated, and by the predictions that would move that number.
 
-A conjecture needs predictions that could fail, each with a pass rule, and a kill condition. Earlier proposals of the same idea are listed in `prior_proposals`; a conjecture can be valuable without being new. When a test runs, its outcome and the revised credence are added to the card's record. A conjecture becomes a finding in the evidence record only when predictions frozen before the data were examined pass on that data, or a prospective prediction about new material comes true. Dead conjectures stay in the directory with their record, so later contributors can see what failed and why.
+A conjecture needs predictions that could fail, each with a pass rule, and a kill condition, the outcome that would make it dead. Earlier proposals of the same idea are listed in `prior_proposals`; a conjecture can be valuable without being new. When a test runs, its outcome and the revised credence are added to the card's record. A conjecture becomes a finding in the evidence record only when predictions frozen before the data were examined pass on that data, or when a prospective prediction about new material comes true. Dead conjectures stay in the directory with their record, so later contributors can see what failed and why.
 
-Tests of a conjecture follow the two-stage design in [the conjecture shots](../../experiments/2026-10-12-conjecture-shots/DESIGN.md): unrestricted exploration on a discovery half, then one frozen shot at the confirmation half. The first two shots led to [seven further rules](../../experiments/2026-10-12-conjecture-shots/REVIEW-RESPONSE.md#rules-for-the-next-shots): shots sharing a half all freeze before any reads it, shared objects get a joint credence rule, small groups get an influence criterion, power is stated for effects of plausible size, site tests handle Mohenjo-daro explicitly, CISI identifiers are stripped when site is withheld, and the October 12 confirmation half is spent for seal size, site and motif.
+Tests follow the two-stage design of [the conjecture shots](../../experiments/2026-10-12-conjecture-shots/DESIGN.md). The corpus is split into two halves. A shot explores the discovery half without restriction, then freezes its predictions and tests them once on the confirmation half. The first two shots led to [seven further rules](../../experiments/2026-10-12-conjecture-shots/REVIEW-RESPONSE.md#rules-for-the-next-shots):
 
-A frozen-rule credence and a review credence can differ. The card's `credence` field holds the current best estimate; the history keeps both.
+- All shots that share a confirmation half freeze their predictions before any of them reads it.
+- Predictions that share objects carry a joint rule for changing the credence.
+- Pass rules for small groups include an influence criterion: a rank statistic or a leave-one-out condition.
+- Power is stated for effects of plausible size, not only for large ones.
+- Site tests exclude Mohenjo-daro, which supplies most of the seals, or stratify by pairs of sites.
+- Shots that withhold site strip the catalogue numbers of the Corpus of Indus Seals and Inscriptions (CISI), whose prefixes reveal the site.
+- The confirmation half of the October 12 split is spent for seal size, site and motif: new tests of those need new material or a new partition.
 
-The `risk` field records how unlikely the author thinks the claim is at the outset. The project aims for about a third of its open conjectures to be long shots.
+The credence computed by a test's frozen rules and the credence after review can differ. The card's `credence` field holds the current best estimate, and the history keeps both.
+
+The `risk` field records how unlikely the author thinks the claim is at the outset. We aim for about a third of open conjectures to be long shots.
 
 | ID | Claim | Status | Credence |
 |---|---|---|---|

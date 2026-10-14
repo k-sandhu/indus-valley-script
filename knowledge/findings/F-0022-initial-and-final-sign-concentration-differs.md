@@ -1,6 +1,6 @@
 ---
 id: "F-0022"
-title: "Initial and final sign concentration differs"
+title: "Indus texts begin with many different signs and end with few"
 status_class: "frozen-evaluation"
 area: "structure"
 date: "2026-10-12"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-Normalized initial-minus-final sign entropy was +0.260, against a shuffle range of −0.017 to +0.018.
+Indus texts start with more varied signs than they end with: normalized initial-minus-final sign entropy is +0.260 in 1,859 distinct texts, against a range of −0.017 to +0.018 when signs are shuffled within texts.
 
 # Evidence
 
@@ -22,4 +22,4 @@ Normalized initial-minus-final sign entropy was +0.260, against a shuffle range 
 
 # Scope
 
-The statistic compares diversity at the two ends of complete texts with within-text shuffling. It describes concentration in the selected population. Genre and sign-versus-word units change the comparison statistic, so the frozen language rule leaves candidates tied.
+Entropy here measures how varied the signs at one position are. The statistic describes this population. In readable corpora it changes with genre and with counting signs or words, so the language rule fixed in advance leaves every candidate language tied.

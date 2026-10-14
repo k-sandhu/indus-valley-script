@@ -1,6 +1,6 @@
 ---
 id: "F-0013"
-title: "Base families reduce unseen-code loss"
+title: "Base-shape families improve prediction of signs unseen in training"
 status_class: "frozen-evaluation"
 area: "structure"
 date: "2026-10-12"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-For unseen codes, base-family backoff lowered loss from 14.60 to 14.19 bits per sign.
+For held-out signs whose code never occurs in training, falling back on the base-shape family lowered loss from 14.60 to 14.19 bits per sign.
 
 # Evidence
 
@@ -22,4 +22,4 @@ For unseen codes, base-family backoff lowered loss from 14.60 to 14.19 bits per 
 
 # Scope
 
-These are held-out tokens whose fine code is absent from the training fold. The comparator is the ungrouped Kneser–Ney baseline. Published Parpola and Mahadevan groupings are separate alternatives in the same output.
+These are held-out signs whose exact Wells code is absent from the training fold. The comparison is the ungrouped Kneser–Ney bigram baseline. The published Parpola and Mahadevan groupings are scored separately in the same output.

@@ -17,15 +17,15 @@ sources: [knowledge/DATA.md, experiments/2026-10-06-evidence-census/synthesis/RE
 
 # Question
 
-Which inscribed Indus objects have been reported since the relevant CISI volume closed its site range, by which excavation and in which publication, and which of them are absent from the local corpus?
+Which inscribed Indus objects have been reported since the relevant volume of the *Corpus of Indus Seals and Inscriptions* (CISI) catalogued their site, by which excavation and in which publication, and which of them are absent from the local corpus?
 
 # Why it matters
 
-The local corpus mirrors catalogue coverage, so later finds are where it is most incomplete. The census found nine north Indian sites with post-1987 inscribed finds, Dholavira's 225 recovered seals outside CISI, and site reports for Farmana, Rakhigarhi, Kanmer, Shikarpur, Nuhato, Masudpur and others. The 12 October searches found no new inscribed-object corpus for 2024–2026, but they also found excavation reports now scanned on the Internet Archive (Farmana 2006–08; Rakhigarhi 1997–2000 by Nath; Surkotada; chapter 6 of the Kanmer report) that have not been read for objects. Conjecture C-0003 predicts the motif mix of the next published seal assemblage.
+The local corpus mirrors catalogue coverage, so later finds are where it is most incomplete. The project's evidence census found nine north Indian sites with post-1987 inscribed finds, Dholavira's 225 recovered seals outside CISI, and site reports for Farmana, Rakhigarhi, Kanmer, Shikarpur, Nuhato, Masudpur and others. The 12 October searches found no new inscribed-object corpus for 2024–2026, but they also found excavation reports now scanned on the Internet Archive (Farmana 2006–08; Rakhigarhi 1997–2000 by Nath; Surkotada; chapter 6 of the Kanmer report) that have not been read for objects. Conjecture C-0003 predicts the motif mix of the next published seal assemblage.
 
 # What is needed
 
-Read [DATA.md](../DATA.md). Use *Indian Archaeology – A Review* volumes (several held), the excavation reports listed in the manifest's not-held entries, Pakistani journal reports and the census site rows. Record per object the site, season, registration, publication and page, and whether a photograph is published. Acquire the archive.org reports with `tools/fetch_data.py` once their entries carry identifiers and hashes.
+Read [DATA.md](../DATA.md). Use *Indian Archaeology – A Review* volumes (several held), the excavation reports that the project's data manifest lists as not held, Pakistani journal reports and the census site rows. Record per object the site, season, registration, publication and page, and whether a photograph is published. Acquire the archive.org reports with `tools/fetch_data.py` once their entries carry identifiers and hashes.
 
 # How to decide
 

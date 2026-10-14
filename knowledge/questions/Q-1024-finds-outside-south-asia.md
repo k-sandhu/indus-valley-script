@@ -21,16 +21,16 @@ Which inscribed Indus and Indus-style objects have been found in Mesopotamia, Ir
 
 # Why it matters
 
-Finds abroad carry dated contexts that South Asian finds often lack, which makes them anchors for chronology. The local corpus has 42 faces from these sites, and the census could not compute coverage fractions because the published populations mix Indus inscriptions with local seals. No consolidated catalogue of Indus-type seals in the Gulf and Mesopotamia was found on 12 October 2026, and the published CISI titles do not name those regions.
+Finds abroad carry dated contexts that South Asian finds often lack, which makes them anchors for chronology. The local corpus has 42 faces (records of inscribed sides) from these sites. The project's evidence census could not compute what share of these finds the corpus holds, because the published lists mix Indus inscriptions with local seals. No consolidated catalogue of Indus-type seals in the Gulf and Mesopotamia was found on 12 October 2026, and the published titles of the *Corpus of Indus Seals and Inscriptions* (CISI) do not name those regions.
 
 # What is needed
 
-Read [DATA.md](../DATA.md). Held: Gadd 1932 on the Ur seals, Laursen 2010 on Gulf-type seals, Nippur III, the 2005 Gonur volume, the 2016 Salūt paper and the CISI 3.3 excerpt. Not held: Kjærum 1983, *Failaka/Dilmun. The Second Millennium Settlements, Volume 1:1: The Stamp and Cylinder Seals* (print, Jutland Archaeological Society), the SAHI Tell Jokha report with Fig. 6.61, and the CISI 3.3 plates (Q-1010). Tabulate each object with its primary locator and classify it as Indus inscription, Indus-style seal without script, or local seal with Indus traits.
+Read [DATA.md](../DATA.md). Held: Gadd 1932 on the Ur seals, Laursen 2010 on Gulf-type seals, Nippur III, the 2005 Gonur volume, the 2016 Salūt paper and the CISI 3.3 excerpt. Not held: Kjærum 1983, *Failaka/Dilmun. The Second Millennium Settlements, Volume 1:1: The Stamp and Cylinder Seals* (print, Jutland Archaeological Society), the SAHI Tell Jokha report with Fig. 6.61, and the CISI 3.3 plates (Q-1010). Tabulate each object with the page or figure of its primary publication and classify it as Indus inscription, Indus-style seal without script, or local seal with Indus traits.
 
 # How to decide
 
-Done when every object named in the census's foreign-find rows has a row with class, locator and context fields, or a recorded reason why the primary source is unavailable.
+Done when every object named in the census's rows for finds abroad has a row with class, locator and context fields, or a recorded reason why the primary source is unavailable.
 
 # Prior attempts
 
-The foreign-find census, the Tell Jokha lead, the Oxus recovery and the Susa audit each covered part of this population.
+The census batch on finds abroad, the Tell Jokha lead, the Oxus recovery and the Susa audit each covered part of this population.

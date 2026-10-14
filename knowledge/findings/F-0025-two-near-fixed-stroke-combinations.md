@@ -1,6 +1,6 @@
 ---
 id: "F-0025"
-title: "Two near-fixed stroke combinations"
+title: "Two signs almost always follow the same number of strokes"
 status_class: "exploratory"
 area: "numerals"
 date: "2026-10-12"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-Code 520 followed three strokes in 38 of 41 cases, and code 585 followed seven in 16 of 17 cases.
+Of 41 stroke groups before sign 520, 38 had three strokes; of 17 before sign 585, 16 had seven.
 
 # Evidence
 
@@ -21,4 +21,4 @@ Code 520 followed three strokes in 38 of 41 cases, and code 585 followed seven i
 
 # Scope
 
-The counts summarize particular combinations selected in the post-outcome item inspection. The saved item table combines stroke families; the report identifies the dominant groups as tall strokes. These examples are within the broader fixed-value comparison and do not supply an independent quantity.
+These combinations were picked while inspecting items after the main outcome. The saved item table combines stroke families; the report identifies the dominant groups as tall strokes. The examples fall within the broader fixed-value comparison and do not supply an independent quantity.

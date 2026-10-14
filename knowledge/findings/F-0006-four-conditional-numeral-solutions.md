@@ -1,6 +1,6 @@
 ---
 id: "F-0006"
-title: "Four conditional numeral solutions"
+title: "Published numeral equations have four whole-number solutions"
 status_class: "verified-computation"
 area: "numerals"
 date: "2026-10-02"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-The exact audit retained four positive-integer solutions. Restricting L to 8–13 retained only (L, S, v) = (10, 8, 6).
+The equations Fuls (2020) proposed for numerical inscriptions have four positive whole-number solutions. Restricting L, the long-stroke multiplier, to 8–13 leaves only (L, S, v) = (10, 8, 6), where S is the short-stroke multiplier and v the unit value of sign W900.
 
 # Evidence
 
@@ -21,4 +21,4 @@ The exact audit retained four positive-integer solutions. Restricting L to 8–1
 
 # Scope
 
-The audit enumerates solutions of the published equalities and applies the source’s additional range. It checks conditional arithmetic; object identity, equal-quantity premises and the physical range require their own source evidence.
+We enumerated all solutions exactly and applied the source's range for L, taken from a reconstructed bangle count. This checks conditional arithmetic only; object identity, the equal-quantity premises and the physical range need their own source evidence.

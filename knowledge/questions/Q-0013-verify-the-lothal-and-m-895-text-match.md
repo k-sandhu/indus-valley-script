@@ -18,15 +18,15 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Question
 
-Do the held CISI plates confirm the same four signs in the same order on L-161 to L-170 and M-895?
+Do the CISI plates we hold show the same four signs in the same order on the Lothal sealings L-161 to L-170 and the Mohenjo-daro seal M-895?
 
 # Why it matters
 
-This is the cheapest direct kill test for the office-text conjecture.
+This is the cheapest direct test that could kill conjecture C-0004, which reads the text as an office title.
 
 # What is needed
 
-Record all photographed impressions, damage, orientation, fine-form alternatives and source coordinates. Have an independent reader inspect the same images without the proposed reading. Read [DATA.md](../DATA.md) for the gaps this task depends on.
+Record every photographed impression, its damage and orientation, alternative fine sign forms and plate references. Have an independent reader inspect the same images without being told the proposed reading. Read [DATA.md](../DATA.md) for the gaps this task depends on.
 
 Sources: [knowledge/conjectures/C-0004-m895-office-text.md](../conjectures/C-0004-m895-office-text.md); [knowledge/directions/what-12-october-established.md](../directions/what-12-october-established.md).
 
@@ -36,7 +36,7 @@ Use C-0004 P1: all four signs agree. A confirmed mismatch kills that prediction;
 
 # Prior attempts
 
-[SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12](../registry/attempts/SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12.json). Read their outcomes and `retry_when` before running this task.
+[SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12](../registry/attempts/SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12.json). Read its outcome and `retry_when` condition before running this task.
 
 # Outcome
 

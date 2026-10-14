@@ -1,6 +1,6 @@
 ---
 id: "F-0024"
-title: "Stroke values are tied to following items"
+title: "Indus stroke counts are more tied to the next sign than Ur III counts"
 status_class: "frozen-evaluation"
 area: "numerals"
 date: "2026-10-12"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-Indus had 3.61 distinct values per qualifying item, against 4.53–5.15 in the size-matched Ur III interval.
+Indus stroke groups took 3.61 different values on average before each sign they precede at least five times; size-matched samples of Ur III accounts gave an interval of 4.53–5.15 values per counted item.
 
 # Evidence
 
@@ -22,4 +22,4 @@ Indus had 3.61 distinct values per qualifying item, against 4.53–5.15 in the s
 
 # Scope
 
-The endpoint treats the following sign as the item and compares observed stroke counts with edited Ur III quantities. Direction, units and selection have separate sensitivities. The result measures fixity of combinations under that representation.
+The sign after a stroke group is treated as the counted item, and stroke counts are compared with edited Ur III quantities. Direction, units and selection have separate sensitivity analyses. The result measures how fixed number–item combinations are in this representation.

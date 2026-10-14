@@ -21,11 +21,19 @@ Use one area per item and one status class per attempt or finding. Preserve an a
 
 The seven definitions below are copied exactly from [INDEX.md](../INDEX.md). Their field values are `proposed`, `synthetic`, `exploratory`, `frozen-evaluation`, `failed`, `superseded` and `verified-computation`.
 
-**Proposed** means not run. **Synthetic** means simulated or constructed data. **Exploratory** means a result or refinement selected after prior outcomes. **Frozen evaluation** means the specified reference/split/method was held fixed before that particular outcome, not necessarily before the entire research project. **Failed** means the stated approach did not pass its comparator/test. **Superseded** means a documented defect or design change prevents using that endpoint as the current result. **Verified computation** means numerical/source-integrity checks passed; it does not mean archaeological semantics or peer review are established.
+Each attempt and finding has one status class. An endpoint is the result an attempt was designed to report; a reference is the baseline or chance model it is compared with.
 
-**Source review** (`source-review`) means an audit, survey, census or literature review whose output is a source record rather than a computation. **Record** (`record`) means a coordination, release or preservation record.
+- Proposed: not run.
+- Synthetic: simulated or constructed data.
+- Exploratory: a result or refinement chosen after earlier outcomes were seen.
+- Frozen evaluation: the reference, data split and method were fixed before that particular outcome, not necessarily before the whole project.
+- Failed: the stated approach did not pass its test or beat its reference.
+- Superseded: a documented defect or design change prevents use of the endpoint as the current result.
+- Verified computation: numerical and source-integrity checks passed; this does not establish archaeological meaning or peer review.
 
-For mixed work choose the class of the primary endpoint and explain that choice. The [status mapping](STATUS-MAPPING.md) records every existing decision. A checked simulation remains `synthetic`; a failed frozen evaluation can retain `frozen-evaluation` when preservation of the prespecified endpoint is the primary fact.
+Two further classes are used. Source review (`source-review`) is an audit, survey, census or literature review whose output is a source record, not a computation. Record (`record`) is a coordination, release or preservation record.
+
+For mixed work, choose the class of the main endpoint and explain the choice. The [status mapping](STATUS-MAPPING.md) records every existing decision. A checked simulation stays `synthetic`; a failed frozen evaluation can keep `frozen-evaluation` when the main fact to preserve is its prespecified endpoint.
 
 ## Questions and conjectures
 
@@ -37,4 +45,4 @@ Verification tiers describe contributor review separately from status class: `su
 
 ## Paths and frontmatter
 
-Frontmatter paths in `evidence` and `sources` are relative to repository root. Append `#/field/subfield` to JSON evidence to name a JSON Pointer; escape slash as `~1` in a field name. Body links are relative to the Markdown file. Use quoted scalars, flow lists, block lists of scalars or block lists of flow mappings. The CLI retains unsupported structures as raw strings and reports invalid required fields.
+Frontmatter paths in `evidence` and `sources` are relative to repository root. To point at one field of a JSON evidence file, append a JSON Pointer such as `#/field/subfield`; write a slash inside a field name as `~1`. Body links are relative to the Markdown file. Use quoted scalars, flow lists, block lists of scalars or block lists of flow mappings. The command-line tool keeps unsupported structures as raw strings and reports invalid required fields.

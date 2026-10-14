@@ -1,6 +1,6 @@
 ---
 id: "F-0009"
-title: "Site frame coverage in the local export"
+title: "The census site list covers 5,652 of 5,680 corpus faces"
 status_class: "source-review"
 area: "data"
 date: "2026-10-07"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-The census frame represented 5,652 of 5,680 local faces across 115 site/provenance entities assembled from 123 batch rows.
+The census site list covers 5,652 of the 5,680 faces (inscribed sides) in our corpus. Its 123 entries, compiled in separate batches, name 115 sites or provenance labels once aliases are merged.
 
 # Evidence
 
@@ -23,4 +23,4 @@ The census frame represented 5,652 of 5,680 local faces across 115 site/provenan
 
 # Scope
 
-Coverage refers to normalized export rows assigned to the source-label frame after overlap removal. Face rows and provisional object families have different denominators. Worldwide published-find coverage remains unknown.
+Coverage counts normalized corpus rows whose site label falls in the census list, with overlapping entries counted once; the other faces have no known site. Faces and provisional objects have different totals. Worldwide coverage of published finds remains unknown.

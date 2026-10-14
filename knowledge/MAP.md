@@ -42,49 +42,49 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 
 ### data
 
-- [F-0007](findings/F-0007-catalogue-identifiers-missing-from-export.md) · source-review · Catalogue identifiers missing from export
-- [F-0008](findings/F-0008-museum-joins-are-a-lower-bound.md) · source-review · Museum joins are a lower bound
-- [F-0009](findings/F-0009-site-frame-coverage-in-the-local-export.md) · source-review · Site frame coverage in the local export
+- [F-0007](findings/F-0007-catalogue-identifiers-missing-from-export.md) · source-review · 166 of 493 checked CISI volume 1 numbers have no corpus match
+- [F-0008](findings/F-0008-museum-joins-are-a-lower-bound.md) · source-review · At least 68 of 114 museum records match objects in our corpus
+- [F-0009](findings/F-0009-site-frame-coverage-in-the-local-export.md) · source-review · The census site list covers 5,652 of 5,680 corpus faces
 
 ### structure
 
-- [F-0001](findings/F-0001-sequential-prediction-on-unique-texts.md) · verified-computation · Sequential prediction on unique texts
-- [F-0002](findings/F-0002-second-order-known-slot-restoration.md) · verified-computation · Second-order known-slot restoration
-- [F-0003](findings/F-0003-second-order-probability-loss-worsens.md) · verified-computation · Second-order probability loss worsens
-- [F-0004](findings/F-0004-loss-selection-returns-first-order.md) · exploratory · Loss selection returns first order
-- [F-0005](findings/F-0005-gap-count-estimator-loses-to-constant-one.md) · failed · Gap-count estimator loses to constant one
-- [F-0010](findings/F-0010-graphic-base-families-improve-prediction.md) · frozen-evaluation · Graphic base families improve prediction
-- [F-0012](findings/F-0012-modifier-signatures-fail-the-grouping-test.md) · failed · Modifier signatures fail the grouping test
-- [F-0013](findings/F-0013-base-families-reduce-unseen-code-loss.md) · frozen-evaluation · Base families reduce unseen-code loss
-- [F-0018](findings/F-0018-lines-recur-more-than-crossing-windows.md) · frozen-evaluation · Lines recur more than crossing windows
-- [F-0019](findings/F-0019-indus-alternation-has-few-stems.md) · frozen-evaluation · Indus alternation has few stems
-- [F-0022](findings/F-0022-initial-and-final-sign-concentration-differs.md) · frozen-evaluation · Initial and final sign concentration differs
+- [F-0001](findings/F-0001-sequential-prediction-on-unique-texts.md) · verified-computation · The previous sign helps predict the next one
+- [F-0002](findings/F-0002-second-order-known-slot-restoration.md) · verified-computation · Two-sign context restores hidden signs better than one-sign context
+- [F-0003](findings/F-0003-second-order-probability-loss-worsens.md) · verified-computation · The two-sign model gives the correct sign less probability
+- [F-0004](findings/F-0004-loss-selection-returns-first-order.md) · exploratory · Choosing by probability loss returns the one-sign model
+- [F-0005](findings/F-0005-gap-count-estimator-loses-to-constant-one.md) · failed · Estimating the number of lost signs does worse than always guessing one
+- [F-0010](findings/F-0010-graphic-base-families-improve-prediction.md) · frozen-evaluation · Grouping sign variants by base shape improves prediction
+- [F-0012](findings/F-0012-modifier-signatures-fail-the-grouping-test.md) · failed · Grouping signs by their added marks does not improve prediction
+- [F-0013](findings/F-0013-base-families-reduce-unseen-code-loss.md) · frozen-evaluation · Base-shape families improve prediction of signs unseen in training
+- [F-0018](findings/F-0018-lines-recur-more-than-crossing-windows.md) · frozen-evaluation · Text lines recur elsewhere more often than stretches crossing the line break
+- [F-0019](findings/F-0019-indus-alternation-has-few-stems.md) · frozen-evaluation · Few Indus segments show alternating final signs
+- [F-0022](findings/F-0022-initial-and-final-sign-concentration-differs.md) · frozen-evaluation · Indus texts begin with many different signs and end with few
 
 ### seals
 
-- [F-0017](findings/F-0017-copper-groups-do-not-transfer-to-seal-animals.md) · failed · Copper groups do not transfer to seal animals
-- [F-0026](findings/F-0026-recurring-seal-texts-span-sites.md) · frozen-evaluation · Recurring seal texts span sites
+- [F-0017](findings/F-0017-copper-groups-do-not-transfer-to-seal-animals.md) · failed · Copper-tablet sign groups do not recur on seals with the same animal
+- [F-0026](findings/F-0026-recurring-seal-texts-span-sites.md) · frozen-evaluation · Most seal texts that recur are found at more than one site
 - [F-0027](findings/F-0027-long-seal-texts-do-not-repeat.md) · frozen-evaluation · Long seal texts do not repeat
-- [F-0028](findings/F-0028-frozen-duplicate-locality-test-does-not-pass.md) · frozen-evaluation · Frozen duplicate-locality test does not pass
-- [F-0029](findings/F-0029-unicorn-pairs-account-for-motif-matches.md) · exploratory · Unicorn pairs account for motif matches
+- [F-0028](findings/F-0028-frozen-duplicate-locality-test-does-not-pass.md) · frozen-evaluation · Planned test finds no site concentration of identical seal texts
+- [F-0029](findings/F-0029-unicorn-pairs-account-for-motif-matches.md) · exploratory · Seals sharing a text share their animal almost only when it is a unicorn
 - [F-0030](findings/F-0030-sealings-match-seals-from-other-cities.md) · verified-computation · Sealings match seals from other cities
 - [F-0035](findings/F-0035-legends-closing-in-four-signs-sit-on-larger-seals.md) · frozen-evaluation · Legends closing in 001, 595, 679 or 820 sit on larger seals in a held-out half
 
 ### tablets
 
-- [F-0014](findings/F-0014-bas-relief-image-prediction.md) · frozen-evaluation · Bas-relief image prediction
-- [F-0015](findings/F-0015-incised-tablet-image-prediction.md) · frozen-evaluation · Incised-tablet image prediction
-- [F-0016](findings/F-0016-copper-image-prediction-fails.md) · failed · Copper image prediction fails
+- [F-0014](findings/F-0014-bas-relief-image-prediction.md) · frozen-evaluation · Bas-relief tablet texts predict their image better than the majority guess
+- [F-0015](findings/F-0015-incised-tablet-image-prediction.md) · frozen-evaluation · Incised tablet texts predict their image better than the majority guess
+- [F-0016](findings/F-0016-copper-image-prediction-fails.md) · failed · Copper tablet texts do not predict their image
 
 ### numerals
 
-- [F-0006](findings/F-0006-four-conditional-numeral-solutions.md) · verified-computation · Four conditional numeral solutions
-- [F-0024](findings/F-0024-stroke-values-are-tied-to-following-items.md) · frozen-evaluation · Stroke values are tied to following items
-- [F-0025](findings/F-0025-two-near-fixed-stroke-combinations.md) · exploratory · Two near-fixed stroke combinations
+- [F-0006](findings/F-0006-four-conditional-numeral-solutions.md) · verified-computation · Published numeral equations have four whole-number solutions
+- [F-0024](findings/F-0024-stroke-values-are-tied-to-following-items.md) · frozen-evaluation · Indus stroke counts are more tied to the next sign than Ur III counts
+- [F-0025](findings/F-0025-two-near-fixed-stroke-combinations.md) · exploratory · Two signs almost always follow the same number of strokes
 
 ### images
 
-- [F-0011](findings/F-0011-agreement-between-the-two-sign-codings.md) · verified-computation · Agreement between the two sign codings
+- [F-0011](findings/F-0011-agreement-between-the-two-sign-codings.md) · verified-computation · Two codings of the signs into families agree closely
 
 ### meaning
 
@@ -92,38 +92,37 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 
 ### comparative
 
-- [F-0023](findings/F-0023-edge-asymmetry-changes-with-the-unit.md) · frozen-evaluation · Edge asymmetry changes with the unit
+- [F-0023](findings/F-0023-edge-asymmetry-changes-with-the-unit.md) · frozen-evaluation · In Ur III seal legends, edge asymmetry reverses from signs to words
 
 ### methods
 
-- [F-0020](findings/F-0020-mean-segmentation-accuracy-at-indus-scale.md) · frozen-evaluation · Mean segmentation accuracy at Indus scale
-- [F-0021](findings/F-0021-seal-legend-segmentation-rehearsal.md) · frozen-evaluation · Seal-legend segmentation rehearsal
-- [F-0031](findings/F-0031-literal-copy-reference-calibration.md) · synthetic · Literal-copy reference calibration
-- [F-0032](findings/F-0032-imperfect-face-reference-calibration.md) · synthetic · Imperfect-face reference calibration
-- [F-0033](findings/F-0033-reference-only-symbol-map-selection.md) · synthetic · Reference-only symbol-map selection
+- [F-0020](findings/F-0020-mean-segmentation-accuracy-at-indus-scale.md) · frozen-evaluation · At Indus scale, the best segmenter only slightly beats cutting everywhere
+- [F-0021](findings/F-0021-seal-legend-segmentation-rehearsal.md) · frozen-evaluation · Branching entropy finds word boundaries in Ur III seal legends
+- [F-0031](findings/F-0031-literal-copy-reference-calibration.md) · synthetic · Copied records inflate false positives unless objects are shuffled
+- [F-0032](findings/F-0032-imperfect-face-reference-calibration.md) · synthetic · Shuffling an object's faces separately inflates false positives
+- [F-0033](findings/F-0033-reference-only-symbol-map-selection.md) · synthetic · Reference-based model choice recovers most simulated symbol maps
 
 ## Open questions by priority
 
 ### Priority 1
 
-- [Q-0001](questions/Q-0001-review-a-30-object-identity-block.md) · open · data · Review a 30-object identity block
-- [Q-0002](questions/Q-0002-audit-completeness-of-object-faces.md) · open · data · Audit completeness of object faces
-- [Q-0004](questions/Q-0004-normalize-dimensions-with-retained-units.md) · open · data · Normalize dimensions with retained units
-- [Q-0005](questions/Q-0005-review-museum-field-disagreements.md) · open · data · Review museum field disagreements
-- [Q-0006](questions/Q-0006-check-source-coordinates-in-an-object-block.md) · open · data · Check source coordinates in an object block
+- [Q-0001](questions/Q-0001-review-a-30-object-identity-block.md) · open · data · Link 30 objects across catalogue, excavation and museum numbers
+- [Q-0002](questions/Q-0002-audit-completeness-of-object-faces.md) · open · data · Check that every recorded face of each object is present
+- [Q-0004](questions/Q-0004-normalize-dimensions-with-retained-units.md) · open · data · Convert object dimensions without losing units or source wording
+- [Q-0005](questions/Q-0005-review-museum-field-disagreements.md) · open · data · Explain disagreements between museum records and the corpus
+- [Q-0006](questions/Q-0006-check-source-coordinates-in-an-object-block.md) · open · data · Check that page and plate references lead to the right objects
 - [Q-0007](questions/Q-0007-trace-chronology-labels-to-dating-evidence.md) · open · archaeology · Trace chronology labels to dating evidence
 - [Q-0008](questions/Q-0008-detect-duplicated-photographs.md) · open · images · Detect duplicated photographs
-- [Q-0009](questions/Q-0009-distinguish-missing-motif-from-no-motif.md) · open · data · Distinguish missing motif from no motif
-- [Q-0011](questions/Q-0011-audit-the-held-h904-historical-join.md) · open · data · Audit the held H904 historical join
-- [Q-0012](questions/Q-0012-audit-the-m-1383-numerical-referent.md) · open · data · Audit the M-1383 numerical referent
+- [Q-0009](questions/Q-0009-distinguish-missing-motif-from-no-motif.md) · open · data · Distinguish a missing motif record from a seal with no motif
+- [Q-0011](questions/Q-0011-audit-the-held-h904-historical-join.md) · open · data · Check whether tablet ICIT 3786 of a numeral proposal is H904
+- [Q-0012](questions/Q-0012-audit-the-m-1383-numerical-referent.md) · open · data · Check the bangle count behind the M-1383 numeral proposal
 - [Q-0014](questions/Q-0014-verify-the-animals-on-the-matched-sealings.md) · open · images · Verify the animals on the matched sealings
 - [Q-0016](questions/Q-0016-resolve-the-dholavira-duplicate-seal.md) · open · data · Resolve the Dholavira duplicate seal
-- [Q-0017](questions/Q-0017-review-circular-seal-transcriptions.md) · open · images · Review circular-seal transcriptions
-- [Q-0018](questions/Q-0018-join-banawali-duplicate-contexts.md) · open · data · Join Banawali duplicate contexts
-- [Q-0020](questions/Q-0020-review-complete-harappa-short-modules.md) · open · tablets · Review complete Harappa short modules
-- [Q-0027](questions/Q-0027-audit-catalogue-line-division-locators.md) · open · data · Audit catalogue line-division locators
-- [Q-0035](questions/Q-0035-audit-completeness-for-a-quantity-inventory.md) · open · data · Audit completeness for a quantity inventory
-- [Q-1005](questions/Q-1005-cisi1-basic-data-table.md) · open · data · Transcribe the CISI 1 basic-data pages into an object table with museum and excavation numbers
+- [Q-0017](questions/Q-0017-review-circular-seal-transcriptions.md) · open · images · Check transcriptions of circular seals from the Gulf and South Asia
+- [Q-0018](questions/Q-0018-join-banawali-duplicate-contexts.md) · open · data · Find the excavation contexts of Banawali seals that share texts
+- [Q-0020](questions/Q-0020-review-complete-harappa-short-modules.md) · open · tablets · Confirm stroke counts on the Harappa tablets H2218–H2239
+- [Q-0027](questions/Q-0027-audit-catalogue-line-division-locators.md) · open · data · Check catalogue line divisions against the source plates
+- [Q-0035](questions/Q-0035-audit-completeness-for-a-quantity-inventory.md) · open · data · Find a physical inventory whose count is known to be complete
 - [Q-1006](questions/Q-1006-cisi2-basic-data-table.md) · open · data · Transcribe the CISI 2 basic-data pages for the Pakistan collections
 - [Q-1008](questions/Q-1008-acquire-cisi-3-1.md) · open · data · Acquire CISI 3.1 (2010), the Mohenjo-daro and Harappa new-material volume
 - [Q-1013](questions/Q-1013-cross-catalogue-identifier-crosswalk.md) · open · data · Build the cross-catalogue identifier crosswalk for every held object
@@ -131,22 +130,22 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 
 ### Priority 2
 
-- [Q-0010](questions/Q-0010-rebuild-dependence-from-all-recorded-faces.md) · open · corpus · Rebuild dependence from all recorded faces
-- [Q-0019](questions/Q-0019-recheck-lothal-attachment-geometry.md) · open · seals · Recheck Lothal attachment geometry
-- [Q-0021](questions/Q-0021-test-w700-tier-stability-by-period.md) · open · tablets · Test W700 tier stability by period
-- [Q-0022](questions/Q-0022-test-same-tier-find-context-clustering.md) · open · tablets · Test same-tier find-context clustering
-- [Q-0023](questions/Q-0023-test-rare-animal-site-concentration.md) · open · seals · Test rare-animal site concentration
-- [Q-0024](questions/Q-0024-test-different-animal-cross-site-pairs.md) · open · seals · Test different-animal cross-site pairs
-- [Q-0025](questions/Q-0025-prepare-prospective-conjecture-observation-rules.md) · open · methods · Prepare prospective conjecture observation rules
-- [Q-0026](questions/Q-0026-recode-sign-families-without-catalogue-order.md) · open · images · Recode sign families without catalogue order
-- [Q-0028](questions/Q-0028-train-segmentation-on-observed-divisions.md) · open · structure · Train segmentation on observed divisions
-- [Q-0029](questions/Q-0029-compare-numerals-in-both-directions.md) · open · numerals · Compare numerals in both directions
-- [Q-0030](questions/Q-0030-check-chronology-transfer-after-context-audit.md) · open · archaeology · Check chronology transfer after context audit
+- [Q-0010](questions/Q-0010-rebuild-dependence-from-all-recorded-faces.md) · open · corpus · Check data splits using every recorded face, including excluded ones
+- [Q-0019](questions/Q-0019-recheck-lothal-attachment-geometry.md) · open · seals · Recheck how the Lothal sealing L206 was attached
+- [Q-0021](questions/Q-0021-test-w700-tier-stability-by-period.md) · open · tablets · Test whether the stroke tiers before sign W700 are stable over time
+- [Q-0022](questions/Q-0022-test-same-tier-find-context-clustering.md) · open · tablets · Test whether tablets of the same tier were found together
+- [Q-0023](questions/Q-0023-test-rare-animal-site-concentration.md) · open · seals · Test whether rarer seal animals are concentrated at fewer sites
+- [Q-0024](questions/Q-0024-test-different-animal-cross-site-pairs.md) · open · seals · Test whether identical texts with different animals cross sites more often
+- [Q-0025](questions/Q-0025-prepare-prospective-conjecture-observation-rules.md) · open · methods · Write rules for scoring future finds against the conjectures
+- [Q-0026](questions/Q-0026-recode-sign-families-without-catalogue-order.md) · open · images · Recode sign families from sheets in shuffled order
+- [Q-0028](questions/Q-0028-train-segmentation-on-observed-divisions.md) · open · structure · Train a segmenter on the catalogue's line divisions
+- [Q-0029](questions/Q-0029-compare-numerals-in-both-directions.md) · open · numerals · Test stroke-number fixity with the preceding and the following sign
+- [Q-0030](questions/Q-0030-check-chronology-transfer-after-context-audit.md) · open · archaeology · Test change in sign use over time on audited, dated objects
 - [Q-0031](questions/Q-0031-separate-manufacture-from-graphic-variation.md) · open · images · Separate manufacture from graphic variation
-- [Q-0032](questions/Q-0032-test-gap-geometry-on-held-damaged-cases.md) · open · images · Test gap geometry on held damaged cases
-- [Q-0038](questions/Q-0038-reproduce-one-manuscript-claim-from-tracked-aggregates.md) · open · methods · Reproduce one manuscript claim from tracked aggregates
-- [Q-1004](questions/Q-1004-face-level-image-index.md) · open · data · Build a face-level image index from the 8,722 local CISI crops
-- [Q-1007](questions/Q-1007-absent-cisi-keys-disposition.md) · open · data · Give every CISI catalogue entry missing from the local index a disposition
+- [Q-0032](questions/Q-0032-test-gap-geometry-on-held-damaged-cases.md) · open · images · Use gap width and traces to count lost signs in damaged texts
+- [Q-0038](questions/Q-0038-reproduce-one-manuscript-claim-from-tracked-aggregates.md) · open · methods · Recompute one Paper 001 result from its tracked summary outputs
+- [Q-1004](questions/Q-1004-face-level-image-index.md) · open · data · Build an index linking each inscribed face to the 8,722 local CISI photograph crops
+- [Q-1007](questions/Q-1007-absent-cisi-keys-disposition.md) · open · data · Classify every CISI catalogue entry that has no match in the local corpus
 - [Q-1009](questions/Q-1009-acquire-cisi-3-2.md) · open · data · Acquire CISI 3.2 (2019) for Kalibangan, Chanhu-daro, Rojdi and the western sites
 - [Q-1011](questions/Q-1011-icit-access-and-fuls-wells-corpora.md) · open · data · Seek access to ICIT and record the Fuls and Wells printed corpora
 - [Q-1014](questions/Q-1014-dholavira-inventory.md) · open · data · Join the Dholavira objects to Bisht's 2015 seal and sealing inventory
@@ -160,10 +159,10 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 
 ### Priority 3
 
-- [Q-0033](questions/Q-0033-independently-reproduce-a-reference-calibration.md) · open · methods · Independently reproduce a reference calibration
-- [Q-0034](questions/Q-0034-repair-retained-mixture-search-misses.md) · open · methods · Repair retained mixture search misses
-- [Q-0036](questions/Q-0036-specify-a-known-script-seal-locality-comparator.md) · open · comparative · Specify a known-script seal-locality comparator
-- [Q-0037](questions/Q-0037-design-a-head-direction-seal-comparison.md) · open · language · Design a head-direction seal comparison
+- [Q-0033](questions/Q-0033-independently-reproduce-a-reference-calibration.md) · open · methods · Reproduce one of Paper 002's chance-comparison calibrations
+- [Q-0034](questions/Q-0034-repair-retained-mixture-search-misses.md) · open · methods · Find an optimizer that closes the recorded mixture-map search failures
+- [Q-0036](questions/Q-0036-specify-a-known-script-seal-locality-comparator.md) · open · comparative · Design a duplicate-locality comparison from seals in readable scripts
+- [Q-0037](questions/Q-0037-design-a-head-direction-seal-comparison.md) · open · language · Design a seal-legend comparison of head-initial and head-final languages
 - [Q-1010](questions/Q-1010-acquire-cisi-3-3.md) · open · data · Acquire the full CISI 3.3 (2022) catalogue for the Indo-Iranian borderlands
 - [Q-1012](questions/Q-1012-im77-web-application.md) · open · data · Record the IM77/IDF80 web application's contents and terms
 - [Q-1020](questions/Q-1020-dimension-units-audit.md) · open · data · Record the unit, precision and source of every dimension value
@@ -179,14 +178,15 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 
 ### Completed and dropped questions
 
-- [Q-0003](questions/Q-0003-recount-metadata-availability-by-object.md) · done · Recount metadata availability by object
+- [Q-0003](questions/Q-0003-recount-metadata-availability-by-object.md) · done · Count metadata coverage per object as well as per face
 - [Q-0013](questions/Q-0013-verify-the-lothal-and-m-895-text-match.md) · done · Verify the Lothal and M-895 text match
 - [Q-0015](questions/Q-0015-compare-m-895-with-the-impressed-seal.md) · done · Compare M-895 with the impressed seal
-- [Q-1001](questions/Q-1001-cisi-plates-l161-m895.md) · done · Assemble the held CISI witnesses for the Lothal L-161 to L-170 sealings and seal M-895
+- [Q-1001](questions/Q-1001-cisi-plates-l161-m895.md) · done · Locate the CISI photographs and basic-data rows for the Lothal sealings L-161 to L-170 and sea…
 - [Q-1002](questions/Q-1002-acquire-mackay-marshall-seal-tables.md) · done · Acquire the machine-readable Mackay 1938 and Marshall 1931 seal tables at a pinned commit
 - [Q-1003](questions/Q-1003-join-mackay-marshall-to-cisi.md) · done · Join the Mackay and Marshall seal tables to CISI M-numbers and the local Mohenjo-daro objects
+- [Q-1005](questions/Q-1005-cisi1-basic-data-table.md) · done · Transcribe the CISI 1 basic-data pages into an object table with museum and excavation numbers
 - [Q-1018](questions/Q-1018-museum-open-access-harvest.md) · done · Harvest open museum records and images for Indus inscribed objects
-- [Q-1019](questions/Q-1019-unjoined-museum-records.md) · done · Resolve the 46 museum records that have no checked join to a local object
+- [Q-1019](questions/Q-1019-unjoined-museum-records.md) · done · Resolve the 46 museum records not yet joined to a local object
 
 ## Conjectures
 
@@ -207,7 +207,9 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 
 ### data
 
+- [CISI-BASIC-DATA-FULL-2026-10-13](registry/attempts/CISI-BASIC-DATA-FULL-2026-10-13.json) · source-review · What does each CISI basic-data table print for every catalogue entry outside the pilot block,…
 - [CISI2-BASIC-DATA-PILOT-2026-10-13](registry/attempts/CISI2-BASIC-DATA-PILOT-2026-10-13.json) · source-review · Can the basic-data section of CISI 2 be transcribed from the held archive.org scan into one ro…
+- [CISI3-RANGE-COVERAGE-2026-10-13](registry/attempts/CISI3-RANGE-COVERAGE-2026-10-13.json) · verified-computation · How many of the CISI numbers after the CISI 1 and 2 ranges for Mohenjo-daro, Harappa, Kalibang…
 - [CONTEXT-01](registry/attempts/CONTEXT-01.json) · source-review · Which physical-use and chronological comparisons can the preserved corpus support?
 - [DATA-INVENTORY-2026-10-12](registry/attempts/DATA-INVENTORY-2026-10-12.json) · source-review · What data does the project hold, how complete is the metadata for each inscribed object and fa…
 - [DATA-ROUND-1-FOLLOW-UP-2026-10-13](registry/attempts/DATA-ROUND-1-FOLLOW-UP-2026-10-13.json) · verified-computation · After the verification, are the museum and CISI 2 packages fit to publish, how does the CISI F…
@@ -573,6 +575,7 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 - [experiments/2026-10-12-transmission-hypothesis/material/RETROSPECTIVE.md](../experiments/2026-10-12-transmission-hypothesis/material/RETROSPECTIVE.md) · document · Material transmission study: retrospective
 - [experiments/2026-10-12-transmission-hypothesis/review/RETROSPECTIVE.md](../experiments/2026-10-12-transmission-hypothesis/review/RETROSPECTIVE.md) · document · Review retrospective
 - [experiments/2026-10-13-bench/RETROSPECTIVE.md](../experiments/2026-10-13-bench/RETROSPECTIVE.md) · document · Shared harness retrospective
+- [experiments/2026-10-13-cisi-basic-data-full/RETROSPECTIVE.md](../experiments/2026-10-13-cisi-basic-data-full/RETROSPECTIVE.md) · document · Retrospective
 - [experiments/2026-10-13-cisi2-basic-data-pilot/RETROSPECTIVE.md](../experiments/2026-10-13-cisi2-basic-data-pilot/RETROSPECTIVE.md) · document · Retrospective: CISI 2 basic-data pilot, 13 October 2026
 - [experiments/2026-10-13-data-round-1-verification/RETROSPECTIVE.md](../experiments/2026-10-13-data-round-1-verification/RETROSPECTIVE.md) · document · Retrospective: data round 1 verification
 - [experiments/2026-10-13-image-index-and-units/RETROSPECTIVE.md](../experiments/2026-10-13-image-index-and-units/RETROSPECTIVE.md) · document · Retrospective: image index and dimension units, 13 October 2026

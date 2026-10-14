@@ -1,6 +1,6 @@
 ---
 id: "F-0019"
-title: "Indus alternation has few stems"
+title: "Few Indus segments show alternating final signs"
 status_class: "frozen-evaluation"
 area: "structure"
 date: "2026-10-12"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-Only 2 of 68 segment-derived stems alternated, a rate of 0.029. The rate lay inside all four matched comparison ranges.
+Of 68 stems (segments minus their last sign) from Dirichlet-process segments of the Indus texts, only 2 occur with more than one final sign, a rate of 0.029, inside all four matched comparison ranges.
 
 # Evidence
 
@@ -23,4 +23,4 @@ Only 2 of 68 segment-derived stems alternated, a rate of 0.029. The rate lay ins
 
 # Scope
 
-The selected segmenter was chosen on the readable-corpus rehearsal. Comparison words are subsampled to the Indus unit-length profile. The protocol treats this rate as descriptive because alternation fails to separate known systems at this scale.
+The segmenter, a Bayesian model that favours reused units, was chosen in the rehearsal on readable scripts. Comparison words from four readable corpora are subsampled to the Indus unit lengths. The protocol treats the rate as descriptive, because alternation fails to separate known writing systems at this scale.

@@ -1,6 +1,6 @@
 ---
 id: "Q-0001"
-title: "Review a 30-object identity block"
+title: "Link 30 objects across catalogue, excavation and museum numbers"
 status: "open"
 area: "data"
 kind: "metadata"
@@ -18,22 +18,22 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Question
 
-Can a 30-object block from the held source collection be joined across catalogue, excavation and museum identifiers without forcing uncertain matches?
+Can 30 objects from sources we hold locally be linked across catalogue, excavation and museum numbers without forcing uncertain matches?
 
 # Why it matters
 
-Physical identity determines which faces belong together and which observations are independent.
+Knowing which records are one physical object shows which faces belong together and which observations are independent.
 
 # What is needed
 
-Use the roadmap’s observation block and held images/registers. Retain source namespaces, all aliases, locators, competing matches and a disagreement ledger in a new package. Read [DATA.md](../DATA.md) for the gaps this task depends on.
+Use the roadmap's 30-object observation block and the images and registers we hold. In a new package, keep each identifier's source numbering, all aliases, page or plate references, competing matches and a ledger of disagreements. Read [DATA.md](../DATA.md) for the gaps this task depends on.
 
 Sources: [knowledge/directions/research-roadmap.md](../directions/research-roadmap.md); [knowledge/directions/context-data-plan.md](../directions/context-data-plan.md).
 
 # How to decide
 
-Stop after the fixed 30 objects. Every asserted same-object edge must have an accession, excavation or plate witness; retain unsupported edges as possible matches. Report resolved, conflicting and unresolved counts.
+Stop after the 30 objects. Every link asserting that two records are one object must rest on an accession number, excavation number or plate; keep unsupported links as possible matches. Report resolved, conflicting and unresolved counts.
 
 # Prior attempts
 
-[ROOT-19](../registry/attempts/ROOT-19.json); [OBJECT-LEDGER-PILOT-01](../registry/attempts/OBJECT-LEDGER-PILOT-01.json). Read their outcomes and `retry_when` before running this task.
+[ROOT-19](../registry/attempts/ROOT-19.json); [OBJECT-LEDGER-PILOT-01](../registry/attempts/OBJECT-LEDGER-PILOT-01.json). Read their outcomes and `retry_when` conditions before running this task.

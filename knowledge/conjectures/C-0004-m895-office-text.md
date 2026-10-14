@@ -16,11 +16,11 @@ tests: ["experiments/2026-10-13-plate-checks: P1 pass, P2 unresolved, P3 pass on
 
 # Claim
 
-The four-sign text carried by the Lothal sealings L-161 to L-170 and by the Mohenjo-daro seal fragment M-895 is the title of an office, held by different people in the two cities. The Lothal sealings were made with a different seal from M-895, cut for a holder of the same office in another affiliation, which is why the sealings show an elephant and M-895 a unicorn.
+The four-sign text carried by the Lothal sealings L-161 to L-170, clay impressions of a seal, and by the Mohenjo-daro seal fragment M-895 is the title of an office, held by different people in the two cities. The Lothal sealings were made with a different seal from M-895, cut for a holder of the same office in another affiliation, which is why the sealings show an elephant and M-895 a unicorn.
 
 # Why it might be true
 
-Ten Lothal sealings with an elephant carry the text of M-895, which is recorded with a unicorn, and most sealings that carry a seal text match seals from other cities: 13 of 16 matching sealings ([seal-text identity](../../experiments/2026-10-12-seal-text-identity/REPORT.md)). If one holder's goods had moved, the sealings would carry M-895's animal. The rival readings are a catalogue error in either animal and a single holder who used two seals.
+Ten Lothal sealings with an elephant carry the text of M-895, which is recorded with a unicorn. Most sealings that carry a seal text match seals from other cities: 13 of the 16 sealings that match a seal ([seal-text identity](../../experiments/2026-10-12-seal-text-identity/REPORT.md)). If one holder's goods had moved, the sealings would carry M-895's animal. The rival readings are an error in the catalogue's record of either animal, and a single holder who used two seals.
 
 # Predictions
 

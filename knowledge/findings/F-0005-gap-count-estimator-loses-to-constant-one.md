@@ -1,6 +1,6 @@
 ---
 id: "F-0005"
-title: "Gap-count estimator loses to constant one"
+title: "Estimating the number of lost signs does worse than always guessing one"
 status_class: "failed"
 area: "structure"
 date: "2026-10-02"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-The sampling-matched local estimator recovered the count in 46.30% of queries, below the constant-one control’s 51.07%.
+Our estimate of how many signs were lost in an artificial gap was right in 46.30% of tests; always guessing one sign was right in 51.07%.
 
 # Evidence
 
@@ -21,4 +21,4 @@ The sampling-matched local estimator recovered the count in 46.30% of queries, b
 
 # Scope
 
-The adjustment matches the artificial sampling law while retaining models and queries. The comparator always predicts one erased sign. Physical gap geometry and surviving traces were absent, and the declared candidate counts exclude larger gaps.
+Each test erased one to three signs inside a text. The estimator reads the signs on both sides through a sign-to-sign transition model, corrected for the rule that drew gap sizes. No physical evidence, such as gap width or traces, was available, and longer gaps were excluded.

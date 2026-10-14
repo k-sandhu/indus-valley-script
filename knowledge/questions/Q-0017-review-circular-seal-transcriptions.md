@@ -1,6 +1,6 @@
 ---
 id: "Q-0017"
-title: "Review circular-seal transcriptions"
+title: "Check transcriptions of circular seals from the Gulf and South Asia"
 status: "open"
 area: "images"
 kind: "verification"
@@ -18,22 +18,22 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Question
 
-Do held Gulf-type and South Asian circular-seal images support the fine codes and reading order used in the foreign-sequence test?
+Do our images of Gulf-type and South Asian circular seals support the sign codes and reading order used in the foreign-sequence test, which compared Indus texts found abroad with South Asian sign order?
 
 # Why it matters
 
-The reported unusual ordering depends on a small object cohort.
+The reported unusual sign order rests on a small group of objects.
 
 # What is needed
 
-Review every eligible held circular seal, including direction evidence, mirroring and damaged alternatives, before opening its model score. Read [DATA.md](../DATA.md) for the gaps this task depends on.
+Review every eligible circular seal we hold an image of, including evidence of direction, mirroring and alternative readings of damaged signs, before opening its model score. Read [DATA.md](../DATA.md) for the gaps this task depends on.
 
 Sources: [knowledge/directions/what-12-october-established.md](../directions/what-12-october-established.md); [knowledge/directions/context-data-plan.md](../directions/context-data-plan.md).
 
 # How to decide
 
-Stop at the saved cohort. Retain every disagreement and recompute sensitivity only in a new endpoint after freezing revised annotations. Unresolved orientation remains a candidate set.
+Stop at the saved set. Keep every disagreement, and recompute sensitivity only in a new result after freezing the revised annotations. An unresolved orientation stays a set of candidates.
 
 # Prior attempts
 
-[FOREIGN-FINDS-SEQUENCE-STATISTICS-2026-10-12](../registry/attempts/FOREIGN-FINDS-SEQUENCE-STATISTICS-2026-10-12.json). Read their outcomes and `retry_when` before running this task.
+[FOREIGN-FINDS-SEQUENCE-STATISTICS-2026-10-12](../registry/attempts/FOREIGN-FINDS-SEQUENCE-STATISTICS-2026-10-12.json). Read its outcome and `retry_when` condition before running this task.

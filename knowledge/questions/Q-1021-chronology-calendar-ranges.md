@@ -17,11 +17,11 @@ sources: [knowledge/DATA.md, experiments/2026-10-12-data-inventory/run-2026-10-1
 
 # Question
 
-For every distinct chronology label in the local export (`time`, `period`, `phase`), what calendar interval does the excavator's dating model give, on what basis, and with what uncertainty?
+For every distinct chronology label in the local export (the Lipi transcription corpus; fields `time`, `period`, `phase`), what calendar interval does the excavator's dating model give, on what basis, and with what uncertainty?
 
 # Why it matters
 
-No local object has a calendar date: the `time`, `period` and `phase` fields carry 21, 57 and 38 distinct site-specific labels (HARP periods such as `Period 3C`, Mohenjo-daro levels such as `Late`, strata such as `Stratum IV`), and 55.8% of objects have at least one of them. A mapping table converts these into intervals that can be compared across sites, while keeping each label's own sequence and datum. Tests of change over time, including C-0005's prediction about tablet tiers across Harappa periods, depend on it.
+No local object has a calendar date: the `time`, `period` and `phase` fields carry 21, 57 and 38 distinct site-specific labels (periods of the Harappa Archaeological Research Project, HARP, such as `Period 3C`, Mohenjo-daro levels such as `Late`, strata such as `Stratum IV`), and 55.8% of objects have at least one of them. A mapping table converts these into intervals that can be compared across sites, while keeping each label's own sequence and datum. Tests of change over time, including conjecture C-0005's prediction about tablet tiers across Harappa periods, depend on it.
 
 # What is needed
 

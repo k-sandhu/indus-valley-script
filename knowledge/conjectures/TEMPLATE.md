@@ -15,11 +15,11 @@ tests: []               # experiment directories that tested it, with outcome
 
 # Claim
 
-State the conjecture plainly in the indicative, as if it were true. One paragraph.
+State the conjecture plainly in the indicative, as if it were true, in one paragraph.
 
 # Why it might be true
 
-The observations that suggested it, each linked to an exact output.
+Describe the observations that suggested it, and link each to the exact output that records it.
 
 # Predictions
 
@@ -27,12 +27,12 @@ The observations that suggested it, each linked to an exact output.
 |---|---|---|---|---|---|
 | P1 | | | | | untested |
 
-Include at least one prospective prediction about material not yet examined.
+Each row gives what is predicted, the data that will test it, the rule that decides a pass, and how a pass or a fail changes the credence. Include at least one prospective prediction, about material not yet examined.
 
 # Kill condition
 
-Which outcome, or combination of outcomes, makes the conjecture dead.
+State which outcome, or combination of outcomes, makes the conjecture dead.
 
 # Record
 
-Dated entries: tests run, outcomes, credence changes and revisions of the claim.
+Add dated entries for each test run, its outcome, each change of credence and each revision of the claim.

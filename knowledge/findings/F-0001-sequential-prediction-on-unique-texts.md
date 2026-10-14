@@ -1,6 +1,6 @@
 ---
 id: "F-0001"
-title: "Sequential prediction on unique texts"
+title: "The previous sign helps predict the next one"
 status_class: "verified-computation"
 area: "structure"
 date: "2026-10-02"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-Previous-sign information improved held-out log score by 0.848 bits per noninitial sign on 1,596 distinct strings and 6,413 noninitial signs.
+Knowing the previous sign improved prediction of held-out texts by 0.848 bits per noninitial sign (each sign after the first), compared with a model using only position, site and object type, on 1,596 distinct texts with 6,413 noninitial signs.
 
 # Evidence
 
@@ -22,4 +22,4 @@ Previous-sign information improved held-out log score by 0.848 bits per noniniti
 
 # Scope
 
-The comparator is the selected independent position/site/type baseline, with physical aliases retained in grouping. The uniqueness-conditioned reference repeats nested fitting. This measures order in the selected transcriptions; the measurement date follows UTC in the original work log.
+Records of one physical object were kept together in cross-validation. The chance comparison shuffled signs among texts of equal length, site and type, keeping positions and creating no duplicate texts, and refitted everything for each shuffle. This measures order in the selected transcriptions; dates follow UTC in the original work log.

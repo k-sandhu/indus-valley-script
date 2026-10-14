@@ -17,11 +17,11 @@ sources: [knowledge/DATA.md, experiments/2026-10-02-connections-and-priority/sou
 
 # Question
 
-Can the Tamil Nadu graffiti corpus be held at specimen level (one row per graffiti-bearing sherd, with site, context, depth, ware and sign class), rather than as the aggregate margins the project snapshotted on 2 October?
+Can the Tamil Nadu graffiti corpus be held at specimen level (one row per graffiti-bearing sherd, with site, context, depth, ware and sign class), rather than as the summary totals the project saved from the portal on 2 October?
 
 # Why it matters
 
-The portal tngraffiti.in, maintained by the Indus Research Centre with the Tamil Nadu State Department of Archaeology, states 15,184 graffiti-bearing potsherds from 140 sites, 2,107 unique signs and a classification of 42 base signs, 544 variants and 1,521 composites from 9,486 recognised graffiti. The project's snapshot gives aggregate counts whose site and depth margins cannot be combined into specimen rows. This is a comparative collection of later South Indian marks, not Indus inscriptions, so it ranks below the Indus object work.
+The portal tngraffiti.in, maintained by the Indus Research Centre with the Tamil Nadu State Department of Archaeology, states 15,184 graffiti-bearing potsherds from 140 sites, 2,107 unique signs and a classification of 42 base signs, 544 variants and 1,521 composites from 9,486 recognised graffiti. The project's snapshot gives totals by site and by depth, which cannot be combined back into one row per sherd. This is a comparative collection of later South Indian marks, not Indus inscriptions, so it ranks below the Indus object work.
 
 # What is needed
 
@@ -33,4 +33,4 @@ Done when a specimen-level table exists locally with its source route and covera
 
 # Prior attempts
 
-The South Indian stroke study and the original-source audit used the aggregate API and selected specimens.
+The South Indian stroke study and the original-source audit used the portal's API, which returns summary totals, and selected specimens.

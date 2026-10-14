@@ -1,6 +1,6 @@
 ---
 id: "Q-0036"
-title: "Specify a known-script seal-locality comparator"
+title: "Design a duplicate-locality comparison from seals in readable scripts"
 status: "open"
 area: "comparative"
 kind: "analysis"
@@ -18,22 +18,22 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Question
 
-Can the known-script editions already held support an object-level duplicate-locality comparator with the same eligibility rules?
+Can the editions of readable-script seals we already hold support an object-level comparison of where duplicate texts are found, under the same eligibility rules as the Indus test?
 
 # Why it matters
 
-Impression records and edited texts supply different object denominators.
+Counting impressions and counting edited texts give different numbers of objects.
 
 # What is needed
 
-Audit object IDs, source groups, find sites, complete legends and aliases in the held comparison editions. Record acquisition gaps through DATA rather than filling them with text counts. Read [DATA.md](../DATA.md) for the gaps this task depends on.
+Audit object IDs, source groups, find sites, complete legends and aliases in the comparison editions we hold. Record acquisition gaps in DATA.md instead of filling them with text counts. Read [DATA.md](../DATA.md) for the gaps this task depends on.
 
 Sources: [knowledge/directions/what-12-october-established.md](../directions/what-12-october-established.md); [experiments/2026-10-12-seal-text-identity/REPORT.md](../../experiments/2026-10-12-seal-text-identity/REPORT.md).
 
 # How to decide
 
-The first endpoint is feasibility: every comparison record must join to an object and site. Freeze a matched test only if the object-level denominator and dependence graph are supported.
+The first result is feasibility: every comparison record must link to an object and a site. Freeze a matched test only if the object count and the dependence graph are supported.
 
 # Prior attempts
 
-[SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12](../registry/attempts/SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12.json); [BRONZE-AGE-DOCUMENTARY-COMPARISON-2026-10-12](../registry/attempts/BRONZE-AGE-DOCUMENTARY-COMPARISON-2026-10-12.json). Read their outcomes and `retry_when` before running this task.
+[SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12](../registry/attempts/SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12.json); [BRONZE-AGE-DOCUMENTARY-COMPARISON-2026-10-12](../registry/attempts/BRONZE-AGE-DOCUMENTARY-COMPARISON-2026-10-12.json). Read their outcomes and `retry_when` conditions before running this task.

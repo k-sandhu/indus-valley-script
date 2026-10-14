@@ -1,6 +1,6 @@
 # Evidence guide for Paper 006
 
-Every number in the [manuscript](manuscript.md) comes from a saved output in `experiments/2026-10-12-published-claim-tests/`. Paths below are relative to that directory. The study's [report](../../experiments/2026-10-12-published-claim-tests/sanskrit-key/REPORT.md), [protocol](../../experiments/2026-10-12-published-claim-tests/PROTOCOL.md), amendments 1–4, [adversarial review](../../experiments/2026-10-12-published-claim-tests/sanskrit-key/review/REVIEW.md) and [response](../../experiments/2026-10-12-published-claim-tests/sanskrit-key/review/RESPONSE.md) record the order in which analyses were designed and which were added after outcomes.
+Every number in the [manuscript](manuscript.md) comes from a saved output in `experiments/2026-10-12-published-claim-tests/`. Paths below are relative to that directory. The study's [report](../../experiments/2026-10-12-published-claim-tests/sanskrit-key/REPORT.md), [protocol](../../experiments/2026-10-12-published-claim-tests/PROTOCOL.md), amendments 1–4, [adversarial review](../../experiments/2026-10-12-published-claim-tests/sanskrit-key/review/REVIEW.md) and [response](../../experiments/2026-10-12-published-claim-tests/sanskrit-key/review/RESPONSE.md) record the order in which analyses were designed and which were added after their results had been seen.
 
 | Manuscript section | Claim | Output |
 |---|---|---|
@@ -8,17 +8,17 @@ Every number in the [manuscript](manuscript.md) comes from a saved output in `ex
 | 4.1 | 69.2% exact skeleton agreement; departure counts; glossing lemma lengths | `sanskrit-key/stage0/summary.json` |
 | 4.2 | Random-string readability by length and lexicon; key and rearrangement shares | `sanskrit-key/stage2/summary.json` |
 | 4.2 | Fitted readability 99.4–99.6% (DCS) and 99.5% (Monier-Williams) | `sanskrit-key/stage2/fitted_readability.json` |
-| 4.2 | Random-key segmentation of the twelve longest texts | `sanskrit-key/stage4/demo.json` |
+| 4.2 | Segmentation of the twelve longest texts under a random rearrangement of the key | `sanskrit-key/stage4/demo.json` |
 | 4.3 | Cross-entropy and redundancy by order; recomputed distance | `sanskrit-key/stage1/summary.json` |
 | 4.3 | Fifty longest texts supply 473 key consonants | `sanskrit-key/stage3/summary.json` (`key.longest50.n`) |
 | 4.4 | Key −0.393, rearrangements −0.463 (sd 0.057), references | `sanskrit-key/stage3/summary.json` |
 | 4.4 | Word-level references and readings by length | `sanskrit-key/stage3/validation.json` |
 | 4.4 | Exhaustive *n/m* choice | `sanskrit-key/stage3/sensitivity_exhaustive.json` |
 | 4.4 | Training-text and projection variants; order-only statistic | `sanskrit-key/stage3/sensitivity_training.json` |
-| 4.5 | Within-stratum optima, scrambled fits, half split | `sanskrit-key/stage3g/summary.json`, `sanskrit-key/stage3g/derived.json` |
-| 4.5 | Deletion in unconstrained optima | `sanskrit-key/stage3/token_check.json` |
+| 4.5 | Best arrangements within frequency strata, fits to shuffled inscriptions, half-split transfer | `sanskrit-key/stage3g/summary.json`, `sanskrit-key/stage3g/derived.json` |
+| 4.5 | Sign tokens that unconstrained optima turn into vowels, deleting them from the skeleton | `sanskrit-key/stage3/token_check.json` |
 | 4.5 | Local ranks by both rankings | `sanskrit-key/stage3f/summary-v2.json` |
-| 4.6 | Transfer z and gap shares by language | `sanskrit-key/stage3g/derived.json` |
+| 4.6 | Transfer z-scores and gap shares by language | `sanskrit-key/stage3g/derived.json` |
 | 4.6 | Near-duplicate control | `sanskrit-key/stage3g/novel_transfer.json` |
 | 4.6 | Failed unconstrained comparison | `sanskrit-key/stage3e/summary.json`, `sanskrit-key/AMENDMENT-2.md` |
 | 4.7 | True-key separation, recovery, transfer by seed | `sanskrit-key/stage5/derived.json`, `sanskrit-key/stage5/summary.json`, `sanskrit-key/stage3g/novel_transfer.json` |

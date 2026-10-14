@@ -1,6 +1,6 @@
 ---
 id: "Q-0038"
-title: "Reproduce one manuscript claim from tracked aggregates"
+title: "Recompute one Paper 001 result from its tracked summary outputs"
 status: "open"
 area: "methods"
 kind: "verification"
@@ -18,22 +18,22 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Question
 
-Can a contributor independently recover one Paper 001 headline comparison from its tracked aggregate outputs and recorded definitions?
+Can a contributor independently recover one headline comparison of Paper 001 from its tracked summary outputs and recorded definitions?
 
 # Why it matters
 
-A short verification contribution can check the human entry page’s claims without requiring local corpus access.
+A short verification can check the claims on the project's front page without access to the local corpus.
 
 # What is needed
 
-Choose one aggregate claim, record the input hashes and recompute the displayed quantity. If a paired replay needs local audits, document that boundary and use the aggregate endpoint only. Read [DATA.md](../DATA.md) for the gaps this task depends on.
+Choose one summary claim, record the input hashes and recompute the displayed quantity. If a paired replay needs local audit files, document that limit and use the summary result only. Read [DATA.md](../DATA.md) for the gaps this task depends on.
 
 Sources: [papers/001-artifact-aware-prediction/claim-evidence-map.md](../../papers/001-artifact-aware-prediction/claim-evidence-map.md); [papers/001-artifact-aware-prediction/methods.md](../../papers/001-artifact-aware-prediction/methods.md).
 
 # How to decide
 
-Match the source’s displayed value and denominator. Stop after the selected claim and report exactly which inputs and calculations were independently inspected.
+Match the displayed value and denominator. Stop after the chosen claim and report exactly which inputs and calculations you inspected independently.
 
 # Prior attempts
 
-[MARKOV-03](../registry/attempts/MARKOV-03.json). Read their outcomes and `retry_when` before running this task.
+[MARKOV-03](../registry/attempts/MARKOV-03.json). Read its outcome and `retry_when` condition before running this task.

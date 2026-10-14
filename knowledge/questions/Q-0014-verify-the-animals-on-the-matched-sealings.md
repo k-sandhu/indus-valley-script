@@ -18,25 +18,25 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Question
 
-Do the held views independently establish the elephant on L-161 to L-170 and the catalogue’s unicorn label on the M-895 fragment?
+Do the views we hold independently show the elephant on L-161 to L-170 and the unicorn the catalogue gives the M-895 fragment?
 
 # Why it matters
 
-Different animal observations are a premise of the office-versus-travelling-seal test.
+The test of whether the text belongs to an office or travelled on one seal assumes the two objects show different animals.
 
 # What is needed
 
-Inspect the complete retained views and captions. Record which features are visible and which are inferred from the fragment or catalogue. Read [DATA.md](../DATA.md) for the gaps this task depends on.
+Inspect the complete views and captions we kept. Record which features are visible and which are inferred from the fragment or catalogue. Read [DATA.md](../DATA.md) for the gaps this task depends on.
 
 Sources: [knowledge/conjectures/C-0004-m895-office-text.md](../conjectures/C-0004-m895-office-text.md); [experiments/2026-10-12-seal-text-identity/REPORT.md](../../experiments/2026-10-12-seal-text-identity/REPORT.md).
 
 # How to decide
 
-Use C-0004 P2 and its credence rule. Pass requires both animals to be visibly or independently source-confirmed; an unidentifiable fragment remains unresolved.
+Use C-0004 P2 and its credence rule. A pass requires both animals visible or independently confirmed by a source; an unidentifiable fragment remains unresolved.
 
 # Prior attempts
 
-[SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12](../registry/attempts/SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12.json). Read their outcomes and `retry_when` before running this task.
+[SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12](../registry/attempts/SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12.json). Read its outcome and `retry_when` condition before running this task.
 
 # Progress
 

@@ -18,7 +18,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Question
 
-Which held photographs or scan panels are repeated witnesses of the same image rather than additional object observations?
+Which photographs or scan panels we hold are repeat copies of one image rather than further views of an object?
 
 # Why it matters
 
@@ -26,14 +26,14 @@ Duplicate images can inflate apparent photographic coverage and independent anno
 
 # What is needed
 
-Hash the held files and compare candidate crops with source captions. Keep full-file and crop matches separate and publish hashes, identifiers and aggregate counts under the rights rules. Read [DATA.md](../DATA.md) for the gaps this task depends on.
+Hash the files and compare candidate crops with source captions. Keep whole-file and crop matches separate, and publish hashes, identifiers and aggregate counts as the rights rules allow. Read [DATA.md](../DATA.md) for the gaps this task depends on.
 
 Sources: [knowledge/directions/context-data-plan.md](../directions/context-data-plan.md); [research/literature/cisi1_counting_and_errata.md](../../research/literature/cisi1_counting_and_errata.md).
 
 # How to decide
 
-Exact hashes establish identical files; near matches require visible crop and caption confirmation. Stop after the declared source block and retain doubtful pairs as candidates.
+Identical hashes establish identical files; near matches need a visual check of crop and caption. Stop after the declared source block and keep doubtful pairs as candidates.
 
 # Prior attempts
 
-[ROOT-19](../registry/attempts/ROOT-19.json); [HARP-LOTHAL-SOURCE-02](../registry/attempts/HARP-LOTHAL-SOURCE-02.json). Read their outcomes and `retry_when` before running this task.
+[ROOT-19](../registry/attempts/ROOT-19.json); [HARP-LOTHAL-SOURCE-02](../registry/attempts/HARP-LOTHAL-SOURCE-02.json). Read their outcomes and `retry_when` conditions before running this task.

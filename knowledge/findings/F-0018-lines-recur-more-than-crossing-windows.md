@@ -1,6 +1,6 @@
 ---
 id: "F-0018"
-title: "Lines recur more than crossing windows"
+title: "Text lines recur elsewhere more often than stretches crossing the line break"
 status_class: "frozen-evaluation"
 area: "structure"
 date: "2026-10-12"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-Under the conservative line order, 23 faces had higher line recurrence, 4 had higher crossing-window recurrence and 42 tied; p = 0.0003.
+On 69 faces where the catalogue splits the text into lines, lines recurred elsewhere more often than equal-length stretches crossing the break: under the conservative line order, 23 faces favoured lines, 4 favoured crossing stretches and 42 tied (p = 0.0003).
 
 # Evidence
 
@@ -24,4 +24,4 @@ Under the conservative line order, 23 faces had higher line recurrence, 4 had hi
 
 # Scope
 
-Lines are sought in clean single-line texts from another object. Crossing windows have matching lengths, and the better crossing order per face supplies the conservative comparator. The outcome uses the eligible catalogue-divided faces, mostly square seals.
+Recurrence means appearing within a clean single-line text on another object. Crossing stretches (crossing windows) are built under both possible line orders, and the conservative comparison takes, for each face, the order that favours them. The faces are eligible catalogue-divided faces, mostly square seals.

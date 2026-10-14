@@ -21,7 +21,7 @@ The animal on an Indus seal marks the holder's affiliation, and the unicorn affi
 
 # Why it might be true
 
-Unicorns are 77% of known square-seal motifs, with a unicorn majority at each of six adequately sampled sites ([sign context and seals](../../experiments/2026-10-06-sign-context-and-seals/REPORT.md)). Seals with identical texts share their animal mainly when it is the unicorn: 88 of 89 concordant pairs, against 1 of 42 pairs with another animal ([seal-text identity](../../experiments/2026-10-12-seal-text-identity/REPORT.md)). Two results constrain the claim: unicorn seals are no more uniform in size than others (CV difference 0.013, p = 0.65), and seal texts do not predict unicorn against other animals (gain −0.063 nats per object, p = 0.81). The first rules out a single workshop template; the second fits an affiliation that is not written in the legend.
+Unicorns are 77% of square seals with a known motif, and they are the majority at each of six adequately sampled sites ([sign context and seals](../../experiments/2026-10-06-sign-context-and-seals/REPORT.md)). Seals with identical texts share their animal mainly when it is the unicorn: of 89 identical-text pairs that share an animal, 88 are unicorn pairs, and of 42 pairs involving another animal, 1 shares it ([seal-text identity](../../experiments/2026-10-12-seal-text-identity/REPORT.md)). Two results constrain the claim. Unicorn seals are no more uniform in size than others (the coefficient of variation differs by 0.013, p = 0.65), and a seal's text does not predict whether its animal is a unicorn (gain −0.063 nats per object, p = 0.81). The first rules out a single workshop template; the second fits an affiliation that is not written in the legend.
 
 # Predictions
 

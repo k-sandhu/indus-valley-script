@@ -1,6 +1,6 @@
 ---
 id: "F-0031"
-title: "Literal-copy reference calibration"
+title: "Copied records inflate false positives unless objects are shuffled"
 status_class: "synthetic"
 area: "methods"
 date: "2026-10-02"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-At nominal 5%, matched object references rejected 5.4% of literal-copy populations, against 15.9% for record-wise references.
+In 1,000 simulated corpora where every object appears as two identical records and sign order carries no information, shuffling whole objects rejected the null hypothesis, true by construction, in 5.4% of corpora at the nominal 5% level, and shuffling records in 15.9%.
 
 # Evidence
 
@@ -21,4 +21,4 @@ At nominal 5%, matched object references rejected 5.4% of literal-copy populatio
 
 # Scope
 
-The same nested prediction statistic is calibrated under an invented literal-copy process. The comparison changes the reference unit while retaining observations. It tests implementation under that law and supplies no archaeological estimate of copying.
+Both shuffling schemes (references) use the held-out gain from knowing the previous sign, refitted for every corpus. The copying process is invented, so this checks the implementation and estimates no archaeological copying.

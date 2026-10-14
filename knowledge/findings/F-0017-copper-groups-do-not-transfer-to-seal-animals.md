@@ -1,6 +1,6 @@
 ---
 id: "F-0017"
-title: "Copper groups do not transfer to seal animals"
+title: "Copper-tablet sign groups do not recur on seals with the same animal"
 status_class: "failed"
 area: "seals"
 date: "2026-10-12"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-Copper class-specific sign groups occurred on matching-animal seals 3 times against 3.01 expected, with p = 0.62.
+Sign groups found with only one image class on copper tablets appeared 3 times on seals showing the matching animal, against 3.01 expected (p = 0.62).
 
 # Evidence
 
@@ -23,4 +23,4 @@ Copper class-specific sign groups occurred on matching-animal seals 3 times agai
 
 # Scope
 
-The permutation comparator tests transfer of copper image-specific groups to matching field animals on seals. The recorded power is higher for fivefold than twofold enrichment. The result leaves smaller effects unresolved.
+The chance comparison shuffles animal labels across 1,209 distinct pairings of seal text and animal. The test has more power for fivefold than twofold enrichment, so smaller effects remain unresolved.

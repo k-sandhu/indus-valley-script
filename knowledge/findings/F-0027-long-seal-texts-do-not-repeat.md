@@ -20,4 +20,4 @@ No two of the 445 seals with six or more signs shared their complete text.
 
 # Scope
 
-The count uses exact complete text identity in the named-site, single-line, one-face seal population. It covers the recorded export and selected faces; it does not count damaged or unselected second faces.
+The count uses exact identity of complete texts among single-line seals from named sites, one face per object. It covers the recorded corpus and selected faces, not damaged texts or unselected second faces.

@@ -11,7 +11,23 @@ PATTERNS = {
     "rhetorical_contrast": r"\b(?:not just|isn['’]t just|it['’]s not about|this isn['’]t about)\b",
     "self_applause": r"\b(?:and that matters|that['’]s the part everyone misses|cannot be overstated|paradigm shift)\b",
     "em_dash": "—",
+    "third_person_voice": r"\b(?:the user|user['’]s|owner['’]s (?:priority|decision|request|approval)|owner decision|the coordinator)\b",
+    "template_paragraph": r"\b(?:the present contribution|our contribution is|are established (?:methods|research approaches|precedents))\b",
+    "generic_link_label": r"\[(?:primary|original|published|exact|source|article|paper|preprint|author manuscript|abstract)\b[^\]]{0,40}\]\(https?://",
+    "inflating_ing_clause": r",\s(?:highlighting|underscoring|showcasing|emphasi[sz]ing|reflecting the)\b",
+    "copula_avoidance": r"\b(?:serves as|stands as)\b",
+    "formal_word": r"\b(?:utili[sz](?:e|es|ed|ing|ation)|subsequently|commenc\w+)\b",
 }
+# Applied after links, inline code and URLs are removed from the line.
+PLAIN_PATTERNS = {
+    "slash_compound": r"\b[A-Za-z]{3,}/[A-Za-z]{3,}\b",
+}
+
+
+def plain(line):
+    line = re.sub(r"\]\([^)]*\)", "]", line)
+    line = re.sub(r"`[^`]*`", "", line)
+    return re.sub(r"https?://\S+", "", line)
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -40,6 +56,9 @@ def main():
                 continue
             for name, pattern in PATTERNS.items():
                 if re.search(pattern,line,re.I):
+                    flags.append({"file": path.relative_to(ROOT).as_posix(), "line": number, "pattern": name, "text": line})
+            for name, pattern in PLAIN_PATTERNS.items():
+                if re.search(pattern,plain(line)):
                     flags.append({"file": path.relative_to(ROOT).as_posix(), "line": number, "pattern": name, "text": line})
     result = {"scope": "new repository prose; flags require human judgment and may be source titles/technical quotations", "files_scanned": len(files), "flags": flags}
     if not args.no_write:

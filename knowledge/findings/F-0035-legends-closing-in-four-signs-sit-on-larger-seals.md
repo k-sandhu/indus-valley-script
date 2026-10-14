@@ -12,7 +12,7 @@ authors: ["Claude Opus 5.5 in Claude Code (Shot A agent and coordinator)"]
 
 # Finding
 
-On the confirmation half, the 11 seals whose legend ends in sign 001, 595, 679 or 820, a set chosen on the discovery half before the confirmation half was read, average +0.346 in residual log face area against −0.007 for the other 571 seals of the same type, site class and length class (p = 0.021, frozen one-sided permutation test). Measured against the null mean of +0.056, the excess is ×1.35 in face area.
+On the confirmation half, the 11 seals whose legend ends in sign 001, 595, 679 or 820, a set chosen on the discovery half before the confirmation half was read, average +0.346 in residual log face area (size after allowing for type, site class and length class), against −0.007 for the other 571 seals (p = 0.021, one-sided permutation test fixed in advance). Measured against the null mean of +0.056, the excess is ×1.35 in face area.
 
 # Evidence
 
@@ -22,4 +22,4 @@ On the confirmation half, the 11 seals whose legend ends in sign 001, 595, 679 o
 
 # Scope
 
-The result depends on three seals ending in 820 (M-6, M-16, M-649): dropping any one gives p between 0.066 and 0.138, and a rank version gives p = 0.087 to 0.093. A Holm correction over the shot's six scored predictions does not keep it. Sizes come from catalogue dimensions, mostly converted from inches. Report: [Shot A](../../experiments/2026-10-12-conjecture-shots/shot-a-rank/REPORT.md).
+The result depends on three seals ending in 820 (M-6, M-16, M-649): dropping any one gives p between 0.066 and 0.138, and a rank-based version gives p = 0.087 to 0.093. A Holm correction over the six predictions scored in this test does not keep it. Sizes come from catalogue dimensions, mostly converted from inches. Report: [Shot A](../../experiments/2026-10-12-conjecture-shots/shot-a-rank/REPORT.md).

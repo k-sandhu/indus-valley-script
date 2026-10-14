@@ -1,6 +1,6 @@
 ---
 id: "F-0023"
-title: "Edge asymmetry changes with the unit"
+title: "In Ur III seal legends, edge asymmetry reverses from signs to words"
 status_class: "frozen-evaluation"
 area: "comparative"
 date: "2026-10-12"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-Ur III seal-legend edge asymmetry was −0.204 by sign and +0.079 by word.
+In Ur III seal legends, edge asymmetry (normalized entropy of the first unit minus that of the last) was −0.204 counted by sign and +0.079 counted by word.
 
 # Evidence
 
@@ -21,4 +21,4 @@ Ur III seal-legend edge asymmetry was −0.204 by sign and +0.079 by word.
 
 # Scope
 
-The sign and complete-word cohorts differ by one eligible legend in the saved profile. Both compare normalized initial and final entropy. The reversal shows why the statistic requires matched unit and genre for language comparisons.
+The sign and word sets differ by one eligible legend. Because the asymmetry reverses with the unit, language comparisons need corpora matched in unit and genre.

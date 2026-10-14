@@ -1,6 +1,6 @@
 ---
 id: "F-0032"
-title: "Imperfect-face reference calibration"
+title: "Shuffling an object's faces separately inflates false positives"
 status_class: "synthetic"
 area: "methods"
 date: "2026-10-02"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-At nominal 5%, matched face-vector references rejected 5% of populations, against 11% for record-wise references.
+In 1,000 simulated corpora of objects with two error-prone copies (faces) of one text, shuffling each object's faces together rejected the null hypothesis, true by construction, in 5% of corpora at the nominal 5% level, and shuffling records separately in 11%.
 
 # Evidence
 
@@ -21,4 +21,4 @@ At nominal 5%, matched face-vector references rejected 5% of populations, agains
 
 # Scope
 
-The generated observation law uses the specified paired-error mechanism. Whole vectors and individual-record columns are competing references for the saved statistic. The calibration is conditional on that known mechanism.
+Face errors follow a stated process, independent between faces. Both references, whole face pairs (face vectors) and per-record shuffling, use the same saved statistic. The calibration holds for that known process.

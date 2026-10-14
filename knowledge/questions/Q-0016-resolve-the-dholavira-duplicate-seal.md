@@ -22,18 +22,18 @@ Are Dholavira 128.1 and 4225.1 two physical seals or two catalogue records of on
 
 # Why it matters
 
-The smaller-site duplicate count is sensitive to this identity edge.
+The count of duplicate texts at the smaller sites depends on this identity.
 
 # What is needed
 
-Compare held registrations, dimensions, photographs and publication crosswalks. Keep text identity as supporting evidence separate from physical identity. Read [DATA.md](../DATA.md) for the gaps this task depends on.
+Compare the registrations, dimensions, photographs and publication concordances we hold. Treat the shared text as supporting evidence, separate from physical identity. Read [DATA.md](../DATA.md) for the gaps this task depends on.
 
 Sources: [experiments/2026-10-12-seal-text-identity/REPORT.md](../../experiments/2026-10-12-seal-text-identity/REPORT.md); [knowledge/directions/context-data-plan.md](../directions/context-data-plan.md).
 
 # How to decide
 
-Accept one-object status only with a registration or image-based identity witness. Report locality sensitivity under both interpretations if the join stays unresolved.
+Accept one-object status only with a registration or image showing it. If unresolved, report the locality result under both interpretations.
 
 # Prior attempts
 
-[SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12](../registry/attempts/SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12.json). Read their outcomes and `retry_when` before running this task.
+[SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12](../registry/attempts/SEAL-TEXT-IDENTITY-LOCALITY-2026-10-12.json). Read its outcome and `retry_when` condition before running this task.

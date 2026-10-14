@@ -1,6 +1,6 @@
 ---
 id: "F-0026"
-title: "Recurring seal texts span sites"
+title: "Most seal texts that recur are found at more than one site"
 status_class: "frozen-evaluation"
 area: "seals"
 date: "2026-10-12"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-There were 65 recurring texts on 174 of 1,430 eligible seals; 41 of the recurring texts spanned sites.
+Among 1,430 eligible seals, 65 texts occur on more than one seal, covering 174 seals, and 41 of these recurring texts occur at more than one site.
 
 # Evidence
 
@@ -23,4 +23,4 @@ There were 65 recurring texts on 174 of 1,430 eligible seals; 41 of the recurrin
 
 # Scope
 
-Recurrence is exact text identity under the selected fine-code transcription, with at least two signs and one face per family. Site and motif labels come from catalogues. A second-face and merged-variant sensitivity are separate from this population.
+Recurrence is exact identity of a text of at least two signs, using the selected sign codes and one face per object. Eligible seals are complete, single-line and from named South Asian sites. Sites and motifs come from catalogues. A sensitivity analysis with second faces and merged variants is separate.

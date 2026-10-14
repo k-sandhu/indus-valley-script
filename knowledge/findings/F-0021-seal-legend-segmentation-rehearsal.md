@@ -1,6 +1,6 @@
 ---
 id: "F-0021"
-title: "Seal-legend segmentation rehearsal"
+title: "Branching entropy finds word boundaries in Ur III seal legends"
 status_class: "frozen-evaluation"
 area: "methods"
 date: "2026-10-12"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-On Ur III seal legends, branching entropy reached boundary F1 0.692 against 0.557 for a boundary everywhere.
+On Ur III seal legends with word divisions hidden, branching entropy, which places a boundary where the next sign becomes hard to predict, reached boundary F1 0.692, against 0.557 for a boundary everywhere.
 
 # Evidence
 
@@ -22,4 +22,4 @@ On Ur III seal legends, branching entropy reached boundary F1 0.692 against 0.55
 
 # Scope
 
-The input conceals word boundaries and retains the seal-legend genre. The comparison scores predicted boundaries against the edition’s divisions. Transfer to Indus boundaries needs observed divisions or spacing evidence.
+These Sumerian seal inscriptions are the comparison genre closest to Indus seals. Predicted boundaries are scored against the edition's divisions. Transfer to Indus texts needs observed divisions or spacing evidence.

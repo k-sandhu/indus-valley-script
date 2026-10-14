@@ -1,6 +1,6 @@
 ---
 id: "Q-0003"
-title: "Recount metadata availability by object"
+title: "Count metadata coverage per object as well as per face"
 status: "done"
 area: "data"
 kind: "metadata"
@@ -18,25 +18,25 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Question
 
-How do field availability and conflicts change when the held export’s face rows are collapsed to provisional object families?
+How do field availability and conflicts change when the export's face rows are grouped into provisional objects (faces the export numbers as one object, with physical identity unchecked)?
 
 # Why it matters
 
-Repeated face metadata can overstate coverage, and placeholder strings previously inflated depth availability.
+Metadata repeated on every face can overstate coverage, and placeholder strings once inflated the count of objects with a depth.
 
 # What is needed
 
-Inventory the actual fields and raw placeholder values; preserve observed, catalogued, inferred, unknown, conflicting and not-applicable states. Report row and object denominators. Read [DATA.md](../DATA.md) for the gaps this task depends on.
+List the fields that occur and their raw placeholder values; keep the states observed, catalogued, inferred, unknown, conflicting and not applicable apart. Report row and object denominators. Read [DATA.md](../DATA.md) for the gaps this task depends on.
 
 Sources: [knowledge/directions/context-data-plan.md](../directions/context-data-plan.md).
 
 # How to decide
 
-Account for every row and provisional family in the pinned input. A field is present only under a declared rule; independently replay the counts and inspect every uncommon placeholder.
+Account for every row and provisional object in the fixed input. Count a field as present only under a declared rule; have the counts replayed independently and inspect every uncommon placeholder.
 
 # Prior attempts
 
-[CONTEXT-01](../registry/attempts/CONTEXT-01.json); [DATASET-LANDSCAPE-01](../registry/attempts/DATASET-LANDSCAPE-01.json). Read their outcomes and `retry_when` before running this task.
+[CONTEXT-01](../registry/attempts/CONTEXT-01.json); [DATASET-LANDSCAPE-01](../registry/attempts/DATASET-LANDSCAPE-01.json). Read their outcomes and `retry_when` conditions before running this task.
 
 # Outcome
 

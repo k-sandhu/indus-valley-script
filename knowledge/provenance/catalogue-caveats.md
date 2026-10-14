@@ -1,12 +1,14 @@
 # Catalogue conventions and matching record
 
-This page collects the conventions needed to read the preserved data and audits. The [corpus retrospective](../retrospectives/corpus-and-transcription.md) explains how the issues were found; [SOURCES.md](SOURCES.md) gives the witnesses and pins.
+This page collects the conventions needed to read the preserved data and audits. The [corpus retrospective](../retrospectives/corpus-and-transcription.md) explains how the issues were found; [SOURCES.md](SOURCES.md) gives the witnesses (our acquired source copies) and pins (recorded dataset versions).
+
+CISI, the *Corpus of Indus Seals and Inscriptions*, photographs each inscribed object under a number whose letter gives the site (M for Mohenjo-daro, H for Harappa). Fuls's database and the Lipi and Mayig transcriptions code each text as a sequence of sign numbers; an export is a copy of such a database at one version, and a crosswalk matches one catalogue's sign numbers to another's.
 
 ## Shared assumptions
 
-The unit of observation is a specified physical object, side, line and witness. Inventory codes are catalogue labels; crosswalk arrays retain graphic candidates. Reading order is a documented transformation of displayed order. Completeness, direction, class and context values remain attributed to their source unless a separate photographic or excavation audit establishes them. Visual annotations made here are qualitative AI annotations, with alternatives and source coordinates preserved for review.
+The unit of observation is a specified physical object, side, line and witness. Sign codes are catalogue labels, and crosswalk arrays keep every graphic candidate. Reading order is a documented transformation of the order a source displays. Values for completeness, direction, class and context stay attributed to their source unless a separate photographic or excavation audit establishes them. Visual annotations made here are qualitative AI annotations, with alternatives and source coordinates preserved for review.
 
-Source-derived text classes belong among transcription metadata. Archaeological response labels must come from observations such as material, manufacture, findspot or associated context. Proposed function, interpretation and later cultural parallels have separate fields. Missingness has explicit reasons and denominators.
+Text classes a source derives from the sequences belong with the transcription metadata. Labels used as archaeological outcomes must come from observations such as material, manufacture, findspot or associated context. Proposed function, interpretation and later cultural parallels have separate fields. Missing values have explicit reasons and denominators.
 
 ## Identifiers, witnesses and duplicates
 
@@ -20,9 +22,11 @@ Source-derived text classes belong among transcription metadata. Archaeological 
 | Official CISI1 PDF repetition | Each PDF 1–431 image set equals PDF 432–862 at offset 431 | Use first copy and record printed/PDF coordinates. The scan has 862 pages but one 431-page book scan repeated. |
 | Excavation item versus lot | Kenoyer/Meadow 2010 excerpt distinguishes year/item identifiers from lot/context identifiers | Keep artifact identity and context identity in separate columns; record joins from primary tables. |
 
-The physical-CISI join found 2,374 of 2,375 nonempty older-export references in Lipi. Of those, 2,243 matched at least one face exactly, increasing to 2,293 after omitting `000`. All 179 Mayig references were found, with 100 broad whole-face matches and 65 matches among 94 clear faces. These counts describe catalogue compatibility. Any-face matching leaves the side join open. Evidence: local-only `data/normalized/{old_lipi_cisi_audit,mayig_lipi_cisi_audit}.json` and [audit code](../../research/corpus/audit_crosscorpus.py).
+A numeric family groups the Lipi face records sharing the number before the decimal point, our provisional object. Page references give the printed page, then the PDF page.
 
-The CISI1 corrigenda, printed 375/PDF 411, affect source selection. H266–H275 duplicate photographs are deleted/reserved for volume 2; H356A/B/C becomes H354A/B/C bis. M463A, H85A, H130A and H289A have mirrored printing; M464A/B are swapped. H76A's wrong mirrored impression on printed 186 is corrected in Addenda printed 364. The [literature counting notes](../../research/literature/cisi1_counting_and_errata.md) preserve the source reference.
+Looking up the older website export's CISI references in Lipi found 2,374 of the 2,375 nonempty references. Of those, 2,243 matched the sign sequence of at least one face exactly, rising to 2,293 when Lipi's eroded-sign marker `000` is ignored. All 179 Mayig references were found, with 100 broad whole-face matches and 65 matches among the 94 clearly transcribed faces. These counts describe catalogue compatibility. Since a match with any face counts, they leave open which side corresponds to which. Evidence: local-only `data/normalized/{old_lipi_cisi_audit,mayig_lipi_cisi_audit}.json` and [audit code](../../research/corpus/audit_crosscorpus.py).
+
+The CISI 1 corrigenda, printed 375 (PDF 411), affect source selection. Duplicate photographs H266–H275 are deleted and reserved for volume 2; H356A/B/C becomes H354A/B/C bis. M463A, H85A, H130A and H289A are printed mirrored; M464A/B are swapped. H76A's wrongly mirrored impression on printed 186 is corrected in the Addenda, printed 364. The [literature counting notes](../../research/literature/cisi1_counting_and_errata.md) preserve the source reference.
 
 ## Order, boundaries and unknown content
 
@@ -39,15 +43,15 @@ The CISI1 corrigenda, printed 375/PDF 411, affect source selection. H266–H275 
 | 1979 dashed underline | Editorial uncertainty, §5.4 printed 15/PDF 16 and §6.6 printed 17/PDF 18 | Preserve auxiliary status separately from glyph strokes and stable codes. |
 | 1979 rectangle/stacked-line auxiliaries | Editorial loss/inaccessibility graphics | Count as modern drawn units in font evaluation, with separate ancient-extent status. |
 
-Fuls's direction field was retained. Chapter 2.2 takes seal texts from impressions, so the image's polarity must be established from its witness rather than inferred solely from the field name. The 2010 help search example is on PDF 5; an earlier source-definition reference to PDF 6 is corrected in the orientation addendum.
+Fuls's direction field was retained. His chapter 2.2 takes seal texts from impressions, so an image's polarity (seal or mirror-image impression) must be established from its witness rather than from the field name alone. The 2010 help search example is on PDF 5; an earlier source-definition reference to PDF 6 is corrected in the orientation addendum.
 
-The 1980 documentation, printed 13–14, explains that some physical boundaries are expressed only by classification or omitted with parallel-text support. Layout codes distinguish intended gaps, multiple lines and multiple sides. A printed 1979 row and its blank gaps therefore need a boundary audit before becoming an ancient sequence.
+The 1980 documentation, printed 13–14, explains that some physical boundaries are expressed only by classification, or omitted where parallel texts support it. Layout codes distinguish intended gaps, multiple lines and multiple sides. A printed 1979 row and its blank gaps therefore need a boundary audit before becoming an ancient sequence.
 
 ## Inventory and class scope
 
-P, Wells and stable Finnish chart codes remain distinct namespaces. The 1979 upper number is a rank shared by graphic variants; the lower number is the stable Finnish code. The numerical reference has 687 chart cells, including repeated ranks/codes and 16 lower-label ambiguities. Store cell identity as `(PDFpage,column,row)`, retain candidate unions and link historical corrections. Repeated numbers remain source facts.
+Mayig's P codes, Wells numbers and stable Finnish chart codes remain separate numbering systems. The 1979 upper number is a rank shared by graphic variants; the lower number is the stable Finnish code. The numerical reference has 687 chart cells, including repeated ranks and codes and 16 lower-label ambiguities. Store cell identity as `(PDFpage,column,row)`, retain candidate unions and link historical corrections. Repeated numbers remain source facts.
 
-Mayig's P→W arrays are direct compatibility lists from its schema. Whole-class scoring ignores feature vectors. Preserve alternatives per token or class without transitive merging through overlapping lists. Examples include P385/W817–861, P086/W390–405 and P316/W705–706. P118 includes W777/778/782 and M362/363/364; the `flower` feature does not preserve the inner-foot variants needed for a strict glyph comparison.
+Mayig's P→W arrays list the Wells numbers its schema declares compatible with each class. Whole-class scoring ignores feature vectors. Keep alternatives per token or class, without merging classes through overlapping lists. Examples include P385/W817–861, P086/W390–405 and P316/W705–706. P118 includes W777/778/782 and M362/363/364; the `flower` feature does not preserve the inner-foot variants needed for a strict glyph comparison.
 
 | Source label | Verified definition | Remaining scope |
 |---|---|---|
@@ -74,4 +78,4 @@ Definitions are in local-only `data/normalized/source_definitions.json`. Origina
 | M1383 | Fuls Fig 15 names M-1383; current CISI-labelled row is reported as clay tag MN82a | Object/material/content-count join and unit premise remain unresolved. |
 | M61/M62 restoration candidates | Bounded surviving motif/U respectively; existing Mayig candidates W081/W700 | Use as historical reading/recoding comparisons. The audited search produced zero new certified one-slot restorations. |
 
-For new work, freeze the witness, physical identity, eligibility and annotation version before model scoring. Record later source reinspection as an overlay with its date and reason. The [experiment registry](../experiments/registry.json) links frozen, superseded and development outputs.
+For new work, freeze the witness, physical identity, eligibility and annotation version before model scoring. Record later source reinspection as a separate overlay with its date and reason. The [experiment registry](../experiments/registry.json) links frozen, superseded and development outputs.

@@ -1,6 +1,6 @@
 ---
 id: "F-0012"
-title: "Modifier signatures fail the grouping test"
+title: "Grouping signs by their added marks does not improve prediction"
 status_class: "failed"
 area: "structure"
 date: "2026-10-12"
@@ -12,7 +12,7 @@ authors: ["Codex CLI (GPT-6.1-Sol)"]
 
 # Finding
 
-Grouping by modifier signature failed the random-grouping test, with p = 0.11.
+Grouping signs by modifier signature, the added marks (such as inner marks, doubling or hatching) a sign carries on any base shape, did no better than random groupings of the same sizes (p = 0.11).
 
 # Evidence
 
@@ -21,4 +21,4 @@ Grouping by modifier signature failed the random-grouping test, with p = 0.11.
 
 # Scope
 
-The endpoint groups added elements across different graphic bases and predicts Wells codes. The comparator randomizes groups of the same sizes. Failure concerns the declared signature scheme and population.
+The test predicts codes in Wells's sign list on held-out texts. The failure concerns this coding scheme and population.
