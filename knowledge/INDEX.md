@@ -1,6 +1,6 @@
 # Knowledge index
 
-The [repository map](MAP.md) lists every navigation entry. For the next step, read the [findings](findings/), [open questions](questions/), [conjectures](conjectures/), the [working model](WORKING-MODEL.md), the [data coverage](DATA.md) and the [timeline](TIMELINE.md). Attempts and findings use the [status vocabulary](registry/VOCABULARY.md) defined at the end of this page.
+The [repository map](MAP.md) lists the entry documents, findings, open questions, conjectures and papers, and gives the commands that list attempts, retrospectives and memos. For the next step, read the [findings](findings/), [open questions](questions/), [conjectures](conjectures/), the [working model](WORKING-MODEL.md), the [data coverage](DATA.md) and the [timeline](TIMELINE.md). Attempts and findings use the [status vocabulary](registry/VOCABULARY.md) defined at the end of this page.
 
 We distinguish four levels of claim: observed graphics, statistical structure, possible function, and phonetic or lexical interpretation, that is, sounds and words. We have useful evidence for the first two. No authenticated phonetic or lexical interpretation has been established.
 
