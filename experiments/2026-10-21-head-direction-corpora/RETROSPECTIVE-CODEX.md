@@ -1,0 +1,24 @@
+# What we delegated to Codex, and how it went
+
+On 21 October 2026 the coordinating Claude session handed four bounded pieces of this package to the Codex CLI (version 0.160.1, model flag `gpt-6.1-sol`, reasoning effort `xhigh`, sandbox `workspace-write`, network enabled for the three acquisition runs). The coordinator chose the sources, made the rights decisions, wrote the protocol, the record schema and the transcription brief, and kept the discrimination design, the feasibility ledger, every amendment and all prose. Each run had a complete prompt in its own directory under [codex/](codex/) (`CODEX-PROMPT.md`, assembled from a task file and [the shared rules](codex/COMMON-RULES.md)) and a manual launcher, `launch-codex.sh`; the prompts and launchers are hashed in [codex/CODEX-PROMPTS.sha256](codex/CODEX-PROMPTS.sha256). All four started at 03:32 UTC and ran in parallel on distinct paths. The runs reported themselves variously as GPT-6.1-Sol or as a GPT-6 family model in the Codex harness; the launcher's model flag is the record.
+
+| Run | Task | Time | Outcome |
+|---|---|---:|---|
+| A1 | Fetch the 1903–04 and 1913–14 reports; transcribe Bloch's and Spooner's Basarh lists and Spooner's field register from page images | 96 min | 140 Bloch entries, 286 Spooner rows (235 entries, 51 impressions), 233 register rows; every SHA-1 matched |
+| A2 | Fetch the 1909–10 and 1911–12 reports and Mahadevan 2003; transcribe Marshall's Bhita list, his findspot index, and Mahadevan's Tables 1.6–1.8 | 65 min | 120 Bhita entries, 25 index rows, 32 Mahadevan rows; no Mahadevan text in tracked files (320-pattern check) |
+| B | Fetch ORACC Old Akkadian and the CDLI bulk data; normalise every Ur III and Old Akkadian seal legend | 71 min | 31,776 primary records; exact reproduction of the 522 held Ur III seal records |
+| C | Write the Brahmi normaliser, the validator, the statistics and the discrimination code; test them | 33 min | Ten passing check groups, including the step 6 regression (−0.204, +0.079) and an exchangeable keep rate of 106/300 |
+
+## What worked
+
+The transcriptions are careful. In the coordinator's check of eight Bloch entries against pp. 108 and 117 every legend, line division, impression count and plate figure matched, and the runs preserved the editors' brackets, question marks and line numbering exactly as printed. A1 and A2 each re-read ten entries a second time and corrected what they found (Bhita 80; a translation and an impression count in Spooner). B rebuilt the earlier Ur III normaliser's output record for record before extending it, and reviewed its own work well enough to find and repair an object-type priority error affecting 1,593 records. C's code implemented the protocol's statistics and keep rule faithfully, refused existing outputs, and reproduced the step 6 values to within 10⁻¹².
+
+## What needed repair
+
+The coordinator's review found problems in the delegated work, and some of them came from the briefs. The run C brief specified the older-convention mapping as "`chh` → `ch`, then `ch` → `c`", and the code applied it literally, so every aspirate became `c`; the brief was wrong, and Amendment 3 records the fix. The brief also applied that mapping to all three Survey reports, although Bloch writes the Indological convention (Amendment 2). The code dropped the editors' bracketed letters without regard to their conventions, joined no words across printed line ends, and could not split Marshall's lumps that carry two impressions; the coordinator wrote [edition_rules.py](edition_rules.py) for these. The schema left room for a mismatch between runs B and C (an empty line list, the name of the field for a missing site's reason, lacuna words without signs), so 2,752 cuneiform records failed C's validator until [adapt_cuneiform.py](adapt_cuneiform.py) mapped them; no reading changed. A1 misread one Spooner legend (556 B, *Mukāsa·ya* for the printed *Mukaśa·ya*), found in the coordinator's page check.
+
+Two operational problems came from the machine. The C: drive filled to its last few hundred megabytes during the runs; A1 and B removed only their own unread renders and duplicate extracts, recorded every removal, and finished. ORACC's certificate chain could not be verified from this machine, so B fetched the Old Akkadian archive without peer verification; the coordinator's verified download has the same SHA-256.
+
+## Lessons for the next delegation
+
+A brief that gives a transformation as a sequence of literal replacements should give a worked example of its output, so that an order-dependent mapping is caught in testing. A brief for transcribing printed lists should ask for the editor's bracket conventions to be recorded per source before any normalisation is written. Two runs that write and read the same record form should be given one shared validator to run on their own outputs.

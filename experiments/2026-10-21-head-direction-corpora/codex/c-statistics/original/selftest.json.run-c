@@ -1,0 +1,190 @@
+{
+  "authors": [
+    {
+      "harness": "Codex desktop",
+      "model": "GPT-6.1-Sol"
+    }
+  ],
+  "check_count": 10,
+  "checks": [
+    {
+      "check": "common_helpers",
+      "passed": true,
+      "result": {
+        "percentile_method": "linear",
+        "seed_matches_sha256_integer": true
+      },
+      "seconds": 0.0155
+    },
+    {
+      "check": "hand_calculated_statistics",
+      "passed": true,
+      "result": {
+        "S3_finite_reference_expected": 0.3125,
+        "checked_hand_values": {
+          "S1": 0.6309297535714575,
+          "S2": 0.75,
+          "S3_constant": 0,
+          "S3_recomputed_stock": 0.3125,
+          "S4": 0.3333333333333333,
+          "S5": 0.3333333333333333,
+          "S6": 0.6309297535714575,
+          "normalized_entropy": 0.5
+        },
+        "null_cases": true,
+        "shuffle_reference": {
+          "observed": 0.6309297535714575,
+          "p2_5": -0.6309297535714575,
+          "p97_5": 0.6309297535714575,
+          "shuffle_mean": 0.02018975211428664,
+          "shuffles": 1000
+        },
+        "statistics": 6,
+        "ties": true
+      },
+      "seconds": 0.0286
+    },
+    {
+      "check": "segmentation_conversion_and_tags",
+      "passed": true,
+      "result": {
+        "aspirates": 10,
+        "case_endings": 16,
+        "general_vocabulary_cases": 14,
+        "older_conversion": "literal sequential"
+      },
+      "seconds": 0.4968
+    },
+    {
+      "check": "normalizer_identities_metadata_and_cli",
+      "passed": true,
+      "result": {
+        "cli_and_review": true,
+        "completeness_cases": 11,
+        "sources": 4
+      },
+      "seconds": 6.4971
+    },
+    {
+      "check": "validator_failures_and_cli",
+      "passed": true,
+      "result": {
+        "checked_failures": [
+          "required:source",
+          "type:reading_doubtful",
+          "type:units",
+          "units_flatten",
+          "line_of_word_count",
+          "line_of_word_index",
+          "line_of_word_index",
+          "lines_flatten",
+          "members_per_word",
+          "member_count:tags",
+          "member_count:tag_source",
+          "enum:genre",
+          "enum:object_kind",
+          "enum:completeness",
+          "enum:line_division_basis",
+          "enum:tags",
+          "enum:tag_source",
+          "site_null_reason",
+          "transcription_by",
+          "unicode_nfc",
+          "type:die_id",
+          "type:impressions"
+        ],
+        "cli_exit_codes": [
+          0,
+          1
+        ],
+        "deliberate_mutations": 22,
+        "duplicate_id": true
+      },
+      "seconds": 1.0514
+    },
+    {
+      "check": "grouping_and_eligibility",
+      "passed": true,
+      "result": {
+        "below_25_excluded": true,
+        "pair_eligibility": true,
+        "tamil_fallback": true,
+        "transitive_groups": 4
+      },
+      "seconds": 0.0056
+    },
+    {
+      "check": "keep_rule_controls",
+      "passed": true,
+      "result": {
+        "exact_exchangeable_orderings": [
+          8,
+          24
+        ],
+        "separated_positive_control_kept": true,
+        "thresholds_and_nulls": true
+      },
+      "seconds": 0.0123
+    },
+    {
+      "check": "exchangeable_synthetic_300_draws",
+      "passed": true,
+      "result": {
+        "draws": 300,
+        "generator": "iid latent common-inventory size 1..512; 25 legends, unique first, shared middle, constant last; matched n=20",
+        "kept": 106,
+        "rate": 0.35333333333333333,
+        "replicates_per_draw": 8,
+        "theoretical_complete_separation": 0.3333333333333333,
+        "wilson_95_interval": [
+          0.30140830066923496,
+          0.40896697088996514
+        ]
+      },
+      "seconds": 1.4854
+    },
+    {
+      "check": "synthetic_cli_determinism_and_summary",
+      "passed": true,
+      "result": {
+        "all_summary_sections": true,
+        "byte_identical": true,
+        "corpora": 5,
+        "existing_out_refused": true,
+        "replicates": 24,
+        "statistics": 9,
+        "summary_sha256": "6f85c56c82e5b7fdfdcfce2ccbf194ae6e6b37c3d2c805389930da31ed491d00"
+      },
+      "seconds": 29.1539
+    },
+    {
+      "check": "step6_S1_regression_only",
+      "passed": true,
+      "result": {
+        "held_sha256": "dedb9c3967d6bd2fe725406e2a46234673fcd8e5a3de2817dee27bc8ce1d899c",
+        "held_unchanged": true,
+        "only_statistic_computed": "S1",
+        "reference_sha256": "5e3bb6bcf016c60edd497fa0082c4d348dfd100c71f29b692cc1590f86ac46e8",
+        "rounded_sign_S1": -0.204,
+        "rounded_word_S1": 0.079,
+        "sign_S1": -0.20366575920038676,
+        "sign_legends": 309,
+        "word_S1": 0.07900749141626018,
+        "word_legends": 308
+      },
+      "seconds": 2.377
+    }
+  ],
+  "code_sha256": {
+    "discriminate.py": "b9996b1f0decf818a9866c5901e9bdd6d701befafb0966c9f1ee6dac9dfaad33",
+    "hd_common.py": "c05cc0cafea28e85a13c37a951db1535fb150e5bc8a336ec4051de69155c944b",
+    "hd_stats.py": "04ee9fe9e5278b8c977a1c842e193797f08590c16d449ceefe15b892db61f6f8",
+    "normalize_brahmi.py": "1e9811bc870058a4e7b1e45639a1e6556b7d51461ab4b1c053ed7337a6ba25af",
+    "selftest.py": "15740886c720494593e5ea054dc0007ffd7ea9f083b84650757ad1face8bab8a",
+    "validate_records.py": "6057dce2fa818354f8fc8b4064ceceae54fe6edb54d945fa926019761e83b4c9"
+  },
+  "elapsed_seconds": 44.961,
+  "passed": true,
+  "schema_version": "head-direction-selftest-1",
+  "work": "data/raw/2026-10-21-head-direction-corpora/codex-c/selftest-4"
+}

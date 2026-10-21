@@ -1,0 +1,504 @@
+"""Test on synthetic fixtures and reproduce only held step 6 S1.
+
+python -I selftest.py --work <new local directory> --out <new json> \
+  [--regression <held records.jsonl>] [--reference <step6 summary.json>] \
+  [--documents <protocol directory>] [--replicates 24]
+
+Default regression/reference paths are the two files specified by run C, resolved
+from the repository root. All paths can be overridden. Every check is reported;
+the process exits nonzero on any failure. Work and report paths must be new.
+"""
+import argparse
+import copy
+import hashlib
+import itertools
+import json
+import math
+import random
+import subprocess
+import sys
+import time
+from collections import Counter
+from pathlib import Path
+
+sys.dont_write_bytecode = True
+PACKAGE = Path(__file__).resolve().parent
+sys.path.insert(0, str(PACKAGE))
+from hd_common import median, percentile, read_jsonl, seeded_random, sha256_file, write_json, write_jsonl
+from hd_stats import S1, S2, S3, S4, S5, S6, closing_stock, normalized_entropy, shuffle_reference
+from discriminate import (CORPORA, GROUPS, STATISTICS, eligible_sets, group_records, keep_rule,
+                          matched_statistic, select_statistic, tagged_members)
+from normalize_brahmi import (ENDINGS, clean_form, completeness, load_lexicon, normalize_entry,
+                              segment_word, tag_member, transliterate)
+from validate_records import check_record, validate
+
+
+def require(condition, message="assertion failed"):
+    if not condition:
+        raise AssertionError(message)
+
+
+def close(actual, expected):
+    require(actual is not None and math.isclose(actual, expected, abs_tol=1e-12),
+            f"expected {expected}, obtained {actual}")
+
+
+def synthetic_record(corpus, index, final=True):
+    unique = f"SYN:{corpus}:{index:04d}"
+    units = [unique, "SYN:MID", "SYN:END"] if final else ["SYN:START", "SYN:MID", unique]
+    words = ["synthetic-title", "synthetic-name", "synthetic-number"]
+    tags = [["TITLE", "OTHER"], ["NAME", "OTHER"], ["NUMBER", "OTHER"]]
+    if not final:
+        tags[0][0], tags[1][0] = "NAME", "TITLE"
+    source = ("synthetic-source-a" if index % 2 else "synthetic-source-b") if corpus == "ia-ganges" else "synthetic-source"
+    return {"record_id": f"{corpus}:synthetic:{index:04d}", "corpus": corpus, "source": source,
+            "source_locator": {"entry": index}, "object_id": unique, "die_id": unique,
+            "object_kind": "seal-die", "genre": "seal", "aliases": [],
+            "site": "SyntheticSiteA" if index % 2 else "SyntheticSiteB",
+            "language": "Sanskrit" if corpus == "ia-ganges" else "Tamil" if corpus == "ta-brahmi" else "Sumerian" if corpus.startswith("sux") else "Akkadian",
+            "language_basis": "catalogue", "script": "Tamil-Brahmi" if corpus == "ta-brahmi" else "Brahmi (Gupta)" if corpus == "ia-ganges" else "cuneiform",
+            "rights": "own-work", "legend_as_printed": " ".join(words), "lines": [words],
+            "line_division_basis": "none", "words": words,
+            "members": [w.split("-") for w in words], "units": units,
+            "word_units": [[units[0]], [units[1]], [units[2]]], "line_of_word": [0, 0, 0],
+            "tags": tags, "tag_source": [["lexicon", "lexicon"] for _ in words],
+            "completeness": "complete", "reading_doubtful": index % 13 == 0,
+            "transcription": {"method": "digital-edition", "by": "synthetic fixture generator"}}
+
+
+def make_five_corpora():
+    records = []
+    for corpus in CORPORA:
+        for i in range(40):
+            record = synthetic_record(corpus, i, corpus in {"ia-ganges", "ta-brahmi"})
+            # Give S6 at least one multi-sign word while retaining two words.
+            record["word_units"] = [record["units"][:2], record["units"][2:]]
+            record["words"] = record["words"][:2]
+            record["lines"] = [record["words"]]
+            record["members"] = [["synthetic", "title"], ["synthetic", "name", "number"]]
+            record["words"][1] = "synthetic-name-number"
+            record["tags"] = [["TITLE", "NAME"], ["NAME", "NUMBER", "TITLE"]] if corpus in {"ia-ganges", "ta-brahmi"} else [["NAME", "TITLE"], ["TITLE", "NUMBER", "NAME"]]
+            record["tag_source"] = [["lexicon"] * len(m) for m in record["members"]]
+            record["line_of_word"] = [0, 0]
+            record["legend_as_printed"] = " ".join(record["words"])
+            if corpus == "ta-brahmi" and i >= 25:
+                record["genre"], record["object_kind"] = "coin", "coin"
+            if corpus == "ia-ganges" and i >= 32:
+                record["language"] = "Prakrit"
+            records.append(record)
+    return records
+
+
+def wilson(successes, total):
+    z = 1.959963984540054
+    p = successes / total
+    centre = (p + z * z / (2 * total)) / (1 + z * z / total)
+    half = z * math.sqrt(p * (1 - p) / total + z * z / (4 * total * total)) / (1 + z * z / total)
+    return [centre - half, centre + half]
+
+
+def run_cli(script, *arguments, expected=0):
+    result = subprocess.run([sys.executable, "-I", str(PACKAGE / script), *map(str, arguments)],
+                            capture_output=True, text=True, encoding="utf-8")
+    require(result.returncode == expected, f"{script} exit {result.returncode}: {result.stderr[:1200]}")
+    return {"exit_code": result.returncode}
+
+
+def main():
+    repo = PACKAGE.parent.parent
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--work", required=True, type=Path)
+    parser.add_argument("--out", required=True, type=Path)
+    parser.add_argument("--regression", type=Path, default=repo / "data/raw/2026-10-12-bronze-age-comparison/normalized-v4/records.jsonl")
+    parser.add_argument("--reference", type=Path, default=repo / "experiments/2026-10-12-structure-first/step6-language/run-2026-10-12/summary.json")
+    parser.add_argument("--documents", type=Path, default=PACKAGE)
+    parser.add_argument("--replicates", type=int, default=24)
+    args = parser.parse_args()
+    if args.work.exists() or args.out.exists():
+        parser.exit(2, "work or report already exists\n")
+    args.work.mkdir(parents=True)
+    started, checks = time.monotonic(), []
+
+    def check(name, action):
+        before = time.monotonic()
+        try:
+            result = action()
+            checks.append({"check": name, "passed": True, "result": result,
+                           "seconds": round(time.monotonic() - before, 4)})
+        except Exception as exc:
+            checks.append({"check": name, "passed": False, "error": f"{type(exc).__name__}: {exc}",
+                           "seconds": round(time.monotonic() - before, 4)})
+        print(json.dumps({k: checks[-1][k] for k in ("check", "passed")}), flush=True)
+
+    def common_test():
+        close(percentile([0, 10, 20, 30], 25), 7.5)
+        close(median([0, 10, 20, 30]), 15)
+        close(percentile([0, 100], 5), 5)
+        require(median([]) is None)
+        text = "synthetic-seed"
+        expected = random.Random(int(hashlib.sha256(text.encode()).hexdigest(), 16)).random()
+        close(seeded_random(text).random(), expected)
+        path = args.work / "common.jsonl"
+        write_jsonl(path, [{"synthetic": True}])
+        require(list(read_jsonl(path)) == [{"synthetic": True}])
+        require(len(sha256_file(path)) == 64)
+        return {"percentile_method": "linear", "seed_matches_sha256_integer": True}
+    check("common_helpers", common_test)
+
+    def stat_tests():
+        close(normalized_entropy(Counter(a=2, b=2), 4), .5)
+        close(normalized_entropy(Counter(a=4), 1), 0)
+        legends = [["a", "c"], ["b", "c"]]
+        close(S1(legends), 1 / math.log2(3))
+        close(S1([["a", "a"]]), 0)
+        require(S1([]) is None)
+        tied = [["x", x] for x in "dcba"]
+        require(closing_stock(tied, 3) == ["a", "b", "c"])
+        close(S2(tied), .75)
+        require(S2([]) is None)
+        close(S3([["a", "a"]] * 4, "hand"), 0)
+        close(S3([["a", "b"], ["c", "d"]], "hand"), 0)
+        require(S3([], "hand") is None)
+        # Independent finite-shuffle calculation: identical two-unit legends
+        # have stock share max(k,4-k)/4, where k end in a after each shuffle.
+        rng = seeded_random("stock-hand:within:S3")
+        shares = []
+        for _ in range(200):
+            endings = []
+            for _ in range(4):
+                pair = ["a", "b"]
+                rng.shuffle(pair)
+                endings.append(pair[1])
+            k = endings.count("a")
+            shares.append(max(k, 4 - k) / 4)
+        expected = 1 - sum(shares) / 200
+        close(S3([["a", "b"]] * 4, "stock-hand"), expected)
+        close(S4([[('t', 'TITLE'), ('n', 'NAME')], [('n', 'NAME'), ('t', 'TITLE')], [('t', 'TITLE'), ('n', 'NAME')]]), 1 / 3)
+        close(S4([[('t', 'TITLE'), ('n', 'NAME'), ('t', 'TITLE')]]), 0)
+        require(S4([[('n', 'NAME')]]) is None)
+        close(S5([[('1', 'NUMBER'), ('n', 'NAME')]] * 2 + [[('t', 'TITLE'), ('1', 'NUMBER')]]), 1 / 3)
+        require(S5([[('1', 'NUMBER'), ('g', 'GRAM'), ('2', 'NUMBER'), ('3', 'NUMBER')]]) is None)
+        close(S6([[['a', 'c'], ['b', 'c']]] * 10), 1 / math.log2(3))
+        require(S6([[['a', 'c']]] * 19) is None)
+        close(S6([[['a', 'a']]] * 20), 0)
+        ref = shuffle_reference([["a", "a"]] * 3, "reference-hand")
+        require(ref == {"observed": 0.0, "shuffle_mean": 0.0, "p2_5": 0.0, "p97_5": 0.0, "shuffles": 1000})
+        nontrivial = shuffle_reference(legends, "reference-hand")
+        require(nontrivial == shuffle_reference(legends, "reference-hand"))
+        close(nontrivial["observed"], 1 / math.log2(3))
+        require(nontrivial["p2_5"] <= nontrivial["shuffle_mean"] <= nontrivial["p97_5"])
+        return {"statistics": 6, "S3_finite_reference_expected": expected, "ties": True, "null_cases": True,
+                "checked_hand_values": {"normalized_entropy": .5, "S1": 1 / math.log2(3), "S2": .75,
+                                        "S3_constant": 0, "S3_recomputed_stock": expected, "S4": 1 / 3,
+                                        "S5": 1 / 3, "S6": 1 / math.log2(3)},
+                "shuffle_reference": nontrivial}
+    check("hand_calculated_statistics", stat_tests)
+
+    lexicon = load_lexicon(PACKAGE / "lexicon-brahmi.tsv")
+
+    def segmentation():
+        cases = {"putrasya": ["pu", "tra", "sya"], "mahārājasya": ["ma", "hā", "rā", "ja", "sya"],
+                 "kumārāmātyādhikaraṇasya": ["ku", "mā", "rā", "mā", "tyā", "dhi", "ka", "ra", "ṇa", "sya"],
+                 "saṃgha": ["saṃ", "gha"], "bhagavat": ["bha", "ga", "va", "t·"],
+                 "īśvara": ["ī", "śva", "ra"], "aia": ["ai", "a"],
+                 "aḥ": ["aḥ"], "a\u0310": ["a\u0310"], "sam\u0310gha": ["sam\u0310", "gha"], "ḷ": ["ḷ"]}
+        for word, expected in cases.items():
+            require(segment_word(word, "ia-ganges") == expected, "segmentation mismatch: " + word)
+        require(segment_word("cāttaṉ", "ta-brahmi") == ["cā", "t·", "ta", "ṉ·"])
+        require(segment_word("ḷa", "ta-brahmi") == ["ḷa"])
+        require(segment_word("putra-sya", "ia-ganges") == ["pu", "tra", "sya"])
+        for consonant in ("kh", "gh", "ch", "jh", "ṭh", "ḍh", "th", "dh", "ph", "bh"):
+            require(segment_word(consonant + "a", "ia-ganges") == [consonant + "a"])
+        require(transliterate("chha cha", True) == "ca ca")
+        require(transliterate("Ç ṛi ṁ", True) == "ś ṛ ṃ")
+        require(clean_form("Shreshṭhi-putrasya?", True).split("-") == ["ṣreṣṭhi", "putrasya"])
+        require(transliterate("Cāttaṉ", False) == "Cāttaṉ")
+        require(tag_member("putrasya", "Sanskrit", lexicon) == ("KIN", "lexicon"))
+        require(tag_member("mahārājasya", "Sanskrit", lexicon) == ("TITLE", "lexicon"))
+        require(tag_member("unlisted", "Sanskrit", lexicon) == ("NAME", "default-name"))
+        for language, endings in ENDINGS.items():
+            for ending in endings:
+                require(tag_member("syntheticstem" + ending, language,
+                                   {("syntheticstem", language): "OTHER"}) == ("OTHER", "lexicon"))
+        require(tag_member("nigama", "Sanskrit", lexicon) == ("OTHER", "lexicon"))
+        require(tag_member("kō", "Tamil", lexicon) == ("TITLE", "lexicon"))
+        return {"general_vocabulary_cases": len(cases) + 3, "aspirates": 10,
+                "case_endings": sum(map(len, ENDINGS.values())), "older_conversion": "literal sequential"}
+    check("segmentation_conversion_and_tags", segmentation)
+
+    def normalizer_tests():
+        base = {"source": "asi-ar-1903-04", "entry": 9001, "page_printed": 0,
+                "page_pdf": 0, "legend_as_printed": "putrasya mahārāja", "legend_lines_as_printed": ["putrasya", "mahārāja"],
+                "language_note": "Sanskrit", "period": "Gupta", "impressions": 7,
+                "transcriber": {"by": "synthetic author", "method": "page-image"}, "scan": "synthetic-scan"}
+        rights = {source: "own-work" for source in ("asi-ar-1903-04", "asi-ar-1913-14", "asi-ar-1911-12", "mahadevan-2003")}
+        bloch = normalize_entry(base, rights, lexicon)
+        require(bloch["object_id"] == bloch["die_id"] == "bloch1903:9001")
+        require(bloch["genre"] == "sealing" and bloch["impressions"] == 7)
+        require(bloch["line_of_word"] == [0, 1] and bloch["line_division_basis"] == "edition")
+        require(bloch["source_locator"]["scan"] == "synthetic-scan")
+        spooner = dict(base, source="asi-ar-1913-14", entry=9002, sub_entry="A", register=9090,
+                       cross_references=[{"source": "asi-ar-1903-04", "entry": [9001, 9003]}], duplicates=[9091])
+        normalized = normalize_entry(spooner, rights, lexicon)
+        require(normalized["object_id"] == "spooner1913:9090")
+        require(normalized["die_id"] == "spooner1913-die:9002A")
+        require(normalized["aliases"] == ["bloch1903:9001", "bloch1903:9003"])
+        require(normalized["duplicate_objects"] == [9091])
+        bhita = normalize_entry(dict(base, source="asi-ar-1911-12", entry=13), rights, lexicon)
+        require(bhita["genre"] == "seal")
+        require(normalize_entry(dict(base, source="asi-ar-1911-12", entry=14), rights, lexicon)["genre"] == "sealing")
+        tamil = dict(base, source="mahadevan-2003", table="1.8", row=9001, object_kind="ring", language_note="Tamil",
+                     legend_as_printed="cāttaṉ", legend_lines_as_printed=None, site_as_printed="River bed at Karur", script_stage="TB-II")
+        t = normalize_entry(tamil, rights, lexicon)
+        require(t["object_id"] == "mahadevan2003:T1.8.9001" and t["site"] == "Karur")
+        require(t["findspot"] == "River bed at Karur" and t["genre"] == "seal" and t["object_kind"] == "ring")
+        require(t["line_division_basis"] == "none" and t["script_stage"] == "TB-II")
+        require(normalize_entry(dict(tamil, site_as_printed=None, findspot_as_printed="Karur river bed"), rights, lexicon)["site"] == "Karur")
+        tnull = normalize_entry(dict(tamil, site_as_printed=None), rights, lexicon)
+        require(tnull["site"] is None and tnull["site_reason"])
+        cases = [("pu[tra]", {}, "restored", False), ("putra?", {}, "complete", True),
+                 ("...putra", {}, "damaged-edge", False), ("pu...tra", {}, "damaged-internal", False),
+                 ("...", {}, "illegible", False), ("", {}, "no-legend", False),
+                 ("putra", {"restored": True}, "restored", False),
+                 ("putra", {"illegible_part": "last letters"}, "damaged-edge", False),
+                 ("?", {}, "illegible", True),
+                 ("putra", {"illegible_part": "legend damaged internally"}, "damaged-internal", False),
+                 ("putra", {"illegible_part": True}, "damaged-internal", False)]
+        for text, fields, state, doubtful in cases:
+            require(completeness(dict(fields, legend_as_printed=text)) == (state, doubtful))
+        inputs = [base, spooner, dict(base, source="asi-ar-1911-12", entry=13), tamil]
+        write_jsonl(args.work / "synthetic-transcriptions.jsonl", inputs)
+        write_json(args.work / "synthetic-rights.json", rights)
+        run_cli("normalize_brahmi.py", "--transcriptions", args.work / "synthetic-transcriptions.jsonl",
+                "--rights", args.work / "synthetic-rights.json", "--lexicon", PACKAGE / "lexicon-brahmi.tsv",
+                "--out", args.work / "synthetic-normalized.jsonl", "--review", args.work / "member-review.tsv")
+        require(validate(list(read_jsonl(args.work / "synthetic-normalized.jsonl")))["valid"])
+        require((args.work / "member-review.tsv").read_text(encoding="utf-8").startswith("member\ttag\ttag_source\tlanguage\tcount"))
+        write_jsonl(args.work / "source-default-transcription.jsonl", [dict(base, language_note=None, period=None)])
+        write_json(args.work / "source-rules.json", {"asi-ar-1903-04": {
+            "collection_language": "Sanskrit", "collection_language_rule": "synthetic collection rule", "period": "Gupta"}})
+        run_cli("normalize_brahmi.py", "--transcriptions", args.work / "source-default-transcription.jsonl",
+                "--rights", args.work / "synthetic-rights.json", "--lexicon", PACKAGE / "lexicon-brahmi.tsv",
+                "--source-rules", args.work / "source-rules.json", "--out", args.work / "source-default-normalized.jsonl",
+                "--review", args.work / "source-default-review.tsv")
+        default_row = next(read_jsonl(args.work / "source-default-normalized.jsonl"))
+        require(default_row["language"] == "Sanskrit" and default_row["language_rule"] == "synthetic collection rule")
+        return {"sources": 4, "completeness_cases": len(cases), "cli_and_review": True}
+    check("normalizer_identities_metadata_and_cli", normalizer_tests)
+
+    records = make_five_corpora()
+    write_jsonl(args.work / "five-corpora.jsonl", records)
+
+    def validator_tests():
+        require(validate(records)["valid"], str(validate(records)))
+        good = records[0]
+        mutations = [
+            ("required:source", lambda r: r.pop("source")),
+            ("type:reading_doubtful", lambda r: r.update(reading_doubtful=1)),
+            ("type:units", lambda r: r.update(units="bad")),
+            ("units_flatten", lambda r: r["units"].append("extra")),
+            ("line_of_word_count", lambda r: r.update(line_of_word=[])),
+            ("line_of_word_index", lambda r: r.update(line_of_word=[0, 9])),
+            ("line_of_word_index", lambda r: r.update(line_of_word=[False, 0])),
+            ("lines_flatten", lambda r: r.update(lines=[["wrong"]])),
+            ("members_per_word", lambda r: r["members"][0].append("extra")),
+            ("member_count:tags", lambda r: r["tags"][0].append("NAME")),
+            ("member_count:tag_source", lambda r: r["tag_source"][0].pop()),
+            ("enum:genre", lambda r: r.update(genre="bad")),
+            ("enum:object_kind", lambda r: r.update(object_kind="bad")),
+            ("enum:completeness", lambda r: r.update(completeness="bad")),
+            ("enum:line_division_basis", lambda r: r.update(line_division_basis="bad")),
+            ("enum:tags", lambda r: r["tags"][0].__setitem__(0, "bad")),
+            ("enum:tag_source", lambda r: r["tag_source"][0].__setitem__(0, "bad")),
+            ("site_null_reason", lambda r: r.update(site=None)),
+            ("transcription_by", lambda r: r.update(transcription={"method": "page-image"})),
+            ("unicode_nfc", lambda r: r.update(findspot="a\u0304")),
+            ("type:die_id", lambda r: r.update(die_id=3)),
+            ("type:impressions", lambda r: r.update(impressions=True)),
+        ]
+        broken = []
+        for expected, mutate in mutations:
+            row = copy.deepcopy(good)
+            mutate(row)
+            require(expected in check_record(row), "missing validator failure: " + expected)
+            broken.append(row)
+        require(validate([good, good])["failures_by_check"]["duplicate_record_id"] == 1)
+        write_jsonl(args.work / "broken-records.jsonl", broken)
+        run_cli("validate_records.py", "--records", args.work / "broken-records.jsonl", "--out", args.work / "broken-validation.json", expected=1)
+        run_cli("validate_records.py", "--records", args.work / "five-corpora.jsonl", "--out", args.work / "valid-validation.json")
+        return {"deliberate_mutations": len(mutations), "checked_failures": [name for name, _ in mutations],
+                "duplicate_id": True, "cli_exit_codes": [0, 1]}
+    check("validator_failures_and_cli", validator_tests)
+
+    def grouping_tests():
+        rows = [synthetic_record("ia-ganges", i) for i in range(8)]
+        rows[0]["die_id"] = rows[1]["die_id"] = "shared-die"
+        rows[1]["aliases"] = rows[2]["aliases"] = ["shared-alias"]
+        rows[2]["units"] = rows[3]["units"][:]
+        rows[0]["completeness"] = "damaged-edge"
+        rows[1]["completeness"] = "restored"
+        rows[2]["units"].append("longer")
+        rows[3]["units"] = rows[2]["units"][:]
+        rows[4]["aliases"] = [rows[5]["die_id"]]
+        rows[6]["object_id"] = rows[7]["object_id"] = "same-lump-different-impressions"
+        rows[6]["duplicate_objects"] = [rows[7]["object_id"]]
+        chosen = group_records(rows)
+        require(len(chosen) == 4 and rows[2] in chosen and rows[0] not in chosen)
+        require(rows[6] in chosen and rows[7] in chosen)
+        # Complete precedes restored even when the restored record is longer.
+        require(rows[4] in chosen)
+        damaged = synthetic_record("ia-ganges", 999)
+        damaged["completeness"] = "damaged-internal"
+        _, populations, counts = eligible_sets([damaged])
+        require(not populations["ia-ganges"]["sign"])
+        require(counts["ia-ganges"]["groups"] == 1)
+        base = [synthetic_record("ta-brahmi", i) for i in range(30)]
+        for row in base[20:]:
+            row["genre"], row["object_kind"] = "coin", "coin"
+        _, populations, counts = eligible_sets(base)
+        require(counts["ta-brahmi"]["levels"]["sign"]["tamil_coin_fallback"])
+        require(len(populations["ta-brahmi"]["sign"]) == 30)
+        _, populations, counts = eligible_sets(base[:24])
+        require(len(populations["ta-brahmi"]["sign"]) == 24)
+        require(not counts["ta-brahmi"]["levels"]["sign"]["population_enters_level"])
+        _, _, counts = eligible_sets([synthetic_record("ta-brahmi", i) for i in range(25)])
+        require(not counts["ta-brahmi"]["levels"]["word"]["tamil_coin_fallback"])
+        _, pops, _ = eligible_sets(records)
+        sets = {c: pops[c]["sign"] for c in GROUPS}
+        sets["akk-sargonic"] = sets["akk-sargonic"][:24]
+        result, _ = matched_statistic(sets, "sign.S1", 8)
+        require("akk-sargonic" not in result["corpora"] and not result["decision"]["testable"])
+        pairless = copy.deepcopy(records[0])
+        pairless["tags"] = [["OTHER"] * len(ms) for ms in pairless["members"]]
+        require(not select_statistic([pairless], "word.S4"))
+        require(not select_statistic([pairless], "word.S5"))
+        # Tamil has 25 word-eligible seals but only 15 pair-eligible legends:
+        # the level qualifies and the pair statistic uses its threshold of 15.
+        tamil_pairs = [synthetic_record("ta-brahmi", i) for i in range(25)]
+        for row in tamil_pairs:
+            row["tags"][0] = ["TITLE", "NAME"]
+        for row in tamil_pairs[15:]:
+            row["tags"] = [["OTHER"] * len(ms) for ms in row["members"]]
+        _, pp, cc = eligible_sets(tamil_pairs)
+        pair_rows = select_statistic(pp["ta-brahmi"]["word"], "word.S4")
+        require(len(pair_rows) == 15 and cc["ta-brahmi"]["levels"]["word"]["population_enters_level"])
+        pair_result, _ = matched_statistic({"ta-brahmi": pair_rows}, "word.S4", 4)
+        require("ta-brahmi" in pair_result["corpora"] and pair_result["n"] == 12)
+        return {"transitive_groups": len(chosen), "tamil_fallback": True, "below_25_excluded": True, "pair_eligibility": True}
+    check("grouping_and_eligibility", grouping_tests)
+
+    def keep_tests():
+        separated = {c: [1.0] * 100 if g == "head-final" else [-1.0] * 100 for c, g in GROUPS.items()}
+        require(keep_rule(separated)["kept"])
+        separated["ia-ganges"][:6] = [-2.0] * 6
+        require(not keep_rule(separated)["conditions"]["2_replicate_separation"])
+        separated["ia-ganges"] = [1.0] * 100
+        separated["ia-ganges"][:2] = [None, None]
+        require(not keep_rule(separated)["conditions"]["3_non_null"])
+        require(keep_rule(separated)["conditions"]["2_replicate_separation"])
+        separated["ia-ganges"] = [1.0] * 100
+        separated["ia-ganges"][0] = None
+        require(keep_rule(separated)["kept"])
+        separated["ia-ganges"] = [-1.0] * 100
+        require(not keep_rule(separated)["conditions"]["1_median_separation"])
+        kept_orderings = 0
+        for ordering in itertools.permutations(range(4)):
+            kept_orderings += keep_rule({c: [ordering[i]] for i, c in enumerate(GROUPS)})["kept"]
+        require(kept_orderings == 8)
+        _, pops, _ = eligible_sets(records)
+        result, _ = matched_statistic({c: pops[c]["sign"] for c in GROUPS}, "sign.S1", 64)
+        require(result["decision"]["kept"] and result["decision"]["direction"] == "head-final-higher")
+        return {"separated_positive_control_kept": True, "exact_exchangeable_orderings": [kept_orderings, 24],
+                "thresholds_and_nulls": True}
+    check("keep_rule_controls", keep_tests)
+
+    def exchangeable():
+        kept, draws, r_count = 0, 300, 8
+        for draw in range(draws):
+            rng = seeded_random(f"exchangeable:{draw}")
+            sets = {}
+            for corpus in GROUPS:
+                size = rng.randrange(1, 513)
+                middle = [f"common-{i}" for i in range(size)]
+                # One generator supplies all corpora. Its latent inventory size
+                # changes S1 while each matched draw has exactly the same S1.
+                sets[corpus] = [{"units": [f"unique-{i}", *middle, "end"]} for i in range(25)]
+            result, _ = matched_statistic(sets, "sign.S1", r_count, prefix=f"exchangeable:{draw}")
+            kept += result["decision"]["kept"]
+        interval = wilson(kept, draws)
+        require(.23 <= kept / draws <= .44, "exchangeable keep rate outside broad binomial check")
+        return {"draws": draws, "replicates_per_draw": r_count, "kept": kept, "rate": kept / draws,
+                "wilson_95_interval": interval, "theoretical_complete_separation": 1 / 3,
+                "generator": "iid latent common-inventory size 1..512; 25 legends, unique first, shared middle, constant last; matched n=20"}
+    check("exchangeable_synthetic_300_draws", exchangeable)
+
+    def end_to_end():
+        for name in ("synthetic-run-1", "synthetic-run-2"):
+            run_cli("discriminate.py", "--records", args.work / "five-corpora.jsonl", "--out", args.work / name,
+                    "--documents", args.documents, "--replicates", args.replicates, "--synthetic")
+        first = (args.work / "synthetic-run-1/summary.json").read_bytes()
+        second = (args.work / "synthetic-run-2/summary.json").read_bytes()
+        require(first == second, "summary not byte-identical")
+        result = json.loads(first)
+        require(result["synthetic"] and result["statistics"]["sign.S1"]["decision"]["kept"])
+        require(set(result["statistics"]) == set(STATISTICS))
+        require(set(result["eligibility"]) == set(CORPORA))
+        require(set(result["hashes"]["documents"]) == {"PROTOCOL.md", "SCHEMA.md", "TRANSCRIPTION-BRIEF.md", "AMENDMENT-1.md"})
+        require(set(result["sensitivities"]) == {"without_doubtful", "sanskrit_only_ia"})
+        for stat, value in result["statistics"].items():
+            require("sux_sargonic" in value and "subcorpora" in value)
+            require("every_subcorpus_on_primary_side" in value["subcorpora"])
+            require(set(value["decision"]["conditions"]) == {"1_median_separation", "2_replicate_separation", "3_non_null"})
+            for summary in value["corpora"].values():
+                require({"eligible", "n", "median", "p5", "p95", "null_share"} <= set(summary))
+            if stat.endswith(".S1"):
+                require(set(value["shuffle_reference"]) == set(CORPORA))
+                require(all(s["shuffles"] == 1000 for s in value["shuffle_reference"].values()))
+        require(result["statistics"]["sign.S1"]["sux_sargonic"]["n"] == result["statistics"]["sign.S1"]["n"])
+        require(result["statistics"]["sign.S1"]["n"] == 20)
+        require(result["sensitivities"]["without_doubtful"]["statistics"]["sign.S1"]["n"] == 28)
+        require(result["sensitivities"]["sanskrit_only_ia"]["eligibility"]["ia-ganges"]["records"] == 32)
+        run_cli("discriminate.py", "--records", args.work / "five-corpora.jsonl", "--out", args.work / "synthetic-run-1", "--synthetic", expected=2)
+        return {"byte_identical": True, "statistics": 9, "corpora": 5,
+                "all_summary_sections": True, "existing_out_refused": True,
+                "summary_sha256": hashlib.sha256(first).hexdigest(), "replicates": args.replicates}
+    check("synthetic_cli_determinism_and_summary", end_to_end)
+
+    def regression():
+        before = sha256_file(args.regression)
+        seen, sign, word = set(), [], []
+        for record in read_jsonl(args.regression):
+            if record.get("corpus") != "sumerian" or record.get("kind") != "seal":
+                continue
+            sequence = tuple(unit for w in record["word_units"] for unit in w)
+            if len(sequence) < 2 or sequence in seen:
+                continue
+            seen.add(sequence)
+            sign.append(sequence)
+            word_sequence = tuple(tuple(w) for w in record["word_units"])
+            if len(word_sequence) >= 2:
+                word.append(word_sequence)
+        sign_s1, word_s1 = S1(sign), S1(word)
+        require(len(sign) == 309 and len(word) == 308, "regression population counts differ")
+        require(round(sign_s1, 3) == -.204 and round(word_s1, 3) == .079, "regression rounded S1 differs")
+        reference = json.loads(args.reference.read_text(encoding="utf-8"))["profiles"]["sumerian_seals"]
+        close(sign_s1, reference["sign_level"]["edge_asymmetry"]["asymmetry_initial_minus_final"])
+        close(word_s1, reference["word_level"]["edge_asymmetry"]["asymmetry_initial_minus_final"])
+        require(before == sha256_file(args.regression), "held file changed")
+        return {"sign_legends": len(sign), "word_legends": len(word), "sign_S1": sign_s1, "word_S1": word_s1,
+                "rounded_sign_S1": round(sign_s1, 3), "rounded_word_S1": round(word_s1, 3),
+                "held_sha256": before, "reference_sha256": sha256_file(args.reference),
+                "held_unchanged": True, "only_statistic_computed": "S1"}
+    check("step6_S1_regression_only", regression)
+    passed = all(c["passed"] for c in checks)
+    report = {"schema_version": "head-direction-selftest-1", "passed": passed, "checks": checks,
+              "check_count": len(checks), "elapsed_seconds": round(time.monotonic() - started, 3),
+              "work": str(args.work).replace("\\", "/"), "authors": [{"model": "GPT-6.1-Sol", "harness": "Codex desktop"}],
+              "code_sha256": {p.name: sha256_file(p) for p in [PACKAGE / n for n in ("hd_common.py", "hd_stats.py", "discriminate.py", "normalize_brahmi.py", "validate_records.py", "selftest.py")]}}
+    write_json(args.out, report)
+    print(json.dumps({"passed": passed, "checks": len(checks), "seconds": report["elapsed_seconds"]}), flush=True)
+    return 0 if passed else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -1,0 +1,377 @@
+"""Convert reviewed printed-list transcriptions to local SCHEMA.md records.
+
+python -I normalize_brahmi.py --transcriptions <jsonl> [<jsonl> ...] \
+  --rights <source-status.json> --lexicon <tsv> --out <new jsonl> --review <new tsv> \
+  [--source-rules <reviewed source defaults.json>]
+
+Paths are explicit. No statistics are computed. Unresolved language, script or
+identity fields raise errors for review; original fields are preserved locally.
+"""
+import argparse
+import csv
+import json
+import re
+import sys
+import unicodedata
+from collections import Counter
+from pathlib import Path
+
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from hd_common import read_jsonl, write_jsonl
+from validate_records import check_record, LANGUAGES, SCRIPTS
+
+SURVEY = {"asi-ar-1903-04", "asi-ar-1913-14", "asi-ar-1911-12"}
+ENDINGS = {
+    "Sanskrit": ("sya", "asya", "āyāḥ", "yāḥ", "aḥ", "ā", "am", "aṃ", "e", "ena"),
+    "Prakrit": ("sa", "asa", "iye", "ye"),
+    "Tamil": ("aṉ", "ṉ"),
+}
+ASPIRATES = {"kh", "gh", "ch", "jh", "ṭh", "ḍh", "th", "dh", "ph", "bh"}
+CONSONANTS = set("kgṅcjñṭḍṇtdnpbmyrlvśṣshḻṟṉḵf")
+MARKS = {"ṃ", "ṁ", "ḥ", "ँ", "\u0310", "\u0303", "m\u0310", "m\u0303"}
+LACUNA = re.compile(r"\.{2,}|…+|\[(?:\s|[-–—.?xX])+\]|(?<!\w)[xX?]+(?!\w)")
+
+
+def transliterate(text, survey=False):
+    text = unicodedata.normalize("NFC", text)
+    if survey:
+        text = text.lower()
+        # Literal sequential replacements specified in the run C brief.
+        for old, new in (("chh", "ch"), ("ch", "c"), ("sh", "ṣ"), ("ṛi", "ṛ"), ("ṁ", "ṃ"), ("ç", "ś")):
+            text = text.replace(old, new)
+    return unicodedata.normalize("NFC", text)
+
+
+def clean_form(text, survey=False):
+    text = LACUNA.sub(" ", transliterate(text, survey))
+    text = re.sub(r"[\[\]()?]", "", text)
+    return " ".join(text.split())
+
+
+def segment_word(word, corpus):
+    word = unicodedata.normalize("NFC", word.replace("-", ""))
+    vowels = set("aāiīuūṛṝeēoō") | ({"ḷ", "ḹ"} if corpus == "ia-ganges" else set())
+    consonants = CONSONANTS | ({"ḷ"} if corpus == "ta-brahmi" else set())
+    tokens, i = [], 0
+    while i < len(word):
+        pair = word[i:i + 2]
+        if pair in ASPIRATES or pair in {"ai", "au", "m\u0310", "m\u0303"}:
+            tokens.append(pair)
+            i += 2
+        elif word[i] in vowels | consonants | MARKS:
+            tokens.append(word[i])
+            i += 1
+        else:
+            raise ValueError("unsupported transliteration character U+%04X" % ord(word[i]))
+    units, cluster = [], []
+    for token in tokens:
+        if token in MARKS:
+            if cluster or not units:
+                raise ValueError("unattached vowel modifier")
+            units[-1] += token
+        elif token in vowels or token in {"ai", "au"}:
+            units.append("".join(cluster) + token)
+            cluster = []
+        else:
+            if corpus == "ta-brahmi" and cluster:
+                units.append(cluster.pop() + "·")
+            cluster.append(token)
+    # At a word end each consonant without a vowel is a separate sign.
+    units.extend(token + "·" for token in cluster)
+    return units
+
+
+def load_lexicon(path):
+    result = {}
+    with open(path, encoding="utf-8-sig", newline="") as stream:
+        reader = csv.DictReader(stream, delimiter="\t")
+        if reader.fieldnames != ["form", "tag", "language", "note"]:
+            raise ValueError("lexicon header must be form, tag, language, note")
+        for row in reader:
+            key = (unicodedata.normalize("NFC", row["form"]), row["language"])
+            if key in result:
+                raise ValueError("duplicate lexicon entry")
+            result[key] = row["tag"]
+    return result
+
+
+def tag_member(member, language, lexicon):
+    languages = ([language] if language in ENDINGS else ["Prakrit"] if language == "Pali" else
+                 ["Sanskrit", "Prakrit"] if language == "mixed Sanskrit-Prakrit" else ["Sanskrit", "Prakrit", "Tamil"])
+    for lang in languages:
+        if (member, lang) in lexicon:
+            return lexicon[member, lang], "lexicon"
+    endings = sorted({ending for lang in languages for ending in ENDINGS[lang]}, key=lambda x: (-len(x), x))
+    for ending in endings:
+        if member.endswith(ending) and len(member) > len(ending):
+            stem = member[:-len(ending)]
+            for lang in languages:
+                if ending in ENDINGS[lang] and (stem, lang) in lexicon:
+                    return lexicon[stem, lang], "lexicon"
+    return "NAME", "default-name"
+
+
+def completeness(entry):
+    text = entry.get("legend_as_printed") or ""
+    doubtful = bool(entry.get("doubtful")) or "?" in text
+    explicit = entry.get("completeness")
+    if explicit:
+        return explicit, doubtful
+    if not text.strip():
+        return ("illegible" if entry.get("illegible_part") else "no-legend"), doubtful
+    gaps = list(LACUNA.finditer(text))
+    if gaps:
+        if not LACUNA.sub("", text).strip(" []()?-"):
+            return "illegible", doubtful
+        if any(not text[:m.start()].strip(" []()?") or not text[m.end():].strip(" []()?") for m in gaps):
+            return "damaged-edge", doubtful
+        return "damaged-internal", doubtful
+    illegible = entry.get("illegible_part")
+    if illegible:
+        description = str(illegible).lower()
+        if re.search(r"\b(first|last|beginning|end|edge|initial|final)\b", description):
+            return "damaged-edge", doubtful
+        return "damaged-internal", doubtful
+    if entry.get("restored") or re.search(r"[\[(].*?[\])]", text):
+        return "restored", doubtful
+    return "complete", doubtful
+
+
+def language_fields(entry, source):
+    note = entry.get("language") or entry.get("language_note")
+    if note:
+        if note in LANGUAGES:
+            language = note
+        else:
+            lowered = str(note).lower()
+            if "mixed" in lowered or ("sanskrit" in lowered and "prakrit" in lowered):
+                language = "mixed Sanskrit-Prakrit"
+            else:
+                language = next((x for x in LANGUAGES if x.lower() == lowered or x.lower() in lowered), None)
+        if language is None:
+            raise ValueError("unresolved language remark; supply reviewed language")
+        return language, entry.get("language_basis", "editor"), "entry language remark"
+    general = entry.get("collection_language")
+    if general in LANGUAGES:
+        return general, "editor", entry.get("collection_language_rule", "editor collection statement supplied in transcription")
+    if source == "asi-ar-1911-12":
+        period = str(entry.get("period") or entry.get("date_as_printed") or "").lower()
+        if "pre-gupta" in period or any(x in period for x in ("maury", "sunga", "śuṅga", "kushan", "kuṣāṇa")):
+            return "mixed Sanskrit-Prakrit", "editor", "Marshall pre-Gupta: Prakrit or mixed (Amendment 1)"
+        if "gupta" in period or "later" in period:
+            return "Sanskrit", "editor", "Marshall Gupta and later: Sanskrit (Amendment 1)"
+    raise ValueError("no language basis; supply entry language or editor collection statement")
+
+
+def script_field(entry, corpus):
+    if corpus == "ta-brahmi":
+        return "Tamil-Brahmi"
+    if entry.get("script") in SCRIPTS:
+        return entry["script"]
+    period = str(entry.get("period") or entry.get("date_as_printed") or "").lower()
+    if "post-gupta" in period or "later" in period:
+        return "Brahmi (later)"
+    if "gupta" in period and "pre-gupta" not in period:
+        return "Brahmi (Gupta)"
+    if "kushan" in period or "kuṣāṇa" in period:
+        return "Brahmi (Kushana)"
+    if "pre-gupta" in period or any(x in period for x in ("maury", "sunga", "śuṅga", "early")):
+        return "Brahmi (early)"
+    raise ValueError("no script stage; supply reviewed script or period")
+
+
+def bloch_aliases(references):
+    aliases = []
+    if references is None:
+        return aliases
+    if not isinstance(references, list):
+        references = [references]
+    for ref in references:
+        if isinstance(ref, dict):
+            if ref.get("source") in {"asi-ar-1903-04", "bloch1903", "Bloch"} and ref.get("entry") is not None:
+                if ref.get("equated", True) and not ref.get("uncertain", False):
+                    entries = ref["entry"] if isinstance(ref["entry"], list) else [ref["entry"]]
+                    aliases.extend("bloch1903:" + str(n) for n in entries)
+            continue
+        value = str(ref)
+        aliases.extend("bloch1903:" + n for n in re.findall(r"bloch1903:(\d+[A-Za-z]?)", value))
+        # Accept only explicit equivalences, not every discussion reference.
+        if re.search(r"(?:same as|identical with|equated with|=)", value, re.I) and re.search(r"Bloch|1903.{0,2}1904", value, re.I):
+            number_part = re.split(r"\bNos?\.?\s*", value, flags=re.I)
+            if len(number_part) > 1:
+                aliases.extend("bloch1903:" + n for n in re.findall(r"\d+[A-Za-z]?", number_part[-1]))
+    return aliases
+
+
+def normalize_entry(entry, rights, lexicon):
+    def nfc(value):
+        if isinstance(value, str):
+            return unicodedata.normalize("NFC", value)
+        if isinstance(value, list):
+            return [nfc(x) for x in value]
+        if isinstance(value, dict):
+            return {nfc(k): nfc(v) for k, v in value.items()}
+        return value
+    entry = nfc(entry)
+    source = entry["source"]
+    if source not in SURVEY | {"mahadevan-2003"}:
+        raise ValueError("unsupported source")
+    if source not in rights:
+        raise ValueError("source absent from rights mapping")
+    corpus = "ta-brahmi" if source == "mahadevan-2003" else "ia-ganges"
+    number = str(entry.get("entry", ""))
+    sub = str(entry.get("sub_entry") or "").strip()
+    aliases = list(entry.get("aliases") or [])
+    if source == "asi-ar-1903-04":
+        object_id = die_id = "bloch1903:" + number
+        kind, genre, site = "clay-sealing", "sealing", "Basarh"
+        identifier = number + sub
+    elif source == "asi-ar-1913-14":
+        register = entry.get("register") or entry.get("register_number") or entry.get("register_no")
+        if register is None:
+            # The list itself is numbered by the Unclassified Register.
+            register = entry.get("entry")
+        if register is None:
+            raise ValueError("Spooner register missing")
+        object_id, die_id = "spooner1913:" + str(register), "spooner1913-die:" + number + sub
+        kind, genre, site = "clay-sealing", "sealing", "Basarh"
+        identifier = number + sub
+        aliases.extend(bloch_aliases(entry.get("cross_references")))
+        aliases.extend("bloch1903:" + str(n) for n in entry.get("bloch_equivalents", []))
+    elif source == "asi-ar-1911-12":
+        match = re.match(r"\d+", number)
+        if not match:
+            raise ValueError("Bhita entry number missing")
+        object_id = die_id = "marshall1911:" + number
+        genre = "seal" if int(match[0]) <= 13 else "sealing"
+        kind = ("ring" if entry.get("object_kind") in {"ring", "signet-ring"} else "seal-die") if genre == "seal" else "clay-sealing"
+        site, identifier = "Bhita", number + sub
+    else:
+        if entry.get("table") is None or entry.get("row") is None:
+            raise ValueError("Mahadevan table and row required")
+        identifier = f"T{entry['table']}.{entry['row']}"
+        object_id = die_id = "mahadevan2003:" + identifier
+        raw_kind = entry.get("object_kind")
+        if raw_kind not in {"seal", "ring", "coin"}:
+            raise ValueError("Mahadevan object kind unresolved")
+        genre = "coin" if raw_kind == "coin" else "seal"
+        kind = "seal-die" if raw_kind == "seal" else raw_kind
+        site = entry.get("site") or entry.get("site_as_printed")
+        if not site and re.search(r"\bKarur\b", str(entry.get("findspot_as_printed") or ""), re.I):
+            site = "Karur"
+        if site and re.search(r"\bKarur\b", site, re.I):
+            site = "Karur"
+        elif site and re.search(r"river|bed|findspot|unknown|provenance", site, re.I):
+            site = None
+        if isinstance(site, str):
+            site = site.strip() or None
+    if not number and source in SURVEY:
+        raise ValueError("entry identifier missing")
+    text = entry.get("legend_as_printed") or ""
+    printed_lines = entry.get("legend_lines_as_printed")
+    if printed_lines is not None:
+        if not isinstance(printed_lines, list) or any(not isinstance(x, str) for x in printed_lines):
+            raise ValueError("legend_lines_as_printed must be strings")
+        lines = [clean_form(line, source in SURVEY).split() for line in printed_lines]
+        if [w for line in lines for w in line] != clean_form(text, source in SURVEY).split():
+            raise ValueError("edition lines disagree with legend_as_printed")
+    else:
+        lines = [clean_form(text, source in SURVEY).split()]
+    words = [word for line in lines for word in line]
+    members = [word.split("-") for word in words]
+    if any(not part for word in members for part in word):
+        raise ValueError("empty compound member")
+    language, basis, rule = language_fields(entry, source)
+    tagged = [[tag_member(part, language, lexicon) for part in word] for word in members]
+    word_units = [segment_word(word, corpus) for word in words]
+    state, doubtful = completeness(entry)
+    transcription = entry.get("transcription")
+    if transcription is None:
+        transcriber = entry.get("transcriber")
+        if isinstance(transcriber, dict):
+            by = transcriber.get("by") or transcriber.get("name") or transcriber.get("model")
+            method = entry.get("method") or transcriber.get("method")
+        else:
+            by, method = transcriber, entry.get("method") or entry.get("transcription_method")
+        if not method:
+            # The transcription brief explicitly requires checking page images.
+            method = "page-image"
+        transcription = {"method": method, "by": by}
+    record = dict(entry)
+    record.update(record_id=f"{corpus}:{source}:{identifier}", corpus=corpus, object_id=object_id,
+                  die_id=die_id, object_kind=kind, genre=genre, aliases=sorted(set(aliases)), site=site,
+                  source_locator={key: entry[key] for key in ("page_printed", "page_pdf", "entry", "plate", "figure", "table", "row", "scan") if entry.get(key) is not None},
+                  language=language, language_basis=basis, language_rule=rule,
+                  script=script_field(entry, corpus), rights=nfc(rights[source]), legend_as_printed=text,
+                  lines=lines, line_division_basis="edition" if printed_lines is not None else "none",
+                  words=words, members=members, word_units=word_units,
+                  units=[u for word in word_units for u in word],
+                  line_of_word=[i for i, line in enumerate(lines) for _ in line],
+                  tags=[[t for t, _ in word] for word in tagged],
+                  tag_source=[[s for _, s in word] for word in tagged],
+                  completeness=state, reading_doubtful=doubtful, transcription=transcription)
+    if entry.get("plates") is not None:
+        record["source_locator"]["plate"] = entry["plates"]
+    if source == "asi-ar-1913-14":
+        record["duplicate_objects"] = entry.get("duplicates") or []
+    if site is None:
+        record["site_reason"] = entry.get("site_reason") or "No unambiguous place name supplied; review in feasibility ledger"
+    if entry.get("findspot_as_printed"):
+        record["findspot"] = entry["findspot_as_printed"]
+    elif corpus == "ta-brahmi":
+        original_site = entry.get("site_as_printed") or entry.get("site")
+        if original_site and original_site != site:
+            record["findspot"] = original_site
+    if entry.get("dimensions") is not None:
+        record["dimensions_as_printed"] = entry["dimensions"]
+    errors = check_record(record)
+    if errors:
+        raise ValueError(f"{record['record_id']}: validation checks {sorted(errors)}")
+    return record
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--transcriptions", nargs="+", required=True, type=Path)
+    for name in ("rights", "lexicon", "out", "review"):
+        parser.add_argument("--" + name, required=True, type=Path)
+    parser.add_argument("--source-rules", type=Path,
+                        help="reviewed source defaults for collection_language, collection_language_rule, script, period")
+    args = parser.parse_args()
+    try:
+        if args.out.exists() or args.review.exists():
+            raise ValueError("output or review already exists")
+        rights = json.loads(args.rights.read_text(encoding="utf-8-sig"))
+        lexicon = load_lexicon(args.lexicon)
+        rules = json.loads(args.source_rules.read_text(encoding="utf-8-sig")) if args.source_rules else {}
+        allowed_defaults = {"collection_language", "collection_language_rule", "script", "period"}
+        if any(not isinstance(v, dict) or set(v) - allowed_defaults for v in rules.values()):
+            raise ValueError("source-rules has unsupported defaults")
+        records = []
+        for p in args.transcriptions:
+            for row in read_jsonl(p):
+                merged = dict(row)
+                for key, value in rules.get(row["source"], {}).items():
+                    if not merged.get(key):
+                        merged[key] = value
+                records.append(normalize_entry(merged, rights, lexicon))
+        if len({r["record_id"] for r in records}) != len(records):
+            raise ValueError("duplicate record identifiers")
+        counts = Counter((member, tag, source, r["language"])
+                         for r in records for ms, ts, ss in zip(r["members"], r["tags"], r["tag_source"])
+                         for member, tag, source in zip(ms, ts, ss))
+        write_jsonl(args.out, records)
+        args.review.parent.mkdir(parents=True, exist_ok=True)
+        with args.review.open("x", encoding="utf-8", newline="") as stream:
+            writer = csv.writer(stream, delimiter="\t")
+            writer.writerow(("member", "tag", "tag_source", "language", "count"))
+            for key, count in sorted(counts.items()):
+                writer.writerow((*key, count))
+        print(json.dumps({"records": len(records), "review_members": len(counts)}))
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        parser.exit(2, f"{exc}\n")
+
+
+if __name__ == "__main__":
+    main()

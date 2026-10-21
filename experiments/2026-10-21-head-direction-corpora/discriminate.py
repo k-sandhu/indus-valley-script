@@ -1,0 +1,341 @@
+"""Run the frozen discrimination protocol on explicitly supplied reviewed records.
+
+python -I discriminate.py --records <jsonl> [<jsonl> ...] --out <new directory> \
+  [--replicates 2000] [--synthetic] [--documents <protocol directory>]
+
+The output directory must be new. Documents default to this script's directory;
+all data paths are arguments. Summary contains aggregates, hashes and no legends.
+Run C invokes this command on synthetic records only.
+"""
+import argparse
+import json
+import math
+import sys
+from collections import Counter, defaultdict
+from pathlib import Path
+
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from hd_common import UnionFind, median, percentile, read_jsonl, seeded_random, sha256_file, write_json
+from hd_stats import S1, S2, S3, S4, S5, S6, pair_counts, shuffle_reference
+from validate_records import validate
+
+SEED_PREFIX = "2026-10-21-head-direction-corpora"
+# Entry thresholds of PROTOCOL.md section 8; AMENDMENT-4.md runs a second panel with MIN_LEGENDS = 20.
+MIN_LEGENDS = 25
+MIN_PAIRS = 15
+GROUPS = {"ia-ganges": "head-final", "ta-brahmi": "head-final",
+          "sux-ur3": "head-initial", "akk-sargonic": "head-initial"}
+CORPORA = tuple(GROUPS) + ("sux-sargonic",)
+STATISTICS = ("sign.S1", "word.S1", "sign.S2", "word.S2", "sign.S3", "word.S3", "word.S4", "word.S5", "within.S6")
+DOCUMENTS = ("PROTOCOL.md", "SCHEMA.md", "TRANSCRIPTION-BRIEF.md", "AMENDMENT-1.md", "AMENDMENT-2.md", "AMENDMENT-3.md", "AMENDMENT-4.md")
+CODE_FILES = ("hd_common.py", "hd_stats.py", "discriminate.py", "normalize_brahmi.py", "edition_rules.py", "adapt_cuneiform.py", "validate_records.py", "selftest.py", "fetch_source.py")
+
+
+def tagged_members(record):
+    return [(member, tag) for members, tags in zip(record["members"], record["tags"])
+            for member, tag in zip(members, tags)]
+
+
+def group_records(records):
+    """Group within one corpus; aliases can refer to another record's die/object ID.
+
+    Sharing a physical object alone does not merge its distinct impressions.
+    duplicate_objects is provenance and is not an alias for a seal legend.
+    """
+    records = sorted(records, key=lambda r: r["record_id"])
+    uf, seen, objects = UnionFind(len(records)), {}, defaultdict(list)
+    for i, record in enumerate(records):
+        objects[record["object_id"]].append(i)
+        identities = list(record.get("aliases", []))
+        if record.get("die_id"):
+            identities.append(record["die_id"])
+        identities.append(record["record_id"])
+        for identifier in identities:
+            key = ("identity", identifier)
+            if key in seen:
+                uf.union(i, seen[key])
+            else:
+                seen[key] = i
+        key = ("sequence", tuple(record["units"]))
+        if key in seen:
+            uf.union(i, seen[key])
+        else:
+            seen[key] = i
+    for i, record in enumerate(records):
+        for alias in record.get("aliases", []):
+            for other in objects.get(alias, []):
+                uf.union(i, other)
+    groups = defaultdict(list)
+    for i, record in enumerate(records):
+        groups[uf.find(i)].append(record)
+    priority = {"complete": 0, "restored": 1}
+    chosen = [min(group, key=lambda r: (priority.get(r["completeness"], 2), -len(r["units"]), r["record_id"]))
+              for group in groups.values()]
+    return sorted(chosen, key=lambda r: r["record_id"])
+
+
+def base_eligible(record, level):
+    return (record["completeness"] in {"complete", "restored"}
+            and bool(record.get("object_id")) and bool(record.get("site"))
+            and len(record["units"] if level == "sign" else record["words"]) >= 2)
+
+
+def eligible_sets(records):
+    grouped, populations, counts = {}, {}, {}
+    for corpus in CORPORA:
+        original = [r for r in records if r["corpus"] == corpus]
+        grouped[corpus] = group_records(original)
+        counts[corpus] = {"records": len(original), "groups": len(grouped[corpus]), "levels": {}}
+        populations[corpus] = {}
+        for level in ("sign", "word"):
+            all_eligible = [r for r in grouped[corpus] if base_eligible(r, level)]
+            seals = [r for r in all_eligible if r["genre"] == "seal"]
+            fallback = corpus == "ta-brahmi" and len(seals) < MIN_LEGENDS
+            population = ([r for r in all_eligible if r["genre"] in {"seal", "coin"}]
+                          if fallback else seals) if corpus == "ta-brahmi" else all_eligible
+            allowed = corpus != "ta-brahmi" or len(population) >= MIN_LEGENDS
+            populations[corpus][level] = population
+            counts[corpus]["levels"][level] = {
+                "eligible": len(population), "available_all_genres": len(all_eligible),
+                "seal_and_ring_eligible": len(seals), "tamil_coin_fallback": fallback,
+                "population": "seals-rings-coins" if fallback else "seals-rings" if corpus == "ta-brahmi" else "all",
+                "population_enters_level": allowed,
+            }
+        for stat in ("S4", "S5"):
+            population = populations[corpus]["word"]
+            counts[corpus]["levels"]["word." + stat] = {
+                "eligible": sum(sum(pair_counts([tagged_members(r)], stat)) > 0 for r in population),
+                "tamil_coin_fallback": counts[corpus]["levels"]["word"]["tamil_coin_fallback"],
+            }
+        counts[corpus]["levels"]["within.S6"] = dict(counts[corpus]["levels"]["sign"])
+    return grouped, populations, counts
+
+
+def select_statistic(population, statistic):
+    if statistic in {"word.S4", "word.S5"}:
+        return [r for r in population if sum(pair_counts([tagged_members(r)], statistic[-2:])) > 0]
+    return population
+
+
+def evaluate(records, statistic, seed):
+    level, name = statistic.split(".")
+    if name in {"S4", "S5"}:
+        legends = [tagged_members(r) for r in records]
+    elif name == "S6":
+        legends = [r["word_units"] for r in records]
+    elif level == "word":
+        # Words are orthographic boundaries; tuples preserve their written signs
+        # and reproduce the step 6 word inventory without editorial hyphens.
+        legends = [tuple(tuple(w) for w in r["word_units"]) for r in records]
+    else:
+        legends = [r["units"] for r in records]
+    functions = {"S1": S1, "S2": S2, "S3": S3, "S4": S4, "S5": S5, "S6": S6}
+    return functions[name](legends, seed) if name == "S3" else functions[name](legends)
+
+
+def distribution(values, eligible, n):
+    defined = [v for v in values if v is not None]
+    return {"eligible": eligible, "n": n, "median": median(defined),
+            "p5": percentile(defined, 5), "p95": percentile(defined, 95),
+            "null_share": 1 - len(defined) / len(values), "replicates": len(values)}
+
+
+def separation(final, initial):
+    if not final or not initial or any(v is None for v in final + initial):
+        return None, None
+    if min(final) > max(initial):
+        return "head-final-higher", min(final) - max(initial)
+    if max(final) < min(initial):
+        return "head-final-lower", min(initial) - max(final)
+    return None, None
+
+
+def keep_rule(values, groups=GROUPS):
+    final = [c for c in values if groups.get(c) == "head-final"]
+    initial = [c for c in values if groups.get(c) == "head-initial"]
+    testable = len(final) >= 2 and len(initial) >= 2
+    all_corpora = final + initial
+    medians = {c: median([v for v in values[c] if v is not None]) for c in all_corpora}
+    direction, gap = separation([medians[c] for c in final], [medians[c] for c in initial])
+    replicates = len(values[all_corpora[0]]) if all_corpora else 0
+    if any(len(values[c]) != replicates for c in all_corpora):
+        raise ValueError("replicate lengths differ")
+    separated = sum(direction is not None and
+                    separation([values[c][r] for c in final], [values[c][r] for c in initial])[0] == direction
+                    for r in range(replicates))
+    share = separated / replicates if replicates else 0.0
+    null_shares = {c: sum(v is None for v in values[c]) / replicates for c in all_corpora} if replicates else {}
+    c1, c2 = direction is not None, share >= .95
+    c3 = bool(all_corpora) and all(v <= .01 + 1e-15 for v in null_shares.values())
+    h, i = len(final), len(initial)
+    chance = 2 * math.factorial(h) * math.factorial(i) / math.factorial(h + i) if h and i else None
+    return {"testable": testable, "kept": testable and c1 and c2 and c3,
+            "conditions": {"1_median_separation": c1, "2_replicate_separation": c2, "3_non_null": c3},
+            "direction": direction, "nearest_median_gap": gap, "separated_replicate_share": share,
+            "null_shares": null_shares, "head_final_corpora": final, "head_initial_corpora": initial,
+            "exchangeable_complete_separation_probability": chance}
+
+
+def matched_statistic(sets, statistic, replicates, prefix=SEED_PREFIX, minimum=None, cap=400, groups=GROUPS, blocked=()):
+    minimum = minimum if minimum is not None else MIN_PAIRS if statistic in {"word.S4", "word.S5"} else MIN_LEGENDS
+    entering = {c: rows for c, rows in sets.items() if c in groups and c not in blocked and len(rows) >= minimum}
+    n = min((len(rows) * 4 // 5 for rows in entering.values()), default=0)
+    if cap is not None:
+        n = min(cap, n)
+    values, result = {}, {}
+    for corpus, rows in entering.items():
+        values[corpus] = []
+        for r in range(replicates):
+            seed = f"{prefix}:{statistic}:{corpus}:{r}"
+            draw = seeded_random(seed).sample(rows, n)
+            values[corpus].append(evaluate(draw, statistic, seed))
+        result[corpus] = distribution(values[corpus], len(rows), n)
+    return {"n": n, "corpora": result, "not_entering": {c: len(rows) for c, rows in sets.items() if c in groups and c not in entering},
+            "decision": keep_rule(values, groups)}, values
+
+
+def subcorpus_key(record):
+    corpus = record["corpus"]
+    if corpus == "ia-ganges":
+        return record["source"]
+    if corpus == "ta-brahmi":
+        return "ring" if record["object_kind"] == "ring" else record["genre"]
+    return record["site"]
+
+
+def run_panel(records, replicates, prefix=SEED_PREFIX):
+    grouped, populations, counts = eligible_sets(records)
+    result = {}
+    for statistic in STATISTICS:
+        level = "sign" if statistic.startswith(("sign.", "within.")) else "word"
+        sets = {c: select_statistic(populations[c][level], statistic) for c in CORPORA}
+        blocked = {c for c in GROUPS if not counts[c]["levels"][level]["population_enters_level"]}
+        primary, values = matched_statistic(sets, statistic, replicates, prefix, blocked=blocked)
+        primary["level_population_exclusions"] = sorted(blocked)
+        for corpus, summary in primary["corpora"].items():
+            summary["population"] = counts[corpus]["levels"][level]
+        n = primary["n"]
+        secondary = sets["sux-sargonic"]
+        if n > 0 and len(secondary) >= n:
+            secondary_values = []
+            for r in range(replicates):
+                seed = f"{prefix}:{statistic}:sux-sargonic:{r}"
+                secondary_values.append(evaluate(seeded_random(seed).sample(secondary, n), statistic, seed))
+            secondary_result = distribution(secondary_values, len(secondary), n)
+            med = secondary_result["median"]
+            secondary_result["relative_to_primary_medians"] = {
+                c: None if med is None or s["median"] is None else "higher" if med > s["median"] else "lower" if med < s["median"] else "equal"
+                for c, s in primary["corpora"].items()}
+            secondary_result["status"] = "reported"
+        else:
+            secondary_result = {"eligible": len(secondary), "n": n, "status": "too-small" if n else "no-primary-n"}
+        subs, subgroups = {}, {}
+        for corpus in GROUPS:
+            # Coins remain visible as a declared sub-corpus even if the primary
+            # Tamil seal population is large enough without them.
+            available = [r for r in grouped[corpus] if base_eligible(r, level)]
+            if corpus == "ta-brahmi":
+                available = [r for r in available if r["genre"] in {"seal", "coin"}]
+            available = select_statistic(available, statistic)
+            by_key = defaultdict(list)
+            for record in available:
+                by_key[subcorpus_key(record)].append(record)
+            for key, rows in sorted(by_key.items()):
+                label = f"{corpus}:{key}"
+                subs[label], subgroups[label] = rows, GROUPS[corpus]
+        sub_result, _ = matched_statistic(subs, statistic, replicates, prefix + ":sub", minimum=15, cap=None, groups=subgroups)
+        sub_final = [s["median"] for c, s in sub_result["corpora"].items() if subgroups[c] == "head-final"]
+        sub_initial = [s["median"] for c, s in sub_result["corpora"].items() if subgroups[c] == "head-initial"]
+        sub_direction, _ = separation(sub_final, sub_initial)
+        sub_result["every_subcorpus_on_primary_side"] = (
+            sub_direction == primary["decision"]["direction"] if sub_final and sub_initial and primary["decision"]["direction"] else None)
+        primary["sux_sargonic"] = secondary_result
+        primary["subcorpora"] = sub_result
+        if statistic.endswith(".S1"):
+            primary["shuffle_reference"] = {}
+            for corpus, rows in sets.items():
+                legends = ([r["units"] for r in rows] if level == "sign" else
+                           [tuple(tuple(w) for w in r["word_units"]) for r in rows])
+                primary["shuffle_reference"][corpus] = {
+                    **shuffle_reference(legends, f"{prefix}:{statistic}:{corpus}:full"),
+                    "eligible": len(rows), "population": counts[corpus]["levels"][level]}
+        result[statistic] = primary
+    return {"eligibility": counts, "statistics": result}
+
+
+def build_summary(records, inputs, documents, replicates=2000, synthetic=False):
+    if replicates < 1:
+        raise ValueError("replicates must be positive")
+    validation = validate(records)
+    if not validation["valid"]:
+        raise ValueError("invalid records: " + json.dumps(validation["failures_by_check"], sort_keys=True))
+    main = run_panel(records, replicates)
+    sensitivities = {
+        "without_doubtful": run_panel([r for r in records if not r["reading_doubtful"]], replicates),
+        "sanskrit_only_ia": run_panel([r for r in records if r["corpus"] != "ia-ganges" or r["language"] == "Sanskrit"], replicates),
+    }
+    code_dir = Path(__file__).resolve().parent
+    coverage = {}
+    for corpus in CORPORA:
+        rows = [r for r in records if r["corpus"] == corpus]
+        fields = sorted({key for r in rows for key in r})
+        coverage[corpus] = {"records": len(rows), "present_nonempty": {
+            field: sum(field in r and r[field] is not None and r[field] != "" and r[field] != [] and r[field] != {} for r in rows) for field in fields}}
+    return {"schema_version": "head-direction-summary-1", "synthetic": synthetic,
+            "entry_thresholds": {"legends": MIN_LEGENDS, "pair_legends": MIN_PAIRS, "subcorpus": 15},
+            "replicates": replicates, "seed_prefix": SEED_PREFIX, "replicate_index_origin": 0,
+            "quantile_method": "linear interpolation at (N-1)*q/100; null replicates excluded from quantiles",
+            "hashes": {"documents": {name: sha256_file(documents / name) for name in DOCUMENTS},
+                       "code": {name: sha256_file(code_dir / name) for name in CODE_FILES},
+                       "lexicon": {"lexicon-brahmi.tsv": sha256_file(code_dir / "lexicon-brahmi.tsv")},
+                       "run_briefs": {str(p.relative_to(code_dir)).replace("\\", "/"): sha256_file(p)
+                                      for p in (code_dir / "codex/c-statistics/CODEX-PROMPT.md", code_dir / "codex/COMMON-RULES.md") if p.is_file()},
+                       "inputs": [{"path": str(p).replace("\\", "/"), "sha256": sha256_file(p)} for p in inputs]},
+            "validation": validation, "metadata_coverage": coverage,
+            **main, "sensitivities": sensitivities}
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--records", nargs="+", required=True, type=Path)
+    parser.add_argument("--out", required=True, type=Path)
+    parser.add_argument("--replicates", type=int, default=2000)
+    parser.add_argument("--synthetic", action="store_true")
+    parser.add_argument("--documents", type=Path, default=Path(__file__).resolve().parent)
+    parser.add_argument("--exclusions", type=Path, help="JSON object mapping record_id to an exclusion reason")
+    parser.add_argument("--minimum-legends", type=int, default=25,
+                        help="entry threshold of PROTOCOL.md section 8 (AMENDMENT-4.md: second panel at 20)")
+    args = parser.parse_args()
+    global MIN_LEGENDS
+    MIN_LEGENDS = args.minimum_legends
+    try:
+        if args.out.exists():
+            raise ValueError("refusing existing output directory")
+        before_hashes = {p: sha256_file(p) for p in args.records}
+        records = [r for path in args.records for r in read_jsonl(path)]
+        excluded = {}
+        if args.exclusions:
+            # AMENDMENT-4.md: records that are not physical objects (composite editions) or not
+            # ancient (casts) leave before grouping; the counts by corpus and reason are reported.
+            exclusions = json.loads(args.exclusions.read_text(encoding="utf-8"))
+            for r in records:
+                if r["record_id"] in exclusions:
+                    key = f'{r["corpus"]}:{exclusions[r["record_id"]]}'
+                    excluded[key] = excluded.get(key, 0) + 1
+            records = [r for r in records if r["record_id"] not in exclusions]
+        summary = build_summary(records, args.records, args.documents, args.replicates, args.synthetic)
+        summary["exclusions"] = {"file_sha256": sha256_file(args.exclusions) if args.exclusions else None,
+                                 "excluded_by_corpus_and_reason": dict(sorted(excluded.items()))}
+        if any(before_hashes[p] != sha256_file(p) for p in args.records):
+            raise ValueError("an input changed during the run")
+        args.out.mkdir(parents=True, exist_ok=False)
+        write_json(args.out / "summary.json", summary)
+        print(json.dumps({"synthetic": args.synthetic, "records": len(records), "replicates": args.replicates,
+                          "kept": [s for s, r in summary["statistics"].items() if r["decision"]["kept"]]}, sort_keys=True))
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        parser.exit(2, f"{exc}\n")
+
+
+if __name__ == "__main__":
+    main()
