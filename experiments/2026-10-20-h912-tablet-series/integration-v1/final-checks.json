@@ -1,0 +1,53 @@
+{
+  "knowledge": {
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "tools/kb.py",
+      "check"
+    ],
+    "exit_code": 0,
+    "stdout": "kb.py check: PASS; 486 items; 0 errors; 12 reviewed local-only targets; 131 Markdown files.\n",
+    "stderr": ""
+  },
+  "new-prose": {
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "tools/review_prose.py",
+      "--path",
+      "experiments/2026-10-20-h912-tablet-series/integration-v1",
+      "--no-write"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"scope\": \"new repository prose; flags require human judgment and may be source titles/technical quotations\",\n  \"files_scanned\": 2,\n  \"flags\": []\n}\n",
+    "stderr": ""
+  },
+  "whitespace": {
+    "command": [
+      "git",
+      "-c",
+      "core.whitespace=cr-at-eol",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "public-checkout-integrity": {
+    "exit_code": 1,
+    "global_error_count": 58,
+    "study_error_count": 0,
+    "record": "public-checkout-integrity-v2.json"
+  },
+  "staged-source-bytes": {
+    "expected_files": 250,
+    "pass": true,
+    "C-0009_original_preserved": true
+  },
+  "author-interpretation": "Author-side study and packaging validation; no independent archaeological or semantic confirmation claimed."
+}

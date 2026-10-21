@@ -1,0 +1,13 @@
+# Fish-study integration
+
+We integrated the completed fish-context study, the two requested parallel studies, and the H-912 source and comparison follow-up on a branch based on remote main at `aac649f0e9699687681772fb38de61c44ab1d892`. Unrelated local commits and unfinished studies were excluded. The research remains at the submitted verification tier.
+
+The [source-payload inventory](payload-source-hashes.json) records 250 contribution files. All 245 entries checked against the studies' completed inventories matched. Staged versions of all 250 source files match their expected bytes, allowing the documented live C-0009 update. Its original bytes are retained in the [card snapshot](C-0009-before-integration.json). Frozen protocols, code, predictions, source observations and scores were preserved.
+
+We merged the three studies' spending entries into the branch ledger, added eleven source and derived-layer records to the data manifest, updated data coverage and the working model, and rebuilt the knowledge map and combined registry. The [maintainer edits](maintainer-edits.json) and [prose review edits](post-review-edits.json) record those changes. The original checkout's unrelated working changes were not imported. Raw PDFs, photographs, OCR and complete source-derived inscription rows stay local.
+
+The knowledge check passes with 486 items and zero errors. This base version of the CLI has no `--strict` option; its ordinary check treats generated-file differences as errors. The [final command record](final-checks.json) preserves the exact command and output. Python compilation, JSON parsing, staged-byte checks and the whitespace check with `cr-at-eol` pass. The repository's `* -text` attribute preserves evidence bytes across platforms.
+
+The [public-checkout verifier](public-checkout-integrity-v2.json) still reports 58 issues in older packages and its existing rejection of the tracked data manifest. None names these five studies or their cards. The first [public check](public-checkout-integrity.json) also found four invalid relative links in the draft Markdown card snapshot; storing the snapshot as JSON preserved its bytes and removed those errors. The earlier [private-mode check](repository-integrity.json) additionally counted local-only witnesses absent from the disposable checkout, so public-checkout mode is the applicable distribution check.
+
+The source studies' arithmetic and integrity records remain the validation for their results. Packaging does not supply an independent review, a fresh population, a physical contents link or a successful semantic test.

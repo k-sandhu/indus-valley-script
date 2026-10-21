@@ -42,6 +42,7 @@ Read the section for your task, then open its card or source package. Use `pytho
 - [F-0007](findings/F-0007-catalogue-identifiers-missing-from-export.md) · source-review · 166 of 493 checked CISI volume 1 numbers have no corpus match
 - [F-0008](findings/F-0008-museum-joins-are-a-lower-bound.md) · source-review · At least 68 of 114 museum records match objects in our corpus
 - [F-0009](findings/F-0009-site-frame-coverage-in-the-local-export.md) · source-review · The census site list covers 5,652 of 5,680 corpus faces
+- [F-0036](findings/F-0036-parpola-2010-vessel-fish-figure-is-h912.md) · source-review · The vessel-and-fish tablet in Parpola's 2010 Figure 6 is H-912 B
 
 ### structure
 
@@ -56,6 +57,7 @@ Read the section for your task, then open its card or source package. Use `pytho
 - [F-0018](findings/F-0018-lines-recur-more-than-crossing-windows.md) · frozen-evaluation · Text lines recur elsewhere more often than stretches crossing the line break
 - [F-0019](findings/F-0019-indus-alternation-has-few-stems.md) · frozen-evaluation · Few Indus segments show alternating final signs
 - [F-0022](findings/F-0022-initial-and-final-sign-concentration-differs.md) · frozen-evaluation · Indus texts begin with many different signs and end with few
+- [F-0037](findings/F-0037-learned-fish-order-predicts-seal-combinations.md) · frozen-evaluation · A discovery-learned fish order predicts reserved seal combinations
 
 ### seals
 
@@ -86,6 +88,10 @@ Read the section for your task, then open its card or source package. Use `pytho
 ### meaning
 
 - [F-0034](findings/F-0034-gloss-map-fails-to-predict-seal-site-and-size.md) · failed · A class-and-gloss map of 118 signs fails to predict seal site and size
+
+### archaeology
+
+- [F-0038](findings/F-0038-h912-source-depth-is-a-range.md) · source-review · H-912's source depth is 4–7 feet, while the export gives its midpoint
 
 ### comparative
 
@@ -180,6 +186,12 @@ Read the section for your task, then open its card or source package. Use `pytho
 - [C-0003](conjectures/C-0003-unicorn-affiliation.md) · open · credence 0.45 · The unicorn marks one affiliation present in every city
 - [C-0004](conjectures/C-0004-m895-office-text.md) · strengthened · credence 0.6 · The text shared by Lothal L-161 and Mohenjo-daro M-895 names an office
 - [C-0005](conjectures/C-0005-tablet-tiers.md) · open · credence 0.5 · Tall strokes before sign 700 count tiers on Harappa tokens
+- [C-0006](conjectures/C-0006-closing-stock-fixed-from-lowest-levels.md) · dead · credence 0.02 · The closing stock of Mohenjo-daro seal legends was fixed from the lowest levels
+- [C-0007](conjectures/C-0007-fish-compound-designations.md) · strengthened · credence 0.45 · Fish combinations form an ordered designation field
+- [C-0008](conjectures/C-0008-fish-numerals-asterism-coverage.md) · weakened · credence 0.05 · Three, six and seven asterism names cover short-stroke fish combinations on seals
+- [C-0009](conjectures/C-0009-h912-vessels-of-fish.md) · open · credence 0.35 · H-912 B records four vessel-units of fish
+- [C-0012](conjectures/C-0012-fish-category-four-unit-records.md) · open · credence 0.4 · The plain-fish tablet series records a standard four-unit category
+- [C-0013](conjectures/C-0013-fish-runs-are-birth-star-names.md) · open · credence 0.03 · Fish runs on seals are birth-star names
 
 ## Papers
 
@@ -192,7 +204,7 @@ Read the section for your task, then open its card or source package. Use `pytho
 
 ## Other records
 
-- 181 registry attempts: `python tools/kb.py list --kind attempt`, or the generated [registry](experiments/registry.json).
-- 159 retrospectives: `python tools/kb.py list --kind retrospective`; the curated essays are indexed in [retrospectives/README.md](retrospectives/README.md).
-- 14 direction memos: `python tools/kb.py list --kind direction`.
+- 192 registry attempts: `python tools/kb.py list --kind attempt`, or the generated [registry](experiments/registry.json).
+- 174 retrospectives: `python tools/kb.py list --kind retrospective`; the curated essays are indexed in [retrospectives/README.md](retrospectives/README.md).
+- 15 direction memos: `python tools/kb.py list --kind direction`.
 - 9 completed and 0 dropped questions: `python tools/kb.py list --kind question --status done` or `--status dropped`.
