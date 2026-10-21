@@ -1,0 +1,9 @@
+# Khirsara acquisition retrospective
+
+We froze the targeted source search before opening primary object content. A publisher contents index corrected the journal identification and established both authors and the page range. The apparent index failure came from a changed static-file directory: the current homepage linked `/assetss/`, and that path supplied the PDF after the older `/assets/` URL returned 404.
+
+The publisher's old-editions page gave a direct issue identifier. Its ordinary Drive download response stated that the owner had disabled downloads. We preserved the response and stopped that route. Official annual-report requests timed out, while the old ASI WordPress route returned 404. An initial index request failed before the parallel annual downloads began; the next script preserved each download result separately. A PowerShell quoting error and two console character-encoding errors affected helper output; using a saved Python script and UTF-8 console output resolved them without changing any source evidence.
+
+The result is an acquired publisher index and an exact route to the required issue, with no acquired object inventory. The four known corpus families remain known. We neither inferred new objects from incomplete snippets nor treated a public viewer link as downloaded source bytes. The next useful evidence is a permitted copy of the eight-page inscribed-material paper or a working official later annual report. The Farmana package was preserved unchanged throughout this extension.
+
+After the download failure, a normal supported Chrome viewer attempt displayed the issue cover. Its accessible controls did not provide usable article navigation, and ordinary scroll and keyboard actions left the cover unchanged. We stopped without extracting an alternate endpoint or recording new object details. This distinction matters: the issue's existence and cover were observed, while its eight-page object contribution remains uninspected.

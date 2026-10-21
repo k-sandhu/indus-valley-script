@@ -1,0 +1,71 @@
+{
+  "inputs": {
+    "lipi_observed_faces.jsonl": "1220f5591a42abe7c6696ac014aba90e7c49fdce6b0ccba0b85bb45f950c30db",
+    "join-table.csv": "b24e08c7ac7ceab47bf5e9fd7df2ee53fd9b3f7ec6262c20598b5521a618c231"
+  },
+  "outputs": {
+    "data/raw/2026-10-20-mohenjo-daro-stratigraphy/discovery-mackay1938.jsonl": "d9017bf441d6a2aba90858b71edac845c1adbcd9cd132fe8f43598255c8a926b",
+    "data/raw/2026-10-20-mohenjo-daro-stratigraphy/confirmation-marshall1931.jsonl": "ea956d7de4daa7ada65bc02041b07c953afc80a52802718d126b97f2ca5df02d"
+  },
+  "mackay1938": {
+    "objects": 651,
+    "seals": 642,
+    "seals_with_level": 639,
+    "seals_with_level_and_length": 493,
+    "seals_with_level_and_opening": 474,
+    "seals_with_level_and_closing": 474,
+    "surface_finds": 3,
+    "seals_with_level_by_area": {
+      "DK": 625,
+      "DK-H": 5,
+      "SD": 9
+    },
+    "object_types": {
+      "MISC": 1,
+      "ROD": 2,
+      "SEAL": 14,
+      "SEAL:C": 2,
+      "SEAL:CY": 1,
+      "SEAL:R": 98,
+      "SEAL:S": 527,
+      "TAB:B": 1,
+      "TAB:I": 4,
+      "TAG:O": 1
+    }
+  },
+  "marshall1931": {
+    "objects": 483,
+    "seals": 480,
+    "seals_with_level": 440,
+    "seals_with_level_and_length": 333,
+    "seals_with_level_and_opening": 317,
+    "seals_with_level_and_closing": 317,
+    "surface_finds": 7,
+    "seals_with_level_by_area": {
+      "A": 2,
+      "B": 10,
+      "C": 53,
+      "D": 15,
+      "DK": 57,
+      "DM": 6,
+      "E": 44,
+      "F": 1,
+      "HR": 156,
+      "L": 9,
+      "SD": 14,
+      "VS": 73
+    },
+    "object_types": {
+      "ROD": 3,
+      "SEAL": 16,
+      "SEAL:C": 4,
+      "SEAL:R": 69,
+      "SEAL:S": 391
+    }
+  },
+  "rules": {
+    "face": "Choose one legend per object: the longest complete text without unknown signs or\nblanks, then the longest text overall, then the lowest record id.",
+    "height": "Mackay: level against the DK datum (SD bench mark rows +2.2 ft). Marshall: minus the depth below the modern surface. Larger is higher, so later in deposition.",
+    "text": "length needs a complete legend without blanks; opening and closing also need a single line and a readable sign in that position; closing pair needs both last two signs readable."
+  }
+}

@@ -1,0 +1,11 @@
+# Acquisition retrospective
+
+The frozen protocol ordered source work by access, identity resolution, source coverage and prior exposure. Farmana's final report was obtainable, but the first full PDF request took several minutes. Public byte-range requests recovered the same source through a second route. The archive's separate OCR file had been recognized with the wrong language and could not locate the object sections. The PDF's embedded text preserved readable English and supplied the contents and captions. We retained the failed OCR route and downloaded witnesses locally.
+
+An identity-only corpus check prevented us from calling the whole Farmana assemblage new. Context and dimension checks recovered five existing matches. Reading the complete marked-pottery section produced additional candidates, and retaining all labels exposed a conflict between the reported total and the union of narrative and photographic identifiers. We kept the conflict and withheld eligibility. The missing CD prevents a complete registration crosswalk.
+
+The register keeps source-derived details local and gives model builders aggregate coverage and source hashes. The custodian encountered graphical descriptions while reading metadata paragraphs; the access record makes that exposure explicit. We did not inspect prediction files or score the reserved material. A source absent from the recorded holdings does not establish that every researcher or model has never encountered its objects.
+
+The report adds a recoverable object block. Its use for a seal-specific prediction remains limited because the confirmed missing records are pottery. The next bounded source check therefore turns to Rakhigarhi under the protocol's fallback rule, while preserving the Farmana result.
+
+The Rakhigarhi fallback supplied a previously unheld 396-page draft, but it has no dedicated seal inventory. Its registered finished-seal examples matched known corpus IDs. The bounded fallback therefore established a source gap and did not add a confirmed missing seal. The held Shikarpur interim report was inspected as another lead; no completed identity review followed. These source checks are preserved locally and have their own exposure entries.

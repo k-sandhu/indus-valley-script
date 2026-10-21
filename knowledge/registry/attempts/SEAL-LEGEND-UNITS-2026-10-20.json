@@ -1,0 +1,31 @@
+{
+ "id": "SEAL-LEGEND-UNITS-2026-10-20",
+ "theme": "segmenter trained on catalogue line divisions (Q-0028), plate audit of the divisions (Q-0027), frozen unit inventory and closing stock, and prospective predictions for unread seals",
+ "status": "frozen-evaluation-with-amendments-and-frozen-predictions",
+ "question": "Does a segmenter trained only on the catalogue's line divisions find held-out divisions better than cutting everywhere and than the saved Dirichlet-process segmenter; can its units be frozen as rules another reader applies identically; and what does the resulting closing stock predict for the absent CISI 3.1 seal numbers and post-catalogue finds?",
+ "outcome": "Plate audit of 75 divided faces: 65 divisions confirmed, 10 unclear, none contradicted; the Lipi visual code lists the line read first last on all 118 divided faces, and the upper line is read first on 43 of 46 confidently placed faces. On the 33 plate-ordered faces held out by object group, the line-trained segmenter found 79.4% of divisions while cutting 7.7% of other positions (J = 0.718, 95% interval 0.586-0.838) against 0.348 for the Dirichlet process, 0.340 greedy n-gram, 0.117 branching entropy and 0 for cutting everywhere; both pre-stated rules pass; 200 label permutations give mean J 0.010, maximum 0.222. In the catalogue's reading order on all 75 faces J = 0.627; in the wrong order it falls to 0.267. Trained on one line division per Ur III seal legend, the model reached word-boundary F1 0.618 against 0.557 for cutting everywhere (precision 0.908, recall 0.468; pass). The protocol's inventory rule gave a one-formula closing stock (version 1); Amendment 1 cut each legend at its strongest boundary, giving 225 units and 49 closing formulae (version 2). An independent agent applying the written rules agreed on all 171 held legends (kappa 1.00). On the held set, 76% of legends close with a stock formula against 21% shuffled; final pairs recur for 79% against 60% for initial pairs; 17% of openings occur elsewhere. On divided seals the longer line ends in a stock formula on 36 of 58 legends against 22% by chance. Four predictions (P1-P4) are hashed with power: P1 passes at >= 0.62 of 50 legends and kills at <= 0.32.",
+ "challenge": "Line divisions label one boundary per legend, so precision is unmeasurable on Indus texts and the learned threshold keeps only the strongest boundary; the protocol's inventory rule was degenerate; divided legends end their top line with the closing formula, which broke the planned joined-legend population; plate readings are AI readings of small halftone crops; 25 of the 33 primary faces are Mohenjo-daro seals.",
+ "remedy": "J defined against random cutting and checked with label permutations and a random-label code test; readable-script calibration with the same model; Amendment 1 (strongest-boundary junction), written before the held set was read, and Amendment 2 (single-line population for P1-P3, divided legends as P4), written after it and before predictions were hashed, with version 1 preserved; agreement measured with an agent who saw only the rules and lists.",
+ "evidence": [
+  "experiments/2026-10-20-seal-legend-units/REPORT.md",
+  "experiments/2026-10-20-seal-legend-units/PROTOCOL.md",
+  "experiments/2026-10-20-seal-legend-units/PROTOCOL.sha256",
+  "experiments/2026-10-20-seal-legend-units/AMENDMENT-1.md",
+  "experiments/2026-10-20-seal-legend-units/AMENDMENT-2.md",
+  "experiments/2026-10-20-seal-legend-units/plate-audit/audit-summary.json",
+  "experiments/2026-10-20-seal-legend-units/run-2026-10-20/cv-summary.json",
+  "experiments/2026-10-20-seal-legend-units/run-2026-10-20/label-permutation.json",
+  "experiments/2026-10-20-seal-legend-units/run-2026-10-20/sumerian-summary.json",
+  "experiments/2026-10-20-seal-legend-units/FROZEN-v1.json",
+  "experiments/2026-10-20-seal-legend-units/FROZEN-v2.json",
+  "experiments/2026-10-20-seal-legend-units/run-2026-10-20/agreement-v2.json",
+  "experiments/2026-10-20-seal-legend-units/run-2026-10-20/calibration-v2.json",
+  "experiments/2026-10-20-seal-legend-units/PREDICTIONS.md",
+  "experiments/2026-10-20-seal-legend-units/PREDICTIONS.sha256",
+  "experiments/2026-10-20-seal-legend-units/spent-entry.json",
+  "experiments/2026-10-20-seal-legend-units/RETROSPECTIVE.md"
+ ],
+ "retry_when": "Score P1-P4 with score_prospective.py once CISI 3.1 is acquired (Q-1008) or post-catalogue seals are transcribed (Q-1026); do not refit the segmenter or rebuild the stock on the known corpus to improve these results. A new segmenter needs boundary labels beyond line divisions (photograph-measured spacing, or a readable-script threshold rule chosen before freezing).",
+ "status_class": "frozen-evaluation",
+ "area": "structure"
+}

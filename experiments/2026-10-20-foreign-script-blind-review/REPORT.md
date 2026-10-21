@@ -1,0 +1,9 @@
+# Source review report
+
+Seven of 33 opaque faces have indexed photographs and have been visually reviewed. The other 26 faces have no indexed picture and remain unverified. All 28 supplied crop hashes match the packet. observations.csv records every face's disposition. SUPPLEMENT.md records a separate review of the complete printed drawing plate, without joining its numbers to opaque IDs.
+
+The photographs establish mirror relationships between the supplied object and impression views. They do not establish a reading direction. Repeated photographs and reverse or profile views add evidence about one object, and should not be counted as independent inscription occurrences. The page for M-500 explicitly places it among incised tablets; a seal-only analysis needs an explicit eligibility decision. M-417 shows joined animals without a securely separable text in the preserved field. Dmd-1 supports one large visible mark but offers little evidence about its internal detail. These observations need reconciliation with any proposed transcription before that transcription is treated as source-checked.
+
+Full published pages were checked for all seven pictured candidates. M-1369 required a corrected volume 2 locator. The supplemental Figure 11 is a drawing plate in impression polarity, and its grey gaps must remain missing evidence. It cannot supply photographic verification for the 26 opaque rows without indexed images. No mapping aid was supplied, so this review makes no code-level agreement claim.
+
+The strongest supported reading is that the supplied packet mixes text-bearing seal faces, an incised tablet, and an animal composition without securely identified text. The deciding source check is a face-by-face concordance between proposed sign sequences, complete catalogue photographs and the corresponding impression drawings, retaining every unresolved segmentation and orientation.

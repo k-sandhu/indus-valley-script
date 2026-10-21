@@ -2,7 +2,7 @@
 
 This repository is a durable Indus research knowledge base with manuscripts and reusable code. It preserves observations, experiments, failed paths and working conjectures about the undeciphered script and its archaeology. Start here, then follow the map to the task and its evidence.
 
-Data completeness comes first. Since 12 October 2026 our first priority has been a full record of every inscribed object, with as much metadata per object as can be sourced: identity and aliases across catalogues, every face and its images, dimensions, material, findspot, stratum and date, museum accession and publication references. Before starting an analysis, read `knowledge/DATA.md` for the gaps it depends on, and prefer work that closes a gap. Record every new source, field and change in coverage in `knowledge/DATA.md` and `data/MANIFEST.json`.
+Data completeness comes first. Since 12 October 2026 our first priority has been a full record of every inscribed object, with as much metadata per object as can be sourced: identity and aliases across catalogues, every face and its images, dimensions, material, findspot, stratum and date, museum accession and publication references. Before starting an analysis, read `knowledge/DATA.md` for the gaps it depends on, and prefer work that closes a gap. Record every new source, field and change in coverage in your own experiment package; maintainers fold those records into `knowledge/DATA.md` and `data/MANIFEST.json` after merging.
 
 ## Hard rules
 
@@ -43,12 +43,12 @@ python tools/kb.py search <terms...> [--kind finding|question|conjecture|attempt
 python tools/kb.py show <ID>
 python tools/kb.py list [--kind ...] [--status ...] [--area ...] [--json]
 python tools/kb.py next [--area ...] [--kind analysis|metadata|verification|tooling|literature|data-acquisition|fieldwork] [--data-access ...] [--difficulty ...]
-python tools/kb.py new question|finding|attempt --title "..." [--area ...]
+python tools/kb.py new question|finding|conjecture|attempt --title "..." [--area ...] [--data]
 python tools/kb.py build
-python tools/kb.py check
+python tools/kb.py check [--strict]
 ```
 
-`new` creates a draft: complete its inputs and fields before submitting. `next` uses merged card claims; check GitHub issues for active work. General questions use Q-0001–Q-0999; data acquisition cards use Q-1001 onward. [Vocabularies](knowledge/registry/VOCABULARY.md) define fields and [CONTRIBUTING](CONTRIBUTING.md) defines review tiers.
+`new` creates a draft: complete its inputs and fields before submitting. `next` uses merged card claims; check GitHub issues for active work. General questions use Q-0001–Q-0999; data acquisition cards use Q-1001 onward, and `new question --data` takes the next of those. `check` lists generated files that need a rebuild as maintainer notes; `--strict` counts them as errors. [Vocabularies](knowledge/registry/VOCABULARY.md) define fields and [CONTRIBUTING](CONTRIBUTING.md) defines review tiers.
 
 ## Contribute without collisions
 

@@ -1,0 +1,28 @@
+{
+ "proposed_ledger_key": "2026-10-20-seal-legend-units",
+ "for": "bench/spent.json, to be added by a maintainer",
+ "seed": "2026-10-20-seal-legend-units",
+ "input_sha256": "1220f5591a42abe7c6696ac014aba90e7c49fdce6b0ccba0b85bb45f950c30db",
+ "split": "five folds of components for cross-validation; 15% of seal-legend components held out as the calibration set H (SHA-256 of '2026-10-20-seal-legend-units:H:<component>' mod 100 below 15)",
+ "spent_families": [
+  "seal_legend_closing_structure",
+  "line_division_unit_boundary"
+ ],
+ "known_corpus_status": "spent for both families: all clean texts trained the segmenter or built the inventory; H was read once to calibrate the predictions; the 75 eligible divided faces were read for training, cross-validation and the in-sample value of P4",
+ "prospective_pools": {
+  "cisi31_absent_seal_numbers": {
+   "definition": "seal faces at the absent CISI 3.1 numbers listed in experiments/2026-10-13-cisi3-range-coverage/run-2026-10-13/absent-numbers.csv, read from CISI 3.1 once acquired (Q-1008)",
+   "status": "fresh; predictions frozen in experiments/2026-10-20-seal-legend-units/PREDICTIONS.md",
+   "reads": []
+  },
+  "post_catalogue_finds": {
+   "definition": "inscribed seals published after the CISI volumes closed their sites, absent from the Lipi export (Q-1026)",
+   "status": "fresh; predictions frozen in experiments/2026-10-20-seal-legend-units/PREDICTIONS.md",
+   "reads": []
+  }
+ },
+ "scorer": "experiments/2026-10-20-seal-legend-units/score_prospective.py",
+ "access_log": "experiments/2026-10-20-seal-legend-units/prospective-access.jsonl",
+ "source": "experiments/2026-10-20-seal-legend-units/PREDICTIONS.md",
+ "synthetic": false
+}
