@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0",
+  "task": "meaning-map",
+  "synthetic": false,
+  "provenance": [
+    {
+      "path": "bench/common.py",
+      "sha256": "ad67cb4453e2a9f436881d7fdd8d8f427e509c0e2bbb80c8f4736d1c51d9370a"
+    },
+    {
+      "path": "bench/__main__.py",
+      "sha256": "1df901f95ddbe76ebbc56868a640eccfac89addb568e74ade74e4fec1c2de11a"
+    },
+    {
+      "path": "bench/meaning_map.py",
+      "sha256": "1a28e10e956b794c7a5a9eb33aea1c45e4d4107e15201fdfbc6661233aa73b29"
+    },
+    {
+      "path": "experiments/2026-10-12-conjecture-shots/shot-b-reading/confirm.py",
+      "sha256": "1be06acdf6f7b209876f49fd0ac9e3241189c2a5feb1aa0bc35135ee77e618ec"
+    },
+    {
+      "path": "experiments/2026-10-12-conjecture-shots/REVIEW-RESPONSE.md",
+      "sha256": "2a996eda0ee1e8f37fd6abd53c256e3258c5f407ebdce0ae0c24b3ef43371db1"
+    },
+    {
+      "path": "data/raw/2026-10-20-fish-context/discovery-v2/discovery-objects.jsonl",
+      "sha256": "cf3d21c19b3d87f2b7e235031ef848899a149796a1ed7997b8bce5815d0357c0"
+    },
+    {
+      "path": "experiments/2026-10-20-fish-context/discovery-v2/map.json",
+      "sha256": "47d7a582953b3e8e080ba36d61eada9e0da02477b136be391c99c0ea962a3095"
+    },
+    {
+      "path": "experiments/2026-10-20-fish-context/discovery-v2/bench-predictions.json",
+      "sha256": "41c3927e7bcfe7d111e79478720162e80c07e5cdcb947131fd7723ea0e4c8f9c"
+    }
+  ],
+  "components": {
+    "fish_on_seals": {
+      "computable": true,
+      "score": 0.03035198273061028,
+      "null_mean": 0.01876089091457363,
+      "null_sd": 0.03298117658686221,
+      "distance_sd": 0.3514456734285783,
+      "p_one_sided": 0.45,
+      "draws": 199,
+      "alpha": 0.0166666666666667,
+      "null_quantiles": {
+        "q025": -0.033311611788877045,
+        "q50": 0.019713202214826597,
+        "q95": 0.06399547694772845,
+        "q975": 0.06478590301616736
+      },
+      "null_min": -0.04379759017158937,
+      "null_max": 0.06763292762247414,
+      "pass": false
+    }
+  },
+  "primary": {
+    "computable": true,
+    "score": 0.3514456734285783,
+    "null_mean": -1.7852832556786437e-17,
+    "null_sd": 1.0,
+    "distance_sd": 0.3514456734285783,
+    "p_one_sided": 0.45,
+    "draws": 199,
+    "alpha": 0.0166666666666667,
+    "null_quantiles": {
+      "q025": -1.5788552165902214,
+      "q50": 0.028874388327077186,
+      "q95": 1.3715273593718198,
+      "q975": 1.3954933348232164
+    },
+    "null_min": -1.8967934913238564,
+    "null_max": 1.4818160467740344,
+    "pass": false
+  },
+  "seed": 20261013,
+  "permutations": 199,
+  "alpha": 0.0166666666666667,
+  "sample_sizes": {
+    "fish_on_seals": {
+      "units": 873,
+      "eligible_signs": 41,
+      "min_sign_units": 20
+    }
+  },
+  "reliability": {
+    "fish_on_seals": {
+      "eligible_signs_both_halves": 41,
+      "units_by_half": [
+        428,
+        445
+      ],
+      "pearson": 0.6852023880777738,
+      "spearman": 0.6463414634146343,
+      "computable": true
+    }
+  },
+  "discovery_resplit_stability": {
+    "fish_on_seals": {
+      "re_splits": 5,
+      "computable_half_contrasts": 10,
+      "mean": 0.03297281833451344,
+      "sd": 0.021375091922978543
+    }
+  },
+  "reliability_population": "evaluated population",
+  "influence": {
+    "fish_on_seals": {
+      "criterion": "leave one component out, direction remains positive",
+      "minimum_contrast": 0.024993689803696616,
+      "pass": true
+    }
+  },
+  "pass": false,
+  "pass_rule": "All declared measures computable; joint within-band p <= alpha; every prediction uses rank or passes component leave-one-out",
+  "power": [
+    {
+      "effect": 0.0,
+      "effect_scale": {
+        "fish_on_seals": "response noise SD"
+      },
+      "law": "Component outcomes depend on the mapped-label share; all signs on a component share its response. Concentration plants a sign-specific category mixed with the original background.",
+      "success": 2,
+      "total": 12,
+      "rate": 0.16666666666666666,
+      "ci95": [
+        0.04696514218385378,
+        0.4480308622529734
+      ]
+    },
+    {
+      "effect": 0.25,
+      "effect_scale": {
+        "fish_on_seals": "response noise SD"
+      },
+      "law": "Component outcomes depend on the mapped-label share; all signs on a component share its response. Concentration plants a sign-specific category mixed with the original background.",
+      "success": 3,
+      "total": 12,
+      "rate": 0.25,
+      "ci95": [
+        0.08894166839405471,
+        0.5323053349335657
+      ]
+    },
+    {
+      "effect": 0.5,
+      "effect_scale": {
+        "fish_on_seals": "response noise SD"
+      },
+      "law": "Component outcomes depend on the mapped-label share; all signs on a component share its response. Concentration plants a sign-specific category mixed with the original background.",
+      "success": 6,
+      "total": 12,
+      "rate": 0.5,
+      "ci95": [
+        0.2537815976337061,
+        0.7462184023662939
+      ]
+    },
+    {
+      "effect": 1.0,
+      "effect_scale": {
+        "fish_on_seals": "response noise SD"
+      },
+      "law": "Component outcomes depend on the mapped-label share; all signs on a component share its response. Concentration plants a sign-specific category mixed with the original background.",
+      "success": 10,
+      "total": 12,
+      "rate": 0.8333333333333334,
+      "ci95": [
+        0.5519691377470266,
+        0.9530348578161463
+      ]
+    }
+  ],
+  "power_scope": "Planted on the supplied discovery incidence matrix when available, with component-shared outcomes"
+}

@@ -10,7 +10,6 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 
 - [.claude/](../.claude/): repository skills.
 - [.github/](../.github/): issue forms.
-- `.playwright-cli/`: local support directory; inspect before use.
 - `LICENSES/`: local support directory; inspect before use.
 - [archive/](../archive/): preserved historical documentation.
 - `bench/`: local support directory; inspect before use.
@@ -24,7 +23,6 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 - `site/`: local support directory; inspect before use.
 - [src/](../src/): reusable analysis code.
 - [templates/](../templates/): contributor templates.
-- `tmp/`: local support directory; inspect before use.
 - [tools/](../tools/): manual repository utilities.
 
 ## Entry documents
@@ -45,6 +43,7 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 - [F-0007](findings/F-0007-catalogue-identifiers-missing-from-export.md) · source-review · 166 of 493 checked CISI volume 1 numbers have no corpus match
 - [F-0008](findings/F-0008-museum-joins-are-a-lower-bound.md) · source-review · At least 68 of 114 museum records match objects in our corpus
 - [F-0009](findings/F-0009-site-frame-coverage-in-the-local-export.md) · source-review · The census site list covers 5,652 of 5,680 corpus faces
+- [F-0036](findings/F-0036-parpola-2010-vessel-fish-figure-is-h912.md) · source-review · The vessel-and-fish tablet in Parpola's 2010 Figure 6 is H-912 B
 
 ### structure
 
@@ -59,6 +58,7 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 - [F-0018](findings/F-0018-lines-recur-more-than-crossing-windows.md) · frozen-evaluation · Text lines recur elsewhere more often than stretches crossing the line break
 - [F-0019](findings/F-0019-indus-alternation-has-few-stems.md) · frozen-evaluation · Few Indus segments show alternating final signs
 - [F-0022](findings/F-0022-initial-and-final-sign-concentration-differs.md) · frozen-evaluation · Indus texts begin with many different signs and end with few
+- [F-0037](findings/F-0037-learned-fish-order-predicts-seal-combinations.md) · frozen-evaluation · A discovery-learned fish order predicts reserved seal combinations
 
 ### seals
 
@@ -89,6 +89,10 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 ### meaning
 
 - [F-0034](findings/F-0034-gloss-map-fails-to-predict-seal-site-and-size.md) · failed · A class-and-gloss map of 118 signs fails to predict seal site and size
+
+### archaeology
+
+- [F-0038](findings/F-0038-h912-source-depth-is-a-range.md) · source-review · H-912's source depth is 4–7 feet, while the export gives its midpoint
 
 ### comparative
 
@@ -195,6 +199,10 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 - [C-0003](conjectures/C-0003-unicorn-affiliation.md) · open · credence 0.45 · The unicorn marks one affiliation present in every city
 - [C-0004](conjectures/C-0004-m895-office-text.md) · strengthened · credence 0.6 · The text shared by Lothal L-161 and Mohenjo-daro M-895 names an office
 - [C-0005](conjectures/C-0005-tablet-tiers.md) · open · credence 0.5 · Tall strokes before sign 700 count tiers on Harappa tokens
+- [C-0007](conjectures/C-0007-fish-compound-designations.md) · strengthened · credence 0.45 · Fish combinations form an ordered designation field
+- [C-0008](conjectures/C-0008-fish-numerals-asterism-coverage.md) · weakened · credence 0.05 · Three, six and seven asterism names cover short-stroke fish combinations on seals
+- [C-0009](conjectures/C-0009-h912-vessels-of-fish.md) · open · credence 0.35 · H-912 B records four vessel-units of fish
+- [C-0012](conjectures/C-0012-fish-category-four-unit-records.md) · open · credence 0.4 · The plain-fish tablet series records a standard four-unit category
 
 ## Registry attempts by area
 
@@ -233,6 +241,7 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 
 ### structure
 
+- [FISH-CONTEXT-2026-10-20](registry/attempts/FISH-CONTEXT-2026-10-20.json) · frozen-evaluation · Do fish forms make ordered compounds, do their preceding strokes favour fixed expressions over…
 - [FOREIGN-FINDS-SEQUENCE-STATISTICS-2026-10-12](registry/attempts/FOREIGN-FINDS-SEQUENCE-STATISTICS-2026-10-12.json) · frozen-evaluation · Do Indus-script texts found in Mesopotamia, the Gulf, Iran and Central Asia follow South Asian…
 - [KEY-ALLOGRAPH-HOMOPHONE-SUBSTITUTION-2026-10-12](registry/attempts/KEY-ALLOGRAPH-HOMOPHONE-SUBSTITUTION-2026-10-12.json) · frozen-evaluation · Do the key's variant groups and same-value (homophone) groups substitute in identical frames a…
 - [LINE-BREAKS-SEGMENTATION-2026-10-12](registry/attempts/LINE-BREAKS-SEGMENTATION-2026-10-12.json) · frozen-evaluation · Do catalogued line divisions fall at recurring-unit boundaries, and do segmented Indus units s…
@@ -278,6 +287,7 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 - [ROOT-05](registry/attempts/ROOT-05.json) · exploratory · Does restoration improve across held-out sites?
 - [ROOT-08](registry/attempts/ROOT-08.json) · failed · Can the number of erased signs be inferred statistically?
 - [ROOT-11](registry/attempts/ROOT-11.json) · exploratory · Can shared frames establish a new semantic sign family?
+- [SCRIPT-VARIATION-2026-10-20](registry/attempts/SCRIPT-VARIATION-2026-10-20.json) · exploratory · Does city improve prediction of fine sign variants after graphic context, carrier, material, m…
 - [SIGN-FAMILIES-2026-10-12](registry/attempts/SIGN-FAMILIES-2026-10-12.json) · frozen-evaluation · Do graphic base families, published sign-list groupings and modifier classes predict the conte…
 - [STRUCTURE-FIRST-PROGRAM-2026-10-12](registry/attempts/STRUCTURE-FIRST-PROGRAM-2026-10-12.json) · frozen-evaluation · Which analytical mistakes have kept the project from a substantive result, and what do sign-li…
 - [TWO-APPROACHES-CLASS-GRAMMAR-2026-10-11](registry/attempts/TWO-APPROACHES-CLASS-GRAMMAR-2026-10-11.json) · exploratory · Can the stochastic grammar recommendation be carried into learned class productions with group…
@@ -299,6 +309,7 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 - [ADMINISTRATIVE-BUNDLES-2026-10-11](registry/attempts/ADMINISTRATIVE-BUNDLES-2026-10-11.json) · exploratory · Do whole face modules bind beyond site/type/length margins and copying, and what carrier opera…
 - [ARCH-01](registry/attempts/ARCH-01.json) · source-review · Can original Harappa publications restore object-level contexts and physical observations for…
 - [ARCH-03](registry/attempts/ARCH-03.json) · verified-computation · Which Harappa lower-face arrangement distinctions survive face exchange and end reversal?
+- [H912-TABLET-SERIES-2026-10-20](registry/attempts/H912-TABLET-SERIES-2026-10-20.json) · frozen-evaluation · Which tablets form H-912's number-V-fish series, and do graphic probabilities or independently…
 - [HARP-SHORT-01](registry/attempts/HARP-SHORT-01.json) · verified-computation · Do the omitted Harappa two-code faces show real count or module variation across registered ta…
 - [IMAGE-TEXT-TABLETS-2026-10-12](registry/attempts/IMAGE-TEXT-TABLETS-2026-10-12.json) · frozen-evaluation · Do texts on copper, bas-relief and incised tablets pair with their images, share vocabulary wi…
 - [ROOT-10](registry/attempts/ROOT-10.json) · exploratory · Do opposed faces create a decoding constraint?
@@ -351,8 +362,10 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 
 ### archaeology
 
+- [ARCHAEOLOGICAL-SETTING-2026-10-20](registry/attempts/ARCHAEOLOGICAL-SETTING-2026-10-20.json) · source-review · Can the primary sources recover individual context keys and distinguish the marking operation…
 - [CHRONOLOGY-REGION-01](registry/attempts/CHRONOLOGY-REGION-01.json) · frozen-evaluation · Does Harappa sign usage change across recorded HARP periods after object-type and excavation-f…
 - [COMM-02](registry/attempts/COMM-02.json) · source-review · Can the community's Tell Jokha object lead be traced to a scholarly photograph and an original…
+- [H912-EXCAVATION-LINKS-2026-10-20](registry/attempts/H912-EXCAVATION-LINKS-2026-10-20.json) · source-review · Does the primary excavation record link H-912 or related registered tablets to a container, fi…
 - [HARAPPAN-SERVICE-RENEWAL-2026-10-11](registry/attempts/HARAPPAN-SERVICE-RENEWAL-2026-10-11.json) · source-review · Which Harappan observations distinguish the continuation of a place, service and production ca…
 - [KANMER-01](registry/attempts/KANMER-01.json) · source-review · Which original object observations support the proposed Kanmer pendant/pass use, and which han…
 - [KANMER-02](registry/attempts/KANMER-02.json) · source-review · Can original bibliography, author proofs and library holdings resolve early Kanmer interpretat…
@@ -584,6 +597,12 @@ Before analysis, read [DATA.md](DATA.md) for the coverage your test needs.
 - [experiments/2026-10-13-plate-checks/RETROSPECTIVE.md](../experiments/2026-10-13-plate-checks/RETROSPECTIVE.md) · document · Retrospective: plate checks of 13 October 2026
 - [experiments/2026-10-13-publication-screen/RETROSPECTIVE.md](../experiments/2026-10-13-publication-screen/RETROSPECTIVE.md) · document · Retrospective: publication screen, 13 October 2026
 - [experiments/2026-10-13-site-generator/RETROSPECTIVE.md](../experiments/2026-10-13-site-generator/RETROSPECTIVE.md) · document · Website generator record
+- [experiments/2026-10-20-archaeological-setting/RETROSPECTIVE.md](../experiments/2026-10-20-archaeological-setting/RETROSPECTIVE.md) · document · Retrospective: Harappa sealing and vessel settings
+- [experiments/2026-10-20-fish-context/RETROSPECTIVE.md](../experiments/2026-10-20-fish-context/RETROSPECTIVE.md) · document · Fish-context study record
+- [experiments/2026-10-20-h912-excavation-links/RETROSPECTIVE.md](../experiments/2026-10-20-h912-excavation-links/RETROSPECTIVE.md) · document · Retrospective: H-912 excavation links
+- [experiments/2026-10-20-h912-tablet-series/RETROSPECTIVE.md](../experiments/2026-10-20-h912-tablet-series/RETROSPECTIVE.md) · document · H-912 series study record
+- [experiments/2026-10-20-h912-tablet-series/integration-v1/RETROSPECTIVE.md](../experiments/2026-10-20-h912-tablet-series/integration-v1/RETROSPECTIVE.md) · document · Integration retrospective
+- [experiments/2026-10-20-script-variation/RETROSPECTIVE.md](../experiments/2026-10-20-script-variation/RETROSPECTIVE.md) · document · Script-variation study retrospective
 - [knowledge/retrospectives/2026-10-06-research-program.md](retrospectives/2026-10-06-research-program.md) · document · October 6–8 research program: approach, problems and repairs
 - [knowledge/retrospectives/2026-10-11-bonta-adversarial.md](retrospectives/2026-10-11-bonta-adversarial.md) · document · October 11 adversarial extension and publication preparation
 - [knowledge/retrospectives/2026-10-11-early-indian-continuity.md](retrospectives/2026-10-11-early-indian-continuity.md) · document · Early Indian institutional knowledge and cultural memory
