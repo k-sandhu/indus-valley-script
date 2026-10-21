@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seal findspot maps</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+:root {
+  color-scheme: light;
+  --surface-0: #f4f3f0;
+  --surface-1: #fcfcfb;
+  --surface-2: #efeeea;
+  --border: #dddcd6;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted: #77766f;
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --series-3: #1baf7a;
+  --site-fill: #8f8e88;
+  --focus: #2a78d6;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --surface-0: #121211;
+    --surface-1: #1a1a19;
+    --surface-2: #242423;
+    --border: #3a3a37;
+    --text-primary: #f0efec;
+    --text-secondary: #c3c2b7;
+    --text-muted: #9a998f;
+    --series-1: #3987e5;
+    --series-2: #d95926;
+    --series-3: #199e70;
+    --site-fill: #8a8980;
+    --focus: #3987e5;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface-0: #121211;
+  --surface-1: #1a1a19;
+  --surface-2: #242423;
+  --border: #3a3a37;
+  --text-primary: #f0efec;
+  --text-secondary: #c3c2b7;
+  --text-muted: #9a998f;
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+  --site-fill: #8a8980;
+  --focus: #3987e5;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--surface-0); color: var(--text-primary);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+header { padding: 20px 24px 8px; max-width: 1500px; margin: 0 auto; }
+h1 { font-size: 22px; line-height: 1.25; margin: 0 0 6px; font-weight: 650; }
+.lede { margin: 0; color: var(--text-secondary); max-width: 900px; }
+.stats { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 12px 0 0; color: var(--text-secondary); font-size: 14px; }
+.stats b { color: var(--text-primary); font-size: 17px; font-variant-numeric: tabular-nums; margin-right: 4px; }
+.controls {
+  max-width: 1500px; margin: 0 auto; padding: 10px 24px; display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center;
+  font-size: 14px; color: var(--text-secondary);
+}
+.ctl { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.ctl > span.lab { font-weight: 600; color: var(--text-primary); margin-right: 2px; }
+.seg { display: inline-flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--surface-1); }
+.seg button { border: 0; background: transparent; color: var(--text-secondary); padding: 5px 10px; font: inherit; cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--border); }
+.seg button[aria-pressed="true"] { background: var(--surface-2); color: var(--text-primary); font-weight: 600; }
+label.chk { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; padding: 3px 8px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-1); }
+.swatch { display: inline-block; width: 22px; height: 0; border-top: 3px solid; vertical-align: middle; }
+.sw-1 { border-color: var(--series-1); }
+.sw-2 { border-color: var(--series-2); border-top-style: dashed; }
+.sw-3 { border-color: var(--series-3); border-top-style: dotted; }
+main {
+  max-width: 1500px; margin: 0 auto; padding: 0 24px 24px;
+  display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(340px, 1fr); gap: 16px;
+}
+#mapwrap { position: relative; background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; min-height: 620px; }
+#map { position: absolute; inset: 0; background: var(--surface-2); }
+.legend {
+  position: absolute; left: 10px; bottom: 26px; z-index: 500; background: var(--surface-1); color: var(--text-secondary);
+  border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; font-size: 12.5px; line-height: 1.7; max-width: 260px;
+}
+.legend .row { display: flex; align-items: center; gap: 8px; }
+.dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: var(--site-fill); opacity: .75; }
+.dot.sel { background: var(--series-1); opacity: 1; }
+.dot.near { background: transparent; border: 2px solid var(--series-3); }
+.diamond { display: inline-block; width: 10px; height: 10px; background: var(--series-2); transform: rotate(45deg); margin: 0 1px; }
+aside#panel { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; display: flex; flex-direction: column; min-height: 620px; max-height: 82vh; }
+.tabs { display: flex; border-bottom: 1px solid var(--border); }
+.tabs button { flex: 1; border: 0; background: transparent; padding: 10px 8px; font: inherit; color: var(--text-secondary); cursor: pointer; border-bottom: 2px solid transparent; }
+.tabs button[aria-selected="true"] { color: var(--text-primary); font-weight: 600; border-bottom-color: var(--text-primary); }
+.tabpane { overflow: auto; padding: 12px 14px 16px; flex: 1; }
+.tabpane[hidden] { display: none; }
+.note { color: var(--text-muted); font-size: 13px; margin: 0 0 10px; }
+.filterchip { display: inline-flex; gap: 6px; align-items: center; background: var(--surface-2); border-radius: 999px; padding: 2px 4px 2px 10px; font-size: 13px; margin-bottom: 8px; }
+.filterchip button { border: 0; background: transparent; color: var(--text-secondary); cursor: pointer; font: inherit; padding: 0 6px; }
+ul.texts { list-style: none; margin: 0; padding: 0; }
+ul.texts li { border-top: 1px solid var(--border); }
+ul.texts li button { width: 100%; text-align: left; background: transparent; border: 0; padding: 9px 4px; font: inherit; color: inherit; cursor: pointer; display: grid; gap: 3px; }
+ul.texts li button:hover, ul.texts li button:focus-visible { background: var(--surface-2); outline: none; }
+.signs { display: flex; flex-wrap: wrap; gap: 4px; }
+.sign { font: 12.5px/1 ui-monospace, "Cascadia Mono", Consolas, monospace; border: 1px solid var(--border); border-radius: 4px; padding: 3px 5px; background: var(--surface-1); color: var(--text-primary); }
+.sign.diff { border-color: var(--series-3); border-width: 2px; padding: 2px 4px; font-weight: 700; }
+.meta { font-size: 13px; color: var(--text-secondary); }
+.meta b { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+.back { border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary); border-radius: 8px; padding: 4px 10px; font: inherit; cursor: pointer; margin-bottom: 10px; }
+h2 { font-size: 16px; margin: 4px 0 6px; }
+h3 { font-size: 14px; margin: 16px 0 6px; display: flex; align-items: center; gap: 8px; }
+.objects { display: grid; gap: 10px; }
+.obj { display: grid; grid-template-columns: 92px 1fr; gap: 10px; border: 1px solid var(--border); border-radius: 8px; padding: 8px; background: var(--surface-1); }
+.obj .imgs { display: flex; flex-direction: column; gap: 4px; }
+.obj img { width: 92px; height: 92px; object-fit: contain; background: var(--surface-2); border-radius: 4px; }
+.obj .noimg { width: 92px; height: 92px; display: grid; place-items: center; background: var(--surface-2); border-radius: 4px; color: var(--text-muted); font-size: 12px; text-align: center; }
+.obj dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 1px 10px; font-size: 13px; }
+.obj dt { color: var(--text-muted); }
+.obj dd { margin: 0; color: var(--text-primary); }
+.obj .title { grid-column: 1 / -1; font-weight: 600; font-size: 14px; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 6px; border-bottom: 1px solid var(--border); text-align: right; vertical-align: top; }
+th:first-child, td:first-child { text-align: left; }
+th { color: var(--text-secondary); font-weight: 600; font-size: 12.5px; position: sticky; top: 0; background: var(--surface-1); }
+td.verdict { text-align: left; color: var(--text-secondary); font-size: 12.5px; }
+.prose p { margin: 0 0 10px; }
+.prose h3 { margin-top: 14px; }
+.prose ul { margin: 0 0 10px; padding-left: 18px; }
+.leaflet-container { font: inherit; background: var(--surface-2); }
+.leaflet-tooltip { background: var(--surface-1); color: var(--text-primary); border: 1px solid var(--border); box-shadow: none; font-size: 13px; }
+.leaflet-tooltip-top:before { border-top-color: var(--border); }
+.count-label { background: transparent; border: 0; box-shadow: none; color: var(--text-primary); font-weight: 700; font-size: 12px; text-shadow: 0 0 3px var(--surface-1), 0 0 3px var(--surface-1); }
+.count-label:before { display: none; }
+.sealing-icon div { width: 12px; height: 12px; background: var(--series-2); transform: rotate(45deg); border: 2px solid var(--surface-1); }
+@media (max-width: 900px) {
+  header, .controls, main { padding-left: 16px; padding-right: 16px; }
+  main { grid-template-columns: 1fr; }
+  #mapwrap { min-height: 440px; }
+  aside#panel { max-height: none; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Where identical seal texts were found</h1>
+  <p class="lede">If a seal legend named one person, its exact text should turn up once, or only where that person lived. If it named an office or title, the same text should turn up in several cities. If goods travelled under seal, clay sealings should be found away from the seals that match them. The map draws each of these links. Click a site or a text to follow it.</p>
+  <div class="stats" id="stats"></div>
+</header>
+
+<div class="controls" role="group" aria-label="Map filters">
+  <div class="ctl"><span class="lab">Show</span>
+    <label class="chk"><input type="checkbox" id="show-shared" checked> <span class="swatch sw-1"></span> Same text on seals at two sites</label>
+    <label class="chk"><input type="checkbox" id="show-sealings" checked> <span class="swatch sw-2"></span> Sealing matching a seal</label>
+    <label class="chk"><input type="checkbox" id="show-near" checked> <span class="swatch sw-3"></span> Near copies (one sign different)</label>
+  </div>
+  <div class="ctl"><span class="lab">Text length</span>
+    <div class="seg" id="seg-length">
+      <button data-v="all" aria-pressed="true">All</button><button data-v="2" aria-pressed="false">2 signs</button><button data-v="3" aria-pressed="false">3</button><button data-v="4+" aria-pressed="false">4 or more</button>
+    </div>
+  </div>
+  <div class="ctl"><span class="lab">Animal</span>
+    <div class="seg" id="seg-animal">
+      <button data-v="all" aria-pressed="true">Any</button><button data-v="unicorn" aria-pressed="false">Only unicorns</button><button data-v="other" aria-pressed="false">Any other animal</button>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section id="mapwrap" aria-label="Map of findspots">
+    <div id="map"></div>
+    <div class="legend" id="legend"></div>
+  </section>
+  <aside id="panel">
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-tab="texts">Texts</button>
+      <button role="tab" aria-selected="false" data-tab="pairs">Site pairs</button>
+      <button role="tab" aria-selected="false" data-tab="read">How to read</button>
+    </div>
+    <div class="tabpane" id="tab-texts" role="tabpanel"></div>
+    <div class="tabpane" id="tab-pairs" role="tabpanel" hidden></div>
+    <div class="tabpane prose" id="tab-read" role="tabpanel" hidden></div>
+  </aside>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const DATA = /*__DATA__*/null;
+const A = DATA.aggregates, R = DATA.records;
+const SITES = Object.fromEntries(A.sites.map(s => [s.name, s]));
+const state = { len: "all", animal: "all", shared: true, sealings: true, near: true, selected: null, site: null, tab: "texts" };
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const fmt = n => n.toLocaleString("en-GB");
+
+// ---------- stats ----------
+const P = A.population;
+const crossTexts = DATA.texts.filter(t => t.seals.length >= 2 && t.sites.length >= 2).length;
+const recurring = DATA.texts.filter(t => t.seals.length >= 2).length;
+document.getElementById("stats").innerHTML =
+  `<span><b>${fmt(P.eligible_seals)}</b>seals with a complete, legible text</span>` +
+  `<span><b>${recurring}</b>texts found on more than one seal (${P.seals_in_recurring_texts} seals)</span>` +
+  `<span><b>${crossTexts}</b>of them at more than one site</span>` +
+  `<span><b>${P.matching_sealings}</b>sealings or tags that match a seal text</span>`;
+
+// ---------- filters ----------
+function textPasses(t) {
+  if (state.len !== "all" && t.length_class !== state.len) return false;
+  const motifs = t.seals.map(id => R[id].motif_code);
+  if (state.animal === "unicorn" && !motifs.every(m => m === "Bull1")) return false;
+  if (state.animal === "other" && !motifs.some(m => m && m !== "Bull1")) return false;
+  if (state.site) {
+    const ids = [...t.seals, ...t.sealings];
+    if (!ids.some(id => R[id].site === state.site)) return false;
+  }
+  return true;
+}
+const visibleTexts = () => DATA.texts.filter(textPasses);
+
+// ---------- map ----------
+const dark = () => document.documentElement.dataset.theme === "dark" ||
+  (document.documentElement.dataset.theme !== "light" && matchMedia("(prefers-color-scheme: dark)").matches);
+const map = L.map("map", { zoomSnap: 0.25, minZoom: 3 });
+const HOME = L.latLngBounds(A.sites.map(s => [s.lat, s.lon])).pad(0.04);
+map.fitBounds(HOME);
+const esri = (path, max, attr) => L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/" + path + "/MapServer/tile/{z}/{y}/{x}",
+  { maxZoom: max, attribution: attr });
+const BASES = {
+  "Light grey": esri("Canvas/World_Light_Gray_Base", 16, "Tiles &copy; Esri, HERE, Garmin, OpenStreetMap contributors"),
+  "Dark grey": esri("Canvas/World_Dark_Gray_Base", 16, "Tiles &copy; Esri, HERE, Garmin, OpenStreetMap contributors"),
+  "Physical relief and rivers": esri("World_Physical_Map", 8, "Tiles &copy; Esri; US National Park Service"),
+  "Topographic": esri("World_Topo_Map", 16, "Tiles &copy; Esri and contributors")
+};
+let base = BASES[dark() ? "Dark grey" : "Light grey"].addTo(map);
+map.on("baselayerchange", e => { base = e.layer; });
+L.control.layers(BASES, null, { position: "topright" }).addTo(map);
+L.control.scale({ imperial: false }).addTo(map);
+const layer = L.layerGroup().addTo(map);
+
+function arc(a, b, bend = 0.18) {
+  const p1 = map.project([a.lat, a.lon], 6), p2 = map.project([b.lat, b.lon], 6);
+  const mx = (p1.x + p2.x) / 2, my = (p1.y + p2.y) / 2, dx = p2.x - p1.x, dy = p2.y - p1.y;
+  const c = L.point(mx - dy * bend, my + dx * bend);
+  const pts = [];
+  for (let i = 0; i <= 32; i++) {
+    const t = i / 32, u = 1 - t;
+    pts.push(map.unproject(L.point(u * u * p1.x + 2 * u * t * c.x + t * t * p2.x, u * u * p1.y + 2 * u * t * c.y + t * t * p2.y), 6));
+  }
+  return pts;
+}
+function addArc(a, b, style, tip, bend) {
+  const pts = arc(a, b, bend);
+  L.polyline(pts, Object.assign({ interactive: false, lineCap: "round" }, style)).addTo(layer);
+  L.polyline(pts, { weight: 14, opacity: 0, interactive: true }).bindTooltip(tip, { sticky: true }).addTo(layer);
+}
+const radius = n => 3 + Math.sqrt(n) * 0.9;
+const LEFT_LABELS = new Set(["Kalibangan"]);
+
+function siteMarker(s, opts) {
+  const m = L.circleMarker([s.lat, s.lon], Object.assign({ radius: radius(s.eligible_seals || 1), weight: 1, color: css("--surface-1"), fillColor: css("--site-fill"), fillOpacity: .55 }, opts));
+  m.bindTooltip(`<b>${esc(s.name)}</b><br>${fmt(s.eligible_seals)} seals with a legible text<br>${s.seals_in_recurring_texts} of them carry a text found on another seal`, { direction: "top" });
+  m.on("click", () => { state.site = state.site === s.name ? null : s.name; state.selected = null; state.tab = "texts"; render(); });
+  return m.addTo(layer);
+}
+function sealingIcon() { return L.divIcon({ className: "sealing-icon", html: "<div></div>", iconSize: [12, 12] }); }
+
+function drawOverview() {
+  const texts = visibleTexts();
+  const pairs = new Map(), sealingPairs = new Map();
+  texts.forEach(t => {
+    const sites = [...new Set(t.seals.map(id => R[id].site))].filter(s => SITES[s]).sort();
+    if (state.shared) for (let i = 0; i < sites.length; i++) for (let j = i + 1; j < sites.length; j++) {
+      const k = sites[i] + "|" + sites[j];
+      pairs.set(k, (pairs.get(k) || 0) + 1);
+    }
+    if (state.sealings) t.sealings.forEach(id => {
+      const ts = R[id].site;
+      new Set(t.seals.map(sid => R[sid].site)).forEach(ss => {
+        if (ss === ts || !SITES[ss] || !SITES[ts]) return;
+        const k = ss + "|" + ts;
+        sealingPairs.set(k, (sealingPairs.get(k) || 0) + 1);
+      });
+    });
+  });
+  const active = new Set();
+  [...pairs.entries()].sort((a, b) => a[1] - b[1]).forEach(([k, n]) => {
+    const [a, b] = k.split("|"); active.add(a); active.add(b);
+    const hl = !state.site || a === state.site || b === state.site;
+    addArc(SITES[a], SITES[b], { color: css("--series-1"), weight: 1.2 + Math.sqrt(n) * 1.6, opacity: hl ? .8 : .12 },
+      `<b>${esc(a)} – ${esc(b)}</b><br>${n} text${n > 1 ? "s" : ""} found on seals at both sites`);
+  });
+  [...sealingPairs.entries()].forEach(([k, n]) => {
+    const [ss, ts] = k.split("|"); active.add(ss); active.add(ts);
+    const hl = !state.site || ss === state.site || ts === state.site;
+    addArc(SITES[ss], SITES[ts], { color: css("--series-2"), weight: 1.5 + Math.sqrt(n), opacity: hl ? .95 : .15, dashArray: "6 6" },
+      `<b>Sealing found at ${esc(ts)}</b><br>matches the text of a seal found at ${esc(ss)} (${n} sealing${n > 1 ? "s" : ""})`, -0.22);
+  });
+  A.sites.forEach(s => {
+    const on = active.has(s.name) || s.name === state.site;
+    siteMarker(s, { fillOpacity: on ? .75 : .3, weight: s.name === state.site ? 3 : 1, color: s.name === state.site ? css("--text-primary") : css("--surface-1") });
+    if (s.eligible_seals >= 10 || s.name === state.site)
+      L.tooltip({ permanent: true, direction: LEFT_LABELS.has(s.name) ? "left" : "right", className: "count-label",
+        offset: [(LEFT_LABELS.has(s.name) ? -1 : 1) * (radius(s.eligible_seals) + 2), 0] }).setLatLng([s.lat, s.lon]).setContent(esc(s.name)).addTo(layer);
+  });
+  const tagSites = new Set();
+  texts.forEach(t => t.sealings.forEach(id => tagSites.add(R[id].site)));
+  if (state.sealings) tagSites.forEach(s => SITES[s] && L.marker([SITES[s].lat, SITES[s].lon], { icon: sealingIcon(), interactive: false }).addTo(layer));
+}
+
+function drawSelected(t) {
+  const copySites = {}, tagSites = {}, nearSites = {};
+  t.seals.forEach(id => copySites[R[id].site] = (copySites[R[id].site] || 0) + 1);
+  t.sealings.forEach(id => tagSites[R[id].site] = (tagSites[R[id].site] || 0) + 1);
+  if (state.near) t.near.forEach(id => nearSites[R[id].site] = (nearSites[R[id].site] || 0) + 1);
+  A.sites.forEach(s => siteMarker(s, { fillOpacity: .18, radius: 3 }));
+  const cs = Object.keys(copySites).filter(s => SITES[s]);
+  if (state.shared) for (let i = 0; i < cs.length; i++) for (let j = i + 1; j < cs.length; j++)
+    addArc(SITES[cs[i]], SITES[cs[j]], { color: css("--series-1"), weight: 3, opacity: .85 }, `Same text on seals at ${esc(cs[i])} and ${esc(cs[j])}`);
+  if (state.sealings) Object.keys(tagSites).forEach(ts => cs.forEach(ss => {
+    if (ss !== ts && SITES[ts]) addArc(SITES[ss], SITES[ts], { color: css("--series-2"), weight: 3, opacity: .95, dashArray: "6 6" },
+      `Sealing at ${esc(ts)} matches the seal text from ${esc(ss)}`, -0.22);
+  }));
+  const pts = [];
+  Object.entries(nearSites).forEach(([s, n]) => {
+    if (!SITES[s]) return;
+    pts.push([SITES[s].lat, SITES[s].lon]);
+    L.circleMarker([SITES[s].lat, SITES[s].lon], { radius: 9 + Math.sqrt(n) * 2, color: css("--series-3"), weight: 2.5, dashArray: "2 4", fill: false })
+      .bindTooltip(`${n} near cop${n > 1 ? "ies" : "y"} at ${esc(s)} (one sign different)`, { direction: "right" }).addTo(layer);
+  });
+  Object.entries(copySites).forEach(([s, n]) => {
+    if (!SITES[s]) return;
+    pts.push([SITES[s].lat, SITES[s].lon]);
+    L.circleMarker([SITES[s].lat, SITES[s].lon], { radius: 6 + Math.sqrt(n) * 2.2, color: css("--surface-1"), weight: 2, fillColor: css("--series-1"), fillOpacity: 1 })
+      .bindTooltip(`${n} seal${n > 1 ? "s" : ""} with this text at ${esc(s)}`, { direction: "top" }).addTo(layer);
+    L.tooltip({ permanent: true, direction: "right", className: "count-label", offset: [8, 0] }).setLatLng([SITES[s].lat, SITES[s].lon]).setContent(`${esc(s)} ×${n}`).addTo(layer);
+  });
+  if (state.sealings) Object.entries(tagSites).forEach(([s, n]) => {
+    if (!SITES[s]) return;
+    pts.push([SITES[s].lat, SITES[s].lon]);
+    L.marker([SITES[s].lat, SITES[s].lon], { icon: sealingIcon() }).bindTooltip(`${n} sealing${n > 1 ? "s" : ""} with this text at ${esc(s)}`).addTo(layer);
+    if (!copySites[s]) L.tooltip({ permanent: true, direction: "left", className: "count-label", offset: [-8, 0] }).setLatLng([SITES[s].lat, SITES[s].lon]).setContent(`${esc(s)} sealings ×${n}`).addTo(layer);
+  });
+  if (pts.length > 1) map.flyToBounds(pts, { padding: [70, 70], maxZoom: 7, duration: .6 });
+  else if (pts.length === 1) map.flyTo(pts[0], 6.5, { duration: .6 });
+}
+
+function legend() {
+  const sel = state.selected;
+  document.getElementById("legend").innerHTML = sel
+    ? `<div class="row"><span class="dot sel"></span>Seal with this text (×count)</div>` +
+      `<div class="row"><span class="diamond"></span>Sealing with this text</div>` +
+      `<div class="row"><span class="dot near"></span>Seal with one sign different</div>` +
+      `<div class="row"><span class="swatch sw-1"></span>Same text at both ends</div>` +
+      `<div class="row"><span class="swatch sw-2"></span>Sealing ← matching seal</div>`
+    : `<div class="row"><span class="dot"></span>Site; area shows its number of seals</div>` +
+      `<div class="row"><span class="swatch sw-1"></span>Texts shared by seals at both sites; width = number of texts</div>` +
+      `<div class="row"><span class="swatch sw-2"></span>Sealing found at one site, matching seal at the other</div>` +
+      `<div class="row"><span class="diamond"></span>Site where a matching sealing was found</div>`;
+}
+
+// ---------- panel ----------
+const signChips = (signs, diffAt) => `<span class="signs">${signs.map((s, i) => `<span class="sign${i === diffAt ? " diff" : ""}">${esc(s)}</span>`).join("")}</span>`;
+function textRow(t) {
+  const sites = t.sites.map(([s, n]) => `${esc(s)}${n > 1 ? " ×" + n : ""}`).join(", ");
+  const motifs = t.motifs.map(([m, n]) => `${esc(m)}${n > 1 ? " ×" + n : ""}`).join(", ");
+  const extra = t.sealings.length ? ` · <b>${t.sealings.length}</b> sealing${t.sealings.length > 1 ? "s" : ""} at ${esc([...new Set(t.sealings.map(id => R[id].site))].join(", "))}` : "";
+  return `<li><button data-text="${t.id}">${signChips(t.signs)}<span class="meta"><b>${t.seals.length}</b> seal${t.seals.length > 1 ? "s" : ""} at ${sites}${extra}</span><span class="meta">${motifs}</span></button></li>`;
+}
+function objCard(id, role, diffAt) {
+  const r = R[id];
+  const imgs = r.images.length
+    ? r.images.slice(0, 2).map(src => `<a href="${esc(src)}" target="_blank" rel="noopener"><img loading="lazy" src="${esc(src)}" alt="Photograph of ${esc(r.cisi)}" onerror="this.closest('a').outerHTML='<div class=noimg>image not found</div>'"></a>`).join("")
+    : `<div class="noimg">no local photograph</div>`;
+  const size = r.size_mm ? `${r.size_mm[0]} × ${r.size_mm[1]} mm` : "not recorded";
+  const row = (k, v) => v ? `<dt>${k}</dt><dd>${esc(v)}</dd>` : "";
+  return `<div class="obj"><div class="imgs">${imgs}</div><dl>
+    <div class="title">${esc(r.cisi || r.id)} · ${esc(r.site)}</div>
+    ${role === "near" ? `<dt>Text</dt><dd>${signChips(r.signs, diffAt)}</dd>` : ""}
+    ${row("Animal", r.motif || "none recorded")}${row("Object", r.type)}<dt>Face</dt><dd>${size}</dd>
+    ${row("Material", r.material)}${row("Findspot", r.findspot)}${row("Depth", r.depth)}${row("Period", r.period)}
+  </dl></div>`;
+}
+function renderTexts() {
+  const el = document.getElementById("tab-texts");
+  const t = state.selected && DATA.texts.find(x => x.id === state.selected);
+  if (t) {
+    const nearShown = state.near && t.near.length;
+    el.innerHTML = `<button class="back" id="back">← All texts</button>
+      <h2>${signChips(t.signs)}</h2>
+      <p class="meta">${t.length} signs in reading order (Wells numbers) · <b>${t.seals.length}</b> seal${t.seals.length > 1 ? "s" : ""} at ${t.sites.length} site${t.sites.length > 1 ? "s" : ""}</p>
+      <h3><span class="dot sel"></span>Seals with this text</h3><div class="objects">${t.seals.map(id => objCard(id, "seal")).join("")}</div>
+      ${t.sealings.length ? `<h3><span class="diamond"></span>Sealings with this text</h3><div class="objects">${t.sealings.map(id => objCard(id, "sealing")).join("")}</div>` : ""}
+      ${nearShown ? `<h3><span class="dot near"></span>Near copies: one sign different</h3><p class="note">Same length, one position differs (outlined). Some may be the same text misread; check the photographs.</p><div class="objects">${t.near.map(id => objCard(id, "near", R[id].differs_at)).join("")}</div>` : ""}
+      ${!nearShown && t.length >= 3 && !t.near.length ? `<p class="note">No seal in the corpus carries a text of this length that differs in only one sign.</p>` : ""}`;
+    document.getElementById("back").onclick = () => { state.selected = null; render(); map.flyToBounds(HOME, { duration: .5 }); };
+    return;
+  }
+  const list = visibleTexts();
+  el.innerHTML = (state.site ? `<span class="filterchip">Texts found at ${esc(state.site)} <button id="clear-site" aria-label="Clear site filter">×</button></span>` : "") +
+    `<p class="note">${list.length} text${list.length !== 1 ? "s" : ""}, ordered by number of sites. Each was found on at least two seals, or on one seal and a sealing.</p>` +
+    `<ul class="texts">${list.map(textRow).join("")}</ul>`;
+  const c = document.getElementById("clear-site"); if (c) c.onclick = () => { state.site = null; render(); };
+  el.querySelectorAll("[data-text]").forEach(b => b.onclick = () => { state.selected = b.dataset.text; render(); el.scrollTop = 0; });
+}
+function verdict(r) {
+  if (r.p_ge < 0.05) return "above chance";
+  if (r.p_le < 0.05) return "below chance";
+  return "as chance";
+}
+function renderPairs() {
+  const lc = state.len;
+  const cross = A.cross_site_links.filter(r => r.length_class === lc).slice(0, 25);
+  const same = A.same_site_repeats.filter(r => r.length_class === lc).slice(0, 15);
+  const tr = r => `<tr><td>${esc(r.key.replace(" | ", " – "))}</td><td>${r.observed}</td><td>${r.expected.toFixed(1)}</td><td>${r.q025}–${r.q975}</td><td class="verdict">${verdict(r)}</td></tr>`;
+  document.getElementById("tab-pairs").innerHTML = `
+    <p class="note">How many recurring texts link each pair of sites, against what we would expect if the same seals had been scattered at random among the sites (site labels shuffled ${fmt(A.permutation.draws)} times across all ${fmt(P.eligible_seals)} seals, so each site keeps its number of seals). Text length follows the filter above (${lc === "all" ? "all lengths" : lc + " signs"}). Exploratory: the comparisons were chosen after the 12 October study, and with many pairs a few will pass by chance.</p>
+    <h3>Texts on seals at both sites</h3>
+    <table><thead><tr><th>Sites</th><th>Observed</th><th>Expected</th><th>95% range</th><th></th></tr></thead><tbody>${cross.map(tr).join("")}</tbody></table>
+    <h3>Texts with two or more copies at one site</h3>
+    <table><thead><tr><th>Site</th><th>Observed</th><th>Expected</th><th>95% range</th><th></th></tr></thead><tbody>${same.map(tr).join("")}</tbody></table>
+    <h3>Sealings matching a seal</h3>
+    <table><thead><tr><th>Sealing found at</th><th>Seal found at</th><th>Seal copies</th></tr></thead><tbody>${A.sealing_links.map(r => `<tr><td>${esc(r.sealing_site)}</td><td style="text-align:left">${esc(r.seal_site)}</td><td>${r.seal_copies}</td></tr>`).join("")}</tbody></table>`;
+}
+function renderRead() {
+  document.getElementById("tab-read").innerHTML = `
+    <h3>Three readings and what each predicts</h3>
+    <p><b>A personal seal.</b> One holder, one seal. Exact copies of a text should be rare, and any copies should be found at one site, perhaps in one house.</p>
+    <p><b>An office or title.</b> Several holders carry the same legend. The same text should appear in several cities, on seals cut by different hands and sometimes with different animals.</p>
+    <p><b>Goods moving under seal.</b> A sealing is clay pressed with a seal, often on a closed container or door. Sealings found far from the matching seal trace where sealed goods ended up.</p>
+    <h3>What the corpus shows</h3>
+    <ul>
+      <li>Long legends are personal: none of the 445 seals with six or more signs shares its full text with another seal.</li>
+      <li>Short legends recur across cities: of the ${recurring} recurring texts, ${crossTexts} occur at more than one site. The site-pair table compares each link with random placement.</li>
+      <li>Shared texts share the animal mainly on unicorn seals; use the Animal filter to see the difference.</li>
+      <li>Ten Lothal sealings with an elephant carry the four-sign text of the Mohenjo-daro seal M-895, recorded with a unicorn. The plate check of 13 October found they were stamped by a different seal of the same width.</li>
+    </ul>
+    <h3>Limits</h3>
+    <ul>
+      <li>Mohenjo-daro supplies ${fmt(SITES["Mohenjo-daro"].eligible_seals)} of the ${fmt(P.eligible_seals)} seals, so most links touch it. The expected column accounts for this.</li>
+      <li>Two-sign texts can coincide without any connection between holders. Filter to four or more signs for the strongest links.</li>
+      <li>Texts, animals, sizes and findspots come from one transcription, the Lipi export, and have not all been checked against the photographs. Near copies may include misreadings of the same text.</li>
+      <li>A seal's findspot is where it was lost or discarded, which need not be where it was used. Site positions come from the project's site map; ${A.population.unplaced_sites.length ? esc(A.population.unplaced_sites.join(", ")) + " has no coordinate and is left off." : "every site is placed."}</li>
+    </ul>
+    <p class="note">Population: complete, legible, single-line seal texts of at least two signs from South Asian sites, one face per object, as in the 12 October seal-text identity study. Photographs are the local CISI crops and open full size on click.</p>`;
+}
+
+function render() {
+  layer.clearLayers();
+  const t = state.selected && DATA.texts.find(x => x.id === state.selected);
+  t ? drawSelected(t) : drawOverview();
+  legend();
+  document.querySelectorAll(".tabs button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.tab === state.tab)));
+  ["texts", "pairs", "read"].forEach(k => document.getElementById("tab-" + k).hidden = k !== state.tab);
+  if (state.tab === "texts") renderTexts();
+  if (state.tab === "pairs") renderPairs();
+  if (state.tab === "read") renderRead();
+}
+
+// ---------- wiring ----------
+document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => { state.tab = b.dataset.tab; render(); });
+[["seg-length", "len"], ["seg-animal", "animal"]].forEach(([id, key]) => {
+  document.querySelectorAll(`#${id} button`).forEach(b => b.onclick = () => {
+    state[key] = b.dataset.v;
+    document.querySelectorAll(`#${id} button`).forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    if (state.selected && !textPasses(DATA.texts.find(x => x.id === state.selected))) state.selected = null;
+    render();
+  });
+});
+[["show-shared", "shared"], ["show-sealings", "sealings"], ["show-near", "near"]].forEach(([id, key]) => {
+  document.getElementById(id).onchange = e => { state[key] = e.target.checked; render(); };
+});
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+  if (base === BASES["Light grey"] || base === BASES["Dark grey"]) {
+    map.removeLayer(base);
+    base = BASES[dark() ? "Dark grey" : "Light grey"].addTo(map);
+  }
+  render();
+});
+render();
+</script>
+</body>
+</html>
