@@ -1,0 +1,142 @@
+{
+  "closing_stock": [
+    "090",
+    "151",
+    "156",
+    "226",
+    "400",
+    "407",
+    "520",
+    "527",
+    "617",
+    "621",
+    "740",
+    "892",
+    "154",
+    "405",
+    "595"
+  ],
+  "closing_stock_sources": {
+    "dkg": [
+      "740",
+      "520",
+      "090",
+      "400",
+      "151",
+      "156",
+      "527",
+      "617",
+      "621",
+      "226",
+      "892",
+      "407"
+    ],
+    "harappa_pool": [
+      "740",
+      "520",
+      "405",
+      "154",
+      "090",
+      "151",
+      "407",
+      "595"
+    ],
+    "harappa_pool_counts": {
+      "520": {
+        "final": 11,
+        "occurrences": 11
+      },
+      "740": {
+        "final": 77,
+        "occurrences": 93
+      },
+      "405": {
+        "final": 10,
+        "occurrences": 17
+      },
+      "151": {
+        "final": 5,
+        "occurrences": 5
+      },
+      "090": {
+        "final": 6,
+        "occurrences": 6
+      },
+      "407": {
+        "final": 5,
+        "occurrences": 6
+      },
+      "154": {
+        "final": 8,
+        "occurrences": 8
+      },
+      "595": {
+        "final": 5,
+        "occurrences": 9
+      }
+    }
+  },
+  "closing_stock_share_pool_in_sample": {
+    "legends": 195,
+    "share": 0.7282051282051282
+  },
+  "closing_stock_share_pool_cross_validated": {
+    "mean": 0.6962009718989557,
+    "quantiles_05_50_95": [
+      0.6077540106951871,
+      0.6984206989247312,
+      0.7733115926783084
+    ],
+    "rule": "Harappa part derived on a random half of the pool with the threshold scaled to 3 closing legends, union with DK-G, share on the other half; 200 splits"
+  },
+  "dkg_stock_share_pool": {
+    "legends": 195,
+    "share": 0.6102564102564103
+  },
+  "rules": {
+    "closing_stock": "union of the DK-G stock (stratigraphy package, discovery-v2/frozen-parameters.json) and the Harappa pool stock: signs closing at least 5 legends of two or more signs whose closing is read, with at least half their occurrences in those legends final",
+    "pool": "every Harappa seal family outside Vats's Mound F stratified seals, legend chosen by build_inputs.legend_face, positions read by period_stats.edge_text_fields"
+  },
+  "equivalence_margin": 0.25,
+  "fail_size": 0.15,
+  "early_share_threshold": 0.55,
+  "min_category": 5,
+  "inventory_min_units": 8,
+  "effects": {
+    "P1": {
+      "pass": 0.05,
+      "inconclusive": -0.02,
+      "fail": -0.1
+    },
+    "P2": {
+      "pass": 0.02,
+      "fail": -0.06
+    },
+    "P3": {
+      "no drift": 0.05,
+      "inconclusive": -0.03,
+      "drift": -0.1
+    },
+    "P4": {
+      "no drift": 0.02,
+      "inconclusive": -0.02,
+      "drift": -0.08
+    },
+    "P5": {
+      "no drift": 0.02,
+      "inconclusive": -0.02,
+      "drift": -0.08
+    },
+    "P6": {
+      "no drift": 0.02,
+      "inconclusive": -0.02,
+      "drift": -0.08
+    },
+    "P7": {
+      "no drift": 0.04,
+      "inconclusive": -0.03,
+      "drift": -0.1
+    }
+  },
+  "constants_basis": "Chosen on synthetic Mound F-shaped populations in design-v1/power-quick.json: opening and closing categories need at least 5 legends and inventory signs at least 8 (false-positive rates 0.03-0.07, power 0.61-0.66 for a period-specific opening in one legend of four, 0.58 for a period-specific interior sign in one legend of two, 0.96 for period-specific closing signs in half the stock-closing legends); the equivalence margin of 0.25 passes 54% of null populations and 11% of populations with a true 0.20 shift; the permutation fail rule replaces the bootstrap 95% rule, which failed 7.7% of null populations."
+}
