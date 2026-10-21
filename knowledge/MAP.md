@@ -190,6 +190,7 @@ Read the section for your task, then open its card or source package. Use `pytho
 - [C-0007](conjectures/C-0007-fish-compound-designations.md) · strengthened · credence 0.45 · Fish combinations form an ordered designation field
 - [C-0008](conjectures/C-0008-fish-numerals-asterism-coverage.md) · weakened · credence 0.05 · Three, six and seven asterism names cover short-stroke fish combinations on seals
 - [C-0009](conjectures/C-0009-h912-vessels-of-fish.md) · open · credence 0.35 · H-912 B records four vessel-units of fish
+- [C-0010](conjectures/C-0010-seal-legend-fixed-pattern.md) · dead · credence 0.02 · The seal legend kept one fixed pattern through Harappa's Periods 3B and 3C
 - [C-0012](conjectures/C-0012-fish-category-four-unit-records.md) · open · credence 0.4 · The plain-fish tablet series records a standard four-unit category
 - [C-0013](conjectures/C-0013-fish-runs-are-birth-star-names.md) · open · credence 0.03 · Fish runs on seals are birth-star names
 
@@ -204,7 +205,7 @@ Read the section for your task, then open its card or source package. Use `pytho
 
 ## Other records
 
-- 192 registry attempts: `python tools/kb.py list --kind attempt`, or the generated [registry](experiments/registry.json).
-- 174 retrospectives: `python tools/kb.py list --kind retrospective`; the curated essays are indexed in [retrospectives/README.md](retrospectives/README.md).
+- 193 registry attempts: `python tools/kb.py list --kind attempt`, or the generated [registry](experiments/registry.json).
+- 175 retrospectives: `python tools/kb.py list --kind retrospective`; the curated essays are indexed in [retrospectives/README.md](retrospectives/README.md).
 - 15 direction memos: `python tools/kb.py list --kind direction`.
 - 9 completed and 0 dropped questions: `python tools/kb.py list --kind question --status done` or `--status dropped`.
