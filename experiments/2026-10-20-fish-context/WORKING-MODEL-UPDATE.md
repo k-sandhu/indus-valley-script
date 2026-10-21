@@ -1,0 +1,9 @@
+# Proposed fish section for the working model
+
+Fish combinations form an ordered designation field. Their component forms occur in conventional sequences within seal legends. Credence 0.45. The test learned a total order on discovery and checked reserved seal texts: 43 dependency groups favour it and eight oppose it, with two ties. A later comparison with independent position frequencies remains positive, as does excluding Mohenjo-daro. [Report](REPORT.md), [conjecture C-0007](../../knowledge/conjectures/C-0007-fish-compound-designations.md).
+
+The numeral evidence leaves several readings open. Seventy-seven of 102 reserved stroke–fish events have a value of two under the tally interpretation. Fish-specific distributions beat a generic quantity reference, but a preceding-context reference predicts slightly better, and removing two eliminates the gain. Those constructions may be links, fixed words or standardized quantities. The current test does not identify their sounds or decide among those functions.
+
+The source-based vessel reading belongs to H-912 B. The 2010 paper version examined here mislabels its Figure 6 as H-902. Our working reading is four vessel-units of fish, credence 0.35, inherited from Parpola's proposal and attached to the corrected object. A measured container or allotment linked to the tablet would test it. [Source note](SOURCE-NOTES.md), [conjecture C-0009](../../knowledge/conjectures/C-0009-h912-vessels-of-fish.md).
+
+The narrow reading that 3, 6 and 7 explain seal combinations of short strokes before plain fish failed its registered coverage and predictive rules. It has only 17 qualifying reserved groups, and its credence is 0.05. Particular celestial readings remain a separate source and linguistic question. [Conjecture C-0008](../../knowledge/conjectures/C-0008-fish-numerals-asterism-coverage.md).

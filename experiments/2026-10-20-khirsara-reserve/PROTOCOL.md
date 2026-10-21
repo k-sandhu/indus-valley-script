@@ -1,0 +1,11 @@
+# Khirsara acquisition protocol
+
+Frozen on 20 October 2026 before new Khirsara primary-source content inspection. Custodian: GPT-6.1-Sol in Codex desktop, fresh_collection. The Farmana package remains frozen.
+
+The earlier corpus census contains four Khirsara physical families, including two older catalogue objects, while excavation continued during 2009-2013. This gap in source dates justifies a targeted extension after Farmana yielded no confirmed missing seal. We seek Nath and colleagues' 2012 paper, *Inscribed Material from Khirsara, Dist. Kachchh, Gujarat*, then Indian Archaeology - A Review 2010-11, 2011-12 and 2012-13, in that order. Verify authors and bibliographic identity from source records. Search institutional and author copies through ordinary public downloads. Stop after these named routes, preserving access failures and unresolved aliases.
+
+Select the complete inscribed-object block supplied by each acquired source. Keep all objects, missing photographs and uncertain registrations. Selection uses publication coverage and identity alone. Do not consult model or prediction files, score tests, select graphic forms or assess apparent support for a model. Compare only source identity, excavation metadata and type against the four pinned corpus families. Repeated impressions, aliases and copies remain related until adjudicated.
+
+All source bytes, pages, OCR and object rows stay local. The parent has seen an old census summary and a public summary of the 2017 PLOS Khirsara Figure 2; grade that figure as exposed. Earlier IAR 2009-10 material and two later exported objects have prior exposure. The custodian may inspect primary pages for metadata, with an actual access log. Parent and model builders receive identities, locators, counts by object class and hashes only. Future test eligibility requires an independent source and alias review, frozen predictions and a declared endpoint. Freeze the entire acquired block before future eligibility or scoring. No universal freshness claim follows from export absence.
+
+Maximize reader comprehension; explain the idea directly in connected prose; keep necessary shared assumptions together; avoid repeated corrective comparisons or warnings that interrupt the argument.

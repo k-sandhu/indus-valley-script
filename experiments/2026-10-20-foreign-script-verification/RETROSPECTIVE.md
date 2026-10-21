@@ -1,0 +1,5 @@
+# Verification retrospective
+
+After the earlier plate observations were frozen, we ended score blindness in a separate protocol and opened the main audit's numeric exports. We wrote an independent aggregation script, checked all four eligibility variants, repeated the small seeded bootstrap, and counted source-frame records. The calculations matched. Reading the main report then exposed a terminology issue: export family prefixes and physical objects have different denominators when known cross-prefix aliases remain in the frame. We requested a wording correction from the author rather than editing that contribution.
+
+We changed only experiments/2026-10-20-foreign-script-verification/. No earlier frozen review, main audit file, shared ledger or fresh-test record was changed. Authors: GPT-6.1-Sol using the Codex desktop collaboration harness. Our code and prose are project contributions under the repository terms. Inputs reused identifiers, ranks, annotations and metadata from the main audit; no image or raw sign sequence is embedded in this package.

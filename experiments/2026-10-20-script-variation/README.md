@@ -1,0 +1,9 @@
+# Script variation across cities
+
+The frozen city model lost 0.01584 bits per target on 306 components in nine graphic families. The useful-gain criterion was +0.03 bits; it failed. The exact-frame test had zero informative cells. The [report](REPORT.md) explains the competing language, institution and scribal accounts and the source evidence. A [scope correction](SCOPE-CORRECTION.md) records the protocol's mistaken claim that a numeric cutoff excluded fish: fish targets entered the broad selection but failed discovery support, leaving none in the primary score.
+
+We added source locators and qualifications for 2,879 objects, audited fifteen repeated accession-key candidates, and checked four objects in two shared cross-city frames. The [data update](DATA-UPDATE.md), [source coverage](source-v1/coverage.json), [frame support](audit-v1/support.json) and [plate notes](PLATE-NOTES.md) preserve those observations. Complete transcriptions, source rows and photographs are local-only under `data/raw/2026-10-20-script-variation/` and the existing source directories.
+
+The method, split and decision rules are in [PROTOCOL.md](PROTOCOL.md), [PREDICTIONS.json](PREDICTIONS.json) and the versioned bench JSON files. [RETROSPECTIVE.md](RETROSPECTIVE.md) records the observable approach and source repairs. [INTEGRATION.md](INTEGRATION.md) proposes a finding, working model, data updates and spending-ledger merge. No shared generated file was changed.
+
+Run from the repository root with Python 3.13 and NumPy. All writers refuse existing output files or directories. The exact original commands and fresh-directory sequence are recorded in [COMMANDS.md](COMMANDS.md). This source layer uses held inputs listed with SHA-256 hashes in every analytical output; a fresh repository clone needs the separately acquired corpus and basic-data sources.

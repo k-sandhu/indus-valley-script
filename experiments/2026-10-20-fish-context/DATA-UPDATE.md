@@ -1,0 +1,15 @@
+# Proposed data update
+
+The fish-context study links the B220 graphic family to a source-qualified subset of 1,246 provisional objects. It retains 1,274 fish-bearing faces and every other face of those objects, giving 1,520 face records. The local register is `data/raw/2026-10-20-fish-context/register-v3/objects.jsonl`; source-field assertions and control objects remain in `register-v2/`. [Join coverage](register-v1/coverage.json), [current field coverage](register-v3/coverage.json) and [verification](verification-v1.json).
+
+Existing source records now have a fish-subset linkage: 846 objects to the full CISI basic-data transcription, 409 to the Mackay–Marshall join table, and 838 to images. Museum assertions occur on 812, with unbracketed museum cells on 654. The 2,755 image links retain face uncertainty, polarity, source page, hash and rights. These are subset joins to material already acquired by earlier contributions; they add no physical objects and do not raise whole-project coverage by those counts. The v1 museum_before field refers only to the raw normalized rows, not to the older-export and museum joins elsewhere in the project.
+
+One new bibliographic assertion corrects a source relation: Parpola 2010 Figure 6, acquired PDF13/printed14, matches CISI H-912 B on volume 2 printed339/PDF374. The published H-902 label is preserved as an alternative source assertion. H-902 is a different tablet on printed338/PDF373. This is separate from the older H-502_B.jpg file-name error, which the image-index contribution already resolved to H-902 B. [Source observations](source-observations-v1.json), S2–S3.
+
+New primary acquisitions are the 34-page version of Parpola's 2010 paper and Belcher's 16-page chapter. URLs, bytes, hashes, retrieval times and observed notices are in [sources-v1.json](sources-v1.json). The 2023 economic paper was already held and is documented separately in [source-reuse-v1.json](source-reuse-v1.json); new requests returned HTML instead of a PDF. All downloaded witnesses remain local. The proposed manifest additions are in [manifest-additions.json](manifest-additions.json).
+
+The source audit identified useful context identifiers for a literal-fish test in Belcher's Street NS2355, Rooms 1–3, North Pit and grey-ash deposits. None is joined to the inscription objects yet. Calendar dates, measured contents, quantities and independently identified owners remain unknown. Missing values are explicit, and no depth datum is converted into a calendar age.
+
+Preserved repairs: discovery v1 excluded seal subtypes; register v2 overcounted depth placeholders; the current source and numerical results use the corrected versions named above. The source-reference correction changes no frozen sequence or score.
+
+Attribution: Nitin Stephen Koshy, *Indus script: seal catalogues and text-structure analysis* (2026), <https://github.com/epachayan/indus-script>, transcribed data CC BY 4.0 at commit `5c14a01`. Our joins reuse the project’s 13 October checked derivative. CISI photographs and their derivatives remain subject to source-specific terms.

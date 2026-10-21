@@ -1,0 +1,102 @@
+{
+ "version": "v2",
+ "protocol_sha256": "f31a4576d97044afb42a2e3158a2f98d6de054606ccf497a3e6cb110c966de15",
+ "inputs": {
+  "faces_file_sha256": "1220f5591a42abe7c6696ac014aba90e7c49fdce6b0ccba0b85bb45f950c30db",
+  "clean_file_sha256": "9e539daef4d5a7efbe3c5f34b73e14058eec1c5e888c749bc2eafb0f08084ba8",
+  "audit_files": {
+   "verdicts-A.tsv": "8c49e9ecbf9e248064dc149d4d558b7a002d6f3d439c50346d8c5fda561cbb16",
+   "verdicts-B.tsv": "920ca0e08dd38c34a98c5423ed37a3dd889e2ef682f0bd30b785c63da86b3370",
+   "verdicts-C.tsv": "43fdae660e303f1de8163cf78544243add175d56bb7dd5ed3fedf7c86613dd48"
+  }
+ },
+ "local_files": {
+  "build-segmentation.jsonl": "4dd3172efc9f3271505b0890e5058c11d223012f67a03e7bff2eb42c9cc2da2d",
+  "closing-stock.json": "85f3182f4968acb31b5c35d2647b02cbe668b4c30efc46c5eed7fb2d2518a7fd",
+  "held-legends-key.jsonl": "cf77d9de8cfc2b60b81165df448250a21ae95dc5032d14f21533e7de0331d17c",
+  "held-legends.jsonl": "37d84b8f8ba3c917b7559e44d5d0f7224ca977a8f1536b12a514fc01c68f925a",
+  "inventory.json": "ad075f44a23b6ba9a99102e4c95eac29806a3cccb827057474d783113d07e813",
+  "model.json": "5f538a7bbdc63865476a416b33212af27249c5afeecdd453cb17b8158bb5f2e8"
+ },
+ "code": {
+  "legend_units.py": "2d97550c35cece8002e6c2cec819f70a920a5466c379ba8c3109bf07407dcfc4",
+  "build_inventory_v2.py": "fb8c14afb23add7c1c3d985012148028d4334f6d5d4e052780b2dc840e8da392",
+  "RULES-v2.md": "8278c2c23664a35a9903c8400606bede1ca5184b0f57b36abfd3a8043d5a99bf",
+  "AMENDMENT-1.md": "39c06475b25b7f76b5223084590ae49205071da6c95dd4de786b820166faf5f4"
+ },
+ "training": {
+  "faces": 75,
+  "choices": 124,
+  "with_plate_order": 33,
+  "excluded": {
+   "unknown_or_damaged_sign": 38,
+   "boustrophedon": 5
+  }
+ },
+ "model": {
+  "features": [
+   "be_forward",
+   "be_backward",
+   "pmi",
+   "left_ends_text",
+   "right_starts_text",
+   "left_pair_ends_text",
+   "right_pair_starts_text",
+   "pair_count",
+   "crossing_triple_count",
+   "left_window_drop",
+   "right_window_drop"
+  ],
+  "w_unit": [
+   0.331946985620463,
+   -0.12081265932334567,
+   -0.44318762175988996,
+   0.8269607186546261,
+   0.5237702213217764,
+   0.7496624931870915,
+   0.00392625960611426,
+   -0.7135736494934858,
+   -0.47069863089458325,
+   -0.6395461186648332,
+   -0.3878453281800238
+  ],
+  "w_layout": [
+   0.33539937337018216,
+   -0.09201064300126782
+  ],
+  "tau": 1.8420333646502796,
+  "train_j": 0.5829024781600998,
+  "converged": true
+ },
+ "build_corpus": {
+  "texts": 1687,
+  "seal_legends_3plus": 994,
+  "cut_rate": 0.29089676216307847,
+  "junction_closing_1_to_4": 884,
+  "mean_unit_length": 2.2292095210108727
+ },
+ "inventory": {
+  "units_2plus": 225,
+  "by_length": {
+   "2": 134,
+   "3": 73,
+   "4": 15,
+   "5": 2,
+   "6": 1
+  }
+ },
+ "closing_stock": {
+  "units": 49,
+  "by_length": {
+   "1": 13,
+   "2": 27,
+   "3": 9
+  },
+  "b_seal_legends_with_stock_closing": 719,
+  "b_share_with_stock_closing": 0.7233400402414487
+ },
+ "held_set": {
+  "components": 171,
+  "seal_legends_3plus": 171
+ }
+}

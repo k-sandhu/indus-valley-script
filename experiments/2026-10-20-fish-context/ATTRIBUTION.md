@@ -1,0 +1,7 @@
+# Source attribution and package handling
+
+The small catalogue examples in `source-selection-v1.json` reuse the checked Mackay–Marshall table derivative from the [13 October source package](../2026-10-13-mackay-marshall-tables/README.md). Their transcribed-data source is Nitin Stephen Koshy, *Indus script: seal catalogues and text-structure analysis* (2026), [epachayan/indus-script](https://github.com/epachayan/indus-script), commit `5c14a01`, CC BY 4.0. We selected rows and joined their source pointers to our image-selection record. The applicable [CC BY 4.0 text](../../LICENSES/CC-BY-4.0.txt) accompanies the repository. This licence does not cover CISI photographs.
+
+Lipi source rows, complete inscription sequences, full CISI basic-data transcriptions, photographs, downloaded papers, extracted text and rendered pages remain in the ignored local source directories. Their pins, source-specific terms and hashes are carried in the source manifests and object-register source controls. The tracked source observations describe a bounded set of inspected cases, including unresolved and missing views. No source photograph is embedded in the reports.
+
+Our code follows the project's Unlicense terms; our prose and aggregate outputs follow CC0 1.0. Third-party material retains the terms recorded for its source. [REUSE](../../REUSE.md) and [redistribution record](../../knowledge/provenance/REDISTRIBUTION.md).

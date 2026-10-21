@@ -1,0 +1,4 @@
+import requests,pathlib,json,hashlib,datetime
+L=pathlib.Path('data/raw/2026-10-20-khirsara-reserve');u='https://drive.google.com/uc?export=download&id=19LjTuyvDS4ImcF37Ev9uGcbH_AKwCJnj';r=requests.get(u,timeout=90);r.raise_for_status();print(r.status_code,r.headers.get('content-type'),len(r.content),flush=True);(L/'itihas17-2-download.response').write_bytes(r.content)
+if r.content.startswith(b'%PDF'):
+ (L/'itihas17-2-2012.pdf').write_bytes(r.content);j={'url':u,'publisher_link':'https://abisy.org.in/php/old-editions.php','id':'itihas17-2-2012','retrieved_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'bytes':len(r.content),'sha256':hashlib.sha256(r.content).hexdigest(),'rights':'rights-unverified','status':'acquired'};(L/'paper-acquisition.json').write_text(json.dumps(j,indent=2));print(j)

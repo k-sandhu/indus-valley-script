@@ -1,0 +1,697 @@
+{
+  "schema_version": "1.0",
+  "task": "fish-context",
+  "synthetic": false,
+  "provenance": [
+    {
+      "path": "bench/common.py",
+      "sha256": "ad67cb4453e2a9f436881d7fdd8d8f427e509c0e2bbb80c8f4736d1c51d9370a"
+    },
+    {
+      "path": "bench/__main__.py",
+      "sha256": "1df901f95ddbe76ebbc56868a640eccfac89addb568e74ade74e4fec1c2de11a"
+    },
+    {
+      "path": "experiments/2026-10-20-fish-context/PROTOCOL.md",
+      "sha256": "39d26b944a094dae9efdcf2f0ce11b40389b5fe2d0997071508f39287fcf7360"
+    },
+    {
+      "path": "experiments/2026-10-20-fish-context/PREDICTIONS.json",
+      "sha256": "f9bb904280062b5d74a417c3833fdf0c827ddd048b47b04d7c24a4851a45cb15"
+    },
+    {
+      "path": "experiments/2026-10-20-fish-context/discovery-v2/model.json",
+      "sha256": "a86560aaf8b90bc76e6b4ba227fdc87f599ca09973cb52068cc55df47fe826d2"
+    },
+    {
+      "path": "experiments/2026-10-12-structure-first/step1-signs/sign_components_v1.tsv",
+      "sha256": "c2d55fb56e25b8d7f630f2680f9b85b9122cfa15b8718e08fa5b72c11f509f7d"
+    },
+    {
+      "path": "experiments/2026-10-12-structure-first/step1-signs/second-coder/components_coder2.tsv",
+      "sha256": "c26c5b656b2f84ef46c4d30cd279b6e01dc1ba5787f5526f481d95b030a01a9e"
+    },
+    {
+      "path": "experiments/2026-10-20-fish-context/study.py",
+      "sha256": "9535cb880ac599989ef836978bd72276fd3708a0c960f22d6455f053a0bf8099"
+    }
+  ],
+  "status_class": "frozen-evaluation",
+  "historical_exposure": true,
+  "fresh_claim_allowed": false,
+  "access": {
+    "utc": "2026-10-21T00:20:08.016473+00:00",
+    "split_id": "2dc777c1d53fe204a1eea41ef8e1a774f54d02bd90bf29f9a5a344be8b266f9c",
+    "half": "confirmation",
+    "shot": "fish",
+    "allowed": true,
+    "predictions_sha256": "f9bb904280062b5d74a417c3833fdf0c827ddd048b47b04d7c24a4851a45cb15",
+    "statistic_families": [
+      "fish_compound_order",
+      "fish_numeral_prediction",
+      "object_type",
+      "site"
+    ],
+    "reused_families": [
+      "site"
+    ],
+    "fresh_claim_allowed": false,
+    "rows": 2831
+  },
+  "comparisons": {
+    "primary_seals": {
+      "order": {
+        "components": 53,
+        "positive": 43,
+        "negative": 8,
+        "ties": 2,
+        "p_one_sided": 3.433558868337627e-07,
+        "mean_component_value": 0.660377358490566,
+        "minimum_leave_one_component_out_mean": 0.6538461538461539,
+        "order": [
+          "220",
+          "235",
+          "240",
+          "226",
+          "231",
+          "233",
+          "241"
+        ],
+        "directed_pairs": {
+          "235>240": 14,
+          "240>220": 5,
+          "240>233": 6,
+          "235>233": 5,
+          "240>231": 5,
+          "220>235": 1,
+          "231>233": 2,
+          "220>241": 1,
+          "220>233": 3,
+          "220>240": 5,
+          "240>235": 2,
+          "235>231": 1,
+          "235>220": 2,
+          "233>235": 1,
+          "235>241": 1,
+          "220>231": 1
+        },
+        "pairs": 55,
+        "forward_pairs": 45,
+        "pass_rule": {
+          "min_components": 15,
+          "min_positive_share": 0.75,
+          "alpha": 0.016666666666666666
+        },
+        "pass": true
+      },
+      "numbers": {
+        "components": 101,
+        "positive": 81,
+        "negative": 14,
+        "ties": 6,
+        "p_one_sided": 6.201253681734331e-13,
+        "mean_component_value": 0.5450328690162948,
+        "minimum_leave_one_component_out_mean": 0.530430448286051,
+        "events": 102,
+        "values": {
+          "2": 77,
+          "1": 9,
+          "3": 10,
+          "6": 3,
+          "4": 3
+        },
+        "by_fish": {
+          "235": {
+            "2": 14,
+            "1": 2
+          },
+          "220": {
+            "2": 24,
+            "3": 8,
+            "1": 2,
+            "6": 3,
+            "4": 3
+          },
+          "219": {
+            "2": 2
+          },
+          "240": {
+            "3": 2,
+            "2": 11,
+            "1": 2
+          },
+          "231": {
+            "2": 8
+          },
+          "233": {
+            "2": 7,
+            "1": 3
+          },
+          "226": {
+            "2": 6
+          },
+          "222": {
+            "2": 3
+          },
+          "236": {
+            "2": 2
+          }
+        },
+        "mean_log2_probability_Q_L": [
+          -1.8094027566519817,
+          -1.2603742966667684
+        ],
+        "pass_rule": {
+          "min_components": 15,
+          "alpha": 0.016666666666666666,
+          "positive_gain_and_all_loo_positive": true
+        },
+        "strict_strokes": false,
+        "pass": true,
+        "narrow_celestial": {
+          "plain_fish_events": 17,
+          "components": 17,
+          "canonical_components": 11,
+          "canonical_component_share": 0.6470588235294118,
+          "wilson95": [
+            0.41300363485218694,
+            0.8269027960275627
+          ],
+          "values": {
+            "3": 8,
+            "6": 3,
+            "2": 3,
+            "4": 2,
+            "1": 1
+          },
+          "mean_gain_over_Q_bits": -0.33961601266558644,
+          "mean_gain_over_L_bits": -0.7530070222764123,
+          "pass": false,
+          "joint_strict_pass": false
+        }
+      },
+      "clean_unique_texts": 667
+    },
+    "strict_strokes_seals": {
+      "order": {
+        "components": 53,
+        "positive": 43,
+        "negative": 8,
+        "ties": 2,
+        "p_one_sided": 3.433558868337627e-07,
+        "mean_component_value": 0.660377358490566,
+        "minimum_leave_one_component_out_mean": 0.6538461538461539,
+        "order": [
+          "220",
+          "235",
+          "240",
+          "226",
+          "231",
+          "233",
+          "241"
+        ],
+        "directed_pairs": {
+          "235>240": 14,
+          "240>220": 5,
+          "240>233": 6,
+          "235>233": 5,
+          "240>231": 5,
+          "220>235": 1,
+          "231>233": 2,
+          "220>241": 1,
+          "220>233": 3,
+          "220>240": 5,
+          "240>235": 2,
+          "235>231": 1,
+          "235>220": 2,
+          "233>235": 1,
+          "235>241": 1,
+          "220>231": 1
+        },
+        "pairs": 55,
+        "forward_pairs": 45,
+        "pass_rule": {
+          "min_components": 15,
+          "min_positive_share": 0.75,
+          "alpha": 0.016666666666666666
+        },
+        "pass": true
+      },
+      "numbers": {
+        "components": 101,
+        "positive": 81,
+        "negative": 14,
+        "ties": 6,
+        "p_one_sided": 6.201253681734331e-13,
+        "mean_component_value": 0.5450328690162948,
+        "minimum_leave_one_component_out_mean": 0.530430448286051,
+        "events": 102,
+        "values": {
+          "2": 77,
+          "1": 9,
+          "3": 10,
+          "6": 3,
+          "4": 3
+        },
+        "by_fish": {
+          "235": {
+            "2": 14,
+            "1": 2
+          },
+          "220": {
+            "2": 24,
+            "3": 8,
+            "1": 2,
+            "6": 3,
+            "4": 3
+          },
+          "219": {
+            "2": 2
+          },
+          "240": {
+            "3": 2,
+            "2": 11,
+            "1": 2
+          },
+          "231": {
+            "2": 8
+          },
+          "233": {
+            "2": 7,
+            "1": 3
+          },
+          "226": {
+            "2": 6
+          },
+          "222": {
+            "2": 3
+          },
+          "236": {
+            "2": 2
+          }
+        },
+        "mean_log2_probability_Q_L": [
+          -1.8094027566519817,
+          -1.2603742966667684
+        ],
+        "pass_rule": {
+          "min_components": 15,
+          "alpha": 0.016666666666666666,
+          "positive_gain_and_all_loo_positive": true
+        },
+        "strict_strokes": true,
+        "pass": true,
+        "narrow_celestial": {
+          "plain_fish_events": 17,
+          "components": 17,
+          "canonical_components": 11,
+          "canonical_component_share": 0.6470588235294118,
+          "wilson95": [
+            0.41300363485218694,
+            0.8269027960275627
+          ],
+          "values": {
+            "3": 8,
+            "6": 3,
+            "2": 3,
+            "4": 2,
+            "1": 1
+          },
+          "mean_gain_over_Q_bits": -0.33961601266558644,
+          "mean_gain_over_L_bits": -0.7530070222764123,
+          "pass": false
+        }
+      },
+      "clean_unique_texts": 667
+    },
+    "all_carriers": {
+      "order": {
+        "components": 62,
+        "positive": 49,
+        "negative": 10,
+        "ties": 3,
+        "p_one_sided": 1.3531398515044535e-07,
+        "mean_component_value": 0.6290322580645161,
+        "minimum_leave_one_component_out_mean": 0.6229508196721312,
+        "order": [
+          "220",
+          "235",
+          "240",
+          "226",
+          "231",
+          "233",
+          "241"
+        ],
+        "directed_pairs": {
+          "235>240": 15,
+          "240>220": 7,
+          "240>233": 7,
+          "235>233": 6,
+          "240>231": 6,
+          "220>235": 2,
+          "231>233": 2,
+          "220>241": 1,
+          "220>233": 4,
+          "235>220": 3,
+          "220>240": 6,
+          "240>235": 2,
+          "235>231": 1,
+          "233>235": 1,
+          "235>241": 1,
+          "220>231": 1
+        },
+        "pairs": 65,
+        "forward_pairs": 52,
+        "pass_rule": {
+          "min_components": 15,
+          "min_positive_share": 0.75,
+          "alpha": 0.016666666666666666
+        },
+        "pass": true
+      },
+      "numbers": {
+        "components": 120,
+        "positive": 85,
+        "negative": 15,
+        "ties": 20,
+        "p_one_sided": 2.4127107519685975e-13,
+        "mean_component_value": 0.46511588321582914,
+        "minimum_leave_one_component_out_mean": 0.4521733701164607,
+        "events": 121,
+        "values": {
+          "7": 1,
+          "3": 13,
+          "2": 88,
+          "1": 9,
+          "6": 5,
+          "4": 5
+        },
+        "by_fish": {
+          "233": {
+            "7": 1,
+            "2": 8,
+            "1": 3
+          },
+          "220": {
+            "3": 10,
+            "2": 28,
+            "1": 2,
+            "6": 5,
+            "4": 5
+          },
+          "235": {
+            "2": 14,
+            "1": 2,
+            "3": 1
+          },
+          "219": {
+            "2": 2
+          },
+          "240": {
+            "3": 2,
+            "2": 15,
+            "1": 2
+          },
+          "231": {
+            "2": 8
+          },
+          "226": {
+            "2": 7
+          },
+          "236": {
+            "2": 3
+          },
+          "222": {
+            "2": 3
+          }
+        },
+        "mean_log2_probability_Q_L": [
+          -1.972245507664821,
+          -1.5031009693694046
+        ],
+        "pass_rule": {
+          "min_components": 15,
+          "alpha": 0.016666666666666666,
+          "positive_gain_and_all_loo_positive": true
+        },
+        "strict_strokes": false,
+        "pass": true,
+        "narrow_celestial": {
+          "plain_fish_events": 22,
+          "components": 22,
+          "canonical_components": 14,
+          "canonical_component_share": 0.6363636363636364,
+          "wilson95": [
+            0.42951708090131013,
+            0.8026679532963387
+          ],
+          "values": {
+            "3": 9,
+            "6": 5,
+            "4": 4,
+            "2": 3,
+            "1": 1
+          },
+          "mean_gain_over_Q_bits": -0.20808553644993968,
+          "mean_gain_over_L_bits": -0.4217420876524853,
+          "pass": false
+        }
+      },
+      "clean_unique_texts": 963
+    },
+    "consensus_fish_seals": {
+      "order": {
+        "components": 53,
+        "positive": 43,
+        "negative": 8,
+        "ties": 2,
+        "p_one_sided": 3.433558868337627e-07,
+        "mean_component_value": 0.660377358490566,
+        "minimum_leave_one_component_out_mean": 0.6538461538461539,
+        "order": [
+          "220",
+          "235",
+          "240",
+          "226",
+          "231",
+          "233",
+          "241"
+        ],
+        "directed_pairs": {
+          "235>240": 14,
+          "240>220": 5,
+          "240>233": 6,
+          "235>233": 5,
+          "240>231": 5,
+          "220>235": 1,
+          "231>233": 2,
+          "220>241": 1,
+          "220>233": 3,
+          "220>240": 5,
+          "240>235": 2,
+          "235>231": 1,
+          "235>220": 2,
+          "233>235": 1,
+          "235>241": 1,
+          "220>231": 1
+        },
+        "pairs": 55,
+        "forward_pairs": 45,
+        "pass_rule": {
+          "min_components": 15,
+          "min_positive_share": 0.75,
+          "alpha": 0.016666666666666666
+        },
+        "pass": true
+      },
+      "numbers": {
+        "components": 101,
+        "positive": 81,
+        "negative": 14,
+        "ties": 6,
+        "p_one_sided": 6.201253681734331e-13,
+        "mean_component_value": 0.5450328690162948,
+        "minimum_leave_one_component_out_mean": 0.530430448286051,
+        "events": 102,
+        "values": {
+          "2": 77,
+          "1": 9,
+          "3": 10,
+          "6": 3,
+          "4": 3
+        },
+        "by_fish": {
+          "235": {
+            "2": 14,
+            "1": 2
+          },
+          "220": {
+            "2": 24,
+            "3": 8,
+            "1": 2,
+            "6": 3,
+            "4": 3
+          },
+          "219": {
+            "2": 2
+          },
+          "240": {
+            "3": 2,
+            "2": 11,
+            "1": 2
+          },
+          "231": {
+            "2": 8
+          },
+          "233": {
+            "2": 7,
+            "1": 3
+          },
+          "226": {
+            "2": 6
+          },
+          "222": {
+            "2": 3
+          },
+          "236": {
+            "2": 2
+          }
+        },
+        "mean_log2_probability_Q_L": [
+          -1.8094027566519817,
+          -1.2603742966667684
+        ],
+        "pass_rule": {
+          "min_components": 15,
+          "alpha": 0.016666666666666666,
+          "positive_gain_and_all_loo_positive": true
+        },
+        "strict_strokes": false,
+        "pass": true,
+        "narrow_celestial": {
+          "plain_fish_events": 17,
+          "components": 17,
+          "canonical_components": 11,
+          "canonical_component_share": 0.6470588235294118,
+          "wilson95": [
+            0.41300363485218694,
+            0.8269027960275627
+          ],
+          "values": {
+            "3": 8,
+            "6": 3,
+            "2": 3,
+            "4": 2,
+            "1": 1
+          },
+          "mean_gain_over_Q_bits": -0.33961601266558644,
+          "mean_gain_over_L_bits": -0.7530070222764123,
+          "pass": false
+        }
+      },
+      "clean_unique_texts": 667
+    }
+  },
+  "functional_credence_before_carrier_test": 0.55,
+  "narrow_celestial_credence": 0.05,
+  "consensus_fish_codes": [
+    "219",
+    "220",
+    "221",
+    "222",
+    "223",
+    "224",
+    "225",
+    "226",
+    "227",
+    "228",
+    "229",
+    "230",
+    "231",
+    "232",
+    "233",
+    "234",
+    "235",
+    "236",
+    "237",
+    "240",
+    "241",
+    "242",
+    "243",
+    "244"
+  ],
+  "confirmation_coverage": {
+    "faces": 650,
+    "objects": 636,
+    "clean_faces": 438,
+    "sites": {
+      "Allahdino": 1,
+      "Bala-kot": 1,
+      "Bhirrana": 1,
+      "Chanhu-daro": 12,
+      "Desalpur": 1,
+      "Dholavira": 16,
+      "Farmana": 1,
+      "Harappa": 238,
+      "Kalibangan": 12,
+      "Jhukar": 1,
+      "Kish": 2,
+      "Lohumjo-daro": 1,
+      "Lothal": 26,
+      "Mohenjo-daro": 319,
+      "Nausharo": 4,
+      "Pabumath": 1,
+      "Rupar": 2,
+      "Unknown": 3,
+      "Rakhigarhi": 1,
+      "Gonur Depe": 1,
+      "Khirsara": 1,
+      "Gola Dhoro (Bagasra)": 1,
+      "Guddal A": 1,
+      "Shikarpur": 1,
+      "Tarkhanewala-dera": 1,
+      "Banawali": 1
+    },
+    "object_types": {
+      "POT:T:g": 24,
+      "SEAL:S": 309,
+      "MISC": 2,
+      "IMPL": 2,
+      "SEAL:R": 66,
+      "POT:T:s": 4,
+      "TAB:B": 119,
+      "TAB:I": 44,
+      "TAG": 19,
+      "TAG:L": 2,
+      "SEAL": 10,
+      "ROD": 2,
+      "TAB:C": 41,
+      "MDLN": 1,
+      "TAG:O": 2,
+      "POT:M": 1,
+      "TAG:PC": 1,
+      "SEAL:C": 1
+    },
+    "sign_tokens": {
+      "220": 243,
+      "233": 93,
+      "236": 14,
+      "240": 176,
+      "235": 133,
+      "226": 24,
+      "231": 56,
+      "219": 3,
+      "221": 3,
+      "222": 11,
+      "242": 2,
+      "232": 5,
+      "243": 5,
+      "244": 3,
+      "241": 4,
+      "234": 5,
+      "227": 1,
+      "230": 2,
+      "224": 1
+    }
+  }
+}

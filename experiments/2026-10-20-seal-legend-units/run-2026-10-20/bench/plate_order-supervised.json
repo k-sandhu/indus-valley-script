@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "task": "segmentation",
+  "synthetic": false,
+  "provenance": [
+    {
+      "path": "bench/common.py",
+      "sha256": "ad67cb4453e2a9f436881d7fdd8d8f427e509c0e2bbb80c8f4736d1c51d9370a"
+    },
+    {
+      "path": "bench/__main__.py",
+      "sha256": "1df901f95ddbe76ebbc56868a640eccfac89addb568e74ade74e4fec1c2de11a"
+    },
+    {
+      "path": "bench/segmentation.py",
+      "sha256": "901ee087148d1611fa3fa3a36ca2c8dca1662e0370bee419a5fbecb1118bd02b"
+    },
+    {
+      "path": "experiments/2026-10-12-structure-first/segmenters.py",
+      "sha256": "82817da3cfa48c071bc35db317f9f79d80afac766f2d01b2c671c5debcd0c12c"
+    },
+    {
+      "path": "experiments/2026-10-12-structure-first/step5-rehearsal/rehearse_segmentation.py",
+      "sha256": "f48d12396cad357a147e81ba9499577d00f43b56b2ab5e6e812becc6662164bc"
+    },
+    {
+      "path": "experiments/2026-10-12-structure-first/review/review_step3_segmenter_breaks.py",
+      "sha256": "72572d9999497bfc0644cbf24be5a809ea0dfd1adf6752945cf15f49bb373393"
+    },
+    {
+      "path": "data/raw/2026-10-20-seal-legend-units/run-2026-10-20/indus/plate_order-supervised-references.jsonl",
+      "sha256": "cac9cba467143a03e2063d4a899e47ba402faba66e86da5b8e4064ea6ad0e82b"
+    },
+    {
+      "path": "data/raw/2026-10-20-seal-legend-units/run-2026-10-20/indus/plate_order-supervised-predictions.jsonl",
+      "sha256": "fc1a13de665a283d3806a8855e660b69b9fbe3288af433db9c0ad548e5c9edb0"
+    }
+  ],
+  "scores": {
+    "reference": "required line divisions; other positions unlabelled",
+    "required_boundaries": 34,
+    "hits": 27,
+    "boundary_recall": 0.7941176470588235,
+    "boundary_precision": null,
+    "boundary_f1": null,
+    "boundary_rate_elsewhere": 0.07650273224043716,
+    "reason": "Catalogue line breaks supply positive boundary evidence; no negative labels"
+  },
+  "baselines": {
+    "all_boundaries": {
+      "reference": "required line divisions; other positions unlabelled",
+      "required_boundaries": 34,
+      "hits": 34,
+      "boundary_recall": 1.0,
+      "boundary_precision": null,
+      "boundary_f1": null,
+      "boundary_rate_elsewhere": 1.0,
+      "reason": "Catalogue line breaks supply positive boundary evidence; no negative labels"
+    },
+    "no_boundaries": {
+      "reference": "required line divisions; other positions unlabelled",
+      "required_boundaries": 34,
+      "hits": 0,
+      "boundary_recall": 0.0,
+      "boundary_precision": null,
+      "boundary_f1": null,
+      "boundary_rate_elsewhere": 0.0,
+      "reason": "Catalogue line breaks supply positive boundary evidence; no negative labels"
+    }
+  },
+  "pass_rule": "Frozen complete-boundary F1 improves the everywhere baseline on the declared readable cohorts; line-only evidence reports recall and cannot grant an F1 pass"
+}
