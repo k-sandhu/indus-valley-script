@@ -159,6 +159,7 @@ Read the section for your task, then open its card or source package. Use `pytho
 - [Q-1026](questions/Q-1026-post-catalogue-finds.md) · open · data · List inscribed objects published after the catalogues, 1987 to 2026
 - [Q-1028](questions/Q-1028-lipi-reuse-basis.md) · open · data · Establish a reuse basis for the Lipi export's record-level metadata
 - [Q-1031](questions/Q-1031-assign-faces-to-sides.md) · open · data · Assign the faces of the 881 multi-face objects to their sides
+- [Q-1032](questions/Q-1032-town-axis-table.md) · open · data · Measure the axis bearing, horizon and founding date of every planned Harappan town
 
 ### Priority 3
 
@@ -191,8 +192,12 @@ Read the section for your task, then open its card or source package. Use `pytho
 - [C-0008](conjectures/C-0008-fish-numerals-asterism-coverage.md) · weakened · credence 0.05 · Three, six and seven asterism names cover short-stroke fish combinations on seals
 - [C-0009](conjectures/C-0009-h912-vessels-of-fish.md) · open · credence 0.35 · H-912 B records four vessel-units of fish
 - [C-0010](conjectures/C-0010-seal-legend-fixed-pattern.md) · dead · credence 0.02 · The seal legend kept one fixed pattern through Harappa's Periods 3B and 3C
+- [C-0011](conjectures/C-0011-proto-dravidian-min-fish-and-star.md) · strengthened · credence 0.2 · Proto-Dravidian mīn meant both fish and star
 - [C-0012](conjectures/C-0012-fish-category-four-unit-records.md) · open · credence 0.4 · The plain-fish tablet series records a standard four-unit category
 - [C-0013](conjectures/C-0013-fish-runs-are-birth-star-names.md) · open · credence 0.03 · Fish runs on seals are birth-star names
+- [C-0014](conjectures/C-0014-parpola-interlocks-measure-the-lexicon.md) · open · credence 0.55 · Parpola's interlocks measure the Tamil lexicon, not the script
+- [C-0015](conjectures/C-0015-towns-laid-out-on-star-settings.md) · weakened · credence 0.04 · Harappan towns were laid out on the setting point of a star
+- [C-0016](conjectures/C-0016-plains-cities-on-true-north.md) · open · credence 0.3 · The plains cities were laid out on true north, the regional towns on their landform
 
 ## Papers
 
@@ -205,7 +210,7 @@ Read the section for your task, then open its card or source package. Use `pytho
 
 ## Other records
 
-- 193 registry attempts: `python tools/kb.py list --kind attempt`, or the generated [registry](experiments/registry.json).
-- 175 retrospectives: `python tools/kb.py list --kind retrospective`; the curated essays are indexed in [retrospectives/README.md](retrospectives/README.md).
-- 15 direction memos: `python tools/kb.py list --kind direction`.
+- 209 registry attempts: `python tools/kb.py list --kind attempt`, or the generated [registry](experiments/registry.json).
+- 194 retrospectives: `python tools/kb.py list --kind retrospective`; the curated essays are indexed in [retrospectives/README.md](retrospectives/README.md).
+- 16 direction memos: `python tools/kb.py list --kind direction`.
 - 9 completed and 0 dropped questions: `python tools/kb.py list --kind question --status done` or `--status dropped`.

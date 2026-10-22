@@ -4056,6 +4056,35 @@
       "verification_tier": "submitted"
     },
     {
+      "id": "ATTEMPT-0001",
+      "theme": "Do the empty motif values on seals mean no motif? (Q-0009 pilot)",
+      "status": "source-review-pilot-submitted",
+      "question": "Does the value None in the Lipi export's symbol field mark a seal that carries no motif, and do the placeholders -, ? and Unknown mark motifs that were not recorded? Checked on a fixed, hash-ordered sample of 38 seal faces against their CISI photograph crops.",
+      "outcome": "On rectangular seals None means no motif: 8 of 8 sampled faces carry one row of signs and nothing else (motif-present share 0, 95% interval 0 to 0.37). On square seals None does not: 6 of 12 sampled faces are broken or worn where a motif would be, 5 of the 6 readable faces carry signs only and 1 shows a device. The placeholder - on square seals covers 5 fragments or worn faces in 8 and one seal with a large animal (M-1005); - on seals without a shape code covers 4 fragments in 4; the two ? and Unknown faces are unreadable. All 4 control crops with a named motif show one. Mapping v1 keeps None as an asserted absence only on rectangular seals (361 objects) and marks the other 97 None seal objects and every placeholder as unknown, which lowers seal motif coverage from 2,110 of 2,239 objects (94.2%) under the 12 October inventory rule to 2,013 (89.9%).",
+      "challenge": "Small strata; one reader; crops are small and dark, so 13 of 38 readings were made on 2x or 3x enlargements with auto-contrast, and 7 of the 21 decidable readings are low confidence. Large sign-like forms on four faces were separated from devices partly by the export's sign count. The worktree had no local data, so inputs were read from the maintainer's checkout.",
+      "remedy": "Protocol hashed before any crop was viewed; deterministic sample; every reading recorded with a confidence and an enlargement flag; verdicts reported with and without low-confidence readings; the 12 October inventory endpoint left unchanged.",
+      "evidence": [
+        "experiments/2026-10-15-route-test-metadata/README.md",
+        "experiments/2026-10-15-route-test-metadata/PROTOCOL.md",
+        "experiments/2026-10-15-route-test-metadata/PROTOCOL.sha256",
+        "experiments/2026-10-15-route-test-metadata/sample.py",
+        "experiments/2026-10-15-route-test-metadata/score.py",
+        "experiments/2026-10-15-route-test-metadata/mapping-v1.json",
+        "experiments/2026-10-15-route-test-metadata/run-2026-10-15/sample.csv",
+        "experiments/2026-10-15-route-test-metadata/run-2026-10-15/observations.csv",
+        "experiments/2026-10-15-route-test-metadata/run-2026-10-15/results.json",
+        "experiments/2026-10-15-route-test-metadata/run-2026-10-15/placeholder-counts.json",
+        "experiments/2026-10-15-route-test-metadata/run-2026-10-15/input-hashes.json"
+      ],
+      "retry_when": "A second reader codes the same 38 crops blind, or all 76 square-seal faces with None and the 58 with - are read against their crops; CISI 3 photographs become available for the faces beyond the CISI 1 and 2 ranges.",
+      "status_class": "source-review",
+      "area": "data",
+      "package": "experiments/2026-10-15-route-test-metadata",
+      "authors": [
+        "Claude Code (Claude Opus 5.5), Claude desktop app"
+      ]
+    },
+    {
       "id": "BENCH-HARNESS-2026-10-13",
       "theme": "shared calibrated evaluation procedures",
       "status": "implemented-synthetic-controls-and-local-source-reproduction",
@@ -4078,6 +4107,46 @@
       "retry_when": "A changed scorer, source representation, independently acquired object population or explicitly declared joint planting law requires a new source-pinned run. Preserve all October 13 endpoints.",
       "status_class": "verified-computation",
       "area": "methods"
+    },
+    {
+      "id": "BIRTH-STAR-NAMES-2026-10-21",
+      "theme": "Fish runs as birth-star names: Brahmi calibration, discovery exploration and frozen predictions for fresh seals",
+      "status": "frozen-prediction",
+      "status_class": "exploratory",
+      "area": "meaning",
+      "question": "Do the fish compounds on Indus seals form the closed, nearly evenly used class of about 27-28 names that birth-asterism naming would produce, measured against the asterism names of a known naming system in Lüders's 1912 list of Brahmi inscriptions?",
+      "outcome": "Calibration: of 757 personal donor occurrences in Lüders's list, 42 (5.5%) carry strictly marked asterism names and 57 (7.5%) under the broad marking; they use 12 or 16 of 25 asterism labels, Puṣya supplies 19, and their normalised entropy (0.775, 0.835) is below that of matched non-asterism name elements (median 0.993), which are open (Chao1 2,282). Two independent markings agree with kappa 0.97. Discovery half of seed 2026-10-21-birth-star-names (666 seal legends): the direction note's N1 and N3 fail as written (prefix-plus-run compounds have 60 types and Chao1 186; no modifier distinguishes three bases); N2 is retired because the calibrated birth-star class itself is less even than matched open vocabulary. Fish runs without their stroke prefix have 33 types and Chao1 38.6, match the broad Brahmi profile at 57 occurrences, keep their four commonest forms at 62-75% across Mohenjo-daro, Harappa, Lothal and Dholavira, and are independent of the following sign (p = 0.36); runs of other sign families are as closed, and 35.6% of legends carry a fish run against 5.5-7.5% asterism names among Brahmi donors. Five predictions, the scorer and the reference data were frozen through bench shots at 2026-10-21T03:36Z for fresh seals only; C-0013 stands at 0.03. The confirmation half was not read.",
+      "challenge": "The fish signs have been examined repeatedly, so only seals absent from the pinned corpus can confirm. Two OCR scans with different errors had to be aligned clause by clause; the personal-name index could not be used. The Brahmi asterism class is small (42 or 57 names), so it cannot be bootstrapped to larger samples. Closure and the Brahmi profile do not separate birth-star names from an ordinary closed sign family with the same profile.",
+      "remedy": "Hashed the protocol and marking rule before extraction; used two independent markers and a logged resolution; kept every marker-A version; froze through the shared loader with nine artifacts and a single joint credence rule in which a closure failure kills the claim and a pass weighs little; replaced an upward bootstrap that rejected the claim's own model with a matched-size comparison and kept the superseded power run; wrote scoring instructions and a scorer that refuses objects already in the pinned corpus and waits for 40 fresh fish runs.",
+      "evidence": [
+        "experiments/2026-10-21-birth-star-names/PROTOCOL.md",
+        "experiments/2026-10-21-birth-star-names/MARKING-RULE.md",
+        "experiments/2026-10-21-birth-star-names/calibration-v1/calibration.json",
+        "experiments/2026-10-21-birth-star-names/calibration-v1/luders-donors.csv",
+        "experiments/2026-10-21-birth-star-names/discovery-v1/results.json",
+        "experiments/2026-10-21-birth-star-names/discovery-v2/checks.json",
+        "experiments/2026-10-21-birth-star-names/power-v2/power-broad.json",
+        "experiments/2026-10-21-birth-star-names/PREDICTIONS.json",
+        "experiments/2026-10-21-birth-star-names/PREDICTIONS.sha256",
+        "experiments/2026-10-21-birth-star-names/FREEZE-NOTES.md",
+        "experiments/2026-10-21-birth-star-names/freeze-v1.json",
+        "experiments/2026-10-21-birth-star-names/round.access.jsonl",
+        "experiments/2026-10-21-birth-star-names/score_fresh.py",
+        "experiments/2026-10-21-birth-star-names/SCORING.md",
+        "experiments/2026-10-21-birth-star-names/verification-v1.json",
+        "experiments/2026-10-21-birth-star-names/REPORT.md",
+        "experiments/2026-10-21-birth-star-names/RETROSPECTIVE.md"
+      ],
+      "retry_when": "Score with the frozen score_fresh.py once at least 40 fish runs in name position are transcribed from seals absent from the pinned corpus (CISI 3.1 or 3.2 absent numbers, Q-1026 finds). A new Indus seed adds no population. A test that can separate birth-star names from an ordinary closed sign family needs observations tied to birth, such as legends naming holder and parent.",
+      "package": "experiments/2026-10-21-birth-star-names",
+      "authors": [
+        {
+          "model": "Claude Opus 5.5 (claude-opus-5-5)",
+          "harness": "Claude Code desktop app",
+          "agent": "side session for study 3 of the Parpola direction note; marker B was a separate general-purpose subagent"
+        }
+      ],
+      "verification_tier": "submitted"
     },
     {
       "id": "CISI-BASIC-DATA-FULL-2026-10-13",
@@ -4331,6 +4400,81 @@
       ]
     },
     {
+      "id": "DRAVIDIAN-ROOT-MEANINGS-2026-10-21",
+      "theme": "Root-level meanings of the Dravidian words in Parpola's Indus readings, on the dated tree of Kolipakam and colleagues",
+      "status": "completed-frozen-evaluation-with-independent-recomputation",
+      "status_class": "frozen-evaluation",
+      "area": "language",
+      "question": "Was 'star' a meaning of Proto-Dravidian *mīn, and do the meanings Parpola's readings need reach the root of the Dravidian tree more often than unproposed meanings from the same dictionary entries?",
+      "outcome": "Sixteen needed senses of nine words were coded from the Dravidian Etymological Dictionary on the 20 tips of the Kolipakam 2018 MCC tree (root 4,433 years). 'Star' lies in entry 4876 (miṉ 'to shine'), separate from 4885 (mīn 'fish'), and is attested in Tamil, Malayalam, Kannada, Kota, Toda, Gondi, Kurukh and Malto. Its Mk1 maximum-likelihood root probability is 0.524 and North Dravidian node probability 0.681; parsimony places it absent at the root. The needed meanings reach the root in 7 of 14 comparable cases against a reference mean of 0.54 (p = 1/10001). P1, P2 and P3 pass; the kill condition fails; the frozen rule gives credence 0.35. Posterior trees give 0.520 (89% above 0.5); a star form homophonous with mīn gives 0.41 at the root and 0.22 at the North node; DravLex fieldwork forms give 0.001. DEDR records no banyan sense for vaṭam, no squirrel sense for piḷḷai and no Murukan sense for vēḷ. Review credence 0.20.",
+      "challenge": "DEDR is the only primary witness and its online edition is all rights reserved, so codings stay local. Many tips are missing in many entries. The ML estimate for 'star' sits near the uninformative value because the fitted rate is high, and on the MCC tree, which splits South I first, a meaning attested only in South I can exceed 0.5 at the root. The northern star words begin with b-, which answers Tamil v- in the coded entries, and DEDR cross-refers entry 4876 to viṇ 'sky'.",
+      "remedy": "Froze sense classes, coding rules, models and the credence rule before any entry was read; recorded two post-data location decisions in an amendment and repeated the literal procedure as a sensitivity; fixed the plain-reading recodes before computing; froze the code by hash and computed once; checked the parse against the source text independently, which found a Gondi attribution error before the freeze; reproduced every root probability with an independent implementation; reported the homophone, posterior, two-rate, doubtful-form, keyword, literal-location and fieldwork sensitivities beside the primary result.",
+      "evidence": [
+        "experiments/2026-10-21-dravidian-root-meanings/PROTOCOL.md",
+        "experiments/2026-10-21-dravidian-root-meanings/PROTOCOL.sha256",
+        "experiments/2026-10-21-dravidian-root-meanings/ENTRIES.md",
+        "experiments/2026-10-21-dravidian-root-meanings/AMENDMENT-1.md",
+        "experiments/2026-10-21-dravidian-root-meanings/S8-RECODE.md",
+        "experiments/2026-10-21-dravidian-root-meanings/FREEZE.json",
+        "experiments/2026-10-21-dravidian-root-meanings/run1/selftest.json",
+        "experiments/2026-10-21-dravidian-root-meanings/run1/tree-summary.json",
+        "experiments/2026-10-21-dravidian-root-meanings/run1/language-tip-map.json",
+        "experiments/2026-10-21-dravidian-root-meanings/results-v1/results.json",
+        "experiments/2026-10-21-dravidian-root-meanings/verify/verification-v1.json",
+        "experiments/2026-10-21-dravidian-root-meanings/bench-selftest.json",
+        "experiments/2026-10-21-dravidian-root-meanings/REPORT.md",
+        "experiments/2026-10-21-dravidian-root-meanings/RETROSPECTIVE.md",
+        "experiments/2026-10-21-dravidian-root-meanings/RETROSPECTIVE-CODEX.md"
+      ],
+      "retry_when": "A correspondence count of northern b- against Tamil m- and v- across DEDR (C-0011 P5), a lexical source for North or Central Dravidian independent of DEDR (P4), an openly licensed DEDR-linked lexicon that allows tracked codings, or a dated tree with the traditional South I and South II sister grouping. A rerun of the same codings on the same tree adds nothing.",
+      "package": "experiments/2026-10-21-dravidian-root-meanings",
+      "authors": [
+        {
+          "model": "Claude Opus 5.5 (claude-opus-5-5)",
+          "harness": "Claude Code desktop app",
+          "agent": "coordinating session: protocol, entry choice, sense coding, freeze, review, prose"
+        },
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex CLI 0.160.1",
+          "agent": "runs 1 and 1b: acquisition, parsing, tip mapping, tree reading, reconstruction code and tests, reference draw"
+        }
+      ],
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "FIELD-NOVELTY-REVIEW-2026-10-22",
+      "theme": "Field-level novelty and publication readiness of the project's research contributions",
+      "status": "completed-source-and-evidence-review",
+      "status_class": "source-review",
+      "area": "methods",
+      "question": "Which of the eight candidate contribution families are new at a defensible level and supported strongly enough for publication?",
+      "outcome": "Two existing scientific cores support focused papers: complete Sanskrit-key calibration and conditional reference laws. Object/source reconciliation is a strong data-paper candidate after a bounded accuracy and release audit. Restoration requires refitting with corrected dependencies; segmentation requires source adjudication and transfer validation. Chronology and rebus studies have named scientific repairs. Earlier primary literature and a pinned October 1 public project preclude several broad novelty claims. A saved-input segmentation replay exactly reproduces the source endpoint.",
+      "challenge": "Broad themes overlap with prior literature. A mutable public project page could not establish the date of each result. Some book-length sources and full-text routes were unavailable, and this review cannot establish exhaustive priority.",
+      "remedy": "Compared specific contribution statements with primary passages and public records, inspected a historical GitHub file at commit 1c73645947deba694cb82d42dba967319e8df5a5, separated novelty from evidential strength, recorded scope and source access, and replayed the saved segmentation scorer without opening fresh material.",
+      "evidence": [
+        "experiments/2026-10-22-field-novelty-review/PROTOCOL.md",
+        "experiments/2026-10-22-field-novelty-review/REPORT.md",
+        "experiments/2026-10-22-field-novelty-review/SOURCES.json",
+        "experiments/2026-10-22-field-novelty-review/SEARCH-LOG.json",
+        "experiments/2026-10-22-field-novelty-review/segmentation-replay.json",
+        "experiments/2026-10-22-field-novelty-review/EVIDENCE-CHECKS.json",
+        "experiments/2026-10-22-field-novelty-review/check_saved_evidence.py",
+        "experiments/2026-10-22-field-novelty-review/DATA-UPDATE.md",
+        "experiments/2026-10-22-field-novelty-review/RETROSPECTIVE.md"
+      ],
+      "retry_when": "Reassess after the named source adjudications, corrected restoration refit, Tamil matching/parser repairs, or full access to the nearest book-length precedents. Later public studies can also change precise priority judgements.",
+      "package": "experiments/2026-10-22-field-novelty-review",
+      "authors": [
+        {
+          "model": "GPT-6 family; exact backend identifier not exposed",
+          "harness": "Codex desktop",
+          "agent": "primary reviewer"
+        }
+      ],
+      "verification_tier": "submitted"
+    },
+    {
       "id": "FISH-CONTEXT-2026-10-20",
       "theme": "Fish combinations, stroke constructions and source-qualified object context",
       "status": "completed-frozen-evaluation-with-post-outcome-source-and-model-audit",
@@ -4538,6 +4682,49 @@
       "area": "seals"
     },
     {
+      "id": "HEAD-DIRECTION-CORPORA-2026-10-21",
+      "theme": "Head-final and head-initial seal-legend comparison corpora and the head-direction discrimination test",
+      "status": "frozen-test-untestable-corpora-too-small",
+      "status_class": "frozen-evaluation",
+      "area": "comparative",
+      "question": "Which seal-legend statistics, at sign and word level, separate head-final from head-initial languages consistently across at least two corpora of each, measured with the same code on legends that each link to an object and a site?",
+      "outcome": "Built object- and site-linked corpora: Indo-Aryan seals and sealings from Basarh and Bhita (556 records, 245 eligible distinct legends at sign level, 30 at word level), Tamil-Brahmi seals, rings and coins (31 records, 23 and 7), Ur III Sumerian seal legends (31,512 records, 3,044 and 3,026) and Old Akkadian legends in Akkadian (89 records, 11 and 10). The frozen keep rule needs two corpora of each group with at least 25 eligible legends; only one of each entered, at threshold 25 and in the declared panel at 20, so no statistic was kept or rejected. Descriptively, at matched size 196 Indo-Aryan and Ur III separate in every draw: edge asymmetry +0.250 against -0.219, closing concentration 0.628 against 0.204, stock closure beyond shuffle +0.264 against -0.025, word-internal asymmetry +0.204 against -0.111; Tamil-Brahmi sits with Indo-Aryan at n = 18 (+0.363). The 11 Akkadian legends also end in few signs (edge asymmetry +0.134 beyond their shuffle range -0.073 to +0.092). An exploratory count after the runs puts titles before names in 57 of 61 Indo-Aryan pairs and after names in 2,393 of 2,475 Ur III pairs and 10 of 15 Akkadian pairs.",
+      "challenge": "Few Akkadian-language seal legends of the Old Akkadian period have a site and an undamaged edge; few Tamil-Brahmi seals and rings were published by 2003; Gupta legends are mostly one compound word, so the head-final word level is thin. No lawful digital copy of Avigad and Sass 1997 was found. The editors print restorations and corrections in different bracket conventions, the delegated transliteration mapping turned aspirates into c, and 25 CDLI seal records are composite editions without a physical object.",
+      "remedy": "Protocol, schema and transcription brief hashed before transcription; four amendments hashed before computation fix the unit rules, the transliteration by source, each editor's bracket conventions (checked on page images), the code corrections, the exclusions and a second panel at threshold 20. Both runs computed every statistic on the entering corpora as description, with shuffle references, sub-corpora and two sensitivity runs. The feasibility ledger lists the routes to the missing corpora.",
+      "evidence": [
+        "experiments/2026-10-21-head-direction-corpora/PROTOCOL.md",
+        "experiments/2026-10-21-head-direction-corpora/PROTOCOL.sha256",
+        "experiments/2026-10-21-head-direction-corpora/AMENDMENT-1.md",
+        "experiments/2026-10-21-head-direction-corpora/AMENDMENT-2.md",
+        "experiments/2026-10-21-head-direction-corpora/AMENDMENT-3.md",
+        "experiments/2026-10-21-head-direction-corpora/AMENDMENT-4.md",
+        "experiments/2026-10-21-head-direction-corpora/FROZEN-INPUTS.json",
+        "experiments/2026-10-21-head-direction-corpora/run-2026-10-21/summary.json",
+        "experiments/2026-10-21-head-direction-corpora/run-2026-10-21-threshold-20/summary.json",
+        "experiments/2026-10-21-head-direction-corpora/FEASIBILITY.md",
+        "experiments/2026-10-21-head-direction-corpora/corpus-counts.json",
+        "experiments/2026-10-21-head-direction-corpora/exploratory-title-name-order.json",
+        "experiments/2026-10-21-head-direction-corpora/exploratory-closing-units.json",
+        "experiments/2026-10-21-head-direction-corpora/selftest.json",
+        "experiments/2026-10-21-head-direction-corpora/bench-selftest.json",
+        "experiments/2026-10-21-head-direction-corpora/REPORT.md",
+        "experiments/2026-10-21-head-direction-corpora/RETROSPECTIVE.md",
+        "experiments/2026-10-21-head-direction-corpora/RETROSPECTIVE-CODEX.md"
+      ],
+      "retry_when": "At least 25 eligible Akkadian (or other head-initial, such as West Semitic) seal legends with object and site, and at least 25 eligible Tamil-Brahmi seal and ring legends, are normalised to SCHEMA.md; run the frozen protocol unchanged at threshold 25 with the compound members of Indo-Aryan legends as word units. A new seed over these corpora supplies no new evidence.",
+      "package": "experiments/2026-10-21-head-direction-corpora",
+      "authors": [
+        "Claude Opus 5.5 (Anthropic) in Claude Code",
+        "Codex CLI 0.160.1 with GPT-6.1-Sol (gpt-6.1-sol, reasoning effort xhigh)"
+      ],
+      "related": [
+        "STRUCTURAL-TYPOLOGY-2026-10-12",
+        "Q-0037",
+        "Q-0036",
+        "F-0023"
+      ]
+    },
+    {
       "id": "IMAGE-INDEX-AND-UNITS-2026-10-13",
       "theme": "face-level index of the 8,722 local Lipi CISI crops (Q-1004) and unit, precision and source of every local size value (Q-1020)",
       "status": "completed-verified-computation-with-ai-caption-readings",
@@ -4679,6 +4866,82 @@
       "area": "data"
     },
     {
+      "id": "NORTH-B-CORRESPONDENCE-2026-10-21",
+      "theme": "Kurukh and Malto initials against Tamil m- and v- across the Dravidian Etymological Dictionary, prediction P5 of C-0011",
+      "status": "completed-frozen-evaluation-with-independent-recomputation",
+      "status_class": "frozen-evaluation",
+      "area": "language",
+      "question": "Does Kurukh or Malto initial b- answer Tamil initial m- in any DEDR entry other than 4876 (miṉ 'to shine', with Kurukh bīnkō and Malto bínḍke 'star'), or only Tamil v-?",
+      "outcome": "Among 63 DEDR entries with Tamil m- and 44 with Tamil v- that have a Kurukh or Malto form, the first undoubted northern form begins with m- in 83 of 88 Tamil m- comparisons and with b- in 2, both in entry 4952 'crocodile'; it begins with b- in 50 of 55 Tamil v- comparisons and with m- in 2 (5516 'to hear', before a nasal). Doubtful and non-first forms add no entry. (The frozen file gives 89 Tamil m- comparisons; the second implementation found the Kurukh line of 4886 doubtful, leaving 88.) P5 is unresolved under its frozen rule (one qualifying entry, two needed for a pass, none for a failure) and C-0011 stays at 0.20 by rule; review proposes 0.15. Before a long front vowel after Tamil m- all 6 northern reflexes keep m-, among them Malto mínu 'fish'; Malto keeps 'fish' (mínu) and 'star' (bínḍke) apart by the initial. Across all Tamil initials northern b- occurs 56 times: 50 for Tamil v-, 4 for Tamil m- (4876, 4952), 2 for Tamil p-. Brahui has b- for Tamil m- three times, before front vowels, in entries where Kurukh and Malto keep m-.",
+      "challenge": "DEDR is the only witness and its DSAL edition is all rights reserved, so parsed lines stay local. DSAL sets some genuine language labels in plain type, italicises some cross-references, and prints four different entries under repeated numbers (1287, 1288, 2835, 5282); the last would have dropped a Tamil v- entry. A first borrowing rule caught a gloss meaning 'to borrow'. An unclosed bold tag in entry 4886 made the frozen parser read a gloss and its doubt mark as a form; the second implementation caught it.",
+      "remedy": "Froze the population, units, doubt and borrowing rules, vowel recording and pass rule before reading any entry for the study; checked every Tamil, Kurukh, Malto and Brahui label in the flattened source against the parsed lines and recorded five parse corrections before the freeze; tested the parser on 24 synthetic traps; froze the code by hash and computed once; had a second implementation written from the protocol alone, which reproduced the outcome and every entry list and corrected one table cell; kept post-outcome analyses in a separate exploratory output.",
+      "evidence": [
+        "experiments/2026-10-21-north-b-correspondence/PROTOCOL.md",
+        "experiments/2026-10-21-north-b-correspondence/PROTOCOL.sha256",
+        "experiments/2026-10-21-north-b-correspondence/PARSE-CHECK.md",
+        "experiments/2026-10-21-north-b-correspondence/FREEZE.json",
+        "experiments/2026-10-21-north-b-correspondence/selftest-v1/selftest.json",
+        "experiments/2026-10-21-north-b-correspondence/parse-check/check-v1.json",
+        "experiments/2026-10-21-north-b-correspondence/parse-check/parse-v1.json",
+        "experiments/2026-10-21-north-b-correspondence/results-v1/results.json",
+        "experiments/2026-10-21-north-b-correspondence/verify/verification-v1.json",
+        "experiments/2026-10-21-north-b-correspondence/exploratory-v1/exploratory.json",
+        "experiments/2026-10-21-north-b-correspondence/bench-selftest-v1.json",
+        "experiments/2026-10-21-north-b-correspondence/REPORT.md",
+        "experiments/2026-10-21-north-b-correspondence/RETROSPECTIVE.md",
+        "experiments/2026-10-21-north-b-correspondence/CARD-PROPOSAL.md"
+      ],
+      "retry_when": "A Kurukh or Malto lexical source independent of DEDR (Droese 1884, Mahapatra 1979, Hahn 1903, Grignard 1924, fieldwork) that records the morphology of the star and sky words (proposed C-0011 P6), or an openly licensed DEDR-linked lexicon that would allow the per-entry table to be tracked. Rerunning the same count on the same pages adds nothing.",
+      "package": "experiments/2026-10-21-north-b-correspondence",
+      "authors": [
+        {
+          "model": "Claude Opus 5.5 (claude-opus-5-5)",
+          "harness": "Claude Code desktop app",
+          "agent": "side session: protocol, parser, parse check, freeze, report"
+        },
+        {
+          "model": "Claude Opus 5.5 (claude-opus-5-5)",
+          "harness": "Claude Code desktop app, subagent",
+          "agent": "second implementation written from the protocol without the first implementation's code"
+        }
+      ],
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "PLAN-REGISTRATION-2026-10-21",
+      "theme": "True-north bearings of published Harappan site-plan arrows by registration to satellite imagery",
+      "status": "completed-frozen-validation-failed-at-dholavira",
+      "status_class": "frozen-evaluation",
+      "area": "archaeology",
+      "question": "What are the true bearings of the north arrows on the excavators' plans of Harappan towns whose walls are now covered, and what true-north deviations do the town-axes plan measurements take when converted with them?",
+      "outcome": "Two blind registrars and a search agent registered 14 plans at 8 towns to Esri World Imagery under a frozen similarity-fit and error model. True-north deviations for covered towns: Kalibangan KLB-2 street grid -6.7 +/- 1.8 (plan arrows about 8.5 degrees east of true north on both IAR plans), Surkotada citadel -11.4 +/- 2.1, Chanhu-daro Mound II street -10.9 +/- 3.8 (one registrar; its 1935 magnetic arrow differs from IGRF by 2.4 sigma), Farmana -23.7 +/- 4.3 (one registrar), Shikarpur fortification +1.3 +/- 4.4 (new plan, undated). Banawali, Kanmer and Rakhigarhi not registrable. Eight dated towns now have true-north values. Frozen validation: Lothal dock -2.31 +/- 0.85 against imagery -1.88 +/- 0.30 (passes), Dholavira -0.38 +/- 0.60 against -5.50 +/- 1.50 (fails, z = 3.2); post-outcome diagnosis: the compared plan-B system is mound edges on the contour drawing, whose graticule north the registration recovers to 0.3 +/- 0.3 degrees, and the three wall plans agree with imagery (z -0.2, 1.3, 1.1). Values withheld from P0 scoring under the frozen rule. Surkotada and Farmana coordinates corrected by 8.1 and 25 km. Registrar agreement chi2 9.4 on 9 plans; planning power of P0 on the eight towns 0.40.",
+      "challenge": "Most plans draw only excavated structures and local grids that do not survive; published coordinates of Surkotada and Farmana were kilometres off; the coordinator had read the deviations, so could not choose control points; the frozen validation compared a mound-edge system with wall measurements at Dholavira; two chained registrations rest on one registrar each.",
+      "remedy": "Control points chosen by agents blind to every orientation value, with a checking tool that never prints the rotation; protocol, plan list, briefs and code hashed before any point and the control files hashed before the single run; class-based error model checked on synthetic registrations; two independent registrars per plan; chaining through auxiliary plans with shared drawn features; graticule and magnetic-arrow checks; post-outcome diagnostics kept in a separate file.",
+      "evidence": [
+        "experiments/2026-10-21-plan-registration/PROTOCOL.md",
+        "experiments/2026-10-21-plan-registration/FREEZE.json",
+        "experiments/2026-10-21-plan-registration/CONTROL-FREEZE.json",
+        "experiments/2026-10-21-plan-registration/selftest-v1/selftest.json",
+        "experiments/2026-10-21-plan-registration/registration-v1/results.json",
+        "experiments/2026-10-21-plan-registration/registration-v1/towns.csv",
+        "experiments/2026-10-21-plan-registration/diagnostics-v1/diagnostics.json",
+        "experiments/2026-10-21-plan-registration/imagery-v1/mosaics.json",
+        "experiments/2026-10-21-plan-registration/measure-S/towns/shikarpur.json",
+        "experiments/2026-10-21-plan-registration/REPORT.md",
+        "experiments/2026-10-21-plan-registration/RETROSPECTIVE.md"
+      ],
+      "retry_when": "Do not re-register the same plans with the same features. Revisit with an imagery measurement of Surkotada's exposed walls at the corrected coordinates, a scoring protocol that validates wall systems against wall systems at Dholavira, a plan of Banawali, Kanmer or Rakhigarhi that draws a surviving feature, or a GNSS or drone survey of their fortifications.",
+      "package": "experiments/2026-10-21-plan-registration",
+      "authors": [
+        {
+          "model": "claude-opus-5-5",
+          "harness": "Claude Code desktop app",
+          "agent": "coordinator with seven general-purpose subagents (two registrars in three regional agents each, one search agent)"
+        }
+      ],
+      "verification_tier": "submitted"
+    },
+    {
       "id": "PLATE-CHECKS-C0004-SHOTA-RIVALS-2026-10-13",
       "theme": "visual checks on CISI photographs: Lothal elephant sealings against seal M-895 (C-0004), and the closing sign on Shot A's large seals (C-0001 layout and direction rivals)",
       "status": "completed-ai-visual-readings-pending-specialist-confirmation",
@@ -4704,6 +4967,49 @@
       "area": "seals"
     },
     {
+      "id": "POST-CATALOGUE-FINDS-2026-10-21",
+      "theme": "Object-level list of inscribed Indus objects reported after the CISI volume covering their site, 1987 to 2026",
+      "status": "completed-source-review",
+      "status_class": "source-review",
+      "area": "data",
+      "question": "Which inscribed Indus objects have been reported since the relevant CISI volume catalogued their site, in which publication, and which are absent from the local corpus?",
+      "outcome": "503 objects listed from IAR 1987-88 to 2013-14, Puratattva 18-37, 15 volumes of Man and Environment, excavation reports and articles, one row per object with locators and no inscription content. 301 are post-catalogue objects with a stated inscription at 21 sites (Dholavira 208, Surkotada 23, Bagasra 12, Bhirrana 9, Khirsara 8, Shikarpur 7, Farmana 6 and 14 smaller sites); 56 more have an uncertain inscription; 145 are already in CISI 1, 2 or 3.1. Under the frozen join rule (registration or cited plate) 10 of the 301 match a local object, 271 are candidates and 20 have no possible local counterpart, so the local corpus lacks between 55 and 291; accepting 67 joins on a find context or an unattributed plate number that picks out one object, a refinement defined after run 3's proposals, gives 77 matches and 55 to 224 absent. 92 local objects gain their first publication locator, 59 a registration and 43 a depth.",
+      "challenge": "The Rakhigarhi report held is a draft without its seal catalogue, and the ASI downloads for the Rakhigarhi and Dholavira reports return covers only. IAR 1996-97 and 2003-04 were missed by the first sweep because a mirror file was mislabelled and an archive OCR was unreadable. Dholavira's local objects mostly lack registrations, leaving 147 candidate rows. The matching run's prefix rule missed DHR registrations and made one false match, and it could not compare differently formatted trench fields. Codex readers saw descriptive source text through early previews. A disk-space stop and two model-capacity stops interrupted the extraction runs.",
+      "remedy": "Fetched IAR 1996-97 from the Internet Archive and IAR 2003-04 from the ASI index and OCRed both in added runs. Matched on whole registration digit runs, compared trench codes directly, removed CISI-numbered families from candidate sets, and wrote a one-to-one grid-square rule for Dholavira before applying it. Kept uncertain joins as candidates and reported absence as bounds; when verification showed that context-only joins break the frozen match rule, kept them as protocol candidates and reported the context joins in separate columns and figures. Logged every reader's exposure. Re-hashed all downloads after the disk stop and resumed each stopped run in its own Codex session.",
+      "evidence": [
+        "experiments/2026-10-21-post-catalogue-finds/PROTOCOL.md",
+        "experiments/2026-10-21-post-catalogue-finds/AMENDMENT-1.md",
+        "experiments/2026-10-21-post-catalogue-finds/README.md",
+        "experiments/2026-10-21-post-catalogue-finds/objects.csv",
+        "experiments/2026-10-21-post-catalogue-finds/sites.csv",
+        "experiments/2026-10-21-post-catalogue-finds/join-decisions.csv",
+        "experiments/2026-10-21-post-catalogue-finds/local-unnamed.csv",
+        "experiments/2026-10-21-post-catalogue-finds/exposure-log.csv",
+        "experiments/2026-10-21-post-catalogue-finds/manifest-proposals.json",
+        "experiments/2026-10-21-post-catalogue-finds/DATA-UPDATE.md",
+        "experiments/2026-10-21-post-catalogue-finds/matching/source-register.csv",
+        "experiments/2026-10-21-post-catalogue-finds/review/build_list.py",
+        "experiments/2026-10-21-post-catalogue-finds/review/match_dholavira.py",
+        "experiments/2026-10-21-post-catalogue-finds/RETROSPECTIVE.md",
+        "experiments/2026-10-21-post-catalogue-finds/RETROSPECTIVE-CODEX.md"
+      ],
+      "retry_when": "Registrations for the corpus's unregistered Dholavira objects become available (Lipi's source or ICIT), which would narrow the 0-147 Dholavira range; the published Rakhigarhi or Dholavira reports, Mughal 1997, the Kuntasi monograph, Puratattva 42-43 or the Lakhan-jo-daro reports are acquired; or IAR volumes after 2013-14 appear. Extend the list in a new dated package and keep this one's rows and ids.",
+      "package": "experiments/2026-10-21-post-catalogue-finds",
+      "authors": [
+        {
+          "model": "Claude Opus 5.5 (claude-opus-5-5)",
+          "harness": "Claude Code desktop app",
+          "agent": "coordinator"
+        },
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex CLI 0.160.1, codex exec, workspace-write sandbox",
+          "agent": "runs 1A, 1B, 2N, 2G, 2D, 2P, 2E, 2F, 3 and 4"
+        }
+      ],
+      "verification_tier": "submitted"
+    },
+    {
       "id": "PUBLICATION-SCREEN-2026-10-13",
       "theme": "publication screen of untracked packages before a public push",
       "status": "completed-screen-applied",
@@ -4723,6 +5029,127 @@
       "retry_when": "Before any later push that adds untracked research packages.",
       "status_class": "record",
       "area": "methods"
+    },
+    {
+      "id": "REBUS-BASE-RATE-2026-10-21",
+      "theme": "Chance rates of Parpola's rebus homophones and compound interlocks in Dravidian and comparison lexicons",
+      "status": "completed-frozen-evaluation-with-one-amendment-and-post-outcome-exploration",
+      "status_class": "frozen-evaluation",
+      "area": "language",
+      "question": "How often does Parpola's homophone procedure find a picture-to-name homophone in each candidate language, and how often do his Tamil compound interlocks appear when the words he started from are replaced by random words of the same productivity and frequency?",
+      "outcome": "In the Tamil Lexicon, compounds muruku-X and X-mīṉ share a member for 30.5% of 2,500 random replacement pairs (95% bootstrap 25.2-36.2%; 40.3% and 28.7% for pools of 25 and 100; 52.8% under the practised stem tolerance), so the frozen rule kills the veḷ interlock as evidence (threshold 20%). Four of five encoded interlocks hold for Parpola's words (veḷ, vaṭa-mīṉ, numeral-mīṉ compounds, katir-k-kaṭavuḷ; Muruka-p-piḷḷai is not in the Lexicon), and all four hold together in 0.44% of 10,000 random draws (2.2% under the practised tolerance), so the network passes the frozen 1% rule. Single homophones between 751 picturable nouns and 436 name meanings occur for 2.31% of evaluable pairs in DEDR, 1.50% in Turner's CDIAL and 0.45% in ePSD2; the Dravidian rate is 2.37 times the median and fails the frozen band of 0.5-2. Restricting each Tamil word to its own gloss lowers the Dravidian rate to 0.29%. Post-outcome: at Parpola's narrower search depth the veḷ link has a 7.8% chance rate; four successes among templates with mean chance rate 0.21 become likely once about 17 templates are tried; mīṉ forms star compounds with three, five, six and seven but not with two.",
+      "challenge": "DEDR and Turner carry all-rights-reserved notices and the Tamil Lexicon edition CC BY-NC-ND 2.0, so all raw and derived lexical data stay local. No machine-readable Munda or Burushaski dictionary was found; those languages enter as wordlists of 113 and 204 concepts. Concept matching depends on each dictionary's English gloss style. The interlock reruns use one Tamil dictionary of 1924-1936. The network's rarity depends on how many templates Parpola examined, which is unknown. The frozen restricted search missed muruka-vēḷ because the Lexicon glosses it by cross-reference.",
+      "remedy": "Logged every request with URL, bytes, SHA-256 and time and rebuilt the manifest from disk hashes after concurrent log appends lost 15 lines. Streamed the 1.9 GB ePSD2 glossary. Repaired DEDR, Tamil Lexicon, Lexibank and Munda parsing before the freeze. A synthetic selftest checked Parpola's own pairs, planted homophones and interlocks, and matched the shared-member null to its hypergeometric value. An independent reimplementation found a vowel-set defect (y treated as a vowel) after the freeze; Amendment 1 repaired it, kept results-v1 and recomputed results-v2, and all seven verification checks then agreed. Post-outcome analyses are in a separate labelled output.",
+      "evidence": [
+        "experiments/2026-10-21-rebus-base-rate/PROTOCOL.md",
+        "experiments/2026-10-21-rebus-base-rate/FREEZE.json",
+        "experiments/2026-10-21-rebus-base-rate/AMENDMENT-1.md",
+        "experiments/2026-10-21-rebus-base-rate/SOURCES.json",
+        "experiments/2026-10-21-rebus-base-rate/pools-v1.json",
+        "experiments/2026-10-21-rebus-base-rate/selftest-v1/selftest.json",
+        "experiments/2026-10-21-rebus-base-rate/selftest-v2/selftest.json",
+        "experiments/2026-10-21-rebus-base-rate/bench-selftest-v1.json",
+        "experiments/2026-10-21-rebus-base-rate/results-v1/homophones.json",
+        "experiments/2026-10-21-rebus-base-rate/results-v1/interlocks.json",
+        "experiments/2026-10-21-rebus-base-rate/results-v2/homophones.json",
+        "experiments/2026-10-21-rebus-base-rate/results-v2/interlocks.json",
+        "experiments/2026-10-21-rebus-base-rate/verification-v1.json",
+        "experiments/2026-10-21-rebus-base-rate/verification-v2.json",
+        "experiments/2026-10-21-rebus-base-rate/exploratory-v1/exploratory.json",
+        "experiments/2026-10-21-rebus-base-rate/REPORT.md",
+        "experiments/2026-10-21-rebus-base-rate/RETROSPECTIVE.md",
+        "experiments/2026-10-21-rebus-base-rate/DATA-RECORDS.md"
+      ],
+      "retry_when": "A blind list of at least 20 Indus sign pairs with Parpola's 1994 picture identifications, frozen before any Tamil compound is looked up; a second Tamil dictionary with compounds (Winslow 1862 or Kadirvelu Pillai on DSAL); or a machine-readable Munda or Burushaski dictionary. Rerunning the same search on the Madras Tamil Lexicon adds nothing.",
+      "package": "experiments/2026-10-21-rebus-base-rate",
+      "authors": [
+        {
+          "model": "Claude Opus 5.5 (claude-opus-5-5)",
+          "harness": "Claude Code desktop app",
+          "agent": "session started from the Parpola direction session"
+        }
+      ],
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "REBUS-BLIND-TEMPLATES-2026-10-22",
+      "theme": "Parpola's Dravidian word assignments scored on Indus sign pairs he did not choose, against matched random Tamil words",
+      "status": "completed-frozen-evaluation-with-post-outcome-exploration",
+      "status_class": "frozen-evaluation",
+      "area": "language",
+      "question": "On Indus sign pairs that Parpola never published, frozen with his picture identifications before any Tamil compound is looked up, do his word assignments form attested Tamil Lexicon compounds more often than random words matched on compounding productivity and Sangam frequency (C-0014, P1)?",
+      "outcome": "On 38 blind adjacent sign pairs (16 identified signs, pairs recurring in at least two distinct texts, published and already-examined pairs removed), Parpola's words form an attested two-member Tamil Lexicon compound for 9 pairs (23.7%) against 4.97 expected for matched random words (13.1%): ratio 1.81, 95% bootstrap interval 0.93-2.72, leave-one-out 1.64-1.98. P1 passes its frozen rule (ratio below 2; kill at 3 with lower bound above 1.5 not reached); 6.7% of random keys reach nine hits. Sensitivities give 1.56-2.42. Most hits pair his word with an unrelated homophone (veḷ-ḷ-āṉai 'white elephant' for āṉ 'cow'); iru-kaṇ 'two eyes' is the one apt reading. The hidden-member template (W1-X / X-W2) holds for 22 of 24 gapped pairs against 82% for random words (ratio 1.11). Parpola's twelve published pairs succeed seven times against 1.15 expected (ratio 6.1, 2.8-11.7). Post-outcome: published pairs succeed at 58% against 24% for blind pairs (one-sided Fisher p = 0.032); at the blind rate, seven successes become likely after about 28 tried pairs.",
+      "challenge": "Parpola's 1994 book was not available with clear rights (lending-only copy), so identifications come from his 1997, 2005, 2008, 2009 and 2010 papers. Parpola names signs by their pictures and the project has no crosswalk from his sign numbers to ICIT codes. The spear and the kaḷam sign could not be coded. The frequency proxy of the base-rate study counts every Sangam token with the same initial letter for one-syllable words (ā, kā). 38 templates leave a wide interval on the ratio.",
+      "remedy": "Acquired four papers with logged requests and hashes; five subagents extracted identifications under a no-dictionary instruction, with forms checked against page images. Fixed ICIT codes from the 45 objects Parpola cites by CISI number and the 'bull's head' from its printed glyph (ICIT 740). Created a new split through bench.shots, counted pairs on the discovery half, froze protocol, predictions and 15 artifacts before the single confirmation read, and hashed the template list before scoring. A synthetic selftest checked planted compounds, sandhi, both search directions, exact against Monte Carlo rates and the cached search against the base-rate picture_hits. An independent reimplementation reproduced all hits and the ratio (1.79 against 1.81) and differed on one pool boundary word because of segmentation of six rare-diacritic headwords.",
+      "evidence": [
+        "experiments/2026-10-22-rebus-blind-templates/PROTOCOL.md",
+        "experiments/2026-10-22-rebus-blind-templates/PREDICTIONS.json",
+        "experiments/2026-10-22-rebus-blind-templates/round.json",
+        "experiments/2026-10-22-rebus-blind-templates/identifications-v1.json",
+        "experiments/2026-10-22-rebus-blind-templates/templates-v1.json",
+        "experiments/2026-10-22-rebus-blind-templates/FREEZE.json",
+        "experiments/2026-10-22-rebus-blind-templates/SOURCES.json",
+        "experiments/2026-10-22-rebus-blind-templates/discovery-v1/pairs.json",
+        "experiments/2026-10-22-rebus-blind-templates/confirmation-v1/pairs.json",
+        "experiments/2026-10-22-rebus-blind-templates/power-v1/power.json",
+        "experiments/2026-10-22-rebus-blind-templates/selftest-v1/selftest.json",
+        "experiments/2026-10-22-rebus-blind-templates/bench-selftest-v1.json",
+        "experiments/2026-10-22-rebus-blind-templates/shots-synthetic.json",
+        "experiments/2026-10-22-rebus-blind-templates/results-v1/templates.json",
+        "experiments/2026-10-22-rebus-blind-templates/verification-v1.json",
+        "experiments/2026-10-22-rebus-blind-templates/exploratory-v1/exploratory.json",
+        "experiments/2026-10-22-rebus-blind-templates/REPORT.md",
+        "experiments/2026-10-22-rebus-blind-templates/RETROSPECTIVE.md",
+        "experiments/2026-10-22-rebus-blind-templates/CARD-UPDATE.md"
+      ],
+      "retry_when": "Parpola's full 1994 identifications (book purchase or loan), a second Tamil dictionary with compounds, or a control language for the same pictures (Sanskrit words scored against Monier-Williams compounds, proposed as C-0014 P4). Rerunning these 38 templates on the same identifications and dictionary adds nothing.",
+      "package": "experiments/2026-10-22-rebus-blind-templates",
+      "authors": [
+        {
+          "model": "Claude Opus 5.5 (claude-opus-5-5)",
+          "harness": "Claude Code desktop app",
+          "agent": "session started from the REBUS-BASE-RATE session; five subagents of the same model extracted identifications"
+        }
+      ],
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "REBUS-WINSLOW-2026-10-22",
+      "theme": "Chance rate of Parpola's veḷ compound interlock in a second Tamil dictionary (Winslow 1862)",
+      "status": "completed-frozen-evaluation-prediction-failed-with-post-outcome-exploration",
+      "status_class": "frozen-evaluation",
+      "area": "language",
+      "question": "Does the veḷ interlock search of REBUS-BASE-RATE-2026-10-21, rerun in Winslow's Tamil-English dictionary of 1862, again find a shared compound member for more than 20% of random replacement pairs, as prediction P2 of C-0014 states?",
+      "outcome": "P2 failed under its frozen rule. Winslow has no two-member compound beginning with muruku (the Tamil Lexicon has 7) and 29 with mīṉ as last member (82), so replacement words matched on muruku's productivity have no compounds and none of 2,500 pairs shares a member (rate 0.0, Wilson 95% upper bound 0.15%; threshold above 0.20). Neither Muruka-vēḷ nor veṇ-mīṉ is a Winslow entry, so the veḷ interlock does not exist there; Skanda's name on vēḷ is cevvēḷ. Two of Parpola's five interlocks hold (vaṭa-mīṉ, aṟu-mīṉ) and random words reproduce both in 3.9% of 10,000 draws. Post-outcome: with pools matched to 7 first-member and 29 second-member compounds, random pairs share a member in 14.0% of cases in Winslow and 16.6% in the Lexicon; a complete parse would give muruku two first-member compounds (murukkam-pū, murukkañ-cettal), and pools matched to one compound give 2.8%.",
+      "challenge": "Winslow prints compounds without hyphens or romanisation, nested under their root, so members had to be recovered from the nesting and Tamil sandhi. Winslow lists every syllabic letter, ending and particle as a headword. The DSAL text writes every initial e as ஏ. DSAL marks long entries with placeholder pages, which stopped the first download stream early. The frozen design matches replacement words to the anchor word's productivity, which is zero for muruku in Winslow.",
+      "remedy": "Logged every request with one log file per page-range stream (978 pages, 978 log lines). Wrote a transliteration (99.92% exact against printed romanisations) and a junction rule with fixed sandhi forms and exact headword matching; repaired it before the freeze against the Tamil Lexicon's hyphenation (98.1% agreement on 11,784 shared compounds, 75.4% coverage). Excluded grammatical entries by their first sense and one-syllable verbal-noun endings. Reused the 21 October code unchanged and showed that the wrapper reproduces results-v2 exactly on the Lexicon. Verified the result with the independent functions of the 21 October verify.py (seven checks agree). Searched the raw pages to separate parser misses from absences; analyses at equal set sizes are in a separate labelled output.",
+      "evidence": [
+        "experiments/2026-10-22-rebus-winslow/PROTOCOL.md",
+        "experiments/2026-10-22-rebus-winslow/FREEZE.json",
+        "experiments/2026-10-22-rebus-winslow/SOURCES.json",
+        "experiments/2026-10-22-rebus-winslow/parser-validation-v1.json",
+        "experiments/2026-10-22-rebus-winslow/check-reuse-v1.json",
+        "experiments/2026-10-22-rebus-winslow/selftest-v1/selftest.json",
+        "experiments/2026-10-22-rebus-winslow/selftest-base-v1/selftest.json",
+        "experiments/2026-10-22-rebus-winslow/bench-selftest-v1.json",
+        "experiments/2026-10-22-rebus-winslow/results-v1/interlocks.json",
+        "experiments/2026-10-22-rebus-winslow/verification-v1.json",
+        "experiments/2026-10-22-rebus-winslow/exploratory-v1/exploratory.json",
+        "experiments/2026-10-22-rebus-winslow/REPORT.md",
+        "experiments/2026-10-22-rebus-winslow/RETROSPECTIVE.md",
+        "experiments/2026-10-22-rebus-winslow/C-0014-RECORD-PROPOSAL.md",
+        "experiments/2026-10-22-rebus-winslow/DATA-RECORDS.md"
+      ],
+      "retry_when": "A third Tamil dictionary that records compounds of both muruku and mīṉ (Kadirvelu Pillai on DSAL), tested with a prediction frozen in advance about the chance rate at equal compound-set sizes; or a frozen count of Sangam attestations of Parpola's interlock compounds against compounds that complete chance interlocks. Rerunning the veḷ search on Winslow adds nothing.",
+      "package": "experiments/2026-10-22-rebus-winslow",
+      "authors": [
+        {
+          "model": "Claude Opus 5.5 (claude-opus-5-5)",
+          "harness": "Claude Code desktop app",
+          "agent": "session started from the session that wrote C-0014"
+        }
+      ],
+      "verification_tier": "submitted"
     },
     {
       "id": "REPO-RESTRUCTURE-2026-10-12",
@@ -4773,6 +5200,39 @@
       "retry_when": "A permitted Khirsara article, new seal inventory or Farmana companion register becomes available; complete identity and exposure adjudication and freeze every participating test before releasing any eligible reserve.",
       "status_class": "record",
       "area": "data"
+    },
+    {
+      "id": "ROUND-SEAL-TRADITION-2026-10-12",
+      "theme": "Gulf Type and other round seals: catalogue joins, image-checked transcriptions, shared sequence tradition and twins-initial count",
+      "status": "completed-frozen-tests-with-exploratory-checks",
+      "question": "Can the Lipi records of round seals be joined to Laursen's 2010 Gulf Type catalogue and to CISI, do their transcriptions agree with published images, do round-seal texts form a shared sequence tradition, and does the twins-initial pattern of West Asian texts hold with image-checked identifications?",
+      "outcome": "31 Lipi records joined with evidence (15 by identifier or citation), including 25 of Laursen's 27 Indus-inscribed Gulf Type seals; CISI numbers exist only for the Indus Valley seals (C-32, M-415, M-416, M-417, M-1369, M-1370). Of 137 checked circular-seal sign positions, 2 differ from Lipi; two Gulf seals are coded in mirror order and Lipi codes pseudo-script strokes as numerals. Other round seals predict a held-out round seal 1.28 bits per transition better than matched South Asian text (interval 0.82-1.76, p = 0.001), of which 1.22 bits come from sign frequencies; shared transitions +2.8 points (p = 0.27) against +24.8 for the copper-tablet control. West Asian and South Asian circular seals do not predict each other after Holm correction. Twins-initial: 4 of 22 West Asian texts against 2 of 2,122 South Asian texts, both readers agreeing on all 28 items (Fisher p = 1.2e-7); 2 of 19 without pseudo-inscriptions (p = 0.00044).",
+      "challenge": "Small regional samples; witnesses are mostly published drawings and 1932 halftones; Reader 1 was not blind to codes; British Museum images unavailable; Lipi's direction field and sign order conflict with the impressions for three Gulf seals; the inventory result admits several explanations (another language, imitation, transcription convention).",
+      "remedy": "Frozen protocol with hashes, dated amendment before computation, blinded second reader, structure-matched South Asian models and nulls, positive controls, five sensitivities including re-oriented and checked transcriptions, and an independent verifier (14 of 14 checks).",
+      "evidence": [
+        "experiments/2026-10-12-round-seal-tradition/PROTOCOL.md",
+        "experiments/2026-10-12-round-seal-tradition/AMENDMENT-2026-10-12-before-computation.md",
+        "experiments/2026-10-12-round-seal-tradition/REPORT.md",
+        "experiments/2026-10-12-round-seal-tradition/joins.csv",
+        "experiments/2026-10-12-round-seal-tradition/transcription-checks.csv",
+        "experiments/2026-10-12-round-seal-tradition/run-2026-10-12/tradition-summary.json",
+        "experiments/2026-10-12-round-seal-tradition/run-2026-10-12/twins-summary.json",
+        "experiments/2026-10-12-round-seal-tradition/run-2026-10-12/exploratory.json",
+        "experiments/2026-10-12-round-seal-tradition/verify-2026-10-12.json",
+        "knowledge/retrospectives/2026-10-12-round-seal-tradition.md"
+      ],
+      "retry_when": "Photographs of the Bahrain, Failaka and British Museum Ur seals, Gulf seals found since 2010, or a simulation that separates imitation from names written with chosen signs become available.",
+      "status_class": "frozen-evaluation",
+      "area": "seals",
+      "authors": [
+        {
+          "model": "Claude Opus 5.5 (claude-opus-5-5)",
+          "harness": "Claude Code desktop app",
+          "agent": "worktree session on claude/wonderful-turing-fe8ea0"
+        }
+      ],
+      "package": "experiments/2026-10-12-round-seal-tradition",
+      "verification_tier": "submitted"
     },
     {
       "id": "SCRIPT-VARIATION-2026-10-20",
@@ -4845,6 +5305,63 @@
       "area": "structure"
     },
     {
+      "id": "SEMANTIC-LEXICAL-CALIBRATION-2026-10-12",
+      "theme": "permutation and achievable-fit calibration of Sanskrit lexical windows",
+      "status": "completed-frozen-decision-rules-met",
+      "question": "Do the October 9 Bonta-extension lexical statistics depend on which Wells codes carry which Sanskrit seed values, and do the new anchor codes open more windows than frequency-matched codes?",
+      "outcome": "The 362 searched and 274 multi-context codes are identical in every rearrangement. Nonempty full intersections are 164 against 158.0 +/- 10.5 (p = 0.28; annealed 255); repeated exact residuals 201 against 208.0 +/- 13.0 (p = 0.74; annealed 264). Moving the 17 new anchors to frequency-matched codes gives 395 +/- 175 windows against 256. Each code's best residual keeps its published support under rearrangement; the post-outcome residuals sam, sa and ati lose support when the anchor values move.",
+      "challenge": "A cached reimplementation first disagreed with the frozen search because its normalization is not idempotent, and the first annealer was too slow on a shared machine.",
+      "remedy": "Exact agreement with the frozen lexical_search on four assignments, per-window caches and incremental counters checked against fresh searches, and separate null, anneal and summary stages.",
+      "evidence": [
+        "experiments/2026-10-12-anchor-calibration/lexical/summary.json",
+        "experiments/2026-10-12-anchor-calibration/lexical/anneal.json",
+        "experiments/2026-10-12-anchor-calibration/lexical/engine-verification-v2.json",
+        "experiments/2026-10-12-anchor-calibration/REPORT.md"
+      ],
+      "retry_when": "A lexical criterion with measured redundancy, such as held-out likelihood under the claimed language, replaces dictionary completion, or seed values come from evidence independent of the corpus windows.",
+      "status_class": "frozen-evaluation",
+      "area": "language",
+      "authors": [
+        {
+          "model": "Claude Opus 5.5 (claude-opus-5-5)",
+          "harness": "Claude Code desktop app",
+          "agent": "worktree session on claude/practical-visvesvaraya-5bcb35"
+        }
+      ],
+      "package": "experiments/2026-10-12-anchor-calibration",
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "SEMANTIC-ROLE-CALIBRATION-2026-10-12",
+      "theme": "permutation and achievable-fit calibration of family role coherence and positional sign meanings",
+      "status": "completed-frozen-decision-rules-with-post-outcome-diagnostic",
+      "question": "Do the anchor-expansion family roles and the October 11 positional meanings score better than within-stratum rearrangements of the same assignments, how far does the same freedom reach, and do fitted role constraints transfer between halves of the corpus?",
+      "outcome": "21 of 53 families meet the two-split rule against 19.9 +/- 2.9 for rearrangements (p = 0.42); optimized swaps reach 47. The code-level count is 62 against 49.1 +/- 4.4 (p = 0.003; exact maximum 115). Total excess, 827 against 194 +/- 295 (p = 0.026), is inside rearrangements once W740 is set aside (p = 0.115). No family meets the frozen per-family rule (BH q <= 0.01; smallest q = 0.026); a post-review 10,000-draw extension gives q = 0.005 for carrier/yoke and bound stalks. Fits to half the texts transfer at z = 4.5 to 4.9 against 1.9 to 2.3 for the published map. The October 11 leading codes rank first to seventh of 27 by final z in a stratum where seven codes exceed z = 3.",
+      "challenge": "Role statistics depend only on the code-to-role mapping. W740 supplies 519 of the 827 excess tokens and makes the null bimodal. A transfer-step error and timing tests preceded the final runs; an independent review found an uninitialized count in the family-count annealer and a verification check of the wrong file.",
+      "remedy": "Exact linear-assignment bounds and annealing, a labelled post-outcome stratum and W740 decomposition, a rerun from fixed seeds, recomputation with the anchor-expansion aggregate() function, and Amendment 1 with a corrected annealer (bound unchanged at 47), a resolution extension and verification-v2.json.",
+      "evidence": [
+        "experiments/2026-10-12-anchor-calibration/REPORT.md",
+        "experiments/2026-10-12-anchor-calibration/PROTOCOL.md",
+        "experiments/2026-10-12-anchor-calibration/roles/summary.json",
+        "experiments/2026-10-12-anchor-calibration/roles/diagnostics-post-outcome.json",
+        "experiments/2026-10-12-anchor-calibration/positional/summary.json",
+        "experiments/2026-10-12-anchor-calibration/verification-v2.json",
+        "experiments/2026-10-12-anchor-calibration/AMENDMENT-1.md"
+      ],
+      "retry_when": "A meaning map is tested against observations outside sign order, such as image-text pairing or object function, or a new family map and its roles are frozen before positional results are seen.",
+      "status_class": "frozen-evaluation",
+      "area": "meaning",
+      "authors": [
+        {
+          "model": "Claude Opus 5.5 (claude-opus-5-5)",
+          "harness": "Claude Code desktop app",
+          "agent": "worktree session on claude/practical-visvesvaraya-5bcb35"
+        }
+      ],
+      "package": "experiments/2026-10-12-anchor-calibration",
+      "verification_tier": "submitted"
+    },
+    {
       "id": "SITE-GENERATOR-2026-10-13",
       "theme": "static project website generated from tracked repository files",
       "status": "completed-published",
@@ -4864,6 +5381,95 @@
       "retry_when": "The site needs new page types, or a check fails on a later build.",
       "status_class": "record",
       "area": "methods"
+    },
+    {
+      "id": "TOWN-AXES-2026-10-21",
+      "theme": "Settlement axis bearings, horizons and layout dates; star alignment of Harappan town plans",
+      "status": "completed-frozen-evaluation-undecided-with-declared-secondary-analysis",
+      "status_class": "frozen-evaluation",
+      "area": "archaeology",
+      "question": "In what directions relative to true north were the Harappan towns laid out, when was each layout built, and does the deviation from the cardinal directions rise with layout date as the setting point of the Pleiades or Aldebaran would require?",
+      "outcome": "The settlement-axis table holds 29 towns: 21 with coordinates and DEM horizon profiles, 14 with measured lines, 4 with two independent true-north imagery deviations (Mohenjo-daro +0.80 +/- 1.84, Harappa +0.01 +/- 0.51, Lothal -1.88 +/- 0.30, Dholavira -5.50 +/- 1.50), Sutkagen-dor with one (-0.38), 13 with plan measurements and 11 with a layout date of evidence tier 2 or 3. Wanzke 1987 measured in gon: his 8-gon system is Mohenjo-daro's main streets (+6.0 +/- 1.0 on imagery) and his p. 37 '1 to 2 degrees' matches its house blocks. Frozen test: stage 1 chose the equinoctial sunset on Mohenjo-daro and Harappa (chi2 0.38; Alcyone 0.97); P0 undecided with four towns (r = 0.49, p = 0.33, power 0.24); P1 (Pleiades, all clockwise) failed on Dholavira and Lothal; P2 and P3 failed. Amendment 1, declared before any value was read, added plan-based deviations: P0 failed on eleven towns (r = 0.46, one-sided p = 0.082; r = 0.07 without Rangpur). Credence of C-0015 0.04, weakened. With true-north errors of 1 degree at the same eleven towns the frozen P0 would have power 0.97.",
+      "challenge": "Most Harappan architecture outside Mohenjo-daro, Harappa, Lothal and Dholavira is backfilled, overgrown or not located in the imagery; nearly every published plan has a north arrow of unstated kind, and four plans of the Dholavira castle disagree by up to about 15 degrees; no Bayesian model of a layout boundary exists and five of eleven dates are cross-dated; one plan measurer stalled before declaring main systems; the C: drive filled to zero during the run.",
+      "remedy": "Four blind measurers with two methods per source class, a dating researcher blind to bearings, a protocol frozen before any value was read or any star position computed, a hashed amendment for the plan-based analysis declared before reading values, plan-north error calibrated against imagery at four towns, synthetic positive and negative controls, a validation gate for the long-term precession, DEM tiles read in memory to spare the disk, and every output written once to a dated directory with input and code hashes.",
+      "evidence": [
+        "experiments/2026-10-21-town-axes/PROTOCOL.md",
+        "experiments/2026-10-21-town-axes/AMENDMENT-1.md",
+        "experiments/2026-10-21-town-axes/FREEZE.json",
+        "experiments/2026-10-21-town-axes/table-v1/settlement-axes.json",
+        "experiments/2026-10-21-town-axes/dates-v1/dates.json",
+        "experiments/2026-10-21-town-axes/horizon-v1/horizons.json",
+        "experiments/2026-10-21-town-axes/validation-v1/validation.json",
+        "experiments/2026-10-21-town-axes/synthetic-v1/positive/results.json",
+        "experiments/2026-10-21-town-axes/synthetic-v1/negative/results.json",
+        "experiments/2026-10-21-town-axes/discovery-v1/choice.json",
+        "experiments/2026-10-21-town-axes/confirmation-v1/results.json",
+        "experiments/2026-10-21-town-axes/exploratory-v1/results.json",
+        "experiments/2026-10-21-town-axes/sensitivity-v1/primary.json",
+        "experiments/2026-10-21-town-axes/sensitivity-v1/exploratory.json",
+        "experiments/2026-10-21-town-axes/planning-v1/power-true-north.json",
+        "experiments/2026-10-21-town-axes/bench-selftest.json",
+        "experiments/2026-10-21-town-axes/REPORT.md",
+        "experiments/2026-10-21-town-axes/RETROSPECTIVE.md"
+      ],
+      "retry_when": "True-north bearings (GNSS, drone or plans registered to ground control) exist for at least eight dated towns, or Bayesian start boundaries replace the cross-dated layout dates. Do not rerun the star test on plans whose north is not stated.",
+      "package": "experiments/2026-10-21-town-axes",
+      "authors": [
+        {
+          "model": "claude-opus-5-5",
+          "harness": "Claude Code desktop app",
+          "agent": "coordinator with five general-purpose subagents"
+        }
+      ],
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "TOWN-ORIENTATIONS-VERIFICATION-2026-10-21",
+      "theme": "Blind independent verification of the town-axes test of star-aligned Harappan town layouts",
+      "status": "completed-review-with-discrepancies",
+      "status_class": "frozen-evaluation",
+      "area": "archaeology",
+      "authors": [
+        {
+          "name": "Claude Opus 5.5 (claude-opus-5-5)",
+          "harness": "Claude Code desktop app; coordinating session and measurer B subagents"
+        },
+        {
+          "name": "gpt-6.1-sol",
+          "harness": "Codex CLI exec, reasoning effort xhigh, workspace-write sandbox with network; tools, imagery, astronomy, dating evidence and measurer A"
+        }
+      ],
+      "question": "Do independent blind measurements from open imagery and published plans, independent layout dates and an independent astronomy implementation reproduce the bearings, dates, predicted deviations and frozen outcome of experiments/2026-10-21-town-axes?",
+      "outcome": "The frozen outcome is reproduced: on our measurements the test is undecided (two towns with primary deviations, eight needed), the credence stays at 0.10 and the Pleiades version fails because Dholavira is turned anticlockwise (-3.54 +- 0.52 deg). Our astronomy reproduces all 83 predicted deviations of the other package within 0.026 deg and its scorer outputs exactly. Bearings disagree under the frozen rule: Lothal's dock is +0.19 +- 0.30 deg on Sentinel-2 against -1.88 +- 0.30 deg on Esri imagery (z = 4.9 on stated errors, about 1.5 on the runway-calibrated error); Dholavira agrees. Open 10 m imagery could not measure Mohenjo-daro, Harappa or Sutkagen-dor. Dates disagree under the frozen rule (5 of 7 towns), through the Chanhu-daro and Dholavira castle source choices. The plan-based secondary analysis fails P0 on our plan readings too, but its correlation reverses sign (r = -0.36 against +0.46) because Rangpur lies near the 45 deg fold.",
+      "challenge": "A duplicate study was already running, so the package became a verification; the shared C: drive filled during acquisition; open imagery resolves walls only when several hundred metres long; no plan states true north; a strict dating rule leaves major towns undated; measurers sharing one imagery source and one tool agree more closely than they are accurate.",
+      "remedy": "Read only the other package's protocol, town list and star file before its report; froze protocol, dates and all blind outputs in sequence; freed our own intermediate files and resumed acquisition under free-space rules; validated the imagery tool on seven runways with segment lengths of 100-400 m; kept strict and liberal date tables; split measurers into regional shares; preserved superseded comparison outputs and recorded each fix.",
+      "evidence": [
+        "experiments/2026-10-21-town-orientations-verification/REPORT.md",
+        "experiments/2026-10-21-town-orientations-verification/PROTOCOL.md",
+        "experiments/2026-10-21-town-orientations-verification/PROTOCOL.sha256",
+        "experiments/2026-10-21-town-orientations-verification/MEASUREMENT-RULES.md",
+        "experiments/2026-10-21-town-orientations-verification/READ-LOG.json",
+        "experiments/2026-10-21-town-orientations-verification/BLIND-FREEZE.sha256",
+        "experiments/2026-10-21-town-orientations-verification/dates-v1/DATES.sha256",
+        "experiments/2026-10-21-town-orientations-verification/table-v1/town-values.json",
+        "experiments/2026-10-21-town-orientations-verification/agreement-v1/plan-agreement.json",
+        "experiments/2026-10-21-town-orientations-verification/comparison-v3/comparison.json",
+        "experiments/2026-10-21-town-orientations-verification/comparison-v3/dates-matched.json",
+        "experiments/2026-10-21-town-orientations-verification/astro-v1/validation-v1.json",
+        "experiments/2026-10-21-town-orientations-verification/infra-v1/validation-v1/summary.json",
+        "experiments/2026-10-21-town-orientations-verification/shots-synthetic-v2.json",
+        "experiments/2026-10-21-town-orientations-verification/RETROSPECTIVE.md",
+        "experiments/2026-10-21-town-orientations-verification/RETROSPECTIVE-CODEX.md",
+        "experiments/2026-10-21-town-orientations-verification/DATA-UPDATE.md"
+      ],
+      "retry_when": "A true-north bearing exists for the Lothal dock and Dholavira's walls (ground or drone survey, plans registered to surveyed control points, or openly licensed sub-metre imagery registered to Sentinel-2), or open imagery of comparable resolution covers Mohenjo-daro and Harappa. Re-measuring with 10 m imagery or with plans of unstated north does not justify a retry.",
+      "verification_tier": "submitted",
+      "verifies": "experiments/2026-10-21-town-axes/",
+      "related_cards": [
+        "Q-1032",
+        "C-0015",
+        "C-0016"
+      ]
     }
   ]
 }
