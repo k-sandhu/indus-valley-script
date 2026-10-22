@@ -1,0 +1,27 @@
+# Retrospective: the plan-registration package, 21 October 2026
+
+Contributors: Claude Opus 5.5 (`claude-opus-5-5`) in the Claude Code desktop app as coordinator, with seven general-purpose subagents of the same model: six registrars (R1 and R2, each split into regions G1 to G3) and one search agent (S). The work was started from the session that built the town-axes package, to supply the true-north bearings its kill condition lacked.
+
+## Approach
+
+We read the town-axes report, protocol, amendment and plan-B method first. Because the report states every plan and imagery deviation, we could not choose control points blind, so the design gave that job to agents who never saw an orientation value. We wrote the fit and error model, the registrars' tools, the run script, a plan list stripped of arrows and bearings, the two briefs and the protocol, ran a synthetic self-test, and hashed all of it in `FREEZE.json` before any agent started. The registrars' checking tool fits the frozen model but never prints the rotation. When all seven agents had finished, we hashed their 46 files in `CONTROL-FREEZE.json` and ran the registration once.
+
+## What happened and what we changed
+
+Two published coordinates were badly wrong. Surkotada's (from English Wikipedia, used by plan-B and searched by the town-axes imagery measurer img-A) lies 8.1 km from the excavated citadel, which explains why the town-axes package found no mound there; both registrars found the exposed walls independently, one through the project's own site census. Farmana's coordinate lay 25 km from the site, which both registrars found from the excavation report's own coordinates. The brief had warned of errors of "several hundred metres"; the registrars widened the search on their own.
+
+Most plans show nothing that survives. Banawali and Kanmer could not be registered by either registrar, and four of the five optional plans failed because they draw single trenches tied to local grids. Chaining through a second plan of the same site rescued Chanhu-daro (for R1, through Mackay's contour map) and Farmana (for R2, through the report's contour map and a 2011 Wayback capture that still shows the terraces). The two registrars disagreed on both chained towns: R2 rejected the ring enclosure that R1 took for Pir's tomb at Chanhu-daro, and at Farmana R1 judged that the report's contour map does not draw the excavated area, while R2 matched the stepped outline of the Locality 1 trenches on both figures. The frozen rule uses an accepted registration even when the other registrar recorded none, so both towns rest on one registrar.
+
+The frozen validation failed at Dholavira. On reading the converted systems we found that plan-B's main system on the ASI contour drawing is a set of mound edges, while the imagery value is the castle walls; the registration itself recovered that drawing's graticule north to within 0.3°, and the three plans that draw walls agree with the imagery. We did not change the protocol or rerun anything. The diagnosis is in a separate post-outcome script and file, and the report withholds the values from scoring as the rule requires.
+
+`register.py` skipped one secondary check. It looked up the IGRF declination for Mackay's magnetic arrow by source id in a field of the town-axes table that holds a citation string, found nothing and wrote no entry; `code/diagnostics.py` repeats the check with a lookup by town and label. The planning-power step of the diagnostics needed pyerfa, which the system Python lacks and which the town-axes session's virtual environment could no longer import; we built a fresh environment in the scratchpad with the pinned version.
+
+Several agents met orientation statements while reading publications for context (Kalibangan, Banawali, Kanmer, Rojdi, Farmana, Chanhu-daro and Shikarpur texts) and stopped reading, as the brief asked; one saw the untracked conjecture file names in `git status`. Each case is recorded in the control file's notes. The agents shared one scratchpad and a few early helper scripts with generic names overwrote each other; they were throwaway viewing aids, and the agents moved later scripts into their own subfolders. One registrar printed the status lines of other agents' control files while summarising its own folder, without reading their points.
+
+## Outcome
+
+Fourteen plans at eight towns have a measured true arrow bearing, and five towns with covered architecture have true-north deviations: Kalibangan, Surkotada, Chanhu-daro, Farmana and Shikarpur. With the four imagery towns, eight towns with a layout date now have true-north values, which is the number the town-axes P0 needs; the frozen validation failed at Dholavira for a cause outside the registration, so scoring waits for a protocol that tests it. The two registrars' rotations agree within their errors (χ² = 9.4 on nine plans). The arrows of the two Kalibangan plans in *Indian Archaeology – A Review* point about 8.5° east of true north, more than the 3.1° root mean square that Amendment 1 of the town-axes package estimated for plan arrows.
+
+## For the next contributor
+
+Measure Surkotada's exposed walls on imagery at 23.6113 N, 70.9174 E; it tests the registered −11.4 ± 2.1° directly. In a scoring package, compare wall systems with wall systems at Dholavira, and decide in the protocol how to weigh the towns that rest on one registrar. Banawali and Kanmer need a field survey or a plan that draws a surviving feature.

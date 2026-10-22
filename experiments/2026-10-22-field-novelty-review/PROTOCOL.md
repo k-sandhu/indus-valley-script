@@ -1,0 +1,15 @@
+# Field novelty and publication review, 22 October 2026
+
+Status class: source-review. This is a post-outcome literature and evidence review, not a new confirmation experiment. Contributor: Codex, GPT-6 family, desktop harness; exact backend identifier not exposed. We own this directory and one new registry entry. Existing studies, manuscripts, generated indexes and reserved observations remain untouched.
+
+We assess the eight contribution families outlined in the preceding discussion: line-trained segmentation; stratigraphic change; seal-text identity and circulation; fish ordering and stroke behaviour; Sanskrit and Dravidian reading calibration; object metadata and source corrections; restoration; conditional reference laws and numerical/mapping controls.
+
+The earlier review in experiments/2026-10-02-connections-and-priority/novelty/ covers the first four papers. The present review adds the 12–22 October work and actively searches for closer precedents. We have already read the project outcomes. No claim of blinded review or fresh confirmation is made.
+
+For each family, search primary publications, institutional repositories, author manuscripts and current research/code records. Separate peer-reviewed work, preprints, theses and project pages. Inspect the closest accessible source at passage level; record inaccessible works and abstract-only scope. Search absence is not proof of priority. Report the original contribution at the narrowest defensible level: new observation, new controlled measurement, resource, method application, or distinct method/theory.
+
+Assess scientific strength separately from novelty: population and object identity, exposure and amendments, suitable controls, inference target, uncertainty, independent verification and replicable source access. Inspect protocols, exact aggregate outputs, code where it bears on a major risk, and recorded reviews. Recompute a small representative bench endpoint from its saved inputs in this directory if available. Do not open new reserved data or rerun costly discovery searches. Clearly distinguish this review from complete independent reproduction.
+
+Publication decisions: (A) evidence sufficient for a focused paper after normal independent checking and manuscript preparation; (B) promising, with a specified scientific repair or validation required; (C) useful supporting result/resource or replication, insufficient as the proposed standalone claim; (D) unsupported claim. These are review judgements, not predictions of editorial acceptance. Prefer a few coherent papers over one paper per result.
+
+Stop when each family has a closest-precedent comparison and an evidence-based decision, or when a named inaccessible source prevents a priority decision. Save the search log, source register, evidence checks, report and retrospective. New bibliographic coverage and no object-record coverage are expected. Raw full-text acquisitions, if needed, go under data/raw/2026-10-22-field-novelty-review/ with hashes and local-only status.

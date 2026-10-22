@@ -1,0 +1,75 @@
+{
+ "slug": "allahdino",
+ "measurer": "B",
+ "located_point": {
+  "latitude": 24.85,
+  "longitude": 67.3,
+  "method": "Not located. The only coordinate is the arcminute value from Fuls's catalogue sample (24°51' N, 67°18' E), uncertain by about 1 km. The 3 km Sentinel-2 render around it shows housing, industrial estates, roads and cleared plots east of Karachi, and no mound could be identified."
+ },
+ "imagery_status": "not measurable",
+ "imagery_unmeasurable_reason": "Site not located: arcminute starting coordinate inside a built-up and industrial area; features in any case not resolvable at 10 m.",
+ "sources": [
+  {
+   "id": "imagery",
+   "kind": "imagery",
+   "manifest_path": "experiments/2026-10-21-town-orientations-verification/infra-v1/imagery-manifest-v1.json",
+   "composite_path": "data/raw/2026-10-21-town-orientations-verification/infra/imagery/allahdino/acquisition-v3/median-composite.tif",
+   "composite_sha256": "8795f0924962066744fec994a38a1cc9a5237306c201376d19825c43662e38a1",
+   "scene_ids": [
+    "S2B_42RUN_20180313_1_L2A",
+    "S2B_42RUN_20191024_1_L2A",
+    "S2B_42RUN_20220210_0_L2A",
+    "S2B_42RUN_20240407_0_L2A",
+    "S2B_42RUN_20250306_0_L2A"
+   ],
+   "scene_datetimes": [
+    "2018-03-13T06:22:08.992000Z",
+    "2019-10-24T06:22:18.391000Z",
+    "2022-02-10T06:22:11.582000Z",
+    "2024-04-07T06:12:20.959000Z",
+    "2025-03-06T06:22:20.332000Z"
+   ],
+   "epsg": 32642,
+   "tile": "42RUN",
+   "manifest_status": "available",
+   "rights_notice": "Copernicus Sentinel data terms; Contains modified Copernicus Sentinel data 2018–2026",
+   "status": "inspected; site not located"
+  },
+  {
+   "id": "plan-fairservis1986-fig2",
+   "kind": "plan",
+   "citation": "Walter A. Fairservis, Jr. 1986, 'Cattle and the Harappan Chiefdoms of the Indus Valley', Expedition 28(2): 43-50, University Museum, University of Pennsylvania. Plan library entry allahdino-01 (publisher PDF)",
+   "source_path": "data/raw/2026-10-21-town-orientations-verification/infra/plans/allahdino/penn-publisher-pdf/source.pdf",
+   "pdf_page": 2,
+   "printed_page": "44",
+   "figure": "Fig. 2, 'Plan of the settlement at Allahdino during the Mature Harappan period.'",
+   "north_class": "unspecified",
+   "north_evidence": "Half-arrowhead (solid wedge) with 'N' beside it, lower right of the plan; no meaning stated.",
+   "survey_year": null,
+   "length_status": "nominal: the plan has no scale; lengths use an arbitrary 0.1 m per render pixel"
+  }
+ ],
+ "line_files": [
+  {
+   "path": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/allahdino/plan-fairservis1986-fig2-lines-v1.json",
+   "source_id": "plan-fairservis1986-fig2",
+   "systems": {
+    "ad-a1": "ad-1",
+    "ad-a2": "ad-1",
+    "ad-a3": "ad-1",
+    "ad-a4": "ad-1",
+    "ad-a5": "ad-1",
+    "ad-a6": "ad-1",
+    "ad-a7": "ad-1",
+    "ad-p1": "ad-1",
+    "ad-p2": "ad-1",
+    "ad-p4": "ad-1",
+    "ad-p3": "ad-2"
+   },
+   "part_override": "Settlement, Mature Harappan plan"
+  }
+ ],
+ "registrations": [],
+ "notes": "Fig. 2 draws walls as bands of brick courses inside dashed trench outlines; we measured eleven outline faces of long wall bands, located with blurred dark-run profiles (scripts-S/bluruns.py) and fitted as edges. Wall bands in both directions lie between -13.4 and -19.7 degrees from the arrow, ten of them within -17.3 to -19.7. The arrow is a small half-arrowhead; we fitted its straight side as the shaft, and its fit error (0.32 degrees) dominates every line's sigma. If the drafter meant the wedge's centre line as the axis, the arrow direction would differ by several degrees; this is the main uncertainty of this source. The plan has no scale bar, so lengths are nominal (0.1 m per render pixel) and the 200 m neighbour check is not meaningful for this source; the length-weighted mean and its standard error do not depend on the scale.",
+ "unmeasurable_reason": null
+}

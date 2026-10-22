@@ -1,0 +1,160 @@
+{
+  "recorded_utc": "2026-10-21T04:22:48.736613+00:00",
+  "agent": "codex gpt-6.1-sol run 1A",
+  "source_count": 185,
+  "status_counts": {
+    "acquired": 52,
+    "wrong-volume": 1,
+    "duplicate": 1,
+    "held-verified": 131
+  },
+  "held_verified_files": 131,
+  "unswept_kanmer_witness_files": 110,
+  "held_sources_swept": 21,
+  "acquired_assets": 115,
+  "downloaded_asset_bytes": 1042382255,
+  "total_network_bytes": 1044664200,
+  "network_request_outcomes": 320,
+  "network_status_counts": {
+    "200": 320
+  },
+  "text_basis_counts": {
+    "pdf-text-layer": 16,
+    "djvu-txt-unpaged": 1,
+    "archive-page-ocr": 52,
+    "tesseract": 4,
+    "html": 2
+  },
+  "page_text_files": 20047,
+  "failed_sources": [],
+  "duplicates": [
+    {
+      "source_id": "iar-1997-98",
+      "sha256": "26a4316a2212fe271740cdef7699efb901e9afc4965e266f8ef511a0abd9add4"
+    }
+  ],
+  "wrong_volumes": [
+    {
+      "source_id": "iar-1996-97",
+      "observed_year_or_volume": "1997-98"
+    }
+  ],
+  "candidate_pages": 1688,
+  "per_site_candidate_pages": {
+    "RGR": 145,
+    "FRM": 113,
+    "BHR": 68,
+    "SNL": 16,
+    "RPR": 44,
+    "KRP": 13,
+    "BJR": 3,
+    "BRR": 14,
+    "TKD": 49,
+    "BNW": 80,
+    "KNL": 70,
+    "KLB": 185,
+    "DHV": 239,
+    "KHR": 12,
+    "KNM": 23,
+    "SKP": 22,
+    "GDH": 33,
+    "NGW": 36,
+    "PDR": 63,
+    "BTD": 25,
+    "KNT": 49,
+    "JKR": 13,
+    "KBD": 1,
+    "NVN": 0,
+    "SKT": 57,
+    "DSL": 8,
+    "RJD": 51,
+    "LTL": 196,
+    "DMB": 56,
+    "NHT": 30,
+    "LKD": 3,
+    "GNW": 5,
+    "CHN": 47,
+    "WTW": 0,
+    "CHL": 0,
+    "RJP": 0,
+    "HRP": 303,
+    "MHJ": 234,
+    "GENERIC": 416
+  },
+  "new_site_lead_rows": 38,
+  "unresolved_iar_heading_pages": 3,
+  "bibliography": {
+    "title_confirmed": 54,
+    "authors_confirmed": 13,
+    "unresolved_or_metadata_only_fields": "Recorded per source; unknown fields remain empty."
+  },
+  "methods": {
+    "downloads": "Repository fetch_http loaded by file path; archive MD5/SHA1 compared after acquisition.",
+    "extraction": "Poppler text extraction; archive page OCR replaces PDF pages below the threshold; journal OCR is split by leaf.",
+    "tesseract": "English, 300 dpi grayscale rendering; three pages per source and up to three sources concurrently; completed pages cached locally.",
+    "keyword_matching": "Case-insensitive matching tolerates spacing and hyphenation; normalized text prefilters the regular expressions.",
+    "printed_pages": "Automatic header/footer detection; no manual page-image review.",
+    "source_text": "Page files and snippets stay local. No objects were extracted or classified."
+  },
+  "observable_repairs": [
+    "PyMuPDF was unavailable under isolated Python; Poppler supplied PDF text and rendering.",
+    "The first sequential OCR pass was interrupted. The replacement runner caches each completed page and processes page batches concurrently.",
+    "Bibliographic checks exposed OCR year errors. Usable PDF text is retained and annual year ranges must span consecutive years.",
+    "Unconfirmed archive creators and non-name OCR fragments were removed from author/editor fields.",
+    "The duplicate mirror file and the requested archive replacement are both retained."
+  ],
+  "deviations": [
+    "The first import wrote tools/__pycache__/fetch_data.cpython-313.pyc outside the owned paths. Bytecode writing was then disabled. The source tool was not edited.",
+    "The unswept Kanmer witness exposure rows record bytes hashed by script because their text was not read.",
+    "The existing Kanmer artifact manifest was consulted to resolve the local witnesses named by the source register."
+  ],
+  "page_images_viewed": 0,
+  "command_workdir": "experiments/2026-10-21-post-catalogue-finds",
+  "command_parameters": {
+    "ROOT": "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script",
+    "RAW": "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\data\\raw\\2026-10-21-post-catalogue-finds\\run1a",
+    "RECORDS": "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-post-catalogue-finds\\acquisition",
+    "SEED": "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-post-catalogue-finds\\selection\\sites-seed.csv"
+  },
+  "reproduction_commands": [
+    "python -I acquisition/fetch_proposed.py discover --root ROOT --raw RAW --records RECORDS",
+    "python -I acquisition/fetch_proposed.py fetch --root ROOT --raw RAW --records RECORDS",
+    "python -I acquisition/process_sources.py held --root ROOT --raw RAW --records RECORDS --seed SEED",
+    "python -I acquisition/process_sources.py duplicates --root ROOT --raw RAW --records RECORDS --seed SEED",
+    "python -I acquisition/process_sources.py extract --root ROOT --raw RAW --records RECORDS --seed SEED",
+    "python -I acquisition/process_sources.py supplemental --root ROOT --raw RAW --records RECORDS --seed SEED",
+    "python -I acquisition/fetch_proposed.py fetch --root ROOT --raw RAW --records RECORDS",
+    "python -I acquisition/archive_ocr_iar.py --root ROOT --raw RAW --records RECORDS",
+    "python -I acquisition/fetch_proposed.py fetch --root ROOT --raw RAW --records RECORDS",
+    "python -I acquisition/process_sources.py extract --ocr --root ROOT --raw RAW --records RECORDS --seed SEED",
+    "python -I acquisition/bibliography.py --root ROOT --raw RAW --records RECORDS",
+    "python -I acquisition/process_sources.py sweep --root ROOT --raw RAW --records RECORDS --seed SEED",
+    "python -I acquisition/selftest-1a.py --root ROOT --raw RAW --records RECORDS"
+  ],
+  "tracked_outputs": [
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/acquisition-log-1a.jsonl",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/archive_ocr_iar.py",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/audit_records.py",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/bibliography-validation-1a.json",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/bibliography.py",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/bibliography_fields.py",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/candidate-pages-1a.csv",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/check_heading_exceptions.py",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/discovery-1a.json",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/exposure-log-1a.csv",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/fetch_proposed.py",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/held-verification-1a.json",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/iar-heading-exceptions-1a.json",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/iar-ocr-alternatives-1a.json",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/manifest-proposals-1a.json",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/new-site-leads-1a.csv",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/process_sources.py",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/processing-summary-1a.json",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/run-record-1a.json",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/run_record.py",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/selftest-1a.json",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/selftest-1a.py",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/source-register-1a.csv",
+    "experiments/2026-10-21-post-catalogue-finds/acquisition/sweep-summary-1a.json"
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0",
+  "task": "town-axes-stage2",
+  "synthetic": false,
+  "n_all": 4,
+  "n_confirmation": 2,
+  "chosen_target": "sun-equinox-set",
+  "P0_all": {
+    "n": 4,
+    "computable": true,
+    "pearson_r": 0.4871,
+    "p_one_sided": 0.333333,
+    "p_method": "exact",
+    "spearman_rho": 0.2,
+    "leave_one_out_min_r": -0.8569,
+    "leave_one_out_r": {
+      "dholavira": -0.8569,
+      "harappa": 0.3807,
+      "lothal": 0.6997,
+      "mohenjo-daro": 0.8835
+    },
+    "wls_slope_deg_per_century": 0.3917,
+    "wls_intercept_deg": 8.4299,
+    "slope_ci95_deg_per_century": [
+      -1.8881,
+      3.1502
+    ],
+    "bootstrap_resamples_used": 19705,
+    "passes": false,
+    "decided": false
+  },
+  "P0_confirmation": {
+    "n": 2,
+    "computable": false
+  },
+  "P1_pleiades": {
+    "fraction_clockwise": 0.5,
+    "towns_below_minus_2_sigma": [
+      "dholavira",
+      "lothal"
+    ],
+    "model_slope_deg_per_century": 0.6224,
+    "fitted_slope_ci95": [
+      -1.8881,
+      3.1502
+    ],
+    "ci_contains_model_slope": true,
+    "ci_excludes_zero": false,
+    "passes": false,
+    "per_town": [
+      {
+        "town": "dholavira",
+        "theta_obs": -5.5,
+        "theta_alcyone": -2.3262
+      },
+      {
+        "town": "harappa",
+        "theta_obs": 0.0058,
+        "theta_alcyone": 0.6157
+      },
+      {
+        "town": "lothal",
+        "theta_obs": -1.8823,
+        "theta_alcyone": 1.7647
+      },
+      {
+        "town": "mohenjo-daro",
+        "theta_obs": 0.8005,
+        "theta_alcyone": -1.3875
+      }
+    ]
+  },
+  "P2_aldebaran": {
+    "n_eligible": 4,
+    "fraction_sign_match": 0.5,
+    "passes": false,
+    "per_town": [
+      {
+        "town": "dholavira",
+        "theta_obs": -5.5,
+        "theta_aldebaran": -6.4014,
+        "sign_match": true
+      },
+      {
+        "town": "harappa",
+        "theta_obs": 0.0058,
+        "theta_aldebaran": -3.4676,
+        "sign_match": false
+      },
+      {
+        "town": "lothal",
+        "theta_obs": -1.8823,
+        "theta_aldebaran": -2.359,
+        "sign_match": true
+      },
+      {
+        "town": "mohenjo-daro",
+        "theta_obs": 0.8005,
+        "theta_aldebaran": -5.4441,
+        "sign_match": false
+      }
+    ]
+  },
+  "P3_chosen_target": {
+    "target": "sun-equinox-set",
+    "n": 2,
+    "chi2_target": 15.0939,
+    "chi2_cardinal": 12.5582,
+    "chi2_constant_offset": 13.8588,
+    "constant_offset_deg": 0.1841,
+    "chi2_probability_target": 0.000528,
+    "ordering_survives_leave_one_out": false,
+    "passes": false,
+    "per_town": [
+      {
+        "town": "dholavira",
+        "theta_obs": -5.5,
+        "theta_pred": 0.2956,
+        "rate_deg_per_century": 0.0,
+        "sigma_total": 1.8028,
+        "chi2": 10.3349
+      },
+      {
+        "town": "lothal",
+        "theta_obs": -1.8823,
+        "theta_pred": 0.3953,
+        "rate_deg_per_century": 0.0,
+        "sigma_total": 1.044,
+        "chi2": 4.759
+      }
+    ]
+  },
+  "power": {
+    "n_sim": 20000,
+    "n_perm_per_sim": 1999,
+    "p0_pass_rate": 0.2422,
+    "model": "Alcyone deviation at each town's layout date plus Gaussian date, measurement and builders' errors"
+  },
+  "D1_mohenjo_daro": {
+    "theta": 0.8005,
+    "sigma": 1.835,
+    "wanzke_tables_7_2_within_2_sigma": false,
+    "wanzke_p37_1_to_2_within_2_sigma": true
+  },
+  "credence_rule": {
+    "prior": 0.1,
+    "posterior": 0.1,
+    "status": "open"
+  },
+  "provenance": {
+    "utc": "2026-10-21T05:36:29.285246+00:00",
+    "python": "3.13.13",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "inputs": {
+      "experiments/2026-10-21-town-axes/table-v1/settlement-axes.json": "21b7eed4b5cc0460ef1a372b58160253f7fb57ddd702b3c2369d6e7d7c323faf",
+      "experiments/2026-10-21-town-axes/horizon-v1/horizons.json": "aa65a631daa5a60d329160b7a2a02017126a87a0f5bb1f9007c331ffd9d01b06",
+      "experiments/2026-10-21-town-axes/discovery-v1/choice.json": "73fc7bda79596df058f2b20e37a8e75e76c81d5e7f9a346df487197bdabca7f4",
+      "experiments/2026-10-21-town-axes/stars-v1.json": "44799a5ba53cda628e5298de3dbc24cda762fa2cfca575adedf9fa19d34177bf"
+    },
+    "code": {
+      "experiments/2026-10-21-town-axes/score.py": "9fd559bd8b107f1ceff7573447b23eea4935e23f4415be5016a9bd841e1c77d7",
+      "experiments/2026-10-21-town-axes/astro.py": "0634dff2ff2248d48fdbcbee15a75a5a02d440e6c416008a14cbffd90c14b164",
+      "experiments/2026-10-21-town-axes/common.py": "92f25cadf6cbbd3eb96f7bca766c70957ee401a6c1e3e0fa9b03f19dfc484490"
+    }
+  }
+}

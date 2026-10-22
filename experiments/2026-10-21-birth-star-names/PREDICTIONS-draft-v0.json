@@ -1,0 +1,11 @@
+{
+  "status": "draft before discovery; replaced at freeze",
+  "statistic_families": ["fish_compound_richness", "fish_compound_evenness", "fish_modifier_pairs"],
+  "withhold_site": false,
+  "joint_credence_rule": "Draft: set at freeze.",
+  "predictions": [
+    {"id": "N1", "statistic": "Chao1 of fish compounds in name position; matched opening-vocabulary Chao1 and Good-Turing novelty", "null": "Fish compounds drawn like opening vocabulary of the same token count", "pass_rule": "Draft: Chao1 in [24, 45]; matched vocabulary Chao1 > 45 and novelty above fish in >= 95% of draws"},
+    {"id": "N2", "statistic": "Normalised entropy H/ln S of fish compounds", "null": "Matched opening vocabulary draws", "pass_rule": "Draft: above matched vocabulary in >= 95% of draws and inside the Brahmi asterism range"},
+    {"id": "N3", "statistic": "Modifier contrasts applying to exactly three fish bases with balanced pair frequencies", "null": "Contrasts spread over other numbers of bases", "pass_rule": "Draft: exactly one contrast with three bases, each pair ratio within [1/3, 3]"}
+  ]
+}

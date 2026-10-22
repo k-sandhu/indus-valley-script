@@ -1,0 +1,148 @@
+{
+ "schema_version": "1.0",
+ "registrar": "R1",
+ "agent": "R1-G2",
+ "plan": "dholavira:asi2020-fig2.10",
+ "status": "registered",
+ "reason": null,
+ "aux_plans": [],
+ "links": [
+  {
+   "plan": "dholavira:asi2020-fig2.10",
+   "to": "map",
+   "points": [
+    {
+     "id": "cp1",
+     "class": "A",
+     "exposed_masonry": true,
+     "plan_px": [
+      888.0,
+      876.0
+     ],
+     "mosaic": "data/raw/2026-10-21-plan-registration/R1-G2/mosaics/dhol_z18_big_cur_z18_x182189-182206_y113142-113158.json",
+     "mosaic_px": [
+      2886.0,
+      2190.0
+     ],
+     "plan_feature": "castle: outer corner of the wall band at the north-east corner (dark block at the top-left of the castle on the page)",
+     "image_feature": "castle: north-east corner, where the shadowed outer face of the north wall ends against the east side",
+     "confidence": "schematic drawing; imagery corner good to about 2 m"
+    },
+    {
+     "id": "cp2",
+     "class": "B",
+     "exposed_masonry": true,
+     "plan_px": [
+      914.0,
+      1100.0
+     ],
+     "mosaic": "data/raw/2026-10-21-plan-registration/R1-G2/mosaics/dhol_z18_big_cur_z18_x182189-182206_y113142-113158.json",
+     "mosaic_px": [
+      2623.0,
+      2186.0
+     ],
+     "plan_feature": "castle: outer corner of the wall band at the north-west corner",
+     "image_feature": "castle: west end of the straight shadow line of the north wall's outer face",
+     "confidence": "the west end of the exposed face is not a sharp corner; good to about 5 m"
+    },
+    {
+     "id": "cp3",
+     "class": "B",
+     "exposed_masonry": true,
+     "plan_px": [
+      985.0,
+      802.0
+     ],
+     "mosaic": "data/raw/2026-10-21-plan-registration/R1-G2/mosaics/dhol_z18_big_cur_z18_x182189-182206_y113142-113158.json",
+     "mosaic_px": [
+      2961.0,
+      2321.0
+     ],
+     "plan_feature": "Eastern Reservoir: centre of the drawn rectangle",
+     "image_feature": "rectangular stone-lined reservoir east of the castle: centre of its whole outline (rim lines at about x 2934-2988, y 2253-2390)",
+     "confidence": "the drawn rectangle is narrower east-west than the reservoir; the centre is used instead of its corners; good to about 5 m"
+    },
+    {
+     "id": "cp4",
+     "class": "C",
+     "exposed_masonry": false,
+     "plan_px": [
+      1190.0,
+      1958.0
+     ],
+     "mosaic": "data/raw/2026-10-21-plan-registration/R1-G2/mosaics/dhol_z18_big_cur_z18_x182189-182206_y113142-113158.json",
+     "mosaic_px": [
+      1570.0,
+      2525.0
+     ],
+     "plan_feature": "cemetery: centre of the largest circular tumulus (dark disc inside a stippled ring)",
+     "image_feature": "centre of a circular patch of bare pale soil about 27 m across west of the town",
+     "confidence": "identification by size and position in the cemetery area; soft edges; good to about 10 m"
+    }
+   ]
+  }
+ ],
+ "candidates_considered": [
+  {
+   "feature": "castle north-east and north-west corners",
+   "used": true,
+   "why": "the north wall's outer face is a clear shadow line in the imagery (cp1, cp2)"
+  },
+  {
+   "feature": "Eastern Reservoir",
+   "used": true,
+   "why": "clear in the imagery; drawn schematically, so its centre is used (cp3)"
+  },
+  {
+   "feature": "largest circular tumulus in the cemetery",
+   "used": true,
+   "why": "matches a round bare patch of similar size (cp4)"
+  },
+  {
+   "feature": "castle south-east and south-west corners, west and north gates",
+   "used": false,
+   "why": "no sharp corner or gap in the imagery that could be matched one-to-one to the drawn bands"
+  },
+  {
+   "feature": "Southern Reservoir (thin outlines and the thick box at its east end)",
+   "used": false,
+   "why": "the long excavated cut south of the castle is in the right place, but the drawn boxes do not match its length or width"
+  },
+  {
+   "feature": "walls of the bailey and middle town (orange bands with gates)",
+   "used": false,
+   "why": "mostly under tree belts; the visible street lines in the middle town are not drawn on this figure"
+  },
+  {
+   "feature": "outer walls and corners of the lower town",
+   "used": false,
+   "why": "tree belts and scrub; no corner identifiable"
+  },
+  {
+   "feature": "River Mansar and River Manhar",
+   "used": false,
+   "why": "drawn as smooth schematic curves; the bends on the drawing could not be matched to particular bends of the channels"
+  },
+  {
+   "feature": "smaller tumuli and graves of the cemetery",
+   "used": false,
+   "why": "under trees; not visible"
+  }
+ ],
+ "imagery": [
+  {
+   "mosaic": "data/raw/2026-10-21-plan-registration/R1-G2/mosaics/dhol_z18_big_cur_z18_x182189-182206_y113142-113158.json",
+   "service": "Esri World Imagery",
+   "release": null,
+   "imagery_date": "20231218"
+  }
+ ],
+ "log": [
+  {
+   "utc": "2026-10-21T23:40:00Z",
+   "change": "moved cp3 in the imagery from (2960, 2305) to (2961, 2321)",
+   "reason": "misread extent: the first position was read on a crop that showed only the deep northern part of the reservoir; a crop of the whole reservoir shows its outline continuing south to y = 2390, so its centre lies at y = 2321"
+  }
+ ],
+ "notes": "Fig. 2.10 is a schematic plan ('Ratio and Proportions') with walls drawn as bands and the page turned about a quarter turn. A trial fit on rough castle corners was used only to find candidate features; all points were then read on the render and the imagery independently. Only four points could be identified; three are within 200 m of each other and the fourth is about 750 m to the west. The figure prints dimensions (in metres) along the walls but no orientation statement; none was read."
+}

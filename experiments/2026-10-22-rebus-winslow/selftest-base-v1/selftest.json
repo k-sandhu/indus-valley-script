@@ -1,0 +1,181 @@
+{
+ "schema_version": "1.0",
+ "task": "rebus-base-rate/selftest",
+ "synthetic": true,
+ "created_utc": "2026-10-22T14:30:05.537908+00:00",
+ "provenance": {
+  "code": {
+   "acquire.py": "59a106de9a0eb1bd00ad5001ba3f1fe5f4a4a2b34821e79150a7af94cadd371c",
+   "exploratory.py": "d6c4af684b741ccfdd9d3143d370f8cc319596241cf1d15737ae5e648488b600",
+   "extract_epsd2.py": "cea9bac91606468866ab018cd5288631a96bea91e6496eace5ed08c580a23d12",
+   "freeze.py": "225fed24fdfe932c6bb701de612b746041873971363c65bb99dda2b09df75895",
+   "manifest.py": "0808b64d775826e3395d407afe7c5a33821e1d6ac3f17a6e44f88c773d84c967",
+   "parse_cdial.py": "bbecf4675047abefad9110828f58c47dd0e1131ae46dd23121e58c6b63507e0b",
+   "parse_dedr.py": "93e36dc2ecf24ed24afbeef7f63e4666cfca545337ae1d1415139cc1fbd35e38",
+   "parse_tamil_lex.py": "e2fb108f1bd3b82f6fe3dd2404a7ee3f780a0c3728afedd3059287ac1b9a6e27",
+   "pools.py": "faad1d249e79edfcfabc346f7f184dfc64f58dc6864e625be13b61e97439f4c8",
+   "rebus.py": "bfa65175b3383b8cad04d05f0078cfa7abcfbc673b0728f92a138f47c787ed42",
+   "run_homophones.py": "1f6724dc08d2dbd741808cfc509e10e43e4f0a6d6bc832b6156d8fa6cdbbbbc3",
+   "run_interlocks.py": "284fa53f152b5997465d21d94f51cd7de452f949d3c088ec3158dccc7c213d46",
+   "selftest.py": "03bd181b1169738dc265daef3b176cae109a689b1c7ab9f9a84b037a9874338f",
+   "verify.py": "7d2ff8097c794d0341aee0abac70013862aeb76e228a23a4337cd8b290d560d9"
+  }
+ },
+ "checks": {
+  "parpola_pairs": [
+   {
+    "a": "mīṉ",
+    "b": "mīṉ",
+    "meanings": "fish / star",
+    "weakest_tolerance": "T0"
+   },
+   {
+    "a": "muruku",
+    "b": "muruku",
+    "meanings": "youth / ear-ring",
+    "weakest_tolerance": "T0"
+   },
+   {
+    "a": "katir",
+    "b": "katir",
+    "meanings": "spindle / to shine",
+    "weakest_tolerance": "T0"
+   },
+   {
+    "a": "piḷḷai",
+    "b": "piḷḷai",
+    "meanings": "squirrel / child",
+    "weakest_tolerance": "T0"
+   },
+   {
+    "a": "vēḷ",
+    "b": "veḷ",
+    "meanings": "Murukan / white",
+    "weakest_tolerance": "T0"
+   },
+   {
+    "a": "veṇ",
+    "b": "vēḷ",
+    "meanings": "veṇ-mīṉ / Muruka-vēḷ",
+    "weakest_tolerance": "T0+sandhi"
+   },
+   {
+    "a": "veḷi",
+    "b": "veḷ",
+    "meanings": "space / white",
+    "weakest_tolerance": "T1"
+   },
+   {
+    "a": "veḷḷi",
+    "b": "vēḷ",
+    "meanings": "veḷḷi-mīṉ / Muruka-vēḷ",
+    "weakest_tolerance": "T1"
+   },
+   {
+    "a": "vaṭam",
+    "b": "vaṭa",
+    "meanings": "banyan / north",
+    "weakest_tolerance": "T0+sandhi"
+   },
+   {
+    "a": "muruka",
+    "b": "muruku",
+    "meanings": "Muruka-vēḷ / muruku",
+    "weakest_tolerance": "T1"
+   }
+  ],
+  "parpola_pairs_pass": true,
+  "segmentation": {
+   "dedr_r_underdot": true,
+   "cdial_accent_anusvara": true,
+   "aspirate_digraph": true,
+   "diphthong": true,
+   "munda_length": true,
+   "sumerian": true,
+   "gemination_free": true,
+   "stem_m": true,
+   "stem_keeps_root_nasal": true,
+   "stem_keeps_final_y": true
+  },
+  "planted_homophones": {
+   "any": [
+    [
+     "p1",
+     "n1"
+    ],
+    [
+     "p2",
+     "n2"
+    ]
+   ],
+   "homonym": [
+    [
+     "p1",
+     "n1"
+    ]
+   ],
+   "pass": true
+  },
+  "inventory_scaling": {
+   "steps": "LAV",
+   "pass": true,
+   "trail": [
+    {
+     "steps": "L",
+     "collision": 0.24221453287197234
+    },
+    {
+     "steps": "LA",
+     "collision": 0.25259515570934254
+    },
+    {
+     "steps": "LAV",
+     "collision": 0.27335640138408307
+    }
+   ]
+  },
+  "planted_interlock": {
+   "shared": {
+    "veḷ": {
+     "w1_compounds": [
+      "kalu-vēḷ"
+     ],
+     "w2_compounds": [
+      "veṇ-pāṉ"
+     ]
+    }
+   },
+   "absent_case": {},
+   "pass": true
+  },
+  "null_calibration": {
+   "vocabulary": 300,
+   "distinct_T1_stems": 300,
+   "nA": 6,
+   "nB": 9,
+   "exact_rate": 0.16833128707684208,
+   "observed_rate": 0.16133333333333333,
+   "pairs": 3000,
+   "z": -1.0244106642624766,
+   "pass": true
+  },
+  "pipeline": {
+   "real_I1_T0s": {
+    "veḷ": {
+     "w1_compounds": [
+      "muruka-vēḷ"
+     ],
+     "w2_compounds": [
+      "veṇ-mīṉ"
+     ]
+    }
+   },
+   "real_I2_T0s": [
+    "vaṭa-mīṉ"
+   ],
+   "I1_null_rate_T0s": 0.0732,
+   "pass": true
+  }
+ },
+ "pass": true
+}

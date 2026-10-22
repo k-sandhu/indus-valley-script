@@ -1,0 +1,1639 @@
+{
+  "schema_version": "1.0",
+  "task": "analysis-selftests",
+  "synthetic": true,
+  "provenance": {
+    "inputs": {
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\data\\raw\\2026-10-21-town-orientations-verification\\astro\\intcal20.14c": "974a66649f2ac8a53e6c99e256b019ac6982f999b12dcf7193162d4c1c09168e",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astro-v1\\stars-retrieved-v1.json": "480e9058c5bd56ef6059d3d95c7c5f6c09ffd4636e49827bea0bc505ff24f119",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astro-v1\\validation-v1.json": "770dbdb887e1da54752ea36a5a77a6b79b0d08b310aadd1dab9ed0f8d8afc6ae",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astro-v1\\horizon\\mohenjo-daro.json": "710c4b5c8a815412e368ed60719ccded03c4a2b90d5d8691f7ec6a5d1698d46a"
+    },
+    "code": {
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\analysis\\calibrate.py": "29a00728e1e68dcd8f7157c7a4970dffd3b4e5faeaa383b180bf8d0d8180c6de",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\analysis\\common.py": "b8b5bd4a26589a9cb3fd79bd240c7f1b9188712b594372ec666d72362dec388c",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\analysis\\compare.py": "ea18c4253160df03b6cfe9a104f542e50bc415f6edce11f6b56415559cf55a28",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\analysis\\score_frozen.py": "213d97be6bb16a4c7b1adb918b5381f51839d009da386969a2af21d9b962c8ae",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\analysis\\selftest.py": "aa1c52425b033c17c16e2ccd9e4ada72e9bb2cfb3973a752da71529659cd1754",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astronomy\\acquire.py": "500f6b53646ee2993b1bfb3883bf5d2103912e14a467eaae7148cb603b8aaca8",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astronomy\\core.py": "072888c9fafba99dc772127b59eb6b6fba9c17a6768585b5307d4e656d3f577d",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astronomy\\horizon.py": "7c7bbcf17c5383a07dbb7746b5765cfa8a94751b1e25c2856bba4760656d64ef",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astronomy\\predict.py": "f9ad100d255dc91001f27a59d5f4bc44e48cf5801efef3eb1287fd437f0bf128",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astronomy\\records.py": "6571c49a2b23d2863e89da74722d6825c01bdc05d912be2a2ebc51e90756dfb5",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astronomy\\validate.py": "2c015c7fd6975253e4caba3615cb38e1702a8c3f240f599f07eb6d33122a597f"
+    }
+  },
+  "all_pass": true,
+  "score_frozen": {
+    "all_pass": true,
+    "checks": {
+      "monotone_P0": true,
+      "monotone_P1": true,
+      "monotone_P2": true,
+      "alcyone_selected": true,
+      "perfect_model_P3": true,
+      "credence_point4": true,
+      "negative_dead": true,
+      "short_open": true,
+      "fixed_target": true,
+      "discovery_failure": true,
+      "tie_order": true,
+      "exact_permutations": true,
+      "power_high": true
+    },
+    "positive_case": {
+      "n": 11,
+      "sigma_int_deg": 1.0,
+      "seed": 20261021,
+      "target_order": [
+        "alcyone",
+        "aldebaran",
+        "procyon",
+        "equinox_set",
+        "equinox_rise",
+        "june_set",
+        "june_rise",
+        "december_set",
+        "december_rise"
+      ],
+      "variant": {
+        "extinction": "base",
+        "horizon": "dem"
+      },
+      "stage1": {
+        "n": 3,
+        "chi2": {
+          "alcyone": 0.0,
+          "aldebaran": 176.14678899082568,
+          "procyon": 704.5871559633027,
+          "equinox_set": 1585.321100917431,
+          "equinox_rise": 2818.348623853211,
+          "june_set": 4403.669724770642,
+          "june_rise": 6341.284403669724,
+          "december_set": 8631.19266055046,
+          "december_rise": 11273.394495412844
+        },
+        "would_choose": "alcyone",
+        "chosen": "alcyone",
+        "choice_fixed": false,
+        "threshold99": 11.344866730144373,
+        "discovery_failure": false,
+        "status": "evaluated"
+      },
+      "P0": {
+        "n": 11,
+        "r": 1.0,
+        "spearman_rho": 1.0,
+        "one_sided_p": 4.9999750001249995e-06,
+        "p_method": "random permutations, plus-one p",
+        "permutations": 200000,
+        "leave_one_out": [
+          {
+            "omitted": "mohenjo-daro",
+            "r": 1.0
+          },
+          {
+            "omitted": "harappa",
+            "r": 1.0
+          },
+          {
+            "omitted": "kalibangan",
+            "r": 1.0
+          },
+          {
+            "omitted": "synthetic-3",
+            "r": 1.0
+          },
+          {
+            "omitted": "synthetic-4",
+            "r": 1.0000000000000002
+          },
+          {
+            "omitted": "synthetic-5",
+            "r": 1.0
+          },
+          {
+            "omitted": "synthetic-6",
+            "r": 1.0000000000000002
+          },
+          {
+            "omitted": "synthetic-7",
+            "r": 1.0
+          },
+          {
+            "omitted": "synthetic-8",
+            "r": 1.0
+          },
+          {
+            "omitted": "synthetic-9",
+            "r": 1.0
+          },
+          {
+            "omitted": "synthetic-10",
+            "r": 1.0
+          }
+        ],
+        "all_leave_one_out_positive": true,
+        "status": "pass"
+      },
+      "P0_confirmation": {
+        "n": 8,
+        "r": 1.0,
+        "spearman_rho": 1.0,
+        "one_sided_p": 2.48015873015873e-05,
+        "p_method": "exact all permutations",
+        "permutations": 40320,
+        "leave_one_out": [
+          {
+            "omitted": "synthetic-3",
+            "r": 0.9999999999999999
+          },
+          {
+            "omitted": "synthetic-4",
+            "r": 1.0000000000000002
+          },
+          {
+            "omitted": "synthetic-5",
+            "r": 1.0
+          },
+          {
+            "omitted": "synthetic-6",
+            "r": 0.9999999999999998
+          },
+          {
+            "omitted": "synthetic-7",
+            "r": 0.9999999999999996
+          },
+          {
+            "omitted": "synthetic-8",
+            "r": 1.0000000000000002
+          },
+          {
+            "omitted": "synthetic-9",
+            "r": 1.0
+          },
+          {
+            "omitted": "synthetic-10",
+            "r": 0.9999999999999999
+          }
+        ],
+        "all_leave_one_out_positive": true,
+        "status": "pass"
+      },
+      "WLS_all": {
+        "slope_deg_per_year": 0.01,
+        "slope_deg_per_century": 1.0,
+        "interval95_deg_per_year": [
+          0.009999999999999997,
+          0.010000000000000004
+        ],
+        "interval95_deg_per_century": [
+          0.9999999999999997,
+          1.0000000000000004
+        ],
+        "resamples": 20000,
+        "valid_resamples": 20000,
+        "reference_deg_per_century": 0.5,
+        "bootstrap": "paired resampling of towns with replacement; zero-date-variance resamples excluded"
+      },
+      "WLS_confirmation": {
+        "slope_deg_per_year": 0.01,
+        "slope_deg_per_century": 1.0,
+        "interval95_deg_per_year": [
+          0.009999999999999998,
+          0.010000000000000002
+        ],
+        "interval95_deg_per_century": [
+          0.9999999999999999,
+          1.0000000000000002
+        ],
+        "resamples": 20000,
+        "valid_resamples": 20000,
+        "reference_deg_per_century": 0.5,
+        "bootstrap": "paired resampling of towns with replacement; zero-date-variance resamples excluded"
+      },
+      "P1": {
+        "status": "pass",
+        "positive_fraction": 1.0,
+        "no_town_below_minus_2sigma": true,
+        "interval_contains_predicted_and_excludes_zero": true,
+        "alcyone_predicted_slope_deg_per_year": 0.01,
+        "alcyone_mean_rate_deg_per_year": 0.009999999999999998,
+        "interpretation": "The predicted slope is the WLS slope of Alcyone theta at the observed town dates, with weights 1/(sigmaTheta^2+1deg^2). The mean local Alcyone rate is reported separately."
+      },
+      "P2": {
+        "eligible_n": 11,
+        "sign_match_n": 11,
+        "sign_match_fraction": 1.0,
+        "status": "pass"
+      },
+      "P3": {
+        "status": "pass",
+        "chi2": {
+          "target": 0.0,
+          "cardinal": 451.3761467889908,
+          "constant_offset": 260.55045871559633
+        },
+        "degrees_of_freedom": 8,
+        "target_upper_tail_probability": 1.0,
+        "discovery_constant_offset_deg": 2.0,
+        "ordering": [
+          "target",
+          "constant_offset",
+          "cardinal"
+        ],
+        "leave_one_out": [
+          {
+            "omitted": "synthetic-3",
+            "chi2": {
+              "target": 0.0,
+              "cardinal": 436.697247706422,
+              "constant_offset": 256.8807339449541
+            },
+            "ordering": [
+              "target",
+              "constant_offset",
+              "cardinal"
+            ],
+            "complete_order_survives": true,
+            "target_remains_better": true
+          },
+          {
+            "omitted": "synthetic-4",
+            "chi2": {
+              "target": 0.0,
+              "cardinal": 428.440366972477,
+              "constant_offset": 252.29357798165137
+            },
+            "ordering": [
+              "target",
+              "constant_offset",
+              "cardinal"
+            ],
+            "complete_order_survives": true,
+            "target_remains_better": true
+          },
+          {
+            "omitted": "synthetic-5",
+            "chi2": {
+              "target": 0.0,
+              "cardinal": 418.348623853211,
+              "constant_offset": 245.87155963302752
+            },
+            "ordering": [
+              "target",
+              "constant_offset",
+              "cardinal"
+            ],
+            "complete_order_survives": true,
+            "target_remains_better": true
+          },
+          {
+            "omitted": "synthetic-6",
+            "chi2": {
+              "target": 0.0,
+              "cardinal": 406.4220183486238,
+              "constant_offset": 237.61467889908255
+            },
+            "ordering": [
+              "target",
+              "constant_offset",
+              "cardinal"
+            ],
+            "complete_order_survives": true,
+            "target_remains_better": true
+          },
+          {
+            "omitted": "synthetic-7",
+            "chi2": {
+              "target": 0.0,
+              "cardinal": 392.6605504587156,
+              "constant_offset": 227.5229357798165
+            },
+            "ordering": [
+              "target",
+              "constant_offset",
+              "cardinal"
+            ],
+            "complete_order_survives": true,
+            "target_remains_better": true
+          },
+          {
+            "omitted": "synthetic-8",
+            "chi2": {
+              "target": 0.0,
+              "cardinal": 377.0642201834862,
+              "constant_offset": 215.59633027522935
+            },
+            "ordering": [
+              "target",
+              "constant_offset",
+              "cardinal"
+            ],
+            "complete_order_survives": true,
+            "target_remains_better": true
+          },
+          {
+            "omitted": "synthetic-9",
+            "chi2": {
+              "target": 0.0,
+              "cardinal": 359.6330275229358,
+              "constant_offset": 201.8348623853211
+            },
+            "ordering": [
+              "target",
+              "constant_offset",
+              "cardinal"
+            ],
+            "complete_order_survives": true,
+            "target_remains_better": true
+          },
+          {
+            "omitted": "synthetic-10",
+            "chi2": {
+              "target": 0.0,
+              "cardinal": 340.36697247706417,
+              "constant_offset": 186.23853211009174
+            },
+            "ordering": [
+              "target",
+              "constant_offset",
+              "cardinal"
+            ],
+            "complete_order_survives": true,
+            "target_remains_better": true
+          }
+        ],
+        "complete_order_survives_all": true,
+        "target_better_survives_all": true
+      },
+      "power": {
+        "simulations": 20000,
+        "permutations_per_simulation": 2000,
+        "p_method": "2000 independent random permutations for each simulation, plus-one p; even for n <=9",
+        "probability_P0_pass": 1.0,
+        "monte_carlo_standard_error": 0.0,
+        "generating_model": "thetaAlcyone(D+Normal(0,sigmaD))+Normal(0,sigmaTheta)+Normal(0,1deg)",
+        "date_evaluation": "direct vector evaluation of space motion, precession and horizon iteration at every drawn year",
+        "optional_columns": "Optional theta/rate columns are used for observed scores. Power evaluates our Alcyone model at drawn dates."
+      },
+      "credence": 0.4,
+      "status": "open",
+      "D1": [
+        {
+          "slug": "mohenjo-daro",
+          "theta_deg": 1.0,
+          "sigma_deg": 0.3,
+          "figure_7p2_within_2sigma": false,
+          "interval_1_to_2_intersects_2sigma": true,
+          "whole_interval_1_to_2_within_2sigma": false,
+          "interval_interpretation": "The interval is compatible when it intersects [theta-2sigma,theta+2sigma]; full containment is also reported."
+        }
+      ],
+      "predictions": [
+        {
+          "slug": "mohenjo-daro",
+          "target": "alcyone",
+          "theta_deg": 1.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "mohenjo-daro",
+          "target": "aldebaran",
+          "theta_deg": 9.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "mohenjo-daro",
+          "target": "procyon",
+          "theta_deg": 17.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "mohenjo-daro",
+          "target": "equinox_set",
+          "theta_deg": 25.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "mohenjo-daro",
+          "target": "equinox_rise",
+          "theta_deg": 33.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "mohenjo-daro",
+          "target": "june_set",
+          "theta_deg": 41.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "mohenjo-daro",
+          "target": "june_rise",
+          "theta_deg": 49.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "mohenjo-daro",
+          "target": "december_set",
+          "theta_deg": 57.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "mohenjo-daro",
+          "target": "december_rise",
+          "theta_deg": 65.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "harappa",
+          "target": "alcyone",
+          "theta_deg": 2.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "harappa",
+          "target": "aldebaran",
+          "theta_deg": 10.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "harappa",
+          "target": "procyon",
+          "theta_deg": 18.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "harappa",
+          "target": "equinox_set",
+          "theta_deg": 26.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "harappa",
+          "target": "equinox_rise",
+          "theta_deg": 34.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "harappa",
+          "target": "june_set",
+          "theta_deg": 42.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "harappa",
+          "target": "june_rise",
+          "theta_deg": 50.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "harappa",
+          "target": "december_set",
+          "theta_deg": 58.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "harappa",
+          "target": "december_rise",
+          "theta_deg": 66.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "kalibangan",
+          "target": "alcyone",
+          "theta_deg": 3.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "kalibangan",
+          "target": "aldebaran",
+          "theta_deg": 11.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "kalibangan",
+          "target": "procyon",
+          "theta_deg": 19.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "kalibangan",
+          "target": "equinox_set",
+          "theta_deg": 27.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "kalibangan",
+          "target": "equinox_rise",
+          "theta_deg": 35.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "kalibangan",
+          "target": "june_set",
+          "theta_deg": 43.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "kalibangan",
+          "target": "june_rise",
+          "theta_deg": 51.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "kalibangan",
+          "target": "december_set",
+          "theta_deg": 59.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "kalibangan",
+          "target": "december_rise",
+          "theta_deg": 67.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-3",
+          "target": "alcyone",
+          "theta_deg": 4.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-3",
+          "target": "aldebaran",
+          "theta_deg": 12.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-3",
+          "target": "procyon",
+          "theta_deg": 20.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-3",
+          "target": "equinox_set",
+          "theta_deg": 28.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-3",
+          "target": "equinox_rise",
+          "theta_deg": 36.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-3",
+          "target": "june_set",
+          "theta_deg": 44.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-3",
+          "target": "june_rise",
+          "theta_deg": 52.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-3",
+          "target": "december_set",
+          "theta_deg": 60.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-3",
+          "target": "december_rise",
+          "theta_deg": 68.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-4",
+          "target": "alcyone",
+          "theta_deg": 5.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-4",
+          "target": "aldebaran",
+          "theta_deg": 13.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-4",
+          "target": "procyon",
+          "theta_deg": 21.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-4",
+          "target": "equinox_set",
+          "theta_deg": 29.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-4",
+          "target": "equinox_rise",
+          "theta_deg": 37.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-4",
+          "target": "june_set",
+          "theta_deg": 45.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-4",
+          "target": "june_rise",
+          "theta_deg": 53.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-4",
+          "target": "december_set",
+          "theta_deg": 61.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-4",
+          "target": "december_rise",
+          "theta_deg": 69.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-5",
+          "target": "alcyone",
+          "theta_deg": 6.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-5",
+          "target": "aldebaran",
+          "theta_deg": 14.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-5",
+          "target": "procyon",
+          "theta_deg": 22.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-5",
+          "target": "equinox_set",
+          "theta_deg": 30.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-5",
+          "target": "equinox_rise",
+          "theta_deg": 38.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-5",
+          "target": "june_set",
+          "theta_deg": 46.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-5",
+          "target": "june_rise",
+          "theta_deg": 54.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-5",
+          "target": "december_set",
+          "theta_deg": 62.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-5",
+          "target": "december_rise",
+          "theta_deg": 70.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-6",
+          "target": "alcyone",
+          "theta_deg": 7.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-6",
+          "target": "aldebaran",
+          "theta_deg": 15.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-6",
+          "target": "procyon",
+          "theta_deg": 23.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-6",
+          "target": "equinox_set",
+          "theta_deg": 31.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-6",
+          "target": "equinox_rise",
+          "theta_deg": 39.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-6",
+          "target": "june_set",
+          "theta_deg": 47.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-6",
+          "target": "june_rise",
+          "theta_deg": 55.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-6",
+          "target": "december_set",
+          "theta_deg": 63.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-6",
+          "target": "december_rise",
+          "theta_deg": 71.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-7",
+          "target": "alcyone",
+          "theta_deg": 8.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-7",
+          "target": "aldebaran",
+          "theta_deg": 16.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-7",
+          "target": "procyon",
+          "theta_deg": 24.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-7",
+          "target": "equinox_set",
+          "theta_deg": 32.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-7",
+          "target": "equinox_rise",
+          "theta_deg": 40.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-7",
+          "target": "june_set",
+          "theta_deg": 48.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-7",
+          "target": "june_rise",
+          "theta_deg": 56.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-7",
+          "target": "december_set",
+          "theta_deg": 64.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-7",
+          "target": "december_rise",
+          "theta_deg": 72.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-8",
+          "target": "alcyone",
+          "theta_deg": 9.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-8",
+          "target": "aldebaran",
+          "theta_deg": 17.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-8",
+          "target": "procyon",
+          "theta_deg": 25.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-8",
+          "target": "equinox_set",
+          "theta_deg": 33.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-8",
+          "target": "equinox_rise",
+          "theta_deg": 41.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-8",
+          "target": "june_set",
+          "theta_deg": 49.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-8",
+          "target": "june_rise",
+          "theta_deg": 57.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-8",
+          "target": "december_set",
+          "theta_deg": 65.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-8",
+          "target": "december_rise",
+          "theta_deg": 73.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-9",
+          "target": "alcyone",
+          "theta_deg": 10.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-9",
+          "target": "aldebaran",
+          "theta_deg": 18.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-9",
+          "target": "procyon",
+          "theta_deg": 26.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-9",
+          "target": "equinox_set",
+          "theta_deg": 34.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-9",
+          "target": "equinox_rise",
+          "theta_deg": 42.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-9",
+          "target": "june_set",
+          "theta_deg": 50.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-9",
+          "target": "june_rise",
+          "theta_deg": 58.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-9",
+          "target": "december_set",
+          "theta_deg": 66.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-9",
+          "target": "december_rise",
+          "theta_deg": 74.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-10",
+          "target": "alcyone",
+          "theta_deg": 11.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-10",
+          "target": "aldebaran",
+          "theta_deg": 19.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-10",
+          "target": "procyon",
+          "theta_deg": 27.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-10",
+          "target": "equinox_set",
+          "theta_deg": 35.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-10",
+          "target": "equinox_rise",
+          "theta_deg": 43.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-10",
+          "target": "june_set",
+          "theta_deg": 51.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-10",
+          "target": "june_rise",
+          "theta_deg": 59.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-10",
+          "target": "december_set",
+          "theta_deg": 67.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        },
+        {
+          "slug": "synthetic-10",
+          "target": "december_rise",
+          "theta_deg": 75.0,
+          "rate_deg_per_year": 0.01,
+          "source": "supplied CSV"
+        }
+      ]
+    },
+    "negative_summary": {
+      "P0": "fail",
+      "credence": 0.02
+    },
+    "short_summary": {
+      "P0": "undecided",
+      "credence": 0.1
+    },
+    "exact_eight": {
+      "p": 2.48015873015873e-05,
+      "permutations": 40320
+    }
+  },
+  "compare": {
+    "all_pass": true,
+    "checks": {
+      "agreement": true,
+      "date_agreement": true,
+      "disagreement": true,
+      "date_disagreement": true,
+      "weighted_mean": true,
+      "standard_error": true,
+      "astronomy_agree": true,
+      "astronomy_disagree": true,
+      "outlier_lists": true
+    },
+    "agree_case": {
+      "n_common": 10,
+      "only_first": [],
+      "only_second": [],
+      "deviations": {
+        "weighted_mean_delta_deg": 0.40000000000000013,
+        "weighted_mean_standard_error_deg": 0.447213595499958,
+        "median_absolute_delta_deg": 0.4000000000000002,
+        "root_mean_square_delta_deg": 0.4000000000000002,
+        "fraction_abs_z_le_2p5": 1.0,
+        "abs_z_gt_2": [],
+        "abs_z_gt_3": [],
+        "verdict": "agree"
+      },
+      "dates": {
+        "fraction_within_tolerance": 1.0,
+        "verdict": "agree"
+      },
+      "towns": [
+        {
+          "slug": "test-0",
+          "part_first": "whole",
+          "part_second": "whole",
+          "theta_delta_deg": 0.4,
+          "combined_sigma_deg": 1.4142135623730951,
+          "z": 0.282842712474619,
+          "date_delta_years": 100.0,
+          "date_tolerance_years": 150.0,
+          "date_agree": true
+        },
+        {
+          "slug": "test-1",
+          "part_first": "whole",
+          "part_second": "whole",
+          "theta_delta_deg": 0.4,
+          "combined_sigma_deg": 1.4142135623730951,
+          "z": 0.282842712474619,
+          "date_delta_years": 100.0,
+          "date_tolerance_years": 150.0,
+          "date_agree": true
+        },
+        {
+          "slug": "test-2",
+          "part_first": "whole",
+          "part_second": "whole",
+          "theta_delta_deg": 0.3999999999999999,
+          "combined_sigma_deg": 1.4142135623730951,
+          "z": 0.28284271247461895,
+          "date_delta_years": 100.0,
+          "date_tolerance_years": 150.0,
+          "date_agree": true
+        },
+        {
+          "slug": "test-3",
+          "part_first": "whole",
+          "part_second": "whole",
+          "theta_delta_deg": 0.3999999999999999,
+          "combined_sigma_deg": 1.4142135623730951,
+          "z": 0.28284271247461895,
+          "date_delta_years": 100.0,
+          "date_tolerance_years": 150.0,
+          "date_agree": true
+        },
+        {
+          "slug": "test-4",
+          "part_first": "whole",
+          "part_second": "whole",
+          "theta_delta_deg": 0.3999999999999999,
+          "combined_sigma_deg": 1.4142135623730951,
+          "z": 0.28284271247461895,
+          "date_delta_years": 100.0,
+          "date_tolerance_years": 150.0,
+          "date_agree": true
+        },
+        {
+          "slug": "test-5",
+          "part_first": "whole",
+          "part_second": "whole",
+          "theta_delta_deg": 0.40000000000000036,
+          "combined_sigma_deg": 1.4142135623730951,
+          "z": 0.28284271247461923,
+          "date_delta_years": 100.0,
+          "date_tolerance_years": 150.0,
+          "date_agree": true
+        },
+        {
+          "slug": "test-6",
+          "part_first": "whole",
+          "part_second": "whole",
+          "theta_delta_deg": 0.40000000000000036,
+          "combined_sigma_deg": 1.4142135623730951,
+          "z": 0.28284271247461923,
+          "date_delta_years": 100.0,
+          "date_tolerance_years": 150.0,
+          "date_agree": true
+        },
+        {
+          "slug": "test-7",
+          "part_first": "whole",
+          "part_second": "whole",
+          "theta_delta_deg": 0.40000000000000036,
+          "combined_sigma_deg": 1.4142135623730951,
+          "z": 0.28284271247461923,
+          "date_delta_years": 100.0,
+          "date_tolerance_years": 150.0,
+          "date_agree": true
+        },
+        {
+          "slug": "test-8",
+          "part_first": "whole",
+          "part_second": "whole",
+          "theta_delta_deg": 0.40000000000000036,
+          "combined_sigma_deg": 1.4142135623730951,
+          "z": 0.28284271247461923,
+          "date_delta_years": 100.0,
+          "date_tolerance_years": 150.0,
+          "date_agree": true
+        },
+        {
+          "slug": "test-9",
+          "part_first": "whole",
+          "part_second": "whole",
+          "theta_delta_deg": 0.40000000000000036,
+          "combined_sigma_deg": 1.4142135623730951,
+          "z": 0.28284271247461923,
+          "date_delta_years": 100.0,
+          "date_tolerance_years": 150.0,
+          "date_agree": true
+        }
+      ]
+    },
+    "astronomy_good": {
+      "targets": {
+        "alcyone": {
+          "n": 10,
+          "max_absolute_difference_deg": 0.05000000000000071,
+          "worst_key": [
+            "test-8",
+            25.0,
+            70.0,
+            -1700.0,
+            "alcyone"
+          ],
+          "verdict": "agree"
+        },
+        "aldebaran": {
+          "n": 10,
+          "max_absolute_difference_deg": 0.05000000000000071,
+          "worst_key": [
+            "test-8",
+            25.0,
+            70.0,
+            -1700.0,
+            "aldebaran"
+          ],
+          "verdict": "agree"
+        },
+        "procyon": {
+          "n": 10,
+          "max_absolute_difference_deg": 0.05000000000000071,
+          "worst_key": [
+            "test-8",
+            25.0,
+            70.0,
+            -1700.0,
+            "procyon"
+          ],
+          "verdict": "agree"
+        },
+        "equinox_set": {
+          "n": 10,
+          "max_absolute_difference_deg": 0.05000000000000071,
+          "worst_key": [
+            "test-8",
+            25.0,
+            70.0,
+            -1700.0,
+            "equinox_set"
+          ],
+          "verdict": "agree"
+        },
+        "equinox_rise": {
+          "n": 10,
+          "max_absolute_difference_deg": 0.05000000000000071,
+          "worst_key": [
+            "test-8",
+            25.0,
+            70.0,
+            -1700.0,
+            "equinox_rise"
+          ],
+          "verdict": "agree"
+        },
+        "june_set": {
+          "n": 10,
+          "max_absolute_difference_deg": 0.05000000000000071,
+          "worst_key": [
+            "test-8",
+            25.0,
+            70.0,
+            -1700.0,
+            "june_set"
+          ],
+          "verdict": "agree"
+        },
+        "june_rise": {
+          "n": 10,
+          "max_absolute_difference_deg": 0.05000000000000071,
+          "worst_key": [
+            "test-8",
+            25.0,
+            70.0,
+            -1700.0,
+            "june_rise"
+          ],
+          "verdict": "agree"
+        },
+        "december_set": {
+          "n": 10,
+          "max_absolute_difference_deg": 0.05000000000000071,
+          "worst_key": [
+            "test-8",
+            25.0,
+            70.0,
+            -1700.0,
+            "december_set"
+          ],
+          "verdict": "agree"
+        },
+        "december_rise": {
+          "n": 10,
+          "max_absolute_difference_deg": 0.05000000000000071,
+          "worst_key": [
+            "test-8",
+            25.0,
+            70.0,
+            -1700.0,
+            "december_rise"
+          ],
+          "verdict": "agree"
+        }
+      },
+      "verdict": "agree"
+    },
+    "astronomy_bad": {
+      "targets": {
+        "alcyone": {
+          "n": 10,
+          "max_absolute_difference_deg": 0.11000000000000032,
+          "worst_key": [
+            "test-4",
+            25.0,
+            70.0,
+            -2100.0,
+            "alcyone"
+          ],
+          "verdict": "disagree"
+        },
+        "aldebaran": {
+          "n": 10,
+          "max_absolute_difference_deg": 0.11000000000000032,
+          "worst_key": [
+            "test-4",
+            25.0,
+            70.0,
+            -2100.0,
+            "aldebaran"
+          ],
+          "verdict": "disagree"
+        },
+        "procyon": {
+          "n": 10,
+          "max_absolute_difference_deg": 0.11000000000000032,
+          "worst_key": [
+            "test-4",
+            25.0,
+            70.0,
+            -2100.0,
+            "procyon"
+          ],
+          "verdict": "disagree"
+        },
+        "equinox_set": {
+          "n": 10,
+          "max_absolute_difference_deg": 0.11000000000000032,
+          "worst_key": [
+            "test-4",
+            25.0,
+            70.0,
+            -2100.0,
+            "equinox_set"
+          ],
+          "verdict": "disagree"
+        },
+        "equinox_rise": {
+          "n": 10,
+          "max_absolute_difference_deg": 0.11000000000000032,
+          "worst_key": [
+            "test-4",
+            25.0,
+            70.0,
+            -2100.0,
+            "equinox_rise"
+          ],
+          "verdict": "disagree"
+        },
+        "june_set": {
+          "n": 10,
+          "max_absolute_difference_deg": 0.11000000000000032,
+          "worst_key": [
+            "test-4",
+            25.0,
+            70.0,
+            -2100.0,
+            "june_set"
+          ],
+          "verdict": "disagree"
+        },
+        "june_rise": {
+          "n": 10,
+          "max_absolute_difference_deg": 0.11000000000000032,
+          "worst_key": [
+            "test-4",
+            25.0,
+            70.0,
+            -2100.0,
+            "june_rise"
+          ],
+          "verdict": "disagree"
+        },
+        "december_set": {
+          "n": 10,
+          "max_absolute_difference_deg": 0.11000000000000032,
+          "worst_key": [
+            "test-4",
+            25.0,
+            70.0,
+            -2100.0,
+            "december_set"
+          ],
+          "verdict": "disagree"
+        },
+        "december_rise": {
+          "n": 10,
+          "max_absolute_difference_deg": 0.11000000000000032,
+          "worst_key": [
+            "test-4",
+            25.0,
+            70.0,
+            -2100.0,
+            "december_rise"
+          ],
+          "verdict": "disagree"
+        }
+      },
+      "verdict": "disagree"
+    }
+  },
+  "calibrate": {
+    "all_pass": true,
+    "checks": {
+      "curve_value_1000": true,
+      "curve_value_3000": true,
+      "curve_value_4500": true,
+      "curve_value_5500": true,
+      "curve_value_8000": true,
+      "one_phase_equals_single": true,
+      "oldest_older_than_each_median": true,
+      "phase_normalizes": true
+    },
+    "curve_value_tests": [
+      {
+        "curve_cal_BP": 1000.0,
+        "curve_14C_BP": 1126.0,
+        "curve_sigma": 13.0,
+        "median_cal_BP": 1014.0,
+        "median_error_years": 14.0,
+        "max_probability_difference": 1.734723475976807e-17
+      },
+      {
+        "curve_cal_BP": 3000.0,
+        "curve_14C_BP": 2889.0,
+        "curve_sigma": 16.0,
+        "median_cal_BP": 3019.0,
+        "median_error_years": 19.0,
+        "max_probability_difference": 8.673617379884035e-18
+      },
+      {
+        "curve_cal_BP": 4500.0,
+        "curve_14C_BP": 3994.0,
+        "curve_sigma": 16.0,
+        "median_cal_BP": 4478.0,
+        "median_error_years": -22.0,
+        "max_probability_difference": 1.5612511283791264e-17
+      },
+      {
+        "curve_cal_BP": 5500.0,
+        "curve_14C_BP": 4799.0,
+        "curve_sigma": 16.0,
+        "median_cal_BP": 5514.0,
+        "median_error_years": 14.0,
+        "max_probability_difference": 1.5612511283791264e-17
+      },
+      {
+        "curve_cal_BP": 8000.0,
+        "curve_14C_BP": 7178.0,
+        "curve_sigma": 22.0,
+        "median_cal_BP": 7988.0,
+        "median_error_years": -12.0,
+        "max_probability_difference": 1.734723475976807e-17
+      }
+    ],
+    "oldest_test": {
+      "median_cal_BP": 5722.0,
+      "oldest_individual_median_cal_BP": 5722.0
+    }
+  },
+  "vector_scalar": [
+    {
+      "target": "alcyone",
+      "extinction": "base",
+      "horizon": "dem",
+      "max_difference_deg": 1.1368683772161603e-13,
+      "pass_": true
+    },
+    {
+      "target": "alcyone",
+      "extinction": "k020",
+      "horizon": "dem",
+      "max_difference_deg": 5.684341886080802e-14,
+      "pass_": true
+    },
+    {
+      "target": "alcyone",
+      "extinction": "k045",
+      "horizon": "dem",
+      "max_difference_deg": 1.1368683772161603e-13,
+      "pass_": true
+    },
+    {
+      "target": "alcyone",
+      "extinction": "none",
+      "horizon": "dem",
+      "max_difference_deg": 1.1368683772161603e-13,
+      "pass_": true
+    },
+    {
+      "target": "alcyone",
+      "extinction": "base",
+      "horizon": "flat",
+      "max_difference_deg": 1.1368683772161603e-13,
+      "pass_": true
+    },
+    {
+      "target": "aldebaran",
+      "extinction": "base",
+      "horizon": "dem",
+      "max_difference_deg": 1.1368683772161603e-13,
+      "pass_": true
+    },
+    {
+      "target": "aldebaran",
+      "extinction": "k020",
+      "horizon": "dem",
+      "max_difference_deg": 5.684341886080802e-14,
+      "pass_": true
+    },
+    {
+      "target": "aldebaran",
+      "extinction": "k045",
+      "horizon": "dem",
+      "max_difference_deg": 1.1368683772161603e-13,
+      "pass_": true
+    },
+    {
+      "target": "aldebaran",
+      "extinction": "none",
+      "horizon": "dem",
+      "max_difference_deg": 4.730960313281685e-06,
+      "pass_": true
+    },
+    {
+      "target": "aldebaran",
+      "extinction": "base",
+      "horizon": "flat",
+      "max_difference_deg": 1.1368683772161603e-13,
+      "pass_": true
+    },
+    {
+      "target": "procyon",
+      "extinction": "base",
+      "horizon": "dem",
+      "max_difference_deg": 5.684341886080802e-14,
+      "pass_": true
+    },
+    {
+      "target": "procyon",
+      "extinction": "k020",
+      "horizon": "dem",
+      "max_difference_deg": 1.7934155607690627e-05,
+      "pass_": true
+    },
+    {
+      "target": "procyon",
+      "extinction": "k045",
+      "horizon": "dem",
+      "max_difference_deg": 0.0,
+      "pass_": true
+    },
+    {
+      "target": "procyon",
+      "extinction": "none",
+      "horizon": "dem",
+      "max_difference_deg": 1.7934155607690627e-05,
+      "pass_": true
+    },
+    {
+      "target": "procyon",
+      "extinction": "base",
+      "horizon": "flat",
+      "max_difference_deg": 5.684341886080802e-14,
+      "pass_": true
+    }
+  ]
+}

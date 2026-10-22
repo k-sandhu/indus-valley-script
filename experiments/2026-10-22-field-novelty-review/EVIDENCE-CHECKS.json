@@ -1,0 +1,80 @@
+{
+  "status_class": "source-review",
+  "python": "3.13.5",
+  "git_head_at_review": "236980a76e60705203a43da08851d21f21a50776",
+  "scope": "Saved-input scorer replay and file-hash verification; no training rerun or source-label adjudication.",
+  "segmentation_json_identical": true,
+  "segmentation_scores": {
+    "reference": "required line divisions; other positions unlabelled",
+    "required_boundaries": 34,
+    "hits": 27,
+    "boundary_recall": 0.7941176470588235,
+    "boundary_precision": null,
+    "boundary_f1": null,
+    "boundary_rate_elsewhere": 0.07650273224043716,
+    "reason": "Catalogue line breaks supply positive boundary evidence; no negative labels"
+  },
+  "derived_recall_minus_elsewhere_rate": 0.7176149148183864,
+  "provenance_checks": [
+    {
+      "path": "bench/common.py",
+      "expected_sha256": "ad67cb4453e2a9f436881d7fdd8d8f427e509c0e2bbb80c8f4736d1c51d9370a",
+      "actual_sha256": "ad67cb4453e2a9f436881d7fdd8d8f427e509c0e2bbb80c8f4736d1c51d9370a",
+      "matches": true
+    },
+    {
+      "path": "bench/__main__.py",
+      "expected_sha256": "1df901f95ddbe76ebbc56868a640eccfac89addb568e74ade74e4fec1c2de11a",
+      "actual_sha256": "1df901f95ddbe76ebbc56868a640eccfac89addb568e74ade74e4fec1c2de11a",
+      "matches": true
+    },
+    {
+      "path": "bench/segmentation.py",
+      "expected_sha256": "901ee087148d1611fa3fa3a36ca2c8dca1662e0370bee419a5fbecb1118bd02b",
+      "actual_sha256": "901ee087148d1611fa3fa3a36ca2c8dca1662e0370bee419a5fbecb1118bd02b",
+      "matches": true
+    },
+    {
+      "path": "experiments/2026-10-12-structure-first/segmenters.py",
+      "expected_sha256": "82817da3cfa48c071bc35db317f9f79d80afac766f2d01b2c671c5debcd0c12c",
+      "actual_sha256": "82817da3cfa48c071bc35db317f9f79d80afac766f2d01b2c671c5debcd0c12c",
+      "matches": true
+    },
+    {
+      "path": "experiments/2026-10-12-structure-first/step5-rehearsal/rehearse_segmentation.py",
+      "expected_sha256": "f48d12396cad357a147e81ba9499577d00f43b56b2ab5e6e812becc6662164bc",
+      "actual_sha256": "f48d12396cad357a147e81ba9499577d00f43b56b2ab5e6e812becc6662164bc",
+      "matches": true
+    },
+    {
+      "path": "experiments/2026-10-12-structure-first/review/review_step3_segmenter_breaks.py",
+      "expected_sha256": "72572d9999497bfc0644cbf24be5a809ea0dfd1adf6752945cf15f49bb373393",
+      "actual_sha256": "72572d9999497bfc0644cbf24be5a809ea0dfd1adf6752945cf15f49bb373393",
+      "matches": true
+    },
+    {
+      "path": "data/raw/2026-10-20-seal-legend-units/run-2026-10-20/indus/plate_order-supervised-references.jsonl",
+      "expected_sha256": "cac9cba467143a03e2063d4a899e47ba402faba66e86da5b8e4064ea6ad0e82b",
+      "actual_sha256": "cac9cba467143a03e2063d4a899e47ba402faba66e86da5b8e4064ea6ad0e82b",
+      "matches": true
+    },
+    {
+      "path": "data/raw/2026-10-20-seal-legend-units/run-2026-10-20/indus/plate_order-supervised-predictions.jsonl",
+      "expected_sha256": "fc1a13de665a283d3806a8855e660b69b9fbe3288af433db9c0ad548e5c9edb0",
+      "actual_sha256": "fc1a13de665a283d3806a8855e660b69b9fbe3288af433db9c0ad548e5c9edb0",
+      "matches": true
+    }
+  ],
+  "relative_links_checked": 17,
+  "broken_relative_links": [],
+  "inputs": [
+    {
+      "path": "experiments/2026-10-20-seal-legend-units/run-2026-10-20/bench/plate_order-supervised.json",
+      "sha256": "32b31792b892ce31c5451bdcdd57ca0b8312310feb5f8bfd48f0f968f32d02d8"
+    },
+    {
+      "path": "experiments/2026-10-22-field-novelty-review/segmentation-replay.json",
+      "sha256": "32b31792b892ce31c5451bdcdd57ca0b8312310feb5f8bfd48f0f968f32d02d8"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+ "schema_version": "1.0",
+ "task": "plan-registration-selftest",
+ "synthetic": true,
+ "seed": 20261021,
+ "created_utc": "2026-10-21T18:52:55Z",
+ "sign_test": [
+  {
+   "phi_true_deg": -17.0,
+   "phi_fit_deg": -17.00000000004631,
+   "alpha_deg": 4.629896466212813e-11,
+   "theta_true_recovered_deg": 12.000000000046299,
+   "ok": true
+  },
+  {
+   "phi_true_deg": -3.0,
+   "phi_fit_deg": -2.9999999999767275,
+   "alpha_deg": -2.3277380023500882e-11,
+   "theta_true_recovered_deg": 11.999999999976723,
+   "ok": true
+  },
+  {
+   "phi_true_deg": 0.0,
+   "phi_fit_deg": 1.048644167710855e-10,
+   "alpha_deg": -1.0487610779819079e-10,
+   "theta_true_recovered_deg": 11.999999999895124,
+   "ok": true
+  },
+  {
+   "phi_true_deg": 8.5,
+   "phi_fit_deg": 8.499999999960991,
+   "alpha_deg": 3.89945853385143e-11,
+   "theta_true_recovered_deg": 12.000000000038995,
+   "ok": true
+  },
+  {
+   "phi_true_deg": 31.0,
+   "phi_fit_deg": 30.99999999970707,
+   "alpha_deg": 2.929141373897437e-10,
+   "theta_true_recovered_deg": 12.000000000292914,
+   "ok": true
+  }
+ ],
+ "coverage": {
+  "3 points, class C, 200 m": {
+   "trials": 4000,
+   "accepted": 3114,
+   "within_1_sigma": 0.7231856133590238,
+   "within_2_sigma": 0.9672447013487476,
+   "median_sigma_phi_deg": 3.330924877476754
+  },
+  "4 points, class C, 200 m": {
+   "trials": 4000,
+   "accepted": 3822,
+   "within_1_sigma": 0.8063840920983778,
+   "within_2_sigma": 0.9790685504971219,
+   "median_sigma_phi_deg": 3.2339313194187875
+  },
+  "4 points, classes A B C C, 300 m": {
+   "trials": 4000,
+   "accepted": 3856,
+   "within_1_sigma": 0.8498443983402489,
+   "within_2_sigma": 0.9875518672199171,
+   "median_sigma_phi_deg": 1.5523300198169108
+  },
+  "6 points, classes B C, 300 m": {
+   "trials": 4000,
+   "accepted": 3995,
+   "within_1_sigma": 0.79549436795995,
+   "within_2_sigma": 0.9802252816020025,
+   "median_sigma_phi_deg": 1.0576292799425393
+  },
+  "5 points, class A, 100 m": {
+   "trials": 4000,
+   "accepted": 3975,
+   "within_1_sigma": 0.7876729559748428,
+   "within_2_sigma": 0.9791194968553459,
+   "median_sigma_phi_deg": 1.334181435143034
+  }
+ },
+ "misidentification_60m": {
+  "4 points, class C": {
+   "trials": 2000,
+   "rejected_fraction": 0.1715,
+   "accepted_and_within_2_sigma_fraction": 0.8
+  },
+  "5 points, classes B C": {
+   "trials": 2000,
+   "rejected_fraction": 0.381,
+   "accepted_and_within_2_sigma_fraction": 0.608
+  }
+ },
+ "provenance": {
+  "code": {
+   "regfit.py": "705ca7b68c0cc573b9a29bb204b138f927c736f939e68a7f3c8c53d8d224e78f",
+   "register.py": "c857ce6985b6acbeefe053b0443262f76e88355ba16286aa8d5614bcd3bf8363",
+   "selftest.py": "ddd5eed0ee765f13b47593440e86318b4b8f967e2839a67ade292f0893fa29c7"
+  }
+ },
+ "sign_test_passes": true
+}

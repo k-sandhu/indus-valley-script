@@ -1,0 +1,243 @@
+{
+ "schema_version": "1.0",
+ "task": "rebus-winslow/selftest",
+ "synthetic": true,
+ "created_utc": "2026-10-22T14:30:04.776418+00:00",
+ "provenance": {
+  "code": {
+   "acquire.py": "9a050f7571a1744ee85f3b313921de2e4232bc99c7a98a602fc40574528ad3d6",
+   "check_reuse.py": "ffd8de419fdbd5dbef88430e0c273b954e9d383ebf91e6319a91999e7382be9b",
+   "freeze.py": "4d532de1e7a2573e269bac4ec427aca9bbb50049e3cf3cbe5322805e80d8e7a2",
+   "manifest.py": "0336648f1836630e0b3ed8aad493cf1c03115576a83a3089582509cd9d9e3bed",
+   "parse_winslow.py": "2f6a57006dcf5584123f8f4be455f21289334ffbd378041250837a8bedd38ba3",
+   "run_winslow.py": "9aa46a50329b96a54d5f49e0955f4a7a73bddf7e5e01ecd8db834f2bac8e4b22",
+   "selftest.py": "13222d609d2d729ac7f6f4928c2138d58eb4a2b52c2758093ba65c2a923bff70",
+   "validate_parser.py": "def3b5a069feadfec96558e03c6310394d98946bfd5592cd5e3a30be5b2b4a9f"
+  },
+  "reused_code": {
+   "rebus.py": "bfa65175b3383b8cad04d05f0078cfa7abcfbc673b0728f92a138f47c787ed42",
+   "run_interlocks.py": "284fa53f152b5997465d21d94f51cd7de452f949d3c088ec3158dccc7c213d46",
+   "parse_tamil_lex.py": "e2fb108f1bd3b82f6fe3dd2404a7ee3f780a0c3728afedd3059287ac1b9a6e27"
+  }
+ },
+ "checks": {
+  "transliteration": {
+   "cases": {
+    "மீன்": "mīṉ",
+    "முருகக்கடவுள்": "murukakkaṭavuḷ",
+    "வெண்மீன்": "veṇmīṉ",
+    "கைக்கிளை": "kaikkiḷai",
+    "அஃது": "aḵtu",
+    "சாழையகத்தி": "cāḻaiyakatti",
+    "கௌரி": "kauri",
+    "பொன்": "poṉ",
+    "ஷண்முகன்": "ṣaṇmukaṉ"
+   },
+   "pass": true
+  },
+  "junction_rule": {
+   "cases": [
+    {
+     "s": "mīṉeṇṇey",
+     "roots": [
+      "mīṉ"
+     ],
+     "got": [
+      "mīṉ",
+      "eṇṇey"
+     ],
+     "rule": "first",
+     "ok": true
+    },
+    {
+     "s": "añcaṉakkalikkam",
+     "roots": [
+      "añcaṉam"
+     ],
+     "got": [
+      "añcaṉa",
+      "kalikkam"
+     ],
+     "rule": "first",
+     "ok": true
+    },
+    {
+     "s": "cāḻaiyakatti",
+     "roots": [
+      "akatti"
+     ],
+     "got": [
+      "cāḻai",
+      "akatti"
+     ],
+     "rule": "second",
+     "ok": true
+    },
+    {
+     "s": "aṟukkaṭavuḷ",
+     "roots": [
+      "kaṭavuḷ"
+     ],
+     "got": [
+      "aṟu",
+      "kaṭavuḷ"
+     ],
+     "rule": "second",
+     "ok": true
+    },
+    {
+     "s": "veṇmīṉ",
+     "roots": [
+      "mīṉ"
+     ],
+     "got": [
+      "veṇ",
+      "mīṉ"
+     ],
+     "rule": "second",
+     "ok": true
+    },
+    {
+     "s": "veṇmīṉ",
+     "roots": [
+      "veḷ"
+     ],
+     "got": [
+      "veṇ",
+      "mīṉ"
+     ],
+     "rule": "first",
+     "ok": true
+    },
+    {
+     "s": "kallaṟai",
+     "roots": [
+      "kal"
+     ],
+     "got": [
+      "kall",
+      "aṟai"
+     ],
+     "rule": "first",
+     "ok": true
+    },
+    {
+     "s": "kaḷamati",
+     "roots": [
+      "kaḷam"
+     ],
+     "got": [
+      "kaḷa",
+      "mati"
+     ],
+     "rule": "first",
+     "ok": true
+    },
+    {
+     "s": "kālavakai",
+     "roots": [
+      "kālam"
+     ],
+     "got": [
+      "kāla",
+      "vakai"
+     ],
+     "rule": "first",
+     "ok": true
+    },
+    {
+     "s": "kutiraiyōṭṭam",
+     "roots": [
+      "kutirai"
+     ],
+     "got": [
+      "kutirai",
+      "ōṭṭam"
+     ],
+     "rule": "first",
+     "ok": true
+    },
+    {
+     "s": "āṭṭukkuṭṭi",
+     "roots": [
+      "āṭu"
+     ],
+     "got": [
+      "āṭṭu",
+      "kuṭṭi"
+     ],
+     "rule": "first",
+     "ok": true
+    },
+    {
+     "s": "mīṉeṇṇey",
+     "roots": [
+      "mīṉ"
+     ],
+     "got": [
+      "mīṉ",
+      "eṇṇey"
+     ],
+     "rule": "first",
+     "ok": true
+    },
+    {
+     "s": "kalippu",
+     "roots": [
+      "kali"
+     ],
+     "got": null,
+     "rule": null,
+     "ok": true
+    },
+    {
+     "s": "marakkalam",
+     "roots": [
+      "mīṉ"
+     ],
+     "got": null,
+     "rule": null,
+     "ok": true
+    }
+   ],
+   "pass": true
+  },
+  "parse_page": {
+   "cases": {
+    "principal_noun": true,
+    "first_member_sub": true,
+    "alternate_forms_split": true,
+    "sentence_without_pos_unsplit": true,
+    "etymology_compound": true,
+    "verb_label": true
+   },
+   "pass": true
+  },
+  "compounds_compatibility": {
+   "shared": [
+    "veḷ"
+   ],
+   "pass": true
+  },
+  "pipeline": {
+   "real_I1_T0s": {
+    "veḷ": {
+     "w1_compounds": [
+      "muruka-vēḷ"
+     ],
+     "w2_compounds": [
+      "veṇ-mīṉ"
+     ]
+    }
+   },
+   "real_I2_T0s": [
+    "vaṭa-mīṉ"
+   ],
+   "P2_rate": 0.0752,
+   "P2_pass": false,
+   "compound_lists_removed": true,
+   "pass": true
+  }
+ },
+ "pass": true
+}

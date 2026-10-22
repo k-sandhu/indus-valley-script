@@ -1,0 +1,1208 @@
+{
+ "schema_version": "1.0",
+ "task": "rebus-base-rate/homophones",
+ "synthetic": false,
+ "created_utc": "2026-10-21T04:07:42.430583+00:00",
+ "provenance": {
+  "code": {
+   "acquire.py": "59a106de9a0eb1bd00ad5001ba3f1fe5f4a4a2b34821e79150a7af94cadd371c",
+   "extract_epsd2.py": "cea9bac91606468866ab018cd5288631a96bea91e6496eace5ed08c580a23d12",
+   "freeze.py": "225fed24fdfe932c6bb701de612b746041873971363c65bb99dda2b09df75895",
+   "manifest.py": "0808b64d775826e3395d407afe7c5a33821e1d6ac3f17a6e44f88c773d84c967",
+   "parse_cdial.py": "bbecf4675047abefad9110828f58c47dd0e1131ae46dd23121e58c6b63507e0b",
+   "parse_dedr.py": "93e36dc2ecf24ed24afbeef7f63e4666cfca545337ae1d1415139cc1fbd35e38",
+   "parse_tamil_lex.py": "e2fb108f1bd3b82f6fe3dd2404a7ee3f780a0c3728afedd3059287ac1b9a6e27",
+   "pools.py": "faad1d249e79edfcfabc346f7f184dfc64f58dc6864e625be13b61e97439f4c8",
+   "rebus.py": "f9c84342a47cd4454aa57a144f3199d902ded60ea881e7932a8cf3f768c6d324",
+   "run_homophones.py": "1f6724dc08d2dbd741808cfc509e10e43e4f0a6d6bc832b6156d8fa6cdbbbbc3",
+   "run_interlocks.py": "284fa53f152b5997465d21d94f51cd7de452f949d3c088ec3158dccc7c213d46",
+   "selftest.py": "a88a5ce83552aed04cb576dbc3bf4af6b1d6277ad244e8f083f8a903cfcd1031",
+   "verify.py": "9b7a106172ed6b516a4914c2d3797f4332c4def5c3c8ad9e5833bfb50fff25f4"
+  },
+  "inputs": {
+   "data/raw/2026-10-21-rebus-base-rate/derived-v1/dedr-entries.jsonl": "becf2c792eaab205e4846d0939469702c7b16765e89a16d1886deb7456ec42cb",
+   "data/raw/2026-10-21-rebus-base-rate/derived-v1/cdial-entries.jsonl": "734632daa4db9d44086f83d0382eabfd3f04b9de3b834379062d7c64445881c8",
+   "data/raw/2026-10-21-rebus-base-rate/derived-v1/epsd2-lemmas.jsonl": "ee26bf8985f959161b159ac2aa5b209a7c4a63f5e985670b034485c1972e7b12",
+   "data/raw/2026-10-21-rebus-base-rate/sources-v1/munda/pMunda_cognate_set_2019-08-29.csv": "b634f283a3fe67ba082c5999e16e9fe13419ae8fbc4bf9b67a8ca161acf5aed2",
+   "data/raw/2026-10-21-rebus-base-rate/sources-v1/backstrom/backstromnorthernpakistan-v1.1.zip": "9d428e2817b35e8d7cf7d2b80739478b17971025f6209402888e18dcc4bf03aa",
+   "experiments/2026-10-21-rebus-base-rate/pools-v1.json": "368d7d5dd1071fcaf5b34398e22b42ecde41e97a50f613a900a49bfc62231248"
+  },
+  "seed": 20261021,
+  "bootstrap_replicates": 2000,
+  "burushaski_representative_variety": "NazimabadUpperSust"
+ },
+ "target_collision_tamil_T0": 0.07616823556301176,
+ "languages": {
+  "dravidian-dedr": {
+   "lexemes": 5623,
+   "attested_lexemes": 3633,
+   "scaled_steps": "L",
+   "collision_trail": [
+    {
+     "steps": "L",
+     "collision": 0.07178124678894153
+    }
+   ],
+   "tolerances": {
+    "T0": {
+     "evaluable_pairs": 168479,
+     "pairs_any": 3894,
+     "rate_any": 0.023112672796016122,
+     "rate_any_ci95_bootstrap": [
+      0.019563269012755298,
+      0.027071919942544764
+     ],
+     "pairs_homonym": 2384,
+     "rate_homonym": 0.014150131470390969,
+     "rate_homonym_ci95_bootstrap": [
+      0.01160367167421459,
+      0.017046931665073983
+     ],
+     "one_word_per_concept": {
+      "pairs": 168479,
+      "pairs_any": 460,
+      "rate": 0.0027303106025083246
+     },
+     "word_pair_collision": 0.00024736537685023845,
+     "word_pair_collision_n": 3633,
+     "by_name_class": {
+      "deity": {
+       "pairs": 4581,
+       "any": 91,
+       "rate": 0.0198646583715346
+      },
+      "celestial": {
+       "pairs": 4072,
+       "any": 59,
+       "rate": 0.014489194499017682
+      },
+      "colour": {
+       "pairs": 6108,
+       "any": 159,
+       "rate": 0.026031434184675836
+      },
+      "direction": {
+       "pairs": 6617,
+       "any": 221,
+       "rate": 0.03339882121807466
+      },
+      "kinship": {
+       "pairs": 36648,
+       "any": 562,
+       "rate": 0.015335079676926435
+      },
+      "quality": {
+       "pairs": 110453,
+       "any": 2802,
+       "rate": 0.02536825618136221
+      }
+     }
+    },
+    "T0s": {
+     "evaluable_pairs": 168479,
+     "pairs_any": 3894,
+     "rate_any": 0.023112672796016122,
+     "rate_any_ci95_bootstrap": [
+      0.019497385430825204,
+      0.0268702627627182
+     ],
+     "pairs_homonym": 2384,
+     "rate_homonym": 0.014150131470390969,
+     "rate_homonym_ci95_bootstrap": [
+      0.011484814131138004,
+      0.01697555778464972
+     ],
+     "one_word_per_concept": {
+      "pairs": 168479,
+      "pairs_any": 460,
+      "rate": 0.0027303106025083246
+     },
+     "word_pair_collision": 0.00024736537685023845,
+     "word_pair_collision_n": 3633,
+     "by_name_class": {
+      "deity": {
+       "pairs": 4581,
+       "any": 91,
+       "rate": 0.0198646583715346
+      },
+      "celestial": {
+       "pairs": 4072,
+       "any": 59,
+       "rate": 0.014489194499017682
+      },
+      "colour": {
+       "pairs": 6108,
+       "any": 159,
+       "rate": 0.026031434184675836
+      },
+      "direction": {
+       "pairs": 6617,
+       "any": 221,
+       "rate": 0.03339882121807466
+      },
+      "kinship": {
+       "pairs": 36648,
+       "any": 562,
+       "rate": 0.015335079676926435
+      },
+      "quality": {
+       "pairs": 110453,
+       "any": 2802,
+       "rate": 0.02536825618136221
+      }
+     }
+    },
+    "T1s": {
+     "evaluable_pairs": 168479,
+     "pairs_any": 8259,
+     "rate_any": 0.04902094623068751,
+     "rate_any_ci95_bootstrap": [
+      0.042052570350013946,
+      0.056316959383662046
+     ],
+     "pairs_homonym": 6933,
+     "rate_homonym": 0.04115052914606568,
+     "rate_homonym_ci95_bootstrap": [
+      0.03499531098831308,
+      0.048188349883368224
+     ],
+     "one_word_per_concept": {
+      "pairs": 168479,
+      "pairs_any": 601,
+      "rate": 0.0035672101567554414
+     },
+     "word_pair_collision": 0.0008247028280895511,
+     "word_pair_collision_n": 3633,
+     "by_name_class": {
+      "deity": {
+       "pairs": 4581,
+       "any": 186,
+       "rate": 0.04060248853962017
+      },
+      "celestial": {
+       "pairs": 4072,
+       "any": 103,
+       "rate": 0.025294695481335953
+      },
+      "colour": {
+       "pairs": 6108,
+       "any": 305,
+       "rate": 0.04993451211525868
+      },
+      "direction": {
+       "pairs": 6617,
+       "any": 460,
+       "rate": 0.06951790841771195
+      },
+      "kinship": {
+       "pairs": 36648,
+       "any": 1291,
+       "rate": 0.03522702466710325
+      },
+      "quality": {
+       "pairs": 110453,
+       "any": 5914,
+       "rate": 0.053543135994495394
+      }
+     }
+    }
+   },
+   "concepts_found": {
+    "picture": 509,
+    "name": 331
+   },
+   "mean_words_per_found_concept": {
+    "picture": 4.781925343811395,
+    "name": 6.761329305135952
+   }
+  },
+  "dravidian-dedr-wordlevel": {
+   "lexemes": 14763,
+   "attested_lexemes": 11102,
+   "scaled_steps": "L",
+   "collision_trail": [
+    {
+     "steps": "L",
+     "collision": 0.07315619659613157
+    }
+   ],
+   "tolerances": {
+    "T0": {
+     "evaluable_pairs": 93070,
+     "pairs_any": 268,
+     "rate_any": 0.002879553024605136,
+     "rate_any_ci95_bootstrap": [
+      0.0020197163425378748,
+      0.0038250778983560762
+     ],
+     "pairs_homonym": 207,
+     "rate_homonym": 0.002224132373482325,
+     "rate_homonym_ci95_bootstrap": [
+      0.0014934995164929622,
+      0.003116471473084772
+     ],
+     "one_word_per_concept": {
+      "pairs": 93070,
+      "pairs_any": 28,
+      "rate": 0.00030084882346620824
+     },
+     "word_pair_collision": 0.00013232362112465957,
+     "word_pair_collision_n": 11102,
+     "by_name_class": {
+      "deity": {
+       "pairs": 3280,
+       "any": 8,
+       "rate": 0.0024390243902439024
+      },
+      "celestial": {
+       "pairs": 2050,
+       "any": 12,
+       "rate": 0.005853658536585366
+      },
+      "colour": {
+       "pairs": 4100,
+       "any": 25,
+       "rate": 0.006097560975609756
+      },
+      "direction": {
+       "pairs": 4920,
+       "any": 12,
+       "rate": 0.0024390243902439024
+      },
+      "kinship": {
+       "pairs": 18450,
+       "any": 37,
+       "rate": 0.002005420054200542
+      },
+      "quality": {
+       "pairs": 60270,
+       "any": 174,
+       "rate": 0.002887008461921354
+      }
+     }
+    },
+    "T0s": {
+     "evaluable_pairs": 93070,
+     "pairs_any": 268,
+     "rate_any": 0.002879553024605136,
+     "rate_any_ci95_bootstrap": [
+      0.0020199849575588268,
+      0.0038468357150531845
+     ],
+     "pairs_homonym": 207,
+     "rate_homonym": 0.002224132373482325,
+     "rate_homonym_ci95_bootstrap": [
+      0.0014934995164929622,
+      0.003115934243042871
+     ],
+     "one_word_per_concept": {
+      "pairs": 93070,
+      "pairs_any": 28,
+      "rate": 0.00030084882346620824
+     },
+     "word_pair_collision": 0.00013232362112465957,
+     "word_pair_collision_n": 11102,
+     "by_name_class": {
+      "deity": {
+       "pairs": 3280,
+       "any": 8,
+       "rate": 0.0024390243902439024
+      },
+      "celestial": {
+       "pairs": 2050,
+       "any": 12,
+       "rate": 0.005853658536585366
+      },
+      "colour": {
+       "pairs": 4100,
+       "any": 25,
+       "rate": 0.006097560975609756
+      },
+      "direction": {
+       "pairs": 4920,
+       "any": 12,
+       "rate": 0.0024390243902439024
+      },
+      "kinship": {
+       "pairs": 18450,
+       "any": 37,
+       "rate": 0.002005420054200542
+      },
+      "quality": {
+       "pairs": 60270,
+       "any": 174,
+       "rate": 0.002887008461921354
+      }
+     }
+    },
+    "T1s": {
+     "evaluable_pairs": 93070,
+     "pairs_any": 762,
+     "rate_any": 0.008187385838616095,
+     "rate_any_ci95_bootstrap": [
+      0.006285322875255185,
+      0.010508219619641131
+     ],
+     "pairs_homonym": 707,
+     "rate_homonym": 0.007596432792521758,
+     "rate_homonym_ci95_bootstrap": [
+      0.005780326635865477,
+      0.009745621575158481
+     ],
+     "one_word_per_concept": {
+      "pairs": 93070,
+      "pairs_any": 72,
+      "rate": 0.0007736112603416783
+     },
+     "word_pair_collision": 0.00043702172147253894,
+     "word_pair_collision_n": 11102,
+     "by_name_class": {
+      "deity": {
+       "pairs": 3280,
+       "any": 11,
+       "rate": 0.003353658536585366
+      },
+      "celestial": {
+       "pairs": 2050,
+       "any": 23,
+       "rate": 0.01121951219512195
+      },
+      "colour": {
+       "pairs": 4100,
+       "any": 59,
+       "rate": 0.014390243902439025
+      },
+      "direction": {
+       "pairs": 4920,
+       "any": 33,
+       "rate": 0.006707317073170732
+      },
+      "kinship": {
+       "pairs": 18450,
+       "any": 107,
+       "rate": 0.005799457994579946
+      },
+      "quality": {
+       "pairs": 60270,
+       "any": 529,
+       "rate": 0.008777169404347104
+      }
+     }
+    }
+   },
+   "concepts_found": {
+    "picture": 410,
+    "name": 227
+   },
+   "mean_words_per_found_concept": {
+    "picture": 3.080487804878049,
+    "name": 4.317180616740088
+   }
+  },
+  "indoaryan-cdial": {
+   "lexemes": 15407,
+   "attested_lexemes": 7414,
+   "scaled_steps": "L",
+   "collision_trail": [
+    {
+     "steps": "L",
+     "collision": 0.11912730330086241
+    }
+   ],
+   "tolerances": {
+    "T0": {
+     "evaluable_pairs": 194798,
+     "pairs_any": 2921,
+     "rate_any": 0.014995020482756496,
+     "rate_any_ci95_bootstrap": [
+      0.012273226624503331,
+      0.018126469470939127
+     ],
+     "pairs_homonym": 1125,
+     "rate_homonym": 0.005775213297877802,
+     "rate_homonym_ci95_bootstrap": [
+      0.004455641228349367,
+      0.007305003131448988
+     ],
+     "one_word_per_concept": {
+      "pairs": 194798,
+      "pairs_any": 137,
+      "rate": 0.0007032926416082301
+     },
+     "word_pair_collision": 3.5880652217098616e-05,
+     "word_pair_collision_n": 7414,
+     "by_name_class": {
+      "deity": {
+       "pairs": 5630,
+       "any": 35,
+       "rate": 0.006216696269982238
+      },
+      "celestial": {
+       "pairs": 4504,
+       "any": 41,
+       "rate": 0.009103019538188277
+      },
+      "colour": {
+       "pairs": 9571,
+       "any": 123,
+       "rate": 0.012851321700971686
+      },
+      "direction": {
+       "pairs": 7319,
+       "any": 157,
+       "rate": 0.02145101789862003
+      },
+      "kinship": {
+       "pairs": 33217,
+       "any": 525,
+       "rate": 0.01580516000842942
+      },
+      "quality": {
+       "pairs": 134557,
+       "any": 2040,
+       "rate": 0.015160861196370312
+      }
+     }
+    },
+    "T0s": {
+     "evaluable_pairs": 194798,
+     "pairs_any": 2921,
+     "rate_any": 0.014995020482756496,
+     "rate_any_ci95_bootstrap": [
+      0.012361266542777647,
+      0.017931780613764
+     ],
+     "pairs_homonym": 1125,
+     "rate_homonym": 0.005775213297877802,
+     "rate_homonym_ci95_bootstrap": [
+      0.004435235474696866,
+      0.007238524009486749
+     ],
+     "one_word_per_concept": {
+      "pairs": 194798,
+      "pairs_any": 137,
+      "rate": 0.0007032926416082301
+     },
+     "word_pair_collision": 3.5880652217098616e-05,
+     "word_pair_collision_n": 7414,
+     "by_name_class": {
+      "deity": {
+       "pairs": 5630,
+       "any": 35,
+       "rate": 0.006216696269982238
+      },
+      "celestial": {
+       "pairs": 4504,
+       "any": 41,
+       "rate": 0.009103019538188277
+      },
+      "colour": {
+       "pairs": 9571,
+       "any": 123,
+       "rate": 0.012851321700971686
+      },
+      "direction": {
+       "pairs": 7319,
+       "any": 157,
+       "rate": 0.02145101789862003
+      },
+      "kinship": {
+       "pairs": 33217,
+       "any": 525,
+       "rate": 0.01580516000842942
+      },
+      "quality": {
+       "pairs": 134557,
+       "any": 2040,
+       "rate": 0.015160861196370312
+      }
+     }
+    },
+    "T1s": {
+     "evaluable_pairs": 194798,
+     "pairs_any": 3336,
+     "rate_any": 0.017125432499306974,
+     "rate_any_ci95_bootstrap": [
+      0.01415748621649093,
+      0.020354675099333665
+     ],
+     "pairs_homonym": 1590,
+     "rate_homonym": 0.008162301461000627,
+     "rate_homonym_ci95_bootstrap": [
+      0.006452838324828797,
+      0.010123307220813355
+     ],
+     "one_word_per_concept": {
+      "pairs": 194798,
+      "pairs_any": 138,
+      "rate": 0.000708426164539677
+     },
+     "word_pair_collision": 6.28093364368278e-05,
+     "word_pair_collision_n": 7414,
+     "by_name_class": {
+      "deity": {
+       "pairs": 5630,
+       "any": 36,
+       "rate": 0.006394316163410302
+      },
+      "celestial": {
+       "pairs": 4504,
+       "any": 47,
+       "rate": 0.010435168738898756
+      },
+      "colour": {
+       "pairs": 9571,
+       "any": 151,
+       "rate": 0.01577682582802215
+      },
+      "direction": {
+       "pairs": 7319,
+       "any": 190,
+       "rate": 0.025959830577947807
+      },
+      "kinship": {
+       "pairs": 33217,
+       "any": 615,
+       "rate": 0.018514616009874463
+      },
+      "quality": {
+       "pairs": 134557,
+       "any": 2297,
+       "rate": 0.017070832435324805
+      }
+     }
+    }
+   },
+   "concepts_found": {
+    "picture": 563,
+    "name": 346
+   },
+   "mean_words_per_found_concept": {
+    "picture": 7.698046181172291,
+    "name": 10.875722543352602
+   }
+  },
+  "sumerian-epsd2": {
+   "lexemes": 7875,
+   "attested_lexemes": 5843,
+   "scaled_steps": "L",
+   "collision_trail": [
+    {
+     "steps": "L",
+     "collision": 0.08138376679410193
+    }
+   ],
+   "tolerances": {
+    "T0": {
+     "evaluable_pairs": 66198,
+     "pairs_any": 300,
+     "rate_any": 0.004531858968548899,
+     "rate_any_ci95_bootstrap": [
+      0.0031420888848605697,
+      0.006057962476207738
+     ],
+     "pairs_homonym": 219,
+     "rate_homonym": 0.003308257047040696,
+     "rate_homonym_ci95_bootstrap": [
+      0.0021752923049034715,
+      0.0045624490165866016
+     ],
+     "one_word_per_concept": {
+      "pairs": 66198,
+      "pairs_any": 77,
+      "rate": 0.001163177135260884
+     },
+     "word_pair_collision": 0.00020635828426855568,
+     "word_pair_collision_n": 5843,
+     "by_name_class": {
+      "deity": {
+       "pairs": 2244,
+       "any": 13,
+       "rate": 0.005793226381461676
+      },
+      "celestial": {
+       "pairs": 2992,
+       "any": 5,
+       "rate": 0.0016711229946524064
+      },
+      "colour": {
+       "pairs": 3366,
+       "any": 19,
+       "rate": 0.00564468211527035
+      },
+      "direction": {
+       "pairs": 4488,
+       "any": 42,
+       "rate": 0.009358288770053475
+      },
+      "kinship": {
+       "pairs": 13090,
+       "any": 68,
+       "rate": 0.005194805194805195
+      },
+      "quality": {
+       "pairs": 40018,
+       "any": 153,
+       "rate": 0.0038232795242141037
+      }
+     }
+    },
+    "T0s": {
+     "evaluable_pairs": 66198,
+     "pairs_any": 300,
+     "rate_any": 0.004531858968548899,
+     "rate_any_ci95_bootstrap": [
+      0.0032327260642315476,
+      0.006087797214417354
+     ],
+     "pairs_homonym": 219,
+     "rate_homonym": 0.003308257047040696,
+     "rate_homonym_ci95_bootstrap": [
+      0.00223571709115079,
+      0.004667814737605366
+     ],
+     "one_word_per_concept": {
+      "pairs": 66198,
+      "pairs_any": 77,
+      "rate": 0.001163177135260884
+     },
+     "word_pair_collision": 0.00020635828426855568,
+     "word_pair_collision_n": 5843,
+     "by_name_class": {
+      "deity": {
+       "pairs": 2244,
+       "any": 13,
+       "rate": 0.005793226381461676
+      },
+      "celestial": {
+       "pairs": 2992,
+       "any": 5,
+       "rate": 0.0016711229946524064
+      },
+      "colour": {
+       "pairs": 3366,
+       "any": 19,
+       "rate": 0.00564468211527035
+      },
+      "direction": {
+       "pairs": 4488,
+       "any": 42,
+       "rate": 0.009358288770053475
+      },
+      "kinship": {
+       "pairs": 13090,
+       "any": 68,
+       "rate": 0.005194805194805195
+      },
+      "quality": {
+       "pairs": 40018,
+       "any": 153,
+       "rate": 0.0038232795242141037
+      }
+     }
+    },
+    "T1s": {
+     "evaluable_pairs": 66198,
+     "pairs_any": 449,
+     "rate_any": 0.006782682256261519,
+     "rate_any_ci95_bootstrap": [
+      0.005151213027583915,
+      0.008686063023052056
+     ],
+     "pairs_homonym": 369,
+     "rate_homonym": 0.005574186531315146,
+     "rate_homonym_ci95_bootstrap": [
+      0.004123614006465452,
+      0.007296292939363727
+     ],
+     "one_word_per_concept": {
+      "pairs": 66198,
+      "pairs_any": 102,
+      "rate": 0.0015408320493066256
+     },
+     "word_pair_collision": 0.0003702965237300602,
+     "word_pair_collision_n": 5843,
+     "by_name_class": {
+      "deity": {
+       "pairs": 2244,
+       "any": 23,
+       "rate": 0.010249554367201427
+      },
+      "celestial": {
+       "pairs": 2992,
+       "any": 10,
+       "rate": 0.0033422459893048127
+      },
+      "colour": {
+       "pairs": 3366,
+       "any": 21,
+       "rate": 0.006238859180035651
+      },
+      "direction": {
+       "pairs": 4488,
+       "any": 53,
+       "rate": 0.011809269162210338
+      },
+      "kinship": {
+       "pairs": 13090,
+       "any": 86,
+       "rate": 0.006569900687547746
+      },
+      "quality": {
+       "pairs": 40018,
+       "any": 256,
+       "rate": 0.006397121295417063
+      }
+     }
+    }
+   },
+   "concepts_found": {
+    "picture": 374,
+    "name": 177
+   },
+   "mean_words_per_found_concept": {
+    "picture": 2.4518716577540105,
+    "name": 2.847457627118644
+   }
+  },
+  "munda-rau2019": {
+   "lexemes": 113,
+   "attested_lexemes": 112,
+   "scaled_steps": "LAVRSNQE",
+   "collision_trail": [
+    {
+     "steps": "L",
+     "collision": 0.051476990379918874
+    },
+    {
+     "steps": "LA",
+     "collision": 0.053908556138376265
+    },
+    {
+     "steps": "LAV",
+     "collision": 0.06050245280214062
+    },
+    {
+     "steps": "LAVR",
+     "collision": 0.061086453311813796
+    },
+    {
+     "steps": "LAVRS",
+     "collision": 0.061086453311813796
+    },
+    {
+     "steps": "LAVRSN",
+     "collision": 0.06515322049735607
+    },
+    {
+     "steps": "LAVRSNQ",
+     "collision": 0.0752405020280745
+    },
+    {
+     "steps": "LAVRSNQE",
+     "collision": 0.0871859669986621
+    }
+   ],
+   "tolerances": {
+    "T0": {
+     "evaluable_pairs": 180,
+     "pairs_any": 0,
+     "rate_any": 0.0,
+     "rate_any_ci95_bootstrap": [
+      0.0,
+      0.0
+     ],
+     "pairs_homonym": 0,
+     "rate_homonym": 0.0,
+     "rate_homonym_ci95_bootstrap": [
+      0.0,
+      0.0
+     ],
+     "one_word_per_concept": {
+      "pairs": 180,
+      "pairs_any": 0,
+      "rate": 0.0
+     },
+     "word_pair_collision": 0.0,
+     "word_pair_collision_n": 112,
+     "by_name_class": {
+      "deity": {
+       "pairs": 0,
+       "any": 0,
+       "rate": null
+      },
+      "celestial": {
+       "pairs": 20,
+       "any": 0,
+       "rate": 0.0
+      },
+      "colour": {
+       "pairs": 20,
+       "any": 0,
+       "rate": 0.0
+      },
+      "direction": {
+       "pairs": 0,
+       "any": 0,
+       "rate": null
+      },
+      "kinship": {
+       "pairs": 20,
+       "any": 0,
+       "rate": 0.0
+      },
+      "quality": {
+       "pairs": 120,
+       "any": 0,
+       "rate": 0.0
+      }
+     }
+    },
+    "T0s": {
+     "evaluable_pairs": 180,
+     "pairs_any": 0,
+     "rate_any": 0.0,
+     "rate_any_ci95_bootstrap": [
+      0.0,
+      0.0
+     ],
+     "pairs_homonym": 0,
+     "rate_homonym": 0.0,
+     "rate_homonym_ci95_bootstrap": [
+      0.0,
+      0.0
+     ],
+     "one_word_per_concept": {
+      "pairs": 180,
+      "pairs_any": 0,
+      "rate": 0.0
+     },
+     "word_pair_collision": 0.0016087516087516086,
+     "word_pair_collision_n": 112,
+     "by_name_class": {
+      "deity": {
+       "pairs": 0,
+       "any": 0,
+       "rate": null
+      },
+      "celestial": {
+       "pairs": 20,
+       "any": 0,
+       "rate": 0.0
+      },
+      "colour": {
+       "pairs": 20,
+       "any": 0,
+       "rate": 0.0
+      },
+      "direction": {
+       "pairs": 0,
+       "any": 0,
+       "rate": null
+      },
+      "kinship": {
+       "pairs": 20,
+       "any": 0,
+       "rate": 0.0
+      },
+      "quality": {
+       "pairs": 120,
+       "any": 0,
+       "rate": 0.0
+      }
+     }
+    },
+    "T1s": {
+     "evaluable_pairs": 180,
+     "pairs_any": 2,
+     "rate_any": 0.011111111111111112,
+     "rate_any_ci95_bootstrap": [
+      0.0,
+      0.044444444444444446
+     ],
+     "pairs_homonym": 2,
+     "rate_homonym": 0.011111111111111112,
+     "rate_homonym_ci95_bootstrap": [
+      0.0,
+      0.044444444444444446
+     ],
+     "one_word_per_concept": {
+      "pairs": 180,
+      "pairs_any": 2,
+      "rate": 0.011111111111111112
+     },
+     "word_pair_collision": 0.002413127413127413,
+     "word_pair_collision_n": 112,
+     "by_name_class": {
+      "deity": {
+       "pairs": 0,
+       "any": 0,
+       "rate": null
+      },
+      "celestial": {
+       "pairs": 20,
+       "any": 0,
+       "rate": 0.0
+      },
+      "colour": {
+       "pairs": 20,
+       "any": 0,
+       "rate": 0.0
+      },
+      "direction": {
+       "pairs": 0,
+       "any": 0,
+       "rate": null
+      },
+      "kinship": {
+       "pairs": 20,
+       "any": 0,
+       "rate": 0.0
+      },
+      "quality": {
+       "pairs": 120,
+       "any": 2,
+       "rate": 0.016666666666666666
+      }
+     }
+    }
+   },
+   "concepts_found": {
+    "picture": 20,
+    "name": 9
+   },
+   "mean_words_per_found_concept": {
+    "picture": 1.0,
+    "name": 1.0
+   }
+  },
+  "burushaski-backstrom": {
+   "lexemes": 204,
+   "attested_lexemes": 204,
+   "scaled_steps": "LAVRSNQE",
+   "collision_trail": [
+    {
+     "steps": "L",
+     "collision": 0.047987050526072376
+    },
+    {
+     "steps": "LA",
+     "collision": 0.04891895016764944
+    },
+    {
+     "steps": "LAV",
+     "collision": 0.05158515435310441
+    },
+    {
+     "steps": "LAVR",
+     "collision": 0.055171696149843914
+    },
+    {
+     "steps": "LAVRS",
+     "collision": 0.056855127760434734
+    },
+    {
+     "steps": "LAVRSN",
+     "collision": 0.05766446988091109
+    },
+    {
+     "steps": "LAVRSNQ",
+     "collision": 0.06381084518441439
+    },
+    {
+     "steps": "LAVRSNQE",
+     "collision": 0.08463444958003154
+    }
+   ],
+   "tolerances": {
+    "T0": {
+     "evaluable_pairs": 2600,
+     "pairs_any": 0,
+     "rate_any": 0.0,
+     "rate_any_ci95_bootstrap": [
+      0.0,
+      0.0
+     ],
+     "pairs_homonym": 0,
+     "rate_homonym": 0.0,
+     "rate_homonym_ci95_bootstrap": [
+      0.0,
+      0.0
+     ],
+     "one_word_per_concept": {
+      "pairs": 2600,
+      "pairs_any": 0,
+      "rate": 0.0
+     },
+     "word_pair_collision": 4.829518014102193e-05,
+     "word_pair_collision_n": 204,
+     "by_name_class": {
+      "deity": {
+       "pairs": 0,
+       "any": 0,
+       "rate": null
+      },
+      "celestial": {
+       "pairs": 260,
+       "any": 0,
+       "rate": 0.0
+      },
+      "colour": {
+       "pairs": 195,
+       "any": 0,
+       "rate": 0.0
+      },
+      "direction": {
+       "pairs": 195,
+       "any": 0,
+       "rate": 0.0
+      },
+      "kinship": {
+       "pairs": 910,
+       "any": 0,
+       "rate": 0.0
+      },
+      "quality": {
+       "pairs": 1040,
+       "any": 0,
+       "rate": 0.0
+      }
+     }
+    },
+    "T0s": {
+     "evaluable_pairs": 2600,
+     "pairs_any": 1,
+     "rate_any": 0.0003846153846153846,
+     "rate_any_ci95_bootstrap": [
+      0.0,
+      0.002307692307692308
+     ],
+     "pairs_homonym": 1,
+     "rate_homonym": 0.0003846153846153846,
+     "rate_homonym_ci95_bootstrap": [
+      0.0,
+      0.002307692307692308
+     ],
+     "one_word_per_concept": {
+      "pairs": 2600,
+      "pairs_any": 1,
+      "rate": 0.0003846153846153846
+     },
+     "word_pair_collision": 0.0002897710808461316,
+     "word_pair_collision_n": 204,
+     "by_name_class": {
+      "deity": {
+       "pairs": 0,
+       "any": 0,
+       "rate": null
+      },
+      "celestial": {
+       "pairs": 260,
+       "any": 0,
+       "rate": 0.0
+      },
+      "colour": {
+       "pairs": 195,
+       "any": 0,
+       "rate": 0.0
+      },
+      "direction": {
+       "pairs": 195,
+       "any": 0,
+       "rate": 0.0
+      },
+      "kinship": {
+       "pairs": 910,
+       "any": 1,
+       "rate": 0.001098901098901099
+      },
+      "quality": {
+       "pairs": 1040,
+       "any": 0,
+       "rate": 0.0
+      }
+     }
+    },
+    "T1s": {
+     "evaluable_pairs": 2600,
+     "pairs_any": 4,
+     "rate_any": 0.0015384615384615385,
+     "rate_any_ci95_bootstrap": [
+      0.0,
+      0.005
+     ],
+     "pairs_homonym": 4,
+     "rate_homonym": 0.0015384615384615385,
+     "rate_homonym_ci95_bootstrap": [
+      0.0,
+      0.005
+     ],
+     "one_word_per_concept": {
+      "pairs": 2600,
+      "pairs_any": 4,
+      "rate": 0.0015384615384615385
+     },
+     "word_pair_collision": 0.0010141987829614604,
+     "word_pair_collision_n": 204,
+     "by_name_class": {
+      "deity": {
+       "pairs": 0,
+       "any": 0,
+       "rate": null
+      },
+      "celestial": {
+       "pairs": 260,
+       "any": 0,
+       "rate": 0.0
+      },
+      "colour": {
+       "pairs": 195,
+       "any": 0,
+       "rate": 0.0
+      },
+      "direction": {
+       "pairs": 195,
+       "any": 0,
+       "rate": 0.0
+      },
+      "kinship": {
+       "pairs": 910,
+       "any": 1,
+       "rate": 0.001098901098901099
+      },
+      "quality": {
+       "pairs": 1040,
+       "any": 3,
+       "rate": 0.0028846153846153848
+      }
+     }
+    }
+   },
+   "concepts_found": {
+    "picture": 65,
+    "name": 40
+   },
+   "mean_words_per_found_concept": {
+    "picture": 1.0,
+    "name": 1.0
+   }
+  }
+ },
+ "prediction_single_homophone": {
+  "rule": "pass if the Dravidian rate (T0s, all words) lies between 0.5 and 2 times the median rate of the full dictionaries (Indo-Aryan CDIAL, Sumerian ePSD2)",
+  "dravidian": 0.023112672796016122,
+  "others": {
+   "indoaryan-cdial": 0.014995020482756496,
+   "sumerian-epsd2": 0.004531858968548899,
+   "munda-rau2019": 0.0,
+   "burushaski-backstrom": 0.0003846153846153846
+  },
+  "median_full_dictionaries": 0.009763439725652696,
+  "ratio": 2.3672674226983066,
+  "pass": false
+ },
+ "local_detail": {
+  "path": "data/raw/2026-10-21-rebus-base-rate/results-v1/results-v1-homophones-detail.json",
+  "sha256": "c9bdb3dbcb0eb4f8551d7e3267c0469876ae39d325570a252dbadc765342b6d9"
+ }
+}

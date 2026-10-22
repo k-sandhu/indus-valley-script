@@ -1,0 +1,368 @@
+{
+  "schema_version": 1,
+  "task": "town-orientation-measurement-tools",
+  "synthetic": true,
+  "provenance": {
+    "code_hashes": {
+      "acquire.py": "ec11b424595759900beb2d2681fc9d6abd3ce823f17fd53c8753ce0b288558cd",
+      "acquire_archive.py": "3fb9fff7d9b8f230a1174e770447fbee69e8d21eed46c185836cb5cfc2bc2b9d",
+      "acquire_missing.py": "f5a4f38bcf5b4476c041880983ec058b55b863c13b01e8e62d9f6c1adb0a2a11",
+      "additional_sources.py": "002ce09654066da1714fd825eaf3baa8dcdc1c6cd02847842a7858bfd4b11962",
+      "cleanup_duplicates.py": "977ed0f4400667aee93a744d6706af697c5a83a6b66eb907bb2efc19faa19099",
+      "common.py": "ba8f1a332b2c6d9cd48ea87571644e441244f5255cda959d264f4a27ed034802",
+      "finalize_imagery.py": "d77ebd9261d148f75f126306f1eb46d8e89709c26a018e590206ea6a86118df5",
+      "finalize_plans.py": "eece91938c2b04901aa81d209c36b04f4844397feb6dcde26295ae1293994d3e",
+      "finalize_sites.py": "16ac07a441983b56b5cbbcda9d75dcb50590a89f0287ed1c57ec36c015c7bed2",
+      "http_ranges.py": "ddbdcbed2d6acadb53f1ffe66c8aba95967264254a8cea7c638d9fc5be6fbd30",
+      "igrf.py": "c1b83237764844c58f587570cd2b80940cad57f4793b18998da7df759d6e3bc4",
+      "landsat_attempt.py": "b3d46aeeb247ee79a123c7fbbc9895b36db7193a6edb4589f1c3758dabf7de2b",
+      "locate_sites.py": "573fa6b2605d97c610aa0a3f9d65fc29fc9071aaed7000830dc42fc090413d02",
+      "locate_support.py": "56dcad9403e85bebd99adf8b176d8e7ca08d892fabb758df0ee0032699bfbfe5",
+      "measure_lines.py": "db4960121e4d14ecf73223704bbbc097f37507259ec6494b7fef7de9d54ce6c6",
+      "package_audit.py": "6544886da1d379d91b4b4592033747245dbe2070031e5f6d5ba23ebcdd78dc9e",
+      "plan_support.py": "c556cbcb34d28e0298e4ffdb4313a7bca37dd83fe0034e0e53d527999b347492",
+      "prepare_sources.py": "530102409c1888ea512c2b3f058a2ddab9d3bb1bfcd9d1412764b65059dc6c1c",
+      "reference_checks.py": "791feaec8450e1fe919515162df996e7887f6630b9a32710312a8d9ec62bab65",
+      "register_plan.py": "416688daceac512c6e6f55bd85f74d6909ef4baa8bdec7f08c5b4d357564069e",
+      "render_image.py": "66c9847065b6375b13238767f24504316ac1ba0fc73c8677bd3ade3349c870f3",
+      "render_plan.py": "02131622e0e425d0f945bc786d6dd7c8a81dce28c0ed39e20b9d516300e3cb05",
+      "resume_storage.py": "09dcdcf192544e610877dabc01a5c294b5c8f52184b130c3e6001173ccf76a7b",
+      "review_plans.py": "7d5110be70ec6e9a7fffd7a2edb4056e5e48bd0260e85e883b8a273bc5f7d8ea",
+      "runway_validation.py": "0d1d9f4a76d48a568b454910a8691302c14100ee498e66563e28d1e624bbb0b8",
+      "selftest.py": "deb95a7d24fd4b98c74488af33ef6c11184b3e93949eb729a0b05ea3a5222766",
+      "source_acquisition.py": "3366cfd49a3344e954b16c2a89ab2e74b2f454c42ffd5d27bb6a182f1a4b0666",
+      "status.py": "c78232f53686823c69244e4db09b4d05878234121ad2d24e1aadc7b5414e3578",
+      "systems.py": "2a51e6161f90143a6f45079eed53eaea9125aa7a20098152d5cef90d3b037a91"
+    },
+    "coefficients_sha256": "8f8d88403028fc4ee92c4f38d97b46e0a87e2cfc496045b43c9e26c1d6b0903c",
+    "seed": 10212026
+  },
+  "aggregates": [
+    {
+      "length_m": 50,
+      "noise_sd": 0.0,
+      "n": 90,
+      "failures": 0,
+      "bias_deg": 0.0025006038162479803,
+      "rms_deg": 0.02452568199178049,
+      "standardized_rms": 0.016367523120119503
+    },
+    {
+      "length_m": 50,
+      "noise_sd": 0.02,
+      "n": 90,
+      "failures": 0,
+      "bias_deg": 0.11870476588040996,
+      "rms_deg": 2.273306069397279,
+      "standardized_rms": 0.724287225801622
+    },
+    {
+      "length_m": 50,
+      "noise_sd": 0.08,
+      "n": 90,
+      "failures": 0,
+      "bias_deg": 0.02823478754872658,
+      "rms_deg": 9.311363028618302,
+      "standardized_rms": 1.2903203911896997
+    },
+    {
+      "length_m": 100,
+      "noise_sd": 0.0,
+      "n": 90,
+      "failures": 0,
+      "bias_deg": 0.0021196099037654095,
+      "rms_deg": 0.02341533413690313,
+      "standardized_rms": 0.02775524199151403
+    },
+    {
+      "length_m": 100,
+      "noise_sd": 0.02,
+      "n": 90,
+      "failures": 0,
+      "bias_deg": -0.14801562709116053,
+      "rms_deg": 0.725178240868512,
+      "standardized_rms": 0.49421237183470895
+    },
+    {
+      "length_m": 100,
+      "noise_sd": 0.08,
+      "n": 90,
+      "failures": 0,
+      "bias_deg": -0.06797721378110708,
+      "rms_deg": 4.794201066107339,
+      "standardized_rms": 1.28715903806299
+    },
+    {
+      "length_m": 200,
+      "noise_sd": 0.0,
+      "n": 90,
+      "failures": 0,
+      "bias_deg": -0.0002829733470947973,
+      "rms_deg": 0.0037093333822315537,
+      "standardized_rms": 0.009208153937554402
+    },
+    {
+      "length_m": 200,
+      "noise_sd": 0.02,
+      "n": 90,
+      "failures": 0,
+      "bias_deg": 0.00810096512591798,
+      "rms_deg": 0.44875169638024526,
+      "standardized_rms": 0.591174144222819
+    },
+    {
+      "length_m": 200,
+      "noise_sd": 0.08,
+      "n": 90,
+      "failures": 0,
+      "bias_deg": 0.44092860508019904,
+      "rms_deg": 2.07236439101542,
+      "standardized_rms": 1.1948980783723204
+    },
+    {
+      "length_m": 300,
+      "noise_sd": 0.0,
+      "n": 90,
+      "failures": 0,
+      "bias_deg": -0.00031232107056350996,
+      "rms_deg": 0.0024988868430710835,
+      "standardized_rms": 0.009244109905376196
+    },
+    {
+      "length_m": 300,
+      "noise_sd": 0.02,
+      "n": 90,
+      "failures": 0,
+      "bias_deg": 0.0353958756240647,
+      "rms_deg": 0.27570060721355977,
+      "standardized_rms": 0.6622036425148485
+    },
+    {
+      "length_m": 300,
+      "noise_sd": 0.08,
+      "n": 90,
+      "failures": 0,
+      "bias_deg": -0.003905593259707195,
+      "rms_deg": 1.2347866320792815,
+      "standardized_rms": 1.2784719459709932
+    },
+    {
+      "length_m": 400,
+      "noise_sd": 0.0,
+      "n": 90,
+      "failures": 0,
+      "bias_deg": 0.0001273297337762516,
+      "rms_deg": 0.003326663923567736,
+      "standardized_rms": 0.01661495622720097
+    },
+    {
+      "length_m": 400,
+      "noise_sd": 0.02,
+      "n": 90,
+      "failures": 0,
+      "bias_deg": -0.013654376767492237,
+      "rms_deg": 0.18535778676178752,
+      "standardized_rms": 0.6646580099495851
+    },
+    {
+      "length_m": 400,
+      "noise_sd": 0.08,
+      "n": 90,
+      "failures": 0,
+      "bias_deg": -0.0954160797387748,
+      "rms_deg": 0.856062558822588,
+      "standardized_rms": 1.254932115723816
+    },
+    {
+      "length_m": 1000,
+      "noise_sd": 0.0,
+      "n": 90,
+      "failures": 0,
+      "bias_deg": -9.634880968355396e-06,
+      "rms_deg": 0.0005338435887786587,
+      "standardized_rms": 0.006579220476155649
+    },
+    {
+      "length_m": 1000,
+      "noise_sd": 0.02,
+      "n": 90,
+      "failures": 0,
+      "bias_deg": 0.002742454207780693,
+      "rms_deg": 0.04728813205014623,
+      "standardized_rms": 0.5706087051771477
+    },
+    {
+      "length_m": 1000,
+      "noise_sd": 0.08,
+      "n": 90,
+      "failures": 0,
+      "bias_deg": -0.0023105852150806074,
+      "rms_deg": 0.21764676269641872,
+      "standardized_rms": 1.219134859208961
+    }
+  ],
+  "cases": 1620,
+  "checks": [
+    {
+      "name": "imagery transform and geodesic central-meridian",
+      "error_deg": 0.0,
+      "grid_true_difference_deg": -1.6103315658710926e-07,
+      "pass": true
+    },
+    {
+      "name": "imagery transform and geodesic far-central-meridian",
+      "error_deg": 2.9615421226480976e-11,
+      "grid_true_difference_deg": -1.2719904210627817,
+      "pass": true
+    },
+    {
+      "name": "profile recovery length 50 noise 0.0",
+      "rms_deg": 0.02452568199178049,
+      "limit_deg": 12,
+      "pass": true
+    },
+    {
+      "name": "profile recovery length 50 noise 0.02",
+      "rms_deg": 2.273306069397279,
+      "limit_deg": 12,
+      "pass": true
+    },
+    {
+      "name": "profile recovery length 50 noise 0.08",
+      "rms_deg": 9.311363028618302,
+      "limit_deg": 12,
+      "pass": true
+    },
+    {
+      "name": "profile recovery length 100 noise 0.0",
+      "rms_deg": 0.02341533413690313,
+      "limit_deg": 6,
+      "pass": true
+    },
+    {
+      "name": "profile recovery length 100 noise 0.02",
+      "rms_deg": 0.725178240868512,
+      "limit_deg": 6,
+      "pass": true
+    },
+    {
+      "name": "profile recovery length 100 noise 0.08",
+      "rms_deg": 4.794201066107339,
+      "limit_deg": 6,
+      "pass": true
+    },
+    {
+      "name": "profile recovery length 200 noise 0.0",
+      "rms_deg": 0.0037093333822315537,
+      "limit_deg": 3,
+      "pass": true
+    },
+    {
+      "name": "profile recovery length 200 noise 0.02",
+      "rms_deg": 0.44875169638024526,
+      "limit_deg": 3,
+      "pass": true
+    },
+    {
+      "name": "profile recovery length 200 noise 0.08",
+      "rms_deg": 2.07236439101542,
+      "limit_deg": 3,
+      "pass": true
+    },
+    {
+      "name": "profile recovery length 300 noise 0.0",
+      "rms_deg": 0.0024988868430710835,
+      "limit_deg": 3,
+      "pass": true
+    },
+    {
+      "name": "profile recovery length 300 noise 0.02",
+      "rms_deg": 0.27570060721355977,
+      "limit_deg": 3,
+      "pass": true
+    },
+    {
+      "name": "profile recovery length 300 noise 0.08",
+      "rms_deg": 1.2347866320792815,
+      "limit_deg": 3,
+      "pass": true
+    },
+    {
+      "name": "profile recovery length 400 noise 0.0",
+      "rms_deg": 0.003326663923567736,
+      "limit_deg": 3,
+      "pass": true
+    },
+    {
+      "name": "profile recovery length 400 noise 0.02",
+      "rms_deg": 0.18535778676178752,
+      "limit_deg": 3,
+      "pass": true
+    },
+    {
+      "name": "profile recovery length 400 noise 0.08",
+      "rms_deg": 0.856062558822588,
+      "limit_deg": 3,
+      "pass": true
+    },
+    {
+      "name": "profile recovery length 1000 noise 0.0",
+      "rms_deg": 0.0005338435887786587,
+      "limit_deg": 3,
+      "pass": true
+    },
+    {
+      "name": "profile recovery length 1000 noise 0.02",
+      "rms_deg": 0.04728813205014623,
+      "limit_deg": 3,
+      "pass": true
+    },
+    {
+      "name": "profile recovery length 1000 noise 0.08",
+      "rms_deg": 0.21764676269641872,
+      "limit_deg": 3,
+      "pass": true
+    },
+    {
+      "name": "plan relative bearing true",
+      "raw_deg": 19.999999999999996,
+      "corrected_deg": 19.999999999999996,
+      "expected_deg": 20,
+      "pass": true
+    },
+    {
+      "name": "plan fitted shafts and downward row sign",
+      "error_deg": 0.04528997839713611,
+      "pass": true
+    },
+    {
+      "name": "plan relative bearing magnetic",
+      "raw_deg": 19.999999999999996,
+      "corrected_deg": 6.60367212587864,
+      "expected_deg": 6.603672125878644,
+      "pass": true
+    },
+    {
+      "name": "system exact mean and standard error",
+      "pass": true
+    },
+    {
+      "name": "system rejects 200 m and 6 degree failures",
+      "pass": true
+    },
+    {
+      "name": "fold endpoints and downward image sign",
+      "pass": true
+    },
+    {
+      "name": "similarity covariance and leave-one-out",
+      "pass": true
+    },
+    {
+      "name": "synthetic scratch below 50 MB",
+      "bytes": 657558,
+      "pass": true
+    }
+  ],
+  "overall_pass": true
+}

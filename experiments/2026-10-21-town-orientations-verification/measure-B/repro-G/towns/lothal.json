@@ -1,0 +1,2865 @@
+{
+  "schema_version": 1,
+  "slug": "lothal",
+  "measurer": "B",
+  "share": "G",
+  "located_point": {
+    "latitude": 22.52286,
+    "longitude": 72.24906,
+    "method": "Centre of the rectangular water-filled basin (the dock) on the Sentinel-2 median composite, inside the vegetated oval mound about 170 m north of the Wikidata starting point (22.521389, 72.249444); the excavated, bright acropolis area lies immediately west of the basin and the museum buildings south of the mound, matching the site plan's layout of dock, platform and acropolis."
+  },
+  "sources": [
+    {
+      "id": "imagery",
+      "kind": "imagery",
+      "manifest_slug": "lothal",
+      "band_measured": "B08 (composite band 4)",
+      "renders": [
+        "data/raw/2026-10-21-town-orientations-verification/measure-B/lothal/r05-nir-500.png"
+      ],
+      "scene_ids": [
+        "S2A_42QZL_20181015_2_L2A",
+        "S2A_42QZL_20190324_1_L2A",
+        "S2A_42QZL_20200217_1_L2A",
+        "S2A_42QZL_20211218_1_L2A",
+        "S2A_42QZL_20221113_0_L2A"
+      ],
+      "scene_datetimes": [
+        "2018-10-15T05:52:40.663000Z",
+        "2019-03-24T05:52:42.440000Z",
+        "2020-02-17T05:52:37.542000Z",
+        "2021-12-18T05:52:44.283000Z",
+        "2022-11-13T05:52:46.852000Z"
+      ],
+      "manifest_path": "experiments/2026-10-21-town-orientations-verification/infra-v1/imagery-manifest-v1.json",
+      "composite_path": "data/raw/2026-10-21-town-orientations-verification/infra/imagery/lothal/acquisition-v4/median-composite.tif",
+      "composite_sha256": "3f7bed2b74890215801babacff3b93e3cf905ce66fa9edc090bccfffafd56fc9",
+      "rights_notice": "Copernicus Sentinel data terms; Contains modified Copernicus Sentinel data 2018–2026"
+    },
+    {
+      "id": "plan-lothal-01",
+      "kind": "plan",
+      "plan_library_id": "lothal-01",
+      "citation": "Unattributed chapter III 'HARAPPAN CIVILIZATION', printed pages 39-75, University of Lucknow web host (author, book and year not in the held excerpt); figure credited 'courtesy ASI'",
+      "source_path": "data/raw/2026-10-21-town-orientations-verification/infra/plans/surkotada/university-chapter/source.pdf",
+      "pdf_page": 8,
+      "printed_page": "46",
+      "figure": "Fig. 3.1 The site plan of Lothal (courtesy ASI)",
+      "north_class": "unspecified",
+      "north_evidence": "A single arrow with the letter 'N' on its shaft at the right edge of the plan; no statement of true or magnetic north.",
+      "survey_year": null,
+      "render": "data/raw/2026-10-21-town-orientations-verification/measure-B/lothal/p03-fig3-1-300dpi-full.png",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-lothal01-lines.json",
+      "north_record": {
+        "class": "unspecified",
+        "evidence": "Fig. 3.1 'The site plan of Lothal (courtesy ASI)', unattributed chapter 'HARAPPAN CIVILIZATION', PDF page 8, printed page 46: a single arrow with the letter 'N' on its shaft, at the right edge of the plan beside the 'Brick Lined Enclosure'. No legend or text states true or magnetic north.",
+        "survey_year": null,
+        "line": {
+          "endpoints_px": [
+            [
+              1436.5,
+              645
+            ],
+            [
+              1439.5,
+              442
+            ]
+          ],
+          "feature": "trough",
+          "corridor_half_width_px": 5,
+          "mode": "manual",
+          "pick_sigma_px": 1.5
+        }
+      },
+      "arrow_result": {
+        "inlier_count": 2,
+        "profile_count": 0,
+        "residual_rms_px": null,
+        "length_px": 203.0221662774782,
+        "sigma_fit_deg": 0.5986453697812945,
+        "sigma_deg": 0.5986453697812945,
+        "mode": "manual",
+        "pick_sigma_px": 1.5,
+        "refined_endpoints_px": [
+          [
+            1436.5,
+            645.0
+          ],
+          [
+            1439.5,
+            442.0
+          ]
+        ],
+        "native_endpoints_px": [
+          [
+            1436.5,
+            645.0
+          ],
+          [
+            1439.5,
+            442.0
+          ]
+        ],
+        "residual_rms_render_px": null,
+        "direction_px_deg": 0.8466740238615051
+      },
+      "metres_per_render_pixel": 0.25839793281653745,
+      "source_sha256": "5d85a7b72f900ffc3ce11f1074978df448e5bba97a1c58b58382f8690b828845",
+      "measurement_provenance": {
+        "acquire.py": "ec11b424595759900beb2d2681fc9d6abd3ce823f17fd53c8753ce0b288558cd",
+        "acquire_archive.py": "3fb9fff7d9b8f230a1174e770447fbee69e8d21eed46c185836cb5cfc2bc2b9d",
+        "acquire_missing.py": "f5a4f38bcf5b4476c041880983ec058b55b863c13b01e8e62d9f6c1adb0a2a11",
+        "acquire_plan_batch.py": "fdb100105eee4d4a3912e052f4c231b388263c9da4a1647b8d0348b3db2a9b91",
+        "additional_sources.py": "002ce09654066da1714fd825eaf3baa8dcdc1c6cd02847842a7858bfd4b11962",
+        "clean_resume_scratch.py": "3acd2f30a01fb1564ff8c0e5f548b16b71672027154cdfcac18a8e08d4b909dd",
+        "cleanup_duplicates.py": "977ed0f4400667aee93a744d6706af697c5a83a6b66eb907bb2efc19faa19099",
+        "common.py": "ba8f1a332b2c6d9cd48ea87571644e441244f5255cda959d264f4a27ed034802",
+        "coordinate_source_review.py": "6ada1c35f8db8a0b098e97e36a8bbd255ce659c6e8580736365c641bf38cbad7",
+        "final_package.py": "dbc91f6b364b1c4ee748a92f25d14d6716b8d9b619aaa4e8f92d8db40917b61c",
+        "finalize_imagery.py": "ce6cfc82a6c3162d00666a4d8274758830d2055d0af5b8652456ea3aa2c323c7",
+        "finalize_plans.py": "eece91938c2b04901aa81d209c36b04f4844397feb6dcde26295ae1293994d3e",
+        "finalize_sites.py": "16ac07a441983b56b5cbbcda9d75dcb50590a89f0287ed1c57ec36c015c7bed2",
+        "http_ranges.py": "ddbdcbed2d6acadb53f1ffe66c8aba95967264254a8cea7c638d9fc5be6fbd30",
+        "igrf.py": "c1b83237764844c58f587570cd2b80940cad57f4793b18998da7df759d6e3bc4",
+        "landsat_attempt.py": "b3d46aeeb247ee79a123c7fbbc9895b36db7193a6edb4589f1c3758dabf7de2b",
+        "locate_sites.py": "573fa6b2605d97c610aa0a3f9d65fc29fc9071aaed7000830dc42fc090413d02",
+        "locate_support.py": "56dcad9403e85bebd99adf8b176d8e7ca08d892fabb758df0ee0032699bfbfe5",
+        "measure_lines.py": "db4960121e4d14ecf73223704bbbc097f37507259ec6494b7fef7de9d54ce6c6",
+        "package_audit.py": "a96c2711bed875437b13f16ee8a1ed099d25e7239e049e3fb299ab518a67e7ab",
+        "plan_support.py": "c556cbcb34d28e0298e4ffdb4313a7bca37dd83fe0034e0e53d527999b347492",
+        "prepare_sources.py": "530102409c1888ea512c2b3f058a2ddab9d3bb1bfcd9d1412764b65059dc6c1c",
+        "reference_checks.py": "791feaec8450e1fe919515162df996e7887f6630b9a32710312a8d9ec62bab65",
+        "register_plan.py": "416688daceac512c6e6f55bd85f74d6909ef4baa8bdec7f08c5b4d357564069e",
+        "render_image.py": "66c9847065b6375b13238767f24504316ac1ba0fc73c8677bd3ade3349c870f3",
+        "render_plan.py": "02131622e0e425d0f945bc786d6dd7c8a81dce28c0ed39e20b9d516300e3cb05",
+        "resume_storage.py": "09dcdcf192544e610877dabc01a5c294b5c8f52184b130c3e6001173ccf76a7b",
+        "review_plans.py": "7d5110be70ec6e9a7fffd7a2edb4056e5e48bd0260e85e883b8a273bc5f7d8ea",
+        "runway_validation.py": "12b5f3f78d7f68f0c4dc36dc640ff334d58fee08f94c84864b674a7652860ab6",
+        "selftest.py": "deb95a7d24fd4b98c74488af33ef6c11184b3e93949eb729a0b05ea3a5222766",
+        "source_acquisition.py": "3366cfd49a3344e954b16c2a89ab2e74b2f454c42ffd5d27bb6a182f1a4b0666",
+        "status.py": "c78232f53686823c69244e4db09b4d05878234121ad2d24e1aadc7b5414e3578",
+        "systems.py": "2a51e6161f90143a6f45079eed53eaea9125aa7a20098152d5cef90d3b037a91"
+      }
+    },
+    {
+      "id": "plan-rao1979-fig18",
+      "kind": "plan",
+      "plan_library_id": null,
+      "citation": "S. R. Rao 1979. Lothal: A Harappan Port Town (1955-62), Vol. I. Memoirs of the Archaeological Survey of India 78. New Delhi: Archaeological Survey of India. Held scan 'Part 1 (Plates Missing)', archive.org item masi78lothalaharappanporttownraos.r.part1platesmissing_443_k (CC0 notice on the archive item)",
+      "source_path": "data/raw/2026-10-21-town-orientations-verification/infra/plans/lothal/rao1979-part1/source.pdf",
+      "pdf_page": 123,
+      "printed_page": "112",
+      "figure": "Fig. 18 LOTHAL 1955-62 WAREHOUSE (PLAN)",
+      "north_class": "unspecified",
+      "north_evidence": "Compass-rose disc with an arrow through it, arrowhead to the page left; no letter N and no stated meaning.",
+      "survey_year": null,
+      "survey_year_note": "The figure title gives the excavation seasons 1955-62; no survey date for the north arrow is stated.",
+      "render": "data/raw/2026-10-21-town-orientations-verification/measure-B/lothal/p04-rao-fig18-pg123-300dpi.png",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig18-lines.json",
+      "north_record": {
+        "class": "unspecified",
+        "evidence": "Fig. 18, Rao 1979 MASI 78 vol. I, printed page 112 (PDF page 123): a compass-rose disc with an arrow through it, arrowhead pointing to the page left, at the upper left of the plan. No letter N and no legend or text stating true or magnetic north was found on the figure.",
+        "survey_year": null,
+        "line": {
+          "endpoints_px": [
+            [
+              819,
+              203.5
+            ],
+            [
+              547,
+              206.5
+            ]
+          ],
+          "feature": "trough",
+          "corridor_half_width_px": 5,
+          "mode": "manual",
+          "pick_sigma_px": 2.5
+        }
+      },
+      "arrow_result": {
+        "inlier_count": 2,
+        "profile_count": 0,
+        "residual_rms_px": null,
+        "length_px": 272.01654361453825,
+        "sigma_fit_deg": 0.744659727259166,
+        "sigma_deg": 0.744659727259166,
+        "mode": "manual",
+        "pick_sigma_px": 2.5,
+        "refined_endpoints_px": [
+          [
+            819.0,
+            203.5
+          ],
+          [
+            547.0,
+            206.5
+          ]
+        ],
+        "native_endpoints_px": [
+          [
+            819.0,
+            203.5
+          ],
+          [
+            547.0,
+            206.5
+          ]
+        ],
+        "residual_rms_render_px": null,
+        "direction_px_deg": 269.36808687817904
+      },
+      "metres_per_render_pixel": 0.01338432122370937,
+      "source_sha256": "05695dbe3d3daa0c62c9d8fc1e637cc147e606fb5b3fbf89a75fcf894304c771",
+      "measurement_provenance": {
+        "acquire.py": "ec11b424595759900beb2d2681fc9d6abd3ce823f17fd53c8753ce0b288558cd",
+        "acquire_archive.py": "3fb9fff7d9b8f230a1174e770447fbee69e8d21eed46c185836cb5cfc2bc2b9d",
+        "acquire_missing.py": "f5a4f38bcf5b4476c041880983ec058b55b863c13b01e8e62d9f6c1adb0a2a11",
+        "acquire_plan_batch.py": "fdb100105eee4d4a3912e052f4c231b388263c9da4a1647b8d0348b3db2a9b91",
+        "additional_sources.py": "002ce09654066da1714fd825eaf3baa8dcdc1c6cd02847842a7858bfd4b11962",
+        "clean_resume_scratch.py": "3acd2f30a01fb1564ff8c0e5f548b16b71672027154cdfcac18a8e08d4b909dd",
+        "cleanup_duplicates.py": "977ed0f4400667aee93a744d6706af697c5a83a6b66eb907bb2efc19faa19099",
+        "common.py": "ba8f1a332b2c6d9cd48ea87571644e441244f5255cda959d264f4a27ed034802",
+        "coordinate_source_review.py": "6ada1c35f8db8a0b098e97e36a8bbd255ce659c6e8580736365c641bf38cbad7",
+        "final_package.py": "dbc91f6b364b1c4ee748a92f25d14d6716b8d9b619aaa4e8f92d8db40917b61c",
+        "finalize_imagery.py": "ce6cfc82a6c3162d00666a4d8274758830d2055d0af5b8652456ea3aa2c323c7",
+        "finalize_plans.py": "eece91938c2b04901aa81d209c36b04f4844397feb6dcde26295ae1293994d3e",
+        "finalize_sites.py": "16ac07a441983b56b5cbbcda9d75dcb50590a89f0287ed1c57ec36c015c7bed2",
+        "http_ranges.py": "ddbdcbed2d6acadb53f1ffe66c8aba95967264254a8cea7c638d9fc5be6fbd30",
+        "igrf.py": "c1b83237764844c58f587570cd2b80940cad57f4793b18998da7df759d6e3bc4",
+        "landsat_attempt.py": "b3d46aeeb247ee79a123c7fbbc9895b36db7193a6edb4589f1c3758dabf7de2b",
+        "locate_sites.py": "573fa6b2605d97c610aa0a3f9d65fc29fc9071aaed7000830dc42fc090413d02",
+        "locate_support.py": "56dcad9403e85bebd99adf8b176d8e7ca08d892fabb758df0ee0032699bfbfe5",
+        "measure_lines.py": "db4960121e4d14ecf73223704bbbc097f37507259ec6494b7fef7de9d54ce6c6",
+        "package_audit.py": "a96c2711bed875437b13f16ee8a1ed099d25e7239e049e3fb299ab518a67e7ab",
+        "plan_support.py": "c556cbcb34d28e0298e4ffdb4313a7bca37dd83fe0034e0e53d527999b347492",
+        "prepare_sources.py": "530102409c1888ea512c2b3f058a2ddab9d3bb1bfcd9d1412764b65059dc6c1c",
+        "reference_checks.py": "791feaec8450e1fe919515162df996e7887f6630b9a32710312a8d9ec62bab65",
+        "register_plan.py": "416688daceac512c6e6f55bd85f74d6909ef4baa8bdec7f08c5b4d357564069e",
+        "render_image.py": "66c9847065b6375b13238767f24504316ac1ba0fc73c8677bd3ade3349c870f3",
+        "render_plan.py": "02131622e0e425d0f945bc786d6dd7c8a81dce28c0ed39e20b9d516300e3cb05",
+        "resume_storage.py": "09dcdcf192544e610877dabc01a5c294b5c8f52184b130c3e6001173ccf76a7b",
+        "review_plans.py": "7d5110be70ec6e9a7fffd7a2edb4056e5e48bd0260e85e883b8a273bc5f7d8ea",
+        "runway_validation.py": "12b5f3f78d7f68f0c4dc36dc640ff334d58fee08f94c84864b674a7652860ab6",
+        "selftest.py": "deb95a7d24fd4b98c74488af33ef6c11184b3e93949eb729a0b05ea3a5222766",
+        "source_acquisition.py": "3366cfd49a3344e954b16c2a89ab2e74b2f454c42ffd5d27bb6a182f1a4b0666",
+        "status.py": "c78232f53686823c69244e4db09b4d05878234121ad2d24e1aadc7b5414e3578",
+        "systems.py": "2a51e6161f90143a6f45079eed53eaea9125aa7a20098152d5cef90d3b037a91"
+      }
+    },
+    {
+      "id": "plan-rao1979-fig17",
+      "kind": "plan",
+      "plan_library_id": null,
+      "citation": "S. R. Rao 1979. Lothal: A Harappan Port Town (1955-62), Vol. I. MASI 78 (held scan as above)",
+      "source_path": "data/raw/2026-10-21-town-orientations-verification/infra/plans/lothal/rao1979-part1/source.pdf",
+      "pdf_page": 120,
+      "printed_page": "109",
+      "figure": "Fig. 17 LOTHAL 1955-62 PLAN OF 'B' BLOCK (PHASE IV)",
+      "north_class": "unspecified",
+      "north_evidence": "Compass-rose disc with an arrow through its centre, half arrowhead to the upper right; no letter N and no stated meaning.",
+      "survey_year": null,
+      "survey_year_note": "The figure title gives the excavation seasons 1955-62; no survey date for the north arrow is stated.",
+      "render": "data/raw/2026-10-21-town-orientations-verification/measure-B/lothal/p05-rao-fig17-pg120-300dpi.png",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig17-lines.json",
+      "north_record": {
+        "class": "unspecified",
+        "evidence": "Fig. 17, Rao 1979 MASI 78 vol. I, printed page 109 (PDF page 120): compass-rose disc with an arrow through its centre, half arrowhead pointing to the upper right, at the upper right of the plan. No letter N and no legend or text stating true or magnetic north on the figure.",
+        "survey_year": null,
+        "line": {
+          "endpoints_px": [
+            [
+              1774.5,
+              505
+            ],
+            [
+              1893,
+              154
+            ]
+          ],
+          "feature": "trough",
+          "corridor_half_width_px": 5,
+          "mode": "manual",
+          "pick_sigma_px": 2.0
+        }
+      },
+      "arrow_result": {
+        "inlier_count": 2,
+        "profile_count": 0,
+        "residual_rms_px": null,
+        "length_px": 370.4635609611288,
+        "sigma_fit_deg": 0.4374351631126296,
+        "sigma_deg": 0.4374351631126296,
+        "mode": "manual",
+        "pick_sigma_px": 2.0,
+        "refined_endpoints_px": [
+          [
+            1774.5,
+            505.0
+          ],
+          [
+            1893.0,
+            154.0
+          ]
+        ],
+        "native_endpoints_px": [
+          [
+            1774.5,
+            505.0
+          ],
+          [
+            1893.0,
+            154.0
+          ]
+        ],
+        "residual_rms_render_px": null,
+        "direction_px_deg": 18.655033961392068
+      },
+      "metres_per_render_pixel": 0.00946969696969697,
+      "source_sha256": "05695dbe3d3daa0c62c9d8fc1e637cc147e606fb5b3fbf89a75fcf894304c771",
+      "measurement_provenance": {
+        "acquire.py": "ec11b424595759900beb2d2681fc9d6abd3ce823f17fd53c8753ce0b288558cd",
+        "acquire_archive.py": "3fb9fff7d9b8f230a1174e770447fbee69e8d21eed46c185836cb5cfc2bc2b9d",
+        "acquire_missing.py": "f5a4f38bcf5b4476c041880983ec058b55b863c13b01e8e62d9f6c1adb0a2a11",
+        "acquire_plan_batch.py": "fdb100105eee4d4a3912e052f4c231b388263c9da4a1647b8d0348b3db2a9b91",
+        "additional_sources.py": "002ce09654066da1714fd825eaf3baa8dcdc1c6cd02847842a7858bfd4b11962",
+        "clean_resume_scratch.py": "3acd2f30a01fb1564ff8c0e5f548b16b71672027154cdfcac18a8e08d4b909dd",
+        "cleanup_duplicates.py": "977ed0f4400667aee93a744d6706af697c5a83a6b66eb907bb2efc19faa19099",
+        "common.py": "ba8f1a332b2c6d9cd48ea87571644e441244f5255cda959d264f4a27ed034802",
+        "coordinate_source_review.py": "6ada1c35f8db8a0b098e97e36a8bbd255ce659c6e8580736365c641bf38cbad7",
+        "final_package.py": "dbc91f6b364b1c4ee748a92f25d14d6716b8d9b619aaa4e8f92d8db40917b61c",
+        "finalize_imagery.py": "ce6cfc82a6c3162d00666a4d8274758830d2055d0af5b8652456ea3aa2c323c7",
+        "finalize_plans.py": "eece91938c2b04901aa81d209c36b04f4844397feb6dcde26295ae1293994d3e",
+        "finalize_sites.py": "16ac07a441983b56b5cbbcda9d75dcb50590a89f0287ed1c57ec36c015c7bed2",
+        "http_ranges.py": "ddbdcbed2d6acadb53f1ffe66c8aba95967264254a8cea7c638d9fc5be6fbd30",
+        "igrf.py": "c1b83237764844c58f587570cd2b80940cad57f4793b18998da7df759d6e3bc4",
+        "landsat_attempt.py": "b3d46aeeb247ee79a123c7fbbc9895b36db7193a6edb4589f1c3758dabf7de2b",
+        "locate_sites.py": "573fa6b2605d97c610aa0a3f9d65fc29fc9071aaed7000830dc42fc090413d02",
+        "locate_support.py": "56dcad9403e85bebd99adf8b176d8e7ca08d892fabb758df0ee0032699bfbfe5",
+        "measure_lines.py": "db4960121e4d14ecf73223704bbbc097f37507259ec6494b7fef7de9d54ce6c6",
+        "package_audit.py": "a96c2711bed875437b13f16ee8a1ed099d25e7239e049e3fb299ab518a67e7ab",
+        "plan_support.py": "c556cbcb34d28e0298e4ffdb4313a7bca37dd83fe0034e0e53d527999b347492",
+        "prepare_sources.py": "530102409c1888ea512c2b3f058a2ddab9d3bb1bfcd9d1412764b65059dc6c1c",
+        "reference_checks.py": "791feaec8450e1fe919515162df996e7887f6630b9a32710312a8d9ec62bab65",
+        "register_plan.py": "416688daceac512c6e6f55bd85f74d6909ef4baa8bdec7f08c5b4d357564069e",
+        "render_image.py": "66c9847065b6375b13238767f24504316ac1ba0fc73c8677bd3ade3349c870f3",
+        "render_plan.py": "02131622e0e425d0f945bc786d6dd7c8a81dce28c0ed39e20b9d516300e3cb05",
+        "resume_storage.py": "09dcdcf192544e610877dabc01a5c294b5c8f52184b130c3e6001173ccf76a7b",
+        "review_plans.py": "7d5110be70ec6e9a7fffd7a2edb4056e5e48bd0260e85e883b8a273bc5f7d8ea",
+        "runway_validation.py": "12b5f3f78d7f68f0c4dc36dc640ff334d58fee08f94c84864b674a7652860ab6",
+        "selftest.py": "deb95a7d24fd4b98c74488af33ef6c11184b3e93949eb729a0b05ea3a5222766",
+        "source_acquisition.py": "3366cfd49a3344e954b16c2a89ab2e74b2f454c42ffd5d27bb6a182f1a4b0666",
+        "status.py": "c78232f53686823c69244e4db09b4d05878234121ad2d24e1aadc7b5414e3578",
+        "systems.py": "2a51e6161f90143a6f45079eed53eaea9125aa7a20098152d5cef90d3b037a91"
+      }
+    }
+  ],
+  "lines": [
+    {
+      "id": "dock-west",
+      "part": "dock (brick-lined basin east of the town)",
+      "kind": "dock edge",
+      "identification": "Western long edge of the water-filled basin, read as the inner face of the western dock wall. The basin is the only rectangular water body on the mound, about 40 m by 210 m, lying east of the excavated acropolis area; it matches the 'Brick Lined Enclosure' on the east side of the town in the Lothal site plan (unattributed chapter, Fig. 3.1, 'The site plan of Lothal (courtesy ASI)', PDF page 8, printed page 46) and the dock of Rao 1979, Fig. 19 (isometric view, printed page 124). Fitted on the NIR band, where open water is darkest.",
+      "system": "dock",
+      "endpoints_px": [
+        [
+          512,
+          252
+        ],
+        [
+          514,
+          555
+        ]
+      ],
+      "corridor_half_width_px": 24,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 12,
+      "profile_count": 12,
+      "residual_rms_px": 0.037012058718662234,
+      "length_px": 18.9362312745871,
+      "sigma_fit_deg": 0.1555591993497188,
+      "sigma_deg": 0.4278558270291565,
+      "sigma_floor_deg": 0.4278558270291565,
+      "effective_profile_count": 6.312637512253584,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          514.5857509427992,
+          251.94847042265746
+        ],
+        [
+          520.6224176764217,
+          554.8680265843846
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          252.69285943392495,
+          224.2780294014161
+        ],
+        [
+          253.07015110477636,
+          243.21050166152403
+        ]
+      ],
+      "residual_rms_render_px": 0.5921929394985957,
+      "endpoints_utm": [
+        [
+          834321.9285943393,
+          2494432.219705986
+        ],
+        [
+          834325.7015110478,
+          2494242.8949833848
+        ]
+      ],
+      "epsg": 32642,
+      "endpoints_lonlat": [
+        [
+          72.24973158336839,
+          22.52372336688113
+        ],
+        [
+          72.24972823535984,
+          22.522015033572
+        ]
+      ],
+      "length_m": 189.17669404807498,
+      "bearing_deg": 180.10432056077244,
+      "theta_deg": 0.10432056077243601,
+      "source_id": "imagery",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/imagery-r05-lines.json",
+      "source_locator": "Sentinel-2 median composite data/raw/2026-10-21-town-orientations-verification/infra/imagery/lothal/acquisition-v4/median-composite.tif, band 4 (B08); render r05-nir-500.png; picks picks/lothal/imagery-r05-picks.json"
+    },
+    {
+      "id": "dock-east",
+      "part": "dock (brick-lined basin east of the town)",
+      "kind": "dock edge",
+      "identification": "Eastern long edge of the same water-filled basin, read as the inner face of the eastern dock wall; identification as for dock-west.",
+      "system": "dock",
+      "endpoints_px": [
+        [
+          576,
+          252
+        ],
+        [
+          575,
+          555
+        ]
+      ],
+      "corridor_half_width_px": 24,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 12,
+      "profile_count": 12,
+      "residual_rms_px": 0.019381358060037327,
+      "length_px": 18.933887835444008,
+      "sigma_fit_deg": 0.08145179331318811,
+      "sigma_deg": 0.4278628170589901,
+      "sigma_floor_deg": 0.4278628170589901,
+      "effective_profile_count": 6.312534378344231,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          574.1606438985445,
+          252.03036759690303
+        ],
+        [
+          579.1615098119446,
+          554.9312938629032
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          256.41629024365903,
+          224.28314797480644
+        ],
+        [
+          256.72884436324654,
+          243.21445586643145
+        ]
+      ],
+      "residual_rms_render_px": 0.31010172896059723,
+      "endpoints_utm": [
+        [
+          834359.1629024366,
+          2494432.1685202518
+        ],
+        [
+          834362.2884436324,
+          2494242.8554413356
+        ]
+      ],
+      "epsg": 32642,
+      "endpoints_lonlat": [
+        [
+          72.25009305660718,
+          22.523715600292967
+        ],
+        [
+          72.25008342173986,
+          22.522007499538798
+        ]
+      ],
+      "length_m": 189.15322497960608,
+      "bearing_deg": 180.300251196448,
+      "theta_deg": 0.3002511964479879,
+      "source_id": "imagery",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/imagery-r05-lines.json",
+      "source_locator": "Sentinel-2 median composite data/raw/2026-10-21-town-orientations-verification/infra/imagery/lothal/acquisition-v4/median-composite.tif, band 4 (B08); render r05-nir-500.png; picks picks/lothal/imagery-r05-picks.json"
+    },
+    {
+      "id": "dock-west-inner",
+      "part": "dock (Brick Lined Enclosure)",
+      "kind": "dock wall",
+      "identification": "Inner (basin-side) edge of the thick western wall of the 'Brick Lined Enclosure' on Fig. 3.1, the dock east of the town.",
+      "system": "dock",
+      "endpoints_px": [
+        [
+          1194,
+          475
+        ],
+        [
+          1129,
+          1060
+        ]
+      ],
+      "corridor_half_width_px": 4,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 194,
+      "profile_count": 194,
+      "residual_rms_px": 0.4072271496356635,
+      "length_px": 588.5965000862676,
+      "sigma_fit_deg": 0.00996801700486559,
+      "sigma_deg": 0.598803632146447,
+      "sigma_floor_deg": 0.013766303468787364,
+      "effective_profile_count": 194,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          1195.4126305704035,
+          475.1520053202646
+        ],
+        [
+          1132.4405529277592,
+          1060.3702187681822
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          1195.4126305704035,
+          475.1520053202646
+        ],
+        [
+          1132.4405529277592,
+          1060.3702187681822
+        ]
+      ],
+      "residual_rms_render_px": 0.4072271496356635,
+      "bearing_raw_deg": 185.29497481186786,
+      "bearing_deg": 185.29497481186786,
+      "declination_deg": null,
+      "length_m": 152.09211888534045,
+      "sigma_line_deg": 0.013766303468787364,
+      "sigma_arrow_deg": 0.5986453697812945,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          308.89215260217145,
+          122.77829594838877
+        ],
+        [
+          292.62029791414966,
+          273.99747254991786
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": 5.29497481186786,
+      "source_id": "plan-lothal-01",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-lothal01-lines.json",
+      "source_locator": "University chapter PDF page 8, printed page 46, Fig. 3.1; render p03-fig3-1-300dpi-full.png (PDF region 105 75 470 390 pt, 300 dpi); picks picks/lothal/plan-lothal01-picks.json"
+    },
+    {
+      "id": "dock-east-inner",
+      "part": "dock (Brick Lined Enclosure)",
+      "kind": "dock wall",
+      "identification": "Inner (basin-side) edge of the thick eastern wall of the 'Brick Lined Enclosure' on Fig. 3.1.",
+      "system": "dock",
+      "endpoints_px": [
+        [
+          1316,
+          490
+        ],
+        [
+          1251,
+          1075
+        ]
+      ],
+      "corridor_half_width_px": 4,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 196,
+      "profile_count": 197,
+      "residual_rms_px": 0.5224615623057548,
+      "length_px": 588.5985761712449,
+      "sigma_fit_deg": 0.012553144464803509,
+      "sigma_deg": 0.598803632146447,
+      "sigma_floor_deg": 0.013766303468787364,
+      "effective_profile_count": 196,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          1314.606861076725,
+          489.84206709859626
+        ],
+        [
+          1248.3051875140739,
+          1074.694503148587
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          1314.606861076725,
+          489.84206709859626
+        ],
+        [
+          1248.3051875140739,
+          1074.694503148587
+        ]
+      ],
+      "residual_rms_render_px": 0.5224615623057548,
+      "bearing_raw_deg": 185.6210375436349,
+      "bearing_deg": 185.6210375436349,
+      "declination_deg": null,
+      "length_m": 152.09265534140692,
+      "sigma_line_deg": 0.013766303468787364,
+      "sigma_arrow_deg": 0.5986453697812945,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          339.69169536866275,
+          126.57417754485691
+        ],
+        [
+          322.55947997779685,
+          277.6988380228907
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": 5.6210375436349125,
+      "source_id": "plan-lothal-01",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-lothal01-lines.json",
+      "source_locator": "University chapter PDF page 8, printed page 46, Fig. 3.1; render p03-fig3-1-300dpi-full.png (PDF region 105 75 470 390 pt, 300 dpi); picks picks/lothal/plan-lothal01-picks.json"
+    },
+    {
+      "id": "acropolis-drain-north",
+      "part": "acropolis",
+      "kind": "drain",
+      "identification": "Line labelled 'drain' along the north side of the 'Acropolis' outline on Fig. 3.1.",
+      "system": "acropolis-drain",
+      "endpoints_px": [
+        [
+          745,
+          667
+        ],
+        [
+          1060,
+          671
+        ]
+      ],
+      "corridor_half_width_px": 5,
+      "feature": "trough",
+      "mode": "fit",
+      "inlier_count": 37,
+      "profile_count": 63,
+      "residual_rms_px": 0.2861129344668446,
+      "length_px": 315.0050190845634,
+      "sigma_fit_deg": 0.03797581863977171,
+      "sigma_deg": 0.5998486822207277,
+      "sigma_floor_deg": 0.02572124790280109,
+      "effective_profile_count": 37,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          745.0008059934303,
+          666.3911387165723
+        ],
+        [
+          1060.005549075381,
+          666.8081331294879
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          745.0008059934303,
+          666.3911387165723
+        ],
+        [
+          1060.005549075381,
+          666.8081331294879
+        ]
+      ],
+      "residual_rms_render_px": 0.2861129344668446,
+      "bearing_raw_deg": 89.22917247213395,
+      "bearing_deg": 89.22917247213395,
+      "declination_deg": null,
+      "length_m": 81.3966457582851,
+      "sigma_line_deg": 0.03797581863977171,
+      "sigma_arrow_deg": 0.5986453697812945,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          192.50666821535665,
+          172.19409269162074
+        ],
+        [
+          273.90324265513715,
+          172.30184318591418
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": -0.7708275278660608,
+      "source_id": "plan-lothal-01",
+      "system_as_picked": "acropolis",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-lothal01-lines.json",
+      "source_locator": "University chapter PDF page 8, printed page 46, Fig. 3.1; render p03-fig3-1-300dpi-full.png (PDF region 105 75 470 390 pt, 300 dpi); picks picks/lothal/plan-lothal01-picks.json"
+    },
+    {
+      "id": "acropolis-east",
+      "part": "acropolis",
+      "kind": "platform edge",
+      "identification": "East side of the 'Acropolis' outline, between the acropolis and the 'Platform', upper segment north of the jog, Fig. 3.1.",
+      "system": "acropolis-warehouse",
+      "endpoints_px": [
+        [
+          1066,
+          682
+        ],
+        [
+          1048,
+          840
+        ]
+      ],
+      "corridor_half_width_px": 5,
+      "feature": "trough",
+      "mode": "fit",
+      "inlier_count": 49,
+      "profile_count": 51,
+      "residual_rms_px": 0.45790098195134105,
+      "length_px": 158.94418728437253,
+      "sigma_fit_deg": 0.08479540284999348,
+      "sigma_deg": 0.6046209879793087,
+      "sigma_floor_deg": 0.05095423366553971,
+      "effective_profile_count": 49,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          1069.2764186919635,
+          682.4775073285141
+        ],
+        [
+          1046.353953737217,
+          839.760104178541
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          1069.2764186919635,
+          682.4775073285141
+        ],
+        [
+          1046.353953737217,
+          839.760104178541
+        ]
+      ],
+      "residual_rms_render_px": 0.45790098195134105,
+      "bearing_raw_deg": 187.44527004879868,
+      "bearing_deg": 187.44527004879868,
+      "declination_deg": null,
+      "length_m": 41.070849427486436,
+      "sigma_line_deg": 0.08479540284999348,
+      "sigma_arrow_deg": 0.5986453697812945,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          276.2988161994738,
+          176.35077708747133
+        ],
+        [
+          270.3756986401077,
+          216.99227498153513
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": 7.445270048798676,
+      "source_id": "plan-lothal-01",
+      "system_as_picked": "acropolis",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-lothal01-lines.json",
+      "source_locator": "University chapter PDF page 8, printed page 46, Fig. 3.1; render p03-fig3-1-300dpi-full.png (PDF region 105 75 470 390 pt, 300 dpi); picks picks/lothal/plan-lothal01-picks.json"
+    },
+    {
+      "id": "warehouse-north",
+      "part": "acropolis (warehouse)",
+      "kind": "platform edge",
+      "identification": "North side of the rectangle labelled 'Warehouse' on Fig. 3.1.",
+      "system": "acropolis-warehouse",
+      "endpoints_px": [
+        [
+          886,
+          903
+        ],
+        [
+          1018,
+          907
+        ]
+      ],
+      "corridor_half_width_px": 4,
+      "feature": "trough",
+      "mode": "fit",
+      "inlier_count": 13,
+      "profile_count": 16,
+      "residual_rms_px": 0.3885867372121206,
+      "length_px": 131.99013204170095,
+      "sigma_fit_deg": 0.3344505281765684,
+      "sigma_deg": 0.6857356885551228,
+      "sigma_floor_deg": 0.0613570151083657,
+      "effective_profile_count": 13,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          886.0154492960777,
+          902.754947525301
+        ],
+        [
+          1017.7440532128619,
+          911.059757367834
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          886.0154492960777,
+          902.754947525301
+        ],
+        [
+          1017.7440532128619,
+          911.059757367834
+        ]
+      ],
+      "residual_rms_render_px": 0.3885867372121206,
+      "bearing_raw_deg": 92.76075532894686,
+      "bearing_deg": 92.76075532894686,
+      "declination_deg": null,
+      "length_m": 34.10597727175735,
+      "sigma_line_deg": 0.3344505281765684,
+      "sigma_arrow_deg": 0.5986453697812945,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          228.9445605416221,
+          233.27001228043952
+        ],
+        [
+          262.9829594865276,
+          235.41595797618447
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": 2.760755328946857,
+      "source_id": "plan-lothal-01",
+      "system_as_picked": "warehouse",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-lothal01-lines.json",
+      "source_locator": "University chapter PDF page 8, printed page 46, Fig. 3.1; render p03-fig3-1-300dpi-full.png (PDF region 105 75 470 390 pt, 300 dpi); picks picks/lothal/plan-lothal01-picks.json"
+    },
+    {
+      "id": "warehouse-west",
+      "part": "acropolis (warehouse)",
+      "kind": "platform edge",
+      "identification": "West side of the 'Warehouse' rectangle on Fig. 3.1.",
+      "system": "acropolis-warehouse",
+      "endpoints_px": [
+        [
+          879,
+          912
+        ],
+        [
+          868,
+          1020
+        ]
+      ],
+      "corridor_half_width_px": 4,
+      "feature": "trough",
+      "mode": "fit",
+      "inlier_count": 35,
+      "profile_count": 36,
+      "residual_rms_px": 0.37543484599702553,
+      "length_px": 108.51589452104372,
+      "sigma_fit_deg": 0.11365503025181828,
+      "sigma_deg": 0.6093387765948631,
+      "sigma_floor_deg": 0.0746401650586483,
+      "effective_profile_count": 35,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          879.965621841403,
+          912.1258481154462
+        ],
+        [
+          865.9415023835677,
+          1019.7317189456878
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          879.965621841403,
+          912.1258481154462
+        ],
+        [
+          865.9415023835677,
+          1019.7317189456878
+        ]
+      ],
+      "residual_rms_render_px": 0.37543484599702553,
+      "bearing_raw_deg": 186.57875023314335,
+      "bearing_deg": 186.57875023314335,
+      "declination_deg": null,
+      "length_m": 28.04028282197512,
+      "sigma_line_deg": 0.11365503025181828,
+      "sigma_arrow_deg": 0.5986453697812945,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          227.38129763343747,
+          235.69143362156228
+        ],
+        [
+          223.75749415596061,
+          263.4965682030201
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": 6.578750233143353,
+      "source_id": "plan-lothal-01",
+      "system_as_picked": "warehouse",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-lothal01-lines.json",
+      "source_locator": "University chapter PDF page 8, printed page 46, Fig. 3.1; render p03-fig3-1-300dpi-full.png (PDF region 105 75 470 390 pt, 300 dpi); picks picks/lothal/plan-lothal01-picks.json"
+    },
+    {
+      "id": "warehouse-east",
+      "part": "acropolis (warehouse)",
+      "kind": "platform edge",
+      "identification": "East side of the 'Warehouse' rectangle on Fig. 3.1.",
+      "system": "acropolis-warehouse",
+      "endpoints_px": [
+        [
+          1024,
+          914
+        ],
+        [
+          1013,
+          1028
+        ]
+      ],
+      "corridor_half_width_px": 4,
+      "feature": "trough",
+      "mode": "fit",
+      "inlier_count": 39,
+      "profile_count": 39,
+      "residual_rms_px": 0.3631048321976263,
+      "length_px": 114.48577678984697,
+      "sigma_fit_deg": 0.1018726401239118,
+      "sigma_deg": 0.6072514417985344,
+      "sigma_floor_deg": 0.07074897467239331,
+      "effective_profile_count": 38.176490729825396,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          1024.890957456576,
+          914.1108833663696
+        ],
+        [
+          1010.7518044745484,
+          1027.7202027029693
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          1024.890957456576,
+          914.1108833663696
+        ],
+        [
+          1010.7518044745484,
+          1027.7202027029693
+        ]
+      ],
+      "residual_rms_render_px": 0.3631048321976263,
+      "bearing_raw_deg": 186.2475473603633,
+      "bearing_deg": 186.2475473603633,
+      "declination_deg": null,
+      "length_m": 29.58288805939198,
+      "sigma_line_deg": 0.1018726401239118,
+      "sigma_arrow_deg": 0.5986453697812945,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          264.8297047691411,
+          236.20436262696887
+        ],
+        [
+          261.17617686680836,
+          265.56077589224014
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": 6.247547360363313,
+      "source_id": "plan-lothal-01",
+      "system_as_picked": "warehouse",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-lothal01-lines.json",
+      "source_locator": "University chapter PDF page 8, printed page 46, Fig. 3.1; render p03-fig3-1-300dpi-full.png (PDF region 105 75 470 390 pt, 300 dpi); picks picks/lothal/plan-lothal01-picks.json"
+    },
+    {
+      "id": "warehouse-south",
+      "part": "acropolis (warehouse)",
+      "kind": "platform edge",
+      "identification": "South side of the 'Warehouse' rectangle on Fig. 3.1.",
+      "system": "acropolis-warehouse",
+      "endpoints_px": [
+        [
+          874,
+          1028
+        ],
+        [
+          1006,
+          1036
+        ]
+      ],
+      "corridor_half_width_px": 4,
+      "feature": "trough",
+      "mode": "fit",
+      "inlier_count": 45,
+      "profile_count": 45,
+      "residual_rms_px": 0.3111354570112721,
+      "length_px": 132.23588572095488,
+      "sigma_fit_deg": 0.07036666843358758,
+      "sigma_deg": 0.6027667432656062,
+      "sigma_floor_deg": 0.06127275280956212,
+      "effective_profile_count": 44.08073401284411,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          874.1176201783144,
+          1026.329778229028
+        ],
+        [
+          1006.0268255206171,
+          1035.6190741317141
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          874.1176201783144,
+          1026.329778229028
+        ],
+        [
+          1006.0268255206171,
+          1035.6190741317141
+        ]
+      ],
+      "residual_rms_render_px": 0.3111354570112721,
+      "bearing_raw_deg": 93.18155301021048,
+      "bearing_deg": 93.18155301021048,
+      "declination_deg": null,
+      "length_m": 34.16947951445862,
+      "sigma_line_deg": 0.07036666843358758,
+      "sigma_arrow_deg": 0.5986453697812945,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          225.8701860925877,
+          265.2014930824362
+        ],
+        [
+          259.95525207251086,
+          267.6018279410114
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": 3.1815530102104788,
+      "source_id": "plan-lothal-01",
+      "system_as_picked": "warehouse",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-lothal01-lines.json",
+      "source_locator": "University chapter PDF page 8, printed page 46, Fig. 3.1; render p03-fig3-1-300dpi-full.png (PDF region 105 75 470 390 pt, 300 dpi); picks picks/lothal/plan-lothal01-picks.json"
+    },
+    {
+      "id": "blk41e-n",
+      "part": "acropolis (warehouse)",
+      "kind": "platform edge",
+      "identification": "Edge of a mud-brick block of the warehouse podium against a passage: north face (page-left edge) of the dark brick block marked 41e; Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 18 'LOTHAL 1955-62 WAREHOUSE (PLAN)', printed page 112, PDF page 123.",
+      "system": "warehouse-blocks",
+      "endpoints_px": [
+        [
+          788,
+          512
+        ],
+        [
+          790,
+          648
+        ]
+      ],
+      "corridor_half_width_px": 10,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 46,
+      "profile_count": 46,
+      "residual_rms_px": 0.3759278676415675,
+      "length_px": 135.86643206687833,
+      "sigma_fit_deg": 0.08142089301104734,
+      "sigma_deg": 0.7490977714693936,
+      "sigma_floor_deg": 0.059573293345502966,
+      "effective_profile_count": 45.338235029118145,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          782.8816895962364,
+          512.3146711352435
+        ],
+        [
+          791.2189477063969,
+          647.9250597114445
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          782.8816895962364,
+          512.3146711352435
+        ],
+        [
+          791.2189477063969,
+          647.9250597114445
+        ]
+      ],
+      "residual_rms_render_px": 0.3759278676415675,
+      "bearing_raw_deg": 267.1138255851869,
+      "bearing_deg": 267.1138255851869,
+      "declination_deg": null,
+      "length_m": 1.818479970302387,
+      "sigma_line_deg": 0.08142089301104734,
+      "sigma_arrow_deg": 0.744659727259166,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          10.478340013716357,
+          6.856984126093126
+        ],
+        [
+          10.589928554387722,
+          8.672037128069048
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": -2.8861744148131265,
+      "source_id": "plan-rao1979-fig18",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig18-lines.json",
+      "source_locator": "Rao 1979 PDF page 123, printed page 112, Fig. 18; render p04-rao-fig18-pg123-300dpi.png (PDF region 75 140 540 655 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig18-picks.json"
+    },
+    {
+      "id": "blk41e-s",
+      "part": "acropolis (warehouse)",
+      "kind": "platform edge",
+      "identification": "Edge of a mud-brick block of the warehouse podium against a passage: south face (page-right edge) of block 41e; Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 18 'LOTHAL 1955-62 WAREHOUSE (PLAN)', printed page 112, PDF page 123.",
+      "system": "warehouse-blocks",
+      "endpoints_px": [
+        [
+          1052,
+          508
+        ],
+        [
+          1053,
+          650
+        ]
+      ],
+      "corridor_half_width_px": 10,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 42,
+      "profile_count": 48,
+      "residual_rms_px": 0.5373230408163359,
+      "length_px": 141.9991285423877,
+      "sigma_fit_deg": 0.12161096902385911,
+      "sigma_deg": 0.7545245769281591,
+      "sigma_floor_deg": 0.05706086796133054,
+      "effective_profile_count": 42,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          1053.7941798027332,
+          507.97325109801625
+        ],
+        [
+          1055.910968047802,
+          649.9566012286674
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          1053.7941798027332,
+          507.97325109801625
+        ],
+        [
+          1055.910968047802,
+          649.9566012286674
+        ]
+      ],
+      "residual_rms_render_px": 0.5373230408163359,
+      "bearing_raw_deg": 269.7777703803672,
+      "bearing_deg": 269.7777703803672,
+      "declination_deg": null,
+      "length_m": 1.9005619498981146,
+      "sigma_line_deg": 0.12161096902385911,
+      "sigma_arrow_deg": 0.744659727259166,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          14.10431980615513,
+          6.798877165747828
+        ],
+        [
+          14.132651579989703,
+          8.69922793231486
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": -0.22222961963279886,
+      "source_id": "plan-rao1979-fig18",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig18-lines.json",
+      "source_locator": "Rao 1979 PDF page 123, printed page 112, Fig. 18; render p04-rao-fig18-pg123-300dpi.png (PDF region 75 140 540 655 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig18-picks.json"
+    },
+    {
+      "id": "blk41e-w",
+      "part": "acropolis (warehouse)",
+      "kind": "platform edge",
+      "identification": "Edge of a mud-brick block of the warehouse podium against a passage: west face (page-bottom edge, on the passage) of block 41e; Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 18 'LOTHAL 1955-62 WAREHOUSE (PLAN)', printed page 112, PDF page 123.",
+      "system": "warehouse-blocks",
+      "endpoints_px": [
+        [
+          796,
+          657
+        ],
+        [
+          1046,
+          652
+        ]
+      ],
+      "corridor_half_width_px": 10,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 68,
+      "profile_count": 84,
+      "residual_rms_px": 0.41391640027830784,
+      "length_px": 250.04069851405546,
+      "sigma_fit_deg": 0.04057228957373108,
+      "sigma_deg": 0.7457641853045439,
+      "sigma_floor_deg": 0.03240490359307403,
+      "effective_profile_count": 68,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          796.1423908761365,
+          661.9737925451448
+        ],
+        [
+          1046.0806887090225,
+          654.818501510091
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          796.1423908761365,
+          661.9737925451448
+        ],
+        [
+          1046.0806887090225,
+          654.818501510091
+        ]
+      ],
+      "residual_rms_render_px": 0.41391640027830784,
+      "bearing_raw_deg": 178.99208426732383,
+      "bearing_deg": 178.99208426732383,
+      "declination_deg": null,
+      "length_m": 3.3466250279127885,
+      "sigma_line_deg": 0.04057228957373108,
+      "sigma_arrow_deg": 0.744659727259166,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          10.655825499298194,
+          8.860069881101364
+        ],
+        [
+          14.001079963600684,
+          8.764301167439077
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": -1.0079157326761674,
+      "source_id": "plan-rao1979-fig18",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig18-lines.json",
+      "source_locator": "Rao 1979 PDF page 123, printed page 112, Fig. 18; render p04-rao-fig18-pg123-300dpi.png (PDF region 75 140 540 655 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig18-picks.json"
+    },
+    {
+      "id": "blk41f-n",
+      "part": "acropolis (warehouse)",
+      "kind": "platform edge",
+      "identification": "Edge of a mud-brick block of the warehouse podium against a passage: north face of block 41f; Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 18 'LOTHAL 1955-62 WAREHOUSE (PLAN)', printed page 112, PDF page 123.",
+      "system": "warehouse-blocks",
+      "endpoints_px": [
+        [
+          792,
+          742
+        ],
+        [
+          795,
+          982
+        ]
+      ],
+      "corridor_half_width_px": 10,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 78,
+      "profile_count": 81,
+      "residual_rms_px": 0.4082666486986715,
+      "length_px": 240.01866469505546,
+      "sigma_fit_deg": 0.03840179405866998,
+      "sigma_deg": 0.745649252121009,
+      "sigma_floor_deg": 0.033759220612786404,
+      "effective_profile_count": 78,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          792.9574502341127,
+          741.9888357439287
+        ],
+        [
+          795.7559744703766,
+          981.9911850326315
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          792.9574502341127,
+          741.9888357439287
+        ],
+        [
+          795.7559744703766,
+          981.9911850326315
+        ]
+      ],
+      "residual_rms_render_px": 0.4082666486986715,
+      "bearing_raw_deg": 269.9638514897995,
+      "bearing_deg": 269.9638514897995,
+      "declination_deg": null,
+      "length_m": 3.2124869079644136,
+      "sigma_line_deg": 0.03840179405866998,
+      "sigma_arrow_deg": 0.744659727259166,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          10.6131972306669,
+          9.93101692200287
+        ],
+        [
+          10.650653577997392,
+          13.143285459327764
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": -0.03614851020051901,
+      "source_id": "plan-rao1979-fig18",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig18-lines.json",
+      "source_locator": "Rao 1979 PDF page 123, printed page 112, Fig. 18; render p04-rao-fig18-pg123-300dpi.png (PDF region 75 140 540 655 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig18-picks.json"
+    },
+    {
+      "id": "blk41f-s",
+      "part": "acropolis (warehouse)",
+      "kind": "platform edge",
+      "identification": "Edge of a mud-brick block of the warehouse podium against a passage: south face of block 41f; Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 18 'LOTHAL 1955-62 WAREHOUSE (PLAN)', printed page 112, PDF page 123.",
+      "system": "warehouse-blocks",
+      "endpoints_px": [
+        [
+          1055,
+          738
+        ],
+        [
+          1054,
+          982
+        ]
+      ],
+      "corridor_half_width_px": 10,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 78,
+      "profile_count": 82,
+      "residual_rms_px": 0.4357129206424403,
+      "length_px": 243.98653288941273,
+      "sigma_fit_deg": 0.04079379959268888,
+      "sigma_deg": 0.745776269055877,
+      "sigma_floor_deg": 0.03320810610239488,
+      "effective_profile_count": 78,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          1052.5934237408683,
+          738.0172775960443
+        ],
+        [
+          1054.3450375135596,
+          981.997522863131
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          1052.5934237408683,
+          738.0172775960443
+        ],
+        [
+          1054.3450375135596,
+          981.997522863131
+        ]
+      ],
+      "residual_rms_render_px": 0.4357129206424403,
+      "bearing_raw_deg": 270.22057509657066,
+      "bearing_deg": 270.22057509657066,
+      "declination_deg": null,
+      "length_m": 3.265594130451031,
+      "sigma_line_deg": 0.04079379959268888,
+      "sigma_arrow_deg": 0.744659727259166,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          14.088248501311813,
+          9.877860311992945
+        ],
+        [
+          14.111692662705389,
+          13.143370286887032
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": 0.22057509657065566,
+      "source_id": "plan-rao1979-fig18",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig18-lines.json",
+      "source_locator": "Rao 1979 PDF page 123, printed page 112, Fig. 18; render p04-rao-fig18-pg123-300dpi.png (PDF region 75 140 540 655 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig18-picks.json"
+    },
+    {
+      "id": "blk41f-e",
+      "part": "acropolis (warehouse)",
+      "kind": "platform edge",
+      "identification": "Edge of a mud-brick block of the warehouse podium against a passage: east face (page-top edge, on the passage) of block 41f; Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 18 'LOTHAL 1955-62 WAREHOUSE (PLAN)', printed page 112, PDF page 123.",
+      "system": "warehouse-blocks",
+      "endpoints_px": [
+        [
+          800,
+          733
+        ],
+        [
+          1048,
+          733
+        ]
+      ],
+      "corridor_half_width_px": 10,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 81,
+      "profile_count": 83,
+      "residual_rms_px": 0.4819833383308229,
+      "length_px": 247.73861728211978,
+      "sigma_fit_deg": 0.042854482244173944,
+      "sigma_deg": 0.7458918259708385,
+      "sigma_floor_deg": 0.032672765996426906,
+      "effective_profile_count": 81,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          800.3804666553195,
+          741.2802890895161
+        ],
+        [
+          1047.8579767071608,
+          729.909074932821
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          800.3804666553195,
+          741.2802890895161
+        ],
+        [
+          1047.8579767071608,
+          729.909074932821
+        ]
+      ],
+      "residual_rms_render_px": 0.4819833383308229,
+      "bearing_raw_deg": 178.0011098329312,
+      "bearing_deg": 178.0011098329312,
+      "declination_deg": null,
+      "length_m": 3.3158132332214887,
+      "sigma_line_deg": 0.042854482244173944,
+      "sigma_arrow_deg": 0.744659727259166,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          10.712549266897202,
+          9.921533505978228
+        ],
+        [
+          14.02486775707481,
+          9.769337523001429
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": -1.9988901670687937,
+      "source_id": "plan-rao1979-fig18",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig18-lines.json",
+      "source_locator": "Rao 1979 PDF page 123, printed page 112, Fig. 18; render p04-rao-fig18-pg123-300dpi.png (PDF region 75 140 540 655 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig18-picks.json"
+    },
+    {
+      "id": "blk41g-n",
+      "part": "acropolis (warehouse)",
+      "kind": "platform edge",
+      "identification": "Edge of a mud-brick block of the warehouse podium against a passage: north face of block 41g; Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 18 'LOTHAL 1955-62 WAREHOUSE (PLAN)', printed page 112, PDF page 123.",
+      "system": "warehouse-blocks",
+      "endpoints_px": [
+        [
+          787,
+          1068
+        ],
+        [
+          789,
+          1320
+        ]
+      ],
+      "corridor_half_width_px": 10,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 83,
+      "profile_count": 85,
+      "residual_rms_px": 0.4538476742122444,
+      "length_px": 251.88523341604827,
+      "sigma_fit_deg": 0.03881511378430074,
+      "sigma_deg": 0.7456706528084525,
+      "sigma_floor_deg": 0.03215313815559841,
+      "effective_profile_count": 83,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          791.1701658276072,
+          1068.0970603330895
+        ],
+        [
+          785.3091410334962,
+          1319.914095502317
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          791.1701658276072,
+          1068.0970603330895
+        ],
+        [
+          785.3091410334962,
+          1319.914095502317
+        ]
+      ],
+      "residual_rms_render_px": 0.4538476742122444,
+      "bearing_raw_deg": 271.9652278629268,
+      "bearing_deg": 271.9652278629268,
+      "declination_deg": null,
+      "length_m": 3.3713128755494033,
+      "sigma_line_deg": 0.03881511378430074,
+      "sigma_arrow_deg": 0.744659727259166,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          10.589275642052105,
+          14.295754153597757
+        ],
+        [
+          10.510829803507598,
+          17.666154241904817
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": 1.9652278629267812,
+      "source_id": "plan-rao1979-fig18",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig18-lines.json",
+      "source_locator": "Rao 1979 PDF page 123, printed page 112, Fig. 18; render p04-rao-fig18-pg123-300dpi.png (PDF region 75 140 540 655 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig18-picks.json"
+    },
+    {
+      "id": "blk41g-s",
+      "part": "acropolis (warehouse)",
+      "kind": "platform edge",
+      "identification": "Edge of a mud-brick block of the warehouse podium against a passage: south face of block 41g; Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 18 'LOTHAL 1955-62 WAREHOUSE (PLAN)', printed page 112, PDF page 123.",
+      "system": "warehouse-blocks",
+      "endpoints_px": [
+        [
+          1055,
+          1065
+        ],
+        [
+          1055,
+          1322
+        ]
+      ],
+      "corridor_half_width_px": 10,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 82,
+      "profile_count": 86,
+      "residual_rms_px": 0.3955528715306079,
+      "length_px": 256.9981485526571,
+      "sigma_fit_deg": 0.03345712058891599,
+      "sigma_deg": 0.7454109526427665,
+      "sigma_floor_deg": 0.03152858376479349,
+      "effective_profile_count": 82,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          1054.4379403087014,
+          1065.0021334816192
+        ],
+        [
+          1055.4134539144884,
+          1321.9984306002714
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          1054.4379403087014,
+          1065.0021334816192
+        ],
+        [
+          1055.4134539144884,
+          1321.9984306002714
+        ]
+      ],
+      "residual_rms_render_px": 0.3955528715306079,
+      "bearing_raw_deg": 270.41442927221726,
+      "bearing_deg": 270.41442927221726,
+      "declination_deg": null,
+      "length_m": 3.4397457741273416,
+      "sigma_line_deg": 0.03345712058891599,
+      "sigma_arrow_deg": 0.744659727259166,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          14.112936103558146,
+          14.254330658453796
+        ],
+        [
+          14.125992691016098,
+          17.69405165239369
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": 0.4144292722172622,
+      "source_id": "plan-rao1979-fig18",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig18-lines.json",
+      "source_locator": "Rao 1979 PDF page 123, printed page 112, Fig. 18; render p04-rao-fig18-pg123-300dpi.png (PDF region 75 140 540 655 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig18-picks.json"
+    },
+    {
+      "id": "blk41g-e",
+      "part": "acropolis (warehouse)",
+      "kind": "platform edge",
+      "identification": "Edge of a mud-brick block of the warehouse podium against a passage: east face of block 41g; Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 18 'LOTHAL 1955-62 WAREHOUSE (PLAN)', printed page 112, PDF page 123.",
+      "system": "warehouse-blocks",
+      "endpoints_px": [
+        [
+          795,
+          1062
+        ],
+        [
+          1048,
+          1062
+        ]
+      ],
+      "corridor_half_width_px": 10,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 80,
+      "profile_count": 85,
+      "residual_rms_px": 0.48300120236146465,
+      "length_px": 252.91906607891696,
+      "sigma_fit_deg": 0.04201270664424622,
+      "sigma_deg": 0.7458439360357305,
+      "sigma_floor_deg": 0.03202705929441203,
+      "effective_profile_count": 80,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          795.0722818236102,
+          1064.8569645813106
+        ],
+        [
+          1047.9104398719562,
+          1058.460104339664
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          795.0722818236102,
+          1064.8569645813106
+        ],
+        [
+          1047.9104398719562,
+          1058.460104339664
+        ]
+      ],
+      "residual_rms_render_px": 0.48300120236146465,
+      "bearing_raw_deg": 179.1826266492646,
+      "bearing_deg": 179.1826266492646,
+      "declination_deg": null,
+      "length_m": 3.385150024000801,
+      "sigma_line_deg": 0.04201270664424622,
+      "sigma_arrow_deg": 0.744659727259166,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          10.641502815994784,
+          14.252387671260372
+        ],
+        [
+          14.025569940924845,
+          14.166770038963
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": -0.8173733507354086,
+      "source_id": "plan-rao1979-fig18",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig18-lines.json",
+      "source_locator": "Rao 1979 PDF page 123, printed page 112, Fig. 18; render p04-rao-fig18-pg123-300dpi.png (PDF region 75 140 540 655 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig18-picks.json"
+    },
+    {
+      "id": "blk41g-w",
+      "part": "acropolis (warehouse)",
+      "kind": "platform edge",
+      "identification": "Edge of a mud-brick block of the warehouse podium against a passage: west face (on the passage) of block 41g; Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 18 'LOTHAL 1955-62 WAREHOUSE (PLAN)', printed page 112, PDF page 123.",
+      "system": "warehouse-blocks",
+      "endpoints_px": [
+        [
+          795,
+          1327
+        ],
+        [
+          1048,
+          1327
+        ]
+      ],
+      "corridor_half_width_px": 10,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 83,
+      "profile_count": 85,
+      "residual_rms_px": 0.5508633455206877,
+      "length_px": 252.9762738733008,
+      "sigma_fit_deg": 0.04766650079987053,
+      "sigma_deg": 0.7461837606784266,
+      "sigma_floor_deg": 0.03202705929441203,
+      "effective_profile_count": 83,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          795.0164337666399,
+          1325.8001183591691
+        ],
+        [
+          1047.9689837382575,
+          1329.2645960507691
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          795.0164337666399,
+          1325.8001183591691
+        ],
+        [
+          1047.9689837382575,
+          1329.2645960507691
+        ]
+      ],
+      "residual_rms_render_px": 0.5508633455206877,
+      "bearing_raw_deg": 181.41659601793614,
+      "bearing_deg": 181.41659601793614,
+      "declination_deg": null,
+      "length_m": 3.385915711497334,
+      "sigma_line_deg": 0.04766650079987053,
+      "sigma_arrow_deg": 0.744659727259166,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          10.640755327660573,
+          17.74493466255102
+        ],
+        [
+          14.0263535108371,
+          17.79130434484777
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": 1.4165960179361434,
+      "source_id": "plan-rao1979-fig18",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig18-lines.json",
+      "source_locator": "Rao 1979 PDF page 123, printed page 112, Fig. 18; render p04-rao-fig18-pg123-300dpi.png (PDF region 75 140 540 655 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig18-picks.json"
+    },
+    {
+      "id": "blk41h-n",
+      "part": "acropolis (warehouse)",
+      "kind": "platform edge",
+      "identification": "Edge of a mud-brick block of the warehouse podium against a passage: north face of block 41h; Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 18 'LOTHAL 1955-62 WAREHOUSE (PLAN)', printed page 112, PDF page 123.",
+      "system": "warehouse-blocks",
+      "endpoints_px": [
+        [
+          766,
+          1410
+        ],
+        [
+          768,
+          1655
+        ]
+      ],
+      "corridor_half_width_px": 10,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 67,
+      "profile_count": 82,
+      "residual_rms_px": 0.4985218404101251,
+      "length_px": 244.92243602047498,
+      "sigma_fit_deg": 0.04885304931152973,
+      "sigma_deg": 0.7462604972988522,
+      "sigma_floor_deg": 0.03307173868021761,
+      "effective_profile_count": 67,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          766.5185622432417,
+          1410.0094861982475
+        ],
+        [
+          762.0388798935719,
+          1654.8909516305046
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          766.5185622432417,
+          1410.0094861982475
+        ],
+        [
+          762.0388798935719,
+          1654.8909516305046
+        ]
+      ],
+      "residual_rms_render_px": 0.4985218404101251,
+      "bearing_raw_deg": 271.67992329621177,
+      "bearing_deg": 271.67992329621177,
+      "declination_deg": null,
+      "length_m": 3.2781205585914437,
+      "sigma_line_deg": 0.04885304931152973,
+      "sigma_arrow_deg": 0.744659727259166,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          10.259330660999412,
+          18.872019891754746
+        ],
+        [
+          10.19937315345125,
+          22.149592086832758
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": 1.6799232962117685,
+      "source_id": "plan-rao1979-fig18",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig18-lines.json",
+      "source_locator": "Rao 1979 PDF page 123, printed page 112, Fig. 18; render p04-rao-fig18-pg123-300dpi.png (PDF region 75 140 540 655 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig18-picks.json"
+    },
+    {
+      "id": "blk41h-s",
+      "part": "acropolis (warehouse)",
+      "kind": "platform edge",
+      "identification": "Edge of a mud-brick block of the warehouse podium against a passage: south face of block 41h; Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 18 'LOTHAL 1955-62 WAREHOUSE (PLAN)', printed page 112, PDF page 123.",
+      "system": "warehouse-41h-south",
+      "endpoints_px": [
+        [
+          1055,
+          1408
+        ],
+        [
+          1052,
+          1660
+        ]
+      ],
+      "corridor_half_width_px": 10,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 58,
+      "profile_count": 71,
+      "residual_rms_px": 0.6698998863792691,
+      "length_px": 251.6589022455649,
+      "sigma_fit_deg": 0.07904552467601049,
+      "sigma_deg": 0.7488433109623142,
+      "sigma_floor_deg": 0.03215187251847544,
+      "effective_profile_count": 58,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          1056.4104964304588,
+          1408.0922127624056
+        ],
+        [
+          1039.9930646043945,
+          1659.2150333336936
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          1056.4104964304588,
+          1408.0922127624056
+        ],
+        [
+          1039.9930646043945,
+          1659.2150333336936
+        ]
+      ],
+      "residual_rms_render_px": 0.6698998863792691,
+      "bearing_raw_deg": 274.3723651247934,
+      "bearing_deg": 274.3723651247934,
+      "declination_deg": null,
+      "length_m": 3.368283586460716,
+      "sigma_line_deg": 0.07904552467601049,
+      "sigma_arrow_deg": 0.744659727259166,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          14.139337428323541,
+          18.846358488215753
+        ],
+        [
+          13.919601247095146,
+          22.207466985345803
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": 4.3723651247934185,
+      "source_id": "plan-rao1979-fig18",
+      "system_as_picked": "warehouse-blocks",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig18-lines.json",
+      "source_locator": "Rao 1979 PDF page 123, printed page 112, Fig. 18; render p04-rao-fig18-pg123-300dpi.png (PDF region 75 140 540 655 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig18-picks.json"
+    },
+    {
+      "id": "blk41h-e",
+      "part": "acropolis (warehouse)",
+      "kind": "platform edge",
+      "identification": "Edge of a mud-brick block of the warehouse podium against a passage: east face (on the passage) of block 41h; Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 18 'LOTHAL 1955-62 WAREHOUSE (PLAN)', printed page 112, PDF page 123.",
+      "system": "warehouse-blocks",
+      "endpoints_px": [
+        [
+          775,
+          1402
+        ],
+        [
+          1045,
+          1402
+        ]
+      ],
+      "corridor_half_width_px": 10,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 85,
+      "profile_count": 91,
+      "residual_rms_px": 0.5873438073240628,
+      "length_px": 269.98384108533526,
+      "sigma_fit_deg": 0.0466958661705817,
+      "sigma_deg": 0.7461223849470785,
+      "sigma_floor_deg": 0.030010541127455534,
+      "effective_profile_count": 85,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          774.9564126988269,
+          1405.9838343825706
+        ],
+        [
+          1044.9240958365733,
+          1408.937562269308
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          774.9564126988269,
+          1405.9838343825706
+        ],
+        [
+          1044.9240958365733,
+          1408.937562269308
+        ]
+      ],
+      "residual_rms_render_px": 0.5873438073240628,
+      "bearing_raw_deg": 181.25876366694752,
+      "bearing_deg": 181.25876366694752,
+      "declination_deg": null,
+      "length_m": 3.6135504542970303,
+      "sigma_line_deg": 0.0466958661705817,
+      "sigma_arrow_deg": 0.744659727259166,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          10.372265561934586,
+          18.81813927471892
+        ],
+        [
+          13.985599753070773,
+          18.857672917562443
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": 1.258763666947516,
+      "source_id": "plan-rao1979-fig18",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig18-lines.json",
+      "source_locator": "Rao 1979 PDF page 123, printed page 112, Fig. 18; render p04-rao-fig18-pg123-300dpi.png (PDF region 75 140 540 655 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig18-picks.json"
+    },
+    {
+      "id": "b172-east-wall-eface",
+      "part": "B block (lower town)",
+      "kind": "house wall",
+      "identification": "Brick wall drawn brick by brick: east face of the long two-brick wall on the east side of house 172.IVa, along the passage; Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 17 'LOTHAL 1955-62 PLAN OF 'B' BLOCK (PHASE IV)', printed page 109, PDF page 120.",
+      "system": "b-block",
+      "endpoints_px": [
+        [
+          1436,
+          742
+        ],
+        [
+          1302,
+          1528
+        ]
+      ],
+      "corridor_half_width_px": 12,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 139,
+      "profile_count": 266,
+      "residual_rms_px": 0.5581012561463042,
+      "length_px": 797.3048762155082,
+      "sigma_fit_deg": 0.018624864234084597,
+      "sigma_deg": 0.43783148298758845,
+      "sigma_floor_deg": 0.010162340870353743,
+      "effective_profile_count": 139,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          1436.0037831169348,
+          742.0006818614257
+        ],
+        [
+          1294.577949698595,
+          1526.662264506425
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          1436.0037831169348,
+          742.0006818614257
+        ],
+        [
+          1294.577949698595,
+          1526.662264506425
+        ]
+      ],
+      "residual_rms_render_px": 0.5581012561463042,
+      "bearing_raw_deg": 171.56214758936957,
+      "bearing_deg": 171.56214758936957,
+      "declination_deg": null,
+      "length_m": 7.550235570222616,
+      "sigma_line_deg": 0.018624864234084597,
+      "sigma_arrow_deg": 0.4374351631126296,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          13.598520673455821,
+          7.026521608536228
+        ],
+        [
+          12.2592608872973,
+          14.457029019947205
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": -8.437852410630427,
+      "source_id": "plan-rao1979-fig17",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig17-lines.json",
+      "source_locator": "Rao 1979 PDF page 120, printed page 109, Fig. 17; render p05-rao-fig17-pg120-300dpi.png (PDF region 48 130 540 630 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig17-picks.json"
+    },
+    {
+      "id": "b172-north-wall-nface",
+      "part": "B block (lower town)",
+      "kind": "house wall",
+      "identification": "Brick wall drawn brick by brick: north face of the north wall of house 172.IVa, facing Street 3; Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 17 'LOTHAL 1955-62 PLAN OF 'B' BLOCK (PHASE IV)', printed page 109, PDF page 120.",
+      "system": "b-block",
+      "endpoints_px": [
+        [
+          950,
+          657
+        ],
+        [
+          1420,
+          712
+        ]
+      ],
+      "corridor_half_width_px": 12,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 65,
+      "profile_count": 158,
+      "residual_rms_px": 0.6985598469721517,
+      "length_px": 473.1227665350425,
+      "sigma_fit_deg": 0.05140600027821695,
+      "sigma_deg": 0.4404453414352079,
+      "sigma_floor_deg": 0.017123255063684284,
+      "effective_profile_count": 65,
+      "warnings": [
+        "Fewer than half of profiles are inliers"
+      ],
+      "refined_endpoints_px": [
+        [
+          950.7168894693151,
+          651.7368454332548
+        ],
+        [
+          1419.510893882928,
+          715.5908479673309
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          950.7168894693151,
+          651.7368454332548
+        ],
+        [
+          1419.510893882928,
+          715.5908479673309
+        ]
+      ],
+      "residual_rms_render_px": 0.6985598469721517,
+      "bearing_raw_deg": 79.10143840881372,
+      "bearing_deg": 79.10143840881372,
+      "declination_deg": null,
+      "length_m": 4.480329228551539,
+      "sigma_line_deg": 0.05140600027821695,
+      "sigma_arrow_deg": 0.4374351631126296,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          9.003000847247302,
+          6.171750430239155
+        ],
+        [
+          13.442338010255,
+          6.776428484539118
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": -10.89856159118628,
+      "source_id": "plan-rao1979-fig17",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig17-lines.json",
+      "source_locator": "Rao 1979 PDF page 120, printed page 109, Fig. 17; render p05-rao-fig17-pg120-300dpi.png (PDF region 48 130 540 630 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig17-picks.json"
+    },
+    {
+      "id": "passage-wall-wface",
+      "part": "B block (lower town)",
+      "kind": "house wall",
+      "identification": "Brick wall drawn brick by brick: west face of the single-row wall between the passage and the verandah; Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 17 'LOTHAL 1955-62 PLAN OF 'B' BLOCK (PHASE IV)', printed page 109, PDF page 120.",
+      "system": "b-block-passage-wall",
+      "endpoints_px": [
+        [
+          1535,
+          962
+        ],
+        [
+          1412,
+          1458
+        ]
+      ],
+      "corridor_half_width_px": 10,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 45,
+      "profile_count": 171,
+      "residual_rms_px": 0.7136103566343793,
+      "length_px": 511.01670008309947,
+      "sigma_fit_deg": 0.035128883702849736,
+      "sigma_deg": 0.4388434349487083,
+      "sigma_floor_deg": 0.015856114074727576,
+      "effective_profile_count": 45,
+      "warnings": [
+        "Fewer than half of profiles are inliers"
+      ],
+      "refined_endpoints_px": [
+        [
+          1527.7704132042088,
+          960.2466683305089
+        ],
+        [
+          1407.3291538548162,
+          1456.8672184592292
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          1527.7704132042088,
+          960.2466683305089
+        ],
+        [
+          1407.3291538548162,
+          1456.8672184592292
+        ]
+      ],
+      "residual_rms_render_px": 0.7136103566343793,
+      "bearing_raw_deg": 174.977234661773,
+      "bearing_deg": 174.977234661773,
+      "declination_deg": null,
+      "length_m": 4.839173296241472,
+      "sigma_line_deg": 0.035128883702849736,
+      "sigma_arrow_deg": 0.4374351631126296,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          14.467522852312584,
+          9.093244965251031
+        ],
+        [
+          13.326980623625154,
+          13.796091083894217
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": -5.022765338227003,
+      "source_id": "plan-rao1979-fig17",
+      "system_as_picked": "b-block",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig17-lines.json",
+      "source_locator": "Rao 1979 PDF page 120, printed page 109, Fig. 17; render p05-rao-fig17-pg120-300dpi.png (PDF region 48 130 540 630 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig17-picks.json"
+    },
+    {
+      "id": "verandah-wall-eface",
+      "part": "B block (lower town)",
+      "kind": "house wall",
+      "identification": "Brick wall drawn brick by brick: east face of the wall between the verandah and house 171.IVa; Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 17 'LOTHAL 1955-62 PLAN OF 'B' BLOCK (PHASE IV)', printed page 109, PDF page 120.",
+      "system": "b-block",
+      "endpoints_px": [
+        [
+          1670,
+          945
+        ],
+        [
+          1600,
+          1500
+        ]
+      ],
+      "corridor_half_width_px": 10,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 80,
+      "profile_count": 158,
+      "residual_rms_px": 0.5737636895719438,
+      "length_px": 558.771043134039,
+      "sigma_fit_deg": 0.051603140727622995,
+      "sigma_deg": 0.44046839394027776,
+      "sigma_floor_deg": 0.01448496634682262,
+      "effective_profile_count": 80,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          1671.8501821061218,
+          945.322884684378
+        ],
+        [
+          1575.788046612465,
+          1495.7746489376143
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          1671.8501821061218,
+          945.322884684378
+        ],
+        [
+          1575.788046612465,
+          1495.7746489376143
+        ]
+      ],
+      "residual_rms_render_px": 0.5737636895719438,
+      "bearing_raw_deg": 171.2442512387553,
+      "bearing_deg": 171.2442512387553,
+      "declination_deg": null,
+      "length_m": 5.291392453920825,
+      "sigma_line_deg": 0.051603140727622995,
+      "sigma_arrow_deg": 0.4374351631126296,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          15.831914603277669,
+          8.951921256480853
+        ],
+        [
+          14.922235289890768,
+          14.164532660394075
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": -8.75574876124469,
+      "source_id": "plan-rao1979-fig17",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig17-lines.json",
+      "source_locator": "Rao 1979 PDF page 120, printed page 109, Fig. 17; render p05-rao-fig17-pg120-300dpi.png (PDF region 48 130 540 630 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig17-picks.json"
+    },
+    {
+      "id": "south-wall-west-sface",
+      "part": "B block (lower town)",
+      "kind": "house wall",
+      "identification": "Brick wall drawn brick by brick: south face of the long southern wall of B block, western segment (west of the cross wall), facing Street 2; Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 17 'LOTHAL 1955-62 PLAN OF 'B' BLOCK (PHASE IV)', printed page 109, PDF page 120.",
+      "system": "b-block",
+      "endpoints_px": [
+        [
+          135,
+          1362
+        ],
+        [
+          535,
+          1414
+        ]
+      ],
+      "corridor_half_width_px": 12,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 76,
+      "profile_count": 135,
+      "residual_rms_px": 0.5733671568840685,
+      "length_px": 403.25426594760404,
+      "sigma_fit_deg": 0.03591741524833111,
+      "sigma_deg": 0.43890725973204625,
+      "sigma_floor_deg": 0.020088083153723547,
+      "effective_profile_count": 76,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          135.75818341950216,
+          1357.07661139516
+        ],
+        [
+          534.3142915530716,
+          1418.4527604627212
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          135.75818341950216,
+          1357.07661139516
+        ],
+        [
+          534.3142915530716,
+          1418.4527604627212
+        ]
+      ],
+      "residual_rms_render_px": 0.5733671568840685,
+      "bearing_raw_deg": 80.09952956800832,
+      "bearing_deg": 80.09952956800832,
+      "declination_deg": null,
+      "length_m": 3.818695700261402,
+      "sigma_line_deg": 0.03591741524833111,
+      "sigma_arrow_deg": 0.4374351631126296,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          1.285588858139225,
+          12.851104274575379
+        ],
+        [
+          5.0597944275859055,
+          13.432317807412133
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": -9.900470431991678,
+      "source_id": "plan-rao1979-fig17",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig17-lines.json",
+      "source_locator": "Rao 1979 PDF page 120, printed page 109, Fig. 17; render p05-rao-fig17-pg120-300dpi.png (PDF region 48 130 540 630 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig17-picks.json"
+    },
+    {
+      "id": "south-wall-east-sface",
+      "part": "B block (lower town)",
+      "kind": "house wall",
+      "identification": "Brick wall drawn brick by brick: south face of the long southern wall of B block, eastern segment, facing Street 2; Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 17 'LOTHAL 1955-62 PLAN OF 'B' BLOCK (PHASE IV)', printed page 109, PDF page 120.",
+      "system": "b-block",
+      "endpoints_px": [
+        [
+          560,
+          1420
+        ],
+        [
+          1130,
+          1503
+        ]
+      ],
+      "corridor_half_width_px": 12,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 109,
+      "profile_count": 193,
+      "residual_rms_px": 0.7380127369043602,
+      "length_px": 575.9845839384757,
+      "sigma_fit_deg": 0.024024204814239936,
+      "sigma_deg": 0.43809437835280357,
+      "sigma_floor_deg": 0.014067166562657288,
+      "effective_profile_count": 109,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          559.6083848291858,
+          1422.8838754480776
+        ],
+        [
+          1130.354664831425,
+          1500.388228863769
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          559.6083848291858,
+          1422.8838754480776
+        ],
+        [
+          1130.354664831425,
+          1500.388228863769
+        ]
+      ],
+      "residual_rms_render_px": 0.7380127369043602,
+      "bearing_raw_deg": 79.07813036590333,
+      "bearing_deg": 79.07813036590333,
+      "declination_deg": null,
+      "length_m": 5.454399469114353,
+      "sigma_line_deg": 0.024024204814239936,
+      "sigma_arrow_deg": 0.4374351631126296,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          5.299321826033956,
+          13.474279123561342
+        ],
+        [
+          10.704116144236979,
+          14.208221864240237
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": -10.921869634096666,
+      "source_id": "plan-rao1979-fig17",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig17-lines.json",
+      "source_locator": "Rao 1979 PDF page 120, printed page 109, Fig. 17; render p05-rao-fig17-pg120-300dpi.png (PDF region 48 130 540 630 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig17-picks.json"
+    },
+    {
+      "id": "room-cross-wall-wface",
+      "part": "B block (lower town)",
+      "kind": "house wall",
+      "identification": "Brick wall drawn brick by brick: west face of the cross wall between the two rooms of 172.IVa; Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 17 'LOTHAL 1955-62 PLAN OF 'B' BLOCK (PHASE IV)', printed page 109, PDF page 120.",
+      "system": "b-block",
+      "endpoints_px": [
+        [
+          600,
+          845
+        ],
+        [
+          550,
+          1305
+        ]
+      ],
+      "corridor_half_width_px": 12,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 89,
+      "profile_count": 155,
+      "residual_rms_px": 0.747895146928892,
+      "length_px": 462.70001233812303,
+      "sigma_fit_deg": 0.03335111743918981,
+      "sigma_deg": 0.43870470588063615,
+      "sigma_floor_deg": 0.01751173929486581,
+      "effective_profile_count": 89,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          598.1379409127604,
+          844.7855846053795
+        ],
+        [
+          545.2079659429238,
+          1304.4481991036566
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          598.1379409127604,
+          844.7855846053795
+        ],
+        [
+          545.2079659429238,
+          1304.4481991036566
+        ]
+      ],
+      "residual_rms_render_px": 0.747895146928892,
+      "bearing_raw_deg": 167.9136229457911,
+      "bearing_deg": 167.9136229457911,
+      "declination_deg": null,
+      "length_m": 4.381628904717075,
+      "sigma_line_deg": 0.03335111743918981,
+      "sigma_arrow_deg": 0.4374351631126296,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          5.664185046522353,
+          7.999863490581246
+        ],
+        [
+          5.162954222944355,
+          12.352729158178567
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": -12.086377054208896,
+      "source_id": "plan-rao1979-fig17",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig17-lines.json",
+      "source_locator": "Rao 1979 PDF page 120, printed page 109, Fig. 17; render p05-rao-fig17-pg120-300dpi.png (PDF region 48 130 540 630 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig17-picks.json"
+    },
+    {
+      "id": "room2-north-nface",
+      "part": "B block (lower town)",
+      "kind": "house wall",
+      "identification": "Brick wall drawn brick by brick: north face of the north wall of the eastern room (with the fire altar); Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 17 'LOTHAL 1955-62 PLAN OF 'B' BLOCK (PHASE IV)', printed page 109, PDF page 120.",
+      "system": "b-block",
+      "endpoints_px": [
+        [
+          868,
+          835
+        ],
+        [
+          1092,
+          863
+        ]
+      ],
+      "corridor_half_width_px": 10,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 43,
+      "profile_count": 76,
+      "residual_rms_px": 0.6913940131674079,
+      "length_px": 225.71174943506546,
+      "sigma_fit_deg": 0.08740692194774932,
+      "sigma_deg": 0.44608238244942244,
+      "sigma_floor_deg": 0.03589408308599218,
+      "effective_profile_count": 43,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          869.0252978163747,
+          827.7793465020824
+        ],
+        [
+          1092.4954181174426,
+          859.5110209877448
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          869.0252978163747,
+          827.7793465020824
+        ],
+        [
+          1092.4954181174426,
+          859.5110209877448
+        ]
+      ],
+      "residual_rms_render_px": 0.6913940131674079,
+      "bearing_raw_deg": 79.42666209086813,
+      "bearing_deg": 79.42666209086813,
+      "declination_deg": null,
+      "length_m": 2.137421869650241,
+      "sigma_line_deg": 0.08740692194774932,
+      "sigma_arrow_deg": 0.4374351631126296,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          8.22940622932173,
+          7.838819569148508
+        ],
+        [
+          10.34560055035457,
+          8.139308910868795
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": -10.573337909131865,
+      "source_id": "plan-rao1979-fig17",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig17-lines.json",
+      "source_locator": "Rao 1979 PDF page 120, printed page 109, Fig. 17; render p05-rao-fig17-pg120-300dpi.png (PDF region 48 130 540 630 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig17-picks.json"
+    },
+    {
+      "id": "room2-east-eface",
+      "part": "B block (lower town)",
+      "kind": "house wall",
+      "identification": "Brick wall drawn brick by brick: east face of the east wall of the eastern room; Rao 1979, Lothal: A Harappan Port Town (1955-62), vol. I, MASI 78, Fig. 17 'LOTHAL 1955-62 PLAN OF 'B' BLOCK (PHASE IV)', printed page 109, PDF page 120.",
+      "system": "b-block",
+      "endpoints_px": [
+        [
+          1095,
+          870
+        ],
+        [
+          1018,
+          1295
+        ]
+      ],
+      "corridor_half_width_px": 10,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 78,
+      "profile_count": 144,
+      "residual_rms_px": 0.5759672306766921,
+      "length_px": 431.91844856419897,
+      "sigma_fit_deg": 0.03898937182978029,
+      "sigma_deg": 0.43916932160961986,
+      "sigma_floor_deg": 0.018760107904057646,
+      "effective_profile_count": 78,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          1100.5586265450438,
+          871.016048926698
+        ],
+        [
+          1022.8959664881987,
+          1295.8949227754686
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          1100.5586265450438,
+          871.016048926698
+        ],
+        [
+          1022.8959664881987,
+          1295.8949227754686
+        ]
+      ],
+      "residual_rms_render_px": 0.5759672306766921,
+      "bearing_raw_deg": 171.70357868450245,
+      "bearing_deg": 171.70357868450245,
+      "declination_deg": null,
+      "length_m": 4.090136823524611,
+      "sigma_line_deg": 0.03898937182978029,
+      "sigma_arrow_deg": 0.4374351631126296,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          10.42195669076746,
+          8.24825803907858
+        ],
+        [
+          9.686514834168548,
+          12.271732223252544
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": -8.296421315497554,
+      "source_id": "plan-rao1979-fig17",
+      "lines_file": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/lothal/plan-rao1979-fig17-lines.json",
+      "source_locator": "Rao 1979 PDF page 120, printed page 109, Fig. 17; render p05-rao-fig17-pg120-300dpi.png (PDF region 48 130 540 630 pt, 300 dpi); picks picks/lothal/plan-rao1979-fig17-picks.json"
+    }
+  ],
+  "registrations": [],
+  "notes": "Imagery resolves one Harappan feature, the dock: both long edges of its water-filled basin were fitted on B08. The rest of the excavated area is visible only as irregular bright patches that cannot be tied to particular walls at 10 m. The plan sources disagree with each other: the schematic site plan (plan-lothal-01) draws the dock as a skewed parallelogram turned about 5.5 degrees clockwise from its arrow, the warehouse plan (Fig. 18) gives block faces within a few degrees of its arrow, and the B-block plan (Fig. 17) gives house walls about 10 degrees anticlockwise of its arrow, while its dash-dot excavation grid is drawn square to the page and 18.7 degrees from the arrow. None of the arrows states its meaning. In plan-lothal-01 the 'Site Boundary' lines were not measured because the plan does not identify them as a wall. In plan-rao1979-fig18 the south face of block 41h (theta 4.37) was put in its own system so that the remaining twelve block faces meet the 6 degree window; in plan-rao1979-fig17 the thin passage wall (theta -5.02, under half of its profiles inliers) was separated for the same reason. No registration was made: the only features common to imagery and plan are the dock corners, a 40 by 210 m rectangle whose ends are blurred at 10 m, so a registration would repeat the dock-line comparison with a larger error. Rao 1979 Fig. 15 (smithy and Street 1, printed page 99) and Fig. 16 (public drain) also carry arrows and were not measured.",
+  "unmeasurable_reason": null,
+  "created_utc": "2026-10-21T07:17:58.445815Z",
+  "systems": [
+    {
+      "source_id": "imagery",
+      "id": "dock",
+      "line_ids": [
+        "dock-west",
+        "dock-east"
+      ],
+      "n": 2,
+      "total_length_m": 378.32991902768106,
+      "theta_deg": 0.20227980149435018,
+      "weighted_sd_deg": 0.09796531764928405,
+      "scatter_se_deg": 0.06927194043090291,
+      "propagated_se_deg": 0.3025422282968365,
+      "se_deg": 0.3025422282968365,
+      "deviation_window_deg": 0.1959306356755519,
+      "warnings": [],
+      "conditions_pass": true
+    },
+    {
+      "source_id": "plan-lothal-01",
+      "id": "dock",
+      "line_ids": [
+        "dock-west-inner",
+        "dock-east-inner"
+      ],
+      "n": 2,
+      "total_length_m": 304.1847742267474,
+      "theta_deg": 5.458006465271252,
+      "weighted_sd_deg": 0.16303136588327277,
+      "scatter_se_deg": 0.11528058436216732,
+      "propagated_se_deg": 0.4234181088905461,
+      "se_deg": 0.4234181088905461,
+      "deviation_window_deg": 0.3260627317670526,
+      "warnings": [],
+      "conditions_pass": true
+    },
+    {
+      "source_id": "plan-lothal-01",
+      "id": "acropolis-drain",
+      "line_ids": [
+        "acropolis-drain-north"
+      ],
+      "n": 1,
+      "total_length_m": 81.3966457582851,
+      "theta_deg": -0.7708275278660608,
+      "weighted_sd_deg": 0.0,
+      "scatter_se_deg": 0.0,
+      "propagated_se_deg": 0.5998486822207277,
+      "se_deg": 0.5998486822207277,
+      "deviation_window_deg": 0.0,
+      "warnings": [
+        "at least one line has no other system line within 200 m"
+      ],
+      "conditions_pass": false
+    },
+    {
+      "source_id": "plan-lothal-01",
+      "id": "acropolis-warehouse",
+      "line_ids": [
+        "acropolis-east",
+        "warehouse-north",
+        "warehouse-west",
+        "warehouse-east",
+        "warehouse-south"
+      ],
+      "n": 5,
+      "total_length_m": 166.96947709506952,
+      "theta_deg": 5.258112803992592,
+      "weighted_sd_deg": 1.9492124644903692,
+      "scatter_se_deg": 0.871714314638072,
+      "propagated_se_deg": 0.281072735141488,
+      "se_deg": 0.871714314638072,
+      "deviation_window_deg": 4.684514719851819,
+      "warnings": [
+        "system includes more than one named town part"
+      ],
+      "conditions_pass": false
+    },
+    {
+      "source_id": "plan-rao1979-fig18",
+      "id": "warehouse-blocks",
+      "line_ids": [
+        "blk41e-n",
+        "blk41e-s",
+        "blk41e-w",
+        "blk41f-n",
+        "blk41f-s",
+        "blk41f-e",
+        "blk41g-n",
+        "blk41g-s",
+        "blk41g-e",
+        "blk41g-w",
+        "blk41h-n",
+        "blk41h-e"
+      ],
+      "n": 12,
+      "total_length_m": 37.33335661781358,
+      "theta_deg": 0.13576003666172215,
+      "weighted_sd_deg": 1.3595843910964371,
+      "scatter_se_deg": 0.39247820709277076,
+      "propagated_se_deg": 0.21897616211679077,
+      "se_deg": 0.39247820709277076,
+      "deviation_window_deg": 4.851402277739908,
+      "warnings": [],
+      "conditions_pass": true
+    },
+    {
+      "source_id": "plan-rao1979-fig18",
+      "id": "warehouse-41h-south",
+      "line_ids": [
+        "blk41h-s"
+      ],
+      "n": 1,
+      "total_length_m": 3.368283586460716,
+      "theta_deg": 4.3723651247934185,
+      "weighted_sd_deg": 0.0,
+      "scatter_se_deg": 0.0,
+      "propagated_se_deg": 0.7488433109623142,
+      "se_deg": 0.7488433109623142,
+      "deviation_window_deg": 0.0,
+      "warnings": [
+        "at least one line has no other system line within 200 m"
+      ],
+      "conditions_pass": false
+    },
+    {
+      "source_id": "plan-rao1979-fig17",
+      "id": "b-block",
+      "line_ids": [
+        "b172-east-wall-eface",
+        "b172-north-wall-nface",
+        "verandah-wall-eface",
+        "south-wall-west-sface",
+        "south-wall-east-sface",
+        "room-cross-wall-wface",
+        "room2-north-nface",
+        "room2-east-eface"
+      ],
+      "n": 8,
+      "total_length_m": 37.20424001996266,
+      "theta_deg": -9.830528591525908,
+      "weighted_sd_deg": 1.3267058777510345,
+      "scatter_se_deg": 0.4690613613989036,
+      "propagated_se_deg": 0.16261872088527857,
+      "se_deg": 0.4690613613989036,
+      "deviation_window_deg": 3.789955738711342,
+      "warnings": [],
+      "conditions_pass": true
+    },
+    {
+      "source_id": "plan-rao1979-fig17",
+      "id": "b-block-passage-wall",
+      "line_ids": [
+        "passage-wall-wface"
+      ],
+      "n": 1,
+      "total_length_m": 4.839173296241472,
+      "theta_deg": -5.022765338227003,
+      "weighted_sd_deg": 0.0,
+      "scatter_se_deg": 0.0,
+      "propagated_se_deg": 0.43884343494870826,
+      "se_deg": 0.43884343494870826,
+      "deviation_window_deg": 0.0,
+      "warnings": [
+        "at least one line has no other system line within 200 m"
+      ],
+      "conditions_pass": false
+    }
+  ],
+  "main_system_by_source": {
+    "imagery": "dock",
+    "plan-lothal-01": "dock",
+    "plan-rao1979-fig17": "b-block",
+    "plan-rao1979-fig18": "warehouse-blocks"
+  }
+}

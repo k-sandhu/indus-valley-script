@@ -1,0 +1,298 @@
+"""Write experiments/2026-10-21-town-axes/dating-v1/towns/kot-diji.json."""
+import json
+import pathlib
+import sys
+
+ROOT = pathlib.Path(r"C:\Users\sandh\OneDrive\Projects\indus_valley_script")
+OUT = ROOT / "experiments" / "2026-10-21-town-axes" / "dating-v1" / "towns" / "kot-diji.json"
+UTC = sys.argv[1]
+
+PENN3_NOTE = ("Penn III states the 5568-year half-life (p. 46) and adds that 'The B.P. dates in this list were "
+              "recorded in 1958', so the ages count back from 1958 rather than 1950; no 13C/12C ratios were measured.")
+KHAN_NOTE = ("Khan prints the Pennsylvania report without stating the half-life; the values are identical to those in "
+             "rc-penn-iii, which uses 5568 years. We give this entry separately because Khan describes the sample and "
+             "its context differently.")
+
+def rc(lab, material, context, phase, age, sigma, hl, source, page, note, cal=None, curve=None):
+    return {
+        "lab_no": lab, "material": material, "context": context, "phase": phase,
+        "age_bp_printed": age, "sigma_printed": sigma, "half_life_printed": hl,
+        "age_bp_5568": age if hl == 5568 else None, "sigma_5568": sigma if hl == 5568 else None,
+        "calibrated_published": cal, "curve": curve, "source": source, "page": page, "note": note,
+    }
+
+part_wall = {
+    "part": "citadel mound (Area A): defensive wall of the Kot Dijian settlement",
+    "layout_phase": "Kot Diji culture levels, layers (16) to (4); the wall was 'raised on bed-rock' at the start of this sequence",
+    "what_was_built": (
+        "Khan calls the defensive wall of the citadel 'the most impressive structural feature of the Kot Dijian level'. "
+        "It 'was raised on bed-rock; the lower part was built with undressed limestone blocks and the imposing structure "
+        "was raised above with mud-bricks'; its outer face was revetted with mud-bricks and it was 'strengthened with "
+        "bastions at intervals', one of them a complex bastion at a corner about 32 by 20 feet in the 1958 booklet. The "
+        "stone substructure stands 10 feet high and the preserved height with the mud-brick part is 12 to 14 feet, and "
+        "the houses inside used the wall as their back wall (1965 pp. 29-30; 1958 pp. 9, 12). Layer (15), the second "
+        "occupation above bed-rock, has 'a well-built stone wall which joins the massive defensive system' (p. 28). The "
+        "wall 'fell into disuse in later Kot Dijian times, when its top was occupied': debris of layers (7) and (8) "
+        "covers it and a stone-lined drain of layer (7) runs over it (pp. 16, 26). Khan found 'no evidence to show that "
+        "the Harappans also used the fortification wall' (p. 16)."),
+    "locator": "khan1965kotdiji pp. 15-16 (summary of results, items 3, 9-11), 26, 28-30; khan1958kotdiji pp. 9, 12",
+    "excavator_range_bce": [3000, 2500],
+    "excavator_basis": (
+        "Cross-dating and stratigraphic estimate, written before the radiocarbon results arrived. In 1965 Khan ascribed "
+        "the Kot Diji 'ensemble' to 'the earlier half of the third millennium' on its likeness to Amri and to the pottery "
+        "below the defences at Harappa, and reckoned that the Kot Dijian levels 'must represent some centuries of "
+        "occupation' by analogy with the building phases of Harappa and Mohenjo-daro (khan1965kotdiji p. 85). The 1958 "
+        "booklet put the ensemble 'round about 3000 B.C.' and the eleven Kot Dijian occupation levels at '500 to 600 "
+        "years' (khan1958kotdiji p. [20], the unnumbered page after p. 19). The range is for the whole Kot Dijian "
+        "occupation; Khan gives no separate date for the wall. He added that the four Pennsylvania dates 'more or less "
+        "confirm my dating' (p. 85)."),
+    "radiocarbon": [
+        rc("P-196", "Ash and charcoal mixed with sand",
+           "Citadel area, square B IV/2, layer 14, above early foundations of defences. Coll. 1958 and subm. by F. A. Khan.",
+           "Kot Diji culture level, layer (14) of the citadel sequence (layers (16) to (4))",
+           4421, 141, 5568, "rc-penn-iii", "51",
+           PENN3_NOTE + " The sample lies above the early foundations of the defences and so gives a date after the wall "
+           "was founded; it is the only determination tied to the fortification."),
+        rc("P-196", "Soil sample: ashy band mixed with charcoal and sand",
+           "Soil sample from deep diggings Sq. BIV/2, Layer (14), Ashy band mixed with charcoal and sand above early foundations of defences",
+           "Kot Diji culture level, layer (14)",
+           4421, 141, None, "khan1965kotdiji", "85", KHAN_NOTE),
+    ],
+    "bayesian_start": None,
+    "syntheses": [
+        {"source": "mughal1980origins", "page": "5-6",
+         "range_bce": [3155, 2590],
+         "statement": ("Mughal, reclassifying the Kot Dijian material as Early Harappan, writes that 'These early materials "
+                       "were dated by Radiocarbon between 3155 and 2590 B.C. (with MASCA corrections on half-life of 5730 "
+                       "years)' and that the Kot Dijian occupation 'is an impressive defence wall dated five to six hundred "
+                       "years earlier than those of Harappa and Moenjodaro'."),
+         "disagreement": ("Older than Khan's 'earlier half of the third millennium' by about a century and a half at the "
+                          "upper end; the MASCA-corrected range covers all four Pennsylvania dates, not the wall alone.")},
+        {"source": "mughal1988genesis", "page": "46",
+         "range_bce": [3370, 2655],
+         "statement": ("The Kot Dijian stratified layers, which yielded 'even fortification which were previously attributed "
+                       "to the mature phase', 'gave the (calibrated) Radiocarbon dates of 3370 and 2655 B.C.'; Mughal adds "
+                       "that the early occupation was 'eight centuries or more earlier than the succeeding mature Harappan "
+                       "phase'."),
+         "disagreement": ("Calibrated end points about two centuries older than Mughal's own 1980 MASCA range and four "
+                          "centuries older than Khan's estimate; the calibration used is not named.")},
+        {"source": "allchin1982rise", "page": "145-146",
+         "range_bce": None,
+         "statement": ("The Allchins describe the first settlement 'constructed upon bed rock, while immediately above were "
+                       "discovered house floors, contained within a massive defensive wall' of limestone rubble below and "
+                       "mud-brick above, with bastions. Of the Early Indus dates, 'one from near the beginning of the "
+                       "settlement gave a date of 2880 B.C.'; their dates are single medial values calibrated with MASCA "
+                       "(p. 6, 'About the book')."),
+         "disagreement": ("The Allchins place the wall with the house floors immediately above the first bed-rock "
+                          "settlement, whereas Khan says the wall itself was raised on bed-rock; the 2880 B.C. medial date "
+                          "falls within Khan's range.")},
+    ],
+    "conflicts": (
+        "The excavator dated the Kot Dijian occupation, and with it the wall, to the earlier half of the third millennium "
+        "by cross-dating. The four Pennsylvania ages, among them 4421 +/- 141 BP from above the wall's early foundations, "
+        "were later turned by Mughal (1980) into a MASCA-corrected range of 3155-2590 B.C. for the Kot Dijian materials "
+        "and by Mughal (1988) into calibrated dates of 3370 and 2655 B.C.; the Allchins give the date from near the "
+        "beginning of the settlement as a medial 2880 B.C. These later figures place the start of the Kot Dijian "
+        "occupation, and so the wall, up to about three and a half centuries before Khan's 3000 B.C. Whether the wall "
+        "was founded with layer (16) or with layer (15) is not stated: Khan has it raised on bed-rock and joined by a "
+        "layer (15) wall, the Allchins put it with the floors above the first settlement."),
+}
+
+part_town = {
+    "part": "citadel mound (Area A): Mature Harappan settlement with lanes",
+    "layout_phase": "Harappa culture levels, layers (3A) to (1); layer (3) is 'the earliest Harappan settlement' and layer (2) 'the principal Harappan settlement'",
+    "what_was_built": (
+        "Above the burnt layer that seals the Kot Dijian levels, the Harappans built houses of stone foundations with "
+        "mud-brick superstructures. In occupation (2) 'Spacious rooms with stone foundations, mud-brick super-structures "
+        "and mud-brick paved floors have been uncovered in a considerable area' and 'A well-regulated town-plan with lanes "
+        "has come to light', including a lane and a spacious street between two blocks of houses (khan1965kotdiji p. 18). "
+        "Khan found no drains (p. 18). The Harappans did not reuse the Kot Dijian wall but 'not only occupied the fortified "
+        "area but extended outside the citadel' (p. 16). The lanes are reported from occupation (2); Khan does not say "
+        "whether they were already laid out in layer (3) or (3A)."),
+    "locator": "khan1965kotdiji pp. 15-16 (summary items 1-2, 11), 17-20, 31-32; khan1958kotdiji pdf p. 11 (plate caption: 'Harappa levels 1 to 2 with stone structures, lanes and pottery in situ, Citadel Area')",
+    "excavator_range_bce": [2500, None],
+    "excavator_basis": (
+        "Cross-dating with Mesopotamia plus a stated guess. Khan takes the mature Harappan culture to be flourishing "
+        "'before 2350 B.C., and onwards' from Harappan objects in Mesopotamian strata of Sargon's time, and says the early "
+        "Harappan pottery above the Kot Dijian levels 'may, at a guess, antedate the well-developed Harappan phases of the "
+        "upper levels at Kot Diji by as much as two hundred years and thereby date the beginning of Harappan culture of c. "
+        "2500 B.C.' (khan1965kotdiji pp. 83-84; the same reasoning, with Early Dynastic III 'c. 2400 B.C.', in "
+        "khan1958kotdiji pp. 7, 18-19). He gives no end date for the Harappan levels."),
+    "radiocarbon": [
+        rc("P-195", "Ash and charcoal mixed with burnt earth",
+           "Citadel area, square B IV/1, layer 4, a thick band of ashy and charred material. Coll. 1958 and subm. by F. A. Khan.",
+           "Kot Diji culture, layer (4): the last Kot Dijian occupation, immediately below the Harappan levels; its top is the burnt layer that marks the break",
+           3925, 134, 5568, "rc-penn-iii", "51",
+           PENN3_NOTE + " This is the only determination from the phase immediately before the Harappan layout; no "
+           "sample from the Harappan levels themselves was dated."),
+        rc("P-195", "Soil sample",
+           "Soil sample from sq. BIV/1, Layer (4), thick band of ashy and charred material",
+           "Kot Diji culture, layer (4)",
+           3925, 134, None, "khan1965kotdiji", "85", KHAN_NOTE),
+    ],
+    "bayesian_start": None,
+    "syntheses": [
+        {"source": "allchin1982rise", "page": "146, 218-219",
+         "range_bce": None,
+         "statement": ("The early occupation 'closes with evidence of two massive conflagrations and is replaced with a "
+                       "mixed but predominantly Harappan culture'; 'A fourth date of 2520 B.C. corresponded with the second "
+                       "great conflagration' (p. 146). Later they note that the layer numbers of two samples are unclear "
+                       "but 'only one date, 2520 B.C. relates to the final destruction at the end of the Kot Dijian "
+                       "occupation', compare it with Kalibangan dates of 2500-2490 B.C. for the start of the Mature "
+                       "Harappan, and conclude that 'the Mature Harappan period began c. 2550 B.C.' (pp. 218-219). All "
+                       "their dates are MASCA-calibrated medial values."),
+         "disagreement": "Agrees closely with Khan's c. 2500 B.C., but on calibrated radiocarbon rather than cross-dating."},
+        {"source": "mughal1980origins", "page": "5-6",
+         "range_bce": None,
+         "statement": ("Mughal writes that the Kot Dijian occupation 'was not only six centuries or more earlier than the "
+                       "succeeding mature Harappan phase which immediately followed it there' but also contained the "
+                       "earliest known elements of the Harappan culture."),
+         "disagreement": "Implies a Harappan start well after 2600 B.C. if the Kot Dijian range is 3155-2590 B.C.; Mughal does not give the Harappan start directly."},
+        {"source": "mughal1988genesis", "page": "46",
+         "range_bce": None,
+         "statement": "Mughal now puts the early occupation 'eight centuries or more earlier than the succeeding mature Harappan phase at Kot Diji and elsewhere'.",
+         "disagreement": "A longer gap than his 1980 'six centuries or more'; neither paper dates the Harappan levels at Kot Diji directly."},
+    ],
+    "conflicts": (
+        "No radiocarbon sample comes from the Harappan levels. The last Kot Dijian layer (4) gives 3925 +/- 134 BP (Libby "
+        "half-life, counted from 1958), which the Allchins calibrate to a medial 2520 B.C. and use as the end of the Kot "
+        "Dijian occupation, in line with Khan's guessed c. 2500 B.C. for the start of the Harappan levels. Mughal's "
+        "statements that the Kot Dijian occupation was six (1980) or eight (1988) centuries or more earlier than the "
+        "Mature Harappan phase concern the start of the Kot Dijian sequence, not the transition, and are not a date for "
+        "the Harappan layout."),
+}
+
+part_outer = {
+    "part": "outer city (Area B, east of the citadel)",
+    "layout_phase": None,
+    "what_was_built": (
+        "Area B was a trench 160 feet long at the foot of the mound with five main layers. Layer (5), on bed-rock, is 'the "
+        "earliest settlement of the site', with stone foundations and mud-brick superstructures; Kot Diji ware runs from "
+        "layer (5) up to layer (2) or (3), and Harappan red-slipped ware appears in layers (2) and (1), mixed with later "
+        "material (khan1965kotdiji pp. 34-35). Khan reports that 'The excavated parts in the lower town have partially "
+        "revealed the plan of a lane in the centre of the area in square BV/1 ... between the massive stone walls of the "
+        "houses', without assigning the lane to a layer or culture (p. 36). The excavation was too narrow to reveal "
+        "complete building plans (p. 36)."),
+    "locator": "khan1965kotdiji pp. 34-36",
+    "excavator_range_bce": None,
+    "excavator_basis": "Khan gives no date for the outer city apart from his general dating of the Kot Dijian and Harappan cultures (see the other parts).",
+    "radiocarbon": [
+        rc("P-179", "Ash and charcoal mixed with sand",
+           "Lower City area, square B V/7, layer 5. Coll. 1957 and subm. by R. Curiel.",
+           "Kot Diji culture, layer 5 (in Area B, the earliest occupation on bed-rock)",
+           4161, 151, 5568, "rc-penn-iii", "51",
+           PENN3_NOTE + " The outer-city layer (5) is the first occupation of the outer city, so the date bears on first "
+           "occupation, not on a layout."),
+        rc("P-180", "Charcoal mixed with sand",
+           "Citadel area, square B VI/6, layer 5. Coll. 1957 and subm. by R. Curiel.",
+           "Kot Diji culture, layer 5",
+           4083, 137, 5568, "rc-penn-iii", "51",
+           PENN3_NOTE + " Penn III places this sample in the citadel area, but Khan's report lists it by locus only and "
+           "numbers the layers of the two areas separately; the BV squares that Khan describes all lie in Area B. We "
+           "list it here beside P-179, collected two days later from the same layer number, and flag the attribution as "
+           "uncertain."),
+        rc("P-179", "Sand and charcoal",
+           "From Locus BV/7, Layer (5) collected 23.11.1957. Sample consisted of sand and charcoal",
+           "layer (5); Khan does not name the area",
+           4161, 151, None, "khan1965kotdiji", "85", KHAN_NOTE),
+        rc("P-180", "Sand and charcoal",
+           "From Locus BVI/6, Layer (5) collected 21.11.1957. Sample consisted of sand and charcoal",
+           "layer (5); Khan does not name the area",
+           4083, 137, None, "khan1965kotdiji", "85", KHAN_NOTE),
+    ],
+    "bayesian_start": None,
+    "syntheses": [
+        {"source": "allchin1982rise", "page": "146",
+         "range_bce": None,
+         "statement": "The Allchins treat two of the Early Indus dates as coming 'from nearer the top' of the Kot Dijian occupation and give them as 3180 and 2700 B.C. (MASCA medial values).",
+         "disagreement": ("If these are P-179 and P-180, as the 'layer (5)' attribution suggests, the Allchins read them as "
+                          "late in the citadel sequence, whereas in Area B layer (5) is the first occupation on bed-rock.")},
+    ],
+    "conflicts": (
+        "The two layer-(5) samples are attributed differently: Penn III puts P-179 in the lower city and P-180 in the "
+        "citadel, Khan lists both by locus only, and the Allchins appear to read both as upper Kot Dijian levels. Because "
+        "Khan numbered the layers of Area A and Area B separately, 'layer (5)' means the first occupation in Area B but a "
+        "late Kot Dijian occupation in Area A."),
+}
+
+doc = {
+    "town": "kot-diji",
+    "compiled_utc": UTC,
+    "parts": [part_wall, part_town, part_outer],
+    "first_occupation": {
+        "phase": "Kot Diji culture: layer (16), 'the earliest occupation on the bed-rock', in the citadel (Area A), and layer (5) on bed-rock in the outer city (Area B)",
+        "range_bce": [3000, 2500],
+        "basis": ("Khan's cross-dated range for the whole Kot Dijian occupation, 'the earlier half of the third millennium' "
+                  "(khan1965kotdiji p. 85); the 1958 booklet put the ensemble 'round about 3000 B.C.' (khan1958kotdiji p. "
+                  "[20]). No sample from layer (16) was dated; P-196 from layer (14) is the oldest determination."),
+        "locator": "khan1965kotdiji pp. 28-29, 35, 85; khan1958kotdiji p. [20]",
+    },
+    "sources": [
+        {"id": "khan1965kotdiji",
+         "citation": ("Khan, F. A. 1965 (published 1966). Excavations at Kot Diji. Pakistan Archaeology 2: 11-85, with "
+                      "plates (the report text runs pp. 13-85; Kenoyer 2020 and Mughal 1988 cite 13-85). Karachi: "
+                      "Department of Archaeology, Government of Pakistan."),
+         "url_or_path": ("https://archive.org/details/dli.ernet.108437 (Digital Library of India scan); local "
+                         "data/raw/2026-10-21-town-axes/dating/kot-diji/khan1965pa2.pdf, with the archive.org OCR text "
+                         "khan1965pa2-djvu.txt (sha256 d0c9805c38b157df7b3c99f16ac5653563b71ff623938203e0b19f4876c65e47)"),
+         "sha256": "11eeb767c7efa0c0f6818cd6cd398a8a40746d9c47f8a9139f7598d7ef8f5e12"},
+        {"id": "khan1958kotdiji",
+         "citation": ("Khan, F. A. [1958]. Preliminary Report on Kot Diji Excavations 1957-58. Karachi: Department of "
+                      "Archaeology, Government of Pakistan (booklet of about twenty pages with plates; undated, issued after the 1957-58 "
+                      "season)."),
+         "url_or_path": ("https://www.harappa.com/sites/default/files/pdf/kot-diji-booklet_0.pdf (landing page "
+                         "https://www.harappa.com/content/preliminary-report-kot-diji-excavations-1957-58, saved as "
+                         "khan1958booklet-page.html); local data/raw/2026-10-21-town-axes/dating/kot-diji/khan1958booklet.pdf "
+                         "(image-only scan, read from rendered pages)"),
+         "sha256": "f9d5f20d967d67932ea3b7e8394c993c440f338a4e55fa9fea9289297cd1a7f2"},
+        {"id": "rc-penn-iii",
+         "citation": "Ralph, E. K. 1959. University of Pennsylvania Radiocarbon Dates III. Radiocarbon 1 (American Journal of Science Radiocarbon Supplement): 45-58. doi:10.1017/s003382220002035x",
+         "url_or_path": "data/raw/2026-10-21-town-axes/dating/radiocarbon-journal/PENN-III.pdf",
+         "sha256": "30794afe1e9dba1ae02d5ff6b781642ba2fd72ffd9034153cd233067f6051586"},
+        {"id": "rc-penn-xix",
+         "citation": "Fishman, B., Forbes, H. and Lawn, B. 1977. University of Pennsylvania Radiocarbon Dates XIX. Radiocarbon 19(2): 188-228. doi:10.1017/s0033822200003532",
+         "url_or_path": "data/raw/2026-10-21-town-axes/dating/radiocarbon-journal/PENN-XIX.pdf",
+         "sha256": "a0d0169c63e8b991e800cf41ec0392a8d212eb66bfdc7607c932a70c5aa23631"},
+        {"id": "mughal1980origins",
+         "citation": ("Mughal, M. R. 1980. The Origins of the Indus Civilization. Sindhological Studies, Summer 1980 "
+                      "(offprint, Institute of Sindhology, University of Sind, Jamshoro), pp. 1-10 of the offprint."),
+         "url_or_path": ("https://rafiquemughal.com/wp-content/uploads/2022/01/MUGHAL_1980_Origins-of-the-Indus-Sindhological-Studies.pdf; "
+                         "local data/raw/2026-10-21-town-axes/dating/shared-mughal/mughal1980origins.pdf (printed page = PDF page minus 1)"),
+         "sha256": "21d46557d89922c18ecaf6f72b84d85b182b1457c91d64d510e6e7011753f0f5"},
+        {"id": "mughal1988genesis",
+         "citation": "Mughal, M. R. 1988. Genesis of the Indus Valley Civilization. Lahore Museum Bulletin 1(1): 45-54.",
+         "url_or_path": ("https://rafiquemughal.com/wp-content/uploads/2022/01/MUGHAL_1988_Genesis-of-the-Indus_Lahore-Mus-Bulletin.pdf; "
+                         "local data/raw/2026-10-21-town-axes/dating/shared-mughal/mughal1988genesis.pdf"),
+         "sha256": "3cb2f9939c04e11c10b8a4387f38c710b917b2dfc01c418500398ea261503c1a"},
+        {"id": "allchin1982rise",
+         "citation": ("Allchin, B. and Allchin, R. 1982. The Rise of Civilization in India and Pakistan. Cambridge: "
+                      "Cambridge University Press. Consulted in the 1983 Indian reprint (New Delhi: Selectbook Service "
+                      "Syndicate) through its archive.org OCR text; page numbers are the printed running heads."),
+         "url_or_path": ("https://archive.org/details/gdmp_the-rise-of-civilization-in-india-and-pakistan-by-bridget-and-raymond-allch; "
+                         "local OCR text data/raw/2026-10-21-town-axes/dating/shared-allchin/allchin1982rise-djvu.txt (the 203 MB "
+                         "PDF scan was not saved because the disk was full)"),
+         "sha256": "08158dc3404c2ff5ef42ed266f6bbacdb3d009e299acf81d9f5958834807d1e0"},
+    ],
+    "notes": (
+        "Kot Diji has two layouts of different date on the same mound, and we record them as separate parts. The fortified "
+        "settlement belongs to the Kot Diji culture (Early Harappan in Mughal's terms): its stone-and-mud-brick defensive "
+        "wall with bastions was raised on bed-rock at the start of the sixteen-layer citadel sequence and had gone out of "
+        "use before the Harappan levels. The Mature Harappan settlement above it, layers (3A) to (1), had stone-founded "
+        "houses and, in occupation (2), 'a well-regulated town-plan with lanes', but no new fortification. We read the "
+        "excavator's full report (Pakistan Archaeology 2) from the Digital Library of India scan on archive.org and the "
+        "1958 preliminary booklet from harappa.com; the report's 1964 summary in Pakistan Archaeology 1 (pp. 39-43) was not "
+        "consulted. All four Kot Diji radiocarbon dates were run by the University of Pennsylvania and published in Penn "
+        "III (1959) with the 5568-year half-life and ages counted from 1958; Khan reprinted the same values without a "
+        "half-life, and Penn XIX (rc-penn-xix, 1977, p. 215) only cites them for comparison, so we give no separate entries for it. We "
+        "searched the Tata Institute, Physical Research Laboratory, Birbal Sahni and other Pennsylvania date lists and "
+        "found no further Kot Diji determinations; the Physical Research Laboratory list PRL-V named in our leads has none. "
+        "We did not find any later radiocarbon programme or Bayesian model for Kot Diji, and could not obtain Mughal's "
+        "1970 dissertation, Possehl's radiocarbon compilations (1989, 1999, 2002; the 2002 book is lending-restricted on "
+        "archive.org) or Shaffer's 1992 chronology chapter (lending-restricted). The later syntheses we did read (Mughal "
+        "1980 and 1988, the Allchins 1982) recalibrate the same four Pennsylvania dates; their differences come from the "
+        "calibration used, not from new samples. Directions and bearings of walls and lanes stated in these reports are "
+        "deliberately not recorded here."),
+}
+
+OUT.write_text(json.dumps(doc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+print("wrote", OUT)

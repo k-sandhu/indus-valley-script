@@ -1,0 +1,34 @@
+{
+ "shot": "rebus-blind",
+ "conjecture": "C-0014 Parpola's interlocks measure the Tamil lexicon, not the script",
+ "statistic_families": ["rebus_template_pairs"],
+ "withhold_site": false,
+ "scoring_population": "Ordered pairs of Parpola-identified signs (identifications-v1.json) adjacent in reading order on single-line faces of data/normalized/lipi_observed_faces.jsonl (SHA-256 1220f559...), counted as split components over both halves of split d1d1b920...; the confirmation half is read once through bench.shots after this freeze. The outcome is computed on the Madras Tamil Lexicon tables of REBUS-BASE-RATE-2026-10-21, which no template has been looked up in.",
+ "historical_exposure": "The discovery half was read on 22 October 2026 for pair counts only. REBUS-BASE-RATE-2026-10-21 enumerated the Tamil Lexicon compounds anchored on mīṉ and muruku and reported numerals one to ten with mīṉ; numeral-and-fish pairs are excluded and a sensitivity drops every template containing mīṉ or muruku. Fish adjacency and fish compound order were examined by earlier packages (FISH-CONTEXT-2026-10-20, BIRTH-STAR-NAMES-2026-10-21); this shot declares only the new family of Tamil compound outcomes for identified-sign pairs.",
+ "joint_credence_rule": "C-0014 stands at 0.55. If P1 passes, the credence becomes 0.8. If the kill condition is met, the credence becomes 0.05 and the conjecture is dead. Otherwise it becomes 0.35. The secondary sets (gapped, published) and the sensitivities do not change the credence.",
+ "predictions": [
+  {
+   "id": "P1_blind_templates",
+   "statistic": "Ratio H/R over the primary templates: H = number of templates whose two Parpola words form an attested two-member Tamil Lexicon compound (shape C, tolerance T0s with sandhi restoration, anchoring by stem); R = sum over templates of the share of matched random word pairs (pools of 50 nearest native nouns in compounding productivity for the slot and Sangam frequency) that do. 95% interval from 2,000 bootstrap resamples of templates; leave-one-out ratios.",
+   "null": "Parpola's words form attested compounds at the rate of random words of the same compounding productivity and frequency (ratio 1).",
+   "pass_rule": "Ratio below 2, and below 3 after removing any one template.",
+   "kill_rule": "Ratio at least 3, bootstrap 2.5% bound above 1.5, and ratio at least 2 after removing any one template.",
+   "power": "power-v1/power.json: with 30-40 templates the pass rule is met in 82-100% of simulations when Parpola's words equal random words; at three times the random rate the kill is reached in 34-66% of simulations for random rates of 5-30% and in 6-9% at 2%.",
+   "credence_effect": "See the joint rule"
+  },
+  {
+   "id": "S1_gapped_templates",
+   "statistic": "Same ratio over gapped templates (one unidentified sign between the pair), shape S: compounds W1-X and X-W2 share a member.",
+   "null": "Ratio 1",
+   "pass_rule": "Reported only; no credence effect",
+   "credence_effect": "None"
+  },
+  {
+   "id": "S2_published_templates",
+   "statistic": "Same ratio over the twelve pairs Parpola published in the five papers, shape C.",
+   "null": "Ratio 1",
+   "pass_rule": "Reported only; no credence effect. Expected to exceed the blind ratio if selection drives the published network.",
+   "credence_effect": "None"
+  }
+ ]
+}

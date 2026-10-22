@@ -60,6 +60,7 @@ The [exploratory Bonta extension](../experiments/2026-10-08-bonta-extension/READ
 | Public/community suggestions | [Community proposals](directions/community-proposals.md) | Tell Jokha lead traced to a scholarly figure; original object report still sought |
 | Feasible next investigations | [Ranked roadmap](directions/research-roadmap.md) | Required inputs, falsification and stopping conditions |
 | Better archaeological observations | [Context data plan](directions/context-data-plan.md) | Proposed data schema and conservative comparisons |
+| Which results are new to the field and ready to publish | [Novelty audit of 22 October](directions/novelty-audit-2026-10-22.md) | Fifteen results placed beside their closest published precedents; three ready for preprint |
 
 The [six-hour session record](../experiments/2026-10-02-six-hour/SESSION_LOG.md) links the completed restoration, reference-law, mapping, numerical and source-observation studies. The proposed physical experiments have not been run.
 

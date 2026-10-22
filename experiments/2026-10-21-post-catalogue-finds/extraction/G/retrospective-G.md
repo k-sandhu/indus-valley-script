@@ -1,0 +1,11 @@
+We used the frozen protocol and Amendment 1 to build an identity table from the supplied local witnesses. The working files belong to extraction/G and run2G. No source was downloaded during this run, and no repository branch or commit was created.
+
+Several acquisition labels suggested broader coverage than their files supplied. The two Khirsara papers from 2014 concern specialist context studies. The held 2021 witness is a general discussion rather than a Juna Khatiya excavation catalogue. The four-page Puratattva 42 file contains the issue contents. We recorded the article bodies it names as unread where they might add objects.
+
+The Surkotada text layer was unusable for the object catalogue. English OCR supplied the relevant chapter and the Kutch exploration section. We also applied OCR to sparse pages in the assigned 1B PDFs. Raster files were temporary after the coordinator's interruption. Eight pages produced no OCR text; none supplies an object locator. The resume audit records those pages and confirms that saved CSV and JSON files parse.
+
+The initial filters allowed descriptive passages into tool output, including parts of the Bagasra study beyond the permitted identity fields. This was an exposure deviation. The access record includes the affected pages, and the deliverables contain identity fields and source locators. Later extraction views emitted structured fields and scope flags. No page image was visually opened by the agent.
+
+The first validation found long identifier/context runs in intermediate field buffers and adjacent input records. We separated those records with field labels and function calls, preserving their values. The validator compares each output with the accessed source text and reports file names and locators without repeating a matching passage.
+
+The object table preserves uncertainty in comparative attributions, a repeated Kanmer registration with conflicting contexts, two Bagasra findspot conflicts, and a later Khirsara illustration that may overlap earlier finds. Counts from overlapping publications remain in the site notes. The next matching run can test catalogue containment and review the uncertain rows without requiring content fields from this extraction.

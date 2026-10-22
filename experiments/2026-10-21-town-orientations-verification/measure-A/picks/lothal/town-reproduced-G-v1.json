@@ -1,0 +1,552 @@
+{
+  "schema_version": 1,
+  "slug": "lothal",
+  "measurer": "A",
+  "authors": [
+    {
+      "model": "GPT-6",
+      "harness": "Codex API"
+    }
+  ],
+  "located_point": {
+    "latitude": 22.521388888889,
+    "longitude": 72.249444444444,
+    "method": "Matched the distinctive rectangular reservoir east of the acropolis in two-scale Sentinel-2 renders to lothal-01 Fig.3.1; starting coordinate is south of basin centre."
+  },
+  "sources": [
+    {
+      "id": "imagery",
+      "kind": "imagery",
+      "scene_ids": [
+        "S2A_42QZL_20181015_2_L2A",
+        "S2A_42QZL_20190324_1_L2A",
+        "S2A_42QZL_20200217_1_L2A",
+        "S2A_42QZL_20211218_1_L2A",
+        "S2A_42QZL_20221113_0_L2A"
+      ],
+      "scene_datetimes": [
+        "2018-10-15T05:52:40.663000Z",
+        "2019-03-24T05:52:42.440000Z",
+        "2020-02-17T05:52:37.542000Z",
+        "2021-12-18T05:52:44.283000Z",
+        "2022-11-13T05:52:46.852000Z"
+      ],
+      "manifest_path": "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\infra-v1\\imagery-manifest-v1.json",
+      "composite": {
+        "path": "data/raw/2026-10-21-town-orientations-verification/infra/imagery/lothal/acquisition-v4/median-composite.tif",
+        "url": "https://earth-search.aws.element84.com/v1",
+        "retrieved_utc": "2026-10-21T04:45:28.948819Z",
+        "bytes": 4206936,
+        "sha256": "3f7bed2b74890215801babacff3b93e3cf905ce66fa9edc090bccfffafd56fc9",
+        "format": "tif",
+        "rights_status": "explicit-license",
+        "rights_notice": "Copernicus Sentinel data terms; Contains modified Copernicus Sentinel data 2018–2026",
+        "transformation": "Median per band; brightness mean of B02 B03 B04 B08",
+        "parents": [
+          "74334b30f8467b2f407a8d131ce6ff279f71fc3ff88bd92d78664952492b3121",
+          "ed31d483fae684f526c1c99ba0b70d738e4d2297766dafad808afe09618bbc46",
+          "9c3fbf33a57cd6b519543425964f4cb7091a1ce58c697067175991ad173c95a5",
+          "90cb63c03bf815d308c7c027c3b2bb79dd8b843b92da4f97e30910d28c114b56",
+          "69cf05ac1f83783cb3fb0ae35bf5eaa202f77f80da0e43c744863d7114372c2a"
+        ],
+        "pixel_median_verified": true,
+        "acquisition_sha256": "e6fd34726a4288da8aa2c9464957d534bff0a75cec0cb7b220be103950efc6e1"
+      },
+      "assessment": "Two long basin inner boundaries are resolved; wall-face identity has uncertainty from water level and vegetation. Short internal walls are unresolved at 10 m."
+    },
+    {
+      "id": "lothal-01",
+      "kind": "plan",
+      "citation": {
+        "authors": null,
+        "year": null,
+        "title": "HARAPPAN CIVILIZATION",
+        "container": "Unattributed Chapter III, printed pages 39–75",
+        "publisher": "University of Lucknow (web host)",
+        "identity_status": "partial: author, book title and publication year are not present in the held excerpt; ASI is credited under the selected figures"
+      },
+      "pdf_page": 8,
+      "printed_page": "46",
+      "figure": "Fig. 3.1",
+      "source_record": {
+        "path": "data/raw/2026-10-21-town-orientations-verification/infra/plans/surkotada/university-chapter/source.pdf",
+        "url": "https://www.lkouniv.ac.in/site/writereaddata/siteContent/202003241550006972anil_kumar_HARAPPAN_CIVILIZATION%201.pdf",
+        "retrieved_utc": "2026-10-21T04:18:22.923410Z",
+        "bytes": 5056143,
+        "sha256": "5d85a7b72f900ffc3ce11f1074978df448e5bba97a1c58b58382f8690b828845",
+        "format": "pdf",
+        "rights_status": "rights-unverified",
+        "rights_notice": "No explicit reuse licence observed"
+      },
+      "north_class": "unspecified",
+      "north_evidence": "N beside the upright arrow on the right of Fig.3.1; no statement of true or magnetic north",
+      "survey_year": null,
+      "north": {
+        "class": "unspecified",
+        "evidence": "N beside the upright arrow on the right of Fig.3.1; no statement of true or magnetic north",
+        "survey_year": null,
+        "line": {
+          "endpoints_px": [
+            [
+              903,
+              488
+            ],
+            [
+              902,
+              364
+            ]
+          ],
+          "mode": "manual",
+          "pick_sigma_px": 2
+        }
+      },
+      "arrow": {
+        "inlier_count": 2,
+        "profile_count": 0,
+        "residual_rms_px": null,
+        "length_px": 124.00403219250575,
+        "sigma_fit_deg": 1.3066417198899705,
+        "sigma_deg": 1.3066417198899705,
+        "mode": "manual",
+        "pick_sigma_px": 2.0,
+        "refined_endpoints_px": [
+          [
+            903.0,
+            488.0
+          ],
+          [
+            902.0,
+            364.0
+          ]
+        ],
+        "native_endpoints_px": [
+          [
+            903.0,
+            488.0
+          ],
+          [
+            902.0,
+            364.0
+          ]
+        ],
+        "residual_rms_render_px": null,
+        "direction_px_deg": 359.5379472785692
+      },
+      "measurement_record": "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\measure-A\\picks\\lothal\\dock-plan-G-v1-refined.json"
+    }
+  ],
+  "lines": [
+    {
+      "id": "dock-west",
+      "part": "brick-lined reservoir",
+      "kind": "dock edge",
+      "identification": "lothal-01 Fig.3.1, long west inner edge of brick-lined reservoir; dark rectangular basin and pale rim match the plan east of acropolis",
+      "system": "dock",
+      "endpoints_px": [
+        [
+          425,
+          160
+        ],
+        [
+          426,
+          326
+        ]
+      ],
+      "corridor_half_width_px": 20,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 12,
+      "profile_count": 12,
+      "residual_rms_px": 0.1081194412893992,
+      "length_px": 16.600163793743558,
+      "sigma_fit_deg": 0.5537521425086211,
+      "sigma_deg": 0.5537521425086211,
+      "sigma_floor_deg": 0.4881026391611219,
+      "effective_profile_count": 5.533433734028887,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          433.40210628935256,
+          159.98357178819697
+        ],
+        [
+          433.7266802427089,
+          325.9848924144503
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          252.89021062893818,
+          225.54835717880803
+        ],
+        [
+          252.9226680242738,
+          242.1484892414334
+        ]
+      ],
+      "residual_rms_render_px": 1.0811944128939917,
+      "endpoints_utm": [
+        [
+          834323.9021062894,
+          2494419.5164282117
+        ],
+        [
+          834324.2266802427,
+          2494253.5151075856
+        ]
+      ],
+      "epsg": 32642,
+      "endpoints_lonlat": [
+        [
+          72.24974806046967,
+          22.523608403941488
+        ],
+        [
+          72.24971615972468,
+          22.52211110991268
+        ]
+      ],
+      "length_m": 165.83891774163988,
+      "bearing_deg": 181.13394893724166,
+      "theta_deg": 1.1339489372416551,
+      "source_id": "imagery",
+      "measurement_record": "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\measure-A\\picks\\lothal\\dock-image-G-v1-refined.json"
+    },
+    {
+      "id": "dock-east",
+      "part": "brick-lined reservoir",
+      "kind": "dock edge",
+      "identification": "lothal-01 Fig.3.1, long east inner edge of brick-lined reservoir; same basin, water-to-rim boundary",
+      "system": "dock",
+      "endpoints_px": [
+        [
+          469,
+          160
+        ],
+        [
+          470,
+          325
+        ]
+      ],
+      "corridor_half_width_px": 20,
+      "feature": "edge",
+      "mode": "fit",
+      "inlier_count": 12,
+      "profile_count": 12,
+      "residual_rms_px": 0.10389858038432292,
+      "length_px": 16.491751239271046,
+      "sigma_fit_deg": 0.5367052598903483,
+      "sigma_deg": 0.5367052598903483,
+      "sigma_floor_deg": 0.49106058422764,
+      "effective_profile_count": 5.500101009173478,
+      "warnings": [],
+      "refined_endpoints_px": [
+        [
+          467.0912851191206,
+          160.07305848919805
+        ],
+        [
+          473.39909360729325,
+          324.8698953698745
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          256.259128511915,
+          225.55730584890816
+        ],
+        [
+          256.88990936073225,
+          242.03698953697582
+        ]
+      ],
+      "residual_rms_render_px": 1.0389858038432291,
+      "endpoints_utm": [
+        [
+          834357.5912851192,
+          2494419.4269415108
+        ],
+        [
+          834363.8990936073,
+          2494254.6301046303
+        ]
+      ],
+      "epsg": 32642,
+      "endpoints_lonlat": [
+        [
+          72.25007510796112,
+          22.52360098744726
+        ],
+        [
+          72.25010154476148,
+          22.52211338378502
+        ]
+      ],
+      "length_m": 164.75580499319707,
+      "bearing_deg": 179.05411426172958,
+      "theta_deg": -0.9458857382704196,
+      "source_id": "imagery",
+      "measurement_record": "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\measure-A\\picks\\lothal\\dock-image-G-v1-refined.json"
+    },
+    {
+      "id": "dock-west-plan",
+      "part": "brick-lined reservoir",
+      "kind": "dock edge",
+      "identification": "Fig.3.1 printed p.46, west outer face of the brick-lined reservoir",
+      "system": "dock",
+      "endpoints_px": [
+        [
+          781,
+          365
+        ],
+        [
+          751,
+          670
+        ]
+      ],
+      "mode": "manual",
+      "pick_sigma_px": 2.0,
+      "inlier_count": 2,
+      "profile_count": 0,
+      "residual_rms_px": null,
+      "length_px": 306.4718584144391,
+      "sigma_fit_deg": 0.5287674272960786,
+      "sigma_deg": 1.4095770913030383,
+      "refined_endpoints_px": [
+        [
+          781.0,
+          365.0
+        ],
+        [
+          751.0,
+          670.0
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          781.0,
+          365.0
+        ],
+        [
+          751.0,
+          670.0
+        ]
+      ],
+      "residual_rms_render_px": null,
+      "bearing_raw_deg": 186.0796333115576,
+      "bearing_deg": 186.0796333115576,
+      "declination_deg": null,
+      "length_m": 165.66046400780493,
+      "sigma_line_deg": 0.5287674272960786,
+      "sigma_arrow_deg": 1.3066417198899705,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          422.1621621621622,
+          197.29729729729732
+        ],
+        [
+          405.945945945946,
+          362.1621621621622
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": 6.079633311557586,
+      "source_id": "lothal-01",
+      "measurement_record": "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\measure-A\\picks\\lothal\\dock-plan-G-v1-refined.json"
+    },
+    {
+      "id": "dock-east-plan",
+      "part": "brick-lined reservoir",
+      "kind": "dock edge",
+      "identification": "Fig.3.1 printed p.46, east outer face of the brick-lined reservoir",
+      "system": "dock",
+      "endpoints_px": [
+        [
+          845,
+          378
+        ],
+        [
+          814,
+          678
+        ]
+      ],
+      "mode": "manual",
+      "pick_sigma_px": 2.0,
+      "inlier_count": 2,
+      "profile_count": 0,
+      "residual_rms_px": null,
+      "length_px": 301.59741378201505,
+      "sigma_fit_deg": 0.5373129171417373,
+      "sigma_deg": 1.4128049246390613,
+      "refined_endpoints_px": [
+        [
+          845.0,
+          378.0
+        ],
+        [
+          814.0,
+          678.0
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          845.0,
+          378.0
+        ],
+        [
+          814.0,
+          678.0
+        ]
+      ],
+      "residual_rms_render_px": null,
+      "bearing_raw_deg": 186.36167776795847,
+      "bearing_deg": 186.36167776795847,
+      "declination_deg": null,
+      "length_m": 163.0256290713595,
+      "sigma_line_deg": 0.5373129171417373,
+      "sigma_arrow_deg": 1.3066417198899705,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          456.7567567567568,
+          204.32432432432432
+        ],
+        [
+          440.0,
+          366.4864864864865
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": 6.361677767958469,
+      "source_id": "lothal-01",
+      "measurement_record": "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\measure-A\\picks\\lothal\\dock-plan-G-v1-refined.json"
+    },
+    {
+      "id": "dock-south-plan",
+      "part": "brick-lined reservoir",
+      "kind": "dock edge",
+      "identification": "Fig.3.1 printed p.46, south outer face of the brick-lined reservoir",
+      "system": "dock",
+      "endpoints_px": [
+        [
+          753,
+          671
+        ],
+        [
+          812,
+          679
+        ]
+      ],
+      "mode": "manual",
+      "pick_sigma_px": 2.0,
+      "inlier_count": 2,
+      "profile_count": 0,
+      "residual_rms_px": null,
+      "length_px": 59.53990258641679,
+      "sigma_fit_deg": 2.719775983205647,
+      "sigma_deg": 3.017365404285544,
+      "refined_endpoints_px": [
+        [
+          753.0,
+          671.0
+        ],
+        [
+          812.0,
+          679.0
+        ]
+      ],
+      "native_endpoints_px": [
+        [
+          753.0,
+          671.0
+        ],
+        [
+          812.0,
+          679.0
+        ]
+      ],
+      "residual_rms_render_px": null,
+      "bearing_raw_deg": 98.18387852156172,
+      "bearing_deg": 98.18387852156172,
+      "declination_deg": null,
+      "length_m": 32.18373112779286,
+      "sigma_line_deg": 2.719775983205647,
+      "sigma_arrow_deg": 1.3066417198899705,
+      "north_class": "unspecified",
+      "endpoints_plan_m": [
+        [
+          407.02702702702703,
+          362.7027027027027
+        ],
+        [
+          438.91891891891896,
+          367.02702702702703
+        ]
+      ],
+      "north_correction_status": "true reference unresolved; retain raw bearing",
+      "theta_deg": 8.183878521561724,
+      "source_id": "lothal-01",
+      "measurement_record": "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\measure-A\\picks\\lothal\\dock-plan-G-v1-refined.json"
+    }
+  ],
+  "registrations": [],
+  "notes": "Basin measurements use water-to-rim boundaries following long brick-lined edges; this identification uncertainty is outside conditional sigma. Plan north is unspecified and the ASI reproduction has incomplete bibliographic identity. No registration: two water-edge ends are not independent secure archaeological corner controls. All checks inspected; fits stay on the long basin boundaries. Plan and imagery compare different faces of the same structure; true reference for plan unresolved.",
+  "unmeasurable_reason": null,
+  "imagery_assessment": "Two long basin inner boundaries are resolved; wall-face identity has uncertainty from water level and vegetation. Short internal walls are unresolved at 10 m.",
+  "plan_assessment": "Measured reservoir perimeter from Fig.3.1. Survey year not given.",
+  "empirical_error_calibration": {
+    "source": "infra-v1/validation-v1/summary.json",
+    "segment_rms_deg": {
+      "100m": 4.272758,
+      "200m": 1.764927,
+      "300m": 0.988215,
+      "400m": 0.746483
+    },
+    "sigma_policy": "Tool sigma retained unchanged; calibration is separate."
+  },
+  "created_utc": "2026-10-21T06:27:27.695037Z",
+  "systems": [
+    {
+      "source_id": "imagery",
+      "id": "dock",
+      "line_ids": [
+        "dock-west",
+        "dock-east"
+      ],
+      "n": 2,
+      "total_length_m": 330.594722734837,
+      "theta_deg": 0.0974386342880266,
+      "weighted_sd_deg": 1.0399117565829608,
+      "scatter_se_deg": 0.7353286549154259,
+      "propagated_se_deg": 0.3856235724921534,
+      "se_deg": 0.7353286549154259,
+      "deviation_window_deg": 2.0798346755120747,
+      "warnings": [],
+      "conditions_pass": true
+    },
+    {
+      "source_id": "lothal-01",
+      "id": "dock",
+      "line_ids": [
+        "dock-west-plan",
+        "dock-east-plan",
+        "dock-south-plan"
+      ],
+      "n": 3,
+      "total_length_m": 360.8698242069573,
+      "theta_deg": 6.39471351325202,
+      "weighted_sd_deg": 0.5758068418157906,
+      "scatter_se_deg": 0.33244223512357496,
+      "propagated_se_deg": 0.9478832150903636,
+      "se_deg": 0.9478832150903636,
+      "deviation_window_deg": 2.1042452100041373,
+      "warnings": [],
+      "conditions_pass": true
+    }
+  ],
+  "main_system_by_source": {
+    "imagery": "dock",
+    "lothal-01": "dock"
+  }
+}

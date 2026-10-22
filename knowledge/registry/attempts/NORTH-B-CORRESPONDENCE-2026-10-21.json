@@ -1,0 +1,42 @@
+{
+  "id": "NORTH-B-CORRESPONDENCE-2026-10-21",
+  "theme": "Kurukh and Malto initials against Tamil m- and v- across the Dravidian Etymological Dictionary, prediction P5 of C-0011",
+  "status": "completed-frozen-evaluation-with-independent-recomputation",
+  "status_class": "frozen-evaluation",
+  "area": "language",
+  "question": "Does Kurukh or Malto initial b- answer Tamil initial m- in any DEDR entry other than 4876 (miṉ 'to shine', with Kurukh bīnkō and Malto bínḍke 'star'), or only Tamil v-?",
+  "outcome": "Among 63 DEDR entries with Tamil m- and 44 with Tamil v- that have a Kurukh or Malto form, the first undoubted northern form begins with m- in 83 of 88 Tamil m- comparisons and with b- in 2, both in entry 4952 'crocodile'; it begins with b- in 50 of 55 Tamil v- comparisons and with m- in 2 (5516 'to hear', before a nasal). Doubtful and non-first forms add no entry. (The frozen file gives 89 Tamil m- comparisons; the second implementation found the Kurukh line of 4886 doubtful, leaving 88.) P5 is unresolved under its frozen rule (one qualifying entry, two needed for a pass, none for a failure) and C-0011 stays at 0.20 by rule; review proposes 0.15. Before a long front vowel after Tamil m- all 6 northern reflexes keep m-, among them Malto mínu 'fish'; Malto keeps 'fish' (mínu) and 'star' (bínḍke) apart by the initial. Across all Tamil initials northern b- occurs 56 times: 50 for Tamil v-, 4 for Tamil m- (4876, 4952), 2 for Tamil p-. Brahui has b- for Tamil m- three times, before front vowels, in entries where Kurukh and Malto keep m-.",
+  "challenge": "DEDR is the only witness and its DSAL edition is all rights reserved, so parsed lines stay local. DSAL sets some genuine language labels in plain type, italicises some cross-references, and prints four different entries under repeated numbers (1287, 1288, 2835, 5282); the last would have dropped a Tamil v- entry. A first borrowing rule caught a gloss meaning 'to borrow'. An unclosed bold tag in entry 4886 made the frozen parser read a gloss and its doubt mark as a form; the second implementation caught it.",
+  "remedy": "Froze the population, units, doubt and borrowing rules, vowel recording and pass rule before reading any entry for the study; checked every Tamil, Kurukh, Malto and Brahui label in the flattened source against the parsed lines and recorded five parse corrections before the freeze; tested the parser on 24 synthetic traps; froze the code by hash and computed once; had a second implementation written from the protocol alone, which reproduced the outcome and every entry list and corrected one table cell; kept post-outcome analyses in a separate exploratory output.",
+  "evidence": [
+    "experiments/2026-10-21-north-b-correspondence/PROTOCOL.md",
+    "experiments/2026-10-21-north-b-correspondence/PROTOCOL.sha256",
+    "experiments/2026-10-21-north-b-correspondence/PARSE-CHECK.md",
+    "experiments/2026-10-21-north-b-correspondence/FREEZE.json",
+    "experiments/2026-10-21-north-b-correspondence/selftest-v1/selftest.json",
+    "experiments/2026-10-21-north-b-correspondence/parse-check/check-v1.json",
+    "experiments/2026-10-21-north-b-correspondence/parse-check/parse-v1.json",
+    "experiments/2026-10-21-north-b-correspondence/results-v1/results.json",
+    "experiments/2026-10-21-north-b-correspondence/verify/verification-v1.json",
+    "experiments/2026-10-21-north-b-correspondence/exploratory-v1/exploratory.json",
+    "experiments/2026-10-21-north-b-correspondence/bench-selftest-v1.json",
+    "experiments/2026-10-21-north-b-correspondence/REPORT.md",
+    "experiments/2026-10-21-north-b-correspondence/RETROSPECTIVE.md",
+    "experiments/2026-10-21-north-b-correspondence/CARD-PROPOSAL.md"
+  ],
+  "retry_when": "A Kurukh or Malto lexical source independent of DEDR (Droese 1884, Mahapatra 1979, Hahn 1903, Grignard 1924, fieldwork) that records the morphology of the star and sky words (proposed C-0011 P6), or an openly licensed DEDR-linked lexicon that would allow the per-entry table to be tracked. Rerunning the same count on the same pages adds nothing.",
+  "package": "experiments/2026-10-21-north-b-correspondence",
+  "authors": [
+    {
+      "model": "Claude Opus 5.5 (claude-opus-5-5)",
+      "harness": "Claude Code desktop app",
+      "agent": "side session: protocol, parser, parse check, freeze, report"
+    },
+    {
+      "model": "Claude Opus 5.5 (claude-opus-5-5)",
+      "harness": "Claude Code desktop app, subagent",
+      "agent": "second implementation written from the protocol without the first implementation's code"
+    }
+  ],
+  "verification_tier": "submitted"
+}

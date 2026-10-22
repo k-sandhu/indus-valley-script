@@ -1,0 +1,199 @@
+{
+ "schema_version": "1.0",
+ "task": "rebus-base-rate/exploratory",
+ "post_outcome": true,
+ "created_utc": "2026-10-21T04:16:20.033016+00:00",
+ "results_dir": "experiments/2026-10-21-rebus-base-rate/results-v2",
+ "provenance": {
+  "code": {
+   "acquire.py": "59a106de9a0eb1bd00ad5001ba3f1fe5f4a4a2b34821e79150a7af94cadd371c",
+   "exploratory.py": "d6c4af684b741ccfdd9d3143d370f8cc319596241cf1d15737ae5e648488b600",
+   "extract_epsd2.py": "cea9bac91606468866ab018cd5288631a96bea91e6496eace5ed08c580a23d12",
+   "freeze.py": "225fed24fdfe932c6bb701de612b746041873971363c65bb99dda2b09df75895",
+   "manifest.py": "0808b64d775826e3395d407afe7c5a33821e1d6ac3f17a6e44f88c773d84c967",
+   "parse_cdial.py": "bbecf4675047abefad9110828f58c47dd0e1131ae46dd23121e58c6b63507e0b",
+   "parse_dedr.py": "93e36dc2ecf24ed24afbeef7f63e4666cfca545337ae1d1415139cc1fbd35e38",
+   "parse_tamil_lex.py": "e2fb108f1bd3b82f6fe3dd2404a7ee3f780a0c3728afedd3059287ac1b9a6e27",
+   "pools.py": "faad1d249e79edfcfabc346f7f184dfc64f58dc6864e625be13b61e97439f4c8",
+   "rebus.py": "bfa65175b3383b8cad04d05f0078cfa7abcfbc673b0728f92a138f47c787ed42",
+   "run_homophones.py": "1f6724dc08d2dbd741808cfc509e10e43e4f0a6d6bc832b6156d8fa6cdbbbbc3",
+   "run_interlocks.py": "284fa53f152b5997465d21d94f51cd7de452f949d3c088ec3158dccc7c213d46",
+   "selftest.py": "03bd181b1169738dc265daef3b176cae109a689b1c7ab9f9a84b037a9874338f",
+   "verify.py": "7d2ff8097c794d0341aee0abac70013862aeb76e228a23a4337cd8b290d560d9"
+  },
+  "results": "f6cae04bb9c01df82ee5669f735bc80aebefeb39627d4195e6be521832c9081a"
+ },
+ "E1_restricted_with_muruka_vel": {
+  "muruka_vel_gloss": [
+   "See ."
+  ],
+  "A_restricted": [
+   "muruka-k-kaṭavuḷ",
+   "muruka-vēḷ"
+  ],
+  "B_restricted_size": 55,
+  "T0s": {
+   "real_shared": {
+    "veḷ": {
+     "w1_compounds": [
+      "muruka-vēḷ"
+     ],
+     "w2_compounds": [
+      "veṇ-mīṉ"
+     ]
+    }
+   },
+   "draws": 10000,
+   "hits": 779,
+   "rate": 0.0779,
+   "ci95_wilson": [
+    0.07280761278815547,
+    0.0833165586414818
+   ]
+  },
+  "T1s": {
+   "real_shared": {
+    "veḷ": {
+     "w1_compounds": [
+      "muruka-vēḷ"
+     ],
+     "w2_compounds": [
+      "veḷḷi-mīṉ",
+      "veṇ-mīṉ"
+     ]
+    }
+   },
+   "draws": 10000,
+   "hits": 1661,
+   "rate": 0.1661,
+   "ci95_wilson": [
+    0.15893408529788092,
+    0.1735223488181008
+   ]
+  }
+ },
+ "E2_numerals_with_min": {
+  "real": {
+   "1": [],
+   "2": [],
+   "3": [
+    "mu-m-mīṉ"
+   ],
+   "4": [],
+   "5": [
+    "ai-m-mīṉ"
+   ],
+   "6": [
+    "aṟu-mīṉ",
+    "āṟā-mīṉ"
+   ],
+   "7": [
+    "eḻu-mīṉ"
+   ],
+   "8": [],
+   "9": [],
+   "10": []
+  },
+  "numerals_with_compound": [
+   3,
+   5,
+   6,
+   7
+  ],
+  "pool_share_with_compound": {
+   "1": 0.12,
+   "2": 0.2,
+   "3": 0.2,
+   "4": 0.2,
+   "5": 0.04,
+   "6": 0.22,
+   "7": 0.02,
+   "8": 0.12,
+   "9": 0.06,
+   "10": 0.16
+  },
+  "pool_numerals_per_word": [
+   1,
+   2,
+   3,
+   6,
+   1,
+   1,
+   3,
+   2,
+   0,
+   0,
+   1,
+   1,
+   1,
+   4,
+   2,
+   0,
+   2,
+   2,
+   2,
+   3,
+   4,
+   3,
+   0,
+   0,
+   2,
+   0,
+   1,
+   0,
+   1,
+   0,
+   0,
+   2,
+   0,
+   0,
+   0,
+   1,
+   1,
+   0,
+   0,
+   0,
+   1,
+   3,
+   5,
+   1,
+   0,
+   0,
+   1,
+   0,
+   1,
+   3
+  ]
+ },
+ "E3_template_multiplicity": {
+  "per_template_rates_T0s": {
+   "I1": 0.3052,
+   "I2": 0.2508571428571429,
+   "I3": 0.04848979591836734,
+   "I4_at_least_one": 0.36,
+   "I5": 0.1083265306122449
+  },
+  "mean_rate": 0.21457469387755101,
+  "p_at_least_4_of_m": {
+   "5": 0.008779964761178708,
+   "6": 0.021857436386468573,
+   "8": 0.07063608910650093,
+   "10": 0.14792405314182572,
+   "12": 0.24548689063982726,
+   "15": 0.4068489379372462,
+   "20": 0.6496851862771353,
+   "30": 0.911257943400612
+  },
+  "templates_for_p_above_0_05": 8,
+  "templates_for_p_above_0_5": 17
+ },
+ "E4_largest_odds_factor": {
+  "I1": 3.27653997378768,
+  "I2": 3.98633257403189,
+  "I3": 20.622895622895626,
+  "I4_at_least_one": 2.7777777777777777,
+  "I5": 9.231348907309721,
+  "network_T0s": 227.27272727272725,
+  "network_T1s": 45.45454545454546
+ }
+}

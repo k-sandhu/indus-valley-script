@@ -1,0 +1,1162 @@
+{
+ "role": "img-B",
+ "written_utc": "2026-10-21T04:44:44Z",
+ "attribution": "Source: Esri, Vantor, Earthstar Geographics, and the GIS User Community",
+ "rights": "Esri World Imagery tiles and the mosaics and inspection crops made from them are third-party material; they are kept only under data/raw/2026-10-21-town-axes/img-B/, which Git ignores, and are not copied into the experiment directory.",
+ "services": [
+  {
+   "id": "esri-world-imagery",
+   "kind": "imagery tile service",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "attribution": "Source: Esri, Vantor, Earthstar Geographics, and the GIS User Community",
+   "projection": "Web Mercator (EPSG:3857), 256 px tiles, north up",
+   "accessed_utc": "2026-10-21",
+   "note": "Zoom 18 is the highest level with real detail at every site we examined; the identify service reports MaxMapLevel 18 for every imagery block we hit."
+  },
+  {
+   "id": "esri-world-imagery-identify",
+   "kind": "imagery metadata",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify",
+   "note": "Point query returning the imagery block, sensor, resolution and acquisition date; one cached response per town under identify/."
+  },
+  {
+   "id": "esri-wayback",
+   "kind": "archived imagery releases",
+   "config_url": "https://s3-us-west-2.amazonaws.com/config.maptiles.arcgis.com/waybackconfig.json",
+   "config_file": "data/raw/2026-10-21-town-axes/img-B/wayback/waybackconfig.json",
+   "config_sha256": "393ac7736bb1aea97e415072e8305ac715728beb423cc45867fe0e2baff64387",
+   "config_retrieved_utc": "2026-10-21T03:44:26Z",
+   "tile_url_template": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/{rel}/{z}/{y}/{x}",
+   "tilemap_url_template": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/MapServer/tilemap/{rel}/{z}/{y}/{x}",
+   "metadata": "each release's metadataLayerUrl (World_Imagery_Metadata_<year>_r<nn>/MapServer, layers 4 to 6) queried at the town's point for SRC_DATE, SRC_DESC and SRC_RES",
+   "attribution": "Source: Esri, Vantor, Earthstar Geographics, and the GIS User Community",
+   "note": "Used where the current release shows the architecture poorly (Lothal, Harappa) and to search for visible remains at backfilled or overgrown sites."
+  },
+  {
+   "id": "osm-nominatim",
+   "kind": "gazetteer",
+   "url": "https://nominatim.openstreetmap.org/search",
+   "accessed_utc": "2026-10-21",
+   "note": "Coordinates of archaeological-site nodes for Surkotada, Rakhigarhi (RGR-1, RGR-2), Kotada Bhadli and Bhirrana, and of villages near other sites. Data (c) OpenStreetMap contributors, ODbL."
+  },
+  {
+   "id": "wikidata",
+   "kind": "gazetteer",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/{QID}.json",
+   "accessed_utc": "2026-10-21",
+   "note": "Coordinates (P625) of Chanhu-daro (Q1062208), Juni Kuran (Q63358276), Sutkagen Dor (Q2369920) and Nausharo (Q2039702). CC0."
+  },
+  {
+   "id": "wikipedia",
+   "kind": "gazetteer",
+   "accessed_utc": "2026-10-21",
+   "pages": [
+    "https://en.wikipedia.org/wiki/Surkotada",
+    "https://en.wikipedia.org/wiki/Banawali",
+    "https://en.wikipedia.org/wiki/Kanmer",
+    "https://en.wikipedia.org/wiki/Chanhudaro",
+    "https://en.wikipedia.org/wiki/Shikarpur,_Gujarat"
+   ],
+   "note": "Published site coordinates read from the article infoboxes; Chanhudaro gives none."
+  }
+ ],
+ "identify_responses": [
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/61.95028_25.49833.json",
+   "retrieved_utc": "2026-10-21T04:34:49Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=61.950278%2C25.498333&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=61.945277999999995%2C25.493333%2C61.955278%2C25.503332999999998&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20250403",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG02",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/67.58800_29.36500.json",
+   "retrieved_utc": "2026-10-21T04:34:59Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=67.588%2C29.365&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=67.583%2C29.36%2C67.59299999999999%2C29.369999999999997&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20250802",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG02",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/68.13340_27.32540.json",
+   "retrieved_utc": "2026-10-21T01:57:01Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=68.1334%2C27.3254&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=68.1284%2C27.3204%2C68.13839999999999%2C27.330399999999997&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20250131",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG02",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/68.13600_27.32600.json",
+   "retrieved_utc": "2026-10-21T01:47:56Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=68.136%2C27.326&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=68.131%2C27.321%2C68.14099999999999%2C27.331&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20250131",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG02",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/68.32304_26.17353.json",
+   "retrieved_utc": "2026-10-21T04:33:39Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=68.32304%2C26.17353&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=68.31804000000001%2C26.16853%2C68.32804%2C26.17853&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20250521",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "WV03",
+   "resolution_m": "0.31",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/68.32306_26.17361.json",
+   "retrieved_utc": "2026-10-21T04:25:18Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=68.32306%2C26.17361&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=68.31806%2C26.16861%2C68.32806%2C26.17861&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20250521",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "WV03",
+   "resolution_m": "0.31",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/69.42608_23.34635.json",
+   "retrieved_utc": "2026-10-21T04:36:28Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=69.42608%2C23.34635&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=69.42108%2C23.341350000000002%2C69.43108%2C23.35135&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20260220",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG03",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/69.76000_23.94500.json",
+   "retrieved_utc": "2026-10-21T04:36:46Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=69.76%2C23.945&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=69.75500000000001%2C23.94%2C69.765%2C23.95&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20241026",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "WV03",
+   "resolution_m": "0.31",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/69.76704_23.94626.json",
+   "retrieved_utc": "2026-10-21T04:34:40Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=69.767039%2C23.946255&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=69.762039%2C23.941255%2C69.77203899999999%2C23.951255&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20241026",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "WV03",
+   "resolution_m": "0.31",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/70.21300_23.88700.json",
+   "retrieved_utc": "2026-10-21T04:16:20Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=70.213%2C23.887&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=70.208%2C23.882%2C70.21799999999999%2C23.892&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20231218",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "WV02",
+   "resolution_m": "0.5",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/70.21310_23.88700.json",
+   "retrieved_utc": "2026-10-21T04:18:01Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=70.2131%2C23.887&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=70.2081%2C23.882%2C70.21809999999999%2C23.892&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20231218",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "WV02",
+   "resolution_m": "0.5",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/70.67743_23.23794.json",
+   "retrieved_utc": "2026-10-21T04:33:43Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=70.67743%2C23.23794&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=70.67243%2C23.23294%2C70.68243%2C23.242939999999997&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20260320",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG01",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/70.67750_23.23750.json",
+   "retrieved_utc": "2026-10-21T04:31:35Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=70.6775%2C23.2375&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=70.6725%2C23.2325%2C70.68249999999999%2C23.2425&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20260320",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG01",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/70.67800_23.20000.json",
+   "retrieved_utc": "2026-10-21T04:30:52Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=70.678%2C23.2&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=70.673%2C23.195%2C70.68299999999999%2C23.205&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20260320",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG01",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/70.69360_23.21160.json",
+   "retrieved_utc": "2026-10-21T04:31:14Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=70.6936%2C23.2116&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=70.68860000000001%2C23.2066%2C70.6986%2C23.2166&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20260320",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG01",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/70.83986_23.62614.json",
+   "retrieved_utc": "2026-10-21T04:22:36Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=70.83986%2C23.62614&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=70.83486%2C23.62114%2C70.84486%2C23.63114&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20260326",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG01",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/70.84070_23.63040.json",
+   "retrieved_utc": "2026-10-21T04:21:42Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=70.8407%2C23.6304&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=70.8357%2C23.625400000000003%2C70.8457%2C23.6354&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20260326",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG01",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/70.84100_23.61700.json",
+   "retrieved_utc": "2026-10-21T04:20:52Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=70.841%2C23.617&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=70.836%2C23.612000000000002%2C70.84599999999999%2C23.622&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20260326",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG01",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/70.86286_23.41775.json",
+   "retrieved_utc": "2026-10-21T04:33:41Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=70.86286%2C23.41775&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=70.85786%2C23.412750000000003%2C70.86786%2C23.42275&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20260326",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG01",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/70.86340_23.41790.json",
+   "retrieved_utc": "2026-10-21T04:24:39Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=70.8634%2C23.4179&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=70.8584%2C23.4129%2C70.8684%2C23.4229&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20260326",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG01",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/72.24900_22.52200.json",
+   "retrieved_utc": "2026-10-21T04:08:43Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=72.249%2C22.522&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=72.244%2C22.517%2C72.25399999999999%2C22.526999999999997&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20260227",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG04",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/72.24910_22.52250.json",
+   "retrieved_utc": "2026-10-21T04:10:32Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=72.2491%2C22.5225&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=72.2441%2C22.517500000000002%2C72.2541%2C22.5275&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20260227",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG04",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/72.86000_30.63000.json",
+   "retrieved_utc": "2026-10-21T03:38:02Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=72.86%2C30.63&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=72.855%2C30.625%2C72.865%2C30.634999999999998&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20250523",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG01",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/72.86160_30.63190.json",
+   "retrieved_utc": "2026-10-21T03:42:26Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=72.8616%2C30.6319&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=72.8566%2C30.626900000000003%2C72.86659999999999%2C30.6369&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20250523",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG01",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/72.86400_30.63000.json",
+   "retrieved_utc": "2026-10-21T03:33:29Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=72.864%2C30.63&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=72.85900000000001%2C30.625%2C72.869%2C30.634999999999998&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20250523",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG01",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/74.13000_29.47300.json",
+   "retrieved_utc": "2026-10-21T03:42:50Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=74.13%2C29.473&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=74.125%2C29.468%2C74.13499999999999%2C29.477999999999998&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20260301",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG05",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/74.13039_29.47386.json",
+   "retrieved_utc": "2026-10-21T04:33:03Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=74.13039%2C29.47386&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=74.12539000000001%2C29.46886%2C74.13539%2C29.478859999999997&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20260301",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG05",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/75.39194_29.59833.json",
+   "retrieved_utc": "2026-10-21T04:24:30Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=75.39194%2C29.59833&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=75.38694000000001%2C29.59333%2C75.39694%2C29.60333&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20230508",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "WV03",
+   "resolution_m": "0.31",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/75.39217_29.59839.json",
+   "retrieved_utc": "2026-10-21T04:33:30Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=75.39217%2C29.59839&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=75.38717%2C29.59339%2C75.39716999999999%2C29.603389999999997&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20230508",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "WV03",
+   "resolution_m": "0.31",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/75.54777_29.55491.json",
+   "retrieved_utc": "2026-10-21T04:36:33Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=75.54777%2C29.55491&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=75.54277%2C29.54991%2C75.55277%2C29.55991&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20230417",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "WV02",
+   "resolution_m": "0.5",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/76.11121_29.29159.json",
+   "retrieved_utc": "2026-10-21T04:33:32Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=76.11121%2C29.29159&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=76.10621%2C29.28659%2C76.11621%2C29.29659&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20241216",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG01",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/identify/76.11250_29.29150.json",
+   "retrieved_utc": "2026-10-21T04:26:14Z",
+   "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/identify?geometry=76.1125%2C29.2915&geometryType=esriGeometryPoint&sr=4326&layers=all&tolerance=1&mapExtent=76.1075%2C29.2865%2C76.11749999999999%2C29.296499999999998&imageDisplay=800%2C800%2C96&returnGeometry=false&f=json",
+   "date": "20241216",
+   "source": "Vantor",
+   "source_info": "Vivid",
+   "sensor": "LG01",
+   "resolution_m": "0.34",
+   "max_level": "18"
+  }
+ ],
+ "mosaics": [
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/banawali_survey_z18_x185967-185973_y108488-108494.png",
+   "sha256": "520718f784dd13e3eb2f91a67430717217a4a831f0e971b657d92463ca5ed8c0",
+   "bytes": 3326330,
+   "mosaicked_utc": "2026-10-21T04:24:28Z",
+   "zoom": 18,
+   "tile_x": [
+    185967,
+    185973
+   ],
+   "tile_y": [
+    108488,
+    108494
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "banawali",
+     "source_id": "src1",
+     "imagery_date": "2023-05-08",
+     "role": "inspected (current World Imagery)"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/bhirrana_survey_z18_x186082-186086_y108525-108529.png",
+   "sha256": "d6543d05846dbcdc494ff647d7a84e0e6a7732682232e410f8fc36a9bbff140a",
+   "bytes": 2134394,
+   "mosaicked_utc": "2026-10-21T04:36:32Z",
+   "zoom": 18,
+   "tile_x": [
+    186082,
+    186086
+   ],
+   "tile_y": [
+    108525,
+    108529
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "bhirrana",
+     "source_id": "src1",
+     "imagery_date": "2023-04-17",
+     "role": "inspected (current World Imagery)"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/chanhu-daro_survey_z18_x180820-180826_y111310-111316.png",
+   "sha256": "779ddd1e84ed09e450adf9864537fb20cbe6b929283c5cd61b3b1f1e3546fc33",
+   "bytes": 4813774,
+   "mosaicked_utc": "2026-10-21T04:25:17Z",
+   "zoom": 18,
+   "tile_x": [
+    180820,
+    180826
+   ],
+   "tile_y": [
+    111310,
+    111316
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "chanhu-daro",
+     "source_id": "src1",
+     "imagery_date": "2025-05-21",
+     "role": "inspected (current World Imagery)"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/dholavira_core_z18_x182196-182202_y113147-113152.png",
+   "sha256": "554c3af84996962ea3c89e80a5b54524799e23a831cc89746c2b0e3ff7055401",
+   "bytes": 4592307,
+   "mosaicked_utc": "2026-10-21T04:16:42Z",
+   "zoom": 18,
+   "tile_x": [
+    182196,
+    182202
+   ],
+   "tile_y": [
+    113147,
+    113152
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "dholavira",
+     "source_id": "src1",
+     "imagery_date": "2023-12-18",
+     "role": "measured (current World Imagery)"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/dholavira_overview_z17_x91097-91102_y56573-56578.png",
+   "sha256": "bcad6fd52488bc1c14d58fb7e747d1f5d5b87b888e1404dca337bdb5b795a2f7",
+   "bytes": 4364198,
+   "mosaicked_utc": "2026-10-21T04:16:19Z",
+   "zoom": 17,
+   "tile_x": [
+    91097,
+    91102
+   ],
+   "tile_y": [
+    56573,
+    56578
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [],
+   "purpose": "inspected only (overview or location search)"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/harappa_core_wb32553_z18_x184127-184136_y107618-107626.png",
+   "sha256": "b766ad1435932fed6f360f6008c25a1b36d4df5997b2f98f9cb3581e87335dee",
+   "bytes": 9877461,
+   "mosaicked_utc": "2026-10-21T04:07:00Z",
+   "zoom": 18,
+   "tile_x": [
+    184127,
+    184136
+   ],
+   "tile_y": [
+    107618,
+    107626
+   ],
+   "service": "Esri World Imagery Wayback release 32553 (published 2024-08-15)",
+   "tile_url_template": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/32553/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "harappa",
+     "source_id": "src2",
+     "imagery_date": "2024-02-14",
+     "role": "second witness (archived World Imagery release with a clearer view of the southern excavation)"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/harappa_core_z18_x184127-184136_y107618-107626.png",
+   "sha256": "247104dadda83acf39b93de017212218298d1048dd0cf2df9ddd444d76e6badb",
+   "bytes": 9877773,
+   "mosaicked_utc": "2026-10-21T03:33:55Z",
+   "zoom": 18,
+   "tile_x": [
+    184127,
+    184136
+   ],
+   "tile_y": [
+    107618,
+    107626
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "harappa",
+     "source_id": "src1",
+     "imagery_date": "2025-05-23",
+     "role": "measured (current World Imagery)"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/harappa_overview_z16_x46030-46034_y26903-26907.png",
+   "sha256": "5b4a241e7be306dc8f9b01598fc75a355d6aa65af55386ebbc29d7414a3ec804",
+   "bytes": 2633352,
+   "mosaicked_utc": "2026-10-21T03:33:26Z",
+   "zoom": 16,
+   "tile_x": [
+    46030,
+    46034
+   ],
+   "tile_y": [
+    26903,
+    26907
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [],
+   "purpose": "inspected only (overview or location search)"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/juni-kuran_overview_z17_x90931-90938_y56548-56556.png",
+   "sha256": "d72d02c320152a103916e02b7eb33f519a1e583446b05392dd4af1ba8ae5197e",
+   "bytes": 9037029,
+   "mosaicked_utc": "2026-10-21T04:36:44Z",
+   "zoom": 17,
+   "tile_x": [
+    90931,
+    90938
+   ],
+   "tile_y": [
+    56548,
+    56556
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [],
+   "purpose": "inspected only (overview or location search)"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/juni-kuran_survey_z18_x181872-181876_y113101-113106.png",
+   "sha256": "b00ef3a44ed3bc2246ccb02aab17ee45d3abb3e0aea6f4e314fb5dc8a6e24547",
+   "bytes": 3377923,
+   "mosaicked_utc": "2026-10-21T04:34:39Z",
+   "zoom": 18,
+   "tile_x": [
+    181872,
+    181876
+   ],
+   "tile_y": [
+    113101,
+    113106
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "juni-kuran",
+     "source_id": "src1",
+     "imagery_date": "2024-10-26",
+     "role": "inspected (current World Imagery, around the Wikidata position)"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/kalibangan_core_wb16749_z18_x185048-185054_y108593-108598.png",
+   "sha256": "dc758b92b10915b17f9ef981eb51eca7482a55f47f14b34afff6e8a605c0cc09",
+   "bytes": 3952946,
+   "mosaicked_utc": "2026-10-21T03:57:32Z",
+   "zoom": 18,
+   "tile_x": [
+    185048,
+    185054
+   ],
+   "tile_y": [
+    108593,
+    108598
+   ],
+   "service": "Esri World Imagery Wayback release 16749 (published 2021-10-13)",
+   "tile_url_template": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/16749/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "kalibangan",
+     "source_id": "src2",
+     "imagery_date": "2021-03-04",
+     "role": "inspected (archived release with lower vegetation)"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/kalibangan_core_wb8432_z18_x185048-185054_y108593-108598.png",
+   "sha256": "3c2aa871674e0e4447f28bfb65a23827e21e2a9fb24214c7f48c447d6a05c530",
+   "bytes": 3341226,
+   "mosaicked_utc": "2026-10-21T04:00:21Z",
+   "zoom": 18,
+   "tile_x": [
+    185048,
+    185054
+   ],
+   "tile_y": [
+    108593,
+    108598
+   ],
+   "service": "Esri World Imagery Wayback release 8432 (published 2021-07-21)",
+   "tile_url_template": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/8432/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "kalibangan",
+     "source_id": "src3",
+     "imagery_date": "2019-02-08",
+     "role": "inspected (archived release)"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/kalibangan_core_z18_x185048-185054_y108593-108598.png",
+   "sha256": "d860ca11de95b15806d51bfed2f3d14ab092ec009ca9c2ca7614b498e502ad7e",
+   "bytes": 2760863,
+   "mosaicked_utc": "2026-10-21T03:43:05Z",
+   "zoom": 18,
+   "tile_x": [
+    185048,
+    185054
+   ],
+   "tile_y": [
+    108593,
+    108598
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "kalibangan",
+     "source_id": "src1",
+     "imagery_date": "2026-03-01",
+     "role": "inspected (current World Imagery)"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/kalibangan_overview_z17_x92523-92528_y54295-54300.png",
+   "sha256": "489a84336f06d8dc393b29265bbc45666f40af107121a7b9dc8ce8479a5d6599",
+   "bytes": 2539892,
+   "mosaicked_utc": "2026-10-21T03:42:50Z",
+   "zoom": 17,
+   "tile_x": [
+    92523,
+    92528
+   ],
+   "tile_y": [
+    54295,
+    54300
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [],
+   "purpose": "inspected only (overview or location search)"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/kanmer_survey_z18_x182671-182674_y113522-113525.png",
+   "sha256": "92e040c40718d720c76f14b62063079f27980322068fbc8aa7af3aaa901bb1fd",
+   "bytes": 1642925,
+   "mosaicked_utc": "2026-10-21T04:24:38Z",
+   "zoom": 18,
+   "tile_x": [
+    182671,
+    182674
+   ],
+   "tile_y": [
+    113522,
+    113525
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "kanmer",
+     "source_id": "src1",
+     "imagery_date": "2026-03-26",
+     "role": "inspected (current World Imagery)"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/kotada-bhadli_survey_z18_x181624-181628_y113578-113582.png",
+   "sha256": "d9b54c97ef92e1a359709d67e9dedf0cadadbf04288a1001bd28976be827fb92",
+   "bytes": 2536878,
+   "mosaicked_utc": "2026-10-21T04:36:28Z",
+   "zoom": 18,
+   "tile_x": [
+    181624,
+    181628
+   ],
+   "tile_y": [
+    113578,
+    113582
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "kotada-bhadli",
+     "source_id": "src1",
+     "imagery_date": "2026-02-20",
+     "role": "inspected (current World Imagery)"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/lothal_core_wb16749_z18_x183680-183684_y114229-114233.png",
+   "sha256": "9624724071461cfcb64713f11903bceb7d6c68927193f7106882c776bb00c2b5",
+   "bytes": 2740797,
+   "mosaicked_utc": "2026-10-21T04:11:12Z",
+   "zoom": 18,
+   "tile_x": [
+    183680,
+    183684
+   ],
+   "tile_y": [
+    114229,
+    114233
+   ],
+   "service": "Esri World Imagery Wayback release 16749 (published 2021-10-13)",
+   "tile_url_template": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/16749/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "lothal",
+     "source_id": "src2",
+     "imagery_date": "2021-03-04",
+     "role": "measured (archived World Imagery release, sharper over the acropolis and lower town); second witness for the dock"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/lothal_core_z18_x183680-183684_y114229-114233.png",
+   "sha256": "de10c8558d45455bb763aa303a51d032cb0d5a31fc28e2e8f71af786fe991bbc",
+   "bytes": 1901088,
+   "mosaicked_utc": "2026-10-21T04:09:14Z",
+   "zoom": 18,
+   "tile_x": [
+    183680,
+    183684
+   ],
+   "tile_y": [
+    114229,
+    114233
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "lothal",
+     "source_id": "src1",
+     "imagery_date": "2026-02-27",
+     "role": "measured (current World Imagery): dock; second witness elsewhere"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/lothal_overview_z17_x91838-91843_y57114-57118.png",
+   "sha256": "c7fbdc60a73516111f859131ebfeff04ae5f0cec9fa360552ac423571c424a52",
+   "bytes": 2414623,
+   "mosaicked_utc": "2026-10-21T04:08:42Z",
+   "zoom": 17,
+   "tile_x": [
+    91838,
+    91843
+   ],
+   "tile_y": [
+    57114,
+    57118
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [],
+   "purpose": "inspected only (overview or location search)"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/mohenjo-daro_core_z18_x180681-180692_y110367-110378.png",
+   "sha256": "56185d2d0988d4b56eac2fb0d1ef21059fc3d742c5d9a99748d3afa405d8f1d9",
+   "bytes": 16998045,
+   "mosaicked_utc": "2026-10-21T01:49:41Z",
+   "zoom": 18,
+   "tile_x": [
+    180681,
+    180692
+   ],
+   "tile_y": [
+    110367,
+    110378
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "mohenjo-daro",
+     "source_id": "src1",
+     "imagery_date": "2025-01-31",
+     "role": "measured"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/mohenjo-daro_overview_z16_x45169-45174_y27590-27596.png",
+   "sha256": "f620c6e492ca46b6bda1ccb2f44795c931cdc65488f24fbd61c636a44c466889",
+   "bytes": 4682339,
+   "mosaicked_utc": "2026-10-21T01:47:54Z",
+   "zoom": 16,
+   "tile_x": [
+    45169,
+    45174
+   ],
+   "tile_y": [
+    27590,
+    27596
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [],
+   "purpose": "inspected only (overview or location search)"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/nausharo_survey_z18_x180285-180291_y108683-108689.png",
+   "sha256": "1f16055473a6aa5aba9798dd30aceefc28fa0f6ee09f02ba7ed9a301a67b622d",
+   "bytes": 4823962,
+   "mosaicked_utc": "2026-10-21T04:34:58Z",
+   "zoom": 18,
+   "tile_x": [
+    180285,
+    180291
+   ],
+   "tile_y": [
+    108683,
+    108689
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "nausharo",
+     "source_id": "src1",
+     "imagery_date": "2025-08-02",
+     "role": "inspected (current World Imagery)"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/rakhigarhi_rgr1_wb64776_z18_x186496-186497_y108745-108746.png",
+   "sha256": "11adb87eda74f0beba27cd068d6bd5786dc0f94e115f843719256f96ea4c14d4",
+   "bytes": 372090,
+   "mosaicked_utc": "2026-10-21T04:30:08Z",
+   "zoom": 18,
+   "tile_x": [
+    186496,
+    186497
+   ],
+   "tile_y": [
+    108745,
+    108746
+   ],
+   "service": "Esri World Imagery Wayback release 64776 (published 2023-08-31)",
+   "tile_url_template": "https://wayback.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/WMTS/1.0.0/default028mm/MapServer/tile/64776/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "rakhigarhi",
+     "source_id": "src2",
+     "imagery_date": "2023-05-04",
+     "role": "inspected (archived release of 31 August 2023, during excavation)"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/rakhigarhi_survey_z18_x186490-186500_y108742-108752.png",
+   "sha256": "a5fb9455fee3bee0ad209a9c6a431d0b390cf5e77b6e86d0200e52662386f73f",
+   "bytes": 9542735,
+   "mosaicked_utc": "2026-10-21T04:26:13Z",
+   "zoom": 18,
+   "tile_x": [
+    186490,
+    186500
+   ],
+   "tile_y": [
+    108742,
+    108752
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "rakhigarhi",
+     "source_id": "src1",
+     "imagery_date": "2024-12-16",
+     "role": "inspected (current World Imagery)"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/shikarpur_mound_z18_x182548-182550_y113686-113688.png",
+   "sha256": "750ec3fa38cab99b9aca968902f00ed4eb73e32a730e53bdedf59a234a9ab08b",
+   "bytes": 462529,
+   "mosaicked_utc": "2026-10-21T04:31:13Z",
+   "zoom": 18,
+   "tile_x": [
+    182548,
+    182550
+   ],
+   "tile_y": [
+    113686,
+    113688
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [],
+   "purpose": "inspected only (overview or location search)"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/shikarpur_overview_z17_x91264-91274_y56843-56853.png",
+   "sha256": "aa5094a307d25686167db443aa9f3af9d02f13cc9b517ef393f170af177321bb",
+   "bytes": 6437217,
+   "mosaicked_utc": "2026-10-21T04:30:52Z",
+   "zoom": 17,
+   "tile_x": [
+    91264,
+    91274
+   ],
+   "tile_y": [
+    56843,
+    56853
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [],
+   "purpose": "inspected only (overview or location search)"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/shikarpur_site_z18_x182535-182539_y113664-113669.png",
+   "sha256": "3fcf4ae95e8be1ee29f9c60a68296d3d0885d897f633c61061273ca27990dc0f",
+   "bytes": 2409402,
+   "mosaicked_utc": "2026-10-21T04:31:34Z",
+   "zoom": 18,
+   "tile_x": [
+    182535,
+    182539
+   ],
+   "tile_y": [
+    113664,
+    113669
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "shikarpur",
+     "source_id": "src1",
+     "imagery_date": "2026-03-20",
+     "role": "inspected (current World Imagery)"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/surkotada_overview2_z18_x182654-182658_y113353-113357.png",
+   "sha256": "3f3ce0ad32e281f6464194171a86463f7b16aa9fff7461d5fb45da9611fe8945",
+   "bytes": 2646492,
+   "mosaicked_utc": "2026-10-21T04:21:41Z",
+   "zoom": 18,
+   "tile_x": [
+    182654,
+    182658
+   ],
+   "tile_y": [
+    113353,
+    113357
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "surkotada",
+     "source_id": "src2",
+     "imagery_date": "2026-03-26",
+     "role": "inspected (current World Imagery, around the Wikipedia position)"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/surkotada_overview_z17_x91326-91330_y56681-56684.png",
+   "sha256": "4009a205e090acacf0f425826080ad1e7dbe2169a45fa4517fe27f8ba2b1fad7",
+   "bytes": 2456476,
+   "mosaicked_utc": "2026-10-21T04:20:51Z",
+   "zoom": 17,
+   "tile_x": [
+    91326,
+    91330
+   ],
+   "tile_y": [
+    56681,
+    56684
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [],
+   "purpose": "inspected only (overview or location search)"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/surkotada_site_z18_x182654-182657_y113357-113360.png",
+   "sha256": "3af635b64de5befa2535f818e77021c7fdff1d9fe2cff56a8617e679c40f527e",
+   "bytes": 1716901,
+   "mosaicked_utc": "2026-10-21T04:22:35Z",
+   "zoom": 18,
+   "tile_x": [
+    182654,
+    182657
+   ],
+   "tile_y": [
+    113357,
+    113360
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "surkotada",
+     "source_id": "src1",
+     "imagery_date": "2026-03-26",
+     "role": "inspected (current World Imagery, around the OpenStreetMap position)"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  },
+  {
+   "file": "data/raw/2026-10-21-town-axes/img-B/mosaics/sutkagen-dor_survey_z18_x176179-176185_y111856-111862.png",
+   "sha256": "8ca44fc35f3f084cf60fe571d88359f46f3b7e1eab0b68965bb975fe1be69fff",
+   "bytes": 5324080,
+   "mosaicked_utc": "2026-10-21T04:34:48Z",
+   "zoom": 18,
+   "tile_x": [
+    176179,
+    176185
+   ],
+   "tile_y": [
+    111856,
+    111862
+   ],
+   "service": "Esri World Imagery (current)",
+   "tile_url_template": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+   "used_by": [
+    {
+     "town": "sutkagen-dor",
+     "source_id": "src1",
+     "imagery_date": "2025-04-03",
+     "role": "inspected (current World Imagery)"
+    }
+   ],
+   "purpose": "measured or inspected in a town file"
+  }
+ ]
+}

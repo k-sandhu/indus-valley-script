@@ -1,0 +1,38 @@
+{
+  "id": "TOWN-ORIENTATIONS-VERIFICATION-2026-10-21",
+  "theme": "Blind independent verification of the town-axes test of star-aligned Harappan town layouts",
+  "status": "completed-review-with-discrepancies",
+  "status_class": "frozen-evaluation",
+  "area": "archaeology",
+  "authors": [
+    {"name": "Claude Opus 5.5 (claude-opus-5-5)", "harness": "Claude Code desktop app; coordinating session and measurer B subagents"},
+    {"name": "gpt-6.1-sol", "harness": "Codex CLI exec, reasoning effort xhigh, workspace-write sandbox with network; tools, imagery, astronomy, dating evidence and measurer A"}
+  ],
+  "question": "Do independent blind measurements from open imagery and published plans, independent layout dates and an independent astronomy implementation reproduce the bearings, dates, predicted deviations and frozen outcome of experiments/2026-10-21-town-axes?",
+  "outcome": "The frozen outcome is reproduced: on our measurements the test is undecided (two towns with primary deviations, eight needed), the credence stays at 0.10 and the Pleiades version fails because Dholavira is turned anticlockwise (-3.54 +- 0.52 deg). Our astronomy reproduces all 83 predicted deviations of the other package within 0.026 deg and its scorer outputs exactly. Bearings disagree under the frozen rule: Lothal's dock is +0.19 +- 0.30 deg on Sentinel-2 against -1.88 +- 0.30 deg on Esri imagery (z = 4.9 on stated errors, about 1.5 on the runway-calibrated error); Dholavira agrees. Open 10 m imagery could not measure Mohenjo-daro, Harappa or Sutkagen-dor. Dates disagree under the frozen rule (5 of 7 towns), through the Chanhu-daro and Dholavira castle source choices. The plan-based secondary analysis fails P0 on our plan readings too, but its correlation reverses sign (r = -0.36 against +0.46) because Rangpur lies near the 45 deg fold.",
+  "challenge": "A duplicate study was already running, so the package became a verification; the shared C: drive filled during acquisition; open imagery resolves walls only when several hundred metres long; no plan states true north; a strict dating rule leaves major towns undated; measurers sharing one imagery source and one tool agree more closely than they are accurate.",
+  "remedy": "Read only the other package's protocol, town list and star file before its report; froze protocol, dates and all blind outputs in sequence; freed our own intermediate files and resumed acquisition under free-space rules; validated the imagery tool on seven runways with segment lengths of 100-400 m; kept strict and liberal date tables; split measurers into regional shares; preserved superseded comparison outputs and recorded each fix.",
+  "evidence": [
+    "experiments/2026-10-21-town-orientations-verification/REPORT.md",
+    "experiments/2026-10-21-town-orientations-verification/PROTOCOL.md",
+    "experiments/2026-10-21-town-orientations-verification/PROTOCOL.sha256",
+    "experiments/2026-10-21-town-orientations-verification/MEASUREMENT-RULES.md",
+    "experiments/2026-10-21-town-orientations-verification/READ-LOG.json",
+    "experiments/2026-10-21-town-orientations-verification/BLIND-FREEZE.sha256",
+    "experiments/2026-10-21-town-orientations-verification/dates-v1/DATES.sha256",
+    "experiments/2026-10-21-town-orientations-verification/table-v1/town-values.json",
+    "experiments/2026-10-21-town-orientations-verification/agreement-v1/plan-agreement.json",
+    "experiments/2026-10-21-town-orientations-verification/comparison-v3/comparison.json",
+    "experiments/2026-10-21-town-orientations-verification/comparison-v3/dates-matched.json",
+    "experiments/2026-10-21-town-orientations-verification/astro-v1/validation-v1.json",
+    "experiments/2026-10-21-town-orientations-verification/infra-v1/validation-v1/summary.json",
+    "experiments/2026-10-21-town-orientations-verification/shots-synthetic-v2.json",
+    "experiments/2026-10-21-town-orientations-verification/RETROSPECTIVE.md",
+    "experiments/2026-10-21-town-orientations-verification/RETROSPECTIVE-CODEX.md",
+    "experiments/2026-10-21-town-orientations-verification/DATA-UPDATE.md"
+  ],
+  "retry_when": "A true-north bearing exists for the Lothal dock and Dholavira's walls (ground or drone survey, plans registered to surveyed control points, or openly licensed sub-metre imagery registered to Sentinel-2), or open imagery of comparable resolution covers Mohenjo-daro and Harappa. Re-measuring with 10 m imagery or with plans of unstated north does not justify a retry.",
+  "verification_tier": "submitted",
+  "verifies": "experiments/2026-10-21-town-axes/",
+  "related_cards": ["Q-1032", "C-0015", "C-0016"]
+}

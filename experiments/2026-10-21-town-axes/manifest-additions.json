@@ -1,0 +1,262 @@
+{
+  "schema_version": "1.0",
+  "proposed_for": "data/MANIFEST.json",
+  "proposed_by": "TOWN-AXES-2026-10-21",
+  "sources": [
+    {
+      "id": "town-axes-table-2026-10-21",
+      "title": "Settlement-axis table: axis bearings, horizons and layout dates of Harappan towns (town-axes package, 21 October 2026)",
+      "kind": "project-derivative",
+      "status": "project-output",
+      "location": "tracked",
+      "local_paths": [
+        "experiments/2026-10-21-town-axes/table-v1/",
+        "experiments/2026-10-21-town-axes/dates-v1/",
+        "experiments/2026-10-21-town-axes/horizon-v1/",
+        "experiments/2026-10-21-town-axes/measure-img-A/towns/",
+        "experiments/2026-10-21-town-axes/measure-img-B/towns/",
+        "experiments/2026-10-21-town-axes/measure-plan-A/towns/",
+        "experiments/2026-10-21-town-axes/measure-plan-B/towns/",
+        "experiments/2026-10-21-town-axes/dating-v1/towns/"
+      ],
+      "size": {
+        "towns": 29,
+        "with_coordinates_and_horizon": 21,
+        "with_measured_lines": 14,
+        "with_two_true_north_imagery_values": 4,
+        "with_one_true_north_imagery_value": 1,
+        "with_plan_measurements": 13,
+        "with_layout_date": 11,
+        "radiocarbon_entries": 382,
+        "measured_structures": {
+          "img-A": 40,
+          "img-B": 127,
+          "plan-A": 150,
+          "plan-B": 212
+        }
+      },
+      "identifiers": [
+        "town slug (towns-v1.json)",
+        "system id per measurer",
+        "plan citation with figure or plate and page",
+        "radiocarbon laboratory number"
+      ],
+      "metadata_fields": [
+        "site latitude and longitude",
+        "line bearing and deviation from cardinal with one-sigma error and length",
+        "system deviation, standard error, spread and total length",
+        "part of town",
+        "north reference of each plan (true, magnetic, grid, unspecified) and survey year",
+        "IGRF declination for dated magnetic plans",
+        "apparent horizon altitude every 0.1 degree over azimuths 45-135 and 225-315",
+        "layout phase per part with excavator's range and basis",
+        "radiocarbon determinations with printed and 5568-year ages",
+        "layout start, evidence tier and date error",
+        "first-occupation range"
+      ],
+      "rights": {
+        "status": "own-work",
+        "licence": "CC0-1.0",
+        "detail": "Bearings, coordinates, horizon altitudes and dates are our observations and compilations. Imagery, plans, DEM tiles and downloaded publications stay local-only; the measurement files record their URLs and hashes."
+      },
+      "fetch": {
+        "method": "rebuild",
+        "steps": [
+          "See experiments/2026-10-21-town-axes/README.md, Reproduction"
+        ]
+      },
+      "questions": [
+        "Q-1032",
+        "Q-1021"
+      ],
+      "hashes": {
+        "experiments/2026-10-21-town-axes/table-v1/settlement-axes.json": "21b7eed4b5cc0460ef1a372b58160253f7fb57ddd702b3c2369d6e7d7c323faf",
+        "experiments/2026-10-21-town-axes/table-v1/settlement-axes.csv": "0e8eaf33c8004e8b515f1dce2bdc996ef0e373e345208f0ca5df142709b5a549",
+        "experiments/2026-10-21-town-axes/dates-v1/dates.json": "4c4b23ba04752873f4e784f4d7088bb78edd8e7998159db3e98725ed747413b0",
+        "experiments/2026-10-21-town-axes/horizon-v1/horizons.json": "aa65a631daa5a60d329160b7a2a02017126a87a0f5bb1f9007c331ffd9d01b06"
+      }
+    },
+    {
+      "id": "esri-world-imagery-town-axes",
+      "title": "Esri World Imagery tile service, zoom 18 mosaics of Harappan sites (Source: Esri, Vantor, Earthstar Geographics, and the GIS User Community)",
+      "kind": "satellite-imagery",
+      "status": "partly-held",
+      "location": "local-only",
+      "local_paths": [
+        "data/raw/2026-10-21-town-axes/img-A/",
+        "data/raw/2026-10-21-town-axes/img-B/"
+      ],
+      "size": {
+        "megabytes": 309
+      },
+      "fetch": {
+        "method": "manual",
+        "steps": [
+          "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}; tile ranges and mosaic SHA-256 in each measurer's sources.json and town files"
+        ]
+      },
+      "rights": {
+        "status": "rights-unverified",
+        "licence": null,
+        "detail": "Esri terms of use; mosaics not redistributed; measured bearings are our observations"
+      },
+      "evidence": [
+        "experiments/2026-10-21-town-axes/measure-img-A/sources.json",
+        "experiments/2026-10-21-town-axes/measure-img-B/sources.json"
+      ],
+      "hashes": {}
+    },
+    {
+      "id": "copernicus-dem-glo30-glo90",
+      "title": "Copernicus DEM GLO-30 and GLO-90 (AWS open data buckets copernicus-dem-30m and copernicus-dem-90m)",
+      "kind": "elevation-model",
+      "status": "not-held",
+      "location": "external",
+      "local_paths": [],
+      "fetch": {
+        "method": "url",
+        "steps": [
+          "Tiles were read into memory, not stored; each tile URL, size and SHA-256 is listed in experiments/2026-10-21-town-axes/horizon-v1/horizons.json under dem_tiles"
+        ]
+      },
+      "rights": {
+        "status": "rights-unverified",
+        "licence": null,
+        "detail": "Copernicus DEM, (c) DLR e.V. 2010-2014 and (c) Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; derived horizon altitudes tracked"
+      },
+      "evidence": [
+        "experiments/2026-10-21-town-axes/horizon-v1/horizons.json"
+      ],
+      "hashes": {}
+    },
+    {
+      "id": "simbad-star-astrometry-town-axes",
+      "title": "SIMBAD astrometry for Alcyone, Aldebaran, Procyon and Thuban (Hipparcos new reduction, van Leeuwen 2007; Gaia DR3 for Thuban)",
+      "kind": "catalogue-extract",
+      "status": "held",
+      "location": "tracked",
+      "local_paths": [
+        "experiments/2026-10-21-town-axes/stars-v1.json",
+        "data/raw/2026-10-21-town-axes/coordinator/simbad-stars.json"
+      ],
+      "rights": {
+        "status": "open-with-acknowledgement",
+        "licence": null,
+        "detail": "This research has made use of the SIMBAD database, CDS, Strasbourg Astronomical Observatory, France."
+      },
+      "fetch": {
+        "method": "url",
+        "steps": [
+          "SIMBAD TAP sync query recorded in experiments/2026-10-21-town-axes/stars-v1.json"
+        ]
+      },
+      "hashes": {
+        "experiments/2026-10-21-town-axes/stars-v1.json": "44799a5ba53cda628e5298de3dbc24cda762fa2cfca575adedf9fa19d34177bf",
+        "data/raw/2026-10-21-town-axes/coordinator/simbad-stars.json": "88e281a34ac0142e0b1857f6d4f4ba52b241fa96399bd34759ee7d8e6cc4ae74"
+      }
+    },
+    {
+      "id": "intcal20",
+      "title": "IntCal20 Northern Hemisphere radiocarbon calibration curve (Reimer et al. 2020, Radiocarbon 62: 725-757)",
+      "kind": "reference-curve",
+      "status": "held",
+      "location": "local-only",
+      "local_paths": [
+        "data/raw/2026-10-21-town-axes/coordinator/intcal20.14c"
+      ],
+      "fetch": {
+        "method": "url",
+        "steps": [
+          "https://intcal.org/curves/intcal20.14c"
+        ]
+      },
+      "rights": {
+        "status": "rights-unverified",
+        "licence": null
+      },
+      "hashes": {
+        "data/raw/2026-10-21-town-axes/coordinator/intcal20.14c": "974a66649f2ac8a53e6c99e256b019ac6982f999b12dcf7193162d4c1c09168e"
+      }
+    },
+    {
+      "id": "town-axes-plan-sources",
+      "title": "Published site plans of Harappan towns downloaded for the town-axes measurements (Marshall 1931 and Mackay 1938 plate volumes, IAR 1955-2001, MASI 78 and 87, Wheeler 1947, Possehl and Raval 1989, Kharakwal et al., Dholavira World Heritage dossier and others)",
+      "kind": "excavation-reports",
+      "status": "partly-held",
+      "location": "local-only",
+      "local_paths": [
+        "data/raw/2026-10-21-town-axes/plan-A/",
+        "data/raw/2026-10-21-town-axes/plan-B/"
+      ],
+      "size": {
+        "megabytes": 865,
+        "plan_B_sources": 25
+      },
+      "fetch": {
+        "method": "manual",
+        "steps": [
+          "URLs, retrieval times and SHA-256 in experiments/2026-10-21-town-axes/measure-plan-B/sources.json and data/raw/2026-10-21-town-axes/plan-B/downloads.json"
+        ]
+      },
+      "rights": {
+        "status": "rights-unverified",
+        "licence": null
+      },
+      "evidence": [
+        "experiments/2026-10-21-town-axes/measure-plan-B/sources.json"
+      ],
+      "hashes": {}
+    },
+    {
+      "id": "town-axes-dating-sources",
+      "title": "Sources of the layout-phase dating records: Radiocarbon date lists (TF, PRL, BS, Penn), Ramachandran 1975, Mandal 1972, excavation memoirs and journal papers",
+      "kind": "literature-set",
+      "status": "partly-held",
+      "location": "local-only",
+      "local_paths": [
+        "data/raw/2026-10-21-town-axes/dating/"
+      ],
+      "size": {
+        "megabytes": 2009,
+        "sources": 199
+      },
+      "fetch": {
+        "method": "manual",
+        "steps": [
+          "acquisitions.jsonl in each subdirectory of data/raw/2026-10-21-town-axes/dating/; source list in experiments/2026-10-21-town-axes/dating-v1/sources.json"
+        ]
+      },
+      "rights": {
+        "status": "rights-unverified",
+        "licence": null
+      },
+      "evidence": [
+        "experiments/2026-10-21-town-axes/dating-v1/sources.json"
+      ],
+      "hashes": {}
+    },
+    {
+      "id": "vahia-menon-2013-dholavira",
+      "title": "Vahia and Menon 2013, A possible Harappan Astronomical Observatory at Dholavira, Journal of Astronomical History and Heritage 16 (arXiv:1310.6474)",
+      "kind": "article",
+      "status": "held",
+      "location": "local-only",
+      "local_paths": [
+        "data/raw/2026-10-21-town-axes/coordinator/vahia2013/arxiv-1310.6474.pdf"
+      ],
+      "fetch": {
+        "method": "url",
+        "steps": [
+          "https://arxiv.org/pdf/1310.6474"
+        ]
+      },
+      "rights": {
+        "status": "rights-unverified",
+        "licence": null
+      },
+      "hashes": {
+        "data/raw/2026-10-21-town-axes/coordinator/vahia2013/arxiv-1310.6474.pdf": "60239fdbcb7275a79cc7d0557c738b8fbd7e367c55a045bad76f3b3a7e926735"
+      }
+    }
+  ]
+}

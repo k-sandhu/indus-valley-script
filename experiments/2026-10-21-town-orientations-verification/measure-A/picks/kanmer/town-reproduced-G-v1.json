@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "slug": "kanmer",
+  "measurer": "A",
+  "authors": [
+    {
+      "model": "GPT-6",
+      "harness": "Codex API"
+    }
+  ],
+  "located_point": {
+    "latitude": 23.41777777777778,
+    "longitude": 70.86333333333333,
+    "method": "Examined indexed archaeological coordinate from the 2020 site description and two scales of composite; the mound cannot be securely distinguished from the settlement and pale bare-ground patches."
+  },
+  "sources": [
+    {
+      "id": "imagery",
+      "kind": "imagery",
+      "scene_ids": [
+        "S2A_42QXL_20240409_0_L2A",
+        "S2B_42QXL_20180317_2_L2A",
+        "S2B_42QXL_20201111_1_L2A"
+      ],
+      "scene_datetimes": [
+        "2024-04-09T06:02:45.434000Z",
+        "2018-03-17T06:02:38.441000Z",
+        "2020-11-11T06:02:46.845000Z"
+      ],
+      "manifest_path": "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\infra-v1\\imagery-manifest-v1.json",
+      "composite": {
+        "path": "data/raw/2026-10-21-town-orientations-verification/infra/imagery/kanmer/offline-recovery-v1/median-composite.tif",
+        "url": "https://earth-search.aws.element84.com/v1",
+        "retrieved_utc": "2026-10-21T05:07:57.540915Z",
+        "bytes": 4331457,
+        "sha256": "8f10329cf0586463fb95568a3388331980eda2670ed71d81e36bdde6c05329b6",
+        "format": "tif",
+        "rights_status": "explicit-license",
+        "rights_notice": "Copernicus Sentinel data terms; Contains modified Copernicus Sentinel data 2018–2026",
+        "transformation": "Offline recovery from verified held scenes; median per band; brightness mean of first four bands",
+        "parents": [
+          "744d46816c8fbf336f7e9345fe0bc06cea62be2f6fd86d8aeb0878bdbfe46ca3",
+          "239368673624411a66fe9f96e25a4ac99dda6f39ae04ccd74f0dcb9c46423193",
+          "1f35209dbfbd2ffff90a4d0fc9cc6f186e26e13fcf9634801d9ee53e424cd625"
+        ],
+        "pixel_median_verified": true
+      },
+      "assessment": "No identifiable ancient straight feature resolved. Roads, plot boundaries and settlement surfaces dominate the crop; none is tied securely to Fig.5."
+    },
+    {
+      "id": "kanmer-01",
+      "kind": "plan",
+      "citation": {
+        "authors": [
+          "J. S. Kharakwal",
+          "Y. S. Rawat",
+          "T. Osada",
+          "L. C. Patel",
+          "Hanmukh Seth",
+          "Rajesh Meena",
+          "S. Meena",
+          "K. P. Singh",
+          "A. Hussain"
+        ],
+        "year": 2011,
+        "title": "Kanmer: A Multicultural Site in Kachchh, Gujarat, India",
+        "container": "Changing Perceptions of Japan in South Asia in the New Asian Era: The State of Japanese Studies in India and other SAARC Countries",
+        "editor": "Takao Uno",
+        "pages": "355–376",
+        "publisher": "International Research Center for Japanese Studies, Kyoto",
+        "identity_status": "Title and authors checked on PDF page 1; container/year from bibliographic search; institutional record returned HTTP 429"
+      },
+      "pdf_page": 6,
+      "printed_page": "360",
+      "figure": "Fig. 5",
+      "source_record": {
+        "path": "data/raw/2026-10-21-town-orientations-verification/infra/plans/kanmer/kharakwal/source.pdf",
+        "url": "https://nichibun.repo.nii.ac.jp/record/1259/files/symp_016__357__355_376__357_378.pdf",
+        "retrieved_utc": "2026-10-21T04:18:21.378610Z",
+        "bytes": 2749765,
+        "sha256": "bac2021f4abebafe89757bfe4fa4d571401ea544e1ba5dbdba7289f5bfded435",
+        "format": "pdf",
+        "rights_status": "rights-unverified",
+        "rights_notice": "No explicit reuse licence observed"
+      },
+      "assessment": "Fig.5 has a north arrow and a printed SCALE=2CM=5M statement, but no scale bar. The graph-paper grid interval in metres is not stated in the inspected text. The embedded reproduction has been resized; using centimetres of this PDF would assume the original scale survived. We retain candidate endpoints but do not assign metres."
+    }
+  ],
+  "lines": [],
+  "registrations": [],
+  "notes": "Kanmer is not measurable under the full metric record requirements from the inspected sources. An N arrow alone would be unspecified; exact survey year unknown. The source paragraph above Fig.5 says houses were made at cardinal direction with the fort wall; encountered incidentally and not used. We found no numeric orientation figure. A text extraction failed under cp1252; repeated with -X utf8. No registration.",
+  "unmeasurable_reason": "No securely identified image feature; plan lacks a verified metric calibration for its resized grid.",
+  "imagery_assessment": "No identifiable ancient straight feature resolved. Roads, plot boundaries and settlement surfaces dominate the crop; none is tied securely to Fig.5.",
+  "plan_assessment": "Fig.5 has a north arrow and a printed SCALE=2CM=5M statement, but no scale bar. The graph-paper grid interval in metres is not stated in the inspected text. The embedded reproduction has been resized; using centimetres of this PDF would assume the original scale survived. We retain candidate endpoints but do not assign metres.",
+  "empirical_error_calibration": {
+    "source": "infra-v1/validation-v1/summary.json",
+    "segment_rms_deg": {
+      "100m": 4.272758,
+      "200m": 1.764927,
+      "300m": 0.988215,
+      "400m": 0.746483
+    },
+    "sigma_policy": "Tool sigma retained unchanged; calibration is separate."
+  },
+  "created_utc": "2026-10-21T06:27:32.703328Z",
+  "systems": [],
+  "main_system_by_source": {}
+}

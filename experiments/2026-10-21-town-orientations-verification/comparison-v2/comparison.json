@@ -1,0 +1,1945 @@
+{
+ "schema_version": "1.0",
+ "task": "town-axes-comparison",
+ "synthetic": false,
+ "provenance": {
+  "inputs": {
+   "experiments\\2026-10-21-town-axes\\REPORT.md": "5e9143e67e76797bfcd58000f13059566f61778417077fca2596fa5013bf6461",
+   "experiments\\2026-10-21-town-axes\\table-v1\\settlement-axes.csv": "0e8eaf33c8004e8b515f1dce2bdc996ef0e373e345208f0ca5df142709b5a549",
+   "experiments\\2026-10-21-town-axes\\dates-v1\\dates.json": "4c4b23ba04752873f4e784f4d7088bb78edd8e7998159db3e98725ed747413b0",
+   "experiments\\2026-10-21-town-axes\\discovery-v1\\choice.json": "73fc7bda79596df058f2b20e37a8e75e76c81d5e7f9a346df487197bdabca7f4",
+   "experiments\\2026-10-21-town-axes\\confirmation-v1\\results.json": "e4b5feed2d0e41f370e12869116fe86aeb44c23d4061d325706c51a90371c038",
+   "experiments\\2026-10-21-town-axes\\exploratory-v1\\table.json": "a0793fd3714b67b8d1f1a1ddecb99d191b9dd8eddc21072a406736c8c75284d8",
+   "experiments\\2026-10-21-town-axes\\exploratory-v1\\choice.json": "b36af9daaa59fb1b7b7996996091a06c8fc578dd57dd821b949c4ac7f295a497",
+   "experiments\\2026-10-21-town-axes\\exploratory-v1\\results.json": "af6a28129e268a0bbcd42fce270206977baa94bfb2ebad76c8b2e009a8bbfeb3",
+   "experiments\\2026-10-21-town-orientations-verification\\table-v1\\town-values.json": "6e424dd0072da6a2dbd1aaaacf640fe2ef3bf31ca0d635ee6c85425f541be720",
+   "experiments\\2026-10-21-town-orientations-verification\\dates-v1\\dates-strict-v1.csv": "8fc96c60278961ad5c6c2abd1307b87195506ffadba39ab1397054d5ef483f13",
+   "experiments\\2026-10-21-town-orientations-verification\\dates-v1\\dates-liberal-v1.csv": "1f4de1e3151a2aa975cb2733b1714fb3b3615285c16a0479da58970e460500c0"
+  },
+  "code": {
+   "coordinator\\compare_town_axes.py": "0a03f4c9ddec882926ef955a9eee20ace323a2243cbc39451908da015f1de46c",
+   "analysis\\score_frozen.py": "213d97be6bb16a4c7b1adb918b5381f51839d009da386969a2af21d9b962c8ae",
+   "astronomy\\predict.py": "f9ad100d255dc91001f27a59d5f4bc44e48cf5801efef3eb1287fd437f0bf128",
+   "astronomy\\core.py": "072888c9fafba99dc772127b59eb6b6fba9c17a6768585b5307d4e656d3f577d",
+   "astronomy\\horizon.py": "6d2dc4898a1212111b0d88cfab8ab1ed734ed208f9bfd194cbf591a33d7a446b"
+  }
+ },
+ "bearings": {
+  "rows": [
+   {
+    "slug": "dholavira",
+    "ours": -3.542671273123612,
+    "sigma_ours": 0.5243997973166105,
+    "our_part": [
+     "middle town (south side, on the ceremonial ground)",
+     "middle town and lower town"
+    ],
+    "theirs": -5.5,
+    "sigma_theirs": 1.5,
+    "their_part": "castle (citadel)",
+    "their_img_A": "-5.2",
+    "their_img_B": "-8.2",
+    "delta": 1.957328726876388,
+    "z": 1.2317809866713632,
+    "same_part": false
+   },
+   {
+    "slug": "lothal",
+    "ours": 0.18710154596922302,
+    "sigma_ours": 0.3,
+    "our_part": [
+     "brick-lined reservoir",
+     "dock (brick-lined basin east of the town)"
+    ],
+    "theirs": -1.8823,
+    "sigma_theirs": 0.3,
+    "their_part": "dockyard (brick basin east of the town)",
+    "their_img_A": "-1.86",
+    "their_img_B": "-1.94",
+    "delta": 2.069401545969223,
+    "z": 4.877626220509209,
+    "same_part": true
+   }
+  ],
+  "weighted_mean_delta": 2.061943821893116,
+  "weighted_mean_se": 0.4099050617626561,
+  "fraction_abs_z_le_2_5": 0.5,
+  "verdict": "disagree"
+ },
+ "astronomy": {
+  "rows": [
+   {
+    "source": "discovery-v1/choice.json",
+    "town": "harappa",
+    "target": "alcyone",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449.0,
+    "theirs": 0.6157,
+    "ours": 0.6157219345828366,
+    "delta": 2.1934582836613536e-05
+   },
+   {
+    "source": "discovery-v1/choice.json",
+    "town": "mohenjo-daro",
+    "target": "alcyone",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799.0,
+    "theirs": -1.3875,
+    "ours": -1.3874975140371362,
+    "delta": 2.4859628637852182e-06
+   },
+   {
+    "source": "discovery-v1/choice.json",
+    "town": "harappa",
+    "target": "aldebaran",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449.0,
+    "theirs": -3.4676,
+    "ours": -3.4675983132036663,
+    "delta": 1.6867963337219294e-06
+   },
+   {
+    "source": "discovery-v1/choice.json",
+    "town": "mohenjo-daro",
+    "target": "aldebaran",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799.0,
+    "theirs": -5.4441,
+    "ours": -5.444073619034725,
+    "delta": 2.6380965274519497e-05
+   },
+   {
+    "source": "discovery-v1/choice.json",
+    "town": "harappa",
+    "target": "procyon",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449.0,
+    "theirs": 4.4956,
+    "ours": 4.495551019612321,
+    "delta": -4.898038767819912e-05
+   },
+   {
+    "source": "discovery-v1/choice.json",
+    "town": "mohenjo-daro",
+    "target": "procyon",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799.0,
+    "theirs": 3.2668,
+    "ours": 3.266818450348296,
+    "delta": 1.845034829628389e-05
+   },
+   {
+    "source": "discovery-v1/choice.json",
+    "town": "harappa",
+    "target": "equinox_set",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449.0,
+    "theirs": 0.6126,
+    "ours": 0.6125815817618445,
+    "delta": -1.8418238155515354e-05
+   },
+   {
+    "source": "discovery-v1/choice.json",
+    "town": "mohenjo-daro",
+    "target": "equinox_set",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799.0,
+    "theirs": 0.1691,
+    "ours": 0.17035890197325898,
+    "delta": 0.0012589019732589801
+   },
+   {
+    "source": "discovery-v1/choice.json",
+    "town": "harappa",
+    "target": "equinox_rise",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449.0,
+    "theirs": -0.577,
+    "ours": -0.5764148804823606,
+    "delta": 0.0005851195176393986
+   },
+   {
+    "source": "discovery-v1/choice.json",
+    "town": "mohenjo-daro",
+    "target": "equinox_rise",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799.0,
+    "theirs": -0.466,
+    "ours": -0.4633580628979388,
+    "delta": 0.0026419371020612314
+   },
+   {
+    "source": "discovery-v1/choice.json",
+    "town": "harappa",
+    "target": "june_set",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449.0,
+    "theirs": 28.8615,
+    "ours": 28.86444913930268,
+    "delta": 0.002949139302678816
+   },
+   {
+    "source": "discovery-v1/choice.json",
+    "town": "mohenjo-daro",
+    "target": "june_set",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799.0,
+    "theirs": 27.3811,
+    "ours": 27.380356868590184,
+    "delta": -0.0007431314098163
+   },
+   {
+    "source": "discovery-v1/choice.json",
+    "town": "harappa",
+    "target": "june_rise",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449.0,
+    "theirs": -28.8494,
+    "ours": -28.847149199597347,
+    "delta": 0.002250800402652686
+   },
+   {
+    "source": "discovery-v1/choice.json",
+    "town": "mohenjo-daro",
+    "target": "june_rise",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799.0,
+    "theirs": -27.7682,
+    "ours": -27.770687923004438,
+    "delta": -0.0024879230044376754
+   },
+   {
+    "source": "discovery-v1/choice.json",
+    "town": "harappa",
+    "target": "december_set",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449.0,
+    "theirs": -27.5036,
+    "ours": -27.505486150399094,
+    "delta": -0.001886150399094788
+   },
+   {
+    "source": "discovery-v1/choice.json",
+    "town": "mohenjo-daro",
+    "target": "december_set",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799.0,
+    "theirs": -26.8703,
+    "ours": -26.896686051585334,
+    "delta": -0.026386051585333803
+   },
+   {
+    "source": "discovery-v1/choice.json",
+    "town": "harappa",
+    "target": "december_rise",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449.0,
+    "theirs": 27.5102,
+    "ours": 27.51177510397146,
+    "delta": 0.0015751039714579917
+   },
+   {
+    "source": "discovery-v1/choice.json",
+    "town": "mohenjo-daro",
+    "target": "december_rise",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799.0,
+    "theirs": 26.7245,
+    "ours": 26.72444078470822,
+    "delta": -5.921529177754792e-05
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "harappa",
+    "target": "alcyone",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449,
+    "theirs": 0.6157,
+    "ours": 0.6157219345828366,
+    "delta": 2.1934582836613536e-05
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "kalibangan",
+    "target": "alcyone",
+    "lat": 29.47368,
+    "lon": 74.13045,
+    "D_year": -2599,
+    "theirs": -0.2804,
+    "ours": -0.2804231355406728,
+    "delta": -2.3135540672791777e-05
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "mohenjo-daro",
+    "target": "alcyone",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799,
+    "theirs": -1.3875,
+    "ours": -1.3874975140371362,
+    "delta": 2.4859628637852182e-06
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "harappa",
+    "target": "aldebaran",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449,
+    "theirs": -3.4676,
+    "ours": -3.4675983132036663,
+    "delta": 1.6867963337219294e-06
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "kalibangan",
+    "target": "aldebaran",
+    "lat": 29.47368,
+    "lon": 74.13045,
+    "D_year": -2599,
+    "theirs": -4.3456,
+    "ours": -4.345615082726852,
+    "delta": -1.5082726851467498e-05
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "mohenjo-daro",
+    "target": "aldebaran",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799,
+    "theirs": -5.4441,
+    "ours": -5.444073619034725,
+    "delta": 2.6380965274519497e-05
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "harappa",
+    "target": "procyon",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449,
+    "theirs": 4.4956,
+    "ours": 4.495551019612321,
+    "delta": -4.898038767819912e-05
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "kalibangan",
+    "target": "procyon",
+    "lat": 29.47368,
+    "lon": 74.13045,
+    "D_year": -2599,
+    "theirs": 3.9778,
+    "ours": 3.977765066331415,
+    "delta": -3.493366858497993e-05
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "mohenjo-daro",
+    "target": "procyon",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799,
+    "theirs": 3.2668,
+    "ours": 3.266818450348296,
+    "delta": 1.845034829628389e-05
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "harappa",
+    "target": "equinox_set",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449,
+    "theirs": 0.6126,
+    "ours": 0.6125815817618445,
+    "delta": -1.8418238155515354e-05
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "kalibangan",
+    "target": "equinox_set",
+    "lat": 29.47368,
+    "lon": 74.13045,
+    "D_year": -2599,
+    "theirs": 0.5486,
+    "ours": 0.5483762242229204,
+    "delta": -0.000223775777079549
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "mohenjo-daro",
+    "target": "equinox_set",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799,
+    "theirs": 0.1691,
+    "ours": 0.17035890197325898,
+    "delta": 0.0012589019732589801
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "harappa",
+    "target": "equinox_rise",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449,
+    "theirs": -0.577,
+    "ours": -0.5764148804823606,
+    "delta": 0.0005851195176393986
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "kalibangan",
+    "target": "equinox_rise",
+    "lat": 29.47368,
+    "lon": 74.13045,
+    "D_year": -2599,
+    "theirs": -0.5005,
+    "ours": -0.49743203418211124,
+    "delta": 0.003067965817888707
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "mohenjo-daro",
+    "target": "equinox_rise",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799,
+    "theirs": -0.466,
+    "ours": -0.4633580628979388,
+    "delta": 0.0026419371020612314
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "harappa",
+    "target": "june_set",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449,
+    "theirs": 28.8615,
+    "ours": 28.86444913930268,
+    "delta": 0.002949139302678816
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "kalibangan",
+    "target": "june_set",
+    "lat": 29.47368,
+    "lon": 74.13045,
+    "D_year": -2599,
+    "theirs": 28.4518,
+    "ours": 28.454294013077458,
+    "delta": 0.002494013077459556
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "mohenjo-daro",
+    "target": "june_set",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799,
+    "theirs": 27.3811,
+    "ours": 27.380356868590184,
+    "delta": -0.0007431314098163
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "harappa",
+    "target": "june_rise",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449,
+    "theirs": -28.8494,
+    "ours": -28.847149199597347,
+    "delta": 0.002250800402652686
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "kalibangan",
+    "target": "june_rise",
+    "lat": 29.47368,
+    "lon": 74.13045,
+    "D_year": -2599,
+    "theirs": -28.4333,
+    "ours": -28.43391787519871,
+    "delta": -0.0006178751987100384
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "mohenjo-daro",
+    "target": "june_rise",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799,
+    "theirs": -27.7682,
+    "ours": -27.770687923004438,
+    "delta": -0.0024879230044376754
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "harappa",
+    "target": "december_set",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449,
+    "theirs": -27.5036,
+    "ours": -27.505486150399094,
+    "delta": -0.001886150399094788
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "kalibangan",
+    "target": "december_set",
+    "lat": 29.47368,
+    "lon": 74.13045,
+    "D_year": -2599,
+    "theirs": -27.2253,
+    "ours": -27.227785149706136,
+    "delta": -0.0024851497061355587
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "mohenjo-daro",
+    "target": "december_set",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799,
+    "theirs": -26.8703,
+    "ours": -26.896686051585334,
+    "delta": -0.026386051585333803
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "harappa",
+    "target": "december_rise",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449,
+    "theirs": 27.5102,
+    "ours": 27.51177510397146,
+    "delta": 0.0015751039714579917
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "kalibangan",
+    "target": "december_rise",
+    "lat": 29.47368,
+    "lon": 74.13045,
+    "D_year": -2599,
+    "theirs": 27.2469,
+    "ours": 27.24930154112529,
+    "delta": 0.002401541125291118
+   },
+   {
+    "source": "exploratory-v1/choice.json",
+    "town": "mohenjo-daro",
+    "target": "december_rise",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799,
+    "theirs": 26.7245,
+    "ours": 26.72444078470822,
+    "delta": -5.921529177754792e-05
+   },
+   {
+    "source": "confirmation-v1/results.json#P1_pleiades",
+    "town": "dholavira",
+    "target": "alcyone",
+    "lat": 23.8869,
+    "lon": 70.2133,
+    "D_year": -2999.0,
+    "theirs": -2.3262,
+    "ours": -2.3262219091961924,
+    "delta": -2.1909196192382296e-05
+   },
+   {
+    "source": "confirmation-v1/results.json#P1_pleiades",
+    "town": "harappa",
+    "target": "alcyone",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449.0,
+    "theirs": 0.6157,
+    "ours": 0.6157219345828366,
+    "delta": 2.1934582836613536e-05
+   },
+   {
+    "source": "confirmation-v1/results.json#P1_pleiades",
+    "town": "lothal",
+    "target": "alcyone",
+    "lat": 22.5225,
+    "lon": 72.2493,
+    "D_year": -2349.0,
+    "theirs": 1.7647,
+    "ours": 1.7647093193103842,
+    "delta": 9.319310384281465e-06
+   },
+   {
+    "source": "confirmation-v1/results.json#P1_pleiades",
+    "town": "mohenjo-daro",
+    "target": "alcyone",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799.0,
+    "theirs": -1.3875,
+    "ours": -1.3874975140371362,
+    "delta": 2.4859628637852182e-06
+   },
+   {
+    "source": "exploratory-v1/results.json#P1_pleiades",
+    "town": "chanhu-daro",
+    "target": "alcyone",
+    "lat": 26.17352,
+    "lon": 68.32302,
+    "D_year": -2999,
+    "theirs": -2.5405,
+    "ours": -2.5404682993777783,
+    "delta": 3.17006222219085e-05
+   },
+   {
+    "source": "exploratory-v1/results.json#P1_pleiades",
+    "town": "dholavira",
+    "target": "alcyone",
+    "lat": 23.8869,
+    "lon": 70.2133,
+    "D_year": -2999,
+    "theirs": -2.3262,
+    "ours": -2.3262219091961924,
+    "delta": -2.1909196192382296e-05
+   },
+   {
+    "source": "exploratory-v1/results.json#P1_pleiades",
+    "town": "farmana",
+    "target": "alcyone",
+    "lat": 29.0667,
+    "lon": 76.5667,
+    "D_year": -2599,
+    "theirs": -0.2493,
+    "ours": -0.24934381439180697,
+    "delta": -4.381439180697888e-05
+   },
+   {
+    "source": "exploratory-v1/results.json#P1_pleiades",
+    "town": "harappa",
+    "target": "alcyone",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449,
+    "theirs": 0.6157,
+    "ours": 0.6157219345828366,
+    "delta": 2.1934582836613536e-05
+   },
+   {
+    "source": "exploratory-v1/results.json#P1_pleiades",
+    "town": "kalibangan",
+    "target": "alcyone",
+    "lat": 29.47368,
+    "lon": 74.13045,
+    "D_year": -2599,
+    "theirs": -0.2804,
+    "ours": -0.2804231355406728,
+    "delta": -2.3135540672791777e-05
+   },
+   {
+    "source": "exploratory-v1/results.json#P1_pleiades",
+    "town": "kanmer",
+    "target": "alcyone",
+    "lat": 23.41783,
+    "lon": 70.86313,
+    "D_year": -2499,
+    "theirs": 0.7855,
+    "ours": 0.7855349144614934,
+    "delta": 3.4914461493396054e-05
+   },
+   {
+    "source": "exploratory-v1/results.json#P1_pleiades",
+    "town": "lothal",
+    "target": "alcyone",
+    "lat": 22.5225,
+    "lon": 72.2493,
+    "D_year": -2349,
+    "theirs": 1.7647,
+    "ours": 1.7647093193103842,
+    "delta": 9.319310384281465e-06
+   },
+   {
+    "source": "exploratory-v1/results.json#P1_pleiades",
+    "town": "mohenjo-daro",
+    "target": "alcyone",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799,
+    "theirs": -1.3875,
+    "ours": -1.3874975140371362,
+    "delta": 2.4859628637852182e-06
+   },
+   {
+    "source": "exploratory-v1/results.json#P1_pleiades",
+    "town": "rangpur",
+    "target": "alcyone",
+    "lat": 22.4333,
+    "lon": 71.9167,
+    "D_year": -1999,
+    "theirs": 3.9108,
+    "ours": 3.91079060285756,
+    "delta": -9.397142440192852e-06
+   },
+   {
+    "source": "exploratory-v1/results.json#P1_pleiades",
+    "town": "rojdi",
+    "target": "alcyone",
+    "lat": 22.2625,
+    "lon": 70.6744,
+    "D_year": -1999,
+    "theirs": 3.9186,
+    "ours": 3.9186155520229136,
+    "delta": 1.555202291347868e-05
+   },
+   {
+    "source": "exploratory-v1/results.json#P1_pleiades",
+    "town": "surkotada",
+    "target": "alcyone",
+    "lat": 23.62827,
+    "lon": 70.84028,
+    "D_year": -2399,
+    "theirs": 1.3886,
+    "ours": 1.388578629812173,
+    "delta": -2.1370187827107756e-05
+   },
+   {
+    "source": "confirmation-v1/results.json#P2_aldebaran",
+    "town": "dholavira",
+    "target": "aldebaran",
+    "lat": 23.8869,
+    "lon": 70.2133,
+    "D_year": -2999.0,
+    "theirs": -6.4014,
+    "ours": -6.401439474244455,
+    "delta": -3.9474244455384166e-05
+   },
+   {
+    "source": "confirmation-v1/results.json#P2_aldebaran",
+    "town": "harappa",
+    "target": "aldebaran",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449.0,
+    "theirs": -3.4676,
+    "ours": -3.4675983132036663,
+    "delta": 1.6867963337219294e-06
+   },
+   {
+    "source": "confirmation-v1/results.json#P2_aldebaran",
+    "town": "lothal",
+    "target": "aldebaran",
+    "lat": 22.5225,
+    "lon": 72.2493,
+    "D_year": -2349.0,
+    "theirs": -2.359,
+    "ours": -2.3589905026954625,
+    "delta": 9.49730453747577e-06
+   },
+   {
+    "source": "confirmation-v1/results.json#P2_aldebaran",
+    "town": "mohenjo-daro",
+    "target": "aldebaran",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799.0,
+    "theirs": -5.4441,
+    "ours": -5.444073619034725,
+    "delta": 2.6380965274519497e-05
+   },
+   {
+    "source": "exploratory-v1/results.json#P2_aldebaran",
+    "town": "chanhu-daro",
+    "target": "aldebaran",
+    "lat": 26.17352,
+    "lon": 68.32302,
+    "D_year": -2999,
+    "theirs": -6.6029,
+    "ours": -6.6029208586284085,
+    "delta": -2.0858628408504387e-05
+   },
+   {
+    "source": "exploratory-v1/results.json#P2_aldebaran",
+    "town": "dholavira",
+    "target": "aldebaran",
+    "lat": 23.8869,
+    "lon": 70.2133,
+    "D_year": -2999,
+    "theirs": -6.4014,
+    "ours": -6.401439474244455,
+    "delta": -3.9474244455384166e-05
+   },
+   {
+    "source": "exploratory-v1/results.json#P2_aldebaran",
+    "town": "farmana",
+    "target": "aldebaran",
+    "lat": 29.0667,
+    "lon": 76.5667,
+    "D_year": -2599,
+    "theirs": -4.3142,
+    "ours": -4.3141986051847425,
+    "delta": 1.3948152570719685e-06
+   },
+   {
+    "source": "exploratory-v1/results.json#P2_aldebaran",
+    "town": "harappa",
+    "target": "aldebaran",
+    "lat": 30.63095,
+    "lon": 72.8623,
+    "D_year": -2449,
+    "theirs": -3.4676,
+    "ours": -3.4675983132036663,
+    "delta": 1.6867963337219294e-06
+   },
+   {
+    "source": "exploratory-v1/results.json#P2_aldebaran",
+    "town": "kalibangan",
+    "target": "aldebaran",
+    "lat": 29.47368,
+    "lon": 74.13045,
+    "D_year": -2599,
+    "theirs": -4.3456,
+    "ours": -4.345615082726852,
+    "delta": -1.5082726851467498e-05
+   },
+   {
+    "source": "exploratory-v1/results.json#P2_aldebaran",
+    "town": "kanmer",
+    "target": "aldebaran",
+    "lat": 23.41783,
+    "lon": 70.86313,
+    "D_year": -2499,
+    "theirs": -3.3108,
+    "ours": -3.3107733744642474,
+    "delta": 2.6625535752611285e-05
+   },
+   {
+    "source": "exploratory-v1/results.json#P2_aldebaran",
+    "town": "lothal",
+    "target": "aldebaran",
+    "lat": 22.5225,
+    "lon": 72.2493,
+    "D_year": -2349,
+    "theirs": -2.359,
+    "ours": -2.3589905026954625,
+    "delta": 9.49730453747577e-06
+   },
+   {
+    "source": "exploratory-v1/results.json#P2_aldebaran",
+    "town": "mohenjo-daro",
+    "target": "aldebaran",
+    "lat": 27.32495,
+    "lon": 68.1343,
+    "D_year": -2799,
+    "theirs": -5.4441,
+    "ours": -5.444073619034725,
+    "delta": 2.6380965274519497e-05
+   },
+   {
+    "source": "exploratory-v1/results.json#P2_aldebaran",
+    "town": "surkotada",
+    "target": "aldebaran",
+    "lat": 23.62827,
+    "lon": 70.84028,
+    "D_year": -2399,
+    "theirs": -2.7184,
+    "ours": -2.7184463945086463,
+    "delta": -4.639450864640793e-05
+   },
+   {
+    "source": "confirmation-v1/results.json#P3",
+    "town": "dholavira",
+    "target": "equinox_set",
+    "lat": 23.8869,
+    "lon": 70.2133,
+    "D_year": -2999.0,
+    "theirs": 0.2956,
+    "ours": 0.2956583257795842,
+    "delta": 5.832577958420071e-05
+   },
+   {
+    "source": "confirmation-v1/results.json#P3",
+    "town": "lothal",
+    "target": "equinox_set",
+    "lat": 22.5225,
+    "lon": 72.2493,
+    "D_year": -2349.0,
+    "theirs": 0.3953,
+    "ours": 0.3952011386909362,
+    "delta": -9.886130906378021e-05
+   },
+   {
+    "source": "exploratory-v1/results.json#P3",
+    "town": "chanhu-daro",
+    "target": "alcyone",
+    "lat": 26.17352,
+    "lon": 68.32302,
+    "D_year": -2999,
+    "theirs": -2.5405,
+    "ours": -2.5404682993777783,
+    "delta": 3.17006222219085e-05
+   },
+   {
+    "source": "exploratory-v1/results.json#P3",
+    "town": "dholavira",
+    "target": "alcyone",
+    "lat": 23.8869,
+    "lon": 70.2133,
+    "D_year": -2999,
+    "theirs": -2.3262,
+    "ours": -2.3262219091961924,
+    "delta": -2.1909196192382296e-05
+   },
+   {
+    "source": "exploratory-v1/results.json#P3",
+    "town": "farmana",
+    "target": "alcyone",
+    "lat": 29.0667,
+    "lon": 76.5667,
+    "D_year": -2599,
+    "theirs": -0.2493,
+    "ours": -0.24934381439180697,
+    "delta": -4.381439180697888e-05
+   },
+   {
+    "source": "exploratory-v1/results.json#P3",
+    "town": "kanmer",
+    "target": "alcyone",
+    "lat": 23.41783,
+    "lon": 70.86313,
+    "D_year": -2499,
+    "theirs": 0.7855,
+    "ours": 0.7855349144614934,
+    "delta": 3.4914461493396054e-05
+   },
+   {
+    "source": "exploratory-v1/results.json#P3",
+    "town": "lothal",
+    "target": "alcyone",
+    "lat": 22.5225,
+    "lon": 72.2493,
+    "D_year": -2349,
+    "theirs": 1.7647,
+    "ours": 1.7647093193103842,
+    "delta": 9.319310384281465e-06
+   },
+   {
+    "source": "exploratory-v1/results.json#P3",
+    "town": "rangpur",
+    "target": "alcyone",
+    "lat": 22.4333,
+    "lon": 71.9167,
+    "D_year": -1999,
+    "theirs": 3.9108,
+    "ours": 3.91079060285756,
+    "delta": -9.397142440192852e-06
+   },
+   {
+    "source": "exploratory-v1/results.json#P3",
+    "town": "rojdi",
+    "target": "alcyone",
+    "lat": 22.2625,
+    "lon": 70.6744,
+    "D_year": -1999,
+    "theirs": 3.9186,
+    "ours": 3.9186155520229136,
+    "delta": 1.555202291347868e-05
+   },
+   {
+    "source": "exploratory-v1/results.json#P3",
+    "town": "surkotada",
+    "target": "alcyone",
+    "lat": 23.62827,
+    "lon": 70.84028,
+    "D_year": -2399,
+    "theirs": 1.3886,
+    "ours": 1.388578629812173,
+    "delta": -2.1370187827107756e-05
+   }
+  ],
+  "max_abs_delta_by_target": {
+   "alcyone": 4.381439180697888e-05,
+   "aldebaran": 4.639450864640793e-05,
+   "procyon": 4.898038767819912e-05,
+   "equinox_set": 0.0012589019732589801,
+   "equinox_rise": 0.003067965817888707,
+   "june_set": 0.002949139302678816,
+   "june_rise": 0.0024879230044376754,
+   "december_set": 0.026386051585333803,
+   "december_rise": 0.002401541125291118
+  },
+  "verdict": "agree"
+ },
+ "dates": [
+  {
+   "variant": "strict",
+   "town": "chanhu-daro",
+   "our_part": "planned settlement",
+   "our_D": -2499.0,
+   "our_sigma": 200.0,
+   "our_level": "3",
+   "their_part": "Mound II: fired-brick town of Mackay's Harappa II occupation",
+   "their_D": -2999,
+   "their_sigma": 200,
+   "their_tier": 3,
+   "delta": 500.0
+  },
+  {
+   "variant": "liberal",
+   "town": "chanhu-daro",
+   "our_part": "planned settlement",
+   "our_D": -2499.0,
+   "our_sigma": 200.0,
+   "our_level": "3",
+   "their_part": "Mound II: fired-brick town of Mackay's Harappa II occupation",
+   "their_D": -2999,
+   "their_sigma": 200,
+   "their_tier": 3,
+   "delta": 500.0
+  },
+  {
+   "variant": "strict",
+   "town": "dholavira",
+   "our_part": "castle",
+   "our_D": -3550.0,
+   "our_sigma": 150.0,
+   "our_level": "2",
+   "their_part": "castle (eastern, higher subdivision of the citadel)",
+   "their_D": -2999,
+   "their_sigma": 200,
+   "their_tier": 3,
+   "delta": -551.0
+  },
+  {
+   "variant": "strict",
+   "town": "dholavira",
+   "our_part": "bailey",
+   "our_D": -2799.0,
+   "our_sigma": 200.0,
+   "our_level": "3",
+   "their_part": "castle (eastern, higher subdivision of the citadel)",
+   "their_D": -2999,
+   "their_sigma": 200,
+   "their_tier": 3,
+   "delta": 200.0
+  },
+  {
+   "variant": "strict",
+   "town": "dholavira",
+   "our_part": "middle town",
+   "our_D": -2799.0,
+   "our_sigma": 200.0,
+   "our_level": "3",
+   "their_part": "castle (eastern, higher subdivision of the citadel)",
+   "their_D": -2999,
+   "their_sigma": 200,
+   "their_tier": 3,
+   "delta": 200.0
+  },
+  {
+   "variant": "liberal",
+   "town": "dholavira",
+   "our_part": "castle",
+   "our_D": -3550.0,
+   "our_sigma": 150.0,
+   "our_level": "2",
+   "their_part": "castle (eastern, higher subdivision of the citadel)",
+   "their_D": -2999,
+   "their_sigma": 200,
+   "their_tier": 3,
+   "delta": -551.0
+  },
+  {
+   "variant": "liberal",
+   "town": "dholavira",
+   "our_part": "bailey",
+   "our_D": -2799.0,
+   "our_sigma": 200.0,
+   "our_level": "3",
+   "their_part": "castle (eastern, higher subdivision of the citadel)",
+   "their_D": -2999,
+   "their_sigma": 200,
+   "their_tier": 3,
+   "delta": 200.0
+  },
+  {
+   "variant": "liberal",
+   "town": "dholavira",
+   "our_part": "middle town",
+   "our_D": -2799.0,
+   "our_sigma": 200.0,
+   "our_level": "3",
+   "their_part": "castle (eastern, higher subdivision of the citadel)",
+   "their_D": -2999,
+   "their_sigma": 200,
+   "their_tier": 3,
+   "delta": 200.0
+  },
+  {
+   "variant": "strict",
+   "town": "farmana",
+   "our_part": "planned settlement",
+   "our_D": -2599.0,
+   "our_sigma": 200.0,
+   "our_level": "3",
+   "their_part": "settlement area (Locality 1 of the main mound)",
+   "their_D": -2599,
+   "their_sigma": 150,
+   "their_tier": 2,
+   "delta": 0.0
+  },
+  {
+   "variant": "liberal",
+   "town": "farmana",
+   "our_part": "planned settlement",
+   "our_D": -2599.0,
+   "our_sigma": 200.0,
+   "our_level": "3",
+   "their_part": "settlement area (Locality 1 of the main mound)",
+   "their_D": -2599,
+   "their_sigma": 150,
+   "their_tier": 2,
+   "delta": 0.0
+  },
+  {
+   "variant": "strict",
+   "town": "harappa",
+   "our_part": "Mound AB",
+   "our_D": -2799.0,
+   "our_sigma": 150.0,
+   "our_level": "2",
+   "their_part": "Mound F: perimeter wall and Great Hall ('granary')",
+   "their_D": -2449,
+   "their_sigma": 150,
+   "their_tier": 2,
+   "delta": -350.0
+  },
+  {
+   "variant": "strict",
+   "town": "harappa",
+   "our_part": "Mound E",
+   "our_D": -2599.0,
+   "our_sigma": 150.0,
+   "our_level": "2",
+   "their_part": "Mound F: perimeter wall and Great Hall ('granary')",
+   "their_D": -2449,
+   "their_sigma": 150,
+   "their_tier": 2,
+   "delta": -150.0
+  },
+  {
+   "variant": "strict",
+   "town": "harappa",
+   "our_part": "Mound F",
+   "our_D": -2449.0,
+   "our_sigma": 150.0,
+   "our_level": "2",
+   "their_part": "Mound F: perimeter wall and Great Hall ('granary')",
+   "their_D": -2449,
+   "their_sigma": 150,
+   "their_tier": 2,
+   "delta": 0.0
+  },
+  {
+   "variant": "strict",
+   "town": "harappa",
+   "our_part": "Mound ET",
+   "our_D": -2449.0,
+   "our_sigma": 150.0,
+   "our_level": "2",
+   "their_part": "Mound F: perimeter wall and Great Hall ('granary')",
+   "their_D": -2449,
+   "their_sigma": 150,
+   "their_tier": 2,
+   "delta": 0.0
+  },
+  {
+   "variant": "liberal",
+   "town": "harappa",
+   "our_part": "Mound AB",
+   "our_D": -2799.0,
+   "our_sigma": 150.0,
+   "our_level": "2",
+   "their_part": "Mound F: perimeter wall and Great Hall ('granary')",
+   "their_D": -2449,
+   "their_sigma": 150,
+   "their_tier": 2,
+   "delta": -350.0
+  },
+  {
+   "variant": "liberal",
+   "town": "harappa",
+   "our_part": "Mound E",
+   "our_D": -2599.0,
+   "our_sigma": 150.0,
+   "our_level": "2",
+   "their_part": "Mound F: perimeter wall and Great Hall ('granary')",
+   "their_D": -2449,
+   "their_sigma": 150,
+   "their_tier": 2,
+   "delta": -150.0
+  },
+  {
+   "variant": "liberal",
+   "town": "harappa",
+   "our_part": "Mound F",
+   "our_D": -2449.0,
+   "our_sigma": 150.0,
+   "our_level": "2",
+   "their_part": "Mound F: perimeter wall and Great Hall ('granary')",
+   "their_D": -2449,
+   "their_sigma": 150,
+   "their_tier": 2,
+   "delta": 0.0
+  },
+  {
+   "variant": "liberal",
+   "town": "harappa",
+   "our_part": "Mound ET",
+   "our_D": -2449.0,
+   "our_sigma": 150.0,
+   "our_level": "2",
+   "their_part": "Mound F: perimeter wall and Great Hall ('granary')",
+   "their_D": -2449,
+   "their_sigma": 150,
+   "their_tier": 2,
+   "delta": 0.0
+  },
+  {
+   "variant": "strict",
+   "town": "kalibangan",
+   "our_part": "citadel: ritual sector",
+   "our_D": -2499.0,
+   "our_sigma": 150.0,
+   "our_level": "2",
+   "their_part": "lower town (KLB-2, eastern mound: walled lower city with street grid)",
+   "their_D": -2599,
+   "their_sigma": 150,
+   "their_tier": 2,
+   "delta": 100.0
+  },
+  {
+   "variant": "strict",
+   "town": "kalibangan",
+   "our_part": "citadel: residential annexe",
+   "our_D": -2499.0,
+   "our_sigma": 150.0,
+   "our_level": "2",
+   "their_part": "lower town (KLB-2, eastern mound: walled lower city with street grid)",
+   "their_D": -2599,
+   "their_sigma": 150,
+   "their_tier": 2,
+   "delta": 100.0
+  },
+  {
+   "variant": "strict",
+   "town": "kalibangan",
+   "our_part": "lower town",
+   "our_D": -2499.0,
+   "our_sigma": 150.0,
+   "our_level": "2",
+   "their_part": "lower town (KLB-2, eastern mound: walled lower city with street grid)",
+   "their_D": -2599,
+   "their_sigma": 150,
+   "their_tier": 2,
+   "delta": 100.0
+  },
+  {
+   "variant": "liberal",
+   "town": "kalibangan",
+   "our_part": "citadel: ritual sector",
+   "our_D": -2499.0,
+   "our_sigma": 150.0,
+   "our_level": "2",
+   "their_part": "lower town (KLB-2, eastern mound: walled lower city with street grid)",
+   "their_D": -2599,
+   "their_sigma": 150,
+   "their_tier": 2,
+   "delta": 100.0
+  },
+  {
+   "variant": "liberal",
+   "town": "kalibangan",
+   "our_part": "citadel: residential annexe",
+   "our_D": -2499.0,
+   "our_sigma": 150.0,
+   "our_level": "2",
+   "their_part": "lower town (KLB-2, eastern mound: walled lower city with street grid)",
+   "their_D": -2599,
+   "their_sigma": 150,
+   "their_tier": 2,
+   "delta": 100.0
+  },
+  {
+   "variant": "liberal",
+   "town": "kalibangan",
+   "our_part": "lower town",
+   "our_D": -2499.0,
+   "our_sigma": 150.0,
+   "our_level": "2",
+   "their_part": "lower town (KLB-2, eastern mound: walled lower city with street grid)",
+   "their_D": -2599,
+   "their_sigma": 150,
+   "their_tier": 2,
+   "delta": 100.0
+  },
+  {
+   "variant": "strict",
+   "town": "kanmer",
+   "our_part": "fortified settlement",
+   "our_D": -2599.0,
+   "our_sigma": 150.0,
+   "our_level": "2",
+   "their_part": "whole town: the fortified main mound",
+   "their_D": -2499,
+   "their_sigma": 150,
+   "their_tier": 2,
+   "delta": -100.0
+  },
+  {
+   "variant": "liberal",
+   "town": "kanmer",
+   "our_part": "fortified settlement",
+   "our_D": -2599.0,
+   "our_sigma": 150.0,
+   "our_level": "2",
+   "their_part": "whole town: the fortified main mound",
+   "their_D": -2499,
+   "their_sigma": 150,
+   "their_tier": 2,
+   "delta": -100.0
+  },
+  {
+   "variant": "liberal",
+   "town": "lothal",
+   "our_part": "acropolis",
+   "our_D": -2155.0,
+   "our_sigma": 164.0,
+   "our_level": "L",
+   "their_part": "dock",
+   "their_D": -2349,
+   "their_sigma": 200,
+   "their_tier": 3,
+   "delta": 194.0
+  },
+  {
+   "variant": "liberal",
+   "town": "lothal",
+   "our_part": "lower town",
+   "our_D": -2155.0,
+   "our_sigma": 164.0,
+   "our_level": "L",
+   "their_part": "dock",
+   "their_D": -2349,
+   "their_sigma": 200,
+   "their_tier": 3,
+   "delta": 194.0
+  },
+  {
+   "variant": "liberal",
+   "town": "mohenjo-daro",
+   "our_part": "citadel / perimeter wall",
+   "our_D": -2641.0,
+   "our_sigma": 150.0,
+   "our_level": "L",
+   "their_part": "lower town (DK-G, HR and VS areas): street grid",
+   "their_D": -2799,
+   "their_sigma": 200,
+   "their_tier": 3,
+   "delta": 158.0
+  },
+  {
+   "variant": "liberal",
+   "town": "mohenjo-daro",
+   "our_part": "lower town",
+   "our_D": -2641.0,
+   "our_sigma": 150.0,
+   "our_level": "L",
+   "their_part": "lower town (DK-G, HR and VS areas): street grid",
+   "their_D": -2799,
+   "their_sigma": 200,
+   "their_tier": 3,
+   "delta": 158.0
+  },
+  {
+   "variant": "strict",
+   "town": "rangpur",
+   "our_part": "Harappan built settlement",
+   "our_D": -1999.0,
+   "our_sigma": 200.0,
+   "our_level": "3",
+   "their_part": "excavated area of the Harappan settlement",
+   "their_D": -1999,
+   "their_sigma": 200,
+   "their_tier": 3,
+   "delta": 0.0
+  },
+  {
+   "variant": "liberal",
+   "town": "rangpur",
+   "our_part": "Harappan built settlement",
+   "our_D": -1999.0,
+   "our_sigma": 200.0,
+   "our_level": "3",
+   "their_part": "excavated area of the Harappan settlement",
+   "their_D": -1999,
+   "their_sigma": 200,
+   "their_tier": 3,
+   "delta": 0.0
+  },
+  {
+   "variant": "liberal",
+   "town": "rojdi",
+   "our_part": "main settlement and enclosure",
+   "our_D": -2558.0,
+   "our_sigma": 178.0,
+   "our_level": "L",
+   "their_part": "circumvallation and gateway (whole settlement)",
+   "their_D": -1999,
+   "their_sigma": 150,
+   "their_tier": 2,
+   "delta": -559.0
+  },
+  {
+   "variant": "liberal",
+   "town": "surkotada",
+   "our_part": "citadel",
+   "our_D": -2705.0,
+   "our_sigma": 168.0,
+   "our_level": "L",
+   "their_part": "citadel (western, higher enclosure)",
+   "their_D": -2399,
+   "their_sigma": 50,
+   "their_tier": 2,
+   "delta": -306.0
+  },
+  {
+   "variant": "liberal",
+   "town": "surkotada",
+   "our_part": "residential annexe",
+   "our_D": -2705.0,
+   "our_sigma": 168.0,
+   "our_level": "L",
+   "their_part": "citadel (western, higher enclosure)",
+   "their_D": -2399,
+   "their_sigma": 50,
+   "their_tier": 2,
+   "delta": -306.0
+  }
+ ],
+ "variants": {
+  "V1_ours_theirdates_ourastro": {
+   "n": 2,
+   "stage1_would_choose": null,
+   "stage1_chosen": "equinox_set",
+   "stage1_chi2": {
+    "alcyone": 0,
+    "aldebaran": 0,
+    "procyon": 0,
+    "equinox_set": 0,
+    "equinox_rise": 0,
+    "june_set": 0,
+    "june_rise": 0,
+    "december_set": 0,
+    "december_rise": 0
+   },
+   "P0": {
+    "status": "undecided",
+    "r": 0.9999999999999999,
+    "one_sided_p": 0.5,
+    "spearman_rho": 0.9999999999999998,
+    "all_leave_one_out_positive": false
+   },
+   "P1": {
+    "status": "fail",
+    "positive_fraction": 0.5,
+    "no_town_below_minus_2sigma": false
+   },
+   "P2": {
+    "status": "undecided",
+    "eligible_n": 2,
+    "sign_match_n": 1
+   },
+   "P3": {
+    "status": "undecided",
+    "chi2": null
+   },
+   "power": null,
+   "credence": 0.1,
+   "status": "open",
+   "D1": []
+  },
+  "V1b_their_discovery_our_confirmation": {
+   "n": 4,
+   "stage1_would_choose": "equinox_set",
+   "stage1_chosen": "equinox_set",
+   "stage1_chi2": {
+    "alcyone": 0.9678648924034643,
+    "aldebaran": 12.027830443486225,
+    "procyon": 14.651760570807518,
+    "equinox_set": 0.38232754297405347,
+    "equinox_rise": 0.6340424427993535,
+    "june_set": 820.7274299783496,
+    "june_rise": 845.6288932094857,
+    "december_set": 774.526844878937,
+    "december_rise": 752.5396879725549
+   },
+   "P0": {
+    "status": "undecided",
+    "r": 0.4308262199981303,
+    "one_sided_p": 0.4166666666666667,
+    "spearman_rho": 0.10540925533894598,
+    "all_leave_one_out_positive": false
+   },
+   "P1": {
+    "status": "fail",
+    "positive_fraction": 0.75,
+    "no_town_below_minus_2sigma": false
+   },
+   "P2": {
+    "status": "undecided",
+    "eligible_n": 4,
+    "sign_match_n": 1
+   },
+   "P3": {
+    "status": "fail",
+    "chi2": {
+     "target": 11.51742792194129,
+     "cardinal": 9.87569886880695,
+     "constant_offset": 10.893380929839578
+    }
+   },
+   "power": null,
+   "credence": 0.1,
+   "status": "open",
+   "D1": [
+    {
+     "slug": "mohenjo-daro",
+     "theta_deg": 0.8005,
+     "sigma_deg": 1.835,
+     "figure_7p2_within_2sigma": false,
+     "interval_1_to_2_intersects_2sigma": true,
+     "whole_interval_1_to_2_within_2sigma": true,
+     "interval_interpretation": "The interval is compatible when it intersects [theta-2sigma,theta+2sigma]; full containment is also reported."
+    }
+   ]
+  },
+  "V2_ours_ourdates_strict": {
+   "n": 1,
+   "stage1_would_choose": null,
+   "stage1_chosen": "equinox_set",
+   "stage1_chi2": {
+    "alcyone": 0,
+    "aldebaran": 0,
+    "procyon": 0,
+    "equinox_set": 0,
+    "equinox_rise": 0,
+    "june_set": 0,
+    "june_rise": 0,
+    "december_set": 0,
+    "december_rise": 0
+   },
+   "P0": {
+    "status": "undecided",
+    "r": NaN,
+    "one_sided_p": null,
+    "spearman_rho": NaN,
+    "all_leave_one_out_positive": false
+   },
+   "P1": {
+    "status": "fail",
+    "positive_fraction": 0.0,
+    "no_town_below_minus_2sigma": false
+   },
+   "P2": {
+    "status": "undecided",
+    "eligible_n": 1,
+    "sign_match_n": 1
+   },
+   "P3": {
+    "status": "undecided",
+    "chi2": null
+   },
+   "power": null,
+   "credence": 0.1,
+   "status": "open",
+   "D1": []
+  },
+  "V2_ours_ourdates_liberal": {
+   "n": 2,
+   "stage1_would_choose": null,
+   "stage1_chosen": "equinox_set",
+   "stage1_chi2": {
+    "alcyone": 0,
+    "aldebaran": 0,
+    "procyon": 0,
+    "equinox_set": 0,
+    "equinox_rise": 0,
+    "june_set": 0,
+    "june_rise": 0,
+    "december_set": 0,
+    "december_rise": 0
+   },
+   "P0": {
+    "status": "undecided",
+    "r": 1.0,
+    "one_sided_p": 0.5,
+    "spearman_rho": 0.9999999999999998,
+    "all_leave_one_out_positive": false
+   },
+   "P1": {
+    "status": "fail",
+    "positive_fraction": 0.5,
+    "no_town_below_minus_2sigma": false
+   },
+   "P2": {
+    "status": "undecided",
+    "eligible_n": 2,
+    "sign_match_n": 1
+   },
+   "P3": {
+    "status": "undecided",
+    "chi2": null
+   },
+   "power": null,
+   "credence": 0.1,
+   "status": "open",
+   "D1": []
+  },
+  "V3_theirs_ourdates_strict": {
+   "n": 2,
+   "stage1_would_choose": null,
+   "stage1_chosen": "equinox_set",
+   "stage1_chi2": {
+    "alcyone": 0.16642287141460174,
+    "aldebaran": 5.489479141835461,
+    "procyon": 13.404520048249065,
+    "equinox_set": 0.2914053204134236,
+    "equinox_rise": 0.26828679632999813,
+    "june_set": 658.9734017427116,
+    "june_rise": 658.7310403431463,
+    "december_set": 598.8960297029494,
+    "december_rise": 598.6702372821002
+   },
+   "P0": {
+    "status": "undecided",
+    "r": 1.0,
+    "one_sided_p": 0.5,
+    "spearman_rho": 0.9999999999999998,
+    "all_leave_one_out_positive": false
+   },
+   "P1": {
+    "status": "fail",
+    "positive_fraction": 0.5,
+    "no_town_below_minus_2sigma": false
+   },
+   "P2": {
+    "status": "undecided",
+    "eligible_n": 2,
+    "sign_match_n": 1
+   },
+   "P3": {
+    "status": "fail",
+    "chi2": {
+     "target": 10.335278593593298,
+     "cardinal": 9.307692307692308,
+     "constant_offset": 9.327333427692308
+    }
+   },
+   "power": null,
+   "credence": 0.1,
+   "status": "open",
+   "D1": []
+  },
+  "V3_theirs_ourdates_liberal": {
+   "n": 4,
+   "stage1_would_choose": "equinox_set",
+   "stage1_chosen": "equinox_set",
+   "stage1_chi2": {
+    "alcyone": 0.4327274329073846,
+    "aldebaran": 10.730193246964141,
+    "procyon": 15.371235946014215,
+    "equinox_set": 0.38232754297405347,
+    "equinox_rise": 0.6340424427993535,
+    "june_set": 820.5279136503403,
+    "june_rise": 845.4101533525561,
+    "december_set": 774.272181425971,
+    "december_rise": 752.3460611900184
+   },
+   "P0": {
+    "status": "undecided",
+    "r": 0.7316938756375099,
+    "one_sided_p": 0.25,
+    "spearman_rho": 0.19999999999999996,
+    "all_leave_one_out_positive": false
+   },
+   "P1": {
+    "status": "fail",
+    "positive_fraction": 0.5,
+    "no_town_below_minus_2sigma": false
+   },
+   "P2": {
+    "status": "undecided",
+    "eligible_n": 4,
+    "sign_match_n": 2
+   },
+   "P3": {
+    "status": "fail",
+    "chi2": {
+     "target": 15.094004682344224,
+     "cardinal": 12.558199913196896,
+     "constant_offset": 13.85883748119708
+    }
+   },
+   "power": null,
+   "credence": 0.1,
+   "status": "open",
+   "D1": [
+    {
+     "slug": "mohenjo-daro",
+     "theta_deg": 0.8005,
+     "sigma_deg": 1.835,
+     "figure_7p2_within_2sigma": false,
+     "interval_1_to_2_intersects_2sigma": true,
+     "whole_interval_1_to_2_within_2sigma": true,
+     "interval_interpretation": "The interval is compatible when it intersects [theta-2sigma,theta+2sigma]; full containment is also reported."
+    }
+   ]
+  },
+  "V4_theirs_theirdates_ourastro": {
+   "n": 4,
+   "stage1_would_choose": "equinox_set",
+   "stage1_chosen": "equinox_set",
+   "stage1_chi2": {
+    "alcyone": 0.9678648924034643,
+    "aldebaran": 12.027830443486225,
+    "procyon": 14.651760570807518,
+    "equinox_set": 0.38232754297405347,
+    "equinox_rise": 0.6340424427993535,
+    "june_set": 820.7274299783496,
+    "june_rise": 845.6288932094857,
+    "december_set": 774.526844878937,
+    "december_rise": 752.5396879725549
+   },
+   "P0": {
+    "status": "undecided",
+    "r": 0.4870534704816547,
+    "one_sided_p": 0.3333333333333333,
+    "spearman_rho": 0.19999999999999996,
+    "all_leave_one_out_positive": false
+   },
+   "P1": {
+    "status": "fail",
+    "positive_fraction": 0.5,
+    "no_town_below_minus_2sigma": false
+   },
+   "P2": {
+    "status": "undecided",
+    "eligible_n": 4,
+    "sign_match_n": 2
+   },
+   "P3": {
+    "status": "fail",
+    "chi2": {
+     "target": 15.094004682344224,
+     "cardinal": 12.558199913196896,
+     "constant_offset": 13.85883748119708
+    }
+   },
+   "power": null,
+   "credence": 0.1,
+   "status": "open",
+   "D1": [
+    {
+     "slug": "mohenjo-daro",
+     "theta_deg": 0.8005,
+     "sigma_deg": 1.835,
+     "figure_7p2_within_2sigma": false,
+     "interval_1_to_2_intersects_2sigma": true,
+     "whole_interval_1_to_2_within_2sigma": true,
+     "interval_interpretation": "The interval is compatible when it intersects [theta-2sigma,theta+2sigma]; full containment is also reported."
+    }
+   ]
+  },
+  "V4x_their_exploratory_ourastro": {
+   "n": 11,
+   "stage1_would_choose": "alcyone",
+   "stage1_chosen": "alcyone",
+   "stage1_chi2": {
+    "alcyone": 15.819844245678517,
+    "aldebaran": 20.02875108990932,
+    "procyon": 40.068737698587356,
+    "equinox_set": 17.95550167952017,
+    "equinox_rise": 15.995491726938525,
+    "june_set": 952.2355067250635,
+    "june_rise": 856.9476961227891,
+    "december_set": 783.8285946459456,
+    "december_rise": 876.9408699508364
+   },
+   "P0": {
+    "status": "fail",
+    "r": 0.4645632688612385,
+    "one_sided_p": 0.08176459117704411,
+    "spearman_rho": 0.3249504489956457,
+    "all_leave_one_out_positive": true
+   },
+   "P1": {
+    "status": "fail",
+    "positive_fraction": 0.2727272727272727,
+    "no_town_below_minus_2sigma": false
+   },
+   "P2": {
+    "status": "fail",
+    "eligible_n": 9,
+    "sign_match_n": 7
+   },
+   "P3": {
+    "status": "fail",
+    "chi2": {
+     "target": 242.9485497344409,
+     "cardinal": 280.9846827526297,
+     "constant_offset": 267.54071347326897
+    }
+   },
+   "power": 0.62575,
+   "credence": 0.02,
+   "status": "dead",
+   "D1": [
+    {
+     "slug": "mohenjo-daro",
+     "theta_deg": 0.8005,
+     "sigma_deg": 1.835,
+     "figure_7p2_within_2sigma": false,
+     "interval_1_to_2_intersects_2sigma": true,
+     "whole_interval_1_to_2_within_2sigma": true,
+     "interval_interpretation": "The interval is compatible when it intersects [theta-2sigma,theta+2sigma]; full containment is also reported."
+    }
+   ]
+  },
+  "V5_amendment1_our_plans_their_dates": {
+   "n": 10,
+   "stage1_would_choose": "aldebaran",
+   "stage1_chosen": "aldebaran",
+   "stage1_chi2": {
+    "alcyone": 15.465742438105327,
+    "aldebaran": 11.154915048541792,
+    "procyon": 30.22188788476927,
+    "equinox_set": 18.205369424287902,
+    "equinox_rise": 15.478821234268976,
+    "june_set": 303.77880317233155,
+    "june_rise": 168.17600331820492,
+    "december_set": 153.55301988778245,
+    "december_rise": 283.7581765700154
+   },
+   "P0": {
+    "status": "fail",
+    "r": 0.22937318871399562,
+    "one_sided_p": 0.26160869195654024,
+    "spearman_rho": 0.29268836799317,
+    "all_leave_one_out_positive": true
+   },
+   "P1": {
+    "status": "fail",
+    "positive_fraction": 0.2,
+    "no_town_below_minus_2sigma": false
+   },
+   "P2": {
+    "status": "fail",
+    "eligible_n": 9,
+    "sign_match_n": 7
+   },
+   "P3": {
+    "status": "fail",
+    "chi2": {
+     "target": 129.18514916899218,
+     "cardinal": 210.04636843452423,
+     "constant_offset": 154.36909915297795
+    }
+   },
+   "power": 0.4681,
+   "credence": 0.02,
+   "status": "dead",
+   "D1": [
+    {
+     "slug": "mohenjo-daro",
+     "theta_deg": 2.9867404299663978,
+     "sigma_deg": 3.5289012522796486,
+     "figure_7p2_within_2sigma": true,
+     "interval_1_to_2_intersects_2sigma": true,
+     "whole_interval_1_to_2_within_2sigma": true,
+     "interval_interpretation": "The interval is compatible when it intersects [theta-2sigma,theta+2sigma]; full containment is also reported."
+    }
+   ],
+   "s_delta_deg": 3.0,
+   "plan_minus_imagery_deltas": [
+    -2.3522901641076874,
+    -3.446140056283566,
+    6.207611967282797,
+    5.270904919302029
+   ],
+   "towns": [
+    "chanhu-daro",
+    "dholavira",
+    "farmana",
+    "harappa",
+    "kalibangan",
+    "kanmer",
+    "lothal",
+    "mohenjo-daro",
+    "rangpur",
+    "surkotada"
+   ],
+   "rule": "Their Amendment 1: towns without our primary value take the inverse-variance mean of our two measurers main plan systems (per measurer, the main system of its longest plan source), whatever the north label, with sigma^2 = max(SE, half difference, 0.3)^2 + s_delta^2; s_delta = 3 deg when fewer than three towns have both imagery and plans; dates from their exploratory table."
+  }
+ },
+ "their_outcome": {
+  "primary": {
+   "n": 4,
+   "P0": false,
+   "P0_decided": false,
+   "chosen": "sun-equinox-set",
+   "credence": {
+    "prior": 0.1,
+    "posterior": 0.1,
+    "status": "open"
+   }
+  },
+  "exploratory": {
+   "n": 11,
+   "P0_r": 0.4646,
+   "P0_p": 0.082055,
+   "chosen": "alcyone",
+   "credence_rule": {
+    "prior": 0.1,
+    "posterior": 0.02,
+    "status": "dead"
+   }
+  }
+ },
+ "frozen_outcome_reproduced": true
+}

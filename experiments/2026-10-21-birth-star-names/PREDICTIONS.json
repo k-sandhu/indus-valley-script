@@ -1,0 +1,65 @@
+{
+  "shot": "birthstar",
+  "conjecture": "C-0013 Fish runs on seals are birth-star names",
+  "statistic_families": ["fish_compound_richness", "fish_compound_evenness", "fish_modifier_pairs", "fish_run_site_stability"],
+  "withhold_site": false,
+  "scoring_population": "Fresh seal texts only: CISI 3.1 and 3.2 numbers absent from the pinned corpus (experiments/2026-10-13-cisi3-range-coverage) and inscribed objects published after the catalogues (Q-1026), scored by score_fresh.py, which refuses any object whose CISI number or full text is in data/normalized/lipi_observed_faces.jsonl (SHA-256 1220f559...). The confirmation half of split 078aef2d... is never read for this shot.",
+  "minimum_sample": "Score once, as soon as the fresh pool holds at least 40 fish runs in name position (unit T0); that run is the frozen outcome. Material added later is reported as a replication with the same code and does not replace it.",
+  "historical_exposure": "Fish adjacency, numeral fixity, fish order and fish numeral models were examined before (Bonta review, NUMERAL-BEHAVIOUR-2026-10-12, FISH-CONTEXT-2026-10-20). Every Indus statistic in this package is exploration on the discovery half of a new seed; only fresh texts can confirm.",
+  "units": "T0: a maximal run of fish-family signs (base B220 of sign_components_v1.tsv) in a clean right-to-left single-line seal legend, without its stroke prefix. T1: the same run with the stroke group (B001, B031) immediately before it. Name position: at least one sign follows the run. Identical full texts are collapsed.",
+  "joint_credence_rule": "C-0013 starts at 0.03. If P2 fails, the credence becomes 0.005 and the claim is dead. If P2 passes, the credence becomes 0.06 when P3 and P4 both pass, 0.03 when exactly one passes and 0.01 when neither passes. If P1 and P5 also pass together with P2, add 0.04, with a cap of 0.12. P1 and P5 otherwise leave the credence unchanged. All five predictions share objects, so this single rule replaces separate updates.",
+  "predictions": [
+    {
+      "id": "P1_literal_N1",
+      "statistic": "Bias-corrected Chao1 of T1 fish compounds in name position on fresh seals, and the share of 9,999 matched draws of fresh opening-vocabulary units (same token count) whose Chao1 exceeds 45",
+      "null": "Fish compounds accumulate like opening vocabulary of the same token count",
+      "pass_rule": "Chao1 between 24 and 45 inclusive and at least 95% of matched opening-vocabulary draws above 45",
+      "discovery_value": "Chao1 186.0 (60 types, 246 tokens); fails. Kept as the direction note's N1 as written.",
+      "credence_effect": "None alone; see the joint rule"
+    },
+    {
+      "id": "P2_closure",
+      "statistic": "Share of fresh T0 fish-run tokens in name position whose type is absent from the frozen discovery inventory of 33 run types (frozen-reference.json)",
+      "null": "An open name vocabulary: on discovery the matched opening vocabulary has Good-Turing novelty 0.24-0.36",
+      "pass_rule": "Novel share at most 0.15",
+      "discovery_value": "Good-Turing novelty of discovery T0 runs 0.041",
+      "power": "Pass probability 0.995-1.0 at 40-150 runs if the discovery profile holds; 0.0-0.02 under an open vocabulary with novelty 0.30 (power-v2/power-broad.json)",
+      "credence_effect": "Failure kills the claim (0.005)"
+    },
+    {
+      "id": "P3_brahmi_profile",
+      "statistic": "Normalised entropy H/ln S and the share of the commonest type of fresh T0 fish runs, compared at n* = min(fresh runs, 57): a larger fresh sample is subsampled to n* 999 times and the medians are used",
+      "null": "The 95% range of the same statistics in bootstrap samples of size n* from the Brahmi asterism names of Lüders's list, broad marking (57 names, 16 asterisms; frozen-reference.json)",
+      "pass_rule": "Both statistics inside their Brahmi 95% ranges",
+      "discovery_value": "At n* = 57: normalised entropy 0.821 in [0.754, 0.907]; top share 0.246 in [0.211, 0.456]; inside. Against the strict marking (42 names) the top share 0.238 falls below [0.310, 0.595].",
+      "reference_choice": "The broad marking was chosen after the calibration and the discovery comparison were seen. Lüders himself equates the ambiguous stems in this list with asterisms (Sona with Śravaṇa, Sāti- with Svāti), and the strict class at 42 names is dominated by Puṣya to 45%. The strict comparison is reported beside the frozen one and has no credence effect.",
+      "power": "Pass probability 0.83-0.94 at 40-150 runs if the discovery profile holds; 0.14-0.48 under an open vocabulary; 0.02-0.22 under a site-specific profile; 0 under a near-monopoly or a flat class of 27",
+      "credence_effect": "See the joint rule"
+    },
+    {
+      "id": "P4_stable_dominant_runs",
+      "statistic": "Share of fresh T0 fish runs in name position that belong to the four commonest discovery runs (220, 240, 235, 233)",
+      "null": "Run frequencies that differ between the catalogued cities and the fresh sites",
+      "pass_rule": "Share between 0.50 and 0.85 inclusive",
+      "discovery_value": "0.667 overall; Mohenjo-daro 0.66, Harappa 0.62, Lothal 0.75, Dholavira 0.71",
+      "power": "Pass probability 0.98-1.0 at 40-150 runs if the discovery profile holds; 0.0-0.08 under a site-specific profile with top-four share 0.40",
+      "credence_effect": "See the joint rule"
+    },
+    {
+      "id": "P5_literal_N3",
+      "statistic": "Number of fish modifiers (sign_components_v1.tsv) that distinguish exactly three attested base variants in fresh name-position runs, each variant attested at least twice, and the count ratio of each pair",
+      "null": "Modifier contrasts spread over other numbers of bases",
+      "pass_rule": "Exactly one modifier applies to exactly three bases and all three pair ratios lie between 1/3 and 3",
+      "discovery_value": "No modifier applies to three bases (cap and dots two each, the others one or none); fails. Kept as the direction note's N3 as written.",
+      "credence_effect": "None alone; see the joint rule"
+    }
+  ],
+  "retired": [
+    {
+      "id": "N2_literal",
+      "text": "Normalised entropy of fish compounds exceeds that of frequency-matched opening vocabulary in at least 95% of draws",
+      "reason": "The calibration shows that a known birth-star class fails this rule: the Brahmi asterism names have normalised entropy 0.775 (strict) and 0.835 (broad) against 0.99 for matched non-asterism name elements, because a closed class with one favoured member is less even than a small sample of an open vocabulary, most of whose types occur once. P3 replaces it with a direct comparison to the calibrated class."
+    }
+  ],
+  "frozen_artifacts": ["score_fresh.py", "birthstar.py", "frozen-reference.json", "PROTOCOL.md", "MARKING-RULE.md", "FREEZE-NOTES.md", "discovery-v1/inventories.json", "calibration-v1/calibration.json", "experiments/2026-10-12-structure-first/step1-signs/sign_components_v1.tsv"]
+}

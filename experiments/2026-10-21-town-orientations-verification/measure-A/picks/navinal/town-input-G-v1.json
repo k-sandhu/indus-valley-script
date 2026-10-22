@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "slug": "navinal",
+  "measurer": "A",
+  "authors": [
+    {
+      "model": "GPT-6",
+      "harness": "Codex API"
+    }
+  ],
+  "located_point": {
+    "latitude": 22.8215277778,
+    "longitude": 69.5971944444,
+    "method": "Initial indexed point was checked in two-scale composites. Abhayan et al.2025 section4.4 gives22degrees49min17.5sec N,69degrees35min49.9sec E, about1.5km north of index. Rendered a fresh 2km/800m four-layer set around that published coordinate; adopted it provisionally, without a secure ancient wall identification."
+  },
+  "sources": [
+    {
+      "id": "imagery",
+      "kind": "imagery",
+      "scene_ids": [
+        "S2B_42QWL_20180307_1_L2A",
+        "S2B_42QWL_20191018_1_L2A",
+        "S2B_42QWL_20211206_1_L2A",
+        "S2B_42QWL_20220214_0_L2A",
+        "S2B_42QWL_20230130_0_L2A"
+      ],
+      "scene_datetimes": [
+        "2018-03-07T06:02:38.834000Z",
+        "2019-10-18T06:02:50.039000Z",
+        "2021-12-06T06:02:43.920000Z",
+        "2022-02-14T06:02:42.740000Z",
+        "2023-01-30T06:02:46.243000Z"
+      ],
+      "manifest_path": "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\infra-v1\\imagery-manifest-v1.json",
+      "composite": {
+        "path": "data/raw/2026-10-21-town-orientations-verification/infra/imagery/navinal/acquisition-v3/median-composite.tif",
+        "url": "https://earth-search.aws.element84.com/v1",
+        "retrieved_utc": "2026-10-21T06:03:09.498024Z",
+        "bytes": 4507141,
+        "sha256": "033772b611f8d69d778e96052674856fe5790864affbb87b2ac6e09f037c7679",
+        "format": "tif",
+        "rights_status": "explicit-license",
+        "rights_notice": "Copernicus Sentinel data terms; Contains modified Copernicus Sentinel data 2018–2026",
+        "transformation": "Median per band; brightness mean of B02 B03 B04 B08",
+        "parents": [
+          "621c12a4498adadaf68fc42f1e68918bab428be6d37fc118d0d2c7e9deefedb4",
+          "fcd11c6fcd441f86a5297782a5073381f055023c7b3912321e16fdfda5f8a9a5",
+          "579f35bb4e348ccac686452a96870845d125039b44e3b46fdd47e939242223c9",
+          "20e7a011ec60c3e8e902257c800b7fe79bfb2f855a44d53b957fd3ddf3aece00",
+          "cb4dd460bebf7b89d54ee92f984dc4cf56d0acce9310531041c65be0e22d921f"
+        ],
+        "pixel_median_verified": true,
+        "acquisition_sha256": "033772b611f8d69d778e96052674856fe5790864affbb87b2ac6e09f037c7679"
+      },
+      "assessment": "At both coordinates the composite shows cultivated plots, drainage and modern disturbance. No securely identified ancient straight line is resolved."
+    }
+  ],
+  "lines": [],
+  "registrations": [],
+  "notes": "Published point improves location provenance but does not authenticate visible geometry. No ancient bearing or registration. Relocation helper initially failed while reading UTF-8 JSON with default cp1252; -X utf8 resolved it before any render was written.",
+  "unmeasurable_reason": "No eligible architectural plan or identified straight Harappan feature in prepared imagery, including the published site coordinate.",
+  "imagery_assessment": "At both coordinates the composite shows cultivated plots, drainage and modern disturbance. No securely identified ancient straight line is resolved.",
+  "plan_assessment": "Live library has no eligible plan. Abhayan et al.2025 section4.4 describes surface surveys2013-17 and two test pits in2015, without identifying a long architectural edge. Commercial panelE was not opened or measured.",
+  "empirical_error_calibration": {
+    "source": "infra-v1/validation-v1/summary.json",
+    "segment_rms_deg": {
+      "100m": 4.272758,
+      "200m": 1.764927,
+      "300m": 0.988215,
+      "400m": 0.746483
+    },
+    "sigma_policy": "Tool sigma retained unchanged; calibration is separate."
+  }
+}

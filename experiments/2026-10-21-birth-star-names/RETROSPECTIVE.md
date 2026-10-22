@@ -1,0 +1,25 @@
+# Birth-star study record
+
+We ran study 3 of the Parpola direction note up to frozen predictions: a calibration on Lüders's list of Brāhmī inscriptions, exploration on the discovery half of a new split, and a freeze of five predictions to be scored only on seals no analysis has used. Before starting we read AGENTS.md, the direction note, the bench guide and spending ledger, the two-stage design, the fish-context protocol and report, the conjecture rules, the writing rules and Q-1026. The protocol and the asterism marking rule were hashed at 01:36 UTC on 21 October, before any donor name was extracted or the split created.
+
+## Approaches and repairs
+
+The Internet Archive holds three scans of the list; we took two with independent OCR, from the Archaeological Survey of India library and the Digital Library of India, and checked their SHA-1 values against the archive metadata. The personal-name index at the end of the list would have given persons rather than inscriptions, but its two-column OCR separates names from entry numbers, so we extracted donors from the entries instead.
+
+Five trial runs of the extractor came before its fixed output. The first chain of entry numbers covered only part of the list, because entries at Sanchi and Bharhut begin with a year, not a place name, and because the Archaeological Survey OCR misses runs of entry headings; we accepted year-led headings and allowed gaps of up to 80 in a longest rising chain. Exact-string alignment of the two scans paired almost nothing, since no two OCR readings of a clause are identical, and a global alignment on text similarity replaced it. "Dedication of" and "Erection of" clauses and clauses naming an object before "by" were added. Clauses that only one scan aligned still produced 26 duplicate rows; marker B noticed three of them among the marked names, and the resolution pass found the rest by name and following text.
+
+Marker A first fell back to the Prakrit form even when Lüders's Sanskrit equivalent named another word, so OCR damage turned Saṃgharakhita into a Svāti name. The second version obeyed the rule strictly and lost names whose Sanskrit equivalent the OCR had garbled. The final version accepts a Prakrit stem only when both scans read it. All three outputs are kept, and all revisions were made before marker B's file was opened. The two markers then disagreed on 5 of 819 rows.
+
+The direction note's predictions failed as written on the discovery half, and the calibration showed why the second could never pass: a known birth-star class is less even than a matched sample of open vocabulary, because such a sample consists mostly of names seen once. We retired N2 and narrowed the claim to fish runs without their stroke prefix, using checks chosen after these results. The first power simulation bootstrapped the 57 Brāhmī names up to the fresh sample size and rejected the claim's own model at larger samples, since a sample of 57 omits the asterisms not yet seen. We kept that output as [power-v1](power-v1/) and froze a design that subsamples the fish runs down to the Brāhmī size instead. The choice of the broad Brāhmī marking as the reference was made after both markings were seen; the [freeze notes](FREEZE-NOTES.md) give the reason and the strict comparison is reported beside it.
+
+A versioned rerun of the next-sign independence test gave p = 0.36 where the earlier unversioned run, cited in the frozen freeze notes, gave 0.35; the difference comes from the permutation seed, and the report gives both.
+
+## Verification and source handling
+
+[verify.py](verify.py) recomputes the calibration counts, shares, Chao1, entropies and top shares from the resolved marking with separate code, checks the frozen reference against the discovery inventory and tests the joint credence function against the rule text; all 21 checks pass ([verification-v1.json](verification-v1.json)). The scorer was run on synthetic rows and on a refusal test before freezing ([synthetic-fresh-check](synthetic-fresh-check/)). The bench synthetic shots check passes ([shots-synthetic.json](shots-synthetic.json)). The access log shows four discovery reads and no confirmation read. No other contributor has reproduced the work.
+
+The OCR files and page images stay local. The donor table derived from the public-domain list is tracked, without OCR context. Tracked Indus outputs are aggregate counts and short fish-run combinations. The shared ledger `bench/spent.json` gained the new split's entry through the bench workflow; no other shared file was changed.
+
+## Outcome
+
+The calibration measures the signature of a real birth-star naming system: 5.5–7.5% of donors, 12–16 of 25 asterisms, one favoured asterism with a third to half of the names. The Indus fish runs share that profile at matched size, are closed, and keep their dominant forms across four cities, but they appear on five to six times as many legends and are no more closed than other sign families. Five predictions are frozen for fresh seals, and conjecture C-0013 stands at 0.03 until at least 40 fresh fish runs can be scored.

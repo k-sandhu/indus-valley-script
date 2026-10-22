@@ -1,0 +1,132 @@
+{
+ "town": "lothal",
+ "role": "img-A",
+ "measured_utc": "2026-10-21T04:22:27Z",
+ "location": {
+  "lat": 22.5225,
+  "lon": 72.2495,
+  "basis": "Centre of our z18 mosaic. We placed it from the published position (about 22.52 N, 72.25 E) and the imagery, which shows the fenced mound with the water-filled brick basin (centre 22.5226 N, 72.2492 E) and the excavated town west of it."
+ },
+ "sources": [
+  {
+   "id": "src1",
+   "kind": "imagery",
+   "citation_or_service": "Esri World Imagery tile service, https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}; Source: Esri, Vantor, Earthstar Geographics, and the GIS User Community. Imagery under the measured structures (World_Imagery/MapServer identify): Vantor Vivid (LG04), source resolution 0.34 m, deepest real zoom 18.",
+   "locator": "zoom 18, tiles x 183680-183684, y 114230-114234; mosaic origin at global pixel (47022080, 29242880), 1280 x 1280 px; retrieved 2026-10-21T03:41:21Z",
+   "file": "data/raw/2026-10-21-town-axes/img-A/mosaics/lothal_main_z18_x183680-183684_y114230-114234.png",
+   "sha256": "d932ce832e8ef7f8f6fe69424d61a1ec98752ca42afd3a206a4da11dffac007f",
+   "north_reference": "true",
+   "north_label_text": "no label; Web Mercator (EPSG:3857) tile grid, whose columns run to true north",
+   "survey_year": null,
+   "imagery_date": "2026-02-27"
+  }
+ ],
+ "structures": [
+  {
+   "id": "LD1",
+   "source": "src1",
+   "part": "dockyard (brick basin east of the town)",
+   "kind": "basin wall",
+   "description": "west wall of the brick basin, inner rim above the water line",
+   "endpoints": "z18 global px P1=(47022761.0, 29243552.0) P2=(47022745.5, 29243158.1); lon-lat P1=(72.249747, 22.521913) P2=(72.249664, 22.523865)",
+   "length_m": 217.5,
+   "bearing_deg": 177.75,
+   "deviation_deg": -2.25,
+   "sigma_deg": 0.29,
+   "phase": null,
+   "confidence": "high"
+  },
+  {
+   "id": "LD2",
+   "source": "src1",
+   "part": "dockyard (brick basin east of the town)",
+   "kind": "basin wall",
+   "description": "east wall of the brick basin, inner rim above the water line",
+   "endpoints": "z18 global px P1=(47022823.0, 29243548.0) P2=(47022812.0, 29243160.0); lon-lat P1=(72.250080, 22.521933) P2=(72.250021, 22.523855)",
+   "length_m": 214.1,
+   "bearing_deg": 178.38,
+   "deviation_deg": -1.62,
+   "sigma_deg": 0.32,
+   "phase": null,
+   "confidence": "high"
+  },
+  {
+   "id": "LD4",
+   "source": "src1",
+   "part": "dockyard (brick basin east of the town)",
+   "kind": "basin wall",
+   "description": "south wall of the brick basin, inner rim west and east of the inlet",
+   "endpoints": "z18 global px P1=(47022761.8, 29243552.0) P2=(47022825.9, 29243551.0); lon-lat P1=(72.249751, 22.521913) P2=(72.250095, 22.521918)",
+   "length_m": 35.4,
+   "bearing_deg": 89.1,
+   "deviation_deg": -0.9,
+   "sigma_deg": 1.53,
+   "phase": null,
+   "confidence": "medium"
+  },
+  {
+   "id": "LT1",
+   "source": "src1",
+   "part": "town (lower town and acropolis area west of the dockyard)",
+   "kind": "house wall",
+   "description": "faint E-W wall line in the lower town, about 100 m west of the basin",
+   "endpoints": "z18 global px P1=(47022550.0, 29243348.0) P2=(47022617.0, 29243345.5); lon-lat P1=(72.248615, 22.522924) P2=(72.248974, 22.522936)",
+   "length_m": 37.0,
+   "bearing_deg": 87.86,
+   "deviation_deg": -2.14,
+   "sigma_deg": 1.82,
+   "phase": null,
+   "confidence": "low"
+  },
+  {
+   "id": "LT4",
+   "source": "src1",
+   "part": "town (lower town and acropolis area west of the dockyard)",
+   "kind": "building wall",
+   "description": "E-W wall of a small walled block in the south-east of the excavated town",
+   "endpoints": "z18 global px P1=(47022637.5, 29243455.5) P2=(47022690.0, 29243453.5); lon-lat P1=(72.249084, 22.522391) P2=(72.249366, 22.522401)",
+   "length_m": 29.0,
+   "bearing_deg": 87.82,
+   "deviation_deg": -2.18,
+   "sigma_deg": 2.32,
+   "phase": null,
+   "confidence": "low"
+  }
+ ],
+ "systems": [
+  {
+   "id": "sys1",
+   "source": "src1",
+   "part": "dockyard (brick basin east of the town)",
+   "structures": [
+    "LD1",
+    "LD2",
+    "LD4"
+   ],
+   "deviation_deg": -1.86,
+   "se_deg": 0.33,
+   "sd_deg": 0.68,
+   "total_length_m": 466.9,
+   "n_lines": 3
+  },
+  {
+   "id": "sys2",
+   "source": "src1",
+   "part": "town (lower town and acropolis area west of the dockyard)",
+   "structures": [
+    "LT1",
+    "LT4"
+   ],
+   "deviation_deg": -2.16,
+   "se_deg": 1.44,
+   "sd_deg": 0.03,
+   "total_length_m": 66.0,
+   "n_lines": 2
+  }
+ ],
+ "main_system": "sys1",
+ "main_system_reason": "The brick basin is the longest straight Harappan structure at Lothal and its two long walls (each about 215 m) give the most precise direction on the site. The town walls west of it are faint and short, but they agree with the basin within their errors, so the basin stands for the layout of the whole excavated settlement.",
+ "published_values": [],
+ "measurable": true,
+ "notes": "The Esri imagery is a Vantor Vivid mosaic of 27 February 2026 with real detail to zoom 18 (0.55 m per pixel). The brick basin is filled with water; we measured its walls on the pale brick rim just above the water line, which follows the top of the conserved walls. The north wall lies in shadow and we did not use it. The excavated town west of the basin is conserved as low wall stubs that are mostly faint at this resolution, and the clearest straight lines there are the pale visitor paths between the conserved blocks, which we excluded. We kept two faint town walls longer than 20 m as low-confidence lines; shorter wall stubs of 12-13 m that we inspected were dropped. The basin walls were restored by the Archaeological Survey of India on their Harappan footings, so their line reflects the Harappan structure, though restoration may have straightened the visible rim slightly."
+}

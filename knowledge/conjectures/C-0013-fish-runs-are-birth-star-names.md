@@ -30,7 +30,7 @@ Two observations count against the claim. Runs of most other sign families of si
 
 | ID | Prediction | Data | Pass rule | Effect on credence | Status |
 |---|---|---|---|---|---|
-| P1 | Prefix-plus-run compounds have Chao1 between 24 and 45 while opening vocabulary keeps growing (direction note N1) | Fresh seals: absent CISI 3.1/3.2 numbers and Q-1026 finds | Chao1 24–45 and 95% of matched opening draws above 45 | +0.04 only with P2 and P5 (cap 0.12) | failed on discovery (Chao1 186); fresh test frozen |
+| P1 | Prefix-plus-run compounds have Chao1 between 24 and 45 while opening vocabulary keeps growing (direction note N1) | Fresh seals: absent CISI 3.1 and 3.2 numbers and Q-1026 finds | Chao1 24–45 and 95% of matched opening draws above 45 | +0.04 only with P2 and P5 (cap 0.12) | failed on discovery (Chao1 186); fresh test frozen |
 | P2 | Fresh fish runs fall inside the 33-type discovery inventory | Same | At most 15% of fresh runs of new types | Failure: 0.005, dead | prospective, frozen |
 | P3 | Fresh fish runs have the evenness and commonest-type share of the Brāhmī asterism names | Same, compared at n* = min(fresh runs, 57) | Both inside the broad Brāhmī 95% ranges | With P2: both P3 and P4 pass 0.06, one 0.03, neither 0.01 | prospective, frozen |
 | P4 | The four commonest discovery runs keep their share at the fresh sites | Same | Share 0.50–0.85 | As P3 | prospective, frozen |

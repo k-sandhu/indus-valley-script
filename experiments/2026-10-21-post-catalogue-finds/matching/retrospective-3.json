@@ -1,0 +1,44 @@
+{
+  "authors": [
+    "OpenAI GPT-6, Codex desktop API harness, run 3"
+  ],
+  "approach": "Standard-library scripts merged the frozen extraction tables, projected allowed corpus fields, compared registrations and context, and recounted eligible rows independently.",
+  "challenges": [
+    "Parsed excavation entries in the basic-data files are dictionaries, not strings.",
+    "Some local identifiers carry site prefixes, project labels or appended catalogue numbers.",
+    "Some source records supply no PDF page extent.",
+    "The output rule also catches unit expressions in allowed depth fields.",
+    "The first independent recount accidentally treated empty reservation entries as assigned families."
+  ],
+  "fixes": [
+    "Used the parsed printed excavation item alongside the raw cell, retaining only the CISI identifier in containment outputs.",
+    "Recorded separate equality and containment rules and left context conflicts open for review.",
+    "Marked unavailable extents in the locator audit.",
+    "Repaired the preview filter and scanned every owned text file; withheld restricted expressions in nine unlisted context cells.",
+    "Corrected the recount to count only reservation entries with actual row users; all checks then passed."
+  ],
+  "outcome": {
+    "merged_rows": 490,
+    "eligible_rows": 307,
+    "matched": 11,
+    "candidate": 271,
+    "absent": 25,
+    "absent_bounds": [
+      69,
+      296
+    ],
+    "local_unlisted": 4138
+  },
+  "deviations": [
+    "An early tool preview contained depth-unit expressions from allowed context fields before the filter repair. No such expression is retained in the deliverables.",
+    "Added a same-part duplicate table for three shared-registration pairs so the coordinator can review them alongside the requested cross-part table.",
+    "Included named zero-row sites from the supplied seed and site notes so their unlisted local families remain visible."
+  ],
+  "source_pages_read": 0,
+  "page_images_opened": 0,
+  "writes": [
+    "experiments/2026-10-21-post-catalogue-finds/matching/",
+    "data/raw/2026-10-21-post-catalogue-finds/run3/"
+  ],
+  "next_review": "Review all candidates, all joins beyond raw equality, absence proposals at sites with local families, the duplicate flags and the two containment comparisons."
+}

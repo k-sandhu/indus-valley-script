@@ -1,0 +1,2387 @@
+{
+  "schema_version": "1.0",
+  "task": "analysis-integration-selftest",
+  "synthetic": true,
+  "provenance": {
+    "inputs": {
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astro-v1\\synthetic\\settlements-v1.csv": "2b396185693ae6d4f53bcc579d2a8a7986b409ad1cd013d70676bdda106e61fb",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astro-v1\\validation-v1.json": "770dbdb887e1da54752ea36a5a77a6b79b0d08b310aadd1dab9ed0f8d8afc6ae",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astro-v1\\stars-retrieved-v1.json": "480e9058c5bd56ef6059d3d95c7c5f6c09ffd4636e49827bea0bc505ff24f119",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astro-v1\\horizon\\banawali.json": "282afebfe3c817a05c4cdade39334cb20de8638c2293cc6bc59f79b194bc33e3",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astro-v1\\horizon\\chanhu-daro.json": "68dc7e459cc248aba7e66721a5ee0cc096f5328e8bcd3caf97dab9ab63ee3bf6",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astro-v1\\horizon\\dholavira.json": "57e87176dc2fec337ff0b13db0bd60fabf6e3b675fa2e504df8fa963c87502c2",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astro-v1\\horizon\\harappa.json": "a4c19dfbc990608c3123abb85ecbd14cdb1fa5752057b460d6977a3d3eb07691",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astro-v1\\horizon\\kalibangan.json": "4ed08c0f9099cbdadcefee31007ac8b7d5e0a274dc4beb2bc823480d8b01778b",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astro-v1\\horizon\\kanmer.json": "9d4d302c3ea633bf8f44113a5cf108e987fe875cef9494701a97f82f356bf6bb",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astro-v1\\horizon\\lothal.json": "5f3dff1227c939442a451e5c51270b15e69f6b74b190a46c07a32ae2b643c2fb",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astro-v1\\horizon\\mohenjo-daro.json": "710c4b5c8a815412e368ed60719ccded03c4a2b90d5d8691f7ec6a5d1698d46a",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astro-v1\\horizon\\rakhigarhi.json": "8e21cae477997d3a56225882d847aba1a42ab123d21329f9ad0d0d3f9fbf1db0",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astro-v1\\horizon\\shikarpur.json": "ad56b6879517eda475c66b223830c2941c11a33d61b31cf81d70d098d442e572",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astro-v1\\horizon\\surkotada.json": "c90e5cade6ae3bfb901892ca1c3547369670e42eccdcc3dcd047b690fba7db0a"
+    },
+    "code": {
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\analysis\\calibrate.py": "29a00728e1e68dcd8f7157c7a4970dffd3b4e5faeaa383b180bf8d0d8180c6de",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\analysis\\common.py": "b8b5bd4a26589a9cb3fd79bd240c7f1b9188712b594372ec666d72362dec388c",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\analysis\\compare.py": "af226eb70f889dd0a5fe2dd88110088a0ef25393266eb6ffa5e5163c6669cfd2",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\analysis\\score_frozen.py": "213d97be6bb16a4c7b1adb918b5381f51839d009da386969a2af21d9b962c8ae",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\analysis\\selftest.py": "aa1c52425b033c17c16e2ccd9e4ada72e9bb2cfb3973a752da71529659cd1754",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\analysis\\verify_integration.py": "0ac1894c48f6de9bcabb6ccd907d0853988266e40edf2d2e042ac3f683952d27",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astronomy\\acquire.py": "500f6b53646ee2993b1bfb3883bf5d2103912e14a467eaae7148cb603b8aaca8",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astronomy\\core.py": "072888c9fafba99dc772127b59eb6b6fba9c17a6768585b5307d4e656d3f577d",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astronomy\\horizon.py": "7c7bbcf17c5383a07dbb7746b5765cfa8a94751b1e25c2856bba4760656d64ef",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astronomy\\predict.py": "f9ad100d255dc91001f27a59d5f4bc44e48cf5801efef3eb1287fd437f0bf128",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astronomy\\prepare_stars.py": "a168814501b732d7d31128172e4c7b400b31f7067fcee836db08cb0d79022740",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astronomy\\records.py": "6571c49a2b23d2863e89da74722d6825c01bdc05d912be2a2ebc51e90756dfb5",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astronomy\\sources.py": "5dc541ac4b19c1b2a5644ce31e1fe0e82b4b60f3e907e6656f808647b2381153",
+      "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-21-town-orientations-verification\\astronomy\\validate.py": "2c015c7fd6975253e4caba3615cb38e1702a8c3f240f599f07eb6d33122a597f"
+    }
+  },
+  "all_pass": true,
+  "checks": {
+    "target_is_alcyone": true,
+    "target_chi2_zero": true,
+    "P0_pass": true,
+    "P3_pass": true,
+    "comparisons_agree": true,
+    "power_finite": true
+  },
+  "score": {
+    "n": 11,
+    "sigma_int_deg": 1.0,
+    "seed": 20261021,
+    "target_order": [
+      "alcyone",
+      "aldebaran",
+      "procyon",
+      "equinox_set",
+      "equinox_rise",
+      "june_set",
+      "june_rise",
+      "december_set",
+      "december_rise"
+    ],
+    "variant": {
+      "extinction": "base",
+      "horizon": "dem"
+    },
+    "stage1": {
+      "n": 3,
+      "chi2": {
+        "alcyone": 0.0,
+        "aldebaran": 32.8025632883941,
+        "procyon": 63.22173478908339,
+        "equinox_set": 19.288613373713602,
+        "equinox_rise": 8.27891255894995,
+        "june_set": 2550.811782773904,
+        "june_rise": 1889.8249390340907,
+        "december_set": 1731.4000114351886,
+        "december_rise": 2379.0785943986903
+      },
+      "would_choose": "alcyone",
+      "chosen": "alcyone",
+      "choice_fixed": false,
+      "threshold99": 11.344866730144373,
+      "discovery_failure": false,
+      "status": "evaluated"
+    },
+    "P0": {
+      "n": 11,
+      "r": 0.9954737147417325,
+      "spearman_rho": 1.0,
+      "one_sided_p": 4.9999750001249995e-06,
+      "p_method": "random permutations, plus-one p",
+      "permutations": 200000,
+      "leave_one_out": [
+        {
+          "omitted": "mohenjo-daro",
+          "r": 0.9941150035012972
+        },
+        {
+          "omitted": "harappa",
+          "r": 0.9957263191669941
+        },
+        {
+          "omitted": "kalibangan",
+          "r": 0.9953882429575782
+        },
+        {
+          "omitted": "lothal",
+          "r": 0.9970164594989797
+        },
+        {
+          "omitted": "dholavira",
+          "r": 0.9960285725298539
+        },
+        {
+          "omitted": "surkotada",
+          "r": 0.9959407906824859
+        },
+        {
+          "omitted": "banawali",
+          "r": 0.9959999798294723
+        },
+        {
+          "omitted": "rakhigarhi",
+          "r": 0.9958554722059416
+        },
+        {
+          "omitted": "chanhu-daro",
+          "r": 0.9950881822922099
+        },
+        {
+          "omitted": "kanmer",
+          "r": 0.9946279728475782
+        },
+        {
+          "omitted": "shikarpur",
+          "r": 0.9939609194294888
+        }
+      ],
+      "all_leave_one_out_positive": true,
+      "status": "pass"
+    },
+    "P0_confirmation": {
+      "n": 8,
+      "r": 0.993492488226489,
+      "spearman_rho": 1.0,
+      "one_sided_p": 2.48015873015873e-05,
+      "p_method": "exact all permutations",
+      "permutations": 40320,
+      "leave_one_out": [
+        {
+          "omitted": "lothal",
+          "r": 0.9926322290940106
+        },
+        {
+          "omitted": "dholavira",
+          "r": 0.992433916215612
+        },
+        {
+          "omitted": "surkotada",
+          "r": 0.9934171851568304
+        },
+        {
+          "omitted": "banawali",
+          "r": 0.996472051806417
+        },
+        {
+          "omitted": "rakhigarhi",
+          "r": 0.9954345174446
+        },
+        {
+          "omitted": "chanhu-daro",
+          "r": 0.9931369511684925
+        },
+        {
+          "omitted": "kanmer",
+          "r": 0.9927480464824716
+        },
+        {
+          "omitted": "shikarpur",
+          "r": 0.9912827533292535
+        }
+      ],
+      "all_leave_one_out_positive": true,
+      "status": "pass"
+    },
+    "WLS_all": {
+      "slope_deg_per_year": 0.0065594878012207175,
+      "slope_deg_per_century": 0.6559487801220718,
+      "interval95_deg_per_year": [
+        0.006105089196536437,
+        0.006856933805290052
+      ],
+      "interval95_deg_per_century": [
+        0.6105089196536436,
+        0.6856933805290052
+      ],
+      "resamples": 20000,
+      "valid_resamples": 20000,
+      "reference_deg_per_century": 0.5,
+      "bootstrap": "paired resampling of towns with replacement; zero-date-variance resamples excluded"
+    },
+    "WLS_confirmation": {
+      "slope_deg_per_year": 0.00609012423134377,
+      "slope_deg_per_century": 0.609012423134377,
+      "interval95_deg_per_year": [
+        0.0053449003355218695,
+        0.00680351350487232
+      ],
+      "interval95_deg_per_century": [
+        0.5344900335521869,
+        0.6803513504872319
+      ],
+      "resamples": 20000,
+      "valid_resamples": 20000,
+      "reference_deg_per_century": 0.5,
+      "bootstrap": "paired resampling of towns with replacement; zero-date-variance resamples excluded"
+    },
+    "P1": {
+      "status": "fail",
+      "positive_fraction": 0.6363636363636364,
+      "no_town_below_minus_2sigma": false,
+      "interval_contains_predicted_and_excludes_zero": true,
+      "alcyone_predicted_slope_deg_per_year": 0.0065594878012207175,
+      "alcyone_mean_rate_deg_per_year": 0.006303832439249184,
+      "interpretation": "The predicted slope is the WLS slope of Alcyone theta at the observed town dates, with weights 1/(sigmaTheta^2+1deg^2). The mean local Alcyone rate is reported separately."
+    },
+    "P2": {
+      "eligible_n": 10,
+      "sign_match_n": 4,
+      "sign_match_fraction": 0.4,
+      "status": "fail"
+    },
+    "P3": {
+      "status": "pass",
+      "chi2": {
+        "target": 0.0,
+        "cardinal": 33.37012418137472,
+        "constant_offset": 119.99751518777164
+      },
+      "degrees_of_freedom": 8,
+      "target_upper_tail_probability": 1.0,
+      "discovery_constant_offset_deg": -2.187351225722258,
+      "ordering": [
+        "target",
+        "cardinal",
+        "constant_offset"
+      ],
+      "leave_one_out": [
+        {
+          "omitted": "lothal",
+          "chi2": {
+            "target": 0.0,
+            "cardinal": 33.23999394170142,
+            "constant_offset": 116.9894869674386
+          },
+          "ordering": [
+            "target",
+            "cardinal",
+            "constant_offset"
+          ],
+          "complete_order_survives": true,
+          "target_remains_better": true
+        },
+        {
+          "omitted": "dholavira",
+          "chi2": {
+            "target": 0.0,
+            "cardinal": 33.353254030705244,
+            "constant_offset": 115.04694517559201
+          },
+          "ordering": [
+            "target",
+            "cardinal",
+            "constant_offset"
+          ],
+          "complete_order_survives": true,
+          "target_remains_better": true
+        },
+        {
+          "omitted": "surkotada",
+          "chi2": {
+            "target": 0.0,
+            "cardinal": 32.82332401177171,
+            "constant_offset": 111.96277416127238
+          },
+          "ordering": [
+            "target",
+            "cardinal",
+            "constant_offset"
+          ],
+          "complete_order_survives": true,
+          "target_remains_better": true
+        },
+        {
+          "omitted": "banawali",
+          "chi2": {
+            "target": 0.0,
+            "cardinal": 32.43358702463461,
+            "constant_offset": 110.61645895360125
+          },
+          "ordering": [
+            "target",
+            "cardinal",
+            "constant_offset"
+          ],
+          "complete_order_survives": true,
+          "target_remains_better": true
+        },
+        {
+          "omitted": "rakhigarhi",
+          "chi2": {
+            "target": 0.0,
+            "cardinal": 30.78519694091093,
+            "constant_offset": 106.28624383954954
+          },
+          "ordering": [
+            "target",
+            "cardinal",
+            "constant_offset"
+          ],
+          "complete_order_survives": true,
+          "target_remains_better": true
+        },
+        {
+          "omitted": "chanhu-daro",
+          "chi2": {
+            "target": 0.0,
+            "cardinal": 27.68996168323662,
+            "constant_offset": 99.94134430171083
+          },
+          "ordering": [
+            "target",
+            "cardinal",
+            "constant_offset"
+          ],
+          "complete_order_survives": true,
+          "target_remains_better": true
+        },
+        {
+          "omitted": "kanmer",
+          "chi2": {
+            "target": 0.0,
+            "cardinal": 23.66911723373309,
+            "constant_offset": 92.85605710413469
+          },
+          "ordering": [
+            "target",
+            "cardinal",
+            "constant_offset"
+          ],
+          "complete_order_survives": true,
+          "target_remains_better": true
+        },
+        {
+          "omitted": "shikarpur",
+          "chi2": {
+            "target": 0.0,
+            "cardinal": 19.596434402929415,
+            "constant_offset": 86.2832958111022
+          },
+          "ordering": [
+            "target",
+            "cardinal",
+            "constant_offset"
+          ],
+          "complete_order_survives": true,
+          "target_remains_better": true
+        }
+      ],
+      "complete_order_survives_all": true,
+      "target_better_survives_all": true
+    },
+    "power": {
+      "simulations": 20000,
+      "permutations_per_simulation": 2000,
+      "p_method": "2000 independent random permutations for each simulation, plus-one p; even for n <=9",
+      "probability_P0_pass": 0.99965,
+      "monte_carlo_standard_error": 0.00013226441320324253,
+      "generating_model": "thetaAlcyone(D+Normal(0,sigmaD))+Normal(0,sigmaTheta)+Normal(0,1deg)",
+      "date_evaluation": "direct vector evaluation of space motion, precession and horizon iteration at every drawn year",
+      "optional_columns": "Optional theta/rate columns are used for observed scores. Power evaluates our Alcyone model at drawn dates."
+    },
+    "credence": 0.4,
+    "status": "open",
+    "D1": [
+      {
+        "slug": "mohenjo-daro",
+        "theta_deg": -2.6517256973911003,
+        "sigma_deg": 0.3,
+        "figure_7p2_within_2sigma": false,
+        "interval_1_to_2_intersects_2sigma": false,
+        "whole_interval_1_to_2_within_2sigma": false,
+        "interval_interpretation": "The interval is compatible when it intersects [theta-2sigma,theta+2sigma]; full containment is also reported."
+      }
+    ],
+    "predictions": [
+      {
+        "slug": "mohenjo-daro",
+        "target": "alcyone",
+        "theta_deg": -2.6517256973911003,
+        "rate_deg_per_year": 0.0063042285402241304,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "mohenjo-daro",
+        "target": "aldebaran",
+        "theta_deg": -6.710742074202585,
+        "rate_deg_per_year": 0.006347215870193281,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "mohenjo-daro",
+        "target": "procyon",
+        "theta_deg": 2.5307523816753132,
+        "rate_deg_per_year": 0.0037893180641401614,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "mohenjo-daro",
+        "target": "equinox_set",
+        "theta_deg": 0.17282309858757117,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "mohenjo-daro",
+        "target": "equinox_rise",
+        "theta_deg": -0.4815072479100735,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "mohenjo-daro",
+        "target": "june_set",
+        "theta_deg": 27.401790633075677,
+        "rate_deg_per_year": -0.00010352805947434262,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "mohenjo-daro",
+        "target": "june_rise",
+        "theta_deg": -27.819048606149174,
+        "rate_deg_per_year": 0.00010186168147356511,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "mohenjo-daro",
+        "target": "december_set",
+        "theta_deg": -26.939426014704765,
+        "rate_deg_per_year": 0.00014213880200486528,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "mohenjo-daro",
+        "target": "december_rise",
+        "theta_deg": 26.733135574115707,
+        "rate_deg_per_year": -0.00010298811076893344,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "harappa",
+        "target": "alcyone",
+        "theta_deg": -2.3342434827714555,
+        "rate_deg_per_year": 0.006528689750561511,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "harappa",
+        "target": "aldebaran",
+        "theta_deg": -6.392085384980589,
+        "rate_deg_per_year": 0.006543846935796864,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "harappa",
+        "target": "procyon",
+        "theta_deg": 2.903492593836745,
+        "rate_deg_per_year": 0.003800183474718892,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "harappa",
+        "target": "equinox_set",
+        "theta_deg": 0.6013122700461508,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "harappa",
+        "target": "equinox_rise",
+        "theta_deg": -0.5670498511480986,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "harappa",
+        "target": "june_set",
+        "theta_deg": 28.89209807558518,
+        "rate_deg_per_year": -9.578006482627188e-05,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "harappa",
+        "target": "june_rise",
+        "theta_deg": -28.88872410729406,
+        "rate_deg_per_year": 0.00010787324827497003,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "harappa",
+        "target": "december_set",
+        "theta_deg": -27.579840714029757,
+        "rate_deg_per_year": 0.0001196436239229115,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "harappa",
+        "target": "december_rise",
+        "theta_deg": 27.593880175317395,
+        "rate_deg_per_year": -0.00010976820880387095,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "kalibangan",
+        "target": "alcyone",
+        "theta_deg": -1.5760844970042172,
+        "rate_deg_per_year": 0.006467075900373515,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "kalibangan",
+        "target": "aldebaran",
+        "theta_deg": -5.631492261357664,
+        "rate_deg_per_year": 0.006449613671584871,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "kalibangan",
+        "target": "procyon",
+        "theta_deg": 3.2722940763175075,
+        "rate_deg_per_year": 0.0036428719981478255,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "kalibangan",
+        "target": "equinox_set",
+        "theta_deg": 0.5284404134168312,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "kalibangan",
+        "target": "equinox_rise",
+        "theta_deg": -0.48466650231223696,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "kalibangan",
+        "target": "june_set",
+        "theta_deg": 28.46319289384769,
+        "rate_deg_per_year": -0.00011031277949825835,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "kalibangan",
+        "target": "june_rise",
+        "theta_deg": -28.438480425412124,
+        "rate_deg_per_year": 0.00010866091734570205,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "kalibangan",
+        "target": "december_set",
+        "theta_deg": -27.271606576985448,
+        "rate_deg_per_year": 0.0001100866035631043,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "kalibangan",
+        "target": "december_rise",
+        "theta_deg": 27.30841289109243,
+        "rate_deg_per_year": -0.00011325330367114362,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "lothal",
+        "target": "alcyone",
+        "theta_deg": -0.3766191195941815,
+        "rate_deg_per_year": 0.006105508486704139,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "lothal",
+        "target": "aldebaran",
+        "theta_deg": -4.464857236848502,
+        "rate_deg_per_year": 0.006055501678484347,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "lothal",
+        "target": "procyon",
+        "theta_deg": 3.61329066453834,
+        "rate_deg_per_year": 0.003324566592024212,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "lothal",
+        "target": "equinox_set",
+        "theta_deg": 0.3861025581887816,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "lothal",
+        "target": "equinox_rise",
+        "theta_deg": -0.3885467115717063,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "lothal",
+        "target": "june_set",
+        "theta_deg": 26.55202406352447,
+        "rate_deg_per_year": -0.00010336260256110563,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "lothal",
+        "target": "june_rise",
+        "theta_deg": -26.550422398840837,
+        "rate_deg_per_year": 0.00010323946880255619,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "lothal",
+        "target": "december_set",
+        "theta_deg": -25.69430970141468,
+        "rate_deg_per_year": 0.00010074311883016662,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "lothal",
+        "target": "december_rise",
+        "theta_deg": 25.687513047903778,
+        "rate_deg_per_year": -0.00010234490547901487,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "dholavira",
+        "target": "alcyone",
+        "theta_deg": 0.1356040715824065,
+        "rate_deg_per_year": 0.006177309615586069,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "dholavira",
+        "target": "aldebaran",
+        "theta_deg": -3.947640716617684,
+        "rate_deg_per_year": 0.006097803712466998,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "dholavira",
+        "target": "procyon",
+        "theta_deg": 3.941839096570561,
+        "rate_deg_per_year": 0.00324682995571834,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "dholavira",
+        "target": "equinox_set",
+        "theta_deg": 0.2960952298171833,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "dholavira",
+        "target": "equinox_rise",
+        "theta_deg": 0.18108694049688268,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "dholavira",
+        "target": "june_set",
+        "theta_deg": 26.939917282025192,
+        "rate_deg_per_year": -0.000106065799259909,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "dholavira",
+        "target": "june_rise",
+        "theta_deg": -25.948409611199068,
+        "rate_deg_per_year": 0.00010870585141191213,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "dholavira",
+        "target": "december_set",
+        "theta_deg": -25.926037953205935,
+        "rate_deg_per_year": 0.00010518141329185938,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "dholavira",
+        "target": "december_rise",
+        "theta_deg": 26.054317661888135,
+        "rate_deg_per_year": -0.00010335901830629268,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "surkotada",
+        "target": "alcyone",
+        "theta_deg": 0.7720182542319094,
+        "rate_deg_per_year": 0.006170703830578645,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "surkotada",
+        "target": "aldebaran",
+        "theta_deg": -3.322710572396602,
+        "rate_deg_per_year": 0.006061646354974641,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "surkotada",
+        "target": "procyon",
+        "theta_deg": 4.25966370402972,
+        "rate_deg_per_year": 0.0031264939992047404,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "surkotada",
+        "target": "equinox_set",
+        "theta_deg": 0.46960567932529784,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "surkotada",
+        "target": "equinox_rise",
+        "theta_deg": -0.47941371024909074,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "surkotada",
+        "target": "june_set",
+        "theta_deg": 26.892700476897403,
+        "rate_deg_per_year": -0.00010503546267614184,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "surkotada",
+        "target": "june_rise",
+        "theta_deg": -26.897761260588453,
+        "rate_deg_per_year": 0.0001075582130108188,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "surkotada",
+        "target": "december_set",
+        "theta_deg": -25.94628504405256,
+        "rate_deg_per_year": 9.93469962250515e-05,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "surkotada",
+        "target": "december_rise",
+        "theta_deg": 26.082051256450413,
+        "rate_deg_per_year": -9.734823605896281e-05,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "banawali",
+        "target": "alcyone",
+        "theta_deg": 1.010359094998762,
+        "rate_deg_per_year": 0.0065049567132592755,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "banawali",
+        "target": "aldebaran",
+        "theta_deg": -3.077342483335997,
+        "rate_deg_per_year": 0.006361831299275878,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "banawali",
+        "target": "procyon",
+        "theta_deg": 4.63804020257885,
+        "rate_deg_per_year": 0.0031730973393973728,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "banawali",
+        "target": "equinox_set",
+        "theta_deg": 0.5383043273136536,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "banawali",
+        "target": "equinox_rise",
+        "theta_deg": -0.5035598900726797,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "banawali",
+        "target": "june_set",
+        "theta_deg": 28.437088862734356,
+        "rate_deg_per_year": -0.00011078477004559772,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "banawali",
+        "target": "june_rise",
+        "theta_deg": -28.410308697183886,
+        "rate_deg_per_year": 0.00011870513733946098,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "banawali",
+        "target": "december_set",
+        "theta_deg": -27.269253828646697,
+        "rate_deg_per_year": 0.00011029396749250963,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "banawali",
+        "target": "december_rise",
+        "theta_deg": 27.27631381380263,
+        "rate_deg_per_year": -0.00011956529104864444,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "rakhigarhi",
+        "target": "alcyone",
+        "theta_deg": 1.6785620906316012,
+        "rate_deg_per_year": 0.006485443723167918,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "rakhigarhi",
+        "target": "aldebaran",
+        "theta_deg": -2.424608551819233,
+        "rate_deg_per_year": 0.006311397420561775,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "rakhigarhi",
+        "target": "procyon",
+        "theta_deg": 4.942892500882692,
+        "rate_deg_per_year": 0.0030401790228194157,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "rakhigarhi",
+        "target": "equinox_set",
+        "theta_deg": 0.524395742139518,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "rakhigarhi",
+        "target": "equinox_rise",
+        "theta_deg": -0.4911091546904487,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "rakhigarhi",
+        "target": "june_set",
+        "theta_deg": 28.321523254865497,
+        "rate_deg_per_year": -0.00011798720462707025,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "rakhigarhi",
+        "target": "june_rise",
+        "theta_deg": -28.325468872263443,
+        "rate_deg_per_year": 0.00011803775647216241,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "rakhigarhi",
+        "target": "december_set",
+        "theta_deg": -27.14603588357153,
+        "rate_deg_per_year": 0.00011548820232036405,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "rakhigarhi",
+        "target": "december_rise",
+        "theta_deg": 27.16422773305655,
+        "rate_deg_per_year": -0.00012071603615993354,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "chanhu-daro",
+        "target": "alcyone",
+        "theta_deg": 2.4882478017614176,
+        "rate_deg_per_year": 0.006300635161596233,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "chanhu-daro",
+        "target": "aldebaran",
+        "theta_deg": -1.637957514214122,
+        "rate_deg_per_year": 0.006099984699093852,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "chanhu-daro",
+        "target": "procyon",
+        "theta_deg": 5.179803186779736,
+        "rate_deg_per_year": 0.0028325114997528543,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "chanhu-daro",
+        "target": "equinox_set",
+        "theta_deg": 0.1735085130599714,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "chanhu-daro",
+        "target": "equinox_rise",
+        "theta_deg": -0.4642232324454909,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "chanhu-daro",
+        "target": "june_set",
+        "theta_deg": 27.320970481277186,
+        "rate_deg_per_year": -0.00011142991849226291,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "chanhu-daro",
+        "target": "june_rise",
+        "theta_deg": -27.40891766870795,
+        "rate_deg_per_year": 0.00011155583875023467,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "chanhu-daro",
+        "target": "december_set",
+        "theta_deg": -26.688749761665775,
+        "rate_deg_per_year": 0.00010874014152136625,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "chanhu-daro",
+        "target": "december_rise",
+        "theta_deg": 26.39308473719376,
+        "rate_deg_per_year": -0.00011010204014141322,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "kanmer",
+        "target": "alcyone",
+        "theta_deg": 3.2517837524856077,
+        "rate_deg_per_year": 0.006156761666855459,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "kanmer",
+        "target": "aldebaran",
+        "theta_deg": -0.9118190565199029,
+        "rate_deg_per_year": 0.005930125201845726,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "kanmer",
+        "target": "procyon",
+        "theta_deg": 5.41383960115536,
+        "rate_deg_per_year": 0.0026488832933944193,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "kanmer",
+        "target": "equinox_set",
+        "theta_deg": 0.3568976329592033,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "kanmer",
+        "target": "equinox_rise",
+        "theta_deg": -0.512750384521965,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "kanmer",
+        "target": "june_set",
+        "theta_deg": 26.348059679707262,
+        "rate_deg_per_year": -9.282390021780884e-05,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "kanmer",
+        "target": "june_rise",
+        "theta_deg": -26.78698296398857,
+        "rate_deg_per_year": 0.0001138312052889745,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "kanmer",
+        "target": "december_set",
+        "theta_deg": -25.715294551310308,
+        "rate_deg_per_year": 0.00011149110505300542,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "kanmer",
+        "target": "december_rise",
+        "theta_deg": 25.670887942729436,
+        "rate_deg_per_year": -0.00011094768853951109,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "shikarpur",
+        "target": "alcyone",
+        "theta_deg": 3.8747028090558615,
+        "rate_deg_per_year": 0.006140843442834125,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "shikarpur",
+        "target": "aldebaran",
+        "theta_deg": -0.31434334719750723,
+        "rate_deg_per_year": 0.005885196121798799,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "shikarpur",
+        "target": "procyon",
+        "theta_deg": 5.670179228414668,
+        "rate_deg_per_year": 0.0025231036689791608,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "shikarpur",
+        "target": "equinox_set",
+        "theta_deg": 0.21770269697378808,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "shikarpur",
+        "target": "equinox_rise",
+        "theta_deg": -0.3490515467888997,
+        "rate_deg_per_year": 0.0,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "shikarpur",
+        "target": "june_set",
+        "theta_deg": 26.398986344888954,
+        "rate_deg_per_year": -0.00011583659178427297,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "shikarpur",
+        "target": "june_rise",
+        "theta_deg": -26.539657004232907,
+        "rate_deg_per_year": 0.00011296360786133163,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "shikarpur",
+        "target": "december_set",
+        "theta_deg": -25.85230463210101,
+        "rate_deg_per_year": 0.0001146663490524702,
+        "source": "independent predictor"
+      },
+      {
+        "slug": "shikarpur",
+        "target": "december_rise",
+        "theta_deg": 25.78452458729504,
+        "rate_deg_per_year": -0.0001148368262188626,
+        "source": "independent predictor"
+      }
+    ]
+  },
+  "comparison": {
+    "n_common": 11,
+    "only_first": [],
+    "only_second": [],
+    "deviations": {
+      "weighted_mean_delta_deg": 0.0,
+      "weighted_mean_standard_error_deg": 0.12792042981336627,
+      "median_absolute_delta_deg": 0.0,
+      "root_mean_square_delta_deg": 0.0,
+      "fraction_abs_z_le_2p5": 1.0,
+      "abs_z_gt_2": [],
+      "abs_z_gt_3": [],
+      "verdict": "agree"
+    },
+    "dates": {
+      "fraction_within_tolerance": 1.0,
+      "verdict": "agree"
+    },
+    "towns": [
+      {
+        "slug": "banawali",
+        "part_first": "synthetic whole town",
+        "part_second": "synthetic whole town",
+        "theta_delta_deg": 0.0,
+        "combined_sigma_deg": 0.4242640687119285,
+        "z": 0.0,
+        "date_delta_years": 0.0,
+        "date_tolerance_years": 100,
+        "date_agree": true
+      },
+      {
+        "slug": "chanhu-daro",
+        "part_first": "synthetic whole town",
+        "part_second": "synthetic whole town",
+        "theta_delta_deg": 0.0,
+        "combined_sigma_deg": 0.4242640687119285,
+        "z": 0.0,
+        "date_delta_years": 0.0,
+        "date_tolerance_years": 100,
+        "date_agree": true
+      },
+      {
+        "slug": "dholavira",
+        "part_first": "synthetic whole town",
+        "part_second": "synthetic whole town",
+        "theta_delta_deg": 0.0,
+        "combined_sigma_deg": 0.4242640687119285,
+        "z": 0.0,
+        "date_delta_years": 0.0,
+        "date_tolerance_years": 100,
+        "date_agree": true
+      },
+      {
+        "slug": "harappa",
+        "part_first": "synthetic whole town",
+        "part_second": "synthetic whole town",
+        "theta_delta_deg": 0.0,
+        "combined_sigma_deg": 0.4242640687119285,
+        "z": 0.0,
+        "date_delta_years": 0.0,
+        "date_tolerance_years": 100,
+        "date_agree": true
+      },
+      {
+        "slug": "kalibangan",
+        "part_first": "synthetic whole town",
+        "part_second": "synthetic whole town",
+        "theta_delta_deg": 0.0,
+        "combined_sigma_deg": 0.4242640687119285,
+        "z": 0.0,
+        "date_delta_years": 0.0,
+        "date_tolerance_years": 100,
+        "date_agree": true
+      },
+      {
+        "slug": "kanmer",
+        "part_first": "synthetic whole town",
+        "part_second": "synthetic whole town",
+        "theta_delta_deg": 0.0,
+        "combined_sigma_deg": 0.4242640687119285,
+        "z": 0.0,
+        "date_delta_years": 0.0,
+        "date_tolerance_years": 100,
+        "date_agree": true
+      },
+      {
+        "slug": "lothal",
+        "part_first": "synthetic whole town",
+        "part_second": "synthetic whole town",
+        "theta_delta_deg": 0.0,
+        "combined_sigma_deg": 0.4242640687119285,
+        "z": 0.0,
+        "date_delta_years": 0.0,
+        "date_tolerance_years": 100,
+        "date_agree": true
+      },
+      {
+        "slug": "mohenjo-daro",
+        "part_first": "synthetic whole town",
+        "part_second": "synthetic whole town",
+        "theta_delta_deg": 0.0,
+        "combined_sigma_deg": 0.4242640687119285,
+        "z": 0.0,
+        "date_delta_years": 0.0,
+        "date_tolerance_years": 100,
+        "date_agree": true
+      },
+      {
+        "slug": "rakhigarhi",
+        "part_first": "synthetic whole town",
+        "part_second": "synthetic whole town",
+        "theta_delta_deg": 0.0,
+        "combined_sigma_deg": 0.4242640687119285,
+        "z": 0.0,
+        "date_delta_years": 0.0,
+        "date_tolerance_years": 100,
+        "date_agree": true
+      },
+      {
+        "slug": "shikarpur",
+        "part_first": "synthetic whole town",
+        "part_second": "synthetic whole town",
+        "theta_delta_deg": 0.0,
+        "combined_sigma_deg": 0.4242640687119285,
+        "z": 0.0,
+        "date_delta_years": 0.0,
+        "date_tolerance_years": 100,
+        "date_agree": true
+      },
+      {
+        "slug": "surkotada",
+        "part_first": "synthetic whole town",
+        "part_second": "synthetic whole town",
+        "theta_delta_deg": 0.0,
+        "combined_sigma_deg": 0.4242640687119285,
+        "z": 0.0,
+        "date_delta_years": 0.0,
+        "date_tolerance_years": 100,
+        "date_agree": true
+      }
+    ],
+    "astronomy": {
+      "targets": {
+        "alcyone": {
+          "n": 11,
+          "max_absolute_difference_deg": 0.0,
+          "worst_key": [
+            "banawali",
+            29.598,
+            75.393,
+            -2399.0,
+            "alcyone"
+          ],
+          "verdict": "agree"
+        },
+        "aldebaran": {
+          "n": 11,
+          "max_absolute_difference_deg": 0.0,
+          "worst_key": [
+            "banawali",
+            29.598,
+            75.393,
+            -2399.0,
+            "aldebaran"
+          ],
+          "verdict": "agree"
+        },
+        "procyon": {
+          "n": 11,
+          "max_absolute_difference_deg": 0.0,
+          "worst_key": [
+            "banawali",
+            29.598,
+            75.393,
+            -2399.0,
+            "procyon"
+          ],
+          "verdict": "agree"
+        },
+        "equinox_set": {
+          "n": 11,
+          "max_absolute_difference_deg": 0.0,
+          "worst_key": [
+            "banawali",
+            29.598,
+            75.393,
+            -2399.0,
+            "equinox_set"
+          ],
+          "verdict": "agree"
+        },
+        "equinox_rise": {
+          "n": 11,
+          "max_absolute_difference_deg": 0.0,
+          "worst_key": [
+            "banawali",
+            29.598,
+            75.393,
+            -2399.0,
+            "equinox_rise"
+          ],
+          "verdict": "agree"
+        },
+        "june_set": {
+          "n": 11,
+          "max_absolute_difference_deg": 0.0,
+          "worst_key": [
+            "banawali",
+            29.598,
+            75.393,
+            -2399.0,
+            "june_set"
+          ],
+          "verdict": "agree"
+        },
+        "june_rise": {
+          "n": 11,
+          "max_absolute_difference_deg": 0.0,
+          "worst_key": [
+            "banawali",
+            29.598,
+            75.393,
+            -2399.0,
+            "june_rise"
+          ],
+          "verdict": "agree"
+        },
+        "december_set": {
+          "n": 11,
+          "max_absolute_difference_deg": 0.0,
+          "worst_key": [
+            "banawali",
+            29.598,
+            75.393,
+            -2399.0,
+            "december_set"
+          ],
+          "verdict": "agree"
+        },
+        "december_rise": {
+          "n": 11,
+          "max_absolute_difference_deg": 0.0,
+          "worst_key": [
+            "banawali",
+            29.598,
+            75.393,
+            -2399.0,
+            "december_rise"
+          ],
+          "verdict": "agree"
+        }
+      },
+      "verdict": "agree",
+      "different_coordinates_or_dates": [],
+      "predictions_first": {
+        "mohenjo-daro": {
+          "alcyone": {
+            "theta_deg": -2.6517256973911003,
+            "rate_deg_per_year": 0.0063042285402241304,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -6.710742074202585,
+            "rate_deg_per_year": 0.006347215870193281,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 2.5307523816753132,
+            "rate_deg_per_year": 0.0037893180641401614,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.17282309858757117,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": -0.4815072479100735,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 27.401790633075677,
+            "rate_deg_per_year": -0.00010352805947434262,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -27.819048606149174,
+            "rate_deg_per_year": 0.00010186168147356511,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -26.939426014704765,
+            "rate_deg_per_year": 0.00014213880200486528,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 26.733135574115707,
+            "rate_deg_per_year": -0.00010298811076893344,
+            "source": "independent predictor"
+          }
+        },
+        "harappa": {
+          "alcyone": {
+            "theta_deg": -2.3342434827714555,
+            "rate_deg_per_year": 0.006528689750561511,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -6.392085384980589,
+            "rate_deg_per_year": 0.006543846935796864,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 2.903492593836745,
+            "rate_deg_per_year": 0.003800183474718892,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.6013122700461508,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": -0.5670498511480986,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 28.89209807558518,
+            "rate_deg_per_year": -9.578006482627188e-05,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -28.88872410729406,
+            "rate_deg_per_year": 0.00010787324827497003,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -27.579840714029757,
+            "rate_deg_per_year": 0.0001196436239229115,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 27.593880175317395,
+            "rate_deg_per_year": -0.00010976820880387095,
+            "source": "independent predictor"
+          }
+        },
+        "kalibangan": {
+          "alcyone": {
+            "theta_deg": -1.5760844970042172,
+            "rate_deg_per_year": 0.006467075900373515,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -5.631492261357664,
+            "rate_deg_per_year": 0.006449613671584871,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 3.2722940763175075,
+            "rate_deg_per_year": 0.0036428719981478255,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.5284404134168312,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": -0.48466650231223696,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 28.46319289384769,
+            "rate_deg_per_year": -0.00011031277949825835,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -28.438480425412124,
+            "rate_deg_per_year": 0.00010866091734570205,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -27.271606576985448,
+            "rate_deg_per_year": 0.0001100866035631043,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 27.30841289109243,
+            "rate_deg_per_year": -0.00011325330367114362,
+            "source": "independent predictor"
+          }
+        },
+        "lothal": {
+          "alcyone": {
+            "theta_deg": -0.3766191195941815,
+            "rate_deg_per_year": 0.006105508486704139,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -4.464857236848502,
+            "rate_deg_per_year": 0.006055501678484347,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 3.61329066453834,
+            "rate_deg_per_year": 0.003324566592024212,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.3861025581887816,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": -0.3885467115717063,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 26.55202406352447,
+            "rate_deg_per_year": -0.00010336260256110563,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -26.550422398840837,
+            "rate_deg_per_year": 0.00010323946880255619,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -25.69430970141468,
+            "rate_deg_per_year": 0.00010074311883016662,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 25.687513047903778,
+            "rate_deg_per_year": -0.00010234490547901487,
+            "source": "independent predictor"
+          }
+        },
+        "dholavira": {
+          "alcyone": {
+            "theta_deg": 0.1356040715824065,
+            "rate_deg_per_year": 0.006177309615586069,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -3.947640716617684,
+            "rate_deg_per_year": 0.006097803712466998,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 3.941839096570561,
+            "rate_deg_per_year": 0.00324682995571834,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.2960952298171833,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": 0.18108694049688268,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 26.939917282025192,
+            "rate_deg_per_year": -0.000106065799259909,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -25.948409611199068,
+            "rate_deg_per_year": 0.00010870585141191213,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -25.926037953205935,
+            "rate_deg_per_year": 0.00010518141329185938,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 26.054317661888135,
+            "rate_deg_per_year": -0.00010335901830629268,
+            "source": "independent predictor"
+          }
+        },
+        "surkotada": {
+          "alcyone": {
+            "theta_deg": 0.7720182542319094,
+            "rate_deg_per_year": 0.006170703830578645,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -3.322710572396602,
+            "rate_deg_per_year": 0.006061646354974641,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 4.25966370402972,
+            "rate_deg_per_year": 0.0031264939992047404,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.46960567932529784,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": -0.47941371024909074,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 26.892700476897403,
+            "rate_deg_per_year": -0.00010503546267614184,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -26.897761260588453,
+            "rate_deg_per_year": 0.0001075582130108188,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -25.94628504405256,
+            "rate_deg_per_year": 9.93469962250515e-05,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 26.082051256450413,
+            "rate_deg_per_year": -9.734823605896281e-05,
+            "source": "independent predictor"
+          }
+        },
+        "banawali": {
+          "alcyone": {
+            "theta_deg": 1.010359094998762,
+            "rate_deg_per_year": 0.0065049567132592755,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -3.077342483335997,
+            "rate_deg_per_year": 0.006361831299275878,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 4.63804020257885,
+            "rate_deg_per_year": 0.0031730973393973728,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.5383043273136536,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": -0.5035598900726797,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 28.437088862734356,
+            "rate_deg_per_year": -0.00011078477004559772,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -28.410308697183886,
+            "rate_deg_per_year": 0.00011870513733946098,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -27.269253828646697,
+            "rate_deg_per_year": 0.00011029396749250963,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 27.27631381380263,
+            "rate_deg_per_year": -0.00011956529104864444,
+            "source": "independent predictor"
+          }
+        },
+        "rakhigarhi": {
+          "alcyone": {
+            "theta_deg": 1.6785620906316012,
+            "rate_deg_per_year": 0.006485443723167918,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -2.424608551819233,
+            "rate_deg_per_year": 0.006311397420561775,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 4.942892500882692,
+            "rate_deg_per_year": 0.0030401790228194157,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.524395742139518,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": -0.4911091546904487,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 28.321523254865497,
+            "rate_deg_per_year": -0.00011798720462707025,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -28.325468872263443,
+            "rate_deg_per_year": 0.00011803775647216241,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -27.14603588357153,
+            "rate_deg_per_year": 0.00011548820232036405,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 27.16422773305655,
+            "rate_deg_per_year": -0.00012071603615993354,
+            "source": "independent predictor"
+          }
+        },
+        "chanhu-daro": {
+          "alcyone": {
+            "theta_deg": 2.4882478017614176,
+            "rate_deg_per_year": 0.006300635161596233,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -1.637957514214122,
+            "rate_deg_per_year": 0.006099984699093852,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 5.179803186779736,
+            "rate_deg_per_year": 0.0028325114997528543,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.1735085130599714,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": -0.4642232324454909,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 27.320970481277186,
+            "rate_deg_per_year": -0.00011142991849226291,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -27.40891766870795,
+            "rate_deg_per_year": 0.00011155583875023467,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -26.688749761665775,
+            "rate_deg_per_year": 0.00010874014152136625,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 26.39308473719376,
+            "rate_deg_per_year": -0.00011010204014141322,
+            "source": "independent predictor"
+          }
+        },
+        "kanmer": {
+          "alcyone": {
+            "theta_deg": 3.2517837524856077,
+            "rate_deg_per_year": 0.006156761666855459,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -0.9118190565199029,
+            "rate_deg_per_year": 0.005930125201845726,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 5.41383960115536,
+            "rate_deg_per_year": 0.0026488832933944193,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.3568976329592033,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": -0.512750384521965,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 26.348059679707262,
+            "rate_deg_per_year": -9.282390021780884e-05,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -26.78698296398857,
+            "rate_deg_per_year": 0.0001138312052889745,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -25.715294551310308,
+            "rate_deg_per_year": 0.00011149110505300542,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 25.670887942729436,
+            "rate_deg_per_year": -0.00011094768853951109,
+            "source": "independent predictor"
+          }
+        },
+        "shikarpur": {
+          "alcyone": {
+            "theta_deg": 3.8747028090558615,
+            "rate_deg_per_year": 0.006140843442834125,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -0.31434334719750723,
+            "rate_deg_per_year": 0.005885196121798799,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 5.670179228414668,
+            "rate_deg_per_year": 0.0025231036689791608,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.21770269697378808,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": -0.3490515467888997,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 26.398986344888954,
+            "rate_deg_per_year": -0.00011583659178427297,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -26.539657004232907,
+            "rate_deg_per_year": 0.00011296360786133163,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -25.85230463210101,
+            "rate_deg_per_year": 0.0001146663490524702,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 25.78452458729504,
+            "rate_deg_per_year": -0.0001148368262188626,
+            "source": "independent predictor"
+          }
+        }
+      },
+      "predictions_second": {
+        "mohenjo-daro": {
+          "alcyone": {
+            "theta_deg": -2.6517256973911003,
+            "rate_deg_per_year": 0.0063042285402241304,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -6.710742074202585,
+            "rate_deg_per_year": 0.006347215870193281,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 2.5307523816753132,
+            "rate_deg_per_year": 0.0037893180641401614,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.17282309858757117,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": -0.4815072479100735,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 27.401790633075677,
+            "rate_deg_per_year": -0.00010352805947434262,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -27.819048606149174,
+            "rate_deg_per_year": 0.00010186168147356511,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -26.939426014704765,
+            "rate_deg_per_year": 0.00014213880200486528,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 26.733135574115707,
+            "rate_deg_per_year": -0.00010298811076893344,
+            "source": "independent predictor"
+          }
+        },
+        "harappa": {
+          "alcyone": {
+            "theta_deg": -2.3342434827714555,
+            "rate_deg_per_year": 0.006528689750561511,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -6.392085384980589,
+            "rate_deg_per_year": 0.006543846935796864,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 2.903492593836745,
+            "rate_deg_per_year": 0.003800183474718892,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.6013122700461508,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": -0.5670498511480986,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 28.89209807558518,
+            "rate_deg_per_year": -9.578006482627188e-05,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -28.88872410729406,
+            "rate_deg_per_year": 0.00010787324827497003,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -27.579840714029757,
+            "rate_deg_per_year": 0.0001196436239229115,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 27.593880175317395,
+            "rate_deg_per_year": -0.00010976820880387095,
+            "source": "independent predictor"
+          }
+        },
+        "kalibangan": {
+          "alcyone": {
+            "theta_deg": -1.5760844970042172,
+            "rate_deg_per_year": 0.006467075900373515,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -5.631492261357664,
+            "rate_deg_per_year": 0.006449613671584871,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 3.2722940763175075,
+            "rate_deg_per_year": 0.0036428719981478255,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.5284404134168312,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": -0.48466650231223696,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 28.46319289384769,
+            "rate_deg_per_year": -0.00011031277949825835,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -28.438480425412124,
+            "rate_deg_per_year": 0.00010866091734570205,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -27.271606576985448,
+            "rate_deg_per_year": 0.0001100866035631043,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 27.30841289109243,
+            "rate_deg_per_year": -0.00011325330367114362,
+            "source": "independent predictor"
+          }
+        },
+        "lothal": {
+          "alcyone": {
+            "theta_deg": -0.3766191195941815,
+            "rate_deg_per_year": 0.006105508486704139,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -4.464857236848502,
+            "rate_deg_per_year": 0.006055501678484347,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 3.61329066453834,
+            "rate_deg_per_year": 0.003324566592024212,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.3861025581887816,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": -0.3885467115717063,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 26.55202406352447,
+            "rate_deg_per_year": -0.00010336260256110563,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -26.550422398840837,
+            "rate_deg_per_year": 0.00010323946880255619,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -25.69430970141468,
+            "rate_deg_per_year": 0.00010074311883016662,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 25.687513047903778,
+            "rate_deg_per_year": -0.00010234490547901487,
+            "source": "independent predictor"
+          }
+        },
+        "dholavira": {
+          "alcyone": {
+            "theta_deg": 0.1356040715824065,
+            "rate_deg_per_year": 0.006177309615586069,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -3.947640716617684,
+            "rate_deg_per_year": 0.006097803712466998,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 3.941839096570561,
+            "rate_deg_per_year": 0.00324682995571834,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.2960952298171833,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": 0.18108694049688268,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 26.939917282025192,
+            "rate_deg_per_year": -0.000106065799259909,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -25.948409611199068,
+            "rate_deg_per_year": 0.00010870585141191213,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -25.926037953205935,
+            "rate_deg_per_year": 0.00010518141329185938,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 26.054317661888135,
+            "rate_deg_per_year": -0.00010335901830629268,
+            "source": "independent predictor"
+          }
+        },
+        "surkotada": {
+          "alcyone": {
+            "theta_deg": 0.7720182542319094,
+            "rate_deg_per_year": 0.006170703830578645,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -3.322710572396602,
+            "rate_deg_per_year": 0.006061646354974641,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 4.25966370402972,
+            "rate_deg_per_year": 0.0031264939992047404,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.46960567932529784,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": -0.47941371024909074,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 26.892700476897403,
+            "rate_deg_per_year": -0.00010503546267614184,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -26.897761260588453,
+            "rate_deg_per_year": 0.0001075582130108188,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -25.94628504405256,
+            "rate_deg_per_year": 9.93469962250515e-05,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 26.082051256450413,
+            "rate_deg_per_year": -9.734823605896281e-05,
+            "source": "independent predictor"
+          }
+        },
+        "banawali": {
+          "alcyone": {
+            "theta_deg": 1.010359094998762,
+            "rate_deg_per_year": 0.0065049567132592755,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -3.077342483335997,
+            "rate_deg_per_year": 0.006361831299275878,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 4.63804020257885,
+            "rate_deg_per_year": 0.0031730973393973728,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.5383043273136536,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": -0.5035598900726797,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 28.437088862734356,
+            "rate_deg_per_year": -0.00011078477004559772,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -28.410308697183886,
+            "rate_deg_per_year": 0.00011870513733946098,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -27.269253828646697,
+            "rate_deg_per_year": 0.00011029396749250963,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 27.27631381380263,
+            "rate_deg_per_year": -0.00011956529104864444,
+            "source": "independent predictor"
+          }
+        },
+        "rakhigarhi": {
+          "alcyone": {
+            "theta_deg": 1.6785620906316012,
+            "rate_deg_per_year": 0.006485443723167918,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -2.424608551819233,
+            "rate_deg_per_year": 0.006311397420561775,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 4.942892500882692,
+            "rate_deg_per_year": 0.0030401790228194157,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.524395742139518,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": -0.4911091546904487,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 28.321523254865497,
+            "rate_deg_per_year": -0.00011798720462707025,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -28.325468872263443,
+            "rate_deg_per_year": 0.00011803775647216241,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -27.14603588357153,
+            "rate_deg_per_year": 0.00011548820232036405,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 27.16422773305655,
+            "rate_deg_per_year": -0.00012071603615993354,
+            "source": "independent predictor"
+          }
+        },
+        "chanhu-daro": {
+          "alcyone": {
+            "theta_deg": 2.4882478017614176,
+            "rate_deg_per_year": 0.006300635161596233,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -1.637957514214122,
+            "rate_deg_per_year": 0.006099984699093852,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 5.179803186779736,
+            "rate_deg_per_year": 0.0028325114997528543,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.1735085130599714,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": -0.4642232324454909,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 27.320970481277186,
+            "rate_deg_per_year": -0.00011142991849226291,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -27.40891766870795,
+            "rate_deg_per_year": 0.00011155583875023467,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -26.688749761665775,
+            "rate_deg_per_year": 0.00010874014152136625,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 26.39308473719376,
+            "rate_deg_per_year": -0.00011010204014141322,
+            "source": "independent predictor"
+          }
+        },
+        "kanmer": {
+          "alcyone": {
+            "theta_deg": 3.2517837524856077,
+            "rate_deg_per_year": 0.006156761666855459,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -0.9118190565199029,
+            "rate_deg_per_year": 0.005930125201845726,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 5.41383960115536,
+            "rate_deg_per_year": 0.0026488832933944193,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.3568976329592033,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": -0.512750384521965,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 26.348059679707262,
+            "rate_deg_per_year": -9.282390021780884e-05,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -26.78698296398857,
+            "rate_deg_per_year": 0.0001138312052889745,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -25.715294551310308,
+            "rate_deg_per_year": 0.00011149110505300542,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 25.670887942729436,
+            "rate_deg_per_year": -0.00011094768853951109,
+            "source": "independent predictor"
+          }
+        },
+        "shikarpur": {
+          "alcyone": {
+            "theta_deg": 3.8747028090558615,
+            "rate_deg_per_year": 0.006140843442834125,
+            "source": "independent predictor"
+          },
+          "aldebaran": {
+            "theta_deg": -0.31434334719750723,
+            "rate_deg_per_year": 0.005885196121798799,
+            "source": "independent predictor"
+          },
+          "procyon": {
+            "theta_deg": 5.670179228414668,
+            "rate_deg_per_year": 0.0025231036689791608,
+            "source": "independent predictor"
+          },
+          "equinox_set": {
+            "theta_deg": 0.21770269697378808,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "equinox_rise": {
+            "theta_deg": -0.3490515467888997,
+            "rate_deg_per_year": 0.0,
+            "source": "independent predictor"
+          },
+          "june_set": {
+            "theta_deg": 26.398986344888954,
+            "rate_deg_per_year": -0.00011583659178427297,
+            "source": "independent predictor"
+          },
+          "june_rise": {
+            "theta_deg": -26.539657004232907,
+            "rate_deg_per_year": 0.00011296360786133163,
+            "source": "independent predictor"
+          },
+          "december_set": {
+            "theta_deg": -25.85230463210101,
+            "rate_deg_per_year": 0.0001146663490524702,
+            "source": "independent predictor"
+          },
+          "december_rise": {
+            "theta_deg": 25.78452458729504,
+            "rate_deg_per_year": -0.0001148368262188626,
+            "source": "independent predictor"
+          }
+        }
+      }
+    }
+  }
+}

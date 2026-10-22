@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "task": "town-axes-planning-power",
+  "synthetic": true,
+  "exploratory": true,
+  "n_towns": 11,
+  "towns": [
+    "chanhu-daro",
+    "dholavira",
+    "farmana",
+    "harappa",
+    "kalibangan",
+    "kanmer",
+    "lothal",
+    "mohenjo-daro",
+    "rangpur",
+    "rojdi",
+    "surkotada"
+  ],
+  "scenarios": {
+    "sigma_theta_0.5": {
+      "n_sim": 5000,
+      "n_perm_per_sim": 1999,
+      "p0_pass_rate": 0.9918,
+      "model": "Alcyone deviation at each town's layout date plus Gaussian date, measurement and builders' errors"
+    },
+    "sigma_theta_1.0": {
+      "n_sim": 5000,
+      "n_perm_per_sim": 1999,
+      "p0_pass_rate": 0.9688,
+      "model": "Alcyone deviation at each town's layout date plus Gaussian date, measurement and builders' errors"
+    },
+    "sigma_theta_2.0": {
+      "n_sim": 5000,
+      "n_perm_per_sim": 1999,
+      "p0_pass_rate": 0.8076,
+      "model": "Alcyone deviation at each town's layout date plus Gaussian date, measurement and builders' errors"
+    }
+  },
+  "provenance": {
+    "utc": "2026-10-21T05:44:00.231361+00:00",
+    "python": "3.13.13",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "inputs": {
+      "experiments/2026-10-21-town-axes/exploratory-v1/table.json": "a0793fd3714b67b8d1f1a1ddecb99d191b9dd8eddc21072a406736c8c75284d8",
+      "experiments/2026-10-21-town-axes/horizon-v1/horizons.json": "aa65a631daa5a60d329160b7a2a02017126a87a0f5bb1f9007c331ffd9d01b06"
+    },
+    "code": {
+      "experiments/2026-10-21-town-axes/planning_power.py": "ca46513232761fb19990b4238ad6d3566416a8e5d54f0c81aedf9055577267f2",
+      "experiments/2026-10-21-town-axes/score.py": "9fd559bd8b107f1ceff7573447b23eea4935e23f4415be5016a9bd841e1c77d7",
+      "experiments/2026-10-21-town-axes/astro.py": "0634dff2ff2248d48fdbcbee15a75a5a02d440e6c416008a14cbffd90c14b164"
+    }
+  }
+}

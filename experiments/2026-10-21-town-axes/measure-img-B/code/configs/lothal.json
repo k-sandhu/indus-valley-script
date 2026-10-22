@@ -1,0 +1,396 @@
+{
+ "town": "lothal",
+ "zoom": 18,
+ "location": {
+  "lat": 22.5225,
+  "lon": 72.2491,
+  "basis": "Located on Esri World Imagery at zoom 17 and 18: the fenced, wooded mound east of the national highway near Saragwala, with the water-filled rectangular dock on its east side and the excavated acropolis and lower town west of it. The coordinates are those of the centre of the excavated area between the acropolis and the dock."
+ },
+ "sources": [
+  {
+   "id": "src1",
+   "name": "lothal_core",
+   "x": [183680, 183684],
+   "y": [114229, 114233],
+   "role": "measured (current World Imagery): dock; second witness elsewhere"
+  },
+  {
+   "id": "src2",
+   "name": "lothal_core",
+   "x": [183680, 183684],
+   "y": [114229, 114233],
+   "wayback_release": "16749",
+   "role": "measured (archived World Imagery release, sharper over the acropolis and lower town); second witness for the dock"
+  }
+ ],
+ "control": {
+  "poly": [[180, 880], [330, 880], [330, 1000], [180, 1000]],
+  "description": "scrub and bare ground west of the mound"
+ },
+ "parts": [
+  {
+   "id": "P1",
+   "source": "src1",
+   "part": "dock (eastern basin)",
+   "description": "Brick-lined rectangular basin on the east side of the town, usually identified as the dock, measured on the current image. The basin is filled with water and its walls have been conserved by the Archaeological Survey of India; the polygon covers the basin and its walls but not the modern paths along its east side and south end.",
+   "polys": [[[666, 522], [745, 522], [745, 940], [666, 940]]],
+   "eye_check": "Overlay checked by eye: the peak runs along the long west and east walls of the basin, which dominate the histogram (88 percent of the edge weight lies near N-S); there is no secondary peak.",
+   "confidence": "high"
+  },
+  {
+   "id": "P1w",
+   "source": "src2",
+   "part": "dock (eastern basin)",
+   "description": "The dock measured again on the archived October 2021 release (the service metadata give a WorldView-2 image of 4 March 2021), as a second witness.",
+   "no_candidates": true,
+   "polys": [[[660, 532], [750, 532], [750, 945], [660, 945]]],
+   "eye_check": "Overlay checked by eye: same edges as P1; the two images agree within their errors.",
+   "confidence": "high"
+  },
+  {
+   "id": "P2",
+   "source": "src2",
+   "part": "acropolis (south-central raised area)",
+   "description": "Two areas of the acropolis on the archived 2021 image: the building at its north-west corner (walls visible as dark shadow lines) and the block of square warehouse units near its south-east. The square outline around the warehouse, which may be a modern revetment of the platform edge, and the paths across the acropolis are outside the polygons.",
+   "polys": [[[466, 724], [540, 724], [540, 798], [466, 798]], [[558, 834], [602, 834], [602, 864], [558, 864]]],
+   "eye_check": "Overlay checked by eye: the peak follows the walls of the north-west building and the grid of warehouse units; the north wall of the building (S9) is turned a few degrees further anticlockwise than the rest.",
+   "confidence": "medium"
+  },
+  {
+   "id": "P3",
+   "source": "src2",
+   "part": "lower town, north-western excavated block",
+   "description": "North-western excavated block of the lower town on the archived 2021 image: a walled compound with internal rooms, bounded on the east by a straight path (excluded).",
+   "polys": [[[436, 492], [478, 492], [478, 602], [436, 602]]],
+   "eye_check": "Overlay checked by eye: the walls of this block are visibly turned anticlockwise from the dock and the acropolis; the peak follows them, and the current image (P3c) gives the same value.",
+   "confidence": "medium"
+  },
+  {
+   "id": "P3c",
+   "source": "src1",
+   "part": "lower town, north-western excavated block",
+   "description": "The north-western lower-town block measured on the current image as a second witness.",
+   "no_candidates": true,
+   "polys": [[[425, 540], [472, 540], [472, 605], [425, 605]]],
+   "eye_check": "Overlay checked by eye: walls are fainter than on the 2021 image; the peak agrees with P3.",
+   "confidence": "medium"
+  },
+  {
+   "id": "P4",
+   "source": "src2",
+   "part": "lower town, western houses",
+   "description": "Two groups of excavated houses in the western lower town on the archived 2021 image, west of the main N-S path (excluded).",
+   "polys": [[[362, 650], [422, 650], [422, 722], [362, 722]], [[375, 740], [425, 740], [425, 785], [375, 785]]],
+   "eye_check": "Overlay checked by eye: the histogram is broad with two near-equal peaks on either side of the reported value; the houses share the anticlockwise turn of the north-western block, but the value is uncertain by several degrees.",
+   "confidence": "low"
+  },
+  {
+   "id": "P5",
+   "source": "src2",
+   "part": "lower town, north-western block and western houses",
+   "description": "Union of the lower-town polygons P3 and P4 on the archived 2021 image.",
+   "no_candidates": true,
+   "polys": [[[436, 492], [478, 492], [478, 602], [436, 602]], [[362, 650], [422, 650], [422, 722], [362, 722]], [[375, 740], [425, 740], [425, 785], [375, 785]]],
+   "eye_check": "The combined peak lies close to the north-western block, which has the sharpest walls.",
+   "confidence": "medium"
+  }
+ ],
+ "check_lines": [
+  {
+   "id": "S1",
+   "system": "sys1",
+   "part": "dock (eastern basin)",
+   "kind": "platform face",
+   "description": "west wall of the dock basin, almost its full length",
+   "p0": [683.12, 926.87],
+   "p1": [666.24, 534.28],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (3 piece(s), coverage 0.99, rms 0.36 px), accepted by eye as a wall or street edge (candidate P1-1)",
+   "confidence": "high",
+   "phase": null
+  },
+  {
+   "id": "S2",
+   "system": "sys1",
+   "part": "dock (eastern basin)",
+   "kind": "platform face",
+   "description": "east wall of the dock basin, southern stretch",
+   "p0": [745.21, 929.39],
+   "p1": [740.43, 799.38],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (4 piece(s), coverage 0.92, rms 0.15 px), accepted by eye as a wall or street edge (candidate P1-2)",
+   "confidence": "high",
+   "phase": null
+  },
+  {
+   "id": "S3",
+   "system": "sys1",
+   "part": "dock (eastern basin)",
+   "kind": "platform face",
+   "description": "west wall of the dock basin, northern stretch (inner edge)",
+   "p0": [670.42, 713.12],
+   "p1": [666.6, 615.64],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (4 piece(s), coverage 0.88, rms 0.52 px), accepted by eye as a wall or street edge (candidate P1-4)",
+   "confidence": "high",
+   "phase": null
+  },
+  {
+   "id": "S4",
+   "system": "sys1",
+   "part": "dock (eastern basin)",
+   "kind": "platform face",
+   "description": "west wall of the dock basin, central stretch (inner edge)",
+   "p0": [675.02, 825.64],
+   "p1": [671.83, 740.63],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (3 piece(s), coverage 0.97, rms 0.15 px), accepted by eye as a wall or street edge (candidate P1-5)",
+   "confidence": "high",
+   "phase": null
+  },
+  {
+   "id": "S5",
+   "system": "sys1",
+   "part": "dock (eastern basin)",
+   "kind": "platform face",
+   "description": "south wall of the dock basin",
+   "p0": [745.6, 932.41],
+   "p1": [680.65, 928.91],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (2 piece(s), coverage 0.83, rms 0.08 px), accepted by eye as a wall or street edge (candidate P1-6)",
+   "confidence": "high",
+   "phase": null
+  },
+  {
+   "id": "S6",
+   "system": "sys1",
+   "part": "dock (eastern basin)",
+   "kind": "platform face",
+   "description": "east wall of the dock basin, northern stretch",
+   "p0": [732.18, 596.86],
+   "p1": [730.07, 549.34],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (1 piece(s), coverage 1.0, rms 0.0 px), accepted by eye as a wall or street edge (candidate P1-9)",
+   "confidence": "medium",
+   "phase": null
+  },
+  {
+   "id": "S7",
+   "system": "sys1",
+   "part": "dock (eastern basin)",
+   "kind": "platform face",
+   "description": "east wall of the dock basin, central stretch",
+   "p0": [743.83, 788.21],
+   "p1": [742.6, 743.07],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (1 piece(s), coverage 1.0, rms 0.0 px), accepted by eye as a wall or street edge (candidate P1-11)",
+   "confidence": "medium",
+   "phase": null
+  },
+  {
+   "id": "S8",
+   "system": "sys1",
+   "part": "dock (eastern basin)",
+   "kind": "platform face",
+   "description": "east wall of the dock basin, north-central stretch",
+   "p0": [741.35, 623.16],
+   "p1": [741.67, 586.87],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (1 piece(s), coverage 1.0, rms 0.0 px), accepted by eye as a wall or street edge (candidate P1-13)",
+   "confidence": "medium",
+   "phase": null
+  },
+  {
+   "id": "S9",
+   "system": "sys2",
+   "part": "acropolis (south-central raised area)",
+   "kind": "wall face",
+   "description": "north wall of the building at the north-west corner of the acropolis",
+   "p0": [496.94, 731.12],
+   "p1": [527.07, 727.06],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (1 piece(s), coverage 1.0, rms 0.0 px), accepted by eye as a wall or street edge (candidate P2-2)",
+   "confidence": "medium",
+   "phase": null
+  },
+  {
+   "id": "S10",
+   "system": "sys2",
+   "part": "acropolis (south-central raised area)",
+   "kind": "wall face",
+   "description": "E-W internal wall of the north-west acropolis building",
+   "p0": [489.36, 755.12],
+   "p1": [510.63, 754.51],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (1 piece(s), coverage 1.0, rms 0.0 px), accepted by eye as a wall or street edge (candidate P2-3)",
+   "confidence": "medium",
+   "phase": null
+  },
+  {
+   "id": "S11",
+   "system": "sys2",
+   "part": "acropolis (south-central raised area)",
+   "kind": "wall face",
+   "description": "north wall of the north-west acropolis building, western part",
+   "p0": [475.63, 730.68],
+   "p1": [495.64, 730.33],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (1 piece(s), coverage 1.0, rms 0.0 px), accepted by eye as a wall or street edge (candidate P2-5)",
+   "confidence": "medium",
+   "phase": null
+  },
+  {
+   "id": "S12",
+   "system": "sys2",
+   "part": "acropolis (south-central raised area)",
+   "kind": "wall face",
+   "description": "N-S internal wall of the north-west acropolis building",
+   "p0": [515.23, 771.89],
+   "p1": [514.66, 751.9],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (1 piece(s), coverage 1.0, rms 0.0 px), accepted by eye as a wall or street edge (candidate P2-6)",
+   "confidence": "medium",
+   "phase": null
+  },
+  {
+   "id": "S13",
+   "system": "sys2",
+   "part": "acropolis (south-central raised area)",
+   "kind": "wall face",
+   "description": "west wall of the north-west acropolis building, southern part",
+   "p0": [470.59, 785.79],
+   "p1": [468.11, 766.88],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (1 piece(s), coverage 1.0, rms 0.0 px), accepted by eye as a wall or street edge (candidate P2-7)",
+   "confidence": "medium",
+   "phase": null
+  },
+  {
+   "id": "S14",
+   "system": "sys2",
+   "part": "acropolis (south-central raised area)",
+   "kind": "wall face",
+   "description": "E-W wall at the south of the north-west acropolis building",
+   "p0": [539.38, 785.97],
+   "p1": [521.86, 785.82],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (1 piece(s), coverage 1.0, rms 0.0 px), accepted by eye as a wall or street edge (candidate P2-8)",
+   "confidence": "medium",
+   "phase": null
+  },
+  {
+   "id": "S15",
+   "system": "sys2",
+   "part": "acropolis (south-central raised area)",
+   "kind": "wall face",
+   "description": "west wall of the north-west acropolis building, northern part",
+   "p0": [473.76, 749.38],
+   "p1": [473.5, 731.87],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (1 piece(s), coverage 1.0, rms 0.0 px), accepted by eye as a wall or street edge (candidate P2-9)",
+   "confidence": "medium",
+   "phase": null
+  },
+  {
+   "id": "S16",
+   "system": "sys3",
+   "part": "lower town, north-western excavated block",
+   "kind": "wall face",
+   "description": "N-S wall in the north-western lower-town block",
+   "p0": [455.44, 596.9],
+   "p1": [446.82, 554.12],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (2 piece(s), coverage 0.86, rms 0.26 px), accepted by eye as a wall or street edge (candidate P3-1)",
+   "confidence": "medium",
+   "phase": null
+  },
+  {
+   "id": "S17",
+   "system": "sys3",
+   "part": "lower town, north-western excavated block",
+   "kind": "wall face",
+   "description": "E-W wall at the south end of the north-western lower-town block",
+   "p0": [444.29, 604.04],
+   "p1": [474.31, 596.6],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (1 piece(s), coverage 1.0, rms 0.0 px), accepted by eye as a wall or street edge (candidate P3-2)",
+   "confidence": "medium",
+   "phase": null
+  },
+  {
+   "id": "S18",
+   "system": "sys3",
+   "part": "lower town, north-western excavated block",
+   "kind": "wall face",
+   "description": "N-S wall in the northern part of the north-western lower-town block",
+   "p0": [460.84, 537.03],
+   "p1": [457.0, 508.1],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (2 piece(s), coverage 0.98, rms 0.21 px), accepted by eye as a wall or street edge (candidate P3-3)",
+   "confidence": "medium",
+   "phase": null
+  }
+ ],
+ "systems": [
+  {
+   "id": "sys1",
+   "part": "dock (eastern basin)",
+   "auto_part": "P1"
+  },
+  {
+   "id": "sys1w",
+   "part": "dock (eastern basin)",
+   "auto_part": "P1w",
+   "note": "Second witness for sys1 on the archived 2021 image."
+  },
+  {
+   "id": "sys2",
+   "part": "acropolis (south-central raised area)",
+   "auto_part": "P2"
+  },
+  {
+   "id": "sys3",
+   "part": "lower town, north-western excavated block",
+   "auto_part": "P3"
+  },
+  {
+   "id": "sys3c",
+   "part": "lower town, north-western excavated block",
+   "auto_part": "P3c",
+   "note": "Second witness for sys3 on the current image."
+  },
+  {
+   "id": "sys4",
+   "part": "lower town, western houses",
+   "auto_part": "P4",
+   "note": "Broad, double-peaked histogram; low reliability."
+  },
+  {
+   "id": "sys5",
+   "part": "lower town, north-western block and western houses",
+   "auto_part": "P5",
+   "note": "Combined lower-town measurement; check lines are listed under sys3."
+  }
+ ],
+ "main_system": "sys1",
+ "main_system_reason": "The dock is the longest straight Harappan construction at Lothal (its walls run for more than 200 m) and gives the sharpest and most stable peak on both images; the acropolis buildings agree with it. The lower-town blocks form a second, distinct system turned several degrees further anticlockwise, reported as sys3 and sys5.",
+ "notes": "We measured Lothal on two releases of Esri World Imagery at zoom 18 (0.55 m per pixel): the current release (a Vantor Vivid image of 27 February 2026), on which the dock is clear but the acropolis and lower town are faded, and an archived Wayback release of 13 October 2021 (a WorldView-2 image of 4 March 2021 according to its metadata layer), on which the low walls of the acropolis and lower town stand out much more clearly. The dock and the acropolis share one direction, while the excavated lower-town blocks west of the acropolis are turned about 7 to 9 degrees further anticlockwise; the two systems are separated by more than their errors on both images. The dock walls have been conserved and the basin is kept filled with water, so its edges are partly modern facing on the excavated line. The square outline around the warehouse units may also be a modern revetment and is excluded from the acropolis polygon. Modern features excluded: the perimeter fence, the visitor paths that cross the site (one runs N-S along the east side of the north-western block and another diagonally across the lower town), the museum and site buildings to the south, and the highway and field boundaries outside the site."
+}

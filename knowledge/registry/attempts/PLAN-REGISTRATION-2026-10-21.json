@@ -1,0 +1,28 @@
+{
+  "id": "PLAN-REGISTRATION-2026-10-21",
+  "theme": "True-north bearings of published Harappan site-plan arrows by registration to satellite imagery",
+  "status": "completed-frozen-validation-failed-at-dholavira",
+  "status_class": "frozen-evaluation",
+  "area": "archaeology",
+  "question": "What are the true bearings of the north arrows on the excavators' plans of Harappan towns whose walls are now covered, and what true-north deviations do the town-axes plan measurements take when converted with them?",
+  "outcome": "Two blind registrars and a search agent registered 14 plans at 8 towns to Esri World Imagery under a frozen similarity-fit and error model. True-north deviations for covered towns: Kalibangan KLB-2 street grid -6.7 +/- 1.8 (plan arrows about 8.5 degrees east of true north on both IAR plans), Surkotada citadel -11.4 +/- 2.1, Chanhu-daro Mound II street -10.9 +/- 3.8 (one registrar; its 1935 magnetic arrow differs from IGRF by 2.4 sigma), Farmana -23.7 +/- 4.3 (one registrar), Shikarpur fortification +1.3 +/- 4.4 (new plan, undated). Banawali, Kanmer and Rakhigarhi not registrable. Eight dated towns now have true-north values. Frozen validation: Lothal dock -2.31 +/- 0.85 against imagery -1.88 +/- 0.30 (passes), Dholavira -0.38 +/- 0.60 against -5.50 +/- 1.50 (fails, z = 3.2); post-outcome diagnosis: the compared plan-B system is mound edges on the contour drawing, whose graticule north the registration recovers to 0.3 +/- 0.3 degrees, and the three wall plans agree with imagery (z -0.2, 1.3, 1.1). Values withheld from P0 scoring under the frozen rule. Surkotada and Farmana coordinates corrected by 8.1 and 25 km. Registrar agreement chi2 9.4 on 9 plans; planning power of P0 on the eight towns 0.40.",
+  "challenge": "Most plans draw only excavated structures and local grids that do not survive; published coordinates of Surkotada and Farmana were kilometres off; the coordinator had read the deviations, so could not choose control points; the frozen validation compared a mound-edge system with wall measurements at Dholavira; two chained registrations rest on one registrar each.",
+  "remedy": "Control points chosen by agents blind to every orientation value, with a checking tool that never prints the rotation; protocol, plan list, briefs and code hashed before any point and the control files hashed before the single run; class-based error model checked on synthetic registrations; two independent registrars per plan; chaining through auxiliary plans with shared drawn features; graticule and magnetic-arrow checks; post-outcome diagnostics kept in a separate file.",
+  "evidence": [
+    "experiments/2026-10-21-plan-registration/PROTOCOL.md",
+    "experiments/2026-10-21-plan-registration/FREEZE.json",
+    "experiments/2026-10-21-plan-registration/CONTROL-FREEZE.json",
+    "experiments/2026-10-21-plan-registration/selftest-v1/selftest.json",
+    "experiments/2026-10-21-plan-registration/registration-v1/results.json",
+    "experiments/2026-10-21-plan-registration/registration-v1/towns.csv",
+    "experiments/2026-10-21-plan-registration/diagnostics-v1/diagnostics.json",
+    "experiments/2026-10-21-plan-registration/imagery-v1/mosaics.json",
+    "experiments/2026-10-21-plan-registration/measure-S/towns/shikarpur.json",
+    "experiments/2026-10-21-plan-registration/REPORT.md",
+    "experiments/2026-10-21-plan-registration/RETROSPECTIVE.md"
+  ],
+  "retry_when": "Do not re-register the same plans with the same features. Revisit with an imagery measurement of Surkotada's exposed walls at the corrected coordinates, a scoring protocol that validates wall systems against wall systems at Dholavira, a plan of Banawali, Kanmer or Rakhigarhi that draws a surviving feature, or a GNSS or drone survey of their fortifications.",
+  "package": "experiments/2026-10-21-plan-registration",
+  "authors": [{"model": "claude-opus-5-5", "harness": "Claude Code desktop app", "agent": "coordinator with seven general-purpose subagents (two registrars in three regional agents each, one search agent)"}],
+  "verification_tier": "submitted"
+}

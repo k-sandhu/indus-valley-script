@@ -1,0 +1,67 @@
+{
+ "slug": "sutkagen-dor",
+ "measurer": "B",
+ "located_point": {
+  "latitude": 25.498646,
+  "longitude": 61.950272,
+  "method": "Sentinel-2 composite renders at 3 km, 1 km and 400 m (RGB, NIR, SWIR, brightness, edge). Dales 1962 describes the citadel as built on a rock outcrop on the eastern edge of the Dasht River plain. South-east of the Dasht channel a dark red-brown patch about 110-120 m wide and 250-300 m long (dark in SWIR), centred near 25.4986 N 61.9503 E, stands out from the pale alluvium; we take it as the outcrop carrying the citadel. The Wikidata starting point lies about 80 m west of it."
+ },
+ "imagery_status": "not measurable",
+ "imagery_unmeasurable_reason": "The west edge of the dark outcrop patch is roughly straight, but at 10 m it cannot be told apart from the rock and shadow edge of the outcrop, so it is not identified with the citadel wall drawn on the plan.",
+ "sources": [
+  {
+   "id": "imagery",
+   "kind": "imagery",
+   "manifest_path": "experiments/2026-10-21-town-orientations-verification/infra-v1/imagery-manifest-v1.json",
+   "composite_path": "data/raw/2026-10-21-town-orientations-verification/infra/imagery/sutkagen-dor/acquisition-v4/median-composite.tif",
+   "composite_sha256": "ba1156d1ec0fe02470a16aa58a4a177e064ccafcfe894491a3b36c28d118315c",
+   "scene_ids": [
+    "S2A_41RLJ_20190418_1_L2A",
+    "S2A_41RLJ_20201108_1_L2A",
+    "S2B_41RLJ_20180309_1_L2A",
+    "S2B_41RLJ_20211019_1_L2A",
+    "S2B_41RLJ_20220226_0_L2A"
+   ],
+   "scene_datetimes": [
+    "2019-04-18T06:42:17.823000Z",
+    "2020-11-08T06:42:19.457000Z",
+    "2018-03-09T06:42:05.525000Z",
+    "2021-10-19T06:42:16.593000Z",
+    "2022-02-26T06:42:10.981000Z"
+   ],
+   "epsg": 32641,
+   "tile": "41RLJ",
+   "manifest_status": "available",
+   "rights_notice": "Copernicus Sentinel data terms; Contains modified Copernicus Sentinel data 2018–2026",
+   "status": "used for location only; no line measured"
+  },
+  {
+   "id": "plan-dales1962-citadel",
+   "kind": "plan",
+   "citation": "George F. Dales, Jr. 1962, 'A Search for Ancient Seaports', Expedition 4(2): 2-10, University Museum, University of Pennsylvania. Plan library entry sutkagen-dor-01 (publisher PDF)",
+   "source_path": "data/raw/2026-10-21-town-orientations-verification/infra/plans/sutkagen-dor/penn-publisher-pdf/source.pdf",
+   "pdf_page": 2,
+   "printed_page": "5",
+   "figure": "Unnumbered plan, caption 'Plan of the Sutkagen-dor citadel showing position of trench.'",
+   "north_class": "unspecified",
+   "north_evidence": "Unlabelled arrow pointing up the page, with a small circle on its shaft, at the right of the plan; no letter, meaning or date.",
+   "survey_year": null
+  }
+ ],
+ "line_files": [
+  {
+   "path": "experiments/2026-10-21-town-orientations-verification/measure-B/picks/sutkagen-dor/plan-dales1962-lines-v1.json",
+   "source_id": "plan-dales1962-citadel",
+   "systems": {
+    "sk-w-in": "sk-citadel",
+    "sk-e-w": "sk-citadel",
+    "sk-e-e": "sk-citadel",
+    "sk-n-s": "sk-citadel",
+    "sk-s-s": "sk-citadel"
+   }
+  }
+ ],
+ "registrations": [],
+ "notes": "Five faces of the citadel's fortification walls on Dales's plan form one system under the rules (all within 200 m and within a 3.1 degree window). The western and eastern walls lie at -2.05 to -2.13 degrees from the plan's arrow and the northern and southern walls at +0.27 and +0.93, so the drawn citadel is about 2.5 degrees from rectangular; the length-weighted value is dominated by the long north-south walls. Dales attributes the citadel and its pottery to the Harappan period (printed pages 4-5). The scale bar's labels are absent from the scan, so lengths rest on the text's 24 ft wall thickness at Operation B (see the picks file); bearings do not depend on it. On printed page 4 Dales also describes the citadel wall's sides as oriented 'closely to the magnetic points of the compass'; we met this qualitative statement while reading the page and did not use it.",
+ "unmeasurable_reason": null
+}

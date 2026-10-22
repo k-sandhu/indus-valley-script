@@ -1,0 +1,32 @@
+{
+  "id": "REBUS-WINSLOW-2026-10-22",
+  "theme": "Chance rate of Parpola's veḷ compound interlock in a second Tamil dictionary (Winslow 1862)",
+  "status": "completed-frozen-evaluation-prediction-failed-with-post-outcome-exploration",
+  "status_class": "frozen-evaluation",
+  "area": "language",
+  "question": "Does the veḷ interlock search of REBUS-BASE-RATE-2026-10-21, rerun in Winslow's Tamil-English dictionary of 1862, again find a shared compound member for more than 20% of random replacement pairs, as prediction P2 of C-0014 states?",
+  "outcome": "P2 failed under its frozen rule. Winslow has no two-member compound beginning with muruku (the Tamil Lexicon has 7) and 29 with mīṉ as last member (82), so replacement words matched on muruku's productivity have no compounds and none of 2,500 pairs shares a member (rate 0.0, Wilson 95% upper bound 0.15%; threshold above 0.20). Neither Muruka-vēḷ nor veṇ-mīṉ is a Winslow entry, so the veḷ interlock does not exist there; Skanda's name on vēḷ is cevvēḷ. Two of Parpola's five interlocks hold (vaṭa-mīṉ, aṟu-mīṉ) and random words reproduce both in 3.9% of 10,000 draws. Post-outcome: with pools matched to 7 first-member and 29 second-member compounds, random pairs share a member in 14.0% of cases in Winslow and 16.6% in the Lexicon; a complete parse would give muruku two first-member compounds (murukkam-pū, murukkañ-cettal), and pools matched to one compound give 2.8%.",
+  "challenge": "Winslow prints compounds without hyphens or romanisation, nested under their root, so members had to be recovered from the nesting and Tamil sandhi. Winslow lists every syllabic letter, ending and particle as a headword. The DSAL text writes every initial e as ஏ. DSAL marks long entries with placeholder pages, which stopped the first download stream early. The frozen design matches replacement words to the anchor word's productivity, which is zero for muruku in Winslow.",
+  "remedy": "Logged every request with one log file per page-range stream (978 pages, 978 log lines). Wrote a transliteration (99.92% exact against printed romanisations) and a junction rule with fixed sandhi forms and exact headword matching; repaired it before the freeze against the Tamil Lexicon's hyphenation (98.1% agreement on 11,784 shared compounds, 75.4% coverage). Excluded grammatical entries by their first sense and one-syllable verbal-noun endings. Reused the 21 October code unchanged and showed that the wrapper reproduces results-v2 exactly on the Lexicon. Verified the result with the independent functions of the 21 October verify.py (seven checks agree). Searched the raw pages to separate parser misses from absences; analyses at equal set sizes are in a separate labelled output.",
+  "evidence": [
+    "experiments/2026-10-22-rebus-winslow/PROTOCOL.md",
+    "experiments/2026-10-22-rebus-winslow/FREEZE.json",
+    "experiments/2026-10-22-rebus-winslow/SOURCES.json",
+    "experiments/2026-10-22-rebus-winslow/parser-validation-v1.json",
+    "experiments/2026-10-22-rebus-winslow/check-reuse-v1.json",
+    "experiments/2026-10-22-rebus-winslow/selftest-v1/selftest.json",
+    "experiments/2026-10-22-rebus-winslow/selftest-base-v1/selftest.json",
+    "experiments/2026-10-22-rebus-winslow/bench-selftest-v1.json",
+    "experiments/2026-10-22-rebus-winslow/results-v1/interlocks.json",
+    "experiments/2026-10-22-rebus-winslow/verification-v1.json",
+    "experiments/2026-10-22-rebus-winslow/exploratory-v1/exploratory.json",
+    "experiments/2026-10-22-rebus-winslow/REPORT.md",
+    "experiments/2026-10-22-rebus-winslow/RETROSPECTIVE.md",
+    "experiments/2026-10-22-rebus-winslow/C-0014-RECORD-PROPOSAL.md",
+    "experiments/2026-10-22-rebus-winslow/DATA-RECORDS.md"
+  ],
+  "retry_when": "A third Tamil dictionary that records compounds of both muruku and mīṉ (Kadirvelu Pillai on DSAL), tested with a prediction frozen in advance about the chance rate at equal compound-set sizes; or a frozen count of Sangam attestations of Parpola's interlock compounds against compounds that complete chance interlocks. Rerunning the veḷ search on Winslow adds nothing.",
+  "package": "experiments/2026-10-22-rebus-winslow",
+  "authors": [{"model": "Claude Opus 5.5 (claude-opus-5-5)", "harness": "Claude Code desktop app", "agent": "session started from the session that wrote C-0014"}],
+  "verification_tier": "submitted"
+}

@@ -1,0 +1,499 @@
+{
+ "schema_version": "1.0",
+ "task": "town-deviation",
+ "synthetic": false,
+ "provenance": {
+  "inputs": {
+   "measure-A\\towns\\allahdino.json": "e5a9a7c015e40f3f58971ef05fd6ac2c35bf2342805734e09b90ec4505962798",
+   "measure-A\\towns\\balakot.json": "c5e36ae65ac0957686403050dcae303217db5c379291180979224c06e67c3495",
+   "measure-A\\towns\\banawali.json": "607018e852a72a51c2c57262324ce5b8c638b3c2876432f3db8910d9cbf1624e",
+   "measure-A\\towns\\bhirrana.json": "8a2d3015b94d04207f90fc79d35df8807470ff26ccb507cb832dc98f1fd4efa8",
+   "measure-A\\towns\\chanhu-daro.json": "842ec5a5df5b0d08929ca1bdd469d8ec7bc5371c615804b3f7a4b04903e4647e",
+   "measure-A\\towns\\desalpur.json": "153a2166867b06cfa65af7d87ebc1d11e4fbb5969bdfff87d40ab1c00b468124",
+   "measure-A\\towns\\dholavira.json": "367638d292ee7c5d707638d99617f29cf451bbb38a5f6a07234fba6d17a2f023",
+   "measure-A\\towns\\farmana.json": "2cdbf70b016a270b7889aaef3c4801cfd1c051c4215eed4673225d1416067ec1",
+   "measure-A\\towns\\ganweriwala.json": "22c5e18e6dc9c4adee29bd775bd5408f1cfb40cea2aa163b8240361acf1a692b",
+   "measure-A\\towns\\gola-dhoro.json": "b1699975fdc0800e75e325c548888969c79790d45adbe9fd51e4ad584fb44f8b",
+   "measure-A\\towns\\harappa.json": "d4be5fb53598cc7315d6f704b744e1c5bd0698efd01c6fefca873bc004c14519",
+   "measure-A\\towns\\juni-kuran.json": "fc90ba4c1b2ce30d74cc49b2d215c934a85711c5a3a54a1f4e890848ab2fcd94",
+   "measure-A\\towns\\kalibangan.json": "a6b76d1fa5b7f2b0180499f08f499e1bb59c6a21556a847ba628019f28651bd5",
+   "measure-A\\towns\\kanmer.json": "7025f2cd784201d60291cb2fd7af6c707c64ce717a8511c3dc71e5eae267b29a",
+   "measure-A\\towns\\karanpura.json": "1b589a82e0dde101757cbc966c72ce8c09b182775ca53eaa4ec15fed11bd8bc1",
+   "measure-A\\towns\\khirsara.json": "7bc5b59fb93affd35c8f3c5dab8a334cba73cc721c3ce4ecbac45a6dff6b66d2",
+   "measure-A\\towns\\kot-diji.json": "80514b9e7386c1691475d89aa09ba15a01ee31dbbc4d98913cedaa8c4fdc93b3",
+   "measure-A\\towns\\kotada-bhadli.json": "14056d14bc7d13fa03e2adc4a2369acf1afcf8d982ab7898f7c14ba53bed6c95",
+   "measure-A\\towns\\kunal.json": "286ca5b5ef42970b5bec070cf3d343fd58297932bbf243f791b1997d772e1850",
+   "measure-A\\towns\\kuntasi.json": "af51c4c3ba568d22122f5c4ef705891015cc671c52b4b34f8b69024e35d72fd7",
+   "measure-A\\towns\\lakhanjo-daro.json": "154aafecf4dab51303755a55bdd9f21538acd9abfb70715f513a4d910538da1a",
+   "measure-A\\towns\\lothal.json": "3632b0222d267d3b124595058f33f89beb1e3c2ffbea16ca152e5176804c0c17",
+   "measure-A\\towns\\mitathal-v2.json": "9cd3d59e62d42cb42cd7fff4d3cffda4a3e815fc5709e9bc578145e258e52ff5",
+   "measure-A\\towns\\mohenjo-daro.json": "dabb0feb28f6ba6803001a3d2bea14b8e8b5db5d9f31549b4297748cfc904f85",
+   "measure-A\\towns\\nausharo.json": "c69fbe1728930adcd2a9c05768d1b47e2a4242cb95af4b0fa40389a6a971573e",
+   "measure-A\\towns\\navinal.json": "d89e3389273bf255c4823f84b7132db50c92e804993569a121023f94d2d8a6b8",
+   "measure-A\\towns\\pabumath.json": "e7850dfedd5dbda4d297bb77cffff674ee39d936bba66c63ca3ac35004ff8fc7",
+   "measure-A\\towns\\rakhigarhi.json": "fe4e0f3fb99d4206a83d16064c96183713c565500f43d534fbab9c8f650ce07a",
+   "measure-A\\towns\\rangpur.json": "25c4823756689b90863d274792a2b5403246fd026a83cf877a6a6f8d693a71cb",
+   "measure-A\\towns\\rojdi.json": "770767583c344b5eeec5122fcf81cec6b000c4019ce24407eb5780eab1970fd7",
+   "measure-A\\towns\\shikarpur.json": "61db4586f8bb406f4129659b922bdf1fee23facf06a7b0f6a7a59e74e16dd161",
+   "measure-A\\towns\\surkotada.json": "2220e086fb825b3378592ba34f144d8832a8c0f8de9aef4cbe34c0997a5aa7a6",
+   "measure-A\\towns\\sutkagen-dor.json": "4b7dd6746b7d7379155700ac57979b7fe7c240098597d6df4a24236a8c674fcd",
+   "measure-B\\towns\\allahdino.json": "1f1320488108ad2040d211e9a7545144c9ba1bd6758a9bfedbe58595a6dbdd56",
+   "measure-B\\towns\\balakot.json": "873ca9b33edbed09d7723844a3f524f1d1d42e754f4ef31b165d2c8a81eddc56",
+   "measure-B\\towns\\banawali.json": "74f42d08cb84a48030e8dda2860e7a866ea43411039fde180456c88b3f96bc68",
+   "measure-B\\towns\\bhirrana.json": "7ae709106ea888fc9591056fe3709302d1833e37753e2942dc445490344c7cd9",
+   "measure-B\\towns\\chanhu-daro.json": "bf1b8587ac306539ce80e1c8319bab289498ccc773a69e193c5b26fa4827706b",
+   "measure-B\\towns\\desalpur.json": "a356f66ffb557a63cc9e299625f9a5985dc37433b9b4129c6af36f4e0856da34",
+   "measure-B\\towns\\dholavira.json": "e0dec2ef14c4ec8d88d7b5e9fa48028f1bd4135324b78d7070ea498e28085572",
+   "measure-B\\towns\\farmana.json": "5a665ba765d62af09a816d31160cf831d518975856ab15d25bb67e9a220f5580",
+   "measure-B\\towns\\ganweriwala.json": "c4240cc73cb84364706b4e370611d0294924cf8f1cbf1393fee1b92d2491a25d",
+   "measure-B\\towns\\gola-dhoro.json": "a0ab13b59fc84e71badf9ffc0de13dbbd2d647a2a88c63068dae47971e1a1bce",
+   "measure-B\\towns\\harappa.json": "b0d4caad8742364d1f067e75a7d285e7a725b8da93e705b00330b3099ab4bf80",
+   "measure-B\\towns\\juni-kuran.json": "20e3da138426672707cf2bb9dbcd0f650af0429f4be3276b571912bd98103dba",
+   "measure-B\\towns\\kalibangan.json": "7bae41a9b672b7450dbbda68e39b88a7361a412560cc101362d10e077f098d70",
+   "measure-B\\towns\\kanmer.json": "63f435f50215309ff90d7a912a4dba83ab44222b5be3fdf3cda862fe43b2e7a7",
+   "measure-B\\towns\\karanpura.json": "512848f752d13490772f884432162608aa220e9bf035e2fd3510d52b70961f03",
+   "measure-B\\towns\\khirsara.json": "2f54aa7473978b0d61eea1dc0ae0cf8f8a2a04cef8ef51d94b57eabaca828627",
+   "measure-B\\towns\\kot-diji.json": "89323d11834bf6f6a6b6d7970181821bbcd85392589b2b8dcc0a8a5f6443c804",
+   "measure-B\\towns\\kotada-bhadli.json": "d888624e872a708cad9afb97888547cf1ad4003bfed6dea6b604a5a459efba13",
+   "measure-B\\towns\\kunal.json": "4a506f307ce6da4457ab0e640817d8e394c50bea1b553436d1e3f1ff85a9140a",
+   "measure-B\\towns\\kuntasi-v2.json": "4d5647bb3ec4e184011cbf2bb4f12a44dc8fa3bd9ba99919605f95ae37d1176f",
+   "measure-B\\towns\\lakhanjo-daro.json": "ea07f4d1d2d1cb97f1aa3778a5f0b184a484b4696b8ff34ded912998da16ff82",
+   "measure-B\\towns\\lothal.json": "a3fb50b3ad5b0bb9c28f1c486b8243c2a1aa4d4892e431656b9613f6249e8e7c",
+   "measure-B\\towns\\mitathal.json": "5dcbd39d5548b41d1750f02f485ed4f07a9186c96be836972632d725f362d875",
+   "measure-B\\towns\\mohenjo-daro.json": "9a19dff41a2833c844d6747bfb32a52346a5bee3529395456ca0136b1abb596f",
+   "measure-B\\towns\\nausharo.json": "25f6112da64224588a9d34e111b2a11f193aadfadcf3f4c493b77919fd479807",
+   "measure-B\\towns\\navinal.json": "2719d9fd284152d83a1ae0a1abd813f2f28f81c6a0f4f256a6f42ab925acf0be",
+   "measure-B\\towns\\pabumath.json": "c13115d90e2c04fac1fee97f11190c77a3734ca4f474fec71fbf114c4b602b05",
+   "measure-B\\towns\\rakhigarhi.json": "e3c6af8e7774a6ad0f801c08d3ec1e747b65d4f94746e46c0c2e95ce7f1d5759",
+   "measure-B\\towns\\rangpur.json": "7be36fbb5ad2e02d610262b3083301c832cdba8046fce70b1a432e6fdd19b4eb",
+   "measure-B\\towns\\rojdi.json": "98857a79e8c91598cb17cded9f3bb6b0b6f57583d73bee8eb72486ab1e06ec5b",
+   "measure-B\\towns\\shikarpur.json": "e850348bfb586e9b011beb393fb3ac416559bf480195ccf5e36ad0ebffc4ea7d",
+   "measure-B\\towns\\surkotada.json": "ceaa61def1ad7c69973a5a71750cc0d31fd40feefbba654e27dd7eadf7e7d366",
+   "measure-B\\towns\\sutkagen-dor.json": "daa3ac2aca2a115b7913038a481f64efca99bc413db0eb07352cd1d640f6d447",
+   "measure-B\\towns\\tarkhanewala-dera.json": "3f24379b10ab9dd9558652855f6c5544613a2dc7033357dc0931bc722b04cae4"
+  },
+  "code": {
+   "coordinator\\combine_towns.py": "3049993a60f5576b0072d47fa11322553e220cab9da144cead688e8b1feaf6d6"
+  },
+  "parts": "32a2c2ca135ae0fe13cccaf829630cc28cc7da835b07157b9f905be533b0466a",
+  "dates": {
+   "strict": "8fc96c60278961ad5c6c2abd1307b87195506ffadba39ab1397054d5ef483f13",
+   "liberal": "1f4de1e3151a2aa975cb2733b1714fb3b3615285c16a0479da58970e460500c0"
+  }
+ },
+ "rule": {
+  "imagery_se_max_deg": 2.0,
+  "same_part_within_m": 200.0,
+  "floor_deg": 0.3
+ },
+ "towns": [
+  {
+   "slug": "allahdino",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 24.85,
+   "lon": 67.3
+  },
+  {
+   "slug": "balakot",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 25.46291666665,
+   "lon": 66.70833316665
+  },
+  {
+   "slug": "banawali",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 29.59846523543723,
+   "lon": 75.39195930749105
+  },
+  {
+   "slug": "bhirrana",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 29.55416667,
+   "lon": 75.56527778
+  },
+  {
+   "slug": "chanhu-daro",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 26.173670555,
+   "lon": 68.32294578
+  },
+  {
+   "slug": "desalpur",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 23.352305665,
+   "lon": 69.32137372
+  },
+  {
+   "slug": "dholavira",
+   "imagery_main": {
+    "A": null,
+    "B": {
+     "theta": -3.542671273123612,
+     "se": 0.5243997973166105,
+     "length": 704.1762340832565,
+     "n": 2,
+     "parts": [
+      "middle town (south side, on the ceremonial ground)",
+      "middle town and lower town"
+     ]
+    }
+   },
+   "value": {
+    "theta": -3.542671273123612,
+    "sigma": 0.5243997973166105,
+    "used": [
+     "B"
+    ],
+    "discordant": false,
+    "step": "2: one measurer",
+    "source": "imagery",
+    "part_lines": [
+     "middle town (south side, on the ceremonial ground)",
+     "middle town and lower town"
+    ]
+   },
+   "lat": 23.886484555000003,
+   "lon": 70.215081835,
+   "dating_part": {
+    "strict": [
+     "middle town"
+    ],
+    "liberal": [
+     "middle town"
+    ]
+   }
+  },
+  {
+   "slug": "farmana",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 29.039444222222222,
+   "lon": 76.30583316666667
+  },
+  {
+   "slug": "ganweriwala",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 28.5,
+   "lon": 71.0666668333335
+  },
+  {
+   "slug": "gola-dhoro",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 23.0366668333335,
+   "lon": 70.52027788888901
+  },
+  {
+   "slug": "harappa",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 30.631476166666502,
+   "lon": 72.8654498333335
+  },
+  {
+   "slug": "juni-kuran",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 23.946255,
+   "lon": 69.767039
+  },
+  {
+   "slug": "kalibangan",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 29.473607155613344,
+   "lon": 74.12923374779362
+  },
+  {
+   "slug": "kanmer",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 23.41782788888889,
+   "lon": 70.86310116666667
+  },
+  {
+   "slug": "karanpura",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 29.10805577777778,
+   "lon": 75.09722211111111
+  },
+  {
+   "slug": "khirsara",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 23.452361,
+   "lon": 69.0549985
+  },
+  {
+   "slug": "kot-diji",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 27.3485466111,
+   "lon": 68.7044107778
+  },
+  {
+   "slug": "kotada-bhadli",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 23.346,
+   "lon": 69.426
+  },
+  {
+   "slug": "kunal",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 29.5,
+   "lon": 75.68333333
+  },
+  {
+   "slug": "kuntasi",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 22.9099999444445,
+   "lon": 70.60833333333349
+  },
+  {
+   "slug": "lakhanjo-daro",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 27.724166833333335,
+   "lon": 68.8475
+  },
+  {
+   "slug": "lothal",
+   "imagery_main": {
+    "A": {
+     "theta": 0.0974386342880266,
+     "se": 0.7353286549154259,
+     "length": 330.594722734837,
+     "n": 2,
+     "parts": [
+      "brick-lined reservoir"
+     ]
+    },
+    "B": {
+     "theta": 0.20227980149435018,
+     "se": 0.3025422282968365,
+     "length": 378.32991902768106,
+     "n": 2,
+     "parts": [
+      "dock (brick-lined basin east of the town)"
+     ]
+    }
+   },
+   "value": {
+    "theta": 0.18710154596922302,
+    "sigma": 0.3,
+    "used": [
+     "A",
+     "B"
+    ],
+    "discordant": false,
+    "step": "1: both, same part",
+    "source": "imagery",
+    "part_lines": [
+     "brick-lined reservoir",
+     "dock (brick-lined basin east of the town)"
+    ]
+   },
+   "lat": 22.5221244444445,
+   "lon": 72.249252222222,
+   "dating_part": {
+    "strict": [
+     "lower town"
+    ],
+    "liberal": [
+     "lower town"
+    ]
+   }
+  },
+  {
+   "slug": "mitathal",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 28.89194444,
+   "lon": 76.16972222
+  },
+  {
+   "slug": "mohenjo-daro",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 27.327178833333498,
+   "lon": 68.1373224444445
+  },
+  {
+   "slug": "nausharo",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 29.365,
+   "lon": 67.588
+  },
+  {
+   "slug": "navinal",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 22.8151973889,
+   "lon": 69.5998032222
+  },
+  {
+   "slug": "pabumath",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 23.616666835,
+   "lon": 70.516666835
+  },
+  {
+   "slug": "rakhigarhi",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 29.293103592496784,
+   "lon": 76.11329646601757
+  },
+  {
+   "slug": "rangpur",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 22.433333165,
+   "lon": 71.916666835
+  },
+  {
+   "slug": "rojdi",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 22.2625,
+   "lon": 70.67444422222201
+  },
+  {
+   "slug": "shikarpur",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 23.2375,
+   "lon": 70.6775
+  },
+  {
+   "slug": "surkotada",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 23.6304,
+   "lon": 70.8407
+  },
+  {
+   "slug": "sutkagen-dor",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 25.498489665,
+   "lon": 61.95027489
+  },
+  {
+   "slug": "tarkhanewala-dera",
+   "imagery_main": {
+    "A": null,
+    "B": null
+   },
+   "value": null,
+   "lat": 29.2333,
+   "lon": 73.2333
+  }
+ ]
+}

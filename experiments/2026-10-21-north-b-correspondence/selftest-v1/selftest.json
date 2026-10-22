@@ -1,0 +1,150 @@
+{
+ "all_passed": true,
+ "n_checks": 24,
+ "checks": [
+  {
+   "case": "label after grammatical label",
+   "ok": true,
+   "got": "[('Tamil', [('malar', 'm', False, False)]), ('Malto', [('balre', 'b', False, False)]), ('Kurukh', [('malkh', 'm', False, False)])]",
+   "want": "[('Tamil', [('malar', 'm', False, False)]), ('Malto', [('balre', 'b', False, False)]), ('Kurukh', [('malkh', 'm', False, False)])]"
+  },
+  {
+   "case": "bold cross-reference",
+   "ok": true,
+   "got": "[('Tamil', [('vaṭi', 'v', False, False)]), ('Kurukh', [('baṛ-', 'b', False, False)])]",
+   "want": "[('Tamil', [('vaṭi', 'v', False, False)]), ('Kurukh', [('baṛ-', 'b', False, False)])]"
+  },
+  {
+   "case": "doubt marks",
+   "ok": true,
+   "got": "[('Tamil', [('māṉ', 'm', False, False)]), ('Malayalam', [('māṉ', 'm', False, False)]), ('Kurukh', [('bānō', 'b', True, False)]), ('Malto', [('bano', 'b', True, False)])]",
+   "want": "[('Tamil', [('māṉ', 'm', False, False)]), ('Malayalam', [('māṉ', 'm', False, False)]), ('Kurukh', [('bānō', 'b', True, False)]), ('Malto', [('bano', 'b', True, False)])]"
+  },
+  {
+   "case": "borrowed forms",
+   "ok": true,
+   "got": "[('Tamil', [('maṉ', 'm', False, False)]), ('Kurukh', [('bān', 'b', False, False), ('mān', 'm', False, True)]), ('Malto', [('mane', 'm', False, True)])]",
+   "want": "[('Tamil', [('maṉ', 'm', False, False)]), ('Kurukh', [('bān', 'b', False, False), ('mān', 'm', False, True)]), ('Malto', [('mane', 'm', False, True)])]"
+  },
+  {
+   "case": "lettered parts",
+   "ok": true,
+   "got": "['a', 'b', 'c']",
+   "want": "['a', 'b', 'c']"
+  },
+  {
+   "case": "part a",
+   "ok": true,
+   "got": "[('Tamil', [('veḷ', 'v', False, False)]), ('Kurukh', [('bel', 'b', False, False)])]",
+   "want": "[('Tamil', [('veḷ', 'v', False, False)]), ('Kurukh', [('bel', 'b', False, False)])]"
+  },
+  {
+   "case": "part b",
+   "ok": true,
+   "got": "[('Tamil', [('mīṉ', 'm', False, False)]), ('Malto', [('mínu', 'm', False, False)])]",
+   "want": "[('Tamil', [('mīṉ', 'm', False, False)]), ('Malto', [('mínu', 'm', False, False)])]"
+  },
+  {
+   "case": "part c",
+   "ok": true,
+   "got": "[('Tamil', [('mūcu', 'm', False, False)]), ('Kurukh', [('mūc-', 'm', False, False)])]",
+   "want": "[('Tamil', [('mūcu', 'm', False, False)]), ('Kurukh', [('mūc-', 'm', False, False)])]"
+  },
+  {
+   "case": "comparison cut",
+   "ok": true,
+   "got": "([('Tamil', [('miṭai', 'm', False, False)]), ('Kurukh', [('miṭ-', 'm', False, False)])], True)",
+   "want": "([('Tamil', [('miṭai', 'm', False, False)]), ('Kurukh', [('miṭ-', 'm', False, False)])], True)"
+  },
+  {
+   "case": "optional letter and Latin name",
+   "ok": true,
+   "got": "[('Tamil', [('viṇ', 'v', False, False)]), ('Malto', [('bīnde', 'b', False, False)])]",
+   "want": "[('Tamil', [('viṇ', 'v', False, False)]), ('Malto', [('bīnde', 'b', False, False)])]"
+  },
+  {
+   "case": "vowel context",
+   "ok": true,
+   "got": "{'mīṉ': ('long front', True), 'bínḍke': ('short front', True), 'mūnd': ('long back', True), 'veḷ': ('short front', False), 'mai': ('diphthong', False), 'bhal': ('short back', False), 'mrag': ('none', False), 'bīnkō': ('long front', True), 'ēru': ('none', False), 'me·n': ('long front', True)}",
+   "want": "{'mīṉ': ('long front', True), 'bínḍke': ('short front', True), 'mūnd': ('long back', True), 'veḷ': ('short front', False), 'mai': ('diphthong', False), 'bhal': ('short back', False), 'mrag': ('none', False), 'bīnkō': ('long front', True), 'ēru': ('none', False), 'me·n': ('long front', True)}"
+  },
+  {
+   "case": "bh flag",
+   "ok": true,
+   "got": "('b', True)",
+   "want": "('b', True)"
+  },
+  {
+   "case": "accent removed from initial",
+   "ok": true,
+   "got": "('b', False)",
+   "want": "('b', False)"
+  },
+  {
+   "case": "repeated print",
+   "ok": true,
+   "got": "(['6', '8'], 2, ['a', 'b'], [])",
+   "want": "(['6', '8'], 2, ['a', 'b'], [])"
+  },
+  {
+   "case": "plain-type lines and citation",
+   "ok": true,
+   "got": "[('Tamil', [('māy', 'm', False, False)]), ('Kurukh', [('bāynā', 'b', False, False)]), ('Malto', [('báye', 'b', False, False)]), ('Brahui', [('bāy', 'b', False, False)])]",
+   "want": "[('Tamil', [('māy', 'm', False, False)]), ('Kurukh', [('bāynā', 'b', False, False)]), ('Malto', [('báye', 'b', False, False)]), ('Brahui', [('bāy', 'b', False, False)])]"
+  },
+  {
+   "case": "R. Br. is not a label",
+   "ok": true,
+   "got": "['Tamil', 'Malayalam']",
+   "want": "['Tamil', 'Malayalam']"
+  },
+  {
+   "case": "plain label out of order",
+   "ok": true,
+   "got": "[('Kurukh', [('mal', 'm', False, False)]), ('Malto', [('male', 'm', False, False)])]",
+   "want": "[('Kurukh', [('mal', 'm', False, False)]), ('Malto', [('male', 'm', False, False)])]"
+  },
+  {
+   "case": "italic citation",
+   "ok": true,
+   "got": "[('Tamil', [('vaḷ', 'v', False, False)]), ('Kurukh', [('bal', 'b', False, False)])]",
+   "want": "[('Tamil', [('vaḷ', 'v', False, False)]), ('Kurukh', [('bal', 'b', False, False)])]"
+  },
+  {
+   "case": "misnumbered print",
+   "ok": true,
+   "got": "(['20', '20/2'], [False, True], ['20'])",
+   "want": "(['20', '20/2'], [False, True], ['20'])"
+  },
+  {
+   "case": "pass rule: one undoubted entry is unresolved",
+   "ok": true,
+   "got": "(['10'], 'unresolved')",
+   "want": "(['10'], 'unresolved')"
+  },
+  {
+   "case": "doubtful case listed",
+   "ok": true,
+   "got": "[('4876', False), ('4876', False), ('10', False), ('11', True)]",
+   "want": "[('4876', False), ('4876', False), ('10', False), ('11', True)]"
+  },
+  {
+   "case": "pass rule: two entries pass",
+   "ok": true,
+   "got": "(['10', '14'], 'pass')",
+   "want": "(['10', '14'], 'pass')"
+  },
+  {
+   "case": "pass rule: failure",
+   "ok": true,
+   "got": "'failure'",
+   "want": "'failure'"
+  },
+  {
+   "case": "primary table",
+   "ok": true,
+   "got": "{'m': 1, 'b': 0, 'v': 0, 'other': 0}",
+   "want": "{'m': 1, 'b': 0, 'v': 0, 'other': 0}"
+  }
+ ]
+}

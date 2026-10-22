@@ -1,0 +1,364 @@
+{
+ "town": "harappa",
+ "zoom": 18,
+ "location": {
+  "lat": 30.6319,
+  "lon": 72.8616,
+  "basis": "Located on Esri World Imagery at zoom 16 and 18: the wooded archaeological mounds west and south of the modern town of Harappa, with the conserved brick buildings on the northern mound (taken to be Mound F) at the north-west of the protected area. The coordinates are those of the two-row building on that mound."
+ },
+ "control": {
+  "poly": [[1100, 1110], [1190, 1110], [1190, 1240], [1100, 1240]],
+  "description": "bare sand in an open, apparently backfilled area of the site south-east of the northern mound"
+ },
+ "parts": [
+  {
+   "id": "P1",
+   "part": "northern mound (Mound F), northern building",
+   "confidence": "medium",
+   "description": "Interior of a large rectangular brick building (about 60 x 65 m inside the polygon) with long N-S internal walls in two halves separated by a central N-S passage; possibly the building usually called the Great Hall or Granary. The polygon stays inside the pale perimeter band, which carries a visitor path around the building.",
+   "eye_check": "Overlay checked by eye: the peak runs parallel to the internal N-S walls; the histogram has a second, nearly equal peak about 3 degrees clockwise, and the peak position switches between the two under rotation and re-compression, so the value is uncertain by a few degrees.",
+   "polys": [[[266, 396], [380, 396], [380, 516], [266, 516]]]
+  },
+  {
+   "id": "P2",
+   "part": "northern mound (Mound F), southern two-row building",
+   "confidence": "high",
+   "description": "Conserved brick building about 160 m south of the northern building: two rows of six rectangular units on either side of an E-W lane, each unit divided by long N-S walls; possibly the 'workmen's quarters' or the Great Hall of the published plans (we did not identify it with certainty from the imagery). The diagonal footpath east of it is outside the polygon.",
+   "eye_check": "Overlay checked by eye: the peak runs exactly along the N-S partition walls and the E-W outer walls; the weak secondary peaks near +/-18 degrees come from herringbone brick paving inside the units.",
+   "polys": [[[250, 742], [362, 742], [362, 828], [250, 828]]]
+  },
+  {
+   "id": "P3",
+   "part": "northern mound (Mound F), eastern trench",
+   "confidence": "low",
+   "description": "Narrow excavated trench with brick walls east of the northern building, between a straight modern retaining wall on its east side (excluded) and a paved visitor area to the south-west (excluded).",
+   "eye_check": "Overlay checked by eye: the walls are short and broken; the histogram has several peaks of similar height and the automatic value is not reliable.",
+   "polys": [[[500, 578], [537, 578], [537, 712], [500, 712]]]
+  },
+  {
+   "id": "P4",
+   "part": "southern fenced excavation",
+   "confidence": "low",
+   "description": "Low, faint walls inside a fenced excavation about 330 m south-east of the two-row building; the fence and its boundary paths are outside the polygon.",
+   "eye_check": "Overlay checked by eye: in the current image the walls are barely visible and the histogram has two peaks of nearly equal height; the archived 2024 image (P4w) shows the same walls more clearly and gives a value within the error.",
+   "polys": [[[645, 1366], [745, 1366], [745, 1435], [645, 1435]]]
+  },
+  {
+   "id": "P5",
+   "part": "northern mound (Mound F), both conserved buildings",
+   "confidence": "high",
+   "description": "Union of P1 and P2, measured as one area.",
+   "eye_check": "The two buildings give the same direction within their errors; the combined peak is dominated by the sharper two-row building.",
+   "polys": [[[266, 396], [380, 396], [380, 516], [266, 516]], [[250, 742], [362, 742], [362, 828], [250, 828]]]
+  },
+  {
+   "id": "P2w",
+   "source": "src2",
+   "part": "northern mound (Mound F), southern two-row building",
+   "confidence": "high",
+   "no_candidates": true,
+   "description": "The same polygon as P2, measured on the archived 2024 image as a second witness.",
+   "eye_check": "Overlay checked by eye: the peak follows the same partition walls as on the current image.",
+   "polys": [[[250, 742], [362, 742], [362, 828], [250, 828]]]
+  },
+  {
+   "id": "P4w",
+   "source": "src2",
+   "part": "southern fenced excavation",
+   "confidence": "low",
+   "description": "Interior of the southern fenced excavation measured on the archived 2024 image, in which its walls are clearer than in the current image; the modern boundary wall and the paths around it are outside the polygon.",
+   "eye_check": "Overlay checked by eye: the short wall stubs inside the enclosure, seen mainly by their shadows, run along the peak direction and are visibly turned anticlockwise relative to the modern boundary wall; the histogram is noisy with several peaks, so the value is uncertain by a few degrees.",
+   "polys": [[[648, 1364], [748, 1364], [748, 1434], [648, 1434]]]
+  }
+ ],
+ "check_lines": [
+  {
+   "id": "S1",
+   "system": "sys1",
+   "part": "northern mound (Mound F), northern building",
+   "kind": "wall face",
+   "description": "west edge of the N-S central passage through the northern building (a visitor path now runs along it)",
+   "p0": [316.64, 485.63],
+   "p1": [317.26, 414.38],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (1 piece(s), coverage 1.0, rms 0.0 px), accepted by eye as a wall or street edge (candidate P1-1)",
+   "confidence": "medium",
+   "phase": null
+  },
+  {
+   "id": "S2",
+   "system": "sys1",
+   "part": "northern mound (Mound F), northern building",
+   "kind": "wall face",
+   "description": "east edge of the N-S central passage through the northern building",
+   "p0": [320.43, 484.4],
+   "p1": [320.35, 424.36],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (2 piece(s), coverage 0.98, rms 0.13 px), accepted by eye as a wall or street edge (candidate P1-2)",
+   "confidence": "medium",
+   "phase": null
+  },
+  {
+   "id": "S3",
+   "system": "sys1",
+   "part": "northern mound (Mound F), northern building",
+   "kind": "wall face",
+   "description": "E-W southern edge of the northern building",
+   "p0": [349.37, 514.39],
+   "p1": [314.37, 513.2],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (2 piece(s), coverage 0.97, rms 0.07 px), accepted by eye as a wall or street edge (candidate P1-3)",
+   "confidence": "low",
+   "phase": null
+  },
+  {
+   "id": "S4",
+   "system": "sys1",
+   "part": "northern mound (Mound F), northern building",
+   "kind": "wall face",
+   "description": "N-S internal wall line in the eastern half of the northern building, northern part",
+   "p0": [356.85, 430.62],
+   "p1": [356.18, 395.62],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (2 piece(s), coverage 0.89, rms 0.14 px), accepted by eye as a wall or street edge (candidate P1-4)",
+   "confidence": "medium",
+   "phase": null
+  },
+  {
+   "id": "S5",
+   "system": "sys1",
+   "part": "northern mound (Mound F), northern building",
+   "kind": "wall face",
+   "description": "E-W internal wall line near the north end of the eastern half",
+   "p0": [354.39, 407.77],
+   "p1": [326.84, 406.35],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (1 piece(s), coverage 1.0, rms 0.0 px), accepted by eye as a wall or street edge (candidate P1-5)",
+   "confidence": "low",
+   "phase": null
+  },
+  {
+   "id": "S6",
+   "system": "sys1",
+   "part": "northern mound (Mound F), northern building",
+   "kind": "wall face",
+   "description": "N-S internal wall line in the eastern half, southern part",
+   "p0": [356.88, 471.87],
+   "p1": [356.45, 446.88],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (1 piece(s), coverage 1.0, rms 0.0 px), accepted by eye as a wall or street edge (candidate P1-6)",
+   "confidence": "medium",
+   "phase": null
+  },
+  {
+   "id": "S7",
+   "system": "sys1",
+   "part": "northern mound (Mound F), northern building",
+   "kind": "wall face",
+   "description": "N-S internal wall line in the western half of the northern building",
+   "p0": [279.96, 449.39],
+   "p1": [280.54, 425.59],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (1 piece(s), coverage 1.0, rms 0.0 px), accepted by eye as a wall or street edge (candidate P1-7)",
+   "confidence": "low",
+   "phase": null
+  },
+  {
+   "id": "S8",
+   "system": "sys2",
+   "part": "northern mound (Mound F), southern two-row building",
+   "kind": "wall face",
+   "description": "west outer wall of the two-row building",
+   "p0": [252.01, 823.13],
+   "p1": [251.29, 754.39],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (3 piece(s), coverage 1.0, rms 0.98 px), accepted by eye as a wall or street edge (candidate P2-2)",
+   "confidence": "high",
+   "phase": null
+  },
+  {
+   "id": "S9",
+   "system": "sys2",
+   "part": "northern mound (Mound F), southern two-row building",
+   "kind": "wall face",
+   "description": "N-S partition wall between units, western part of the building",
+   "p0": [284.35, 814.37],
+   "p1": [283.42, 755.62],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (2 piece(s), coverage 0.89, rms 0.11 px), accepted by eye as a wall or street edge (candidate P2-4)",
+   "confidence": "high",
+   "phase": null
+  },
+  {
+   "id": "S10",
+   "system": "sys2",
+   "part": "northern mound (Mound F), southern two-row building",
+   "kind": "wall face",
+   "description": "N-S partition wall between units, eastern part of the building",
+   "p0": [350.3, 814.38],
+   "p1": [349.21, 756.88],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (2 piece(s), coverage 0.87, rms 0.31 px), accepted by eye as a wall or street edge (candidate P2-5)",
+   "confidence": "high",
+   "phase": null
+  },
+  {
+   "id": "S11",
+   "system": "sys2",
+   "part": "northern mound (Mound F), southern two-row building",
+   "kind": "wall face",
+   "description": "E-W southern wall of the southern row of units",
+   "p0": [306.88, 825.66],
+   "p1": [345.63, 825.23],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (1 piece(s), coverage 1.0, rms 0.0 px), accepted by eye as a wall or street edge (candidate P2-6)",
+   "confidence": "medium",
+   "phase": null
+  },
+  {
+   "id": "S12",
+   "system": "sys2",
+   "part": "northern mound (Mound F), southern two-row building",
+   "kind": "wall face",
+   "description": "N-S partition wall, southern row of units",
+   "p0": [318.91, 821.81],
+   "p1": [320.08, 789.36],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (2 piece(s), coverage 1.0, rms 0.91 px), accepted by eye as a wall or street edge (candidate P2-9)",
+   "confidence": "medium",
+   "phase": null
+  },
+  {
+   "id": "S13",
+   "system": "sys2",
+   "part": "northern mound (Mound F), southern two-row building",
+   "kind": "wall face",
+   "description": "N-S partition wall, southern row of units, west of centre",
+   "p0": [288.32, 821.87],
+   "p1": [288.31, 790.62],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (1 piece(s), coverage 1.0, rms 0.0 px), accepted by eye as a wall or street edge (candidate P2-11)",
+   "confidence": "medium",
+   "phase": null
+  },
+  {
+   "id": "S14",
+   "system": "sys2",
+   "part": "northern mound (Mound F), southern two-row building",
+   "kind": "wall face",
+   "description": "N-S partition wall, northern row of units",
+   "p0": [285.71, 786.87],
+   "p1": [285.59, 756.88],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (1 piece(s), coverage 1.0, rms 0.0 px), accepted by eye as a wall or street edge (candidate P2-14)",
+   "confidence": "medium",
+   "phase": null
+  },
+  {
+   "id": "S15",
+   "system": "sys2",
+   "part": "northern mound (Mound F), southern two-row building",
+   "kind": "wall face",
+   "description": "N-S partition wall, southern row of units, near centre",
+   "p0": [299.69, 819.38],
+   "p1": [299.66, 793.12],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (2 piece(s), coverage 1.0, rms 0.95 px), accepted by eye as a wall or street edge (candidate P2-19)",
+   "confidence": "medium",
+   "phase": null
+  },
+  {
+   "id": "S16",
+   "system": "sys4",
+   "part": "southern fenced excavation",
+   "kind": "wall face",
+   "description": "faint E-W wall inside the southern fenced excavation",
+   "p0": [689.38, 1394.41],
+   "p1": [716.85, 1391.61],
+   "no_refine": true,
+   "endpoint_sigma_px": 1.0,
+   "method": "endpoints of a straight edge found by the OpenCV line-segment detector (1 piece(s), coverage 1.0, rms 0.0 px), accepted by eye as a wall or street edge (candidate P4-1)",
+   "confidence": "low",
+   "phase": null
+  }
+ ],
+ "systems": [
+  {
+   "id": "sys1",
+   "part": "northern mound (Mound F), northern building",
+   "auto_part": "P1"
+  },
+  {
+   "id": "sys2",
+   "part": "northern mound (Mound F), southern two-row building",
+   "auto_part": "P2"
+  },
+  {
+   "id": "sys3",
+   "part": "northern mound (Mound F), eastern trench",
+   "auto_part": "P3",
+   "note": "Automatic value not reliable (broad multi-peaked histogram)."
+  },
+  {
+   "id": "sys4",
+   "part": "southern fenced excavation",
+   "auto_part": "P4",
+   "note": "Automatic value not reliable (two near-equal peaks); faint walls."
+  },
+  {
+   "id": "sys5",
+   "part": "northern mound (Mound F), both conserved buildings",
+   "auto_part": "P5",
+   "note": "Combined measurement of sys1 and sys2; the check lines are listed under those systems."
+  },
+  {
+   "id": "sys2w",
+   "part": "northern mound (Mound F), southern two-row building",
+   "auto_part": "P2w",
+   "note": "Second witness for sys2 on the archived 2024 image."
+  },
+  {
+   "id": "sys4w",
+   "part": "southern fenced excavation",
+   "auto_part": "P4w",
+   "note": "Second witness for sys4 on the archived 2024 image."
+  }
+ ],
+ "main_system": "sys5",
+ "main_system_reason": "The two conserved buildings on the northern mound are the only Harappan architecture at Harappa whose walls are sharp and long enough in the imagery to measure reliably; they agree with each other, and their combined measurement is the best imagery estimate we have for the town. The fortification walls and gateways of the other mounds are not distinguishable under the scrub at this resolution.",
+ "published_values": [],
+ "measurable": true,
+ "notes": "Esri World Imagery at zoom 18 (0.46 m per pixel at this latitude; the service reports a 0.34 m Vantor Vivid image of 23 May 2025, published to zoom 18 only). Most of the site is covered by scrub and trees, and the published fortification walls and gateways of Mounds AB, E and ET could not be seen; an open sandy area south-east of the northern mound shows no walls and appears backfilled. We measured the two conserved brick buildings on the northern mound, a narrow trench east of them and one fenced excavation further south. Because the current image shows the southern excavation poorly, we also measured it, and the two-row building as a cross-check, on an archived World Imagery release (Wayback release 32553, a WorldView-2 image of 14 February 2024). The conserved buildings carry modern capping, so their wall tops may have been rebuilt, but the capping follows the excavated foundations. Modern features excluded: the perimeter path around the northern building, paths through and beside the buildings, the retaining wall and paved visitor area beside the eastern trench, fences around excavations, and the cardinal field grid of the surrounding farmland, which lies entirely outside the polygons. The two-row building has the sharpest orientation signal of any structure at the site; the trench gives an unreliable value, and the walls inside the southern excavation are turned several degrees anticlockwise from north, unlike the buildings on the northern mound.",
+ "sources": [
+  {
+   "id": "src1",
+   "name": "harappa_core",
+   "x": [184127, 184136],
+   "y": [107618, 107626],
+   "role": "measured (current World Imagery)"
+  },
+  {
+   "id": "src2",
+   "name": "harappa_core",
+   "x": [184127, 184136],
+   "y": [107618, 107626],
+   "wayback_release": "32553",
+   "role": "second witness (archived World Imagery release with a clearer view of the southern excavation)"
+  }
+ ]
+}

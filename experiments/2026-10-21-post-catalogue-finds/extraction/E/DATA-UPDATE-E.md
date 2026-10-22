@@ -1,0 +1,5 @@
+We add local English OCR for the verified Internet Archive copy of Indian Archaeology 1996–97 – A Review, source iar-1996-97-archive. The PDF has 337 pages and SHA256 3bb42d877df5a6c45367e7aacb9588206a71447dae4c32fde8f2ff9b5bba23c3. Its imprint year is 2002. The coordinator's acquisition manifest remains the acquisition record; source-register-additions-E.csv proposes its missing shared-register entry.
+
+The extraction adds one provisional Bagasra object row with season, material, object class and publication locators. It supplies no registration, detailed context or confirmed image medium. The row is proposed as post-catalogue pending the later matching run. We add no corpus match and make no coverage claim about unpublished objects.
+
+The E package records 13 site notes, 12 direct candidate pages, 82 reviewed pages and 193 confirmed printed footer labels. Balu, Kodumanal and Brass receive unused codes BLU, KDM and BRS, with inclusion grounds in new-site-leads-E.csv. There are no internal merges. The raw OCR and source PDF remain local under unresolved third-party rights.

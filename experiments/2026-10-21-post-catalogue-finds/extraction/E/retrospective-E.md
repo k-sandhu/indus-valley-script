@@ -1,0 +1,9 @@
+We verified the supplied PDF hash and the frozen protocol before extraction. The title pages identify the 1996–97 volume; the imprint gives 2002. We rendered all 337 pages in grey at 300 dpi and used English Tesseract OCR. Each worker deleted its render immediately after OCR. The text remains under run2E.
+
+The sweep found 12 candidate pages. We reviewed the candidates, their neighbours, entry boundaries and supplementary scope checks through a restricted vocabulary view. The page log records 82 reviewed pages; the exposure log separately records the full-volume automated search. We confirmed 193 footer labels. Empty OCR pages 2, 6 and 337 have blank renders. Page 224 had image content but no initial OCR text; one sparse OCR pass recovered text. No completed nonempty page was OCRed again after resumption.
+
+The Bagasra entry yields one individually described object with an explicit inscription attribution. Its total of three sealings includes two objects without that attribution. The Kodumanal comparison gives no physical-object count. Balu supplies no inscription-qualified object, and the Brass sealings belong to a later period. Kunal and Rojdi have no site-name occurrence in the volume. No object was matched to the local corpus.
+
+An initial context filter exposed a short descriptive fragment on PDF page 40. We corrected the filter and recorded the exposure without retaining the description in our extraction files. No page image was viewed. An early sweep attempted to read a completion record while OCR was still writing it; the sweep now uses only completed page records.
+
+The source explicitly assigned to E is recorded in the coordinator manifest but is absent from both shared acquisition CSV registers. We wrote source-register-additions-E.csv within E ownership. The selftest reports this shared-register exception separately from its data and content checks. Shared files were left to their maintainers.

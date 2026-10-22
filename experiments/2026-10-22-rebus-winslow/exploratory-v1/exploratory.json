@@ -1,0 +1,189 @@
+{
+ "schema_version": "1.0",
+ "task": "rebus-winslow/exploratory",
+ "synthetic": false,
+ "post_outcome": true,
+ "created_utc": "2026-10-22T14:36:46.831139+00:00",
+ "seed": 20261022,
+ "k": 50,
+ "real_features": {
+  "winslow": {
+   "muruku": {
+    "word": "muruku",
+    "head": "முருகு",
+    "stem": "muruk",
+    "found_in_lexicon": true,
+    "prod_first": 0,
+    "prod_last": 5,
+    "freq": 85
+   },
+   "mīṉ": {
+    "word": "mīṉ",
+    "head": "மீன்",
+    "stem": "miṉ",
+    "found_in_lexicon": true,
+    "prod_first": 33,
+    "prod_last": 29,
+    "freq": 99
+   }
+  },
+  "tamil_lexicon": {
+   "muruku": {
+    "word": "muruku",
+    "head": "முருகு",
+    "stem": "muruk",
+    "found_in_lexicon": true,
+    "prod_first": 7,
+    "prod_last": 16,
+    "freq": 85
+   },
+   "mīṉ": {
+    "word": "mīṉ",
+    "head": "மீன்",
+    "stem": "miṉ",
+    "found_in_lexicon": true,
+    "prod_first": 70,
+    "prod_last": 82,
+    "freq": 99
+   }
+  }
+ },
+ "provenance": {
+  "code": {
+   "acquire.py": "9a050f7571a1744ee85f3b313921de2e4232bc99c7a98a602fc40574528ad3d6",
+   "check_reuse.py": "ffd8de419fdbd5dbef88430e0c273b954e9d383ebf91e6319a91999e7382be9b",
+   "exploratory.py": "b80faf9674f885833a6e39b4aa3a956614da5d31ad3cfd61a5d4ae3862f8448a",
+   "freeze.py": "4d532de1e7a2573e269bac4ec427aca9bbb50049e3cf3cbe5322805e80d8e7a2",
+   "manifest.py": "0336648f1836630e0b3ed8aad493cf1c03115576a83a3089582509cd9d9e3bed",
+   "parse_winslow.py": "2f6a57006dcf5584123f8f4be455f21289334ffbd378041250837a8bedd38ba3",
+   "run_winslow.py": "9aa46a50329b96a54d5f49e0955f4a7a73bddf7e5e01ecd8db834f2bac8e4b22",
+   "selftest.py": "13222d609d2d729ac7f6f4928c2138d58eb4a2b52c2758093ba65c2a923bff70",
+   "validate_parser.py": "def3b5a069feadfec96558e03c6310394d98946bfd5592cd5e3a30be5b2b4a9f"
+  },
+  "inputs": {
+   "data/raw/2026-10-22-rebus-winslow/derived-v1/winslow-entries.jsonl": "5697e42a1fc2ec88cc6daa05018a7c4b5f819206c3783d7af6d106cbe3e5d1e5",
+   "data/raw/2026-10-21-rebus-base-rate/derived-v1/tamil-lex-entries.jsonl": "09cad396fc60dfa12b8aa34ede349d1dce31a4f67cf87c7df025a1df4a93f3ec",
+   "data/raw/2026-10-21-rebus-base-rate/derived-v1/dedr-entries.jsonl": "becf2c792eaab205e4846d0939469702c7b16765e89a16d1886deb7456ec42cb"
+  }
+ },
+ "X1_winslow_muruku_at_lexicon_productivity": {
+  "target_prod_first": 7,
+  "pool_W1": {
+   "mean_prod_first": 6.92,
+   "median_freq": 86.5,
+   "max_distance": 0.36190155122390955
+  },
+  "pool_W2": {
+   "mean_prod_last": 28.74,
+   "median_freq": 93.0,
+   "max_distance": 0.5060406435522592
+  },
+  "T0s": {
+   "pairs": 2500,
+   "pairs_with_shared": 350,
+   "rate": 0.14,
+   "ci95_bootstrap_over_pool_words": [
+    0.10319,
+    0.1816199999999999
+   ]
+  },
+  "T1s": {
+   "pairs": 2500,
+   "pairs_with_shared": 735,
+   "rate": 0.294,
+   "ci95_bootstrap_over_pool_words": [
+    0.2352,
+    0.3556
+   ]
+  }
+ },
+ "X2_winslow_muruku_at_one_compound": {
+  "target_prod_first": 1,
+  "pool_W1": {
+   "mean_prod_first": 1.28,
+   "median_freq": 64.5,
+   "max_distance": 0.3977244329913968
+  },
+  "T0s": {
+   "pairs": 2500,
+   "pairs_with_shared": 71,
+   "rate": 0.0284,
+   "ci95_bootstrap_over_pool_words": [
+    0.01679,
+    0.0424
+   ]
+  },
+  "T1s": {
+   "pairs": 2500,
+   "pairs_with_shared": 187,
+   "rate": 0.0748,
+   "ci95_bootstrap_over_pool_words": [
+    0.049190000000000005,
+    0.1044
+   ]
+  }
+ },
+ "X3_equal_set_sizes": {
+  "target_prod_first_W1": 7,
+  "target_prod_last_W2": 29,
+  "winslow": {
+   "pool_W1": {
+    "mean_prod_first": 6.92,
+    "median_freq": 86.5,
+    "max_distance": 0.36190155122390955
+   },
+   "pool_W2": {
+    "mean_prod_last": 28.74,
+    "median_freq": 93.0,
+    "max_distance": 0.5060406435522592
+   },
+   "T0s": {
+    "pairs": 2500,
+    "pairs_with_shared": 350,
+    "rate": 0.14,
+    "ci95_bootstrap_over_pool_words": [
+     0.10559,
+     0.1828
+    ]
+   }
+  },
+  "tamil_lexicon": {
+   "pool_W1": {
+    "mean_prod_first": 6.86,
+    "median_freq": 79.0,
+    "max_distance": 0.37481888891035803
+   },
+   "pool_W2": {
+    "mean_prod_last": 29.5,
+    "median_freq": 86.5,
+    "max_distance": 0.47368868491068145
+   },
+   "T0s": {
+    "pairs": 2500,
+    "pairs_with_shared": 414,
+    "rate": 0.1656,
+    "ci95_bootstrap_over_pool_words": [
+     0.1288,
+     0.206
+    ]
+   }
+  }
+ },
+ "X4_forms_ending_in_min": {
+  "distinct_forms": 87,
+  "entries": 61,
+  "split_as_X_min": 28,
+  "only_in_definitions": 26,
+  "parpola_compounds_as_entries": {
+   "முருகவேள்": false,
+   "வெண்மீன்": false,
+   "வெள்ளிமீன்": false,
+   "முருகக்கடவுள்": false
+  },
+  "parpola_compounds_in_text": {
+   "முருகவேள்": false,
+   "வெண்மீன்": true,
+   "வெள்ளிமீன்": false
+  }
+ }
+}

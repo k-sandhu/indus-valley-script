@@ -1,0 +1,78 @@
+{
+ "schema_version": "1.0",
+ "task": "rebus-blind-templates/identifications",
+ "description": "Parpola's picture identifications with a Dravidian word, from five of his papers, mapped to ICIT sign codes of data/normalized/lipi_observed_faces.jsonl. Compiled on 22 October 2026 before any Tamil compound was looked up.",
+ "sources": {
+  "P1997": "Parpola, Asko. 1997. Dravidian and the Indus script: On the interpretation of some pivotal signs. Studia Orientalia 82: 167-192.",
+  "P2005": "Parpola, Asko. 2005. Study of the Indus script. Transactions of the International Conference of Eastern Studies 50: 28-66.",
+  "P2008": "Parpola, Asko. 2008. Is the Indus script indeed not a writing system? In Airavati: Felicitation volume in honour of Iravatham Mahadevan, 111-131.",
+  "P2009": "Parpola, Asko. 2009. 'Hind leg' + 'fish': towards further understanding of the Indus script. Scripta 1: 37-76.",
+  "P2010": "Parpola, Asko. 2010. A Dravidian solution to the Indus script problem. Chennai: World Classical Tamil Conference."
+ },
+ "rules": {
+  "inclusion": "A sign enters when at least one source gives a Dravidian word for what the sign depicts, with Parpola's stance asserted, suggested or alternative, and does not call the sign's reading unresolved. Ligatures and modified signs that Parpola reads as compounds are left out, because their word is itself a compound.",
+  "codes": "The ICIT codes of a sign are the codes found at the position Parpola describes in the objects he cites by CISI number. The 'bull's head' is the exception: P1997 prints its glyph, which is the ICIT 'jar' 740, and names its ligatures with one and two strokes between the horns (741, 742). The numerals one and two are the ICIT short-stroke codes 001 and 002 by definition.",
+  "words": "Tamil forms as printed with diacritics in any source; a Proto-Dravidian form without a Tamil form is used without its asterisk, with PD *ṯ written as Tamil ṟ. Forms are listed with the words of Parpola's own published readings first, then his picture words. A form is dropped when its stem under the stated tolerance of REBUS-BASE-RATE-2026-10-21 (vowel length and gemination free, final -m and final vowel removed) equals that of a form already listed, and hyphenated compounds and non-Tamil forms are dropped."
+ },
+ "identifications": {
+  "FISH": {"label": "fish (plain)", "codes": ["220"], "words": ["mīṉ"],
+           "evidence": "P2010 pdf 14 (H-9, M-410, M-112, M-414); P2005 pdf 25; P2009 pdf 8; P1997 prints mīṉ in aṟu-mīṉ",
+           "code_evidence": "H-9 017 220 ('seven' + 'fish'); H-669 032 220; M-410 220 alone"},
+  "ONE": {"label": "numeral one (single short stroke)", "codes": ["001"], "words": ["oru", "oṉṟu"],
+          "evidence": "P1997 pdf 5 (printed 171): *oru / *ōr / *oṉ-ṯu 'one', suggested", "code_evidence": "ICIT short-stroke code"},
+  "TWO": {"label": "numeral two (double short stroke)", "codes": ["002"], "words": ["iru", "iraṇṭu"],
+          "evidence": "P1997 pdf 5 (printed 171): *iru / *īr / *ir-aṇ-ṭu 'two', suggested", "code_evidence": "ICIT short-stroke code"},
+  "SIX": {"label": "numeral six", "codes": ["016"], "words": ["aṟu"],
+          "evidence": "P2010 pdf 16 (M-112); P2005 pdf 27; P1997 aṟu-mīṉ", "code_evidence": "M-112 016 220"},
+  "SEVEN": {"label": "numeral seven", "codes": ["017"], "words": ["eḻu"],
+            "evidence": "P2010 pdf 16 (H-9); P2005 pdf 27", "code_evidence": "H-9 017 220"},
+  "FIG": {"label": "three-branched fig tree (Parpola no. 123)", "codes": ["776", "783", "784", "785", "786"], "words": ["vaṭam"],
+          "evidence": "P2010 pdf 19, fig. 11; P2009 pdf 11; P2005 pdf 28: vaṭam, vaṭa, vaṭa-maram",
+          "code_evidence": "M-414 255 786 220; M-172 850 786 220; H-6 625 776 032; C-40, M-14 776; H-289 783; H-577 784; K-15 785"},
+  "SPINDLE": {"label": "spindle", "codes": ["684", "683"], "words": ["katir"],
+              "evidence": "P2010 pdf 20: *katir, suggested; first sign of M-112 and, varied, of M-241",
+              "code_evidence": "M-112 first sign 684; M-241 first sign 683"},
+  "CIRCLES": {"label": "two intersecting circles (ear-rings, bangles)", "codes": ["840"], "words": ["muruku"],
+              "evidence": "P2010 pdf 22; P2009 pdf 20; P1997 pdf 8", "code_evidence": "H-723, H-182 840 032 740; M-1202, H-771 840 257"},
+  "SQUIRREL": {"label": "palm squirrel", "codes": ["257"], "words": ["piḷḷai", "aṇil"],
+               "evidence": "P2010 pdf 25; P2009 pdf 24", "code_evidence": "M-1202, H-771 840 257; Nd-1 first sign 257"},
+  "TWOLONG": {"label": "two long vertical strokes", "codes": ["032"], "words": ["veḷ"],
+              "evidence": "P2010 pdf 26 (veḷ, veḷḷi; picture veḷi suggested); P2009 pdf 22 (veḷ asserted, veḷi alternative); P1997 pdf 9 value vĕ̄ḷ",
+              "code_evidence": "H-669 032 220; H-723 840 032"},
+  "CRAB": {"label": "crab (Parpola no. 88)", "codes": ["798"], "words": ["kōḷ"],
+           "evidence": "P2009 pdf 14: koḷ, kōḷ asserted; P2005 pdf 30: koḷ suggested, reading kōṇ-mīṉ",
+           "code_evidence": "M-57 798 231; M-387 798 032"},
+  "EYE": {"label": "dot in circle, eye", "codes": ["832"], "words": ["kaṇ"],
+          "evidence": "P2005 pdf 33: kaṇ suggested, kāṇ alternative; P2008 pdf 8", "code_evidence": "H-602, H-396, H-568, M-205 904 832 ('water' + 'eye')"},
+  "WATER": {"label": "two parallel winding lines, water (Parpola no. 175)", "codes": ["904"], "words": ["nīr"],
+            "evidence": "P2005 pdf 34: nīr suggested", "code_evidence": "H-602, H-396, H-568, M-205 904 832"},
+  "HINDLEG": {"label": "hind leg of an ungulate", "codes": ["278", "279"], "words": ["tāḷ", "tōḷ"],
+              "evidence": "P2009 pdf 27: tāḷ, tōḷ suggested", "code_evidence": "M-1690 278 220; M-71 279; M-290 279"},
+  "BULLHEAD": {"label": "bull's head (the 'jar' of other sign lists)", "codes": ["740"], "words": ["ā", "āṉ", "āvu"],
+               "evidence": "P1997 pdf 5 (printed 171): Proto-Dravidian *ā 'cow', Tamil ā and āvu, reconstruction *āṉ; suggested",
+               "code_evidence": "glyph printed in P1997 pdf 4-5; its ligatures with strokes between the horns are ICIT 741 and 742"},
+  "YOKE": {"label": "yoke-carrier", "codes": ["151"], "words": ["kā", "kāvu", "kāvaṭi"],
+           "evidence": "P1997 pdf 7: kā, kāvu, kāvaṭi 'carrying yoke'", "code_evidence": "H-177 151 033 700 (next to 'three vessels'); M-495 740 151"}
+ },
+ "left_out": {
+  "spear": "P1997 gives *koṭi / *kōṭu with sign no. 189 of Parpola 1994 but cites no object by CISI number, so no ICIT code can be fixed",
+  "kaḷam sign": "P1997 cites only a Koskenniemi-Parpola text number (2279), with no CISI object",
+  "scorpion, oval, cart": "P2009 offers several words for each and calls none of them satisfactory",
+  "compound signs": "fig with crab (kōḷi; 777, 778, 782, 797), fish with roof (mai-mīṉ), bull's head with strokes (741, 742), bull's head with yoke-carrier (154, 156, 158), doubled eye (792), framed man, fish with four corner strokes",
+  "offering vessel (700)": "identified pictorially (P1997) with no Dravidian word"
+ },
+ "published_pairs": {
+  "rule": "Ordered pairs that Parpola reads as a unit in any of the five papers. They are left out of the blind templates and scored separately as selected templates.",
+  "pairs": [["SIX", "FISH", "P2010 aṟu-mīn; P2005; P1997"], ["SEVEN", "FISH", "P2010 eḻu-mīn; P2005"],
+            ["FIG", "FISH", "P2010 vaṭa-mīn; P2005; P2009"], ["CRAB", "FISH", "P2005 kōṇ-mīṉ; P2009 kōḷ-mīn"],
+            ["WATER", "EYE", "P2005 nīr-k-kaṇṭi"], ["CIRCLES", "TWOLONG", "P2010 Muruka-vēḷ; P2009"],
+            ["CIRCLES", "SQUIRREL", "P2010 Muruka-p-piḷḷa; P2009"], ["TWOLONG", "FISH", "P2010 veṇ-mīn; P2009 veḷ-mīn"],
+            ["FIG", "TWOLONG", "P2009 vaṭa-veḷḷi"], ["HINDLEG", "FISH", "P2009 tāḷ + mīn"],
+            ["FISH", "YOKE", "P1997 deity name + derivative of kā-"], ["ONE", "BULLHEAD", "P1997 Ur-Adad"]]
+ },
+ "known_outcomes": {
+  "rule": "Pairs whose Tamil Lexicon outcome was already reported by REBUS-BASE-RATE-2026-10-21 are left out of every template set.",
+  "pairs": [["ONE", "FISH", "numerals one to ten with mīṉ, exploratory.json E2"], ["TWO", "FISH", "same"]],
+  "gapped": [["CIRCLES", "FISH", "the veḷ search of 2010 (I1)"]]
+ }
+}

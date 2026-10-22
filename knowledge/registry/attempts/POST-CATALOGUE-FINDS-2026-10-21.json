@@ -1,0 +1,43 @@
+{
+  "id": "POST-CATALOGUE-FINDS-2026-10-21",
+  "theme": "Object-level list of inscribed Indus objects reported after the CISI volume covering their site, 1987 to 2026",
+  "status": "completed-source-review",
+  "status_class": "source-review",
+  "area": "data",
+  "question": "Which inscribed Indus objects have been reported since the relevant CISI volume catalogued their site, in which publication, and which are absent from the local corpus?",
+  "outcome": "503 objects listed from IAR 1987-88 to 2013-14, Puratattva 18-37, 15 volumes of Man and Environment, excavation reports and articles, one row per object with locators and no inscription content. 301 are post-catalogue objects with a stated inscription at 21 sites (Dholavira 208, Surkotada 23, Bagasra 12, Bhirrana 9, Khirsara 8, Shikarpur 7, Farmana 6 and 14 smaller sites); 56 more have an uncertain inscription; 145 are already in CISI 1, 2 or 3.1. Under the frozen join rule (registration or cited plate) 10 of the 301 match a local object, 271 are candidates and 20 have no possible local counterpart, so the local corpus lacks between 55 and 291; accepting 67 joins on a find context or an unattributed plate number that picks out one object, a refinement defined after run 3's proposals, gives 77 matches and 55 to 224 absent. 92 local objects gain their first publication locator, 59 a registration and 43 a depth.",
+  "challenge": "The Rakhigarhi report held is a draft without its seal catalogue, and the ASI downloads for the Rakhigarhi and Dholavira reports return covers only. IAR 1996-97 and 2003-04 were missed by the first sweep because a mirror file was mislabelled and an archive OCR was unreadable. Dholavira's local objects mostly lack registrations, leaving 147 candidate rows. The matching run's prefix rule missed DHR registrations and made one false match, and it could not compare differently formatted trench fields. Codex readers saw descriptive source text through early previews. A disk-space stop and two model-capacity stops interrupted the extraction runs.",
+  "remedy": "Fetched IAR 1996-97 from the Internet Archive and IAR 2003-04 from the ASI index and OCRed both in added runs. Matched on whole registration digit runs, compared trench codes directly, removed CISI-numbered families from candidate sets, and wrote a one-to-one grid-square rule for Dholavira before applying it. Kept uncertain joins as candidates and reported absence as bounds; when verification showed that context-only joins break the frozen match rule, kept them as protocol candidates and reported the context joins in separate columns and figures. Logged every reader's exposure. Re-hashed all downloads after the disk stop and resumed each stopped run in its own Codex session.",
+  "evidence": [
+    "experiments/2026-10-21-post-catalogue-finds/PROTOCOL.md",
+    "experiments/2026-10-21-post-catalogue-finds/AMENDMENT-1.md",
+    "experiments/2026-10-21-post-catalogue-finds/README.md",
+    "experiments/2026-10-21-post-catalogue-finds/objects.csv",
+    "experiments/2026-10-21-post-catalogue-finds/sites.csv",
+    "experiments/2026-10-21-post-catalogue-finds/join-decisions.csv",
+    "experiments/2026-10-21-post-catalogue-finds/local-unnamed.csv",
+    "experiments/2026-10-21-post-catalogue-finds/exposure-log.csv",
+    "experiments/2026-10-21-post-catalogue-finds/manifest-proposals.json",
+    "experiments/2026-10-21-post-catalogue-finds/DATA-UPDATE.md",
+    "experiments/2026-10-21-post-catalogue-finds/matching/source-register.csv",
+    "experiments/2026-10-21-post-catalogue-finds/review/build_list.py",
+    "experiments/2026-10-21-post-catalogue-finds/review/match_dholavira.py",
+    "experiments/2026-10-21-post-catalogue-finds/RETROSPECTIVE.md",
+    "experiments/2026-10-21-post-catalogue-finds/RETROSPECTIVE-CODEX.md"
+  ],
+  "retry_when": "Registrations for the corpus's unregistered Dholavira objects become available (Lipi's source or ICIT), which would narrow the 0-147 Dholavira range; the published Rakhigarhi or Dholavira reports, Mughal 1997, the Kuntasi monograph, Puratattva 42-43 or the Lakhan-jo-daro reports are acquired; or IAR volumes after 2013-14 appear. Extend the list in a new dated package and keep this one's rows and ids.",
+  "package": "experiments/2026-10-21-post-catalogue-finds",
+  "authors": [
+    {
+      "model": "Claude Opus 5.5 (claude-opus-5-5)",
+      "harness": "Claude Code desktop app",
+      "agent": "coordinator"
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "harness": "Codex CLI 0.160.1, codex exec, workspace-write sandbox",
+      "agent": "runs 1A, 1B, 2N, 2G, 2D, 2P, 2E, 2F, 3 and 4"
+    }
+  ],
+  "verification_tier": "submitted"
+}

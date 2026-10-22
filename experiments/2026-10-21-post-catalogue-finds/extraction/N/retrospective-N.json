@@ -1,0 +1,28 @@
+{
+  "authors": [
+    "codex gpt-6.1-sol run 2N"
+  ],
+  "harness": "Codex desktop tools; Python 3.13 isolated scripts; Poppler; Tesseract",
+  "approach": "Read the frozen protocol, screened supplied page text, extracted identity and context fields, and reconciled repeated publications without loading the local corpus.",
+  "challenges": [
+    "Some held files are journal contents rather than articles.",
+    "The held inventory is a separate publication from Nath.",
+    "An older PDF text utility produced control characters that confused page splitting.",
+    "The coordinator stopped the run because system disk space was low.",
+    "Line-based filtering missed restricted fragments in wrapped entries and a mixed table."
+  ],
+  "fixes": [
+    "Used Poppler with explicit encoding and verified source page counts.",
+    "Separated unread intended works from the held files.",
+    "Removed 107 retained temporary images and changed OCR handling to delete each render.",
+    "Retained unresolved identities as possible duplicates.",
+    "Marked the reader exposed in every reviewed-source exposure entry."
+  ],
+  "outcome": "The tables retain uncertain script status, unnumbered groups and inaccessible source leads. Illustration media stay unknown unless a primary caption explicitly identifies them. No download, package installation, corpus match or repository operation was performed.",
+  "deviations": [
+    "Restricted fragments reached some tool previews; the run cannot establish reader blindness. No derived description or transcription is retained in the deliverables.",
+    "The requested raw page-text extraction preserves original source text locally; it is excluded from the tracked-file content scan.",
+    "The Sanauli held file has no entry in either supplied source register. Its text was extracted and logged, but no object row cites it."
+  ],
+  "disk_write_failure_after_resume": false
+}
