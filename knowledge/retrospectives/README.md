@@ -59,6 +59,13 @@ The [societal persistence program](2026-10-11-societal-persistence.md) records d
 
 [Sanskrit key, foreign finds and allograph tests](2026-10-12-published-claim-tests.md) records the unattended Claude Opus 5.5 package, its source-access repairs, the failed free-assignment language comparison and its constrained replacement, the exploratory power analysis and the subagent reports saved by the coordinating session.
 
+## 12 October: calibration of the semantic assignments
+
+[Rearrangements, bounds and transfer of the semantic maps](2026-10-12-anchor-calibration.md) records the worktree input arrangement, the non-idempotent normalization found by the lexical reimplementation check, a transfer-step error and its rerun from fixed seeds, the slow first annealer and its incremental replacement, timing-test exposure of bound values, and the post-outcome W740 diagnostic.
+
+## 12 October: round seals
+
+[Round-seal follow-up](2026-10-12-round-seal-tradition.md) records the worktree and main-checkout split, catalogue joins from metadata and drawings, mirrored Lipi codes, a blinded second reader and counting errors corrected in the report.
 
 ## 12 October: structure before meaning
 
@@ -69,3 +76,7 @@ The [societal persistence program](2026-10-11-societal-persistence.md) records d
 ## 12–13 October: opening the repository and the first conjecture shots
 
 [Restructure, data inventory, conjecture shots, publication screen and website](2026-10-13-open-collaboration-and-first-shots.md) records the coordinated session that opened the repository to parallel contributors, its delegation to Claude subagents and the Codex CLI, the shots and their review, the publication screen, and the privacy, rights and line-ending repairs.
+
+## 15 October: route test from AGENTS.md
+
+[Route test](../../experiments/2026-10-15-route-test/RETROSPECTIVE.md) records a fresh worktree session that followed only AGENTS.md and the files it names through a metadata task (Q-0009) and a reproduction of F-0027, the baseline `kb.py check` failure caused by an ignored log, the use of the maintainer's local data, and three draft errors corrected before submission. The package lists its [proposed edits](../../experiments/2026-10-15-route-test/PROPOSED-EDITS.md) to the route.

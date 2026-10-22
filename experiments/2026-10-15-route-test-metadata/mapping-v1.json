@@ -1,0 +1,27 @@
+{
+  "mapping": "lipi-symbol-value-status",
+  "version": 1,
+  "date": "2026-10-15",
+  "source_field": "symbol in data/normalized/lipi_observed_faces.jsonl (Lipi export, commit fc8813a)",
+  "scope": "Seal faces (type beginning SEAL). Tablets, tags, sealings, pottery and the cult field are not covered; for them the 12 October inventory rule stands unverified.",
+  "value_statuses": {
+    "recorded": "The field names a motif.",
+    "asserted-absent": "The face carries no animal, scene or other device; checked against photographs for this label and seal type.",
+    "missing-unknown": "The label does not tell whether the face has a motif: the motif may be absent, unrecorded, or not observable because the face is broken or worn."
+  },
+  "rules": [
+    {"symbol": "None", "seal_type": "SEAL:R", "status": "asserted-absent",
+     "reason": "8 of 8 sampled rectangular faces carry one row of signs and nothing else (stratum C)."},
+    {"symbol": "None", "seal_type": "SEAL:S", "status": "missing-unknown",
+     "reason": "6 of 12 sampled square faces are broken or worn where a motif would be; of the 6 readable faces, 5 carry signs only and 1 shows a device (stratum A)."},
+    {"symbol": "None", "seal_type": ["SEAL", "SEAL:C", "SEAL:CY", "SEAL:L"], "status": "missing-unknown",
+     "reason": "Not sampled; 31 objects. Kept unknown until checked, because the square-seal stratum shows that None does not always mean no motif."},
+    {"symbol": "-", "seal_type": "any", "status": "missing-unknown",
+     "reason": "9 of 12 sampled faces with - are fragments or worn (strata B and D); one square seal with - shows a large animal (M-1005), so - also covers unrecorded motifs."},
+    {"symbol": ["?", "Unknown"], "seal_type": "any", "status": "missing-unknown",
+     "reason": "Both sampled faces are dark or broken (stratum E)."},
+    {"symbol": "any other value", "seal_type": "any", "status": "recorded",
+     "reason": "4 of 4 control crops with a named motif show one (stratum K); the names themselves were not checked."}
+  ],
+  "evidence": "run-2026-10-15/results.json"
+}

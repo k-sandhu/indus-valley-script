@@ -1,0 +1,27 @@
+{
+  "id": "SEMANTIC-LEXICAL-CALIBRATION-2026-10-12",
+  "theme": "permutation and achievable-fit calibration of Sanskrit lexical windows",
+  "status": "completed-frozen-decision-rules-met",
+  "question": "Do the October 9 Bonta-extension lexical statistics depend on which Wells codes carry which Sanskrit seed values, and do the new anchor codes open more windows than frequency-matched codes?",
+  "outcome": "The 362 searched and 274 multi-context codes are identical in every rearrangement. Nonempty full intersections are 164 against 158.0 +/- 10.5 (p = 0.28; annealed 255); repeated exact residuals 201 against 208.0 +/- 13.0 (p = 0.74; annealed 264). Moving the 17 new anchors to frequency-matched codes gives 395 +/- 175 windows against 256. Each code's best residual keeps its published support under rearrangement; the post-outcome residuals sam, sa and ati lose support when the anchor values move.",
+  "challenge": "A cached reimplementation first disagreed with the frozen search because its normalization is not idempotent, and the first annealer was too slow on a shared machine.",
+  "remedy": "Exact agreement with the frozen lexical_search on four assignments, per-window caches and incremental counters checked against fresh searches, and separate null, anneal and summary stages.",
+  "evidence": [
+    "experiments/2026-10-12-anchor-calibration/lexical/summary.json",
+    "experiments/2026-10-12-anchor-calibration/lexical/anneal.json",
+    "experiments/2026-10-12-anchor-calibration/lexical/engine-verification-v2.json",
+    "experiments/2026-10-12-anchor-calibration/REPORT.md"
+  ],
+  "retry_when": "A lexical criterion with measured redundancy, such as held-out likelihood under the claimed language, replaces dictionary completion, or seed values come from evidence independent of the corpus windows.",
+  "status_class": "frozen-evaluation",
+  "area": "language",
+  "authors": [
+    {
+      "model": "Claude Opus 5.5 (claude-opus-5-5)",
+      "harness": "Claude Code desktop app",
+      "agent": "worktree session on claude/practical-visvesvaraya-5bcb35"
+    }
+  ],
+  "package": "experiments/2026-10-12-anchor-calibration",
+  "verification_tier": "submitted"
+}

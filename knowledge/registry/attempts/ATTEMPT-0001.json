@@ -1,0 +1,27 @@
+{
+  "id": "ATTEMPT-0001",
+  "theme": "Do the empty motif values on seals mean no motif? (Q-0009 pilot)",
+  "status": "source-review-pilot-submitted",
+  "question": "Does the value None in the Lipi export's symbol field mark a seal that carries no motif, and do the placeholders -, ? and Unknown mark motifs that were not recorded? Checked on a fixed, hash-ordered sample of 38 seal faces against their CISI photograph crops.",
+  "outcome": "On rectangular seals None means no motif: 8 of 8 sampled faces carry one row of signs and nothing else (motif-present share 0, 95% interval 0 to 0.37). On square seals None does not: 6 of 12 sampled faces are broken or worn where a motif would be, 5 of the 6 readable faces carry signs only and 1 shows a device. The placeholder - on square seals covers 5 fragments or worn faces in 8 and one seal with a large animal (M-1005); - on seals without a shape code covers 4 fragments in 4; the two ? and Unknown faces are unreadable. All 4 control crops with a named motif show one. Mapping v1 keeps None as an asserted absence only on rectangular seals (361 objects) and marks the other 97 None seal objects and every placeholder as unknown, which lowers seal motif coverage from 2,110 of 2,239 objects (94.2%) under the 12 October inventory rule to 2,013 (89.9%).",
+  "challenge": "Small strata; one reader; crops are small and dark, so 13 of 38 readings were made on 2x or 3x enlargements with auto-contrast, and 7 of the 21 decidable readings are low confidence. Large sign-like forms on four faces were separated from devices partly by the export's sign count. The worktree had no local data, so inputs were read from the maintainer's checkout.",
+  "remedy": "Protocol hashed before any crop was viewed; deterministic sample; every reading recorded with a confidence and an enlargement flag; verdicts reported with and without low-confidence readings; the 12 October inventory endpoint left unchanged.",
+  "evidence": [
+    "experiments/2026-10-15-route-test-metadata/README.md",
+    "experiments/2026-10-15-route-test-metadata/PROTOCOL.md",
+    "experiments/2026-10-15-route-test-metadata/PROTOCOL.sha256",
+    "experiments/2026-10-15-route-test-metadata/sample.py",
+    "experiments/2026-10-15-route-test-metadata/score.py",
+    "experiments/2026-10-15-route-test-metadata/mapping-v1.json",
+    "experiments/2026-10-15-route-test-metadata/run-2026-10-15/sample.csv",
+    "experiments/2026-10-15-route-test-metadata/run-2026-10-15/observations.csv",
+    "experiments/2026-10-15-route-test-metadata/run-2026-10-15/results.json",
+    "experiments/2026-10-15-route-test-metadata/run-2026-10-15/placeholder-counts.json",
+    "experiments/2026-10-15-route-test-metadata/run-2026-10-15/input-hashes.json"
+  ],
+  "retry_when": "A second reader codes the same 38 crops blind, or all 76 square-seal faces with None and the 58 with - are read against their crops; CISI 3 photographs become available for the faces beyond the CISI 1 and 2 ranges.",
+  "status_class": "source-review",
+  "area": "data",
+  "package": "experiments/2026-10-15-route-test-metadata",
+  "authors": ["Claude Code (Claude Opus 5.5), Claude desktop app"]
+}
