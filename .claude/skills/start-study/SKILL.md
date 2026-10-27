@@ -9,6 +9,4 @@ Search prior attempts and read their retry conditions and retrospectives. Follow
 
 Select the relevant [bench task](../../../bench/README.md) in the protocol, exercise its synthetic mode, and declare the comparison and pass rule before outcomes. Record the resulting versioned JSON and hashes in the owned package. Acquire or restore required local inputs through `knowledge/DATA.md` and `tools/fetch_data.py`.
 
-## Local data storage
-
-Read [LOCAL_STORAGE.md](../../../LOCAL_STORAGE.md) before acquiring or restoring inputs. Bulk local data live at `D:\projects\indus_valley_script`; historical checkout paths are junctions or file links. Put new raw inputs in the D: `data/raw/YYYY-MM-DD-slug/` tree and record logical and physical paths.
+Put new raw inputs under `data/raw/YYYY-MM-DD-slug/`, keep them local-only, and record logical and physical paths as described in [LOCAL_STORAGE.md](../../../LOCAL_STORAGE.md).

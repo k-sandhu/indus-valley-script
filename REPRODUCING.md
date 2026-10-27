@@ -14,7 +14,7 @@ The [reviewed sign catalogue](experiments/2026-10-11-bonta-adversarial/run-v6/ca
 
 ## Local storage on this workstation
 
-Bulk local inputs are stored at `D:\projects\indus_valley_script`. The checkout keeps historical relative paths through junctions and file links. Check that D: is mounted before restoring inputs or making large writes; use [LOCAL_STORAGE.md](LOCAL_STORAGE.md) for locations and handling. Frozen source paths and hashes are unchanged.
+See [LOCAL_STORAGE.md](LOCAL_STORAGE.md) for local input paths and restoration on this workstation or another machine.
 
 ## Inputs and environment
 

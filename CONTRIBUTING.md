@@ -4,7 +4,7 @@ This is a knowledge repository whose research code is run by hand. The project h
 
 ## Local data paths
 
-Read [LOCAL_STORAGE.md](LOCAL_STORAGE.md). On this workstation new raw acquisitions go to `D:\projects\indus_valley_script\data\raw\YYYY-MM-DD-slug\`; the checkout's `data/raw/` junction reaches the same files. Preserve local-only handling and record logical and physical paths.
+Follow [LOCAL_STORAGE.md](LOCAL_STORAGE.md) for local inputs and acquisition records.
 
 ## Before starting
 

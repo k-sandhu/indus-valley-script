@@ -6,8 +6,12 @@ This project gathers what can be sourced about every inscribed object and tests 
 
 ## Where things stand
 
-Most results below come from held-out tests: we fit a model on some of the inscriptions, score it on the rest, and compare the score with what chance would give. Each link opens a card with the exact numbers, the objects counted and the chance comparison used. A p-value says how often chance alone would produce a result at least this strong.
+The [findings guide](knowledge/findings/README.md) groups the evidence by subject. Many results below come from held-out tests: we fit a model on some of the inscriptions, score it on the rest, and compare the score with what chance would give. Each link opens a card with the exact numbers, the objects counted and the chance comparison used. A p-value says how often chance alone would produce a result at least this strong.
 
+- The object register covers all 4,695 provisional Lipi objects and 5,680 exported faces in the held sources, while preserving uncertain identities and source assertions. [Register report](experiments/2026-10-22-object-register/REPORT.md)
+- An excavators' caption places H-1657 on the floor of Room 591 in Trench 43 at Harappa and assigns it to late Period 3C; the field basis for that date remains to be obtained. [Source review](experiments/2026-10-24-harappa-context-pass2-review/REPORT.md)
+- Image review confirmed fourteen catalogue-view links in held images, including links for L-163 and L-207 absent from the earlier image index. [Independent review](experiments/2026-10-26-object-pilot-review/REPORT.md)
+- A register of 34 candidate towns preserves distinct architectural axes and building episodes; published Mohenjo-daro surveys show nearly cardinal and turned street systems. [Town register](experiments/2026-10-24-q1032-town-axis-register/REPORT.md)
 - No two of the 445 seals with six or more signs carry the same full text. [Finding](knowledge/findings/F-0027-long-seal-texts-do-not-repeat.md)
 - A sealing is the impression a seal leaves in clay, for example on a closed container. Of 16 sealings or tags whose text matches a known seal, 13 match only seals found at other sites. [Finding](knowledge/findings/F-0030-sealings-match-seals-from-other-cities.md)
 - Line breaks fall between recurring units. On 69 seals where the catalogue shows how the text was split across lines, the text of each line recurs elsewhere more often than a stretch of the same length that crosses the break: 23 seals favour the lines, 4 favour the crossing stretches and 42 tie (p = 0.0003). [Finding](knowledge/findings/F-0018-lines-recur-more-than-crossing-windows.md)
@@ -25,15 +29,17 @@ No sign yet has an established sound or meaning, and the language of the script 
 
 We write our ideas as plain claims, each with a credence (our probability that it is right), predictions that could fail and a kill condition, the result that would make us drop it. The [working model](knowledge/WORKING-MODEL.md) puts them together into one account. Its central claim is that the script did three different jobs: seals carry identity legends, Harappa's tablets are standard tokens made in series, and marks on pottery label contents or owners (credence 0.6). A seal legend, on this account, is a name followed by a title (0.45), and the short legends that recur on seals in many cities are the titles of offices (0.55). Each claim under test has its own [conjecture card](knowledge/conjectures/).
 
-We test a claim in two stages. First we explore freely on one half of the inscriptions. Then we freeze a single prediction and check it once against the other half. The first two tests ran on 12 and 13 October 2026:
+We test a claim in two stages. First we explore freely on one half of the inscriptions. Then we freeze a single prediction and check it once against the other half. The first tests ran on 12 and 13 October 2026:
 
 - A working reading that gave roles such as name, household or office to the 118 commonest signs did no better than shuffled versions of itself at predicting where seals were found or how large they were. [Report](experiments/2026-10-12-conjecture-shots/shot-b-reading/REPORT.md)
 - Seals whose legend ends in one of four signs were predicted to be larger than comparable seals, and they were (p = 0.021). An independent review found that three very large seals ending in sign 820 carry most of the result, so we hold the idea at a credence of 0.15. [Report](experiments/2026-10-12-conjecture-shots/shot-a-rank/REPORT.md), [review and response](experiments/2026-10-12-conjecture-shots/REVIEW-RESPONSE.md)
 - A check of the published photographs found that ten clay sealings from Lothal, in Gujarat, carry the same four-sign legend as the seal M-895 from Mohenjo-daro, but were stamped by a different seal. [Plate check](experiments/2026-10-13-plate-checks/README.md)
 
+Later tests and reviews changed several conjectures. The [Mohenjo-daro stratigraphy shot](knowledge/conjectures/C-0006-closing-stock-fixed-from-lowest-levels.md) met its kill condition, as did the [Harappa period test](knowledge/conjectures/C-0010-seal-legend-fixed-pattern.md). The [fish-order test](knowledge/conjectures/C-0007-fish-compound-designations.md) passed its joint rule, but stronger comparisons narrowed the numeral result; the [asterism coverage test](knowledge/conjectures/C-0008-fish-numerals-asterism-coverage.md) failed its registered rules. The [Proto-Dravidian fish-and-star test](knowledge/conjectures/C-0011-proto-dravidian-min-fish-and-star.md) passed its frozen rule and is held at 0.20 after review. The [town-axis star test](knowledge/conjectures/C-0015-towns-laid-out-on-star-settings.md) was undecided under its frozen rule and its Pleiades prediction failed; a later secondary analysis weakened it. These results retain the exposure limitations recorded in the cards and [bench ledger](bench/spent.json). Later cards propose tests of urban practices and continuity; their functional claims remain open.
+
 ## Start exploring
 
-The [project website](https://k-sandhu.github.io/indus-valley-script/) presents the findings, open questions and working model as web pages. The [sign catalogue](experiments/2026-10-11-bonta-adversarial/run-v6/catalogue.html) shows signs with example inscriptions and the meanings proposed for them, each with its evidence. The [chart atlas](output/chart_atlas/index.html) shows the 687 sign drawings and numbers in Koskenniemi and Parpola's 1979 *Corpus of Texts in the Indus Script*, each linked to its page and marked where the reading of the chart is uncertain. The [repository map](knowledge/MAP.md) lists every finding, question, attempt, paper and retrospective.
+The [project website](https://k-sandhu.github.io/indus-valley-script/) presents the findings, open questions and working model as web pages. The [sign catalogue](experiments/2026-10-11-bonta-adversarial/run-v6/catalogue.html) shows signs with example inscriptions and the meanings proposed for them, each with its evidence. The [chart atlas](output/chart_atlas/index.html) shows the 687 sign drawings and numbers in Koskenniemi and Parpola's 1979 *Corpus of Texts in the Indus Script*, each linked to its page and marked where the reading of the chart is uncertain. The [Indus living atlas](experiments/2026-10-26-indus-living-atlas/index.html) maps places and their phases, shows city reconstructions and reviews settlement persistence. The [repository map](knowledge/MAP.md) lists every finding, question, attempt, paper and retrospective.
 
 | Manuscript draft | Question |
 |---|---|
@@ -48,7 +54,7 @@ PDFs of the [original research report](output/pdf/indus_script_research_report.p
 
 ## Data
 
-On this workstation, bulk local inputs live at `D:\projects\indus_valley_script`. Existing checkout paths reach them through junctions and file links. Read [LOCAL_STORAGE.md](LOCAL_STORAGE.md) before acquiring or restoring inputs.
+Acquired inputs stay outside Git; [REPRODUCING.md](REPRODUCING.md) and [LOCAL_STORAGE.md](LOCAL_STORAGE.md) explain how to obtain or restore them.
 
 Our first priority is a complete record of every inscribed object: all of its catalogue numbers, every face and photograph, its size and material, where and in which layer it was found, its date, its museum number and where it has been published. [DATA.md](knowledge/DATA.md) lists what we hold, what exists elsewhere and what is still missing.
 
@@ -82,10 +88,14 @@ For agents: Clone https://github.com/k-sandhu/indus-valley-script, read AGENTS.m
 | `bench/` | The shared harness that scores proposed readings and keys |
 | `tools/` | Scripts for the knowledge base, checks and the website, all run by hand |
 | `data/` | Records of where each input came from; the large inputs are kept out of Git |
+| `site/` | Website assets and source material |
+| `LICENSES/` | Licence texts |
 | `templates/` | Templates for experiments, findings, questions and source reviews |
 | `research/`, `results/`, `archive/` | Earlier plans, outputs and documentation, kept unchanged |
 | `.claude/skills/` | Short task guides for agents, linked from AGENTS.md |
 | `.github/ISSUE_TEMPLATE/` | Forms for claiming questions and reporting data or result errors |
+
+Top-level guides include [AGENTS.md](AGENTS.md), [CONTRIBUTING.md](CONTRIBUTING.md), [REPRODUCING.md](REPRODUCING.md) and [LOCAL_STORAGE.md](LOCAL_STORAGE.md).
 
 ## Reuse and licence
 

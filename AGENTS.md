@@ -25,11 +25,11 @@ Include this writing requirement in every future subagent assignment: maximize r
 
 ## How to orient
 
-Layer 0 is this file. Layer 1 is [knowledge/MAP.md](knowledge/MAP.md) or `python tools/kb.py`. Layer 2 is the finding, question, conjecture or registry card for the task. Layer 3 is its linked experiment package, with protocol, exact outputs and review.
+Layer 0 is this file. Layer 1 is [knowledge/MAP.md](knowledge/MAP.md) or `python tools/kb.py --help`. Layer 2 is the finding, question, conjecture or registry card for the task. Layer 3 is its linked experiment package, with protocol, exact outputs and review.
 
 | Intent | Read or run | Skill |
 |---|---|---|
-| Understand where things stand | [README](README.md), [findings](knowledge/findings/), [working model](knowledge/WORKING-MODEL.md) | orient |
+| Understand where things stand | [README](README.md), [findings guide](knowledge/findings/README.md), [working model](knowledge/WORKING-MODEL.md) | orient |
 | Pick a task | `python tools/kb.py next`; check the question's issue | pick-task |
 | Add or improve data and metadata | [DATA](knowledge/DATA.md), [manifest](data/MANIFEST.json) | add-data |
 | Test a conjecture | [conjecture rules](knowledge/conjectures/README.md), [design](experiments/2026-10-12-conjecture-shots/DESIGN.md) | test-conjecture |

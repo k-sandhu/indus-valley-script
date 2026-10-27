@@ -26,4 +26,4 @@ Submit an attempt entry with the schema used by [the registry](../knowledge/regi
 
 Project code is under the Unlicense, and documentation and generated aggregates are under CC0 1.0. Methods imported from earlier project work keep their source paths and SHA-256 hashes. Third-party inputs keep their source terms, recorded in [LICENSE](../LICENSE) and [REUSE.md](../REUSE.md).
 
-On this workstation, bulk inputs and detailed exports live under `D:\projects\indus_valley_script`. The checkout's `data/raw/` junction preserves relative paths. Read [LOCAL_STORAGE.md](../LOCAL_STORAGE.md) before restoring data or writing large outputs.
+See [LOCAL_STORAGE.md](../LOCAL_STORAGE.md) for local inputs and detailed exports.

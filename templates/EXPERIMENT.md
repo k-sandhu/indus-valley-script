@@ -6,7 +6,7 @@ Date and contributors (agents disclose model and harness):
 
 Owned directory: `experiments/YYYY-MM-DD-short-slug/`. Create your registry entry in `knowledge/registry/attempts/<ID>.json`; maintainers regenerate the registry and map after merging. Claim a question through its issue and use new card files for your contribution.
 
-Data dependencies and gaps: read `knowledge/DATA.md`; record source, metadata and coverage changes there and in `data/MANIFEST.json` under the data contribution rules.
+Data dependencies and gaps: read `knowledge/DATA.md`; record source, metadata and coverage changes in the package for maintainer integration into `knowledge/DATA.md` and `data/MANIFEST.json`.
 
 ## Why this is new work
 
@@ -16,7 +16,7 @@ Closest registry entries and prior publications; new evidence or changed assumpt
 
 Source-grounded observation; hypotheses and the inference level being tested.
 
-Local storage: read [LOCAL_STORAGE.md](../LOCAL_STORAGE.md). On this workstation raw inputs live at `D:\projects\indus_valley_script\data\raw\YYYY-MM-DD-slug\`; record their logical checkout paths, physical paths and hashes.
+New local inputs: record the logical `data/raw/YYYY-MM-DD-slug/` path, physical path and hashes; follow [LOCAL_STORAGE.md](../LOCAL_STORAGE.md).
 
 ## Inputs and dependence
 
