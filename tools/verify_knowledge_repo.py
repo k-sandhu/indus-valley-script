@@ -8,6 +8,7 @@ import re
 import subprocess
 from urllib.parse import unquote
 from verify_checkout_navigation import destinations
+from storage_paths import repository_relative
 
 ROOT = Path(__file__).resolve().parents[1]
 if os.name == 'nt' and not str(ROOT).startswith('\\\\?\\'):
@@ -37,7 +38,7 @@ def main():
         if not args.public_checkout:
             return path.exists()
         try:
-            relative = path.resolve().relative_to(ROOT).as_posix()
+            relative = repository_relative(path.resolve(), ROOT).as_posix()
         except ValueError:
             return False
         return path.exists() and (relative in selected or any(p.startswith(relative.rstrip('/')+'/') for p in selected))
@@ -45,7 +46,7 @@ def main():
         if not args.public_checkout:
             return False
         try:
-            relative = path.resolve().relative_to(ROOT).as_posix()
+            relative = repository_relative(path.resolve(), ROOT).as_posix()
         except ValueError:
             return False
         if relative not in public_omissions:

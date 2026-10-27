@@ -2,6 +2,8 @@
 
 Since 11 October 2026 the public repository has held the reviewed research record. Bulk acquired corpora, downloaded papers, source images and OCR remain in the local project. The [October 11 asset review](../../experiments/2026-10-11-public-release/ASSET-REVIEW.md) and [publication manifest](../../experiments/2026-10-11-public-release/publication-manifest.json) document the current release. This policy records source-specific terms and handling.
 
+Bulk local inputs on this workstation live at `D:\projects\indus_valley_script`. Checkout junctions retain the historical source paths. [LOCAL_STORAGE.md](../../LOCAL_STORAGE.md) describes acquisition and restoration. Storage location does not change source rights or local-only handling.
+
 ## Current handling
 
 | Material | Evidence | Current handling | Public-release preparation |

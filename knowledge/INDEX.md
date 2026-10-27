@@ -6,6 +6,8 @@ We distinguish four levels of claim: observed graphics, statistical structure, p
 
 The [fish study](../experiments/2026-10-20-fish-context/REPORT.md) and [H-912 follow-up](../experiments/2026-10-20-h912-tablet-series/REPORT.md) distinguish ordered fish combinations from the proposed four-unit tablet series. Parallel reports recover [manufacture and deposition](../experiments/2026-10-20-archaeological-setting/REPORT.md) and test [graphic variation across cities](../experiments/2026-10-20-script-variation/REPORT.md). Their source registers, failed predictions and conjectures are preserved with the versioned results.
 
+Bulk local data on this workstation live at `D:\projects\indus_valley_script`; checkout paths remain available through links. Read [LOCAL_STORAGE.md](../LOCAL_STORAGE.md) before acquiring or restoring inputs.
+
 ## Research memory
 
 - [Experiment registry](experiments/registry.json): questions, outcomes, defects, remedies, exact evidence and reasons to revisit, for the experiments of the first investigation and each indexed methods run.

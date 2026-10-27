@@ -4,6 +4,10 @@ This repository is a durable Indus research knowledge base with manuscripts and 
 
 Data completeness comes first. Since 12 October 2026 our first priority has been a full record of every inscribed object, with as much metadata per object as can be sourced: identity and aliases across catalogues, every face and its images, dimensions, material, findspot, stratum and date, museum accession and publication references. Before starting an analysis, read `knowledge/DATA.md` for the gaps it depends on, and prefer work that closes a gap. Record every new source, field and change in coverage in your own experiment package; maintainers fold those records into `knowledge/DATA.md` and `data/MANIFEST.json` after merging.
 
+## Local data storage
+
+Read [LOCAL_STORAGE.md](LOCAL_STORAGE.md) before acquiring or restoring data. Bulk local inputs are stored at `D:\projects\indus_valley_script`; the C: checkout retains junctions and file links for historical paths. Write new raw inputs under the D: `data/raw/YYYY-MM-DD-slug/` tree, keep them local-only, and record logical and physical paths. Check the D: target before large writes.
+
 ## Hard rules
 
 - The project has no CI/CD, and none should be added: no `.github/workflows`, deployment scaffolding or recurring automations. A maintainer builds the website by hand with `tools/build_site.py` and publishes it to the `gh-pages` branch.

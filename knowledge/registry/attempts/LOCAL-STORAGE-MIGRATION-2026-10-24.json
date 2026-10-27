@@ -1,0 +1,27 @@
+{
+  "id": "LOCAL-STORAGE-MIGRATION-2026-10-24",
+  "theme": "Preservation of local acquired data on D: with historical checkout paths",
+  "status": "completed-with-recorded-inaccessible-environment",
+  "status_class": "record",
+  "area": "data",
+  "question": "Can bulk local data be moved off C: while retaining exact source bytes and historical project paths?",
+  "outcome": "187,131 accessible files, 35,099,820,039 bytes, matched destination SHA-256 before their C: copies were removed. Nine directory junctions and 434 file links retain paths. Bulk data are at D:/projects/indus_valley_script. One plotting environment with 14 inaccessible directories and one inaccessible 110-byte file is preserved intact on C:. Entry documents and all seven repository task skills identify the new root.",
+  "challenge": "Long Windows paths, denied ACLs, a failed early hashing run, and navigation tools that resolved junction targets outside the checkout.",
+  "remedy": "Extended-length path inventory; incremental file hashes; whole-environment preservation for inaccessible material; destination verification before native PowerShell removal; explicit checked source and target roots; storage-aware repository-relative path validation.",
+  "evidence": [
+    "experiments/2026-10-24-storage-migration/README.md",
+    "experiments/2026-10-24-storage-migration/summary.json",
+    "LOCAL_STORAGE.md",
+    "LOCAL_STORAGE.json",
+    "tools/storage_paths.py"
+  ],
+  "retry_when": "A storage target is unavailable, restoration is required, or a new bulk tree must be relocated. Keep the external manifest and backup; do not replace a missing junction with a C: data directory.",
+  "package": "experiments/2026-10-24-storage-migration",
+  "authors": [
+    {
+      "model": "GPT-6 (exact runtime model ID unavailable)",
+      "harness": "Codex desktop app"
+    }
+  ],
+  "verification_tier": "submitted"
+}

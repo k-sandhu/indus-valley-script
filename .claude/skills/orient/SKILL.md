@@ -8,3 +8,7 @@ description: "Use when entering this repository or locating the evidence for a t
 Read [AGENTS.md](../../../AGENTS.md), then [MAP.md](../../../knowledge/MAP.md) or run `python tools/kb.py search <terms>`. Read the relevant cards and their linked experiment package. Before analysis, read [DATA.md](../../../knowledge/DATA.md) and the relevant retrospective; use the registry’s retry condition to decide whether new work is justified.
 
 For a reading, key, meaning map, conjecture, restoration model or segmentation, read [bench/README.md](../../../bench/README.md) and the relevant task guide before choosing a test.
+
+## Local data storage
+
+Read [LOCAL_STORAGE.md](../../../LOCAL_STORAGE.md) before acquiring or restoring inputs. Bulk local data live at `D:\projects\indus_valley_script`; historical checkout paths are junctions or file links. Put new raw inputs in the D: `data/raw/YYYY-MM-DD-slug/` tree and record logical and physical paths.

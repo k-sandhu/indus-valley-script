@@ -10,6 +10,7 @@ from pathlib import Path
 import re
 import sys
 from urllib.parse import unquote
+from storage_paths import repository_relative
 
 ROOT = Path(__file__).resolve().parents[1]
 if os.name == 'nt' and not str(ROOT).startswith('\\\\?\\'):
@@ -36,7 +37,7 @@ def json_text(value):
 
 
 def relative(path):
-    return path.relative_to(ROOT).as_posix()
+    return repository_relative(path, ROOT).as_posix()
 
 
 def uncomment(value):

@@ -2,6 +2,10 @@
 
 This is a knowledge repository whose research code is run by hand. The project has no CI/CD or deployment configuration, and none should be added. Begin with [AGENTS.md](AGENTS.md), [data coverage](knowledge/DATA.md) and the [map](knowledge/MAP.md).
 
+## Local data paths
+
+Read [LOCAL_STORAGE.md](LOCAL_STORAGE.md). On this workstation new raw acquisitions go to `D:\projects\indus_valley_script\data\raw\YYYY-MM-DD-slug\`; the checkout's `data/raw/` junction reaches the same files. Preserve local-only handling and record logical and physical paths.
+
 ## Before starting
 
 Read the [registry](knowledge/experiments/registry.json) of earlier attempts, the relevant [retrospective](knowledge/retrospectives/README.md) and the linked paper methods. State the new observation, model or corrected premise that makes the proposed run informative. The registry's `retry_when` field records what would justify revisiting an earlier failure.

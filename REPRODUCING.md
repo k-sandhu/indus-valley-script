@@ -12,6 +12,10 @@ The detailed JSONL files of the restoration benchmarks, the slot audits and cont
 
 The [reviewed sign catalogue](experiments/2026-10-11-bonta-adversarial/run-v6/catalogue.html) embeds its data and can be opened directly from a clone, including its attributed detail crops from the chart. To serve it in a browser, run `python -m http.server 8769 --bind 127.0.0.1` from the repository root and open `/experiments/2026-10-11-bonta-adversarial/run-v6/catalogue.html`. The [adversarial report](experiments/2026-10-11-bonta-adversarial/REPORT.md) lists the local inputs needed to rebuild the catalogue and recompute its results.
 
+## Local storage on this workstation
+
+Bulk local inputs are stored at `D:\projects\indus_valley_script`. The checkout keeps historical relative paths through junctions and file links. Check that D: is mounted before restoring inputs or making large writes; use [LOCAL_STORAGE.md](LOCAL_STORAGE.md) for locations and handling. Frozen source paths and hashes are unchanged.
+
 ## Inputs and environment
 
 See the [source inventory](knowledge/provenance/SOURCES.md), the [redistribution review](knowledge/provenance/REDISTRIBUTION.md) and the [historical environment](output/environment.json). The first run used Python 3.13.5 on Windows. `requirements.txt` records the package versions observed then; plotting originally used a separate `.vendor` tree. A single pip environment is a convenience and does not exactly reconstruct that historical layering.

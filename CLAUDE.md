@@ -1,1 +1,2 @@
 @AGENTS.md
+@LOCAL_STORAGE.md

@@ -9,6 +9,7 @@ from pathlib import Path
 import re
 import subprocess
 from urllib.parse import unquote
+from storage_paths import repository_relative
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / 'experiments/2026-10-02-six-hour/integration-review/checkout-availability'
@@ -75,7 +76,7 @@ def classify(doc, destination, selected):
         return dict(category='network-or-scheme', target=destination)
     path = (doc.parent / target).resolve()
     try:
-        relative = path.relative_to(ROOT).as_posix()
+        relative = repository_relative(path, ROOT).as_posix()
     except ValueError:
         return dict(category='outside-repository', target=target, workspace_exists=path.exists())
     children = [p for p in selected if p.startswith(relative.rstrip('/') + '/')]

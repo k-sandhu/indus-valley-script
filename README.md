@@ -48,6 +48,8 @@ PDFs of the [original research report](output/pdf/indus_script_research_report.p
 
 ## Data
 
+On this workstation, bulk local inputs live at `D:\projects\indus_valley_script`. Existing checkout paths reach them through junctions and file links. Read [LOCAL_STORAGE.md](LOCAL_STORAGE.md) before acquiring or restoring inputs.
+
 Our first priority is a complete record of every inscribed object: all of its catalogue numbers, every face and photograph, its size and material, where and in which layer it was found, its date, its museum number and where it has been published. [DATA.md](knowledge/DATA.md) lists what we hold, what exists elsewhere and what is still missing.
 
 Much of the source material belongs to others. A copy of this repository contains our text, code, protocols, summary results and pointers to the sources, together with some third-party material we are allowed to share. The digital corpora, most photographs and the downloaded publications have to be obtained separately under their own terms. [REPRODUCING.md](REPRODUCING.md) explains how to obtain them and rerun a study, and the [rights records](knowledge/provenance/REDISTRIBUTION.md) say what can be shared.

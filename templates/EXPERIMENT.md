@@ -16,6 +16,8 @@ Closest registry entries and prior publications; new evidence or changed assumpt
 
 Source-grounded observation; hypotheses and the inference level being tested.
 
+Local storage: read [LOCAL_STORAGE.md](../LOCAL_STORAGE.md). On this workstation raw inputs live at `D:\projects\indus_valley_script\data\raw\YYYY-MM-DD-slug\`; record their logical checkout paths, physical paths and hashes.
+
 ## Inputs and dependence
 
 URLs, version/commit, hashes, inventory, physical aliases, date/context uncertainty, exclusions and missing cases; source terms and local-only inputs.
