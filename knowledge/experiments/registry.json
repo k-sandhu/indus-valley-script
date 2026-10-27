@@ -4149,6 +4149,44 @@
       "verification_tier": "submitted"
     },
     {
+      "id": "CANDIDATE-IDENTITY-EXPOSURE-01",
+      "theme": "Complete candidate identity and participant exposure review",
+      "status": "complete-metadata-review-with-unresolved-identity-and-exposure-gaps",
+      "status_class": "exploratory",
+      "area": "data",
+      "question": "Can all 358 candidate inventory rows receive source-attributed identity and exposure dispositions using held metadata without a new primary-content read?",
+      "outcome": "Reviewed all 358 rows. Verified 24 existing provisional-family identifier links; retained 306 candidate-only rows and 28 unlinked rows. Indexed 1018 historical exposure records and 2139 candidate-event associations. Preserved 11 unresolved duplicate flags and two shared-registration pairs. Distinguished 313 explicit PDF-page matches from 45 derived-page matches with unverified original PDF binding. No physical merges or confirmation-eligible rows.",
+      "challenge": "Inventory rows are not unique physical objects. Site and project labels complicate complete-identifier matching. Exposure logs mix script access, model display, conservative incident sets and derived page coordinates.",
+      "remedy": "Used narrow site-qualified namespace rules, preserved all numeric components and unresolved relations, separated access and display classes, retained participant and page uncertainty, and verified deterministic local exports. Logged incidental source-derived metadata displayed during workflow inspection.",
+      "evidence": [
+        "experiments/2026-10-22-candidate-identity-exposure/PROTOCOL.md",
+        "experiments/2026-10-22-candidate-identity-exposure/REPORT.md",
+        "experiments/2026-10-22-candidate-identity-exposure/INTERFACE.md",
+        "experiments/2026-10-22-candidate-identity-exposure/REVISION-NOTES.md",
+        "experiments/2026-10-22-candidate-identity-exposure/run-v3/summary.json",
+        "experiments/2026-10-22-candidate-identity-exposure/run-v3/source-manifest.json",
+        "experiments/2026-10-22-candidate-identity-exposure/run-v3/validation.json",
+        "experiments/2026-10-22-candidate-identity-exposure/source-and-replay-verification.json",
+        "experiments/2026-10-22-candidate-identity-exposure/DATA-UPDATE.md",
+        "experiments/2026-10-22-candidate-identity-exposure/RETROSPECTIVE.md"
+      ],
+      "retry_when": "New object-specific identity evidence, original-PDF page bindings, exact historical display records or a declared future participant and statistic-family policy becomes available.",
+      "package": "experiments/2026-10-22-candidate-identity-exposure",
+      "related_questions": [
+        "Q-1030",
+        "Q-1031",
+        "Q-1028"
+      ],
+      "authors": [
+        {
+          "model": "GPT-6 family; exact backend identifier not exposed",
+          "harness": "Codex desktop collaboration",
+          "agent": "object-register worker"
+        }
+      ],
+      "verification_tier": "submitted"
+    },
+    {
       "id": "CISI-BASIC-DATA-FULL-2026-10-13",
       "theme": "Double-blind transcription of the complete CISI 1 and CISI 2 basic-data tables, joined to the local corpus",
       "status": "completed-cisi1-adjudicated-cisi2-partly-adjudicated",
@@ -4308,6 +4346,71 @@
       "area": "meaning"
     },
     {
+      "id": "CROP-CONTINUITY-2026-10-25",
+      "theme": "Crop retention, changing composition and source denominators after Harappan urban decline",
+      "status": "completed-initial-source-audit-and-descriptive-pilot",
+      "status_class": "source-review",
+      "area": "archaeology",
+      "authors": [
+        {
+          "name": "GPT-6",
+          "model": "GPT-6; exact build unavailable",
+          "harness": "Codex API workspace"
+        }
+      ],
+      "question": "Which parts of the Jognakhera crop-continuity claim survive an independent source audit, and what comparison data can support a regional test?",
+      "outcome": "Audited the focal paper and extracted nine published phase summaries at five comparison sites. Bahola's winter share rises by 10.42 percentage points and its summer share falls by 15.36 points between Late Harappan and PGW assemblages. Reconstructed cereal-denominator millet figures of 54.05% and 71.37%. The focal paper's three reported crop date ranges predate a 1200 BCE PGW reference; its complete supplement and layer-phase joins remain uninspected. The news article misreads a modern crop list as archaeological finds. No regional significance test or new excavation claim is made.",
+      "challenge": "Focal supplementary DOCX access failed; direct publisher access returned a JavaScript challenge and the author PDF download returned 403. Pooled phase percentages lack deposit-level uncertainty and common recovery denominators. Several comparison publications share one excavation lineage.",
+      "remedy": "Preserved failed requests and source scope, reused an identical-hash Cambridge manuscript with supplement, inspected comparison tables visually, and checked the calculations through pdfplumber and exact rational arithmetic. All 52 same-contributor checks pass. Recorded missing fields and a prospective recovery-controlled design; retained run-v1 beside the reproducible-output naming repair in run-v2.",
+      "evidence": [
+        "experiments/2026-10-25-crop-continuity/PROTOCOL.md",
+        "experiments/2026-10-25-crop-continuity/protocol-freeze-v1.json",
+        "experiments/2026-10-25-crop-continuity/REPORT.md",
+        "experiments/2026-10-25-crop-continuity/run-v2/summary.json",
+        "experiments/2026-10-25-crop-continuity/run-v2/validation.json",
+        "experiments/2026-10-25-crop-continuity/source-manifest.json",
+        "experiments/2026-10-25-crop-continuity/comparison-data-register.json",
+        "experiments/2026-10-25-crop-continuity/NEXT-STUDY.md",
+        "experiments/2026-10-25-crop-continuity/DATA-UPDATE.md",
+        "experiments/2026-10-25-crop-continuity/RETROSPECTIVE.md"
+      ],
+      "retry_when": "The Jognakhera supplement, independently associated layer dates and PGW sample joins, or comparable deposit-level crop counts and recovery metadata at independent sites become available. New familiar phase-percentage contrasts alone do not establish unchanged management or drought causation.",
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "CULTURAL-TRANSMISSION-THEORIES-2026-10-25",
+      "theme": "Practical inheritance, language contact and later ritual organization",
+      "status": "completed-source-synthesis-with-three-untested-conjectures",
+      "status_class": "source-review",
+      "area": "comparative",
+      "authors": [
+        {
+          "name": "GPT-6",
+          "model": "GPT-6; exact build unavailable",
+          "harness": "Codex API workspace"
+        }
+      ],
+      "question": "How can crop continuity support testable theories about the passage from Indus society to later regional, Vedic and language histories?",
+      "outcome": "Developed three conjectures: practical transmission through local networks, agricultural knowledge crossing into Indo-Aryan speech communities, and a long-shot diagnostic Vedic operation with an Indus-period ancestor. Starting credences are 0.65, 0.50 and 0.20, explicitly subjective. A horsegram case joins published botanical and lexical proposals while preserving multiple-domestication and alternate-route explanations. Established language genealogy, scholarly models and new hypotheses are recorded separately; no historical prediction is confirmed.",
+      "challenge": "Crop occurrence cannot identify a language or ritual lineage. Sources reuse archaeological and etymological evidence. The author substrate PDF failed TLS validation, the journal endpoint returned HTML, and a later Kuru publication remained inaccessible. Genetic ancestry proxies have uncertain archaeological associations.",
+      "remedy": "Reused hashed primary sources, checked the original Vedic locus and primary linguistic and genetic literature, retained alternative Dravidian scenarios, and recorded source access limits. Each conjecture has predictions, an evidence gate and a kill condition; shared observations have a joint update rule. A versioned synthetic bench shots run passed workflow guards only, with no real confirmation population opened.",
+      "evidence": [
+        "experiments/2026-10-25-continuity-theories/PROTOCOL.md",
+        "experiments/2026-10-25-continuity-theories/REPORT.md",
+        "experiments/2026-10-25-continuity-theories/TEST-DESIGN.md",
+        "experiments/2026-10-25-continuity-theories/CLAIM-EVIDENCE.json",
+        "experiments/2026-10-25-continuity-theories/source-manifest.json",
+        "experiments/2026-10-25-continuity-theories/bench-shots-synthetic-v1.json",
+        "experiments/2026-10-25-continuity-theories/DATA-UPDATE.md",
+        "experiments/2026-10-25-continuity-theories/RETROSPECTIVE.md",
+        "knowledge/conjectures/C-0020-practical-knowledge-through-local-networks.md",
+        "knowledge/conjectures/C-0021-farming-knowledge-across-language-contact.md",
+        "knowledge/conjectures/C-0022-vedic-rite-retains-regional-operation.md"
+      ],
+      "retry_when": "New independently dated intermediate production contexts, a complete source-reviewed agricultural vocabulary with etymological controls, or a frozen diagnostic operation and comparable Iranian and regional controls permit an empirical test. Repeating generic similarities, dictionary matches or generated workflow checks adds no historical confirmation.",
+      "verification_tier": "submitted"
+    },
+    {
       "id": "DATA-INVENTORY-2026-10-12",
       "theme": "Data holdings, metadata coverage per inscribed object, unheld sources and acquisition priorities",
       "status": "completed-inventory-verified-computation",
@@ -4438,6 +4541,219 @@
           "model": "gpt-6.1-sol",
           "harness": "Codex CLI 0.160.1",
           "agent": "runs 1 and 1b: acquisition, parsing, tip mapping, tree reading, reconstruction code and tests, reference draw"
+        }
+      ],
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "EIGHT-DIRECTIONS-2026-10-24",
+      "theme": "Coordinated source work across eight research directions",
+      "status": "completed-first-contributions",
+      "question": "What source and implementation gaps can a first contribution close in each of eight open directions?",
+      "outcome": "Eight separate contributions recover object identity, physical face, context, sealing, tablet, lexical, readable-control and construction-phase evidence. Detailed datasets remain local on D:. The reports define residual acquisition and specialist-review requirements.",
+      "challenge": "Three concurrent worker slots, overlapping prior source histories, source dependence and incomplete physical-use metadata.",
+      "remedy": "Give eight workers distinct packages, dispatch as slots open, preserve source and protocol versions, review returned prose and counts, and independently inspect the bounded Lothal source chain.",
+      "evidence": [
+        "experiments/2026-10-24-eight-directions/PROTOCOL.md",
+        "experiments/2026-10-24-eight-directions/REPORT.md",
+        "experiments/2026-10-24-eight-directions/REVIEW.md",
+        "experiments/2026-10-24-eight-directions/RETROSPECTIVE.md",
+        "experiments/2026-10-24-eight-directions/DATA-UPDATE.md",
+        "experiments/2026-10-24-eight-directions/claim-results.json",
+        "experiments/2026-10-24-eight-directions/source-hash-review-v4.json",
+        "experiments/2026-10-24-eight-directions/dispatch-v7.json",
+        "experiments/2026-10-24-eight-directions/package-audit-v1.json",
+        "experiments/2026-10-24-eight-directions/increment-review-v1.json",
+        "experiments/2026-10-24-eight-directions/VALIDATION.md",
+        "experiments/2026-10-24-eight-directions/worktree-review-v1.json",
+        "experiments/2026-10-24-eight-directions/syntax-check-v2.json",
+        "experiments/2026-10-24-eight-directions/knowledge-check-v2.json",
+        "experiments/2026-10-24-eight-directions/repository-comparison-v2.json"
+      ],
+      "retry_when": "The next round supplies one of the object images, catalogue pages, field records or specialist adjudications identified by the eight reports.",
+      "status_class": "record",
+      "area": "data",
+      "verification_tier": "submitted",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration",
+          "role": "Eight research workers and a separate bounded source reviewer"
+        },
+        {
+          "model": "GPT-6 family; exact root model identifier not exposed",
+          "harness": "Codex desktop collaboration",
+          "role": "Integrating contributor"
+        }
+      ]
+    },
+    {
+      "id": "EIGHT-DIRECTIONS-PASS2-2026-10-24",
+      "theme": "Second source pass across eight research directions",
+      "status": "completed-bounded-evidence-pass",
+      "question": "Which remaining source gaps can a second bounded pass close across the eight existing directions?",
+      "outcome": "Eight contributions add source-qualified context, workshop comparisons, lexical case adjudications, photographic inventories, readable-seal exclusions and original laboratory and conservation records. A separate review confirms the H-1657 identity and caption chain. Detailed source data remain on D:.",
+      "challenge": "Incomplete catalogues and field records, access failures, repeated source lineages, ambiguous identifiers and three concurrent worker slots.",
+      "remedy": "Freeze bounded cases and source searches, assign distinct packages to gpt-6.1-sol workers, preserve prior results and failed versions, log exposure, and review the new source chain separately.",
+      "evidence": [
+        "experiments/2026-10-24-eight-directions-pass2/PROTOCOL.md",
+        "experiments/2026-10-24-eight-directions-pass2/REPORT.md",
+        "experiments/2026-10-24-eight-directions-pass2/REVIEW.md",
+        "experiments/2026-10-24-eight-directions-pass2/RETROSPECTIVE.md",
+        "experiments/2026-10-24-eight-directions-pass2/DATA-UPDATE.md",
+        "experiments/2026-10-24-eight-directions-pass2/VALIDATION.md",
+        "experiments/2026-10-24-eight-directions-pass2/dispatch-v6.json",
+        "experiments/2026-10-24-eight-directions-pass2/claim-check-v1.json",
+        "experiments/2026-10-24-eight-directions-pass2/byte-review-v1.json",
+        "experiments/2026-10-24-eight-directions-pass2/byte-review-v2.json",
+        "experiments/2026-10-24-eight-directions-pass2/byte-review-v3.json",
+        "experiments/2026-10-24-eight-directions-pass2/byte-review-v4.json",
+        "experiments/2026-10-24-harappa-context-pass2-review/verification-v1.json",
+        "experiments/2026-10-24-eight-directions-pass2/package-audit-v1.json",
+        "experiments/2026-10-24-eight-directions-pass2/separate-review-audit-v1.json",
+        "experiments/2026-10-24-eight-directions-pass2/knowledge-check-v1.json",
+        "experiments/2026-10-24-eight-directions-pass2/syntax-check-v1.json",
+        "experiments/2026-10-24-eight-directions-pass2/prose-review-v1.json",
+        "experiments/2026-10-24-eight-directions-pass2/repository-comparison-v1.json",
+        "experiments/2026-10-24-eight-directions-pass2/worktree-review-v1.json",
+        "experiments/2026-10-24-eight-directions-pass2/closing-check-v1.json"
+      ],
+      "retry_when": "Acquire the specific accession concordances, catalogue plates, field lots, contact photographs, specialist lexical adjudications or architectural section records named in the eight reports.",
+      "status_class": "record",
+      "area": "data",
+      "verification_tier": "submitted",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration",
+          "role": "Eight research workers and a separate bounded source reviewer"
+        },
+        {
+          "model": "GPT-6 family; exact root model identifier not exposed",
+          "harness": "Codex desktop collaboration",
+          "role": "Integrating contributor"
+        }
+      ]
+    },
+    {
+      "id": "EIGHT-DIRECTIONS-PASS3-2026-10-24",
+      "theme": "Third source pass across eight research directions",
+      "status": "completed-bounded-evidence-pass",
+      "question": "What new source routes can advance the remaining evidence gaps across eight directions?",
+      "outcome": "Eight contributions recover an early Harappa field key, restricted am-class rules, a full Tell Brak catalogue and a contradictory Lothal plate identity, while documenting remaining face, physical-use and construction-context gaps. A separate contributor checks four source chains. Detailed data remain on D:.",
+      "challenge": "Inaccessible catalogues, image-only held scans, missing source joins, lexical class notation and conflicting original plate references.",
+      "remedy": "Freeze new routes and cases, preserve bounded amendments and failed versions, use local rendering and public institutional file links, review source scopes separately, and retain complete prior passes.",
+      "evidence": [
+        "experiments/2026-10-24-eight-directions-pass3/PROTOCOL.md",
+        "experiments/2026-10-24-eight-directions-pass3/REPORT.md",
+        "experiments/2026-10-24-eight-directions-pass3/REVIEW.md",
+        "experiments/2026-10-24-eight-directions-pass3/RETROSPECTIVE.md",
+        "experiments/2026-10-24-eight-directions-pass3/DATA-UPDATE.md",
+        "experiments/2026-10-24-eight-directions-pass3/VALIDATION.md",
+        "experiments/2026-10-24-eight-directions-pass3/dispatch-v8.json",
+        "experiments/2026-10-24-eight-directions-pass3/claim-check-v1.json",
+        "experiments/2026-10-24-eight-directions-pass3/byte-review-v1.json",
+        "experiments/2026-10-24-eight-directions-pass3/byte-review-v2.json",
+        "experiments/2026-10-24-eight-directions-pass3/byte-review-v3.json",
+        "experiments/2026-10-24-eight-directions-pass3/byte-review-v4.json",
+        "experiments/2026-10-24-eight-directions-pass3/byte-review-v5.json",
+        "experiments/2026-10-24-eight-directions-pass3/byte-review-v6.json",
+        "experiments/2026-10-24-source-review-pass3/verification-v1.json",
+        "experiments/2026-10-24-eight-directions-pass3/package-audit-v1.json",
+        "experiments/2026-10-24-eight-directions-pass3/separate-review-audit-v1.json",
+        "experiments/2026-10-24-eight-directions-pass3/syntax-check-v1.json",
+        "experiments/2026-10-24-eight-directions-pass3/knowledge-check-v1.json",
+        "experiments/2026-10-24-eight-directions-pass3/prose-review-v1.json",
+        "experiments/2026-10-24-eight-directions-pass3/repository-comparison-v1.json",
+        "experiments/2026-10-24-eight-directions-pass3/worktree-review-v1.json",
+        "experiments/2026-10-24-eight-directions-pass3/closing-check-v1.json"
+      ],
+      "retry_when": "Acquire the named field lots, original photograph register, missing catalogue plates, full textual citation or construction section, or obtain the specified specialist adjudication.",
+      "status_class": "record",
+      "area": "data",
+      "verification_tier": "submitted",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration",
+          "role": "Eight research workers and a separate source reviewer"
+        },
+        {
+          "model": "GPT-6 family; exact root model identifier not exposed",
+          "harness": "Codex desktop collaboration",
+          "role": "Integrating contributor"
+        }
+      ]
+    },
+    {
+      "id": "EVIDENCE-INTEGRATION-01",
+      "theme": "Held-source face, lexical and candidate reviews integrated into the object register",
+      "status": "complete-source-review-integration-with-unresolved-gaps",
+      "status_class": "exploratory",
+      "area": "data",
+      "question": "Which layout, lexical-source and candidate identity or exposure gaps can the held evidence close, and can those reviews be integrated without changing frozen source records?",
+      "outcome": "Reviewed 29 faces with two sealed visual records; accepted 21 provisional spatial layouts and 12 source-segment maps. Integrated 24 lexical-form reviews, 40 frozen compound sample cases and 3 diagnostics, plus all 358 candidate identity/exposure reviews. Reverified 24 existing identifier links; 306 candidate-only and 28 unlinked remain. Preserved 4695 object families and 5680 faces, adding 5474 review assertions including 5396 unresolved candidate relations. No new physical merges, authenticated readings or fresh confirmation objects.",
+      "challenge": "Image tiers and catalogue segments differ; exact dictionary forms can select wrong senses or languages; page access does not establish exact object exposure. The first integration reused a path variable and produced incorrect compact face-review links.",
+      "remedy": "Kept independent visual freezes, source-qualified decisions, scoped lexical relations and participant/page uncertainty. Preserved the first integration and its code, reproduced the provenance bug in a regression test, and built a corrected run-v2.",
+      "evidence": [
+        "experiments/2026-10-22-evidence-integration/PROTOCOL.md",
+        "experiments/2026-10-22-evidence-integration/VISUAL-PASS-FREEZE.json",
+        "experiments/2026-10-22-evidence-integration/REPORT.md",
+        "experiments/2026-10-22-evidence-integration/INTERFACE.md",
+        "experiments/2026-10-22-evidence-integration/run-v2/coverage.json",
+        "experiments/2026-10-22-evidence-integration/run-v2/source-manifest.json",
+        "experiments/2026-10-22-evidence-integration/run-v2/validation.json",
+        "experiments/2026-10-22-evidence-integration/VALIDATION.md",
+        "experiments/2026-10-22-evidence-integration/RETROSPECTIVE.md",
+        "experiments/2026-10-22-evidence-integration/synthetic-validation.json",
+        "experiments/2026-10-22-candidate-identity-exposure/INTEGRATION-REVIEW-V2.json"
+      ],
+      "retry_when": "Obtain expert layout and lexical reviews, stronger catalogue or accession identities, original source-page mappings and participant-specific exposure evidence; complete corrected lexical extraction and calibrated controls.",
+      "package": "experiments/2026-10-22-evidence-integration",
+      "related_questions": [
+        "Q-1030",
+        "Q-0027",
+        "Q-0039"
+      ],
+      "authors": [
+        {
+          "model": "GPT-6 family; exact backend identifier not exposed",
+          "harness": "Codex desktop collaboration",
+          "agent": "integrating contributor"
+        }
+      ],
+      "verification_tier": "reviewed"
+    },
+    {
+      "id": "FACE-ADJUDICATION-29-01",
+      "theme": "Independent visual review of unresolved divided-face layouts",
+      "status": "completed-visual-source-review-with-provisional-segment-maps",
+      "status_class": "source-review",
+      "area": "images",
+      "question": "Which of the 29 already imaged faces lacking accepted physical order can be represented by explicit source-linked group geometry?",
+      "outcome": "All 29 faces have a disposition after 29 primary and eight alternate image views. Twenty-one spatial layouts and twelve provisional catalogue-segment to graphic-group maps are supported; no historical reading traversal is assigned. Three supplemental caption, duplicate-image and main-versus-edge identity checks are recorded locally.",
+      "challenge": "Faint images, unknown codes, composite panels, rotated groups and scene details can obscure segment correspondence. Both agents have historical project exposure, so the visual masking does not establish fresh evidence.",
+      "remedy": "Sealed a visual-only record before source codes, retained an independently sealed parent record, rendered held catalogue glyphs only in the alignment phase, preserved original-pixel geometry and uncertainty, and kept unsupported maps unresolved. Detailed records remain local under the redistribution rules.",
+      "evidence": [
+        "experiments/2026-10-22-face-adjudication/PROTOCOL.md",
+        "experiments/2026-10-22-face-adjudication/SOURCE-MANIFEST.json",
+        "experiments/2026-10-22-face-adjudication/VISUAL-PASS-1-FREEZE.json",
+        "experiments/2026-10-22-face-adjudication/results-v1.json",
+        "experiments/2026-10-22-face-adjudication/REPORT.md",
+        "experiments/2026-10-22-face-adjudication/RETROSPECTIVE.md",
+        "experiments/2026-10-22-face-adjudication/DATA-UPDATE.md",
+        "experiments/2026-10-22-face-adjudication/VALIDATION.md",
+        "experiments/2026-10-22-face-adjudication/prepare.py",
+        "experiments/2026-10-22-face-adjudication/render_codes.py",
+        "experiments/2026-10-22-face-adjudication/build_reviews.py"
+      ],
+      "retry_when": "Independent expert review or higher-resolution primary plates can resolve the remaining layout and source-segment correspondences. Preserve the current records when adding new assertions.",
+      "package": "experiments/2026-10-22-face-adjudication",
+      "authors": [
+        {
+          "model": "GPT-6 family; exact backend identifier not exposed",
+          "harness": "Codex desktop collaboration",
+          "agent": "visual source reviewer"
         }
       ],
       "verification_tier": "submitted"
@@ -4640,6 +4956,124 @@
       "verification_tier": "submitted"
     },
     {
+      "id": "HARAPPA-CONTEXT-EXTENSION-2026-10-24",
+      "theme": "Independent chronology and recovery contexts for HARP seals",
+      "status": "completed-bounded-source-audit",
+      "status_class": "source-review",
+      "area": "archaeology",
+      "authors": [
+        {
+          "name": "gpt-6.1-sol",
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration"
+        }
+      ],
+      "question": "Which source-qualified HARP seal identities and context dates can support a later independent chronological cohort?",
+      "outcome": "Nine unique CISI identities receive source-qualified context dispositions. Two explicit uncontested full keys are preserved; H-2587 retains conflicting lots 7158 and 7458. Three early Mound E seals remain field-context candidates. Two mixed-context seals carry style-based 3C revisions. No new independent calendar sample or eligible confirmation seal is established, and no legend statistic is scored.",
+      "challenge": "The public synthesis omits individual field context links and contains an internal lot contradiction. A linked 2009 chapter returned HTTP 403 and exceeded the web PDF size limit.",
+      "remedy": "Preserved both lot assertions, separated deposit and style dates, retained snippet-only chronology as unverified, and kept all detailed records and text extraction on D:.",
+      "evidence": [
+        "experiments/2026-10-24-harappa-context-extension/PROTOCOL.md",
+        "experiments/2026-10-24-harappa-context-extension/REPORT.md",
+        "experiments/2026-10-24-harappa-context-extension/source-manifest.json",
+        "experiments/2026-10-24-harappa-context-extension/summary-v1.json",
+        "experiments/2026-10-24-harappa-context-extension/validation-v1.json",
+        "experiments/2026-10-24-harappa-context-extension/RETROSPECTIVE.md",
+        "experiments/2026-10-24-harappa-context-extension/DATA-UPDATE.md"
+      ],
+      "retry_when": "Field lots and stratigraphic relations are recovered for H-1688, H-1682 and H-1692, independently contextualized late HARP seals become available, or a primary witness resolves H-2587. Reserve all later text scoring for a jointly frozen design.",
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "HARAPPA-CONTEXT-PASS2-2026-10-24",
+      "theme": "Harappa floor and lot source acquisition",
+      "status": "completed-bounded-source-audit",
+      "status_class": "source-review",
+      "area": "archaeology",
+      "authors": [
+        {
+          "name": "gpt-6.1-sol",
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration"
+        }
+      ],
+      "question": "Q-0030: Can public primary sources qualify the five unresolved Harappa cases?",
+      "outcome": "One of five cases gains a HARP context assertion: H-1657 on Room 591 floor in Trench 43, published late 3C. Four remain without new contexts; H-2587 lot conflict remains unresolved. No sample links or manufacture dates added.",
+      "challenge": "2009 PDF exceeds public reader limit and ordinary author routes return 403; 1999 scan exposes no inspectable text or pixels.",
+      "remedy": "Preserved response records, exact remaining field dependencies and incidental inscription exposure; retained snippet-only leads outside admitted contexts.",
+      "evidence": [
+        "experiments/2026-10-24-harappa-context-pass2/PROTOCOL.md",
+        "experiments/2026-10-24-harappa-context-pass2/REPORT.md",
+        "experiments/2026-10-24-harappa-context-pass2/RETROSPECTIVE.md",
+        "experiments/2026-10-24-harappa-context-pass2/DATA-UPDATE.md",
+        "experiments/2026-10-24-harappa-context-pass2/source-manifest.json",
+        "experiments/2026-10-24-harappa-context-pass2/summary-v1.json",
+        "experiments/2026-10-24-harappa-context-pass2/validation-v1.json",
+        "experiments/2026-10-24-harappa-context-pass2/exposure-record.json"
+      ],
+      "retry_when": "Acquire lot 8796 floor relations, the 1999/2008 button-seal captions or early Mound E field lots through an accessible primary route.",
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "HARAPPA-CONTEXT-PASS2-REVIEW-2026-10-24",
+      "theme": "Harappa H-1657 caption and identity review",
+      "status": "completed-bounded-source-review",
+      "question": "Does the primary source chain support the H-1657 Room 591 floor and late Period 3C assertion?",
+      "outcome": "Original 2010 identity footnote and seven individual primary captions checked. H-1657 identity and Room 591 floor, Trench 43, late Period 3C attribution supported. Adjacent Period 4 vessel is a separate key; phase reasoning and carving date remain unestablished. Complete tool responses retained.",
+      "challenge": "Caption attribution does not supply the stratigraphic phase argument or a dated sample; adjacent captions can cause Period 4 conflation.",
+      "remedy": "Separate source keys, preserve full accessible responses, qualify reviewed scope and recommend exact late Period 3C wording.",
+      "evidence": [
+        "experiments/2026-10-24-harappa-context-pass2-review/PROTOCOL.md",
+        "experiments/2026-10-24-harappa-context-pass2-review/REPORT.md",
+        "experiments/2026-10-24-harappa-context-pass2-review/RETROSPECTIVE.md",
+        "experiments/2026-10-24-harappa-context-pass2-review/verification-v1.json",
+        "experiments/2026-10-24-harappa-context-pass2-review/validation-v1.json",
+        "experiments/2026-10-24-harappa-context-pass2-review/source-manifest-v1.json",
+        "experiments/2026-10-24-harappa-context-pass2-review/exposure-record-v1.json"
+      ],
+      "retry_when": "Lot 8796 field records and the phase argument or linked samples become accessible.",
+      "status_class": "exploratory",
+      "area": "data",
+      "verification_tier": "reviewed",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration",
+          "role": "separate source reviewer"
+        }
+      ]
+    },
+    {
+      "id": "HARAPPA-CONTEXT-PASS3-2026-10-24",
+      "theme": "Harappa excavation caption and field identifier recovery",
+      "status": "completed-bounded-source-audit",
+      "status_class": "source-review",
+      "area": "archaeology",
+      "authors": [
+        {
+          "name": "gpt-6.1-sol",
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration"
+        }
+      ],
+      "question": "Q-0030: Can local primary page pixels qualify the five unresolved Harappa cases?",
+      "outcome": "One of five cases gains a field key and narrower street context; one gains identifier corroboration. Zero independent excavation lineages, sample links or manufacture dates added; lot conflict retained.",
+      "challenge": "Original render bound found maps and the preceding plate; figure legend was printed separately. The original 2008 source remained a lead.",
+      "remedy": "Froze two page amendments before inspection, retained all page images and crops locally, and separated identifier corroboration from archaeological detail.",
+      "evidence": [
+        "experiments/2026-10-24-harappa-context-pass3/PROTOCOL.md",
+        "experiments/2026-10-24-harappa-context-pass3/REPORT.md",
+        "experiments/2026-10-24-harappa-context-pass3/RETROSPECTIVE.md",
+        "experiments/2026-10-24-harappa-context-pass3/DATA-UPDATE.md",
+        "experiments/2026-10-24-harappa-context-pass3/source-manifest.json",
+        "experiments/2026-10-24-harappa-context-pass3/summary-v1.json",
+        "experiments/2026-10-24-harappa-context-pass3/validation-v1.json",
+        "experiments/2026-10-24-harappa-context-pass3/exposure-record.json"
+      ],
+      "retry_when": "Acquire lot3166 stratigraphic relations and phase evidence, the1996 button-seal item register, or the original2008 figure.",
+      "verification_tier": "submitted"
+    },
+    {
       "id": "HARAPPA-LEGEND-PERIODS-2026-10-20",
       "theme": "conjecture shot: Harappa seal legends against Vats's stratum order in Mound F (HARP 3B-1 to 3C-4), mound and label-source split, with a seal-format positive control",
       "status": "completed-frozen-confirmation-conjecture-dead",
@@ -4751,6 +5185,143 @@
       "area": "data"
     },
     {
+      "id": "IMAGE-RECOVERY-2026-10-26",
+      "theme": "Held image catalogue recovery",
+      "status": "completed-bounded-source-review",
+      "question": "Can anonymous and application-unmapped held images recover catalogue coverage for the fixed pilot and missing images?",
+      "outcome": "Censused 284 anonymous and 2152 application-unmapped assets; reviewed 24 assets on 20 source pages; recovered 14 asset-to-catalogue view links against the October 13 image-file index. L-163 A and C were already available in prior source-page records; zero newly available pilot photographs established.",
+      "challenge": "Application-map omissions include inherited research-index assignments, non-object crops and missing captions.",
+      "remedy": "Reconcile prior assignments and verify crop carrier outlines against captioned primary pages; preserve candidate and rejected records.",
+      "retry_when": "A separately bounded review of the 34 remaining unresolved anonymous crops or new accession concordance is available.",
+      "status_class": "source-review",
+      "area": "data",
+      "verification_tier": "submitted",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration"
+        }
+      ],
+      "evidence": [
+        "experiments/2026-10-26-image-recovery/PROTOCOL.md",
+        "experiments/2026-10-26-image-recovery/REPORT.md",
+        "experiments/2026-10-26-image-recovery/RETROSPECTIVE.md",
+        "experiments/2026-10-26-image-recovery/DATA-UPDATE.md",
+        "experiments/2026-10-26-image-recovery/aggregate-v1.json",
+        "experiments/2026-10-26-image-recovery/validation-v1.json",
+        "experiments/2026-10-26-image-recovery/source-manifest-v1.json",
+        "experiments/2026-10-26-image-recovery/REPORT-v2.md",
+        "experiments/2026-10-26-image-recovery/DATA-UPDATE-v2.md",
+        "experiments/2026-10-26-image-recovery/aggregate-v2.json",
+        "experiments/2026-10-26-image-recovery/source-manifest-v2.json"
+      ]
+    },
+    {
+      "id": "INDUS-CITY-3D-2026-10-26",
+      "theme": "Inspectable metric architecture for the Indus living atlas",
+      "status": "completed-source-linked-offline-architectural-explorer",
+      "status_class": "record",
+      "area": "archaeology",
+      "question": "How can the existing city maps become interactive metric city contexts and detailed building models while preserving the distinction between published dimensions and missing survey geometry?",
+      "outcome": "Seven offline orbitable models cover two city contexts and five building scenes, with 49 feature records, 590 mesh parts, 3,269 polygon faces, source cards, Plan view, cutaway and optional roofs or water, assumed-height sensitivity and seven metric OBJ exports. All 769 deterministic geometry/source/export checks and 32 browser checks pass. Counts describe the display; no inscribed-object coverage or archaeological confirmation claim is added.",
+      "challenge": "Incomplete phase-keyed plans and registered city coordinates prevent survey-complete cities. Source prose and a table disagree on Dholavira's city length, and a deep local reservoir probe must remain separate from general basin depth. An initial syntax error and Canvas polygon occlusion broke earlier display endpoints.",
+      "remedy": "Use named district patches without invented city blocks; preserve source ranges, exact locators and separate footprint, placement and height fields; use native WebGL depth buffering and triangle-depth picking; preserve all earlier endpoints, inspect every model and verify exported geometry independently of the writer.",
+      "evidence": [
+        "experiments/2026-10-26-indus-living-atlas/reconstruction/PROTOCOL.md",
+        "experiments/2026-10-26-indus-living-atlas/reconstruction/README.md",
+        "experiments/2026-10-26-indus-living-atlas/reconstruction/REPORT.md",
+        "experiments/2026-10-26-indus-living-atlas/reconstruction/SOURCES.json",
+        "experiments/2026-10-26-indus-living-atlas/reconstruction/DATA-UPDATE.md",
+        "experiments/2026-10-26-indus-living-atlas/reconstruction/RETROSPECTIVE.md",
+        "experiments/2026-10-26-indus-living-atlas/reconstruction/run-v5/scenes.json",
+        "experiments/2026-10-26-indus-living-atlas/reconstruction/run-v5/manifest.json",
+        "experiments/2026-10-26-indus-living-atlas/reconstruction/verification-v5.json",
+        "experiments/2026-10-26-indus-living-atlas/reconstruction/browser-verification-v5.json"
+      ],
+      "retry_when": "Acquire registered, phase-keyed city plans, building sections and elevations, especially exact reservoir floor and stair geometry, gateway sections and city street coordinates. Replace a named assumption with those observations; another seed or an invented house grid supplies no new archaeological evidence.",
+      "package": "experiments/2026-10-26-indus-living-atlas/reconstruction",
+      "related_cards": [
+        "Q-1032"
+      ],
+      "authors": [
+        {
+          "model": "GPT-6 family; exact serving variant unavailable",
+          "harness": "Codex desktop collaboration",
+          "role": "delegated architecture, source records, procedural geometry and author verification"
+        }
+      ],
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "INDUS-LIVING-ATLAS-2026-10-26",
+      "theme": "Modern Indus geographic atlas, architectural models and regional continuity evidence",
+      "status": "completed-local-atlas-and-parallel-source-reviews",
+      "status_class": "exploratory",
+      "area": "archaeology",
+      "question": "Can existing Indus maps support a modern source-linked geographic explorer, detailed architectural models, and separate reviews of changing markers and towns inhabited today?",
+      "outcome": "The local atlas preserves 115 place entities and 112 located points, exposes source and date quality, imports later coordinate assertions and maps sixteen town or named-place candidates from an eighteen-case review. A separate offline explorer provides seven 3D scenes and top-down plans with metric exports and feature-level assumptions. The continuity study records twelve sources and sixteen observations of regional persistence, changed markers and detectability. No new inscribed object, site discovery, inscription date or continuous Indus-to-present town sequence is claimed.",
+      "challenge": "Earlier location and chronology records have unequal source quality. Source plans lack common surveyed control, reconstructions need explicit height and placement assumptions, and an early occupation date does not establish uninterrupted habitation. A living-town numeric date correction arrived after the first integration snapshot.",
+      "remedy": "Retain original coordinates and phases, preserve competing assertions and unlocated labels, separate modern anchors from ancient features, distinguish modelling parameters, and preserve the first map snapshot before building a corrected successor. Link every historical claim to its source review and prospective deciding evidence.",
+      "evidence": [
+        "experiments/2026-10-26-indus-living-atlas/PROTOCOL.md",
+        "experiments/2026-10-26-indus-living-atlas/README.md",
+        "experiments/2026-10-26-indus-living-atlas/index.html",
+        "experiments/2026-10-26-indus-living-atlas/research.html",
+        "experiments/2026-10-26-indus-living-atlas/mapping/REPORT.md",
+        "experiments/2026-10-26-indus-living-atlas/mapping/run-v2/atlas-data.json",
+        "experiments/2026-10-26-indus-living-atlas/mapping/run-v2/manifest.json",
+        "experiments/2026-10-26-indus-living-atlas/qa/map-verification-v2.json",
+        "experiments/2026-10-26-indus-living-atlas/VALIDATION.md",
+        "experiments/2026-10-26-indus-living-atlas/DATA-UPDATE.md",
+        "experiments/2026-10-26-indus-living-atlas/RETROSPECTIVE.md",
+        "experiments/2026-10-26-indus-living-atlas/reconstruction/REPORT.md",
+        "experiments/2026-10-26-indus-living-atlas/continuity/REPORT.md",
+        "experiments/2026-10-26-indus-living-atlas/living-towns/REPORT.md"
+      ],
+      "retry_when": "Add licensed georeferenced excavation plans, surveyed feature coordinates and architectural-phase joins, new independently dated occupation contexts beneath modern towns, or recovery-controlled ordinary-activity and marker records. Additional generic cultural similarities or reseeding exposed inscriptions do not establish fresh continuity evidence.",
+      "package": "experiments/2026-10-26-indus-living-atlas",
+      "authors": [
+        {
+          "model": "GPT-6; exact runtime build unavailable",
+          "harness": "Codex desktop/API workspace harness",
+          "agent": "map and integration contributor; three parallel contributors have separate attempt records"
+        }
+      ],
+      "verification_tier": "submitted",
+      "related_cards": []
+    },
+    {
+      "id": "INDUS-MARKER-CONTINUITY-2026-10-26",
+      "theme": "Regional persistence, changing urban markers and archaeological detectability",
+      "status": "completed-bounded-source-review-with-prospective-test-design",
+      "status_class": "source-review",
+      "area": "archaeology",
+      "authors": [
+        {
+          "name": "GPT-6",
+          "model": "GPT-6; exact build unavailable",
+          "harness": "Codex API workspace"
+        }
+      ],
+      "question": "Can continued regional communities and practical traditions coexist with the disappearance of distinctive urban Indus material markers, and how would preservation and survey distinguish the alternatives?",
+      "outcome": "Twelve primary sources support sixteen source-located observations. Regional posturban occupation and practical retention coexist with marker changes, local abandonment and redistribution. Bisht's preliminary Dholavira Stage VI retains inscribed seals and cubical weights in a reduced settlement assigned c.1950–1800 BCE; that phase envelope spans 1900 and exact last use requires primary contexts and absolute dates. Alamgirpur preserves a conflict between apparent stratigraphic continuity and available calendar dates. No empirical continuity probability, unchanged language or uninterrupted modern-city sequence is inferred.",
+      "challenge": "Excavation lineages recur across publications; phase ranges do not directly date each object. Residual artifacts, absent supplements, failed dates, later cover and unequal survey effort limit inference. Giosan acquisition routes and direct Alamgirpur retrieval failed; two bibliographic details required correction during inspection.",
+      "remedy": "Recorded source scope and dependence, reused hashed primary witnesses, inspected original scan pages, preserved acquisition failures and metadata corrections, and separated domestic occupation, marker use and detection in a prospective design. Same-contributor source-byte and integrity checks are distinct from historical review.",
+      "evidence": [
+        "experiments/2026-10-26-indus-living-atlas/continuity/PROTOCOL.md",
+        "experiments/2026-10-26-indus-living-atlas/continuity/protocol-freeze-v1.json",
+        "experiments/2026-10-26-indus-living-atlas/continuity/REPORT.md",
+        "experiments/2026-10-26-indus-living-atlas/continuity/TEST-DESIGN.md",
+        "experiments/2026-10-26-indus-living-atlas/continuity/sources.json",
+        "experiments/2026-10-26-indus-living-atlas/continuity/evidence.json",
+        "experiments/2026-10-26-indus-living-atlas/continuity/DATA-UPDATE.md",
+        "experiments/2026-10-26-indus-living-atlas/continuity/RETROSPECTIVE.md",
+        "experiments/2026-10-26-indus-living-atlas/continuity/verification-v2.json"
+      ],
+      "retry_when": "Independent direct dates and context joins for final marker use, an Alamgirpur transition chronology, the Jognakhera supplement, comparable recovery volumes, new diagnostic production sequences or calibrated survey blocks permit a new test. Familiar site-phase summaries or a new simulation seed do not supply fresh confirmation.",
+      "verification_tier": "submitted"
+    },
+    {
       "id": "KHIRSARA-RESERVE-2026-10-20",
       "theme": "bounded primary-source acquisition for a prospective seal reserve",
       "status": "bounded-source-access-gap-zero-new-seals",
@@ -4774,6 +5345,185 @@
       "retry_when": "A permitted copy of Itihas Darpan17(2),2012,pp235-242 or usable ordinary viewer navigation becomes available; an official2010-13 annual report provides an object inventory and plates.",
       "status_class": "source-review",
       "area": "data"
+    },
+    {
+      "id": "LEXICAL-EVIDENCE-PASS2-2026-10-24",
+      "theme": "Printed sense and increment evidence for sixteen lexical cases",
+      "status": "completed-bounded-source-review; specialist-adjudication-pending",
+      "status_class": "source-review",
+      "area": "language",
+      "question": "Which unresolved increment and homograph cases can be qualified by actual dictionary and grammatical source entries for Q-0039?",
+      "outcome": "Reviewed 16 frozen cases with 35 Lexicon sense references and 23 distinct DEDR entries. Eight cases have printed boundary or contextual increment support, one generated candidate contradicts its ten-parts source sense, six conflicts separate homographs, and one material-noun case has conflicting grammatical labels. Acquired Annamalai institutional Sandhi lesson and Wilden grammar PDF; inspected m-assimilation rules, without establishing a universal u-to-am rule. Existing candidates, exact subset and scorer flags unchanged.",
+      "challenge": "Exact forms pool different senses and origins. DEDR can preserve Sanskrit comparisons and agree through shared lexicographical sources. A nominal material sense can differ from a parent grammatical label; printed citations do not verify earliest dates.",
+      "remedy": "Froze 16 cases; bound original Winslow/Lexicon/DEDR witnesses and preserved repeated numbered entries; selected explicit senses; inspected published grammar pages; recorded size-limited acquisition failure and retained unresolved ancestry and historical questions.",
+      "evidence": [
+        "experiments/2026-10-24-lexical-evidence-pass2/PROTOCOL.md",
+        "experiments/2026-10-24-lexical-evidence-pass2/FREEZE-v1.json",
+        "experiments/2026-10-24-lexical-evidence-pass2/REPORT.md",
+        "experiments/2026-10-24-lexical-evidence-pass2/RETROSPECTIVE.md",
+        "experiments/2026-10-24-lexical-evidence-pass2/DATA-UPDATE.md",
+        "experiments/2026-10-24-lexical-evidence-pass2/results-v1.json",
+        "experiments/2026-10-24-lexical-evidence-pass2/validation-v2.json",
+        "experiments/2026-10-24-lexical-evidence-pass2/source-manifest-v1.json",
+        "experiments/2026-10-24-lexical-evidence-pass2/EXPOSURE-v1.json",
+        "experiments/2026-10-24-lexical-evidence-pass2/commands-v1.json",
+        "experiments/2026-10-24-lexical-evidence-pass2/source-manifest-v2.json",
+        "experiments/2026-10-24-lexical-evidence-pass2/prior-frozen-inputs-verification-v1.json"
+      ],
+      "retry_when": "A qualified Dravidianist reviews these exact cases, competing etymologies and noun labels, and the cited literary and grammar passages are checked directly for the proposed rules and attestation dates.",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration",
+          "agent": "lexical evidence pass2 worker",
+          "qualifications": "AI source reviewer without specialist Tamil credentials"
+        }
+      ],
+      "verification_tier": "submitted",
+      "package": "experiments/2026-10-24-lexical-evidence-pass2"
+    },
+    {
+      "id": "LEXICAL-EVIDENCE-PASS3-2026-10-24",
+      "theme": "Restricted plant-compound am licensing and literary citation route",
+      "status": "completed-bounded-source-review; literary-and-specialist-review-pending",
+      "status_class": "source-review",
+      "area": "language",
+      "question": "Which primary grammar passages license the existing Q-0039 increment cases, and can the cited gourd commentary be verified?",
+      "outcome": "Acquired Kothandaraman1997 scan under changed120MBcap; rendered printed32and318–319 give unpredictable am distribution, restricted case-relation formation and plant mpu→ppu allomorphy. Five mandatory cases retained. Different named Project Madurai commentary acquired; exact Lexicon3.26citation remains unverified. Targeted follow-up resolves Rule128 as source-defined am-taking flora class N_fl1 (Syntax Rule37, printed111), explicitly distinguished from non-taking N_fl2.",
+      "challenge": "OCR obscures subscripts; lexical conditioning and modern scope limit generalization. Cited literary edition unidentified; Scribd delivers shell and Wikisource403.",
+      "remedy": "Preserve indexed scan and rendered pages locally; source-qualified five-case outcomes; no scorer, extraction or confirmation changes.",
+      "evidence": [
+        "experiments/2026-10-24-lexical-evidence-pass3/PROTOCOL.md",
+        "experiments/2026-10-24-lexical-evidence-pass3/REPORT.md",
+        "experiments/2026-10-24-lexical-evidence-pass3/RETROSPECTIVE.md",
+        "experiments/2026-10-24-lexical-evidence-pass3/DATA-UPDATE.md",
+        "experiments/2026-10-24-lexical-evidence-pass3/FREEZE-v1.json",
+        "experiments/2026-10-24-lexical-evidence-pass3/results-v1.json",
+        "experiments/2026-10-24-lexical-evidence-pass3/source-manifest-v1.json",
+        "experiments/2026-10-24-lexical-evidence-pass3/validation-v1.json",
+        "experiments/2026-10-24-lexical-evidence-pass3/EXPOSURE-v1.json",
+        "experiments/2026-10-24-lexical-evidence-pass3/REPORT-v2.md",
+        "experiments/2026-10-24-lexical-evidence-pass3/RETROSPECTIVE-v2.md",
+        "experiments/2026-10-24-lexical-evidence-pass3/DATA-UPDATE-v2.md",
+        "experiments/2026-10-24-lexical-evidence-pass3/source-manifest-v2.json",
+        "experiments/2026-10-24-lexical-evidence-pass3/results-v2.json",
+        "experiments/2026-10-24-lexical-evidence-pass3/validation-v2.json"
+      ],
+      "retry_when": "Full grammatical class definitions and exact cited commentary are available for specialist review.",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration",
+          "qualifications": "AI source reviewer without specialist Tamil credentials"
+        }
+      ],
+      "verification_tier": "submitted",
+      "package": "experiments/2026-10-24-lexical-evidence-pass3"
+    },
+    {
+      "id": "LEXICAL-EXTRACTION-EXTENSION-2026-10-24",
+      "theme": "Source-qualified complete dictionary extraction and conservative morphology candidates",
+      "status": "completed-versioned-extraction; specialist-eligibility-pending",
+      "status_class": "exploratory",
+      "area": "methods",
+      "question": "Can general source-backed extraction repairs preserve the complete Winslow population and expose unresolved morphology for a fair later reading comparison?",
+      "outcome": "Re-extracted 69310 Winslow records from 978 pages. Selected two-member rows changed from 18426 to 25653; 8138 member lists changed. Lexicon assistance, parent borrowing marks and unresolved increment candidates have separate provenance. All comparative-scorer eligibility remains false. No rebus effect or real confirmation was run. Parent code review found inherited vowel-length folding in increment generation beyond the exact-match scope. A preserved-run audit flags 2 of 59 analyses on 2 rows; the exact subset retains 57 unresolved analyses on all 57 candidate-bearing rows. Five audit tests and separate exact-count/hash replay pass.",
+      "challenge": "Printed boundaries and lexical senses are distinct. Lexicon-assisted Winslow rows create comparative source dependence; borrowed parents, morphological increments and historical senses require specialist review. The initial report incorrectly restricted inherited e/ē and o/ō folding to cross-dictionary alignment; the candidate-layer deviation is now quantified separately.",
+      "remedy": "Pinned protocol, imported parents, complete tables and all source pages; retained original and guarded members, exact-headword cross-source evidence, unresolved candidates and separate known-regression checks.",
+      "evidence": [
+        "experiments/2026-10-24-lexical-extraction-extension/PROTOCOL.md",
+        "experiments/2026-10-24-lexical-extraction-extension/FREEZE-v1.json",
+        "experiments/2026-10-24-lexical-extraction-extension/FREEZE-v2.json",
+        "experiments/2026-10-24-lexical-extraction-extension/FREEZE-v3.json",
+        "experiments/2026-10-24-lexical-extraction-extension/REPORT.md",
+        "experiments/2026-10-24-lexical-extraction-extension/RETROSPECTIVE.md",
+        "experiments/2026-10-24-lexical-extraction-extension/DATA-UPDATE.md",
+        "experiments/2026-10-24-lexical-extraction-extension/results-v1.json",
+        "experiments/2026-10-24-lexical-extraction-extension/validation-v2.json",
+        "experiments/2026-10-24-lexical-extraction-extension/source-manifest-v1.json",
+        "experiments/2026-10-24-lexical-extraction-extension/segmentation-synthetic-v1.json",
+        "experiments/2026-10-24-lexical-extraction-extension/shots-synthetic-v1.json",
+        "experiments/2026-10-24-lexical-extraction-extension/verification-v1.json",
+        "experiments/2026-10-24-lexical-extraction-extension/commands-v2.json",
+        "experiments/2026-10-24-lexical-extraction-extension/INCREMENT-AUDIT-PROTOCOL-v1.md",
+        "experiments/2026-10-24-lexical-extraction-extension/increment-audit-v1.json",
+        "experiments/2026-10-24-lexical-extraction-extension/increment-audit-verification-v1.json",
+        "experiments/2026-10-24-lexical-extraction-extension/source-manifest-v2.json",
+        "experiments/2026-10-24-lexical-extraction-extension/REPORT-before-increment-audit-v1.md"
+      ],
+      "retry_when": "Independent Tamil specialist review resolves remaining morphology, senses and lexical eligibility; a later calibrated comparison declares dictionary dependence and freezes all participants before reviewed unexamined confirmation.",
+      "package": "experiments/2026-10-24-lexical-extraction-extension",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration",
+          "agent": "lexical extraction worker",
+          "qualifications": "AI source reviewer without specialist Tamil credentials"
+        }
+      ],
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "LEXICAL-SOURCE-REVIEW-01",
+      "theme": "Source adjudication of proposed lexical senses and dictionary compound boundaries",
+      "status": "completed-provisional-source-review; expert-adjudication-and-full-extraction-pending",
+      "status_class": "exploratory",
+      "area": "methods",
+      "question": "Which current lexical forms and sampled compound boundaries can be resolved directly from held dictionary and proposal sources?",
+      "outcome": "Reviewed all 24 forms, 56 exact Tamil Lexicon records and 38 selected senses or contextual entries. Two cited alternatives were assigned the wrong language: āvu is Kannada/Telugu and tōḷ is Toda. Four source-attested form relations have limited contexts. Among 20 accepted splits in a frozen stratified Winslow sample, 17 have source-supported boundaries, 1 is wrong and 2 remain unresolved; among 20 rejected rows, 2 are documented missed compounds, 9 unresolved and 9 outside the declared two-noun or two-member scope. Three known failures were reviewed separately. A general source guard suppresses the false jamīṉ split and preserves parent origin marks. No reading effect was rerun.",
+      "challenge": "Homographs, numeral combining forms, cross-language extraction mistakes and ambiguous morphology made form-only lookup insufficient. Row-origin flags omitted parent metadata, and dictionary crosschecks sometimes reused Winslow rather than adding independent attestation. The audit cannot supply dictionary-wide recall or verified earliest dates.",
+      "remedy": "Froze a deterministic forty-row sample before reading source outcomes; bound every reviewed record to original source blocks and hashes; retained unresolved cases and separate regression rows; preserved source-specific language and sense choices; added a tested general grammatical-root guard without word-specific patches.",
+      "evidence": [
+        "experiments/2026-10-22-lexical-source-review/PROTOCOL.md",
+        "experiments/2026-10-22-lexical-source-review/FREEZE.json",
+        "experiments/2026-10-22-lexical-source-review/REPORT.md",
+        "experiments/2026-10-22-lexical-source-review/RETROSPECTIVE.md",
+        "experiments/2026-10-22-lexical-source-review/DATA-UPDATE.md",
+        "experiments/2026-10-22-lexical-source-review/results-v1.json",
+        "experiments/2026-10-22-lexical-source-review/guard-results-v1.json",
+        "experiments/2026-10-22-lexical-source-review/source-manifest-v1.json",
+        "experiments/2026-10-22-lexical-source-review/verification-v1.json",
+        "experiments/2026-10-22-lexical-source-review/verification-v2.json",
+        "experiments/2026-10-22-lexical-source-review/shots-synthetic-v1.json"
+      ],
+      "retry_when": "A Dravidianist has reviewed unresolved member identities, historical senses and noun eligibility, and a complete versioned extraction with general increment handling can be evaluated on an independently adjudicated sample.",
+      "package": "experiments/2026-10-22-lexical-source-review",
+      "authors": [
+        {
+          "model": "GPT-6; exact backend identifier not exposed",
+          "harness": "Codex desktop",
+          "agent": "lexical source-review worker",
+          "qualifications": "AI source reviewer without specialist Tamil credentials"
+        }
+      ],
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "LOCAL-STORAGE-MIGRATION-2026-10-24",
+      "theme": "Preservation of local acquired data on D: with historical checkout paths",
+      "status": "completed-with-recorded-inaccessible-environment",
+      "status_class": "record",
+      "area": "data",
+      "question": "Can bulk local data be moved off C: while retaining exact source bytes and historical project paths?",
+      "outcome": "187,131 accessible files, 35,099,820,039 bytes, matched destination SHA-256 before their C: copies were removed. Nine directory junctions and 434 file links retain paths. Bulk data are at D:/projects/indus_valley_script. One plotting environment with 14 inaccessible directories and one inaccessible 110-byte file is preserved intact on C:. Entry documents and all seven repository task skills identify the new root.",
+      "challenge": "Long Windows paths, denied ACLs, a failed early hashing run, and navigation tools that resolved junction targets outside the checkout.",
+      "remedy": "Extended-length path inventory; incremental file hashes; whole-environment preservation for inaccessible material; destination verification before native PowerShell removal; explicit checked source and target roots; storage-aware repository-relative path validation.",
+      "evidence": [
+        "experiments/2026-10-24-storage-migration/README.md",
+        "experiments/2026-10-24-storage-migration/summary.json",
+        "LOCAL_STORAGE.md",
+        "LOCAL_STORAGE.json",
+        "tools/storage_paths.py"
+      ],
+      "retry_when": "A storage target is unavailable, restoration is required, or a new bulk tree must be relocated. Keep the external manifest and backup; do not replace a missing junction with a C: data directory.",
+      "package": "experiments/2026-10-24-storage-migration",
+      "authors": [
+        {
+          "model": "GPT-6 (exact runtime model ID unavailable)",
+          "harness": "Codex desktop app"
+        }
+      ],
+      "verification_tier": "submitted"
     },
     {
       "id": "MACKAY-MARSHALL-TABLES-2026-10-13",
@@ -4908,6 +5658,364 @@
       "verification_tier": "submitted"
     },
     {
+      "id": "OBJECT-IDENTITY-EXTENSION-2026-10-24",
+      "theme": "Dholavira source identity cross-references",
+      "status": "completed-bounded-source-review",
+      "question": "Do 28 candidate Dholavira accessions agree across the primary context table and individual catalogue?",
+      "outcome": "28 of 28 source identities agree across both tables; 56 coordinate checks pass. No source conflicts, new corpus links or physical merges. All 28 family relationships remain candidates.",
+      "challenge": "The publication cross-references do not provide an independent accession-to-corpus concordance; locator commands exposed descriptive page beginnings.",
+      "remedy": "Retain exact source pages, identity-only extracts, access exceptions and candidate status; keep detailed derivatives physically on D:.",
+      "evidence": [
+        "experiments/2026-10-24-object-identity-extension/PROTOCOL.md",
+        "experiments/2026-10-24-object-identity-extension/REPORT.md",
+        "experiments/2026-10-24-object-identity-extension/RETROSPECTIVE.md",
+        "experiments/2026-10-24-object-identity-extension/DATA-UPDATE.md",
+        "experiments/2026-10-24-object-identity-extension/results-v1.json",
+        "experiments/2026-10-24-object-identity-extension/validation-v1.json",
+        "experiments/2026-10-24-object-identity-extension/source-manifest-v3.json"
+      ],
+      "retry_when": "An excavation or museum concordance identifies both complete accession and corpus catalogue number.",
+      "status_class": "exploratory",
+      "area": "data",
+      "verification_tier": "submitted",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration"
+        }
+      ]
+    },
+    {
+      "id": "OBJECT-IDENTITY-PASS2-2026-10-24",
+      "theme": "Dholavira corpus identity bridges",
+      "status": "completed-bounded-source-comparisons",
+      "question": "Can ten internally supported Dholavira accession records be bridged to corpus families using identifiers or individual photographs?",
+      "outcome": "Ten primary photograph panels and seven measurement records checked against 62 candidate families and 274 retained edges. Four exact measurement triples and one further exact h/v candidate identified. Zero supported bridges; all ten remain unresolved because no corpus photograph or shared complete accession was recovered.",
+      "challenge": "No candidate corpus photos in held index; public ICIT returns 401, old ASI report URL 404, institutional cover only 2 pages. Source sign-count and identifier differences retained.",
+      "remedy": "Freeze complete block and strict admission rules, inspect accession-labelled photographs, preserve all candidate edges, record exploratory measurement concordance and precise missing accession/photo evidence.",
+      "evidence": [
+        "experiments/2026-10-24-object-identity-pass2/PROTOCOL.md",
+        "experiments/2026-10-24-object-identity-pass2/REPORT.md",
+        "experiments/2026-10-24-object-identity-pass2/RETROSPECTIVE.md",
+        "experiments/2026-10-24-object-identity-pass2/DATA-UPDATE.md",
+        "experiments/2026-10-24-object-identity-pass2/aggregate-v1.json",
+        "experiments/2026-10-24-object-identity-pass2/validation-v1.json",
+        "experiments/2026-10-24-object-identity-pass2/source-manifest-v2.json",
+        "experiments/2026-10-24-object-identity-pass2/exposure-record-v1.json"
+      ],
+      "retry_when": "Obtain candidate corpus photographs or a complete accession concordance; inspect damage and outline against the saved primary panels.",
+      "status_class": "exploratory",
+      "area": "data",
+      "verification_tier": "submitted",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration"
+        }
+      ]
+    },
+    {
+      "id": "OBJECT-IDENTITY-PASS3-2026-10-24",
+      "theme": "Dholavira accession and image namespace provenance",
+      "status": "completed-bounded-asset-provenance-route",
+      "question": "Can held unmapped assets or acquisition provenance establish an accession or photograph bridge for the ten Q-1030 cases?",
+      "outcome": "Held asset inventory and mapping code inspected. 2152 unmapped filenames include 284 anonymous volume1/2 crops. Dlv and DIv keys remain separate. No qualifying bridge recovered for the ten frozen cases; 274 candidate relationships retained.",
+      "challenge": "Corpus photographs use catalogue reference keys; dimensional candidates lack a source-qualified accession-to-catalogue connection.",
+      "remedy": "Freeze local provenance route, preserve source snapshots and exact asset accounting, retain unresolved cases and record exposure.",
+      "evidence": [
+        "experiments\\2026-10-24-object-identity-pass3\\PROTOCOL.md",
+        "experiments\\2026-10-24-object-identity-pass3\\REPORT.md",
+        "experiments\\2026-10-24-object-identity-pass3\\RETROSPECTIVE.md",
+        "experiments\\2026-10-24-object-identity-pass3\\DATA-UPDATE.md",
+        "experiments\\2026-10-24-object-identity-pass3\\aggregate-v1.json",
+        "experiments\\2026-10-24-object-identity-pass3\\source-manifest-v1.json",
+        "experiments\\2026-10-24-object-identity-pass3\\exposure-record-v1.json",
+        "experiments\\2026-10-24-object-identity-pass3\\validation-v1.json",
+        "experiments\\2026-10-24-object-identity-pass3\\changed-paths.json",
+        "experiments/2026-10-24-object-identity-pass3/source-manifest-v2.json"
+      ],
+      "retry_when": "Source-qualified accession concordance or corpus-side photographs for the four dimensional candidates become available.",
+      "status_class": "source-review",
+      "area": "data",
+      "verification_tier": "submitted",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration"
+        }
+      ]
+    },
+    {
+      "id": "OBJECT-PILOT-INTEGRATION-2026-10-26",
+      "theme": "Twenty-target catalogue with reviewed image relations and source conflicts",
+      "status": "completed-reviewed-object-pilot",
+      "question": "Can the three evidence passes become a browsable twenty-target register with verified image links, explicit conflicts and ranked missing records?",
+      "outcome": "Twenty target records consolidate 539 inherited source assertions and two conflict summaries. Fourteen crop-to-catalogue view links are new against the 13 October research index; no newly available pilot photograph or physical merge is established. A separate contributor reviews the image relations, selected primary claims and register structure. Three scoped entries are integrated into the shared data inventory.",
+      "challenge": "Candidate identities, missing base-family matches, composite crops whose filenames omit panels, conflicting original identifiers and a distinction between index coverage and prior photograph availability.",
+      "remedy": "Preserve dated versions and candidate sets, compare exact index baselines, reread selected original pages, retain blocked identity claims, independently review source chains and hashes, and render a local catalogue with explicit source coordinates and missing evidence.",
+      "evidence": [
+        "experiments/2026-10-26-object-pilot/PROTOCOL.md",
+        "experiments/2026-10-26-object-pilot/AMENDMENT-001.md",
+        "experiments/2026-10-26-object-pilot/REPORT.md",
+        "experiments/2026-10-26-object-pilot/REVIEW.md",
+        "experiments/2026-10-26-object-pilot/RETROSPECTIVE.md",
+        "experiments/2026-10-26-object-pilot/DATA-UPDATE.md",
+        "experiments/2026-10-26-object-pilot/dispatch-v2.json",
+        "experiments/2026-10-26-object-pilot/claim-check-v1.json",
+        "experiments/2026-10-26-object-pilot/integration/manifest-v2.json",
+        "experiments/2026-10-26-object-pilot/integration/validation-v2.json",
+        "experiments/2026-10-26-object-pilot/inventory-integration-v1.json",
+        "experiments/2026-10-26-object-pilot/final-audit-v1.json",
+        "experiments/2026-10-26-object-pilot/browser-validation-v1.json",
+        "experiments/2026-10-26-object-pilot-review/REVIEW.md",
+        "experiments/2026-10-26-object-pilot-review/validation-v3.json",
+        "experiments/2026-10-26-object-pilot-review/integration-review-v2.json"
+      ],
+      "retry_when": "Obtain registered Dholavira accession-to-catalogue bridges, ASI negative and specimen records for CLXI F, HARP object and photo records for H-2587, original phase arguments for lots 3166 and 8796, or inspect the remaining anonymous crop queue with a frozen selection.",
+      "status_class": "record",
+      "area": "data",
+      "verification_tier": "reviewed",
+      "verification_scope": "All 14 new image-index relations and selected primary claims; structural and hash checks of inherited metadata. Not an exhaustive primary retranscription or archaeological specialist acceptance.",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration",
+          "role": "Three production workers and a separate source reviewer"
+        },
+        {
+          "model": "GPT-6 family; exact root model identifier not exposed",
+          "harness": "Codex desktop collaboration",
+          "role": "Coordinating contributor, integration review, browser inspection and shared inventory update"
+        }
+      ]
+    },
+    {
+      "id": "OBJECT-PILOT-REGISTER-2026-10-26",
+      "theme": "Twenty-target source-qualified object register",
+      "status": "completed-held-metadata-consolidation",
+      "question": "Can the held source layers form twenty inspectable dossiers without accepting candidate physical identities?",
+      "outcome": "Twenty dossiers, 539 assertions, 138 missing-evidence rows and a local catalogue; 62 Dholavira candidate families and 274 edges retained; zero new empirical observations or physical merges.",
+      "challenge": "Source layers use different locators and retain conflicting identifiers and incomplete face inventories.",
+      "remedy": "Preserve source assertions, raw uncertainty and candidate membership, distinguish source-page views from accepted faces, and independently check structure, links and hashes.",
+      "evidence": [
+        "experiments/2026-10-26-object-pilot-register/PROTOCOL.md",
+        "experiments/2026-10-26-object-pilot-register/REPORT.md",
+        "experiments/2026-10-26-object-pilot-register/DATA-UPDATE.md",
+        "experiments/2026-10-26-object-pilot-register/RETROSPECTIVE.md",
+        "experiments/2026-10-26-object-pilot-register/INTERFACE.md",
+        "experiments/2026-10-26-object-pilot-register/schema-v1.json",
+        "experiments/2026-10-26-object-pilot-register/aggregate-v4.json",
+        "experiments/2026-10-26-object-pilot-register/coverage-v4.json",
+        "experiments/2026-10-26-object-pilot-register/source-manifest-v4.json",
+        "experiments/2026-10-26-object-pilot-register/validation-v4.json",
+        "experiments/2026-10-26-object-pilot-register/author-crosscheck-v4.json",
+        "experiments/2026-10-26-object-pilot-register/AMENDMENT-1.md",
+        "experiments/2026-10-26-object-pilot-register/delta-v3-to-v4.json"
+      ],
+      "retry_when": "A source-qualified accession concordance, field item record, photograph binding or new reviewed image join becomes available.",
+      "status_class": "source-review",
+      "area": "data",
+      "verification_tier": "submitted",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration"
+        }
+      ]
+    },
+    {
+      "id": "OBJECT-PILOT-REVIEW-2026-10-26",
+      "theme": "Independent review of pilot membership, image indexing and unresolved source identities",
+      "status": "completed-independent-review",
+      "status_class": "source-review",
+      "area": "data",
+      "authors": [
+        {
+          "name": "gpt-6.1-sol",
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration"
+        }
+      ],
+      "question": "Do the twenty-target register, fourteen new crop-index links and source-conflict boundaries agree with preserved sources?",
+      "outcome": "Reviewed: exact20 targets,62 Dholavira families and274 relationships without merging;14 source-supported view links across13 existing assets and12 catalogue keys; two first keys relative to October13 index; zero newly available pilot photographs established. Both identity conflicts remain unresolved.",
+      "challenge": "Index absence could be mistaken for prior photograph absence; repeated publication labels do not settle original registration.",
+      "remedy": "Compare all new joins with original pixels and the prior index, recreate12 source renders, recompute200 hash bindings and inspect conflicting source coordinates.",
+      "evidence": [
+        "experiments/2026-10-26-object-pilot-review/PROTOCOL.md",
+        "experiments/2026-10-26-object-pilot-review/REPORT.md",
+        "experiments/2026-10-26-object-pilot-review/RETROSPECTIVE.md",
+        "experiments/2026-10-26-object-pilot-review/validation-v2.json",
+        "experiments/2026-10-26-object-pilot-review/source-manifest-v2.json",
+        "experiments/2026-10-26-object-pilot-review/REPORT-v2.md",
+        "experiments/2026-10-26-object-pilot-review/validation-v3.json",
+        "experiments/2026-10-26-object-pilot-review/source-manifest-v3.json",
+        "experiments/2026-10-26-object-pilot-review/AMENDMENT-001.md",
+        "experiments/2026-10-26-object-pilot-review/REVIEW.md",
+        "experiments/2026-10-26-object-pilot-review/integration-review-v2.json"
+      ],
+      "retry_when": "Original ASI negative register or HARP object cards and registered drawing history become available; other metadata cells require their own source review.",
+      "verification_tier": "reviewed",
+      "verification_scope": "Independent source-pixel and structural review of explicit claims; no archaeological expert or linguistic acceptance"
+    },
+    {
+      "id": "OBJECT-REGISTER-BUILD-01",
+      "theme": "Full provisional object register and source-attributed metadata",
+      "status": "complete-base-population-with-partial-source-adapters",
+      "status_class": "exploratory",
+      "area": "data",
+      "question": "Can the entire held Lipi population be rebuilt in the pilot's version 2 schema while preserving source uncertainty, aliases, faces and missingness?",
+      "outcome": "Built 4695 provisional objects, 5680 faces and 225223 assertions. Reproduced 4075 usable CISI strings and 3598 dimension-bearing families. Integrated 2602 CISI joins, 1134 excavation-table families, 2375 older-export families, 179 Mayig identities, 2562 image-bearing families and pilot enrichment for 236 families. Preserved 3238 CISI decisions including 2870 automatic merges; withheld disputed cells from accepted fields. Physical identities and exposure remain unreviewed.",
+      "challenge": "Pilot validation fixes the population at 200; source aliases do not establish physical identity; CISI 2 retains unresolved reader differences; one dimension exceeds a plausibility bound; exact image panels and some source adapters remain incomplete.",
+      "remedy": "Kept the unchanged schema, adapted closure and provenance checks, retained raw values and canonical statuses in local sidecars, quarantined the dimension outlier, imported original reader decisions, and left unresolved joins and omitted adapters explicit.",
+      "evidence": [
+        "experiments/2026-10-22-object-register/PROTOCOL.md",
+        "experiments/2026-10-22-object-register/REPORT.md",
+        "experiments/2026-10-22-object-register/INTERFACE.md",
+        "experiments/2026-10-22-object-register/run-v2/coverage.json",
+        "experiments/2026-10-22-object-register/run-v2/source-manifest.json",
+        "experiments/2026-10-22-object-register/run-v2/validation.json",
+        "experiments/2026-10-22-object-register/source-verification-v2.json",
+        "experiments/2026-10-22-object-register/synthetic-validation.json",
+        "experiments/2026-10-22-object-register/replay-comparison.json",
+        "experiments/2026-10-22-object-register/RETROSPECTIVE.md"
+      ],
+      "retry_when": "Add the named missing adapters, review catalogue-only and post-catalogue object identities, adjudicate CISI differences, reconcile image panels, or construct an audited exposure and text-dependency history.",
+      "package": "experiments/2026-10-22-object-register",
+      "related_questions": [
+        "Q-1030",
+        "Q-1031",
+        "Q-1028",
+        "Q-1013"
+      ],
+      "authors": [
+        {
+          "model": "GPT-6 family; exact backend identifier not exposed",
+          "harness": "Codex desktop",
+          "agent": "object-register worker"
+        }
+      ],
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "OFFICE-SEAL-EVIDENCE-2026-10-24",
+      "theme": "Original Lothal sealing descriptions and disputed attachment supports",
+      "status": "completed-bounded-source-adjudication",
+      "status_class": "source-review",
+      "area": "seals",
+      "authors": [
+        {
+          "name": "gpt-6.1-sol",
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration"
+        }
+      ],
+      "question": "What original excavation evidence links the repeated elephant sealings and related die groups to physical attachments and find contexts?",
+      "outcome": "A CISI alias join identifies Rao's excavation object 1864 as L-164: Rao interprets its flat cord-marked underside as a jar stopper, whereas Frenez and Tosi tentatively interpret its group as wooden-box sealings. A local versioned ledger preserves 93 source assertions for twelve elephant-cohort objects and four controls. Original descriptions link repeated impressions on L-189, L-190 and L-193. The 65-sealing and 69-of-90 deposit accounts retain separate scopes, and M-895's motif remains unresolved.",
+      "challenge": "Rao scans lack useful body text layers; flat contact and cords do not uniquely identify a container; original and later authors differ on support type, nail marks and fire cause. Individual excavation-layer joins are missing.",
+      "remedy": "Frozen bounded page recovery, OCR with visual checks of decisive pages, exact CISI identity joins, separate observation and interpretation fields, D: local-only record storage and 50 passing author checks.",
+      "evidence": [
+        "experiments/2026-10-24-office-seal-evidence/PROTOCOL.md",
+        "experiments/2026-10-24-office-seal-evidence/PROTOCOL.sha256.json",
+        "experiments/2026-10-24-office-seal-evidence/REPORT.md",
+        "experiments/2026-10-24-office-seal-evidence/source-manifest-v1.json",
+        "experiments/2026-10-24-office-seal-evidence/aggregate-v1.json",
+        "experiments/2026-10-24-office-seal-evidence/validation-v1.json",
+        "experiments/2026-10-24-office-seal-evidence/RETROSPECTIVE.md",
+        "experiments/2026-10-24-office-seal-evidence/DATA-UPDATE.md",
+        "experiments/2026-10-24-office-seal-evidence/modal-correction-v2.json",
+        "experiments/2026-10-24-office-seal-evidence/REVIEW-RESPONSE.md"
+      ],
+      "retry_when": "Calibrated reverse and edge views distinguish box corners from vessel rims or stoppers in L-164 and the elephant cohort; original field records resolve individual deposit positions; or a specialist determines M-895's remaining motif. Any functional test requires a jointly frozen bench design.",
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "OFFICE-SEAL-PASS2-2026-10-24",
+      "theme": "Published reverse and edge coverage of the Lothal elephant sealings",
+      "status": "completed-bounded-view-audit",
+      "status_class": "source-review",
+      "area": "seals",
+      "authors": [
+        {
+          "name": "gpt-6.1-sol",
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration"
+        }
+      ],
+      "question": "Which published contact views can distinguish the tentative box and jar-stopper interpretations for L-164 and selected controls?",
+      "outcome": "Five frozen objects were audited. Three have registered non-obverse photographs in the selected sources; L-164 and L-167 do not. The ledger lists sixteen target photograph panels, many already held or previously inspected. Rao Figure 38B supplies two paired elephant drawings, including one probable L-164 candidate without a recovered number key. Original plates CLXI–CLXIV were located and inspected. A 100 by 115 pixel poster preview was acquired; no full new PDF or support-type resolution resulted.",
+      "challenge": "Published halftones leave contact geometry uncertain; the original drawing lacks a recovered excavation-number binding; full poster and 2024 figure routes returned HTTP 403.",
+      "remedy": "Bounded five-object protocol, explicit source and exposure ledger, native figure resolution checks, separate candidate drawings and registered photographs, and corrected inherited CISI printed-page metadata in version 2 manifests.",
+      "evidence": [
+        "experiments/2026-10-24-office-seal-pass2/PROTOCOL.md",
+        "experiments/2026-10-24-office-seal-pass2/REPORT.md",
+        "experiments/2026-10-24-office-seal-pass2/source-manifest-v2.json",
+        "experiments/2026-10-24-office-seal-pass2/aggregate-v2.json",
+        "experiments/2026-10-24-office-seal-pass2/validation-v1.json",
+        "experiments/2026-10-24-office-seal-pass2/RETROSPECTIVE.md",
+        "experiments/2026-10-24-office-seal-pass2/DATA-UPDATE.md"
+      ],
+      "retry_when": "A registered calibrated underside and continuous edge series for L-164 or L-167, a Figure 38B number key, or accessible full-resolution later author photographs becomes available. Existing obverses alone do not decide support geometry.",
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "OFFICE-SEAL-PASS3-2026-10-24",
+      "theme": "Original Lothal plate identity conflict and new public image routes",
+      "status": "completed-bounded-source-recovery",
+      "status_class": "source-review",
+      "area": "seals",
+      "authors": [
+        {
+          "name": "gpt-6.1-sol",
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration"
+        }
+      ],
+      "question": "Can a figure key or new public contact publication bind Lothal L-164 to its underside evidence?",
+      "outcome": "Rao1985 p319 associates Plate CLXI F with1864, but p325 associates it with1830. CISI1 distinguishes these as L-164 and L-161. Figure38B panel6 remains unregistered; zero new full PDFs, posters or registered contact photographs. Deposit65/69 remains unresolved.",
+      "challenge": "Original plate references conflict; new author attachment routes return403 and institutional record requests fail.",
+      "remedy": "Preserve both original references and their page images, separate catalogue aliases, retain all failed routes and freeze earlier packages.",
+      "evidence": [
+        "experiments/2026-10-24-office-seal-pass3/PROTOCOL.md",
+        "experiments/2026-10-24-office-seal-pass3/REPORT.md",
+        "experiments/2026-10-24-office-seal-pass3/RETROSPECTIVE.md",
+        "experiments/2026-10-24-office-seal-pass3/DATA-UPDATE.md",
+        "experiments/2026-10-24-office-seal-pass3/source-manifest-v1.json",
+        "experiments/2026-10-24-office-seal-pass3/aggregate-v1.json",
+        "experiments/2026-10-24-office-seal-pass3/validation-v1.json",
+        "experiments/2026-10-24-office-seal-pass3/exposure-record-v1.json"
+      ],
+      "retry_when": "A photograph register, caption correction, explicit Figure38B number key or registered underside and edge series becomes accessible.",
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "OFFICE-SOURCE-VERIFICATION-2026-10-24",
+      "theme": "Lothal sealing source verification",
+      "status": "completed-bounded-source-review",
+      "question": "Does the primary source chain support an object-linked disagreement over L-164 attachment support?",
+      "outcome": "Five page images and four matching source hashes support the L164=1864=LTH SRG1232 identity, the individually described cord-fastened flat underside and the qualified later wooden-box group reconstruction. The 65/69 deposit counts remain unreconciled.",
+      "challenge": "Later group interpretation is qualified and depends on the shared excavation assemblage and catalogue identities.",
+      "remedy": "Separate object observations, group reconstructions and source dependence; restrict reviewed status to the five-page claim chain.",
+      "evidence": [
+        "experiments/2026-10-24-office-source-verification/PROTOCOL.md",
+        "experiments/2026-10-24-office-source-verification/REPORT.md",
+        "experiments/2026-10-24-office-source-verification/RETROSPECTIVE.md",
+        "experiments/2026-10-24-office-source-verification/verification-v1.json",
+        "experiments/2026-10-24-office-source-verification/source-manifest-v3.json",
+        "experiments/2026-10-24-office-source-verification/exposure-manifest-v1.json"
+      ],
+      "retry_when": "Calibrated underside and edge images, or an object-specific physical review, distinguish stopper and box contacts.",
+      "status_class": "exploratory",
+      "area": "seals",
+      "verification_tier": "reviewed",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration",
+          "role": "separate source reviewer"
+        }
+      ]
+    },
+    {
       "id": "PLAN-REGISTRATION-2026-10-21",
       "theme": "True-north bearings of published Harappan site-plan arrows by registration to satellite imagery",
       "status": "completed-frozen-validation-failed-at-dholavira",
@@ -5029,6 +6137,172 @@
       "retry_when": "Before any later push that adds untracked research packages.",
       "status_class": "record",
       "area": "methods"
+    },
+    {
+      "id": "READABLE-EXTERNAL-RECORDS-2026-10-27",
+      "theme": "Readable records outside India and later South Indian comparisons",
+      "status": "exploratory-source-inventory",
+      "question": "Which already readable records outside India can support a source-linked study of trade, people and seal use without reconstructing Bhaty's readings?",
+      "outcome": "Eight source pointers distinguish Mesopotamian contact records, a Susa Ur III tablet, early Dilmun tokens and later Iranian/Tamil-Brahmi comparisons. No corpus admission, physical merge or reading test.",
+      "challenge": "Unprovenanced interpreter seal, source-qualified dates, embargoed Bahrain plates and failed access to Tamil Nadu and Berenike full pages.",
+      "remedy": "Retain identifiers, access tiers, conflicting dates and explicit acquisition targets; preserve selected tool responses locally.",
+      "evidence": [
+        "experiments/2026-10-27-readable-external-records/PROTOCOL.md",
+        "experiments/2026-10-27-readable-external-records/REPORT.md",
+        "experiments/2026-10-27-readable-external-records/sources.json",
+        "experiments/2026-10-27-readable-external-records/DATA-UPDATE.md",
+        "experiments/2026-10-27-readable-external-records/RETROSPECTIVE.md",
+        "experiments/2026-10-27-readable-external-records/validation-v1.json"
+      ],
+      "retry_when": "Full object editions or plate access supply source-linked names, goods, dates and seal relations; admit no legend before identity, completeness and relevant language review.",
+      "status_class": "exploratory",
+      "area": "data",
+      "authors": [
+        "GPT-6, Codex API workspace harness; exact model build unavailable"
+      ]
+    },
+    {
+      "id": "READABLE-SEAL-CONTROLS-2026-10-24",
+      "theme": "Primary object witnesses and bounded extension ledger for readable seal controls",
+      "status": "completed-source-adjudication-no-new-eligible-legends",
+      "status_class": "exploratory",
+      "area": "comparative",
+      "question": "Can bounded primary and institutional source recovery add eligible Akkadian and Tamil-Brahmi seal legends to the frozen head-direction comparison?",
+      "outcome": "Adjudicated 18 candidates with zero new eligible distinct legends: two confirmed duplicates, eleven probable revised-edition duplicates, one deferred seal, two language exclusions and two damaged-edge exclusions. Recovered physical witnesses behind two existing Urkesh legends and restored a 57-page institutional Tamil preview with a specific absent-catalogue target. Original counts remain 11 Akkadian sign-level legends and 23 Tamil-Brahmi including coins, 16 seals and rings.",
+      "challenge": "The current CICT URL returns 404; the held institutional file is a preview omitting catalogue pp.67 and 70. Akkadian-name royal legend A14.239 has a Hurrian title; other source candidates repeat existing dies or have damaged edges. Seven search queries exceeded the declared six-query bound by one.",
+      "remedy": "Preserved source hashes, failures, actual displayed page exposure, explicit null fields, physical-object joins, language exclusions and a versioned local-only ledger. Existing corpus files and statistical rules remain unchanged.",
+      "evidence": [
+        "experiments/2026-10-24-readable-seal-controls/PROTOCOL.md",
+        "experiments/2026-10-24-readable-seal-controls/protocol-hash.json",
+        "experiments/2026-10-24-readable-seal-controls/REPORT.md",
+        "experiments/2026-10-24-readable-seal-controls/RETROSPECTIVE.md",
+        "experiments/2026-10-24-readable-seal-controls/DATA-UPDATE.md",
+        "experiments/2026-10-24-readable-seal-controls/source-manifest.json",
+        "experiments/2026-10-24-readable-seal-controls/validation-v1.json",
+        "experiments/2026-10-24-readable-seal-controls/validate.py",
+        "experiments/2026-10-24-readable-seal-controls/changed-paths.json",
+        "experiments/2026-10-24-readable-seal-controls/local-artifacts-v1.json",
+        "experiments/2026-10-24-readable-seal-controls/prose-review.json"
+      ],
+      "retry_when": "Acquire revised Tamil catalogue pp.67–70 and its seal and ring plates, or a primary Tell Brak corpus with complete Akkadian legends and physical carrier identifiers; count only new distinct legends after aliases and die joins. A separately declared Old Assyrian period extension may be evaluated without changing the existing Sargonic cohort.",
+      "package": "experiments/2026-10-24-readable-seal-controls",
+      "authors": [
+        "gpt-6.1-sol; Codex collaboration"
+      ],
+      "verification_tier": "submitted",
+      "related": [
+        "Q-0037",
+        "HEAD-DIRECTION-CORPORA-2026-10-21",
+        "STRUCTURAL-TYPOLOGY-2026-10-12"
+      ]
+    },
+    {
+      "id": "READABLE-SEAL-PASS2-2026-10-24",
+      "theme": "Urkesh courtier page-image admission and bounded readable-seal source recovery",
+      "status": "completed-source-review-no-admissions",
+      "status_class": "exploratory",
+      "area": "comparative",
+      "question": "Can primary full legends enlarge Q-0037 comparison corpora?",
+      "outcome": "Four Urkesh seal cases adjudicated from previously unread page images: three deferred and one excluded for incomplete legend. Two acquisition targets deferred. Zero eligible admissions; frozen counts remain unchanged.",
+      "challenge": "Zamenna language and reading-direction ambiguity; cook name abraded; isolated h4 personal-name language unresolved; full Tamil revised catalogue and Tell Brak catalogue unavailable within bounded search.",
+      "remedy": "Recorded exact primary coordinates and physical carriers, four acquisition responses, eight query strings, source hashes and local-only ledger.",
+      "evidence": [
+        "experiments/2026-10-24-readable-seal-pass2/PROTOCOL.md",
+        "experiments/2026-10-24-readable-seal-pass2/protocol-hash.json",
+        "experiments/2026-10-24-readable-seal-pass2/REPORT.md",
+        "experiments/2026-10-24-readable-seal-pass2/RETROSPECTIVE.md",
+        "experiments/2026-10-24-readable-seal-pass2/DATA-UPDATE.md",
+        "experiments/2026-10-24-readable-seal-pass2/source-manifest.json",
+        "experiments/2026-10-24-readable-seal-pass2/aggregate-v1.json",
+        "experiments/2026-10-24-readable-seal-pass2/validation-v1.json",
+        "experiments/2026-10-24-readable-seal-pass2/local-artifacts-v1.json",
+        "experiments/2026-10-24-readable-seal-pass2/changed-paths.json",
+        "experiments/2026-10-24-readable-seal-pass2/validate.py"
+      ],
+      "retry_when": "Obtain revised Tamil catalogue pp67–70 and plates, complete Tell Brak glyptic entries, or specialist language adjudication of Zamenna legends.",
+      "package": "experiments/2026-10-24-readable-seal-pass2",
+      "authors": [
+        "gpt-6.1-sol; Codex collaboration"
+      ],
+      "verification_tier": "submitted",
+      "related": [
+        "Q-0037",
+        "READABLE-SEAL-CONTROLS-2026-10-24",
+        "HEAD-DIRECTION-CORPORA-2026-10-21"
+      ]
+    },
+    {
+      "id": "READABLE-SEAL-PASS3-2026-10-24",
+      "theme": "Full Tell Brak glyptic catalogue recovery and Reg257 carrier join",
+      "status": "completed-source-recovery-no-admissions",
+      "status_class": "exploratory",
+      "area": "comparative",
+      "question": "Can full primary entries enlarge Q-0037 readable-seal controls?",
+      "outcome": "Recovered full Matthews1997 scan; REG257 joins catalogue308 and TB1058. One candidate deferred for restored sign, language and duplicate adjudication. Zero admissions.",
+      "challenge": "HTML access checks, image-only scan and stored/delivered checksum mismatch; Tamil pages unavailable.",
+      "remedy": "Followed public repository PID and bundle links, preserved response bytes, visually read catalogue and Appendix B; kept exact page coordinates and baseline.",
+      "evidence": [
+        "experiments/2026-10-24-readable-seal-pass3/aggregate-v1.json",
+        "experiments/2026-10-24-readable-seal-pass3/AMENDMENT-1.md",
+        "experiments/2026-10-24-readable-seal-pass3/checks-v1.json",
+        "experiments/2026-10-24-readable-seal-pass3/DATA-UPDATE.md",
+        "experiments/2026-10-24-readable-seal-pass3/exposure-v1.json",
+        "experiments/2026-10-24-readable-seal-pass3/local-artifacts-v1.json",
+        "experiments/2026-10-24-readable-seal-pass3/PROTOCOL.md",
+        "experiments/2026-10-24-readable-seal-pass3/PROTOCOL.sha256",
+        "experiments/2026-10-24-readable-seal-pass3/REPORT.md",
+        "experiments/2026-10-24-readable-seal-pass3/RETROSPECTIVE.md",
+        "experiments/2026-10-24-readable-seal-pass3/source-manifest.json",
+        "experiments/2026-10-24-readable-seal-pass3/validate.py",
+        "experiments/2026-10-24-readable-seal-pass3/validation-v1.json",
+        "experiments/2026-10-24-readable-seal-pass3/changed-paths.json"
+      ],
+      "retry_when": "Specialist plate and language check of catalogue308 and frozen baseline alias comparison; full Tamil revised catalogue pp67–70.",
+      "package": "experiments/2026-10-24-readable-seal-pass3",
+      "authors": [
+        "gpt-6.1-sol; Codex collaboration"
+      ],
+      "verification_tier": "submitted",
+      "related": [
+        "Q-0037",
+        "READABLE-SEAL-PASS2-2026-10-24"
+      ]
+    },
+    {
+      "id": "READING-EVAL-READINESS-01",
+      "theme": "Input repairs and data requirements for a common evaluation of proposed readings",
+      "status": "completed-input-repair-and-readiness-audit; prospective-evaluation-blocked",
+      "status_class": "exploratory",
+      "area": "methods",
+      "question": "Which input defects can we repair now, and what source, identity, exposure and calibration evidence is required before a common prospective comparison of readings?",
+      "outcome": "Exact lexical lookup and written-form counting are implemented with explicit ambiguity and reviewed-variant records. On the same 162399 historical tokens, kā has 9 exact tokens against 22287 historical prefix matches; ā has 24 against 4458. All 24 proposed forms were audited: 8 unique exact entries, 15 homograph sets and 1 missing exact entry. Twenty-one generated input/preflight tests, independent count replay and three bench synthetic tasks pass. Ten blockers and a proposed participant contract identify the remaining work. No corrected rebus effect or new reading was evaluated.",
+      "challenge": "Prefix frequencies and collapsed lexical fallback confounded the old features. Homographs, historical attestation, source-text boundaries and Winslow compound omissions require source judgments. Provisional physical identity and unreviewed exposure prevent a fresh confirmation claim. The shared harness has no calibrated rebus task.",
+      "remedy": "Preserved old outputs, wrote a protocol before measuring the repair, separated written-form counts from sense selection, kept all dictionary derivatives local, implemented a fail-closed manifest preflight, and recorded explicit source and calibration gates.",
+      "evidence": [
+        "experiments/2026-10-22-reading-eval-readiness/PROTOCOL.md",
+        "experiments/2026-10-22-reading-eval-readiness/REPORT.md",
+        "experiments/2026-10-22-reading-eval-readiness/RETROSPECTIVE.md",
+        "experiments/2026-10-22-reading-eval-readiness/DATA-UPDATE.md",
+        "experiments/2026-10-22-reading-eval-readiness/BLOCKERS.json",
+        "experiments/2026-10-22-reading-eval-readiness/PARTICIPANT-CONTRACT.json",
+        "experiments/2026-10-22-reading-eval-readiness/run-v1/input-audit.json",
+        "experiments/2026-10-22-reading-eval-readiness/run-v1/source-manifest.json",
+        "experiments/2026-10-22-reading-eval-readiness/verification-v1.json",
+        "experiments/2026-10-22-reading-eval-readiness/verification-v2.json",
+        "experiments/2026-10-22-reading-eval-readiness/key-synthetic-v1.json",
+        "experiments/2026-10-22-reading-eval-readiness/meaning-synthetic-v1.json",
+        "experiments/2026-10-22-reading-eval-readiness/shots-synthetic-v1.json"
+      ],
+      "retry_when": "A source-adjudicated lexical inventory and general compound audit are available; the corrected features are integrated into a calibrated scorer with equal freedom for controls; and a reviewed object cohort has known identity and exposure before every participant freezes.",
+      "package": "experiments/2026-10-22-reading-eval-readiness",
+      "authors": [
+        {
+          "model": "GPT-6; exact backend identifier not exposed",
+          "harness": "Codex desktop",
+          "agent": "direction 7 reading-evaluation worker"
+        }
+      ],
+      "verification_tier": "submitted"
     },
     {
       "id": "REBUS-BASE-RATE-2026-10-21",
@@ -5172,6 +6446,31 @@
       "retry_when": "The contributor model changes (for example a licence or CI decision), or kb.py check reports drift.",
       "status_class": "record",
       "area": "methods"
+    },
+    {
+      "id": "RESEARCH-LAUNCH-2026-10-22",
+      "theme": "Object register and input gates for inscription units and competing readings",
+      "status": "first-execution-block-completed-with-source-gates-open",
+      "status_class": "record",
+      "area": "data",
+      "question": "Can directions 1, 2 and 7 begin in parallel from a shared object register and explicit source gaps?",
+      "outcome": "Three owned packages implement the base register, a register-aware unit-study queue, and lexical repairs plus participant checks. Independent accounting reproduces 4695 provisional families and 5680 faces; all 118 divided faces join the register, with three image-review flags. Twenty-one reading-input tests pass on coordinator rerun. No fresh cohort is certified or opened.",
+      "challenge": "The source record contains disputed catalogue readings, provisional physical identities, ambiguous image links, lexical matching defects and incomplete exposure histories.",
+      "remedy": "Preserve alternatives and earlier outputs, use canonical value statuses, withhold unresolved fields from accepted values, propagate image flags into queues, repair exact lookup, and require reviewed inputs before a prospective freeze.",
+      "evidence": [
+        "experiments/2026-10-22-research-launch/PLAN.md",
+        "experiments/2026-10-22-research-launch/SCOPE.json",
+        "experiments/2026-10-22-research-launch/REPORT.md",
+        "experiments/2026-10-22-research-launch/register-interface-v2.json",
+        "experiments/2026-10-22-research-launch/reading-tests-reproduced.json",
+        "experiments/2026-10-22-unit-readiness/readiness-register-v2.json",
+        "experiments/2026-10-22-research-launch/RETROSPECTIVE.md"
+      ],
+      "retry_when": "Reviewed image and lexical annotations, remaining source adapters, or adjudicated exposure histories close a named gate; preserve this first implementation record.",
+      "authors": [
+        "Codex (GPT-6, desktop harness), coordinating contributor"
+      ],
+      "verification_tier": "submitted"
     },
     {
       "id": "RESERVED-TEST-PROGRAM-2026-10-20",
@@ -5362,6 +6661,69 @@
       "verification_tier": "submitted"
     },
     {
+      "id": "SHARED-INFRASTRUCTURE-PLAN-TEST-2026-10-24",
+      "theme": "Shared infrastructure tested against original excavation plans and dated documentary contexts",
+      "status": "completed-exploratory-measurement-and-eligibility-pilot",
+      "status_class": "exploratory",
+      "area": "archaeology",
+      "question": "Do named streets and services persist through rebuilding, and can seals or tablets be joined to independently dated operational episodes?",
+      "outcome": "Eighteen scoped plan quantities, one independently grid-registered descriptive pair, 29 architectural source cases, 32 frozen context assessments and 78 source-specific dating entries. The fixed six-town frame plus a declared Mohenjo-daro control yields zero fully qualified persistence episodes and zero matched documentary pairs. Selective access change and renewed services are positive observations; institutional mechanisms remain undecided.",
+      "challenge": "Composite phases, incomplete common excavation windows, unknown survey accuracy, secondary deposits, conflicting provenience and intrusive dated material prevent the intended causal comparisons. Multiple source uses, objects, samples and independent episodes have different denominators.",
+      "remedy": "Freeze feature inventories and separate context coding before integration; preserve exact locators, north conventions, local-only source imagery, reading sensitivity, sample-to-event relations and missing reasons. Independently check arithmetic and grid fits, recount Lothal provenance rows, preserve a post-freeze Kanmer floor lead separately, and specify controls and observations that can defeat each claim.",
+      "evidence": [
+        "experiments/2026-10-24-shared-infrastructure-plan-test/PROTOCOL.md",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/PROTOCOL.sha256.json",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/AMENDMENT-01.md",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/REPORT.md",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/RESULTS.md",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/SOURCES.md",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/MEASUREMENT-RULES.md",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/DECISION.md",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/TEST-DESIGN.md",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/run-v1.json",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/EXPOSURE.json",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/measurement-review-v1.json",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/lothal-recount-v1.json",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/POSTJOIN-LEAD-01.json",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/bench-shots-synthetic-v1.json",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/DATA-UPDATE.md",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/RETROSPECTIVE.md",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/modules/contexts/context-freeze.json",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/modules/plans-west/module-freeze.json",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/README.md",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/REVIEW-RESPONSE.md",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/CHECKS.md",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/study-validation-v3.json",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/book-manifest-v2.json",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/book-visual-review-v2.json",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/explorer-manifest-v2.json",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/explorer-ui-review-v2.json",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/modules/visuals/manifest-run-v2.json",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/modules/visuals/release-run-v2.json",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/modules/presentation/artifact-manifest.json",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/CHECKS-v1.json",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/CHANGED-PATHS.json",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/artifact-manifest-v1.json"
+      ],
+      "retry_when": "Acquire complete phase-keyed common windows with internal partitions, preservation controls, independently dated repairs and original-use documentary contexts. Fresh confirmation requires a new population, a power audit and frozen scoring; another seed over exposed plans or objects does not supply it.",
+      "package": "experiments/2026-10-24-shared-infrastructure-plan-test",
+      "related_cards": [
+        "Q-0040",
+        "Q-1032",
+        "C-0017",
+        "C-0018",
+        "C-0019"
+      ],
+      "authors": [
+        {
+          "model": "GPT-6 family; exact serving variant unavailable",
+          "harness": "Codex desktop collaboration",
+          "role": "coordinator and three delegated agents, with separate source coding and same-team review"
+        }
+      ],
+      "verification_tier": "submitted"
+    },
+    {
       "id": "SITE-GENERATOR-2026-10-13",
       "theme": "static project website generated from tracked repository files",
       "status": "completed-published",
@@ -5381,6 +6743,189 @@
       "retry_when": "The site needs new page types, or a check fails on a later build.",
       "status_class": "record",
       "area": "methods"
+    },
+    {
+      "id": "SOURCE-CONFLICTS-2026-10-26",
+      "theme": "Exact dependencies and blocked assertions for two pilot source conflicts",
+      "status": "completed-bounded-source-review",
+      "status_class": "source-review",
+      "area": "data",
+      "authors": [
+        {
+          "name": "gpt-6.1-sol",
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration"
+        }
+      ],
+      "question": "Do held indexes, tables or named registration records resolve Lothal CLXI F and Harappa7158/7458?",
+      "outcome": "Both conflicts remain unresolved. Checked Rao index is thematic;2010 Table 1 is chronological.2010 acknowledgement identifies HARP object and photo databases as exact underlying record targets. Two qualified conflict records separate safe display from blocked joins.",
+      "challenge": "Repeated excavation publications and internal contradictory labels cannot identify a physical specimen.",
+      "remedy": "Preserve opposing assertions and exact coordinates; inspect held front/end/index matter; rank underlying registered records.",
+      "evidence": [
+        "experiments/2026-10-26-source-conflicts/PROTOCOL.md",
+        "experiments/2026-10-26-source-conflicts/AMENDMENT-1.md",
+        "experiments/2026-10-26-source-conflicts/AMENDMENT-2.md",
+        "experiments/2026-10-26-source-conflicts/REPORT.md",
+        "experiments/2026-10-26-source-conflicts/RETROSPECTIVE.md",
+        "experiments/2026-10-26-source-conflicts/DATA-UPDATE.md",
+        "experiments/2026-10-26-source-conflicts/source-manifest-v2.json",
+        "experiments/2026-10-26-source-conflicts/asset-manifest-v2.json",
+        "experiments/2026-10-26-source-conflicts/validation-v2.json"
+      ],
+      "retry_when": "ASI labelled negative/register for CLXI F or HARP original 7158/7458 object cards and drawing registration become accessible.",
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "SOURCE-REVIEW-PASS3-2026-10-24",
+      "theme": "Separate source review of four third-pass evidence chains",
+      "status": "completed-bounded-source-review",
+      "status_class": "source-review",
+      "area": "archaeology",
+      "authors": [
+        {
+          "name": "gpt-6.1-sol",
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration"
+        }
+      ],
+      "question": "Do the specified third-pass material claims agree with the primary pages?",
+      "outcome": "Twelve pages support the four specified source chains; no required correction. Reviewed tier applies only to enumerated statements.",
+      "challenge": "Source subscripts, restored signs and conflicting plate keys require exact-page inspection.",
+      "remedy": "Frozen fourteen-page limit; twelve primary pages independently inspected; unresolved substantive decisions retained.",
+      "evidence": [
+        "experiments/2026-10-24-source-review-pass3/PROTOCOL.md",
+        "experiments/2026-10-24-source-review-pass3/REPORT.md",
+        "experiments/2026-10-24-source-review-pass3/RETROSPECTIVE.md",
+        "experiments/2026-10-24-source-review-pass3/source-manifest-v1.json",
+        "experiments/2026-10-24-source-review-pass3/verification-v1.json",
+        "experiments/2026-10-24-source-review-pass3/validation-v1.json"
+      ],
+      "verification_tier": "reviewed",
+      "retry_when": "Field registers, specialist assessment or original photograph key become available."
+    },
+    {
+      "id": "SOUTH-ASIA-LIVING-TOWNS-2026-10-26",
+      "theme": "Source-linked histories of ancient settlements and living towns across South Asia",
+      "status": "completed-source-register-with-explicit-chronological-and-spatial-gaps",
+      "status_class": "source-review",
+      "area": "archaeology",
+      "question": "Which living towns have evidence of Indus-period habitation, and which have a demonstrated dated sequence connecting that occupation to the present settlement?",
+      "outcome": "A register compares sixteen living-town or modern-settlement candidates in five countries with two abandoned Indus cities, using twenty-four source records. Harappa and Rupnagar have local Mature Indus overlap. Kenoyer's primary report documents the modern town over part of Harappa, while its post-1300 BCE dated bridge remains unresolved; Rupnagar's ASI card explicitly records a post-Harappan break. No complete source-audited Indus-to-present occupation sequence was found within the reviewed candidates. The register preserves nearby earlier sites separately and makes no exhaustive oldest-town ranking.",
+      "challenge": "Municipal names, sacred places, nearby prehistoric sites and excavated mounds are often assigned one age. Some government routes timed out or failed legacy TLS, publication and reprint years differed, and one initial PDF locator was one page early.",
+      "remedy": "Recorded the dated evidence place, modern civic identity, spatial relation, phase bounds, known gaps, access depth and source rights separately. Acquired public alternate primary scans, checked title pages and bounded chronology passages, preserved the failed locator check and wrote a corrected version. All raw witnesses and derivatives remain local-only on D:.",
+      "evidence": [
+        "experiments/2026-10-26-indus-living-atlas/living-towns/PROTOCOL.md",
+        "experiments/2026-10-26-indus-living-atlas/living-towns/REPORT.md",
+        "experiments/2026-10-26-indus-living-atlas/living-towns/TABLE.md",
+        "experiments/2026-10-26-indus-living-atlas/living-towns/towns.json",
+        "experiments/2026-10-26-indus-living-atlas/living-towns/towns.schema.json",
+        "experiments/2026-10-26-indus-living-atlas/living-towns/sources.json",
+        "experiments/2026-10-26-indus-living-atlas/living-towns/acquisition-v1.json",
+        "experiments/2026-10-26-indus-living-atlas/living-towns/acquisition-v2.json",
+        "experiments/2026-10-26-indus-living-atlas/living-towns/witness-inspection-v2.json",
+        "experiments/2026-10-26-indus-living-atlas/living-towns/validation-v4.json",
+        "experiments/2026-10-26-indus-living-atlas/living-towns/DATA-UPDATE.md",
+        "experiments/2026-10-26-indus-living-atlas/living-towns/RETROSPECTIVE.md"
+      ],
+      "retry_when": "New source-specific stratigraphy closes the c. 1300 BCE-to-historic gap beneath modern Harappa, locates Rupnagar occupation during its reported breaks, supplies independently checkable older dates at Vadnagar or Rajghat, or joins a modern settlement to its separately located early predecessor. Repeating tourist age lists or shifting a municipality's age from a nearby prehistoric site adds no sequence evidence.",
+      "package": "experiments/2026-10-26-indus-living-atlas/living-towns",
+      "authors": [
+        {
+          "model": "GPT-6 (exact runtime build unavailable)",
+          "harness": "Codex API workspace",
+          "agent": "living-towns contributor to a parallel atlas package"
+        }
+      ],
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "TABLET-USE-EVIDENCE-2026-10-24",
+      "theme": "Physical manufacture and use evidence for a bounded Harappa tablet series",
+      "status": "completed-bounded-source-field-audit",
+      "status_class": "source-review",
+      "area": "tablets",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration"
+        }
+      ],
+      "question": "Which physical manufacture, grouping and use relations does the primary publication establish for H-2218–H-2239?",
+      "outcome": "The complete 22-object series has a local register of 308 source-qualified assertions. Published microscopic examination reports common cutting direction and within-character stroke order across at least three engravers. The inherited recovery split is sixteen in a clump, two nearby and four scattered, all in secondary debris. Six physical-use fields remain unreported for these objects in the bounded chapter, yielding 132 unknown assertions. No objects or registration joins are newly discovered. The proposed pouch, ended utility and direct-reading intent remain attributed interpretations. Worn terracotta examples in Figure 3 are kept separate from this incised steatite block. No confirmation or new significance test was accessed and no conjecture credence changed.",
+      "challenge": "An existing registration frame can appear to supply operational evidence when published interpretations or wear from another material class are transferred to its members. The source does not resolve one-time versus accumulated production, and no registered impression, attachment or allotment was recovered in this chapter.",
+      "remedy": "Froze a bounded field-audit protocol, reviewed the complete held chapter, inspected complete production and interpretation pages, retained individual primary registrations on D:, distinguished source observations from reconstructions, recorded missing use fields as unknown and specified separate deciding observations for stamping, packaging and quantity relations.",
+      "evidence": [
+        "experiments/2026-10-24-tablet-use-evidence/PROTOCOL.md",
+        "experiments/2026-10-24-tablet-use-evidence/REPORT.md",
+        "experiments/2026-10-24-tablet-use-evidence/source-manifest-v1.json",
+        "experiments/2026-10-24-tablet-use-evidence/summary-v1.json",
+        "experiments/2026-10-24-tablet-use-evidence/validation-v1.json",
+        "experiments/2026-10-24-tablet-use-evidence/DATA-UPDATE.md",
+        "experiments/2026-10-24-tablet-use-evidence/RETROSPECTIVE.md"
+      ],
+      "retry_when": "An individually registered ancient impression, residue-bearing attachment, clump enclosure record, documented allotment or complete object microscopy record supplies a physical relation beyond the already exposed chapter. A new source must retain secondary deposition and manufacturing dependence; another seed or transcription fit does not supply the missing use observation.",
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "TABLET-USE-PASS2-2026-10-24",
+      "theme": "Registered workshop contexts and bounded search for tablet use",
+      "status": "completed-bounded-source-search",
+      "status_class": "source-review",
+      "area": "tablets",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration"
+        }
+      ],
+      "question": "Q-0022: Does a source outside the 2000 chapter establish operational use for H-2218-H-2239?",
+      "outcome": "Six queries and eight opens recover three registered workshop-context comparisons, no new target or control use relation. Five HTML contents inspected; two failed links; one metadata-only PDF.",
+      "challenge": "Direct acquisition returned 403, report links failed, and manufacturing context does not identify operational use.",
+      "remedy": "Preserved web text responses and access failures on D:, bounded claims to actual captions, retained all carrier controls and unknown fields.",
+      "evidence": [
+        "experiments/2026-10-24-tablet-use-pass2/PROTOCOL.md",
+        "experiments/2026-10-24-tablet-use-pass2/REPORT.md",
+        "experiments/2026-10-24-tablet-use-pass2/RETROSPECTIVE.md",
+        "experiments/2026-10-24-tablet-use-pass2/DATA-UPDATE.md",
+        "experiments/2026-10-24-tablet-use-pass2/source-manifest-v1.json",
+        "experiments/2026-10-24-tablet-use-pass2/aggregate-v1.json",
+        "experiments/2026-10-24-tablet-use-pass2/validation-v1.json",
+        "experiments/2026-10-24-tablet-use-pass2/exposure-v1.json"
+      ],
+      "retry_when": "Acquire the complete 2001 report and 1997 unit-8040 field records, or a registered ancient impression or attachment record for the 22 tablets.",
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "TABLET-USE-PASS3-2026-10-24",
+      "theme": "Full held report audit and institutional recovery routes",
+      "status": "completed-bounded-source-search",
+      "status_class": "source-review",
+      "area": "tablets",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration"
+        }
+      ],
+      "question": "Q-0022: Which physical-use and deposition assertions can the2005 report and2001 chronology section support?",
+      "outcome": "All19 held scan pages OCR-read; nine visually inspected. One2001 section recovered. Workshop description difference and broader dump context recorded; zero new registered target-use relations.",
+      "challenge": "Scan has no text layer; Harvard access403; SEM report502; exact8040 records remain missing.",
+      "remedy": "Rendered locally, OCR read and captions checked; preserved source differences and bounded unknowns.",
+      "evidence": [
+        "experiments/2026-10-24-tablet-use-pass3/aggregate-v1.json",
+        "experiments/2026-10-24-tablet-use-pass3/build_records.py",
+        "experiments/2026-10-24-tablet-use-pass3/changed-paths.json",
+        "experiments/2026-10-24-tablet-use-pass3/checks-v1.json",
+        "experiments/2026-10-24-tablet-use-pass3/DATA-UPDATE.md",
+        "experiments/2026-10-24-tablet-use-pass3/exposure-v1.json",
+        "experiments/2026-10-24-tablet-use-pass3/PROTOCOL.md",
+        "experiments/2026-10-24-tablet-use-pass3/REPORT.md",
+        "experiments/2026-10-24-tablet-use-pass3/RETROSPECTIVE.md",
+        "experiments/2026-10-24-tablet-use-pass3/source-manifest-v1.json",
+        "experiments/2026-10-24-tablet-use-pass3/validation-v1.json"
+      ],
+      "retry_when": "Acquire complete2001 report or exact1997 unit8040 field photograph and treatment record, or registered impressions and attachment records.",
+      "verification_tier": "submitted"
     },
     {
       "id": "TOWN-AXES-2026-10-21",
@@ -5422,6 +6967,48 @@
         }
       ],
       "verification_tier": "submitted"
+    },
+    {
+      "id": "TOWN-AXIS-REGISTER-2026-10-24",
+      "theme": "Source-backed town-axis register with architectural parts, dating assertions and corrected-location horizons",
+      "status": "completed-source-register-with-explicit-gaps",
+      "status_class": "source-review",
+      "area": "data",
+      "question": "Can the prior Q-1032 measurements, plans, horizons and dates be reconciled without losing their source locators, north references, uncertainty or missingness?",
+      "outcome": "A 34-town register preserves 1,380 measurement records, 118 dated-part assertions, 620 radiocarbon assertions and 539 source-use records including 46 new DEM tiles. Two exploratory Surkotada wall picks are -11.83 and -11.60 degrees with roughly 5-degree digitizing errors and unknown total error. Thirty-five Wanzke published rows were entered with gon and north distinctions. Corrected Surkotada and Farmana horizons raise usable modern-location profile coverage from 18 to 20 towns. The record audit checks 207 input hashes and 3,009 references. No new radiocarbon determination, inscribed object, scientific orientation statistic or credence update.",
+      "challenge": "Prior compilations use different schemas, repeat samples and source images, mix architectural parts, and include superseded site coordinates. Lothal imagery values disagree, registration validation failed, and most wall-to-construction-boundary joins remain unresolved.",
+      "remedy": "Keep each source assertion with a hash and JSON Pointer; label north, dependence, coordinate quality and reported versus partial errors; preserve failed build run-v1; retain all earlier endpoints; compute corrected-location profiles with the unchanged sampler and store acquired tiles on D:.",
+      "evidence": [
+        "experiments/2026-10-24-q1032-town-axis-register/PROTOCOL.md",
+        "experiments/2026-10-24-q1032-town-axis-register/REPORT.md",
+        "experiments/2026-10-24-q1032-town-axis-register/TABLE.md",
+        "experiments/2026-10-24-q1032-town-axis-register/run-v5/town-axis-table.json",
+        "experiments/2026-10-24-q1032-town-axis-register/run-v5/measurements.jsonl",
+        "experiments/2026-10-24-q1032-town-axis-register/run-v5/coverage.json",
+        "experiments/2026-10-24-q1032-town-axis-register/run-v5/input-manifest.json",
+        "experiments/2026-10-24-q1032-town-axis-register/audit-v5.json",
+        "experiments/2026-10-24-q1032-town-axis-register/horizon-repair-v1/horizons.json",
+        "experiments/2026-10-24-q1032-town-axis-register/source-checks.json",
+        "experiments/2026-10-24-q1032-town-axis-register/manifest-additions.json",
+        "experiments/2026-10-24-q1032-town-axis-register/bench-selftest.json",
+        "experiments/2026-10-24-q1032-town-axis-register/RETROSPECTIVE.md"
+      ],
+      "retry_when": "Add surveyed true-north wall bearings, georeferenced plans with new control evidence, phase-linked construction samples or verified site identities. Do not refit the star test on the same examined observations or treat repeated readings as independent imagery.",
+      "package": "experiments/2026-10-24-q1032-town-axis-register",
+      "authors": [
+        {
+          "model": "GPT-6 (exact runtime model ID unavailable)",
+          "harness": "Codex desktop app",
+          "agent": "single contributor"
+        }
+      ],
+      "verification_tier": "submitted",
+      "related_cards": [
+        "Q-1032",
+        "Q-1021",
+        "C-0015",
+        "C-0016"
+      ]
     },
     {
       "id": "TOWN-ORIENTATIONS-VERIFICATION-2026-10-21",
@@ -5470,6 +7057,297 @@
         "C-0015",
         "C-0016"
       ]
+    },
+    {
+      "id": "TOWN-PHASE-LINKS-2026-10-24",
+      "theme": "Named architectural systems linked to building episodes and dated deposits",
+      "status": "completed-bounded-source-review",
+      "status_class": "source-review",
+      "area": "data",
+      "question": "Which original sections and deposit descriptions link Lothal dock and Dholavira castle and middle-town walls to building episodes?",
+      "outcome": "Eleven relations from 24 pages in two held excavation scans record inward additions, separate enclosure starts, inlet replacements and later sealing fill. No construction sample joins, new bearings or new determinations.",
+      "challenge": "Composite plans, restored faces and phase-level dates do not identify the dated construction of each measured line; source text has a street-direction conflict.",
+      "remedy": "Preserve exact page locators and physical relationships; separate initial wall, repairs and redeposited fill; require phase-keyed survey and original sample contexts.",
+      "evidence": [
+        "experiments/2026-10-24-town-phase-links/PROTOCOL.md",
+        "experiments/2026-10-24-town-phase-links/REPORT.md",
+        "experiments/2026-10-24-town-phase-links/RETROSPECTIVE.md",
+        "experiments/2026-10-24-town-phase-links/DATA-UPDATE.md",
+        "experiments/2026-10-24-town-phase-links/source-manifest.json",
+        "experiments/2026-10-24-town-phase-links/run-v1/summary.json",
+        "experiments/2026-10-24-town-phase-links/run-v2/summary.json"
+      ],
+      "retry_when": "Obtain phase-keyed wall plans, surveyed true-north control and sample loci in primary construction deposits; recover original TF-19 context and TL laboratory records.",
+      "package": "experiments/2026-10-24-town-phase-links",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration"
+        }
+      ],
+      "verification_tier": "submitted",
+      "related_cards": [
+        "Q-1032",
+        "C-0016"
+      ]
+    },
+    {
+      "id": "TOWN-PHASE-PASS2-2026-10-24",
+      "theme": "Original dock sample and Castle restoration contexts",
+      "status": "completed-bounded-source-acquisition",
+      "status_class": "source-review",
+      "area": "data",
+      "question": "Can original TF-19 laboratory and Dholavira conservation records close the wall-to-building-episode gaps of Q-1032?",
+      "outcome": "Two primary sources, eleven selected pages, two laboratory contexts and four restoration episodes. TF-19 locus and depth verified; southeast Castle resetting dated to 2005–06. Plate XXXVIII and construction-sample joins remain missing.",
+      "challenge": "Old lab address redirects; large management PDF rejected by text tool; Lothal plate edition remains unavailable.",
+      "remedy": "Acquire public Cambridge PDF and institutional management plan directly, preserve conventions, record precise remaining section and conservation documentation targets.",
+      "evidence": [
+        "experiments/2026-10-24-town-phase-pass2/PROTOCOL.md",
+        "experiments/2026-10-24-town-phase-pass2/REPORT.md",
+        "experiments/2026-10-24-town-phase-pass2/RETROSPECTIVE.md",
+        "experiments/2026-10-24-town-phase-pass2/DATA-UPDATE.md",
+        "experiments/2026-10-24-town-phase-pass2/source-manifest.json",
+        "experiments/2026-10-24-town-phase-pass2/aggregate.json",
+        "experiments/2026-10-24-town-phase-pass2/validation.json",
+        "experiments/2026-10-24-town-phase-pass2/exposure-manifest.json"
+      ],
+      "retry_when": "Obtain Lothal plate XXXVIII, SRG11 locus5B sample section, Dholavira numbered-stone restoration photographs and wall coordinates or original TL sample contexts.",
+      "package": "experiments/2026-10-24-town-phase-pass2",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration"
+        }
+      ],
+      "verification_tier": "submitted",
+      "related_cards": [
+        "Q-1032",
+        "C-0016"
+      ]
+    },
+    {
+      "id": "TOWN-PHASE-PASS3-2026-10-24",
+      "theme": "Dholavira restoration documentation and Lothal original-source gaps",
+      "status": "completed-bounded-source-review",
+      "status_class": "source-review",
+      "area": "data",
+      "question": "Can institutional nomination drawings and conservation records close the Q-1032 wall-to-phase and sample joins?",
+      "outcome": "Two primary source copies and twelve pages inspected; plan locator and earlier conservation photographs recovered. Zero new excavation observations or construction-sample joins. Target southeast stone register, Lothal original plate and TL contexts remain missing.",
+      "challenge": "Annual review403; nomination too large for text service; target records absent from inspected pages.",
+      "remedy": "Direct requests acquisition, local extraction, explicit dependent-source accounting and precise open fields.",
+      "evidence": [
+        "experiments/2026-10-24-town-phase-pass3/PROTOCOL.md",
+        "experiments/2026-10-24-town-phase-pass3/REPORT.md",
+        "experiments/2026-10-24-town-phase-pass3/RETROSPECTIVE.md",
+        "experiments/2026-10-24-town-phase-pass3/DATA-UPDATE.md",
+        "experiments/2026-10-24-town-phase-pass3/aggregate.json",
+        "experiments/2026-10-24-town-phase-pass3/source-manifest.json",
+        "experiments/2026-10-24-town-phase-pass3/validation.json",
+        "experiments/2026-10-24-town-phase-pass3/exposure-manifest.json"
+      ],
+      "retry_when": "Actual numbered-stone restoration register or phase-keyed footprint, original Lothal plate/sample section or original TL collection documentation becomes available.",
+      "package": "experiments/2026-10-24-town-phase-pass3",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration"
+        }
+      ],
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "UNIT-READINESS-01",
+      "theme": "Object, layout and exposure data needed for reusable inscription units",
+      "status": "completed-held-metadata-readiness-audit",
+      "status_class": "source-review",
+      "area": "data",
+      "question": "Which source and identity gaps must close before a new reusable-unit confirmation test?",
+      "outcome": "Executable local queues cover 118 divided faces, 881 unresolved multiface objects and 358 nonbaseline post-catalogue rows. Twenty-nine imaged faces lack an accepted order and 43 lack a crop. Four readable complete-boundary cohorts remain available for calibration. Every candidate row has a source-level access log, requiring page, object and participant exposure review; no fresh cohort is certified.",
+      "challenge": "The old prospective freshness declaration predates documented descriptive exposure, and two historical unit statistic families are absent from the shared spending ledger. Physical line divisions are partial labels. Export families and readable-source document IDs require identity and dependence review.",
+      "remedy": "Preserved source records and prior endpoints; supplied reproducible metadata queues, input hashes, a machine-readable release decision, a proposed ledger correction, and staged complete-boundary and physical-division protocols. Both shared synthetic tasks pass.",
+      "evidence": [
+        "experiments/2026-10-22-unit-readiness/PROTOCOL.md",
+        "experiments/2026-10-22-unit-readiness/REPORT.md",
+        "experiments/2026-10-22-unit-readiness/readiness-v1.json",
+        "experiments/2026-10-22-unit-readiness/audit.py",
+        "experiments/2026-10-22-unit-readiness/audit-v1.py",
+        "experiments/2026-10-22-unit-readiness/ANNOTATION-FIELDS.md",
+        "experiments/2026-10-22-unit-readiness/release-decision.json",
+        "experiments/2026-10-22-unit-readiness/ledger-update.json",
+        "experiments/2026-10-22-unit-readiness/segmentation-synthetic.json",
+        "experiments/2026-10-22-unit-readiness/shots-synthetic.json",
+        "experiments/2026-10-22-unit-readiness/verification-v2.json",
+        "experiments/2026-10-22-unit-readiness/VALIDATION.md",
+        "experiments/2026-10-22-unit-readiness/DATA-UPDATE.md",
+        "experiments/2026-10-22-unit-readiness/RETROSPECTIVE.md"
+      ],
+      "retry_when": "Primary images, independent layout annotations, physical identity links and participant-specific exposure review establish a cohort; all participants can then freeze a power-supported test before confirmation.",
+      "package": "experiments/2026-10-22-unit-readiness",
+      "authors": [
+        {
+          "model": "GPT-6 family; exact backend identifier not exposed",
+          "harness": "Codex desktop collaboration",
+          "agent": "unit-readiness contributor"
+        }
+      ],
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "UNIT-SOURCE-EXTENSION-2026-10-24",
+      "theme": "Primary image routes and physical-side evidence for inscription units",
+      "status": "completed-bounded-source-extension",
+      "status_class": "source-review",
+      "area": "data",
+      "question": "Which missing divided-face sources and unresolved physical sides can the held primary plates resolve?",
+      "outcome": "One divided-face witness recovered, reducing missing crops from 43 to 42; eight provisional face-side bridges on four of five objects, thirteen photograph bridges and 22 case-safe panel crops. All 43 acquisition routes have dispositions; two numbered export faces retain a parts-versus-sides conflict.",
+      "challenge": "Export ordinal faces can differ from printed A/B labels, and one old CISI3 task was already in held CISI 2. A partial download filename misidentified a CISI 1 route. Windows A/a crop filenames collided.",
+      "remedy": "Preserved first outputs and exact builder; version 2 uses explicit polarity suffixes and passes source hash, route and crop-coordinate checks. Primary captions, graphic basis, polarity, transforms, exposure and unresolved relations remain in detailed D: records.",
+      "evidence": [
+        "experiments/2026-10-24-unit-source-extension/PROTOCOL.md",
+        "experiments/2026-10-24-unit-source-extension/AMENDMENT-1.md",
+        "experiments/2026-10-24-unit-source-extension/REPORT.md",
+        "experiments/2026-10-24-unit-source-extension/results-v2.json",
+        "experiments/2026-10-24-unit-source-extension/SOURCE-MANIFEST-v2.json",
+        "experiments/2026-10-24-unit-source-extension/verification-v2.json",
+        "experiments/2026-10-24-unit-source-extension/VALIDATION.md",
+        "experiments/2026-10-24-unit-source-extension/DATA-UPDATE.md",
+        "experiments/2026-10-24-unit-source-extension/RETROSPECTIVE.md",
+        "experiments/2026-10-24-unit-source-extension/build.py",
+        "experiments/2026-10-24-unit-source-extension/verify.py"
+      ],
+      "retry_when": "Obtain CISI 3.1 and 3.2 plates or primary images for the 31 catalogue routes; verify the seven inherited no-key object locators; recover four missing identities; expert-review the eight provisional bridges.",
+      "package": "experiments/2026-10-24-unit-source-extension",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration",
+          "agent": "unit-source contributor"
+        }
+      ],
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "UNIT-SOURCE-PASS2-2026-10-24",
+      "theme": "Seven missing-face source locators and CISI access",
+      "status": "completed-bounded-source-search",
+      "status_class": "source-review",
+      "area": "data",
+      "question": "Q-0027: Can seven inherited non-CISI locators supply missing primary face photographs?",
+      "outcome": "Seven routes checked; one Dholavira primary panel recovered as a candidate, zero admitted new face bridges, queue remains42. Five HARP strings clarified as lot-and-item syntax. CISI publisher, institutional and excerpt routes checked without acquiring catalogue plates.",
+      "challenge": "Unresolved Dholavira identifier namespace; source caption counts8 against export9; HARP figure publications unidentified. HTTP403 and store bot challenge limit access.",
+      "remedy": "Kept candidate separate from supported identities; recorded exact page and crop coordinates, source hashes and exposure. Preserved failed crops and v1 manifests; v2 repairs Windows logical paths.",
+      "evidence": [
+        "experiments/2026-10-24-unit-source-pass2/PROTOCOL.md",
+        "experiments/2026-10-24-unit-source-pass2/REPORT.md",
+        "experiments/2026-10-24-unit-source-pass2/results-v2.json",
+        "experiments/2026-10-24-unit-source-pass2/SOURCE-MANIFEST-v2.json",
+        "experiments/2026-10-24-unit-source-pass2/verification-v2.json",
+        "experiments/2026-10-24-unit-source-pass2/VALIDATION.md",
+        "experiments/2026-10-24-unit-source-pass2/DATA-UPDATE.md",
+        "experiments/2026-10-24-unit-source-pass2/RETROSPECTIVE.md",
+        "experiments/2026-10-24-unit-source-pass2/prepare.py",
+        "experiments/2026-10-24-unit-source-pass2/build.py",
+        "experiments/2026-10-24-unit-source-pass2/repair_paths.py",
+        "experiments/2026-10-24-unit-source-pass2/verify_v2.py"
+      ],
+      "retry_when": "Acquire original HARP figure publication and captioned lot/item images; obtain348-to20781 concordance and review sign-count disagreement; identify341 namespace; obtain lawful CISI3.1/3.2 plates.",
+      "package": "experiments/2026-10-24-unit-source-pass2",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration",
+          "agent": "unit-source pass2 contributor"
+        }
+      ],
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "UNIT-SOURCE-PASS3-2026-10-24",
+      "theme": "HARP chapter editions and institutional CISI routes",
+      "status": "completed-bounded-source-search",
+      "status_class": "source-review",
+      "area": "data",
+      "question": "Q-0027: Can new source routes resolve the seven missing-face locators?",
+      "outcome": "No new face bridges; queue remains 42. Public 17-page HARP scan adds title and contents before the 15-page chapter span; complete equivalence unchecked. Annual-report citations preserved; institutional full-text resolver has no services.",
+      "challenge": "Direct downloads return403; figure publication assignment absent; Dholavira namespace and count conflict persist.",
+      "remedy": "Preserved web bodies and failures; admitted access facts only; structural edition comparison kept separate from byte equivalence.",
+      "evidence": [
+        "experiments/2026-10-24-unit-source-pass3/PROTOCOL.md",
+        "experiments/2026-10-24-unit-source-pass3/REPORT.md",
+        "experiments/2026-10-24-unit-source-pass3/aggregate-v1.json",
+        "experiments/2026-10-24-unit-source-pass3/source-manifest-v1.json",
+        "experiments/2026-10-24-unit-source-pass3/validation-v1.json",
+        "experiments/2026-10-24-unit-source-pass3/DATA-UPDATE.md",
+        "experiments/2026-10-24-unit-source-pass3/RETROSPECTIVE.md"
+      ],
+      "retry_when": "Obtain a captioned year/lot/item figure or catalogue data row and photograph, or Dholavira accession concordance.",
+      "package": "experiments/2026-10-24-unit-source-pass3",
+      "authors": [
+        {
+          "model": "gpt-6.1-sol",
+          "harness": "Codex collaboration"
+        }
+      ],
+      "verification_tier": "submitted"
+    },
+    {
+      "id": "URBAN-FORM-INSCRIPTION-ECOLOGY-2026-10-24",
+      "theme": "Comparative Indus urban construction histories and documentary activities",
+      "status": "completed-source-backed-comparison-with-prospective-models",
+      "status_class": "source-review",
+      "area": "archaeology",
+      "question": "How do town designs, structures, materials, occupation sequences and local alterations compare, and which architectural relations can test the function of documentary objects?",
+      "outcome": "287 source-qualified assertions across twelve core towns and one hinterland relation; 42 source-use records, 38 checked paths representing 36 distinct held hashes; 134 quantity rows; complete 225-row local Dholavira seal-context extraction with scoped aggregates; six exploratory dimension-pair ratios; sixteen prior-output links and three untested conjectures. No fresh confirmation, new field measurement or global object-census gain.",
+      "challenge": "Partial exposures, mixed building phases, historical date conventions, open chronological bounds, source conflicts and secondary deposits prevent whole-town counts or functional labels from raw site totals. An initial adapter failed and a second merge had semantic index and date-operator defects.",
+      "remedy": "Preserve exact locators, raw quantities, phase namespaces, denominators and missing reasons; retain failed endpoints; review exact domain tags, unknown phases, open bounds and multi-site associations; separate architectural persistence from institutional mechanism and labour from generic provisioning; require independently coded primary contexts and a powered prospective comparison.",
+      "evidence": [
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/PROTOCOL.md",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/PROTOCOL.sha256.json",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/REPORT.md",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/COMPARISON.md",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/METHODS.md",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/TEST-DESIGN.md",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/run-v3/summary.json",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/run-v3/source-integrity.json",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/run-v3/validation.json",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/shape-comparison-v1/results.json",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/synthetic-v1/results.json",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/bench-shots-synthetic-v1.json",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/modules/inscriptions/context-table-summary.json",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/modules/inscriptions/prior-results.json",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/REVIEW-RESPONSE.md",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/DATA-UPDATE.md",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/RETROSPECTIVE.md",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/README.md",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/SOURCES.md",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/quantities.csv",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/EXPOSURE.json",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/AUTHORSHIP-CORRECTION.md",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/CHECKS.json",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/study-validation-v3.json",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/book-manifest-v4.json",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/book-visual-review-v4.json",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/modules/visuals/manifest-run-v7.json",
+        "experiments/2026-10-24-urban-form-and-inscription-ecology/modules/presentation/artifact-manifest.json"
+      ],
+      "retry_when": "New phase-keyed surveys, independent construction dates, physically identified primary-use documentary contexts and matched recovery denominators can discriminate common rules, supervision, engineering constraints and specific administrative functions. Do not rerun a town-level text correlation over the same examined corpus as fresh confirmation.",
+      "package": "experiments/2026-10-24-urban-form-and-inscription-ecology",
+      "related_cards": [
+        "Q-0040",
+        "Q-1032",
+        "C-0017",
+        "C-0018",
+        "C-0019"
+      ],
+      "authors": [
+        {
+          "model": "GPT-6-family; exact serving variant not exposed",
+          "harness": "Codex desktop collaboration",
+          "role": "coordinator and three research agents, with separate review and visual-production assignments",
+          "correction": "experiments/2026-10-24-urban-form-and-inscription-ecology/AUTHORSHIP-CORRECTION.md"
+        }
+      ],
+      "verification_tier": "submitted"
     }
   ]
 }

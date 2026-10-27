@@ -126,6 +126,7 @@ Read the section for your task, then open its card or source package. Use `pytho
 - [Q-0020](questions/Q-0020-review-complete-harappa-short-modules.md) · open · tablets · Confirm stroke counts on the Harappa tablets H2218–H2239
 - [Q-0027](questions/Q-0027-audit-catalogue-line-division-locators.md) · open · data · Check catalogue line divisions against the source plates
 - [Q-0035](questions/Q-0035-audit-completeness-for-a-quantity-inventory.md) · open · data · Find a physical inventory whose count is known to be complete
+- [Q-0039](questions/Q-0039-common-reading-evaluation.md) · claimed · methods · Repair lexical inputs and specify a common test of competing readings
 - [Q-1006](questions/Q-1006-cisi2-basic-data-table.md) · open · data · Transcribe the CISI 2 basic-data pages for the Pakistan collections
 - [Q-1008](questions/Q-1008-acquire-cisi-3-1.md) · open · data · Acquire CISI 3.1 (2010), the Mohenjo-daro and Harappa new-material volume
 - [Q-1013](questions/Q-1013-cross-catalogue-identifier-crosswalk.md) · open · data · Build the cross-catalogue identifier crosswalk for every held object
@@ -147,6 +148,8 @@ Read the section for your task, then open its card or source package. Use `pytho
 - [Q-0031](questions/Q-0031-separate-manufacture-from-graphic-variation.md) · open · images · Separate manufacture from graphic variation
 - [Q-0032](questions/Q-0032-test-gap-geometry-on-held-damaged-cases.md) · open · images · Use gap width and traces to count lost signs in damaged texts
 - [Q-0038](questions/Q-0038-reproduce-one-manuscript-claim-from-tracked-aggregates.md) · open · methods · Recompute one Paper 001 result from its tracked summary outputs
+- [Q-0040](questions/Q-0040-urban-rebuilding-and-documentary-practice.md) · open · archaeology · How did urban rebuilding change documentary practice across Indus towns?
+- [Q-0041](questions/Q-0041-crop-retention-after-urban-decline.md) · open · archaeology · Which crop groups and farming practices persisted after Harappan urban decline?
 - [Q-1004](questions/Q-1004-face-level-image-index.md) · open · data · Build an index linking each inscribed face to the 8,722 local CISI photograph crops
 - [Q-1007](questions/Q-1007-absent-cisi-keys-disposition.md) · open · data · Classify every CISI catalogue entry that has no match in the local corpus
 - [Q-1009](questions/Q-1009-acquire-cisi-3-2.md) · open · data · Acquire CISI 3.2 (2019) for Kalibangan, Chanhu-daro, Rojdi and the western sites
@@ -198,6 +201,12 @@ Read the section for your task, then open its card or source package. Use `pytho
 - [C-0014](conjectures/C-0014-parpola-interlocks-measure-the-lexicon.md) · open · credence 0.55 · Parpola's interlocks measure the Tamil lexicon, not the script
 - [C-0015](conjectures/C-0015-towns-laid-out-on-star-settings.md) · weakened · credence 0.04 · Harappan towns were laid out on the setting point of a star
 - [C-0016](conjectures/C-0016-plains-cities-on-true-north.md) · open · credence 0.3 · The plains cities were laid out on true north, the regional towns on their landform
+- [C-0017](conjectures/C-0017-shared-routes-across-rebuilding.md) · open · credence 0.55 · Shared urban routes survived rebuilding through common rules
+- [C-0018](conjectures/C-0018-sealings-at-urban-handovers.md) · open · credence 0.35 · Sealings recorded handovers between urban groups
+- [C-0019](conjectures/C-0019-tablets-for-shared-work.md) · open · credence 0.1 · Harappa tablet series recorded obligations for shared work
+- [C-0020](conjectures/C-0020-practical-knowledge-through-local-networks.md) · open · credence 0.65 · Local farming and craft networks carried practical knowledge beyond Indus cities
+- [C-0021](conjectures/C-0021-farming-knowledge-across-language-contact.md) · open · credence 0.5 · Language contact carried regional farming knowledge into early Indo-Aryan communities
+- [C-0022](conjectures/C-0022-vedic-rite-retains-regional-operation.md) · open · credence 0.2 · A Vedic farming rite preserves a regional operation transmitted from the Indus period
 
 ## Papers
 
@@ -210,7 +219,7 @@ Read the section for your task, then open its card or source package. Use `pytho
 
 ## Other records
 
-- 209 registry attempts: `python tools/kb.py list --kind attempt`, or the generated [registry](experiments/registry.json).
-- 194 retrospectives: `python tools/kb.py list --kind retrospective`; the curated essays are indexed in [retrospectives/README.md](retrospectives/README.md).
+- 263 registry attempts: `python tools/kb.py list --kind attempt`, or the generated [registry](experiments/registry.json).
+- 260 retrospectives: `python tools/kb.py list --kind retrospective`; the curated essays are indexed in [retrospectives/README.md](retrospectives/README.md).
 - 16 direction memos: `python tools/kb.py list --kind direction`.
 - 9 completed and 0 dropped questions: `python tools/kb.py list --kind question --status done` or `--status dropped`.
