@@ -11,13 +11,38 @@
 <a class="skip" href="#content">Skip to content</a>
 <header class="site-header">
   <a class="brand" href="../../index.html">Indus research</a>
-  <nav aria-label="Main navigation"><a href="../../index.html">Home</a><a href="../../findings/index.html">Findings</a><a href="../../working-model/index.html">Working model</a><a href="../../conjectures/index.html">Conjectures</a><a href="../../questions/index.html">Open questions</a><a href="../../attempts/index.html">Registry</a><a href="../../data.html">Data</a><a href="../../timeline/index.html">Timeline</a><a href="../index.html">Papers</a><a href="../../explore/index.html">Explore</a><a href="../../contribute/index.html">Contribute</a><a href="../../reuse/index.html">Reuse</a></nav>
+  <nav aria-label="Main navigation"><ul class="nav-list">
+  <li>
+    <a href="../../index.html">Home</a>
+  </li><li>
+    <a href="../../findings/index.html">Findings</a>
+  </li><li>
+    <details>
+      <summary>Ideas</summary>
+      <ul><li><a href="../../working-model/index.html">Working model</a></li><li><a href="../../conjectures/index.html">Conjectures</a></li></ul>
+    </details>
+  </li><li>
+    <a href="../../questions/index.html">Questions</a>
+  </li><li class="current-section">
+    <details open>
+      <summary>Record<span class="sr-only"> (current section)</span></summary>
+      <ul><li><a href="../../attempts/index.html">Registry</a></li><li><a href="../../timeline/index.html">Timeline</a></li><li><a href="../index.html" aria-current="location">Papers</a></li><li><a href="../../data.html">Data</a></li></ul>
+    </details>
+  </li><li>
+    <a href="../../explore/index.html">Explore</a>
+  </li><li>
+    <details>
+      <summary>About</summary>
+      <ul><li><a href="../../contribute/index.html">Contribute</a></li><li><a href="../../reuse/index.html">Reuse</a></li></ul>
+    </details>
+  </li>
+  </ul></nav>
 </header>
 <main id="content">
   <h1>Evidence guide for Paper 006</h1>
   
   <h2 id="evidence-guide-for-paper-006">Evidence guide for Paper 006</h2>
-<p>Every number in the <a href="index.html">manuscript</a> comes from a saved output in <code>experiments/2026-10-12-published-claim-tests/</code>. Paths below are relative to that directory. The study's <a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/experiments/2026-10-12-published-claim-tests/sanskrit-key/REPORT.md">report</a>, <a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/experiments/2026-10-12-published-claim-tests/PROTOCOL.md">protocol</a>, amendments 1–4, <a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/experiments/2026-10-12-published-claim-tests/sanskrit-key/review/REVIEW.md">adversarial review</a> and <a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/experiments/2026-10-12-published-claim-tests/sanskrit-key/review/RESPONSE.md">response</a> record the order in which analyses were designed and which were added after outcomes.</p>
+<p>Every number in the <a href="index.html">manuscript</a> comes from a saved output in <code>experiments/2026-10-12-published-claim-tests/</code>. Paths below are relative to that directory. The study's <a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/experiments/2026-10-12-published-claim-tests/sanskrit-key/REPORT.md">report</a>, <a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/experiments/2026-10-12-published-claim-tests/PROTOCOL.md">protocol</a>, amendments 1–4, <a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/experiments/2026-10-12-published-claim-tests/sanskrit-key/review/REVIEW.md">adversarial review</a> and <a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/experiments/2026-10-12-published-claim-tests/sanskrit-key/review/RESPONSE.md">response</a> record the order in which analyses were designed and which were added after their results had been seen.</p>
 <table>
 <thead>
 <tr>
@@ -49,7 +74,7 @@
 </tr>
 <tr>
 <td>4.2</td>
-<td>Random-key segmentation of the twelve longest texts</td>
+<td>Segmentation of the twelve longest texts under a random rearrangement of the key</td>
 <td><code>sanskrit-key/stage4/demo.json</code></td>
 </tr>
 <tr>
@@ -84,12 +109,12 @@
 </tr>
 <tr>
 <td>4.5</td>
-<td>Within-stratum optima, scrambled fits, half split</td>
+<td>Best arrangements within frequency strata, fits to shuffled inscriptions, half-split transfer</td>
 <td><code>sanskrit-key/stage3g/summary.json</code>, <code>sanskrit-key/stage3g/derived.json</code></td>
 </tr>
 <tr>
 <td>4.5</td>
-<td>Deletion in unconstrained optima</td>
+<td>Sign tokens that unconstrained optima turn into vowels, deleting them from the skeleton</td>
 <td><code>sanskrit-key/stage3/token_check.json</code></td>
 </tr>
 <tr>
@@ -99,7 +124,7 @@
 </tr>
 <tr>
 <td>4.6</td>
-<td>Transfer z and gap shares by language</td>
+<td>Transfer z-scores and gap shares by language</td>
 <td><code>sanskrit-key/stage3g/derived.json</code></td>
 </tr>
 <tr>
@@ -134,12 +159,12 @@
 </tr>
 </tbody>
 </table>
-<p>Figures are generated by <code>sanskrit-key/make_figures.py</code> from these outputs. The printable version is rendered by <a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/papers/006-sanskrit-key-calibration/render_paper.py">render_paper.py</a> from this manuscript; it rasterizes the SVG figures locally before layout.</p>
+<p>Figures are generated by <code>sanskrit-key/make_figures.py</code> from these outputs. The printable version is rendered by <a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/papers/006-sanskrit-key-calibration/render_paper.py">render_paper.py</a> from this manuscript; it rasterizes the SVG figures locally before layout.</p>
 <p>The analyses use Python 3.13 with NumPy 2.2 and Matplotlib 3.11. Raw sources (DCS texts, Monier-Williams, Latin, Old Tamil and Sumerian text, the preprints) and per-inscription outputs are kept locally under <code>data/raw/2026-10-12-decipherment-claim-tests/</code> and are not redistributed.</p>
 </main>
 <footer class="site-footer">
-  <a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/papers/006-sanskrit-key-calibration/methods.md">Source on GitHub</a>
-  <span>16639e6f8474 · 2026-10-13T14:17:34-04:00</span>
+  <a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/papers/006-sanskrit-key-calibration/methods.md">Source on GitHub</a>
+  <span>1d2dcf451ff7 · 2026-10-27T17:37:40-04:00</span>
 </footer>
 </body>
 </html>

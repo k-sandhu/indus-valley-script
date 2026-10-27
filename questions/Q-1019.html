@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Q-1019: Resolve the 46 museum records that have no checked join to a local object · Indus research</title>
+  <title>Q-1019: Resolve the 46 museum records not yet joined to a local object · Indus research</title>
   <link rel="stylesheet" href="../assets/site.css">
   <script src="../assets/site.js" defer></script>
 </head>
@@ -11,10 +11,35 @@
 <a class="skip" href="#content">Skip to content</a>
 <header class="site-header">
   <a class="brand" href="../index.html">Indus research</a>
-  <nav aria-label="Main navigation"><a href="../index.html">Home</a><a href="../findings/index.html">Findings</a><a href="../working-model/index.html">Working model</a><a href="../conjectures/index.html">Conjectures</a><a href="index.html">Open questions</a><a href="../attempts/index.html">Registry</a><a href="../data.html">Data</a><a href="../timeline/index.html">Timeline</a><a href="../papers/index.html">Papers</a><a href="../explore/index.html">Explore</a><a href="../contribute/index.html">Contribute</a><a href="../reuse/index.html">Reuse</a></nav>
+  <nav aria-label="Main navigation"><ul class="nav-list">
+  <li>
+    <a href="../index.html">Home</a>
+  </li><li>
+    <a href="../findings/index.html">Findings</a>
+  </li><li>
+    <details>
+      <summary>Ideas</summary>
+      <ul><li><a href="../working-model/index.html">Working model</a></li><li><a href="../conjectures/index.html">Conjectures</a></li></ul>
+    </details>
+  </li><li class="current-section">
+    <a href="index.html" aria-current="location">Questions</a>
+  </li><li>
+    <details>
+      <summary>Record</summary>
+      <ul><li><a href="../attempts/index.html">Registry</a></li><li><a href="../timeline/index.html">Timeline</a></li><li><a href="../papers/index.html">Papers</a></li><li><a href="../data.html">Data</a></li></ul>
+    </details>
+  </li><li>
+    <a href="../explore/index.html">Explore</a>
+  </li><li>
+    <details>
+      <summary>About</summary>
+      <ul><li><a href="../contribute/index.html">Contribute</a></li><li><a href="../reuse/index.html">Reuse</a></li></ul>
+    </details>
+  </li>
+  </ul></nav>
 </header>
 <main id="content">
-  <h1>Q-1019: Resolve the 46 museum records that have no checked join to a local object</h1>
+  <h1>Q-1019: Resolve the 46 museum records not yet joined to a local object</h1>
   
   
 <dl class="metadata">
@@ -42,24 +67,24 @@
 
 
 </dl>
-<p><a class="action" href="https://github.com/k-sandhu/indus-valley-script/issues/new?template=claim-question.yml&amp;title=%5BQ-1019%5D+Claim%3A+Resolve+the+46+museum+records+that+have+no+checked+join+to+a+local+object">Claim or discuss on GitHub</a></p>
+<p><a class="action" href="https://github.com/k-sandhu/indus-valley-script/issues/new?template=claim-question.yml&amp;title=%5BQ-1019%5D+Claim%3A+Resolve+the+46+museum+records+not+yet+joined+to+a+local+object">Claim or discuss on GitHub</a></p>
 
 <h2 id="question">Question</h2>
 <p>Which local object, if any, does each of the 46 unresolved museum records describe?</p>
 <h2 id="why-it-matters">Why it matters</h2>
-<p>The census saved 114 original-object records from six museums and confirmed 68 joins. The remaining 46 split into 13 failed string matches, 2 records with a usable key that was never tried and 31 records without a usable key in the first pass. Each new join adds an accession number, a museum photograph and often dimensions to an object that lacks them.</p>
+<p>The project's evidence census saved 114 museum records of original objects from six museums and confirmed 68 joins, that is, records checked to describe a particular local object. The remaining 46 split into 13 whose identifier strings failed to match, 2 with a usable identifier that was never tried, and 31 without a usable identifier in the first pass. Each new join adds an accession number, a museum photograph and often dimensions to an object that lacks them.</p>
 <h2 id="what-is-needed">What is needed</h2>
-<p>Read <a href="../data.html">DATA.md</a>. Inputs: the saved records under <code>data/raw/2026-10-06-evidence-census/collections-and-datasets/focused-pass-2026-10-07/</code> and the candidate list in <code>data/raw/2026-10-06-evidence-census/synthesis/main-2026-10-07-v6/candidate-object-joins.json</code>; the CISI 1 basic data (Q-1005) for accession concordances; Marshall's p. 402 tabulation for British Museum seals. Start with the two untried keys and the 13 failed strings, then look for concordance routes for the 31 keyless records. Record each decision with its basis.</p>
+<p>Read <a href="../data.html">DATA.md</a>. Inputs: the saved records under <code>data/raw/2026-10-06-evidence-census/collections-and-datasets/focused-pass-2026-10-07/</code> and the candidate list in <code>data/raw/2026-10-06-evidence-census/synthesis/main-2026-10-07-v6/candidate-object-joins.json</code>; the CISI 1 basic data (Q-1005), whose museum column links entries of the <em>Corpus of Indus Seals and Inscriptions</em> to accession numbers; Marshall's p. 402 table for British Museum seals. Start with the two untried identifiers and the 13 failed strings, then look for a published concordance that links each of the 31 records without an identifier to a catalogue number. Record each decision with its basis.</p>
 <h2 id="how-to-decide">How to decide</h2>
 <p>Done when each of the 46 records is joined, has a candidate set, or is recorded as unjoinable with the sources searched. Report the new lower bound of confirmed joins beside the census's 68.</p>
 <h2 id="prior-attempts">Prior attempts</h2>
-<p>The museum census and the synthesis review produced the 68 confirmed joins and left these 46 open.</p>
-<p>13 October 2026, outcome: Each of the 46 records has a decision with its basis (<a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/experiments/2026-10-13-museum-open-access/joins/q1019-decisions.csv">q1019-decisions.csv</a>). Sixteen are confirmed through CISI 1 basic-data rows read by eye (Lothal LTH SRG numbers, NMI and IM numbers, Banawali and Chanhu-daro rows), the Marshall 1931 and Mackay 1938 seal tables, and numbers written on the objects in CISI photographs (L-29 B "SRG 989", L-122 B "2845"). Twenty-one have candidate sets (the Met seals, seven Indian Museum seals without a confirmed identifier join, the Louvre seals from Susa and Girsu, two British Museum seals and three National Museum records), eight are unmatched and one is uninscribed. The confirmed lower bound rises from 68 to 84 for the census's 114 records. Five unmatched records are candidate additions to the corpus: CISI H-224 (NMI 1296), Banawali 3714 and Dholavira DHR-22198, DHR-6032 and DHR-7860. The National Museum record DK12995 shares its number with CISI H-13, a Harappa unicorn seal, and is not that object. The independent reviewer added Indian Museum 10377/A7252/C.2803 as family 2194 (M-1809), through Marshall 1931 vol. II p. 403 row 199. The recall search leaves 10 non-joined records with hits, four confined to one family; printed-page checks are pending. Retry when CISI 3.1 or the British Museum object pages are available, or with better copies of the Mackay 1943 plates.</p>
+<p>The museum batch of the census and the synthesis review produced the 68 confirmed joins and left these 46 open.</p>
+<p>13 October 2026, outcome: Each of the 46 records has a decision with its basis (<a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/experiments/2026-10-13-museum-open-access/joins/q1019-decisions.csv">q1019-decisions.csv</a>). Sixteen are confirmed through CISI 1 basic-data rows read by eye (Lothal LTH SRG numbers, National Museum (NMI) and Indian Museum (IM) numbers, Banawali and Chanhu-daro rows), the Marshall 1931 and Mackay 1938 seal tables, and numbers written on the objects in CISI photographs (L-29 B "SRG 989", L-122 B "2845"). Twenty-one have candidate sets (the Met seals, seven Indian Museum seals without a confirmed identifier join, the Louvre seals from Susa and Girsu, two British Museum seals and three National Museum records), eight are unmatched and one is uninscribed. The confirmed lower bound rises from 68 to 84 for the census's 114 records. Five unmatched records are candidate additions to the corpus: CISI H-224 (NMI 1296), Banawali 3714 and Dholavira DHR-22198, DHR-6032 and DHR-7860. The National Museum record DK12995 shares its number with CISI H-13, a Harappa unicorn seal, and is not that object. The independent reviewer added Indian Museum 10377/A7252/C.2803 as Lipi family 2194 (M-1809), the local corpus's record group for that object, through Marshall 1931 vol. II p. 403 row 199. A substring search of identifiers for missed joins leaves 10 unjoined records with hits, four of them pointing to a single family; printed-page checks are pending. Retry when CISI 3.1 or the British Museum object pages are available, or with better copies of the Mackay 1943 plates.</p>
 
 </main>
 <footer class="site-footer">
-  <a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/knowledge/questions/Q-1019-unjoined-museum-records.md">Source on GitHub</a>
-  <span>16639e6f8474 · 2026-10-13T14:17:34-04:00</span>
+  <a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/knowledge/questions/Q-1019-unjoined-museum-records.md">Source on GitHub</a>
+  <span>1d2dcf451ff7 · 2026-10-27T17:37:40-04:00</span>
 </footer>
 </body>
 </html>

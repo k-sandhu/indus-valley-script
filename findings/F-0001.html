@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>F-0001: Sequential prediction on unique texts · Indus research</title>
+  <title>F-0001: The previous sign helps predict the next one · Indus research</title>
   <link rel="stylesheet" href="../assets/site.css">
   <script src="../assets/site.js" defer></script>
 </head>
@@ -11,10 +11,35 @@
 <a class="skip" href="#content">Skip to content</a>
 <header class="site-header">
   <a class="brand" href="../index.html">Indus research</a>
-  <nav aria-label="Main navigation"><a href="../index.html">Home</a><a href="index.html">Findings</a><a href="../working-model/index.html">Working model</a><a href="../conjectures/index.html">Conjectures</a><a href="../questions/index.html">Open questions</a><a href="../attempts/index.html">Registry</a><a href="../data.html">Data</a><a href="../timeline/index.html">Timeline</a><a href="../papers/index.html">Papers</a><a href="../explore/index.html">Explore</a><a href="../contribute/index.html">Contribute</a><a href="../reuse/index.html">Reuse</a></nav>
+  <nav aria-label="Main navigation"><ul class="nav-list">
+  <li>
+    <a href="../index.html">Home</a>
+  </li><li class="current-section">
+    <a href="index.html" aria-current="location">Findings</a>
+  </li><li>
+    <details>
+      <summary>Ideas</summary>
+      <ul><li><a href="../working-model/index.html">Working model</a></li><li><a href="../conjectures/index.html">Conjectures</a></li></ul>
+    </details>
+  </li><li>
+    <a href="../questions/index.html">Questions</a>
+  </li><li>
+    <details>
+      <summary>Record</summary>
+      <ul><li><a href="../attempts/index.html">Registry</a></li><li><a href="../timeline/index.html">Timeline</a></li><li><a href="../papers/index.html">Papers</a></li><li><a href="../data.html">Data</a></li></ul>
+    </details>
+  </li><li>
+    <a href="../explore/index.html">Explore</a>
+  </li><li>
+    <details>
+      <summary>About</summary>
+      <ul><li><a href="../contribute/index.html">Contribute</a></li><li><a href="../reuse/index.html">Reuse</a></li></ul>
+    </details>
+  </li>
+  </ul></nav>
 </header>
 <main id="content">
-  <h1>F-0001: Sequential prediction on unique texts</h1>
+  <h1>F-0001: The previous sign helps predict the next one</h1>
   
   
 <dl class="metadata">
@@ -45,20 +70,20 @@
 
 
 <h2 id="finding">Finding</h2>
-<p>Previous-sign information improved held-out log score by 0.848 bits per noninitial sign on 1,596 distinct strings and 6,413 noninitial signs.</p>
+<p>Knowing the previous sign improved prediction of held-out texts by 0.848 bits per noninitial sign (each sign after the first), compared with a model using only position, site and object type, on 1,596 distinct texts with 6,413 noninitial signs.</p>
 <h2 id="evidence">Evidence</h2>
 <ul>
-<li><a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/research/methods/results/joint_nested_unique_conditioned_1000/joint_nested_results.json">research/methods/results/joint_nested_unique_conditioned_1000/joint_nested_results.json</a>, JSON field <code>/observed/gain_bits_per_noninitial_sign</code>.</li>
-<li><a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/research/methods/results/joint_nested_unique_conditioned_1000/joint_nested_results.json">research/methods/results/joint_nested_unique_conditioned_1000/joint_nested_results.json</a>, JSON field <code>/observed/records</code>.</li>
-<li><a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/research/methods/results/joint_nested_unique_conditioned_1000/joint_nested_results.json">research/methods/results/joint_nested_unique_conditioned_1000/joint_nested_results.json</a>, JSON field <code>/observed/noninitial_tokens</code>.</li>
+<li><a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/research/methods/results/joint_nested_unique_conditioned_1000/joint_nested_results.json">research/methods/results/joint_nested_unique_conditioned_1000/joint_nested_results.json</a>, JSON field <code>/observed/gain_bits_per_noninitial_sign</code>.</li>
+<li><a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/research/methods/results/joint_nested_unique_conditioned_1000/joint_nested_results.json">research/methods/results/joint_nested_unique_conditioned_1000/joint_nested_results.json</a>, JSON field <code>/observed/records</code>.</li>
+<li><a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/research/methods/results/joint_nested_unique_conditioned_1000/joint_nested_results.json">research/methods/results/joint_nested_unique_conditioned_1000/joint_nested_results.json</a>, JSON field <code>/observed/noninitial_tokens</code>.</li>
 </ul>
 <h2 id="scope">Scope</h2>
-<p>The comparator is the selected independent position/site/type baseline, with physical aliases retained in grouping. The uniqueness-conditioned reference repeats nested fitting. This measures order in the selected transcriptions; the measurement date follows UTC in the original work log.</p>
+<p>Records of one physical object were kept together in cross-validation. The chance comparison shuffled signs among texts of equal length, site and type, keeping positions and creating no duplicate texts, and refitted everything for each shuffle. This measures order in the selected transcriptions; dates follow UTC in the original work log.</p>
 
 </main>
 <footer class="site-footer">
-  <a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/knowledge/findings/F-0001-sequential-prediction-on-unique-texts.md">Source on GitHub</a>
-  <span>16639e6f8474 · 2026-10-13T14:17:34-04:00</span>
+  <a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/knowledge/findings/F-0001-sequential-prediction-on-unique-texts.md">Source on GitHub</a>
+  <span>1d2dcf451ff7 · 2026-10-27T17:37:40-04:00</span>
 </footer>
 </body>
 </html>

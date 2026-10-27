@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Q-0010: Rebuild dependence from all recorded faces · Indus research</title>
+  <title>Q-0010: Check data splits using every recorded face, including excluded ones · Indus research</title>
   <link rel="stylesheet" href="../assets/site.css">
   <script src="../assets/site.js" defer></script>
 </head>
@@ -11,10 +11,35 @@
 <a class="skip" href="#content">Skip to content</a>
 <header class="site-header">
   <a class="brand" href="../index.html">Indus research</a>
-  <nav aria-label="Main navigation"><a href="../index.html">Home</a><a href="../findings/index.html">Findings</a><a href="../working-model/index.html">Working model</a><a href="../conjectures/index.html">Conjectures</a><a href="index.html">Open questions</a><a href="../attempts/index.html">Registry</a><a href="../data.html">Data</a><a href="../timeline/index.html">Timeline</a><a href="../papers/index.html">Papers</a><a href="../explore/index.html">Explore</a><a href="../contribute/index.html">Contribute</a><a href="../reuse/index.html">Reuse</a></nav>
+  <nav aria-label="Main navigation"><ul class="nav-list">
+  <li>
+    <a href="../index.html">Home</a>
+  </li><li>
+    <a href="../findings/index.html">Findings</a>
+  </li><li>
+    <details>
+      <summary>Ideas</summary>
+      <ul><li><a href="../working-model/index.html">Working model</a></li><li><a href="../conjectures/index.html">Conjectures</a></li></ul>
+    </details>
+  </li><li class="current-section">
+    <a href="index.html" aria-current="location">Questions</a>
+  </li><li>
+    <details>
+      <summary>Record</summary>
+      <ul><li><a href="../attempts/index.html">Registry</a></li><li><a href="../timeline/index.html">Timeline</a></li><li><a href="../papers/index.html">Papers</a></li><li><a href="../data.html">Data</a></li></ul>
+    </details>
+  </li><li>
+    <a href="../explore/index.html">Explore</a>
+  </li><li>
+    <details>
+      <summary>About</summary>
+      <ul><li><a href="../contribute/index.html">Contribute</a></li><li><a href="../reuse/index.html">Reuse</a></li></ul>
+    </details>
+  </li>
+  </ul></nav>
 </header>
 <main id="content">
-  <h1>Q-0010: Rebuild dependence from all recorded faces</h1>
+  <h1>Q-0010: Check data splits using every recorded face, including excluded ones</h1>
   
   
 <dl class="metadata">
@@ -42,24 +67,24 @@
 
 
 </dl>
-<p><a class="action" href="https://github.com/k-sandhu/indus-valley-script/issues/new?template=claim-question.yml&amp;title=%5BQ-0010%5D+Claim%3A+Rebuild+dependence+from+all+recorded+faces">Claim or discuss on GitHub</a></p>
+<p><a class="action" href="https://github.com/k-sandhu/indus-valley-script/issues/new?template=claim-question.yml&amp;title=%5BQ-0010%5D+Claim%3A+Check+data+splits+using+every+recorded+face%2C+including+excluded+ones">Claim or discuss on GitHub</a></p>
 
 <h2 id="question">Question</h2>
-<p>Do existing analysis splits preserve aliases and repeated whole texts when grouping uses the full observational register, including excluded faces?</p>
+<p>Do existing training and test splits keep an object's aliases and repeated whole texts together when grouping uses the full register of faces, including excluded ones?</p>
 <h2 id="why-it-matters">Why it matters</h2>
-<p>An excluded short or damaged face can connect an otherwise eligible object to a training object.</p>
+<p>An excluded short or damaged face can link an otherwise eligible object to a training object.</p>
 <h2 id="what-is-needed">What is needed</h2>
-<p>Use confirmed physical identity separately from repeated-text dependence. Reconstruct group closure before eligibility filtering and compare it with a chosen saved split. Read <a href="../data.html">DATA.md</a> for the gaps this task depends on.</p>
-<p>Sources: <a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/knowledge/directions/context-data-plan.md">knowledge/directions/context-data-plan.md</a>; <a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/knowledge/directions/research-roadmap.md">knowledge/directions/research-roadmap.md</a>.</p>
+<p>Treat confirmed physical identity separately from shared-text dependence. Build the complete linked groups before eligibility filtering and compare them with a chosen saved split. Read <a href="../data.html">DATA.md</a> for the gaps this task depends on.</p>
+<p>Sources: <a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/knowledge/directions/context-data-plan.md">knowledge/directions/context-data-plan.md</a>; <a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/knowledge/directions/research-roadmap.md">knowledge/directions/research-roadmap.md</a>.</p>
 <h2 id="how-to-decide">How to decide</h2>
-<p>Pass only if no declared dependence component crosses its evaluation boundary. Report every changed group and preserve the old endpoint; any leakage requires a separately dated rerun.</p>
+<p>Pass only if no linked group (dependence component) crosses the training–evaluation boundary. Report every changed group and keep the old result; any leakage needs a separately dated rerun.</p>
 <h2 id="prior-attempts">Prior attempts</h2>
-<p><a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/knowledge/registry/attempts/ROOT-03.json">ROOT-03</a>; <a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/knowledge/registry/attempts/CONTEXT-01.json">CONTEXT-01</a>. Read their outcomes and <code>retry_when</code> before running this task.</p>
+<p><a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/knowledge/registry/attempts/ROOT-03.json">ROOT-03</a>; <a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/knowledge/registry/attempts/CONTEXT-01.json">CONTEXT-01</a>. Read their outcomes and <code>retry_when</code> conditions before running this task.</p>
 
 </main>
 <footer class="site-footer">
-  <a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/knowledge/questions/Q-0010-rebuild-dependence-from-all-recorded-faces.md">Source on GitHub</a>
-  <span>16639e6f8474 · 2026-10-13T14:17:34-04:00</span>
+  <a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/knowledge/questions/Q-0010-rebuild-dependence-from-all-recorded-faces.md">Source on GitHub</a>
+  <span>1d2dcf451ff7 · 2026-10-27T17:37:40-04:00</span>
 </footer>
 </body>
 </html>

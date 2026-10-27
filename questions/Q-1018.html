@@ -11,7 +11,32 @@
 <a class="skip" href="#content">Skip to content</a>
 <header class="site-header">
   <a class="brand" href="../index.html">Indus research</a>
-  <nav aria-label="Main navigation"><a href="../index.html">Home</a><a href="../findings/index.html">Findings</a><a href="../working-model/index.html">Working model</a><a href="../conjectures/index.html">Conjectures</a><a href="index.html">Open questions</a><a href="../attempts/index.html">Registry</a><a href="../data.html">Data</a><a href="../timeline/index.html">Timeline</a><a href="../papers/index.html">Papers</a><a href="../explore/index.html">Explore</a><a href="../contribute/index.html">Contribute</a><a href="../reuse/index.html">Reuse</a></nav>
+  <nav aria-label="Main navigation"><ul class="nav-list">
+  <li>
+    <a href="../index.html">Home</a>
+  </li><li>
+    <a href="../findings/index.html">Findings</a>
+  </li><li>
+    <details>
+      <summary>Ideas</summary>
+      <ul><li><a href="../working-model/index.html">Working model</a></li><li><a href="../conjectures/index.html">Conjectures</a></li></ul>
+    </details>
+  </li><li class="current-section">
+    <a href="index.html" aria-current="location">Questions</a>
+  </li><li>
+    <details>
+      <summary>Record</summary>
+      <ul><li><a href="../attempts/index.html">Registry</a></li><li><a href="../timeline/index.html">Timeline</a></li><li><a href="../papers/index.html">Papers</a></li><li><a href="../data.html">Data</a></li></ul>
+    </details>
+  </li><li>
+    <a href="../explore/index.html">Explore</a>
+  </li><li>
+    <details>
+      <summary>About</summary>
+      <ul><li><a href="../contribute/index.html">Contribute</a></li><li><a href="../reuse/index.html">Reuse</a></li></ul>
+    </details>
+  </li>
+  </ul></nav>
 </header>
 <main id="content">
   <h1>Q-1018: Harvest open museum records and images for Indus inscribed objects</h1>
@@ -47,19 +72,19 @@
 <h2 id="question">Question</h2>
 <p>Which Indus inscribed objects are published in museum collections with open data or image terms, and what accession, dimension, findspot, bibliography and image fields does each record add?</p>
 <h2 id="why-it-matters">Why it matters</h2>
-<p>Museum records supply accession numbers, measured dimensions and photographs taken by the holding institution, which the local corpus lacks for most objects. The 12 October checks found open routes not used by the census: the Metropolitan Museum's API (v1 search retired on 1 October 2026, v1.1 live) with five Indus seals flagged public domain (49.40.1–4, 1984.482); the Cleveland Museum of Art's CC0 API with three inscribed seals (1964.104, 1973.160, 1973.161); the Penn Museum's full collections CSV under CC BY 4.0 (144 MB, updated 7 October 2026), with 34 records tagged Indus Script, many of them Chanhu-daro material on loan from the Museum of Fine Arts, Boston; the Victoria and Albert Museum API with three Mohenjo-daro seal records; and British Museum records such as 1947,0416.7, with CC BY-NC-SA 4.0 applying only to images marked for it.</p>
+<p>Museum records supply accession numbers, measured dimensions and photographs taken by the holding institution, which the local corpus lacks for most objects. The 12 October checks found open routes that the project's evidence census had not used: the Metropolitan Museum's API (v1 search retired on 1 October 2026, v1.1 live) with five Indus seals flagged public domain (49.40.1–4, 1984.482); the Cleveland Museum of Art's CC0 API with three inscribed seals (1964.104, 1973.160, 1973.161); the Penn Museum's full collections CSV under CC BY 4.0 (144 MB, updated 7 October 2026), with 34 records tagged Indus Script, many of them Chanhu-daro material on loan from the Museum of Fine Arts, Boston; the Victoria and Albert Museum API with three Mohenjo-daro seal records; and British Museum records such as 1947,0416.7, with CC BY-NC-SA 4.0 applying only to images marked for it.</p>
 <h2 id="what-is-needed">What is needed</h2>
-<p>Read <a href="../data.html">DATA.md</a>. Query each API or download with a dated, hashed record of every response under a new <code>data/raw/</code> directory: Met v1.1 search and object records, Cleveland open-access API, Penn CSV (filter locally), V&amp;A API, British Museum object pages. Record per object the accession, title, inscription flag, site, dimensions, material, bibliography, image URL and the image licence. Join to CISI numbers through bibliography, field numbers and the CISI basic data (Q-1005), keeping candidates separate. Images with CC0 or CC BY terms may later be tracked with attribution; keep the rest local.</p>
+<p>Read <a href="../data.html">DATA.md</a>. Query each API or download with a dated, hashed record of every response under a new <code>data/raw/</code> directory: Met v1.1 search and object records, Cleveland open-access API, Penn CSV (filter locally), V&amp;A API, British Museum object pages. Record per object the accession, title, inscription flag, site, dimensions, material, bibliography, image URL and the image licence. Join each record to its CISI number, its entry in the <em>Corpus of Indus Seals and Inscriptions</em>, which means recording that both describe the same object and on what basis. Use the bibliography, field numbers and the CISI basic data (Q-1005), the catalogue's table of excavation and museum numbers, and keep candidate joins separate. Images with CC0 or CC BY terms may later be tracked in Git with attribution; keep the rest local.</p>
 <h2 id="how-to-decide">How to decide</h2>
 <p>Done when each listed institution has a dated harvest record, every inscribed Indus object found has a row with its licence, and joins to local objects are counted beside the census's 68 confirmed joins. Casts and plaster impressions are recorded as such and not counted as originals.</p>
 <h2 id="prior-attempts">Prior attempts</h2>
-<p>The museum census inspected 114 original records at six institutions and confirmed 68 joins; it did not use the Cleveland, V&amp;A or Penn bulk routes.</p>
-<p>13 October 2026, outcome: Seven institutions have a dated harvest record (<a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/experiments/2026-10-13-museum-open-access/README.md">package</a>). Inscribed Indus originals found: Metropolitan 5 and Cleveland 3 (CC0, with photographs, no findspot or number), Penn 5 (CC BY 4.0 data; plus 4 uninscribed seal-amulets and 38 casts or impressions), V&amp;A 2 inscribed originals among 4 reviewed attributed records (plus a modern impression and figurine head IS.9-1951 outside inscription scope), British Museum 7 with a stated inscription among 27 listed Indus stamp-seals, Art Institute of Chicago 0, Smithsonian 0 (20 casts in 539,615 bulk records). Every record has a row with its data and image licence in <code>harvest/</code> and <code>joins/join-table.csv</code>. Joins beside the census's 68: 27 exact or confirmed records in this package, 19 new, so 87 museum records are joined. Casts and impressions are recorded and not counted as originals. Left open: the British Museum's object pages are behind a Cloudflare challenge, so 20 of its Indus seals lack a reachable description and five cannot yet be joined; reading their Miscellaneous numbers in a browser would settle them. Raw V&amp;A responses must be deleted by 10 November 2026 under the V&amp;A API terms.</p>
+<p>The museum batch of the census inspected 114 records of original objects at six institutions and confirmed 68 joins; it did not use the Cleveland, V&amp;A or Penn bulk routes.</p>
+<p>13 October 2026, outcome: Seven institutions have a dated harvest record (<a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/experiments/2026-10-13-museum-open-access/README.md">package</a>). Inscribed Indus originals found: Metropolitan 5 and Cleveland 3 (CC0, with photographs, no findspot or number), Penn 5 (CC BY 4.0 data; plus 4 uninscribed seal-amulets and 38 casts or impressions), V&amp;A 2 inscribed originals among 4 reviewed attributed records (plus a modern impression and figurine head IS.9-1951 outside inscription scope), British Museum 7 with a stated inscription among 27 listed Indus stamp-seals, Art Institute of Chicago 0, Smithsonian 0 (20 casts in 539,615 bulk records). Every record has a row with its data and image licence in <code>harvest/</code> and <code>joins/join-table.csv</code>. Joins beside the census's 68: 27 exact or confirmed records in this package, 19 new, so 87 museum records are joined. Casts and impressions are recorded and not counted as originals. Left open: the British Museum's object pages are behind a Cloudflare challenge, so 20 of its Indus seals lack a reachable description and five cannot yet be joined; reading their Miscellaneous numbers in a browser would settle them. Raw V&amp;A responses must be deleted by 10 November 2026 under the V&amp;A API terms.</p>
 
 </main>
 <footer class="site-footer">
-  <a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/knowledge/questions/Q-1018-museum-open-access-harvest.md">Source on GitHub</a>
-  <span>16639e6f8474 · 2026-10-13T14:17:34-04:00</span>
+  <a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/knowledge/questions/Q-1018-museum-open-access-harvest.md">Source on GitHub</a>
+  <span>1d2dcf451ff7 · 2026-10-27T17:37:40-04:00</span>
 </footer>
 </body>
 </html>

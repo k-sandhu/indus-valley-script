@@ -11,7 +11,32 @@
 <a class="skip" href="#content">Skip to content</a>
 <header class="site-header">
   <a class="brand" href="../index.html">Indus research</a>
-  <nav aria-label="Main navigation"><a href="../index.html">Home</a><a href="../findings/index.html">Findings</a><a href="../working-model/index.html">Working model</a><a href="../conjectures/index.html">Conjectures</a><a href="index.html">Open questions</a><a href="../attempts/index.html">Registry</a><a href="../data.html">Data</a><a href="../timeline/index.html">Timeline</a><a href="../papers/index.html">Papers</a><a href="../explore/index.html">Explore</a><a href="../contribute/index.html">Contribute</a><a href="../reuse/index.html">Reuse</a></nav>
+  <nav aria-label="Main navigation"><ul class="nav-list">
+  <li>
+    <a href="../index.html">Home</a>
+  </li><li>
+    <a href="../findings/index.html">Findings</a>
+  </li><li>
+    <details>
+      <summary>Ideas</summary>
+      <ul><li><a href="../working-model/index.html">Working model</a></li><li><a href="../conjectures/index.html">Conjectures</a></li></ul>
+    </details>
+  </li><li class="current-section">
+    <a href="index.html" aria-current="location">Questions</a>
+  </li><li>
+    <details>
+      <summary>Record</summary>
+      <ul><li><a href="../attempts/index.html">Registry</a></li><li><a href="../timeline/index.html">Timeline</a></li><li><a href="../papers/index.html">Papers</a></li><li><a href="../data.html">Data</a></li></ul>
+    </details>
+  </li><li>
+    <a href="../explore/index.html">Explore</a>
+  </li><li>
+    <details>
+      <summary>About</summary>
+      <ul><li><a href="../contribute/index.html">Contribute</a></li><li><a href="../reuse/index.html">Reuse</a></li></ul>
+    </details>
+  </li>
+  </ul></nav>
 </header>
 <main id="content">
   <h1>Q-1013: Build the cross-catalogue identifier crosswalk for every held object</h1>
@@ -45,21 +70,21 @@
 <p><a class="action" href="https://github.com/k-sandhu/indus-valley-script/issues/new?template=claim-question.yml&amp;title=%5BQ-1013%5D+Claim%3A+Build+the+cross-catalogue+identifier+crosswalk+for+every+held+object">Claim or discuss on GitHub</a></p>
 
 <h2 id="question">Question</h2>
-<p>For each local object, which identifiers name it in each catalogue and record: CISI number with side and photograph suffixes, Mahadevan 1977 text number, Koskenniemi and Parpola 1979 text number, ICIT/Lipi number, excavation registration, museum accession, and excavation-report figure or table entry? Which links are confirmed physical identities and which are candidates?</p>
+<p>For each local object, which identifiers name it in each catalogue and record: its number in the <em>Corpus of Indus Seals and Inscriptions</em> (CISI) with side and photograph suffixes, its Mahadevan 1977 text number, its Koskenniemi and Parpola 1979 text number, its ICIT or Lipi number, its excavation registration, its museum accession, and its figure or table entry in an excavation report? Which links are confirmed to name the same physical object and which are candidates? The answer is a crosswalk: one table that lists every identifier of each object.</p>
 <h2 id="why-it-matters">Why it matters</h2>
-<p>Every other enrichment depends on joins. The local export has a CISI number for 86.8% of objects and a usable excavation string for 89.6%, but the excavation field mixes registrations, citations and lot numbers, and no local file holds the Mahadevan 1977 or 1979 numbers per object. Without one crosswalk, each study re-derives joins and repeats earlier mistakes; the object ledger pilot had to separate 149 excavation strings into 126 registrations and other kinds by hand.</p>
+<p>Every other task that adds metadata depends on joins, that is, on matching records in different sources to the same object. The Lipi export, our local transcription corpus, has a CISI number for 86.8% of objects and a usable excavation string for 89.6%, but the excavation field mixes registrations, citations and lot numbers, and no local file holds the Mahadevan 1977 or 1979 numbers per object. Without one crosswalk, each study re-derives joins and repeats earlier mistakes; the object ledger pilot had to separate 149 excavation strings into 126 registrations and other kinds by hand.</p>
 <h2 id="what-is-needed">What is needed</h2>
-<p>Read <a href="../data.html">DATA.md</a> and the identity rules in <a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/knowledge/provenance/catalogue-caveats.md">catalogue-caveats.md</a>. Inputs: Lipi and website exports; CISI basic data (Q-1005, Q-1006); the Mahadevan 1977 PDF (held) and its concordance or site tables; the 1979 and 1980 Helsinki editions (held; the 1980 volume documents sources and duplicates); museum joins from the census and Q-1019; excavation tables from Q-1003, Q-1014 and Q-1016. Store one row per identifier assertion with source, page, relation type (<code>same-object</code>, <code>same-side</code>, <code>extra-photo</code>, <code>impression-of</code>, <code>possible-match</code>, <code>repeated-text</code>) and confidence. Never merge transitively through candidate links.</p>
+<p>Read <a href="../data.html">DATA.md</a> and the identity rules in <a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/knowledge/provenance/catalogue-caveats.md">catalogue-caveats.md</a>. Inputs: the Lipi export and the older Indus website export; the CISI basic data (Q-1005, Q-1006), the catalogue's tables of each entry's excavation, museum and concordance numbers; the Mahadevan 1977 PDF (held) and its concordance or site tables; the 1979 and 1980 Helsinki editions (held; the 1980 volume documents sources and duplicates); the museum records joined to objects by the census and by Q-1019; and the excavation tables from Q-1003, Q-1014 and Q-1016. Store one row for each assertion that an identifier names an object, with source, page, relation type (<code>same-object</code>, <code>same-side</code>, <code>extra-photo</code>, <code>impression-of</code>, <code>possible-match</code>, <code>repeated-text</code>) and confidence. Never merge transitively through candidate links: two records that are each a candidate match for a third stay separate.</p>
 <h2 id="how-to-decide">How to decide</h2>
-<p>Done when every local object has all identifiers that the held sources assert, each with a locator, and the summary reports for each catalogue the share of local objects linked by confirmed and by candidate relations. A blind second check of 100 random links reports an error rate; above 3% for confirmed links, revise the rules.</p>
+<p>Done when every local object has all identifiers that the held sources assert, each with a locator, and the summary reports for each catalogue the share of local objects linked by confirmed and by candidate relations. A second reader who has not seen the first decisions checks 100 random links and reports an error rate; if it is above 3% for confirmed links, revise the rules.</p>
 <h2 id="prior-attempts">Prior attempts</h2>
-<p>ROOT-19 resolved several historical joins by primary witnesses. The object ledger pilot built source-qualified aliases for 200 carriers. The census matched catalogue keys by exact string.</p>
-<p>13 October 2026. The CISI basic data gives an FC number (the 1979–1982 Helsinki concordance number) for every entry; the CISI 2 pilot holds 327 CISI-to-FC links for M-621 to M-947 locally. For Mohenjo-daro the FC number encodes the excavator's catalogue number: 1000 plus Marshall's 1931 number or 2000 plus Mackay's 1938 number, which holds for 216 of 219 objects joined in both the CISI 2 pilot and the <a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/experiments/2026-10-13-mackay-marshall-tables/README.md">Mackay and Marshall join</a> (<a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/experiments/2026-10-13-data-round-1-verification/fc-crosswalk.json">cross-check</a>). The three exceptions belong to two pairs of objects whose CISI 2 basic-data rows are crossed, as plate measurements show (<a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/experiments/2026-10-13-data-round-1-verification/swap-check.md">swap check</a>); the rule holds for every checkable object whose CISI 2 row is right. The FC number therefore links CISI numbers to the excavators' tables without going through Lipi's registration strings, and the digits Lipi appends to its registrations are the same catalogue numbers.</p>
+<p>The source-identity study ROOT-19 resolved several earlier joins by checking primary sources. The object ledger pilot, a trial version of the planned register, recorded each alias of 200 inscribed objects with the source that gives it. The project's evidence census matched catalogue numbers as exact strings.</p>
+<p>13 October 2026. The CISI basic data gives an FC number (the 1979–1982 Helsinki concordance number) for every entry; the CISI 2 transcription pilot holds 327 CISI-to-FC links for M-621 to M-947 locally. For Mohenjo-daro the FC number encodes the excavator's catalogue number: 1000 plus Marshall's 1931 number or 2000 plus Mackay's 1938 number, which holds for 216 of 219 objects joined in both the CISI 2 pilot and the <a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/experiments/2026-10-13-mackay-marshall-tables/README.md">Mackay and Marshall join</a> (<a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/experiments/2026-10-13-data-round-1-verification/fc-crosswalk.json">cross-check</a>). The three exceptions belong to two pairs of objects whose CISI 2 basic-data rows are crossed, as plate measurements show (<a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/experiments/2026-10-13-data-round-1-verification/swap-check.md">swap check</a>); the rule holds for every checkable object whose CISI 2 row is right. The FC number therefore links CISI numbers to the excavators' tables without going through Lipi's registration strings, and the digits Lipi appends to its registrations are the same catalogue numbers.</p>
 
 </main>
 <footer class="site-footer">
-  <a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/knowledge/questions/Q-1013-cross-catalogue-identifier-crosswalk.md">Source on GitHub</a>
-  <span>16639e6f8474 · 2026-10-13T14:17:34-04:00</span>
+  <a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/knowledge/questions/Q-1013-cross-catalogue-identifier-crosswalk.md">Source on GitHub</a>
+  <span>1d2dcf451ff7 · 2026-10-27T17:37:40-04:00</span>
 </footer>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Q-0034: Repair retained mixture search misses · Indus research</title>
+  <title>Q-0034: Find an optimizer that closes the recorded mixture-map search failures · Indus research</title>
   <link rel="stylesheet" href="../assets/site.css">
   <script src="../assets/site.js" defer></script>
 </head>
@@ -11,10 +11,35 @@
 <a class="skip" href="#content">Skip to content</a>
 <header class="site-header">
   <a class="brand" href="../index.html">Indus research</a>
-  <nav aria-label="Main navigation"><a href="../index.html">Home</a><a href="../findings/index.html">Findings</a><a href="../working-model/index.html">Working model</a><a href="../conjectures/index.html">Conjectures</a><a href="index.html">Open questions</a><a href="../attempts/index.html">Registry</a><a href="../data.html">Data</a><a href="../timeline/index.html">Timeline</a><a href="../papers/index.html">Papers</a><a href="../explore/index.html">Explore</a><a href="../contribute/index.html">Contribute</a><a href="../reuse/index.html">Reuse</a></nav>
+  <nav aria-label="Main navigation"><ul class="nav-list">
+  <li>
+    <a href="../index.html">Home</a>
+  </li><li>
+    <a href="../findings/index.html">Findings</a>
+  </li><li>
+    <details>
+      <summary>Ideas</summary>
+      <ul><li><a href="../working-model/index.html">Working model</a></li><li><a href="../conjectures/index.html">Conjectures</a></li></ul>
+    </details>
+  </li><li class="current-section">
+    <a href="index.html" aria-current="location">Questions</a>
+  </li><li>
+    <details>
+      <summary>Record</summary>
+      <ul><li><a href="../attempts/index.html">Registry</a></li><li><a href="../timeline/index.html">Timeline</a></li><li><a href="../papers/index.html">Papers</a></li><li><a href="../data.html">Data</a></li></ul>
+    </details>
+  </li><li>
+    <a href="../explore/index.html">Explore</a>
+  </li><li>
+    <details>
+      <summary>About</summary>
+      <ul><li><a href="../contribute/index.html">Contribute</a></li><li><a href="../reuse/index.html">Reuse</a></li></ul>
+    </details>
+  </li>
+  </ul></nav>
 </header>
 <main id="content">
-  <h1>Q-0034: Repair retained mixture search misses</h1>
+  <h1>Q-0034: Find an optimizer that closes the recorded mixture-map search failures</h1>
   
   
 <dl class="metadata">
@@ -42,24 +67,24 @@
 
 
 </dl>
-<p><a class="action" href="https://github.com/k-sandhu/indus-valley-script/issues/new?template=claim-question.yml&amp;title=%5BQ-0034%5D+Claim%3A+Repair+retained+mixture+search+misses">Claim or discuss on GitHub</a></p>
+<p><a class="action" href="https://github.com/k-sandhu/indus-valley-script/issues/new?template=claim-question.yml&amp;title=%5BQ-0034%5D+Claim%3A+Find+an+optimizer+that+closes+the+recorded+mixture-map+search+failures">Claim or discuss on GitHub</a></p>
 
 <h2 id="question">Question</h2>
-<p>Can a different optimizer close the retained mixture-map score gaps without changing the declared objective or supplied component count?</p>
+<p>Some recorded mixture-model mapping failures returned maps scoring below the true map. Can a different optimizer close those score gaps without changing the declared objective or the supplied number of components?</p>
 <h2 id="why-it-matters">Why it matters</h2>
-<p>Population identification and finite-sample search success are distinct measurements.</p>
+<p>Whether the model identifies the true map in principle and whether a finite search finds it are separate measurements.</p>
 <h2 id="what-is-needed">What is needed</h2>
-<p>Use tracked generated worlds or their lossless package, the exact truth scores and failed-map diagnostics. Freeze the optimizer and budget before a fresh generated comparison. Read <a href="../data.html">DATA.md</a> for the gaps this task depends on.</p>
-<p>Sources: <a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/knowledge/directions/research-roadmap.md">knowledge/directions/research-roadmap.md</a>; <a href="../papers/004-reference-model-selection/methods.html">papers/004-reference-model-selection/methods.md</a>.</p>
+<p>Use the tracked simulated systems or their lossless package, the true maps' exact scores and the failed-map diagnostics. Freeze the optimizer and budget before a fresh simulated comparison. Read <a href="../data.html">DATA.md</a> for the gaps this task depends on.</p>
+<p>Sources: <a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/knowledge/directions/research-roadmap.md">knowledge/directions/research-roadmap.md</a>; <a href="../papers/004-reference-model-selection/methods.html">papers/004-reference-model-selection/methods.md</a>.</p>
 <h2 id="how-to-decide">How to decide</h2>
-<p>Pass requires the declared search improvement on the frozen objective plus a fresh control grid. Stop if gains come only from tuning on the saved misses; retain tied objectives and wrong optima.</p>
+<p>A pass requires the declared search improvement on the frozen objective plus a fresh control grid. Stop if gains come only from tuning on the saved failures; keep tied objectives and wrong optima on record.</p>
 <h2 id="prior-attempts">Prior attempts</h2>
-<p><a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/knowledge/registry/attempts/CRYPTO-10.json">CRYPTO-10</a>; <a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/knowledge/registry/attempts/CRYPTO-11.json">CRYPTO-11</a>. Read their outcomes and <code>retry_when</code> before running this task.</p>
+<p><a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/knowledge/registry/attempts/CRYPTO-10.json">CRYPTO-10</a>; <a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/knowledge/registry/attempts/CRYPTO-11.json">CRYPTO-11</a>. Read their outcomes and <code>retry_when</code> conditions before running this task.</p>
 
 </main>
 <footer class="site-footer">
-  <a href="https://github.com/k-sandhu/indus-valley-script/blob/16639e6f84746cd10aeee9efaecc85642b43631b/knowledge/questions/Q-0034-repair-retained-mixture-search-misses.md">Source on GitHub</a>
-  <span>16639e6f8474 · 2026-10-13T14:17:34-04:00</span>
+  <a href="https://github.com/k-sandhu/indus-valley-script/blob/1d2dcf451ff740b65b7b270933dfe51f643a32cc/knowledge/questions/Q-0034-repair-retained-mixture-search-misses.md">Source on GitHub</a>
+  <span>1d2dcf451ff7 · 2026-10-27T17:37:40-04:00</span>
 </footer>
 </body>
 </html>
