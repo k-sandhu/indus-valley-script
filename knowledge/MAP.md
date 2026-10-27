@@ -43,6 +43,8 @@ Read the section for your task, then open its card or source package. Use `pytho
 - [F-0008](findings/F-0008-museum-joins-are-a-lower-bound.md) · source-review · At least 68 of 114 museum records match objects in our corpus
 - [F-0009](findings/F-0009-site-frame-coverage-in-the-local-export.md) · source-review · The census site list covers 5,652 of 5,680 corpus faces
 - [F-0036](findings/F-0036-parpola-2010-vessel-fish-figure-is-h912.md) · source-review · The vessel-and-fish tablet in Parpola's 2010 Figure 6 is H-912 B
+- [F-0039](findings/F-0039-the-base-register-preserves-all-4695-provisional-objects-and-5680-face.md) · exploratory · The base register preserves all 4695 provisional objects and 5680 faces
+- [F-0043](findings/F-0043-rao-assigns-plate-clxi-f-to-two-different-lothal-objects.md) · source-review · Rao assigns Plate CLXI F to two different Lothal objects
 
 ### structure
 
@@ -68,12 +70,14 @@ Read the section for your task, then open its card or source package. Use `pytho
 - [F-0029](findings/F-0029-unicorn-pairs-account-for-motif-matches.md) · exploratory · Seals sharing a text share their animal almost only when it is a unicorn
 - [F-0030](findings/F-0030-sealings-match-seals-from-other-cities.md) · verified-computation · Sealings match seals from other cities
 - [F-0035](findings/F-0035-legends-closing-in-four-signs-sit-on-larger-seals.md) · frozen-evaluation · Legends closing in 001, 595, 679 or 820 sit on larger seals in a held-out half
+- [F-0042](findings/F-0042-l-164-has-conflicting-published-jar-stopper-and-wooden-box-interpretat.md) · source-review · L-164 has conflicting published jar-stopper and wooden-box interpretations
 
 ### tablets
 
 - [F-0014](findings/F-0014-bas-relief-image-prediction.md) · frozen-evaluation · Bas-relief tablet texts predict their image better than the majority guess
 - [F-0015](findings/F-0015-incised-tablet-image-prediction.md) · frozen-evaluation · Incised tablet texts predict their image better than the majority guess
 - [F-0016](findings/F-0016-copper-image-prediction-fails.md) · failed · Copper tablet texts do not predict their image
+- [F-0045](findings/F-0045-the-h-2218-to-h-2239-tablets-share-a-reported-cutting-method.md) · source-review · The H-2218 to H-2239 tablets share a reported cutting method
 
 ### numerals
 
@@ -84,6 +88,7 @@ Read the section for your task, then open its card or source package. Use `pytho
 ### images
 
 - [F-0011](findings/F-0011-agreement-between-the-two-sign-codings.md) · verified-computation · Two codings of the signs into families agree closely
+- [F-0047](findings/F-0047-fourteen-catalogue-view-relations-recovered-from-existing-image-assets.md) · source-review · Fourteen catalogue-view relations recovered from existing image assets
 
 ### meaning
 
@@ -92,10 +97,14 @@ Read the section for your task, then open its card or source package. Use `pytho
 ### archaeology
 
 - [F-0038](findings/F-0038-h912-source-depth-is-a-range.md) · source-review · H-912's source depth is 4–7 feet, while the export gives its midpoint
+- [F-0040](findings/F-0040-h-1657-has-a-published-late-period-3c-floor-context.md) · source-review · H-1657 has a published late Period 3C floor context
+- [F-0041](findings/F-0041-h-1688-joins-field-key-h90-1600-and-lower-mound-e-street-levels.md) · source-review · H-1688 joins field key H90-1600 and lower Mound E street levels
+- [F-0046](findings/F-0046-the-town-register-separates-architectural-axes-and-building-episodes-a.md) · source-review · The town register separates architectural axes and building episodes at 34 towns
 
 ### comparative
 
 - [F-0023](findings/F-0023-edge-asymmetry-changes-with-the-unit.md) · frozen-evaluation · In Ur III seal legends, edge asymmetry reverses from signs to words
+- [F-0044](findings/F-0044-tell-brak-reg257-is-matthews-catalogue-308-and-tb1058.md) · source-review · Tell Brak REG257 is Matthews catalogue 308 and TB1058
 
 ### methods
 
@@ -219,7 +228,7 @@ Read the section for your task, then open its card or source package. Use `pytho
 
 ## Other records
 
-- 263 registry attempts: `python tools/kb.py list --kind attempt`, or the generated [registry](experiments/registry.json).
-- 260 retrospectives: `python tools/kb.py list --kind retrospective`; the curated essays are indexed in [retrospectives/README.md](retrospectives/README.md).
+- 266 registry attempts: `python tools/kb.py list --kind attempt`, or the generated [registry](experiments/registry.json).
+- 263 retrospectives: `python tools/kb.py list --kind retrospective`; the curated essays are indexed in [retrospectives/README.md](retrospectives/README.md).
 - 16 direction memos: `python tools/kb.py list --kind direction`.
 - 9 completed and 0 dropped questions: `python tools/kb.py list --kind question --status done` or `--status dropped`.
