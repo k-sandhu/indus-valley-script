@@ -1,9 +1,9 @@
 ---
-id: F-0038
+id: "F-0038"
 title: "H-912's source depth is 4–7 feet, while the export gives its midpoint"
-status_class: source-review
-area: archaeology
-date: 2026-10-20
+status_class: "source-review"
+area: "archaeology"
+date: "2026-10-20"
 registry_ids: ["H912-EXCAVATION-LINKS-2026-10-20", "H912-TABLET-SERIES-2026-10-20"]
 evidence: ["experiments/2026-10-20-h912-excavation-links/source-observations-v1.json", "experiments/2026-10-20-h912-excavation-links/REPORT.md", "experiments/2026-10-20-h912-tablet-series/SOURCE-OBSERVATIONS.md"]
 population: "Vats 1940 catalogue no.448, collection reference8650c, and its H-912 export assertion"

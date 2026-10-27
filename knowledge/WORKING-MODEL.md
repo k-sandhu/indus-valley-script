@@ -83,3 +83,24 @@ The parallel source audit distinguishes forty pre-firing vessel stamps from six 
 - 12 October 2026, version 0: written from the October 6–12 results before the two conjecture shots reported.
 - 13 October 2026, version 1: Shot B's reading failed its frozen test (section 2 lowered to 0.45); Shot A's closing-sign result added as section 2a at 0.15 after review; the plate check moved section 4 to 0.6; data completeness added at the head of the list of what would change the model. The reversed-locality pattern seen after Shot B's outcome is left out: it reverses on the other half.
 - 20 October 2026, version 2: added the ordered fish field, failed narrow asterism test, standard four-unit Fish conjecture and source-qualified archaeological and regional comparisons. Frozen evaluations retain historical-exposure and author-verification status.
+
+- 2026-10-27: added the list of conjectures outside the integrated model.
+
+## Conjectures outside the integrated model
+
+These cards hold claims outside the integrated account above. Each line gives the card's current status and credence; the card preserves its tests and revision history.
+
+- [C-0002](conjectures/C-0002-working-reading.md) Indus legends use seven classes arranged as household, name and office. Status dead; credence 0.02.
+- [C-0006](conjectures/C-0006-closing-stock-fixed-from-lowest-levels.md) Mohenjo-daro seal legends kept their closing stock while their opening signs, variants and length drifted through the excavated sequence. Status dead; credence 0.02.
+- [C-0010](conjectures/C-0010-seal-legend-fixed-pattern.md) Harappa seal legends kept their closing stock, opening signs, variants, length and inventory through Periods 3B and 3C. Status dead; credence 0.02.
+- [C-0011](conjectures/C-0011-proto-dravidian-min-fish-and-star.md) Proto-Dravidian mīn meant both fish and star. Status strengthened; credence 0.20.
+- [C-0013](conjectures/C-0013-fish-runs-are-birth-star-names.md) Fish runs in a seal legend's name field give the holder's birth-star name from a closed class of about 30 to 40 forms. Status open; credence 0.03.
+- [C-0014](conjectures/C-0014-parpola-interlocks-measure-the-lexicon.md) Parpola's interlocks arise from Tamil compound vocabulary and the choice of sign sequences examined. Status open; credence 0.55.
+- [C-0015](conjectures/C-0015-towns-laid-out-on-star-settings.md) Harappan builders laid out town axes on a setting star, so deviation records layout date. Status weakened; credence 0.04.
+- [C-0016](conjectures/C-0016-plains-cities-on-true-north.md) The plains cities follow true north, while regional towns follow local landforms at deviations of 5 to 30 degrees anticlockwise. Status open; credence 0.30.
+- [C-0017](conjectures/C-0017-shared-routes-across-rebuilding.md) Common rules preserved shared routes and services while neighbouring building groups changed their houses. Status open; credence 0.55.
+- [C-0018](conjectures/C-0018-sealings-at-urban-handovers.md) Sealings recorded responsibility at handovers between urban groups. Status open; credence 0.35.
+- [C-0019](conjectures/C-0019-tablets-for-shared-work.md) Harappa tablet series recorded obligations or entitlements for work on shared infrastructure. Status open; credence 0.10.
+- [C-0020](conjectures/C-0020-practical-knowledge-through-local-networks.md) Local farming households and specialist networks carried practical knowledge beyond Indus urban institutions. Status open; credence 0.65.
+- [C-0021](conjectures/C-0021-farming-knowledge-across-language-contact.md) Language contact carried regional farming knowledge and vocabulary into early Indo-Aryan-speaking communities. Status open; credence 0.50.
+- [C-0022](conjectures/C-0022-vedic-rite-retains-regional-operation.md) A diagnostic operation in a Vedic farming rite descends through regional communities from an Indus-period practice. Status open; credence 0.20.

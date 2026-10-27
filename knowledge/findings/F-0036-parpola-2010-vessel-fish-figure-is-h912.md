@@ -1,9 +1,9 @@
 ---
-id: F-0036
+id: "F-0036"
 title: "The vessel-and-fish tablet in Parpola's 2010 Figure 6 is H-912 B"
-status_class: source-review
-area: data
-date: 2026-10-20
+status_class: "source-review"
+area: "data"
+date: "2026-10-20"
 registry_ids: ["FISH-CONTEXT-2026-10-20"]
 evidence: ["experiments/2026-10-20-fish-context/source-observations-v1.json", "experiments/2026-10-20-fish-context/SOURCE-NOTES.md", "experiments/2026-10-20-fish-context/sources-v1.json", "experiments/2026-10-20-fish-context/verification-v1.json"]
 population: "Figure 6 in the acquired 34-page 2010 paper, compared with CISI 2 printed pages338–339"

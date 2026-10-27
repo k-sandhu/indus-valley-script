@@ -1,9 +1,9 @@
 ---
-id: F-0037
+id: "F-0037"
 title: "A discovery-learned fish order predicts reserved seal combinations"
-status_class: frozen-evaluation
-area: structure
-date: 2026-10-20
+status_class: "frozen-evaluation"
+area: "structure"
+date: "2026-10-20"
 registry_ids: ["FISH-CONTEXT-2026-10-20"]
 evidence: ["experiments/2026-10-20-fish-context/confirmation-v1/results.json#/comparisons/primary_seals/order", "experiments/2026-10-20-fish-context/freeze-v1.json", "experiments/2026-10-20-fish-context/verification-v1.json"]
 population: "53 dependency groups with adjacent unequal common fish codes in reserved clean seal texts"
