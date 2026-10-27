@@ -11,7 +11,14 @@
 <a class="skip" href="#content">Skip to content</a>
 <header class="site-header">
   <a class="brand" href="{{ home }}">Indus research</a>
-  <nav aria-label="Main navigation">{% for label, url in nav %}<a href="{{ url }}">{{ label }}</a>{% endfor %}</nav>
+  <nav aria-label="Main navigation"><ul class="nav-list">
+  {% for item in nav_groups %}<li{% if item.active %} class="current-section"{% endif %}>
+    {% if item.children %}<details{% if item.active %} open{% endif %}>
+      <summary>{{ item.label }}{% if item.active %}<span class="sr-only"> (current section)</span>{% endif %}</summary>
+      <ul>{% for child in item.children %}<li><a href="{{ child.url }}"{% if child.current %} aria-current="page"{% elif child.active %} aria-current="location"{% endif %}>{{ child.label }}</a></li>{% endfor %}</ul>
+    </details>{% else %}<a href="{{ item.url }}"{% if item.current %} aria-current="page"{% elif item.active %} aria-current="location"{% endif %}>{{ item.label }}</a>{% endif %}
+  </li>{% endfor %}
+  </ul></nav>
 </header>
 <main id="content">
   <h1>{{ title }}</h1>

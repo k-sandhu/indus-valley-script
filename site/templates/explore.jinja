@@ -1,2 +1,2 @@
 {% extends "base.jinja" %}
-{% block content %}<ul>{% for viewer in viewers %}<li><a href="{{ viewer.url }}">{{ viewer.name }}</a></li>{% endfor %}</ul>{% endblock %}
+{% block content %}<ul class="cards">{% for viewer in viewers %}<li><h2><a href="{{ viewer.url }}">{{ viewer.name }}</a></h2><p>{{ viewer.description }}</p></li>{% endfor %}</ul>{% endblock %}

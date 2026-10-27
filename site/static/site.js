@@ -25,6 +25,9 @@ document.querySelectorAll(".listing").forEach(async listing => {
       element.hidden = !matches;
       if (matches) shown += 1;
     });
+    listing.querySelectorAll("[data-group]").forEach(group => {
+      group.hidden = ![...group.querySelectorAll("[data-id]")].some(element => !element.hidden);
+    });
     count.textContent = `${shown} of ${elements.length} shown`;
   }
   form.addEventListener("submit", event => event.preventDefault());

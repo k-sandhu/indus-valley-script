@@ -4,7 +4,7 @@ from __future__ import annotations
 import argparse
 from collections import defaultdict
 from contextlib import contextmanager
-from datetime import datetime
+from datetime import date
 import hashlib
 import html
 from html.parser import HTMLParser
@@ -31,11 +31,16 @@ OMISSIONS = 'experiments/2026-10-11-public-release/public-omissions.json'
 MANIFEST = 'data/MANIFEST.json'
 EXPLORE = ('experiments/2026-10-11-bonta-adversarial/run-v6/catalogue.html',
            'output/chart_atlas/index.html')
+FINDINGS_GUIDE = 'knowledge/findings/README.md'
+LIVING_ATLAS = 'experiments/2026-10-26-indus-living-atlas'
+# A group has children; a direct entry has a destination. No scripted menu.
 NAV = [('Home', 'index.html'), ('Findings', 'findings/index.html'),
-       ('Working model', 'working-model/index.html'), ('Conjectures', 'conjectures/index.html'),
-       ('Open questions', 'questions/index.html'), ('Registry', 'attempts/index.html'),
-       ('Data', 'data.html'), ('Timeline', 'timeline/index.html'), ('Papers', 'papers/index.html'),
-       ('Explore', 'explore/index.html'), ('Contribute', 'contribute/index.html'), ('Reuse', 'reuse/index.html')]
+       ('Ideas', [('Working model', 'working-model/index.html'), ('Conjectures', 'conjectures/index.html')]),
+       ('Questions', 'questions/index.html'),
+       ('Record', [('Registry', 'attempts/index.html'), ('Timeline', 'timeline/index.html'),
+                   ('Papers', 'papers/index.html'), ('Data', 'data.html')]),
+       ('Explore', 'explore/index.html'),
+       ('About', [('Contribute', 'contribute/index.html'), ('Reuse', 'reuse/index.html')])]
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}
 RESOURCE_ATTRS = {'src', 'poster', 'data', 'srcset'}
 
@@ -189,6 +194,86 @@ def text_only(value):
                   markdown.markdown(str(value), extensions=['extra'])))).strip()
 
 
+def parse_findings_guide(content, rows):
+    """Parse the shared guide contract. Reject partial parses instead of losing prose."""
+    lines = content.replace('\r\n', '\n').strip().splitlines()
+    if not lines or lines[0].strip() != '# Findings':
+        raise ValueError('expected # Findings as the first heading')
+    by_id = {row['id']: row for row in rows}
+    intro, themes, seen, uncarded = [], [], set(), None
+    current = None
+    for number, line in enumerate(lines[1:], 2):
+        if line.startswith('## '):
+            title = line[3:].strip()
+            if not title or uncarded is not None:
+                raise ValueError(f'line {number}: empty theme or section after the final section')
+            if title == 'Results recorded in packages but not yet carded':
+                uncarded = {'title': title, 'intro': [], 'entries': []}
+                current = uncarded
+            else:
+                current = {'title': title, 'intro': [], 'cards': []}
+                themes.append(current)
+        elif line.startswith('#'):
+            raise ValueError(f'line {number}: only level-2 theme headings are supported')
+        elif line.startswith('- ['):
+            if current is None:
+                raise ValueError(f'line {number}: entry before the first theme')
+            if current is uncarded:
+                if not re.fullmatch(r'- \[[^\]]+\]\([^)]+\) .+', line):
+                    raise ValueError(f'line {number}: malformed package entry')
+                current['entries'].append(line)
+                continue
+            match = re.fullmatch(r'- \[(F-\d{4})\]\(([^)]+)\) (.+?)\s+\*([\w-]+)\*\.?', line)
+            if not match:
+                raise ValueError(f'line {number}: malformed finding entry')
+            identifier, target, result, status = match.groups()
+            row = by_id.get(identifier)
+            if row is None or identifier in seen:
+                raise ValueError(f'line {number}: unknown or repeated finding {identifier}')
+            if safe_path(posixpath.join(posixpath.dirname(FINDINGS_GUIDE), target)) != row['path']:
+                raise ValueError(f'line {number}: card path does not match {identifier}')
+            if status != row['status']:
+                raise ValueError(f'line {number}: status does not match {identifier}')
+            current['cards'].append({'id': identifier, 'result': result})
+            seen.add(identifier)
+        else:
+            if line.strip() and (line.lstrip().startswith(('-', '*', '+')) or
+                                 (current and current.get('cards', current.get('entries')))):
+                raise ValueError(f'line {number}: prose must precede the section entries')
+            (intro if current is None else current['intro']).append(line)
+    if not any(s.strip() for s in intro) or not themes or any(not any(s.strip() for s in t['intro']) or not t['cards'] for t in themes):
+        raise ValueError('the guide needs an introduction and themes with prose and findings')
+    return {'intro': '\n'.join(intro), 'themes': themes, 'uncarded': uncarded, 'listed': seen}
+
+
+def attempt_date(fields):
+    """Use an explicit ISO date, then the dated package containing the evidence."""
+    candidates = [fields.get('date', '')]
+    paths = [fields.get('package', ''), *fields.get('evidence', [])]
+    # A nested run date does not replace the package's starting date.
+    candidates.extend(m[1] for path in paths if isinstance(path, str)
+                      for m in [re.match(r'^experiments/(\d{4}-\d{2}-\d{2})(?:-|/|$)', path)] if m)
+    for value in candidates:
+        try:
+            return date.fromisoformat(str(value)[:10]).isoformat()
+        except ValueError:
+            pass
+    return ''
+
+
+def grouped_attempts(rows):
+    groups = []
+    months = ('January', 'February', 'March', 'April', 'May', 'June',
+              'July', 'August', 'September', 'October', 'November', 'December')
+    for row in rows:
+        day = row['date']
+        if not groups or groups[-1]['date'] != day:
+            groups.append({'date': day, 'title': str(int(day[8:])) + ' ' + months[int(day[5:7])-1] + ' ' + day[:4]
+                           if day else 'Undated attempts', 'rows': []})
+        groups[-1]['rows'].append(row)
+    return groups
+
+
 class RewriteHTML(HTMLParser):
     def __init__(self, builder, source, page, headings=False):
         super().__init__(convert_charrefs=False)
@@ -265,6 +350,7 @@ class Builder:
                        'CONTRIBUTING.md': 'contribute/index.html', 'REUSE.md': 'reuse/index.html',
                        'THIRD_PARTY_NOTICES.md': 'reuse/notices.html',
                        'knowledge/findings': 'findings/index.html', 'knowledge/questions': 'questions/index.html',
+                       FINDINGS_GUIDE: 'findings/index.html',
                        'knowledge/conjectures': 'conjectures/index.html',
                        'knowledge/conjectures/README.md': 'conjectures/rules.html',
                        'knowledge/experiments/registry.json': 'attempts/index.html'}
@@ -283,6 +369,7 @@ class Builder:
         self.env = jinja2.Environment(loader=SourceTemplates(source), autoescape=True,
                                       keep_trailing_newline=True, newline_sequence='\n')
         self.copied, self.pages, self.unavailable, self.skipped, self.dynamic = {}, {}, set(), [], set()
+        self.findings_guide = {'path': FINDINGS_GUIDE, 'mode': 'area', 'reason': 'not in the public repository'}
         self.env.filters['label'] = lambda value: str(value).replace('-', ' ').replace('_', ' ')
 
     def write(self, path, content):
@@ -360,9 +447,23 @@ class Builder:
         return ''.join(parser.output)
 
     def page(self, path, title, source, template='document.jinja', **values):
+        def nav_link(label, dest):
+            # Cards and secondary pages belong to the section containing their index.
+            current = path == dest
+            active = current or (dest.endswith('/index.html') and path.startswith(dest[:-10]))
+            return {'label': label, 'url': relative_url(dest, path), 'current': current, 'active': active}
+        nav = []
+        for label, dest in NAV:
+            if isinstance(dest, list):
+                children = [nav_link(name, target) for name, target in dest]
+                nav.append({'label': label, 'children': children, 'active': any(c['active'] for c in children)})
+            else:
+                nav.append(nav_link(label, dest))
         context = dict(title=title, page=path, source_url=self.github(source), source_path=source,
                        commit=self.source.commit, commit_date=self.source.date, worktree=self.source.worktree,
-                       nav=[(label, relative_url(dest, path)) for label, dest in NAV],
+                       nav_groups=nav,
+                       nav=[(name, relative_url(target, path)) for label, dest in NAV
+                            for name, target in (dest if isinstance(dest, list) else [(label, dest)])],
                        css=relative_url('assets/site.css', path), js=relative_url('assets/site.js', path),
                        home=relative_url('index.html', path), repo=REPO, **values)
         self.write(path, self.env.get_template(template).render(**context))
@@ -387,11 +488,63 @@ class Builder:
                 package = next((p.split('#')[0] for p in evidence if p.startswith('experiments/') and self.source.allowed(p.split('#')[0])), item['path'])
                 # A package directory is discoverable even when its first witness is omitted.
                 row['url'] = self.github(str(PurePosixPath(package).parent)) if package != item['path'] else self.github(package)
+                row['date'] = attempt_date(row)
+                # Report candidates go through link(), including omitted and absent reports.
+                reports = [p for p in evidence if re.search(r'/(?:REPORT|README)\.md(?:#.*)?$', p)]
+                preferred = row.get('package', '').rstrip('/')
+                row['report_path'] = next((p for p in reports if PurePosixPath(p.split('#')[0]).name == 'REPORT.md'),
+                                          preferred + '/REPORT.md' if preferred else reports[0] if reports else item['path'])
+                row['report_url'] = self.link(row['report_path'], 'README.md', 'index.html')
             else:
                 row['url'] = PurePosixPath(self.routes[item['path']]).name
                 row['claim'] = text_only(section(item['body'], 'Claim' if kind == 'conjecture' else 'Question' if kind == 'question' else 'Finding'))
             rows.append(row)
+        if kind == 'attempt':
+            # Stable ID order resolves ties without consulting time or file timestamps.
+            rows.sort(key=lambda r: r['id'])
+            rows.sort(key=lambda r: r['date'], reverse=True)
         return rows
+
+    def findings_sections(self, rows):
+        self.findings_guide = {'path': FINDINGS_GUIDE, 'mode': 'area', 'reason': 'not in the public repository'}
+        for row in rows:
+            row['theme'] = row['area']
+        if not self.source.allowed(FINDINGS_GUIDE):
+            return None
+        try:
+            guide = parse_findings_guide(self.source.text(FINDINGS_GUIDE), rows)
+        except ValueError as exc:
+            self.findings_guide['reason'] = str(exc)
+            return None
+        page = 'findings/index.html'
+        by_id = {r['id']: r for r in rows}
+        themes, anchors = [], set()
+        for theme in guide['themes']:
+            cards = []
+            for entry in theme['cards']:
+                row = by_id[entry['id']]
+                row['theme'] = theme['title']
+                row['result'] = text_only(entry['result'])
+                cards.append({**row, 'result_html': self.rendered(entry['result'], FINDINGS_GUIDE, page)})
+            anchor = markdown.extensions.toc.slugify(theme['title'], '-')
+            while anchor in anchors:
+                anchor += '-2'
+            anchors.add(anchor)
+            themes.append({'title': theme['title'], 'anchor': anchor, 'rows': cards,
+                           'intro': self.rendered('\n'.join(theme['intro']), FINDINGS_GUIDE, page)})
+        other = [row for row in rows if row['id'] not in guide['listed']]
+        for row in other:
+            row['theme'] = 'Other findings'
+        if other:
+            themes.append({'title': 'Other findings', 'anchor': 'other-findings', 'rows': other,
+                           'intro': '<p>These cards have not yet been placed in the findings guide.</p>'})
+        uncarded = guide['uncarded']
+        self.findings_guide = {'path': FINDINGS_GUIDE, 'mode': 'guide', 'reason': '',
+                               'listed': len(guide['listed']), 'other': len(other)}
+        return {'intro': self.rendered(guide['intro'], FINDINGS_GUIDE, page), 'themes': themes,
+                'uncarded': {'title': uncarded['title'],
+                             'body': self.rendered('\n'.join(uncarded['intro']) + '\n\n' +
+                                                   '\n'.join(uncarded['entries']), FINDINGS_GUIDE, page)} if uncarded else None}
 
     def card(self, item):
         path = self.routes[item['path']]
@@ -470,16 +623,22 @@ class Builder:
         for name in ('site.css', 'site.js'):
             self.write('assets/' + name, self.source.bytes('site/static/' + name))
         indexes = {kind: self.index_rows(kind) for kind in ('finding', 'question', 'conjecture', 'attempt')}
+        findings = self.findings_sections(indexes['finding'])
         for kind, folder in [('finding', 'findings'), ('question', 'questions'), ('conjecture', 'conjectures'), ('attempt', 'attempts')]:
             self.write(folder + '/index.json', dumps(indexes[kind]))
             for item in self.groups[kind] if kind != 'attempt' else []:
                 self.card(item)
-            filters = ['area', 'kind', 'difficulty', 'data_access', 'priority'] if kind == 'question' else []
+            filters = (['area', 'kind', 'difficulty', 'data_access', 'priority'] if kind == 'question' else
+                       ['theme', 'status'] if kind == 'finding' else [])
             visible_rows = [row for row in indexes[kind] if row['status'] in ('open', 'claimed')] if kind == 'question' else indexes[kind]
             values = {field: sorted({str(row.get(field, '')) for row in visible_rows if row.get(field, '') != ''}) for field in filters}
+            listing_source = dict(finding='knowledge/findings', question='knowledge/questions', conjecture='knowledge/conjectures', attempt='knowledge/experiments/registry.json')[kind]
+            if kind == 'finding' and findings:
+                listing_source = FINDINGS_GUIDE
             self.page(folder + '/index.html', dict(finding='Findings', question='Open questions', conjecture='Conjectures', attempt='Registry')[kind],
-                      dict(finding='knowledge/findings', question='knowledge/questions', conjecture='knowledge/conjectures', attempt='knowledge/experiments/registry.json')[kind],
-                      'listing.jinja', kind=kind, rows=visible_rows, filters=values, index_url='index.json')
+                      listing_source,
+                      'listing.jinja', kind=kind, rows=visible_rows, filters=values, index_url='index.json',
+                      findings=findings, attempt_groups=grouped_attempts(visible_rows) if kind == 'attempt' else [])
         readme = self.source.text('README.md')
         purpose = readme.split('\n', 1)[1].split('\n## ', 1)[0].strip()
         model = self.source.text('knowledge/WORKING-MODEL.md') if self.source.allowed('knowledge/WORKING-MODEL.md') else ''
@@ -493,7 +652,11 @@ class Builder:
                   purpose=self.rendered(purpose, 'README.md', 'index.html'),
                   standing=self.rendered(section(readme, 'Where things stand'), 'README.md', 'index.html'),
                   headlines=headlines, conjectures=indexes['conjecture'], bootstrap=bootstrap,
-                  counts={'findings': len(indexes['finding']), 'open questions': sum(r.get('status') in ('open', 'claimed') for r in indexes['question']), 'attempts': len(indexes['attempt'])})
+                  # Coordination, release and preservation records stay in the registry only.
+                  recent=[row for row in indexes['attempt'] if row['status'] != 'record'][:10],
+                  counts={'findings': len(indexes['finding']), 'conjectures': len(indexes['conjecture']),
+                          'open questions': sum(r.get('status') in ('open', 'claimed') for r in indexes['question']),
+                          'attempts': len(indexes['attempt'])})
         for source in ('knowledge/WORKING-MODEL.md', 'knowledge/DATA.md', 'knowledge/TIMELINE.md',
                        'REUSE.md', 'THIRD_PARTY_NOTICES.md', 'knowledge/conjectures/README.md'):
             if source == 'REUSE.md':
@@ -519,9 +682,26 @@ class Builder:
                   skills=self.rendered(section(agents, 'Repository skills'), 'AGENTS.md', 'contribute/index.html'))
         for path in EXPLORE:
             self.explore(path)
+        catalogue_readme = 'experiments/2026-10-11-bonta-adversarial/README.md'
+        catalogue_text = self.source.text(catalogue_readme).replace('\r\n', '\n') if self.source.allowed(catalogue_readme) else ''
+        catalogue_intro = catalogue_text.split('\n\n', 2)[1] if '\n\n' in catalogue_text else ''
+        # The frozen chart viewer has no adjacent README. Its description is in the root README.
+        chart_sentence = re.search(r'The \[chart atlas\]\([^)]+\)[^.]+\.', readme)
+        descriptions = (next((s.strip() for s in re.split(r'(?<=\.)\s+', catalogue_intro)
+                              if s.startswith('Fifty-six ')), text_only(catalogue_intro)),
+                        text_only(chart_sentence[0]) if chart_sentence else 'The chart atlas is part of the first investigation’s recorded outputs.')
+        atlas_script = LIVING_ATLAS + '/mapping/atlas.js'
+        if self.source.allowed(atlas_script):
+            if external_script_resource(self.source.text(atlas_script)):
+                self.skipped.append({'path': LIVING_ATLAS + '/index.html',
+                                     'reason': 'Living atlas not packaged: the optional street basemap loads external OpenStreetMap tiles; site resources must be local.'})
+            else:
+                self.skipped.append({'path': LIVING_ATLAS + '/index.html',
+                                     'reason': 'Living atlas source changed; its full resource closure needs a new publication review before packaging.'})
         self.page('explore/index.html', 'Explore', 'README.md', 'explore.jinja',
-                  viewers=[{'name': label, 'url': relative_url(path, 'explore/index.html')}
-                           for path, label in zip(EXPLORE, ('Reviewed sign catalogue', 'Chart atlas')) if path in self.pages])
+                  viewers=[{'name': label, 'url': relative_url(path, 'explore/index.html'), 'description': description}
+                           for path, label, description in zip(EXPLORE, ('Reviewed sign catalogue', 'Chart atlas'), descriptions)
+                           if path in self.pages])
         papers = []
         pdfs = [{'name': PurePosixPath(path).name, 'url': self.github(path)} for path in sorted(self.source.files)
                 if path.startswith('output/pdf/') and path.endswith('.pdf')]
@@ -561,6 +741,7 @@ class Builder:
                    'mode': 'worktree' if self.source.worktree else 'commit', 'public_files': sorted(self.source.files),
                    'omissions': self.source.omissions, 'inputs': self.source.inputs, 'copied': self.copied,
                    'pages': self.pages, 'dynamic_assets': sorted(self.dynamic), 'skipped': self.skipped,
+                   'findings_guide': self.findings_guide,
                    'unavailable_links': [{'source': s, 'target': t} for s, t in sorted(self.unavailable)]}))
 
 
@@ -618,6 +799,11 @@ class InspectHTML(HTMLParser):
 
 def css_urls(content):
     return re.findall(r'url\(\s*[\"\x27]?([^\)\"\x27]+)', content) + re.findall(r'@import\s+[\"\x27]([^\"\x27]+)', content)
+
+
+def external_script_resource(content):
+    # Tile layers request images dynamically, including when enabled by a control.
+    return bool(re.search(r'\b(?:fetch|WebSocket|EventSource|importScripts|tileLayer)\s*\(\s*[\"\x27](?:https?:)?//', content))
 
 
 def check(out, root=ROOT):
@@ -702,7 +888,7 @@ def check(out, root=ROOT):
             for url in re.findall(r'href=[\"\x27]([^\"\x27]+)', block):
                 if '${' not in url:
                     verify(url, name)
-            if re.search(r'\b(?:fetch|WebSocket|EventSource|importScripts)\s*\(\s*[\"\x27](?:https?:)?//', block):
+            if external_script_resource(block):
                 errors.append(f'{name}: script loads an external resource')
     for name, path in files.items():
         if path.suffix == '.css':
@@ -710,12 +896,14 @@ def check(out, root=ROOT):
                 verify(url, name, True)
         if path.suffix == '.js':
             block = path.read_text(encoding='utf-8')
-            if re.search(r'\b(?:fetch|WebSocket|EventSource|importScripts)\s*\(\s*[\"\x27](?:https?:)?//', block):
+            if external_script_resource(block):
                 errors.append(f'{name}: script loads an external resource')
         if path.suffix == '.json' and name.endswith('/index.json'):
             for row in json.loads(path.read_text(encoding='utf-8')):
                 verify(row['url'], name)
                 verify(row['source_url'], name)
+                if row.get('report_url'):
+                    verify(row['report_url'], 'index.html')
     for origin, target in metadata['dynamic_assets']:
         if target not in files or target not in metadata['copied']:
             errors.append(f'{origin}: missing dynamic asset {target}')

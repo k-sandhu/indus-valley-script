@@ -1,0 +1,11 @@
+1. python tools/build_site.py --out tmp/site-preview-baseline
+Result: WinError 5, access denied. The destination resolved through the existing tmp junction to D:/projects/indus_valley_script/tmp/site-preview-baseline. No output was created there. Successful outputs use _site/.
+
+2. python tools/build_site.py --worktree --out _site/site-preview-draft
+Result: IndexError at catalogue_intro = source.text(catalogue_readme).split("\n\n")[1]. The README used CRLF. Fixed by normalizing that input before paragraph extraction; the next build passed.
+
+3. python experiments/2026-10-27-site-organization/review_atlas.py
+Result: UnicodeDecodeError while reading a Leaflet PNG as UTF-8. Fixed by hashing binary resources and parsing only HTML, CSS and JavaScript. The next review completed with one external-tile-loader blocker.
+
+4. python experiments/2026-10-27-site-organization/browser_check.py --site _site/site-preview-browser-draft --shots _site/site-preview-browser-draft-shots
+Result: the browser steps and screenshots completed, but result serialization raised ValueError because the screenshot argument was relative. Fixed by resolving the screenshot path before reporting. The repaired run passed 69 checks.
