@@ -1,0 +1,7 @@
+# Proposed data update
+
+Add an auxiliary source-qualified wall and deposit relation table for Q-1032:11 relations across2 held sources and24 inspected pages. Local logical path: `data/raw/2026-10-24-town-phase-links/relations.json`; physical path: `D:/projects/indus_valley_script/data/raw/2026-10-24-town-phase-links/relations.json`. Exact hashes and page coverage are in `run-v1/summary.json` and `source-manifest.json`.
+
+Fields include named structure, episode, relation type, source page, construction-sample join status and required evidence. There are zero completed construction-sample joins, zero new radiocarbon determinations, zero new bearings and zero acquired publications. Existing register totals remain unchanged. Additions concern explicit links to the original sections, schematic phase diagram, inlet-stage illustration and redeposited basin fill. Earlier phase assertions remain source-linked and are not counted as new discoveries.
+
+Priority gaps: connect Dholavira southern castle section and middle-town arms to numbered surveyed wall fabrics; obtain TL sample collection loci and material; recover Lothal phase-keyed dock plan, SRG 11 TF-19 section and laboratory record; resolve the Street 1/Street 6 direction conflict; document restorations and true-north control. Obtain short-lived primary construction material where existing associations cannot establish a building boundary. All acquired scans and detailed derivatives retain unresolved rights and remain local-only.

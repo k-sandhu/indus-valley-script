@@ -1,0 +1,286 @@
+{
+  "candidate_cohort": {
+    "confirmed_fresh_objects": 0,
+    "definite_post_catalogue_rows": 301,
+    "exposure_log_rows": 892,
+    "freshness_statement": "No candidate is certified fresh by this audit; source-level logs need object, page and participant review.",
+    "identity_status": {
+      "absent": 28,
+      "candidate": 306,
+      "matched": 24
+    },
+    "inventory_rows": 503,
+    "nonbaseline_rows": 358,
+    "rows_with_possible_duplicate_marker": 11,
+    "rows_with_source_level_exposure_log": 358
+  },
+  "checks": {
+    "all_nonbaseline_rows_queued_once": true,
+    "all_plate_faces_queued_once": true,
+    "clean_order_count_matches_saved_audit": true,
+    "confirmed_count_matches_saved_audit": true,
+    "crop_count_matches_saved_audit": true,
+    "no_freshness_inferred": true,
+    "plate_count_matches_saved_audit": true,
+    "register_not_failed": true
+  },
+  "image_assignment": {
+    "face_side_object_photo_faces": 2181,
+    "faces": 5680,
+    "link_relations": {
+      "face-side": 4163,
+      "multi-side": 6,
+      "other-side": 1493,
+      "side-unassigned": 2770,
+      "side-unknown": 12
+    },
+    "multiface_objects": 902,
+    "multiface_objects_without_all_verified_sides": 881,
+    "objects": 4695,
+    "queued_multiface_objects_with_any_linked_image": 378,
+    "queued_multiface_objects_without_linked_image": 503,
+    "side_unassigned_faces_with_image": 797
+  },
+  "local_outputs": [
+    {
+      "path": "data/raw/2026-10-22-unit-readiness/run-register-v2/candidate-cohort-queue.csv",
+      "sha256": "24631b844d8312f7a6f7d17abed5650c475795ceb5ca318e748d7db30b750a9c"
+    },
+    {
+      "path": "data/raw/2026-10-22-unit-readiness/run-register-v2/divided-face-queue.csv",
+      "sha256": "8c8446d97d74804a165fd1caae303643160e6c633c806670c00cbc3e2e38ffc5"
+    },
+    {
+      "path": "data/raw/2026-10-22-unit-readiness/run-register-v2/multiface-queue.csv",
+      "sha256": "d4da987c146c0caae3e922a4aecd70f2d4a1ded9995abfe0af64b786254f1b61"
+    }
+  ],
+  "object_register": {
+    "errors": [],
+    "face_exposure_statuses": {
+      "unreviewed": 5680
+    },
+    "face_identity_statuses": {
+      "provisional-export-family": 5680
+    },
+    "faces": 5680,
+    "faces_with_conflicts": 4,
+    "image_links": 8444,
+    "image_side_match": {
+      "False": 4287,
+      "True": 4157
+    },
+    "objects": 4695,
+    "sources": [
+      {
+        "path": "data/raw/2026-10-22-object-register/run-v2/objects.jsonl",
+        "sha256": "0f8c82d917c8b77790b940a484dbc4c4ecf49cb2fd693e90ac39a5f78527d19f"
+      },
+      {
+        "path": "data/raw/2026-10-22-object-register/run-v2/faces.jsonl",
+        "sha256": "f38d963d2ddd755315116d23cbacf02c2eaaea2650d193781a4a54bde64d2bc4"
+      }
+    ],
+    "status": "checked"
+  },
+  "plate_audit": {
+    "code_status": {
+      "boustrophedon": 5,
+      "eligible": 75,
+      "unknown_or_damaged_sign": 38
+    },
+    "complete_word_boundary_labels": 0,
+    "confirmed_divisions": 65,
+    "eligible_clean_order_labels": 33,
+    "faces": 118,
+    "imaged_without_physical_order": 29,
+    "missing_crop_source_categories": {
+      "CISI3-number-per-prior-audit": 32,
+      "no-CISI-number": 11
+    },
+    "missing_crops": 43,
+    "physical_order_labels": 46,
+    "queued_faces": 118,
+    "register_image_identity_reviews": 3,
+    "registered_faces": 118,
+    "unclear_divisions": 10,
+    "with_crop": 75
+  },
+  "provenance": {
+    "code_sha256": "e2c010785f43f07ec6bca344f379b10126cdf1417bda4d763a8596b75cdc9921",
+    "inputs": [
+      {
+        "path": "experiments/2026-10-20-seal-legend-units/plate-audit/audit-table.csv",
+        "role": "plate_audit",
+        "sha256": "6ea60bd841b97ec20d6b8179c05dc9aede56729e28694f422cdafdc54ec725f6"
+      },
+      {
+        "path": "experiments/2026-10-20-seal-legend-units/plate-audit/audit-summary.json",
+        "role": "plate_summary",
+        "sha256": "68ae25d91d5139344f277c775e65a87047127d8cb55ef2e8a3718b61584cc0d4"
+      },
+      {
+        "path": "experiments/2026-10-13-image-index-and-units/run-2026-10-13/images/face-image-links.csv",
+        "role": "image_links",
+        "sha256": "00295c9d5670fb05f02956f3cb4810df44d0ffa7403c761fd16b91dae0cc9f75"
+      },
+      {
+        "path": "experiments/2026-10-13-image-index-and-units/verified-sides.tsv",
+        "role": "verified_sides",
+        "sha256": "56f27b71c2f0dccd50eb73b904279faa333fd1e7f3aaf17f0367e82e219a3752"
+      },
+      {
+        "path": "data/normalized/lipi_observed_faces.jsonl",
+        "role": "faces",
+        "sha256": "1220f5591a42abe7c6696ac014aba90e7c49fdce6b0ccba0b85bb45f950c30db"
+      },
+      {
+        "path": "experiments/2026-10-21-post-catalogue-finds/objects.csv",
+        "role": "post_catalogue",
+        "sha256": "c5d33f6384804fe0103b3add6cc45964ece9a46c7e623fba7307febb3c180df7"
+      },
+      {
+        "path": "experiments/2026-10-21-post-catalogue-finds/exposure-log.csv",
+        "role": "exposure_log",
+        "sha256": "e0feab96235fc138a338111cc3bfb3a7bd732e298f34b9867d2f69f4a4d890b9"
+      },
+      {
+        "path": "experiments/2026-10-21-post-catalogue-finds/RETROSPECTIVE-CODEX.md",
+        "role": "exposure_retrospective",
+        "sha256": "c6bc2144a1f09290a6e97cb591acac64f254915fc6b15c284aba3d20d73c4216"
+      },
+      {
+        "path": "data/raw/2026-10-12-bronze-age-comparison/normalized-v4/records.jsonl",
+        "role": "readable_records",
+        "sha256": "dedb9c3967d6bd2fe725406e2a46234673fcd8e5a3de2817dee27bc8ce1d899c"
+      },
+      {
+        "path": "data/normalized/lipi_clean_rtl_singleline.jsonl",
+        "role": "clean_lengths",
+        "sha256": "9e539daef4d5a7efbe3c5f34b73e14058eec1c5e888c749bc2eafb0f08084ba8"
+      },
+      {
+        "path": "bench/segmentation.py",
+        "role": "bench_segmentation",
+        "sha256": "901ee087148d1611fa3fa3a36ca2c8dca1662e0370bee419a5fbecb1118bd02b"
+      },
+      {
+        "path": "experiments/2026-10-12-structure-first/step5-rehearsal/rehearse_segmentation.py",
+        "role": "rehearsal",
+        "sha256": "f48d12396cad357a147e81ba9499577d00f43b56b2ab5e6e812becc6662164bc"
+      },
+      {
+        "path": "bench/spent.json",
+        "role": "spent",
+        "sha256": "8c681272333cadf5c3ba21d2f3ca5b99a9704d29ffb0dcde48cc18d29385f94c"
+      },
+      {
+        "path": "experiments/2026-10-20-seal-legend-units/spent-entry.json",
+        "role": "unit_spent_proposal",
+        "sha256": "9852effe6ea44e0e03d12ab063db4f402536749d6eee2bfa06eca0dce5f1d474"
+      }
+    ],
+    "protocol_sha256": "15c7dda0c5557ec404d67325b63d11b79c5d31afb3d6592308f18406b6d60330"
+  },
+  "readable_control_cohorts": {
+    "akkadian_letter_lines_matched": {
+      "complete": true,
+      "internal_boundary_labels": 1192,
+      "previously_used": true,
+      "texts": 1223
+    },
+    "egyptian_glyph_sentences_matched": {
+      "complete": true,
+      "internal_boundary_labels": 914,
+      "previously_used": true,
+      "texts": 940
+    },
+    "sumerian_lines_matched": {
+      "complete": true,
+      "internal_boundary_labels": 3404,
+      "previously_used": true,
+      "texts": 1859
+    },
+    "sumerian_seals_all": {
+      "complete": true,
+      "internal_boundary_labels": 1187,
+      "previously_used": true,
+      "texts": 309
+    }
+  },
+  "readable_source_pools": [
+    {
+      "corpus": "sumerian",
+      "kind": "seal",
+      "rows_with_nonempty_word_units": 522,
+      "rows_with_source_word_refs": 522,
+      "source_document_is_physical_object": "unverified; review composites and aliases",
+      "source_documents": 516,
+      "source_rows": 522
+    },
+    {
+      "corpus": "sumerian",
+      "kind": "natural_line",
+      "rows_with_nonempty_word_units": 31215,
+      "rows_with_source_word_refs": 31215,
+      "source_document_is_physical_object": "unverified; review composites and aliases",
+      "source_documents": 2931,
+      "source_rows": 31215
+    },
+    {
+      "corpus": "egyptian",
+      "kind": "glyph_sentence",
+      "rows_with_nonempty_word_units": 1965,
+      "rows_with_source_word_refs": 1965,
+      "source_document_is_physical_object": "unverified; review composites and aliases",
+      "source_documents": 976,
+      "source_rows": 1966
+    },
+    {
+      "corpus": "akkadian",
+      "kind": "natural_line",
+      "rows_with_nonempty_word_units": 4114,
+      "rows_with_source_word_refs": 4114,
+      "source_document_is_physical_object": "unverified; review composites and aliases",
+      "source_documents": 414,
+      "source_rows": 4114
+    }
+  ],
+  "readiness": {
+    "held_source_audit": "complete",
+    "historical_reproduction": "available",
+    "new_full_word_boundary_claim": "blocked-no-complete-Indus-labels",
+    "new_physical_division_test": "blocked-adjudication-identity-and-exposure",
+    "prospective_reusable_unit_test": "blocked-confirmed-fresh-cohort-and-freeze",
+    "source_block_transfer_test": "blocked-source-and-dependence-graph-review"
+  },
+  "schema_version": "1.0",
+  "scope": "held metadata audit; no image viewing, no new model score, no new confirmation read",
+  "spending": {
+    "historical_unit_families": [
+      "seal_legend_closing_structure",
+      "line_division_unit_boundary"
+    ],
+    "interpretation": "Historical use remains exposure even if a proposed ledger update was not integrated.",
+    "shared_families": [
+      "exact_frame_site_variant",
+      "fish_compound_order",
+      "fish_numeral_prediction",
+      "graphic_variant_choice",
+      "motif",
+      "object_type",
+      "paired_tablet_descriptor",
+      "rebus_template_pairs",
+      "seal_size",
+      "site",
+      "source_block_variant_choice",
+      "tablet_v_series"
+    ],
+    "unit_families_absent_from_shared_ledger": [
+      "line_division_unit_boundary",
+      "seal_legend_closing_structure"
+    ]
+  },
+  "synthetic": false,
+  "task": "unit-data-readiness"
+}

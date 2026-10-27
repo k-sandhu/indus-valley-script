@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0",
+  "status": "proposed contract; no participants registered and no real confirmation opened",
+  "scope": "One evidence and registration contract with separate scorers for phonetic keys, rebus readings and meaning maps",
+  "preflight_implementation": "experiments/2026-10-22-reading-eval-readiness/code/preflight.py",
+  "preflight_scope": "Reject missing, null, nonfinite, empty or unknown required declarations, changed source hashes, unreviewed exposure, unsupported rebus scorer, unfrozen participants and prior confirmation access. Human review must establish the truth of declarations and matched freedom across participants. Passing preflight never replaces the shots loader.",
+  "lexical_zero_policy": "Zero exact occurrences means zero complete written-form matches in the specified token stream; it does not establish absence of the lemma, its inflected forms or its meaning.",
+  "required_participant_fields": {
+    "participant_id": "Stable ID and version",
+    "role": "proposal | positive_control | negative_control",
+    "comparison_group": "The outcome and eligible population shared by the proposed reading and its controls",
+    "claim": "Object with title, edition, locator, statement and sources (pinned artifact list); label any reconstructed claim",
+    "family": "phonetic_key | rebus | meaning_map",
+    "inputs": "Nonempty pinned artifact list with repository-relative path and SHA256; associated source records give byte count, rights and transformations",
+    "sign_namespace": "Object with name, version and crosswalk (pinned artifact list); ambiguous mappings remain sets",
+    "mapping": "Pinned artifact list containing the complete submitted map, alternative values, unmapped signs and excluded records",
+    "construction_record": "Objects, texts, dictionary pages, metadata and previous outcome families seen during construction",
+    "freedom": "All choices listed in matched_freedom_fields, fixed before scoring",
+    "predictions": "Named outcome, statistic family, direction, minimum independent units, null, pass rule and missingness rule",
+    "scorer": "Versioned bench task and code hashes; rebus requires a separately reviewed task before acceptance",
+    "controls": "Known-correct and wrong controls under the same source and freedom conditions",
+    "calibration": "Accepted simulation plan and interval-based power/error report under stated laws",
+    "source_review": "Accepted independent review and its pinned evidence",
+    "cohort": "Reviewed-unexamined exposure, pinned identity and exposure reviews, and independent-unit count",
+    "freeze": "Shared shots registration, joint credence rule, all artifact hashes and freeze before any confirmation read"
+  },
+  "object_register_interface": {
+    "path_pattern": "data/raw/2026-10-22-object-register/<reviewed-run>/register-v2.json",
+    "selection_status": "Interface template only. No register version or prospective cohort is selected; the final reviewed version and its hashes enter each participant manifest.",
+    "exports": ["objects.jsonl", "faces.jsonl", "assertion-values.jsonl"],
+    "object_id": "LIPI:<object_family_id>; provisional physical identity",
+    "surface_id": "LIPI:<record_id>",
+    "required_fields": ["object_id", "surface_id", "aliases", "source locator and hash", "value_status", "uncertainty", "exposure_status"],
+    "required_future_reviews": ["physical-identity closure", "face assignment", "text-dependence closure", "object and statistic-family exposure"],
+    "unknown_exposure_policy": "Blocks a fresh claim. The current register's unreviewed state does not establish eligibility.",
+    "evaluated_variables": "Keep measurements and their source assertions separate from readings. Missing, conflicting and inferred values need frozen inclusion rules."
+  },
+  "matched_freedom_fields": [
+    "sign and object coverage",
+    "option-list size per sign",
+    "empty emissions and ignored signs",
+    "output length and deletion budget",
+    "projection alphabet and sound mergers",
+    "dictionary editions and search scope",
+    "lexical sense and historical-attestation rules",
+    "compound and morphological transformations",
+    "reading direction and segmentation alternatives",
+    "number and selection of templates",
+    "model order and training corpora",
+    "tuning objective, search budget and number of tries"
+  ],
+  "comparison_rules": [
+    "Group comparisons by outcome and population; do not rank different families by raw p-values.",
+    "Move full alternative lists together in fixed-key rearrangements.",
+    "Repeat any model or map fitting within each fitted null under the same discovery budget.",
+    "Evaluate a shared eligible population or preregister coverage-stratified contrasts when maps cover different signs.",
+    "Freeze all participants and the family-wise testing rule before the first confirmation read.",
+    "Report all prespecified predictions, including uncomputable ones and failures.",
+    "Repaired scores on already examined data remain retrospective. A new seed does not restore freshness."
+  ],
+  "families": {
+    "phonetic_key": {
+      "task": "bench key-calibration",
+      "candidate": "Complete published Sanskrit key with the final review repairs in paper 006",
+      "positive_control": "Known plaintext encoded at matched length, homophony and option-list freedom; also readable-script transfer when independent source data are available",
+      "wrong_controls": ["within-band scrambled key", "random key", "unrelated language model", "order-shuffled text"],
+      "current_default_rule": "p <= 0.01 and separation >= 3 SD overall and in both grouped halves; order-only p <= 0.01; unrelated language models must fail the same separation rule for a language-identification claim",
+      "ready_for_new_confirmation": false
+    },
+    "rebus": {
+      "task": null,
+      "candidate": "Source-adjudicated Parpola identifications, with exact lexical lookup and reviewed variants",
+      "positive_control": "A generated or independently attested rebus system with known assignments, dictionary coverage and compounds preserved",
+      "wrong_controls": ["whole-key replacements matched on declared lexical properties", "wrong assignments with the same alternative-list sizes", "an independently sourced rival-language dictionary under equivalent rules"],
+      "current_default_rule": null,
+      "ready_for_new_confirmation": false,
+      "blocking_reason": "No calibrated shared rebus bench task; dictionary and identification gaps remain. A ratio above 1 or a small p-value alone is not an acceptance rule."
+    },
+    "meaning_map": {
+      "task": "bench meaning-map",
+      "candidate": "A fully frozen functional meaning map with independent object-variable predictions",
+      "positive_control": "Known labels planted at prespecified effect sizes on a discovery-only incidence matrix, with shared outcomes within each object component",
+      "wrong_controls": ["label records rearranged within fixed frequency and position bands", "zero-effect outcomes", "matched but semantically wrong maps"],
+      "current_default_rule": "All measures computable; joint p <= 0.05; declared rank or leave-one-component-out influence criterion; individual predictions adjusted for multiplicity",
+      "ready_for_new_confirmation": false
+    }
+  },
+  "next_calibration_campaign": {
+    "status": "proposed; thresholds require review before the campaign starts",
+    "null_replicates_per_law": 1000,
+    "positive_replicates_per_effect_and_law": 300,
+    "minimum_power_target": 0.8,
+    "planning_acceptance": "95% Wilson lower bound >= 0.80 for the declared minimally useful effect; for nominal 0.05 tests, null rejection rate <= 0.05 and 95% Wilson upper bound <= 0.065",
+    "laws": ["matched-length generated writing with homophony", "source missingness and ambiguous entries", "shared physical/text dependencies", "discovery-fitted wrong proposals with equal tuning budget"],
+    "required_before_run": ["family-specific minimally useful effect", "all noise and missingness parameters", "fixed seed schedule", "multiplicity rule", "fitted-null algorithm", "failure and stopping rule"],
+    "current_smoke_test_limit": "One generated key example and 30 meaning-map power replicates do not certify this campaign."
+  }
+}

@@ -1,0 +1,11 @@
+# Tablet source-field audit
+
+We began with the H-912 study and its excavation follow-up, C-0005, C-0009, C-0012, Q-0022 and the administrative-bundle retrospective. They already showed why another graphic fit could not identify an allocation or contents. We selected the complete H-2218–H-2239 source block and froze a protocol for physical evidence. The October 2 Harappa frame had already recovered all 22 registrations, the clump relation and the published engraver groups.
+
+We reused the held 21-page author PDF, verified its hash and opened the canonical author-hosted PDF. Poppler extracted the full chapter to D: and rendered PDF pages 14–20 there. We inspected six complete rendered pages, including the production argument, proposed pouch and direction-of-reading endnote. Page 15 was rendered but not displayed during this audit. The source manifest distinguishes the text review from the displayed pages.
+
+The useful new register fields are the reported common incision direction and within-character stroke order, the unresolved timing and workshop alternatives, and six use fields absent from the bounded chapter. A potential error emerged in the chapter's earlier discussion: its worn tablets belong to moulded terracotta Figure 3, while the 22 incised steatite tablets belong to Figure 4. We preserved that distinction in every use-wear null. We also kept modern examination moulds separate from ancient impressions and the proposed pouch separate from a recovered container.
+
+The builder uses the prior exact registration joins and never opens inscription payloads. It writes all detailed records on D:, refuses to overwrite its aggregate endpoint, and records source and code hashes. Validation independently checks the 22 identities, 308 assertions, the 16/2/4 recovery split, manufacturing-group margins and unknown-value reasons. These checks are the author's accounting review, not an independent archaeological replication.
+
+This audit adds no physical objects or new finds. It makes the source's manufacture and use evidence available as explicit individual relations and gives the next acquisition a deciding target. A matched ancient impression could identify stamping; a preserved clump enclosure could establish packaging; a registered allotment or container relation is still required for any specific quantity or contents proposal.

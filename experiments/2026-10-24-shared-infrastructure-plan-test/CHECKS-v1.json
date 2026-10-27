@@ -1,0 +1,65 @@
+{
+  "created_utc": "2026-10-25T02:30:02.541635+00:00",
+  "scope": "Owned contribution; same-team reproducibility and presentation review",
+  "commands": {
+    "knowledge_base": {
+      "command": [
+        "C:\\Python313\\python.exe",
+        "tools/kb.py",
+        "check"
+      ],
+      "returncode": 0,
+      "stdout": "MAINTAINER knowledge/experiments/registry.json: differs from a fresh build; run python tools/kb.py build\nMAINTAINER knowledge/MAP.md: differs from a fresh build; run python tools/kb.py build\nkb.py check: PASS; 649 items; 0 errors; 0 warnings; 2 maintainer notes; 12 reviewed local-only targets; 138 Markdown files.\n",
+      "stderr": ""
+    },
+    "source_compilation": {
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-m",
+        "compileall",
+        "-q",
+        "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-10-24-shared-infrastructure-plan-test"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "prose_scan": {
+      "command": [
+        "C:\\Python313\\python.exe",
+        "tools/review_prose.py",
+        "--path",
+        "experiments/2026-10-24-shared-infrastructure-plan-test",
+        "--output",
+        "experiments/2026-10-24-shared-infrastructure-plan-test/prose-scan-v1-final.json"
+      ],
+      "returncode": 0,
+      "stdout": "Full findings preserved in prose-scan-v1-final.json",
+      "stderr": "",
+      "files_scanned": 35,
+      "manual_review_flags": 37
+    }
+  },
+  "study_validation": {
+    "path": "study-validation-v3.json",
+    "sha256": "e926d62f4425af5f22d25ab1f37e9521c3d252384f0f2166e0c663a51f6580ce",
+    "checks": 304,
+    "passed": true
+  },
+  "broader_repository_verifier": {
+    "repository_status": "fail",
+    "error_count": 58,
+    "errors_in_this_package": [],
+    "conclusion": "All reported errors lie outside this package; prior repository findings remain unfixed by this contribution."
+  },
+  "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+  "authors": [
+    {
+      "model": "GPT-6 family; exact serving variant unavailable",
+      "harness": "Codex desktop collaboration",
+      "role": "root final check record"
+    }
+  ],
+  "scientific_confirmation": false,
+  "passed": true
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-10-26T10:15:03.711832+00:00",
+  "results": [
+    {
+      "command": [
+        "C:\\Python313\\python.exe",
+        "tools/review_prose.py",
+        "--path",
+        "experiments/2026-10-26-indus-living-atlas/living-towns",
+        "--no-write"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"scope\": \"new repository prose; flags require human judgment and may be source titles/technical quotations\",\n  \"files_scanned\": 5,\n  \"flags\": [\n    {\n      \"file\": \"experiments/2026-10-26-indus-living-atlas/living-towns/PROTOCOL.md\",\n      \"line\": 9,\n      \"pattern\": \"slash_compound\",\n      \"text\": \"We read AGENTS.md, README.md, knowledge/INDEX.md, knowledge/DATA.md, LOCAL_STORAGE.md, CONTRIBUTING.md, the registry, the editorial rules, redistribution rules, REUSE.md and LICENSE. The October 11 settlement prospection retrospective identified geographic and chronological joins as recurring failure points. The October 24 town-axis register preserves site phases but does not compare them with modern civic settlement. The October 25 continuity package distinguishes practical inheritance from a demonstrated lineage. We will add an explicit modern-place-to-excavated-place relation, evidence dates and continuity claims with their source scope.\"\n    },\n    {\n      \"file\": \"experiments/2026-10-26-indus-living-atlas/living-towns/PROTOCOL.md\",\n      \"line\": 27,\n      \"pattern\": \"slash_compound\",\n      \"text\": \"The validator will check required fields, unique IDs, source references, geographic bounds, date intervals, period overlap logic, explicit source scope, and the absence of a verified continuity claim without supporting sequence evidence. We will review the prose and run the knowledge checks. No reading, sign key, meaning map, restoration, segmentation or script conjecture is submitted, so no bench scorer measures this endpoint. We read bench/README.md; its five scientific tasks do not evaluate a settlement source register. No confirmation half or spent statistic family will be opened.\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Python313\\python.exe",
+        "tools/kb.py",
+        "check"
+      ],
+      "returncode": 0,
+      "stdout": "MAINTAINER knowledge/experiments/registry.json: differs from a fresh build; run python tools/kb.py build\nMAINTAINER knowledge/MAP.md: differs from a fresh build; run python tools/kb.py build\nkb.py check: PASS; 672 items; 0 errors; 0 warnings; 2 maintainer notes; 12 reviewed local-only targets; 139 Markdown files.\n",
+      "stderr": ""
+    }
+  ],
+  "interpretation": "Prose flags require review. Repository-wide failures must be attributed by path; no unrelated files are repaired by this contribution."
+}

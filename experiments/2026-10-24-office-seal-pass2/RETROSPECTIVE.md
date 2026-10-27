@@ -1,0 +1,11 @@
+# Retrospective
+
+We continued from the corrected first office-seal report and froze a five-object view search. The first extraction command failed because the Windows terminal could not encode a square character in the PDF text. Running Python in UTF-8 mode repaired the display before images were rendered. No observation or frozen output was replaced.
+
+The catalogue and 2005 figures supplied a finite inventory of target views. We extracted the native 2005 figure images to distinguish their actual resolution from enlarged page renders. The original excavation scan had no useful plate text. A forty-page thumbnail sheet and one full plate header located CLXI–CLXIV. Figure 38B supplied candidate paired drawings, but no object-number key was recovered, so those drawings remain outside confirmed L-164 reverse-photograph coverage.
+
+Ordinary requests to the poster PDF, publisher PDF and author-deposit routes returned HTTP 403. The publicly served poster preview was acquired, and proved too small for object-level observation. Web-readable text located the later L-163 figure without supplying its pixels. We stopped at the frozen query and page bounds.
+
+The outcome is a source-qualified view inventory with a specific missing image target. Earlier photographs remain identified as previously held or previously inspected, and new target audits are separated from new physical observations. The first office-seal package and verification were untouched. Precise support geometry, the deposit count discrepancy and the office conjecture remain unresolved.
+
+Parent review caught a printed-page field inherited from the earlier CISI basic-data manifest. Version 2 corrects it to the four displayed object pages, leaving version 1 intact. The aggregate revision separates sixteen listed target photographic panels from the 21,249 newly acquired preview bytes. Validation passed 43 checks. The prose scan flags one literal filesystem path, retained after inspection. The knowledge check passes with generated-map maintainer notes. The repository-wide verifier reports broken links elsewhere; its output is preserved for comparison with the parent's baseline, and it identifies no error in this package.

@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fixed twenty-target object metadata projection",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "objects",
+    "source_catalogue"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "objects": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "required": [
+          "record_id",
+          "site",
+          "identity_status",
+          "accepted_physical_merge",
+          "aliases",
+          "assertions",
+          "images",
+          "missing_fields",
+          "candidate_family_ids"
+        ],
+        "properties": {
+          "record_id": {
+            "type": "string"
+          },
+          "site": {
+            "enum": [
+              "Dholavira",
+              "Harappa",
+              "Lothal"
+            ]
+          },
+          "identity_status": {
+            "type": "string"
+          },
+          "accepted_physical_merge": {
+            "type": "boolean"
+          },
+          "aliases": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "scheme",
+                "value",
+                "status"
+              ]
+            }
+          },
+          "candidate_family_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "assertions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "assertion_id",
+                "field",
+                "value",
+                "status",
+                "source_refs",
+                "locator"
+              ],
+              "properties": {
+                "assertion_id": {
+                  "type": "string"
+                },
+                "field": {
+                  "type": "string"
+                },
+                "status": {
+                  "enum": [
+                    "catalogued",
+                    "inferred",
+                    "unknown",
+                    "conflicting"
+                  ]
+                },
+                "source_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "locator": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "source_refs",
+                "coverage_class"
+              ]
+            }
+          },
+          "missing_fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "source_catalogue": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_ref",
+          "logical_path",
+          "physical_path",
+          "sha256"
+        ]
+      }
+    }
+  },
+  "additionalProperties": true
+}

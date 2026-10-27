@@ -1,0 +1,13 @@
+# Building the transmission theories
+
+We read “Vegas” as the Vedas and carried the completed crop pilot into the existing 11 October continuity program. That program had already developed selective transmission and intellectual recombination, with no diagnostic join from Harappan operations to a specific Vedic institution. We retained those outcomes rather than treating a new synthesis as new confirmation.
+
+The source search checked linguistic ancestry separately from material continuity. Primary scholarship on Indo-Iranian and Middle Indic supplied the language framework. Fuller and Murphy's horsegram study supplied a concrete comparison of plant history and names across language families, while preserving a multiple-domestication alternative. The 2019 ancient-DNA discussion explicitly retains both northwestern and peninsular Dravidian scenarios. The 2025 population study refines ancestry proxies and cautions about their archaeological association.
+
+The author-hosted Witzel substrate PDF failed TLS hostname validation. A journal-hosted route returned HTML rather than a PDF. We preserved the failures without bypassing access controls. Search-extracted substrate passages are treated as access-limited author proposals. The 2025 Kuru monograph was discovered as a later publication, but its journal endpoint denied access; it remains a lead. We reused the previously held 1995 paper and Jamison and Brereton introduction with their recorded hashes.
+
+Three new cards state practical transmission, agricultural language contact and a diagnostic ritual inheritance claim. Their starting credences are judgments. One is a long shot. Predictions require new source-qualified material and a joint update rule for overlapping evidence. The generated bench shots run passed the workflow guards. It does not test any historical proposal, and no real confirmation population was read.
+
+Raw acquisitions and extracted witnesses stay under D:. We wrote only a new experiment directory and its new conjecture and registry files. Shared manifests, the working model, generated navigation and prior study outputs were left unchanged. All 81 source, link and procedural checks pass, and the real spending ledger's hash is unchanged. The knowledge check passes; the repository-wide integrity check reports zero errors in this contribution and 58 broken links elsewhere. The prose scan's one ordinary-prose flag was corrected.
+
+The strongest current theory is practical inheritance with cultural recombination. Its next deciding evidence is a dated operational sequence joined to an independently supported language-contact history.

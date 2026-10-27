@@ -1,0 +1,42 @@
+{
+  "id": "TOWN-AXIS-REGISTER-2026-10-24",
+  "theme": "Source-backed town-axis register with architectural parts, dating assertions and corrected-location horizons",
+  "status": "completed-source-register-with-explicit-gaps",
+  "status_class": "source-review",
+  "area": "data",
+  "question": "Can the prior Q-1032 measurements, plans, horizons and dates be reconciled without losing their source locators, north references, uncertainty or missingness?",
+  "outcome": "A 34-town register preserves 1,380 measurement records, 118 dated-part assertions, 620 radiocarbon assertions and 539 source-use records including 46 new DEM tiles. Two exploratory Surkotada wall picks are -11.83 and -11.60 degrees with roughly 5-degree digitizing errors and unknown total error. Thirty-five Wanzke published rows were entered with gon and north distinctions. Corrected Surkotada and Farmana horizons raise usable modern-location profile coverage from 18 to 20 towns. The record audit checks 207 input hashes and 3,009 references. No new radiocarbon determination, inscribed object, scientific orientation statistic or credence update.",
+  "challenge": "Prior compilations use different schemas, repeat samples and source images, mix architectural parts, and include superseded site coordinates. Lothal imagery values disagree, registration validation failed, and most wall-to-construction-boundary joins remain unresolved.",
+  "remedy": "Keep each source assertion with a hash and JSON Pointer; label north, dependence, coordinate quality and reported versus partial errors; preserve failed build run-v1; retain all earlier endpoints; compute corrected-location profiles with the unchanged sampler and store acquired tiles on D:.",
+  "evidence": [
+    "experiments/2026-10-24-q1032-town-axis-register/PROTOCOL.md",
+    "experiments/2026-10-24-q1032-town-axis-register/REPORT.md",
+    "experiments/2026-10-24-q1032-town-axis-register/TABLE.md",
+    "experiments/2026-10-24-q1032-town-axis-register/run-v5/town-axis-table.json",
+    "experiments/2026-10-24-q1032-town-axis-register/run-v5/measurements.jsonl",
+    "experiments/2026-10-24-q1032-town-axis-register/run-v5/coverage.json",
+    "experiments/2026-10-24-q1032-town-axis-register/run-v5/input-manifest.json",
+    "experiments/2026-10-24-q1032-town-axis-register/audit-v5.json",
+    "experiments/2026-10-24-q1032-town-axis-register/horizon-repair-v1/horizons.json",
+    "experiments/2026-10-24-q1032-town-axis-register/source-checks.json",
+    "experiments/2026-10-24-q1032-town-axis-register/manifest-additions.json",
+    "experiments/2026-10-24-q1032-town-axis-register/bench-selftest.json",
+    "experiments/2026-10-24-q1032-town-axis-register/RETROSPECTIVE.md"
+  ],
+  "retry_when": "Add surveyed true-north wall bearings, georeferenced plans with new control evidence, phase-linked construction samples or verified site identities. Do not refit the star test on the same examined observations or treat repeated readings as independent imagery.",
+  "package": "experiments/2026-10-24-q1032-town-axis-register",
+  "authors": [
+    {
+      "model": "GPT-6 (exact runtime model ID unavailable)",
+      "harness": "Codex desktop app",
+      "agent": "single contributor"
+    }
+  ],
+  "verification_tier": "submitted",
+  "related_cards": [
+    "Q-1032",
+    "Q-1021",
+    "C-0015",
+    "C-0016"
+  ]
+}

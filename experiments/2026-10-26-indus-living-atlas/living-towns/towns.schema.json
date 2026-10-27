@@ -1,0 +1,267 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Living towns source register 1.0",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "created_date",
+    "scope",
+    "periods",
+    "records"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "country",
+          "lat",
+          "lon",
+          "coordinate_precision",
+          "category",
+          "modern_civic_identity",
+          "evidence_place",
+          "earliest_evidence_bce",
+          "earlier_regional_evidence",
+          "urban_foundation",
+          "occupation_spans",
+          "indus_overlap",
+          "continuity_status",
+          "indus_to_present_demonstrated",
+          "spatial_relation",
+          "known_hiatuses",
+          "summary",
+          "source_ids",
+          "gaps",
+          "chronology_anchors"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "country": {
+            "type": "string",
+            "minLength": 1
+          },
+          "modern_civic_identity": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_place": {
+            "type": "string",
+            "minLength": 1
+          },
+          "urban_foundation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "continuity_status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "spatial_relation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lat": {
+            "type": "number",
+            "minimum": -90,
+            "maximum": 90
+          },
+          "lon": {
+            "type": "number",
+            "minimum": -180,
+            "maximum": 180
+          },
+          "coordinate_precision": {
+            "type": "object",
+            "required": [
+              "meters",
+              "basis",
+              "anchor_kind"
+            ],
+            "properties": {
+              "meters": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "basis": {
+                "type": "string",
+                "minLength": 1
+              },
+              "anchor_kind": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "category": {
+            "enum": [
+              "living-town-candidate",
+              "abandoned-indus-contrast"
+            ]
+          },
+          "earliest_evidence_bce": {
+            "type": "object",
+            "required": [
+              "earliest",
+              "latest",
+              "date_label",
+              "basis",
+              "kind"
+            ],
+            "properties": {
+              "earliest": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              },
+              "latest": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              },
+              "date_label": {
+                "type": "string",
+                "minLength": 1
+              },
+              "basis": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "earlier_regional_evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "place",
+                "date_label",
+                "relationship",
+                "source_ids"
+              ]
+            }
+          },
+          "occupation_spans": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "start_bce",
+                "end_bce",
+                "scope"
+              ],
+              "properties": {
+                "start_bce": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "end_bce": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "scope": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "indus_overlap": {
+            "type": "object",
+            "required": [
+              "mature_2600_1900",
+              "late_1900_1300",
+              "basis"
+            ],
+            "properties": {
+              "mature_2600_1900": {
+                "enum": [
+                  "yes",
+                  "no",
+                  "uncertain"
+                ]
+              },
+              "late_1900_1300": {
+                "enum": [
+                  "yes",
+                  "no",
+                  "uncertain"
+                ]
+              },
+              "basis": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "indus_to_present_demonstrated": {
+            "type": "boolean",
+            "description": "True requires an independently reviewed complete local occupation series. All records in version 1 are false."
+          },
+          "known_hiatuses": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "source_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^LT-S[0-9]{2}$"
+            }
+          },
+          "gaps": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "chronology_anchors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "date_label",
+                "status",
+                "basis",
+                "source_ids"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Structural schema. validate.py also checks sources, local hashes, chronology, geographic joins and declared gaps."
+}

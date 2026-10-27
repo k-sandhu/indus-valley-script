@@ -1,0 +1,5 @@
+# Data coverage update proposed for integration
+
+The 2005 report now has complete OCR coverage of PDF pages 1–19 and visual checks of pages 1, 11–17 and 19. The held PDF is preserved at data/raw/2026-10-12-transmission-hypothesis/material/acquisition-v2/kenoyer2005-harappa.pdf. New renderings, OCR, failed empty text extraction, complete web responses and detailed source observations live under logical data/raw/2026-10-24-tablet-use-pass3/, physically D:/projects/indus_valley_script/data/raw/2026-10-24-tablet-use-pass3/.
+
+Proposed metadata additions are the workshop Figure 9 section locator, the Figure 10 material and erosion description conflict for H2001-5087, broader Trench 11 secondary-dump discussion, and the exact 1997 report recipient and submission date. These add no target object or independent excavation. The newly accessible 2001 chronology section supplies a class-level red-pigment lead without registered targets. Full 2001 report coverage and exact8040 field records remain open. All six physical-use fields remain unknown for the 22 tablets and the three control populations. Raw sources have unresolved redistribution rights and remain local-only.

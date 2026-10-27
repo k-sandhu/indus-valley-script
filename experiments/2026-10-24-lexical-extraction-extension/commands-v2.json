@@ -1,0 +1,55 @@
+{
+  "commands": [
+    "python experiments/2026-10-24-lexical-extraction-extension/code/extract.py freeze",
+    "python experiments/2026-10-24-lexical-extraction-extension/code/extract.py freeze2",
+    "python experiments/2026-10-24-lexical-extraction-extension/code/extract.py freeze3",
+    "python experiments/2026-10-24-lexical-extraction-extension/code/extract.py run",
+    "python -m unittest discover -s experiments/2026-10-24-lexical-extraction-extension/code -p test_extract.py -v",
+    "python -m bench segmentation --synthetic --out experiments/2026-10-24-lexical-extraction-extension/segmentation-synthetic-v1.json",
+    "python -m bench shots --synthetic --out experiments/2026-10-24-lexical-extraction-extension/shots-synthetic-v1.json",
+    "python experiments/2026-10-24-lexical-extraction-extension/code/validate.py",
+    "python experiments/2026-10-24-lexical-extraction-extension/code/package.py",
+    "python experiments/2026-10-24-lexical-extraction-extension/code/verify.py",
+    "python tools/review_prose.py --path experiments/2026-10-24-lexical-extraction-extension --output experiments/2026-10-24-lexical-extraction-extension/prose-review-v3.json"
+  ],
+  "author_checks_pass": true,
+  "interrupted_attempt": "Initial source scan stopped before writing a freeze or extraction endpoint; resumable page scan replaced it",
+  "attempt_status": [
+    {
+      "stage": "initial unlogged freeze",
+      "exit": 1,
+      "cause": "interrupted before endpoint; no identified stalled operation"
+    },
+    {
+      "stage": "sequential pre-output verification",
+      "exit": 1,
+      "cause": "interrupted after measured advancing reads; preserved adapter and freeze"
+    },
+    {
+      "stage": "v2 parallel parser",
+      "exit": 1,
+      "cause": "two malformed hw blocks violate selected-entry wrapper assertion; inherited parser skips them"
+    },
+    {
+      "stage": "v3 complete extraction",
+      "exit": 0
+    },
+    {
+      "stage": "validation-v1",
+      "exit": 1,
+      "cause": "validator expected candidate outside frozen noun scope; preserved failing output"
+    },
+    {
+      "stage": "validation-v2",
+      "exit": 0
+    },
+    {
+      "stage": "independent arithmetic replay",
+      "exit": 0
+    }
+  ],
+  "prose_review": {
+    "flags": 2,
+    "review": "Accepted exact data/raw path and frozen native/borrowed policy wording; no stock-phrase flags in final report."
+  }
+}

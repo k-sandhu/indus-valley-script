@@ -1,0 +1,39 @@
+# Held-source reviews integrated into the object register
+
+We completed the three fixed review queues and built a new register version. The 29-face review supports 21 spatial layouts and 12 provisional maps from catalogue segments to visible groups. All 24 lexical forms now have source-level sense decisions, and all 358 candidate inventory rows have identity and exposure dispositions. The register retains its 4,695 provisional object families and 5,680 faces. [Coverage](run-v2/coverage.json) and the [input and output hashes](run-v2/source-manifest.json) describe the final version.
+
+The final local directory is `data/raw/2026-10-22-evidence-integration/run-v2/`. It preserves the parent assertions and adds 5,474 review assertions. Of these, 5,420 record inventory-row relationships to provisional families: 24 are supported by source-qualified identifiers and 5,396 remain candidate relationships. The added assertion count therefore measures documented reviews and unresolved relations, rather than new archaeological facts. Earlier registers and the first integration run remain unchanged.
+
+## Gaps closed by the held evidence
+
+| Workstream | Completed review | Supported change | Remaining evidence |
+|---|---|---|---|
+| Face layout | All 29 selected faces, with two separately sealed visual records | 21 compatible spatial layouts; 12 source-segment location maps | Eight uncertain layouts; 17 without an accepted segment map; expert review |
+| Dictionary senses | 24 forms and 56 exact dictionary records | 38 role-specific sense or contextual selections; two language-label corrections; four scoped form relations | Historical attestations, uncertain senses and specialist morphology review |
+| Compound parser | Forty prespecified sample entries and three known diagnostic cases | One wrong accepted boundary and two source-supported omissions documented; grammatical-root guard and parent-origin metadata repaired | General increment handling, unresolved entries and complete re-extraction |
+| Candidate identity | All 358 inventory rows | 24 existing identifier links reverified; every other relation retained with its status | 306 candidate-only rows, 28 unlinked rows, eleven duplicate flags and two additional same-registration pairs |
+| Candidate exposure | All 358 rows linked to 1,018 historical documentation records | Page-coordinate basis, participant scope and display uncertainty recorded per row | Exact displayed content, source versions for 45 derived page labels, and eligibility for the proposed participants and statistic family |
+
+The [face report](../2026-10-22-face-adjudication/REPORT.md) records the visual evidence. Both contributors sealed their first pass before consulting the other's decisions or the current catalogue-code comparison. Subsequent alignment used distinctive graphic forms, including rotated groups and a catalogue sign occupying more than one visible tier. The 12 accepted maps locate source segments; historical linguistic traversal remains unresolved. These are provisional AI source observations, with prior project exposure disclosed.
+
+Supplemental image review restores six provisional face-image links on three faces, representing five distinct image payloads. Two impression filenames have identical bytes and remain aliases of one payload. A main face and an inscribed edge receive separate side assignments. A different catalogue entry's numbered image groups remain distinct candidates because their physical relation needs the entry itself. The image population and object identities are preserved. The [interface](INTERFACE.md) explains the new fields and their review status.
+
+The [lexical report](../2026-10-22-lexical-source-review/REPORT.md) identifies two language-attribution errors in the earlier Tamil candidate list. The cited 1997 passage assigns āvu to Kannada and Telugu; the 2009 passage assigns tōḷ to Toda. The dictionary review also selects the appropriate homographs and records context-specific numeral and verb forms. Those relations do not authorize general spelling substitution or change the exact-token counts. Earliest attestations remain unverified.
+
+In the twenty sampled entries whose split the existing parser accepted, the original sources support 17 boundaries, contradict one and leave two unresolved. Of twenty sampled rejected entries, two have directly supported omitted boundaries, nine are unresolved and nine fall outside the intended two-noun or two-member scope. The known three failures are separate diagnostics. These unequal strata cannot estimate dictionary-wide recall. The new grammatical-root guard suppresses the false ja plus mīṉ split; it does not complete the dictionary extraction. No rebus effect was recalculated.
+
+The [candidate report](../2026-10-22-candidate-identity-exposure/REPORT.md) verifies complete registration components within their documented site and project namespaces. It adds no newly supported physical identity. Exposure records associate two candidates with a page on which an image was displayed, thirteen with recorded text display, 172 with conservative possible-display incidents, thirty with a broad reviewed-page set of uncertain display extent, and 141 with identity or bibliographic metadata display. None establishes exact object viewing merely from a page match. There are 313 explicit PDF-coordinate matches and 45 matches to derived page labels whose underlying PDF version remains unverified.
+
+## What changed in the register
+
+The version 2 core schema remains unchanged. Accepted surface arrangements now cite the combined adjudication; earlier source values and assertions remain available. Compact face records carry the layout decision, source-segment map, unresolved reasons and current-review exposure. Source-qualified candidate relationships are added with separate supported and candidate confidence. All 358 candidate rows remain in a dedicated review table, including the unlinked rows.
+
+Dictionary senses and compound reviews are separately versioned resources beside the archaeological register. They are not assigned to signs or objects as meanings. The lexical field `accepted_for_tamil_picture_alternative` excludes the two wrong-language alternatives only; its true value does not approve an Indus picture identification or every sense. Consumers must read `review_decision`, the selected sense's role, and its source evidence.
+
+Every historical candidate retains false confirmation eligibility. The current reviews also log the actual face images displayed to the contributors. Physical-family merges, authenticated readings and new statistical confirmation runs are all zero. Source images, excerpts, sign sequences and detailed derivatives remain local; the tracked package contains code, protocols, aggregate results and provenance hashes.
+
+## Verification and deciding evidence
+
+The final build passes the unchanged core schema and checks every reference, population, parent assertion and source hash it uses. Eight integration tests include a regression for a provenance-link defect found by independent review. The original integration passed structural checks but pointed its 29 compact face review links at the rendering font. We preserved that output and its exact producing code, repaired the variable reuse, and built `run-v2`. [Validation](VALIDATION.md) records the tests, independent review and repository checks.
+
+The strongest supported conclusion is that held sources resolve specific corpus geometry, language labels, senses and exposure distinctions that previously blocked a reproducible evaluation. They support a better-defined test population and input specification. Expert inspection of the 12 segment maps, review of unresolved lexical morphology, complete corrected lexical extraction, and object-specific identity and exposure evidence would decide whether those inputs are ready for a frozen substantive comparison.

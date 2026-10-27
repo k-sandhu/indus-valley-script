@@ -1,0 +1,9 @@
+# Retrospective
+
+We used the add-data and start-study repository skills to continue the fixed five-object audit. Three discovery queries preceded the protocol; we disclosed that exposure and froze the inspection bounds before opening primary pages. The new author and institutional routes produced identifiable attachment targets but no full publication. We retained HTTP failures and the institutional DNS failure. Web discovery responses could only be summarized; ordinary response bodies were preserved where returned.
+
+The original report scan had no native text on the selected pages, so we rendered its bounded page block and read the page images. The decisive addition came from the plate catalogue on p325: its1830 identification conflicts with p319's1864 reference to the same panel. We checked the catalogue alias page and reported both assertions to the coordinating contributor. This repairs the scope of our earlier plate claim without choosing a specimen number unsupported by the source chain.
+
+The pass adds one source conflict and failed route records. It leaves the missing contact photograph, drawing key and deposit inventory open. The validation is the author's own source and accounting check; specialist review remains separate. The strongest next step is a photograph register or corrected caption binding Plate CLXI F and Figure38B panel6 to excavation numbers.
+
+The first validation invocation used the Windows default text encoding and failed on a curly quotation mark in the observations. Running the unchanged checks with Python UTF-8 mode passed 41 checks. The knowledge check after adding the registry entry passed with zero errors and two generated-map maintainer notes. Three prose flags concern paths and frozen route wording, and were retained after inspection.

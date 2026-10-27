@@ -1,0 +1,2383 @@
+{
+  "schema_version": "1.0",
+  "task": "living-town-register-validation",
+  "created_at": "2026-10-26T10:18:27.770113+00:00",
+  "scientific_status": "source-review; internal checks do not authenticate continuous settlement",
+  "passed": true,
+  "checks_passed": 468,
+  "checks_total": 468,
+  "summary": {
+    "records": 18,
+    "living_candidates": 16,
+    "sources": 24,
+    "local_witnesses": 28,
+    "continuity_classes": {
+      "continuity-asserted-not-demonstrated": 1,
+      "unresolved": 1,
+      "long-sequence-continuity-unproven": 8,
+      "documented-sequence-with-hiatus": 3,
+      "nearby-modern-settlement": 1,
+      "archaeological-or-sacred-place-not-town-continuity": 2,
+      "abandoned-ancient-city": 2
+    },
+    "demonstrated_indus_to_present": 0
+  },
+  "inputs": {
+    "PROTOCOL.md": "368d7672c7321be5621c133536541c60ba32c7692a2c40fe862807243fa2a7ba",
+    "towns.json": "f6a8d5075b58090245cc2c2bb696bc01700e9d778b586b30a89441762ae08b48",
+    "sources.json": "9b333d2d04442571764419b4befbe0b9db2f9f9da46a77f5d40f894f13200711",
+    "towns.schema.json": "26256794c1ca688d23a6473d68060a8d836ce93800ade3dbf1a9281a48b55f7c",
+    "TABLE.md": "a7bbadc1ac8d5cf546692888f6bafa1c695209f0c18bdc296de51206b1f285c1",
+    "REPORT.md": "a4060bf1e1b2a60d948922ac8c5bada36823070a08eade6de4fb221478a6f7a7",
+    "DATA-UPDATE.md": "59c660e8def220a777a15082aa78b13ea595b0f448ec6b210b051a64e450a909",
+    "RETROSPECTIVE.md": "5eb4d5a009765678411da1b3384c9e1758b303656304da536bd6759f5493f280",
+    "build_register.py": "28721b8c5a6f1f31bbff0b25c4f7ffebd95f792d56af02b2711f6aaa19af989a",
+    "validate.py": "b815d090d11a3664dd461845d66faef0d75bc6ceb6d12554dba7f9c1c54b7792",
+    "acquisition-v1.json": "557810a2ad47b1c906780ad62bedcfa0102d95bc253b1b939ce63d8beca89ad7",
+    "acquisition-v2.json": "c1b3dd0046bf77154dd8196791063aae5669e9073a116e894b225dc47b4dac11",
+    "witness-inspection-v1.json": "8a48f0e4552bf60ccb16901c1b1c0eadfd438314c12fba819da2e2358f19a031",
+    "witness-inspection-v2.json": "e94bb7b0c743ee25f4e1b5f60ebf768124e929d6003d3cadaf76fc5b7de26318"
+  },
+  "checks": [
+    {
+      "name": "schema version",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "protocol planned candidate coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "unique town IDs",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "unique source IDs",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "five country coverage",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "two explicit abandoned contrasts",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-01: required fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-01: approximate South Asia coordinate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-01: explicit coarse precision",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-01: known continuity class",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-01: source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-01: explicit spatial and temporal gaps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-01: date interval",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-01: date basis",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-01: no unsupported Indus-to-present certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-01: valid occupation span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-01: mature_2600_1900 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-01: mature_2600_1900 no contradicting local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-01: late_1900_1300 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-01: late_1900_1300 no contradicting local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-02: required fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-02: approximate South Asia coordinate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-02: explicit coarse precision",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-02: known continuity class",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-02: source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-02: explicit spatial and temporal gaps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-02: date interval",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-02: date basis",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-02: no unsupported Indus-to-present certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-02: mature_2600_1900 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-02: late_1900_1300 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-03: required fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-03: approximate South Asia coordinate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-03: explicit coarse precision",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-03: known continuity class",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-03: source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-03: explicit spatial and temporal gaps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-03: date interval",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-03: date basis",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-03: no unsupported Indus-to-present certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-03: valid occupation span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-03: mature_2600_1900 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-03: mature_2600_1900 no contradicting local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-03: late_1900_1300 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-03: late_1900_1300 no contradicting local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-03: regional source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-03: regional spatial relation explicit",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-04: required fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-04: approximate South Asia coordinate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-04: explicit coarse precision",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-04: known continuity class",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-04: source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-04: explicit spatial and temporal gaps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-04: date interval",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-04: date basis",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-04: no unsupported Indus-to-present certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-04: valid occupation span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-04: mature_2600_1900 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-04: mature_2600_1900 positive supported by local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-04: late_1900_1300 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-04: late_1900_1300 positive supported by local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-05: required fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-05: approximate South Asia coordinate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-05: explicit coarse precision",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-05: known continuity class",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-05: source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-05: explicit spatial and temporal gaps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-05: date interval",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-05: date basis",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-05: no unsupported Indus-to-present certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-05: valid occupation span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-05: mature_2600_1900 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-05: mature_2600_1900 no contradicting local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-05: late_1900_1300 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-05: regional source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-05: regional spatial relation explicit",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-06: required fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-06: approximate South Asia coordinate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-06: explicit coarse precision",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-06: known continuity class",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-06: source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-06: explicit spatial and temporal gaps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-06: date interval",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-06: date basis",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-06: no unsupported Indus-to-present certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-06: valid occupation span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-06: mature_2600_1900 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-06: mature_2600_1900 no contradicting local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-06: late_1900_1300 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-06: late_1900_1300 no contradicting local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-07: required fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-07: approximate South Asia coordinate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-07: explicit coarse precision",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-07: known continuity class",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-07: source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-07: explicit spatial and temporal gaps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-07: date interval",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-07: date basis",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-07: no unsupported Indus-to-present certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-07: valid occupation span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-07: mature_2600_1900 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-07: mature_2600_1900 no contradicting local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-07: late_1900_1300 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-07: late_1900_1300 no contradicting local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-08: required fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-08: approximate South Asia coordinate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-08: explicit coarse precision",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-08: known continuity class",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-08: source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-08: explicit spatial and temporal gaps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-08: date interval",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-08: date basis",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-08: no unsupported Indus-to-present certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-08: valid occupation span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-08: mature_2600_1900 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-08: mature_2600_1900 no contradicting local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-08: late_1900_1300 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-08: late_1900_1300 no contradicting local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-09: required fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-09: approximate South Asia coordinate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-09: explicit coarse precision",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-09: known continuity class",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-09: source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-09: explicit spatial and temporal gaps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-09: date interval",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-09: date basis",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-09: no unsupported Indus-to-present certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-09: mature_2600_1900 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-09: late_1900_1300 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-10: required fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-10: approximate South Asia coordinate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-10: explicit coarse precision",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-10: known continuity class",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-10: source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-10: explicit spatial and temporal gaps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-10: date interval",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-10: date basis",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-10: no unsupported Indus-to-present certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-10: mature_2600_1900 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-10: late_1900_1300 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-10: regional source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-10: regional spatial relation explicit",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-11: required fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-11: approximate South Asia coordinate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-11: explicit coarse precision",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-11: known continuity class",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-11: source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-11: explicit spatial and temporal gaps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-11: date interval",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-11: date basis",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-11: no unsupported Indus-to-present certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-11: valid occupation span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-11: mature_2600_1900 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-11: mature_2600_1900 positive supported by local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-11: late_1900_1300 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-11: late_1900_1300 positive supported by local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-12: required fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-12: approximate South Asia coordinate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-12: explicit coarse precision",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-12: known continuity class",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-12: source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-12: explicit spatial and temporal gaps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-12: date interval",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-12: date basis",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-12: no unsupported Indus-to-present certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-12: valid occupation span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-12: mature_2600_1900 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-12: mature_2600_1900 no contradicting local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-12: late_1900_1300 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-12: late_1900_1300 no contradicting local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-13: required fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-13: approximate South Asia coordinate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-13: explicit coarse precision",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-13: known continuity class",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-13: source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-13: explicit spatial and temporal gaps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-13: date interval",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-13: date basis",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-13: no unsupported Indus-to-present certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-13: valid occupation span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-13: mature_2600_1900 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-13: mature_2600_1900 no contradicting local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-13: late_1900_1300 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-13: late_1900_1300 no contradicting local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-13: regional source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-13: regional spatial relation explicit",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-14: required fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-14: approximate South Asia coordinate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-14: explicit coarse precision",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-14: known continuity class",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-14: source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-14: explicit spatial and temporal gaps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-14: date interval",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-14: date basis",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-14: no unsupported Indus-to-present certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-14: valid occupation span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-14: mature_2600_1900 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-14: mature_2600_1900 no contradicting local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-14: late_1900_1300 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-14: late_1900_1300 no contradicting local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-15: required fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-15: approximate South Asia coordinate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-15: explicit coarse precision",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-15: known continuity class",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-15: source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-15: explicit spatial and temporal gaps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-15: date interval",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-15: date basis",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-15: no unsupported Indus-to-present certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-15: valid occupation span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-15: mature_2600_1900 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-15: mature_2600_1900 no contradicting local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-15: late_1900_1300 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-15: late_1900_1300 no contradicting local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-15: regional source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-15: regional spatial relation explicit",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-16: required fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-16: approximate South Asia coordinate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-16: explicit coarse precision",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-16: known continuity class",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-16: source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-16: explicit spatial and temporal gaps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-16: date interval",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-16: date basis",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-16: no unsupported Indus-to-present certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-16: valid occupation span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-16: mature_2600_1900 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-16: mature_2600_1900 no contradicting local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-16: late_1900_1300 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-16: late_1900_1300 no contradicting local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-16: regional source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-16: regional spatial relation explicit",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-17: required fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-17: approximate South Asia coordinate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-17: explicit coarse precision",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-17: known continuity class",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-17: source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-17: explicit spatial and temporal gaps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-17: date interval",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-17: date basis",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-17: no unsupported Indus-to-present certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-17: valid occupation span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-17: mature_2600_1900 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-17: mature_2600_1900 positive supported by local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-17: late_1900_1300 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-17: late_1900_1300 positive supported by local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-18: required fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-18: approximate South Asia coordinate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-18: explicit coarse precision",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-18: known continuity class",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-18: source links resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-18: explicit spatial and temporal gaps",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-18: date interval",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-18: date basis",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-18: no unsupported Indus-to-present certification",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-18: valid occupation span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-18: mature_2600_1900 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-18: mature_2600_1900 positive supported by local span",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-18: late_1900_1300 enum",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S01: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S01: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S01: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S01: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S02: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S02: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S02: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S02: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S03: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S03: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S03: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S03: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S04: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S04: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S04: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S04: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S05: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S05: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S05: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S05: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S06: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S06: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S06: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S06: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S07: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S07: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S07: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S07: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S08: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S08: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S08: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S08: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S09: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S09: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S09: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S09: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S10: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S10: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S10: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S10: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S11: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S11: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S11: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S11: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S12: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S12: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S12: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S12: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S13: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S13: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S13: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S13: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S14: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S14: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S14: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S14: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S15: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S15: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S15: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S15: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S16: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S16: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S16: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S16: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S17: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S17: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S17: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S17: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S18: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S18: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S18: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S18: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S19: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S19: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S19: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S19: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S20: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S20: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S20: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S20: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S21: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S21: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S21: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S21: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S22: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S22: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S22: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S22: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S23: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S23: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S23: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S23: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S24: bibliography fields",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S24: date or explicit unknown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S24: stable public URL",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "LT-S24: explicit rights",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json: exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S01: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S01-1.html: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S01-1.html: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S02: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S02-1.html: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S02-1.html: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S03: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S03-1.html: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S03-1.html: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S04: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S04-1.html: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S04-1.html: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S05: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S05-1.html: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S05-1.html: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S05: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S05-2.pdf: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S05-2.pdf: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S06: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S06-1.pdf: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S06-1.pdf: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S07: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S07-1.pdf: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S07-1.pdf: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S08: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S09: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S09-1.html: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S09-1.html: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S09: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S09-2.html: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S09-2.html: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S10: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S10-1.pdf: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S10-1.pdf: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S11: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S12: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S12-1.html: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S12-1.html: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S13: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S14: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S14-1.html: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S14-1.html: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S15: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S15-1.html: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S15-1.html: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S15: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S15-2.html: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S15-2.html: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S16: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S16-1.html: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S16-1.html: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S16: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S16-2.pdf: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S16-2.pdf: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S17: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S17-1.html: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S17-1.html: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S18: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S18-1.pdf: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S18-1.pdf: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S19: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S19-1.pdf: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S19-1.pdf: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S20: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S20-1.html: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S20-1.html: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S21: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S21-1.html: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S21-1.html: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S22: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S22-1.html: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S22-1.html: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S23: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S23-1.html: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S23-1.html: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v1.json/LT-S24: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v2.json: exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v2.json/LT-S03: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v2.json/LT-S03-v2-1.html: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v2.json/LT-S03-v2-1.html: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v2.json/LT-S08: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v2.json/LT-S08-v2-1.pdf: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v2.json/LT-S08-v2-1.pdf: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v2.json/LT-S09: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v2.json/LT-S09-v2-1.pdf: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v2.json/LT-S09-v2-1.pdf: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v2.json/LT-S11: source exists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v2.json/LT-S11-v2-1.pdf: physical file hash",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "acquisition-v2.json/LT-S11-v2-1.pdf: D local-only path",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Harappa modern overlap retained",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Rupnagar's hiatus retained",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Patna's sampled-area hiatus retained",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Srinagar not dated from Burzahom",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Lumbini temple not dated from nearby village",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Rajgir uncalibrated result not a calendar date",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "all source IDs used",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "primary page fragments pass corrected locators",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "failed first locator check preserved",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "package file: PROTOCOL.md",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "package file: towns.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "package file: sources.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "package file: towns.schema.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "package file: TABLE.md",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "package file: REPORT.md",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "package file: DATA-UPDATE.md",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "package file: RETROSPECTIVE.md",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "package file: build_register.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "package file: validate.py",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "package file: acquisition-v1.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "package file: acquisition-v2.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "package file: witness-inspection-v1.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "package file: witness-inspection-v2.json",
+      "passed": true,
+      "details": null
+    }
+  ]
+}

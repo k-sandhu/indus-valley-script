@@ -1,0 +1,5 @@
+# Clarification of the saved coverage note
+
+The third string in `run-v2/coverage.json`'s `counting_notes` says that CISI accession coverage includes bracketed candidates. This wording refers to the imported assertions and identifiers. The accepted object-field count, `field_coverage.object.museum_accession = 1979`, excludes the CISI cells described by the explicit `cisi_reader_decisions.accepted_cell_policy`. The [source verification](source-verification-v2.json) confirms that uncertain CISI assertions do not occur in accepted fields. The frozen JSON and its replay are preserved; this note clarifies the scope of that inherited phrase.
+
+The image keys listed as quarantined include M-1187, which has no face link in the inherited index. The M-1187-named composite is already mapped there to M-1189. That whole-file pointer remains available; its exact panel geometry is unresolved, as described in the report. The three other listed object keys carry inherited links withheld from face-specific acceptance.

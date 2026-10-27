@@ -1,0 +1,11 @@
+# Presentation retrospective
+
+We used the reviewed register to build a short quantitative presentation. The main design problem was preserving the distinctions that the table had recovered: a town can have several architectural systems, a wall's building episode can differ from first occupation, and a quoted error can cover only part of the uncertainty. We kept those qualifications beside their measurements and placed the full source routes in the speaker notes.
+
+The first draft used a horizontal bar chart for the three Mohenjo-daro axes. Its labels overlapped the small negative bars. We changed it to a native point chart. The horizon chart initially placed its horizontal axis at zero, through the negative-altitude profile. We moved its labels and crossing to the lower edge while retaining the negative values. Native PowerPoint wrapped an ASCII minus away from a Surkotada value, so the final chart uses the mathematical minus and explicitly labels the angular unit.
+
+The local authoring runtime needed its bundled dependency path before it could discover fonts. The chart API required the documented `top` label position. The finalizer required a separate native-table policy for each table slide. Excel's fifteen-digit limit rejected the full floating-point tails, so the chart values use twelve significant digits. A later font check found that series labels retained Aptos while the surrounding deck used Arial. We assigned Arial to the series labels explicitly. Earlier drafts remain under the D: build tree.
+
+We checked the final package's native chart data and workbooks, then opened it in Microsoft PowerPoint and exported every slide for inspection. We also resized representative charts in a separate test copy, saved it and reopened it. The delivered file remains unchanged. The layout checker estimated that the eleven-town table might extend into its footer. PowerPoint's exported slide shows the full table with space above the footer, so we retained the layout and recorded that warning's disposition in the artifact manifest.
+
+The deck adds no scientific test or confirmation population. It gives the deciding survey the final slide so that the presentation ends on the same falsifiable claim as the research report.

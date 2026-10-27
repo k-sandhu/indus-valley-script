@@ -1,0 +1,13 @@
+# Work record
+
+We began with the final Sanskrit-key review and the rebus studies' recorded retry conditions. The existing code confirmed two repairable input choices: a prefix count that removes Tamil vowel marks, and a lexical lookup that falls back to a collapsed phonological form. We wrote the protocol before implementing the replacement or measuring its counts.
+
+We separated lexical identity from the phonological tolerance used in a rebus search. The replacement preserves exact forms, returns every homograph record and requires a documented decision for any selected variant. A written-form counter can still aggregate homographs. Generated tests cover the known prefix failure, Unicode equivalence, vowel length, consonant doubling, missing input, zero counts and ambiguous senses.
+
+The audit uses every proposed form in the existing identification list and the same historical token stream. Its diagnostic counts revealed that 15 of 24 forms have multiple exact lexical records. This made the scope of sense adjudication clearer: it is necessary for semantic and origin decisions, while form counting alone does not require it. We recorded these cases locally without selecting entries or recalculating the rebus effect.
+
+We checked the Winslow examples against their held HTML pages and retained the incomplete parser as an open task. The examples alone do not define a general junction rule or a representative recall estimate. A future repair needs a manually reviewed sample across compound classes and rejected entries.
+
+The shared key, meaning-map and shots synthetic runs completed successfully. The meaning-map command was explicitly limited to 30 power trials for a smoke test; its null interval is too wide for the proposed calibration campaign. We added a manifest preflight check and eight generated tests so missing or unreviewed declarations fail before a future access request. The coordinating reviewer identified a mismatch between the documented fields and the checked fields, and missing checks for duplicate IDs. We aligned the fields, added pinned evidence for claims, maps and crosswalks, and rejected duplicate or overlapping control IDs. Three additional tests cover those repairs and malformed family types. The independent count replay and source hash checks passed with all twenty-one focused tests in verification-v2; verification-v1 preserves the earlier eighteen-test result.
+
+No new Indus holdout was opened. New detailed derivatives remain in the owned local data directory. We did not edit the shared harness, old analyses, source tables, generated knowledge index or spending ledger. The next work belongs to the named source, parser, calibration and register reviewers in the blocker manifest.

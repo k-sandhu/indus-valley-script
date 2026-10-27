@@ -1,0 +1,13 @@
+# Full object register from held sources
+
+22 October 2026. Direction 1, Q-1030. This protocol precedes the first build. The package is exploratory data engineering by the GPT-6 Codex agent through the Codex desktop collaboration harness; the exact model variant is not exposed to this worker.
+
+We will retain every one of the 4,695 Lipi families and all 5,680 exported faces. A family is a provisional object identity. The build will not merge families because a catalogue or museum number agrees. An external row joins only through an inherited reviewed join or a unique catalogue key, with competing identities retained in a separate queue.
+
+The register will use the unchanged version 2 schema of the 7 October object-ledger pilot. Stable identifiers will be `LIPI:<family>` and `LIPI:<record_id>`. Sidecar tables will give raw values, normalized values, value status, unresolved conflicts, source hashes and join status. Unknown exposure will remain unreviewed. This task will read metadata and source pointers; it will not score readings or declare a new confirmation cohort. No bench reading, meaning-map or segmentation task applies to this metadata build.
+
+The first population will use the normalized Lipi export. Adapters will add the 13 October image index, complete CISI basic-data tables, excavation-table joins, museum joins, older website export, Mayig source links and corrected pilot enrichment where the held files support them. Every adapter will report input rows, linked families, unresolved rows and fields actually imported. Missing adapters will remain explicit. Source-derived rows, source strings and detailed conflict queues will stay under local `data/raw/2026-10-22-object-register/`.
+
+The build must refuse an existing output directory. It will record input hashes, reproduce the inventory's 4,075 families with a usable CISI string and 3,598 families with at least one positive dimension, and explain any change of definition. We will validate the unchanged JSON schema, object and face closure, source and assertion references, source paths, missing-value reasons, and copied source values. Focused synthetic failures will check duplicate IDs, foreign-object assertions, missing provenance, uncertain identity joins, and confusion between unknown exposure and freshness. A second fresh build must reproduce deterministic output hashes.
+
+No source is acquired or published in this run. The aggregate report and source manifest may be tracked. Detailed register rows remain local while Q-1028 is open. The resulting register is ready for downstream audits when it has complete base population and explicit source gaps; physical identity adjudication and new unseen evaluation data remain separate work.

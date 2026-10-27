@@ -1,0 +1,7 @@
+# Proposed data update
+
+Maintain the missing divided-face total at 42. Add one provisional primary-source candidate for the Dholavira record carrying 348: Bisht preliminary report accession 20781, context-table serial 44 on printed page 249, PDF page 266 and illustrated serial 92 on printed page 280, PDF page 297. Grid, Bailey location, depth and dimensions agree. The accession concordance remains missing, and the source caption counts eight signs against nine in the export. Keep candidate status and the local photograph hash from SOURCE-MANIFEST-v2.json; do not merge identities or assign segment positions.
+
+For the five inherited HARP figure routes, retain the year, lot and item fields separately. Their four-digit middle tokens conform to the unregistered-object convention described by Kenoyer and Meadow (2010), printed page 3, footnote 4. The figure publication and primary object image remain unresolved. The seven dispositions and acquisition responses are local under data/raw/2026-10-24-unit-source-pass2/, physically D:/projects/indus_valley_script/data/raw/2026-10-24-unit-source-pass2/.
+
+CISI3.1/3.2 access remains incomplete. New publisher and institutional response witnesses establish available bibliographic routes, not catalogue-image coverage. Source rights remain unverified; acquired HTML, extracted text, images and object-level observations remain local. No shared DATA, MANIFEST, stock or bench state was edited.

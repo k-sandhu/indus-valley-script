@@ -1,0 +1,20 @@
+# Readable records outside the Indus region
+
+We can begin with texts already read in other scripts. The strongest historical targets are Mesopotamian cuneiform records of Meluhha, Ur III documents from Susa, and early Dilmun seal legends. Later Iranian and Tamil-Brahmi records provide comparisons for how inscriptions identify people, allocate goods and authorize transactions. This source inventory admits no inscription to an evaluation corpus.
+
+The eight entries in [sources.json](sources.json) distinguish complete institutional pages, scholarly transliterations, author abstracts and indexed excerpts. Access tiers matter: an abstract establishes the publication's reported result but supplies no uninspected accession or plate.
+
+| Region | Source-backed material | Use and remaining evidence |
+|---|---|---|
+| Mesopotamia | Louvre AO 22310 identifies an interpreter of Meluhha; Possehl describes readable cuneiform references to commerce and Meluhhan communities. | Recover the underlying tablet editions and their goods, names, dates and identifiers. AO 22310 has no established excavation locus; catalogue and scholarly date alternatives remain separate. |
+| Susa, Iran | BDTNS 157897 / P332451 / TS.B 140 provides a Ur III tablet and seal transliteration, with museum identifiers and dimensions. | A concrete record for joining a transaction to an official's seal. Damaged signs stay uncertain; no independent translation was made. |
+| Bahrain / early Dilmun | Laursen and colleagues' 2026 abstract reports three tokens carrying impressions of two seals naming Yagli-el and an epithet. | Obtain the complete edition and plates before object-level admission. The owner's identification with a namesake king remains a question. |
+| Persepolis, Iran | Hallock's published Elamite administrative texts document food movements, allocations and sealed transactions around 500 BCE. | Later evidence for administrative operation; chronology excludes treating it as contemporary testimony about the Indus cities. |
+| South India | The official Tamil-Brahmi overview lists readable pottery, coins, rings, seals and cave records, including the name Peravatan on a Karur silver ring. | Keep this explicitly requested comparison separate from overseas geography. Obtain full editions and object identities before adding legends. |
+| Egypt and Oman | The 2025 Berenike publication's indexed passages discuss Tamil-Brahmi jar inscriptions and comparative Sumhuram finds. | A later overseas comparison. Full article access and plates remain missing in this pass, and one claimed Omani example is qualified in the source. |
+
+The project already holds a narrower readable-seal comparison. The [24 October recovery](../2026-10-24-readable-seal-controls/REPORT.md) retained eleven Akkadian legends and sixteen Tamil seals or rings, with twenty-three Tamil-Brahmi legends when coins are included. Those are eligibility counts for that particular study, not worldwide totals. Its [third pass](../2026-10-24-readable-seal-pass3/REPORT.md) recovered the Tell Brak catalogue without admitting the partly restored cup-bearer legend.
+
+Our next acquisition priority is an edition-linked register of external texts: carrier, accession, excavated place, date, script and language, original edition, edited reading, goods and units, personal names, titles, seals and source dependence. Start with Mesopotamia, Susa and Bahrain; keep later controls in their own dated groups. The current [external-anchor audit](../../research/literature/external_phonetic_anchor_audit.md) found no inspected object with an established correspondence between Indus and cuneiform texts.
+
+The strongest conclusion is that readable external records already support a concrete study of people, goods and authorization in connected trading societies. The deciding evidence for a restricted Indus reading would be an independently identified person, commodity or transaction joined to its particular inscription. This inventory establishes source routes; it makes no such identification.

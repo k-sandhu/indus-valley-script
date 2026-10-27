@@ -1,0 +1,9 @@
+# Retrospective
+
+Contributor: gpt-6.1-sol, Codex collaboration harness,24 October 2026. We used the repository add-data and write-retrospective skills and no further agents. We read the latest register and the three earlier study retrospectives, checked D: and the raw-data junction, and froze a 24-page review before extracting new evidence.
+
+The Dholavira PDF contains usable English text, while the inherited OCR file and Lothal text layer are garbled. We used PyMuPDF 1.28.0 to extract Dholavira passages and render selected figures. For Lothal we rendered selected pages and ran local Tesseract OCR. A diagnostic page confirmed that PDF index 100 is printed p. 90, so the dock's pp. 124-127 are indices 134-137. The diagnostic page counts within the stopping limit. We visually inspected the Dholavira section and stage schematic, the castle plan and Lothal Fig. 19. We preserved all derivatives on D:.
+
+The figures clarified the work. Dholavira Fig. 5.2 starts the middle town in IIIA, while Fig. 5.1 draws the successive inward additions to the southern castle defence. Lothal Fig. 19 distinguishes inlet stages but is an isometric view. We therefore recorded physical sequence relations and the missing survey joins. The wall-related fill description was retained with its redeposition setting. We did not promote inherited TF-19 metadata to a newly verified laboratory record.
+
+The first package run passed locator and field checks and preserved eleven relations in a local-only table. The report distinguishes evidence already in earlier compilations from the added source-level relation records. No new chronology or bearing was calculated. The remaining work requires phase-keyed wall coordinates, construction deposits, sample material and restoration records; repeated imagery measurements would not close those gaps.

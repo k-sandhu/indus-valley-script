@@ -1,0 +1,165 @@
+{
+  "schema_version": "1.0",
+  "task": "meaning-map",
+  "synthetic": true,
+  "provenance": [
+    {
+      "path": "bench/common.py",
+      "sha256": "ad67cb4453e2a9f436881d7fdd8d8f427e509c0e2bbb80c8f4736d1c51d9370a"
+    },
+    {
+      "path": "bench/__main__.py",
+      "sha256": "1df901f95ddbe76ebbc56868a640eccfac89addb568e74ade74e4fec1c2de11a"
+    },
+    {
+      "path": "bench/meaning_map.py",
+      "sha256": "1a28e10e956b794c7a5a9eb33aea1c45e4d4107e15201fdfbc6661233aa73b29"
+    },
+    {
+      "path": "experiments/2026-10-12-conjecture-shots/shot-b-reading/confirm.py",
+      "sha256": "1be06acdf6f7b209876f49fd0ac9e3241189c2a5feb1aa0bc35135ee77e618ec"
+    },
+    {
+      "path": "experiments/2026-10-12-conjecture-shots/REVIEW-RESPONSE.md",
+      "sha256": "2a996eda0ee1e8f37fd6abd53c256e3258c5f407ebdce0ae0c24b3ef43371db1"
+    }
+  ],
+  "components": {
+    "larger_official": {
+      "computable": true,
+      "score": 0.5,
+      "null_mean": 0.0011875785175879396,
+      "null_sd": 0.06798862568494381,
+      "distance_sd": 7.336703992133715,
+      "p_one_sided": 0.005,
+      "draws": 199,
+      "alpha": 0.05,
+      "null_quantiles": {
+        "q025": -0.12314453125,
+        "q50": -0.00390625,
+        "q95": 0.11054687499999993,
+        "q975": 0.13486328124999997
+      },
+      "null_min": -0.1650390625,
+      "null_max": 0.1943359375,
+      "pass": true
+    }
+  },
+  "primary": {
+    "computable": true,
+    "score": 7.336703992133715,
+    "null_mean": -8.926416278393219e-18,
+    "null_sd": 1.0,
+    "distance_sd": 7.336703992133715,
+    "p_one_sided": 0.005,
+    "draws": 199,
+    "alpha": 0.05,
+    "null_quantiles": {
+      "q025": -1.8287192675983373,
+      "q50": -0.07492177502149416,
+      "q95": 1.608493999999029,
+      "q975": 1.9661480341117519
+    },
+    "null_min": -2.4449183866118225,
+    "null_max": 2.840892238026001,
+    "pass": true
+  },
+  "seed": 20261013,
+  "permutations": 199,
+  "alpha": 0.05,
+  "sample_sizes": {
+    "larger_official": {
+      "units": 1536,
+      "eligible_signs": 64,
+      "min_sign_units": 24
+    }
+  },
+  "reliability": {
+    "larger_official": {
+      "eligible_signs_both_halves": 64,
+      "units_by_half": [
+        761,
+        775
+      ],
+      "pearson": 0.8752814343203305,
+      "spearman": 0.7550824175824176,
+      "computable": true
+    }
+  },
+  "discovery_resplit_stability": {
+    "larger_official": {
+      "re_splits": 5,
+      "computable_half_contrasts": 10,
+      "mean": 0.4998046875,
+      "sd": 0.0005859375000000001
+    }
+  },
+  "reliability_population": "supplied discovery data",
+  "influence": {
+    "larger_official": {
+      "criterion": "rank",
+      "pass": true
+    }
+  },
+  "pass": true,
+  "pass_rule": "All declared measures computable; joint within-band p <= alpha; every prediction uses rank or passes component leave-one-out",
+  "power": [
+    {
+      "effect": 0.0,
+      "effect_scale": {
+        "larger_official": "response noise SD"
+      },
+      "law": "Component outcomes depend on the mapped-label share; all signs on a component share its response. Concentration plants a sign-specific category mixed with the original background.",
+      "success": 2,
+      "total": 30,
+      "rate": 0.06666666666666667,
+      "ci95": [
+        0.018477023791270378,
+        0.2132345836261692
+      ]
+    },
+    {
+      "effect": 0.25,
+      "effect_scale": {
+        "larger_official": "response noise SD"
+      },
+      "law": "Component outcomes depend on the mapped-label share; all signs on a component share its response. Concentration plants a sign-specific category mixed with the original background.",
+      "success": 30,
+      "total": 30,
+      "rate": 1.0,
+      "ci95": [
+        0.8864866068260312,
+        0.9999999999999999
+      ]
+    },
+    {
+      "effect": 0.5,
+      "effect_scale": {
+        "larger_official": "response noise SD"
+      },
+      "law": "Component outcomes depend on the mapped-label share; all signs on a component share its response. Concentration plants a sign-specific category mixed with the original background.",
+      "success": 30,
+      "total": 30,
+      "rate": 1.0,
+      "ci95": [
+        0.8864866068260312,
+        0.9999999999999999
+      ]
+    },
+    {
+      "effect": 1.5,
+      "effect_scale": {
+        "larger_official": "response noise SD"
+      },
+      "law": "Component outcomes depend on the mapped-label share; all signs on a component share its response. Concentration plants a sign-specific category mixed with the original background.",
+      "success": 30,
+      "total": 30,
+      "rate": 1.0,
+      "ci95": [
+        0.8864866068260312,
+        0.9999999999999999
+      ]
+    }
+  ],
+  "power_scope": "Planted on the supplied discovery incidence matrix when available, with component-shared outcomes"
+}

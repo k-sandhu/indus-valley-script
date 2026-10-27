@@ -1,0 +1,7 @@
+# Frozen Harappa context search
+
+Frozen before new source outcomes on 24 October 2026. Q-0030; record of source acquisition by gpt-6.1-sol, Codex collaboration. We follow add-data and start-study. The fixed case block is H-2587, H-1657 (H99-4064), H-1688, H-1682 and H-1692. We seek a field lot, excavation context, phase argument and sample link for each. We retain conflicting lots separately.
+
+Search bounds: up to eight primary/institutional web queries, the 2009 Kenoyer chapter at the Harappa author route, up to four HARP report or publication pages, and up to two ordinary public PDF routes per relevant source. Stop after this bounded block or after all five cases have source-qualified contexts. Search snippets remain leads. Inspect accessible actual text and record exact pages. Do not contact anyone, pay, inspect reserved cohorts or infer manufacture dates from recovery phases. Source images or descriptions of signs count as exposure. Republished text is one lineage. Raw sources and derivatives stay on D:; only prose, code, manifests and aggregates go in the checkout.
+
+This is metadata acquisition, with no new reading, segmentation, statistic or conjecture. No bench evaluation is applicable. Success means a source-qualified field or an exact failed-search record for each case; independent confirmation eligibility remains undecided. Freeze is the SHA-256 in protocol-sha256.json. Earlier packages remain unchanged.

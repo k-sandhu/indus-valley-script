@@ -1,0 +1,15 @@
+# Architectural data and coverage update
+
+We acquired eight HTML witnesses and reused one previously held preliminary excavation-report scan. [SOURCES.json](SOURCES.json) records titles, authors, dates, exact URLs, logical and physical paths, formats, byte counts, SHA-256 hashes, access times and rights observations. A tenth source, the 1968 alternative Lothal interpretation, is a bibliographic pointer inspected through its publisher abstract and is included in [scenes.json](run-v5/scenes.json); no local copy is claimed.
+
+New raw witnesses are local-only under physical `D:/projects/indus_valley_script/data/raw/2026-10-26-indus-living-atlas/reconstruction/`, reachable through logical `data/raw/2026-10-26-indus-living-atlas/reconstruction/`. We checked the D: mount and the checkout's `data/raw` junction before acquisition. The reused report retains its original path and hash. Browser screenshots and exported download checks also remain under the new D: root, separate from the tracked model files.
+
+The authored geometry adds seven models, 49 feature records, 590 mesh parts and a source record for every feature. Repeated buildings embedded in city scenes account for some instances. These counts describe presentation coverage and do not count independent archaeological observations. We add no inscribed object, face, photograph, museum accession or object findspot. Existing object-coverage percentages remain unchanged.
+
+The new machine-readable fields are model units and coordinate convention; feature identity and description; published dimensions and ranges; exact source locator; footprint status; position status; vertical status; assumed parameters; source identity; optional display-layer role; and the height-sensitivity range. Unknown positional errors remain `null`, with a missing reason. Each OBJ group joins to a feature ID in `scenes.json`.
+
+We preserve two source distinctions that affect the meshes. Dholavira's p. 107 table city length conflicts with the repeated prose value. Its reservoir's general 7.20–7.50 m depth is distinct from the localized 10.60 m northern cut. The model also keeps Lothal's first-stage northern opening separate from its later eastern opening. No source wording was changed to make those records agree.
+
+The new raw HTML and previously held PDF have `rights-unverified` status. They remain local, with no acquired photograph, traced source plan or full text embedded in the explorer. Our original code follows the Unlicense; the project's schematic geometry, summaries and metadata follow CC0 1.0. Third-party titles and bibliographic pointers retain attribution.
+
+Maintainer integration is proposed in [manifest-additions.json](manifest-additions.json). Shared `knowledge/DATA.md` and `data/MANIFEST.json` were left unchanged. The next coverage gain requires plans and sections joined by a common coordinate frame and building episode, followed by object-context joins. Repeating a visual model with more invented city blocks would not close that gap.

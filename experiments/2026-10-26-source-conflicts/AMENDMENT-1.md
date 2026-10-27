@@ -1,0 +1,3 @@
+# Additional front matter
+
+The first eight Rao PDF pages end at the copyright page. They do not reach the contents or lists that the protocol intended to check. Before opening further pages, we add PDF pages 9–24, at most sixteen pages, as the sole extension. This bound cannot be used to inspect new object plates. We retain the zero-query and zero-acquisition limits. The filename inventory supplied no separately named errata or photograph register. A search within the held Airavati text for the two Harappa registration numbers found neither; that search is recorded as an incidental bibliographic check, with no new source assertion admitted.

@@ -1,0 +1,9 @@
+# Coverage addition for integration
+
+We add a reproducible twenty-target projection and local catalogue from eleven held contribution packages. The [manifest](source-manifest-v4.json) records original sources, derived input paths, actual physical paths and file hashes. The [interface](INTERFACE.md) identifies local outputs. All detailed JSON and HTML are under `D:/projects/indus_valley_script/data/raw/2026-10-26-object-pilot-register/`, reached logically as `data/raw/2026-10-26-object-pilot-register/`. Existing inputs remain unchanged.
+
+The measured gain is consolidation: twenty inspectable dossiers, 539 retained assertions and 138 ranked missing-evidence rows. New acquisitions, physical merges, primary observations and empirical coverage gains are all zero. The projection preserves 62 Dholavira candidate families and 274 edges. It does not change corpus totals or source ownership. The source dependencies and original uncertainty remain attached to assertions.
+
+The [coverage table](coverage-v4.json) measures presence over twenty source targets and separately records zero newly accepted physical identities. Seventeen targets have local image files; H-1657 has only a source-qualified web pointer. All-face completeness remains unestablished. A source page containing a named drawing or panel is counted separately from an isolated verified face. The later image-recovery and conflict-review contributions belong to the coordinating integration and are not counted here.
+
+Project code is under the Unlicense and project prose and aggregate records under CC0 1.0. Third-party source terms remain unchanged. Full records, images, source-derived text and browsable HTML remain local-only. No shared data inventory, generated knowledge map or merged experiment registry was changed by this contribution.

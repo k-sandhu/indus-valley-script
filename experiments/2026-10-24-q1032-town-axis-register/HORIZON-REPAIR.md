@@ -1,0 +1,7 @@
+# Corrected-location horizon calculation
+
+Added after run-v2 identified profiles from superseded coordinates. This is an exploratory metadata repair. We reuse the unchanged `horizon.py` and `common.py` from 21 October, record their hashes, and compute the same 2-250 km profiles at Surkotada (23.6113 N, 70.9174 E) and Farmana (29.040 N, 76.306 E). The latter coordinate is approximate and is not a surveyed wall point. The source is the plan-registration report and, for Surkotada, the new imagery record.
+
+Use GLO-30 within 20 km and GLO-90 farther away, exclude the inner 2 km, sample every 0.1 degree in the eastern and western sectors, and retain the 1.6 m eye height and terrestrial-refraction coefficient 0.13. Store tiles only on D: with URL, retrieval time, size and SHA-256. HTTP errors other than 404 stop the run. Missing GLO-30 tiles stop the run because land coverage can be incomplete. A missing GLO-90 tile is treated as sea according to the dataset's AWS documentation and remains listed. No missing tile is silently inferred from a network failure.
+
+These are modern surface-model horizons. The DSM includes vegetation and buildings. Observer position, ancient ground level, vegetation change and DEM errors have not been combined into a one-sigma uncertainty. The profiles repair the location error and do not establish a Bronze Age apparent horizon. No orientation hypothesis is scored.

@@ -1,0 +1,7 @@
+# Increment exactness audit
+
+Parent code review found that the frozen increment generator uses the inherited e/ē and o/ō comparison for prefix and suffix matching and second-noun lookup. This exceeds the protocol's exact-match candidate scope. The four explicitly flagged Lexicon-assisted alignment rows concern a separate operation.
+
+We preserve the entire extraction, all candidates, frozen code and earlier validation outputs. We audit each candidate by requiring its two surface members to concatenate exactly to the entry's roman form, its left surface to be an exact increment form of the proposed left lemma, and its right surface to equal the right lemma exactly. A failed equality that succeeds under only e/ē and o/ō folding is flagged as folding-dependent. Any failure that folding cannot explain is separately unresolved. We write a new local detailed audit and exact-match candidate subset without editing selected members or promoting eligibility. Every retained or flagged candidate stays unresolved and scorer-ineligible.
+
+The audit counts candidate analyses and affected dictionary rows separately. Tests include pe and pē alternatives, an unaffected candidate, a folded prefix, a folded right root and a mismatch outside the inherited folding. Stop after a complete audit of every candidate in the frozen table and deterministic replay of its counts. This is a post-outcome implementation audit, with no new lexical source or archaeological confirmation access.

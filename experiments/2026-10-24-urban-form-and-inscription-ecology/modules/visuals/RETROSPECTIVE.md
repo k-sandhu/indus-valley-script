@@ -1,0 +1,11 @@
+# Visual atlas retrospective
+
+We produced 23 scientific figures from validated science `run-v3`, the three research modules, the existing synthetic calculations and the six published dimension pairs. We acquired no source imagery. The PNG, SVG and contact-sheet files were written directly to D:. The repository contains code, source references, hashes and review records.
+
+The first render exposed clipped titles, crowded prior-result cards and collisions between dates, legends and captions. Subsequent graphic runs adjusted type sizes, margins and arrow placement. We separated the dense site callouts on the location index and moved the Dholavira source dates into the row labels. These changes preserved archaeological values. We retained each rendered run and the corresponding build-code snapshot.
+
+The sixth graphic run corrected shortened bibliographic titles against the source register, added project-source locators to the coverage figures and pinned the older result files and inherited coordinate table as inputs. Review then found that the heatmap's handwritten display labels followed a different order from the register's named domain fields. Graphic `run-v7` derives each display label from its domain key. The cells and counts were unchanged. The verifier now checks both the key-label correspondence and every indexed cell.
+
+We inspected all 23 final PNGs and the selected contact sheet. The final review checked title and caption legibility, data labels, chronology qualifiers, units, source scopes and the distinction between reported and illustrative geometry. The automated verification passes 577 checks covering pinned inputs, exact source metadata, assertion locators, PNG resolution, SVG parsing, asset hashes, selected denominators and independent arithmetic reimplementations of the synthetic examples. The check count measures software consistency and does not count independent archaeological validations.
+
+The source index, selected change matrix and available denominator examples make the acquisition priorities clearer. They also show why a single similarity score across whole towns would conceal differences in architectural unit, phase and exposure. The next study needs matched building episodes and documentary contexts before it can decide which scale of coordination explains the shared forms.

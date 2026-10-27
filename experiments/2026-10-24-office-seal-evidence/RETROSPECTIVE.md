@@ -1,0 +1,11 @@
+# Retrospective
+
+We froze a bounded recovery protocol, read the earlier statistical and plate-check reports and their reviews, and followed the physical-use studies back to the original excavation publication. The existing Frenez and Tosi witness supplied exact page citations. The D: storage target and raw-directory junction were checked before extraction.
+
+The first search found almost no text in the Rao PDFs. Existing text files did not supply the requested body passages, so we rendered and OCRed a bounded set of pages around the printed references. The first Part II block reached printed p. 319 but stopped before the cited p. 321. A second block completed pp. 320–323 within the protocol's twelve-page limit. The initial Part I pages concerned adjacent stratigraphy; its structural chapter supplied the warehouse description at p. 113. Exact consulted pages remain in the manifest. We checked the decisive OCR passages against their rendered pages.
+
+The useful result was an identifier join: excavation 1864 is CISI L-164. This connects an earlier jar-stopper interpretation to the later wooden-box group. Related catalogue joins recovered a repeated-die control network. We preserved disagreements over support type, deposit totals, fire cause and nail marks instead of selecting one source's interpretation. No M-895 motif measurement was repeated.
+
+The source-relation curation script initially contained detailed rows in the C: package. We moved that scratch script to the owned D: directory before delivery and retained a generic validator in C:. An earlier long shell write was rejected by the execution policy; the file patch succeeded, with no research outcome lost. The ledger and aggregate files were written once as version 1. The source hashes and all artifacts present when the artifact manifest was frozen pass validation. The later preserved curation scratch script is additional local provenance and is outside that initial artifact list.
+
+This run closes an excavation-source gap for one disputed object and four control aliases. It leaves reverse-surface inspection and specialist motif adjudication as the concrete retry conditions. Author checks are recorded at submitted tier; no independent reviewer participated in this package.

@@ -1,0 +1,288 @@
+{
+  "manifest_path": "data/MANIFEST.json",
+  "manifest_sha256": "19aef38473417a0f950c70dff22281ce611274df73990277c69f58c57458d96a",
+  "note": "Inherited titles, versions, rights and source routes. Direct derivative hashes are recorded in run-v2/source-manifest.json. Museum joins also cite the 13 October museum package; this inherited inventory does not enumerate every harvested institutional record.",
+  "source_lineage": [
+    {
+      "adapter_source_id": "lipi",
+      "upstream_sources": [
+        {
+          "id": "lipi",
+          "title": "Lipi inscription export and seal image crops (yajnadevam/lipi)",
+          "version": {
+            "commit": "fc8813a52e183d19c441631dc26c33a4dccbea39"
+          },
+          "rights": {
+            "status": "rights-unverified",
+            "licence": null,
+            "detail": "No LICENSE at the pinned commit. Image crops reproduce CISI photographs whose owners are the holding institutions."
+          },
+          "fetch": {
+            "method": "git",
+            "url": "https://github.com/yajnadevam/lipi",
+            "commit": "fc8813a52e183d19c441631dc26c33a4dccbea39",
+            "verify": {
+              "src/assets/data/inscriptions.csv": "c36d0c26becb00b12b509cb2f5a35ffab1b5332e2e438cda308a272f77dba62c",
+              "src/assets/data/seal_id_and_image_mapping.json": "8069120d4ee271939adf096287762a3b83ecfd8f5dcb6f4fa014ae8e18f668d5"
+            }
+          },
+          "evidence": [
+            "knowledge/provenance/SOURCES.md",
+            "experiments/2026-10-12-data-inventory/run-2026-10-12/summary.json",
+            "experiments/2026-10-12-data-inventory/run-2026-10-12/field-coverage-overall.csv"
+          ]
+        }
+      ]
+    },
+    {
+      "adapter_source_id": "website",
+      "upstream_sources": [
+        {
+          "id": "indus-website",
+          "title": "Earlier Indus website export (yajnadevam/indus-website)",
+          "version": {
+            "commit": "2434249618b1e74de3f26d28b90dfde093c3dd94"
+          },
+          "rights": {
+            "status": "explicit-license",
+            "licence": "GPL-3.0 (repository)",
+            "detail": "Coverage of imported corpus and image assets by the repository licence is unresolved."
+          },
+          "fetch": {
+            "method": "git",
+            "url": "https://github.com/yajnadevam/indus-website",
+            "commit": "2434249618b1e74de3f26d28b90dfde093c3dd94",
+            "verify": {
+              "population-script.sql": "04d5a2c0f239458e4151d006b10c6ace638ee63f961083cf0331fd23309d2a24"
+            }
+          },
+          "evidence": [
+            "knowledge/provenance/SOURCES.md",
+            "experiments/2026-10-12-data-inventory/run-2026-10-12/cross-source.json"
+          ]
+        }
+      ]
+    },
+    {
+      "adapter_source_id": "mayig",
+      "upstream_sources": [
+        {
+          "id": "mayig",
+          "title": "Mayig indus-valley-script-corpus (Mohenjo-daro unicorn seals)",
+          "version": {
+            "commit": "ad2f1e218a34b8c33c57de0d6cb8d99272765bbb"
+          },
+          "rights": {
+            "status": "explicit-license",
+            "licence": "MIT (Michael Carlson 2024)",
+            "detail": "Photographs used for annotation have separate rights."
+          },
+          "fetch": {
+            "method": "git",
+            "url": "https://github.com/mayig/indus-valley-script-corpus",
+            "commit": "ad2f1e218a34b8c33c57de0d6cb8d99272765bbb",
+            "verify": {
+              "LICENSE": "c8fde8f47c2a3e5c5ce4c2e42a836bf04607298e692f08f4af3d25fcb92688b6",
+              "corpus/m001_m099/m001.json": "11031b52f64a9ecba5594fc14c109613357ad22ffaa10800dbbae1f8bc15790f"
+            }
+          },
+          "evidence": [
+            "knowledge/provenance/SOURCES.md",
+            "LICENSES/Mayig-MIT.md"
+          ]
+        }
+      ]
+    },
+    {
+      "adapter_source_id": "cisi1",
+      "upstream_sources": [
+        {
+          "id": "cisi-1",
+          "title": "Joshi and Parpola 1987, Corpus of Indus Seals and Inscriptions. 1. Collections in India",
+          "version": null,
+          "rights": {
+            "status": "rights-unverified",
+            "licence": null,
+            "detail": "Copyright 1987 Suomalainen Tiedeakatemia; photographs belong to the holding institutions."
+          },
+          "fetch": {
+            "method": "http",
+            "url": "https://ignca.gov.in/Asi_data/76884.pdf",
+            "filename": "joshi_parpola_1987_cisi1.pdf",
+            "sha256": "47a4da4227cfb7baa56d6a561e25797225499d0ec54f5a702a82c67ab4746d4d",
+            "bytes": 31508998
+          },
+          "evidence": [
+            "knowledge/provenance/SOURCES.md",
+            "research/literature/cisi1_counting_and_errata.md",
+            "experiments/2026-10-06-evidence-census/synthesis/catalogue-coverage.csv",
+            "experiments/2026-10-13-cisi2-basic-data-pilot/schema.json"
+          ]
+        }
+      ]
+    },
+    {
+      "adapter_source_id": "cisi2",
+      "upstream_sources": [
+        {
+          "id": "cisi-2",
+          "title": "Shah and Parpola 1991, Corpus of Indus Seals and Inscriptions. 2. Collections in Pakistan",
+          "version": null,
+          "rights": {
+            "status": "rights-unverified",
+            "licence": null,
+            "detail": "Copyright 1991 Finnish Academy for the volume; photographs belong to the object owners."
+          },
+          "fetch": {
+            "method": "http",
+            "url": "https://archive.org/download/TheIndusScript.TextConcordanceAndTablesIravathanMahadevan/Corpus%20of%20Indus%20Seals%20and%20Inscriptions.%20Collections%20in%20Pakistan_text.pdf",
+            "filename": "cisi2-archive.pdf",
+            "sha256": "5258071b08898ce4bb9e9a5ee675d182fbe4c1eb22ed2822f6838fdbd5f7e54b",
+            "bytes": 60132087
+          },
+          "evidence": [
+            "experiments/2026-10-06-evidence-census/synthesis/sources.json",
+            "experiments/2026-10-06-evidence-census/synthesis/catalogue-coverage.csv",
+            "experiments/2026-10-13-cisi2-basic-data-pilot/README.md",
+            "experiments/2026-10-13-cisi2-basic-data-pilot/schema.json"
+          ]
+        }
+      ]
+    },
+    {
+      "adapter_source_id": "excavation",
+      "upstream_sources": [
+        {
+          "id": "epachayan-mackay-marshall",
+          "title": "Koshy (epachayan/indus-script), machine-readable seal catalogues from Mackay (1938) and Marshall (1931)",
+          "version": {
+            "commit": "5c14a01f44296a01256a34e7e5e5e9fd82d9a67f",
+            "committed": "2026-10-10",
+            "zenodo_doi": "10.5281/zenodo.22852769 (concept DOI in README and CITATION.cff); version record 10.5281/zenodo.23281781 holds only a preprint PDF"
+          },
+          "rights": {
+            "status": "explicit-license",
+            "licence": "Transcribed tables CC BY 4.0 (LICENSE-DATA at the pin); code MIT (LICENSE; docs/DATA_NOTICE.md says MIT covers scripts/ only)",
+            "detail": "LICENSE-DATA covers transcriptions/mackay1938_seal_table/, transcriptions/marshall1931_seal_table/, transcriptions/mackay1938_plates/ and outputs/mackay_seal_table.csv, marshall_seal_table.csv, marshall_seal_table_transcribed.csv, findspots_mackay.csv, concordance_parpola_G.csv, concordance_m77_G_inferred.csv, constraints.csv. Required attribution: Nitin Stephen Koshy, \"Indus script: seal catalogues and text-structure analysis\" (2026), https://github.com/epachayan/indus-script. The tables were transcribed by an AI model; a 13 October check found 0 of 30 Mackay rows and 3 of 30 Marshall rows in error against the print."
+          },
+          "fetch": {
+            "method": "git",
+            "url": "https://github.com/epachayan/indus-script",
+            "commit": "5c14a01f44296a01256a34e7e5e5e9fd82d9a67f",
+            "verify": {
+              "outputs/mackay_seal_table.csv": "0d2499b2079d05fd9d67c9e5f694799827234712f242b6a14e47a22d0a03f518",
+              "outputs/marshall_seal_table_transcribed.csv": "5a339a7884d34cc9c0c94a402f191e09ad28667aeb560d00acf82f6cb0c09ca2",
+              "outputs/marshall_seal_table.csv": "145154784093efcdf7be4efbd93ed4e838309c3d584625be23d97db51e16bcf9",
+              "outputs/findspots_mackay.csv": "d1bff7d0a23925427ff056c65b92b2c6f930c970972b40f049902812f144949b"
+            }
+          },
+          "evidence": [
+            "experiments/2026-10-13-mackay-marshall-tables/acquisition.json",
+            "experiments/2026-10-13-mackay-marshall-tables/README.md",
+            "experiments/2026-10-13-mackay-marshall-tables/verification/summary.json",
+            "experiments/2026-10-12-data-inventory/sources.json"
+          ]
+        },
+        {
+          "id": "mackay-marshall-join-2026-10-13",
+          "title": "Join of the Mackay 1938 and Marshall 1931 seal-table rows to Lipi object families and CISI numbers",
+          "version": null,
+          "rights": {
+            "status": "mixed-assets",
+            "licence": null,
+            "detail": "Join keys, dispositions, checks and counts are own work (CC0 per LICENSE). The table values in join-table.csv are from Koshy's transcription, CC BY 4.0, with the attribution in the package README. No Lipi field values are included."
+          },
+          "fetch": {
+            "method": "rebuild",
+            "steps": [
+              "python -P experiments/2026-10-13-mackay-marshall-tables/join_tables.py --out <new dir> --local <new local dir>"
+            ]
+          },
+          "evidence": [
+            "experiments/2026-10-13-mackay-marshall-tables/README.md",
+            "experiments/2026-10-13-mackay-marshall-tables/verification/summary.json"
+          ]
+        }
+      ]
+    },
+    {
+      "adapter_source_id": "images",
+      "upstream_sources": [
+        {
+          "id": "image-index-and-dimension-audit",
+          "title": "Face-level image index of the Lipi CISI crops and dimension units audit (13 October 2026)",
+          "version": null,
+          "rights": {
+            "status": "mixed-assets",
+            "licence": null,
+            "detail": "Own work (CC0 prose and aggregates, Unlicense code) except the dimension table, mismatch lists and split detail, which carry record-level Lipi size values (no licence at the pin) and stay outside the CC0 dedication; images, OCR text and page renders are local only."
+          },
+          "fetch": {
+            "method": "rebuild",
+            "steps": [
+              "Hold the Lipi export at fc8813a, the older website export at 2434249, CISI 1 and CISI 2 scans, and the October 12 split.",
+              "python -P experiments/2026-10-13-image-index-and-units/cisi_pages.py; python -P experiments/2026-10-13-image-index-and-units/crop_ocr.py",
+              "python -P experiments/2026-10-13-image-index-and-units/page_index.py --out <new run>/pages; build_index.py --out <new run>/images; dimensions.py --out <new run>/dimensions"
+            ]
+          },
+          "evidence": [
+            "experiments/2026-10-13-image-index-and-units/README.md",
+            "experiments/2026-10-13-image-index-and-units/PROTOCOL.md",
+            "experiments/2026-10-13-image-index-and-units/verification-results.json"
+          ]
+        }
+      ]
+    },
+    {
+      "adapter_source_id": "museums",
+      "upstream_sources": [
+        {
+          "id": "museum-records-2026-10-07",
+          "title": "Saved museum collection records from the census focused pass (New Delhi, Kolkata, British Museum, Penn, Louvre, Met)",
+          "version": null,
+          "rights": {
+            "status": "mixed-assets",
+            "licence": null,
+            "detail": "Met eligible assets CC0, Penn downloadable data CC BY 4.0 and Louvre record data Etalab Open Licence 2.0 were recorded as policy routes by the census; image permissions differ by institution."
+          },
+          "fetch": {
+            "method": "rebuild",
+            "steps": [
+              "Rerun the census collection scripts in experiments/2026-10-06-evidence-census/collections-and-datasets/ into a new raw directory."
+            ]
+          },
+          "evidence": [
+            "experiments/2026-10-06-evidence-census/synthesis/join-summary.json",
+            "experiments/2026-10-06-evidence-census/synthesis/field-completeness.csv"
+          ]
+        },
+        {
+          "id": "british-museum-collection",
+          "title": "British Museum Collection Online: 27 stamp-seals labelled Indus Valley Civilisation in the 'indus seal' listing",
+          "version": null,
+          "rights": {
+            "status": "mixed-assets",
+            "licence": "CC BY-NC-SA 4.0 only for content marked with the CC logo",
+            "detail": "Scripted access returned a Cloudflare challenge on 13 October; robots.txt content signal search=yes, ai-train=no, use=reference. Identifiers and Miscellaneous numbers only are tracked."
+          },
+          "fetch": {
+            "method": "manual",
+            "steps": [
+              "Open https://www.britishmuseum.org/collection/search?keyword=indus%20seal in a browser and record the Museum number and Miscellaneous number of each seal."
+            ]
+          },
+          "evidence": [
+            "experiments/2026-10-13-museum-open-access/README.md",
+            "experiments/2026-10-13-museum-open-access/harvest/summary.csv",
+            "experiments/2026-10-13-museum-open-access/joins/join-table.csv",
+            "experiments/2026-10-13-museum-open-access/coverage/summary.json",
+            "experiments/2026-10-13-museum-open-access/REVIEW-CHANGES.md",
+            "experiments/2026-10-13-museum-open-access/harvest/review-overrides.json",
+            "experiments/2026-10-13-museum-open-access/verification/independent-check.md",
+            "experiments/2026-10-13-data-round-1-verification/REPORT.md"
+          ]
+        }
+      ]
+    }
+  ]
+}

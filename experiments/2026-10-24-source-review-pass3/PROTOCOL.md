@@ -1,0 +1,9 @@
+# Frozen source review protocol
+
+We independently check four specified source chains in the third evidence pass. This is separate source review by gpt-6.1-sol through Codex collaboration, without specialist credentials. We reuse author source locators and held PDFs, then inspect original page pixels or native text. We do not reuse author judgments as verification.
+
+The bound is fourteen primary pages or crops total across four chains: Harappa 1991 PDF65, the cited 2010 identity passage and optionally 1999 PDF7; Matthews 1997 PDF280 and PDF323; Kothandaraman 1997 PDF127,48,334,335; Rao 1985 PDF70,76 and CISI1 PDF409. At most two further pages may resolve a citation within these routes. No network acquisition, corpus opening or extension to other cases is permitted. Stop when the specified claims are checked or the limit is reached. Count a repeated view of the same page once; a new crop is another unit.
+
+Admit a claim only when inspected source content states its identifier, contextual relation or grammatical restriction. Record uncertainty in glyphs or identity rather than completing it from the author report. A source agreement does not create independent excavation evidence. We do not adjudicate strict language classification, baseline duplication, plate identity or chronology beyond explicit source assertions.
+
+All new renders, source extracts and detailed observations stay at D:/projects/indus_valley_script/data/raw/2026-10-24-source-review-pass3/ (logical data/raw/2026-10-24-source-review-pass3/). Original source rights remain unresolved and local-only. Record source hashes, page bounds and incidental inscription exposure. Bench is inapplicable: this review proposes no reading, key, segmentation or confirmation result. Preserve prior packages and write only the assigned review package and registry record.

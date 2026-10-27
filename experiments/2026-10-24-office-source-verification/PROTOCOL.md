@@ -1,0 +1,7 @@
+# Bounded source verification protocol
+
+We independently inspect the object identity and interpretive chain claimed in the office-seal source contribution. We reuse its four held PDF witnesses, verifying their bytes against the recorded hashes. We inspect page images of CISI1 printed p. 373 / PDF 409, Rao 1985 p. 319 / PDF 70, and Frenez and Tosi 2005 pp. 78–79 / PDF 16–17. These four pages are the complete decisive scope. We may inspect Rao 1979 p. 113 / PDF 124 solely to check the reported 65-versus-69 source counts. We stop after those five pages.
+
+We record whether the catalogue identifies L-164 as excavation 1864 and museum LTH SRG 1232, whether Rao describes cords and a flat underside for 1864, and whether the later publication assigns L-161–172 to wooden surfaces. We separate physical descriptions from container interpretations and distinguish object-specific from group-level statements. We check the later source's dependence on Rao and CISI only where visible within these pages. We make no new reading, die measurement, functional hypothesis or confirmation claim.
+
+All rendered images, full text and detailed notes go physically under D:/projects/indus_valley_script/data/raw/2026-10-24-office-source-verification/. Code, prose, manifests and aggregate checks stay in this new experiment. Author packages remain unchanged. This contribution is a separate source review by gpt-6.1-sol in Codex collaboration; it shares the parent conversation and published claims but uses its own primary-page observations.

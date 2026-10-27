@@ -1,0 +1,46 @@
+{
+  "reviewed_run": "data/raw/2026-10-22-evidence-integration/run-v1",
+  "reviewer_model": "GPT-6 family; exact backend identifier not exposed",
+  "reviewer_harness": "Codex desktop collaboration",
+  "method": "Read integration code and compare frozen JSON/JSONL metadata, identifier sets, source relations and hashes; no images or source passages displayed.",
+  "checks": {
+    "candidate_file_byte_preserved": true,
+    "358_candidate_rows_preserved": true,
+    "old_assertions_unchanged": true,
+    "old_detailed_assertions_byte_prefix_preserved": true,
+    "all_old_populations_preserved": true,
+    "parent_files_unchanged": true,
+    "relation_confidence_matches_source": true,
+    "relation_sets_complete": true,
+    "candidate_assertions_retained_as_inferred_not_observed": true,
+    "no_page_event_promoted_to_object_view": true,
+    "candidate_exposure_event_ids_preserved": true
+  },
+  "counts": {
+    "candidate_rows": 358,
+    "supported_relations": 24,
+    "candidate_relations": 5396,
+    "candidate_review_assertions": 5420,
+    "added_assertions": 5474,
+    "historical_exposure_events": 1018
+  },
+  "finding": {
+    "severity": "material_provenance_bug",
+    "location": "experiments/2026-10-22-evidence-integration/integrate.py:face_reviews",
+    "description": "The input path variable is reused for image and alignment sources before writing layout_review.review_path. The resulting review_path points to the source font, so consumers cannot follow the advertised face-review link.",
+    "affected_face_rows": 29,
+    "observed_review_paths": {
+      "data/raw/2026-10-08-bonta-extension/source-2026-10-09/lipi-font-local.ttf": 29
+    },
+    "parent_notified": true,
+    "requested_remedy": "Keep run-v1 and write corrected provenance to a new integration run."
+  },
+  "source_scope": "Detailed integrated output is under ignored data/raw; source review metadata and candidate confidence remain local.",
+  "input_hashes": {
+    "integrate.py": "f2f531ae2535386dd1d0d59a1663fa5f5401aa9a6c8fcda5d52a258b0ae240e1",
+    "parent_register": "f05aa500a133062f7aa6e07b9a433dcf14375625a018879b64392a2271634e42",
+    "integrated_register": "57189128a359d19caa09e61b9d2dd767809dcd8c56776c709d332497f2273adf",
+    "candidate_reviews": "360570c51a899d2835a6d767fda240477b2867f42252bed86b785ebd5d251940"
+  },
+  "status": "candidate_semantics_and_parent_preservation_pass; face_review_path_fix_required"
+}

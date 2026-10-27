@@ -1,0 +1,9 @@
+# Retrospective
+
+We froze a five-object block before displaying its primary plates and excluded the completed 29-face review. The useful source distinctions emerged from comparing printed captions with graphic combinations and the normalized export rows. Export ordinals did not consistently follow printed letters. A side C inscription, mirrored impressions and two numbered fragments carrying the same side label needed separate representations.
+
+Checking the full missing-crop queue against the held caption index recovered one formerly missing divided face from CISI 2. This changed the acquisition denominator before any new segmentation analysis. The old filename cisi3-stream.pdf proved to be a partial download from the CISI 1 URL. We retained that source-identity correction and the unsuccessful TLS request. A guessed Indology route returned a fellowship announcement; the access record preserves the error, and the held publisher flyer supplies the volume bibliography instead.
+
+The first crop build used capital and lowercase labels as filenames. Windows treated object A and impression a as the same path, so later crops overwrote earlier crops inside the new run. The independent dimension check caught this defect. We preserved the first run and its exact builder, then produced version 2 with explicit object and impression suffixes. Hash and dimension checks now pass for every final output. One PowerShell inline repair command failed parsing before execution; a complete Python repair then made the intended change.
+
+Some login-shell calls stalled without output; commands with login disabled returned normally. No duplicate mutating build was launched during that interval. Detailed data and all imagery stayed on D:, while code, provenance hashes and aggregate results stayed in the owned package. We completed the bounded block and left the missing catalogue and object-identity work in a local residual queue.

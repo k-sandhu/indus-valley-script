@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "type": "proposed-maintainer-update",
+  "apply_automatically": false,
+  "preserve_existing_files": true,
+  "historical_families_to_record": ["seal_legend_closing_structure", "line_division_unit_boundary"],
+  "historical_input_sha256": "1220f5591a42abe7c6696ac014aba90e7c49fdce6b0ccba0b85bb45f950c30db",
+  "source": {
+    "path": "experiments/2026-10-20-seal-legend-units/spent-entry.json",
+    "sha256": "9852effe6ea44e0e03d12ab063db4f402536749d6eee2bfa06eca0dce5f1d474"
+  },
+  "shared_ledger_at_audit": {
+    "path": "bench/spent.json",
+    "sha256": "8c681272333cadf5c3ba21d2f3ca5b99a9704d29ffb0dcde48cc18d29385f94c",
+    "missing_historical_unit_families": ["line_division_unit_boundary", "seal_legend_closing_structure"]
+  },
+  "prospective_pool_status_correction": {
+    "post_catalogue_finds": "eligibility-unreviewed-at-object-and-participant-level",
+    "cisi31_absent_seal_numbers": "eligibility-unreviewed; absence from the local catalogue does not certify exposure history",
+    "reason": "The old broad fresh declaration predates the 21 October extraction and documented accidental descriptive exposure. Catalogue absence and source access logs must be joined to physical objects and participants before any new-cohort declaration.",
+    "candidate_metadata_rows_requiring_review": 358,
+    "definite_post_catalogue_rows_within_these": 301,
+    "source_level_log_rows": 892,
+    "candidate_rows_with_a_source_level_log": 358,
+    "objects_certified_fresh_by_this_audit": 0
+  },
+  "new_evidence": [
+    {"path": "experiments/2026-10-21-post-catalogue-finds/exposure-log.csv", "sha256": "e0feab96235fc138a338111cc3bfb3a7bd732e298f34b9867d2f69f4a4d890b9"},
+    {"path": "experiments/2026-10-21-post-catalogue-finds/RETROSPECTIVE-CODEX.md", "sha256": "c6bc2144a1f09290a6e97cb591acac64f254915fc6b15c284aba3d20d73c4216"},
+    {"path": "experiments/2026-10-21-post-catalogue-finds/objects.csv", "sha256": "c5d33f6384804fe0103b3add6cc45964ece9a46c7e623fba7307febb3c180df7"}
+  ],
+  "required_exposure_fields": ["source_id", "source_page_or_image", "object_id_or_unresolved_candidates", "participant_id", "access_time", "access_mode", "content_scope", "statistic_or_formula_family", "effect_on_eligibility", "adjudicator", "evidence"],
+  "interpretation": "A source-level access event can be automated metadata extraction, human or agent page viewing, or descriptive text exposure. It does not prove every object was seen or every participant's formula was affected. The row-level review must retain these distinctions. No exposure status is upgraded by missing logs."
+}

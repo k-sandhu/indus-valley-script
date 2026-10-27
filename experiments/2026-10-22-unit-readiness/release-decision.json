@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "direction": 2,
+  "decision": "begin-data-adjudication; confirmation-not-ready",
+  "evidence": "experiments/2026-10-22-unit-readiness/readiness-v1.json",
+  "allowed_now": [
+    "Resolve object and surface identifiers in the new register.",
+    "Prepare blinded layout annotation forms and independently review the historically examined plate set.",
+    "Acquire missing primary source locators and review exposure metadata.",
+    "Audit source-document identities and complete boundary labels in previously used readable controls."
+  ],
+  "confirmation_ready": false,
+  "blockers": [
+    {
+      "id": "U1",
+      "requirement": "Complete primary images for divided faces",
+      "remaining_faces": 43,
+      "subcounts": {"CISI3_number": 32, "no_CISI_number": 11},
+      "close_when": "Each face has a primary image, verified object and surface relation, source coordinates and retained uncertainty."
+    },
+    {
+      "id": "U2",
+      "requirement": "Independent physical layout and order adjudication",
+      "imaged_faces_without_accepted_order": 29,
+      "all_faces_needing_second_reader_and_geometry": 118,
+      "close_when": "Two independent records and adjudication history identify image transform, groups, order, damage and coordinates."
+    },
+    {
+      "id": "U3",
+      "requirement": "Full object and text dependence graph",
+      "unresolved_multiface_objects": 881,
+      "subcounts": {"linked_images_already_available": 378, "no_linked_image": 503},
+      "close_when": "Every selected object retains all known faces and confirmed aliases; repeated texts are grouped separately with a source-reviewed rule."
+    },
+    {
+      "id": "U4",
+      "requirement": "Positive cohort exposure review",
+      "candidate_metadata_rows": 358,
+      "definite_post_catalogue_rows": 301,
+      "rows_with_source_level_access_logs": 358,
+      "close_when": "Page, object, participant and formula-specific exposure have been reviewed and the selected cohort's eligibility is documented. Absence of an access event does not certify freshness."
+    },
+    {
+      "id": "U5",
+      "requirement": "Complete-label readable controls and source grouping",
+      "existing_cohort_sizes": [309, 1859, 940, 1223],
+      "close_when": "Editorial boundary conventions, physical source identities, composites, aliases and duplicate texts are checked; discovery calibration and power justify frozen thresholds."
+    },
+    {
+      "id": "U6",
+      "requirement": "Freeze all participants before confirmation",
+      "close_when": "The shared shots loader records every participant, source and code hash, prediction, comparison law and joint credence rule before its first real confirmation read."
+    }
+  ],
+  "next_acquisition_task": {
+    "question": "Q-0027",
+    "issue_number": 4,
+    "queue": "data/raw/2026-10-22-unit-readiness/run-v2/divided-face-queue.csv",
+    "first_action": "Assign independent reviewers to the 29 already imaged faces lacking accepted order; obtain exact CISI3 plate access for the 32 missing-crop faces and primary object locators for the other 11.",
+    "parallel_action": "Resolve side assignments for the 378 queued multiface objects with linked images; preserve current image-name corrections and unresolved identity flags."
+  }
+}

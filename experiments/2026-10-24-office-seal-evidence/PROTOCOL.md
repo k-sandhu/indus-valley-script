@@ -1,0 +1,9 @@
+# Protocol: Lothal seal-use source recovery
+
+Frozen before new source outcomes, 24 October 2026. We use the orient, add-data and write-retrospective repository skills. The target is the excavation account behind the repeated elephant sealings and the physical attachments they sealed. Earlier work compared L-161–170 with M-895; this run adds the earlier excavation account and tests the source-to-object linkage.
+
+We inspect the title pages and search the already held Rao 1979 Part 1 and Rao 1985 Part 2 PDFs for sealing, elephant, warehouse, string, reed and the catalogue numbers used by Frenez and Tosi 2005. Read at most twelve relevant text pages in each volume, plus title pages and up to four linked plates. Recover Frenez and Tosi's table and discussion for the L-161–172 group and one related sealing group as a control. Keep printed and PDF page numbers separate. Stop after these bounds or a documented access failure. No confirmation cohort or new corpus statistic is used.
+
+Record objects, excavation aliases, die grouping, motif attribution, attachment traces and contexts as separate source-qualified relations. A group-level description transfers to an individual object only through a source identifier link. Preserve catalogue assertions separately from direct visual observations. A negative result includes exact searched page coverage. The result can strengthen an excavation-source link without deciding office function. We submit no new functional reading or credence update in this source-work round. A later functional proposal requires its own bench output.
+
+All detailed records, extracts and rendered images stay under D:/projects/indus_valley_script/data/raw/2026-10-24-office-seal-evidence/. Track only our prose, code, source manifests and aggregates. Freeze this file's hash before extraction. Author model gpt-6.1-sol; harness Codex collaboration; author checks remain submitted.

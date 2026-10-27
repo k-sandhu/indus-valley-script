@@ -1,0 +1,7 @@
+# Protocol, 24 October 2026
+
+We extend source coverage for the 43 divided faces lacking crops and review a fixed block of five multi-face objects: LIPI:1057, 1156, 1168, 1201 and 121, the first five image-linked entries in the existing queue. The completed 29-face adjudication is excluded. We freeze these selections before displaying their images. This work uses held primary plates and captions and records visible panel geometry separately from export face identity. A caption letter alone cannot assign a numbered export face; distinctive graphic agreement or another explicit source bridge is required.
+
+We inspect the held source routes, the five catalogue pages and linked photographs. We record original pixel geometry, crop transformations, seal versus impression polarity, source labels and unresolved disagreements. The stopping rule is five objects and all 43 missing-face routes, with at most one bounded retrieval of the identified CISI volume 3 source. Source-derived payloads and images stay physically on D:. The new premise is the integrated register's explicit unresolved image relations; the segmenter, stock and predictions remain frozen.
+
+All displayed content is historical exploratory exposure for gpt-6.1-sol under Codex collaboration. We open no confirmation cohort, assign no linguistic traversal and submit no segmentation or reading prediction. Author checks verify hashes, coverage and coordinates. Expert review remains separate from these author observations.

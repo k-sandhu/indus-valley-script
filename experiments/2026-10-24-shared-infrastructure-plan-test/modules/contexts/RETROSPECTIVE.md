@@ -1,0 +1,11 @@
+# Context audit record
+
+We inherited familiarity with the earlier town comparison, Harappa tablet studies, the Dholavira catalogue extraction and Lothal sealing work. We kept the new architectural persistence outcomes outside this audit until its context records were frozen. This is separation of two exploratory coding tasks; it does not restore freshness to previously examined objects.
+
+The useful change was to begin with registered items and named spaces, then audit each link to a deposit and date. That recovered positive manufacturing, floor, room and installed-reuse associations that a generic missing-context summary would obscure. The exact figure tables also prevented secondary or surface objects from enlarging manufacturing and room cohorts.
+
+Three repairs mattered. A file called kanmer2013.pdf proved to be HTML, so its permissive-renderer extraction is retained as a failed witness and excluded from article facts. The Banawali sitting-room seal had no registration on the held primary page, so the attractive B17 alias remained an unjoined candidate. The Lothal provenance transcription disagreed with the prose counts; we preserved both and left the manual table recount open for independent checking. At Dholavira, the stage gate accepts III A through whitespace-only normalization, and counts of usable labels explicitly exclude Nil while the original cells remain intact.
+
+We retained 78 date-evidence entries without pooling calendar ranges. Two omit raw determinations in their source paragraph. Repeated Kanmer lab records are counted once, two pairs of Harappa laboratory determinations share physical samples, and alternate Lothal half-life calculations remain alternate conventions. Dates from other trenches, periods or mounds stayed rejected associations. This produces no qualified C0018/C0019 before/after pair in the bounded frame, while giving specific records and source panels that could close the chain.
+
+All source page text, detailed source-row derivatives and 17 visual witnesses remain under the new D: raw directory. The tracked module contains authored assessments, summaries, source/path/hash records and reproducible scripts. No bench confirmation read, spent-ledger edit, conjecture-card edit or other worker's file was made. Contributor: GPT-6 family, exact variant unavailable; Codex desktop collaboration.

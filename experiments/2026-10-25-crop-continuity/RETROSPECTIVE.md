@@ -1,0 +1,17 @@
+# Work record for the crop-continuity pilot
+
+We followed the source of ThePrint's Jognakhera report to Swaroop et al. 2026, inspected the prior continuity registry entries and preserved a protocol before extracting supplementary tables. The focal headline counts and dates were already exposed. The study was therefore recorded as a source audit and exploratory reanalysis.
+
+The publisher returned an HTTP-200 JavaScript challenge to a direct request, while the web tool supplied the article's metadata and the author-deposited paper text. We retained the challenge file and corrected its interpretation in the source manifest. ResearchGate's direct PDF download returned 403. The publisher's DOCX link failed, and two plausible public asset paths returned HTML rather than a DOCX. An older CDN endpoint failed DNS resolution. We did not treat any of those responses as the supplement. Two in-app browser attempts timed out. PDF screenshot calls returned references without usable pixels; no focal visual check is claimed.
+
+The Cambridge repository supplied Petrie and Bates's 100-page accepted manuscript including its supplement. Its hash matched the project's 11 October copy. We extracted its phase summaries and inspected rendered pages locally. Windows console output initially failed on a Unicode character; configuring UTF-8 fixed that display problem without changing the input. The failed command reached no analysis endpoint.
+
+The first numerical run completed. Its local detailed-output filename was fixed to v1, which would obstruct a rerun in a new result directory. We saved the original code beside run-v1 and changed the filename to follow the output directory. Run-v2 preserves the same archaeological values. A separate pdfplumber extraction and exact Fraction calculations passed all 52 checks. This is same-contributor verification, with no independent reviewer or acceptance decision.
+
+The audit exposed a modern-crop list misread in the news article, a gap between the reported direct crop dates and the article's PGW reference bracket, and a denominator that changes two regional millet figures. It also recovered a usable Bahola phase comparison. We kept these results separate from claims about crop rotation, acreage, population ancestry and the causal impact of drought, each of which needs additional observations.
+
+All writes were confined to the new experiment directory, its new question and attempt files, and local D: inputs. Existing work, frozen endpoints, shared coverage files and generated navigation were preserved. A read-only GitHub issue search found no Jognakhera match. No issue claim, correspondence, publication, commit, push, CI/CD or automation was performed.
+
+The completed endpoint is a source audit, descriptive pilot and acquisition design. The regional inferential study remains proposed, with missing fields and stopping rules in [NEXT-STUDY.md](NEXT-STUDY.md). The strongest reading supported here is selective crop retention with changing proportions; matched dated deposits and management observations would test the extent of continuity.
+
+The knowledge check passed. After the numerical check, 64 checks of the owned contribution also passed. The final repository-wide check found no errors in our paths and 58 broken links elsewhere. Earlier checker outputs include links to validation outputs that had not yet been written; all of those paths exist at the completed endpoint. The three remaining prose flags are two frozen protocol phrases and a valid frontmatter path list.

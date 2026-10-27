@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-20",
+  "updated": "2026-10-26",
   "description": "Every data source the Indus research project holds or knows of, with version, location, size, identifiers, rights and acquisition route. Human-readable account: knowledge/DATA.md. Tool: tools/fetch_data.py.",
   "status_values": {
     "held": "A local copy with a recorded hash exists and matches the named edition.",
@@ -29,7 +29,7 @@
   },
   "counts": {
     "held": 40,
-    "project-output": 20,
+    "project-output": 23,
     "partly-held": 14,
     "not-held": 30
   },
@@ -4195,6 +4195,170 @@
         "experiments/2026-10-20-h912-excavation-links/REPORT.md"
       ],
       "notes": "Subset coverage overlaps other source layers. Zero new physical objects asserted. Author checks do not imply independent archaeological confirmation."
+    },
+    {
+      "id": "object-pilot-reviewed-2026-10-26",
+      "title": "Twenty-target object register with reviewed image joins and conflict dispositions",
+      "kind": "source-join",
+      "status": "project-output",
+      "location": "local-only",
+      "local_paths": [
+        "data/raw/2026-10-26-object-pilot/integration-v2/pilot-integrated-v2.json",
+        "data/raw/2026-10-26-object-pilot/integration-v2/catalogue-integrated-v2-polished.html",
+        "data/raw/2026-10-26-object-pilot/integration-v2/missing-evidence-integrated-v2.json"
+      ],
+      "version": {
+        "date": "2026-10-26"
+      },
+      "size": {
+        "target_records": 20,
+        "inherited_source_assertions": 539,
+        "integration_conflict_summaries": 2,
+        "candidate_families": 62,
+        "candidate_relationships": 274,
+        "new_physical_merges": 0
+      },
+      "identifiers": [
+        "pilot target ID",
+        "CISI catalogue key",
+        "source and page locator"
+      ],
+      "metadata_fields": [
+        "source-qualified assertions",
+        "candidate identities",
+        "image and face pointers",
+        "dimensions and material",
+        "findspot and phase",
+        "missing evidence",
+        "conflicting source assertions"
+      ],
+      "rights": {
+        "status": "mixed-assets",
+        "licence": null,
+        "detail": "Project code, prose, aggregates and source manifests are retained in the checkout. Source-derived records and third-party images remain local-only under REDISTRIBUTION.md."
+      },
+      "fetch": {
+        "method": "rebuild",
+        "steps": [
+          "Follow experiments/2026-10-26-object-pilot/REPORT.md and its input manifests. Original sources must be available locally."
+        ]
+      },
+      "hashes": {
+        "data/raw/2026-10-26-object-pilot/integration-v2/pilot-integrated-v2.json": "19fea3a8db47777dba951a9d8ed1ab6da2553a0c7d9567bcaa41bf31a07351ea",
+        "data/raw/2026-10-26-object-pilot/integration-v2/catalogue-integrated-v2-polished.html": "f7d1ac0d6d67ece8d9e4911b276d4e391d7d77e5cc7cb1ea7ef9e21590f1380b",
+        "data/raw/2026-10-26-object-pilot/integration-v2/missing-evidence-integrated-v2.json": "3220f52088ab97e7088f6878d5bf80535e109a99138bb77f6259ed21d0d4dd7a"
+      },
+      "evidence": [
+        "experiments/2026-10-26-object-pilot/REPORT.md",
+        "experiments/2026-10-26-object-pilot-register/INTERFACE.md",
+        "experiments/2026-10-26-object-pilot-review/REVIEW.md"
+      ],
+      "notes": "The fixed subset overlaps existing holdings. Independent review checks structure and selected primary claims; it does not retranscribe all 539 historical assertions. No global corpus count changes."
+    },
+    {
+      "id": "image-recovery-index-2026-10-26",
+      "title": "Reviewed recovery of fourteen held crop-to-catalogue view links",
+      "kind": "source-join",
+      "status": "project-output",
+      "location": "local-only",
+      "local_paths": [
+        "data/raw/2026-10-26-image-recovery/image-joins-v2.json"
+      ],
+      "version": {
+        "date": "2026-10-26"
+      },
+      "size": {
+        "assets_censused": 8722,
+        "anonymous_assets": 284,
+        "assets_inspected": 24,
+        "new_index_relations": 14,
+        "newly_available_pilot_photographs": 0,
+        "new_physical_merges": 0
+      },
+      "identifiers": [
+        "pilot target ID",
+        "CISI catalogue key",
+        "source and page locator"
+      ],
+      "metadata_fields": [
+        "asset identity",
+        "catalogue key",
+        "view label",
+        "source plate",
+        "prior index status",
+        "review disposition"
+      ],
+      "rights": {
+        "status": "mixed-assets",
+        "licence": null,
+        "detail": "Project code, prose, aggregates and source manifests are retained in the checkout. Source-derived records and third-party images remain local-only under REDISTRIBUTION.md."
+      },
+      "fetch": {
+        "method": "rebuild",
+        "steps": [
+          "Follow experiments/2026-10-26-image-recovery/REPORT-v2.md and its input manifests. Original sources must be available locally."
+        ]
+      },
+      "hashes": {
+        "data/raw/2026-10-26-image-recovery/image-joins-v2.json": "27bc277f69fb3a2025e1feb508b7c2e03c129fe67bf5db9074662cf09f53f657"
+      },
+      "evidence": [
+        "experiments/2026-10-26-image-recovery/REPORT-v2.md",
+        "experiments/2026-10-26-image-recovery/aggregate-v2.json",
+        "experiments/2026-10-26-object-pilot-review/REPORT-v2.md"
+      ],
+      "notes": "Gain is measured against the 13 October image-files.csv table. L-163 photographs predate this pass in source-page records. L-163 and L-207 are newly indexed keys in that table; broader L-207 availability was not audited."
+    },
+    {
+      "id": "object-source-conflicts-2026-10-26",
+      "title": "Lothal and Harappa source conflicts with exact resolving records",
+      "kind": "source-join",
+      "status": "project-output",
+      "location": "local-only",
+      "local_paths": [
+        "data/raw/2026-10-26-source-conflicts/conflicts-v2.json"
+      ],
+      "version": {
+        "date": "2026-10-26"
+      },
+      "size": {
+        "conflicts": 2,
+        "affected_pilot_targets": 2,
+        "comparison_entities": 1,
+        "closed_conflicts": 0
+      },
+      "identifiers": [
+        "pilot target ID",
+        "CISI catalogue key",
+        "source and page locator"
+      ],
+      "metadata_fields": [
+        "competing source assertions",
+        "source dependence",
+        "safe display",
+        "blocked identity claims",
+        "ranked resolving records"
+      ],
+      "rights": {
+        "status": "mixed-assets",
+        "licence": null,
+        "detail": "Project code, prose, aggregates and source manifests are retained in the checkout. Source-derived records and third-party images remain local-only under REDISTRIBUTION.md."
+      },
+      "fetch": {
+        "method": "rebuild",
+        "steps": [
+          "Follow experiments/2026-10-26-source-conflicts/REPORT.md and its input manifests. Original sources must be available locally."
+        ]
+      },
+      "hashes": {
+        "data/raw/2026-10-26-source-conflicts/conflicts-v2.json": "2e5a793dfa89649a07813819bc621128028b7ca2878148a9d6636bbc36be8bbf"
+      },
+      "evidence": [
+        "experiments/2026-10-26-source-conflicts/REPORT.md",
+        "experiments/2026-10-26-source-conflicts/source-manifest-v2.json",
+        "experiments/2026-10-26-object-pilot-review/REVIEW.md"
+      ],
+      "notes": "Both conflicts remain unresolved. L-161 is a comparison entity only. Original registered photographs and object cards are needed; repeated publication labels do not supply independent excavation evidence."
     }
   ]
 }

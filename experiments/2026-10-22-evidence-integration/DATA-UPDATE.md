@@ -1,0 +1,13 @@
+# Proposed data inventory update
+
+The new local register is `data/raw/2026-10-22-evidence-integration/run-v2/`. Its parent remains `data/raw/2026-10-22-object-register/run-v2/`. Both use core schema 2.0 and retain 4,695 provisional object families and 5,680 faces. The final integrated register has 230,697 assertions, including 5,474 review assertions. Most additions document unresolved candidate relationships. Shared inventory and generated knowledge files are left for maintainer integration.
+
+Add the final [coverage](run-v2/coverage.json), [source manifest](run-v2/source-manifest.json), [validation](run-v2/validation.json) and [interface](INTERFACE.md) to the object-register provenance. The new local tables retain 29 face reviews, their independent adjudications, four supplemental face decisions, all 358 candidate reviews, historical and current exposure events, 24 lexical-form reviews and 43 compound review rows. The latter comprise forty frozen sample cases and three previously known diagnostics.
+
+Record the following coverage changes: 21 source-reviewed spatial layouts; 12 provisional source-segment location maps; six restored provisional face-image links on three faces, with five distinct payloads; 24 existing inventory-to-family links independently reverified; and an exposure disposition for every candidate. The candidate review adds 1,018 historical documentation records and the integration adds 33 current image-review records, one of which concerns an unresolved candidate face assignment. These count documentation records, not independent sessions or objects.
+
+Retain the unresolved totals: eight selected layouts, seventeen selected source-segment maps, 306 candidate-only inventory rows, 28 unlinked inventory rows, eleven possible-duplicate flags and two further same-registration relations. Forty-five candidate page mappings rely on derived page labels with unverified original PDF versions. No candidate is certified fresh and no physical families are merged.
+
+The lexical resources add two source-language corrections, 38 role-specific sense or contextual selections and four context-limited form relations. They do not update archaeological meanings, exact-token counts or a reading effect. The compound review requires general morphology repairs and complete re-extraction before a new evaluation.
+
+Source-specific image data, lexical excerpts, sign sequences and detailed reviews remain local-only under the existing redistribution policy. This contribution adds no new remote source acquisition. Its first integration run is preserved as superseded because a compact face-review pointer was wrong; the corrected second run is the consumption target.

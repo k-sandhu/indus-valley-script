@@ -1,0 +1,13 @@
+# Western-town source work
+
+We reused the frozen town-axis and town-phase packages to locate the original sources, then read additional architectural passages in the Dholavira and Lothal reports. The preliminary edition status of Dholavira and Lothal's missing plate volume remain attached to their records. A six-page contact sheet on D: checked the lower-town counts, encroachment example, reservoir-area revision and Lothal street account against the original printing. We also inspected Green and colleagues' printed Table 1 after the web accessibility description concealed a decimal discrepancy.
+
+The available `kenoyer_1998_ancient_cities.pdf` was already identified by the earlier source log as a mismatched decipherment essay. We excluded it. Three attempted Harappa.com downloads returned HTTP 403; existing verified copies supplied the 1991 and revised 2005 manuscripts. The 2010 measurement chapter was accessible to the web reader but has no acquired byte copy. This is an explicit source-hash gap, rather than an empty citation treated as checked storage.
+
+The new local sources are the Jansen 1989 article, Kenoyer's 2021–22 synthesis, and Green, Alam and Petrie's 2026 article. A new archive OCR representation supplements the already held Mackay 1943 scan. Chanhudaro's March 2026 field-team article and the July 2026 conference abstract were already held in the town-axis package; we reused their bytes and preserved the distinction between a full contextual report and an abstract. The Green supplements returned HTTP 403 and their data could not be independently recounted.
+
+The module adds 126 structured architectural, chronological and evidence-gap assertions across five towns. It adds a five-row, chart-ready series of published residential statistics. It does not add measured building footprints, excavation-population denominators, new radiocarbon dates or a confirmed urban-planning statistic. The source audit identified conflicting area scopes at Dholavira, a street-direction reversal at Lothal and unresolved numerical inconsistencies in the 2026 residential study. These are retained as data.
+
+The ledger builder checks unique IDs, source references, required uncertainty fields and ten source hashes. Review tier is submitted author checks. No confirmation population was opened and no benchmark statistic was spent. The parent package owns integration, hypothesis registration, comparative analysis and presentation.
+
+Changed paths are confined to `experiments/2026-10-24-urban-form-and-inscription-ecology/modules/western/` and the corresponding local-only D: `data/raw/2026-10-24-urban-form-and-inscription-ecology/western/` directory. We made no changes to shared cards, generated maps, manifests or earlier experiment outputs.

@@ -1,0 +1,15 @@
+# Retrospective: preparing a reusable-unit test
+
+We read the data plan, redistribution rules, earlier segmentation and image-index retrospectives, the shared scorer and shots instructions, and the relevant registry retry conditions. The assignment was to prepare direction 2 while parallel agents built the object register and repaired reading evaluation. This package owns its directory, local data directory and one registry record.
+
+We wrote the protocol before computing new aggregate joins. The existing source counts were already known from the earlier reports. The script then joined all divided-face audit rows to normalized face metadata, built the complete unresolved multiface queue, joined post-catalogue source IDs to the access log, and reconstructed only the existing readable-control cohort membership. It never viewed source images or ran a new segmentation model.
+
+The first audit wrote its three local queues but failed when an output path was relative and the repository root was absolute. We preserved those partial files under `run-v1`, normalized command-line paths before execution, and wrote the completed run under `run-v2`. A separate early inspection command hit Windows' default text encoding on a Unicode source; subsequent inspection and audit commands use explicit UTF-8. Neither error changed an earlier research endpoint.
+
+The consequential finding was the difference between the 20 October prospective freshness declaration and the 21 October extraction exposure record. We preserved both records, made exposure review an explicit eligibility gate, and proposed a ledger update in this package. We did not convert all source accesses into claims of object-level exposure, because the logs need page, participant and content interpretation.
+
+The register interface was agreed with the parallel object-register agent: provisional `LIPI:` identifiers, metadata-only faces and objects, image relations, conflicts and an unreviewed exposure status. The audit includes an optional consumer with duplicate-ID and parent-object checks. A later integration run can preserve the held-source audit while recording the new register hashes.
+
+During integration review, the coordinating agent noticed that the first consumer checked only the register summary while the detailed queue still displayed the older image index. We preserved the exact first-run script as `audit-v1.py` and extended `audit.py` to carry each face's register identity, image conflicts, accepted side-image count and an explicit review task. Known quarantined images therefore enter the adjudication queue. Historical image-index counts and completed outputs remain unchanged; the integration run records the amended script's hash.
+
+Synthetic segmentation and shots tests pass. They establish expected scorer semantics and procedural guards on generated records. The package contributes an actionable data queue and a proposed test design. Source acquisition, independent layout annotation, object identity adjudication and a positive exposure review remain before a new confirmation result.

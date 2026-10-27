@@ -1,0 +1,36 @@
+# Independent review of the twenty-target pilot
+
+We support the fourteen new catalogue-view links in image-recovery v2 and the register v4 consolidation within the scope below. The image result comprises thirteen existing assets, twelve catalogue keys and fourteen view relations. L-163 and L-207 acquire their first keys in the 13 October image-file index. L-163 A and C were already available on the previously inspected CISI source page and in the earlier view ledger. The pilot gains two explicit crop-to-view index links and zero newly available photographs. We establish no newly identified physical object.
+
+The reviewer is gpt-6.1-sol using the Codex collaboration harness, separate from the three authors. We froze PROTOCOL.md before reading their detailed result records and used the repository verify-study skill. This is direct source review and independent structural computation. It does not confer archaeological expert acceptance. Bench scoring is inapplicable because the work submits no reading, meaning map or segmentation.
+
+## Image evidence
+
+We read all fourteen claimed new relations against the complete labelled plate pages and the held crop pixels. We also recreated all twelve relevant page renders from the held original PDFs and found identical pixels. The independent index comparison confirms that every claimed new asset-to-key relation was absent from the 13 October image-files.csv assignments. The hashes of the source records, detailed outputs and register image files match all 209 checked bindings. The checks and exact baseline are in validation-v3.json; record-level comparisons remain in the local review directory.
+
+The composite Lothal crop contains the full L-163 A outline at upper left and the curved L-163 C profile at upper right, above the L-164 and L-165 images. The original source is CISI volume 1, PDF313, printed277. The anonymous L-119 C crop matches the right-middle pale rectangular photograph on PDF303, printed267. L-207 A 1-2 matches the large upper-left carrier with a central cavity and broken lower rim on PDF323, printed287. C-34 B matches the long reverse with its central fracture on PDF372, printed336.
+
+The volume 2 joins also agree with the original page captions and carrier shapes: M-805 a on PDF104, M-957 A on PDF128, M-966 A on PDF129, M-1020 B on PDF136, M-1058 B on PDF141, M-1078 a on PDF144, M-1202 c on PDF178, and M-1342 A and a on PDF207. Uppercase and lowercase source labels remain distinct. The narrow M-1202 F fragment stays a candidate. The author's eight rejected crops show headings, margins or scan traces; this review saw all twenty-four candidate assets on the four contact sheets. We did not redo all 284 anonymous images.
+
+Viewing whole pages exposed neighboring objects and sign shapes. We recorded no sign transcription, language assignment or meaning. The sample has freshness=false and supplies no held-out confirmation result. New acceptance applies to the fourteen catalogue-image relations, not to cross-catalogue physical identity or newly acquired primary files.
+
+## Register and unresolved identities
+
+Our independent computation finds the exact twenty targets, ten Dholavira candidates, five Harappa targets and five Lothal targets. The Dholavira records preserve sixty-two candidate families and 274 relationships with zero accepted physical merges. All 539 assertions retain a status, source reference and locator. Every target retains an explicit missing-field list, and source assertion coverage remains distinct from accepted physical identity coverage. No inspected payload key supplies a sequence or language reading. This is a structural review of the inherited assertions; we have not reread all historical metadata cells in their original sources.
+
+Register v4 correctly distinguishes the H-1657 remote slide pointer from local image bytes. H-2587 and H-1688 have held whole drawing pages. We inspected both pages and the published cross-references. H-1682 and H-1692 have no image entry merely because a narrative page discusses them. The unresolved Rao plate remains a candidate source page, with a warning that its photograph is not assigned securely to L-164. These distinctions must survive integration.
+
+The two source conflicts remain unresolved. Our fresh Rao PDF70 render shows printed319 associating CLXI F with 1864. PDF76, printed325, gives 1830 for the same panel. CISI PDF409, printed373, separately maps L-164 to 1864 and LTH SRG1232, and L-161 to 1830 and LTH SRG1195. The thematic index at PDF454, printed708, directs the reader to seals and sealings on pp305-333; it supplies no specimen key. Thus the p325 warehouse, layer and phase cannot be transferred securely to L-164 through CLXI F. An ASI labelled negative register and specimen cards would decide that binding.
+
+Kenoyer and Meadow 2010 PDF9 states H96/7158-01 for H-2587, while Figure2 item1 on PDF10 states H96/7458-0001. The earlier 1999 drawing page repeats the concentric button-seal image as Figure4 item2. Repeated publication labels do not decide the original registration. PDF2 explicitly describes the HARP object database, the photo database intended to be linked to it, and the original photographic material sent for CISI preparation. This supports the conflict package's named next records. We did not access those databases. Original object cards for both lots, tied to the drawing and its registration history, would decide the identity.
+
+## Final register additions
+
+Register v4 adds previously held source assertions that v3 omitted. We independently read Kenoyer and Meadow 2010 PDF9: the H-2587 paragraph gives maximum diameter 15.29 mm and states that the object is steatite with traces of blue glaze. Both disputed registrations stay source-qualified. The CISI basic-data page, PDF409 and printed373, gives L-174, FC6071, excavation1924, museum unknown and ASI with a corrigendum pointer. The zero-based782 retained transcription agrees with those cells. Its museum cell remains unknown, and the record acquires no Lipi family identity. The inherited L-174 table count1 and later count2 assertions remain conflicting; we did not perform a new primary adjudication of those counts. These are gains in consolidation completeness relative to v3, with zero new source acquisition.
+
+## Review disposition and corrections
+
+The active reviewed endpoints are register v4, image joins and aggregate v2, and source conflicts and manifests v2. Image v1 used broader gain wording; v2 now states the exact index baseline and zero newly available pilot photographs. The conflict source manifest v1 contained two corrupted title encodings; v2 repairs those titles while preserving the original. We checked the repaired versions and found no remaining blocking defect in these scoped claims. We report these claims as reviewed; maintainer acceptance remains separate.
+
+The strongest supported conclusion is that the existing store supports a more complete, source-qualified object catalogue without resolving the remaining physical identities. The fourteen image relations pass the decisive crop, plate and prior-index comparison. The unresolved Lothal and Harappa joins require original registered records that bind the disputed publication image or drawing to its object.
+

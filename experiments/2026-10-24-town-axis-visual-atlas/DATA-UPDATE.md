@@ -1,0 +1,9 @@
+# Sources, transformations and coverage
+
+The atlas presents existing observations from `experiments/2026-10-24-q1032-town-axis-register/run-v5/`, its horizon repair and the earlier Lothal comparison. It adds no source acquisition, inscribed object, radiocarbon determination or archaeological measurement. Source coverage does not change. New counts describe the retained record types, north classifications and field gaps, with their source units stated on the figures.
+
+The source plates use held local assets. Figure 14 reuses the existing Surkotada pick overlay. Figure 15 reuses the Joshi Fig. 8 render at zero-based PDF index 61. Figure 16 crops the same native-pixel box from the current and archived Esri mosaics without registering one image to the other. Figure 30 crops Wanzke Fig. 2 from printed p. 39, zero-based PDF index 41. The figure manifest records crop bounds, parent paths, hashes and prior transformation records. Source hashes match the held transformation records before export.
+
+The horizon record contains thirty usable profile assertions at twenty distinct towns. Different observer points remain separate in figures 27 and 28. The four sector plots retain every 0.1-degree ray from the corrected Surkotada and Farmana profiles. The endpoint-error curve uses the register builder's small-angle formula with three-pixel endpoint uncertainty. Its caption identifies it as a sensitivity calculation and leaves provider and restoration error unknown.
+
+Physical root: `D:\projects\indus_valley_script\data\raw\2026-10-24-town-axis-visual-atlas`. Logical root: `data/raw/2026-10-24-town-axis-visual-atlas/`. PNG, SVG, PDF, preview and archive files remain local-only. The tracked package contains code, prose and source and delivery manifests. No source-coverage update to `knowledge/DATA.md` or `data/MANIFEST.json` is required.

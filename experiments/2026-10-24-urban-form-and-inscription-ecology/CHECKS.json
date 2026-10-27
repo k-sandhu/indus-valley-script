@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-24",
+  "verification_tier": "submitted",
+  "study_integrity": {
+    "endpoint": "study-validation-v3.json",
+    "status": "pass",
+    "checks": 164,
+    "failed": 0
+  },
+  "graphic_integrity": {
+    "endpoint": "modules/visuals/validation-run-v7.json",
+    "status": "pass",
+    "checks": 577
+  },
+  "book_layout": {
+    "endpoint": "book-visual-review-v4.json",
+    "status": "pass",
+    "rendered_pages": 74,
+    "figure_pages": 23,
+    "off_page_text": 0
+  },
+  "presentation": {
+    "endpoint": "modules/presentation/artifact-manifest.json",
+    "status": "pass",
+    "native_slides_rendered_and_inspected": 26,
+    "numeric_chart_points_checked": 71,
+    "native_charts_edit_saved_reopened": 3
+  },
+  "synthetic_controls": {
+    "endpoint": "synthetic-v1/results.json",
+    "status": "pass",
+    "archaeological_observations": 0
+  },
+  "shots_workflow": {
+    "endpoint": "bench-shots-synthetic-v1.json",
+    "status": "pass",
+    "synthetic": true
+  },
+  "prose_review": {
+    "endpoint": "PROSE-REVIEW.json",
+    "status": "reviewed",
+    "no_write_scan": "prose-scan-v3.json",
+    "files_scanned": 38,
+    "flags_reviewed": 85
+  },
+  "knowledge_check": {
+    "endpoint": "kb-check-v1.json",
+    "status": "pass",
+    "items": 622,
+    "errors": 0,
+    "warnings": 0,
+    "maintainer_notes": [
+      "knowledge/experiments/registry.json: differs from a fresh build; run python tools/kb.py build",
+      "knowledge/MAP.md: differs from a fresh build; run python tools/kb.py build"
+    ]
+  },
+  "broad_repository_check": {
+    "endpoint": "repo-integrity-v2.json",
+    "status": "fail",
+    "errors": 58,
+    "unchanged_errors_from_prior_endpoint": true,
+    "errors_in_owned_package_or_cards": 0,
+    "disposition": "58 existing errors outside the owned contribution; no new broad-check error. See exact records rather than treating the whole repository as passed."
+  },
+  "scope": "Source, arithmetic, data and artifact checks. No fresh archaeological confirmation or independent peer-review acceptance.",
+  "integration_wrapper_repair": "The first kb-check capture failed because the import path omitted tools; the actual checker was rerun with its tools path and passed."
+}

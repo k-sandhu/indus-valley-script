@@ -1,0 +1,3 @@
+# Amendment: catalogue-only targets
+
+Frozen before the v4 derivation. We add H-2587's published diameter and material from the held 2010 source, PDF page 9, and recover L-174's source-qualified basic-data row and earlier payload-free pilot metadata. We preserve uncertain cells and source disagreements. Both targets remain outside the Lipi family projection and receive no physical merge. We acquire no sources. If needed, at most two primary pages may be inspected; this amendment authorises no additional page search. The separate reviewer checks the material and catalogue cell readings. We report v3-to-v4 assertion and field-coverage changes as consolidation of held evidence.

@@ -1,0 +1,15 @@
+{
+  "commands": [
+    "python experiments/2026-10-24-lexical-extraction-extension/code/extract.py freeze",
+    "python experiments/2026-10-24-lexical-extraction-extension/code/extract.py freeze2",
+    "python experiments/2026-10-24-lexical-extraction-extension/code/extract.py freeze3",
+    "python experiments/2026-10-24-lexical-extraction-extension/code/extract.py run",
+    "python -m unittest discover -s experiments/2026-10-24-lexical-extraction-extension/code -p test_extract.py -v",
+    "python -m bench segmentation --synthetic --out experiments/2026-10-24-lexical-extraction-extension/segmentation-synthetic-v1.json",
+    "python -m bench shots --synthetic --out experiments/2026-10-24-lexical-extraction-extension/shots-synthetic-v1.json",
+    "python experiments/2026-10-24-lexical-extraction-extension/code/validate.py",
+    "python experiments/2026-10-24-lexical-extraction-extension/code/package.py"
+  ],
+  "author_checks_pass": true,
+  "interrupted_attempt": "Initial source scan stopped before writing a freeze or extraction endpoint; resumable page scan replaced it"
+}

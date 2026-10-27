@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Explore Indus cities, source-backed architectural reconstructions and the evidence beneath South Asia's living towns.">
+  <title>Indus Atlas · Cities and their afterlives</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23143d40'/%3E%3Cpath d='M6 25V7h20v18H6m7 0V7m7 0v18M6 16h20' fill='none' stroke='%23ebeadb'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="mapping/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="mapping/atlas.css">
+</head>
+<body>
+  <a class="skip" href="#map">Skip to map</a>
+  <header class="masthead">
+    <a class="brand" href="index.html" aria-label="Indus Atlas home"><svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><path d="M5 27V9h26v18H5m8 0V9m10 0v18M5 18h26" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M3 32h30" stroke="currentColor"/></svg><span>INDUS<span class="brand-light"> ATLAS</span><small>CITIES AND THEIR AFTERLIVES</small></span></a>
+    <nav aria-label="Atlas sections"><a class="nav-active" href="index.html">The map</a><a href="reconstruction/index.html">Cities in 3D <span aria-hidden="true">↗</span></a><button id="towns-open" type="button">Living towns</button><a href="research.html#continuity">Continuity study <span aria-hidden="true">↗</span></a></nav>
+    <button id="about-open" class="quiet" type="button">About the evidence</button>
+  </header>
+  <main class="workspace">
+    <aside class="sidebar" aria-label="Map filters and places">
+      <div class="intro"><span class="eyebrow">A LANDSCAPE, ACROSS TIME</span><h1>Cities leave traces.<br>What carries on?</h1><p>Explore the places, buildings and changing material record of the Indus world.</p></div>
+      <div class="layer-tabs" role="group" aria-label="Choose map layer"><button data-layer="sites" class="active" type="button">Indus places</button><button data-layer="towns" type="button">Towns today</button><button data-layer="both" type="button">Compare</button></div>
+      <div class="filters">
+        <label class="search-label" for="search"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m15 15 5 5" stroke="currentColor" stroke-width="1.6"/></svg><input id="search" type="search" placeholder="Find a city, site or country…" autocomplete="off"></label>
+        <div class="filter-row"><label>Map extent<select id="extent"><option value="south-asia">South Asia</option><option value="all">All find locations</option></select></label><label>Country<select id="country"><option value="all">All countries</option></select></label></div>
+        <details class="more-filters"><summary>Evidence filters <span>+</span></summary><label>Location evidence<select id="quality"><option value="all">All reference points</option><option value="site">Catalogue site coordinates</option><option value="approximate">Approximate / gazetteer</option><option value="flagged">Locations needing review</option></select></label><label>Dating basis<select id="date-quality"><option value="all">All inherited date ranges</option><option value="site">Has a site-specific range</option><option value="convention">Regional convention only</option></select></label><label class="check"><input id="labels" type="checkbox" checked> Place labels</label><label class="check"><input id="modern" type="checkbox"> Modern street basemap <small>online</small></label><p class="small">Street tiles show today's landscape. The offline outlines use Natural Earth at regional scale.</p></details>
+      </div>
+      <div class="results-heading"><span id="result-count" aria-live="polite">Loading places…</span><button id="fit" class="text-button" type="button">Fit results</button></div>
+      <div id="place-list" class="place-list" aria-label="Matching places"></div>
+      <div class="sidebar-bottom"><a href="reconstruction/index.html#model=great-bath"><span class="model-icon" aria-hidden="true">◇</span><span><strong>Step inside the architecture</strong><small>The Great Bath and Dholavira's reservoirs</small></span><span aria-hidden="true">↗</span></a><button id="export" class="text-button" type="button">↓ Export these places · GeoJSON</button></div>
+    </aside>
+    <section class="map-stage" aria-label="Geographic explorer">
+      <div id="map" tabindex="0" role="application" aria-label="Interactive map of archaeological places and towns; use arrow keys to pan and plus or minus to zoom"></div>
+      <div class="map-caption"><span class="status-dot"></span><span id="map-mode">INDUS FIND LOCATIONS</span><span class="map-divider"></span><span id="map-subtitle">Source-linked reference points</span></div>
+      <div class="map-tools"><button id="home" type="button" title="Reset map view" aria-label="Reset map view">⌂</button><button id="legend-toggle" type="button" title="Show map legend" aria-label="Toggle map legend">☷</button></div>
+      <div class="map-legend" id="legend"><strong>Reading this map</strong><span><i class="dot indus"></i>Indus-related find location</span><span><i class="dot living"></i>Present-day town / place anchor</span><span><i class="dot flagged"></i>Location needs review</span><span><i class="dot dashed"></i>Approximate / gazetteer point</span><p>Points locate places. They do not trace ancient settlement boundaries.</p></div>
+      <div class="detail-panel" id="detail-panel" hidden aria-live="polite"></div>
+      <div class="map-note" id="map-note">Modern geographic context · Ancient rivers are not reconstructed</div>
+    </section>
+    <footer class="timeline" aria-label="Date filter">
+      <div class="time-title"><span class="eyebrow">ARCHAEOLOGICAL TIME</span><strong id="time-description">All recorded periods</strong></div>
+      <div class="periods" role="group" aria-label="Filter by archaeological period"><button data-period="all" class="active" type="button">All periods</button><button data-period="early" type="button">Early <small>4000–2600 BCE</small></button><button data-period="mature" type="button">Urban <small>2600–1900 BCE</small></button><button data-period="late" type="button">Late <small>1900–1300 BCE</small></button></div>
+      <div class="year-control"><label class="check"><input id="single-year" type="checkbox"> At one date <output id="year-label" for="year">2300 BCE</output></label><input id="year" aria-label="Select a year BCE" type="range" min="1000" max="4000" step="25" value="2300" disabled></div>
+      <p class="time-note" id="time-note">A recorded range overlaps the selected period. Site dates are separate from inscription dates.</p>
+    </footer>
+  </main>
+  <dialog id="about-dialog"><button class="dialog-close" type="button" data-close="about-dialog" aria-label="Close evidence information">×</button><span class="eyebrow">HOW TO USE THE ATLAS</span><h2>Every point has an evidence trail.</h2><p>This atlas extends our earlier find-site map and architectural register. Select a point for its location source, dated phases, missing evidence and links to the records. The inherited source register contains 115 place entities, including regional labels and finds outside South Asia.</p><p>The date control uses overlap with recorded site phases. A displayed point does not establish continuous occupation or the date of an individual inscription. Modern town anchors remain visible across date filters so that their separate histories can be inspected.</p><p>The city viewer shows dimension-backed architecture, approximate placement and assumed heights with separate evidence labels. Its city scenes are schematic reconstructions. Their 3D geometry is not a field survey.</p><div class="reading-links"><a href="README.md">Package and reproduction guide ↗</a><a href="mapping/REPORT.md">Map sources and coverage ↗</a><a href="research.html#continuity">The changing-marker hypothesis ↗</a><a href="research.html#living-towns">Old towns: dates and occupation gaps ↗</a><a href="../2026-10-08-site-map-and-overview/site-map.html">Earlier find-site map ↗</a><a href="../2026-10-12-satellite-prospection/atlas/viewer-v1/index.html">Earlier satellite atlas ↗</a></div><p class="small">Made with Natural Earth. Leaflet 1.9.4 is provided under BSD-2-Clause. Optional street tiles © OpenStreetMap contributors. Project code: Unlicense; original project prose: CC0. Source material retains its own terms.</p></dialog>
+  <dialog id="towns-dialog" class="towns-dialog"><button class="dialog-close" type="button" data-close="towns-dialog" aria-label="Close towns table">×</button><span class="eyebrow">EVIDENCE BENEATH TOWNS TODAY</span><h2>An early settlement date is one part of a town's history.</h2><p>Compare the excavated chronology, spatial relationship and continuity evidence for each candidate. Dates describe the particular site or sequence cited. <a href="research.html#living-towns">Read the source review ↗</a></p><div id="town-table"></div></dialog>
+  <noscript><p class="no-script">The interactive map requires JavaScript. Read the <a href="mapping/REPORT.md">map report</a>, <a href="research.html#living-towns">living-towns review</a> or <a href="research.html#continuity">continuity study</a>.</p></noscript>
+  <script src="mapping/vendor/leaflet/leaflet.js"></script>
+  <script src="mapping/current-data.js"></script>
+  <script src="mapping/atlas.js"></script>
+</body>
+</html>

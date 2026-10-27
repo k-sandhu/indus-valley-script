@@ -1,0 +1,16 @@
+# Separate source review of the third evidence pass
+
+We independently checked twelve primary pages across four source chains. The material claims listed below agree with the inspected pages. This review qualifies those claims as reviewed; the remaining claims in the author packages retain their existing status. The reviewer is gpt-6.1-sol through Codex collaboration, without specialist credentials. We reused the authors’ held PDFs and page renders, read the original pixels, and extracted the specified 2010 page directly from its PDF. The lexical review uses REPORT-v2.md and source-manifest-v2.json.
+
+| Source chain | Checked result | Remaining decision |
+|---|---|---|
+| Harappa | The 2010 manuscript p.10 identifies H-1688 and cites 1991 Figure 13.44e. That caption supplies H90-1600/3166-1, lower street levels in area C, Period 3A. The 1999 Figure 4 item 2 legend reads H96/7458-01. | The field register and phase argument remain unchecked. We did not inspect the 2010 7158 prose assertion. |
+| Tell Brak | Matthews p.265 equates catalogue 308, REG257 and TB1058 and describes an irregular bulla fragment. Eidem’s Appendix B p.308 gives the cup-bearer reading and marks part of the final name sign as restored. | Strict language classification, full-legend admission and baseline duplication remain open. |
+| Tamil grammar | Kothandaraman Rule 37, p.111, defines flora classes with and without am. Rule 128, p.318, uses the am-taking class. Rule 129, p.319, gives the plant-stem change mpu to ppu before am. Page 32 explicitly says occurrence is not predictable. | Applying these contemporary literary rules to Old Tamil or individual frozen lexical cases needs separate evidence. |
+| Lothal | Rao p.319 refers object 1864 to Plate CLXI F; p.325 assigns that panel to 1830. CISI1 p.373 distinguishes L-161 = 1830, LTH SRG1195, from L-164 = 1864, LTH SRG1232. | The conflict is internal to Rao. The inspected evidence does not select the photograph’s identity. |
+
+The review found no required correction to these specified claims. The grammar’s class definition supports the narrower account in the author’s v2 report. The Lothal conflict justifies withholding a secure plate identity. Harappa’s repeated publications belong to the same excavation lineage, and our second reading adds no independent excavation observation.
+
+The frozen protocol allowed fourteen pages or crops and no acquisition. We inspected twelve distinct pages, reused eleven existing page images, and extracted the 2010 manuscript page directly. All new source text, renders and detailed notes remain local under data/raw/2026-10-24-source-review-pass3/, physically D:/projects/indus_valley_script/data/raw/2026-10-24-source-review-pass3/. The source manifest records hashes and locators. The exposure record names neighboring inscriptions and legends encountered in these pages. Bench is inapplicable because this is source qualification with no submitted reading, key or scored proposal.
+
+The boldest supported reading is that the third pass has recovered a traceable early Harappa context, a registered Tell Brak carrier with a published cup-bearer legend, a restricted grammatical plant class, and a genuine Lothal identity conflict. Field records, specialist epigraphic and Tamil assessment, and an original photograph register would decide the remaining substantive questions.

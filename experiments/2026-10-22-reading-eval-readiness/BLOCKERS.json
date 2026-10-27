@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "direction": 7,
+  "new_confirmation_ready": false,
+  "blockers": [
+    {
+      "id": "R7-01", "priority": 1, "status": "component-repaired; integration-pending",
+      "problem": "The historical frequency proxy counts prefixes after deleting terminal Tamil vowel marks.",
+      "evidence": "experiments/2026-10-22-reading-eval-readiness/run-v1/input-audit.json#/illustrative_input_checks",
+      "action": "Integrate exact written-form counts or a separately reviewed inflection-aware measure into both proposal and null-pool features in a new scorer version.",
+      "owner_role": "evaluation implementer",
+      "acceptance": "All proposal and control features use the same frozen measure; unit counterexamples and independent feature replay pass. No historical output is overwritten."
+    },
+    {
+      "id": "R7-02", "priority": 1, "status": "open", "depends_on": ["R7-01"],
+      "problem": "Of 24 proposed forms, 15 have multiple exact dictionary records and aṟu has no exact one-member entry. The former code selected first rows or a collapsed-form fallback.",
+      "action": "Have a Dravidian specialist adjudicate lexeme, sense and earliest attestation wherever the proposed meaning or native-noun filter depends on them, including homographs and any numeral allomorph. Written-form counts may aggregate homographs without choosing a sense. Preserve unresolved cases and the excluded set.",
+      "owner_role": "Dravidian lexicographic reviewer",
+      "acceptance": "Every accepted mapping has source edition, page, stable entry ID, sense, historical-period basis and signed adjudication. A variant cannot be justified solely by the scorer's phonological tolerance."
+    },
+    {
+      "id": "R7-03", "priority": 1, "status": "open",
+      "problem": "Whole-file Sangam HTML tokens include any Tamil front matter and editorial text; exact written forms omit inflections and sandhi.",
+      "action": "Build a line-addressable poetry-only source extract and a separately reviewed list of complete attested variants. Record original line text locally and line IDs in results.",
+      "owner_role": "Tamil corpus editor",
+      "acceptance": "A source-blind sample verifies text boundaries and the matching rule. Form frequency and sense attestation remain separate measurements."
+    },
+    {
+      "id": "R7-04", "priority": 1, "status": "open",
+      "problem": "Winslow's parser misses -am-increment compounds and principal compounds without etymologies, and gives jamīṉ a two-member split.",
+      "action": "Audit a stratified sample of accepted and rejected compounds across the dictionary before changing junction rules; add the known failures to a held regression set.",
+      "owner_role": "lexicographic reviewer and parser implementer",
+      "acceptance": "Versioned manual gold set, precision and recall by compound class, every alternative retained, no selected-word-only patch. The reviewed table is frozen before a new assay.",
+      "evidence": "experiments/2026-10-22-reading-eval-readiness/run-v1/input-audit.json#/winslow_checks"
+    },
+    {
+      "id": "R7-05", "priority": 1, "status": "open",
+      "problem": "The available Parpola inventory uses five later papers, 16 signs and 24 distinct word forms. The full 1994 inventory and all sign-code crosswalks remain unavailable or unresolved.",
+      "action": "Obtain lawful access to the 1994 book and build a versioned extraction of every proposed identification, including negative and alternative cases, with reviewed sign crosswalks.",
+      "owner_role": "source reviewer",
+      "acceptance": "A complete source inventory and explicit exclusions; every code supported by a glyph or located object observation, with ambiguous mappings retained."
+    },
+    {
+      "id": "R7-06", "priority": 1, "status": "open", "depends_on": ["R7-01", "R7-02", "R7-03", "R7-04"],
+      "problem": "The shared harness has key and meaning-map tasks but no calibrated rebus task with comparable correct and wrong controls.",
+      "action": "Implement a separate rebus task, preserving whole-key replacement dependence and equal choice budgets, and run the prespecified calibration campaign.",
+      "owner_role": "evaluation implementer and independent methods reviewer",
+      "acceptance": "Known-correct controls pass with stated power, wrong controls meet the error-rate rule, and dictionary coverage changes do not silently change the target. Family-specific effect and pass rules are frozen."
+    },
+    {
+      "id": "R7-07", "priority": 1, "status": "blocked-by-register-review",
+      "problem": "Current physical identities are provisional and exposure is unreviewed. Absence from the spending ledger does not establish a fresh object.",
+      "action": "Close aliases and faces, construct separate text-dependence components, and record object and statistic-family exposure before reserving a genuinely unexamined cohort.",
+      "owner_role": "object-register and exposure reviewers",
+      "acceptance": "Reviewed eligibility file with inclusion/exclusion reasons and hashes; every reserved component has known identity and an exposure review. All participants freeze before access.",
+      "register_dependency": "Versioned object register with independently reviewed identity and exposure; pin the reviewed run when registering participants"
+    },
+    {
+      "id": "R7-08", "priority": 2, "status": "open",
+      "problem": "Meaning-map outcomes need independently measured object properties, with source conflicts, missingness and site proxies controlled.",
+      "action": "Export source assertions for the declared dimensions, material, context or use outcomes and audit joins independently of the reading. Define eligible components and missingness rules on discovery.",
+      "owner_role": "register reviewer and meaning-map analyst",
+      "acceptance": "A signed variable dictionary, independent measurement provenance, sufficient component counts and a site-proxy audit where geography is predicted."
+    },
+    {
+      "id": "R7-09", "priority": 2, "status": "open",
+      "problem": "Language-model projection, training genre and deletion freedom affect Sanskrit-key comparisons, and different proposals cover different sign sets.",
+      "action": "Use the final paper 006 repairs, freeze projection/model sensitivity conditions and deletion budgets, and compare common populations or prespecified coverage strata.",
+      "owner_role": "language-model evaluator",
+      "acceptance": "Pinned training/test separation, complete emission counts, same option-list freedom, source-specific exclusions and fixed unrelated-language controls."
+    },
+    {
+      "id": "R7-10", "priority": 1, "status": "open", "depends_on": ["R7-05", "R7-06", "R7-07", "R7-08", "R7-09"],
+      "problem": "No complete shared roster, joint testing rule or adequate calibration campaign has been frozen.",
+      "action": "Finalize the participation contract, evaluate correct and wrong controls under the same source/freedom laws, then register every participant and freeze all artifacts before opening confirmation.",
+      "owner_role": "evaluation coordinator and independent reviewer",
+      "acceptance": "Reviewed calibration report and source/exposure decisions; complete shared shots manifest, joint credence rule, immutable artifacts and access log."
+    }
+  ]
+}

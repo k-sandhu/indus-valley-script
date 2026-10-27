@@ -1,0 +1,9 @@
+# Retrospective
+
+The changed acquisition limit supplied the missing grammar immediately. A term index located am examples near the end of the morphophonemics chapter even though the text layer contained no useful occurrence of increment. Searching filler and plant examples succeeded where the original vocabulary failed. The rendered pages preserved subscripts and showed a stem change that the OCR obscured. We kept the general statement about unpredictable am distribution beside the specific plant rules.
+
+The literary route made partial progress. Wikisource returned 403, while the Project Madurai index led to an accessible named commentary. That etext did not yield the exact cited phrase under the bounded search, and its print-edition identity remains incomplete. We retained this failure instead of treating another commentary as the dictionary's cited source. Scribd likewise delivered a shell without the book passage, although the search system exposed an excerpt. That excerpt was excluded from admitted evidence.
+
+A Windows console failed while printing Unicode from the held Wilden term index. The UTF-8 file had already been saved; printing with PYTHONIOENCODING=utf-8 repaired display without changing the input. Our direct acquisition scripts and response bodies remain local. Full web-search responses were not exported, so the query log states that preservation limit. The work supplies author source qualification; independent specialist review remains outstanding.
+
+A bounded follow-up used the remaining page allowance to resolve Rule128's class notation. The morphology stem pages did not define it; indexing flora and plant led to Syntax Rule37, printed111/PDF127. The rendered page explicitly separates am-taking and non-taking flora classes. We preserved the earlier report and aggregate, then wrote version2 with this evidence.

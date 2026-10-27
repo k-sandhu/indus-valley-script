@@ -1,0 +1,9 @@
+# Protocol: Dholavira registration identities
+
+We freeze PCF-DHV-005 through PCF-DHV-032, the 28 candidate inventory rows citing printed pages 247–249 (PDF pages 264–266) of the held Dholavira report, before opening these primary pages. These rows form a contiguous context-table block with complete registrations and catalogue numbers. The earlier identity audit retained their candidate relationships. Our new evidence is direct inspection of the primary registration and catalogue columns and their internal cross-references.
+
+We inspect identity and find-context columns only. We do not display inscription images, sign sequences, motif descriptions or reserved payloads. A mechanical extraction may locate columns without displaying their content. We record every displayed rectangle and text excerpt locally, with source hashes. We compare registration, catalogue number and context row against the frozen inventory, preserve contradictory values and keep every provisional corpus family separate. A matching context alone remains a candidate. Register-ready assertions concern source identities and catalogue cross-references; family links require complete independent identifiers.
+
+We stop after these three context pages and the catalogue identity columns needed to check this block, or after a documented access or layout barrier. Outcomes are supported source identities, corrected metadata, explicit conflicts and unresolved corpus links. This is exploratory source work, not a confirmation test or reading claim. No population freshness is certified. Bench README and spending history were consulted; no statistic is evaluated.
+
+All detailed source derivatives live at D:/projects/indus_valley_script/data/raw/2026-10-24-object-identity-extension/, reached logically through data/raw/2026-10-24-object-identity-extension/. Source rights remain unverified. We preserve the original PDF and every earlier output.

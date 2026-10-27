@@ -1,0 +1,28 @@
+{
+  "id": "OBJECT-REGISTER-BUILD-01",
+  "theme": "Full provisional object register and source-attributed metadata",
+  "status": "complete-base-population-with-partial-source-adapters",
+  "status_class": "exploratory",
+  "area": "data",
+  "question": "Can the entire held Lipi population be rebuilt in the pilot's version 2 schema while preserving source uncertainty, aliases, faces and missingness?",
+  "outcome": "Built 4695 provisional objects, 5680 faces and 225223 assertions. Reproduced 4075 usable CISI strings and 3598 dimension-bearing families. Integrated 2602 CISI joins, 1134 excavation-table families, 2375 older-export families, 179 Mayig identities, 2562 image-bearing families and pilot enrichment for 236 families. Preserved 3238 CISI decisions including 2870 automatic merges; withheld disputed cells from accepted fields. Physical identities and exposure remain unreviewed.",
+  "challenge": "Pilot validation fixes the population at 200; source aliases do not establish physical identity; CISI 2 retains unresolved reader differences; one dimension exceeds a plausibility bound; exact image panels and some source adapters remain incomplete.",
+  "remedy": "Kept the unchanged schema, adapted closure and provenance checks, retained raw values and canonical statuses in local sidecars, quarantined the dimension outlier, imported original reader decisions, and left unresolved joins and omitted adapters explicit.",
+  "evidence": [
+    "experiments/2026-10-22-object-register/PROTOCOL.md",
+    "experiments/2026-10-22-object-register/REPORT.md",
+    "experiments/2026-10-22-object-register/INTERFACE.md",
+    "experiments/2026-10-22-object-register/run-v2/coverage.json",
+    "experiments/2026-10-22-object-register/run-v2/source-manifest.json",
+    "experiments/2026-10-22-object-register/run-v2/validation.json",
+    "experiments/2026-10-22-object-register/source-verification-v2.json",
+    "experiments/2026-10-22-object-register/synthetic-validation.json",
+    "experiments/2026-10-22-object-register/replay-comparison.json",
+    "experiments/2026-10-22-object-register/RETROSPECTIVE.md"
+  ],
+  "retry_when": "Add the named missing adapters, review catalogue-only and post-catalogue object identities, adjudicate CISI differences, reconcile image panels, or construct an audited exposure and text-dependency history.",
+  "package": "experiments/2026-10-22-object-register",
+  "related_questions": ["Q-1030", "Q-1031", "Q-1028", "Q-1013"],
+  "authors": [{"model": "GPT-6 family; exact backend identifier not exposed", "harness": "Codex desktop", "agent": "object-register worker"}],
+  "verification_tier": "submitted"
+}

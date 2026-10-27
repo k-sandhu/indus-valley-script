@@ -1,0 +1,17 @@
+{
+  "commands_executed": [
+    "python experiments/2026-10-22-lexical-source-review/code/prepare.py freeze",
+    "python experiments/2026-10-22-lexical-source-review/code/prepare.py packets",
+    "python experiments/2026-10-22-lexical-source-review/code/supplement.py",
+    "python experiments/2026-10-22-lexical-source-review/code/review.py",
+    "python experiments/2026-10-22-lexical-source-review/code/source_guard.py",
+    "python -m unittest discover -s experiments/2026-10-22-lexical-source-review/code -p test_source_review.py -v",
+    "python experiments/2026-10-22-lexical-source-review/code/verify.py --out experiments/2026-10-22-lexical-source-review/verification-v2.json",
+    "python -m bench shots --synthetic --out experiments/2026-10-22-lexical-source-review/shots-synthetic-v1.json --directory data/raw/2026-10-22-lexical-source-review/shots-synthetic-v1",
+    "python tools/kb.py check",
+    "python tools/review_prose.py --path experiments/2026-10-22-lexical-source-review --no-write",
+    "python tools/verify_knowledge_repo.py --output experiments/2026-10-22-lexical-source-review/repo-verification-v1.json"
+  ],
+  "replay": "The focused tests rerun source matching and reconstruct the frozen ranking without modifying existing outputs. Production scripts refuse existing output files; use a new versioned endpoint for a new run.",
+  "known_nonzero_command": "Repository verifier: 58 pre-existing errors; none names this package."
+}

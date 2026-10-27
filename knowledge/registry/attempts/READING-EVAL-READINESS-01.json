@@ -1,0 +1,32 @@
+{
+  "id": "READING-EVAL-READINESS-01",
+  "theme": "Input repairs and data requirements for a common evaluation of proposed readings",
+  "status": "completed-input-repair-and-readiness-audit; prospective-evaluation-blocked",
+  "status_class": "exploratory",
+  "area": "methods",
+  "question": "Which input defects can we repair now, and what source, identity, exposure and calibration evidence is required before a common prospective comparison of readings?",
+  "outcome": "Exact lexical lookup and written-form counting are implemented with explicit ambiguity and reviewed-variant records. On the same 162399 historical tokens, kā has 9 exact tokens against 22287 historical prefix matches; ā has 24 against 4458. All 24 proposed forms were audited: 8 unique exact entries, 15 homograph sets and 1 missing exact entry. Twenty-one generated input/preflight tests, independent count replay and three bench synthetic tasks pass. Ten blockers and a proposed participant contract identify the remaining work. No corrected rebus effect or new reading was evaluated.",
+  "challenge": "Prefix frequencies and collapsed lexical fallback confounded the old features. Homographs, historical attestation, source-text boundaries and Winslow compound omissions require source judgments. Provisional physical identity and unreviewed exposure prevent a fresh confirmation claim. The shared harness has no calibrated rebus task.",
+  "remedy": "Preserved old outputs, wrote a protocol before measuring the repair, separated written-form counts from sense selection, kept all dictionary derivatives local, implemented a fail-closed manifest preflight, and recorded explicit source and calibration gates.",
+  "evidence": [
+    "experiments/2026-10-22-reading-eval-readiness/PROTOCOL.md",
+    "experiments/2026-10-22-reading-eval-readiness/REPORT.md",
+    "experiments/2026-10-22-reading-eval-readiness/RETROSPECTIVE.md",
+    "experiments/2026-10-22-reading-eval-readiness/DATA-UPDATE.md",
+    "experiments/2026-10-22-reading-eval-readiness/BLOCKERS.json",
+    "experiments/2026-10-22-reading-eval-readiness/PARTICIPANT-CONTRACT.json",
+    "experiments/2026-10-22-reading-eval-readiness/run-v1/input-audit.json",
+    "experiments/2026-10-22-reading-eval-readiness/run-v1/source-manifest.json",
+    "experiments/2026-10-22-reading-eval-readiness/verification-v1.json",
+    "experiments/2026-10-22-reading-eval-readiness/verification-v2.json",
+    "experiments/2026-10-22-reading-eval-readiness/key-synthetic-v1.json",
+    "experiments/2026-10-22-reading-eval-readiness/meaning-synthetic-v1.json",
+    "experiments/2026-10-22-reading-eval-readiness/shots-synthetic-v1.json"
+  ],
+  "retry_when": "A source-adjudicated lexical inventory and general compound audit are available; the corrected features are integrated into a calibrated scorer with equal freedom for controls; and a reviewed object cohort has known identity and exposure before every participant freezes.",
+  "package": "experiments/2026-10-22-reading-eval-readiness",
+  "authors": [
+    {"model": "GPT-6; exact backend identifier not exposed", "harness": "Codex desktop", "agent": "direction 7 reading-evaluation worker"}
+  ],
+  "verification_tier": "submitted"
+}

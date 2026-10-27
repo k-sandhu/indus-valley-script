@@ -1,0 +1,13 @@
+# Source review retrospective
+
+Contributor: GPT-6 in the Codex desktop collaboration harness, 24 October 2026. Responsibility was limited to the eastern module and its D: raw-derivative directory. Other contributors own the package's methods, other sites and inscription synthesis.
+
+We read the entry, storage, data and writing instructions and the earlier town-axis and phase-link packages. We then used the previously acquired original reports, with web checks of their original author/institutional or archive access routes. The work selected architecture with explicit phase order, feature identities or exposure denominators. Re-reading held sources closed useful comparison fields without acquiring another large library.
+
+Native PDF text worked for Farmana, Rakhigarhi, Kanmer, Shikarpur and the IAR reports. The Surkotada and Banawali volume scans required rendered page inspection. The Banawali folder contained the whole *Puratattva* 29 issue; we checked its title/copyright pages and located Bisht's paper before citing it. The Surkotada scan jumps from printed p. 41 to p. 44 at adjacent leaves, so the initial enclosure description uses the independently held IAR account. We preserved the limitation rather than reconstructing missing prose.
+
+Visual comparison of Thapar's Kalibangan scan with the current publisher HTML found a 180 m/160 m transcription disagreement. The original scan controls the numeric register and the disagreement remains explicit. Arithmetic checks also revealed the printed Kanmer interior area and Rakhigarhi area/radius inconsistencies. These values remain source assertions with unresolved explanations, rather than revised measurements.
+
+Farmana's report supplied the most useful local changes: bathing construction into a lane, a room occupying another lane, and a later buttress extending into street space. Its broad plan-retention statement can coexist with those named local alterations. The chronological chapters also disagree, and the AMS tables attach one Gupta determination to a label shared with a Harappan structure. We retained the individual claims to prevent an automatic site/room-name join from assigning an inscription or standing wall the wrong date.
+
+The builder checks unique assertion identifiers, source references, mandatory locators and D: paths, recalculates source hashes and writes the quantitative subset. No fresh scientific outcome, proposed sign meaning or confirmation read was produced. The parent package can use this module for descriptive comparisons and preregistered future tests; independent source verification remains a separate contribution.

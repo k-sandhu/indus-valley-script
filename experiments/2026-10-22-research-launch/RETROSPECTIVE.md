@@ -1,0 +1,15 @@
+# Coordinating the first execution block
+
+We assigned distinct paths to three contributors and agreed on provisional object and face identifiers before implementation. The register worker built the base population and source adapters. The unit worker accounted for layout, image and exposure gaps. The reading worker repaired lexical lookup and specified participant requirements. During integration we recorded the plan, claimed the questions, reviewed code and prose, and checked the resulting interface independently.
+
+The GitHub connector returned a 403 when creating claims. The authenticated repository CLI succeeded; the exact bodies are retained in this package and the issue URLs are in SCOPE.json. An early console read also hit Windows' default text encoding; subsequent Python inspection commands used UTF-8 explicitly. These problems did not change the research inputs.
+
+Review found that the first compact register interface used nonstandard value-status terms. The final run uses the repository vocabulary and separates uncertainty from value status. We also required the CISI reader decisions and bracketed alternatives to remain visible. The assembled source already preserved merged alternatives, so the repair concerned their review state and admission to accepted fields, rather than reconstructing lost source choices. An inherited plausibility check rejected a 3,000 mm dimension; the builder preserved that raw value and withheld it from accepted measurements. Earlier successful outputs remain at run-v1; run-v2 is the reviewed build.
+
+The unit audit initially checked the register only at aggregate level. We extended it to carry each face's registered identity, image conflicts and accepted side links into the work queue. This makes an unresolved image relation visible at the point where a reviewer selects a case. The original audit code and output remain preserved in its package. Our integration run joined all 118 divided faces and carried three image-review flags.
+
+The reading worker independently reproduced the historical and repaired counts; we also reran its test suite during integration. Review added checks for missing claim, sign-namespace and mapping declarations, duplicate participant IDs, overlapping controls and malformed family types. The contract treats a register path as a future reviewed selection and does not silently select an older build for confirmation.
+
+Two source limitations govern the next work. Dictionary form counts need a cleaner poetry corpus and meaning-dependent adjudication, while the post-catalogue inventory needs page-to-object exposure review. A source access entry alone cannot establish exactly what each participant saw. We preserved the prior records and proposed corrections instead of relabelling that population as fresh.
+
+The result is a reproducible starting point for the selected research directions. Its next decisive test is whether independent source review closes the named input gaps sufficiently for a frozen, calibrated comparison.

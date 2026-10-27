@@ -1,0 +1,27 @@
+from pathlib import Path
+import json,re,hashlib,datetime,csv
+P=Path('experiments/2026-10-24-object-identity-pass2');R=Path('D:/projects/indus_valley_script/data/raw/2026-10-24-object-identity-pass2')
+def dump(path,data):
+ assert not path.exists(),str(path)
+ path.write_text(json.dumps(data,indent=2)+'\n',encoding='utf-8')
+target=json.loads((R/'target-inventory-v1.json').read_text());corpus=json.loads((R/'candidate-corpus-faces-v1.json').read_text());obs=json.loads((R/'source-observations-v1.json').read_text());panels=json.loads((R/'target-primary-panels-v1.json').read_text());links=json.loads((R/'candidate-image-links-v1.json').read_text())
+def numeric(s):
+ m=re.match(r'\s*(\d+(?:\.\d+)?)',str(s or ''));return float(m[1]) if m else None
+out=[]
+for t in target:
+ candidates=[c for c in corpus if c['object_family_id'] in t['local_family_ids'].split('|')];m=obs['measurements'].get(t['row_id']);comp=[]
+ for c in candidates:
+  md=c['metadata'];shared_id=md.get('excavation-idno')==t['registration'];xy=bool(m) and all(numeric(md.get(k))==numeric(m[k]) for k in ['h','v']);triple=xy and numeric(md.get('th'))==numeric(m['body_thickness']);comp.append({'family_id':c['object_family_id'],'complete_export_registration':md.get('excavation-idno'),'shared_registration_literal':shared_id,'h_v_exact_numeric':xy,'h_v_body_thickness_exact_numeric':triple,'has_corpus_photo':any(x['object_family_id']==c['object_family_id'] for x in links),'retained':True})
+ out.append({'row_id':t['row_id'],'registration':t['registration'],'source_panel':next(x for x in panels if x['row_id']==t['row_id']),'measurements':m,'physical_observation':obs['photo_notes'][t['row_id']],'comparisons':comp,'bridge_disposition':'unresolved_no_shared_identifier_or_corpus_photo','physical_merge':False,'confirmation_eligibility':False,'source_dependence':'Source report and corpus may share excavation metadata; agreement is not an independent archaeological observation.','exact_triplet_priority_families':[x['family_id'] for x in comp if x['h_v_body_thickness_exact_numeric']],'exact_hv_priority_families':[x['family_id'] for x in comp if x['h_v_exact_numeric']]})
+dump(R/'bridge-decisions-v1.json',out)
+summary={'frozen_target_rows':len(target),'candidate_families':len({c['object_family_id'] for c in corpus}),'candidate_comparison_edges':sum(len(x['comparisons']) for x in out),'primary_photo_panels_inspected':10,'targets_with_printed_measurements':len(obs['measurements']),'targets_with_exact_h_v_body_thickness_agreement':sum(bool(x['exact_triplet_priority_families']) for x in out),'targets_with_exact_h_v_agreement':sum(bool(x['exact_hv_priority_families']) for x in out),'candidate_linked_corpus_photos':len(links),'complete_registration_literal_matches':sum(c['shared_registration_literal'] for x in out for c in x['comparisons']),'supported_new_bridges':0,'unresolved_bridges':len(out),'physical_merges':0,'new_physical_objects_asserted':0,'qualifications':['dimension agreement is candidate-priority evidence only','all inherited candidates retained','corpus sign-token count differs from source sign count for one dimensional priority case; counting conventions unresolved','one dimensional priority case has differing source accession and export identifier; namespaces unresolved']}
+dump(P/'aggregate-v1.json',summary)
+sources=[('bisht-2015-held','data/raw/2026-10-11-societal-persistence/evidence/acquisition-v5/bisht2015-preliminary-original.pdf'),('prior-identity-assertions','data/raw/2026-10-24-object-identity-extension/identity-assertions-v1.json'),('lipi-normalized','data/normalized/lipi_observed_faces.jsonl'),('lipi-original','data/lipi/src/assets/data/inscriptions.csv'),('corpus-image-index','experiments/2026-10-13-image-index-and-units/run-2026-10-13/images/face-image-links.csv'),('object-register','data/raw/2026-10-22-evidence-integration/run-v2/objects.jsonl'),('face-register','data/raw/2026-10-22-evidence-integration/run-v2/faces.jsonl'),('older-export','data/normalized/indus_website_observed.jsonl'),('candidate-inventory','experiments/2026-10-21-post-catalogue-finds/objects.csv')]
+records=[]
+for label,path in sources:
+ p=Path(path);b=p.read_bytes();records.append({'source_id':label,'logical_path':path,'physical_path':str(p.resolve()),'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest(),'rights':'inherited source terms; detailed derivatives local-only'})
+acq=json.loads((R/'acquisition-v1.json').read_text())+json.loads((R/'acquisition-v2-additional.json').read_text());artifacts=[]
+for p in R.iterdir():
+ if p.is_file():artifacts.append({'logical_path':'data/raw/2026-10-24-object-identity-pass2/'+p.name,'physical_path':str(p),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()})
+dump(P/'source-manifest-v1.json',{'sources':records,'source_title':'Dholavira Report (preliminary, Jan 2015)','report_original_url':'https://archive.org/download/dholavirareportpreliminaryjan2015_860_K/Dholavira%20Report%20%28preliminary%2C%20Jan%202015%29.pdf','report_original_retrieved_utc':'2026-10-11T07:08:49.097252+00:00','review_time_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'acquisition_attempts':acq,'new_local_artifacts':artifacts,'raw_rights':'unverified; local-only','printed_catalogue_pages':sorted({x['printed_page'] for x in panels}),'pdf_catalogue_pages':sorted({x['pdf_page'] for x in panels}),'pdf_measurement_pages':[264,265]})
+print(json.dumps(summary,indent=2))

@@ -1,0 +1,19 @@
+from pathlib import Path
+import json,hashlib
+P=Path(__file__).resolve().parent;root=P.parents[1];R=Path('D:/projects/indus_valley_script/data/raw/2026-10-24-office-seal-pass3')
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+def dump(p,x):p.write_text(json.dumps(x,indent=2,ensure_ascii=False)+'\n',encoding='utf8')
+registry=root/'knowledge/registry/attempts/OFFICE-SEAL-PASS3-2026-10-24.json'
+dump(registry,{'id':'OFFICE-SEAL-PASS3-2026-10-24','theme':'Original Lothal plate identity conflict and new public image routes','status':'completed-bounded-source-recovery','status_class':'source-review','area':'seals','authors':[{'name':'gpt-6.1-sol','model':'gpt-6.1-sol','harness':'Codex collaboration'}],'question':'Can a figure key or new public contact publication bind Lothal L-164 to its underside evidence?','outcome':'Rao1985 p319 associates Plate CLXI F with1864, but p325 associates it with1830. CISI1 distinguishes these as L-164 and L-161. Figure38B panel6 remains unregistered; zero new full PDFs, posters or registered contact photographs. Deposit65/69 remains unresolved.','challenge':'Original plate references conflict; new author attachment routes return403 and institutional record requests fail.','remedy':'Preserve both original references and their page images, separate catalogue aliases, retain all failed routes and freeze earlier packages.','evidence':[f'experiments/2026-10-24-office-seal-pass3/{n}' for n in ['PROTOCOL.md','REPORT.md','RETROSPECTIVE.md','DATA-UPDATE.md','source-manifest-v1.json','aggregate-v1.json','validation-v1.json','exposure-record-v1.json']],'retry_when':'A photograph register, caption correction, explicit Figure38B number key or registered underside and edge series becomes accessible.','verification_tier':'submitted'})
+m=json.loads((P/'source-manifest-v1.json').read_text());checks=[]
+def check(name,value):checks.append({'check':name,'pass':bool(value)})
+for s in m['sources']:check('source hash '+s['id'],sha(Path(s['physical_path']))==s['sha256'])
+for a in m['artifacts']:check('raw '+a['path'],sha(R/a['path'])==a['sha256'])
+check('raw junction',str((root/'data/raw').resolve()).lower().startswith('d:'))
+protocol=json.loads((P/'PROTOCOL.sha256.json').read_text(encoding='utf-8-sig'));check('frozen protocol',sha(P/'PROTOCOL.md').upper()==protocol['Hash'])
+a=json.loads((P/'aggregate-v1.json').read_text());check('five cases',len(a['frozen_objects'])==5);check('candidate remains unresolved',a['rao38B_panel6_identity']=='unresolved candidate');check('no new contact claim',a['new_registered_contact_photographs']==0)
+check('exact opposing source assertions retained','(1830)' in (R/'observations.md').read_text(encoding='utf8') and 'Sealing no. 1864' in (R/'observations.md').read_text(encoding='utf8'))
+check('all new routes recorded',len(m['new_routes'])==5)
+dump(P/'validation-v1.json',{'type':'author source-integrity and accounting checks','specialist_review':False,'passed':sum(x['pass'] for x in checks),'failed':sum(not x['pass'] for x in checks),'checks':checks,'prose_review':'Three flags inspected: frozen protocol route wording and literal paths, retained; no substantive stock phrase.','kb_check_log':str(R/'kb-check.txt'),'limitations':['Web discovery responses summarized, not full captures','No full new publication or specimen observation','Original source conflict unresolved']})
+paths=[f.relative_to(root).as_posix() for f in sorted(P.iterdir()) if f.is_file()]+[registry.relative_to(root).as_posix()];paths.append('experiments/2026-10-24-office-seal-pass3/changed-paths.json');dump(P/'changed-paths.json',{'tracked_paths':sorted(set(paths)),'raw_root_physical':str(R),'raw_root_logical':'data/raw/2026-10-24-office-seal-pass3/','shared_files_modified':False})
+print(json.dumps({'passed':sum(x['pass'] for x in checks),'failed':sum(not x['pass'] for x in checks)}))

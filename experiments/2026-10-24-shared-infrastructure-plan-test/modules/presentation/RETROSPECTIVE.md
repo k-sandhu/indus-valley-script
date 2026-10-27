@@ -1,0 +1,11 @@
+# Retrospective
+
+We turned the source study into a local illustrated PowerPoint after the analytical run and visual atlas were frozen. The deck moves from actual plans and changed access to the documentary context chain, direct dating counterexamples and the conditions for a deciding comparison. The source boards carry the archaeological detail; native charts and tables show the count conflicts, missing joins and measurement bounds.
+
+The first layout made several source contexts too small. We removed conservative white margins from display copies and enlarged the plans without cropping their relevant labels or captions. The dense eligibility table also needed shorter descriptions. We preserved the earlier exports and made a second version. Individual slide inspection then found two unit headers wrapping within a word; a third export repaired those labels. Numerical inputs and source images remained unchanged across these display revisions.
+
+We kept every source-image byte, payload and draft on D:. The checkout holds the authored builder, preparation and verification scripts, exact input manifests, review notes and output metadata. This prevented the presentation workflow from returning bulk acquired material to C:. The builder used `@oai/artifact-tool`, the skill finalizer and the selected Arial font. Native PowerPoint rendering supplied the final view of all slides, and a separate test copy verified that each native chart could be edited, resized, saved and reopened.
+
+The final package contains 26 slides with three native charts, eight native tables, 18 slides using source imagery and source notes on every slide. All 42 chart cache points match the frozen archaeological inputs. The finalizer found no structural or layout error. The visual review found no remaining defect after the two header repairs.
+
+The material was previously exposed during discovery and integration; no blinding or independent confirmation is claimed. The deck preserves the zero qualified comparisons and does not update the conjecture credences. People retained or renewed connections while local access changed. New complete, independently dated phase windows must show a route-retention advantage after preservation controls before that pattern can support the proposed institutional explanation.
