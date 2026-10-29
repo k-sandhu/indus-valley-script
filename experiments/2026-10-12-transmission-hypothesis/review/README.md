@@ -13,7 +13,7 @@
 | Actual validator limit | [validator-scope-v2/interpretation.json](validator-scope-v2/interpretation.json): an unsupported teaching interpretation passes 21 declaration checks |
 | Independent comparison reconstruction | [comparison-checks-v1/checks.json](comparison-checks-v1/checks.json): 260 checks of seven comparisons, 35 rival records and reference joins |
 | Exact final review scope | [reviewer-final-v1/checks.json](reviewer-final-v1/checks.json), including reviewed file hashes |
-| Observable work and preservation | [RETROSPECTIVE.md](RETROSPECTIVE.md) and [changed-paths.json](changed-paths.json) |
+| Observable work and preservation | [RETROSPECTIVE.md](RETROSPECTIVE.md); the review wrote no changed-path inventory |
 
 The source frame was fixed in [PROTOCOL.md](PROTOCOL.md) and [CONTROL-LOCI.md](CONTROL-LOCI.md). The added comparative essay and transport exception are recorded in the access amendment. Pollock’s inaccessible target remains in the ledger without a substantive observation. Identical Old Avestan mirrors and overlapping excerpts retain their dependencies.
 

@@ -29,4 +29,4 @@ For [Q-1022](../../knowledge/questions/Q-1022-depth-normalization.md): the Marsh
 
 ## Coverage
 
-No coverage figure in DATA.md changes. The proposed line for the 13 October section: "On 20 October the joined levels were used for the first legend-against-level test at Mohenjo-daro ([stratigraphy package](../experiments/2026-10-20-mohenjo-daro-stratigraphy/REPORT.md)); Marshall's depths parse for 451 of 492 joined rows and are comparable only within an excavated section."
+No coverage figure in DATA.md changes. The proposed line for the 13 October section: "On 20 October the joined levels were used for the first legend-against-level test at Mohenjo-daro ([stratigraphy package](REPORT.md)); Marshall's depths parse for 451 of 492 joined rows and are comparable only within an excavated section."

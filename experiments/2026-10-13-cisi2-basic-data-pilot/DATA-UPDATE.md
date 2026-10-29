@@ -18,7 +18,7 @@ CISI 2 row. Replace the "Identifiers and fields" cell with:
 
 and the "Known defects" cell with:
 
-> Page order complete for the catalogue (printed page = PDF − 35 for pp. 1–447); small digits blurred, so about 7% of basic-data cells stay uncertain after double reading ([pilot](../experiments/2026-10-13-cisi2-basic-data-pilot/README.md))
+> Page order complete for the catalogue (printed page = PDF − 35 for pp. 1–447); small digits blurred, so about 7% of basic-data cells stay uncertain after double reading ([pilot](README.md))
 
 CISI 1 row. Replace "basic data with museum and excavation numbers" with:
 
@@ -30,7 +30,7 @@ Add a row:
 
 | Source | Size | Where | Notes |
 |---|---|---|---|
-| [CISI 2 basic-data pilot](../experiments/2026-10-13-cisi2-basic-data-pilot/README.md) (13 October) | 327 entries, M-621 to M-947; 283 joined to Lipi families | Values local (rights unverified); schema, accuracy, coverage and per-object field flags tracked | Two blind readings, 90.5% cell agreement, 119 of 1,635 cells left bracketed; procedure for the remaining 22 CISI 2 and about 20 CISI 1 half-column blocks |
+| [CISI 2 basic-data pilot](README.md) (13 October) | 327 entries, M-621 to M-947; 283 joined to Lipi families | Values local (rights unverified); schema, accuracy, coverage and per-object field flags tracked | Two blind readings, 90.5% cell agreement, 119 of 1,635 cells left bracketed; procedure for the remaining 22 CISI 2 and about 20 CISI 1 half-column blocks |
 
 ## Section 2, "Metadata coverage"
 
@@ -44,11 +44,11 @@ In the coverage table change the Museum column for three rows, and add a note un
 
 Note to add after the table's source line:
 
-> Museum after 13 October adds the CISI 2 basic data for M-621 to M-947 (202 seals at Mohenjo-daro gain a museum number, from local values; [coverage.json](../experiments/2026-10-13-cisi2-basic-data-pilot/coverage.json)). Other columns are unchanged: the CISI basic data prints no findspot, depth, material or dimensions.
+> Museum after 13 October adds the CISI 2 basic data for M-621 to M-947 (202 seals at Mohenjo-daro gain a museum number, from local values; [coverage.json](coverage.json)). Other columns are unchanged: the CISI basic data prints no findspot, depth, material or dimensions.
 
 In the "Conflicts" paragraph, add:
 
-> For the 278 Mohenjo-daro objects in M-621 to M-947 that have an excavation number in both sources, Lipi's `excavation-idno` equals the CISI 2 number for 40 (mostly objects with FC numbers below 1000) and, for 182 with four-digit FC numbers, is the CISI 2 number followed by the FC concordance number without its first digit; 12 differ only in the area prefix (DK against DK-B or DK-C), 4 are values crossed between two entries (M-653 with M-655, M-656 with M-707), where plate measurements show CISI 2's table to be wrong, 2 differ where the page confirms the CISI 2 number, 3 are truncated or carry another suffix, and 35 cannot be compared because the printed cell is uncertain. Museum numbers agree with the older export for all 71 comparable objects ([pilot README](../experiments/2026-10-13-cisi2-basic-data-pilot/README.md)).
+> For the 278 Mohenjo-daro objects in M-621 to M-947 that have an excavation number in both sources, Lipi's `excavation-idno` equals the CISI 2 number for 40 (mostly objects with FC numbers below 1000) and, for 182 with four-digit FC numbers, is the CISI 2 number followed by the FC concordance number without its first digit; 12 differ only in the area prefix (DK against DK-B or DK-C), 4 are values crossed between two entries (M-653 with M-655, M-656 with M-707), where plate measurements show CISI 2's table to be wrong, 2 differ where the page confirms the CISI 2 number, 3 are truncated or carry another suffix, and 35 cannot be compared because the printed cell is uncertain. Museum numbers agree with the older export for all 71 comparable objects ([pilot README](README.md)).
 
 ## Section 4, "Target object record"
 
@@ -65,7 +65,7 @@ In the "Conflicts" paragraph, add:
 
 Rank 3 (Q-1005, Q-1006): replace "What it changes" with:
 
-> Museum numbers and holding institutions for the Indian and Pakistani collections; the M-621 to M-947 pilot raised museum coverage from 5.8% to 10.1%; about 5 hours of double-read agent work remain for both volumes (2.8 for CISI 2, 2.4 for CISI 1 at the CISI 2 rate) ([procedure](../experiments/2026-10-13-cisi2-basic-data-pilot/PROCEDURE.md))
+> Museum numbers and holding institutions for the Indian and Pakistani collections; the M-621 to M-947 pilot raised museum coverage from 5.8% to 10.1%; about 5 hours of double-read agent work remain for both volumes (2.8 for CISI 2, 2.4 for CISI 1 at the CISI 2 rate) ([procedure](PROCEDURE.md))
 
 ## Section 7, "Rights"
 

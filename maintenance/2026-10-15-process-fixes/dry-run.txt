@@ -1,0 +1,87 @@
+$ python tools/kb.py new conjecture --title "Dry run: a conjecture created from the CLI" --area seals
+knowledge/conjectures/C-0006-dry-run-a-conjecture-created-from-the-cli.md
+[exit 0]
+
+--- knowledge/conjectures/C-0006-dry-run-a-conjecture-created-from-the-cli.md
+---
+id: C-0006
+title: "Dry run: a conjecture created from the CLI"
+status: open            # open | strengthened | weakened | dead
+credence: 0.00          # author's probability that the claim is true as stated
+credence_history:
+  - {date: 2026-10-15, value: 0.00, reason: "starting estimate"}
+risk: long-shot         # safe | stretch | long-shot
+area: seals             # corpus | data | structure | seals | tablets | numerals | images | meaning | language | archaeology | comparative | methods
+authors: [contributor handle, model and harness if an agent]
+prior_proposals: []     # earlier authors who proposed this or a close variant, with citations
+builds_on: []           # registry IDs and report paths
+tests: []               # experiment directories that tested it, with outcome
+---
+
+$ python tools/kb.py new question --data --title "Dry run: a data acquisition question"
+knowledge/questions/Q-1032-dry-run-a-data-acquisition-question.md
+[exit 0]
+
+--- knowledge/questions/Q-1032-dry-run-a-data-acquisition-question.md
+---
+id: Q-1032
+title: "Dry run: a data acquisition question"
+status: open
+area: data
+kind: data-acquisition
+priority: 2
+data_access: local-only
+compute: hours
+difficulty: standard
+claimed_by: ""
+claim_expires: ""
+prior_attempts: []
+related: []
+sources: []
+authors: []
+---
+
+$ python tools/kb.py new question --title "Dry run: a lapsed claim"
+knowledge/questions/Q-0039-dry-run-a-lapsed-claim.md
+[exit 0]
+
+--- knowledge/questions/Q-0039-dry-run-a-lapsed-claim.md after setting status claimed, claimed_by and claim_expires 2026-10-01
+status: claimed
+area: methods
+kind: analysis
+priority: 2
+data_access: local-only
+compute: hours
+difficulty: standard
+claimed_by: "dry-run-contributor"
+claim_expires: "2026-10-01"
+prior_attempts: []
+
+$ python tools/kb.py check
+WARNING knowledge/questions/Q-0039-dry-run-a-lapsed-claim.md: claim by dry-run-contributor lapsed on 2026-10-01; check the issue before taking the question
+MAINTAINER knowledge/MAP.md: differs from a fresh build; run python tools/kb.py build
+kb.py check: PASS; 471 items; 0 errors; 1 warnings; 1 maintainer notes; 12 reviewed local-only targets; 134 Markdown files.
+[exit 0]
+
+$ python tools/kb.py check --strict
+ERROR knowledge/MAP.md: differs from a fresh build; run python tools/kb.py build
+WARNING knowledge/questions/Q-0039-dry-run-a-lapsed-claim.md: claim by dry-run-contributor lapsed on 2026-10-01; check the issue before taking the question
+kb.py check: FAIL; 471 items; 1 errors; 1 warnings; 0 maintainer notes; 12 reviewed local-only targets; 134 Markdown files.
+[exit 1]
+
+$ python tools/kb.py new finding --data --title "Dry run: refused"
+kb.py: --data applies only to questions
+[exit 1]
+
+removed 'knowledge/conjectures/C-0006-dry-run-a-conjecture-created-from-the-cli.md'
+removed 'knowledge/questions/Q-1032-dry-run-a-data-acquisition-question.md'
+removed 'knowledge/questions/Q-0039-dry-run-a-lapsed-claim.md'
+
+$ python tools/kb.py build
+kb.py build: 0 files changed
+[exit 0]
+
+$ python tools/kb.py check --strict
+kb.py check: PASS; 468 items; 0 errors; 0 warnings; 0 maintainer notes; 12 reviewed local-only targets; 132 Markdown files.
+[exit 0]
+

@@ -44,7 +44,7 @@ For [Q-1022](../../knowledge/questions/Q-1022-depth-normalization.md): Vats's pr
 
 ## Coverage
 
-No coverage figure in DATA.md changes. A proposed line for the chronology section: "On 20 October Vats's Mound F stratified seals (175 families, Strata VII–I, which the export maps to HARP 3B-1 through 3C-4) were tested for change in their legends ([Harappa legend-periods package](../experiments/2026-10-20-harappa-legend-periods/REPORT.md)); the export's mapping of Vats's strata to HARP periods is tabulated in that package's DATA-UPDATE.md, source undocumented."
+No coverage figure in DATA.md changes. A proposed line for the chronology section: "On 20 October Vats's Mound F stratified seals (175 families, Strata VII–I, which the export maps to HARP 3B-1 through 3C-4) were tested for change in their legends ([Harappa legend-periods package](REPORT.md)); the export's mapping of Vats's strata to HARP periods is tabulated in that package's DATA-UPDATE.md, source undocumented."
 
 ## A record line for C-0006
 

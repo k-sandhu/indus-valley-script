@@ -15,6 +15,18 @@ if os.name == 'nt' and not str(ROOT).startswith('\\\\?\\'):
     root_path = str(ROOT)
     ROOT = Path('\\\\?\\UNC\\' + root_path[2:] if root_path.startswith('\\\\') else '\\\\?\\' + root_path)
 
+# The transmission study's final review pinned these documents before the coordinator's
+# manifest step, which never ran. Their links to the unwritten files are reported, not
+# counted as errors, while each document keeps its reviewed bytes.
+UNWRITTEN_TARGETS = {
+    "experiments/2026-10-12-transmission-hypothesis/README.md":
+        ("ef23777f1490d10a92842b480d76b85fe672a2e62a17ca735eb17d340362c9c2", {"manifest.json", "verification.json", "changed-paths.json"}),
+    "experiments/2026-10-12-transmission-hypothesis/REPORT.md":
+        ("18934ac9c2637567b7c0f976a65fd95fd4463d924c75f2355e0b7e5ee7917b64", {"verification.json"}),
+    "experiments/2026-10-12-transmission-hypothesis/RETROSPECTIVE.md":
+        ("2a25a99912768d858fed3f46d6a70f9fd1bdf483068f89b2eec7bf68121b21f8", {"manifest.json", "verification.json", "changed-paths.json"}),
+}
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--verify-import", action="store_true", help="Hash every imported local source file; may take several minutes")
@@ -70,13 +82,16 @@ def main():
     docs = [ROOT/p for p in ("README.md", "REPRODUCING.md", "CONTRIBUTING.md", "REUSE.md")]
     docs += list((ROOT/"knowledge").rglob("*.md")) + list((ROOT/"papers").rglob("*.md"))
     docs += list((ROOT/"experiments").rglob("*.md"))
+    docs += list((ROOT/"maintenance").rglob("*.md")) + list((ROOT/"presentations").rglob("*.md"))
     if args.public_checkout:
         docs = sorted(ROOT/p for p in selected if p.lower().endswith('.md'))
     broken = []
+    unwritten = []
     frozen_link_contexts = []
     document_snapshot_contexts = {}
+    original_contexts = {}
     public_contexts = ROOT/'maintenance/2026-10-11-public-release/navigation-contexts.json'
-    for version in [2,3]:
+    for version in [2,3,4]:
         if (public_contexts.parent/f'navigation-contexts-v{version}.json').is_file():
             public_contexts = public_contexts.parent/f'navigation-contexts-v{version}.json'
     if public_contexts.is_file():
@@ -86,6 +101,9 @@ def main():
                 errors.append('Frozen navigation document hash mismatch: ' + row['document'])
             else:
                 document_snapshot_contexts[snapshot_path] = ROOT/row['source_context']
+                if 'original_context' in row:
+                    # Snapshots of a package moved out of experiments/ also resolve links to its former neighbours.
+                    original_contexts[snapshot_path] = ROOT/row['original_context']
     capture_root = ROOT/'experiments/2026-10-02-six-hour/integration-review/checkout-availability'
     for summary_path in capture_root.glob('captured-*/summary.json'):
         captured = json.loads(summary_path.read_text(encoding='utf-8'))
@@ -101,6 +119,9 @@ def main():
         if not doc.is_file():
             continue
         content = doc.read_text(encoding="utf-8")
+        pinned = UNWRITTEN_TARGETS.get(doc.relative_to(ROOT).as_posix())
+        if pinned and hashlib.sha256(doc.read_bytes()).hexdigest() != pinned[0]:
+            pinned = None
         link_base = doc.parent
         if doc in document_snapshot_contexts:
             link_base = document_snapshot_contexts[doc]
@@ -128,11 +149,16 @@ def main():
             if not target or re.match(r"[a-zA-Z][\w+.-]*:", target):
                 continue
             target = unquote(target)
+            if doc in original_contexts and available(original_contexts[doc]/target):
+                continue
             if not available(link_base/target) and not omitted(link_base/target,doc.relative_to(ROOT).as_posix()):
-                broken.append({"file": doc.relative_to(ROOT).as_posix(), "target": target})
+                if pinned and target in pinned[1]:
+                    unwritten.append({"file": doc.relative_to(ROOT).as_posix(), "target": target})
+                else:
+                    broken.append({"file": doc.relative_to(ROOT).as_posix(), "target": target})
     errors += [f"Broken link: {r['file']} -> {r['target']}" for r in broken]
     listed = sorted(selected) if args.public_checkout else subprocess.run(["git", "ls-files", "--cached", "--others", "--exclude-standard"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.splitlines()
-    forbidden = [p for p in listed if p.startswith(".github/workflows/") or (p.startswith("data/") and p != "data/README.md")]
+    forbidden = [p for p in listed if p.startswith(".github/workflows/") or (p.startswith("data/") and p not in ("data/README.md", "data/MANIFEST.json"))]
     if forbidden:
         errors.append(f"Forbidden distributed paths: {forbidden}")
     large = [p for p in listed if (ROOT/p).is_file() and (ROOT/p).stat().st_size > 90*1024*1024]
@@ -165,6 +191,7 @@ def main():
               "frozen_protocol_link_contexts":frozen_link_contexts,
               "document_snapshot_link_contexts":resolved_document_contexts,
               "public_checkout":args.public_checkout,"unavailable_local_witnesses":unavailable_local,
+              "unwritten_link_targets":unwritten,
               "exact_reviewed_omission_count":len(public_omissions),
               "scope": "repository structure, local links, preserved evidence and distribution checks; not peer review or archaeological validation"}
     dest.parent.mkdir(parents=True, exist_ok=True)
