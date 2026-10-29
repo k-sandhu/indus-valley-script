@@ -33,21 +33,21 @@ The table gives every reproduced number and its original witness. Score comparis
 | restoration: Markov2 top1 | 0.37270570608065928 | 0.37270570608065928 | [source](../../experiments/2026-10-02-six-hour/markov-order2/main/results.json) |
 | restoration: Markov2 top5 | 0.58871269821450867 | 0.58871269821450867 | [source](../../experiments/2026-10-02-six-hour/markov-order2/main/results.json) |
 | restoration: Markov2 top10 | 0.65451367211886624 | 0.65451367211886624 | [source](../../experiments/2026-10-02-six-hour/markov-order2/main/results.json) |
-| restoration release v1: inscription_number_accuracy | 23 | 23 | [source](../../experiments/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
-| restoration release v1: classification_exact_accuracy | 19 | 19 | [source](../../experiments/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
-| restoration release v1: strict_top1 | 0.74531835205992514 | 0.74531835205992514 | [source](../../experiments/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
-| restoration release v1: strict_top5 | 0.83895131086142327 | 0.83895131086142327 | [source](../../experiments/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
-| restoration release v2: inscription_number_accuracy | 62 | 62 | [source](../../experiments/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
-| restoration release v2: classification_exact_accuracy | 55 | 55 | [source](../../experiments/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
-| restoration release v2: strict_top1 | 0.70738636363636365 | 0.70738636363636365 | [source](../../experiments/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
-| restoration release v2: strict_top5 | 0.86363636363636365 | 0.86363636363636365 | [source](../../experiments/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
-| restoration release v2: source_row_recall random recall | 0.96578538102643852 | 0.96578538102643852 | [source](../../experiments/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
-| restoration release v3: inscription_number_accuracy | 71 | 71 | [source](../../experiments/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
-| restoration release v3: classification_exact_accuracy | 72 | 72 | [source](../../experiments/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
-| restoration release v3: strict_top1 | 0.80054644808743169 | 0.80054644808743169 | [source](../../experiments/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
-| restoration release v3: strict_top5 | 0.92349726775956287 | 0.92349726775956287 | [source](../../experiments/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
-| restoration release v3: source_row_recall random recall | 1 | 1 | [source](../../experiments/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
-| restoration release v3: physical_line_recall random recall | 1 | 1 | [source](../../experiments/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
+| restoration release v1: inscription_number_accuracy | 23 | 23 | [source](../../maintenance/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
+| restoration release v1: classification_exact_accuracy | 19 | 19 | [source](../../maintenance/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
+| restoration release v1: strict_top1 | 0.74531835205992514 | 0.74531835205992514 | [source](../../maintenance/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
+| restoration release v1: strict_top5 | 0.83895131086142327 | 0.83895131086142327 | [source](../../maintenance/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
+| restoration release v2: inscription_number_accuracy | 62 | 62 | [source](../../maintenance/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
+| restoration release v2: classification_exact_accuracy | 55 | 55 | [source](../../maintenance/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
+| restoration release v2: strict_top1 | 0.70738636363636365 | 0.70738636363636365 | [source](../../maintenance/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
+| restoration release v2: strict_top5 | 0.86363636363636365 | 0.86363636363636365 | [source](../../maintenance/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
+| restoration release v2: source_row_recall random recall | 0.96578538102643852 | 0.96578538102643852 | [source](../../maintenance/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
+| restoration release v3: inscription_number_accuracy | 71 | 71 | [source](../../maintenance/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
+| restoration release v3: classification_exact_accuracy | 72 | 72 | [source](../../maintenance/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
+| restoration release v3: strict_top1 | 0.80054644808743169 | 0.80054644808743169 | [source](../../maintenance/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
+| restoration release v3: strict_top5 | 0.92349726775956287 | 0.92349726775956287 | [source](../../maintenance/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
+| restoration release v3: source_row_recall random recall | 1 | 1 | [source](../../maintenance/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
+| restoration release v3: physical_line_recall random recall | 1 | 1 | [source](../../maintenance/2026-10-08-hf-public-release/release/benchmark/expected-metrics.json) |
 | segmentation cohort count: sumerian_seals_all | 309 | 309 | [source](../../experiments/2026-10-12-structure-first/step5-rehearsal/run-segmentation-2026-10-12/summary.json) |
 | segmentation F1: sumerian_seals_all/branching_entropy | 0.69221924108853972 | 0.69221924108853972 | [source](../../experiments/2026-10-12-structure-first/step5-rehearsal/run-segmentation-2026-10-12/summary.json) |
 | segmentation F1: sumerian_seals_all/greedy_ngram | 0.43924101735970933 | 0.43924101735970933 | [source](../../experiments/2026-10-12-structure-first/step5-rehearsal/run-segmentation-2026-10-12/summary.json) |

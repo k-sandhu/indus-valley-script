@@ -27,7 +27,7 @@ import markdown
 ROOT = Path(__file__).resolve().parents[1]
 REPO = 'https://github.com/k-sandhu/indus-valley-script'
 SITE = 'https://k-sandhu.github.io/indus-valley-script/'
-OMISSIONS = 'experiments/2026-10-11-public-release/public-omissions.json'
+OMISSIONS = 'maintenance/2026-10-11-public-release/public-omissions.json'
 MANIFEST = 'data/MANIFEST.json'
 EXPLORE = ('experiments/2026-10-11-bonta-adversarial/run-v6/catalogue.html',
            'output/chart_atlas/index.html')

@@ -21,7 +21,7 @@ Start with these files:
 - experiments/2026-10-11-bonta-adversarial/run-v5/catalogue-data.json
 - experiments/2026-10-11-bonta-adversarial/catalogue-template.html
 - experiments/2026-10-11-bonta-adversarial/verification.json
-- experiments/2026-10-11-public-release/ASSET-REVIEW.md
+- maintenance/2026-10-11-public-release/ASSET-REVIEW.md
 - experiments/2026-10-08-bonta-review/README.md (earlier completed audit; do not repeat its failed panels as new confirmation)
 
 For selected visual evidence, use Read on these local images:

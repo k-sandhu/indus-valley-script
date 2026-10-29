@@ -19,7 +19,7 @@ RUN = ROOT / "experiments/2026-10-13-bench"
 KEY_SOURCE = "experiments/2026-10-12-published-claim-tests/sanskrit-key"
 SHOT_SOURCE = "experiments/2026-10-12-conjecture-shots"
 STRUCTURE_SOURCE = "experiments/2026-10-12-structure-first"
-RELEASE_SOURCE = "experiments/2026-10-08-hf-public-release/release"
+RELEASE_SOURCE = "maintenance/2026-10-08-hf-public-release/release"
 
 
 def sha256(path):

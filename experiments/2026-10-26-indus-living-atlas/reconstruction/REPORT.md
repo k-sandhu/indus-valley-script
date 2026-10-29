@@ -2,7 +2,7 @@
 
 We built seven offline 3D models with 49 feature records. Mohenjo-daro and Dholavira provide city contexts; five building scenes expose the Great Bath, Dholavira's eastern reservoir and west castle gateway, Mohenjo-daro's Pillared Hall and Lothal's large basin. The [current explorer](run-v5/index.html) uses a native WebGL depth buffer for geometry and Canvas for labels and rulers. It has no runtime network dependency or vendor library.
 
-The contribution builds on the [town-axis atlas](../../2026-10-24-town-axis-visual-atlas/README.md), [Q-1032 register](../../2026-10-24-q1032-town-axis-register/REPORT.md) and [shared-infrastructure study](../../2026-10-24-shared-infrastructure-plan-test/README.md). Those studies preserve source plans, bearings, dimensional observations and phase conflicts. Our new endpoint is an inspectable presentation and export of cited architectural quantities. No previously examined plan or inscription becomes a fresh confirmation population here.
+The contribution builds on the [town-axis atlas](../../../presentations/2026-10-24-town-axis-visual-atlas/README.md), [Q-1032 register](../../2026-10-24-q1032-town-axis-register/REPORT.md) and [shared-infrastructure study](../../2026-10-24-shared-infrastructure-plan-test/README.md). Those studies preserve source plans, bearings, dimensional observations and phase conflicts. Our new endpoint is an inspectable presentation and export of cited architectural quantities. No previously examined plan or inscription becomes a fresh confirmation population here.
 
 ## What the measurements support
 

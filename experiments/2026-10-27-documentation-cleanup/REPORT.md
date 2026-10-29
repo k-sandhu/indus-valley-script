@@ -1,9 +1,0 @@
-# Entry documentation cleanup
-
-The README now connects the existing findings to later object and town evidence, records outcomes of later conjecture tests, and links the living atlas. The source-linked additions are the [object register](../2026-10-22-object-register/REPORT.md), [H-1657 review](../2026-10-24-harappa-context-pass2-review/REPORT.md), [image review](../2026-10-26-object-pilot-review/REPORT.md) and [town register](../2026-10-24-q1032-town-axis-register/REPORT.md). The conjecture paragraph links each claim to its card and the exposure ledger.
-
-Storage instructions remain complete in [AGENTS.md](../../AGENTS.md) and [LOCAL_STORAGE.md](../../LOCAL_STORAGE.md). Other entry points supply a short pointer or the task-specific acquisition rule. The experiment template also corrects where a contributor records coverage changes: the owned package supplies the proposal for maintainer integration.
-
-The bare `python tools/kb.py` command in AGENTS.md failed because a subcommand is required; it now reads `python tools/kb.py --help`. We checked the displayed knowledge-base commands and flags against subcommand help, the bench commands against bench help, the site builder against its help, and the reproduction and verification command options against their help where available. No other command correction was identified. The new findings-guide links are intended for the parallel findings contribution.
-
-[Before and after](before-after.md) lists each assigned entry document. [Knowledge-base check](kb-check.txt), [prose review](prose-review.txt) and [link check](link-check.json) retain the results. The link checker does not follow local junctions or links, and reports any such destination separately. External URLs and heading fragments are outside its path-existence check. The review is submitted; a separate contributor has not reproduced it.

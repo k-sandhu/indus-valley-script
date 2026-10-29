@@ -12,10 +12,12 @@ Read the section for your task, then open its card or source package. Use `pytho
 - [archive/](../archive/): preserved historical documentation.
 - [bench/](../bench/): shared evaluation harness.
 - [data/](../data/): data README and manifest; acquired inputs stay local.
-- [experiments/](../experiments/): dated protocols, outputs and reviews; new outputs go in a new dated package.
+- [experiments/](../experiments/): dated research protocols, outputs and reviews; new research goes in a new dated package.
 - [knowledge/](../knowledge/): cards, navigation and research memory.
+- [maintenance/](../maintenance/): dated records of earlier repository work: releases, publication screens, the website generator, storage and restructuring.
 - [output/](../output/): original reports and chart atlas, frozen.
 - [papers/](../papers/): manuscripts and evidence maps.
+- [presentations/](../presentations/): slide decks, maps and visual summaries of recorded results.
 - [research/](../research/): original investigation and source audits, frozen.
 - [results/](../results/): original outputs, frozen.
 - [site/](../site/): website templates and static files.
@@ -228,7 +230,7 @@ Read the section for your task, then open its card or source package. Use `pytho
 
 ## Other records
 
-- 266 registry attempts: `python tools/kb.py list --kind attempt`, or the generated [registry](experiments/registry.json).
-- 263 retrospectives: `python tools/kb.py list --kind retrospective`; the curated essays are indexed in [retrospectives/README.md](retrospectives/README.md).
+- 263 registry attempts: `python tools/kb.py list --kind attempt`, or the generated [registry](experiments/registry.json).
+- 260 retrospectives: `python tools/kb.py list --kind retrospective`; the curated essays are indexed in [retrospectives/README.md](retrospectives/README.md).
 - 16 direction memos: `python tools/kb.py list --kind direction`.
 - 9 completed and 0 dropped questions: `python tools/kb.py list --kind question --status done` or `--status dropped`.

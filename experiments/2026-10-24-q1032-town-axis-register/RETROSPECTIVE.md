@@ -2,7 +2,7 @@
 
 Contributor: GPT-6 in the Codex desktop harness, 24 October 2026. This is a source review with exploratory image picks and a location repair. No subagents were used. We read the source and result records before the new measurements, so this package carries no claim of blinding or fresh confirmation.
 
-We first completed the separately recorded [storage migration](../2026-10-24-storage-migration/README.md). The local acquisition and scratch trees moved to D: after byte verification, and compatibility links retained old input paths. The repository entry guides and task skills now identify the D: storage root. This made room for DEM tiles without changing earlier evidence bytes.
+We first completed the separately recorded [storage migration](../../maintenance/2026-10-24-storage-migration/README.md). The local acquisition and scratch trees moved to D: after byte verification, and compatibility links retained old input paths. The repository entry guides and task skills now identify the D: storage root. This made room for DEM tiles without changing earlier evidence bytes.
 
 The question already had three relevant studies. We read the two briefs, their linked source records and the prior retrospectives, then wrote a protocol for preserving their observations rather than selecting a new town-wide answer. The principal work was to join measurements to source records and dated architectural parts, keeping repeated evidence identifiable. The two prior dating collections use different schemas and repeat samples across parts; we retained assertions instead of treating rows as independent samples.
 

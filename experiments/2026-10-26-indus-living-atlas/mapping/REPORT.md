@@ -6,7 +6,7 @@ We built a source-linked map from the project's earlier 115-place register. Sear
 
 ## What changed
 
-The [8 October map](../../2026-10-08-site-map-and-overview/README.md) supplied 115 place entities and 112 coordinates. These include finds outside South Asia and three unlocated entries: Wattoowala, Luristan and the regional label Dilmun. We preserve all of them. The initial South Asia view shows 84 located entries and one unlocated entry; the full view exposes all 115. The corpus behind the old map is a record of finds, not a census of every ancient city.
+The [8 October map](../../../presentations/2026-10-08-site-map-and-overview/README.md) supplied 115 place entities and 112 coordinates. These include finds outside South Asia and three unlocated entries: Wattoowala, Luristan and the regional label Dilmun. We preserve all of them. The initial South Asia view shows 84 located entries and one unlocated entry; the full view exposes all 115. The corpus behind the old map is a record of finds, not a census of every ancient city.
 
 The [24 October architectural register](../../2026-10-24-q1032-town-axis-register/REPORT.md) supplies competing coordinate assertions for matched towns. We retain those alternatives and explicitly select its later Surkotada and Farmana reference coordinates. The older map already used coordinates close to those selected points; these overlays are small harmonizations, not new multi-kilometre discoveries. The original coordinates and each selection's source remain in the data snapshot. Allahdino retains a disagreement of 0.10 degrees in latitude. Earlier build notes also identify Nindowari and Tell Abraq location or locator issues. Their warnings remain with the inherited points.
 

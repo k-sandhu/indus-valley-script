@@ -27,7 +27,7 @@ This package adds true-north orientation to the settlement record of the [town-a
 
 | Town | Coordinate used before | Found | Evidence |
 |---|---|---|---|
-| Surkotada | 23.6304 N, 70.8407 E (English Wikipedia, via plan-B; img-A searched here) | 23.6113 N, 70.9174 E, 8.1 km east-south-east | Exposed citadel walls matching Joshi's plans, found independently by two registrars; agrees with the GAZETTEER2018 entry in `experiments/2026-10-08-site-map-and-overview/data/sites-census.json` |
+| Surkotada | 23.6304 N, 70.8407 E (English Wikipedia, via plan-B; img-A searched here) | 23.6113 N, 70.9174 E, 8.1 km east-south-east | Exposed citadel walls matching Joshi's plans, found independently by two registrars; agrees with the GAZETTEER2018 entry in `presentations/2026-10-08-site-map-and-overview/data/sites-census.json` |
 | Farmana | 29.0667 N, 76.5667 E (English Wikipedia, approximate) | about 29.040 N, 76.306 E, 25 km west | Shinde et al. 2008 give the site as 29°02′22″ N, 76°18′21″ E and Datum Point 2 as 29°02′26″ N, 76°18′30″ E; one registrar found the terraced mound 100–200 m from these points |
 | Chanhu-daro | 26.1736 N, 68.3231 E | within about 60 m | One registrar placed the mounds 60 m west-south-west, the other at the published point |
 | Gola Dhoro | 21.4833 N, 70.95 E | not found | The coordinate is that of the town of Bagasra; the report places the site in Rajkot district |

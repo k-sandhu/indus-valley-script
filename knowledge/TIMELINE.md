@@ -8,18 +8,6 @@ The dated entries run newest first. Entries from 13–27 October 2026 extend the
 
 Eight source pointers distinguish contemporary contact records from later comparisons, admitting zero inscriptions to an evaluation corpus. [readable external records](../experiments/2026-10-27-readable-external-records/REPORT.md), [retrospective](../experiments/2026-10-27-readable-external-records/RETROSPECTIVE.md).
 
-## Entry documentation cleanup
-
-The entry documents link later source results and current conjecture tests, centralize storage guidance and record command-help checks. [documentation cleanup](../experiments/2026-10-27-documentation-cleanup/REPORT.md), [retrospective](../experiments/2026-10-27-documentation-cleanup/RETROSPECTIVE.md).
-
-## Website organization
-
-Seven navigation entries connect the themed findings, ideas and dated record while preserving the existing destinations. [site organization](../experiments/2026-10-27-site-organization/REPORT.md), [retrospective](../experiments/2026-10-27-site-organization/RETROSPECTIVE.md).
-
-## Findings organization
-
-The [editorial report](../experiments/2026-10-27-findings-organization/REPORT.md) records nine new cards and ten themes covering all 47 findings, with the [retrospective](../experiments/2026-10-27-findings-organization/RETROSPECTIVE.md) and saved navigation checks.
-
 # 2026-10-26
 
 ## Twenty-target object pilot and independent review
@@ -76,7 +64,7 @@ Twelve primary pages support the enumerated Harappa, Tell Brak, Tamil-grammar an
 
 ## Town axes, construction phases and visual records
 
-The 34-town register retains 1,380 measurements and separate dating assertions, while construction-sample joins remain missing and displays expose the source differences. [q1032 town axis register](../experiments/2026-10-24-q1032-town-axis-register/REPORT.md), [retrospective](../experiments/2026-10-24-q1032-town-axis-register/RETROSPECTIVE.md); [town phase links](../experiments/2026-10-24-town-phase-links/REPORT.md), [retrospective](../experiments/2026-10-24-town-phase-links/RETROSPECTIVE.md); [town phase pass2](../experiments/2026-10-24-town-phase-pass2/REPORT.md), [retrospective](../experiments/2026-10-24-town-phase-pass2/RETROSPECTIVE.md); [town phase pass3](../experiments/2026-10-24-town-phase-pass3/REPORT.md), [retrospective](../experiments/2026-10-24-town-phase-pass3/RETROSPECTIVE.md); [town axis presentation](../experiments/2026-10-24-town-axis-presentation/README.md), [retrospective](../experiments/2026-10-24-town-axis-presentation/RETROSPECTIVE.md); [town axis visual atlas](../experiments/2026-10-24-town-axis-visual-atlas/README.md), [retrospective](../experiments/2026-10-24-town-axis-visual-atlas/RETROSPECTIVE.md).
+The 34-town register retains 1,380 measurements and separate dating assertions, while construction-sample joins remain missing and displays expose the source differences. [q1032 town axis register](../experiments/2026-10-24-q1032-town-axis-register/REPORT.md), [retrospective](../experiments/2026-10-24-q1032-town-axis-register/RETROSPECTIVE.md); [town phase links](../experiments/2026-10-24-town-phase-links/REPORT.md), [retrospective](../experiments/2026-10-24-town-phase-links/RETROSPECTIVE.md); [town phase pass2](../experiments/2026-10-24-town-phase-pass2/REPORT.md), [retrospective](../experiments/2026-10-24-town-phase-pass2/RETROSPECTIVE.md); [town phase pass3](../experiments/2026-10-24-town-phase-pass3/REPORT.md), [retrospective](../experiments/2026-10-24-town-phase-pass3/RETROSPECTIVE.md); [town axis presentation](../presentations/2026-10-24-town-axis-presentation/README.md), [retrospective](../presentations/2026-10-24-town-axis-presentation/RETROSPECTIVE.md); [town axis visual atlas](../presentations/2026-10-24-town-axis-visual-atlas/README.md), [retrospective](../presentations/2026-10-24-town-axis-visual-atlas/RETROSPECTIVE.md).
 
 ## Urban form and inscription ecology
 
@@ -84,7 +72,7 @@ The comparison records 287 urban assertions, but its follow-up finds zero fully 
 
 ## Local storage preservation
 
-The migration verifies 187,131 accessible files by hash and retains historical paths through nine junctions and 434 file links. [storage migration](../experiments/2026-10-24-storage-migration/README.md).
+The migration verifies 187,131 accessible files by hash and retains historical paths through nine junctions and 434 file links. [storage migration](../maintenance/2026-10-24-storage-migration/README.md).
 
 # 2026-10-22
 
@@ -102,7 +90,7 @@ Blind pairs yield 9 compounds among 38 pairs against 4.97 expected; the Winslow 
 
 ## Novelty review and findings presentation
 
-The separate review identifies two existing scientific cores for focused papers and names the repairs needed for other publication candidates. [field novelty review](../experiments/2026-10-22-field-novelty-review/REPORT.md), [validation](../experiments/2026-10-22-field-novelty-review/VALIDATION.md), [retrospective](../experiments/2026-10-22-field-novelty-review/RETROSPECTIVE.md); [findings slides](../experiments/2026-10-22-findings-slides/README.md), [validation](../experiments/2026-10-22-findings-slides/VALIDATION.md), [retrospective](../experiments/2026-10-22-findings-slides/RETROSPECTIVE.md).
+The separate review identifies two existing scientific cores for focused papers and names the repairs needed for other publication candidates. [field novelty review](../experiments/2026-10-22-field-novelty-review/REPORT.md), [validation](../experiments/2026-10-22-field-novelty-review/VALIDATION.md), [retrospective](../experiments/2026-10-22-field-novelty-review/RETROSPECTIVE.md); [findings slides](../presentations/2026-10-22-findings-slides/README.md), [validation](../presentations/2026-10-22-findings-slides/VALIDATION.md), [retrospective](../presentations/2026-10-22-findings-slides/RETROSPECTIVE.md).
 
 # 2026-10-21
 
@@ -132,7 +120,7 @@ The 29-town table fails the Pleiades version, while independent bearings, dates 
 
 ## Publication screen of the October 20 work
 
-The screen examines 508 files with the earlier sequence scanner and records source-specific publication decisions. [publication screen](../experiments/2026-10-21-publication-screen/README.md).
+The screen examines 508 files with the earlier sequence scanner and records source-specific publication decisions. [publication screen](../maintenance/2026-10-21-publication-screen/README.md).
 
 # 2026-10-20
 
@@ -168,13 +156,13 @@ The comparison places the Mature Harappan civilisation beside 21 contemporary so
 
 ## Process repairs and newcomer route test
 
-The route test completes metadata and reproduction tasks but records 28 obstacles; the motif pilot lowers recorded seal-motif coverage from 94.2% to 89.9%. [process fixes](../experiments/2026-10-15-process-fixes/README.md), [retrospective](../experiments/2026-10-15-process-fixes/RETROSPECTIVE.md); [route test](../experiments/2026-10-15-route-test/REPORT.md), [retrospective](../experiments/2026-10-15-route-test/RETROSPECTIVE.md); [route test metadata](../experiments/2026-10-15-route-test-metadata/README.md), [retrospective](../experiments/2026-10-15-route-test-metadata/RETROSPECTIVE.md).
+The route test completes metadata and reproduction tasks but records 28 obstacles; the motif pilot lowers recorded seal-motif coverage from 94.2% to 89.9%. [process fixes](../maintenance/2026-10-15-process-fixes/README.md), [retrospective](../maintenance/2026-10-15-process-fixes/RETROSPECTIVE.md); [route test](../maintenance/2026-10-15-route-test/REPORT.md), [retrospective](../maintenance/2026-10-15-route-test/RETROSPECTIVE.md); [route test metadata](../experiments/2026-10-15-route-test-metadata/README.md), [retrospective](../experiments/2026-10-15-route-test-metadata/RETROSPECTIVE.md).
 
 # 2026-10-14
 
 ## Outside review of structure and process
 
-Three read-only Muse reviews assess repository layout, contributor rules and research direction. [muse review](../experiments/2026-10-14-muse-review/README.md).
+Three read-only Muse reviews assess repository layout, contributor rules and research direction. [muse review](../maintenance/2026-10-14-muse-review/README.md).
 
 # 2026-10-13
 
@@ -204,7 +192,7 @@ Five task commands reproduce 50 numerical source comparisons, with historical po
 
 ## Writing, publication and research displays
 
-The prose pass checks 102 citations, the publication screen separates local-only files, and the website and 48-world renewal display expose existing results. [academic writing pass](../experiments/2026-10-13-academic-writing-pass/README.md); [publication screen](../experiments/2026-10-13-publication-screen/README.md), [retrospective](../experiments/2026-10-13-publication-screen/RETROSPECTIVE.md); [relay visualization](../experiments/2026-10-13-relay-visualization/README.md); [site generator](../experiments/2026-10-13-site-generator/RETROSPECTIVE.md).
+The prose pass checks 102 citations, the publication screen separates local-only files, and the website and 48-world renewal display expose existing results. [academic writing pass](../maintenance/2026-10-13-academic-writing-pass/README.md); [publication screen](../maintenance/2026-10-13-publication-screen/README.md), [retrospective](../maintenance/2026-10-13-publication-screen/RETROSPECTIVE.md); [relay visualization](../presentations/2026-10-13-relay-visualization/README.md); [site generator](../maintenance/2026-10-13-site-generator/RETROSPECTIVE.md).
 
 # 2026-10-12
 
@@ -217,7 +205,7 @@ The prose pass checks 102 citations, the publication screen separates local-only
 | Two developments beyond Bonta: learned grammar and whole-object record functions | [Integrated findings](../experiments/2026-10-11-two-approaches/REPORT.md), [source recommendations](../experiments/2026-10-11-two-approaches/literature/LANDSCAPE.md), [adversarial review](../experiments/2026-10-11-two-approaches/review/REVIEW.md) |
 | Strongest reviewed sign hypotheses, Sanskrit anchors and inscription examples | [Visual catalogue](../experiments/2026-10-11-bonta-adversarial/run-v6/catalogue.html), [adversarial report](../experiments/2026-10-11-bonta-adversarial/REPORT.md) |
 | Does Yajnadevam's published Sanskrit key or its unicity argument hold up? Do Indus texts found abroad differ? | [Paper 006](../papers/006-sanskrit-key-calibration/manuscript.md), [published-claim tests](../experiments/2026-10-12-published-claim-tests/README.md), [key calibration method](../knowledge/directions/key-calibration-2026-10-12.md) |
-| Public release scope and source attribution | [Asset review](../experiments/2026-10-11-public-release/ASSET-REVIEW.md), [third-party notices](../THIRD_PARTY_NOTICES.md) |
+| Public release scope and source attribution | [Asset review](../maintenance/2026-10-11-public-release/ASSET-REVIEW.md), [third-party notices](../THIRD_PARTY_NOTICES.md) |
 | Findings available for reuse and discussion | [Research contributions](../knowledge/research-contributions.md) |
 | October 6–7 program: stronger restoration models, evidence census, tests of Frenez's lecture, weights, backward chronology | [Program report](../experiments/2026-10-06-research-program/REPORT.md), [packages and reviews](../experiments/2026-10-06-research-program/README.md) |
 | Is the Indus evidence completely indexed, and with what metadata? | [Census synthesis](../experiments/2026-10-06-evidence-census/synthesis/REPORT.md) |
@@ -304,4 +292,4 @@ Before a new run, search [the registry](../knowledge/experiments/registry.json),
 
 This repository preserves evidence, methods, manuscripts, exploratory ideas and failed approaches from an ongoing Indus script investigation. It currently contains no authenticated translation, sound value, language identification or decipherment.
 
-The public research package retains the manuscripts, code, protocols and reviewed outputs. Acquired corpora, source photographs and downloaded source copies remain local. The [public asset review](../experiments/2026-10-11-public-release/ASSET-REVIEW.md) records the source exclusions and preservation backups. Scripts run manually; no CI/CD workflows are included.
+The public research package retains the manuscripts, code, protocols and reviewed outputs. Acquired corpora, source photographs and downloaded source copies remain local. The [public asset review](../maintenance/2026-10-11-public-release/ASSET-REVIEW.md) records the source exclusions and preservation backups. Scripts run manually; no CI/CD workflows are included.

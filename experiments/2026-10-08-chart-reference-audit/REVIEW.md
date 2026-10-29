@@ -101,7 +101,7 @@ No claim of decipherment, sound or meaning appears. The cell evidence describes 
 
 ## Boundaries
 
-`git status --porcelain` shows only `experiments/2026-10-08-chart-reference-audit/review/` (mine, with this file) and `experiments/2026-10-08-site-map-and-overview/`, which belongs to another contributor. The temporary folder `data/raw/2026-10-08-chart-reference-audit/reviewer-tmp/` was deleted. No file of the package, the original reference or `output/chart_atlas/` was changed.
+`git status --porcelain` shows only `experiments/2026-10-08-chart-reference-audit/review/` (mine, with this file) and `presentations/2026-10-08-site-map-and-overview/`, which belongs to another contributor. The temporary folder `data/raw/2026-10-08-chart-reference-audit/reviewer-tmp/` was deleted. No file of the package, the original reference or `output/chart_atlas/` was changed.
 
 ## Required fixes, ranked
 

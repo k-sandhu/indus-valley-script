@@ -1,6 +1,6 @@
 # Package O: prepare a public Hugging Face dataset and document the private store
 
-Owned directory: `experiments/2026-10-08-hf-public-release/`. Local raw directory: `data/raw/2026-10-08-hf-public-release/`. Python environments: the system Python and `C:\Users\sandh\.venvs\indus-ml\Scripts\python.exe`; you may install the `datasets` and `pyarrow` libraries into the venv with `pip --no-cache-dir` to validate loading.
+Owned directory: `maintenance/2026-10-08-hf-public-release/`. Local raw directory: `data/raw/2026-10-08-hf-public-release/`. Python environments: the system Python and `C:\Users\sandh\.venvs\indus-ml\Scripts\python.exe`; you may install the `datasets` and `pyarrow` libraries into the venv with `pip --no-cache-dir` to validate loading.
 
 ## Request
 

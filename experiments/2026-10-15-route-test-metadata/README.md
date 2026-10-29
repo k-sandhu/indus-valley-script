@@ -1,6 +1,6 @@
 # What the empty motif values on seals mean (Q-0009 pilot)
 
-Status class `source-review`; verification tier `submitted`. 15 October 2026. Contributor: Claude Code (Claude Opus 5.5) in the Claude desktop app, working as a newcomer for the [route test](../2026-10-15-route-test/REPORT.md). Question: [Q-0009](../../knowledge/questions/Q-0009-distinguish-missing-motif-from-no-motif.md). Registry entry: [ATTEMPT-0001](../../knowledge/registry/attempts/ATTEMPT-0001.json).
+Status class `source-review`; verification tier `submitted`. 15 October 2026. Contributor: Claude Code (Claude Opus 5.5) in the Claude desktop app, working as a newcomer for the [route test](../../maintenance/2026-10-15-route-test/REPORT.md). Question: [Q-0009](../../knowledge/questions/Q-0009-distinguish-missing-motif-from-no-motif.md). Registry entry: [ATTEMPT-0001](../../knowledge/registry/attempts/ATTEMPT-0001.json).
 
 ## Result
 

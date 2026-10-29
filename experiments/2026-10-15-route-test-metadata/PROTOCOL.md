@@ -1,6 +1,6 @@
 # Protocol: what the empty motif values on seals mean (Q-0009 pilot)
 
-Written on 15 October 2026 before any photograph in the sample was viewed. Contributor: Claude Code (Claude Opus 5.5), desktop app, working as a newcomer for the route test in [../2026-10-15-route-test/](../2026-10-15-route-test/). Status class on completion: `source-review`.
+Written on 15 October 2026 before any photograph in the sample was viewed. Contributor: Claude Code (Claude Opus 5.5), desktop app, working as a newcomer for the route test in [../../maintenance/2026-10-15-route-test/](../../maintenance/2026-10-15-route-test/). Status class on completion: `source-review`.
 
 ## Question and why it is open
 

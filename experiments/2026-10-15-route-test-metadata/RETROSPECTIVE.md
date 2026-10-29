@@ -1,6 +1,6 @@
 # Retrospective: Q-0009 pilot, 15 October 2026
 
-We chose Q-0009 from the starter Priority 1 metadata questions because its inputs were all held and its stopping rule, a fixed sample with every placeholder category reviewed, could be met in one session. The route to it, and every point where the route was unclear, is in the [route-test report](../2026-10-15-route-test/REPORT.md); this note covers the data work.
+We chose Q-0009 from the starter Priority 1 metadata questions because its inputs were all held and its stopping rule, a fixed sample with every placeholder category reviewed, could be met in one session. The route to it, and every point where the route was unclear, is in the [route-test report](../../maintenance/2026-10-15-route-test/REPORT.md); this note covers the data work.
 
 The first obstacle was that the worktree had no local data. `python tools/fetch_data.py --verify lipi` reported both pinned files missing, and `--fetch lipi --dry-run` showed the clone it would make. Rather than download a second copy, we read the maintainer's existing local files from the main checkout, recorded their hashes and confirmed that the faces file matches the hash DATA.md gives for the 12 October inventory.
 

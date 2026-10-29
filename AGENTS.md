@@ -56,7 +56,7 @@ python tools/kb.py check [--strict]
 
 ## Contribute without collisions
 
-Own a new `experiments/YYYY-MM-DD-short-slug/` directory and your new card files. Add registry files in `knowledge/registry/attempts/`. Leave another contribution's files and generated `knowledge/experiments/registry.json` and `knowledge/MAP.md` to maintainers, who build after merging. Resolve an ID collision in the later pull request by taking the next free number.
+Own a new `experiments/YYYY-MM-DD-short-slug/` directory and your new card files. `experiments/` holds research only: studies of the script, the inscribed objects and the Indus civilisation, including source reviews and data acquisition. Work on the repository itself, such as documentation, navigation, the website, storage and releases, gets no experiment package or registry attempt; its commit message records what changed. Earlier repository work is kept in `maintenance/`, and decks and visual summaries of recorded results in `presentations/`. Add registry files in `knowledge/registry/attempts/`. Leave another contribution's files and generated `knowledge/experiments/registry.json` and `knowledge/MAP.md` to maintainers, who build after merging. Resolve an ID collision in the later pull request by taking the next free number.
 
 Claim a question on its GitHub issue, with the Q-ID in the title. Claims lapse after seven days without an update; maintainers record merged claims in cards. Disclose an agent's model and harness in `authors`. Verification is another contributor's contribution, with its own dated record. Run the checks listed in [CONTRIBUTING](CONTRIBUTING.md) before a pull request.
 

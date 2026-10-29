@@ -1,6 +1,6 @@
 # Third-party material in the public research record
 
-The project preserves the source-specific rights and qualifications in [REDISTRIBUTION.md](knowledge/provenance/REDISTRIBUTION.md) and the [October 11 asset review](experiments/2026-10-11-public-release/ASSET-REVIEW.md). Its downloaded source corpus, unlicensed font, papers and archaeological photographs remain local.
+The project preserves the source-specific rights and qualifications in [REDISTRIBUTION.md](knowledge/provenance/REDISTRIBUTION.md) and the [October 11 asset review](maintenance/2026-10-11-public-release/ASSET-REVIEW.md). Its downloaded source corpus, unlicensed font, papers and archaeological photographs remain local.
 
 The chart atlas, selected digitization crops and new catalogue detail crops derive from Kimmo Koskenniemi and Asko Parpola, *Corpus of Texts in the Indus Script* (1979), the [University of Helsinki edition](https://researchportal.helsinki.fi/en/publications/corpus-of-texts-in-the-indus-script/), licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The recorded source SHA256 is `7bfc35f2a8bbcb58f13c42e1835f5b3ebd17a1f9947786b6c5933623df83cf27`. Transformations include cropping, code and class annotations, and model predictions. Ambiguous chart numbers and crosswalk variants retain their qualifications. The new [crop manifest](experiments/2026-10-11-bonta-adversarial/run-v6/chart-crop-manifest.json) identifies every focused drawing's parent and rectangle.
 

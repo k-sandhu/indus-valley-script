@@ -81,7 +81,9 @@ For agents: Clone https://github.com/k-sandhu/indus-valley-script, read AGENTS.m
 | Directory | Contents |
 |---|---|
 | `knowledge/` | Findings, open questions, conjectures, the working model, the data page and the record of every attempt |
-| `experiments/` | One dated folder per study, with its plan, outputs, review and retrospective |
+| `experiments/` | One dated folder per research study, with its plan, outputs, review and retrospective |
+| `presentations/` | Slide decks, maps and visual summaries of recorded results |
+| `maintenance/` | Records of earlier work on the repository itself: releases, publication screens, the website generator, storage and restructuring |
 | `papers/` | Manuscript drafts with their methods and the evidence behind each claim |
 | `output/` | Reports, the chart atlas and summaries |
 | `src/` | Analysis code |
@@ -99,7 +101,7 @@ Top-level guides include [AGENTS.md](AGENTS.md), [CONTRIBUTING.md](CONTRIBUTING.
 
 ## Reuse and licence
 
-Code written for the project is released under the [Unlicense](LICENSES/Unlicense.txt), and our text, data, cards and documentation under [CC0 1.0](LICENSES/CC0-1.0.txt), so both can be reused without asking. Material derived from the 1979 Helsinki edition of the Indus texts is under [CC BY 4.0](LICENSES/CC-BY-4.0.txt) and needs its attribution ([LICENSE](LICENSE)). Third-party material keeps its own terms. Contributions are accepted under the same terms. [REUSE.md](REUSE.md), the [third-party notices](THIRD_PARTY_NOTICES.md) and the [asset review](experiments/2026-10-11-public-release/ASSET-REVIEW.md) give the details. The manuscripts are drafts written with AI assistance and have not been peer reviewed.
+Code written for the project is released under the [Unlicense](LICENSES/Unlicense.txt), and our text, data, cards and documentation under [CC0 1.0](LICENSES/CC0-1.0.txt), so both can be reused without asking. Material derived from the 1979 Helsinki edition of the Indus texts is under [CC BY 4.0](LICENSES/CC-BY-4.0.txt) and needs its attribution ([LICENSE](LICENSE)). Third-party material keeps its own terms. Contributions are accepted under the same terms. [REUSE.md](REUSE.md), the [third-party notices](THIRD_PARTY_NOTICES.md) and the [asset review](maintenance/2026-10-11-public-release/ASSET-REVIEW.md) give the details. The manuscripts are drafts written with AI assistance and have not been peer reviewed.
 
 ## History
 

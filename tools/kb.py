@@ -170,8 +170,9 @@ def index_items():
     for kind, pattern in patterns.items():
         paths = set(ROOT.glob(pattern))
         if kind == 'retrospective':
-            paths.update(ROOT.glob('experiments/**/RETROSPECTIVE.md'))
-            paths.update(ROOT.glob('experiments/**/RETROSPECTIVE.json'))
+            for folder in ('experiments', 'maintenance', 'presentations'):
+                paths.update(ROOT.glob(f'{folder}/**/RETROSPECTIVE.md'))
+                paths.update(ROOT.glob(f'{folder}/**/RETROSPECTIVE.json'))
         for path in sorted(paths):
             if path.name == 'README.md':
                 continue
@@ -212,7 +213,9 @@ def map_document(items):
              '## Top level', '']
     # A fixed list of tracked directories, so local folders never enter the committed map.
     descriptions = {'papers': 'manuscripts and evidence maps', 'knowledge': 'cards, navigation and research memory',
-                    'experiments': 'dated protocols, outputs and reviews; new outputs go in a new dated package',
+                    'experiments': 'dated research protocols, outputs and reviews; new research goes in a new dated package',
+                    'maintenance': 'dated records of earlier repository work: releases, publication screens, the website generator, storage and restructuring',
+                    'presentations': 'slide decks, maps and visual summaries of recorded results',
                     'research': 'original investigation and source audits, frozen',
                     'src': 'original analysis code, frozen', 'results': 'original outputs, frozen',
                     'output': 'original reports and chart atlas, frozen', 'bench': 'shared evaluation harness',
@@ -322,13 +325,13 @@ def new_markdown():
     result = [ROOT/n for n in names if (ROOT/n).exists()]
     for pattern in ('knowledge/registry/*.md', 'knowledge/findings/*.md', 'knowledge/questions/*.md', '.claude/skills/*/*.md'):
         result += sorted(ROOT.glob(pattern))
-    result += [p for p in (ROOT/'experiments/2026-10-12-repo-restructure').glob('*.md') if p.name != 'CODEX-PROMPT.md']
+    result += [p for p in (ROOT/'maintenance/2026-10-12-repo-restructure').glob('*.md') if p.name != 'CODEX-PROMPT.md']
     return sorted(set(result))
 
 
 def check(strict=False):
     errors, warnings, notes, reviewed, ids, orders = [], [], [], set(), {}, {}
-    omissions_path = ROOT/'experiments/2026-10-11-public-release/public-omissions.json'
+    omissions_path = ROOT/'maintenance/2026-10-11-public-release/public-omissions.json'
     omissions = set(json.loads(read(omissions_path)).get('targets', [])) if omissions_path.exists() else set()
     items = index_items()
     metadata = json.loads(read(ROOT/'knowledge/registry/metadata.json'))

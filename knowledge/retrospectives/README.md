@@ -79,7 +79,7 @@ The [societal persistence program](2026-10-11-societal-persistence.md) records d
 
 ## 15 October: route test from AGENTS.md
 
-[Route test](../../experiments/2026-10-15-route-test/RETROSPECTIVE.md) records a fresh worktree session that followed only AGENTS.md and the files it names through a metadata task (Q-0009) and a reproduction of F-0027, the baseline `kb.py check` failure caused by an ignored log, the use of the maintainer's local data, and three draft errors corrected before submission. The package lists its [proposed edits](../../experiments/2026-10-15-route-test/PROPOSED-EDITS.md) to the route.
+[Route test](../../maintenance/2026-10-15-route-test/RETROSPECTIVE.md) records a fresh worktree session that followed only AGENTS.md and the files it names through a metadata task (Q-0009) and a reproduction of F-0027, the baseline `kb.py check` failure caused by an ignored log, the use of the maintainer's local data, and three draft errors corrected before submission. The package lists its [proposed edits](../../maintenance/2026-10-15-route-test/PROPOSED-EDITS.md) to the route.
 
 ## 13 October 2026: programme records
 
@@ -95,18 +95,15 @@ Two readers agree on the four-sign Lothal and M-895 text, while spacing distingu
 
 Five task commands reproduce 50 numerical source comparisons, with historical population exposure retained in the shared split records. [bench](../../experiments/2026-10-13-bench/RETROSPECTIVE.md).
 
-The prose pass checks 102 citations, the publication screen separates local-only files, and the website and 48-world renewal display expose existing results. [academic writing pass (report; no separate retrospective)](../../experiments/2026-10-13-academic-writing-pass/README.md); [publication screen](../../experiments/2026-10-13-publication-screen/RETROSPECTIVE.md); [relay visualization (report; no separate retrospective)](../../experiments/2026-10-13-relay-visualization/README.md); [site generator](../../experiments/2026-10-13-site-generator/RETROSPECTIVE.md).
-
+The prose pass checks 102 citations, the publication screen separates local-only files, and the website and 48-world renewal display expose existing results. [academic writing pass (report; no separate retrospective)](../../maintenance/2026-10-13-academic-writing-pass/README.md); [publication screen](../../maintenance/2026-10-13-publication-screen/RETROSPECTIVE.md); [relay visualization (report; no separate retrospective)](../../presentations/2026-10-13-relay-visualization/README.md); [site generator](../../maintenance/2026-10-13-site-generator/RETROSPECTIVE.md).
 
 ## 14 October 2026: programme records
 
-Three read-only Muse reviews assess repository layout, contributor rules and research direction. [muse review (report; no separate retrospective)](../../experiments/2026-10-14-muse-review/README.md).
-
+Three read-only Muse reviews assess repository layout, contributor rules and research direction. [muse review (report; no separate retrospective)](../../maintenance/2026-10-14-muse-review/README.md).
 
 ## 15 October 2026: programme records
 
-The route test completes metadata and reproduction tasks but records 28 obstacles; the motif pilot lowers recorded seal-motif coverage from 94.2% to 89.9%. [process fixes](../../experiments/2026-10-15-process-fixes/RETROSPECTIVE.md); [route test](../../experiments/2026-10-15-route-test/RETROSPECTIVE.md); [route test metadata](../../experiments/2026-10-15-route-test-metadata/RETROSPECTIVE.md).
-
+The route test completes metadata and reproduction tasks but records 28 obstacles; the motif pilot lowers recorded seal-motif coverage from 94.2% to 89.9%. [process fixes](../../maintenance/2026-10-15-process-fixes/RETROSPECTIVE.md); [route test](../../maintenance/2026-10-15-route-test/RETROSPECTIVE.md); [route test metadata](../../experiments/2026-10-15-route-test-metadata/RETROSPECTIVE.md).
 
 ## 20 October 2026: programme records
 
@@ -124,7 +121,6 @@ Farmana supplies 15 conditionally absent pottery objects but zero approved objec
 
 The comparison places the Mature Harappan civilisation beside 21 contemporary societies, retaining source-specific area, population and institution estimates. [contemporary civilisations (report; no separate retrospective)](../../experiments/2026-10-20-contemporary-civilisations/README.md).
 
-
 ## 21 October 2026: programme records
 
 The 503-row register identifies 301 post-catalogue inscribed objects and bounds corpus absence at 55–291 under the frozen join rule. [post catalogue finds](../../experiments/2026-10-21-post-catalogue-finds/RETROSPECTIVE.md).
@@ -139,8 +135,7 @@ Matched random pairs reproduce the single interlock in 30.5% of cases, while the
 
 The 29-town table fails the Pleiades version, while independent bearings, dates and failed Dholavira plan validation leave the broader orientation test unresolved. [town axes](../../experiments/2026-10-21-town-axes/RETROSPECTIVE.md); [town orientations verification](../../experiments/2026-10-21-town-orientations-verification/RETROSPECTIVE.md); [plan registration](../../experiments/2026-10-21-plan-registration/RETROSPECTIVE.md).
 
-The screen examines 508 files with the earlier sequence scanner and records source-specific publication decisions. [publication screen (report; no separate retrospective)](../../experiments/2026-10-21-publication-screen/README.md).
-
+The screen examines 508 files with the earlier sequence scanner and records source-specific publication decisions. [publication screen (report; no separate retrospective)](../../maintenance/2026-10-21-publication-screen/README.md).
 
 ## 22 October 2026: programme records
 
@@ -150,8 +145,7 @@ The integration adds 5,474 review assertions, accepts 21 provisional spatial lay
 
 Blind pairs yield 9 compounds among 38 pairs against 4.97 expected; the Winslow rerun fails its frozen rule because the starting interlock is absent. [rebus blind templates](../../experiments/2026-10-22-rebus-blind-templates/RETROSPECTIVE.md); [rebus winslow](../../experiments/2026-10-22-rebus-winslow/RETROSPECTIVE.md).
 
-The separate review identifies two existing scientific cores for focused papers and names the repairs needed for other publication candidates. [field novelty review](../../experiments/2026-10-22-field-novelty-review/RETROSPECTIVE.md); [findings slides](../../experiments/2026-10-22-findings-slides/RETROSPECTIVE.md).
-
+The separate review identifies two existing scientific cores for focused papers and names the repairs needed for other publication candidates. [field novelty review](../../experiments/2026-10-22-field-novelty-review/RETROSPECTIVE.md); [findings slides](../../presentations/2026-10-22-findings-slides/RETROSPECTIVE.md).
 
 ## 24 October 2026: programme records
 
@@ -173,17 +167,15 @@ The Tell Brak catalogue resolves REG257 to catalogue 308 and TB1058, with zero n
 
 Twelve primary pages support the enumerated Harappa, Tell Brak, Tamil-grammar and Lothal source chains within a bounded reviewed scope. [source review pass3](../../experiments/2026-10-24-source-review-pass3/RETROSPECTIVE.md).
 
-The 34-town register retains 1,380 measurements and separate dating assertions, while construction-sample joins remain missing and displays expose the source differences. [q1032 town axis register](../../experiments/2026-10-24-q1032-town-axis-register/RETROSPECTIVE.md); [town phase links](../../experiments/2026-10-24-town-phase-links/RETROSPECTIVE.md); [town phase pass2](../../experiments/2026-10-24-town-phase-pass2/RETROSPECTIVE.md); [town phase pass3](../../experiments/2026-10-24-town-phase-pass3/RETROSPECTIVE.md); [town axis presentation](../../experiments/2026-10-24-town-axis-presentation/RETROSPECTIVE.md); [town axis visual atlas](../../experiments/2026-10-24-town-axis-visual-atlas/RETROSPECTIVE.md).
+The 34-town register retains 1,380 measurements and separate dating assertions, while construction-sample joins remain missing and displays expose the source differences. [q1032 town axis register](../../experiments/2026-10-24-q1032-town-axis-register/RETROSPECTIVE.md); [town phase links](../../experiments/2026-10-24-town-phase-links/RETROSPECTIVE.md); [town phase pass2](../../experiments/2026-10-24-town-phase-pass2/RETROSPECTIVE.md); [town phase pass3](../../experiments/2026-10-24-town-phase-pass3/RETROSPECTIVE.md); [town axis presentation](../../presentations/2026-10-24-town-axis-presentation/RETROSPECTIVE.md); [town axis visual atlas](../../presentations/2026-10-24-town-axis-visual-atlas/RETROSPECTIVE.md).
 
 The comparison records 287 urban assertions, but its follow-up finds zero fully qualified persistence episodes and zero matched documentary pairs. [urban form and inscription ecology](../../experiments/2026-10-24-urban-form-and-inscription-ecology/RETROSPECTIVE.md); [shared infrastructure plan test](../../experiments/2026-10-24-shared-infrastructure-plan-test/RETROSPECTIVE.md).
 
-The migration verifies 187,131 accessible files by hash and retains historical paths through nine junctions and 434 file links. [storage migration (report; no separate retrospective)](../../experiments/2026-10-24-storage-migration/README.md).
-
+The migration verifies 187,131 accessible files by hash and retains historical paths through nine junctions and 434 file links. [storage migration (report; no separate retrospective)](../../maintenance/2026-10-24-storage-migration/README.md).
 
 ## 25 October 2026: programme records
 
 Nine published phase summaries at five sites show crop persistence with changing proportions and motivate three untested transmission conjectures. [crop continuity](../../experiments/2026-10-25-crop-continuity/RETROSPECTIVE.md); [continuity theories](../../experiments/2026-10-25-continuity-theories/RETROSPECTIVE.md).
-
 
 ## 26 October 2026: programme records
 
@@ -193,13 +185,7 @@ The atlas preserves 115 place entities, seven model scenes and source-qualified 
 
 The atlas also keeps module accounts for [continuity](../../experiments/2026-10-26-indus-living-atlas/continuity/RETROSPECTIVE.md), [living towns](../../experiments/2026-10-26-indus-living-atlas/living-towns/RETROSPECTIVE.md), [reconstruction](../../experiments/2026-10-26-indus-living-atlas/reconstruction/RETROSPECTIVE.md).
 
-
 ## 27 October 2026: programme records
 
 Eight source pointers distinguish contemporary contact records from later comparisons, admitting zero inscriptions to an evaluation corpus. [readable external records](../../experiments/2026-10-27-readable-external-records/RETROSPECTIVE.md).
 
-The entry documents link later source results and current conjecture tests, centralize storage guidance and record command-help checks. [documentation cleanup](../../experiments/2026-10-27-documentation-cleanup/RETROSPECTIVE.md).
-
-Seven navigation entries connect the themed findings, ideas and dated record while preserving the existing destinations. [site organization](../../experiments/2026-10-27-site-organization/RETROSPECTIVE.md).
-
-The [findings-organization retrospective](../../experiments/2026-10-27-findings-organization/RETROSPECTIVE.md) records the inventory, card selection, navigation structure and preservation checks for this editorial pass.

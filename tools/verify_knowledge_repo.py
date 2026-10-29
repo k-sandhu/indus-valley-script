@@ -28,7 +28,7 @@ def main():
     selected = set(subprocess.check_output(['git','ls-files','--cached','-z'],cwd=ROOT).decode('utf-8').split('\0'))
     selected.discard('')
     public_omissions = set()
-    omission_register = ROOT/'experiments/2026-10-11-public-release/public-omissions.json'
+    omission_register = ROOT/'maintenance/2026-10-11-public-release/public-omissions.json'
     if omission_register.is_file():
         public_omissions = set(json.loads(omission_register.read_text(encoding='utf-8'))['targets'])
     unavailable_local = []
@@ -75,7 +75,7 @@ def main():
     broken = []
     frozen_link_contexts = []
     document_snapshot_contexts = {}
-    public_contexts = ROOT/'experiments/2026-10-11-public-release/navigation-contexts.json'
+    public_contexts = ROOT/'maintenance/2026-10-11-public-release/navigation-contexts.json'
     for version in [2,3]:
         if (public_contexts.parent/f'navigation-contexts-v{version}.json').is_file():
             public_contexts = public_contexts.parent/f'navigation-contexts-v{version}.json'
