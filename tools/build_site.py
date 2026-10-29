@@ -33,6 +33,17 @@ EXPLORE = ('experiments/2026-10-11-bonta-adversarial/run-v6/catalogue.html',
            'output/chart_atlas/index.html')
 FINDINGS_GUIDE = 'knowledge/findings/README.md'
 LIVING_ATLAS = 'experiments/2026-10-26-indus-living-atlas'
+# Atlas pages and the tracked files they load, published at their repository paths.
+ATLAS_PAGES = ('index.html', 'research.html', 'reconstruction/index.html', 'reconstruction/run-v5/index.html')
+ATLAS_ASSETS = ('mapping/atlas.css', 'mapping/atlas.js', 'mapping/current-data.js',
+                'mapping/vendor/leaflet/leaflet.css', 'mapping/vendor/leaflet/leaflet.js',
+                'mapping/vendor/leaflet/leaflet.js.map', 'mapping/vendor/leaflet/LICENSE',
+                *(f'mapping/vendor/leaflet/images/{name}.png'
+                  for name in ('layers', 'layers-2x', 'marker-icon', 'marker-icon-2x', 'marker-shadow')))
+# The site copy drops the optional online street basemap so that every map resource is local.
+ATLAS_STREET_CONTROL = '<label class="check"><input id="modern" type="checkbox"> Modern street basemap <small>online</small></label>'
+ATLAS_STREET_HANDLER = re.compile(r'\r?\n  \$\("modern"\)\.addEventListener\("change",e=>\{.*?'
+                                  r'Ancient rivers are not reconstructed";\}\r?\n  \}\);', re.S)
 # A group has children; a direct entry has a destination. No scripted menu.
 NAV = [('Home', 'index.html'), ('Findings', 'findings/index.html'),
        ('Ideas', [('Working model', 'working-model/index.html'), ('Conjectures', 'conjectures/index.html')]),
@@ -366,6 +377,10 @@ class Builder:
         for path in EXPLORE:
             if source.allowed(path):
                 self.routes[path] = path
+        self.atlas = all(source.allowed(f'{LIVING_ATLAS}/{name}') for name in ATLAS_PAGES + ATLAS_ASSETS)
+        if self.atlas:
+            for name in ATLAS_PAGES + ATLAS_ASSETS:
+                self.routes[f'{LIVING_ATLAS}/{name}'] = f'{LIVING_ATLAS}/{name}'
         self.env = jinja2.Environment(loader=SourceTemplates(source), autoescape=True,
                                       keep_trailing_newline=True, newline_sequence='\n')
         self.copied, self.pages, self.unavailable, self.skipped, self.dynamic = {}, {}, set(), [], set()
@@ -619,6 +634,83 @@ class Builder:
         self.write(path, content)
         self.pages[path] = path
 
+    def write_tracked(self, path, content):
+        if path not in (self.source.tracked if self.source.worktree else self.source.committed):
+            raise ValueError(f'Asset is not tracked: {path}')
+        payload = content.encode('utf-8')
+        self.copied[path] = hashlib.sha256(payload).hexdigest()
+        self.write(path, payload)
+
+    def living_atlas(self):
+        """Publish the living atlas with local resources only; return its Explore entry."""
+        index = f'{LIVING_ATLAS}/index.html'
+        if not self.atlas:
+            self.skipped.append({'path': index, 'reason': 'not in the public repository'})
+            return None
+
+        def report_links(content):
+            # The scripts insert their HTML into index.html, so relative report links resolve from there.
+            def gated(match):
+                resolved = self.link(match[1], index, index)
+                return '"' + (resolved or '#') + '"'
+            return re.sub(r'"((?:\.\./)+[^"\s]+?\.md(?:#[^"]*)?)"', gated, content)
+
+        for name in ATLAS_ASSETS:
+            path = f'{LIVING_ATLAS}/{name}'
+            if name not in ('mapping/atlas.js', 'mapping/current-data.js'):
+                self.copy(path, tracked_only=True)
+                continue
+            content = self.source.text(path)
+            if name == 'mapping/atlas.js':
+                content, count = ATLAS_STREET_HANDLER.subn('', content)
+                if count != 1:
+                    raise ValueError(f'Living atlas street basemap handler not found: {path}')
+            content = report_links(content)
+            if external_script_resource(content):
+                raise ValueError(f'Living atlas script loads an external resource: {path}')
+            self.write_tracked(path, content)
+        data_text = self.source.text(f'{LIVING_ATLAS}/mapping/current-data.js')
+        data = json.loads(data_text.split('=', 1)[1].strip().rstrip(';'))
+        for name in ATLAS_PAGES:
+            path = f'{LIVING_ATLAS}/{name}'
+            content = self.source.text(path)
+            if name == 'index.html':
+                if ATLAS_STREET_CONTROL not in content:
+                    raise ValueError(f'Living atlas street basemap control not found: {path}')
+                content = content.replace(ATLAS_STREET_CONTROL, '')
+            parser = RewriteHTML(self, path, path)
+            parser.feed(content)
+            content = ''.join(parser.output)
+            source_link = '<a href="' + self.github(path) + '">Source on GitHub</a> · ' + self.source.commit[:12]
+            if name == 'index.html':
+                # The map is drawn in JavaScript; without it the page lists every place and town.
+                def table(columns, rows):
+                    return ('<table><thead><tr>' + ''.join('<th scope="col">' + label + '</th>' for label, _ in columns) +
+                            '</tr></thead><tbody>' + ''.join('<tr>' + ''.join('<td>' + html.escape(str(value(row) or '')) + '</td>'
+                                                                                for _, value in columns) + '</tr>' for row in rows) +
+                            '</tbody></table>')
+                places = table([('Place', lambda r: r.get('name')), ('Country', lambda r: r.get('country')),
+                                ('Region', lambda r: r.get('region')), ('Location basis', lambda r: r.get('coord_kind')),
+                                ('Inscribed objects', lambda r: (r.get('counts') or {}).get('families')),
+                                ('First inscribed find', lambda r: (r.get('first_inscribed_find') or {}).get('year'))],
+                               data['sites'])
+                towns = table([('Town', lambda r: r.get('name')), ('Country', lambda r: r.get('country')),
+                               ('Category', lambda r: str(r.get('category') or '').replace('-', ' '))], data['towns'])
+                suffix = ('<noscript><h2>Places in the atlas</h2>' + places + '<h2>Towns inhabited today</h2>' + towns +
+                          '<p><a href="' + self.github(f'{LIVING_ATLAS}/mapping/current-data.js') + '">Atlas data on GitHub</a> · ' +
+                          source_link + '</p></noscript>')
+            else:
+                suffix = '<footer><p>' + source_link + '</p></footer>'
+            end = '</body>' if '</body>' in content else '</html>' if '</html>' in content else None
+            content = content.replace(end, suffix + end) if end else content + '\n' + suffix
+            self.write(path, content)
+            self.pages[path] = path
+        summary = data.get('summary', {})
+        return {'name': 'Indus living atlas', 'url': relative_url(index, 'explore/index.html'),
+                'description': f"A map of {summary.get('find_sites')} places where Indus inscribed objects were found and "
+                               f"{summary.get('living_towns')} towns inhabited today, with reconstructions of cities and buildings "
+                               'and a review of which places stayed occupied. The website copy uses the offline basemap only.'}
+
     def build(self):
         for name in ('site.css', 'site.js'):
             self.write('assets/' + name, self.source.bytes('site/static/' + name))
@@ -690,18 +782,13 @@ class Builder:
         descriptions = (next((s.strip() for s in re.split(r'(?<=\.)\s+', catalogue_intro)
                               if s.startswith('Fifty-six ')), text_only(catalogue_intro)),
                         text_only(chart_sentence[0]) if chart_sentence else 'The chart atlas is part of the first investigation’s recorded outputs.')
-        atlas_script = LIVING_ATLAS + '/mapping/atlas.js'
-        if self.source.allowed(atlas_script):
-            if external_script_resource(self.source.text(atlas_script)):
-                self.skipped.append({'path': LIVING_ATLAS + '/index.html',
-                                     'reason': 'Living atlas not packaged: the optional street basemap loads external OpenStreetMap tiles; site resources must be local.'})
-            else:
-                self.skipped.append({'path': LIVING_ATLAS + '/index.html',
-                                     'reason': 'Living atlas source changed; its full resource closure needs a new publication review before packaging.'})
-        self.page('explore/index.html', 'Explore', 'README.md', 'explore.jinja',
-                  viewers=[{'name': label, 'url': relative_url(path, 'explore/index.html'), 'description': description}
-                           for path, label, description in zip(EXPLORE, ('Reviewed sign catalogue', 'Chart atlas'), descriptions)
-                           if path in self.pages])
+        viewers = [{'name': label, 'url': relative_url(path, 'explore/index.html'), 'description': description}
+                   for path, label, description in zip(EXPLORE, ('Reviewed sign catalogue', 'Chart atlas'), descriptions)
+                   if path in self.pages]
+        atlas = self.living_atlas()
+        if atlas:
+            viewers.append(atlas)
+        self.page('explore/index.html', 'Explore', 'README.md', 'explore.jinja', viewers=viewers)
         papers = []
         pdfs = [{'name': PurePosixPath(path).name, 'url': self.github(path)} for path in sorted(self.source.files)
                 if path.startswith('output/pdf/') and path.endswith('.pdf')]
@@ -872,8 +959,10 @@ def check(out, root=ROOT):
         if target not in files:
             errors.append(f'{origin}: missing target {target}')
         elif parsed.fragment and target in inspectors and unquote(parsed.fragment) not in inspectors[target].ids:
-            # The catalogue creates Wxxx anchors while rendering its embedded rows.
-            if not (target == EXPLORE[0] and re.fullmatch('W[0-9]{3}', parsed.fragment)):
+            # The catalogue creates Wxxx anchors while rendering its embedded rows; the atlas
+            # pages read key=value fragments as view state rather than element ids.
+            if not (target == EXPLORE[0] and re.fullmatch('W[0-9]{3}', parsed.fragment) or
+                    target.startswith(LIVING_ATLAS + '/') and '=' in parsed.fragment):
                 errors.append(f'{origin}: missing fragment {target}#{parsed.fragment}')
     for name, parser in inspectors.items():
         for url in parser.links:

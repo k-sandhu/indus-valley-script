@@ -152,7 +152,7 @@
       if(reports.length)html+=`<h3>Published object counts</h3><div class="source"><details><summary>Inspect ${reports.length} attributed count statements</summary>${reports.map(c=>`<p>${esc(c.text)}</p><cite>${esc(c.source)}</cite>`).join("")}</details></div>`;
       if(row.model_id)html+=`<a class="primary-link" href="reconstruction/index.html#model=${encodeURIComponent(row.model_id)}">Explore architecture in 3D ↗</a><a class="secondary-link" href="reconstruction/index.html#model=${encodeURIComponent(row.model_id)}&view=plan">Open the top-down city / building plan ↗</a>`;
       if(row.architectural_register)html+=`<a class="secondary-link" href="${esc(row.architectural_register)}">Architectural source register ↗</a>`;
-      html+='<a class="secondary-link" href="../2026-10-08-site-map-and-overview/README.md">Earlier map: sources and known gaps ↗</a>';
+      html+='<a class="secondary-link" href="../../presentations/2026-10-08-site-map-and-overview/README.md">Earlier map: sources and known gaps ↗</a>';
     }
     panel.innerHTML=html;panel.hidden=false;
     panel.querySelector(".panel-close").addEventListener("click",closeDetail);
