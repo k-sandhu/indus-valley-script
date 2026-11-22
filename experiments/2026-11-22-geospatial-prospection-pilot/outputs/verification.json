@@ -1,0 +1,79 @@
+{
+  "generated_utc": "2026-11-22T08:49:12.548705+00:00",
+  "all_passed": true,
+  "passed_count": 5,
+  "total_checks": 5,
+  "checks": [
+    {
+      "name": "dem_manifest_and_hashes",
+      "tiles_checked": 16,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "wgs84_tm_projection_vs_pyproj",
+      "points_checked": 8,
+      "max_error_mm": 0.03092,
+      "max_roundtrip_mm": 0.04571,
+      "passed": true
+    },
+    {
+      "name": "synthetic_tpi_and_hacf_invariance",
+      "offset_max_diff_m": 1.2159347534179688e-05,
+      "planar_trend_core_max_diff_m": 4.76837158203125e-07,
+      "peak_at_center": true,
+      "synthetic_step_valley_hacf_m": 0.0,
+      "synthetic_step_bar_hacf_m": 6.0,
+      "passed": true
+    },
+    {
+      "name": "analysis_a_pilot_and_holdout_integrity",
+      "frames": {
+        "P08_P09": {
+          "primary_blocks": 24,
+          "holdout_blocks": 8,
+          "backup_blocks": 12,
+          "min_intra_stratum_spacing_m": 19026.3,
+          "min_calibration_anchor_dist_m": 10089.3,
+          "holdout_commitment_sha256_verified": "8521d7367c9536a1440112493cf927f76665ea81be869cdc565b35b0e802781d"
+        },
+        "P06": {
+          "primary_blocks": 24,
+          "holdout_blocks": 8,
+          "backup_blocks": 12,
+          "min_intra_stratum_spacing_m": 7071.1,
+          "min_calibration_anchor_dist_m": 5418.4,
+          "holdout_commitment_sha256_verified": "b8ce6e240db4ff7603cd8a546f4dd6bcd25cd5c96ab17c15c8a1a44eeb394a70"
+        }
+      },
+      "passed": true,
+      "failures": []
+    },
+    {
+      "name": "analysis_b_calibration_and_blind_packet",
+      "recomputed_metrics": {
+        "disk500_max_tpi300_m": {
+          "roc_auc": 0.7096,
+          "cliffs_delta": 0.4192,
+          "p_value": 0.007453645436479495
+        },
+        "disk500_max_tpimax_m": {
+          "roc_auc": 0.7221,
+          "cliffs_delta": 0.4442,
+          "p_value": 0.004940420000414449
+        },
+        "disk500_peak_prominence_m": {
+          "roc_auc": 0.685,
+          "cliffs_delta": 0.37,
+          "p_value": 0.01582645508684611
+        }
+      },
+      "blind_units_checked": 72,
+      "p01_p02_units": 36,
+      "p03_p05_units": 36,
+      "blind_key_sha256_verified": "abbc468e5cb22a805194d161fb40d10ba9dd4a2de7109dd8f4bc4aec306b589d",
+      "passed": true,
+      "failures": []
+    }
+  ]
+}

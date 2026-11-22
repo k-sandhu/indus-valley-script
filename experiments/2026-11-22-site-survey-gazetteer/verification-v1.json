@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "verified_date": "2026-11-22",
+  "overall_passed": true,
+  "checks_passed": 8,
+  "checks_total": 8,
+  "checks": [
+    {
+      "check_id": "V01_hash_integrity",
+      "description": "All upstream input hashes and generated output hashes (including local-only D: extract) match coverage-v1.json.",
+      "passed": true,
+      "details": {
+        "inputs_checked": 21,
+        "outputs_checked": 5,
+        "mismatches": []
+      }
+    },
+    {
+      "check_id": "V02_zero_entity_loss",
+      "description": "All 115 Atlas/Census entities, 34 Q-1032 towns, 18 Living Towns, 26 Post-Catalogue site rows, and 3 reconnaissance leads are reconciled without loss or duplicate IDs.",
+      "passed": true,
+      "details": {
+        "reconciled_records": 144,
+        "unique_ids": 144,
+        "missing_atlas": [],
+        "missing_census": [],
+        "q1032_matched": 34,
+        "q1032_expected": 34,
+        "living_towns_matched": 18,
+        "living_towns_expected": 18,
+        "post_catalogue_matched": 26,
+        "post_catalogue_expected": 26,
+        "missing_recon": []
+      }
+    },
+    {
+      "check_id": "V03_no_silent_averaging_and_spread_accuracy",
+      "description": "Every primary coordinate matches a verbatim retained assertion (zero silent averaging), every precision class is valid, and all pairwise Haversine spreads match independent recomputation.",
+      "passed": true,
+      "details": {
+        "averaging_or_primary_violations": [],
+        "spread_mismatches": [],
+        "bad_precision": [],
+        "checked_assertions": 271
+      }
+    },
+    {
+      "check_id": "V04_four_unit_and_status_separation",
+      "description": "All records enforce valid four-unit and excavation-status vocabularies; remote proposals stay separate from recorded localities; Ganweriwala and Kotada area definitions remain distinct.",
+      "passed": true,
+      "details": {
+        "unit_violations": [],
+        "excavation_status_violations": [],
+        "ganweriwala_retained_areas_ha": [
+          33.0,
+          66.7,
+          81.5
+        ],
+        "kotada_lodrani_retained_areas_ha": [
+          0.6
+        ]
+      }
+    },
+    {
+      "check_id": "V05_alias_and_homonym_integrity",
+      "description": "All mandatory aliases resolve cleanly, zero unflagged cross-entity collisions exist, and homonymous Kotada entries are flagged.",
+      "passed": true,
+      "details": {
+        "total_alias_rows": 443,
+        "missing_mandatory_aliases": [],
+        "unflagged_collisions": [],
+        "kotada_homonym_rows": 2,
+        "unknown_alias_targets": []
+      }
+    },
+    {
+      "check_id": "V06_survey_effort_and_window_containment",
+      "description": "All 21 prospection windows (P01-P21) have valid survey-effort classifications and exact independent bounding-box containment parity.",
+      "passed": true,
+      "details": {
+        "windows_checked": 21,
+        "campaigns_recorded": 19,
+        "bbox_mismatches": [],
+        "bad_survey_effort_classes": []
+      }
+    },
+    {
+      "check_id": "V07_csv_json_coverage_parity",
+      "description": "gazetteer-v1.csv, gazetteer-v1.json, aliases-v1.csv, and coverage-v1.json agree on every row ID, count, and key status column.",
+      "passed": true,
+      "details": {
+        "gazetteer_json_rows": 144,
+        "gazetteer_csv_rows": 144,
+        "aliases_csv_rows": 443,
+        "field_mismatches": []
+      }
+    },
+    {
+      "check_id": "V08_redistribution_hygiene",
+      "description": "Tracked outputs contain no raw third-party MAHSA tile payloads or verbatim page dumps, and local-only extract exists under data/raw/.",
+      "passed": true,
+      "details": {
+        "hygiene_flags": [],
+        "local_raw_extract_exists": true
+      }
+    }
+  ]
+}

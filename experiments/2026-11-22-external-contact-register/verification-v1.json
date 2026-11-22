@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-11-22",
+  "all_passed": true,
+  "checks_passed": 7,
+  "checks_total": 7,
+  "checks": [
+    {
+      "check": "source_sha256_integrity",
+      "passed": true,
+      "detail": {
+        "sources_checked": 9,
+        "source_mismatches": [],
+        "record_hash_errors": []
+      }
+    },
+    {
+      "check": "schema_and_unique_ids",
+      "passed": true,
+      "detail": {
+        "total_records": 196,
+        "missing_fields": [],
+        "duplicate_ids": []
+      }
+    },
+    {
+      "check": "cohort_1_vs_cohort_2_zero_conflation",
+      "passed": true,
+      "detail": {
+        "violations": []
+      }
+    },
+    {
+      "check": "cdli_pnumber_and_metadata_lookup",
+      "passed": true,
+      "detail": {
+        "total_unique_cdli_pids": 163,
+        "verified_in_cdli_cat": 163,
+        "verified_in_oracc_ur3_fallback": [],
+        "missing_pids": [],
+        "metadata_mismatches": []
+      }
+    },
+    {
+      "check": "exclusion_and_deduplication_integrity",
+      "passed": true,
+      "detail": {
+        "false_positive_leaks": [],
+        "later_period_sample_leaks": [],
+        "composite_seal_or_dilmun_composite_leaks": [],
+        "lipi_6000_1_duplicate_leak": false
+      }
+    },
+    {
+      "check": "aggregate_counts_and_csv_consistency",
+      "passed": true,
+      "detail": {
+        "recomputed_counts": {
+          "total_records": 196,
+          "cohort_1_contemporary_total": 193,
+          "cohort_1_contemporary_physical": 182,
+          "cohort_1_contemporary_composite_editions": 11,
+          "cohort_2_later_control_total": 3,
+          "by_evidence_class_total": {
+            "explicit_meluhha_mention": 135,
+            "susa_sealed_transaction": 21,
+            "gulf_indus_style_seal": 29,
+            "dilmun_named_seal": 8,
+            "later_control": 3
+          },
+          "by_evidence_class_physical": {
+            "explicit_meluhha_mention": 124,
+            "susa_sealed_transaction": 21,
+            "gulf_indus_style_seal": 29,
+            "dilmun_named_seal": 8,
+            "later_control": 3
+          },
+          "by_evidence_class_composite": {
+            "explicit_meluhha_mention": 11
+          },
+          "cohort_1_records_with_associated_seals": 63,
+          "meluhha_records_with_associated_seals": 12,
+          "cohort_1_unique_goods_and_units": 47,
+          "cohort_1_unique_titles_and_offices": 32,
+          "cohort_1_unique_personal_names": 543,
+          "meluhha_unique_goods_and_units": 45,
+          "meluhha_unique_titles_and_offices": 28,
+          "meluhha_unique_personal_names": 524
+        },
+        "count_mismatches": {},
+        "meluhha_csv_rows": 135,
+        "meluhha_csv_matches_register": true
+      }
+    },
+    {
+      "check": "local_raw_derivatives_on_d_drive",
+      "passed": true,
+      "detail": {
+        "atf-excerpts-local-v1.jsonl": {
+          "exists": true,
+          "bytes": 45240,
+          "physical_path": "D:\\projects\\indus_valley_script\\data\\raw\\2026-11-22-external-contact-register\\atf-excerpts-local-v1.jsonl"
+        },
+        "excluded-records-audit-v1.json": {
+          "exists": true,
+          "bytes": 40554,
+          "physical_path": "D:\\projects\\indus_valley_script\\data\\raw\\2026-11-22-external-contact-register\\excluded-records-audit-v1.json"
+        },
+        "source-hashes-v1.json": {
+          "exists": true,
+          "bytes": 3213,
+          "physical_path": "D:\\projects\\indus_valley_script\\data\\raw\\2026-11-22-external-contact-register\\source-hashes-v1.json"
+        }
+      }
+    }
+  ]
+}
