@@ -227,10 +227,14 @@ Read the section for your task, then open its card or source package. Use `pytho
 - [papers/004-reference-model-selection/manuscript.md](../papers/004-reference-model-selection/manuscript.md) · document · Choosing record models before symbolic mapping: reference-conditioned recovery controls
 - [papers/005-settlement-survey-gaps/manuscript.md](../papers/005-settlement-survey-gaps/manuscript.md) · document · The Indus excavation gap: what repeat surveys reveal and how to test hidden settlement landsca…
 - [papers/006-sanskrit-key-calibration/manuscript.md](../papers/006-sanskrit-key-calibration/manuscript.md) · document · Testing a published Sanskrit key for the Indus script against its own rearrangements
+- [papers/007-object-reconciliation-register/manuscript.md](../papers/007-object-reconciliation-register/manuscript.md) · document · A source-linked object reconciliation register, coverage audit and post-catalogue census for t…
+- [papers/008-seal-legend-segmentation/manuscript.md](../papers/008-seal-legend-segmentation/manuscript.md) · document · Line-trained segmentation, graphic families, and cross-city circulation of Indus seal legends
+- [papers/009-rebus-interlock-calibration/manuscript.md](../papers/009-rebus-interlock-calibration/manuscript.md) · document · Quantitative chance calibration of Dravidian rebus interlocks in the Indus script
+- [papers/010-harappa-stratigraphic-drift/manuscript.md](../papers/010-harappa-stratigraphic-drift/manuscript.md) · document · Fixed closing formula and drifting legend body in Harappa Mound F seal stratigraphy
 
 ## Other records
 
 - 263 registry attempts: `python tools/kb.py list --kind attempt`, or the generated [registry](experiments/registry.json).
-- 260 retrospectives: `python tools/kb.py list --kind retrospective`; the curated essays are indexed in [retrospectives/README.md](retrospectives/README.md).
+- 261 retrospectives: `python tools/kb.py list --kind retrospective`; the curated essays are indexed in [retrospectives/README.md](retrospectives/README.md).
 - 16 direction memos: `python tools/kb.py list --kind direction`.
 - 9 completed and 0 dropped questions: `python tools/kb.py list --kind question --status done` or `--status dropped`.
