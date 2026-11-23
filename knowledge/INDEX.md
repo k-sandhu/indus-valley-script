@@ -1,8 +1,8 @@
 # Knowledge index
 
-Use this index to find a research programme by date and follow its results to reports, reviews and exact outputs. The [findings guide](findings/README.md) groups individual results by question; the dated summaries below preserve the longer research record. Attempts and findings use the [status vocabulary](registry/VOCABULARY.md).
+Use this index to find a research programme by date and follow its results to reports, reviews and exact outputs. The repository began with the undeciphered Indus script and also houses programmes on settlement survey gaps, town planning and urban rebuilding, post-urban agriculture and cultural continuity, comparative Bronze Age societies, societal persistence theory, and statistical evaluation methods. The [findings guide](findings/README.md) groups individual results by question; the dated summaries below preserve the longer research record. Attempts and findings use the [status vocabulary](registry/VOCABULARY.md).
 
-We distinguish four levels of claim: observed graphics, statistical structure, possible function, and phonetic or lexical interpretation, that is, sounds and words. We have useful evidence for the first two. No authenticated phonetic or lexical interpretation has been established.
+For inscription studies, we distinguish four levels of claim: observed graphics, statistical structure, possible function, and phonetic or lexical interpretation, that is, sounds and words. We have useful evidence for the first two. No authenticated phonetic or lexical interpretation has been established. Archaeological, comparative and theoretical programmes follow the same rule of separating source observations and formal models from historical interpretation.
 
 ## Start here
 

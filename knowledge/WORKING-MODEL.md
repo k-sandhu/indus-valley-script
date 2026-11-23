@@ -1,6 +1,8 @@
-# Working model of the Indus inscriptions
+# Working model of the Indus civilisation and script
 
-Version 2, 20 October 2026. This is our current best account of what the inscriptions are and how they work, stated at full strength. Each part carries a credence, our probability that it holds as stated, and links to the measurements it rests on. We revise the model whenever a test or a new observation moves a credence, and the changelog at the end records each revision; the evidence record in `experiments/` and the registry is unaffected by this file. Claims under active test have their own cards in [conjectures](conjectures/README.md).
+Version 3, 22 November 2026. This is our current best account of the Indus inscriptions and of the cities, institutions and post-urban continuity that produced and outlived them, stated at full strength in two integrated parts. Each part carries a credence, our probability that it holds as stated, and links to the measurements or source audits it rests on. We revise the model whenever a test or a new observation moves a credence, and the changelog at the end records each revision; the evidence record in `experiments/` and the registry is unaffected by this file. Claims under active test have their own cards in [conjectures](conjectures/README.md).
+
+## Part 1: The script and inscribed objects
 
 Signs are named by their numbers in the Wells sign list: 740 is the jar sign and 700 a U-shaped sign, also written W700. A face is one inscribed side of an object. A seal legend is the text cut on a seal; a sealing is clay impressed with a seal, so it carries that seal's text and animal. Object numbers such as M-895 are those of the Corpus of Indus Seals and Inscriptions (CISI). A shot is a single frozen test: we divide the corpus into a discovery half, explored freely, and a confirmation half, read once after the predictions are frozen.
 
@@ -60,7 +62,7 @@ Grouping signs into families by their base improves the prediction of rare signs
 
 A key (sound values for signs) or a meaning map that fits the corpus says little by itself. Random consonant strings pass a dictionary-based readability test 92% to 100% of the time, and keys fitted to one half of the corpus fit the other half equally well under unrelated languages ([published-claim tests](../experiments/2026-10-12-published-claim-tests/README.md)). A correct key stands far above rearrangements of its own values: on synthetic corpora shaped like the Indus texts, by 27 to 72 standard deviations. Any reading this model eventually supports must pass that [calibration](directions/key-calibration-2026-10-12.md) or predict something outside the texts.
 
-## Fish labels and four-unit tablets
+## 9. Fish labels and four-unit tablets
 
 Fish combinations form an ordered designation field within seal legends. Credence 0.45. The frozen order predicts 43 independent text groups, with eight opposing it and two ties. The numeral result depends heavily on two-stroke constructions and does not decide between fixed expressions and standardized quantities. The narrow asterism-coverage model failed its registered rules, leaving credence 0.05. [Fish study](../experiments/2026-10-20-fish-context/REPORT.md), [C-0007](conjectures/C-0007-fish-compound-designations.md), [C-0008](conjectures/C-0008-fish-numerals-asterism-coverage.md).
 
@@ -70,25 +72,57 @@ A securely new example of the exact short-stroke, plain-V and plain-fish constru
 
 The parallel source audit distinguishes forty pre-firing vessel stamps from six clay tags and one jar stopper. Two stamps have individual locus, lot and item links; contents and attachment evidence remain missing. The parallel graphic-variation model loses 0.01584 bits per target when city is added across 306 independent text groups, with a 95% interval from −0.04107 to +0.00610. This result leaves a common written convention compatible with several spoken-language and institutional mechanisms. [Manufacture and deposition](../experiments/2026-10-20-archaeological-setting/REPORT.md), [graphic variation](../experiments/2026-10-20-script-variation/REPORT.md).
 
+## Part 2: Cities, institutions and post-urban continuity
+
+Part 2 integrates our current account of Harappan urban coordination, town layout, and what survived urban decline after 1900 BCE. Unlike Part 1, these claims rest on published architectural plans, radiocarbon determinations, archaeobotanical assemblages, comparative Bronze Age tables and textual audits, and are tested through prospective or withheld-sample designs rather than the inscription corpus split.
+
+## 10. Shared urban rules preserved streets and services across rebuilding
+
+Indus building groups altered their houses under common rules that preserved shared streets, drains, entrances and enclosure lines across rebuilding. Credence 0.55. Across 287 source-qualified assertions for twelve core towns, Banawali's replanning, Kanmer's aligned infill, Farmana's local encroachments and the wall and hydraulic sequences at Dholavira and Lothal show durable shared frameworks alongside local changes ([urban form study](../experiments/2026-10-24-urban-form-and-inscription-ecology/REPORT.md), [C-0017](conjectures/C-0017-shared-routes-across-rebuilding.md)).
+
+Placed beside 21 contemporary societies of 2600–1900 BCE, the Mature Harappan civilisation spread one material culture across 650,000–1,000,000 km² and is the only coded literate society with planned streets, drainage and standard weights that lacks an identified palace or royal tomb ([contemporary civilisations](../experiments/2026-10-20-contemporary-civilisations/README.md)). Two companion institutional claims link urban coordination directly to Part 1's inscribed objects: sealings recorded responsibility at handovers between urban groups in controlled passages and storage settings (Credence 0.35; [C-0018](conjectures/C-0018-sealings-at-urban-handovers.md)), and, as a long shot, Harappa's repeated tablet series recorded obligations or entitlements for work on shared infrastructure (Credence 0.10; [C-0019](conjectures/C-0019-tablets-for-shared-work.md)).
+
+## 11. Plains cities followed true north while regional towns followed local landforms
+
+Builders of the Indus-plain cities laid out major axes within two degrees of true north, whereas walled regional towns in Kutch, Saurashtra and the Ghaggar plain followed local landforms (river channels, ridges or shorelines) turned anticlockwise by 5 to 30 degrees. Credence 0.30. On imagery checked blind by two measurers, Harappa's Mound F (+0.01 ± 0.51°), Mohenjo-daro's house blocks (+0.5 ± 0.4°) and the Lothal dock (−1.9 ± 0.3°) lie close to cardinal, while published plans of Surkotada, Kalibangan, Chanhu-daro, Farmana, Kanmer and Rojdi turn anticlockwise by 8 to 29 degrees ([town axes](../experiments/2026-10-21-town-axes/REPORT.md), [C-0016](conjectures/C-0016-plains-cities-on-true-north.md)).
+
+The 34-town register (1,380 line and system records, 118 dated-part assertions and 620 radiocarbon assertions) shows that individual cities preserve distinct architectural systems and rebuilding episodes, such as Mohenjo-daro's near-cardinal house blocks alongside streets turned roughly 6 to 7.5 degrees clockwise ([town register](../experiments/2026-10-24-q1032-town-axis-register/REPORT.md)). The competing hypothesis that builders aligned town axes on setting stars failed its Pleiades prediction and sits at credence 0.04 ([C-0015](conjectures/C-0015-towns-laid-out-on-star-settings.md)).
+
+## 12. Local farming and craft networks carried practical knowledge past urban decline
+
+Farming households and local specialist networks carried practical knowledge across the decline of Indus urban institutions after 1900 BCE, while practices dependent on long-distance procurement or city-wide coordination faded or reorganized. Credence 0.65. Our [crop continuity audit](../experiments/2026-10-25-crop-continuity/REPORT.md) verifies post-1900 BCE crop dates at Jognakhera (green gram 1880–1691 cal BCE; rice 1517–1428 cal BCE) and recalculates nine phase summaries across five sites from Petrie and Bates (2017), showing crop persistence alongside shifting seasonal balances (winter crops rising from 6.87% to 17.29% at Bahola). Card [C-0020](conjectures/C-0020-practical-knowledge-through-local-networks.md).
+
+This selective survival matches both our [societal persistence models](../experiments/2026-10-11-societal-persistence/REPORT.md), where renewal capacity and shared prerequisites separate locally maintainable operations from fragile ones, and the [Indus living atlas](../experiments/2026-10-26-indus-living-atlas/README.md), whose 18-case town review documents regional persistence through urban reorganization without establishing an uninterrupted Indus-to-present occupation sequence at any single town.
+
+## 13. Regional farming knowledge crossed language boundaries into early Indo-Aryan communities
+
+Early Indo-Aryan-speaking communities acquired regional crop knowledge and agricultural vocabulary through contact with older South Asian farming communities, contributing to the agricultural repertoire reflected in Vedic texts. Credence 0.50. The mechanism is selective inheritance combined with intellectual recombination developed in our [early Indian continuity study](../experiments/2026-10-11-early-indian-continuity/REPORT.md) and [continuity theories](../experiments/2026-10-25-continuity-theories/REPORT.md), leaving the donor language open and distinct from the language of the Indus script. Card [C-0021](conjectures/C-0021-farming-knowledge-across-language-contact.md).
+
+### 13a. A Vedic farming rite retains a regional operation from the Indus period
+
+As a long-shot extension of section 13, a diagnostic agricultural operation preserved in a Vedic farming rite descends through regional farming communities from an Indus-period practice, placed inside a changed ritual and explanatory frame. Credence 0.20. The 11 October audit found zero verified diagnostic joins across archaeological and textual domains; testing requires freezing an unusual linked operation bundle and tracking dated intermediate contexts against Indo-Iranian controls. Card [C-0022](conjectures/C-0022-vedic-rite-retains-regional-operation.md).
+
 ## What would change the model most
 
-- Complete, well-described data, now our first priority: object identities joined across catalogues, every face photographed, dimensions, findspots and dates ([DATA.md](DATA.md)). Every section above is limited because only 28.8% of objects have all three dimensions and 55.8% have a period label.
+- Complete, well-described data, now our first priority: object identities joined across catalogues, every face photographed, dimensions, findspots and dates ([DATA.md](DATA.md)). Every section in Part 1 is limited because only 28.8% of objects have all three dimensions and 55.8% have a period label.
 - A specialist reading of the animal on M-895 and of the trunk-and-tusk element on the Lothal sealings (section 4).
 - Photographs of the seals ending in 820 that we do not hold (M-1701, M-1761 and the Dholavira seal), and seals ending in 820 in material none of these analyses has seen, tested with a rule based on ranks or on leaving out one seal at a time (section 2a).
-- One excavated deposit with both seals and sealings, where the same issuer should appear on both (sections 2 and 4).
+- One excavated deposit with both seals and sealings, or primary-use sealing and tablet contexts in independently coded urban passages and work areas (sections 2, 4 and 10).
 - The expanded concordance planned by the Iravatham Mahadevan chair at the Roja Muthiah Research Library, which would supply texts none of these analyses has seen.
+- True-north surveys of named, phase-linked walls at Mohenjo-daro, Surkotada, Kalibangan, Kanmer, Chanhu-daro, Farmana and Lothal, tied to construction-phase radiocarbon samples (sections 10 and 11).
+- Sample-level, directly dated archaeobotanical sequences across local post-urban transitions (starting with the Jognakhera supplement and layer-to-phase mapping), paired with blind etymological coding of agricultural vocabulary against Indo-Iranian controls (sections 12 and 13).
 
 ## Changelog
 
 - 12 October 2026, version 0: written from the October 6–12 results before the two conjecture shots reported.
 - 13 October 2026, version 1: Shot B's reading failed its frozen test (section 2 lowered to 0.45); Shot A's closing-sign result added as section 2a at 0.15 after review; the plate check moved section 4 to 0.6; data completeness added at the head of the list of what would change the model. The reversed-locality pattern seen after Shot B's outcome is left out: it reverses on the other half.
 - 20 October 2026, version 2: added the ordered fish field, failed narrow asterism test, standard four-unit Fish conjecture and source-qualified archaeological and regional comparisons. Frozen evaluations retain historical-exposure and author-verification status.
-
-- 2026-10-27: added the list of conjectures outside the integrated model.
+- 27 October 2026: added the list of conjectures outside the integrated model.
+- 22 November 2026, version 3: expanded the working model into two integrated parts (Part 1: The script and inscribed objects; Part 2: Cities, institutions and post-urban continuity), bringing open urbanism, town-layout and continuity claims (C-0016 to C-0022) into sections 10–13 while keeping dead, weakened and rival conjectures listed below.
 
 ## Conjectures outside the integrated model
 
-These cards hold claims outside the integrated account above. Each line gives the card's current status and credence; the card preserves its tests and revision history.
+These cards hold dead, weakened or rival claims outside the affirmative account above. Each line gives the card's current status and credence; the card preserves its tests and revision history.
 
 - [C-0002](conjectures/C-0002-working-reading.md) Indus legends use seven classes arranged as household, name and office. Status dead; credence 0.02.
 - [C-0006](conjectures/C-0006-closing-stock-fixed-from-lowest-levels.md) Mohenjo-daro seal legends kept their closing stock while their opening signs, variants and length drifted through the excavated sequence. Status dead; credence 0.02.
@@ -97,10 +131,3 @@ These cards hold claims outside the integrated account above. Each line gives th
 - [C-0013](conjectures/C-0013-fish-runs-are-birth-star-names.md) Fish runs in a seal legend's name field give the holder's birth-star name from a closed class of about 30 to 40 forms. Status open; credence 0.03.
 - [C-0014](conjectures/C-0014-parpola-interlocks-measure-the-lexicon.md) Parpola's interlocks arise from Tamil compound vocabulary and the choice of sign sequences examined. Status open; credence 0.55.
 - [C-0015](conjectures/C-0015-towns-laid-out-on-star-settings.md) Harappan builders laid out town axes on a setting star, so deviation records layout date. Status weakened; credence 0.04.
-- [C-0016](conjectures/C-0016-plains-cities-on-true-north.md) The plains cities follow true north, while regional towns follow local landforms at deviations of 5 to 30 degrees anticlockwise. Status open; credence 0.30.
-- [C-0017](conjectures/C-0017-shared-routes-across-rebuilding.md) Common rules preserved shared routes and services while neighbouring building groups changed their houses. Status open; credence 0.55.
-- [C-0018](conjectures/C-0018-sealings-at-urban-handovers.md) Sealings recorded responsibility at handovers between urban groups. Status open; credence 0.35.
-- [C-0019](conjectures/C-0019-tablets-for-shared-work.md) Harappa tablet series recorded obligations or entitlements for work on shared infrastructure. Status open; credence 0.10.
-- [C-0020](conjectures/C-0020-practical-knowledge-through-local-networks.md) Local farming households and specialist networks carried practical knowledge beyond Indus urban institutions. Status open; credence 0.65.
-- [C-0021](conjectures/C-0021-farming-knowledge-across-language-contact.md) Language contact carried regional farming knowledge and vocabulary into early Indo-Aryan-speaking communities. Status open; credence 0.50.
-- [C-0022](conjectures/C-0022-vedic-rite-retains-regional-operation.md) A diagnostic operation in a Vedic farming rite descends through regional communities from an Indus-period practice. Status open; credence 0.20.

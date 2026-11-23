@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-22",
+  "updated": "2026-11-23",
   "description": "Every data source the Indus research project holds or knows of, with version, location, size, identifiers, rights and acquisition route. Human-readable account: knowledge/DATA.md. Tool: tools/fetch_data.py.",
   "status_values": {
     "held": "A local copy with a recorded hash exists and matches the named edition.",
@@ -28,10 +28,11 @@
     "rebuild": "Regenerate from tracked code and other manifest sources."
   },
   "counts": {
-    "held": 61,
-    "project-output": 36,
+    "total": 158,
+    "held": 63,
     "partly-held": 17,
-    "not-held": 32
+    "project-output": 44,
+    "not-held": 34
   },
   "sources": [
     {
@@ -5852,6 +5853,520 @@
         "data/raw/2026-10-27-readable-external-records/web-captures.json": "d83afffff5ccda65b3261e659fd7d8b15029f56aa253ddb34e5351722c8012d9",
         "data/raw/2026-10-27-readable-external-records/capture-manifest.json": "1b1aa7f96128035a0c32a2833531748864ea51b1ea000750a7f3d5565024ac95"
       }
+    },
+    {
+      "id": "rebus-repaired-2026-11-22",
+      "title": "Repaired exact-frequency Tamil rebus rerun and Monier-Williams Sanskrit cross-language control (38 blind pairs)",
+      "kind": "project-output",
+      "status": "project-output",
+      "location": "tracked",
+      "local_paths": [
+        "experiments/2026-11-22-rebus-repaired/verification-v1.json"
+      ],
+      "version": {
+        "date": "2026-11-22"
+      },
+      "size": {
+        "blind_pairs": 38,
+        "published_pairs": 12,
+        "monier_williams_compounds": 101164
+      },
+      "rights": {
+        "status": "own-work",
+        "licence": "CC0-1.0 / Unlicense",
+        "detail": "Project code, exact-frequency control outputs and verification JSON tracked; source lexicons remain local."
+      },
+      "fetch": {
+        "method": "rebuild",
+        "steps": [
+          "See experiments/2026-11-22-rebus-repaired/REPORT.md."
+        ]
+      },
+      "evidence": [
+        "experiments/2026-11-22-rebus-repaired/REPORT.md",
+        "experiments/2026-11-22-rebus-repaired/verification-v1.json"
+      ],
+      "questions": [
+        "Q-0039"
+      ],
+      "hashes": {
+        "experiments/2026-11-22-rebus-repaired/verification-v1.json": "35d21e527a03926058f6710f1add7e6d15e94a4a0c60c84e97f68a496ecad01a"
+      }
+    },
+    {
+      "id": "site-survey-gazetteer-2026-11-22",
+      "title": "Reconciled Indus site and survey-effort gazetteer v1 (144 entities, 443 aliases, 271 coordinate assertions, 19 survey campaigns)",
+      "kind": "site-register",
+      "status": "project-output",
+      "location": "tracked",
+      "local_paths": [
+        "experiments/2026-11-22-site-survey-gazetteer/gazetteer-v1.json",
+        "experiments/2026-11-22-site-survey-gazetteer/gazetteer-v1.csv",
+        "experiments/2026-11-22-site-survey-gazetteer/aliases-v1.csv",
+        "experiments/2026-11-22-site-survey-gazetteer/survey-effort-v1.json",
+        "data/raw/2026-11-22-site-survey-gazetteer/raw-concordance-extract-v1.json"
+      ],
+      "version": {
+        "date": "2026-11-22"
+      },
+      "size": {
+        "site_entities": 144,
+        "located_entities": 133,
+        "alias_rows": 443,
+        "coordinate_assertions": 271,
+        "coordinate_conflicts": 24,
+        "survey_campaigns": 19
+      },
+      "rights": {
+        "status": "mixed-assets",
+        "licence": "CC0-1.0 / Unlicense",
+        "detail": "Tracked gazetteer tables and code CC0/Unlicense; local raw-concordance-extract-v1.json remains local-only."
+      },
+      "fetch": {
+        "method": "rebuild",
+        "steps": [
+          "See experiments/2026-11-22-site-survey-gazetteer/REPORT.md."
+        ]
+      },
+      "evidence": [
+        "experiments/2026-11-22-site-survey-gazetteer/REPORT.md",
+        "experiments/2026-11-22-site-survey-gazetteer/DATA-UPDATE.md",
+        "experiments/2026-11-22-site-survey-gazetteer/verification-v1.json"
+      ],
+      "questions": [],
+      "hashes": {
+        "experiments/2026-11-22-site-survey-gazetteer/gazetteer-v1.json": "f7a85856ad767a698fe188c6652875218c6952aecf0dba58ff1b59e9bbd3a65d",
+        "experiments/2026-11-22-site-survey-gazetteer/gazetteer-v1.csv": "103bfbf72b096755668061411af18092092c845690c23ecf1737362a003d51cb",
+        "experiments/2026-11-22-site-survey-gazetteer/aliases-v1.csv": "4dfa0ca5722963ba98b0ff7c04887f75bc84146ad0d25bfd97730f51eae7ced8",
+        "experiments/2026-11-22-site-survey-gazetteer/survey-effort-v1.json": "6bd1f6fde51ef2b4e176ee5ca35427023a98c8abded9debe4c5bb45fa291d3d1",
+        "data/raw/2026-11-22-site-survey-gazetteer/raw-concordance-extract-v1.json": "95e8b195555b5ce57cc1d068616d5e3cd62e0bac008130e6c18769bdad4fed0f"
+      }
+    },
+    {
+      "id": "geospatial-prospection-dem-2026-11-22",
+      "title": "Copernicus DEM GLO-30 1-degree tiles for northern settlement prospection regions P01-P09 (10 newly downloaded tiles)",
+      "kind": "elevation-model",
+      "status": "held",
+      "location": "local-only",
+      "local_paths": [
+        "data/raw/2026-11-22-geospatial-prospection-pilot/dem/30m/"
+      ],
+      "version": {
+        "date": "2026-11-22",
+        "product": "Copernicus DEM GLO-30 COG"
+      },
+      "size": {
+        "tiles": 10,
+        "bytes": 421453464
+      },
+      "rights": {
+        "status": "explicit-license",
+        "licence": "Copernicus DEM licence",
+        "detail": "(c) DLR e.V. 2010-2014 and (c) Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the EU and ESA; raw GeoTIFFs local-only on D:."
+      },
+      "fetch": {
+        "method": "manual",
+        "steps": [
+          "Download the 10 Copernicus DEM GLO-30 tiles from https://copernicus-dem-30m.s3.amazonaws.com/ using experiments/2026-11-22-geospatial-prospection-pilot/outputs/dem_manifest.json."
+        ]
+      },
+      "evidence": [
+        "experiments/2026-11-22-geospatial-prospection-pilot/DATA-UPDATE.md",
+        "experiments/2026-11-22-geospatial-prospection-pilot/outputs/dem_manifest.json"
+      ],
+      "questions": [],
+      "hashes": {
+        "data/raw/2026-11-22-geospatial-prospection-pilot/dem/30m/Copernicus_DSM_COG_10_N27_00_E070_00_DEM.tif": "e94448c064139ba3c353917bd21cdddfa19c55abf843e2d763865a32a021090d",
+        "data/raw/2026-11-22-geospatial-prospection-pilot/dem/30m/Copernicus_DSM_COG_10_N27_00_E071_00_DEM.tif": "749396b83f4315cadad1a9bd0e383883e9fb626ab1038a1475ee56f0ec78e388",
+        "data/raw/2026-11-22-geospatial-prospection-pilot/dem/30m/Copernicus_DSM_COG_10_N28_00_E070_00_DEM.tif": "488b8f785306bd9298e2f41c9217ccc3cdc767b3d70e0a1d2704b260bfefa5c8",
+        "data/raw/2026-11-22-geospatial-prospection-pilot/dem/30m/Copernicus_DSM_COG_10_N28_00_E071_00_DEM.tif": "2c5c777e7aac8421174e440f22c35a5ce6c2d4861ee59409421dbf82bc57bf92",
+        "data/raw/2026-11-22-geospatial-prospection-pilot/dem/30m/Copernicus_DSM_COG_10_N29_00_E071_00_DEM.tif": "faaf8dfbaf64e18fba361ba829cca03f1ea860cfec01ac377a056596e5212738",
+        "data/raw/2026-11-22-geospatial-prospection-pilot/dem/30m/Copernicus_DSM_COG_10_N29_00_E072_00_DEM.tif": "0116c3b57bebff0dc645361e565a1efb644653c5a4801dae2b7a07d5cc284243",
+        "data/raw/2026-11-22-geospatial-prospection-pilot/dem/30m/Copernicus_DSM_COG_10_N30_00_E071_00_DEM.tif": "b00b507dbd56660860e7453427e1e02ef9db318df33b51f9767b24d599932ccc",
+        "data/raw/2026-11-22-geospatial-prospection-pilot/dem/30m/Copernicus_DSM_COG_10_N30_00_E074_00_DEM.tif": "199abc82d71bbeba35b2bfa6964f25d913754e40810108ca596188eb47b97ce6",
+        "data/raw/2026-11-22-geospatial-prospection-pilot/dem/30m/Copernicus_DSM_COG_10_N30_00_E075_00_DEM.tif": "4ca389a4af29554e8ea4afaccb6dc2b0f4ae177994a45adab85f2e9229126a5e",
+        "data/raw/2026-11-22-geospatial-prospection-pilot/dem/30m/Copernicus_DSM_COG_10_N30_00_E076_00_DEM.tif": "1f682577320595c6942e045dc4b46e697cbf49874236bc0c62da744f0b9b6142"
+      }
+    },
+    {
+      "id": "geospatial-prospection-pilot-2026-11-22",
+      "title": "Open-data settlement prospection pilot and landform stratification frames for P01-P09 (30,041 cells, 24-block pilots, 72-unit blind packet)",
+      "kind": "project-output",
+      "status": "project-output",
+      "location": "tracked",
+      "local_paths": [
+        "experiments/2026-11-22-geospatial-prospection-pilot/outputs/dem_manifest.json",
+        "experiments/2026-11-22-geospatial-prospection-pilot/outputs/verification.json"
+      ],
+      "version": {
+        "date": "2026-11-22"
+      },
+      "size": {
+        "stratified_cells": 30041,
+        "pilot_blocks_per_frame": 24,
+        "blind_units": 72
+      },
+      "rights": {
+        "status": "own-work",
+        "licence": "CC0-1.0 / Unlicense",
+        "detail": "Derived stratification tables, blind GeoJSON packet and verification code tracked; raw DEM and WorldCover rasters local-only."
+      },
+      "fetch": {
+        "method": "rebuild",
+        "steps": [
+          "See experiments/2026-11-22-geospatial-prospection-pilot/REPORT.md."
+        ]
+      },
+      "evidence": [
+        "experiments/2026-11-22-geospatial-prospection-pilot/REPORT.md",
+        "experiments/2026-11-22-geospatial-prospection-pilot/DATA-UPDATE.md",
+        "experiments/2026-11-22-geospatial-prospection-pilot/outputs/verification.json"
+      ],
+      "questions": [],
+      "hashes": {
+        "experiments/2026-11-22-geospatial-prospection-pilot/outputs/dem_manifest.json": "07e06ff35b1b1d7649ec2eb3e005f4e1a87cb3516233ca7a741b2e0dd1a33969",
+        "experiments/2026-11-22-geospatial-prospection-pilot/outputs/verification.json": "675fd0198a77b804a5afc840c9c04f93ea23884b427a824f7bf553effee770e1"
+      }
+    },
+    {
+      "id": "restoration-leak-free-2026-11-22",
+      "title": "Full-corpus alias-clean (Split 2) and near-variant-clean (Split 3) known-slot restoration refit (8,009 queries, 6 models)",
+      "kind": "project-output",
+      "status": "project-output",
+      "location": "local-only",
+      "local_paths": [
+        "experiments/2026-11-22-restoration-leak-free/results-v1/summary.json",
+        "experiments/2026-11-22-restoration-leak-free/verification-v1.json",
+        "data/raw/2026-11-22-restoration-leak-free/"
+      ],
+      "version": {
+        "date": "2026-11-22"
+      },
+      "size": {
+        "queries": 8009,
+        "splits": 3,
+        "models": 6,
+        "local_prediction_files": 18
+      },
+      "rights": {
+        "status": "mixed-assets",
+        "licence": "CC0-1.0 / Unlicense",
+        "detail": "Aggregate summary, code and verification JSON tracked; per-query fold and prediction JSONL files remain local-only under Lipi redistribution policy."
+      },
+      "fetch": {
+        "method": "rebuild",
+        "steps": [
+          "See experiments/2026-11-22-restoration-leak-free/REPORT.md."
+        ]
+      },
+      "evidence": [
+        "experiments/2026-11-22-restoration-leak-free/REPORT.md",
+        "experiments/2026-11-22-restoration-leak-free/DATA-UPDATE.md",
+        "experiments/2026-11-22-restoration-leak-free/verification-v1.json"
+      ],
+      "questions": [
+        "Q-0010"
+      ],
+      "hashes": {
+        "experiments/2026-11-22-restoration-leak-free/results-v1/summary.json": "d97eaa3af73d60a1c952db517d9f51bf24b125e13f57a84e90e7cbc96954b9ee",
+        "experiments/2026-11-22-restoration-leak-free/verification-v1.json": "3976285fa4d9791e135cd2c4de41eeb583fb302a6401ff59cd13c524ed52f35a"
+      }
+    },
+    {
+      "id": "external-contact-register-2026-11-22",
+      "title": "Edition-linked external contact records register v1 (196 records: Meluhha cuneiform, Ur III Susa, Gulf/Indus-style seals, Early Dilmun, controls)",
+      "kind": "project-register",
+      "status": "project-output",
+      "location": "tracked",
+      "local_paths": [
+        "experiments/2026-11-22-external-contact-register/register-v1.json",
+        "experiments/2026-11-22-external-contact-register/verification-v1.json",
+        "data/raw/2026-11-22-external-contact-register/atf-excerpts-local-v1.jsonl"
+      ],
+      "version": {
+        "date": "2026-11-22"
+      },
+      "size": {
+        "records": 196,
+        "contemporary_records": 193,
+        "later_controls": 3,
+        "verified_cdli_p_numbers": 163
+      },
+      "rights": {
+        "status": "mixed-assets",
+        "licence": "CC0-1.0 / Unlicense",
+        "detail": "Tracked edition-linked register and verification JSON CC0/Unlicense; bulk local ATF excerpts remain local-only."
+      },
+      "fetch": {
+        "method": "rebuild",
+        "steps": [
+          "See experiments/2026-11-22-external-contact-register/REPORT.md."
+        ]
+      },
+      "evidence": [
+        "experiments/2026-11-22-external-contact-register/REPORT.md",
+        "experiments/2026-11-22-external-contact-register/DATA-UPDATE.md",
+        "experiments/2026-11-22-external-contact-register/verification-v1.json"
+      ],
+      "questions": [],
+      "hashes": {
+        "experiments/2026-11-22-external-contact-register/register-v1.json": "8f2673f7888f589752766b99a490512763c5b2f48f19622332c35e6db188f2fb",
+        "experiments/2026-11-22-external-contact-register/verification-v1.json": "383c709c70aaff449acd281290ab2056dba508f7cd3846d1d1d5659bdeac4694",
+        "data/raw/2026-11-22-external-contact-register/atf-excerpts-local-v1.jsonl": "da1216946d577b5cfadcfb27ca5628ad7ae10434a30331ea09e6e924c1dabb61"
+      }
+    },
+    {
+      "id": "living-towns-inputs-2026-11-23",
+      "title": "Living-town GIS inputs: ESA WorldCover 2021 clips (N27E066, N30E075), OSM Overpass extracts, and local-reference Esri mosaics",
+      "kind": "satellite-imagery",
+      "status": "held",
+      "location": "local-only",
+      "local_paths": [
+        "data/raw/2026-11-23-living-towns-footprints/"
+      ],
+      "version": {
+        "date": "2026-11-23"
+      },
+      "size": {
+        "worldcover_clips": 2,
+        "osm_extracts": 3,
+        "esri_mosaics": 5
+      },
+      "rights": {
+        "status": "mixed-assets",
+        "licence": "CC BY 4.0 / ODbL 1.0 / Esri local reference",
+        "detail": "ESA WorldCover 2021 v200 CC BY 4.0; OSM extracts ODbL 1.0; Esri World Imagery mosaics local visual reference only and excluded from Git."
+      },
+      "fetch": {
+        "method": "rebuild",
+        "steps": [
+          "Run experiments/2026-11-23-living-towns-footprints/code/acquire_inputs.py."
+        ]
+      },
+      "evidence": [
+        "experiments/2026-11-23-living-towns-footprints/DATA-UPDATE.md"
+      ],
+      "questions": [],
+      "hashes": {
+        "data/raw/2026-11-23-living-towns-footprints/worldcover/ESA_WorldCover_2021_lakhanjo_daro_N27E066.tif": "dbabc4d0168cdb1fdc740911852ea5f49f05fa6137b0833fc8c95840e01608a7",
+        "data/raw/2026-11-23-living-towns-footprints/worldcover/ESA_WorldCover_2021_rupnagar_N30E075.tif": "fd745fdeed0e0afed677c86b04b845114b333bf74caf16f98289f211927cdd8f",
+        "data/raw/2026-11-23-living-towns-footprints/osm/osm_harappa.json": "c2e13dfca27cc6d4d608c314821d3339bdb21c749a8a6926b380155eeb8c9fbe",
+        "data/raw/2026-11-23-living-towns-footprints/osm/osm_lakhanjo_daro.json": "bc27d72303277139937a616a6bd750058e43cb28c0d54be8d169069f2168ff9d",
+        "data/raw/2026-11-23-living-towns-footprints/osm/osm_rupnagar.json": "7458dee5f87e5503e6c0dcf17b8d3f3cfceb42af53c7f59d928b28ef36665beb",
+        "data/raw/2026-11-23-living-towns-footprints/mosaics/lakhanjo_daro_z17_x90598-90606_y55019-55026.png": "31a0f13508b18bd4c709bb12613afdda3f52e8c7350d5c9cd285dd19cb7a3d26",
+        "data/raw/2026-11-23-living-towns-footprints/mosaics/lakhanjo_daro_z18_x181199-181210_y110040-110050.png": "1a96a67f2ceb6a091ce20f15ac5aec061a25eacc2ed243fcbc5ecad8edaa947c",
+        "data/raw/2026-11-23-living-towns-footprints/mosaics/rupnagar_z17_x93396-93404_y53665-53672.png": "12d46b30180dfa02d1590967dc05384f198c79328f983b4122086c407f350323",
+        "data/raw/2026-11-23-living-towns-footprints/mosaics/rupnagar_z18_x186796-186805_y107332-107342.png": "ef710f93c0ab4b09e2343d026c62eea1aeda7ba0cafd576fec585a78d0889720",
+        "data/raw/2026-11-23-living-towns-footprints/mosaics/rupnagar_mound_z18_x186791-186800_y107329-107338.png": "8583e82d433b8410be26f29585c0e1aa50b1abcf6f77749690e8f0496042eeda"
+      }
+    },
+    {
+      "id": "living-towns-footprints-2026-11-23",
+      "title": "Georeferenced four-layer living-town urban footprints and survey windows for Harappa, Lakhanjo-Daro and Rupnagar (91 polygons, 28 windows)",
+      "kind": "project-output",
+      "status": "project-output",
+      "location": "tracked",
+      "local_paths": [
+        "experiments/2026-11-23-living-towns-footprints/harappa-windows-v1.geojson",
+        "experiments/2026-11-23-living-towns-footprints/lakhanjo-daro-windows-v1.geojson",
+        "experiments/2026-11-23-living-towns-footprints/rupnagar-windows-v1.geojson",
+        "experiments/2026-11-23-living-towns-footprints/windows-v1.csv",
+        "experiments/2026-11-23-living-towns-footprints/summary-v1.json"
+      ],
+      "version": {
+        "date": "2026-11-23"
+      },
+      "size": {
+        "sites": 3,
+        "polygons": 91,
+        "windows": 28,
+        "layer1_ha": 139.09
+      },
+      "rights": {
+        "status": "own-work",
+        "licence": "CC0-1.0 / Unlicense",
+        "detail": "GeoJSON footprints, window tables, code and verification JSON tracked; Esri-overlaid PNGs under figures/ stay local-only."
+      },
+      "fetch": {
+        "method": "rebuild",
+        "steps": [
+          "See experiments/2026-11-23-living-towns-footprints/REPORT.md."
+        ]
+      },
+      "evidence": [
+        "experiments/2026-11-23-living-towns-footprints/REPORT.md",
+        "experiments/2026-11-23-living-towns-footprints/DATA-UPDATE.md",
+        "experiments/2026-11-23-living-towns-footprints/verification-v1.json"
+      ],
+      "questions": [],
+      "hashes": {
+        "experiments/2026-11-23-living-towns-footprints/harappa-windows-v1.geojson": "69e025c888e7107ecc705bb828907218b4231ca17d4aaf1a2dce8d18d4e147c4",
+        "experiments/2026-11-23-living-towns-footprints/lakhanjo-daro-windows-v1.geojson": "af0975c044b3ae1ede14821d36dd1c9b2988ca187544ce2825dce691c7a55edc",
+        "experiments/2026-11-23-living-towns-footprints/rupnagar-windows-v1.geojson": "c52b96419ce965ce765e9c9769252392cbb1d3538c31999b8652cd77067dfa59",
+        "experiments/2026-11-23-living-towns-footprints/windows-v1.csv": "95f1a51ecef417f542cdfe88ee2feb7b5a7425b43ec1adde17dca423d8019a5b",
+        "experiments/2026-11-23-living-towns-footprints/summary-v1.json": "0f2866afaeff153c1119cb517b0fbc56931aca57c9c64420a83a7fd255562277"
+      }
+    },
+    {
+      "id": "fresh-cohort-certification-2026-11-23",
+      "title": "Blind fresh post-catalogue cohort certification v1 (503 rows; 8 certified absent sealed objects; P1-P4 power analysis)",
+      "kind": "project-output",
+      "status": "project-output",
+      "location": "tracked",
+      "local_paths": [
+        "experiments/2026-11-23-fresh-cohort-certification/fresh-cohort-v1.csv",
+        "experiments/2026-11-23-fresh-cohort-certification/summary-v1.json",
+        "experiments/2026-11-23-fresh-cohort-certification/verification-v1.json"
+      ],
+      "version": {
+        "date": "2026-11-23"
+      },
+      "size": {
+        "rows_audited": 503,
+        "certified_absent_sealed": 8,
+        "certified_seals": 3,
+        "conditionally_absent": 88,
+        "blocked_by_alias_ambiguity": 230,
+        "already_present_or_exposed": 177
+      },
+      "rights": {
+        "status": "own-work",
+        "licence": "CC0-1.0 / Unlicense",
+        "detail": "Blind certification tables, code, power analysis and unsent ICIT/HARP request drafts tracked; local PDF access log on D:."
+      },
+      "fetch": {
+        "method": "rebuild",
+        "steps": [
+          "See experiments/2026-11-23-fresh-cohort-certification/REPORT.md."
+        ]
+      },
+      "evidence": [
+        "experiments/2026-11-23-fresh-cohort-certification/REPORT.md",
+        "experiments/2026-11-23-fresh-cohort-certification/DATA-UPDATE.md",
+        "experiments/2026-11-23-fresh-cohort-certification/verification-v1.json"
+      ],
+      "questions": [
+        "Q-1011",
+        "Q-1014",
+        "Q-1017",
+        "Q-1026"
+      ],
+      "hashes": {
+        "experiments/2026-11-23-fresh-cohort-certification/fresh-cohort-v1.csv": "fe550618cae69e4a169946132cf05ce59293526691657923b7c5540bdc7456fb",
+        "experiments/2026-11-23-fresh-cohort-certification/summary-v1.json": "649272c7e3b511fe6d6219dc9d0e06b6917efb3cf7bbd5695253e3d9c0d42716",
+        "experiments/2026-11-23-fresh-cohort-certification/verification-v1.json": "19110340f2df769f01524e322fa61b63cdb0595ff50c5977b80b5b0a6af610c8"
+      }
+    },
+    {
+      "id": "physical-anchors-lothal-2026-11-23",
+      "title": "Physical numerical anchor plate audits (H-904, M-1383) and Lothal 93-sealing attachment geometry and frozen LOCO-CV test",
+      "kind": "project-output",
+      "status": "project-output",
+      "location": "tracked",
+      "local_paths": [
+        "experiments/2026-11-23-physical-anchors-lothal/anchors-audit-v1.json",
+        "experiments/2026-11-23-physical-anchors-lothal/lothal-attachments-v1.csv",
+        "experiments/2026-11-23-physical-anchors-lothal/lothal-test-v1.json",
+        "experiments/2026-11-23-physical-anchors-lothal/verification-v1.json"
+      ],
+      "version": {
+        "date": "2026-11-23"
+      },
+      "size": {
+        "anchors_audited": 2,
+        "lothal_sealings_coded": 93,
+        "joined_diagnostic_sealings": 55,
+        "die_components": 36
+      },
+      "rights": {
+        "status": "own-work",
+        "licence": "CC0-1.0 / Unlicense",
+        "detail": "Tracked audit tables, statistical outputs and code CC0/Unlicense; local primary plate renders kept under data/raw/2026-11-23-physical-anchors-lothal/."
+      },
+      "fetch": {
+        "method": "rebuild",
+        "steps": [
+          "See experiments/2026-11-23-physical-anchors-lothal/REPORT.md."
+        ]
+      },
+      "evidence": [
+        "experiments/2026-11-23-physical-anchors-lothal/REPORT.md",
+        "experiments/2026-11-23-physical-anchors-lothal/DATA-UPDATE.md",
+        "experiments/2026-11-23-physical-anchors-lothal/verification-v1.json"
+      ],
+      "questions": [
+        "Q-0011",
+        "Q-0012",
+        "Q-0019"
+      ],
+      "hashes": {
+        "experiments/2026-11-23-physical-anchors-lothal/anchors-audit-v1.json": "11b8baabbfc578652ca1c2fb4107e0bd869eac88a56394deb24673b94ccd7a97",
+        "experiments/2026-11-23-physical-anchors-lothal/lothal-attachments-v1.csv": "09c928fdcfef23cd24793ea6d054f9ef5e7d71c402df88f4af50626422ecd335",
+        "experiments/2026-11-23-physical-anchors-lothal/lothal-test-v1.json": "0319373d467856a9a1bbc89004e71a4851319d8ce371f14aba67ec2321694216",
+        "experiments/2026-11-23-physical-anchors-lothal/verification-v1.json": "6fbcbc195acd9408013b2833e1184bd6ddebe8c0eddae0a644b22f19fdbf2c99"
+      }
+    },
+    {
+      "id": "halim-vidale-1984-interim-reports-1",
+      "title": "Halim & Vidale 1984, Kilns, Bangles and Coated Vessels: Ceramic Production in Closed Containers at Moenjodaro (Interim Reports Vol. 1, pp. 63-97)",
+      "kind": "excavation-report",
+      "status": "not-held",
+      "location": "external",
+      "local_paths": [],
+      "version": {
+        "year": 1984,
+        "pages": "63-97"
+      },
+      "size": {},
+      "rights": {
+        "status": "rights-unverified",
+        "licence": null,
+        "detail": "Print/library publication (Jansen & Urban eds., Aachen 1984); needed to verify M-1383 stoneware-bangle fragment and refit counts (Q-0012)."
+      },
+      "fetch": {
+        "method": "manual",
+        "steps": [
+          "Locate via library scan or interlibrary loan (Aachen, RWTH / IsMEO Interim Reports Vol. 1, 1984, pp. 63-97)."
+        ]
+      },
+      "evidence": [
+        "experiments/2026-11-23-physical-anchors-lothal/DATA-UPDATE.md"
+      ],
+      "questions": [
+        "Q-0012"
+      ],
+      "hashes": {}
+    },
+    {
+      "id": "vergessene-staedte-am-indus-1987",
+      "title": "Vergessene Staedte am Indus: Fruehe Kulturen in Pakistan vom 8.-2. Jahrtausend v. Chr. (Mainz 1987, p. 272, C 77)",
+      "kind": "exhibition-catalogue",
+      "status": "not-held",
+      "location": "external",
+      "local_paths": [],
+      "version": {
+        "year": 1987,
+        "locator": "p. 272, C 77"
+      },
+      "size": {},
+      "rights": {
+        "status": "rights-unverified",
+        "licence": null,
+        "detail": "Print exhibition catalogue cited by CISI 2 p. 439 as photo source for M-1383 A (1); needed for Q-0012."
+      },
+      "fetch": {
+        "method": "manual",
+        "steps": [
+          "Inspect Mainz 1987 catalogue p. 272, item C 77 via library holdings."
+        ]
+      },
+      "evidence": [
+        "experiments/2026-11-23-physical-anchors-lothal/DATA-UPDATE.md"
+      ],
+      "questions": [
+        "Q-0012"
+      ],
+      "hashes": {}
     }
   ]
 }

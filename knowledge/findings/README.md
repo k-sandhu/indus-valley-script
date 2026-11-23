@@ -1,6 +1,6 @@
 # Findings
 
-A finding card records a result, its exact evidence, the population it covers and its status class. Start with a theme, then follow a card to the versioned output or primary-page source check. Counts and conclusions keep the date and scope of the original result.
+A finding card records a result, its exact evidence, the population it covers and its status class. Start with a theme, then follow a card to the versioned output or primary-page source check. Counts and conclusions keep the date and scope of the original result. Studies outside the script corpus, including settlement prospection, urban form, contemporary Bronze Age societies, crop continuity, early Indian cultural transmission, weight metrology, 3D city reconstructions and societal persistence theory, appear under Archaeological contexts of objects and towns, in the uncarded package list at the bottom of this page, and in the [knowledge index](../INDEX.md).
 
 The [status vocabulary](../registry/VOCABULARY.md) distinguishes verified computations, evaluations frozen before their reported outcome, exploratory refinements, failed tests, source reviews and synthetic controls; proposed, superseded and record classes preserve plans and research history. Verification tiers describe contributor review separately. The project's interpretations live in the [conjectures](../conjectures/README.md) and [working model](../WORKING-MODEL.md).
 

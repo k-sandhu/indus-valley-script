@@ -5,17 +5,17 @@ Use one area per item and one status class per attempt or finding. Preserve an a
 ## Areas
 
 - `corpus`: Transcriptions, sign inventories, sampling frames and the representation of inscribed records.
-- `data`: Acquisition, metadata, joins and completeness of object, surface, image and source records.
+- `data`: Acquisition, metadata, joins and completeness of object, surface, image, settlement, urban, archaeobotanical and comparative source records.
 - `structure`: Order, recurrence, boundaries, prediction and distributions of signs or units.
 - `seals`: Seal legends, sealings, stamps, motifs and the physical use of seals.
 - `tablets`: Inscribed tablets, their complete faces, production series and object relationships.
 - `numerals`: Proposed numerical notation, quantities, metrology and arithmetic constraints.
 - `images`: Photographs, drawings, graphic features, recognition and visual annotation.
 - `meaning`: Semantic and functional hypotheses and their independent tests.
-- `language`: Phonetic keys, lexical comparisons and proposed linguistic identifications.
-- `archaeology`: Find contexts, strata, chronology, material evidence and settlement observations.
-- `comparative`: Known writing systems, cultural transmission and cross-society comparisons.
-- `methods`: Evaluation, inference, mathematical controls and reusable research procedures.
+- `language`: Phonetic keys, lexical comparisons, language-contact hypotheses and proposed linguistic identifications.
+- `archaeology`: Find contexts, strata, chronology, material evidence, settlement surveys, town axes, urban planning, 3D architectural reconstructions and archaeobotanical crop studies.
+- `comparative`: Known writing systems, contemporary Bronze Age societies, cultural and institutional transmission, and cross-society comparisons.
+- `methods`: Evaluation, inference, mathematical controls, formal societal-persistence models and reusable research procedures.
 
 ## Status classes
 

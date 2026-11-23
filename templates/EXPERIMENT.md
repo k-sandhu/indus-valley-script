@@ -14,7 +14,7 @@ Closest registry entries and prior publications; new evidence or changed assumpt
 
 ## Observation and competing explanations
 
-Source-grounded observation; hypotheses and the inference level being tested.
+Source-grounded observation; hypotheses and the inference level or research domain being tested (graphic, functional, numerical, linguistic, archaeological or urban, environmental or agricultural, comparative or historical, or methodological and theoretical).
 
 New local inputs: record the logical `data/raw/YYYY-MM-DD-slug/` path, physical path and hashes; follow [LOCAL_STORAGE.md](../LOCAL_STORAGE.md).
 
@@ -42,7 +42,7 @@ Observable errors, what changed, what remained unresolved; references to preserv
 
 What is now ruled out or supported within this protocol, what should not be rerun unchanged, and which new evidence would justify a revisit.
 
-End with the boldest reading supported by this result and the test that would decide it. Working meanings and functions belong in conjecture cards, with a credence, predictions and kill condition. Use `experiments/2026-10-12-conjecture-shots/DESIGN.md` for a conjecture test.
+End with the boldest reading supported by this result and the test that would decide it. Working interpretations of the script, cities, institutions or continuity belong in conjecture cards, with a credence, predictions and kill condition. Use `experiments/2026-10-12-conjecture-shots/DESIGN.md` for inscription-corpus conjecture tests, or a comparable frozen withheld-sample or prospective design for archaeological, comparative and continuity tests.
 
 ## Review and verification
 
