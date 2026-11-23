@@ -1,0 +1,910 @@
+{
+  "schema_version": "1.0",
+  "created_utc": "2026-11-23T07:08:30.580772+00:00",
+  "protocol_path": "experiments/2026-11-23-living-towns-footprints/PROTOCOL.md",
+  "protocol_sha256": "4c70dc851a44fb6ec76a9b0c666c3e04f296f71687d0d26ab4d96e82f48967c2",
+  "sites": {
+    "harappa": {
+      "site_id": "harappa",
+      "site_name": "Harappa",
+      "utm_epsg": 32643,
+      "geojson_path": "experiments/2026-11-23-living-towns-footprints/harappa-windows-v1.geojson",
+      "figure_path": "experiments/2026-11-23-living-towns-footprints/figures/harappa_4layer_map.png",
+      "local_plain_baseline_m": 160.87,
+      "layer_1_feature_count": 8,
+      "layer_1_union_area_ha": 72.79,
+      "layer_2_built_area_ha": 70.741,
+      "layer_3_concealed_overlap_ha": 28.617,
+      "layer_3_concealed_overlap_bounds_ha": [
+        25.854,
+        31.678
+      ],
+      "layer_3_concealed_pct_of_l1": 39.31,
+      "layer_3_concealed_pct_bounds": [
+        35.52,
+        43.52
+      ],
+      "layer_4_window_count": 10,
+      "layer_4_tier_counts": {
+        "tier_1": 4,
+        "tier_2": 4,
+        "tier_3": 2
+      },
+      "layer_4_demoted_count": 2,
+      "registration": {
+        "primary_plan": "Kenoyer 1991 Fig. 4.2 (p. 31) & Kenoyer 2008 Fig. 3 (p. 28), HARP metric grid",
+        "method": "4-parameter weighted least-squares similarity transform to Esri World Imagery z18 (UTM 43N)",
+        "control_points": [
+          {
+            "id": "cp1_granary_ctr",
+            "class": "B",
+            "sigma_m": 6.0,
+            "plan_px": [
+              740.0,
+              322.0
+            ],
+            "z18_px": [
+              1344.0,
+              712.0
+            ],
+            "feature": "Mound F Great Granary centre"
+          },
+          {
+            "id": "cp2_workmen_q_ctr",
+            "class": "A",
+            "sigma_m": 3.0,
+            "plan_px": [
+              734.0,
+              488.0
+            ],
+            "z18_px": [
+              1325.0,
+              1043.0
+            ],
+            "feature": "Mound F Workmen's Quarters conserved block centre"
+          },
+          {
+            "id": "cp3_muslim_tomb",
+            "class": "A",
+            "sigma_m": 3.0,
+            "plan_px": [
+              958.0,
+              598.0
+            ],
+            "z18_px": [
+              1752.0,
+              1278.0
+            ],
+            "feature": "Mound AB Muslim tomb centre"
+          },
+          {
+            "id": "cp4_mound_ab_vats",
+            "class": "B",
+            "sigma_m": 6.0,
+            "plan_px": [
+              942.0,
+              779.0
+            ],
+            "z18_px": [
+              1712.0,
+              1656.0
+            ],
+            "feature": "Mound AB Vats central walled excavation enclosure"
+          },
+          {
+            "id": "cp5_harappa_museum",
+            "class": "A",
+            "sigma_m": 3.0,
+            "plan_px": [
+              1208.0,
+              1175.0
+            ],
+            "z18_px": [
+              2235.0,
+              2475.0
+            ],
+            "feature": "Harappa Museum main building"
+          },
+          {
+            "id": "cp6_rest_house",
+            "class": "B",
+            "sigma_m": 6.0,
+            "plan_px": [
+              1070.0,
+              1200.0
+            ],
+            "z18_px": [
+              1960.0,
+              2500.0
+            ],
+            "feature": "Harappa Rest House compound"
+          }
+        ],
+        "fit_metrics": {
+          "n_points": 6,
+          "dof": 8,
+          "params": [
+            1.0392687784551526,
+            -0.05175254042683264,
+            294307.8538160883,
+            3391304.061253261
+          ],
+          "scale_m_per_px": 1.0405565430635166,
+          "expected_scale_m_per_px": 1.0287,
+          "scale_ratio": 1.0115257539258449,
+          "rotation_ccw_deg": -2.850807088889002,
+          "rmse_m": 5.116433653648759,
+          "max_residual_m": 7.384647754296432,
+          "loo_max_m": 11.092374185365463,
+          "loo_errors_m": [
+            4.085,
+            8.414,
+            8.915,
+            5.833,
+            11.092,
+            8.921
+          ],
+          "residuals_m": [
+            3.328,
+            4.109,
+            6.088,
+            5.442,
+            2.81,
+            7.385
+          ],
+          "chi2": 9.516455471680171,
+          "chi2_per_dof": 1.1895569339600214,
+          "chi2_mirror": 6289.751896838786,
+          "singular_value_ratio": 0.155229185011466
+        },
+        "cross_check_wheeler1947_pl15": {
+          "control-R1": {
+            "n_points": 12,
+            "dof": 20,
+            "params": [
+              0.5769294834535685,
+              -0.011656329541438026,
+              294993.30635317415,
+              3391082.553152919
+            ],
+            "scale_m_per_px": 0.577047224147539,
+            "expected_scale_m_per_px": 0.5957,
+            "scale_ratio": 0.968687634963134,
+            "rotation_ccw_deg": -1.1574510479725486,
+            "rmse_m": 5.324148955944787,
+            "max_residual_m": 11.705530932551817,
+            "loo_max_m": 12.992350863928051,
+            "loo_errors_m": [
+              2.331,
+              3.922,
+              2.034,
+              3.622,
+              0.689,
+              7.462,
+              12.992,
+              10.033,
+              1.339,
+              5.797,
+              5.124,
+              8.273
+            ],
+            "residuals_m": [
+              1.92,
+              3.366,
+              1.705,
+              3.16,
+              0.579,
+              6.165,
+              11.706,
+              6.992,
+              1.155,
+              4.868,
+              4.263,
+              6.693
+            ],
+            "chi2": 19.044026469832414,
+            "chi2_per_dof": 0.9522013234916207,
+            "chi2_mirror": 6946.798218412076,
+            "singular_value_ratio": 0.23704905571257892
+          },
+          "control-R2": {
+            "n_points": 9,
+            "dof": 14,
+            "params": [
+              0.5732564335667121,
+              -0.006866247556899907,
+              294992.4224080378,
+              3391076.8295130096
+            ],
+            "scale_m_per_px": 0.5732975527430226,
+            "expected_scale_m_per_px": 0.5957,
+            "scale_ratio": 0.9623930715847283,
+            "rotation_ccw_deg": -0.6862342426905572,
+            "rmse_m": 3.135040864711266,
+            "max_residual_m": 4.337603944114994,
+            "loo_max_m": 8.460980527530083,
+            "loo_errors_m": [
+              3.416,
+              2.679,
+              2.31,
+              3.557,
+              2.493,
+              4.198,
+              4.824,
+              5.261,
+              8.461
+            ],
+            "residuals_m": [
+              2.916,
+              2.339,
+              1.9,
+              2.995,
+              1.909,
+              3.164,
+              4.033,
+              4.338,
+              3.628
+            ],
+            "chi2": 9.828481223409565,
+            "chi2_per_dof": 0.7020343731006832,
+            "chi2_mirror": 10011.221160361456,
+            "singular_value_ratio": 0.48194680630299347
+          }
+        },
+        "uncertainty_buffer_m": 10.0
+      },
+      "layer_1_zones": [
+        {
+          "id": "HRP-L1-MOUND-F",
+          "site_id": "harappa",
+          "layer": "layer_1_published_archaeology",
+          "name": "Mound F (Great Granary and Workmen's Quarters walled sector)",
+          "sub_type": "walled_mound_sector",
+          "evidence_grade": "registered_plan",
+          "source_citation": "Kenoyer 1991 Fig. 4.2 (p. 31); Kenoyer 2008 Fig. 3 (p. 28); Wheeler 1947 Pl. XV",
+          "positional_uncertainty_m": 10.0,
+          "area_ha": 7.6352,
+          "wc_built_overlap_ha": 2.5652,
+          "wc_built_overlap_pct": 33.11,
+          "dem_mean_m": 165.4,
+          "rel_elev_m": 4.53,
+          "include_in_site_union": true,
+          "notes": "Conserved Mature Harappan granary, circular working platforms and workmen's quarters."
+        },
+        {
+          "id": "HRP-L1-MOUND-AB",
+          "site_id": "harappa",
+          "layer": "layer_1_published_archaeology",
+          "name": "Mound AB (Citadel defences and high mound)",
+          "sub_type": "walled_mound_sector",
+          "evidence_grade": "registered_plan",
+          "source_citation": "Wheeler 1947 Pl. XV; Kenoyer 1991 Fig. 4.2 (p. 31); Kenoyer 2008 Fig. 3 (p. 28)",
+          "positional_uncertainty_m": 10.0,
+          "area_ha": 11.018,
+          "wc_built_overlap_ha": 4.7544,
+          "wc_built_overlap_pct": 42.59,
+          "dem_mean_m": 172.11,
+          "rel_elev_m": 11.24,
+          "include_in_site_union": true,
+          "notes": "Fortified mud-brick perimeter wall, Vats and Wheeler excavations, HARP Operation 2."
+        },
+        {
+          "id": "HRP-L1-MOUND-E",
+          "site_id": "harappa",
+          "layer": "layer_1_published_archaeology",
+          "name": "Mound E (Urban sector, kilns and southern gateway)",
+          "sub_type": "walled_mound_sector",
+          "evidence_grade": "registered_plan",
+          "source_citation": "Kenoyer 1991 Fig. 4.2 (p. 31); Kenoyer 2008 Fig. 3 (p. 28)",
+          "positional_uncertainty_m": 10.0,
+          "area_ha": 11.6894,
+          "wc_built_overlap_ha": 0.2796,
+          "wc_built_overlap_pct": 2.37,
+          "dem_mean_m": 171.96,
+          "rel_elev_m": 11.09,
+          "include_in_site_union": true,
+          "notes": "HARP Operation 3 kilns, revetment wall, Early-to-Mature perimeter wall #30 and gateway #84."
+        },
+        {
+          "id": "HRP-L1-MOUND-ET",
+          "site_id": "harappa",
+          "layer": "layer_1_published_archaeology",
+          "name": "Mound ET (Eastern walled suburb and Old Police Station)",
+          "sub_type": "walled_mound_sector",
+          "evidence_grade": "registered_plan",
+          "source_citation": "Kenoyer 2008 Fig. 3 (p. 28); Kenoyer 1991 Fig. 4.2 (p. 31)",
+          "positional_uncertainty_m": 10.0,
+          "area_ha": 5.7411,
+          "wc_built_overlap_ha": 1.8852,
+          "wc_built_overlap_pct": 32.36,
+          "dem_mean_m": 167.28,
+          "rel_elev_m": 6.4,
+          "include_in_site_union": true,
+          "notes": "Walled eastern suburb with southern gateway linking to Mound E."
+        },
+        {
+          "id": "HRP-L1-NE-TOWN-SECTOR",
+          "site_id": "harappa",
+          "layer": "layer_1_published_archaeology",
+          "name": "Northeastern Walled Sector beneath Modern Harappa Town",
+          "sub_type": "concealed_walled_sector",
+          "evidence_grade": "registered_plan",
+          "source_citation": "Kenoyer 1991 p. 57 ('approximately one quarter of the total area of the site'); Kenoyer 2008 Fig. 3 (p. 28, shaded sector '? = Walls not excavated')",
+          "positional_uncertainty_m": 15.0,
+          "area_ha": 21.761,
+          "wc_built_overlap_ha": 18.3364,
+          "wc_built_overlap_pct": 83.44,
+          "dem_mean_m": 166.21,
+          "rel_elev_m": 5.34,
+          "include_in_site_union": true,
+          "notes": "Shaded walled sector in Kenoyer 2008 Fig. 3 directly beneath modern Harappa town; perimeter walls unexcavated."
+        },
+        {
+          "id": "HRP-L1-LOW-WESTERN",
+          "site_id": "harappa",
+          "layer": "layer_1_published_archaeology",
+          "name": "Low Western Mound",
+          "sub_type": "outer_mound_sector",
+          "evidence_grade": "registered_plan",
+          "source_citation": "Kenoyer 1991 Fig. 4.2 (p. 31); Kenoyer 2008 Fig. 3 (p. 28)",
+          "positional_uncertainty_m": 10.0,
+          "area_ha": 2.0719,
+          "wc_built_overlap_ha": 0.0,
+          "wc_built_overlap_pct": 0.0,
+          "dem_mean_m": 165.4,
+          "rel_elev_m": 4.53,
+          "include_in_site_union": true,
+          "notes": "Lower western occupation rise tested by HARP test pits."
+        },
+        {
+          "id": "HRP-L1-CEMETERY-H-R37",
+          "site_id": "harappa",
+          "layer": "layer_1_published_archaeology",
+          "name": "Cemetery H and Cemetery R37 mortuary zone",
+          "sub_type": "cemetery_zone",
+          "evidence_grade": "registered_plan",
+          "source_citation": "Wheeler 1947 Pl. XV; Kenoyer 1991 Fig. 4.2 (p. 31, HARP Operation 1)",
+          "positional_uncertainty_m": 10.0,
+          "area_ha": 5.9227,
+          "wc_built_overlap_ha": 0.0248,
+          "wc_built_overlap_pct": 0.41,
+          "dem_mean_m": 166.97,
+          "rel_elev_m": 6.1,
+          "include_in_site_union": true,
+          "notes": "Mature Harappan Cemetery R37 and Late Harappan Cemetery H south of Mound AB."
+        },
+        {
+          "id": "HRP-L1-AREA-G-SE",
+          "site_id": "harappa",
+          "layer": "layer_1_published_archaeology",
+          "name": "Area G / Vats southeastern archaeological zone",
+          "sub_type": "outer_excavation_zone",
+          "evidence_grade": "registered_plan",
+          "source_citation": "Kenoyer 2008 Fig. 3 (p. 28, labeled 'Vats'); Vats 1940",
+          "positional_uncertainty_m": 15.0,
+          "area_ha": 6.3064,
+          "wc_built_overlap_ha": 0.7712,
+          "wc_built_overlap_pct": 11.98,
+          "dem_mean_m": 165.21,
+          "rel_elev_m": 4.34,
+          "include_in_site_union": true,
+          "notes": "Southern scatter and Vats excavation area south of the Chichawatni-Sahiwal road."
+        }
+      ]
+    },
+    "lakhanjo_daro": {
+      "site_id": "lakhanjo_daro",
+      "site_name": "Lakhanjo-Daro (Sukkur SITE)",
+      "utm_epsg": 32642,
+      "geojson_path": "experiments/2026-11-23-living-towns-footprints/lakhanjo-daro-windows-v1.geojson",
+      "figure_path": "experiments/2026-11-23-living-towns-footprints/figures/lakhanjo_daro_4layer_map.png",
+      "local_plain_baseline_m": 59.6,
+      "layer_1_feature_count": 3,
+      "layer_1_union_area_ha": 52.406,
+      "layer_2_built_area_ha": 130.783,
+      "layer_3_concealed_overlap_ha": 36.922,
+      "layer_3_concealed_overlap_bounds_ha": [
+        27.519,
+        47.361
+      ],
+      "layer_3_concealed_pct_of_l1": 70.45,
+      "layer_3_concealed_pct_bounds": [
+        52.51,
+        90.37
+      ],
+      "layer_4_window_count": 9,
+      "layer_4_tier_counts": {
+        "tier_1": 4,
+        "tier_2": 2,
+        "tier_3": 3
+      },
+      "layer_4_demoted_count": 3,
+      "registration": {
+        "primary_plan": "Biagi and Vidale 2022, Asian Perspectives 61(1):6, Fig. 3 (Sukkur SITE / Mound D Trench C)",
+        "method": "4-parameter weighted least-squares similarity transform to Esri World Imagery z18 (UTM 42N)",
+        "control_points": [
+          {
+            "id": "cp1_rd7_x_rd8",
+            "class": "A",
+            "sigma_m": 3.0,
+            "plan_px": [
+              485.0,
+              577.0
+            ],
+            "z18_px": [
+              1470.0,
+              1425.0
+            ],
+            "feature": "Road No. 7 x Road No. 8 intersection centre"
+          },
+          {
+            "id": "cp2_rd7_x_rd3",
+            "class": "A",
+            "sigma_m": 3.0,
+            "plan_px": [
+              380.0,
+              804.0
+            ],
+            "z18_px": [
+              1238.0,
+              1957.0
+            ],
+            "feature": "Road No. 7 x Road No. 3 intersection centre"
+          },
+          {
+            "id": "cp3_moundD_plot_nw",
+            "class": "A",
+            "sigma_m": 3.0,
+            "plan_px": [
+              585.0,
+              588.0
+            ],
+            "z18_px": [
+              1698.0,
+              1445.0
+            ],
+            "feature": "Mound D plot NW wall corner on Road No. 8"
+          },
+          {
+            "id": "cp4_factory_rd8_nw",
+            "class": "A",
+            "sigma_m": 3.0,
+            "plan_px": [
+              682.0,
+              591.0
+            ],
+            "z18_px": [
+              1925.0,
+              1450.0
+            ],
+            "feature": "Factory block NW corner east of Mound D on Road No. 8"
+          },
+          {
+            "id": "cp5_rd3_mid_factory",
+            "class": "A",
+            "sigma_m": 3.0,
+            "plan_px": [
+              746.0,
+              814.0
+            ],
+            "z18_px": [
+              2075.0,
+              1972.0
+            ],
+            "feature": "Industrial lane x Road No. 3 junction south of factory"
+          },
+          {
+            "id": "cp6_rd8_east_factory",
+            "class": "A",
+            "sigma_m": 3.0,
+            "plan_px": [
+              888.0,
+              594.0
+            ],
+            "z18_px": [
+              2400.0,
+              1458.0
+            ],
+            "feature": "East industrial compound corner on Road No. 8"
+          }
+        ],
+        "fit_metrics": {
+          "n_points": 6,
+          "dof": 8,
+          "params": [
+            1.219372831423243,
+            0.011056312278014957,
+            484305.5745821744,
+            3067490.7089515813
+          ],
+          "scale_m_per_px": 1.2194229553581175,
+          "expected_scale_m_per_px": 1.2192,
+          "scale_ratio": 1.0001828702084297,
+          "rotation_ccw_deg": 0.519498757607559,
+          "rmse_m": 2.001853966095003,
+          "max_residual_m": 2.828324046556095,
+          "loo_max_m": 5.843285308630276,
+          "loo_errors_m": [
+            0.544,
+            5.843,
+            3.153,
+            2.31,
+            3.105,
+            2.488
+          ],
+          "residuals_m": [
+            0.389,
+            2.828,
+            2.531,
+            1.847,
+            2.092,
+            1.304
+          ],
+          "chi2": 2.6716128677135296,
+          "chi2_per_dof": 0.3339516084641912,
+          "chi2_mirror": 29832.65361253849,
+          "singular_value_ratio": 0.598493865286467
+        },
+        "registered_mound_d_latlon": [
+          27.724866,
+          68.848496
+        ],
+        "source_audit_findings": {
+          "printed_caption_coord_latlon": [
+            27.728889,
+            68.848611
+          ],
+          "caption_offset_from_drawn_mound_d_m": 445.7,
+          "printed_scale_bar_label_m": 200.0,
+          "printed_scale_bar_true_ground_m": 509.7,
+          "scale_bar_discrepancy_factor": 2.55,
+          "note": "Independent OSM and Esri road-grid distance between Road 8 and Road 3 (285.3 m) confirms the true figure scale (1.219 m/px); the printed 200 m bar spans 418 px (~510 m on ground) and the printed latitude 27d43'44\"N sits 455 m north of the drawn Mound D rectangle (27d43'29\"N)."
+        },
+        "uncertainty_buffer_m": {
+          "mound_d": 15.0,
+          "central_west_core": 25.0,
+          "site_50ha_envelope": 50.0
+        }
+      },
+      "layer_1_zones": [
+        {
+          "id": "LKD-L1-MOUND-D-TRENCH-C",
+          "site_id": "lakhanjo_daro",
+          "layer": "layer_1_published_archaeology",
+          "name": "Mound D / Trench C (Plots D9-D11 south of Road No. 8)",
+          "sub_type": "registered_excavation_zone",
+          "evidence_grade": "registered_plan",
+          "source_citation": "Biagi and Vidale 2022, Asian Perspectives 61(1):6, Fig. 3 (white outline around Mound D Trench C); GrN-23123 charcoal date",
+          "positional_uncertainty_m": 15.0,
+          "area_ha": 0.9636,
+          "wc_built_overlap_ha": 0.2468,
+          "wc_built_overlap_pct": 24.75,
+          "dem_mean_m": 61.74,
+          "rel_elev_m": 2.14,
+          "include_in_site_union": true,
+          "notes": "Registered from Fig. 3 (RMSE 2.00 m) to (27.724866N, 68.848496E); printed caption latitude 27d43'44\"N sits 446 m north of the drawn box."
+        },
+        {
+          "id": "LKD-L1-CENTRAL-WEST-CORE",
+          "site_id": "lakhanjo_daro",
+          "layer": "layer_1_published_archaeology",
+          "name": "Central and Western Salvage Mound Core (DOAM / Shar & Shah Anchor)",
+          "sub_type": "documented_mound_core",
+          "evidence_grade": "topographic_source_envelope",
+          "source_citation": "DOAM site inventory (27.723889N, 68.846431E); Shar and Shah 2022 (27d43'27\"N, 68d50'51\"E); Directorate of Antiquities Sindh 2022 (central & western mounds)",
+          "positional_uncertainty_m": 25.0,
+          "area_ha": 7.4083,
+          "wc_built_overlap_ha": 3.494,
+          "wc_built_overlap_pct": 46.69,
+          "dem_mean_m": 61.64,
+          "rel_elev_m": 2.04,
+          "include_in_site_union": true,
+          "notes": "Block bounded by Road No. 7, Road No. 8 and Road No. 3 containing Mound D, the DOAM anchor and Shar & Shah's main mound coordinate."
+        },
+        {
+          "id": "LKD-L1-SITE-50HA-ENVELOPE",
+          "site_id": "lakhanjo_daro",
+          "layer": "layer_1_published_archaeology",
+          "name": "Lakhanjo-Daro Sukkur SITE Published ~50 ha Terrace Envelope (Mounds A-D)",
+          "sub_type": "source_bounded_site_envelope",
+          "evidence_grade": "topographic_source_envelope",
+          "source_citation": "ul-Haq and Ali 2001:29 (quoted in Biagi and Vidale 2022:5, 'originally covered nearly 50 hectares of the SITE area'); Directorate of Antiquities Sindh 2022 (western, central and eastern mounds); Copernicus GLO-30 terrace",
+          "positional_uncertainty_m": 50.0,
+          "area_ha": 52.2244,
+          "wc_built_overlap_ha": 36.9216,
+          "wc_built_overlap_pct": 70.45,
+          "dem_mean_m": 61.75,
+          "rel_elev_m": 2.15,
+          "include_in_site_union": true,
+          "notes": "Bounded to ~50 ha on the flood-free Sukkur SITE limestone terrace (61.5-72 m MSL), excluding the NW flooded basin (<60 m) and rejecting the unauthenticated 300 ha claim. No unmapped trench polygons are fabricated for Mounds A-C."
+        }
+      ]
+    },
+    "rupnagar": {
+      "site_id": "rupnagar",
+      "site_name": "Rupnagar (Ropar)",
+      "utm_epsg": 32643,
+      "geojson_path": "experiments/2026-11-23-living-towns-footprints/rupnagar-windows-v1.geojson",
+      "figure_path": "experiments/2026-11-23-living-towns-footprints/figures/rupnagar_4layer_map.png",
+      "local_plain_baseline_m": 268.23,
+      "layer_1_feature_count": 6,
+      "layer_1_union_area_ha": 13.888,
+      "layer_2_built_area_ha": 59.609,
+      "layer_3_concealed_overlap_ha": 7.51,
+      "layer_3_concealed_overlap_bounds_ha": [
+        5.023,
+        10.1
+      ],
+      "layer_3_concealed_pct_of_l1": 54.08,
+      "layer_3_concealed_pct_bounds": [
+        36.17,
+        72.72
+      ],
+      "layer_4_window_count": 9,
+      "layer_4_tier_counts": {
+        "tier_1": 5,
+        "tier_2": 0,
+        "tier_3": 4
+      },
+      "layer_4_demoted_count": 4,
+      "registration": {
+        "primary_plan": "Prabhakar, Indian Archaeology 2011-2012 - A Review, pp. 72-76 (21 trenches on 5x5 m Nalagarh Kothi datum grid)",
+        "method": "Exact metric datum projection from NE corner of Nalagarh Kothi pavement (Esri z18 pixel 1007, 1046) in UTM 43N",
+        "datum_nalagarh_kothi_ne_latlon": [
+          30.971621,
+          76.523804
+        ],
+        "datum_nalagarh_kothi_ne_utm43n": [
+          645522.77,
+          3427452.78
+        ],
+        "trench_count_projected": 21,
+        "datum_uncertainty_m": 6.0,
+        "rotation_3deg_max_displacement_m": 10.0,
+        "source_audit_findings": {
+          "printed_iar2011_12_coord_latlon": [
+            30.9664,
+            76.5331
+          ],
+          "offset_from_physical_mound_m": 1059.9,
+          "asi_card_lt_s13_note": "ASI Chandigarh Circle site card (LT-S13) prints latitude 30d28'N, inconsistent with Rupnagar (~30d58'N); rejected as a coordinate.",
+          "note": "All four 2011-12 trench clusters align directly with physical mound topography (N-S rain gully at E20-E30, NE slope at N45E120-N50E145, SSW slope above houses at S65-S70, western mound at W170-W190)."
+        },
+        "uncertainty_buffer_m": {
+          "trenches_2011": 6.0,
+          "protected_mound": 15.0,
+          "southern_mound_town": 25.0
+        }
+      },
+      "layer_1_zones": [
+        {
+          "id": "RPR-L1-TRENCHES-2011-NE",
+          "site_id": "rupnagar",
+          "layer": "layer_1_published_archaeology",
+          "name": "2011-12 Northeastern Slope Harappan/Bara Trenches (N45E120-N50E145)",
+          "sub_type": "datum_grid_trench_cluster",
+          "evidence_grade": "datum_grid_trench",
+          "source_citation": "Prabhakar, Indian Archaeology 2011-2012 - A Review, pp. 73-74 (8 trenches of 5x5 m from Nalagarh Kothi NE pavement datum)",
+          "positional_uncertainty_m": 6.0,
+          "area_ha": 0.03,
+          "wc_built_overlap_ha": 0.0,
+          "wc_built_overlap_pct": 0.0,
+          "dem_mean_m": 282.57,
+          "rel_elev_m": 14.34,
+          "include_in_site_union": true,
+          "notes": "Exposed Harappan/Bara habitation at 0.50 m depth over a 0.22 m NW-SE mud platform and Sutlej silt, plus a lakhauri brick kiln."
+        },
+        {
+          "id": "RPR-L1-TRENCHES-2011-GULLY",
+          "site_id": "rupnagar",
+          "layer": "layer_1_published_archaeology",
+          "name": "2011-12 Central-East Rain Gully Trenches (N5E20-N5E30)",
+          "sub_type": "datum_grid_trench_cluster",
+          "evidence_grade": "datum_grid_trench",
+          "source_citation": "Prabhakar, Indian Archaeology 2011-2012 - A Review, pp. 73, 76 (3 trenches of 5x5 m)",
+          "positional_uncertainty_m": 6.0,
+          "area_ha": 0.0075,
+          "wc_built_overlap_ha": 0.0,
+          "wc_built_overlap_pct": 0.0,
+          "dem_mean_m": 290.93,
+          "rel_elev_m": 22.7,
+          "include_in_site_union": true,
+          "notes": "Dug to 6.3 m depth in the N-S rain gully east of Nalagarh Kothi; exposed Gupta and Post-Gupta brick structures."
+        },
+        {
+          "id": "RPR-L1-TRENCHES-2011-SSW",
+          "site_id": "rupnagar",
+          "layer": "layer_1_published_archaeology",
+          "name": "2011-12 South-Southwest Slope Trenches (S65W20-S70W5)",
+          "sub_type": "datum_grid_trench_cluster",
+          "evidence_grade": "datum_grid_trench",
+          "source_citation": "Prabhakar, Indian Archaeology 2011-2012 - A Review, pp. 73, 75-76 (6 trenches of 5x5 m)",
+          "positional_uncertainty_m": 6.0,
+          "area_ha": 0.03,
+          "wc_built_overlap_ha": 0.0,
+          "wc_built_overlap_pct": 0.0,
+          "dem_mean_m": 285.89,
+          "rel_elev_m": 17.66,
+          "include_in_site_union": true,
+          "notes": "Dug to 6.65 m in S70W5; Medieval hearths and eroded deposits overlying stray Painted Grey Ware at base."
+        },
+        {
+          "id": "RPR-L1-TRENCHES-2011-WEST",
+          "site_id": "rupnagar",
+          "layer": "layer_1_published_archaeology",
+          "name": "2011-12 Westernmost Cemetery-Mound Trenches (S20W175-N20W185)",
+          "sub_type": "datum_grid_trench_cluster",
+          "evidence_grade": "datum_grid_trench",
+          "source_citation": "Prabhakar, Indian Archaeology 2011-2012 - A Review, pp. 73, 76 (4 trenches of 5x5 m)",
+          "positional_uncertainty_m": 6.0,
+          "area_ha": 0.1125,
+          "wc_built_overlap_ha": 0.0,
+          "wc_built_overlap_pct": 0.0,
+          "dem_mean_m": 282.61,
+          "rel_elev_m": 14.38,
+          "include_in_site_union": true,
+          "notes": "Probed western mound where Y. D. Sharma exposed the Harappan Cemetery; PGW layers encountered on eastern periphery."
+        },
+        {
+          "id": "RPR-L1-PROTECTED-MOUND",
+          "site_id": "rupnagar",
+          "layer": "layer_1_published_archaeology",
+          "name": "Protected Ropar ASI Mound Complex (Northern, Nalagarh Kothi & Western Cemetery Mounds)",
+          "sub_type": "protected_mound_zone",
+          "evidence_grade": "topographic_source_envelope",
+          "source_citation": "Prabhakar, IAR 2011-12, p. 72 (~12 ha four-mound complex rising ~21 m); ASI site card LT-S13; OSM Ropar Harappan Site; Esri z18",
+          "positional_uncertainty_m": 15.0,
+          "area_ha": 6.3331,
+          "wc_built_overlap_ha": 0.4836,
+          "wc_built_overlap_pct": 7.51,
+          "dem_mean_m": 284.34,
+          "rel_elev_m": 16.11,
+          "include_in_site_union": true,
+          "notes": "Unbuilt ASI protected reserve containing Nalagarh Kothi (293.1 m MSL), the 2011-12 trenches and western cemetery rise."
+        },
+        {
+          "id": "RPR-L1-SOUTHERN-MOUND-TOWN",
+          "site_id": "rupnagar",
+          "layer": "layer_1_published_archaeology",
+          "name": "Southern Mound Concealed beneath Old Rupnagar Town (293.8 m MSL Crest)",
+          "sub_type": "concealed_mound_sector",
+          "evidence_grade": "topographic_source_envelope",
+          "source_citation": "Prabhakar, IAR 2011-12, p. 72 ('the southern one is densely occupied and partly excavated by Y. D. Sharma', total site ~12 ha); Copernicus GLO-30 DEM (>284 m MSL peak 293.83 m at 30.9697N, 76.5264E)",
+          "positional_uncertainty_m": 25.0,
+          "area_ha": 7.3711,
+          "wc_built_overlap_ha": 7.0312,
+          "wc_built_overlap_pct": 93.73,
+          "dem_mean_m": 287.13,
+          "rel_elev_m": 18.9,
+          "include_in_site_union": true,
+          "notes": "Elevated topographic mound mass directly beneath dense old Rupnagar streets; unexcavated Y. D. Sharma RPR-1/RPR-2 trench outlines are not fabricated."
+        }
+      ]
+    }
+  },
+  "totals": {
+    "layer_1_union_area_ha": 139.084,
+    "layer_3_concealed_overlap_ha": 73.049,
+    "layer_4_windows_total": 28,
+    "tier_1_windows": 13,
+    "tier_2_windows": 6,
+    "tier_3_windows": 9,
+    "demoted_windows": 9
+  },
+  "input_hashes": [
+    {
+      "logical_path": "experiments/2026-11-23-living-towns-footprints/PROTOCOL.md",
+      "physical_path": "C:\\Users\\sandh\\OneDrive\\Projects\\indus_valley_script\\experiments\\2026-11-23-living-towns-footprints\\PROTOCOL.md",
+      "bytes": 18280,
+      "sha256": "4c70dc851a44fb6ec76a9b0c666c3e04f296f71687d0d26ab4d96e82f48967c2"
+    },
+    {
+      "logical_path": "data/raw/2026-10-12-satellite-prospection/SPATIAL_CONTROL_20261012T053309958546Z_B02_WorldCover_N30E072.tif",
+      "physical_path": "D:\\projects\\indus_valley_script\\data\\raw\\2026-10-12-satellite-prospection\\SPATIAL_CONTROL_20261012T053309958546Z_B02_WorldCover_N30E072.tif",
+      "bytes": 135372,
+      "sha256": "3ddbb73fd81dde1275231648168b67cf5660c1d6bae394977585def04eef7dc7"
+    },
+    {
+      "logical_path": "data/raw/2026-10-21-town-orientations-verification/astro/dem/30m/Copernicus_DSM_COG_10_N30_00_E072_00_DEM.tif",
+      "physical_path": "D:\\projects\\indus_valley_script\\data\\raw\\2026-10-21-town-orientations-verification\\astro\\dem\\30m\\Copernicus_DSM_COG_10_N30_00_E072_00_DEM.tif",
+      "bytes": 40085904,
+      "sha256": "269a9377da5f6394b2cc632bcfe8dbfe030a559111c928002f695d634ff3cbd8"
+    },
+    {
+      "logical_path": "data/raw/2026-10-21-town-orientations-verification/astro/dem/30m/Copernicus_DSM_COG_10_N27_00_E068_00_DEM.tif",
+      "physical_path": "D:\\projects\\indus_valley_script\\data\\raw\\2026-10-21-town-orientations-verification\\astro\\dem\\30m\\Copernicus_DSM_COG_10_N27_00_E068_00_DEM.tif",
+      "bytes": 44747730,
+      "sha256": "b744429e90713cfd041041461bd33d0220710a129db02dbdd83b48f99052f436"
+    },
+    {
+      "logical_path": "data/raw/2026-11-22-geospatial-prospection-pilot/dem/30m/Copernicus_DSM_COG_10_N30_00_E076_00_DEM.tif",
+      "physical_path": "D:\\projects\\indus_valley_script\\data\\raw\\2026-11-22-geospatial-prospection-pilot\\dem\\30m\\Copernicus_DSM_COG_10_N30_00_E076_00_DEM.tif",
+      "bytes": 39750096,
+      "sha256": "1f682577320595c6942e045dc4b46e697cbf49874236bc0c62da744f0b9b6142"
+    },
+    {
+      "logical_path": "data/raw/2026-10-21-plan-registration/R1-G1/mosaics/harappa_z18_cur_z18_x184123-184135_y107617-107629.json",
+      "physical_path": "D:\\projects\\indus_valley_script\\data\\raw\\2026-10-21-plan-registration\\R1-G1\\mosaics\\harappa_z18_cur_z18_x184123-184135_y107617-107629.json",
+      "bytes": 741,
+      "sha256": "12724a7f5b1c586ef32911221ab395314d2a3ac85124980bb060e1cb65e3db6c"
+    },
+    {
+      "logical_path": "data/raw/2026-10-21-town-axes/img-A/mosaics/harappa_ov_z16_x46030-46034_y26903-26907.json",
+      "physical_path": "D:\\projects\\indus_valley_script\\data\\raw\\2026-10-21-town-axes\\img-A\\mosaics\\harappa_ov_z16_x46030-46034_y26903-26907.json",
+      "bytes": 676,
+      "sha256": "3a76c6acf166a8ce437814c97ead72a037d659893017160486cb0035c7c13717"
+    },
+    {
+      "logical_path": "data/raw/2026-10-21-town-axes/dating/harappa/kenoyer1991urban.pdf",
+      "physical_path": "D:\\projects\\indus_valley_script\\data\\raw\\2026-10-21-town-axes\\dating\\harappa\\kenoyer1991urban.pdf",
+      "bytes": 16267805,
+      "sha256": "3a62216b706084169ea97f276cbb63ba3b2c48f9ac20dbf45b612ef225bbdf04"
+    },
+    {
+      "logical_path": "data/raw/2026-10-21-town-axes/dating/harappa/kenoyer2008urbanism.pdf",
+      "physical_path": "D:\\projects\\indus_valley_script\\data\\raw\\2026-10-21-town-axes\\dating\\harappa\\kenoyer2008urbanism.pdf",
+      "bytes": 18862571,
+      "sha256": "13803fe803cd9178a27d7a3fc1d3eda3fb922b3a17e3dca6dc1315a81c67baad"
+    },
+    {
+      "logical_path": "data/raw/2026-10-21-town-axes/dating/lakhanjo-daro/biagi2022lakhan.pdf",
+      "physical_path": "D:\\projects\\indus_valley_script\\data\\raw\\2026-10-21-town-axes\\dating\\lakhanjo-daro\\biagi2022lakhan.pdf",
+      "bytes": 2946797,
+      "sha256": "8c3a889ff505c1ef0c11fbccb79588125f92e8c6945dbfbe42cedb67e8ccc490"
+    },
+    {
+      "logical_path": "data/raw/2026-10-11-settlement-prospection/SINDH2022.html",
+      "physical_path": "D:\\projects\\indus_valley_script\\data\\raw\\2026-10-11-settlement-prospection\\SINDH2022.html",
+      "bytes": 203937,
+      "sha256": "20bb8c65fb3cd03ab8929ed4eeaf1504460e5628669600a868b652ba68a8dacc"
+    },
+    {
+      "logical_path": "data/raw/2026-10-21-post-catalogue-finds/run1b/sources/iar-2011-12/iar-2011-12.pdf",
+      "physical_path": "D:\\projects\\indus_valley_script\\data\\raw\\2026-10-21-post-catalogue-finds\\run1b\\sources\\iar-2011-12\\iar-2011-12.pdf",
+      "bytes": 37938206,
+      "sha256": "046a9657041d95031e1d61f884eca3eed4ddc8353fd4c5588b5081b34978f9dc"
+    },
+    {
+      "logical_path": "data/raw/2026-11-23-living-towns-footprints/worldcover/ESA_WorldCover_2021_lakhanjo_daro_N27E066.tif",
+      "physical_path": "D:\\projects\\indus_valley_script\\data\\raw\\2026-11-23-living-towns-footprints\\worldcover\\ESA_WorldCover_2021_lakhanjo_daro_N27E066.tif",
+      "bytes": 31434,
+      "sha256": "dbabc4d0168cdb1fdc740911852ea5f49f05fa6137b0833fc8c95840e01608a7"
+    },
+    {
+      "logical_path": "data/raw/2026-11-23-living-towns-footprints/worldcover/ESA_WorldCover_2021_rupnagar_N30E075.tif",
+      "physical_path": "D:\\projects\\indus_valley_script\\data\\raw\\2026-11-23-living-towns-footprints\\worldcover\\ESA_WorldCover_2021_rupnagar_N30E075.tif",
+      "bytes": 34474,
+      "sha256": "fd745fdeed0e0afed677c86b04b845114b333bf74caf16f98289f211927cdd8f"
+    },
+    {
+      "logical_path": "data/raw/2026-11-23-living-towns-footprints/mosaics/lakhanjo_daro_z18_x181199-181210_y110040-110050.json",
+      "physical_path": "D:\\projects\\indus_valley_script\\data\\raw\\2026-11-23-living-towns-footprints\\mosaics\\lakhanjo_daro_z18_x181199-181210_y110040-110050.json",
+      "bytes": 340,
+      "sha256": "1f8fb098e3d07ed2cb9c71a4eaefb5663e060d31530d5fac73f587c027c16893"
+    },
+    {
+      "logical_path": "data/raw/2026-11-23-living-towns-footprints/mosaics/rupnagar_mound_z18_x186791-186800_y107329-107338.json",
+      "physical_path": "D:\\projects\\indus_valley_script\\data\\raw\\2026-11-23-living-towns-footprints\\mosaics\\rupnagar_mound_z18_x186791-186800_y107329-107338.json",
+      "bytes": 342,
+      "sha256": "dad904fc8e76c45e441b144d30a4a008350d42bcfc42f8f3dc2f9646b2c6f524"
+    },
+    {
+      "logical_path": "data/raw/2026-11-23-living-towns-footprints/osm/osm_harappa.json",
+      "physical_path": "D:\\projects\\indus_valley_script\\data\\raw\\2026-11-23-living-towns-footprints\\osm\\osm_harappa.json",
+      "bytes": 82619,
+      "sha256": "c2e13dfca27cc6d4d608c314821d3339bdb21c749a8a6926b380155eeb8c9fbe"
+    },
+    {
+      "logical_path": "data/raw/2026-11-23-living-towns-footprints/osm/osm_lakhanjo_daro.json",
+      "physical_path": "D:\\projects\\indus_valley_script\\data\\raw\\2026-11-23-living-towns-footprints\\osm\\osm_lakhanjo_daro.json",
+      "bytes": 157930,
+      "sha256": "bc27d72303277139937a616a6bd750058e43cb28c0d54be8d169069f2168ff9d"
+    },
+    {
+      "logical_path": "data/raw/2026-11-23-living-towns-footprints/osm/osm_rupnagar.json",
+      "physical_path": "D:\\projects\\indus_valley_script\\data\\raw\\2026-11-23-living-towns-footprints\\osm\\osm_rupnagar.json",
+      "bytes": 283682,
+      "sha256": "7458dee5f87e5503e6c0dcf17b8d3f3cfceb42af53c7f59d928b28ef36665beb"
+    }
+  ]
+}

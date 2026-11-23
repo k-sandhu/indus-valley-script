@@ -1,0 +1,111 @@
+{
+  "verified_utc": "2026-11-23T06:53:32+00:00",
+  "all_passed": true,
+  "checks_passed": 10,
+  "checks_total": 10,
+  "checks": [
+    {
+      "check": "protocol_sha256_matches_frozen_and_summary",
+      "passed": true,
+      "detail": {
+        "frozen": "ffeba2bbec064b196915cdf2b58e3aac74de215650a3afa54c2d807add206902",
+        "actual": "ffeba2bbec064b196915cdf2b58e3aac74de215650a3afa54c2d807add206902",
+        "summary": "ffeba2bbec064b196915cdf2b58e3aac74de215650a3afa54c2d807add206902"
+      }
+    },
+    {
+      "check": "all_input_hashes_verified",
+      "passed": true,
+      "detail": {
+        "verified_inputs": 19,
+        "mismatches": []
+      }
+    },
+    {
+      "check": "exact_503_row_bijection_json_and_csv",
+      "passed": true,
+      "detail": {
+        "raw_503": 503,
+        "json_rows": 503,
+        "csv_rows": 503,
+        "unique": 503
+      }
+    },
+    {
+      "check": "exact_358_audit_bijection",
+      "passed": true,
+      "detail": {
+        "raw_358": 358,
+        "json_in_358": 358,
+        "csv_in_358": 358,
+        "baseline_only": 145
+      }
+    },
+    {
+      "check": "tier_partition_exact_and_consistent",
+      "passed": true,
+      "detail": {
+        "all_503": {
+          "conditionally_absent_needs_plate_check": 88,
+          "certified_absent_sealed": 8,
+          "blocked_by_alias_ambiguity": 230,
+          "already_present_or_exposed": 177
+        },
+        "within_358": {
+          "conditionally_absent_needs_plate_check": 88,
+          "certified_absent_sealed": 8,
+          "blocked_by_alias_ambiguity": 230,
+          "already_present_or_exposed": 32
+        }
+      }
+    },
+    {
+      "check": "reference_corpus_denominators_exact",
+      "passed": true,
+      "detail": {
+        "lipi_families": 4695,
+        "lipi_faces": 5680,
+        "mackay_marshall_joins": 1146,
+        "cisi_flags": 3680,
+        "cisi_joined_to_lipi": 2602,
+        "base_register_fresh": 0
+      }
+    },
+    {
+      "check": "zero_overlap_certified_absent_sealed_vs_lipi_mm_cisi_spent",
+      "passed": true,
+      "detail": {
+        "certified_absent_sealed_count": 8,
+        "seals": 3,
+        "sealings": 3,
+        "tablets": 2,
+        "overlap_failures": []
+      }
+    },
+    {
+      "check": "all_certified_absent_sealed_held_pdf_plates_verified",
+      "passed": true,
+      "detail": {
+        "verified_objects": 8,
+        "plate_failures": []
+      }
+    },
+    {
+      "check": "blinding_invariants_and_zero_prospective_reads",
+      "passed": true,
+      "detail": {
+        "pdf_log_events": 27,
+        "pdf_probe_events": 20,
+        "prospective_access_log_absent": true
+      }
+    },
+    {
+      "check": "p1_to_p4_power_bounds_verified_against_frozen_spec",
+      "passed": true,
+      "detail": {
+        "scenarios_checked": 6,
+        "issues": []
+      }
+    }
+  ]
+}
