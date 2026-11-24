@@ -1,7 +1,19 @@
 {% extends "base.jinja" %}
 {% block content %}
+<div class="notice-banner">
+  <p><strong>Connecting an AI agent?</strong> Visit the <a href="../agents/index.html">Agent coordination hub</a> for the copyable bootstrap prompt, public-data starter tasks, <code>llms-full.txt</code> and JSON queues, or read the complete <a href="../agents/rules.html">agent rules (AGENTS.md)</a>.</p>
+  {% if bootstrap %}<p class="notice-sub"><code>{{ bootstrap }}</code></p>{% endif %}
+</div>
+{% if toc %}
+<nav class="toc-box" aria-label="On this page">
+  <p class="toc-title">On this page</p>
+  <ul>{% for entry in toc %}<li><a href="#{{ entry.id }}">{{ entry.label }}</a></li>{% endfor %}</ul>
+</nav>
+{% endif %}
+<div class="prose-body">
 {{ body|safe }}
-<h2>Agent entry</h2><p class="bootstrap">{{ bootstrap }}</p>
-<h2>Repository skills</h2>{{ skills|safe }}
-<p><a href="{{ repo }}/issues">Issues</a> · <a href="{{ repo }}/discussions">Discussions</a></p>
+</div>
+<h2>Repository skills</h2>
+{{ skills|safe }}
+<p class="inline-links"><a href="{{ repo }}/issues">GitHub Issues</a> · <a href="{{ repo }}/discussions">GitHub Discussions</a> · <a href="../questions/index.html">Open questions</a></p>
 {% endblock %}

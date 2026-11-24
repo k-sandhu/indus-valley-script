@@ -1,6 +1,21 @@
 {% extends "base.jinja" %}
 {% block content %}
-<p>{% for link in links %}<a href="{{ link.url }}">{{ link.label }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>
+<div class="notice-banner">
+  <p><strong>Working manuscript draft{% if paper_number %} · Paper {{ paper_number }}{% endif %}.</strong> Written with AI assistance and not peer reviewed. See the claim-evidence map and methods page for the exact data, scripts and outputs behind each result.</p>
+  {% if paper_question %}<p class="notice-sub"><strong>Question:</strong> {{ paper_question }}</p>{% endif %}
+  <div class="toolbar-actions">
+    {% for link in links %}<a class="btn-small btn-outline-sm" href="{{ link.url }}">{{ link.label|capitalize }}</a>{% endfor %}
+    {% if canonical_url %}<button type="button" class="btn-small btn-outline-sm share-btn js-only" data-share-url="{{ canonical_url }}" hidden>Copy link</button>{% endif %}
+  </div>
+</div>
+{% if toc %}
+<nav class="toc-box" aria-label="On this page">
+  <p class="toc-title">On this page</p>
+  <ul>{% for entry in toc %}<li><a href="#{{ entry.id }}">{{ entry.label }}</a></li>{% endfor %}</ul>
+</nav>
+{% endif %}
+<div class="prose-body">
 {{ body|safe }}
-<h2>PDFs</h2><ul>{% for pdf in pdfs %}<li><a href="{{ pdf.url }}">{{ pdf.name }}</a></li>{% endfor %}</ul>
+</div>
+{% if pdfs %}<h2>PDF version on GitHub</h2><ul>{% for pdf in pdfs %}<li><a href="{{ pdf.url }}">{{ pdf.name }}</a></li>{% endfor %}</ul>{% endif %}
 {% endblock %}

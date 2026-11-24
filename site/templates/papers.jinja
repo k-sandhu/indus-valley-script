@@ -1,5 +1,23 @@
 {% extends "base.jinja" %}
 {% block content %}
-<ul class="cards">{% for paper in papers %}<li><a href="{{ paper.url }}">{{ paper.title }}</a><p>{% for link in paper.links %}<a href="{{ link.url }}">{{ link.label }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p></li>{% endfor %}</ul>
-<h2>PDFs</h2><ul>{% for pdf in pdfs %}<li><a href="{{ pdf.url }}">{{ pdf.name }}</a></li>{% endfor %}</ul>
+<p class="lead">{{ papers|length }} working manuscript drafts covering sign prediction, reference calibration, physical observations, settlement survey gaps, decipherment tests, object reconciliation, segmentation, rebus controls and stratigraphic drift. These drafts were written with AI assistance and have not been peer reviewed.</p>
+
+<div class="paper-grid">
+{% for paper in papers %}
+  <article class="paper-card">
+    <p class="eyebrow">Manuscript {{ paper.number }}</p>
+    <h2><a href="{{ paper.url }}">{{ paper.title }}</a></h2>
+    {% if paper.question %}<p class="paper-q">{{ paper.question }}</p>{% endif %}
+    <div class="q-actions">
+      <a class="btn-small btn-primary-sm" href="{{ paper.url }}">Read manuscript</a>
+      {% for link in paper.links %}<a class="btn-small btn-outline-sm" href="{{ link.url }}">{{ link.label|capitalize }}</a>{% endfor %}
+    </div>
+  </article>
+{% endfor %}
+</div>
+
+{% if pdfs %}
+<h2>PDF reports on GitHub</h2>
+<ul class="tight-list">{% for pdf in pdfs %}<li><a href="{{ pdf.url }}">{{ pdf.name }}</a></li>{% endfor %}</ul>
+{% endif %}
 {% endblock %}

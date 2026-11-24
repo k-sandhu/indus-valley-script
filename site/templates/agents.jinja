@@ -1,0 +1,123 @@
+{% extends "base.jinja" %}
+{% block content %}
+<p class="lead">This repository is organized as a shared research workspace where independent humans and AI coding agents work in parallel on distinct files. Read the complete project rules in <a href="rules.html">AGENTS.md (rendered)</a> or <a href="{{ agents_rules_github }}">AGENTS.md on GitHub</a> before starting a run.</p>
+
+<dl class="counts">
+  <div><dt>Open and claimed questions</dt><dd>{{ counts.open }}</dd></div>
+  <div><dt>Public or no-local-data tasks</dt><dd>{{ counts.public_data }}</dd></div>
+  <div><dt>Starter public tasks</dt><dd>{{ counts.starter_public }}</dd></div>
+  <div><dt>Recorded attempts</dt><dd>{{ counts.attempts }}</dd></div>
+</dl>
+
+<h2>1. Quick-start prompt</h2>
+<p>Paste this prompt into Claude Code, Codex, Antigravity, Cursor, Gemini CLI, or any repository-capable coding agent:</p>
+<div class="prompt-box prompt-light">
+  <div class="prompt-head">
+    <span>Agent bootstrap prompt</span>
+    <button type="button" class="copy-btn js-only" data-copy-target="hub-agent-prompt" hidden>Copy prompt</button>
+  </div>
+  <pre id="hub-agent-prompt"><code>{{ agent_prompt }}</code></pre>
+</div>
+{% if bootstrap %}<p class="bootstrap-note">Short form from README: <code>{{ bootstrap }}</code></p>{% endif %}
+
+<h2>2. How parallel coordination works</h2>
+<p>The four steps below summarize the workflow; <a href="rules.html">AGENTS.md</a> holds all binding rules, including the <code>bench/</code> and <code>bench/spent.json</code> shot protocol, the no-decipherment boundary, local-only source rights, and <code>WRITING.md</code>.</p>
+<div class="steps-grid">
+  <article class="step-card">
+    <p class="step-num">Step 1</p>
+    <h3>Read rules and avoid repeats</h3>
+    <p>Read <a href="rules.html">AGENTS.md</a>, <a href="../data.html">knowledge/DATA.md</a>, and <code>knowledge/experiments/registry.json</code> before designing a run. Never rerun a failed or superseded path without new data or a corrected premise.</p>
+  </article>
+  <article class="step-card">
+    <p class="step-num">Step 2</p>
+    <h3>Claim a question on GitHub</h3>
+    <p>Run <code>python tools/kb.py next --data-access public</code> (or <code>none-needed</code>) or pick a task below. Check GitHub Issues for existing claims, then open or comment on the issue with the Q-ID in the title. Claims lapse after seven days without an update.</p>
+  </article>
+  <article class="step-card">
+    <p class="step-num">Step 3</p>
+    <h3>Own distinct files and freeze controls</h3>
+    <p>Put outputs in a new dated folder <code>experiments/YYYY-MM-DD-short-slug/</code> plus your new card files. Never edit generated <code>registry.json</code> or <code>MAP.md</code>. Attach <code>python -m bench</code> outputs for inscription-corpus claims, or prespecified controls for archaeology and continuity studies.</p>
+  </article>
+  <article class="step-card">
+    <p class="step-num">Step 4</p>
+    <h3>Verify, disclose and submit</h3>
+    <p>Disclose the agent's model and harness in <code>authors</code>. Before opening a pull request, run <code>python tools/kb.py check</code>, <code>python tools/review_prose.py --path &lt;your directory&gt; --no-write</code>, and <code>python tools/verify_knowledge_repo.py --output &lt;your new verification path&gt;</code>.</p>
+  </article>
+</div>
+
+<h2>3. Machine-readable endpoints</h2>
+<p>External agents and scripts can read the published state directly over HTTPS:</p>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th scope="col">Endpoint</th><th scope="col">Format</th><th scope="col">Contents</th></tr></thead>
+    <tbody>
+      <tr><td><a href="{{ agents_rules_github }}"><code>AGENTS.md</code> (pinned)</a></td><td>Markdown</td><td>Complete hard rules, data priority, bench protocol, and contribution contract.</td></tr>
+      <tr><td><a href="../llms.txt"><code>llms.txt</code></a></td><td>Markdown</td><td>Concise project map with absolute links to every section and JSON index.</td></tr>
+      <tr><td><a href="../llms-full.txt"><code>llms-full.txt</code></a></td><td>Markdown</td><td>Single-file digest of rules, data access values, working model, findings, conjectures, and open questions.</td></tr>
+      <tr><td><a href="../api/summary.json"><code>api/summary.json</code></a></td><td>JSON</td><td>Counts, endpoints, bootstrap prompt, public-data starter queue, and conjecture credences.</td></tr>
+      <tr><td><a href="../questions/index.json"><code>questions/index.json</code></a></td><td>JSON</td><td>All question cards with priority, difficulty, data access, claim URLs, and GitHub issue search links.</td></tr>
+      <tr><td><a href="../findings/index.json"><code>findings/index.json</code></a></td><td>JSON</td><td>All finding cards with themes, status classes, and summary results.</td></tr>
+      <tr><td><a href="../conjectures/index.json"><code>conjectures/index.json</code></a></td><td>JSON</td><td>All conjecture cards with credence, risk tier, and status.</td></tr>
+      <tr><td><a href="../attempts/index.json"><code>attempts/index.json</code></a></td><td>JSON</td><td>Full attempt registry with dates, status classes, outcomes, and report links.</td></tr>
+      <tr><td><a href="../search-index.json"><code>search-index.json</code></a></td><td>JSON</td><td>Unified search index spanning findings, conjectures, open questions, papers, and explorers.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>4. Tasks runnable without restricted local corpora</h2>
+<p>Every task below has <code>data_access: public</code> or <code>none-needed</code>, so a fresh clone can start immediately. Check the GitHub issue link before claiming, because card status records claims only after merge. Tasks marked <code>local-only</code> require inputs kept outside Git (see <code>REPRODUCING.md</code>).</p>
+<div class="question-board">
+{% for q in starter_questions %}
+  <article class="question">
+    <div class="q-top">
+      <span class="qid-pill">{{ q.id }}</span>
+      <span class="badge {{ q.status }}">Priority {{ q.priority }}</span>
+      <span class="meta-tag">{{ q.difficulty }}</span>
+      <span class="meta-tag">{{ q.data_access|label }}</span>
+    </div>
+    <h3><a href="../questions/{{ q.href }}">{{ q.title }}</a></h3>
+    <p>{{ q.claim }}</p>
+    <p class="cmd-line"><code>python tools/kb.py show {{ q.id }}</code></p>
+    <div class="q-actions">
+      <a class="btn-small btn-primary-sm" href="../questions/{{ q.href }}">Task brief and prompt</a>
+      {% if q.issues_url %}<a class="btn-small btn-outline-sm" href="{{ q.issues_url }}">Check issues</a>{% endif %}
+      {% if q.claim_url %}<a class="btn-small btn-outline-sm" href="{{ q.claim_url }}">Claim on GitHub</a>{% endif %}
+    </div>
+  </article>
+{% endfor %}
+</div>
+<p><a href="../questions/index.html">View all open questions with filters →</a></p>
+
+<h2>5. Data access values, verification tiers and status classes</h2>
+<div class="two-col">
+  <div class="info-box">
+    <h3>Data access values</h3>
+    <ul class="tight-list">
+      {% for key, desc in data_access_legend.items() %}<li><code>{{ key }}</code> — {{ desc }}</li>{% endfor %}
+    </ul>
+  </div>
+  <div class="info-box">
+    <h3>Verification tiers</h3>
+    <ul class="tight-list">
+      <li><strong>submitted</strong> — Author's recorded run with inputs, code hashes, and outputs.</li>
+      <li><strong>reproduced</strong> — Another contributor reran the work from recorded inputs.</li>
+      <li><strong>reviewed</strong> — An independent adversarial review is recorded in its own dated package.</li>
+      <li><strong>accepted</strong> — Maintainer decision after review and integration checks.</li>
+    </ul>
+  </div>
+</div>
+
+{% if status_classes %}
+<div class="info-box">
+  <h3>Status classes (verbatim from VOCABULARY.md)</h3>
+  <ul class="tight-list">
+    {% for sc in status_classes %}<li><span class="badge {{ sc.slug }}">{{ sc.label }}</span> — {{ sc.definition }}</li>{% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<h2>6. Repository skills</h2>
+{{ skills|safe }}
+
+<p class="inline-links"><a href="rules.html">Full agent rules (AGENTS.md)</a> · <a href="../contribute/index.html">Full contributing guide</a> · <a href="{{ repo }}/issues">GitHub Issues</a> · <a href="{{ repo }}/discussions">GitHub Discussions</a></p>
+{% endblock %}

@@ -1,1 +1,12 @@
 {% extends "base.jinja" %}
+{% block content %}
+{% if toc %}
+<nav class="toc-box" aria-label="On this page">
+  <p class="toc-title">On this page</p>
+  <ul>{% for entry in toc %}<li><a href="#{{ entry.id }}">{{ entry.label }}</a></li>{% endfor %}</ul>
+</nav>
+{% endif %}
+<div class="prose-body">
+{{ body|safe }}
+</div>
+{% endblock %}

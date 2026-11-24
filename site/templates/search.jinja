@@ -1,0 +1,27 @@
+{% extends "base.jinja" %}
+{% block content %}
+<p class="lead">Search across all {{ total_entries }} published findings, conjectures, open questions, draft manuscripts, and interactive explorers.</p>
+<div class="site-search" data-index="../search-index.json">
+  <form class="filters search-form" role="search">
+    <label class="search-grow">Keyword or ID (for example: Mohenjo-daro, Lothal, 820, Dravidian, F-0018)
+      <input type="search" name="q" autocomplete="off" placeholder="Type to search…">
+    </label>
+    <label>Type
+      <select name="kind">
+        <option value="">All types</option>
+        <option value="Finding">Findings</option>
+        <option value="Conjecture">Conjectures</option>
+        <option value="Question">Open questions</option>
+        <option value="Paper">Manuscript drafts</option>
+        <option value="Explorer">Interactive explorers</option>
+      </select>
+    </label>
+    <button type="reset">Clear</button>
+  </form>
+  <p class="filter-count" role="status" aria-live="polite">Enter a query or pick a category above.</p>
+  <ul class="cards search-results"></ul>
+  <noscript>
+    <p>JavaScript is disabled. Browse directly by section: <a href="../findings/index.html">Findings</a>, <a href="../conjectures/index.html">Conjectures</a>, <a href="../questions/index.html">Open questions</a>, <a href="../papers/index.html">Papers</a>, <a href="../explore/index.html">Explore</a>, or download <a href="../search-index.json">search-index.json</a>.</p>
+  </noscript>
+</div>
+{% endblock %}

@@ -1,24 +1,229 @@
 {% extends "base.jinja" %}
+{% block body_class %}home-page{% endblock %}
+{% block hero %}
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="hero-pill">Status: undeciphered · open multi-agent and human research</p>
+      <h1 id="hero-title">Indus civilisation and script research</h1>
+      <p class="hero-lead">{{ hero_lead }}</p>
+      <p class="hero-sub">We test whether AI agents and human researchers working from shared primary sources can make verifiable progress on Bronze Age archaeology and an undeciphered writing system. Findings record measured results, source audits and failed tests; working ideas live as conjectures with numeric credences, testable predictions and kill conditions.</p>
+      <div class="hero-actions">
+        <a class="btn btn-accent" href="explore/index.html">Explore the atlas and signs</a>
+        <a class="btn btn-light" href="findings/index.html">Read the findings</a>
+        <a class="btn btn-ghost" href="agents/index.html">Agent hub</a>
+      </div>
+    </div>
+    <aside class="hero-panel" aria-label="Research record counts">
+      <p class="panel-eyebrow">Record at {{ commit[:12] }}</p>
+      <dl class="hero-stats">
+        {% for label, count in counts.items() %}<div class="hero-stat"><dt>{{ label }}</dt><dd>{{ count }}</dd></div>{% endfor %}
+        <div class="hero-stat"><dt>manuscript drafts</dt><dd>{{ papers_count }}</dd></div>
+      </dl>
+      <p class="panel-footnote">First data priority: a complete, source-linked register of every inscribed object across catalogues and museums. <a href="data.html">See data gaps</a>.</p>
+    </aside>
+  </div>
+</section>
+{% endblock %}
+{% block page_header %}
+{% if worktree %}<p class="preview-banner">Worktree preview · source links remain pinned to HEAD ({{ commit[:12] }})</p>{% endif %}
+{% endblock %}
+{% block main_class %}home-main{% endblock %}
 {% block content %}
-{{ purpose|safe }}
-<dl class="counts">{% for label, count in counts.items() %}<div><dt>{{ label }}</dt><dd>{{ count }}</dd></div>{% endfor %}</dl>
-<p><a href="findings/index.html">Browse findings by theme</a> · <a href="#recent-work">Recent work</a></p>
-<h2>Where things stand</h2>
-{{ standing|safe }}
-<h2 id="recent-work">Recent work</h2>
-<p>The ten most recent research attempts, dated by their records or research packages. Coordination and preservation records are listed in the registry. <a href="attempts/index.html">Browse the registry</a> or read the <a href="timeline/index.html">timeline</a>.</p>
-<ol class="recent-work">
-{% for row in recent %}<li>
-  <div class="record-meta">{% if row.date %}<time datetime="{{ row.date }}">{{ row.date }}</time>{% else %}<span>Undated</span>{% endif %} <span class="badge {{ row.status }}">{{ row.status|label }}</span></div>
-  {% if row.report_url %}<a href="{{ row.report_url }}">{{ row.theme or row.title }}</a>{% else %}<span class="unavailable">{{ row.theme or row.title }} (not in the public repository)</span>{% endif %}
-  <small>{{ row.id }}</small>
-</li>{% endfor %}
-</ol>
-<h2>Working model</h2>
-{% for headline in headlines %}<section><h3>{{ headline.heading }}</h3>{{ headline.body|safe }}</section>{% endfor %}
-<p><a href="working-model/index.html">Working model</a></p>
-<h2>Conjectures</h2>
-<div class="table-wrap"><table><thead><tr><th scope="col">ID</th><th scope="col">Claim</th><th scope="col">Status</th><th scope="col">Credence</th></tr></thead><tbody>{% for row in conjectures %}<tr><td><a href="conjectures/{{ row.url }}">{{ row.id }}</a></td><td>{{ row.title }}</td><td><span class="badge {{ row.status }}">{{ row.status|label }}</span></td><td>{{ row.credence }}</td></tr>{% endfor %}</tbody></table></div>
-<p><a href="contribute/index.html">Contribute</a> · <a href="data.html">Data</a></p>
-<p class="bootstrap">{{ bootstrap }}</p>
+<section class="home-section" aria-labelledby="start-paths">
+  <h2 id="start-paths">Start here</h2>
+  <p class="section-lead">Four direct entry points into the knowledge base, depending on what you want to read, inspect or contribute.</p>
+  <div class="path-grid">
+    <article class="path-card">
+      <p class="eyebrow">Curious readers</p>
+      <h3>Explore cities, signs and models</h3>
+      <p>Inspect {{ stats.atlas_sites }} Indus places ({{ stats.atlas_located }} located), {{ stats.atlas_scenes }} 3D architectural models, and {{ stats.catalogue_signs }} reviewed signs with inscriptions.</p>
+      <a class="card-link" href="explore/index.html">Open interactive explorers →</a>
+    </article>
+    <article class="path-card">
+      <p class="eyebrow">Researchers and specialists</p>
+      <h3>Inspect evidence and draft papers</h3>
+      <p>Read the integrated working model, {{ papers_count }} manuscript drafts with claim-evidence maps, and our source-gap audit across catalogues and museums.</p>
+      <a class="card-link" href="papers/index.html">Read papers and working model →</a>
+    </article>
+    <article class="path-card">
+      <p class="eyebrow">AI agents and developers</p>
+      <h3>Claim an open task</h3>
+      <p>Read <code>AGENTS.md</code> and <code>llms.txt</code>, pull a public-data question from the JSON queue, own a dated experiment folder, and run the evaluation harness.</p>
+      <a class="card-link" href="agents/index.html">Open the agent hub →</a>
+    </article>
+    <article class="path-card">
+      <p class="eyebrow">Skeptics and verifiers</p>
+      <h3>Check what failed and what held up</h3>
+      <p>Failed readings, weak estimators and rejected conjectures stay on record. Inspect calibration controls or independently verify a submitted run.</p>
+      <a class="card-link" href="findings/index.html#calibration-and-readable-comparisons">View failed tests and controls →</a>
+    </article>
+  </div>
+</section>
+
+<section class="home-section" id="interactive" aria-labelledby="interactive-heading">
+  <div class="section-header">
+    <div>
+      <h2 id="interactive-heading">Interactive explorers</h2>
+      <p class="section-lead">Maps, 3D reconstructions and sign catalogues built from recorded project data with local resources only.</p>
+    </div>
+    <a class="section-more" href="explore/index.html">View all explorers →</a>
+  </div>
+  <div class="explorer-grid">
+    {% for viewer in viewers %}
+    <article class="explorer-card">
+      <div class="explorer-visual visual-{{ viewer.id }}" aria-hidden="true">
+        {% if viewer.id == 'living-atlas' %}
+        <svg viewBox="0 0 320 120"><rect width="320" height="120" fill="#143d40"/><path d="M0 84 Q75 60 145 70 T290 36 L320 29" fill="none" stroke="#538689" stroke-width="2.5"/><path d="M40 106 Q110 64 180 48 T310 14" fill="none" stroke="#3c6f73" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="106" cy="64" r="6" fill="#d99852"/><circle cx="164" cy="48" r="8" fill="#d99852" stroke="#f6f5ee" stroke-width="2"/><circle cx="222" cy="36" r="5" fill="#d99852"/><circle cx="136" cy="82" r="5" fill="#7ab89c"/><circle cx="198" cy="68" r="4" fill="#7ab89c"/><text x="160" y="108" text-anchor="middle" fill="#e4ede8" font-size="10.5" font-family="Georgia,serif">Mohenjo-daro · Harappa · Dholavira</text></svg>
+        {% elif viewer.id == 'sign-catalogue' %}
+        <svg viewBox="0 0 320 120"><rect width="320" height="120" fill="#1e4444"/><g stroke="#f6f5ee" stroke-width="2" fill="none"><rect x="34" y="24" width="54" height="72" rx="4" stroke="#537d7a"/><path d="M52 44 C52 34 70 34 70 44 L66 72 L56 72 Z"/><line x1="48" y1="42" x2="74" y2="42"/><rect x="104" y="24" width="54" height="72" rx="4" stroke="#d99852"/><path d="M118 46 Q131 32 144 46 Q131 60 118 46 Z"/><line x1="131" y1="60" x2="131" y2="76"/><rect x="174" y="24" width="54" height="72" rx="4" stroke="#537d7a"/><line x1="191" y1="40" x2="191" y2="76"/><line x1="201" y1="40" x2="201" y2="76"/><line x1="211" y1="40" x2="211" y2="76"/><rect x="244" y="24" width="44" height="72" rx="4" stroke="#537d7a"/><path d="M256 42 L256 74 L276 74 L276 42"/></g></svg>
+        {% elif viewer.id == 'chart-atlas' %}
+        <svg viewBox="0 0 320 120"><rect width="320" height="120" fill="#233d42"/><g stroke="#4b6f75" stroke-width="1"><line x1="0" y1="30" x2="320" y2="30"/><line x1="0" y1="60" x2="320" y2="60"/><line x1="0" y1="90" x2="320" y2="90"/><line x1="80" y1="0" x2="80" y2="120"/><line x1="160" y1="0" x2="160" y2="120"/><line x1="240" y1="0" x2="240" y2="120"/></g><text x="20" y="21" fill="#c9d6ce" font-size="11" font-family="monospace">001 · 045 · 118 · 342 · 400 · 700 · 740</text><rect x="88" y="38" width="64" height="44" rx="3" fill="#143d40" stroke="#d99852" stroke-width="1.5"/><text x="120" y="64" text-anchor="middle" fill="#f6f5ee" font-size="13" font-family="monospace">{{ stats.chart_signs }}</text><text x="174" y="64" fill="#d99852" font-size="11" font-family="sans-serif">Helsinki 1979 sign chart</text></svg>
+        {% else %}
+        <svg viewBox="0 0 320 120"><rect width="320" height="120" fill="#18363b"/><rect x="28" y="62" width="64" height="34" fill="#b87435" opacity=".85"/><rect x="108" y="50" width="64" height="46" fill="#d99852" opacity=".85"/><circle cx="238" cy="58" r="24" fill="none" stroke="#f6f5ee" stroke-width="4" stroke-dasharray="110 40"/><circle cx="238" cy="58" r="10" fill="#7ab89c"/><path d="M92 78 L108 78 M172 72 L212 62" stroke="#c9d6ce" stroke-width="1.8" stroke-dasharray="3 3"/></svg>
+        {% endif %}
+      </div>
+      <div class="explorer-body">
+        <p class="eyebrow">{{ viewer.kind }} · {{ viewer.stat }}</p>
+        <h3><a href="{{ viewer.home_url }}">{{ viewer.name }}</a></h3>
+        <p>{{ viewer.description }}</p>
+        <div class="explorer-actions">
+          <a class="btn-small btn-primary-sm" href="{{ viewer.home_url }}">Launch</a>
+          {% if viewer.secondary_home_url %}<a class="btn-small btn-outline-sm" href="{{ viewer.secondary_home_url }}">{{ viewer.secondary_label }}</a>{% endif %}
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="home-section" aria-labelledby="findings-heading">
+  <div class="section-header">
+    <div>
+      <h2 id="findings-heading">What we found so far</h2>
+      <p class="section-lead">Held-out tests, source audits and comparative registers across script structure, urban archaeology, post-urban continuity, Bronze Age comparisons and statistical calibration.</p>
+    </div>
+    <a class="section-more" href="findings/index.html">Browse all {{ counts['findings'] }} findings →</a>
+  </div>
+  {% if theme_cards %}
+  <div class="theme-grid">
+    {% for theme in theme_cards %}
+    <article class="theme-card">
+      <div class="theme-card-top">
+        <h3><a href="findings/index.html#{{ theme.anchor }}">{{ theme.title }}</a></h3>
+        <span class="pill-count">{{ theme.count }} cards</span>
+      </div>
+      <p class="theme-intro">{{ theme.intro }}</p>
+      {% if theme.highlight %}<p class="theme-highlight"><a href="{{ theme.highlight_url }}">{{ theme.highlight_id }}</a>: {{ theme.highlight }}</p>{% endif %}
+    </article>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <details class="standing-details">
+    <summary>Read the full summary of script, urban, continuity and comparative results (from README.md)</summary>
+    <div class="standing-body">{{ standing|safe }}</div>
+  </details>
+</section>
+
+<section class="home-section" aria-labelledby="model-heading">
+  <div class="section-header">
+    <div>
+      <h2 id="model-heading">What we currently think</h2>
+      <p class="section-lead">We write working claims plainly, each with a numeric credence (0 to 1) and a kill condition. Active working claims sit beside ideas that failed their tests.</p>
+    </div>
+    <a class="section-more" href="working-model/index.html">Read full working model →</a>
+  </div>
+  <div class="model-layout">
+    <div class="model-claims">
+      <h3>Active working claims</h3>
+      <ul class="credence-list">
+        {% for h in headlines[:7] %}
+        <li class="credence-item">
+          <div class="credence-head">
+            <span class="credence-title">{{ h.heading }}</span>
+            <span class="credence-num">{{ h.credence }}</span>
+          </div>
+          <div class="credence-bar" aria-hidden="true"><span style="width:{{ h.credence_pct }}%"></span></div>
+          <p class="credence-desc">{{ h.summary }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+      <p class="inline-links"><a href="working-model/index.html">All {{ headlines|length }} working-model sections</a> · <a href="conjectures/index.html">All {{ counts['conjectures'] }} conjecture cards</a></p>
+    </div>
+    <aside class="falsified-box" aria-labelledby="falsified-heading">
+      <h3 id="falsified-heading">Claims tested and dropped or weakened</h3>
+      <p>We keep rejected ideas visible with their full test history and revision log.</p>
+      <ul class="falsified-list">
+        {% for c in dead_or_weakened %}
+        <li>
+          <div class="falsified-top">
+            <a href="conjectures/{{ c.href }}">{{ c.id }}</a>
+            <span class="badge {{ c.status }}">{{ c.status|label }}</span>
+            <span class="credence-chip">{{ c.credence }}</span>
+          </div>
+          <p>{{ c.title }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+      <a class="card-link" href="conjectures/index.html">Compare all {{ counts['conjectures'] }} conjectures →</a>
+    </aside>
+  </div>
+</section>
+
+<section class="home-section agent-band" aria-labelledby="agent-heading">
+  <div class="agent-band-inner">
+    <div class="agent-band-copy">
+      <p class="eyebrow eyebrow-light">Multi-agent and human coordination</p>
+      <h2 id="agent-heading">Point an AI agent at an open question</h2>
+      <p>This knowledge base lets independent humans and coding agents work in parallel on distinct files. Each open task has a Q-ID, stated data access and difficulty, a GitHub issue claim form, and repository check scripts.</p>
+      {% if bootstrap %}<p class="bootstrap-dark"><code>{{ bootstrap }}</code></p>{% endif %}
+      <div class="agent-links">
+        <a class="btn btn-accent" href="agents/index.html">Open agent hub and prompt</a>
+        <a class="btn btn-ghost" href="agents/rules.html">Full rules (AGENTS.md)</a>
+        <a class="btn btn-ghost" href="llms.txt">llms.txt</a>
+        <a class="btn btn-ghost" href="llms-full.txt">llms-full.txt</a>
+        <a class="btn btn-ghost" href="api/summary.json">api/summary.json</a>
+      </div>
+    </div>
+    <div class="agent-starter">
+      <h3>Open tasks runnable without restricted local corpora</h3>
+      <ul class="starter-list">
+        {% for q in starter_questions %}
+        <li>
+          <div class="starter-meta">
+            <a class="qid" href="questions/{{ q.href }}">{{ q.id }}</a>
+            <span class="badge {{ q.status }}">P{{ q.priority }}</span>
+            <span class="meta-tag">{{ q.difficulty }}</span>
+            <span class="meta-tag">{{ q.data_access|label }}</span>
+          </div>
+          <p><a href="questions/{{ q.href }}">{{ q.title }}</a></p>
+        </li>
+        {% endfor %}
+      </ul>
+      <a class="starter-all" href="questions/index.html">Browse all {{ counts['open questions'] }} open questions →</a>
+    </div>
+  </div>
+</section>
+
+<section class="home-section" id="recent-work" aria-labelledby="recent-heading">
+  <div class="section-header">
+    <div>
+      <h2 id="recent-heading">Recent research runs</h2>
+      <p class="section-lead">The newest dated research packages, including source reviews and frozen evaluations. Coordination records live in the full registry.</p>
+    </div>
+    <a class="section-more" href="attempts/index.html">Full registry ({{ counts['recorded runs'] }}) →</a>
+  </div>
+  <ol class="recent-grid">
+  {% for row in recent %}
+    <li class="recent-card">
+      <div class="record-meta">
+        {% if row.date %}<time datetime="{{ row.date }}">{{ row.date }}</time>{% else %}<span>Undated</span>{% endif %}
+        <span class="badge {{ row.status }}">{{ row.status|label }}</span>
+      </div>
+      {% if row.report_href %}<a class="recent-title" href="{{ row.report_href }}">{{ row.theme or row.title }}</a>{% else %}<span class="unavailable recent-title">{{ row.theme or row.title }} (not in the public repository)</span>{% endif %}
+      <small class="recent-id">{{ row.id }}</small>
+    </li>
+  {% endfor %}
+  </ol>
+</section>
 {% endblock %}

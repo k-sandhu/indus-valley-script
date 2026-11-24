@@ -1,6 +1,7 @@
 {% extends "base.jinja" %}
 {% block content %}
-{% if licence %}<p>{{ licence }}</p>{% endif %}
+<div class="prose-body">
 {{ body|safe }}
-<p><a href="{{ notices }}">Third-party notices</a></p>
+</div>
+<p><a class="btn-small btn-outline-sm" href="{{ notices }}">Third-party notices</a></p>
 {% endblock %}

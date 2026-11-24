@@ -1,6 +1,6 @@
 # Website generator
 
-The website presents the repository's research record. Git selects the source files. Python 3.13, Markdown 3.8.2 and Jinja2 3.1.6 build the pages. Templates use `.jinja` so the repository's downloaded-HTML exclusion does not hide them.
+The website presents the repository's research record for both human readers and AI research agents. Git selects the source files. Python 3.13, Markdown 3.8.2 and Jinja2 3.1.6 build the pages. Templates use `.jinja` so the repository's downloaded-HTML exclusion does not hide them.
 
 Run these commands from the repository root:
 
@@ -10,40 +10,59 @@ python tools/build_site.py --worktree --out _site
 python tools/build_site.py --check _site
 ```
 
-Use an empty output directory or a previous build directory. A build reads HEAD by default. `--worktree` reads files selected by `git ls-files --cached --others --exclude-standard` for a preview. The preview label identifies that mode; its source links still name HEAD. The check reports how many preview targets are absent at that commit. Commit the source before publishing so those links resolve on GitHub. All generated HTML belongs in the ignored output directory or on gh-pages. The generator adds no workflow.
+Use an empty output directory or a previous build directory. A build reads HEAD by default. `--worktree` reads files selected by `git ls-files --cached --others --exclude-standard` for a preview. The preview banner identifies that mode; its source links still name HEAD. The check reports how many preview targets are absent at that commit. Commit the source before publishing so those links resolve on GitHub. All generated HTML belongs in the ignored output directory or on `gh-pages`. The generator adds no workflow.
 
-The data directory and public omissions are excluded. The requested manifest table is the sole read exception: `data/MANIFEST.json` must be tracked, and its source file is never copied. Explore image assets must be tracked even in a preview. Missing document links become text labelled "not in the public repository". External hyperlinks remain usable; pages load local resources.
+The `data/` directory and public omissions are excluded. The manifest metadata table is the sole read exception: `data/MANIFEST.json` must be tracked, and its source file is never copied. Explore image assets must be tracked even in a preview. Missing document links become text labelled "not in the public repository". External hyperlinks remain usable; pages load local resources only.
 
-## Navigation and research lists
+## Navigation, sharing and visual structure
 
-The navigation has seven entries: Home, Findings, Ideas, Questions, Record, Explore and About. Ideas opens the working model and conjectures. Record opens the registry, timeline, papers and data. About opens contribution and reuse guidance. Native HTML disclosures keep the groups usable without JavaScript; the current section opens and the current page is marked. Existing page paths are retained.
+The masthead has seven entries: Home, Explore, Findings, Ideas, Questions, Record and Participate, plus links to site-wide Search and the GitHub repository. Ideas opens Working model and Conjectures. Record opens Papers, Registry, Data and Timeline. Participate opens the Agent hub, Agent rules (`AGENTS.md`), Contribute and Reuse & licence. Native HTML `<details>` menus keep every dropdown usable without JavaScript, and every existing page URL is retained.
 
-Findings reads `knowledge/findings/README.md` when the selected source contains it. The guide supplies introductory prose, level-2 themes, their descriptions and ordered card lines, each a list item that links the card ID to its file and follows it with a result sentence and an italic status class. A card's path and status must match its indexed record. The final `Results recorded in packages but not yet carded` section supplies a separate list of report links through the ordinary publication gate. Cards absent from the guide appear under Other findings. Search, theme and status filters use the complete `findings/index.json`, which includes each card's theme and the guide's result sentence.
+Every page except `404.html` emits canonical, Open Graph and Twitter Card metadata backed by the local `assets/social-card.png` and `assets/favicon.svg`. Regenerate `site/static/social-card.png` with `python site/make_social_card.py`. Longer documents and cards include breadcrumbs, reading times and an on-page table of contents built from level-2 headings after stripping any repeated leading `#` title. `404.html` uses site-root `/indus-valley-script/` asset and navigation paths so missing nested URLs still render cleanly.
 
-If the guide is absent or does not parse, Findings groups all cards by area. `site-build.json` records the selected mode and the fallback reason under `findings_guide`. Links to the guide resolve to the Findings index. Theme fragments follow Markdown heading slugs.
+The home page opens with the project's purpose and commit counts, followed by four audience entry cards and visual cards for the interactive explorers. Below that sit all nine finding themes, visual credence bars for active working claims paired with dropped or weakened conjectures, the agent coordination summary with public-data open tasks, and the eight newest research runs.
 
-Home retains the README purpose, Where things stand, working-model headlines, conjecture table and For agents bootstrap line. Counts now include conjectures. Recent work lists the ten newest research attempts with dates, status classes and gated report links; `record` attempts (coordination, release and preservation) appear only in the registry. The registry includes every attempt, ordered newest first and grouped by date, with date links above the list and undated attempts last. Dates use an explicit ISO record date first, then the date of its experiment package; equal dates use ascending attempt ID. Nested run-directory dates do not replace package dates. The timeline continues to render `knowledge/TIMELINE.md` at its existing URL. All list rows remain in HTML when JavaScript is disabled; filtering hides empty groups when JavaScript is enabled.
+## Research listings and conjecture views
 
-## Explore and the living atlas
+Findings reads `knowledge/findings/README.md` when the selected source contains it. The guide supplies introductory prose, level-2 themes, their descriptions and ordered card lines, each a list item that links the card ID to its file and follows it with a result sentence and an italic status class. A card's path and status must match its indexed record. The final `Results recorded in packages but not yet carded` section supplies a separate list of report links through the ordinary publication gate. Cards absent from the guide appear under Other findings. If the guide is absent or does not parse, Findings groups all cards by area and records the fallback reason in `site-build.json`.
 
-Explore describes the reviewed sign catalogue using its package README. The frozen chart atlas has no adjacent README, so its description comes from the chart-atlas sentence in the repository README. Their embedded data, tracked images, attribution and no-script tables are preserved.
+Open questions, Findings, Conjectures and the Experiment registry render their full lists in HTML when JavaScript is disabled. With JavaScript enabled, quick-filter chips, dropdown filters and search update the list and synchronize filter state into URL query parameters. Open and claimed question cards link to both the GitHub issue search (to check active claims) and the claim form, and include a task-specific agent prompt; completed and dropped question cards omit those controls. Conjecture listings display credence bars, and conjecture cards render an inline SVG credence trajectory chart whenever two or more history entries exist.
 
-Explore also publishes the 26 October Indus living atlas at its repository path: the map (`index.html`), the research reader (`research.html`), and the reconstruction entry with the self-contained `reconstruction/run-v5/index.html` it opens. `ATLAS_ASSETS` in `tools/build_site.py` lists the tracked scripts, styles, data and Leaflet files they load, and each is copied as tracked. The repository version offers an optional OpenStreetMap street basemap, which loads remote tiles; the site copy removes that control and its handler so that every map resource is local, and the build stops if either is no longer found. Relative report links inside the atlas scripts and data become commit-pinned GitHub links, and key=value fragments such as `#model=great-bath` are treated as view state rather than anchors. Without JavaScript the map page lists every place and town in tables. The atlas's own README records project code under the Unlicense, original prose and geometry under CC0, Leaflet under BSD-2-Clause with its full notice, and Natural Earth geometry in the public domain. Source photographs and scanned plans are not redistributed by the atlas. The checker recognizes external `tileLayer` calls as well as external fetch and related loaders.
+## Agent coordination and machine-readable feeds
 
-Start a local HTTP server to use search and filters:
+The Agent coordination hub (`agents/index.html`) pairs with the full rendered rules (`agents/rules.html`) to provide a copyable bootstrap prompt, parallel contribution steps, verbatim status-class definitions from `knowledge/registry/VOCABULARY.md`, data-access definitions, repository skills, and a starter queue restricted to open tasks with `data_access: public` or `none-needed`.
+
+All JSON indexes (`findings/index.json`, `questions/index.json`, `conjectures/index.json`, `attempts/index.json`) emit absolute public URLs. The build also emits:
+
+- `llms.txt`: concise map linking `AGENTS.md` to its commit-pinned GitHub Markdown file alongside absolute public links to every section and JSON index.
+- `llms-full.txt`: single-file Markdown digest of standing constraints, data-access definitions, working-model claims, findings by theme, conjectures and priority open questions.
+- `api/summary.json`: machine-readable snapshot with counts, endpoints, bootstrap prompt and the public-data starter task queue.
+- `search-index.json` and `search/index.html`: site-wide search across findings, conjectures, open questions, draft manuscripts and interactive explorers.
+
+## Explore, the living atlas and visual packages
+
+Explore publishes the self-contained interactive viewers tracked in the public repository at their repository paths, injecting description and social preview metadata into each viewer page:
+
+- The **Indus living atlas** (`experiments/2026-10-26-indus-living-atlas/index.html`), its research reader (`research.html`), and its seven 3D city and building reconstructions (`reconstruction/index.html`). The site copy strips the optional online OpenStreetMap street basemap control and handler so every resource stays local.
+- The **Reviewed sign catalogue** (`experiments/2026-10-11-bonta-adversarial/run-v6/catalogue.html`) and the **1979 chart atlas** (`output/chart_atlas/index.html`), retaining their embedded rows, tracked images, attribution and `<noscript>` tables.
+- When `presentations/2026-10-13-relay-visualization/run-v1/index.html` is tracked in the public source, **The teaching relay** is published locally with external font links stripped; otherwise Explore links its GitHub README alongside the contemporary Bronze Age civilisations study.
+
+## Local preview and publication
+
+Start a local HTTP server to test search, filters and viewers:
 
 ```text
 python -m http.server 8000 --directory _site
 ```
 
-Open `http://localhost:8000/`. Pages also contain their full lists without JavaScript. Explore supplies tables of the viewers' embedded rows when JavaScript is disabled. `site-build.json` records the source commit, inputs, copied assets, omitted links and unavailable pages. `--check` checks these records, page links, assets, pinned repository links and external resource references. It reports size and the largest files.
+Open `http://localhost:8000/`. `site-build.json` records the source commit, inputs, copied assets, omitted links and unavailable pages. `--check` verifies these records, internal links, fragment IDs, absolute public URLs in JSON, text and sitemap feeds, assets, pinned GitHub links, heading order, `alt` text and the absence of external resource loads.
 
-After reviewing and committing the source files, publish to the local branch:
+After reviewing and committing the source files, publish to the local `gh-pages` branch:
 
 ```text
 python tools/build_site.py --publish
 ```
 
-This command builds and checks HEAD, writes a new gh-pages commit with Git plumbing, and updates that local branch. It preserves the current branch, index and working tree. A later invocation uses the existing gh-pages commit as its parent. Commit metadata uses the source commit's date. It does not push. Review the result before pushing or changing GitHub Pages settings.
+This command builds and checks HEAD, writes a new `gh-pages` commit with Git plumbing, and updates that local branch while preserving the current branch, index and working tree. A later invocation uses the existing `gh-pages` commit as its parent, and commit metadata uses the source commit's date. It does not push. Review the result before pushing.
 
-The base URL is `https://k-sandhu.github.io/indus-valley-script/`. Page links are relative; the sitemap and llms.txt use absolute public URLs. The build output is deterministic for a fixed source commit and pinned dependencies.
+The base URL is `https://k-sandhu.github.io/indus-valley-script/`. Page links are relative (except on `404.html`); canonical tags, social images, `sitemap.xml`, `llms.txt`, `llms-full.txt`, `api/summary.json` and JSON indexes use absolute public URLs. The build output is deterministic for a fixed source commit and pinned dependencies.

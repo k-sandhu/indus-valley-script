@@ -1,16 +1,54 @@
 {% extends "base.jinja" %}
 {% block content %}
-<dl class="metadata">
-{% for key in ['status_class', 'status', 'area', 'credence', 'risk', 'kind', 'difficulty', 'data_access', 'priority', 'claimed_by', 'claim_expires'] %}
-{% if fields.get(key) is not none and fields.get(key) != '' %}<div><dt>{{ key|label }}</dt><dd>{% if key in ['status', 'status_class'] %}<span class="badge {{ fields[key] }}">{{ fields[key]|label }}</span>{% else %}{{ fields[key] }}{% endif %}</dd></div>{% endif %}
-{% endfor %}
-</dl>
-{% if claim_url %}<p><a class="action" href="{{ claim_url }}">Claim or discuss on GitHub</a></p>{% endif %}
+<div class="card-toolbar">
+  <dl class="metadata">
+  {% for key in ['status_class', 'status', 'area', 'credence', 'risk', 'kind', 'difficulty', 'data_access', 'priority', 'claimed_by', 'claim_expires'] %}
+  {% if fields.get(key) is not none and fields.get(key) != '' and not (key == 'credence' and credence_pct is not none) %}<div><dt>{{ key|label }}</dt><dd>{% if key in ['status', 'status_class'] %}<span class="badge {{ fields[key] }}">{{ fields[key]|label }}</span>{% else %}{{ fields[key] }}{% endif %}</dd></div>{% endif %}
+  {% endfor %}
+  </dl>
+  <div class="toolbar-actions">
+    {% if issues_url %}<a class="btn-small btn-outline-sm" href="{{ issues_url }}">Check existing claims</a>{% endif %}
+    {% if claim_url %}<a class="btn-small btn-primary-sm" href="{{ claim_url }}">Claim on GitHub</a>{% endif %}
+    {% if canonical_url %}<button type="button" class="btn-small btn-outline-sm share-btn js-only" data-share-url="{{ canonical_url }}" hidden>Copy link</button>{% endif %}
+  </div>
+</div>
+
+{% if credence_pct is not none %}
+<div class="credence-summary">
+  <div class="credence-head">
+    <span class="credence-title">Current credence</span>
+    <span class="credence-num">{{ fields.credence }} ({{ credence_pct }}%)</span>
+  </div>
+  <div class="credence-bar credence-bar-lg" aria-hidden="true"><span style="width:{{ credence_pct }}%"></span></div>
+</div>
+{% endif %}
+
+{% if agent_prompt %}
+<div class="prompt-box prompt-light">
+  <div class="prompt-head">
+    <span>Run {{ item.id }} with an AI coding agent</span>
+    <button type="button" class="copy-btn js-only" data-copy-target="card-agent-prompt" hidden>Copy prompt</button>
+  </div>
+  <pre id="card-agent-prompt"><code>{{ agent_prompt }}</code></pre>
+</div>
+{% endif %}
+
+{% if toc %}
+<nav class="toc-box" aria-label="On this page">
+  <p class="toc-title">On this page</p>
+  <ul>{% for entry in toc %}<li><a href="#{{ entry.id }}">{{ entry.label }}</a></li>{% endfor %}{% if history %}<li><a href="#credence-history">Credence history</a></li>{% endif %}</ul>
+</nav>
+{% endif %}
+
+<div class="prose-body">
+{{ body|safe }}
+</div>
+
 {% if history %}
-<h2>Credence history</h2>
+<h2 id="credence-history">Credence history</h2>
+{% if credence_chart %}<div class="chart-wrap">{{ credence_chart|safe }}</div>{% endif %}
 <div class="table-wrap"><table><thead><tr><th scope="col">Date</th><th scope="col">Credence</th><th scope="col">Reason</th></tr></thead><tbody>
-{% for row in history %}<tr><td>{{ row.date }}</td><td>{{ row.value }}</td><td>{{ row.reason }}</td></tr>{% endfor %}
+{% for row in history %}<tr><td class="nowrap">{{ row.date }}</td><td><strong>{{ row.value }}</strong></td><td>{{ row.reason }}</td></tr>{% endfor %}
 </tbody></table></div>
 {% endif %}
-{{ body|safe }}
 {% endblock %}
