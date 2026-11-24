@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Statistical methods, sensitivity analyses, and reproduction commands · Indus Research</title>
+  <meta name="description" content="This companion document specifies the exact mathematical definitions, decision rules, sensitivity analyses, power simulations, and reproduction commands behind manuscript.md. All code…">
+  <link rel="canonical" href="https://k-sandhu.github.io/indus-valley-script/papers/010-harappa-stratigraphic-drift/methods.html">
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Indus civilisation and script research">
+  <meta property="og:title" content="Statistical methods, sensitivity analyses, and reproduction commands · Indus Research">
+  <meta property="og:description" content="This companion document specifies the exact mathematical definitions, decision rules, sensitivity analyses, power simulations, and reproduction commands behind manuscript.md. All code…">
+  <meta property="og:url" content="https://k-sandhu.github.io/indus-valley-script/papers/010-harappa-stratigraphic-drift/methods.html">
+  <meta property="og:image" content="https://k-sandhu.github.io/indus-valley-script/assets/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Statistical methods, sensitivity analyses, and reproduction commands · Indus Research">
+  <meta name="twitter:description" content="This companion document specifies the exact mathematical definitions, decision rules, sensitivity analyses, power simulations, and reproduction commands behind manuscript.md. All code…">
+  <meta name="twitter:image" content="https://k-sandhu.github.io/indus-valley-script/assets/social-card.png">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <script src="../../assets/site.js" defer></script>
+</head>
+<body class="">
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html">
+      <svg class="brand-mark" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="5" fill="#0f3134"/>
+        <path d="M6 23V8h20v15H6m6.5 0V8m7 0v15M6 15.5h20" fill="none" stroke="#f6f5ee" stroke-width="1.5" stroke-linecap="square"/>
+        <path d="M5 26.5h22" stroke="#d99852" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">Indus Research</span>
+        <span class="brand-sub">Civilisation &amp; script knowledge base</span>
+      </span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul class="nav-list">
+      <li class="nav-item">
+        <a href="../../index.html">Home</a>
+      </li><li class="nav-item">
+        <a href="../../explore/index.html">Explore</a>
+      </li><li class="nav-item">
+        <a href="../../findings/index.html">Findings</a>
+      </li><li class="nav-item has-menu">
+        <details class="nav-menu">
+          <summary>Ideas<span class="chev" aria-hidden="true">▾</span></summary>
+          <ul class="nav-dropdown"><li><a href="../../working-model/index.html">Working model</a></li><li><a href="../../conjectures/index.html">Conjectures</a></li></ul>
+        </details>
+      </li><li class="nav-item">
+        <a href="../../questions/index.html">Questions</a>
+      </li><li class="nav-item current-section has-menu">
+        <details class="nav-menu">
+          <summary>Record<span class="sr-only"> (current section)</span><span class="chev" aria-hidden="true">▾</span></summary>
+          <ul class="nav-dropdown"><li><a href="../index.html" aria-current="location">Papers</a></li><li><a href="../../attempts/index.html">Registry</a></li><li><a href="../../data.html">Data</a></li><li><a href="../../timeline/index.html">Timeline</a></li></ul>
+        </details>
+      </li><li class="nav-item has-menu">
+        <details class="nav-menu">
+          <summary>Participate<span class="chev" aria-hidden="true">▾</span></summary>
+          <ul class="nav-dropdown"><li><a href="../../agents/index.html">Agent hub</a></li><li><a href="../../agents/rules.html">Agent rules</a></li><li><a href="../../contribute/index.html">Contribute</a></li><li><a href="../../reuse/index.html">Reuse &amp; licence</a></li></ul>
+        </details>
+      </li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="icon-link" href="../../search/index.html" title="Search the knowledge base (press /)" aria-label="Search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <span class="icon-label">Search</span>
+      </a>
+      <a class="repo-link" href="https://github.com/k-sandhu/indus-valley-script">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<main id="content" class="page-main">
+  
+  
+  <nav class="breadcrumbs" aria-label="Breadcrumb"><ol>
+    <li><a href="../../index.html">Home</a></li><li><a href="../index.html">Papers</a></li><li><a href="index.html">Paper 010</a></li><li><span aria-current="page">Methods</span></li>
+  </ol></nav>
+  
+  <div class="page-head">
+    <h1>Statistical methods, sensitivity analyses, and reproduction commands</h1>
+    <p class="page-meta">14 min read</p>
+  </div>
+  
+  
+  
+
+<nav class="toc-box" aria-label="On this page">
+  <p class="toc-title">On this page</p>
+  <ul><li><a href="#1-chronological-clocks-excavation-frames-and-analytical-units">1. Chronological clocks, excavation frames, and analytical units</a></li><li><a href="#2-primary-test-statistics-and-null-distributions">2. Primary test statistics and null distributions</a></li><li><a href="#3-multiplicity-influence-and-credence-rules">3. Multiplicity, influence, and credence rules</a></li><li><a href="#4-exploratory-post-outcome-and-companion-analyses">4. Exploratory post-outcome and companion analyses</a></li><li><a href="#5-pre-freeze-power-summary-harappa-mound-f">5. Pre-freeze power summary (Harappa Mound F)</a></li><li><a href="#6-frozen-artifact-hashes-and-reproduction-commands">6. Frozen artifact hashes and reproduction commands</a></li></ul>
+</nav>
+
+<div class="prose-body">
+<p>This companion document specifies the exact mathematical definitions, decision rules, sensitivity analyses, power simulations, and reproduction commands behind <a href="index.html">manuscript.md</a>. All code runs under Python 3.13 with NumPy. Raw inscription rows and third-party source PDFs remain local-only under <code>data/raw/</code> and <code>data/normalized/</code>; tracked outputs hold aggregates, statistics, sign codes, and family identifiers.</p>
+<h2 id="1-chronological-clocks-excavation-frames-and-analytical-units">1. Chronological clocks, excavation frames, and analytical units</h2>
+<h3 id="11-relative-clock-u">1.1 Relative clock $u$</h3>
+<p>For any group of $N$ seals with an ordered chronological key $k_i$ (smaller values are older), let $r_i \in [1, N]$ be the average rank (mid-rank for ties) of $k_i$ computed by <code>strat_stats.average_ranks</code>. The normalized clock value is:</p>
+<p>$$u_i = \frac{r_i - 0.5}{N} \in (0, 1).$$</p>
+<ul>
+<li><strong>Harappa Mound F confirmation (<code>C-0010</code>):</strong> $k_i = -\text{stratum}_i$, where Vats's strata run from Stratum VII ($k = -7$, oldest) to Stratum I ($k = -1$, latest). Ranks are computed mound-wide over the $N = 173$ seals in qualifying trench frames (<code>scope="mound"</code> in <code>period_stats.add_clock</code>). Thirds are defined by fixed cut points on $u$: early third $u &lt; 1/3$ (Strata VII–V, 46 seals), middle third $1/3 \le u &lt; 2/3$ (Strata IV–III, 74 seals), and late third $u \ge 2/3$ (Strata II–I, 53 seals).</li>
+<li><strong>Harappa discovery (<code>C-0010</code>):</strong> Frames are <code>(mound, chronology_source)</code> cells with at least 5 seals (99 seals in 7 frames). Because Vats strata and HARP periods are distinct scales, $u$ is ranked within each frame (<code>scope="frame"</code>).</li>
+<li><strong>Mohenjo-daro Mackay DK-G discovery and Marshall confirmation (<code>C-0006</code>):</strong> $k_i$ is Mackay's level in feet against the DK datum (625 seals, ranked in one frame <code>DK</code>) or minus Marshall's depth in feet below the modern surface (434 seals, ranked within each of 15 area-section strata).</li>
+</ul>
+<h3 id="12-excavation-frames-and-unit-merging">1.2 Excavation frames and unit merging</h3>
+<p>In Harappa Mound F, trench cells with at least 15 seals form their own frames (<code>FTrench I</code>: 37, <code>FGranery</code>: 37, <code>FTrench VI</code>: 33, <code>FTrench IV+V</code>: 24, unnamed <code>F-</code>: 22, <code>FTrench III</code>: 20). Smaller cells (<code>FTrench A</code>: 1, <code>FTrench V</code>: 1) are pooled into <code>F/rest</code> (size 2) and dropped because the pooled frame falls below the 5-seal minimum, leaving 173 seals.</p>
+<p>Each object family contributes one legend face: the longest complete text without unknown signs or blanks, breaking ties by longest text overall and then lowest record identifier. Signs are stored in right-to-left reading order (<code>signs_reading_rtl</code>), corresponding to the reverse of the visual left-to-right string (<code>signs_visual_ltr</code>). In the Harappa edge rule (<code>period_stats.edge_text_fields</code>):</p>
+<ul>
+<li>A legend contributes a <strong>closing sign</strong> (<code>visual[0]</code>) if it is single-line (<code>single_line</code> true and no <code>/</code> in <code>text_code_visual_ltr</code>), its left edge is intact (<code>text_code_visual_ltr</code> starts with <code>+</code>), <code>visual[0] != "000"</code>, and it is not a complete one-sign legend (<code>length</code> is either <code>None</code> or $\ge 2$).</li>
+<li>A legend contributes an <strong>opening sign</strong> (<code>visual[-1]</code>) under the symmetric rule at the right edge (<code>text_code_visual_ltr</code> ends with <code>+</code> and <code>visual[-1] != "000"</code>).</li>
+<li>A legend contributes a <strong>length</strong> if <code>complete_observed</code> is true and <code>has_blank_space</code> is false.</li>
+<li><strong>Deduplication within frames:</strong> For opening, closing, length, inventory, and variant tests, identical clean complete legends occurring in the same frame are merged into one unit whose clock value is the median $u$ of its copies. Incomplete or unknown-sign legends remain separate units. For the rectangular-seal positive control (PC), every physical seal counts once without text merging.</li>
+</ul>
+<h2 id="2-primary-test-statistics-and-null-distributions">2. Primary test statistics and null distributions</h2>
+<p>Let $G$ partition the $n$ analytical units into excavation frames $F_1, \dots, F_m$. Every permutation test (<code>strat_stats.permutation_test</code>) draws $B = 9{,}999$ independent permutations $\pi^{(b)}$ that shuffle the vector $u$ strictly within each frame $F_g$, keeping frame sizes and marginal distributions of $u$ fixed. With the observed statistic $T_{\text{obs}} = T(u)$ counted as one draw:</p>
+<ul>
+<li>Upper-tail one-sided $p$-value (P3, P4, P6, P7, PC):
+  $$p = \frac{1 + \sum_{b=1}^{B} \mathbf{1}!\left(T(\pi^{(b)} u) \ge T_{\text{obs}} - 10^{-12}\right)}{B + 1}.$$</li>
+<li>Two-sided $p$-value centred at the permutation null mean $\bar{T}<em b="1">{\text{null}}$ (P1 permutation test, P5):
+  $$p = \frac{1 + \sum</em>}^{B} \mathbf{1}!\left(\left|T(\pi^{(b)} u) - \bar{T<em _text_obs="\text{obs">{\text{null}}\right| \ge \left|T</em>.$$}} - \bar{T}_{\text{null}}\right| - 10^{-12}\right)}{B + 1</li>
+<li>Standardized score: $z = (T_{\text{obs}} - \bar{T}<em _text_null="\text{null">{\text{null}}) / s</em>$ is the sample standard deviation (}}$, where $s_{\text{null}<code>ddof=1</code>) of the $B$ null draws.</li>
+</ul>
+<h3 id="21-closing-stock-equivalence-p1-and-early-level-p2">2.1 Closing-stock equivalence (P1) and early level (P2)</h3>
+<p>Let $S$ be the frozen 15-sign closing stock (<code>090</code>, <code>151</code>, <code>154</code>, <code>156</code>, <code>226</code>, <code>400</code>, <code>405</code>, <code>407</code>, <code>520</code>, <code>527</code>, <code>595</code>, <code>617</code>, <code>621</code>, <code>740</code>, <code>892</code>), defined as the union of Mackay's 12 DK-G closing signs and the 8 signs closing at least 5 legends of length $\ge 2$ with final share $\ge 0.5$ in the 253-family non-confirmation Harappa pool. For each closing unit $i$ ($n = 130$), let $I_i = \mathbf{1}(\text{closing}_i \in S)$.</p>
+<ul>
+<li><strong>P1 observed difference:</strong>
+  $$\Delta_{\text{stock}} = \frac{\sum_{i: u_i \ge 2/3} I_i}{n_{\text{late}}} - \frac{\sum_{i: u_i &lt; 1/3} I_i}{n_{\text{early}}}.$$</li>
+<li><strong>Equivalence interval:</strong> Within each frame $F_g$, resample $|F_g|$ units with replacement ($B = 9{,}999$ replicates, seed <code>20261022</code>), recomputing $\Delta_{\text{stock}}^{(b)}$. Take the 5th and 95th percentiles as the 90% interval (and 2.5th and 97.5th as the 95% interval). P1 passes if the 90% interval lies strictly inside $(-0.25, +0.25)$ and survives the ten-deletion check; P1 fails if its two-sided within-frame permutation $p \le 0.05$, $|\Delta_{\text{stock}}| \ge 0.15$, and it survives the ten-deletion check; otherwise P1 is inconclusive.</li>
+<li><strong>P2 early level:</strong> $p_{\text{early}} = \sum_{i: u_i &lt; 1/3} I_i / n_{\text{early}}$. P2 passes if $p_{\text{early}} \ge 0.55$ and remains $\ge 0.55$ after deleting one early-third stock-closing legend (<code>(k - 1) / (n_early - 1)</code>).</li>
+</ul>
+<h3 id="22-slot-identity-opening-signs-p3-and-closing-signs-p7">2.2 Slot identity: opening signs (P3) and closing signs (P7)</h3>
+<p>Signs appearing in at least $k = 5$ units form their own categories; rarer signs are pooled into <code>OTHER</code>, yielding $C$ categories (<code>C = 6</code> for P3, <code>C = 5</code> for P7). With category sizes $n_c$, category means $\bar{u}_c$, and overall mean $\bar{u}$ (<code>strat_stats.between_ratio_factory</code>):</p>
+<p>$$T_{\text{slot}}(u) = n \cdot \frac{\sum_{c=1}^{C} n_c (\bar{u}<em i="1">c - \bar{u})^2}{\sum</em>.$$}^{n} (u_i - \bar{u})^2</p>
+<h3 id="23-graphic-variant-choice-p4">2.3 Graphic variant choice (P4)</h3>
+<p>Using <code>data/normalized/mayig_wells_class_crosswalk.json</code>, retain Wells codes that map to exactly one Mayig class in classes with at least two such codes. For each merged legend (from <code>all_legends</code>) and each Mayig class present in it, create one <code>(legend, class)</code> row carrying the legend's most frequent Wells code in that class (breaking ties by lower code). Retain Mayig classes having at least two codes with $\ge 3$ tokens each and at least 10 total rows in those retained codes (in Mound F: <code>P004</code>, <code>P086</code>, <code>P316</code>, <code>P364</code>, <code>P385</code>; 228 total rows across all mapped classes, with the five qualifying classes entering the sum). For each qualifying class $m$ with $K_m$ retained codes and row subset $J_m$, let $T_{\text{slot}, m}(u_{J_m})$ be the between-code rank statistic on $u_{J_m}$. Then (<code>strat_stats.variant_statistic_factory</code>):</p>
+<p>$$T_{\text{var}}(u) = \sum_{m} \left(T_{\text{slot}, m}(u_{J_m}) - (K_m - 1)\right).$$</p>
+<h3 id="24-legend-length-p5">2.4 Legend length (P5)</h3>
+<p>Across complete merged legends ($n = 105$), convert length $L_i$ within each frame $F_g$ to its normalized mid-rank $x_i = (r_{g}(L_i) - 0.5) / |F_g|$ (<code>strat_stats.stratified_spearman_factory</code>). The statistic is the Pearson correlation between $x$ and $u$, tested two-sided:</p>
+<p>$$r_{\text{len}}(u) = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(u_i - \bar{u})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2 \sum_{i=1}^{n}(u_i - \bar{u})^2}}.$$</p>
+<h3 id="25-sign-inventory-p6">2.5 Sign inventory (P6)</h3>
+<p>Across all merged legends ($n = 172$), retain every readable sign $s \neq \text{"000"}$ present in at least $m_{\min} = 8$ legends (<code>21</code> qualifying signs in Mound F). Let $n_s$ be the number of legends containing $s$ and $\bar{u}<em i="1">s$ their mean $u$. With population variance $\text{Var}(u) = \frac{1}{n}\sum</em>)^2$ (}^{n}(u_i - \bar{u<code>period_stats.inventory_factory</code>):</p>
+<p>$$T_{\text{inv}}(u) = \frac{\sum_{s} n_s (\bar{u}_s - \bar{u})^2}{\text{Var}(u)}.$$</p>
+<h3 id="26-positive-control-pc">2.6 Positive control (PC)</h3>
+<p>Across all $N = 173$ physical seals in frames, let $R_i = \mathbf{1}(\text{object_type}_i = \text{"SEAL:R"})$. The statistic is the Pearson correlation between $R$ and $u$, tested one-sided (upper tail).</p>
+<h2 id="3-multiplicity-influence-and-credence-rules">3. Multiplicity, influence, and credence rules</h2>
+<ul>
+<li><strong>Holm step-down adjustment:</strong> Applied across the six primary $p$-values ($m = 6$: P1 permutation $p$ and P3–P7). Ordering $p_{(1)} \le \dots \le p_{(6)}$, $p^{\text{Holm}}<em _le="\le" j="j" l="l">{(j)} = \max</em>)$.} \min(1, (m - l + 1) p_{(l)</li>
+<li><strong>Ten-deletion single-unit influence rule:</strong></li>
+<li>For a P1 pass, rank all units by $|\Delta_{\text{stock}, -i} - \Delta_{\text{stock}}|$ descending, take the top 10, and recompute the 90% bootstrap interval ($1{,}999$ resamples each). The rule is met if all 10 intervals stay strictly inside $(-0.25, +0.25)$.</li>
+<li>For any drift test (P3–P7) with $p \le 0.05$, rank all units by how much deleting unit $i$ moves the statistic toward its null ($T_{-i} - T_{\text{obs}}$ for one-sided upper tests; $|T_{-i}| - |T_{\text{obs}}|$ for two-sided P5), take the 10 smallest (most null-ward) values, and rerun the within-frame permutation test ($2{,}999$ draws each). The outcome is <code>drift</code> only if $\max_{k=1\dots 10} p_{-i_k} \le 0.10$; otherwise <code>inconclusive</code>. If raw $p &gt; 0.10$, the outcome is <code>no drift</code>; if $0.05 &lt; p \le 0.10$, <code>inconclusive</code>.</li>
+<li><strong>Leave-one-frame-out diagnostics:</strong> For every drift test reaching $p \le 0.05$, drop each of the six trench frames one at a time and rerun the permutation test ($2{,}999$ draws). Reported without altering the frozen outcome.</li>
+<li><strong>Joint credence rule (<code>C-0010</code>):</strong> Starting credence is 0.40. Additive effects are P1 (+0.05 pass, −0.02 inconclusive, −0.10 fail), P2 (+0.02 pass, −0.06 fail), P3 (+0.05 no drift, −0.03 inconclusive, −0.10 drift), P4–P6 (+0.02, −0.02, −0.08 each), and P7 (+0.04, −0.03, −0.10). Positive gains on P1 and P3–P7 count at half weight if PC fails. If P1 fails or any of P3–P7 reads <code>drift</code> with Holm $p \le 0.05$, the kill condition overrides and sets credence to 0.02 (<code>dead</code>).</li>
+</ul>
+<h2 id="4-exploratory-post-outcome-and-companion-analyses">4. Exploratory post-outcome and companion analyses</h2>
+<ul>
+<li><strong>Format-controlled Mound F tests (<code>post_outcome.py</code>, $9{,}999$ draws):</strong> (1) Joint trench-and-format frames (<code>f"{trench}|{'R' if SEAL:R else 'S'}"</code>); (2) square seals only ($N = 147$); (3) rectangular seals only ($N = 26$); (4) interior sign count $L_i - 2$ on complete ordered legends of length $\ge 2$ (24 early, 44 middle, 32 late); (5) per-sign contributions to P6 and per-class within-trench permutation tests for P4.</li>
+<li><strong>Cross-site sign check (<code>post_outcome_signs.py</code>, $9{,}999$ draws):</strong> Two-sided within-frame permutation test of $\bar{u}_s - \bar{u}$ for signs <code>806</code>, <code>817</code>, <code>233</code>, <code>900</code>, <code>390</code>, <code>590</code> and <code>741</code>, plus length correlation, across Mound F confirmation (172 legends), Harappa discovery (98 legends), and Mackay DK-G (610 legends).</li>
+<li><strong>Mohenjo-daro convergence score (<code>post_outcome_convergence.py</code>, $9{,}999$ draws):</strong> Let $c_{\text{MD}}(s)$ and $n_{\text{MD}}$ be token counts across 1,352 Mohenjo-daro seal faces, $c_{\text{H}}(s)$ and $n_{\text{H}}$ across the 253 non-Mound-F Harappa seal families, and $V$ the union vocabulary size. Each sign receives score:
+  $$\ell(s) = \ln!\frac{c_{\text{MD}}(s) + 0.5}{n_{\text{MD}} + 0.5 V} - \ln!\frac{c_{\text{H}}(s) + 0.5}{n_{\text{H}} + 0.5 V}.$$
+  Each merged Mound F legend receives the mean $\ell(s)$ over all its readable signs (171 units) and over its interior signs <code>signs[1:-1]</code> (130 units), correlated with $u$ by two-sided within-trench Pearson permutation test.</li>
+<li><strong>Companion city-level graphic variation (<code>2026-10-20-script-variation</code>):</strong> Hierarchical smoothed count model (shrinkage weight 20, one pseudocount per candidate fine code) predicting Wells code within nine eligible Mayig graphic families from family, carrier, material, motif, preservation, CISI volume, position, length, and neighbouring graphic classes, compared against the same model adding <code>site</code> at every level. Evaluated on 306 confirmation components (one hashed target per alias and repeated-text component) by mean $\log_2$-probability gain in bits with 95% component-bootstrap intervals.</li>
+</ul>
+<h2 id="5-pre-freeze-power-summary-harappa-mound-f">5. Pre-freeze power summary (Harappa Mound F)</h2>
+<p>Simulated in <code>discovery-v2/power.json</code> on Mound F's exact 6-frame, 7-stratum layout populated from the 253-family Harappa pool (400 null replicates, 200 per alternative, 999 permutations or resamples per replicate; standard error $\approx 0.035$). Mixing exchanges strata randomly for 25% or 50% of seals per trench after planting.</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Test</th>
+<th style="text-align: right;">Unmixed rate</th>
+<th style="text-align: right;">25% mixed</th>
+<th style="text-align: right;">50% mixed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Null (no planted effect): P1 pass / fail</td>
+<td>P1</td>
+<td style="text-align: right;">0.558 / 0.043</td>
+<td style="text-align: right;">not run</td>
+<td style="text-align: right;">not run</td>
+</tr>
+<tr>
+<td>Null (no planted effect): false-positive drift</td>
+<td>P3–P7</td>
+<td style="text-align: right;">0.035–0.058</td>
+<td style="text-align: right;">not run</td>
+<td style="text-align: right;">not run</td>
+</tr>
+<tr>
+<td>Closing-stock true shift 0.10: P1 pass / fail</td>
+<td>P1</td>
+<td style="text-align: right;">0.350 / 0.075</td>
+<td style="text-align: right;">not run</td>
+<td style="text-align: right;">not run</td>
+</tr>
+<tr>
+<td>Closing-stock true shift 0.20: P1 pass / fail</td>
+<td>P1</td>
+<td style="text-align: right;">0.105 / 0.310</td>
+<td style="text-align: right;">not run</td>
+<td style="text-align: right;">not run</td>
+</tr>
+<tr>
+<td>Closing-stock true shift 0.30: P1 pass / fail</td>
+<td>P1</td>
+<td style="text-align: right;">0.025 / 0.680</td>
+<td style="text-align: right;">not run</td>
+<td style="text-align: right;">not run</td>
+</tr>
+<tr>
+<td>Opening sign shifted by period in 25% / 35% of legends</td>
+<td>P3</td>
+<td style="text-align: right;">0.635 / 0.890</td>
+<td style="text-align: right;">0.420 / 0.680</td>
+<td style="text-align: right;">0.215 / 0.405</td>
+</tr>
+<tr>
+<td>Closing sign shifted in 25% / 50% of stock closers</td>
+<td>P7</td>
+<td style="text-align: right;">0.365 / 0.990</td>
+<td style="text-align: right;">0.275 / 0.835</td>
+<td style="text-align: right;">not run</td>
+</tr>
+<tr>
+<td>Variant shifted in 25% / 50% of tokens</td>
+<td>P4</td>
+<td style="text-align: right;">0.310 / 0.925</td>
+<td style="text-align: right;">0.225 / 0.730</td>
+<td style="text-align: right;">not run</td>
+</tr>
+<tr>
+<td>Late third longer by 0.5 / 0.8 / 1.2 signs</td>
+<td>P5</td>
+<td style="text-align: right;">0.155 / 0.380 / 0.580</td>
+<td style="text-align: right;">0.110 / 0.220 / 0.335</td>
+<td style="text-align: right;">not run</td>
+</tr>
+<tr>
+<td>One interior sign shifted in 25% / 50% of legends</td>
+<td>P6</td>
+<td style="text-align: right;">0.130 / 0.585</td>
+<td style="text-align: right;">0.150 / 0.390</td>
+<td style="text-align: right;">not run</td>
+</tr>
+<tr>
+<td>Rectangular seals rising 10% to 25% / 10% to 30%</td>
+<td>PC</td>
+<td style="text-align: right;">0.385 / 0.515</td>
+<td style="text-align: right;">0.240 / 0.395</td>
+<td style="text-align: right;">not run</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-frozen-artifact-hashes-and-reproduction-commands">6. Frozen artifact hashes and reproduction commands</h2>
+<h3 id="61-harappa-mound-f-freeze-2026-10-21t033445z">6.1 Harappa Mound F freeze (<code>2026-10-21T03:34:45Z</code>)</h3>
+<p>Recorded in <code>experiments/2026-10-20-harappa-legend-periods/bench/shots-freeze.json</code>:</p>
+<ul>
+<li><code>PREDICTIONS.json</code>: <code>d3c37d2990ccc89c7e5027ec4b46629987f9a174c5f330d88fb3748a22489ac9</code></li>
+<li><code>data/normalized/lipi_observed_faces.jsonl</code>: <code>1220f5591a42abe7c6696ac014aba90e7c49fdce6b0ccba0b85bb45f950c30db</code></li>
+<li><code>data/normalized/mayig_wells_class_crosswalk.json</code>: <code>9fea45e16be1218d148473dad440f806a2f0c12c954c79347db2584324cc1f71</code></li>
+<li><code>discovery-v2/frozen-parameters.json</code>: <code>ccced192a9c35e460dec03939df8372c249b561569a5c5786436b7223187f19c</code></li>
+<li><code>period_score.py</code>: <code>e4c47b60961fc7f17db6388444f1b441e37614417cbadc269bfd0dd7cf92f067</code></li>
+<li><code>period_stats.py</code>: <code>78929e9776318bc715e235b6720206c2492845a9103f333aff9fffcebac0ab42</code></li>
+<li><code>strat_stats.py</code>: <code>d7b38ddd1a93532ffe4d64a9e1578517cded7825a3e4c029acd8fb59e89a09f1</code></li>
+</ul>
+<h3 id="62-reproduction-commands">6.2 Reproduction commands</h3>
+<p>Every script refuses to overwrite an existing output directory or file. Rerunning from scratch requires fresh output paths (and a fresh split and ledger copy for the <code>bench shots</code> steps, because the original split is already opened) plus local copies of the Lipi export and Mackay and Marshall table joins.</p>
+<pre><code class="language-text"># 1. Mohenjo-daro stratigraphy (C-0006)
+python -P experiments/2026-10-20-mohenjo-daro-stratigraphy/build_inputs.py
+python -P experiments/2026-10-20-mohenjo-daro-stratigraphy/explore_mackay.py experiments/2026-10-20-mohenjo-daro-stratigraphy/discovery-v2-rerun
+python -P experiments/2026-10-20-mohenjo-daro-stratigraphy/power.py experiments/2026-10-20-mohenjo-daro-stratigraphy/discovery-v2/frozen-parameters.json experiments/2026-10-20-mohenjo-daro-stratigraphy/power-rerun.json
+python -P experiments/2026-10-20-mohenjo-daro-stratigraphy/verify_independent.py experiments/2026-10-20-mohenjo-daro-stratigraphy/verify-rerun.json
+python -P experiments/2026-10-20-mohenjo-daro-stratigraphy/post_outcome.py experiments/2026-10-20-mohenjo-daro-stratigraphy/post-outcome-rerun
+
+# 2. Harappa Mound F stratigraphy (C-0010)
+python -P experiments/2026-10-20-harappa-legend-periods/build_inputs.py
+python -P experiments/2026-10-20-harappa-legend-periods/explore_discovery.py experiments/2026-10-20-harappa-legend-periods/discovery-v1-rerun
+python -P experiments/2026-10-20-harappa-legend-periods/make_parameters.py experiments/2026-10-20-harappa-legend-periods/params-rerun.json experiments/2026-10-20-harappa-legend-periods/constants-rerun.json
+python -P experiments/2026-10-20-harappa-legend-periods/rehearse_discovery.py experiments/2026-10-20-harappa-legend-periods/rehearsal-rerun
+python -P experiments/2026-10-20-harappa-legend-periods/reliability.py experiments/2026-10-20-harappa-legend-periods/reliability-rerun.json
+python -P experiments/2026-10-20-harappa-legend-periods/power.py experiments/2026-10-20-harappa-legend-periods/discovery-v2/frozen-parameters.json experiments/2026-10-20-harappa-legend-periods/power-rerun.json
+python -P experiments/2026-10-20-harappa-legend-periods/verify_independent.py experiments/2026-10-20-harappa-legend-periods/verify-9999-rerun.json 9999
+python -P experiments/2026-10-20-harappa-legend-periods/post_outcome.py experiments/2026-10-20-harappa-legend-periods/post-outcome-rerun
+python -P experiments/2026-10-20-harappa-legend-periods/post_outcome_signs.py experiments/2026-10-20-harappa-legend-periods/sign-check-rerun.json
+python -P experiments/2026-10-20-harappa-legend-periods/post_outcome_convergence.py experiments/2026-10-20-harappa-legend-periods/convergence-rerun.json
+</code></pre>
+<p>Original confirmation runs used <code>confirm.py</code> against the frozen <code>bench shots</code> splits (<code>experiments/2026-10-20-mohenjo-daro-stratigraphy/shots/round.json</code> and <code>experiments/2026-10-20-harappa-legend-periods/shots/round.json</code>), with read logs preserved in <code>shots/round.access.jsonl</code>.</p>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-title">Indus civilisation and script research</p>
+        <p class="footer-note">Open, source-linked knowledge base built by AI agents and human reviewers. The script remains undeciphered; every tested claim and failed run stays on record.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Explore</p>
+        <ul>
+          <li><a href="../../explore/index.html">Interactive tools</a></li>
+          <li><a href="../../search/index.html">Search knowledge base</a></li>
+          <li><a href="../../agents/index.html">Agent coordination hub</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">For agents</p>
+        <ul>
+          <li><a href="../../llms.txt">llms.txt</a></li>
+          <li><a href="../../llms-full.txt">llms-full.txt (full digest)</a></li>
+          <li><a href="https://github.com/k-sandhu/indus-valley-script">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span><a href="https://github.com/k-sandhu/indus-valley-script/blob/82521025e90485d0ee5a41b06aa9dc4f14391eda/papers/010-harappa-stratigraphic-drift/methods.md">Source on GitHub</a> · Commit <code>82521025e904</code> (2026-11-23)</span>
+      <span>Code: Unlicense · Project prose and cards: CC0 1.0 · Helsinki 1979 derivatives: CC BY 4.0</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

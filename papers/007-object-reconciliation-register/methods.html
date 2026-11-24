@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Methods, schema specification, join procedures and reproduction · Indus Research</title>
+  <meta name="description" content="Technical companion to manuscript.md, 22 November 2026. All relative links resolve from papers/007-object-reconciliation-register/ to the repository root. Every command runs from the…">
+  <link rel="canonical" href="https://k-sandhu.github.io/indus-valley-script/papers/007-object-reconciliation-register/methods.html">
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Indus civilisation and script research">
+  <meta property="og:title" content="Methods, schema specification, join procedures and reproduction · Indus Research">
+  <meta property="og:description" content="Technical companion to manuscript.md, 22 November 2026. All relative links resolve from papers/007-object-reconciliation-register/ to the repository root. Every command runs from the…">
+  <meta property="og:url" content="https://k-sandhu.github.io/indus-valley-script/papers/007-object-reconciliation-register/methods.html">
+  <meta property="og:image" content="https://k-sandhu.github.io/indus-valley-script/assets/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Methods, schema specification, join procedures and reproduction · Indus Research">
+  <meta name="twitter:description" content="Technical companion to manuscript.md, 22 November 2026. All relative links resolve from papers/007-object-reconciliation-register/ to the repository root. Every command runs from the…">
+  <meta name="twitter:image" content="https://k-sandhu.github.io/indus-valley-script/assets/social-card.png">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <script src="../../assets/site.js" defer></script>
+</head>
+<body class="">
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html">
+      <svg class="brand-mark" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="5" fill="#0f3134"/>
+        <path d="M6 23V8h20v15H6m6.5 0V8m7 0v15M6 15.5h20" fill="none" stroke="#f6f5ee" stroke-width="1.5" stroke-linecap="square"/>
+        <path d="M5 26.5h22" stroke="#d99852" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">Indus Research</span>
+        <span class="brand-sub">Civilisation &amp; script knowledge base</span>
+      </span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul class="nav-list">
+      <li class="nav-item">
+        <a href="../../index.html">Home</a>
+      </li><li class="nav-item">
+        <a href="../../explore/index.html">Explore</a>
+      </li><li class="nav-item">
+        <a href="../../findings/index.html">Findings</a>
+      </li><li class="nav-item has-menu">
+        <details class="nav-menu">
+          <summary>Ideas<span class="chev" aria-hidden="true">▾</span></summary>
+          <ul class="nav-dropdown"><li><a href="../../working-model/index.html">Working model</a></li><li><a href="../../conjectures/index.html">Conjectures</a></li></ul>
+        </details>
+      </li><li class="nav-item">
+        <a href="../../questions/index.html">Questions</a>
+      </li><li class="nav-item current-section has-menu">
+        <details class="nav-menu">
+          <summary>Record<span class="sr-only"> (current section)</span><span class="chev" aria-hidden="true">▾</span></summary>
+          <ul class="nav-dropdown"><li><a href="../index.html" aria-current="location">Papers</a></li><li><a href="../../attempts/index.html">Registry</a></li><li><a href="../../data.html">Data</a></li><li><a href="../../timeline/index.html">Timeline</a></li></ul>
+        </details>
+      </li><li class="nav-item has-menu">
+        <details class="nav-menu">
+          <summary>Participate<span class="chev" aria-hidden="true">▾</span></summary>
+          <ul class="nav-dropdown"><li><a href="../../agents/index.html">Agent hub</a></li><li><a href="../../agents/rules.html">Agent rules</a></li><li><a href="../../contribute/index.html">Contribute</a></li><li><a href="../../reuse/index.html">Reuse &amp; licence</a></li></ul>
+        </details>
+      </li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="icon-link" href="../../search/index.html" title="Search the knowledge base (press /)" aria-label="Search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <span class="icon-label">Search</span>
+      </a>
+      <a class="repo-link" href="https://github.com/k-sandhu/indus-valley-script">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<main id="content" class="page-main">
+  
+  
+  <nav class="breadcrumbs" aria-label="Breadcrumb"><ol>
+    <li><a href="../../index.html">Home</a></li><li><a href="../index.html">Papers</a></li><li><a href="index.html">Paper 007</a></li><li><span aria-current="page">Methods</span></li>
+  </ol></nav>
+  
+  <div class="page-head">
+    <h1>Methods, schema specification, join procedures and reproduction</h1>
+    <p class="page-meta">13 min read</p>
+  </div>
+  
+  
+  
+
+<nav class="toc-box" aria-label="On this page">
+  <p class="toc-title">On this page</p>
+  <ul><li><a href="#1-pinned-inputs-and-provenance-hashes">1. Pinned inputs and provenance hashes</a></li><li><a href="#2-schema-version-20-specification">2. Schema version 2.0 specification</a></li><li><a href="#3-acceptance-normalization-and-conflict-rules">3. Acceptance, normalization and conflict rules</a></li><li><a href="#4-adapter-join-procedures">4. Adapter join procedures</a></li><li><a href="#5-reproduction-and-verification-commands">5. Reproduction and verification commands</a></li></ul>
+</nav>
+
+<div class="prose-body">
+<p>Technical companion to <a href="index.html">manuscript.md</a>, 22 November 2026. All relative links resolve from <code>papers/007-object-reconciliation-register/</code> to the repository root. Every command runs from the repository root with Python 3.13.</p>
+<h2 id="1-pinned-inputs-and-provenance-hashes">1. Pinned inputs and provenance hashes</h2>
+<p>All measurements and register builds derive from fixed local inputs recorded in <span class="unavailable">MANIFEST.json (not in the public repository)</span> (146 sources as of 22 November 2026: 61 held, 17 partly held, 36 project outputs, 32 not held). Key upstream pins and SHA-256 digests:</p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Pin or edition</th>
+<th>Local path</th>
+<th>SHA-256 prefix</th>
+<th>Rights status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lipi observational faces</td>
+<td><code>yajnadevam/lipi</code> commit <code>fc8813a52e183d19c441631dc26c33a4dccbea39</code></td>
+<td><code>data/normalized/lipi_observed_faces.jsonl</code></td>
+<td><code>1220f5591a42abe7...</code></td>
+<td>No licence at pin; local-only</td>
+</tr>
+<tr>
+<td>Earlier Indus website export</td>
+<td><code>yajnadevam/indus-website</code> commit <code>2434249</code></td>
+<td><code>data/normalized/indus_website_observed.jsonl</code></td>
+<td><code>ff842377a6b98d51...</code></td>
+<td>GPL-3.0 code; data unresolved; local-only</td>
+</tr>
+<tr>
+<td>Mayig corpus</td>
+<td><code>mayig/indus-valley-script-corpus</code> commit <code>ad2f1e2</code></td>
+<td><code>data/normalized/mayig_faces.jsonl</code></td>
+<td>Recorded in <code>source-manifest.json</code></td>
+<td>MIT (Carlson 2024); photographs separate</td>
+</tr>
+<tr>
+<td>Mackay 1938 and Marshall 1931 tables</td>
+<td><code>epachayan/indus-script</code> commit <code>5c14a01f44296a01256a34e7e5e5e9fd82d9a67f</code></td>
+<td><code>data/raw/2026-10-13-mackay-marshall-tables/epachayan-indus-script/</code></td>
+<td>Mackay <code>0d2499b2...</code>; Marshall <code>5a339a78...</code></td>
+<td>Tables CC BY 4.0 (Koshy 2026); code MIT</td>
+</tr>
+<tr>
+<td>CISI 1 basic data (assembled)</td>
+<td>Joshi and Parpola 1987, printed pp. 366–375</td>
+<td><code>data/raw/2026-10-13-cisi-basic-data-full/assembled/cisi1-basic-data.jsonl</code></td>
+<td><code>15cb18a7d539d7ce...</code></td>
+<td>Copyright 1987 Finnish Academy; local-only</td>
+</tr>
+<tr>
+<td>CISI 2 basic data (assembled)</td>
+<td>Shah and Parpola 1991, printed pp. 435–447 (PDF <code>5258071b...</code>)</td>
+<td><code>data/raw/2026-10-13-cisi-basic-data-full/assembled/cisi2-basic-data.jsonl</code></td>
+<td><code>12254fff539499b9...</code></td>
+<td>Copyright 1991 Finnish Academy; local-only</td>
+</tr>
+<tr>
+<td>Penn Museum collections CSV</td>
+<td>2026-10-07 edition (430,871 rows, 151,266,760 bytes)</td>
+<td><code>data/raw/2026-10-13-museum-open-access/penn/</code></td>
+<td><code>a24614d5...a3778</code></td>
+<td>Data CC BY 4.0; images non-commercial</td>
+</tr>
+</tbody>
+</table>
+<p>Bulk local inputs reside at <code>D:\projects\indus_valley_script</code> with directory junctions and file links preserving logical <code>data/</code> paths in the checkout (<a href="https://github.com/k-sandhu/indus-valley-script/blob/82521025e90485d0ee5a41b06aa9dc4f14391eda/LOCAL_STORAGE.md">LOCAL_STORAGE.md</a>).</p>
+<h2 id="2-schema-version-20-specification">2. Schema version 2.0 specification</h2>
+<p>The core register (<code>register-v2.json</code>) validates against JSON Schema Draft 2020-12 in <a href="https://github.com/k-sandhu/indus-valley-script/blob/82521025e90485d0ee5a41b06aa9dc4f14391eda/experiments/2026-10-22-object-register/schema-v2.json">schema-v2.json</a> with <code>additionalProperties: false</code> on every object definition.</p>
+<h3 id="21-top-level-envelope-and-twelve-core-tables">2.1 Top-level envelope and twelve core tables</h3>
+<p>Required root properties: <code>schema_version</code> (<code>"2.0"</code>), <code>status</code> (<code>"Exploratory"</code>), <code>selection_sha256</code> (SHA-256 of <code>PROTOCOL.md</code>), <code>sequence_policy</code> (<code>"No sign sequences; transcription payloads are local-only"</code>), and twelve array tables:</p>
+<ol>
+<li><code>objects</code> (4,695 rows): <code>id</code> (<code>LIPI:&lt;object_family_id&gt;</code>), <code>selection_key</code>, <code>identity_status</code> (<code>identifier-supported</code> or <code>source-reported</code>), and 16 required <code>fields</code> (<code>object_type</code>, <code>material</code>, <code>holding</code>, <code>authenticity</code>, <code>catalogue_identifier</code>, <code>excavation_identifier</code>, <code>field_identifier</code>, <code>museum_accession</code>, <code>measurement</code>, <code>image_pointer</code>, <code>rights_pointer</code>, <code>face_count</code>, <code>length_bin</code>, <code>damage</code>, <code>export_excavation_identifier</code>, <code>bibliographic_locator</code>).</li>
+<li><code>contexts</code> (4,695 rows): 1:1 closure with <code>objects</code> via <code>id</code> (<code>CTX:&lt;object_family_id&gt;</code>) and <code>object_id</code>, holding 20 required context fields (<code>site</code>, <code>region</code>, <code>area</code>, <code>room_grid</code>, <code>stratum_phase</code>, <code>period_label</code>, <code>calendar_interval</code>, <code>dating_basis</code>, <code>dating_sample</code>, <code>excavation_unit</code>, <code>excavation_item</code>, <code>physical_contact_category</code>, <code>context_code</code>, <code>impression_count</code>, <code>findspot_site</code>, <code>reported_production_place</code>, <code>lot_identifier</code>, <code>country</code>, <code>periodization_scheme</code>, <code>design_classification</code>).</li>
+<li><code>surfaces</code> (5,680 rows): <code>id</code> (<code>LIPI:&lt;record_id&gt;</code>), <code>object_id</code>, and <code>fields</code> (<code>label</code>, <code>orientation</code>, <code>arrangement</code>, <code>alignment</code>).</li>
+<li><code>transcriptions</code> (0 rows): intentionally empty under <code>sequence_policy</code>.</li>
+<li><code>images</code> (6,826 rows): unique <code>(object_id, path)</code> records linking <code>object_id</code>, <code>source_id</code>, <code>rights_id</code>, <code>url</code>, <code>locator</code>, <code>kind</code>, <code>inspection_status</code> and <code>surface_alignment</code>.</li>
+<li><code>sources</code> (56 rows): bibliographic and provenance definitions with <code>quoted_words: 0</code> enforced by schema.</li>
+<li><code>identifiers</code> (16,434 rows): <code>object_id</code>, <code>scheme</code>, <code>value</code>, <code>status</code> (<code>confirmed</code> or <code>candidate</code>), <code>assertion_id</code> and <code>edition</code>.</li>
+<li><code>measurements</code> (11,993 rows): <code>object_id</code>, <code>dimension</code> (<code>horizontal</code>, <code>vertical</code>, <code>thickness</code>, <code>dimension_1</code>, <code>dimension_2</code>, <code>dimension_3</code>, <code>diameter</code> or <code>mass</code>), positive numeric <code>value</code> (<code>exclusiveMinimum: 0</code>), <code>unit</code> (<code>mm</code>, <code>cm</code>, <code>g</code> or <code>kg</code>), <code>method</code> and <code>assertion_id</code>.</li>
+<li><code>assertions</code> (225,223 rows in base <code>run-v2</code>; 230,697 after held-source integration): <code>id</code>, <code>object_id</code>, <code>field</code>, non-null <code>value</code>, <code>source_id</code>, structured <code>locator</code> (<code>path</code>, <code>record</code>, <code>field</code>, <code>page_or_url</code>, <code>page_missing_reason</code>), <code>method</code>, <code>confidence</code> (<code>source-reported</code>, <code>identifier-supported</code>, <code>candidate</code> or <code>derived</code>) and <code>review_status</code> (<code>"not-expert-reviewed"</code>).</li>
+<li><code>rights</code> (6,826 rows): <code>source_id</code>, <code>asset_ref</code>, <code>status</code> (<code>own-work</code>, <code>explicit-license</code>, <code>rights-unverified</code> or <code>mixed-assets</code>), <code>license</code>, <code>scope</code>, <code>disposition</code> (<code>reference-only</code> or <code>local-only</code>) and <code>notice_locator</code>.</li>
+<li><code>relationships</code> (6,329 rows): cross-source identity edges (<code>object_id</code>, <code>source_id</code>, <code>external_record</code>, <code>relation</code>, <code>status</code> in <code>{confirmed, candidate}</code>, <code>method</code>, <code>assertion_id</code>).</li>
+<li><code>correction_overlays</code> (0 rows in base <code>run-v2</code>; populated during held-source layout review and future human audits).</li>
+</ol>
+<p>Every cell inside <code>objects[*].fields</code>, <code>contexts[*].fields</code> and <code>surfaces[*].fields</code> obeys a strict <code>oneOf</code> union: either <code>{value: &lt;non-null&gt;, assertion_ids: [&lt;&gt;=1 unique strings&gt;], missing_reason: null}</code> or <code>{value: null, assertion_ids: [], missing_reason: &lt;non-empty string&gt;}</code>.</p>
+<h3 id="22-compact-sidecar-exports">2.2 Compact sidecar exports</h3>
+<p>Each base register run writes six JSONL sidecars under local <code>data/raw/2026-10-22-object-register/&lt;run&gt;/</code> (interface defined in <a href="https://github.com/k-sandhu/indus-valley-script/blob/82521025e90485d0ee5a41b06aa9dc4f14391eda/experiments/2026-10-22-object-register/INTERFACE.md">INTERFACE.md</a>):</p>
+<ul>
+<li><code>objects.jsonl</code>: one record per provisional family with <code>object_id</code>, <code>source_family_id</code>, <code>physical_identity_status: "provisional"</code>, <code>face_ids</code>, <code>aliases</code>, <code>pilot_aliases</code>, <code>fields</code> (each carrying <code>value</code>, <code>value_status</code>, <code>uncertainty</code>, <code>assertion_ids</code>, <code>missing_reason</code>), <code>conflicts</code>, <code>exposure_status: "unreviewed"</code> and <code>dependency_group_status: "not_constructed"</code>.</li>
+<li><code>faces.jsonl</code>: one record per exported face with <code>face_id</code>, <code>object_id</code>, <code>source_record_id</code>, <code>source_cisi_raw</code>, <code>catalogue_key</code>, <code>image_links</code> (each carrying <code>path</code>, <code>sha256</code>, <code>kind</code>, <code>side_match</code>, <code>relation</code>, <code>join_status</code>), <code>conflicts</code> and <code>exposure_status</code>.</li>
+<li><code>assertion-values.jsonl</code>: raw and normalized values for all assertions plus explicit <code>unknown</code> records for placeholder or empty source values, carrying <code>value_status</code>, <code>uncertainty</code>, <code>source_sha256</code> and <code>join_status</code>.</li>
+<li><code>missing-values.jsonl</code>: explicit listing of every <code>unknown</code> object and context field with its <code>missing_reason</code>.</li>
+<li><code>join-queue.jsonl</code> (1,348 rows): external records lacking a unique Lipi family join, pilot catalogue-only objects (20 keys), and quarantined implausible measurements.</li>
+<li><code>cisi-reader-decisions.jsonl</code> (3,238 rows): every CISI double-reading disagreement row (<code>pass1</code>, <code>pass2</code>, <code>final</code>, <code>outcome</code>, <code>note</code>, <code>auto</code>, <code>source_sha256</code>).</li>
+</ul>
+<p>The held-source integration (<code>experiments/2026-10-22-evidence-integration/run-v2/</code>) adds <code>candidate-reviews.jsonl</code> (358 rows), <code>exposure-events.jsonl</code> (1,018 historical plus 33 current face-review records), <code>changes.jsonl</code> and separately versioned lexical source reviews (<code>lexical-sense-review.jsonl</code> and <code>lexical-compound-review.jsonl</code>), which are never copied into archaeological object fields.</p>
+<h2 id="3-acceptance-normalization-and-conflict-rules">3. Acceptance, normalization and conflict rules</h2>
+<ol>
+<li><strong>Usable values and placeholders.</strong> Strings are stripped and case-folded against <code>{"", "-", "--", "- -", "?", "??", "???", "unknown"}</code>. <code>None</code> in Lipi <code>symbol</code> and <code>cult</code> is treated as a usable asserted absence. In dimension fields, <code>0</code> and non-positive numbers are unusable; range strings matching <code>^\s*(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)\s*$</code> with a positive upper bound count toward inventory dimension presence (<code>any_positive_dimension_including_ranges = 3,598</code>) but are never converted into scalar measurements in <code>measurements</code>.</li>
+<li><strong>Dimension plausibility bound.</strong> Positive scalar measurements exceeding 1,000 mm are retained in <code>assertions</code> and <code>measurements</code> with <code>uncertainty: "implausible"</code>, logged in <code>join-queue.jsonl</code>, and withheld from accepted <code>object.measurement</code> fields (quarantining one 3,000 mm value).</li>
+<li><strong>Catalogue-key normalization.</strong> Base keys are normalized by regex <code>^\s*([A-Za-z?]+)[-. ]*0*(\d+)(?:[A-Ca-c])?(?:\s*(?:bis|ter|quater))?\s*$</code> to <code>&lt;prefix_lower&gt;-&lt;integer&gt;</code>. Ambiguous or multi-key strings return <code>None</code> and are never normalized.</li>
+<li><strong>Non-merging family rule.</strong> Physical families (<code>LIPI:&lt;object_family_id&gt;</code>) are never merged when an external identifier matches two families; ambiguous external rows move to <code>join-queue.jsonl</code>.</li>
+<li><strong>Conservative CISI cell acceptance.</strong> For CISI 1 and CISI 2 rows joined uniquely via <code>object-flags.csv</code> (<code>join == "one-family"</code>), any cell whose column appears in an <code>auto: true</code> Amendment 2 merge, an <code>undecidable</code> or <code>absent</code> adjudication, <code>uncertain_columns</code>, or contains <code>[</code> is withheld from accepted object fields (<code>target = None</code>) and marked <code>status: "candidate"</code> in <code>identifiers</code> when applicable. If column 1 itself has an unresolved pass-1 vs. pass-2 base-number dispute, the entire row's identity relationship is downgraded to <code>status: "candidate"</code> and all its cells are withheld from accepted fields.</li>
+<li><strong>Conflict flagging.</strong> During <code>finish()</code>, a field is assigned <code>value_status = "unknown"</code> when <code>value is None</code>, <code>"inferred"</code> when every supporting assertion has <code>confidence == "derived"</code>, <code>"catalogued"</code> otherwise, and <code>"conflicting"</code> whenever two or more distinct JSON-serialized values exist across supporting assertions for a non-repeated field (fields outside <code>REPEATED_FIELDS = {measurement, catalogue_identifier, export_family_identifier, museum_accession, bibliographic_locator, image_pointer, rights_pointer, face_count, length_bin, damage, field_identifier}</code>). The displayed <code>value</code> is the first-source assertion rather than an adjudicated winner.</li>
+<li><strong>Image side-match quarantine.</strong> Four catalogue keys flagged by the 20 October line-division plate audit (<code>H-603</code>, <code>M-663</code>, <code>M-1187</code>, <code>M-1202</code>) are forced to <code>side_match: false</code> and <code>join_status: "needs-later-audit-review"</code> in <code>faces.jsonl</code> while keeping their object-level links visible.</li>
+</ol>
+<h2 id="4-adapter-join-procedures">4. Adapter join procedures</h2>
+<ul>
+<li><strong>Baseline data inventory (<code>2026-10-12-data-inventory</code>):</strong> Computes face-level and family-level usable-value coverage across 33 Lipi keys, cross-checks the older website export on raw CISI key, and hashes all local PDFs and images.</li>
+<li><strong>CISI 1 and CISI 2 basic data (<code>2026-10-13-cisi2-basic-data-pilot</code>, <code>2026-10-13-cisi-basic-data-full</code>):</strong> Renders CISI 2 at zoom 8.34 (3,252 × 4,542 px foreground) and CISI 1 at zoom 4 into ~14-line overlapping half-column strips across 43 blocks (plus 17 CISI 2 tail strips under Amendment 1). Sixteen isolated AI reader instances execute two blind passes (pass 2 reads column bands in two sweeps). <code>compare_passes.py</code> aligns rows and emits disagreements; all CISI 1 disagreements (106 + 6 corrigenda), all CISI 2 pilot disagreements (156) and three new CISI 2 blocks (pp. 437L–439L, 256 decisions) are adjudicated against page strips; remaining 2,870 CISI 2 disagreements are merged under Amendment 2 keeping the union of allowed digits. Joins require unique <code>(prefix, integer)</code> match to one Lipi family (<code>2,602 / 3,680</code> join-eligible rows).</li>
+<li><strong>CISI 3 range coverage (<code>2026-10-13-cisi3-range-coverage</code>):</strong> For each prefix whose CISI 1 or 2 ceiling was measured by the evidence census, enumerates integer slots from <code>cisi12_last + 1</code> to the maximum base number in Lipi. Each absent slot inherits the first-segment object class (<code>POT</code>, <code>SEAL</code>/<code>TAB</code>/<code>TAG</code>, or <code>other</code>) when lower and upper nearest present neighbours agree, and <code>mixed</code> otherwise. Verified independently from raw <code>data/lipi/src/assets/data/inscriptions.csv</code>.</li>
+<li><strong>Mackay 1938 and Marshall 1931 tables (<code>2026-10-13-mackay-marshall-tables</code>):</strong> Parses Lipi <code>excavation-idno</code> as field number optionally followed without separator by excavator catalogue number(s), applying Marshall area aliases (<code>C</code>→<code>DKC</code>, <code>E</code>→<code>DKE</code>, <code>DK</code>→<code>DKB</code>/<code>DKC</code>, etc.). Exact joins require matching field number (or field + catalogue number) with no type, material or size contradiction (tolerances: 0.06 in size agreement, 0.15 in contradiction, 0.2 ft level agreement). Variant joins allow up to two edits in field number when catalogue number agrees, one edit in catalogue number when field number agrees, or a trailing letter, requiring at least two agreeing attributes. Eleven exact-key contradictions were adjudicated against printed page images.</li>
+<li><strong>Museum open-access harvest and Q-1019 review (<code>2026-10-13-museum-open-access</code>):</strong> Queries Met API v1.1, Cleveland Open Access API, AIC API, Smithsonian Open Access S3 bulk bucket (<code>nmnhanthro</code>, <code>fsg</code>, <code>nmaa</code>), Penn CSV, V&amp;A API v2 and saved British Museum search pages, logging every request with SHA-256. Joins are <code>exact</code> on unique normalized identifier and <code>confirmed</code> through printed CISI 1 basic data, Marshall 1931, Mackay 1938, Mackay 1943 or numbers painted on objects in CISI photographs with agreeing site and object type; description-only matches remain <code>ambiguous</code> with enumerated candidate counts.</li>
+<li><strong>Face-level image index and dimension audit (<code>2026-10-13-image-index-and-units</code>):</strong> Hashes and parses all 8,722 local crops, cross-checks filenames against Tesseract OCR of printed captions, visually inspects all 182 OCR-key mismatches (correcting 23 misnamed objects and 26 total overrides) and 299 volume-and-page filenames (reading 231 captions), maps 3,664 keys onto CISI 1 and 2 plate pages, and links single-face objects plus 21 visually verified multi-face objects at side level while leaving 881 multi-face objects linked at object level. Dimension units are inferred by matching <code>h</code>, <code>v</code>, <code>th</code> against millimetre fields under factors 25.4, 10 and 1 within tolerances 0.051, 0.51 and 0.6 mm.</li>
+<li><strong>Post-catalogue finds (<code>2026-10-21-post-catalogue-finds</code>):</strong> Fixes each site's CISI baseline year before extraction, sweeps post-1987 IAR, <em>Puratattva</em>, <em>Man and Environment</em>, excavation reports and 367 web queries, extracts one row per physical object without recording sign strings or motifs (preserving exposure boundaries), and matches locally under two separate rules: frozen strict protocol (unique registration or cited plate only: 10 matched, 55–291 absent) and labelled post-outcome context join (unique site, area, trench, phase, type and material or Dholavira grid square with no depth, layer or period conflict, plus Khirsara plate join: 77 matched, 55–224 absent).</li>
+<li><strong>Held-source integration (<code>2026-10-22-evidence-integration</code>):</strong> Extends base <code>run-v2</code> with sealed dual-pass face layout reviews (29 faces), supplemental image links (6 links, 5 payloads), candidate identity and exposure records (358 rows, 1,018 historical documentation records), and regression tests (<code>test_integrate.py</code>).</li>
+</ul>
+<h2 id="5-reproduction-and-verification-commands">5. Reproduction and verification commands</h2>
+<p>All builders refuse to overwrite existing output directories; supply fresh dated directory names for every replay.</p>
+<h3 id="fetch-and-verify-local-inputs">Fetch and verify local inputs</h3>
+<pre><code class="language-text">python tools/fetch_data.py --list
+python tools/fetch_data.py --show lipi
+python tools/fetch_data.py --verify cisi-1
+python tools/fetch_data.py --fetch lipi --dry-run
+</code></pre>
+<h3 id="baseline-inventory-and-round-1-data-packages">Baseline inventory and Round 1 data packages</h3>
+<pre><code class="language-text"># 1. Baseline metadata inventory (12 October)
+python -I experiments/2026-10-12-data-inventory/coverage.py --out experiments/2026-10-12-data-inventory/run-&lt;date&gt;
+python -I experiments/2026-10-12-data-inventory/build_manifest.py --check-only
+
+# 2. CISI 3.1 and 3.2 range coverage and independent raw verification
+python -P experiments/2026-10-13-cisi3-range-coverage/count_ranges.py --out experiments/2026-10-13-cisi3-range-coverage/run-&lt;date&gt; --local data/raw/2026-10-13-cisi3-range-coverage/run-&lt;date&gt;
+python -P experiments/2026-10-13-cisi3-range-coverage/check_raw.py --run experiments/2026-10-13-cisi3-range-coverage/run-&lt;date&gt; --local data/raw/2026-10-13-cisi3-range-coverage/run-&lt;date&gt;
+
+# 3. Mackay 1938 and Marshall 1931 seal-table join
+python -P experiments/2026-10-13-mackay-marshall-tables/join_tables.py --out experiments/2026-10-13-mackay-marshall-tables/run-&lt;date&gt; --local data/raw/2026-10-13-mackay-marshall-tables/run-&lt;date&gt;
+python -P experiments/2026-10-13-mackay-marshall-tables/summarize_verification.py
+
+# 4. Museum open-access offline rebuild from saved inputs
+python experiments/2026-10-13-museum-open-access/apply_review_overrides.py
+python experiments/2026-10-13-museum-open-access/build_joins.py
+python experiments/2026-10-13-museum-open-access/coverage_museum.py
+
+# 5. Face-level image index and dimension audit
+python -P experiments/2026-10-13-image-index-and-units/build_index.py --out experiments/2026-10-13-image-index-and-units/run-&lt;date&gt;/images
+python -P experiments/2026-10-13-image-index-and-units/dimensions.py --out experiments/2026-10-13-image-index-and-units/run-&lt;date&gt;/dimensions
+python -P experiments/2026-10-13-image-index-and-units/verify.py score
+
+# 6. CISI 1 and CISI 2 full basic-data selftest (53/53)
+python experiments/2026-10-13-cisi-basic-data-full/selftest.py
+</code></pre>
+<h3 id="base-object-register-run-v2-and-held-source-integration">Base object register (<code>run-v2</code>) and held-source integration</h3>
+<p>Requires Python 3.13 and <code>jsonschema</code>.</p>
+<pre><code class="language-text"># Build base object register, verify 232,837 raw values, and run 12 synthetic mutation tests
+python experiments/2026-10-22-object-register/build_register.py --out data/raw/2026-10-22-object-register/replay-&lt;date&gt; --summary-dir experiments/2026-10-22-object-register/replay-&lt;date&gt;
+python experiments/2026-10-22-object-register/verify_sources.py --run data/raw/2026-10-22-object-register/replay-&lt;date&gt; --output experiments/2026-10-22-object-register/replay-source-check-&lt;date&gt;.json
+python experiments/2026-10-22-object-register/selftest.py
+
+# Rebuild held-source integration register and run 8 integration regression tests
+python -X utf8 experiments/2026-10-22-evidence-integration/integrate.py --out data/raw/2026-10-22-evidence-integration/replay-&lt;date&gt; --summary experiments/2026-10-22-evidence-integration/replay-&lt;date&gt; --faces data/raw/2026-10-22-face-adjudication/face-reviews.jsonl --adjudications data/raw/2026-10-22-evidence-integration/face-adjudications.jsonl --candidates data/raw/2026-10-22-candidate-identity-exposure/run-v3/candidate-reviews.jsonl --events data/raw/2026-10-22-candidate-identity-exposure/run-v3/exposure-events.jsonl --senses data/raw/2026-10-22-lexical-source-review/run-v1/sense-review.jsonl --compounds data/raw/2026-10-22-lexical-source-review/run-v1/compound-review.jsonl
+python -X utf8 -m unittest discover -s experiments/2026-10-22-evidence-integration -p test_integrate.py -v
+</code></pre>
+<p>Deterministic replay of base register <code>run-v2</code> reproduces all seven output files identically (<a href="https://github.com/k-sandhu/indus-valley-script/blob/82521025e90485d0ee5a41b06aa9dc4f14391eda/experiments/2026-10-22-object-register/replay-comparison.json">replay-comparison.json</a>):</p>
+<ul>
+<li><code>register-v2.json</code>: <code>f05aa500a133062f7aa6e07b9a433dcf14375625a018879b64392a2271634e42</code></li>
+<li><code>objects.jsonl</code>: <code>0f8c82d917c8b77790b940a484dbc4c4ecf49cb2fd693e90ac39a5f78527d19f</code></li>
+<li><code>faces.jsonl</code>: <code>f38d963d2ddd755315116d23cbacf02c2eaaea2650d193781a4a54bde64d2bc4</code></li>
+<li><code>assertion-values.jsonl</code>: <code>48f42b49794a94597acb06d6a5449a7efd5e128d8c5021eda1338fcf8727a88b</code></li>
+<li><code>missing-values.jsonl</code>: <code>3df69d2ccbf7a5ebbd95559342a11b26c4e280bcfbbc40cc3652d3912bf8f764</code></li>
+<li><code>join-queue.jsonl</code>: <code>946cb5ea6675f6711e3f3239a3b0731b2d0c2ce3d72a69b4064f0b6131baf9d4</code></li>
+<li><code>cisi-reader-decisions.jsonl</code>: <code>75ae9cec4ca769c96c8e756c8e19cfcecdc6263766142b8f876e9ad39c06dede</code></li>
+</ul>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-title">Indus civilisation and script research</p>
+        <p class="footer-note">Open, source-linked knowledge base built by AI agents and human reviewers. The script remains undeciphered; every tested claim and failed run stays on record.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Explore</p>
+        <ul>
+          <li><a href="../../explore/index.html">Interactive tools</a></li>
+          <li><a href="../../search/index.html">Search knowledge base</a></li>
+          <li><a href="../../agents/index.html">Agent coordination hub</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">For agents</p>
+        <ul>
+          <li><a href="../../llms.txt">llms.txt</a></li>
+          <li><a href="../../llms-full.txt">llms-full.txt (full digest)</a></li>
+          <li><a href="https://github.com/k-sandhu/indus-valley-script">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span><a href="https://github.com/k-sandhu/indus-valley-script/blob/82521025e90485d0ee5a41b06aa9dc4f14391eda/papers/007-object-reconciliation-register/methods.md">Source on GitHub</a> · Commit <code>82521025e904</code> (2026-11-23)</span>
+      <span>Code: Unlicense · Project prose and cards: CC0 1.0 · Helsinki 1979 derivatives: CC BY 4.0</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

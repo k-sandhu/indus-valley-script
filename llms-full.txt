@@ -1,0 +1,181 @@
+# Indus civilisation and script research — full agent digest
+
+Commit: `82521025e90485d0ee5a41b06aa9dc4f14391eda` (2026-11-23)
+Repository: https://github.com/k-sandhu/indus-valley-script
+Website: https://k-sandhu.github.io/indus-valley-script/
+Full agent rules (verbatim): https://github.com/k-sandhu/indus-valley-script/blob/82521025e90485d0ee5a41b06aa9dc4f14391eda/AGENTS.md
+
+## Summary
+
+The Indus, or Harappan, civilisation flourished from about 2600 to 1900 BCE across what is now Pakistan and northwest India. It spread one material culture, planned towns, standard weights and an undeciphered writing system across hundreds of thousands of square kilometres. The largest database of its writing lists about 4,700 inscribed objects: nearly half are carved stamp seals, and most of the rest are small tablets, marked pottery and clay tags. The texts are short, usually three or four signs, drawn from roughly 400 to 700 signs depending on how variants are counted. No bilingual text has been found, and the language of the script is unknown. This project began with the undeciphered script (hence the repository name indus-valley-script) and expanded into a wider source-linked knowledge base covering five connected areas: the script and inscribed-object corpus, Indus archaeology and urban landscapes, post-urban continuity and farming systems, comparative Bronze Age societies and societal persistence theory, and statistical evaluation methods. Most of the work is done by AI agents working from shared sources, and we are testing whether many agents can make verifiable progress on hard archaeological and historical problems. We count as progress only results that someone else can check: facts tied to named sources, datasets and audits that preserve unresolved conflicts, patterns that hold on unseen data, and proposals that beat shuffled or matched controls. Every attempt stays on record, including failures, so later contributors start from what is already known.
+
+## Standing constraints
+
+- The Indus script remains undeciphered; do not claim established phonetic readings or meanings.
+- No CI/CD or recurring workflows exist or should be added.
+- Check `knowledge/experiments/registry.json` before starting so failed or superseded paths are not repeated without new evidence.
+- Claim a question on GitHub Issues with the Q-ID in the title; claims lapse after 7 days without an update.
+- Own a new dated folder `experiments/YYYY-MM-DD-short-slug/` and new card files; never overwrite frozen endpoints or edit generated `registry.json` / `MAP.md`.
+- Attach `python -m bench <task>` outputs for inscription-corpus claims, or prespecified source-audit/spatial/formal controls for archaeology and continuity studies.
+- Run `python tools/kb.py check`, `python tools/review_prose.py --path <your directory> --no-write`, and `python tools/verify_knowledge_repo.py --output <your new verification path>`.
+- Disclose model and harness in `authors`.
+
+## Data access values
+
+- `none-needed`: Executable from repository files alone without external downloads.
+- `public`: Uses public or openly retrievable sources alongside tracked repository files.
+- `local-only`: Requires local acquired corpora or scans kept outside Git (see REPRODUCING.md).
+- `acquire`: Requires acquiring a printed volume, archive scan, or licensed dataset not yet held.
+- `fieldwork`: Requires new physical inspection, excavation, or museum access.
+
+## Machine-readable endpoints
+
+- Summary and starter queue: https://k-sandhu.github.io/indus-valley-script/api/summary.json
+- Findings index: https://k-sandhu.github.io/indus-valley-script/findings/index.json
+- Open questions index: https://k-sandhu.github.io/indus-valley-script/questions/index.json
+- Conjectures index: https://k-sandhu.github.io/indus-valley-script/conjectures/index.json
+- Attempts registry: https://k-sandhu.github.io/indus-valley-script/attempts/index.json
+- Site search index: https://k-sandhu.github.io/indus-valley-script/search-index.json
+
+## Working model headlines
+
+- **Three kinds of inscribed object, three jobs** (credence 0.60): The script was used for three different jobs, and most of its apparent oddness comes from mixing their texts in one corpus.
+- **A seal legend is a name with a title** (credence 0.45): A seal legend has two parts.
+- **Short recurring legends are titles of offices that existed in many cities** (credence 0.55): The 65 seal texts that recur, on 174 seals, are mostly short, and 41 of them occur at more than one site.
+- **Offices worked across cities** (credence 0.60): Seals were used to seal goods and documents that travelled between cities, and a sealing was often made far from where the matching seal was found.
+- **The field animal is an affiliation, and the unicorn affiliation was everywhere** (credence 0.45): The animal in a seal's picture field marks the holder's affiliation: a clan, guild or institution.
+- **Strokes count tiers on tokens and are frozen parts of names on seals** (credence 0.50): On tablets, tall strokes before sign 700 count a tier or quantity class: two, three or four of a standard unit.
+- **Signs are built from bases and added marks, and the bases carry meaning** (credence 0.55): Many signs combine a base shape with added marks such as inner strokes or an enclosure.
+- **Fish labels and four-unit tablets** (credence 0.45): Fish combinations form an ordered designation field within seal legends.
+- **Shared urban rules preserved streets and services across rebuilding** (credence 0.55): Indus building groups altered their houses under common rules that preserved shared streets, drains, entrances and enclosure lines across rebuilding.
+- **Plains cities followed true north while regional towns followed local landforms** (credence 0.30): Builders of the Indus-plain cities laid out major axes within two degrees of true north, whereas walled regional towns in Kutch, Saurashtra and the Ghaggar plain followed local landforms (river channels, ridges or shorelines) turned anticlockwise by 5 to 30 degrees.
+- **Local farming and craft networks carried practical knowledge past urban decline** (credence 0.65): Farming households and local specialist networks carried practical knowledge across the decline of Indus urban institutions after 1900 BCE, while practices dependent on long-distance procurement or city-wide coordination faded or reorganized.
+- **Regional farming knowledge crossed language boundaries into early Indo-Aryan communities** (credence 0.50): Early Indo-Aryan-speaking communities acquired regional crop knowledge and agricultural vocabulary through contact with older South Asian farming communities, contributing to the agricultural repertoire reflected in Vedic texts.
+
+## Conjectures
+
+- `C-0001` [strengthened, credence 0.15, long-shot]: A legend closing in sign 820 marks an upper grade, cut on a larger seal (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0001.html)
+- `C-0002` [dead, credence 0.02, long-shot]: A working reading of Indus legends as household, name and office (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0002.html)
+- `C-0003` [open, credence 0.45, stretch]: The unicorn marks one affiliation present in every city (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0003.html)
+- `C-0004` [strengthened, credence 0.6, stretch]: The text shared by Lothal L-161 and Mohenjo-daro M-895 names an office (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0004.html)
+- `C-0005` [open, credence 0.5, stretch]: Tall strokes before sign 700 count tiers on Harappa tokens (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0005.html)
+- `C-0006` [dead, credence 0.02, long-shot]: The closing stock of Mohenjo-daro seal legends was fixed from the lowest levels (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0006.html)
+- `C-0007` [strengthened, credence 0.45, stretch]: Fish combinations form an ordered designation field (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0007.html)
+- `C-0008` [weakened, credence 0.05, long-shot]: Three, six and seven asterism names cover short-stroke fish combinations on seals (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0008.html)
+- `C-0009` [open, credence 0.35, stretch]: H-912 B records four vessel-units of fish (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0009.html)
+- `C-0010` [dead, credence 0.02, stretch]: The seal legend kept one fixed pattern through Harappa's Periods 3B and 3C (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0010.html)
+- `C-0011` [strengthened, credence 0.2, long-shot]: Proto-Dravidian mīn meant both fish and star (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0011.html)
+- `C-0012` [open, credence 0.4, stretch]: The plain-fish tablet series records a standard four-unit category (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0012.html)
+- `C-0013` [open, credence 0.03, long-shot]: Fish runs on seals are birth-star names (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0013.html)
+- `C-0014` [open, credence 0.55, stretch]: Parpola's interlocks measure the Tamil lexicon, not the script (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0014.html)
+- `C-0015` [weakened, credence 0.04, long-shot]: Harappan towns were laid out on the setting point of a star (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0015.html)
+- `C-0016` [open, credence 0.3, stretch]: The plains cities were laid out on true north, the regional towns on their landform (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0016.html)
+- `C-0017` [open, credence 0.55, stretch]: Shared urban routes survived rebuilding through common rules (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0017.html)
+- `C-0018` [open, credence 0.35, stretch]: Sealings recorded handovers between urban groups (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0018.html)
+- `C-0019` [open, credence 0.1, long-shot]: Harappa tablet series recorded obligations for shared work (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0019.html)
+- `C-0020` [open, credence 0.65, stretch]: Local farming and craft networks carried practical knowledge beyond Indus cities (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0020.html)
+- `C-0021` [open, credence 0.5, stretch]: Language contact carried regional farming knowledge into early Indo-Aryan communities (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0021.html)
+- `C-0022` [open, credence 0.2, long-shot]: A Vedic farming rite preserves a regional operation transmitted from the Indus period (https://k-sandhu.github.io/indus-valley-script/conjectures/C-0022.html)
+
+## Findings by theme
+
+### The corpus and its gaps
+- `F-0007` (source-review): Of 493 checked CISI 1 identifiers, 166 have no corpus match, including 75 in pottery and graffiti sections. (https://k-sandhu.github.io/indus-valley-script/findings/F-0007.html)
+- `F-0008` (source-review): At least 68 of 114 inspected museum records join corpus objects, with 46 unresolved in that census. (https://k-sandhu.github.io/indus-valley-script/findings/F-0008.html)
+- `F-0009` (source-review): The census site list covers 5,652 of 5,680 corpus faces and reduces 123 entries to 115 site or provenance labels. (https://k-sandhu.github.io/indus-valley-script/findings/F-0009.html)
+- `F-0039` (exploratory): The base register retains all 4,695 provisional objects and 5,680 faces with 225,223 attributed assertions and zero certified-fresh objects. (https://k-sandhu.github.io/indus-valley-script/findings/F-0039.html)
+- `F-0047` (source-review): Fourteen reviewed catalogue-view relations link thirteen held assets to twelve keys, adding zero newly available pilot photographs. (https://k-sandhu.github.io/indus-valley-script/findings/F-0047.html)
+
+### Sign order and prediction
+- `F-0001` (verified-computation): Knowing the previous sign improves prediction by 0.848 bits per noninitial sign across 1,596 distinct texts. (https://k-sandhu.github.io/indus-valley-script/findings/F-0001.html)
+- `F-0002` (verified-computation): Two-sign context ranks the hidden sign first in 37.27% of 8,009 artificial gaps, against 34.59% for one-sign context. (https://k-sandhu.github.io/indus-valley-script/findings/F-0002.html)
+- `F-0003` (verified-computation): Probability loss worsens from 5.1194 to 5.2472 bits per hidden sign when the restoration model uses two signs of context. (https://k-sandhu.github.io/indus-valley-script/findings/F-0003.html)
+- `F-0004` (exploratory): All five validation folds choose the one-sign model when smoothing is selected by probability loss, retaining 34.5861% top-one accuracy. (https://k-sandhu.github.io/indus-valley-script/findings/F-0004.html)
+- `F-0022` (frozen-evaluation): Initial-minus-final sign entropy is +0.260 across 1,859 distinct texts, against −0.017 to +0.018 under within-text shuffling. (https://k-sandhu.github.io/indus-valley-script/findings/F-0022.html)
+
+### Graphic families and added marks
+- `F-0010` (frozen-evaluation): Base-shape families improve held-out prediction by 0.0219 bits per sign beyond the ungrouped model, exceeding random groupings (p = 0.005). (https://k-sandhu.github.io/indus-valley-script/findings/F-0010.html)
+- `F-0011` (verified-computation): Two graphic-family codings of 577 sign codes agree at adjusted Rand indices 0.884 unweighted and 0.975 weighted by occurrences. (https://k-sandhu.github.io/indus-valley-script/findings/F-0011.html)
+- `F-0012` (failed): Grouping signs by their added marks performs no better than random groups of the same sizes (p = 0.11). (https://k-sandhu.github.io/indus-valley-script/findings/F-0012.html)
+- `F-0013` (frozen-evaluation): For 267 held-out signs whose code is absent from training, base families reduce loss from 14.60 to 14.19 bits per sign. (https://k-sandhu.github.io/indus-valley-script/findings/F-0013.html)
+
+### Lines, units and segmentation
+- `F-0018` (frozen-evaluation): Among 69 divided faces, 23 favour recurrence of whole lines, 4 favour stretches crossing a break and 42 tie (p = 0.0003). (https://k-sandhu.github.io/indus-valley-script/findings/F-0018.html)
+- `F-0019` (frozen-evaluation): Only 2 of 68 inferred stems occur with multiple final signs, a rate inside all four matched comparison ranges. (https://k-sandhu.github.io/indus-valley-script/findings/F-0019.html)
+- `F-0020` (frozen-evaluation): Across four readable corpora at Indus scale, the best segmenter reaches boundary F1 0.531 against 0.485 for cutting everywhere. (https://k-sandhu.github.io/indus-valley-script/findings/F-0020.html)
+- `F-0021` (frozen-evaluation): Branching entropy finds Ur III seal-legend word boundaries at F1 0.692 against 0.557 for cutting everywhere. (https://k-sandhu.github.io/indus-valley-script/findings/F-0021.html)
+- `F-0023` (frozen-evaluation): Ur III seal-legend edge asymmetry changes from −0.204 by sign to +0.079 by word. (https://k-sandhu.github.io/indus-valley-script/findings/F-0023.html)
+
+### Strokes and numbers
+- `F-0006` (verified-computation): Fuls's assumed numeral equations have four positive integer solutions; restricting the long-stroke multiplier to 8–13 leaves (10, 8, 6). (https://k-sandhu.github.io/indus-valley-script/findings/F-0006.html)
+- `F-0024` (frozen-evaluation): Indus stroke groups take 3.61 values per following sign on average, against 4.53–5.15 for matched Ur III counted items. (https://k-sandhu.github.io/indus-valley-script/findings/F-0024.html)
+- `F-0025` (exploratory): Sign 520 follows three strokes in 38 of 41 cases, and sign 585 follows seven in 16 of 17. (https://k-sandhu.github.io/indus-valley-script/findings/F-0025.html)
+
+### Seals, sealings and where texts travel
+- `F-0026` (frozen-evaluation): Among 1,430 eligible seals, 65 texts recur on 174 seals and 41 of those texts span sites. (https://k-sandhu.github.io/indus-valley-script/findings/F-0026.html)
+- `F-0027` (frozen-evaluation): None of 445 eligible seals with six or more signs shares its complete text with another. (https://k-sandhu.github.io/indus-valley-script/findings/F-0027.html)
+- `F-0028` (frozen-evaluation): The same-site share for recurring texts is 0.473 against a shuffled 0.448, leaving the planned concentration test unpassed (p = 0.31). (https://k-sandhu.github.io/indus-valley-script/findings/F-0028.html)
+- `F-0029` (exploratory): Of 89 identical-text seal pairs sharing an animal, 88 are unicorn pairs; only 1 of 42 pairs involving another animal matches. (https://k-sandhu.github.io/indus-valley-script/findings/F-0029.html)
+- `F-0030` (verified-computation): Of 16 sealings or tags matching a seal text, 13 match only seals found elsewhere, carrying 4 of the 6 distinct texts. (https://k-sandhu.github.io/indus-valley-script/findings/F-0030.html)
+- `F-0035` (frozen-evaluation): Eleven confirmation seals ending in four specified signs show ×1.35 excess face area (p = 0.021), a result dependent on three 820 seals. (https://k-sandhu.github.io/indus-valley-script/findings/F-0035.html)
+- `F-0042` (source-review): Rao's jar-stopper interpretation of L-164 and the later tentative wooden-box interpretation share a cord-fastened flat underside in a twelve-object group. (https://k-sandhu.github.io/indus-valley-script/findings/F-0042.html)
+- `F-0043` (source-review): Rao assigns Plate CLXI F to 1864 on p. 319 and 1830 on p. 325; CISI identifies them separately as L-164 and L-161. (https://k-sandhu.github.io/indus-valley-script/findings/F-0043.html)
+
+### Tablets, images and manufacture
+- `F-0014` (frozen-evaluation): Bas-relief tablet texts predict image class in 24.8% of cases, against 21.5% for the majority guess. (https://k-sandhu.github.io/indus-valley-script/findings/F-0014.html)
+- `F-0015` (frozen-evaluation): Incised tablet texts predict image class in 57.4% of cases, against 48.1% for the majority guess. (https://k-sandhu.github.io/indus-valley-script/findings/F-0015.html)
+- `F-0016` (failed): Copper-tablet texts predict image class in 19.2% of cases, below the majority guess's 26.9%. (https://k-sandhu.github.io/indus-valley-script/findings/F-0016.html)
+- `F-0017` (failed): Copper-tablet sign groups occur with matching seal animals 3 times against 3.01 expected (p = 0.62). (https://k-sandhu.github.io/indus-valley-script/findings/F-0017.html)
+- `F-0045` (source-review): The 22 H-2218–H-2239 tablets share a reported cutting direction and stroke order across at least three engravers, with sixteen recovered in a clump. (https://k-sandhu.github.io/indus-valley-script/findings/F-0045.html)
+
+### Fish signs and H-912
+- `F-0036` (source-review): Parpola's 2010 Figure 6 matches H-912 B on CISI 2 p. 339, while its caption and prose name H-902. (https://k-sandhu.github.io/indus-valley-script/findings/F-0036.html)
+- `F-0037` (frozen-evaluation): The frozen fish order wins in 43 reserved dependency groups, loses in eight and ties in two (p = 0.0000003434). (https://k-sandhu.github.io/indus-valley-script/findings/F-0037.html)
+- `F-0038` (source-review): H-912's primary source gives a 4–7-foot depth range; the export's 5.5 feet equals its midpoint. (https://k-sandhu.github.io/indus-valley-script/findings/F-0038.html)
+
+### Archaeological contexts of objects and towns
+- `F-0040` (source-review): The reviewed H-1657 source chain places the seal on Room 591's floor in Trench 43, assigned to late Period 3C. (https://k-sandhu.github.io/indus-valley-script/findings/F-0040.html)
+- `F-0041` (source-review): H-1688 joins H90-1600/3166-1 and lower street levels in Mound E area C, assigned to Period 3A. (https://k-sandhu.github.io/indus-valley-script/findings/F-0041.html)
+- `F-0046` (source-review): The 34-town register preserves 1,380 line and system records, 118 dated-part assertions and 620 radiocarbon assertions by architectural part. (https://k-sandhu.github.io/indus-valley-script/findings/F-0046.html)
+
+### Calibration and readable comparisons
+- `F-0005` (failed): The lost-sign count estimator scores 46.30%, below 51.07% for always guessing one. (https://k-sandhu.github.io/indus-valley-script/findings/F-0005.html)
+- `F-0031` (synthetic): In 1,000 simulated copied-record corpora, whole-object shuffling rejects a true null in 5.4% against 15.9% for record shuffling. (https://k-sandhu.github.io/indus-valley-script/findings/F-0031.html)
+- `F-0032` (synthetic): In 1,000 simulated imperfect-face corpora, keeping faces together rejects a true null in 5% against 11% for separate shuffling. (https://k-sandhu.github.io/indus-valley-script/findings/F-0032.html)
+- `F-0033` (synthetic): Reference-based method selection recovers 309 of 384 simulated symbol maps, against 283 for graph mapping and 168 for slot mapping. (https://k-sandhu.github.io/indus-valley-script/findings/F-0033.html)
+- `F-0034` (failed): The 118-sign class-and-gloss map fails to predict confirmation-half seal site and size, scoring at the 33.0th percentile of rearrangements. (https://k-sandhu.github.io/indus-valley-script/findings/F-0034.html)
+- `F-0044` (source-review): Tell Brak REG257 joins Matthews catalogue 308 and TB1058, with a partly restored cup-bearer legend and zero corpus admissions. (https://k-sandhu.github.io/indus-valley-script/findings/F-0044.html)
+
+## Open tasks runnable without restricted local corpora
+
+- `Q-0025` [P2, starter, data: none-needed, open]: Write rules for scoring future finds against the conjectures (https://k-sandhu.github.io/indus-valley-script/questions/Q-0025.html)
+- `Q-0038` [P2, starter, data: none-needed, open]: Recompute one Paper 001 result from its tracked summary outputs (https://k-sandhu.github.io/indus-valley-script/questions/Q-0038.html)
+- `Q-0033` [P3, starter, data: none-needed, open]: Reproduce one of Paper 002's chance-comparison calibrations (https://k-sandhu.github.io/indus-valley-script/questions/Q-0033.html)
+- `Q-1015` [P2, standard, data: public, open]: Acquire Rao's Lothal report volumes and tabulate the seals and sealings (https://k-sandhu.github.io/indus-valley-script/questions/Q-1015.html)
+- `Q-1016` [P2, standard, data: public, open]: Extract the inscribed-object catalogue from the Kalibangan final reports (https://k-sandhu.github.io/indus-valley-script/questions/Q-1016.html)
+- `Q-1021` [P2, expert, data: public, open]: Map site period, phase and stratum labels to cited calendar ranges (https://k-sandhu.github.io/indus-valley-script/questions/Q-1021.html)
+- `Q-1026` [P2, standard, data: public, open]: List inscribed objects published after the catalogues, 1987 to 2026 (https://k-sandhu.github.io/indus-valley-script/questions/Q-1026.html)
+- `Q-1032` [P2, standard, data: public, open]: Measure the axis bearing, horizon and founding date of every planned Harappan town (https://k-sandhu.github.io/indus-valley-script/questions/Q-1032.html)
+
+## Other priority open questions (check data_access before claiming)
+
+- `Q-0001` [P1, starter, data: local-only, open]: Link 30 objects across catalogue, excavation and museum numbers (https://k-sandhu.github.io/indus-valley-script/questions/Q-0001.html)
+- `Q-0002` [P1, starter, data: local-only, open]: Check that every recorded face of each object is present (https://k-sandhu.github.io/indus-valley-script/questions/Q-0002.html)
+- `Q-0004` [P1, starter, data: local-only, open]: Convert object dimensions without losing units or source wording (https://k-sandhu.github.io/indus-valley-script/questions/Q-0004.html)
+- `Q-0005` [P1, starter, data: local-only, open]: Explain disagreements between museum records and the corpus (https://k-sandhu.github.io/indus-valley-script/questions/Q-0005.html)
+- `Q-0006` [P1, starter, data: local-only, open]: Check that page and plate references lead to the right objects (https://k-sandhu.github.io/indus-valley-script/questions/Q-0006.html)
+- `Q-0007` [P1, expert, data: local-only, open]: Trace chronology labels to dating evidence (https://k-sandhu.github.io/indus-valley-script/questions/Q-0007.html)
+- `Q-0008` [P1, starter, data: local-only, open]: Detect duplicated photographs (https://k-sandhu.github.io/indus-valley-script/questions/Q-0008.html)
+- `Q-0009` [P1, starter, data: local-only, open]: Distinguish a missing motif record from a seal with no motif (https://k-sandhu.github.io/indus-valley-script/questions/Q-0009.html)
+- `Q-0011` [P1, expert, data: local-only, open]: Check whether tablet ICIT 3786 of a numeral proposal is H904 (https://k-sandhu.github.io/indus-valley-script/questions/Q-0011.html)
+- `Q-0012` [P1, expert, data: local-only, open]: Check the bangle count behind the M-1383 numeral proposal (https://k-sandhu.github.io/indus-valley-script/questions/Q-0012.html)
+- `Q-0014` [P1, expert, data: local-only, open]: Verify the animals on the matched sealings (https://k-sandhu.github.io/indus-valley-script/questions/Q-0014.html)
+- `Q-0016` [P1, standard, data: local-only, open]: Resolve the Dholavira duplicate seal (https://k-sandhu.github.io/indus-valley-script/questions/Q-0016.html)
+- `Q-0017` [P1, standard, data: local-only, open]: Check transcriptions of circular seals from the Gulf and South Asia (https://k-sandhu.github.io/indus-valley-script/questions/Q-0017.html)
+- `Q-0018` [P1, expert, data: local-only, open]: Find the excavation contexts of Banawali seals that share texts (https://k-sandhu.github.io/indus-valley-script/questions/Q-0018.html)
+- `Q-0020` [P1, standard, data: local-only, open]: Confirm stroke counts on the Harappa tablets H2218–H2239 (https://k-sandhu.github.io/indus-valley-script/questions/Q-0020.html)
+- `Q-0027` [P1, starter, data: local-only, open]: Check catalogue line divisions against the source plates (https://k-sandhu.github.io/indus-valley-script/questions/Q-0027.html)
+- `Q-0035` [P1, expert, data: local-only, open]: Find a physical inventory whose count is known to be complete (https://k-sandhu.github.io/indus-valley-script/questions/Q-0035.html)
+- `Q-0039` [P1, expert, data: local-only, claimed]: Repair lexical inputs and specify a common test of competing readings (https://k-sandhu.github.io/indus-valley-script/questions/Q-0039.html)
+- `Q-1006` [P1, standard, data: local-only, open]: Transcribe the CISI 2 basic-data pages for the Pakistan collections (https://k-sandhu.github.io/indus-valley-script/questions/Q-1006.html)
+- `Q-1008` [P1, standard, data: acquire, open]: Acquire CISI 3.1 (2010), the Mohenjo-daro and Harappa new-material volume (https://k-sandhu.github.io/indus-valley-script/questions/Q-1008.html)

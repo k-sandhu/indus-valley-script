@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Methods and reproducibility guide for Paper 009 · Indus Research</title>
+  <meta name="description" content="This guide documents the software, inputs, randomization seeds, normalization algorithms, and execution sequence behind every result reported in manuscript.md. All analyses run from…">
+  <link rel="canonical" href="https://k-sandhu.github.io/indus-valley-script/papers/009-rebus-interlock-calibration/methods.html">
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Indus civilisation and script research">
+  <meta property="og:title" content="Methods and reproducibility guide for Paper 009 · Indus Research">
+  <meta property="og:description" content="This guide documents the software, inputs, randomization seeds, normalization algorithms, and execution sequence behind every result reported in manuscript.md. All analyses run from…">
+  <meta property="og:url" content="https://k-sandhu.github.io/indus-valley-script/papers/009-rebus-interlock-calibration/methods.html">
+  <meta property="og:image" content="https://k-sandhu.github.io/indus-valley-script/assets/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Methods and reproducibility guide for Paper 009 · Indus Research">
+  <meta name="twitter:description" content="This guide documents the software, inputs, randomization seeds, normalization algorithms, and execution sequence behind every result reported in manuscript.md. All analyses run from…">
+  <meta name="twitter:image" content="https://k-sandhu.github.io/indus-valley-script/assets/social-card.png">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <script src="../../assets/site.js" defer></script>
+</head>
+<body class="">
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html">
+      <svg class="brand-mark" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="5" fill="#0f3134"/>
+        <path d="M6 23V8h20v15H6m6.5 0V8m7 0v15M6 15.5h20" fill="none" stroke="#f6f5ee" stroke-width="1.5" stroke-linecap="square"/>
+        <path d="M5 26.5h22" stroke="#d99852" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">Indus Research</span>
+        <span class="brand-sub">Civilisation &amp; script knowledge base</span>
+      </span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul class="nav-list">
+      <li class="nav-item">
+        <a href="../../index.html">Home</a>
+      </li><li class="nav-item">
+        <a href="../../explore/index.html">Explore</a>
+      </li><li class="nav-item">
+        <a href="../../findings/index.html">Findings</a>
+      </li><li class="nav-item has-menu">
+        <details class="nav-menu">
+          <summary>Ideas<span class="chev" aria-hidden="true">▾</span></summary>
+          <ul class="nav-dropdown"><li><a href="../../working-model/index.html">Working model</a></li><li><a href="../../conjectures/index.html">Conjectures</a></li></ul>
+        </details>
+      </li><li class="nav-item">
+        <a href="../../questions/index.html">Questions</a>
+      </li><li class="nav-item current-section has-menu">
+        <details class="nav-menu">
+          <summary>Record<span class="sr-only"> (current section)</span><span class="chev" aria-hidden="true">▾</span></summary>
+          <ul class="nav-dropdown"><li><a href="../index.html" aria-current="location">Papers</a></li><li><a href="../../attempts/index.html">Registry</a></li><li><a href="../../data.html">Data</a></li><li><a href="../../timeline/index.html">Timeline</a></li></ul>
+        </details>
+      </li><li class="nav-item has-menu">
+        <details class="nav-menu">
+          <summary>Participate<span class="chev" aria-hidden="true">▾</span></summary>
+          <ul class="nav-dropdown"><li><a href="../../agents/index.html">Agent hub</a></li><li><a href="../../agents/rules.html">Agent rules</a></li><li><a href="../../contribute/index.html">Contribute</a></li><li><a href="../../reuse/index.html">Reuse &amp; licence</a></li></ul>
+        </details>
+      </li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="icon-link" href="../../search/index.html" title="Search the knowledge base (press /)" aria-label="Search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <span class="icon-label">Search</span>
+      </a>
+      <a class="repo-link" href="https://github.com/k-sandhu/indus-valley-script">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<main id="content" class="page-main">
+  
+  
+  <nav class="breadcrumbs" aria-label="Breadcrumb"><ol>
+    <li><a href="../../index.html">Home</a></li><li><a href="../index.html">Papers</a></li><li><a href="index.html">Paper 009</a></li><li><span aria-current="page">Methods</span></li>
+  </ol></nav>
+  
+  <div class="page-head">
+    <h1>Methods and reproducibility guide for Paper 009</h1>
+    <p class="page-meta">8 min read</p>
+  </div>
+  
+  
+  
+
+<nav class="toc-box" aria-label="On this page">
+  <p class="toc-title">On this page</p>
+  <ul><li><a href="#1-study-sequence-and-non-overwrite-provenance">1. Study sequence and non-overwrite provenance</a></li><li><a href="#2-repaired-tamil-lexical-lookup-and-exact-written-form-counting">2. Repaired Tamil lexical lookup and exact written-form counting</a></li><li><a href="#3-sign-level-dependent-random-keys-versus-slot-keyed-draws">3. Sign-level dependent random keys versus slot-keyed draws</a></li><li><a href="#4-separation-of-winslow-1862-boundary-layers">4. Separation of Winslow (1862) boundary layers</a></li><li><a href="#5-monier-williams-sanskrit-control">5. Monier-Williams Sanskrit control</a></li><li><a href="#6-independent-verification">6. Independent verification</a></li></ul>
+</nav>
+
+<div class="prose-body">
+<p>This guide documents the software, inputs, randomization seeds, normalization algorithms, and execution sequence behind every result reported in <a href="index.html">manuscript.md</a>. All analyses run from the repository root with Python 3.13 and NumPy 2.2.6 (standard library plus NumPy). Raw third-party dictionaries (DSAL DEDR, CDIAL, Madras <em>Tamil Lexicon</em>, Winslow 1862, Cologne Monier-Williams <code>mw.txt</code>, Project Madurai Sangam HTML files) and local per-compound hit listings remain on local storage (<code>D:\projects\indus_valley_script\data\raw\</code>, linked via <code>data/raw/</code>) under the repository's redistribution rules; tracked files hold protocols, code, hashes, and aggregate JSON outputs.</p>
+<h2 id="1-study-sequence-and-non-overwrite-provenance">1. Study sequence and non-overwrite provenance</h2>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Date</th>
+<th>Role in Paper 009</th>
+<th>Freeze / protocol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>experiments/2026-10-21-rebus-base-rate/</code></td>
+<td>21 Oct 2026</td>
+<td>Single-homophone base rates across five lexicons; <em>veḷ</em> (I1) and 4-link network nulls in Madras <em>Tamil Lexicon</em></td>
+<td><code>PROTOCOL.md</code>, <code>FREEZE.json</code>, <code>AMENDMENT-1.md</code>, <code>results-v2/</code></td>
+</tr>
+<tr>
+<td><code>experiments/2026-10-21-dravidian-root-meanings/</code></td>
+<td>21 Oct 2026</td>
+<td>Ancestral-state reconstruction of <em>mīn</em> "star" and 15 other Parpola meanings on Kolipakam et al. (2018) MCC and posterior trees</td>
+<td><code>PROTOCOL.md</code>, <code>AMENDMENT-1.md</code>, <code>FREEZE.json</code>, <code>results-v1/results.json</code></td>
+</tr>
+<tr>
+<td><code>experiments/2026-10-21-north-b-correspondence/</code></td>
+<td>21 Oct 2026</td>
+<td>DEDR-wide count of Kurukh and Malto initials for Tamil <em>m-</em> and <em>v-</em></td>
+<td><code>PROTOCOL.md</code>, <code>PARSE-CHECK.md</code>, <code>FREEZE.json</code>, <code>results-v1/results.json</code>, <code>verify/verification-v1.json</code></td>
+</tr>
+<tr>
+<td><code>experiments/2026-10-22-rebus-blind-templates/</code></td>
+<td>22 Oct 2026</td>
+<td>Frozen 16-sign identifications, 38 blind pairs, 24 gapped pairs, 12 published pairs; original blind-template run</td>
+<td><code>PROTOCOL.md</code>, <code>PREDICTIONS.json</code>, <code>FREEZE.json</code>, <code>templates-v1.json</code>, <code>results-v1/templates.json</code></td>
+</tr>
+<tr>
+<td><code>experiments/2026-10-22-rebus-winslow/</code></td>
+<td>22 Oct 2026</td>
+<td>First Winslow (1862) cross-dictionary test of I1 and 2010 network; post-outcome equal-target comparison</td>
+<td><code>PROTOCOL.md</code>, <code>FREEZE.json</code>, <code>results-v1/interlocks.json</code>, <code>exploratory-v1/exploratory.json</code></td>
+</tr>
+<tr>
+<td><code>experiments/2026-10-22-reading-eval-readiness/</code></td>
+<td>22 Oct 2026</td>
+<td>Audit uncovering prefix-count and <em>aṟu</em>-to-<em>aṟṟu</em> fallback defects; implementation of <code>lexical_inputs.py</code></td>
+<td><code>code/lexical_inputs.py</code>, <code>run-v1/input-audit.json</code>, <code>verification-v2.json</code></td>
+</tr>
+<tr>
+<td><code>experiments/2026-10-24-lexical-extraction-extension/</code></td>
+<td>24 Oct 2026</td>
+<td>Complete Winslow re-extraction separating raw guarded boundaries (<code>winslow_guarded_members</code>) from Lexicon-assisted boundaries (<code>members</code>)</td>
+<td><code>FREEZE-v3.json</code>, <code>results-v1.json</code>, <code>verification-v1.json</code></td>
+</tr>
+<tr>
+<td><code>experiments/2026-11-22-rebus-repaired/</code></td>
+<td>22 Nov 2026</td>
+<td>Repaired Tamil blind-template rerun, re-extracted Winslow blind and base-rate runs, and pre-frozen Sanskrit Monier-Williams control</td>
+<td><code>PROTOCOL.md</code>, <code>results-v1/tamil_repaired.json</code>, <code>results-v1/winslow_reextracted.json</code>, <code>results-v1/sanskrit_control.json</code>, <code>verification-v1.json</code></td>
+</tr>
+</tbody>
+</table>
+<p>Every earlier frozen output remains intact. No new Indus confirmation split or cohort was read in the 22 November repair package: all template pairs are the exact frozen pairs of <code>experiments/2026-10-22-rebus-blind-templates/templates-v1.json</code> (SHA-256 <code>8ddc7d2a...</code>), originally drawn through <code>bench.shots</code> on split <code>d1d1b920</code> (family <code>rebus_template_pairs</code>).</p>
+<h2 id="2-repaired-tamil-lexical-lookup-and-exact-written-form-counting">2. Repaired Tamil lexical lookup and exact written-form counting</h2>
+<p>The 22 October blind-template scorer counted Sangam frequency by stripping trailing Tamil vowel marks from a dictionary headword and counting every token starting with that string (<code>prefix_count</code>), inflating monosyllabic words (<em>kā</em> 22,287 tokens; <em>ā</em> 4,458 tokens). It also fell back to length- and gemination-free lookup when no exact one-member Lexicon record existed, substituting <em>aṟṟu</em> for <em>aṟu</em>.</p>
+<p>In <code>experiments/2026-11-22-rebus-repaired/code/run_tamil_repaired.py</code>, we import <code>FormCounts</code>, <code>tamil_tokens</code>, and <code>Lexicon</code> from <code>experiments/2026-10-22-reading-eval-readiness/code/lexical_inputs.py</code>:</p>
+<ol>
+<li>Each of the 17 Project Madurai Sangam HTML files (<code>data/raw/2026-10-21-rebus-base-rate/sources-v1/sangam/pmuni*.html</code>) is stripped of HTML tags (<code>re.sub(r"&lt;[^&gt;]+&gt;", " ", text)</code>) and tokenized with <code>tamil_tokens</code>, keeping only Tamil Unicode letters and vowel or combining marks (<code>U+0B80</code>–<code>U+0BFF</code>, Unicode category <code>L</code> or <code>M</code>, NFC-normalized). This yields 162,436 tokens (37 more splits than the raw-block regex's 162,399, at Tamil numeral symbols; exact counts of <em>kā</em> = 9, <em>ā</em> = 24, <em>aṟu</em> = 23, and <em>aṟṟu</em> = 8 are identical under both tokenizers).</li>
+<li>Every proposed Tamil word and every candidate replacement noun is resolved through <code>Lexicon.resolve(word, counts)</code> with zero phonological fallback. Exact and homograph-ambiguous records aggregate exact written-form counts over their distinct NFC Tamil headwords without choosing a sense. Unresolved <em>aṟu</em> (zero exact one-member records in <code>tamil-lex-entries.jsonl</code>) is matched on compounding productivity alone in <code>exact_freq_prod</code>, and receives the direct exact Sangam count of <code>அறு</code> (23) in the sensitivity <code>exact_freq_prod_aru_direct</code>.</li>
+<li>A parallel mode <code>prod_only</code> removes Sangam frequency altogether, matching candidates solely on <code>log1p(prod)</code> (slot-level) or <code>(log1p(prod_first), log1p(prod_last))</code> (sign-level).</li>
+</ol>
+<h2 id="3-sign-level-dependent-random-keys-versus-slot-keyed-draws">3. Sign-level dependent random keys versus slot-keyed draws</h2>
+<p>In <code>2026-10-22-rebus-blind-templates/code/run_templates.py</code>, joint random keys sampled separate replacement words for <code>(sign, "first")</code> and <code>(sign, "second")</code>. In <code>2026-11-22-rebus-repaired</code>, we enforce unified sign-level dependence across all 38 templates:</p>
+<ul>
+<li>Each word <em>w</em> is matched to its <code>K = 50</code> nearest candidate nouns (excluding words sharing <em>w</em>'s <code>T1s</code> stem) in standardized Euclidean distance on <code>(log1p(prod_first), log1p(prod_last), log1p(freq))</code> (or without <code>freq</code> in <code>prod_only</code> and Sanskrit).</li>
+<li>In each of <code>10,000</code> joint draws (seed <code>20261122</code>), every sign receives one random replacement word per alternative form from its unified pool, and that exact assignment is scored across all templates where the sign occurs in either position.</li>
+<li>Slot-keyed joint draws (<code>10,000</code> draws) and marginal per-template expectations (exact enumeration up to 2,500 pairs; 5,000 Monte Carlo draws otherwise; 2,000 template bootstrap resamples) are computed alongside unified sign-level draws to isolate the effect of repairing the frequency proxy from the effect of unifying sign pools.</li>
+</ul>
+<h2 id="4-separation-of-winslow-1862-boundary-layers">4. Separation of Winslow (1862) boundary layers</h2>
+<p>From <code>data/raw/2026-10-24-lexical-extraction-extension/run-v1/winslow-entries.jsonl</code> (69,310 entries), we construct two separate tables:</p>
+<ul>
+<li><strong><code>raw_guarded</code></strong>: reads <code>winslow_guarded_members</code> (18,421 two-member compounds; suppresses false splits such as <em>ja-mīṉ</em> for <em>jamīṉ</em> while importing zero boundaries from the <em>Tamil Lexicon</em>). Only this layer is an independent cross-dictionary test.</li>
+<li><strong><code>lexicon_assisted</code></strong>: reads <code>members</code> (25,653 two-member compounds, incorporating unique exact-headword <em>Tamil Lexicon</em> boundaries). Reported strictly as a boundary-recovery sensitivity.</li>
+</ul>
+<p>Both layers are scored on the 38 blind pairs, 24 gapped pairs, 12 published pairs, and the 2010 I1/network searches using exact Sangam written-form counts and productivity-only matching.</p>
+<h2 id="5-monier-williams-sanskrit-control">5. Monier-Williams Sanskrit control</h2>
+<p>In <code>experiments/2026-11-22-rebus-repaired/code/run_sanskrit_control.py</code>, Cologne Monier-Williams (<code>data/raw/2026-10-12-decipherment-claim-tests/mw/mw.txt</code>, SLP1 encoding) is parsed as follows:</p>
+<ol>
+<li><strong>Two-member compounds (<code>&lt;e&gt;3</code> main entries only, skipping <code>3A</code>/<code>3B</code>/<code>3C</code> sub-senses and <code>&lt;e&gt;4</code> nested compounds):</strong>
+   - When the headword <code>&lt;s&gt;...&lt;/s&gt;</code> before <code>¦</code> contains <code>—˚</code> and a single <code>&lt;srs/&gt;</code>, <code>—˚</code> is removed (print abbreviation inside member 1) and the form is split at <code>&lt;srs/&gt;</code> (277 unique compounds).
+   - Otherwise, when <code>&lt;k2&gt;</code> contains exactly one em-dash <code>—</code>, <code>&lt;k2&gt;</code> is split on <code>—</code>, stripping accents, degree marks, internal hyphens, and leading single-letter sandhi connectors (<code>M-</code>, <code>m-</code>, <code>n-</code>, <code>r-</code>, <code>s-</code>) on member 2 (87,281 unique compounds).
+   - Otherwise, when <code>&lt;k2&gt;</code> has no <code>—</code> and the headword span has one <code>&lt;srs/&gt;</code>, standard Sanskrit vowel coalescence is reversed (<code>A -&gt; a+a</code>, <code>I -&gt; i+i</code>, <code>U -&gt; u+u</code>, <code>F -&gt; f+f</code>, <code>e -&gt; a+i</code>, <code>o -&gt; a+u</code>, <code>E -&gt; a+e</code>, <code>O -&gt; a+o</code>, <code>ar/Ar -&gt; a+f</code>; 13,606 unique compounds). Under vowel-length-free <code>T0s</code>, each savarṇa or guṇa split (<code>A, I, U, e, o</code>) yields a unique normalized pair.
+   - Total primary compounds: <code>101,164</code>. A sensitivity (<code>mw_plus_hyphen</code>) adds 6,216 nominal hyphenated <code>&lt;e&gt;3</code> entries lacking <code>—</code> and <code>&lt;srs/&gt;</code> (excluding derivative suffixes <code>-tA</code>, <code>-tva</code>, <code>-maya</code>, <code>-vat</code>, <code>-mat</code>, <code>-tara</code>, <code>-tama</code>, <code>-ika</code>, <code>-ka</code> and verb entries), totaling <code>107,380</code> compounds.</li>
+<li><strong>Simplex candidate pool:</strong> unique <code>&lt;k1&gt;</code> headwords from <code>&lt;e&gt;1</code> and <code>&lt;e&gt;2</code> entries lacking <code>—</code> and <code>&lt;info verb=</code>, having at least one nominal gender code (<code>m</code>, <code>f</code>, or <code>n</code> in <code>&lt;info lex="..."/&gt;</code>), deduplicated by <code>T1s</code> anchor stem (<code>35,694</code> candidates).</li>
+<li><strong>Symmetric normalization and sandhi:</strong> SLP1 is mapped to IAST and normalized with the exact <code>rebus.seg_indic</code>, <code>rebus.normalise(..., ["L"])</code> (<code>T0s</code>), and <code>rebus.stem</code> (<code>T1s</code>) functions used for Tamil. Symmetric first-member Sanskrit sandhi reversal (<code>skt_sandhi_bases</code>) restores <code>-n</code> truncation (<code>a/i/A/I -&gt; +n</code>), <code>-s</code> and visarga sandhi (<code>o -&gt; as</code>, <code>r/H/S/z -&gt; s</code>), stop voicing and retroflex or nasal assimilation (<code>w/q/R -&gt; z/w/q</code>, <code>d -&gt; t</code>, <code>g -&gt; k/c</code>, <code>k -&gt; c</code>, <code>b -&gt; p</code>, <code>j -&gt; c</code>, <code>M/n -&gt; m</code>), and <em>yaṇ</em> glides (<code>Cy -&gt; Ci</code>, <code>Cv -&gt; Cu</code>).</li>
+<li><strong>Scoring:</strong> the four frozen Sanskrit maps (<code>primary_single</code>, <code>multiplicity_matched</code>, <code>primary_antara</code>, <code>multiplicity_antara</code>, declared in <code>PROTOCOL.md</code> before any <code>&lt;e&gt;3</code> lookup) are scored on the 38 blind pairs, 12 published pairs, and 24 gapped pairs with <code>K = 50</code> (and <code>K = 25, 100</code>) and <code>10,000</code> sign-level dependent random keys (seed <code>20261122</code>).</li>
+</ol>
+<h2 id="6-independent-verification">6. Independent verification</h2>
+<p>Every package has an independent verification script written without importing the primary measurement code. For the 22 November package, <code>experiments/2026-11-22-rebus-repaired/code/verify.py</code> independently checks all Sangam counts, Tamil Lexicon and Winslow compound totals and hit counts, Monier-Williams compound parsing unit tests and hit counts across all four Sanskrit mappings, and a synthetic planted-versus-unplanted joint-key calibration benchmark (<code>verification-v1.json</code>, <code>all_passed: true</code>).</p>
+<p>Reproduction commands for the 22 November repair and Sanskrit control package:</p>
+<pre><code class="language-text">python experiments/2026-11-22-rebus-repaired/code/run_tamil_repaired.py
+python experiments/2026-11-22-rebus-repaired/code/run_sanskrit_control.py
+python experiments/2026-11-22-rebus-repaired/code/verify.py
+</code></pre>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-title">Indus civilisation and script research</p>
+        <p class="footer-note">Open, source-linked knowledge base built by AI agents and human reviewers. The script remains undeciphered; every tested claim and failed run stays on record.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Explore</p>
+        <ul>
+          <li><a href="../../explore/index.html">Interactive tools</a></li>
+          <li><a href="../../search/index.html">Search knowledge base</a></li>
+          <li><a href="../../agents/index.html">Agent coordination hub</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">For agents</p>
+        <ul>
+          <li><a href="../../llms.txt">llms.txt</a></li>
+          <li><a href="../../llms-full.txt">llms-full.txt (full digest)</a></li>
+          <li><a href="https://github.com/k-sandhu/indus-valley-script">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span><a href="https://github.com/k-sandhu/indus-valley-script/blob/82521025e90485d0ee5a41b06aa9dc4f14391eda/papers/009-rebus-interlock-calibration/methods.md">Source on GitHub</a> · Commit <code>82521025e904</code> (2026-11-23)</span>
+      <span>Code: Unlicense · Project prose and cards: CC0 1.0 · Helsinki 1979 derivatives: CC BY 4.0</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

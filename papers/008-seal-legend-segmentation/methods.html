@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Methods, splits, benchmark commands, and limitations · Indus Research</title>
+  <meta name="description" content="This companion document specifies the data filters, component-grouping rules, statistical procedures, cryptographic hashes and reproduction commands behind manuscript.md. All paths…">
+  <link rel="canonical" href="https://k-sandhu.github.io/indus-valley-script/papers/008-seal-legend-segmentation/methods.html">
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Indus civilisation and script research">
+  <meta property="og:title" content="Methods, splits, benchmark commands, and limitations · Indus Research">
+  <meta property="og:description" content="This companion document specifies the data filters, component-grouping rules, statistical procedures, cryptographic hashes and reproduction commands behind manuscript.md. All paths…">
+  <meta property="og:url" content="https://k-sandhu.github.io/indus-valley-script/papers/008-seal-legend-segmentation/methods.html">
+  <meta property="og:image" content="https://k-sandhu.github.io/indus-valley-script/assets/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Methods, splits, benchmark commands, and limitations · Indus Research">
+  <meta name="twitter:description" content="This companion document specifies the data filters, component-grouping rules, statistical procedures, cryptographic hashes and reproduction commands behind manuscript.md. All paths…">
+  <meta name="twitter:image" content="https://k-sandhu.github.io/indus-valley-script/assets/social-card.png">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <script src="../../assets/site.js" defer></script>
+</head>
+<body class="">
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html">
+      <svg class="brand-mark" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="5" fill="#0f3134"/>
+        <path d="M6 23V8h20v15H6m6.5 0V8m7 0v15M6 15.5h20" fill="none" stroke="#f6f5ee" stroke-width="1.5" stroke-linecap="square"/>
+        <path d="M5 26.5h22" stroke="#d99852" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">Indus Research</span>
+        <span class="brand-sub">Civilisation &amp; script knowledge base</span>
+      </span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul class="nav-list">
+      <li class="nav-item">
+        <a href="../../index.html">Home</a>
+      </li><li class="nav-item">
+        <a href="../../explore/index.html">Explore</a>
+      </li><li class="nav-item">
+        <a href="../../findings/index.html">Findings</a>
+      </li><li class="nav-item has-menu">
+        <details class="nav-menu">
+          <summary>Ideas<span class="chev" aria-hidden="true">▾</span></summary>
+          <ul class="nav-dropdown"><li><a href="../../working-model/index.html">Working model</a></li><li><a href="../../conjectures/index.html">Conjectures</a></li></ul>
+        </details>
+      </li><li class="nav-item">
+        <a href="../../questions/index.html">Questions</a>
+      </li><li class="nav-item current-section has-menu">
+        <details class="nav-menu">
+          <summary>Record<span class="sr-only"> (current section)</span><span class="chev" aria-hidden="true">▾</span></summary>
+          <ul class="nav-dropdown"><li><a href="../index.html" aria-current="location">Papers</a></li><li><a href="../../attempts/index.html">Registry</a></li><li><a href="../../data.html">Data</a></li><li><a href="../../timeline/index.html">Timeline</a></li></ul>
+        </details>
+      </li><li class="nav-item has-menu">
+        <details class="nav-menu">
+          <summary>Participate<span class="chev" aria-hidden="true">▾</span></summary>
+          <ul class="nav-dropdown"><li><a href="../../agents/index.html">Agent hub</a></li><li><a href="../../agents/rules.html">Agent rules</a></li><li><a href="../../contribute/index.html">Contribute</a></li><li><a href="../../reuse/index.html">Reuse &amp; licence</a></li></ul>
+        </details>
+      </li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="icon-link" href="../../search/index.html" title="Search the knowledge base (press /)" aria-label="Search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <span class="icon-label">Search</span>
+      </a>
+      <a class="repo-link" href="https://github.com/k-sandhu/indus-valley-script">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<main id="content" class="page-main">
+  
+  
+  <nav class="breadcrumbs" aria-label="Breadcrumb"><ol>
+    <li><a href="../../index.html">Home</a></li><li><a href="../index.html">Papers</a></li><li><a href="index.html">Paper 008</a></li><li><span aria-current="page">Methods</span></li>
+  </ol></nav>
+  
+  <div class="page-head">
+    <h1>Methods, splits, benchmark commands, and limitations</h1>
+    <p class="page-meta">16 min read</p>
+  </div>
+  
+  
+  
+
+<nav class="toc-box" aria-label="On this page">
+  <p class="toc-title">On this page</p>
+  <ul><li><a href="#1-shared-corpus-inputs-and-object-grouping">1. Shared corpus inputs and object grouping</a></li><li><a href="#2-graphic-sign-families-and-modifiers-step-1">2. Graphic sign families and modifiers (step 1)</a></li><li><a href="#3-line-division-recurrence-plate-audit-and-face-adjudication">3. Line-division recurrence, plate audit, and face adjudication</a></li><li><a href="#4-line-trained-segmentation-ur-iii-calibration-and-frozen-inventory">4. Line-trained segmentation, Ur III calibration, and frozen inventory</a></li><li><a href="#5-stroke-numeral-fixity-and-comparative-seal-corpora">5. Stroke-numeral fixity and comparative seal corpora</a></li><li><a href="#6-seal-text-circulation-lothal-plate-check-and-archival-audit">6. Seal-text circulation, Lothal plate check, and archival audit</a></li><li><a href="#7-reproduction-and-benchmark-commands">7. Reproduction and benchmark commands</a></li><li><a href="#8-methodological-limitations-summary">8. Methodological limitations summary</a></li></ul>
+</nav>
+
+<div class="prose-body">
+<p>This companion document specifies the data filters, component-grouping rules, statistical procedures, cryptographic hashes and reproduction commands behind <a href="index.html">manuscript.md</a>. All paths resolve from the repository root (<code>c:/Users/sandh/OneDrive/Projects/indus_valley_script</code> or equivalent checkout). Raw corpora, per-inscription tables, inventories and plate crops remain local under <code>data/</code> and <code>data/raw/</code> because of unresolved upstream redistribution rights; only aggregates, protocols and code are tracked in Git.</p>
+<h2 id="1-shared-corpus-inputs-and-object-grouping">1. Shared corpus inputs and object grouping</h2>
+<p>All Indus structural analyses read from two normalized files built from the pinned Lipi export (<code>yajnadevam/lipi</code>, commit <code>fc8813a5</code>):</p>
+<ol>
+<li><code>data/normalized/lipi_observed_faces.jsonl</code> (SHA-256 <code>1220f5591a42abe7c6696ac014aba90e7c49fdce6b0ccba0b85bb45f950c30db</code>): all 5,680 inscribed faces, retaining Wells and ICIT visual sign codes, right-to-left reading-order codes (<code>signs_reading_rtl</code>), object types, field motifs, site names and CISI catalogue aliases.</li>
+<li><code>data/normalized/lipi_clean_rtl_singleline.jsonl</code> (SHA-256 <code>9e539daef4d5a7efbe3c5f34b73e14058eec1c5e888c749bc2eafb0f08084ba8</code>): complete single-line faces read right to left with no damaged or unknown signs. Deduplicating exact reading-order sequences of at least two signs yields 1,859 distinct texts containing 8,535 sign tokens across 577 attested Wells sign codes (1,312 distinct texts on seals, object type <code>SEAL*</code>).</li>
+</ol>
+<p>To prevent leakage across evaluation splits, faces are grouped into connected components whenever they share a physical object identifier, a catalogue alias or an identical sign sequence. In the clean structural frame, the 1,859 distinct texts form 1,571 connected components (with one large component of 206 linked texts producing fold 0 of 537 texts against 312 to 344 texts in folds 1 to 4). Every cross-validation split, held-out calibration set and block bootstrap operates on whole components.</p>
+<h2 id="2-graphic-sign-families-and-modifiers-step-1">2. Graphic sign families and modifiers (step 1)</h2>
+<p>Package: <code>experiments/2026-10-12-structure-first/step1-signs/</code> (protocol SHA-256 <code>a2185b6331d3d9e6055c4ba5ee66da4e006b17067b1f5bc9c7ddfc0311de44c7</code>, coding SHA-256 <code>c2d55fb56e25b8d7f630f2680f9b85b9122cfa15b8718e08fa5b72c11f509f7d</code>).</p>
+<ul>
+<li><strong>Coding procedure.</strong> All 722 Lipi font codes were rendered in Wells code order (48 glyphs per contact sheet, labelled with code and corpus token count). Coder 1 (Claude Opus 5.5) assigned every code a base family, stroke count (for numerals) and modifiers from a 14-term vocabulary (<code>encl</code>, <code>dots</code>, <code>inner</code>, <code>side</code>, <code>top</code>, <code>cap</code>, <code>bar</code>, <code>hatch</code>, <code>double</code>, <code>hold</code>, <code>pole</code>, <code>yoke</code>, <code>X</code>, <code>variant</code>). Coder 2 (a separate Claude Opus 5.5 subagent given only the sheets and vocabulary) coded the same 722 codes independently.</li>
+<li><strong>Inventories tested.</strong> <code>W</code> (577 attested Wells codes), <code>V</code> (310 attested groups with identical base, modifiers and count; 359 in full vocabulary), <code>P</code> (444 attested Mayig or Parpola-level classes; 555 in vocabulary), <code>M</code> (438 attested Mahadevan numbers; 551 in vocabulary), <code>B_coder1</code> (78 attested base families; 85 in vocabulary), <code>B_coder2</code> (59 attested base families; 63 in vocabulary), and <code>modifier_signature</code> (271 groups pooling signs across bases by modifier set).</li>
+<li><strong>Predictive evaluation.</strong> Every model predicts exact original <code>W</code> codes across five component-grouped folds (8,535 held-out tokens). The baseline is an interpolated Kneser–Ney bigram model (5.893 bits per sign; unigram 7.058 bits). Each candidate partition trains a class-based bigram model and interpolates it with the <code>W</code> bigram baseline (mixing weight <code>lambda</code> tuned inside training folds). Gains are measured in bits per sign against the baseline, with the identity-partition mixture gain (0.0029 bits) reported alongside 200 random partitions matched to each grouping's exact group-size distribution.</li>
+<li><strong>Post-outcome review controls.</strong> Computed in <code>experiments/2026-10-12-structure-first/review/REVIEW.md</code>: 100 random contiguous-cut partitions placing 85 cuts along the Wells number line; splitting numeral families into singletons; merging one-substitution near-copies into the same fold; adding an end-of-text symbol; and testing nine individual modifiers one at a time.</li>
+</ul>
+<h2 id="3-line-division-recurrence-plate-audit-and-face-adjudication">3. Line-division recurrence, plate audit, and face adjudication</h2>
+<h3 id="31-line-division-recurrence-step-3">3.1 Line-division recurrence (step 3)</h3>
+<p>Package: <code>experiments/2026-10-12-structure-first/step3-segmentation/</code> (<code>run-linebreaks-2026-10-12-v3/summary.json</code>, after Amendments 1 and 2).</p>
+<ul>
+<li><strong>Population.</strong> Of 118 faces carrying <code>/</code> in the Lipi visual code, 40 contain unknown, damaged or empty lines, 6 lack any line or crossing window of length 2 or more, and 3 are boustrophedon, leaving 69 clean multi-line faces (61 <code>SEAL:S</code>, 3 <code>POT:T:g</code>, 2 <code>TAB:C</code>, 1 <code>SEAL</code>, 1 <code>TAB:B</code>, 1 <code>IMPL</code>).</li>
+<li><strong>Test.</strong> Each line (read right to left) is checked for exact contiguous recurrence inside clean single-line texts from other objects. Length-matched crossing windows straddling the break are checked under both line orders. Primary comparisons use a two-sided sign test on per-face recurrence rates, both pooled across line orders and under the conservative order (whichever order maximizes crossing-window recurrence on each face). Post-outcome review controls deduplicated identical faces, removed numeral-only lines, shifted the division to all other internal positions, and measured unsupervised segmenter recall across 76 divisions on 72 joined faces.</li>
+</ul>
+<h3 id="32-plate-audit-and-29-face-adjudication">3.2 Plate audit and 29-face adjudication</h3>
+<p>Packages: <code>experiments/2026-10-20-seal-legend-units/plate-audit/</code> and <code>experiments/2026-10-22-face-adjudication/</code>.</p>
+<ul>
+<li><strong>Initial audit (Q-0027).</strong> Of the 118 divided faces, 43 lacked held crops (32 CISI 3 numbers, 11 no CISI number). Three blinded AI readers (25 faces each) inspected the 75 photographed faces from CISI 1 and 2 crops, counting visible signs per group and recording segment placement, layout type (<code>wrapped</code>, <code>separate</code>, <code>other</code>) and confidence (<code>high</code>, <code>medium</code>, <code>low</code>). A division counted as confirmed when visible sign groups matched catalogue counts within one sign. Removing 38 unknown or damaged faces and 5 boustrophedon faces left 75 segmenter-usable faces (79 divisions), 33 of which received a verified plate order (30 reversed visual code, 3 forward: H-60, H-97, K-16).</li>
+<li><strong>Follow-up adjudication of 29 unresolved faces.</strong> A two-pass protocol (<code>results-v1.json</code>, <code>VISUAL-PASS-1-FREEZE.json</code>) inspected 29 primary images and 8 alternate views before accessing rendered catalogue glyph sheets. A separate coordinating pass independently sealed first-pass observations and reviewed the second-pass graphic mappings. Dispositions separated accepted physical-layout observations (21 of 29) and provisional segment-to-group maps (12 of 29) from historical reading traversal (0 accepted).</li>
+</ul>
+<h2 id="4-line-trained-segmentation-ur-iii-calibration-and-frozen-inventory">4. Line-trained segmentation, Ur III calibration, and frozen inventory</h2>
+<p>Package: <code>experiments/2026-10-20-seal-legend-units/</code> (protocol SHA-256 <code>f31a4576d97044afb42a2e3158a2f98d6de054606ccf497a3e6cb110c966de15</code>, Amendments 1 and 2).</p>
+<h3 id="41-model-specification-and-features">4.1 Model specification and features</h3>
+<p>Each internal position between adjacent signs of a joined legend is scored by a regularized conditional linear model ($\lambda = 1.0$) trained by maximum likelihood over the scribe's break choices (124 choices across 75 usable faces in the full fit; 59 to 63 training faces per fold in 5-fold component-grouped cross-validation). The model separates eleven standardized textual features (<code>w_unit</code>) from two layout features (<code>w_layout</code>), dropping <code>w_layout</code> at inference time:</p>
+<ol>
+<li><code>be_forward</code>: forward branching-entropy change across the candidate cut.</li>
+<li><code>be_backward</code>: backward branching-entropy change across the candidate cut.</li>
+<li><code>pmi</code>: pointwise mutual information of the adjacent sign pair straddling the cut.</li>
+<li><code>left_ends_text</code>: log rate at which the sign immediately before the cut ends single-line texts.</li>
+<li><code>right_starts_text</code>: log rate at which the sign immediately after the cut begins single-line texts.</li>
+<li><code>left_pair_ends_text</code>: how often the two-sign stretch ending at the cut ends single-line texts.</li>
+<li><code>right_pair_starts_text</code>: how often the two-sign stretch starting at the cut begins single-line texts.</li>
+<li><code>pair_count</code>: corpus frequency of the adjacent sign pair straddling the cut.</li>
+<li><code>crossing_triple_count</code>: corpus frequency of three-sign sequences straddling the cut.</li>
+<li><code>left_window_drop</code>: drop in corpus recurrence when extending the left window across the cut.</li>
+<li><code>right_window_drop</code>: drop in corpus recurrence when extending the right window across the cut.</li>
+</ol>
+<p>Every feature is computed from the clean corpus with the scored face's entire object-family component removed. At test time, the model places a boundary wherever the unit score exceeds threshold $\tau$, chosen on training faces to maximize Youden's $J$.</p>
+<h3 id="42-evaluation-metric-and-baselines">4.2 Evaluation metric and baselines</h3>
+<p>Because line divisions label positive boundaries only, Indus segmentation is scored with <code>python -m bench segmentation</code> by Youden's $J = \text{recall}<em _text_other="\text{other">{\text{div}} - \text{rate}</em>$, where }<code>boundary_precision</code> and <code>boundary_f1</code> remain explicitly <code>null</code>. Component-cluster bootstrap intervals (resampling connected object components) quantify uncertainty and paired differences against four comparators: <code>layout_only</code>, <code>branching_entropy</code>, <code>greedy_ngram</code> and <code>dp_unigram</code> (Dirichlet-process unigram segmenter). A post-protocol label-permutation control (<code>label-permutation.json</code>) relocates each face's divisions to random internal positions and refits across 200 trials.</p>
+<h3 id="43-ur-iii-sumerian-calibration">4.3 Ur III Sumerian calibration</h3>
+<p>Using 309 distinct Ur III Sumerian seal legends (308 with line divisions, 1,187 word divisions, 718 line divisions, all 718 coinciding with word divisions; input SHA-256 <code>dedb9c3967d6bd2fe725406e2a46234673fcd8e5a3de2817dee27bc8ce1d899c</code>), we ran five-fold cross-validation under two training regimes: <code>supervised_75_labels</code> (exactly one line division sampled from each of 75 training legends per fold, matching the Indus label count) and <code>supervised_all_line_labels</code> (all 554 to 599 training line divisions per fold). Held-out predictions were scored against complete word boundaries (precision, recall, boundary F1, exact word F1) and line divisions (line J). Pre-stated pass rule: held-out word-boundary F1 of the 75-label model exceeds the cut-everywhere baseline (0.557) by at least 0.05 (achieved margin +0.061).</p>
+<h3 id="44-build-and-held-split-version-2-inventory-agreement-and-prospective-locks">4.4 Build and held split, version 2 inventory, agreement, and prospective locks</h3>
+<p>Before building any inventory, 15% of object-family components were partitioned by deterministic hash into held-out calibration set H (171 seal legends of three or more signs), leaving build corpus B (1,687 clean texts, including 994 seal legends of three or more signs).</p>
+<ul>
+<li><strong>Version 1 to version 2 (Amendment 1).</strong> Version 1 cut only where score exceeded $\tau$ (4.5% cut rate; 1 closing formula closing 9 of 994 build seals). Amendment 1 (frozen before reading H) added one cut at each legend's highest-scoring internal position (<code>FROZEN-v2.json</code>, build cut rate 29.1%, mean unit length 2.23 signs). Recurring multi-sign units formed the 225-unit inventory; final stretches of one to four signs following the peak junction in at least three unrelated components formed the 49-formula closing stock (<code>closing-stock.json</code> SHA-256 <code>85f3182f4968acb31b5c35d2647b02cbe668b4c30efc46c5eed7fb2d2518a7fd</code>; <code>inventory.json</code> SHA-256 <code>ad075f44a23b6ba9a99102e4c95eac29806a3cccb827057474d783113d07e813</code>).</li>
+<li><strong>Rule text and independent implementation.</strong> <code>RULES-v2.md</code> (SHA-256 <code>8278c2c23664a35a9903c8400606bede1ca5184b0f57b36abfd3a8043d5a99bf</code>) fixes the longest 1-to-4-sign stock closing first (Rule 1), then cuts the opening into the fewest inventory units (Rule 2). An independent agent parsed all 171 legends in H (776 internal positions) from <code>RULES-v2.md</code> alone (<code>agreement-v2.json</code>, κ = 1.00).</li>
+<li><strong>Prospective scoring locks.</strong> <code>PREDICTIONS.md</code>, <code>predictions.json</code>, <code>RULES-v2.md</code>, the lists and <code>score_prospective.py</code> are locked in <code>PREDICTIONS.sha256</code>. Power tables use 20,000 to 40,000 simulated pools drawn from H calibration rates (<code>calibration-v2.json</code>, <code>predictions.json</code>). Two statistic families are registered in <code>spent-entry.json</code>: <code>seal_legend_closing_structure</code> (P1–P3) and <code>line_division_unit_boundary</code> (P4).</li>
+</ul>
+<h2 id="5-stroke-numeral-fixity-and-comparative-seal-corpora">5. Stroke-numeral fixity and comparative seal corpora</h2>
+<h3 id="51-stroke-numeral-fixity-step-4">5.1 Stroke-numeral fixity (step 4)</h3>
+<p>Package: <code>experiments/2026-10-12-structure-first/step4-numerals/</code> (<code>run-2026-10-12/summary.json</code>, plus review sensitivities).</p>
+<ul>
+<li><strong>Population and comparison.</strong> Short-stroke and tall-stroke numeral tokens in the 1,859 clean Indus texts preceding a non-numeral sign or text end yield 1,265 pairs and 56 qualifying items ($\ge 5$ tokens; 996 tokens). Ur III tablets contribute 3,421 numeral–word pairs (subsampled 200 times to 1,265 tokens; 38 to 48 qualifying items per draw), and Linear B supplies 201 commodity–number pairs (12 qualifying items, 146 tokens).</li>
+<li><strong>Metrics and sensitivities.</strong> Primary measures are mean distinct values per qualifying item, token-weighted top-value share, and raw mutual information divided by value entropy, plus a 10,000-permutation null for Indus MI and a Jensen–Shannon divergence test between short-stroke (787) and tall-stroke (478) following distributions. Post-outcome sensitivities tested family-aware Indus values against unit-aware Ur III values, five-token rarefaction per item, permutation-debiasing (net MI ratio), removing value-2 tokens (691 remaining), and reversing item direction to the preceding sign.</li>
+</ul>
+<h3 id="52-edge-asymmetry-and-head-direction-seal-corpora">5.2 Edge asymmetry and head-direction seal corpora</h3>
+<p>Packages: <code>experiments/2026-10-12-structure-first/step6-language/</code> and <code>experiments/2026-10-21-head-direction-corpora/</code> (protocol SHA-256 <code>9c496a9ef7cb43119344b6e1d6ac895a198b9633ebc641ac7d74a1d85742aba2</code>, Amendments 1–4).</p>
+<ul>
+<li><strong>Edge asymmetry (<code>sign.S1</code>).</strong> Defined as normalized Shannon entropy of initial units minus normalized Shannon entropy of final units over distinct texts of length $\ge 2$, compared against within-text unit shuffles (95% range). Step 6 measured Indus clean (1,859), Indus seals (1,312), Ur III seals (309 sign, 308 word), Egyptian glyph sentences (1,696 sign, 1,301 word) and Ur III tablets (1,067 sign, 1,065 word).</li>
+<li><strong>Five comparative seal corpora.</strong> Linked to physical objects and findspots, grouped by die, alias and identical sign sequence, excluding composite editions and casts: <code>ia-ganges</code> (Basarh and Bhita, 556 records / 495 objects / 245 eligible sign legends / 30 word), <code>ta-brahmi</code> (Mahadevan 2003 Tables 1.6–1.8, 31 records / 23 eligible sign including 7 coins / 7 word), <code>sux-ur3</code> (ORACC <code>epsd2/admin/ur3</code>, 31,512 records / 31,220 objects / 3,044 eligible sign / 3,026 word), <code>akk-sargonic</code> (ORACC <code>oakk</code> + CDLI, 89 records / 17 composites excluded / 11 eligible sign / 10 word), and <code>sux-sargonic</code> (175 records / 2 excluded / 42 eligible sign / 36 word).</li>
+<li><strong>Discrimination rules.</strong> Frozen entry threshold: 25 eligible legends per corpus and at least two corpora per group (Amendment 4 added a secondary panel at threshold 20; 2,000 matched-size replicate draws at n = 196 and n = 18). Neither panel reached two head-initial corpora (<code>akk-sargonic</code> = 11), so all statistics reported <code>testable: false</code> and <code>kept: false</code>. Post-run exploratory counts recorded closing grammatical units (<code>exploratory-closing-units.json</code>) and adjacent title–name order across all lexical members (<code>exploratory-title-name-order.json</code>).</li>
+</ul>
+<h2 id="6-seal-text-circulation-lothal-plate-check-and-archival-audit">6. Seal-text circulation, Lothal plate check, and archival audit</h2>
+<h3 id="61-seal-text-identity-and-circulation">6.1 Seal-text identity and circulation</h3>
+<p>Package: <code>experiments/2026-10-12-seal-text-identity/</code> (<code>run-2026-10-12/summary.json</code>, <code>sensitivity.json</code>, <code>review-response.json</code>, <code>segments.json</code>).</p>
+<ul>
+<li><strong>Population.</strong> 1,430 complete single-line <code>SEAL*</code> faces of length $\ge 2$ without unknown signs from 29 named South Asian sites, taking one face per object family (lowest record identifier).</li>
+<li><strong>Statistics.</strong> Locality (<code>S1</code>): mean share of same-text seal pairs found at one site (text-weighted primary, pair-weighted companion), tested against 10,000 global site shuffles (primary frozen null) and 10,000 length-stratified site shuffles (Amendment 2 exploratory sensitivity, plus Mayig variant merging yielding 81 shared texts). Coincidence (<code>S3</code>): exact expected duplicate pairs by length from an interpolated Kneser–Ney bigram model via dynamic programming over squared transition probabilities, fitted to all 2,164 distinct legible texts (primary) and refitted to 824 non-seal texts and 1,420 seal texts (review). Motif concordance (<code>S4</code>): same-motif pair share across 130 pairs with both motifs coded, tested against 10,000 within-site motif shuffles, with a breakdown comparing unicorn and non-unicorn pairs and a no-motif-as-category check. Cross-city sealings (<code>S5</code>): exact text matches between tags or sealings (<code>TAG*</code>) and eligible seals. Independent verification (<code>verify.py</code>) rebuilt populations, checked permutation means against exact hypergeometric expectations and checked coincidence DP by enumeration at lengths 1 and 2.</li>
+</ul>
+<h3 id="62-blinded-lothal-m-895-plate-check-and-archival-pass-3">6.2 Blinded Lothal / M-895 plate check and archival pass 3</h3>
+<p>Packages: <code>experiments/2026-10-13-plate-checks/</code> (protocol SHA-256 <code>bd3e40402307091bd7d1d226bfd358ba5201f8f9ad3820fc17ed495f1874b4f9</code>) and <code>experiments/2026-10-24-office-seal-pass3/</code> (building on <code>2026-10-24-office-seal-evidence/</code>).</p>
+<ul>
+<li><strong>Plate measurements.</strong> M-895 was rendered from CISI 2 printed p. 85 (PDF 120, zoom 8.34; calibrated on M-894, M-896, M-897 at 31.1 px/mm, giving 724 px = 23.3 mm against catalogue 23.4 mm). Lothal sealings L-161 to L-170 were inspected on CISI 1 printed pp. 276–278 (PDF 312–314) and Lipi crops (calibrated at 22.7 px/mm on 2:1 renders, 11.27 px/mm on L-161 Lipi crop, giving 23.4 mm face width, range 21.1 to 24.2 mm). Proportions of sign width along the text band are scale-invariant. A blinded second AI reader received eleven views renamed <code>X01</code> to <code>X11</code> (<code>second-reader-report.json</code>) without identity labels or expected outcomes.</li>
+<li><strong>Archival pass 3.</strong> Bounded page-image reinspection of Rao 1985 Vol. II printed pp. 317–325 (PDF 68–76, SHA-256 <code>bc5f16e3d8836ac0f03b5b28e74fc9775ab042cf972fb64d59f082d7a8074865</code>) and CISI 1 printed p. 373 (PDF 409, SHA-256 <code>47a4da4227cfb7baa56d6a561e25797225499d0ec54f5a702a82c67ab4746d4d</code>) documented the contradictory assignment of Plate CLXI F to both 1864 (L-164) and 1830 (L-161) and preserved all conflicting source assertions without collapsing object identities (<code>aggregate-v1.json</code>).</li>
+</ul>
+<h2 id="7-reproduction-and-benchmark-commands">7. Reproduction and benchmark commands</h2>
+<p>Run from the repository root with Python 3.13, NumPy and SciPy, with local inputs present under <code>data/normalized/</code> and <code>data/raw/</code>:</p>
+<pre><code class="language-text"># Benchmark self-test and segmentation endpoint replay
+python -m bench selftest --out &lt;new-dir&gt;/selftest.json
+python -m bench segmentation \
+  --reference data/raw/2026-10-20-seal-legend-units/run-2026-10-20/indus/plate_order-supervised-references.jsonl \
+  --prediction data/raw/2026-10-20-seal-legend-units/run-2026-10-20/indus/plate_order-supervised-predictions.jsonl \
+  --out &lt;new-dir&gt;/segmentation-replay.json
+
+# Seal-legend units pipeline (plate audit, CV, permutation null, Ur III calibration, v2 inventory, agreement, predictions)
+python -P experiments/2026-10-20-seal-legend-units/audit_summary.py --out &lt;new-dir&gt;
+python -P experiments/2026-10-20-seal-legend-units/sumerian_calibration.py --run &lt;new-run&gt;
+python -P experiments/2026-10-20-seal-legend-units/run_cv.py --run &lt;new-run&gt;
+python -P experiments/2026-10-20-seal-legend-units/label_permutation.py --run &lt;new-run&gt; --perms 200
+python -P experiments/2026-10-20-seal-legend-units/build_inventory_v2.py --version &lt;new-v&gt;
+python -P experiments/2026-10-20-seal-legend-units/agreement.py --version v2 --agent &lt;agent-file&gt; --out &lt;new-dir&gt;/agreement.json
+python -P experiments/2026-10-20-seal-legend-units/calibrate.py --version v2 --out &lt;new-dir&gt;/calibration.json
+python -P experiments/2026-10-20-seal-legend-units/make_predictions.py --calibration &lt;new-dir&gt;/calibration.json --out &lt;new-dir&gt;/predictions.json
+
+# Structure-first steps 1, 3, 4, 6 and seal-text identity verification
+python -P experiments/2026-10-12-structure-first/step1-signs/analyze_step1.py
+python -P experiments/2026-10-12-structure-first/step3-segmentation/analyze_step3.py
+python -P experiments/2026-10-12-structure-first/step4-numerals/analyze_step4.py
+python -P experiments/2026-10-12-structure-first/step6-language/analyze_step6.py
+python -P experiments/2026-10-12-seal-text-identity/verify.py
+
+# Head-direction comparative corpora
+python -P experiments/2026-10-21-head-direction-corpora/discriminate.py --threshold 25 --out &lt;new-dir&gt;/t25
+python -P experiments/2026-10-21-head-direction-corpora/discriminate.py --threshold 20 --out &lt;new-dir&gt;/t20
+</code></pre>
+<p>Note on provenance bug fixed after agreement run: in <code>agreement-v2.json</code> and <code>agreement-v2-junction.json</code>, the <code>rules_sha256</code> field recorded the hash of <code>RULES.md</code> (v1) due to a script slip that was fixed later; the independent agent actually read <code>RULES-v2.md</code>, whose hash (<code>8278c2c2...</code>) is verified in <code>FROZEN-v2.json</code> and <code>PREDICTIONS.sha256</code>.</p>
+<h2 id="8-methodological-limitations-summary">8. Methodological limitations summary</h2>
+<ol>
+<li><strong>Single upstream Indus export:</strong> Lipi (<code>fc8813a5</code>) omits CISI 3.1/3.2 gaps and post-catalogue finds and has unresolved redistribution rights.</li>
+<li><strong>Small primary labelled division sample:</strong> 33 plate-ordered faces (25 Mohenjo-daro) limit power on non-wrapped layouts (3 separate-field faces, J = 0.000) and regional generalization.</li>
+<li><strong>AI visual inspection without human verification:</strong> Sign-family coding, plate audits, 29-face adjudication and Lothal measurements all await human epigraphic review.</li>
+<li><strong>In-sample vs out-of-sample inventory steps:</strong> Amendment 1 responded to version 1's low cut rate on build corpus B before held set H was opened; P4's 62% rate on 58 divided seals is in-sample and therefore awaits fresh divided seals.</li>
+<li><strong>Corpus size shortfalls in comparative tests:</strong> Old Akkadian (11) and Tamil-Brahmi (23) fell short of the 25-legend threshold, leaving head-direction placement untestable until additional excavated corpora (such as Tell Brak, Tell Mozan, Kültepe, revised <em>Early Tamil Epigraphy</em>, Karur and Keeladi) are added.</li>
+<li><strong>One-face-per-family rule in seal identity:</strong> Taking the lowest record identifier per object family omitted one Harappa duplicate occurring on second faces (H-352, H-354, H-369), and Mohenjo-daro's 64% share of eligible seals (917 of 1,430) dominates global pair expectations.</li>
+</ol>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-title">Indus civilisation and script research</p>
+        <p class="footer-note">Open, source-linked knowledge base built by AI agents and human reviewers. The script remains undeciphered; every tested claim and failed run stays on record.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">Explore</p>
+        <ul>
+          <li><a href="../../explore/index.html">Interactive tools</a></li>
+          <li><a href="../../search/index.html">Search knowledge base</a></li>
+          <li><a href="../../agents/index.html">Agent coordination hub</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">For agents</p>
+        <ul>
+          <li><a href="../../llms.txt">llms.txt</a></li>
+          <li><a href="../../llms-full.txt">llms-full.txt (full digest)</a></li>
+          <li><a href="https://github.com/k-sandhu/indus-valley-script">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span><a href="https://github.com/k-sandhu/indus-valley-script/blob/82521025e90485d0ee5a41b06aa9dc4f14391eda/papers/008-seal-legend-segmentation/methods.md">Source on GitHub</a> · Commit <code>82521025e904</code> (2026-11-23)</span>
+      <span>Code: Unlicense · Project prose and cards: CC0 1.0 · Helsinki 1979 derivatives: CC BY 4.0</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
